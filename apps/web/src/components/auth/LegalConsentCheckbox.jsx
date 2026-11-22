@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 /**
  * LA CASE DE CONSENTEMENT — une seule, obligatoire, et la même partout.
@@ -20,6 +19,10 @@ import { useTranslation } from 'react-i18next';
  * `stopPropagation` sur les liens : sans lui, le clic remonterait au conteneur
  * et basculerait la case au moment même où l'élève part lire le document.
  *
+ * Le libellé est en FRANÇAIS, comme les deux documents qu'il nomme (rétablis
+ * depuis l'ancien site le 2026-11-22) : il est écrit ici, et non dans le
+ * catalogue arabe de l'interface.
+ *
  * La zone tactile fait 24px et le conteneur offre une marge de frappe
  * confortable — une case de 16px seule est difficile à viser sur téléphone.
  */
@@ -30,7 +33,6 @@ export default function LegalConsentCheckbox({
   disabled = false,
   id = 'accept-legal',
 }) {
-  const { t } = useTranslation('marketing');
   const errorId = `${id}-error`;
 
   return (
@@ -47,8 +49,8 @@ export default function LegalConsentCheckbox({
           aria-describedby={error ? errorId : undefined}
           className="mt-0.5 h-6 w-6 shrink-0 cursor-pointer rounded border-slate-300 text-nav-accent focus:ring-2 focus:ring-nav-accent focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
         />
-        <label htmlFor={id} className="text-sm leading-relaxed text-slate-700 cursor-pointer select-none">
-          {t('consent.iAccept')}{' '}
+        <label htmlFor={id} lang="fr" dir="ltr" className="text-sm leading-relaxed text-slate-700 cursor-pointer select-none">
+          J’accepte les{' '}
           <Link
             to="/cgu"
             target="_blank"
@@ -56,9 +58,9 @@ export default function LegalConsentCheckbox({
             onClick={(e) => e.stopPropagation()}
             className="font-medium text-nav-accent underline underline-offset-2 hover:text-nav-accent"
           >
-            {t('consent.terms')}
+            Conditions Générales d’Utilisation
           </Link>{' '}
-          {t('consent.and')}{' '}
+          et la{' '}
           <Link
             to="/confidentialite"
             target="_blank"
@@ -66,9 +68,9 @@ export default function LegalConsentCheckbox({
             onClick={(e) => e.stopPropagation()}
             className="font-medium text-nav-accent underline underline-offset-2 hover:text-nav-accent"
           >
-            {t('consent.privacy')}
+            Politique de confidentialité
           </Link>{' '}
-          {t('consent.ofPlatform')}
+          de Smarter Academy.
         </label>
       </div>
 

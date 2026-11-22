@@ -6,11 +6,17 @@ import { fileURLToPath } from 'node:url';
 const SRC = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => readFileSync(join(SRC, p), 'utf8');
 
-// Les catalogues arabes : l'interface élève/visiteur est arabe, donc les
-// libellés que ces contrats exigent vivent ici et non dans le JSX.
+// Le catalogue arabe : le reste de l'interface élève/visiteur est encore
+// arabe, donc les libellés que ces contrats exigent y vivent. Les pages
+// légales et la case de consentement, elles, sont en FRANÇAIS depuis le
+// 2026-11-22 (textes de l'ancien site rétablis) : leurs mots sont dans le JSX.
 const readJson = (p) => JSON.parse(read(p));
-const marketingAr = readJson('i18n/locales/ar/marketing.json');
 const authAr = readJson('i18n/locales/ar/auth.json');
+
+/** Le fichier du serveur qui fait autorité sur les versions ET sur l'identité de l'éditeur. */
+const legalPhp = readFileSync(join(SRC, '../../api/config/legal.php'), 'utf8');
+const publisher = (champ) =>
+  legalPhp.match(new RegExp(`'${champ}' => '([^']*)'`))?.[1] ?? '';
 
 /**
  * La source PRIVÉE DE SES COMMENTAIRES.
@@ -55,14 +61,12 @@ describe('La case de consentement', () => {
   });
 
   it('porte les deux intitulés exigés', () => {
-    // L'interface est ARABE : les deux intitulés ne sont plus écrits dans le
-    // JSX mais rendus depuis le catalogue de traduction. Le contrat tient
-    // toujours — la case doit nommer les deux documents — mais il se vérifie
-    // désormais en deux temps : la clé est posée ici, le texte existe là-bas.
-    expect(source).toContain("t('consent.terms')");
-    expect(source).toContain("t('consent.privacy')");
-    expect(marketingAr.consent.terms.trim()).not.toBe('');
-    expect(marketingAr.consent.privacy.trim()).not.toBe('');
+    // Les deux documents sont FRANÇAIS : la case les nomme par leur titre
+    // français, écrit dans le JSX, chacun DANS le lien vers sa page.
+    const code = readCode('components/auth/LegalConsentCheckbox.jsx');
+    expect(code).toMatch(/to="\/cgu"[\s\S]*?>\s*Conditions Générales d’Utilisation\s*<\/Link>/);
+    expect(code).toMatch(/to="\/confidentialite"[\s\S]*?>\s*Politique de confidentialité\s*<\/Link>/);
+    expect(code).toContain('J’accepte les');
   });
 
   it('relie la case à son libellé par id/htmlFor, sans imbrication interactive', () => {
@@ -178,7 +182,8 @@ describe('Le service d’authentification', () => {
 describe('Les routes légales', () => {
   const app = read('App.jsx');
 
-  it('les deux pages sont routées — sinon elles retombent sur l’accueil', () => {
+  it('les trois pages sont routées — sinon elles retombent sur l’accueil', () => {
+    expect(app).toContain('path="/mentions-legales"');
     expect(app).toContain('path="/confidentialite"');
     expect(app).toContain('path="/cgu"');
   });
@@ -192,7 +197,7 @@ describe('Les routes légales', () => {
     const bloc = app.slice(app.indexOf('<Route element={<MainLayout />}>'));
     const fin = bloc.indexOf('</Route>');
     const dansLaCoquille = bloc.slice(0, fin);
-    for (const route of ['/confidentialite', '/cgu', '/verification-email']) {
+    for (const route of ['/mentions-legales', '/confidentialite', '/cgu', '/verification-email']) {
       expect(dansLaCoquille).toContain(`path="${route}"`);
     }
   });
@@ -201,7 +206,8 @@ describe('Les routes légales', () => {
 describe('Le pied de page', () => {
   const source = read('components/navigation/Footer.jsx');
 
-  it('mène aux deux documents', () => {
+  it('mène aux trois documents', () => {
+    expect(source).toContain("to: '/mentions-legales'");
     expect(source).toContain("to: '/confidentialite'");
     expect(source).toContain("to: '/cgu'");
   });
@@ -215,6 +221,7 @@ describe('Les pages légales elles-mêmes', () => {
   const app = read('App.jsx');
   const footer = read('components/navigation/Footer.jsx');
   const pages = {
+    'Mentions légales': read('pages/legal/MentionsLegales.jsx'),
     CGU: read('pages/legal/CGU.jsx'),
     Confidentialité: read('pages/legal/Confidentialite.jsx'),
   };
@@ -237,44 +244,64 @@ describe('Les pages légales elles-mêmes', () => {
   });
 
   /**
-   * CGU et politique de confidentialité : depuis le 2026-10-04, texte arabe
-   * fourni par le propriétaire (droit algérien), repris tel quel. Les
-   * contrats ci-dessous protègent ce qui a été RAJOUTÉ au modèle — la date,
-   * l'adresse de contact — et ce qui ne doit pas y revenir.
+   * Les trois documents sont les textes FRANÇAIS de l'ancien site (`main`),
+   * rétablis tels quels le 2026-11-22 sur décision du propriétaire, en version
+   * 2026-09-12 — celle que le serveur écrit dans chaque consentement. Les
+   * contrats ci-dessous protègent l'accord entre la page et le serveur, et
+   * l'adresse de contact.
    */
   it('portent la version qui correspond à celle du serveur', () => {
-    const legal = readFileSync(join(SRC, '../../api/config/legal.php'), 'utf8');
-    expect(legal).toContain("'terms_version' => env('LEGAL_TERMS_VERSION', '2026-10-04')");
-    expect(legal).toContain("'privacy_version' => env('LEGAL_PRIVACY_VERSION', '2026-10-04')");
-    expect(pages.CGU).toContain('4 أكتوبر 2026');
-    expect(pages['Confidentialité']).toContain('4 أكتوبر 2026');
+    expect(legalPhp).toContain("'terms_version' => env('LEGAL_TERMS_VERSION', '2026-09-12')");
+    expect(legalPhp).toContain("'privacy_version' => env('LEGAL_PRIVACY_VERSION', '2026-09-12')");
+    expect(pages.CGU).toContain("const UPDATED_AT = '12 septembre 2026'");
+    expect(pages['Confidentialité']).toContain("const UPDATED_AT = '12 septembre 2026'");
+    expect(pages.CGU).toContain('updatedAt={UPDATED_AT}');
+    expect(pages['Confidentialité']).toContain('updatedAt={UPDATED_AT}');
   });
 
   it('donnent une adresse de contact réelle, sans gabarit resté vide', () => {
-    for (const nom of ['CGU', 'Confidentialité']) {
-      expect(pages[nom], nom).toContain("const EMAIL = 'contact@smarter-academy.com'");
-      expect(pages[nom], nom).toContain('<Mail />');
-      expect(pages[nom], nom).not.toMatch(/\[(التاريخ|البريد الإلكتروني|العنوان القانوني)\]/);
-      expect(pages[nom], nom).not.toMatch(/smarter-academy\.fr/);
+    // L'adresse des pages est CELLE de l'éditeur déclarée au serveur : deux
+    // adresses différentes enverraient une demande de droits dans le vide.
+    expect(publisher('email')).toMatch(/^[^@\s]+@[^@\s]+\.[a-z]+$/);
+    for (const nom of Object.keys(pages)) {
+      expect(pages[nom], nom).toContain(`const EMAIL = '${publisher('email')}'`);
+      expect(pages[nom], nom).toMatch(/<Mail \/>|href=\{`mailto:\$\{EMAIL\}`\}/);
+      expect(pages[nom], nom).not.toMatch(/\[(date|e-mail|courriel|adresse)[^\]]*\]/i);
     }
   });
 
-  it('relèvent du droit algérien, pas du RGPD', () => {
-    expect(pages.CGU).toMatch(/الجمهورية الجزائرية/);
-    expect(pages['Confidentialité']).toMatch(/في الجزائر/);
-    for (const nom of ['CGU', 'Confidentialité']) {
-      expect(pages[nom], nom).not.toMatch(/RGPD|CNIL/);
+  it('relèvent du droit français et du RGPD, pas du droit algérien', () => {
+    expect(pages.CGU).toMatch(/droit français/);
+    expect(pages['Confidentialité']).toMatch(/RGPD/);
+    expect(pages['Confidentialité']).toMatch(/CNIL/);
+    for (const [nom, source] of Object.entries(pages)) {
+      expect(source, nom).not.toMatch(/الجزائر|الجزائرية|algérien/i);
     }
   });
 
   /**
-   * La page « معلومات قانونية » (mentions légales, éditeur français) a été
-   * retirée le 2026-10-04 sur décision du propriétaire : ni route, ni lien.
+   * La page des mentions légales, retirée par le produit algérien le
+   * 2026-10-04, est RÉTABLIE (2026-11-22) : routée, liée depuis le pied de
+   * page et depuis le cadre commun, et elle affiche le bloc de l'éditeur.
    */
-  it('n’exposent plus la page des mentions légales', () => {
-    expect(app).not.toContain('/mentions-legales');
-    expect(footer).not.toContain('/mentions-legales');
-    expect(read('pages/legal/LegalPage.jsx')).not.toContain('/mentions-legales');
+  it('exposent la page des mentions légales, avec le bloc de l’éditeur', () => {
+    expect(app).toContain('path="/mentions-legales" element={<MentionsLegales />}');
+    expect(footer).toContain("to: '/mentions-legales'");
+    expect(read('pages/legal/LegalPage.jsx')).toContain("to: '/mentions-legales'");
+    const page = pages['Mentions légales'];
+    expect(page).toContain('title="Éditeur du site"');
+    expect(page).toContain('title="Directeur de la publication"');
+    expect(page).toContain('title="Hébergeur"');
+  });
+
+  it('nomment l’éditeur tel que le serveur le déclare — une seule identité', () => {
+    const page = pages['Mentions légales'];
+    for (const champ of ['name', 'legal_form', 'siren', 'ape', 'address']) {
+      expect(publisher(champ), champ).not.toBe('');
+      expect(page, champ).toContain(publisher(champ));
+    }
+    const [a, m, j] = publisher('registered_at').split('-');
+    expect(page).toContain(`${j}/${m}/${a}`);
   });
 
   it('ne nomment aucun tribunal précis', () => {

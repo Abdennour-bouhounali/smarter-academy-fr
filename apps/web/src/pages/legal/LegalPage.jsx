@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 /**
- * LE CADRE DES DEUX PAGES LÉGALES — confidentialité, CGU.
+ * LE CADRE DES TROIS PAGES LÉGALES — mentions légales, confidentialité, CGU.
  *
  * Pourquoi un composant partagé : trois documents qui se citent l'un l'autre
  * doivent se RESSEMBLER. Un lecteur qui passe des CGU à la politique de
@@ -11,17 +10,25 @@ import { Link } from 'react-router-dom';
  * et le même pied de page — sinon il croit avoir changé de site.
  *
  * Le cadre ne fournit QUE la mise en page : en-tête, largeur de lecture,
- * navigation entre les documents. Le texte juridique vit dans chaque
+ * navigation entre les trois documents. Le texte juridique vit dans chaque
  * page, parce que c'est lui qui fait foi.
  *
  * Ce composant s'affiche à l'intérieur de MainLayout, qui porte déjà la barre
  * de navigation et le pied de page : il ne doit en ajouter aucun.
+ *
+ * ── Langue et sens de lecture ───────────────────────────────────────────
+ * Les trois documents sont les textes FRANÇAIS de l'ancien site, rétablis
+ * tels quels (2026-11-22). Le reste de l'interface est encore arabe et se lit
+ * de droite à gauche (`<html lang="ar" dir="rtl">`) jusqu'à sa conversion
+ * (FRANCE_REBUILD_PLAN.md §4) : le cadre déclare donc lui-même `lang="fr"` et
+ * `dir="ltr"`, sans quoi un texte français hériterait du sens arabe. Ses
+ * libellés sont écrits en français ici, et non dans le catalogue arabe.
  */
 
-// Des CLÉS : constant de module, donc résolu au rendu.
 const LEGAL_LINKS = [
-  { to: '/confidentialite', labelKey: 'legal.privacyShort' },
-  { to: '/cgu', labelKey: 'legal.termsShort' },
+  { to: '/mentions-legales', label: 'Mentions légales' },
+  { to: '/confidentialite', label: 'Confidentialité' },
+  { to: '/cgu', label: 'CGU' },
 ];
 
 /**
@@ -47,6 +54,15 @@ export function LegalSection({ id, number, title, children }) {
   );
 }
 
+/** Un sous-titre à l'intérieur d'une section. */
+export function LegalSubheading({ children }) {
+  return (
+    <h3 className="font-space font-semibold text-base sm:text-lg text-slate-800 mt-6 mb-2">
+      {children}
+    </h3>
+  );
+}
+
 /** Un paragraphe de corps de texte. */
 export function LegalParagraph({ children }) {
   return (
@@ -60,6 +76,74 @@ export function LegalList({ children }) {
     <ul className="font-inter text-slate-600 text-base leading-relaxed space-y-2 ps-5 list-disc marker:text-blue-400">
       {children}
     </ul>
+  );
+}
+
+/**
+ * Un encadré d'insistance — pour les clauses qu'un lecteur pressé ne doit pas
+ * manquer (renonciation au droit de rétractation, absence d'automatisme,
+ * consentement parental). Le fond coloré n'a pas de valeur juridique : il
+ * signale simplement que la clause engage.
+ */
+export function LegalCallout({ tone = 'blue', title, children }) {
+  const tones = {
+    blue: 'bg-blue-50 border-blue-200',
+    amber: 'bg-amber-50 border-amber-200',
+    slate: 'bg-slate-50 border-slate-200',
+  };
+  return (
+    <div className={`rounded-2xl border px-5 py-4 ${tones[tone] ?? tones.slate}`}>
+      {title && (
+        <p className="font-space font-semibold text-slate-900 text-base mb-1.5">{title}</p>
+      )}
+      <div className="font-inter text-slate-700 text-base leading-relaxed space-y-2">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Un tableau. Toujours enveloppé dans un conteneur qui défile
+ * horizontalement : à 400 px de large, un tableau à trois colonnes déborde,
+ * et un document légal illisible sur téléphone n'est pas opposable
+ * sereinement.
+ */
+export function LegalTable({ headers, rows }) {
+  return (
+    <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+      <table className="w-full min-w-[34rem] border-collapse text-start">
+        <thead>
+          <tr className="border-b-2 border-slate-200">
+            {headers.map((h) => (
+              <th
+                key={h}
+                scope="col"
+                className="font-space font-semibold text-slate-900 text-sm py-3 pe-4 align-bottom"
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i} className="border-b border-slate-100 align-top">
+              {row.map((cell, j) => (
+                <td
+                  key={j}
+                  className={`py-3 pe-4 font-inter text-base leading-relaxed ${
+                    j === 0 ? 'text-slate-800 font-medium' : 'text-slate-600'
+                  }`}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -85,9 +169,8 @@ const SHELL = 'sa-page mx-auto w-full max-w-[1200px]';
 const MEASURE = 'max-w-[1050px] mx-auto';
 
 export default function LegalPage({ eyebrow, title, intro, updatedAt, children }) {
-  const { t } = useTranslation('marketing');
   return (
-    <div className="pt-16">
+    <div lang="fr" dir="ltr" className="pt-16">
       <section className={`py-12 sm:py-16 ${SHELL}`}>
         <div className={MEASURE}>
           <motion.div
@@ -108,7 +191,7 @@ export default function LegalPage({ eyebrow, title, intro, updatedAt, children }
             )}
             {updatedAt && (
               <p className="font-mono-jetbrains text-slate-400 text-xs uppercase tracking-wider mt-5">
-                {t('legal.lastUpdated', { date: updatedAt })}
+                Dernière mise à jour : {updatedAt}
               </p>
             )}
           </motion.div>
@@ -121,7 +204,7 @@ export default function LegalPage({ eyebrow, title, intro, updatedAt, children }
 
       <div className={`pb-20 ${SHELL}`}>
         <nav
-          aria-label={t('legal.documentsAria')}
+          aria-label="Documents légaux"
           className={`${MEASURE} border-t border-slate-200 pt-8 flex flex-wrap gap-x-6 gap-y-3`}
         >
           {LEGAL_LINKS.map((l) => (
@@ -130,9 +213,15 @@ export default function LegalPage({ eyebrow, title, intro, updatedAt, children }
               to={l.to}
               className="font-inter text-base text-slate-500 hover:text-nav-accent transition-colors"
             >
-              {t(l.labelKey)}
+              {l.label}
             </Link>
           ))}
+          <Link
+            to="/contact"
+            className="font-inter text-base text-slate-500 hover:text-nav-accent transition-colors"
+          >
+            Nous contacter
+          </Link>
         </nav>
       </div>
     </div>

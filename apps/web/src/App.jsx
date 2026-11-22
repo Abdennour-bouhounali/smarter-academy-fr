@@ -17,6 +17,7 @@ const ForgotPassword = lazy(() => import('./pages/ForgotPassword'));
 const ResetPassword = lazy(() => import('./pages/ResetPassword'));
 const VerificationEmail = lazy(() => import('./pages/VerificationEmail'));
 const AuthGoogle = lazy(() => import('./pages/AuthGoogle'));
+const MentionsLegales = lazy(() => import('./pages/legal/MentionsLegales'));
 const Confidentialite = lazy(() => import('./pages/legal/Confidentialite'));
 const CGU = lazy(() => import('./pages/legal/CGU'));
 // Le cadre et SES TEXTES partent ensemble : `admin` est un namespace à la demande (BUNDLE_BOUNDARIES.md §3).
@@ -612,6 +613,7 @@ function AppRoutes() {
             Publiques et accessibles SANS compte : on doit pouvoir lire
             ce que l'on accepte avant de l'accepter. Elles sont liées
             depuis le pied de page et depuis la case de consentement. */}
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />
         <Route path="/cgu" element={<CGU />} />
         {/* « اجعل الجهاز للدراسة فقط » : le guide des parents, PUBLIC (PARENT_SPACE.md §6). */}

@@ -89,14 +89,18 @@ export default function Footer() {
           <nav aria-label={tm('footer.legalAria')} className="mb-5">
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:justify-start">
               {[
-                { to: '/confidentialite', label: tm('footer.privacy') },
-                { to: '/cgu', label: tm('footer.terms') },
+                // Les trois documents sont en FRANÇAIS (textes de l'ancien site rétablis
+                // le 2026-11-22) : leurs intitulés le sont aussi, comme sur `main`.
+                { to: '/mentions-legales', label: 'Mentions légales', lang: 'fr' },
+                { to: '/confidentialite', label: 'Politique de confidentialité', lang: 'fr' },
+                { to: '/cgu', label: "Conditions Générales d'Utilisation", lang: 'fr' },
                 // Le guide « حماية الجهاز » (PARENT_SPACE.md §6) : public, pour les parents.
                 { to: '/himaya', label: tm('footer.deviceGuide') },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
                     to={item.to}
+                    lang={item.lang}
                     className="font-inter text-slate-400 hover:text-white text-sm transition-colors duration-200"
                   >
                     {item.label}
