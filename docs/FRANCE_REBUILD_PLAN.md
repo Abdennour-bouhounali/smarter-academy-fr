@@ -97,6 +97,58 @@ Order matters: each step keeps the checks runnable.
 | 1H | Contract tests and walks rewritten for French (they must assert French and forbid Arabic) | `lint`, `check:unused`, `check:unreached`, `check:format`, `check:lessons`, `npm test`, API suite: all pass |
 | 1I | `CLAUDE.md`, `docs/README.md` and the contracts rewritten for this product; DZ-only docs deleted | a new session can start from `CLAUDE.md` alone |
 
+### 4bis. Step 1B in detail — « the empty French house » (contract of every agent of this step)
+
+The owner, 2026-11-22: « imagine the FR platform does not exist … no real user or subscriber exists yet … no lesson
+exists, they will be generated from scratch based on the learning points of the net ». So nothing of DZ's content is
+kept as a fixture and nothing of old FR is preserved: after 1B the tree is the ENGINE and the SHELL around an EMPTY
+French catalogue. A thing that only served a deleted lesson is deleted too, with its tests, in the same step.
+
+**The curriculum data** — same data MODEL as DZ (`docs/architecture/LEARNING_NET.md`), new names, no content yet:
+
+| DZ | Here |
+|---|---|
+| `packages/core/curriculum/dz/` | `packages/core/curriculum/fr/` |
+| level `moyen` | level `college` (« Collège ») |
+| grades `1am`, `2am`, `3am`, `4am` | `6e`, `5e`, `4e`, `3e` — in that order; `terminale_dz` is removed |
+| `net/official_programme_moyen.json`, `net/learning_net_moyen.json` | `net/official_programme_college.json`, `net/learning_net_college.json` |
+| `programme_<g>_2026_2027.json`, `lessons_…`, `units_…`, `calendar/progression_…` | same names with the French grade |
+| keys `titleAr`, `textAr`, `partsAr`, `subtitleAr`, `objectivesAr`, `prerequisitesAr`, `addedValueAr`, `noteAr`, `labelAr`, `officialAr`, `namedPartsAr`, `namedMethodsAr`, `captionAr`, `levelLabelAr`, `gradeLabelAr` | the same key WITHOUT `Ar` (`title`, `text`, …), in the data and in every reader |
+| function and export names in `Dz` / `dz` (`buildDzLesson`, `dzCourseLevels`, `DZ_UNIT_PATH_SEGMENT`…) | neutral names (`buildLesson`, `allCourseLevels`, `UNIT_PATH_SEGMENT`…) |
+
+Content of the skeleton: the four grades; for each, its domains = the five thèmes of the cycle 4 programme
+(`nombres_calculs` « Nombres et calculs », `organisation_gestion_donnees_fonctions` « Organisation et gestion de
+données, fonctions », `grandeurs_mesures` « Grandeurs et mesures », `espace_geometrie` « Espace et géométrie »,
+`algorithmique_programmation` « Algorithmique et programmation »), marked `verified: false` (6e belongs to cycle 3 —
+Stage 2 corrects it from the official text); NO topic, NO unit, NO lesson, NO programme item, NO link, NO thread; the
+calendar file keeps its shape with an empty list of weeks and events (Stage 2D writes the French year). Every grade
+has `curriculumStatus: 'lessons_planned'`.
+
+**What must keep working on the empty catalogue**: the app builds and starts; a student can register, choose a grade
+and sees an honest « no lesson yet » state (never a crash, never an empty page); the teacher, parent, school and admin
+spaces open; every generator runs and writes an empty index; every check of `package.json` passes or is deleted with
+the thing it guarded.
+
+**Deleted in 1B** (with their tests, walks, scripts, docs and i18n keys): every DZ lesson, bank, class test and
+textbook source (done, 10,483 files); then whatever `check:unreached` reports once no lesson mounts — expected: the
+legacy lab system `lessons/common/manipulations/`, the old module-lesson kit `lessons/common/kit/`, the mission player
+`lessons/common/mission/`, `i18n/locales/ar/lesson.manipulation.json`, the textbook layer (`textbookPages.js`,
+`check:textbook`, `lessons/common/textbook/`), `manipulationTypes.js` / `manipulationLevels.js` if nothing reads them;
+the per-lesson walks of `apps/web/e2e/` (the walk LIBRARY `e2e/lib/` stays); `scripts/practice-oracle/<lesson>.mjs`
+(the oracle's engine stays); the DZ thinking-lab challenges and compass index content; the 16 migrations that only
+remap DZ lesson codes are NOT deleted (a migration history is never rewritten) — they do nothing on a French database.
+
+**Kept, untouched in 1B**: the v2 engine `lessons/common/gameworld/` (kit, the three worlds, missions), `launchkit/`,
+`lessonlab/`, `features/classSession/`, the practice engine and the exam sheet, the math lab, the thinking-lab ENGINE,
+the compass ENGINE, the games space, every space of the shell, the whole API. They still speak Arabic and still read
+right to left: that is steps 1C–1E, not this one. A test of a kept thing that used a DZ lesson as its example gets a
+small neutral fixture of its own (in the test's folder), never a real lesson.
+
+**Rules of the step**: DZ's repository is never touched (owner, 2026-11-22 — read it, never write it). One heavy
+check at a time on this machine; an agent runs only the tests of what it touched, with `--maxWorkers=2`. No test is
+weakened to pass: a test is deleted only when the thing it tested is deleted, and the report names every deleted test
+file and why.
+
 Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
 French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,
 drawn-in-code and the one screen size 1366×768 are kept as they are.
@@ -120,27 +172,32 @@ prime factorisation, algorithmics, ratio, homothety.
 
 Gate: the owner validates the 3e lesson list and its net.
 
-## 6. The cutover — its own track, only on the owner's word
+## 6. Going live — simplified by the owner on 2026-11-22
 
-1. A copy of the production database; the 94 migrations rehearsed on it; subscriptions, payments and entitlements
-   checked row by row before and after.
-2. What subscribers see on day one decided by the owner (old lessons gone, 3e present).
-3. Backup, deploy, `FR_REBUILD_CUTOVER_APPROVED=yes`, smoke test, Stripe webhook checked with a real event.
-4. The legacy tree stays tagged on `main`'s last commit for a rollback.
+The owner: « imagine the FR platform does not exist … no real user or subscriber exists yet ». So there is no
+production data to carry and no migration rehearsal: the French database is created FRESH from this tree's migrations.
+What is left of this track:
+
+1. The branch replaces `main` when the rebuilt platform is coherent (core in French, catalogue defined, at least the
+   first 3e lessons) — the owner allowed commits and pushes in the FR repository; the main session pushes the WORK
+   BRANCH and asks before the push that replaces `main`.
+2. A fresh database on the server (the old one dropped or renamed by the owner), then the deploy with
+   `FR_REBUILD_CUTOVER_APPROVED=yes`, a smoke test, and one real Stripe test payment.
+3. Old FR stays reachable in git on the last commit of today's `main` (`0ddfb98`).
 
 ## 7. Open — the owner decides (defaults in use until then)
 
 | # | Question | Default in use |
 |---|---|---|
-| 1 | When does old FR leave production? | when 3e exists here |
-| 2 | May the engine boundary go into DZ, and when? | built here only |
+| 1 | When does old FR leave production? | ANSWERED 2026-11-22: no real user exists; see §6 |
+| 2 | May the engine boundary go into DZ, and when? | ANSWERED 2026-11-22: « do not touch the dz platform ». The boundary lives here only; a DZ lesson is brought over by a tool of THIS repository that reads DZ and converts (§8) |
 | 3 | Which DZ features does France get? | all, books off; thinking lab, compass, daily challenge hidden until French content exists |
 | 4 | Minors' data in France (parent link, teacher-made accounts, school space, push, answer photos) | features kept; privacy policy to be rewritten and read by a lawyer before they go live |
 | 5 | Price; « 1 mois offert » is advertised and not implemented | 35 €/year kept; the claim removed until a trial exists |
 | 6 | Lycée | not carried; « 6e à Terminale » leaves the copy |
 | 7 | Culture rules; dice, coins, urns in probabilities (brevet material) | allowed as experiments, never betting |
 | 8 | Brand: DZ's ring-and-cube or FR's current logo | DZ's mark |
-| 9 | Commits on this branch | none until the owner says |
+| 9 | Commits on this branch | ANSWERED 2026-11-22: commits and pushes are allowed in the FR repository |
 
 ## 8. Stage 3 — the 3e lessons
 
