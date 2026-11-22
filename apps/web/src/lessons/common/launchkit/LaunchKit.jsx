@@ -28,10 +28,10 @@ import {
   BatteryCharging,
 } from 'lucide-react';
 import { getLessonPath } from '@smarter-academy/core';
-import { toolsForLesson } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { toolsForLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import MathText from '../components/MathText';
 import { GRADE_NAMES } from '../lessonlab/order';
-import { setReturnTo } from '../mission/returnToLesson';
+import { setReturnTo } from '../components/returnToLesson';
 import { useIsPhoneScreen } from '../../../components/auth/RequireLargeScreen';
 import { PHONE_LESSONS } from '../../../components/auth/phoneLessons';
 import { FAMILIES, MISTAKES, familyFor, makeQuestion, pickForm, nextForm, complete, grade } from './families';
@@ -850,7 +850,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
               {shown && (
                 <div className="lk-revise" data-lk-revise={shown.item}>
                   <p>
-                    <b>{shown.item === pr.first?.item ? L.reviseFirst : L.also}:</b> {shown.lesson.titleAr}{' '}
+                    <b>{shown.item === pr.first?.item ? L.reviseFirst : L.also}:</b> {shown.lesson.title}{' '}
                     <span>({L.from(shown.grade).replace('من ', '')})</span>
                   </p>
                   <div>

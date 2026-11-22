@@ -3,13 +3,14 @@
  * allume existe dans la figure. Chaque figure se dessine (couches de base et toutes les
  * couches) en SVG pur, sans image matricielle (THINKING_LAB.md §7).
  */
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, it, expect } from 'vitest';
 import { FIGURE_NAMES, loadFigure } from './index';
 
 const DIR = new URL('../../../../../../content/thinking-lab/challenges/', import.meta.url);
-const challenges = readdirSync(DIR).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(new URL(f, DIR), 'utf8')));
+// the Algerian challenges left with their content (2026-11-22): until French ones exist, each figure draws on its defaults
+const challenges = (existsSync(DIR) ? readdirSync(DIR) : []).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(new URL(f, DIR), 'utf8')));
 
 const fill = (props, values) => JSON.parse(JSON.stringify(props ?? {}).replace(/\{([a-zA-Z]\w*)\}/g, (w, n) => (n in values ? String(values[n]) : w)));
 const firstTuple = (params) => Object.fromEntries(Object.entries(params?.vars ?? {}).map(([k, v]) => [k, v[0]]));

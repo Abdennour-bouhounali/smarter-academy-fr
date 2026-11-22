@@ -1,7 +1,15 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   typeOf, questionNumber, exerciseLabel, sourceLinkFor, curriculumTree, timeAgo, notebookPaths,
 } from './noteMeta';
+
+// The catalogue is empty until the French lessons: the lessons of the neutral catalogue fixture stand in for it.
+vi.mock('@smarter-academy/core', async (importOriginal) => {
+  const real = await importOriginal();
+  const { fixtureLevels } = await import('../../../../components/student/test/catalogueFixture.js');
+  const lessons = fixtureLevels.flatMap((l) => l.grades).flatMap((g) => g.chapters).flatMap((c) => c.lessons);
+  return { ...real, getLessonById: (code) => lessons.find((l) => l.id === code) ?? null };
+});
 
 const t = (key, opts) => {
   if (key === 'notebook.space.card.exercise') return 'تمرين';
@@ -23,32 +31,32 @@ describe('ce qu’une carte dit d’une note', () => {
     expect(questionNumber('q3')).toBe('3');
     expect(questionNumber('Q12')).toBe('12');
     expect(questionNumber('autre')).toBe('autre');
-    expect(exerciseLabel({ exerciseId: 'ex-4am-qasim-mushtarak-akbar-l2-003' }, t)).toBe('تمرين 3 · المستوى 2');
+    expect(exerciseLabel({ exerciseId: 'ex-4am-lecon-a-l2-003' }, t)).toBe('تمرين 3 · المستوى 2');
     expect(exerciseLabel({ exerciseId: 'mystere' }, t)).toBe('تمرين');
   });
 
   it('la source : le hub de pratique pour un exercice, la leçon (ou rien) sinon', () => {
-    expect(sourceLinkFor({ lessonCode: 'qasim-mushtarak-akbar', exerciseId: 'ex-1' })).toEqual({ to: '/espace/pratique/qasim-mushtarak-akbar', kind: 'exercise' });
+    expect(sourceLinkFor({ lessonCode: 'lecon-a', exerciseId: 'ex-1' })).toEqual({ to: '/espace/pratique/lecon-a', kind: 'exercise' });
     // Hors de l'espace élève (l'enseignant), la pratique n'existe pas : la note d'exercice renvoie à la leçon.
-    expect(sourceLinkFor({ lessonCode: 'qasim-mushtarak-akbar', exerciseId: 'ex-1' }, '/enseignant')?.kind).toBe('lesson');
-    const lesson = sourceLinkFor({ lessonCode: 'qasim-mushtarak-akbar', moduleSlug: 'baqat', moduleNumber: 1 });
+    expect(sourceLinkFor({ lessonCode: 'lecon-a', exerciseId: 'ex-1' }, '/enseignant')?.kind).toBe('lesson');
+    const lesson = sourceLinkFor({ lessonCode: 'lecon-a', moduleSlug: 'baqat', moduleNumber: 1 });
     expect(lesson.kind).toBe('lesson');
-    expect(lesson.to.endsWith('/qasim-mushtarak-akbar/baqat')).toBe(true);
+    expect(lesson.to.endsWith('/lecon-a/baqat')).toBe(true);
     expect(sourceLinkFor({ lessonCode: 'inconnue-au-catalogue' })).toBeNull();
     expect(sourceLinkFor({})).toBeNull();
   });
 
   it('l’arbre du menhaj vient des facettes ET du catalogue ; les notes sans leçon ne sont pas perdues', () => {
     const tree = curriculumTree([
-      { lessonCode: 'qasim-mushtarak-akbar', lessonTitle: 'x', count: 3 },
-      { lessonCode: 'ikhtizal-kasr', lessonTitle: 'y', count: 1 },
+      { lessonCode: 'lecon-a', lessonTitle: 'x', count: 3 },
+      { lessonCode: 'lecon-c', lessonTitle: 'y', count: 1 },
       { lessonCode: null, lessonTitle: null, count: 2 },
     ]);
     expect(tree.orphan).toBe(2);
     expect(tree.grades).toHaveLength(1);
     expect(tree.grades[0].count).toBe(4);
     const lessons = tree.grades[0].chapters.flatMap((c) => c.lessons).map((l) => l.code);
-    expect(lessons).toEqual(expect.arrayContaining(['qasim-mushtarak-akbar', 'ikhtizal-kasr']));
+    expect(lessons).toEqual(expect.arrayContaining(['lecon-a', 'lecon-c']));
   });
 
   it('« il y a… » en arabe, robuste aux dates absentes', () => {

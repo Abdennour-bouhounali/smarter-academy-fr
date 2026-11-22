@@ -1,5 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { exerciseIdsFor, loadExercise, levelCounts } from '../practice/practiceContent';
 import {
   refOf,
   parseRef,
@@ -14,45 +13,52 @@ import {
   questionsWord,
 } from './exerciseBank';
 
-const LESSON = 'qasim-adad-tabii';
-const loadAll = async () => {
-  const out = [];
-  for (const level of Object.keys(levelCounts(LESSON)).map(Number))
-    for (const id of exerciseIdsFor(LESSON, level)) out.push(await loadExercise(LESSON, level, id));
-  return out;
-};
+const LESSON = 'lecon-a';
 
 describe('بنك التمارين — the bank as a teacher uses it', () => {
   it('names an exercise by its level and its id, and opens it on the board of the class', () => {
-    expect(refOf(3, 'ex-4am-qasim-adad-tabii-l3-002')).toBe('3:ex-4am-qasim-adad-tabii-l3-002');
-    expect(parseRef('3:ex-4am-qasim-adad-tabii-l3-002')).toEqual({ level: 3, id: 'ex-4am-qasim-adad-tabii-l3-002' });
+    expect(refOf(3, 'ex-3e-lecon-a-l3-002')).toBe('3:ex-3e-lecon-a-l3-002');
+    expect(parseRef('3:ex-3e-lecon-a-l3-002')).toEqual({ level: 3, id: 'ex-3e-lecon-a-l3-002' });
     expect(parseRef('x:1')).toBe(null);
     expect(parseRef(null)).toBe(null);
     expect(parseRef('3:../../etc')).toBe(null);
-    expect(exerciseBoardPath(LESSON, 3, 'ex-1')).toBe('/enseignant/hissa/qasim-adad-tabii?exercice=3%3Aex-1');
+    expect(exerciseBoardPath(LESSON, 3, 'ex-1')).toBe('/enseignant/hissa/lecon-a?exercice=3%3Aex-1');
   });
 
-  it('gives the teacher a KEY for every question of the bank of the pilot: an answer or a solution, never nothing', async () => {
-    const all = await loadAll();
-    expect(all.length).toBe(50);
-    expect(all.every(Boolean)).toBe(true);
-    let questions = 0;
-    for (const ex of all) {
-      const s = summaryOf(ex);
-      expect(s.title, ex.id).toBeTruthy();
-      expect(s.questions).toBe(ex.questions.length);
-      expect(s.minutes).toBeGreaterThan(0);
-      for (const q of ex.questions) {
-        questions += 1;
-        expect(hasKey(q), `${ex.id} ${q.id}`).toBe(true);
-        if (q.answerType === 'choice') {
-          const k = keyOf(q);
-          expect(k.answer, `${ex.id} ${q.id}`).toMatch(/^[أبجدهو]/);
-          expect(choicesOf(q).filter((c) => c.right).length).toBeGreaterThan(0);
-        }
-      }
-    }
-    expect(questions).toBe(172);
+  it('sums up an exercise of the bank and letters its choices (a neutral exercise written here)', () => {
+    const exercise = {
+      id: 'ex-1',
+      level: 2,
+      metadata: {
+        title: 'Exercice 1',
+        estimatedMinutes: 6,
+        tags: ['diviseurs'],
+        exam: { kind: 'official', badge: 'Brevet 2025' },
+      },
+      questions: [
+        { id: 'q1', answerType: 'choice', choices: [{ content: 'oui', isCorrect: true }, { content: 'non' }] },
+      ],
+    };
+    expect(summaryOf(exercise)).toEqual({
+      id: 'ex-1',
+      level: 2,
+      title: 'Exercice 1',
+      badge: 'Brevet 2025',
+      official: true,
+      minutes: 6,
+      questions: 1,
+      tags: ['diviseurs'],
+    });
+    expect(summaryOf({ id: 'ex-2', level: 1 })).toMatchObject({
+      title: 'ex-2',
+      minutes: 0,
+      questions: 0,
+      official: false,
+    });
+    expect(choicesOf(exercise.questions[0])).toEqual([
+      { letter: 'أ', content: 'oui', right: true },
+      { letter: 'ب', content: 'non', right: false },
+    ]);
   });
 
   it('writes the key the way a teacher reads it', () => {

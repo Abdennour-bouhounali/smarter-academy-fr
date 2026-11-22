@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
-import { courseLevels } from '@smarter-academy/core';
+import { buildCourseLevels, courseLevels } from '@smarter-academy/core';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../..');
@@ -25,11 +25,24 @@ describe('la porte de palier côté élève', () => {
     // `lessons.tier` (en base, décidé par l'administrateur) est la seule
     // source de vérité. Un palier dans le bundle serait une seconde autorité
     // — une liste figée de leçons gratuites ou payantes.
-    const lessons = courseLevels.flatMap((l) => l.grades)
+    const lessonsOf = (levels) => levels.flatMap((l) => l.grades)
       .flatMap((g) => g.chapters ?? [])
       .flatMap((c) => c.lessons ?? []);
-    expect(lessons.length).toBeGreaterThan(0);
-    for (const lesson of lessons) {
+    // A neutral catalogue of its own (the shipped one is empty): even a source line that carries a tier is not copied.
+    const fixture = buildCourseLevels([{
+      programme: {
+        grade: '5e', gradeLabel: 'Cinquième', gradeShortLabel: '5e', level: 'college', levelLabel: 'Collège',
+        domains: [{ id: 'd1', title: 'Domaine A', topics: [{ id: 't1', title: 'Sujet 1' }] }],
+      },
+      lessons: { grade: '5e', lessons: [{
+        code: 'lecon-a', chapterId: 'd1', sourceTopicId: 't1', order: 0, kind: 'lesson', description: 'Description',
+        prerequisites: [], prerequisiteLessonCodes: [], pointsToLearn: ['Point 1'], durationMinutes: 45, difficulty: 1,
+        status: 'available', icon: null, decompositionType: 'textbook_lesson', decisionStatus: 'draft', tier: 'premium',
+      }] },
+      units: { grade: '5e', units: [], ownerChapters: [], chapterIcons: {}, chapterOrder: { order: [] } },
+    }]);
+    expect(lessonsOf(fixture).length).toBeGreaterThan(0);
+    for (const lesson of [...lessonsOf(fixture), ...lessonsOf(courseLevels)]) {
       expect(lesson, lesson.id).not.toHaveProperty('tier');
     }
   });
@@ -39,7 +52,6 @@ describe('la porte de palier côté élève', () => {
       'src/components/student/LessonCard.jsx',
       'src/pages/student/StudentHome.jsx',
       'src/lessons/common/components/LessonIndex.jsx',
-      'src/lessons/common/components/ModuleLayout.jsx',
     ]) {
       expect(read(file), file).not.toMatch(/lesson\??\.tier\b/);
     }
@@ -63,22 +75,17 @@ describe('la porte de palier côté élève', () => {
   });
 
   it('une URL de leçon ou de module tapée directement passe par la porte', () => {
-    // La fabrique de routes de l'unité enveloppe CHAQUE page (sommaire et
-    // modules) : une leçon générée demain en hérite sans code.
-    // La composition porte → page vit dans le runtime de leçon partagé
-    // (lot paresseux, docs/architecture/BUNDLE_BOUNDARIES.md) : la fabrique
-    // rend LessonPageFrame pour chaque page, et LessonPageFrame pose la porte
-    // AUTOUR du <Suspense> qui charge le code de la page.
-    const routes = read('src/lessons/common/unit/buildLessonRoutes.jsx');
-    expect(routes).toContain('<LessonPageFrame');
-    expect(routes).toMatch(/const withSuspense = \(Component, module = null\) => \(\s*<Suspense[^>]*>\s*<LessonPageFrame/);
+    // La fabrique de routes enveloppe l'accueil de CHAQUE leçon (une adresse de module y renvoie) : une leçon
+    // générée demain en hérite sans code. La composition porte → page vit dans le runtime de leçon partagé
+    // (lot paresseux, docs/architecture/BUNDLE_BOUNDARIES.md) : LessonPageFrame pose la porte AUTOUR du
+    // <Suspense> qui charge le code de la page.
+    const routes = read('src/lessons/common/lessonRoutes.jsx');
+    expect(routes).toMatch(/<Suspense fallback=\{<LessonWaiting [^}]*\} title=\{config\.title\} \/>\}>\s*<LessonPageFrame/);
+    expect(routes).toContain('<Navigate to={basePath} replace />');
     const frame = read('src/lessons/common/lessonRuntime.jsx');
     expect(frame).toMatch(/<LessonAccessGate lessonId=\{config\.id\}[^>]*>\s*<Suspense/);
     const gate = read('src/lessons/common/components/LessonAccessGate.jsx');
     expect(gate).toContain('isLessonLocked(lessonId)');
-    // Et le module lui-même refuse d'écrire une progression sous verrou.
-    const layout = read('src/lessons/common/components/ModuleLayout.jsx');
-    expect(layout).toContain('const unlocked = sequentiallyUnlocked && !premiumLocked;');
   });
 
   it('le contexte distingue « retiré » de « verrouillé »', () => {
@@ -98,12 +105,12 @@ describe('la porte de palier côté élève', () => {
     const source = read('src/lessons/common/components/LessonIndex.jsx');
     expect(source).toContain('isLessonLocked(config.id)');
     expect(source).toContain('<PremiumLessonLocked');
-    // Un retour AVANT le rendu du sommaire : le bloc verrouillé sort de la
+    // Un retour AVANT le monde et la fiche : le bloc verrouillé sort de la
     // fonction, il ne se superpose pas au contenu (qui resterait dans le DOM).
     const lockedAt = source.indexOf('isLessonLocked(config.id)');
-    const roadmapAt = source.indexOf('isModuleClosed(config.id, module.number)');
+    const worldAt = source.indexOf('<LessonGameWorld');
     expect(lockedAt).toBeGreaterThan(-1);
-    expect(roadmapAt).toBeGreaterThan(lockedAt);
+    expect(worldAt).toBeGreaterThan(lockedAt);
 
     // Le panneau partagé : message arabe (clé i18n) et chemin vers la SAISIE
     // D'UN CODE, jamais une page de tarifs — le produit algérien se paie en

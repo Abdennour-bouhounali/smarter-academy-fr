@@ -1,4 +1,4 @@
-import { getSchoolYear, schoolYearOf } from '@smarter-academy/core/curriculum/dz/calendar/schoolCalendar.js';
+import { getSchoolYear, schoolYearOf } from '@smarter-academy/core/curriculum/fr/calendar/schoolCalendar.js';
 
 /**
  * The lessons of THIS week for a grade, read from the school calendar and the grade's progression — what the teacher's

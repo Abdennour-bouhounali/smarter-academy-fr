@@ -24,7 +24,7 @@ import MathLabel from '../../lessons/common/components/MathLabel';
  */
 let netPromise = null;
 const loadNet = () => {
-  netPromise ??= import('@smarter-academy/core/curriculum/dz/net/learningNet.js');
+  netPromise ??= import('@smarter-academy/core/curriculum/fr/net/learningNet.js');
   return netPromise;
 };
 
@@ -38,7 +38,7 @@ export default function EarlierYearReview({ learningPointCode = null, lessonCode
     let alive = true;
     loadNet().then((net) => {
       if (!alive) return;
-      const labels = new Map(net.GRADES.map((g) => [g.id, g.labelAr]));
+      const labels = new Map(net.GRADES.map((g) => [g.id, g.label]));
       setState({ groups: net.earlierYearReviewFor({ learningPointCode, lessonCode }), labels });
     }).catch(() => { /* hors ligne : pas de renvoi, jamais d'erreur sous un verdict */ });
     return () => { alive = false; };
@@ -60,9 +60,9 @@ export default function EarlierYearReview({ learningPointCode = null, lessonCode
             <span>
               <span className="font-bold">{t('review.earlierYear')}</span>{' '}
               {path ? (
-                <Link to={path} className="font-bold text-teal-700 underline underline-offset-4 hover:text-teal-900"><MathLabel>{group.lesson.titleAr}</MathLabel></Link>
+                <Link to={path} className="font-bold text-teal-700 underline underline-offset-4 hover:text-teal-900"><MathLabel>{group.lesson.title}</MathLabel></Link>
               ) : (
-                <MathLabel>{group.items[0].textAr}</MathLabel>
+                <MathLabel>{group.items[0].text}</MathLabel>
               )}{' '}
               <span className="text-slate-500">({grade})</span>
             </span>

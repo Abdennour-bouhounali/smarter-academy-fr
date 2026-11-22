@@ -13,6 +13,7 @@ import { useCatalogueView } from '../components/student/catalogueView';
 import { storage, scopedStorage } from '../utils/storage';
 import { AuthContext } from '../context/AuthContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import NoLessonYet from '../components/student/NoLessonYet';
 
 export default function CoursesPage() {
   const { t } = useTranslation('common');
@@ -51,11 +52,10 @@ export default function CoursesPage() {
 
   // Helpers
   //
-  // Le niveau de repli vient du CATALOGUE, jamais d'un identifiant écrit ici.
-  // « college » était un héritage français : sous un catalogue algérien
-  // (`moyen`, `thanawi`) il ne correspond à rien, `levelData` devenait
-  // undefined, et la page affichait « bientôt disponible » alors qu'un
-  // catalogue existait — une panne silencieuse qu'aucun test unitaire ne voit.
+  // Le niveau de repli vient du CATALOGUE, jamais d'un identifiant écrit ici :
+  // un identifiant écrit en dur qui ne correspond à aucun niveau rendait
+  // `levelData` undefined, et la page affichait « bientôt disponible » alors
+  // qu'un catalogue existait — une panne silencieuse.
   const defaultLevelId = courseLevels[0]?.id ?? null;
   const getValidLevelId = (id) => courseLevels.find(l => l.id === id) ? id : null;
   
@@ -68,11 +68,10 @@ export default function CoursesPage() {
     return level.grades.find(g => g.id === gradeId) ? gradeId : null;
   };
 
-  // courseLevels is filtered to ACTIVE_GRADE_IDS (activeGrades.js) and is
-  // currently empty — no Algerian grade exists yet (roadmap Phase 7). Every
-  // level/grade lookup above then comes back empty/null, so this page must
-  // render an explicit "nothing active yet" state rather than dereference
-  // levelData.grades below.
+  // courseLevels is filtered to ACTIVE_GRADE_IDS (activeGrades.js). When it
+  // is empty every level/grade lookup above comes back empty/null, so this
+  // page must render an explicit "nothing active yet" state rather than
+  // dereference levelData.grades below.
   const hasActiveCurriculum = Boolean(levelData);
   const effectiveGradeId = hasActiveCurriculum
     ? (getValidGradeId(effectiveLevelId, urlGrade) || getValidGradeId(effectiveLevelId, profileGrade) || getValidGradeId(effectiveLevelId, lsGrade) || levelData.grades[levelData.grades.length - 1]?.id)
@@ -439,6 +438,11 @@ export default function CoursesPage() {
               </div>
             ))}
           </section>
+        )}
+
+        {/* A grade with no lesson and no programme topic yet (the French catalogue before its lessons): say it. */}
+        {!searchQuery && visibleTopicChapters.length === 0 && !gradeData.chapters.some((c) => c.lessons.length > 0) && (
+          <NoLessonYet />
         )}
 
         {/* COURSE GRID.

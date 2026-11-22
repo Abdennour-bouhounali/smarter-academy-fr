@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import MathLabel from '../components/MathLabel';
+import MathLabel from './MathLabel';
 import { readReturnTo, clearReturnTo, isAwayFrom } from './returnToLesson';
 
 const session = () => (typeof window !== 'undefined' ? window.sessionStorage : null);

@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
@@ -10,16 +10,18 @@ import {
   expectedAnswerText,
   formatStudentAnswer,
 } from './teacherBank';
-import { PRACTICE_ACTIVE_LESSONS } from './practiceCapability';
-import { loadExercise, exerciseIdsFor, levelCounts } from './practiceContent';
+import { levelCounts } from './practiceContent';
+
+// The exercise banks are EMPTY until the French banks are written: a neutral count of exercises stands in for one bank.
+vi.mock('./practiceCounts', () => ({ levelCounts: (code) => (code === 'lecon-a' ? { 2: 1, 1: 2 } : {}) }));
 
 const here = dirname(fileURLToPath(import.meta.url));
 const read = (p) => readFileSync(resolve(here, '../../..', p), 'utf8');
 
 describe('la pratique de l’enseignant — on y entre par la leçon', () => {
   it('le Hub de la leçon, puis un exercice d’un niveau', () => {
-    expect(teacherBankPath('qasim-adad-tabii')).toBe('/enseignant/pratique/qasim-adad-tabii');
-    expect(teacherBankPath('qasim-adad-tabii', 2, 'ex-1')).toBe('/enseignant/pratique/qasim-adad-tabii/2/ex-1');
+    expect(teacherBankPath('lecon-a')).toBe('/enseignant/pratique/lecon-a');
+    expect(teacherBankPath('lecon-a', 2, 'ex-1')).toBe('/enseignant/pratique/lecon-a/2/ex-1');
   });
 
   it('ne pointe jamais vers l’espace élève suivi', () => {
@@ -28,7 +30,7 @@ describe('la pratique de l’enseignant — on y entre par la leçon', () => {
 });
 
 describe('teacherOverview — la MÊME forme que l’aperçu de l’élève, sans suivi', () => {
-  const code = PRACTICE_ACTIVE_LESSONS[0];
+  const code = 'lecon-a';
   const overview = teacherOverview(code);
 
   it('porte les clés que PracticeHub lit', () => {
@@ -138,18 +140,6 @@ describe('expectedAnswerText — lisible par l’enseignant', () => {
     expect(expectedAnswerText({ answerType: 'choice', choices: [] })).toBeNull();
   });
 
-  it('chaque question du contenu réel a une réponse affichable et se vérifie juste', async () => {
-    // Un échantillon : le premier exercice de chaque niveau de la première leçon.
-    const lesson = PRACTICE_ACTIVE_LESSONS[0];
-    for (const level of [1, 2, 3, 4, 5]) {
-      const [id] = exerciseIdsFor(lesson, level);
-      if (!id) continue;
-      const exercise = await loadExercise(lesson, level, id);
-      for (const q of exercise.questions) {
-        expect(expectedAnswerText(q), `${id}/${q.id}`).toBeTruthy();
-      }
-    }
-  });
 });
 
 describe('aucun suivi — garanties de structure', () => {

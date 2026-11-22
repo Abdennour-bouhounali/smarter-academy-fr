@@ -26,6 +26,7 @@ import PremiumCard from '../../features/home/components/PremiumCard';
 import DailyChallengeCard from '../../features/home/components/DailyChallengeCard';
 import { fetchCompass } from '../../services/compassService';
 import { usePrefetchLessonRuntime } from '../../lessons/common/lessonRuntimeLoader';
+import NoLessonYet from '../../components/student/NoLessonYet';
 
 // « بوصلتي » sur l'accueil (YEAR_COMPASS.md §6bis) : un lot PARESSEUX — réseau + calendrier n'entrent
 // pas dans le lot de l'accueil ; la page s'affiche, puis la section arrive.
@@ -134,6 +135,13 @@ export default function StudentHome() {
         <motion.div {...enter(0)} className="mb-6 sm:mb-7">
           <HomeGreeting name={getDisplayName(user)} gradeName={grade?.name || null} />
         </motion.div>
+
+        {/* His grade has no published lesson yet: say it first, above everything that would otherwise sit empty. */}
+        {grade && grade.lessonCount === 0 && (
+          <motion.div {...enter(0.03)} className="mb-6">
+            <NoLessonYet />
+          </motion.div>
+        )}
 
         <motion.div {...enter(0.05)}>
           {compassLoaded ? (

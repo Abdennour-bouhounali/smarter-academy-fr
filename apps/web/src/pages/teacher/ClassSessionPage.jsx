@@ -7,7 +7,7 @@ import {
   getLesson,
   homeLessonOf,
   toolsForLesson,
-} from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+} from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { FAMILIES } from '../../lessons/common/launchkit/families';
 import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
@@ -103,7 +103,7 @@ const uuid = () =>
         .replace(/^(.{8})(.{4})(.{4})(.{4})(.{12}).*$/, '$1-$2-4$3-a$4-$5')
         .slice(0, 36);
 /** The name of a الكفاءة a teacher reads: the title of the lesson that teaches it. */
-const itemLabel = (item) => (item ? (homeLessonOf(item)?.titleAr ?? getItem(item)?.textAr ?? item) : '');
+const itemLabel = (item) => (item ? (homeLessonOf(item)?.title ?? getItem(item)?.text ?? item) : '');
 
 /**
  * « حصّة القسم » — the teacher's class session of ONE lesson (CLASS_SESSION.md): he chooses the class, prepares the

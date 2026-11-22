@@ -12,22 +12,20 @@
 
 export const CONFIG_LOADERS = import.meta.glob(
   [
-    './*/1am/**/lesson.config.js',
-    './*/2am/**/lesson.config.js',
-    './*/3am/**/lesson.config.js',
-    './*/4am/**/lesson.config.js',
-    './*/terminale_dz/**/lesson.config.js',
+    './college/6e/**/lesson.config.js',
+    './college/5e/**/lesson.config.js',
+    './college/4e/**/lesson.config.js',
+    './college/3e/**/lesson.config.js',
   ],
   { import: 'LESSON_CONFIG' },
 );
 
 export const ROUTES_LOADERS = import.meta.glob(
   [
-    './*/1am/**/routes.jsx',
-    './*/2am/**/routes.jsx',
-    './*/3am/**/routes.jsx',
-    './*/4am/**/routes.jsx',
-    './*/terminale_dz/**/routes.jsx',
+    './college/6e/**/routes.jsx',
+    './college/5e/**/routes.jsx',
+    './college/4e/**/routes.jsx',
+    './college/3e/**/routes.jsx',
   ],
   { import: 'default' },
 );
@@ -35,11 +33,10 @@ export const ROUTES_LOADERS = import.meta.glob(
 /** The PACK of a lesson (`lesson.pack.js`, LESSON_V2.md): a few lines of data whose content is behind its own imports. */
 export const PACK_LOADERS = import.meta.glob(
   [
-    './*/1am/**/lesson.pack.js',
-    './*/2am/**/lesson.pack.js',
-    './*/3am/**/lesson.pack.js',
-    './*/4am/**/lesson.pack.js',
-    './*/terminale_dz/**/lesson.pack.js',
+    './college/6e/**/lesson.pack.js',
+    './college/5e/**/lesson.pack.js',
+    './college/4e/**/lesson.pack.js',
+    './college/3e/**/lesson.pack.js',
   ],
   { import: 'LESSON_PACK' },
 );

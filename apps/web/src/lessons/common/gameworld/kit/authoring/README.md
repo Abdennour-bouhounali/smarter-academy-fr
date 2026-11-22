@@ -1,8 +1,8 @@
 # The authoring kit — write a lesson's world by filling content, not by rewriting machinery
 
 The three lessons built on « أرخبيل القواسم » (unit 1 of 4AM, lessons 4–6) each re-derived the same helpers, forge
-blocks and tests: 31 + 39 agent minutes for lesson 6's written world. This folder holds that machinery ONCE, tested and
-proved on two of those lessons (`proof.bahth.test.js`, `proof.tayin.test.js`). Since 2026-11-20 the `world/math.js` of
+blocks and tests: 31 + 39 agent minutes for lesson 6's written world. This folder holds that machinery ONCE, tested (it
+was proved on two of those lessons; the proofs left with the Algerian lessons on 2026-11-22). Since 2026-11-20 the `world/math.js` of
 lessons 4–7 RE-EXPORT `numbers.js` (their copies are deleted) and lesson 6's `forges.js` is assembled from
 `forgeBlocks.js`: a block or a helper no lesson uses is deleted, never kept « for later » (`npm run check:unused`).
 
@@ -14,8 +14,7 @@ lessons 4–7 RE-EXPORT `numbers.js` (their copies are deleted) and lesson 6's `
 | `test/bank.js`                    | Node   | `readBank(id)`, `bankPairs`, `pairLines`, `collisions`, `storiesOf`, `islandNamesIn`                                                                                                                                                                                                                                                                                                                                                                                        |
 | `scripts/lesson-bank-numbers.mjs` | CLI    | `node scripts/lesson-bank-numbers.mjs <id> [--check 119,85 1833,546 …] [--js]`                                                                                                                                                                                                                                                                                                                                                                                              |
 
-The kit names no lesson and no world's key: the lesson is always the argument. Only the two `proof.*` tests import a
-lesson. `test/` is a test folder for the repo's checks: it is never in the app.
+The kit names no lesson and no world's key: the lesson is always the argument. `test/` is a test folder for the repo's checks: it is never in the app.
 
 ## The order to write a `world/`
 
@@ -51,7 +50,7 @@ export const NUMBERS = { tarh: { gaps: [259, 185], purse: 12, plank: 37 }, boss:
 ```
 
 ```js
-// forges.js — one forge met on a convoy (lesson 6's 🔁, rebuilt this way in proof.bahth.test.js)
+// forges.js — one forge met on a convoy (lesson 6's 🔁 was rebuilt this way)
 import {
   attacksOf,
   fromLog,

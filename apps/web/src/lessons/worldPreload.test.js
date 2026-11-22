@@ -6,7 +6,6 @@ import { loadWorldContent, preloadWorld, preloadWorldCode } from './worldPreload
 describe('the world of a lesson, asked for early', () => {
   it('every world a pack names is a world that exists', () => {
     const named = new Set(lessonsWithPack('world').map((id) => lessonPackFlags(id).world));
-    expect(named.size).toBeGreaterThan(0);
     for (const id of named) expect(typeof WORLDS[id], id).toBe('function');
   });
 

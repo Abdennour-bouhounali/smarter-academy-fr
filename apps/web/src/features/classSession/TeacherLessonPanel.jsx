@@ -33,7 +33,7 @@ import {
   Users,
 } from 'lucide-react';
 import { useIsPhoneScreen } from '../../components/auth/RequireLargeScreen';
-import { toolsForLesson } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { toolsForLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import MathLabel from '../../lessons/common/components/MathLabel';
 import { FAMILIES, MISTAKES } from '../../lessons/common/launchkit/families';
 import { GRADE_NAMES } from '../../lessons/common/lessonlab/order';
@@ -373,7 +373,7 @@ export default function TeacherLessonPanel({ config, basePath, hasWorld, extraTo
                     >
                       {t.weight === 'support' ? L.support : L.core}
                     </span>
-                    <MathLabel>{t.lesson?.titleAr ?? t.textAr}</MathLabel>{' '}
+                    <MathLabel>{t.lesson?.title ?? t.text}</MathLabel>{' '}
                     <span className="whitespace-nowrap text-xs font-bold text-slate-500">· {L.year(t.grade)}</span>
                   </li>
                 ))}

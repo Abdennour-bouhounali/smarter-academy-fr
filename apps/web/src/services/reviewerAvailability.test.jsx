@@ -83,8 +83,7 @@ describe('les surfaces qui affichent l’état', () => {
     ['src/components/student/LessonCard.jsx', 'status={publication}'],
     ['src/components/student/LessonRow.jsx', 'status={publication}'],
     ['src/pages/UnitPage.jsx', 'lessonStatus(lesson.id)'],
-    ['src/lessons/common/components/LessonIndex.jsx', 'moduleStatus(config.id, module.number)'],
-    ['src/lessons/common/components/ModuleLayout.jsx', 'moduleStatus(lessonId, moduleNumber)'],
+    ['src/lessons/common/components/LessonIndex.jsx', 'lessonStatus(config.id)'],
   ])('%s pose la pastille', (file, call) => {
     // `publication` = `lessonStatus(lesson.id)`, lu par useLessonTileState.
     const source = read(file);
@@ -99,13 +98,9 @@ describe('les surfaces qui affichent l’état', () => {
     expect(source).toContain('aria-disabled="true"');
   });
 
-  it('le signalement est EN HAUT du module et du sommaire, en variante visible', () => {
-    const module = read('src/lessons/common/components/ModuleLayout.jsx');
+  it('le signalement de l’accueil de leçon est en variante visible', () => {
     const index = read('src/lessons/common/components/LessonIndex.jsx');
-    expect(module).toContain('variant="prominent"');
     expect(index).toContain('variant="prominent"');
-    // Plus de bouton dans le pied de page du module.
-    expect(module.slice(module.lastIndexOf('<footer'))).not.toContain('<ReportButton');
   });
 
   it('le sommaire refuse une leçon non publiée ouverte par URL directe', () => {

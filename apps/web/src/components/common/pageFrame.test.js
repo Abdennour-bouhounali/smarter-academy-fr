@@ -24,7 +24,6 @@ describe('cadre de page partagé', () => {
   const PAGES = [
     ['Courses',        'src/pages/Courses.jsx'],
     ['Lesson Index',   'src/lessons/common/components/LessonIndex.jsx'],
-    ['Lesson Module',  'src/lessons/common/components/ModuleLayout.jsx'],
     ['Exercise',       'src/pages/student/practice/PracticeSession.jsx'],
     ['Exercise Space', 'src/pages/student/practice/PracticeHub.jsx'],
     ['Ma progression', 'src/pages/student/Progression.jsx'],
@@ -120,7 +119,7 @@ describe('fond uni du système d’exercices', () => {
     // Les commentaires CITENT `min-height: 100%` pour expliquer pourquoi il ne
     // convient pas ; on lit donc les DÉCLARATIONS seules.
     const css = read('src/index.css').replace(/\/\*[\s\S]*?\*\//g, '');
-    // slate-50 : exactement le `bg-slate-50` de LessonIndex/ModuleLayout.
+    // slate-50 : exactement le `bg-slate-50` de LessonIndex.
     expect(css).toMatch(/\.sa-surface-plain\s*\{[^}]*background-color:\s*#f8fafc/i);
     // `min-height: 100%` ne suffit pas — le <main> parent n'a pas de hauteur
     // définie, et l'aplat s'arrêterait où finit le contenu.

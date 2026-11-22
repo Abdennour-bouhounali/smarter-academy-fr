@@ -203,7 +203,6 @@ describe('le contexte pilote le composant', () => {
 
   const HOSTS = [
     ['sommaire de leçon', 'src/lessons/common/components/LessonIndex.jsx', 'lesson'],
-    ['module', 'src/lessons/common/components/ModuleLayout.jsx', 'module'],
     ['question d’exercice', 'src/pages/student/practice/PracticeSession.jsx', 'question'],
     ['diagnostic', 'src/pages/student/diagnostic/DiagnosticRun.jsx', 'diagnostic'],
   ];
@@ -212,20 +211,12 @@ describe('le contexte pilote le composant', () => {
     expect(read(file)).toContain(`source="${source}"`);
   });
 
-  it('un seul composant sert les quatre contextes', () => {
+  it('un seul composant sert les trois contextes', () => {
     // Pas de ReportButtonLesson / ReportButtonModule : c'est le contexte qui
     // varie, pas le composant.
     for (const [, file] of HOSTS) {
       expect(read(file)).toContain('<ReportButton');
     }
-  });
-
-  it('ModuleLayout le pose dans SES DEUX sorties', () => {
-    // Le composant a une branche « module verrouillé » avec son propre <main> :
-    // un bouton posé dans une seule disparaîtrait sans bruit dans l'autre.
-    const source = read('src/lessons/common/components/ModuleLayout.jsx');
-    expect(source.split('<ReportButton').length - 1).toBe(2);
-    expect(source.split('source="module"').length - 1).toBe(2);
   });
 
   it('aucune leçon ne câble le bouton à la main', () => {
@@ -234,7 +225,7 @@ describe('le contexte pilote le composant', () => {
     const strays = HOSTS.map(([, f]) => f);
     const lessonFiles = read('src/lessons/common/components/LessonIndex.jsx');
     expect(lessonFiles).toContain('ReportButton');
-    expect(strays.length).toBe(4);
+    expect(strays.length).toBe(3);
   });
 });
 

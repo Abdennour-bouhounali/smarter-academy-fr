@@ -204,40 +204,6 @@ import { prefetchBooksForLocation } from './features/books/bookCache';
 import RequireAccount from './components/auth/RequireAccount';
 import RequireLargeScreen from './components/auth/RequireLargeScreen';
 
-/**
- * La surface de QA est-elle montée ?
- *
- * Deux portes, et les deux sont des CONSTANTES à la construction : Vite
- * remplace `import.meta.env.*` par des littéraux avant que Rollup ne passe.
- */
-const QA_FIXTURES_ENABLED = import.meta.env.DEV || import.meta.env.VITE_QA_FIXTURES === 'true';
-
-/**
- * Le chargement de la surface de QA — PARESSEUX, et c'est ce qui la tient
- * hors du lot de production.
- *
- * Un `import` statique ne suffisait PAS : Rollup ne peut pas prouver qu'un
- * module importé pour ses exports n'a aucun effet de bord, et il le gardait
- * dans le lot d'entrée même quand la branche qui l'utilise était morte
- * (constaté : 'qa-rtl-fixture' se retrouvait dans index-*.js).
- *
- * Avec `lazy(() => import(...))` DERRIÈRE la condition littérale, la branche
- * entière — appel compris — disparaît à la construction, et avec elle le
- * point d'entrée du fragment. Le test d'isolement le vérifie sur le lot
- * réellement construit.
- */
-const RtlLessonFixture = QA_FIXTURES_ENABLED
-  ? lazy(() =>
-      Promise.all([import('./qa/rtlLessonFixture/FixtureRoutes.jsx'), loadLessonManipulationStrings()]).then(
-        ([m]) => m,
-      ),
-    )
-  : null;
-// The prototype of an integration mission (dev builds only, like the fixture above).
-const MissionPrototype = QA_FIXTURES_ENABLED ? lazy(() => import('./qa/missionPrototype/MissionPrototype.jsx')) : null;
-const MissionsHome = QA_FIXTURES_ENABLED
-  ? lazy(() => import('./qa/missionPrototype/MissionPrototype.jsx').then((m) => ({ default: m.MissionsHome })))
-  : null;
 import { AuthProvider } from './context/AuthContext';
 import { WorkspaceLayoutProvider } from './context/WorkspaceLayoutContext';
 import { NotebookProvider } from './features/practice/notebook/NotebookProvider';
@@ -246,7 +212,6 @@ import { ContentAvailabilityProvider } from './context/ContentAvailabilityContex
 import { StudyContextProvider } from './context/StudyContextContext';
 import { useLessonProgressSync } from './hooks/useLessonProgressSync';
 import { useLessonRoutes } from './lessons/lessonRouteBoundary';
-import { loadLessonManipulationStrings } from './i18n/lessonManipulationStrings';
 import { preloadNamespace } from './i18n/index.js';
 import StudyTimeTracker from './features/studyTime/StudyTimeTracker';
 
@@ -656,25 +621,6 @@ function AppRoutes() {
           <Route element={<RequireLargeScreen />}>{lessonRoutes}</Route>
         </Route>
 
-        {/* ── SURFACE DE QA — jamais en production ────────────────
-            Le moteur de leçon n'a jamais été rendu sous RTL, faute de
-            leçon montée (rapport de reprise §17/§18). Cette surface
-            monte les VRAIS composants du moteur avec du texte arabe,
-            pour qu'on puisse le regarder.
-
-            La condition est littérale et statiquement analysable : dans
-            un lot de production ordinaire, `import.meta.env.DEV` vaut
-            false et `VITE_QA_FIXTURES` n'est pas 'true', donc Rollup
-            élimine la branche ET le module qu'elle appelle. Le test
-            d'isolement le vérifie sur le lot réellement construit.
-
-            Hors de src/lessons/ : l'index des leçons, les globs de lessonLoaders.js,
-            check-routes, validate-lessons et check-dormant-isolation
-            n'y voient rien, et elle n'est dans aucun catalogue. */}
-        {QA_FIXTURES_ENABLED && <Route path="/__qa/rtl-lesson/*" element={<RtlLessonFixture />} />}
-        {QA_FIXTURES_ENABLED && <Route path="/__qa/mission-1" element={<MissionPrototype />} />}
-        {QA_FIXTURES_ENABLED && <Route path="/__qa/mission-2" element={<MissionPrototype n={2} />} />}
-        {QA_FIXTURES_ENABLED && <Route path="/__qa/missions" element={<MissionsHome />} />}
       </Route>
     </Routes>
   );

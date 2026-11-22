@@ -7,8 +7,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, Check, Delete, Eye, X } from 'lucide-react';
 import MathText from '../../lessons/common/components/MathText';
-import KidFigure from '../../lessons/common/manipulations/primitives/KidFigure';
-import { kidLook } from '../../lessons/common/manipulations/primitives/kidFigure';
+import KidFigure from '../../lessons/common/components/KidFigure';
+import { kidLook } from '../../lessons/common/components/kidFigure';
 import { playSfx } from '../../lessons/common/utils/playEffect';
 import { ClassWindow, Speaker, BoardTools, BoardLayers, useBoardTools } from './board';
 import {

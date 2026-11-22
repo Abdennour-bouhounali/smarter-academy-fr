@@ -7,15 +7,15 @@
  *                      EXERCISES / EXERCISES_1 / … (énoncé, correction,
  *                      commonError, difficulté)
  *
- * Les globs sont PARESSEUX et bornés au cycle moyen (BUNDLE_BOUNDARIES.md §4.3 ; 1AM–3AM
- * ajoutées le 2026-10-14 — leurs leçons y entrent d'elles-mêmes une fois générées) :
+ * Les globs sont PARESSEUX et bornés au collège (BUNDLE_BOUNDARIES.md §4.3 ; une leçon y
+ * entre d'elle-même une fois générée) :
  * rien n'entre dans le lot d'entrée, seule la leçon ouverte est chargée, et
  * ses fichiers sont les mêmes lots que ceux de ses modules.
  * Le dossier d'une leçon porte son id (lesson.config.js `id`) — c'est la clé.
  */
-const knowledgeFiles = import.meta.glob('../../../lessons/moyen/*/**/knowledge.jsx');
+const knowledgeFiles = import.meta.glob('../../../lessons/college/*/**/knowledge.jsx');
 // Les tests de figures (content/figures.test.js, règle du propriétaire 2026-10-04) ne sont pas du contenu : exclus.
-const contentFiles = import.meta.glob(['../../../lessons/moyen/*/**/content/*.js', '!../../../lessons/moyen/*/**/content/*.test.js']);
+const contentFiles = import.meta.glob(['../../../lessons/college/*/**/content/*.js', '!../../../lessons/college/*/**/content/*.test.js']);
 
 const lessonIdOf = (path, marker) => {
   const parts = path.split('/');

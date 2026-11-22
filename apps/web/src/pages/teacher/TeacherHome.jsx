@@ -48,7 +48,8 @@ export default function TeacherHome() {
   const today = todayIso();
   const ent = data?.entitlements;
   const classes = (data?.classrooms ?? []).filter((c) => c.status !== 'archived');
-  const week = weekLessonsFor('4am', today);
+  // The grade whose lessons are built first (3e, FRANCE_REBUILD_PLAN.md §8); null while the year has no calendar.
+  const week = weekLessonsFor('3e', today);
 
   return (
     <TeacherPage

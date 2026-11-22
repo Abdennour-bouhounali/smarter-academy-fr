@@ -26,10 +26,10 @@ describe('registry — dormant-grade isolation', () => {
   });
 
   it('never resolves a lesson whose folder grade is outside ACTIVE_GRADE_IDS', () => {
+    // A lesson id of every grade the product does not carry: none resolves, whatever folder held it.
     const knownLessonByGrade = {
-      '6e': 'fractions',
-      '5e': 'operations-5e',
-      '4e': 'racines-carrees',
+      '4am': 'qasim-adad-tabii',
+      '1am': 'qisma-iqlidiya-baqi',
       seconde: 'fonction-affine-2nde',
       premiere_specialite: 'second-degre-resoudre-1ere',
     };
@@ -55,7 +55,7 @@ describe('registry — build-time glob scope', () => {
     const call = calls.find((c) => c.includes(file));
     expect(call, `lessonLoaders.js must glob an explicit list of grade patterns for ${file}`).toBeTruthy();
     const escaped = file.replace('.', '\\.');
-    const grades = [...call.matchAll(new RegExp(`'\\./\\*/([^/]+)/\\*\\*/${escaped}'`, 'g'))].map((m) => m[1]);
+    const grades = [...call.matchAll(new RegExp(`'\\./college/([^/]+)/\\*\\*/${escaped}'`, 'g'))].map((m) => m[1]);
     expect(grades.sort()).toEqual([...ACTIVE_GRADE_IDS].sort());
   });
 
@@ -85,8 +85,8 @@ const KNOWN_UNMOUNTED_MODULES = {};
 describe('registry — every indexed lesson loads with its own routes', () => {
   const lessons = getBuiltLessons();
 
-  it('indexes the built lessons', () => {
-    expect(lessons.length).toBeGreaterThanOrEqual(74);
+  it('indexes the built lessons — none before the first French lesson', () => {
+    expect(lessons).toEqual([]);
   });
 
   it.each(lessons.map((l) => [l.id, l]))('%s : config + routes resolve, and mount its index and every module', async (id, { basePath }) => {

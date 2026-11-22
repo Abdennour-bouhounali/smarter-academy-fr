@@ -38,7 +38,7 @@ export function planTools(netTools, hasFamily, kit = {}, now = Date.now()) {
     tools.push({
       item: it.id,
       grade: it.grade,
-      text: it.textAr,
+      text: it.text,
       weight: it.weight ?? null,
       lesson: it.lesson,
       known: fresh,

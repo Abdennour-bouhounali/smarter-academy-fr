@@ -223,7 +223,7 @@ function PointerStep({ year, profile, today, classroomName, error, onConfirm, on
                 <span className={`grid h-12 w-12 place-items-center rounded-full ${i <= pickedAt ? 'bg-indigo-500 text-white' : 'border-2 border-slate-300 bg-white'}`}>
                   {i <= pickedAt && <Check size={22} aria-hidden="true" />}
                 </span>
-                <span className={`text-base ${on ? 'font-black text-slate-900' : 'font-semibold text-slate-700'}`}>{c.titleAr}</span>
+                <span className={`text-base ${on ? 'font-black text-slate-900' : 'font-semibold text-slate-700'}`}>{c.title}</span>
                 {c.suggested && <span className="rounded-full bg-amber-100 px-2 text-xs font-bold text-amber-900">{t('pointer.suggested')}</span>}
               </button>
             );
@@ -475,8 +475,8 @@ function Report({ state, year, grade, today, live, onContinue, onRetake }) {
           {report.priority ? (
             <div className="space-y-3 rounded-3xl bg-white p-6 shadow-lg shadow-teal-100 ring-2 ring-teal-200" data-compass-priority>
               <span className="inline-block rounded-full bg-teal-100 px-3 py-0.5 text-sm font-black text-teal-900">{t('report.startHere')}</span>
-              <h2 className="text-2xl font-black text-slate-900"><MathText>{report.priority.textAr}</MathText></h2>
-              <p className="text-slate-600">{t(`report.grade.${report.priority.grade}`)}{report.priority.homeLesson ? ` · ${report.priority.homeLesson.titleAr}` : ''}</p>
+              <h2 className="text-2xl font-black text-slate-900"><MathText>{report.priority.text}</MathText></h2>
+              <p className="text-slate-600">{t(`report.grade.${report.priority.grade}`)}{report.priority.homeLesson ? ` · ${report.priority.homeLesson.title}` : ''}</p>
               <ReviseLink line={report.priority} big />
             </div>
           ) : (
@@ -531,7 +531,7 @@ function ItemRow({ line }) {
   return (
     <div className="flex items-center justify-between gap-3 rounded-2xl bg-white px-5 py-3 ring-1 ring-slate-200">
       <div className="min-w-0">
-        <p className="font-bold text-slate-900"><MathText>{line.textAr}</MathText></p>
+        <p className="font-bold text-slate-900"><MathText>{line.text}</MathText></p>
         <p className="text-sm text-slate-600">{t(`report.grade.${line.grade}`)}</p>
       </div>
       <div className="flex shrink-0 items-center gap-2">
@@ -550,7 +550,7 @@ function WeekTask({ task }) {
       <div className="flex items-center gap-4 rounded-2xl px-4 py-3 ring-1 ring-slate-200">
         <span className="grid h-12 w-12 place-items-center rounded-xl bg-amber-100 text-amber-900"><Target size={24} aria-hidden="true" /></span>
         <div className="flex-1">
-          <p className="text-lg font-bold text-slate-900">{t('week.prepare', { title: task.lesson.titleAr })}</p>
+          <p className="text-lg font-bold text-slate-900">{t('week.prepare', { title: task.lesson.title })}</p>
           <p className="text-sm text-slate-600">{t('week.prepareHint')}</p>
         </div>
         {path && <Link to={path} className="min-h-[44px] rounded-xl bg-nav-accent px-5 py-2.5 font-black text-white">{t('week.open')}</Link>}
@@ -562,7 +562,7 @@ function WeekTask({ task }) {
     <div className="flex items-center gap-4 rounded-2xl px-4 py-3 ring-1 ring-slate-200">
       <span className="grid h-12 w-12 place-items-center rounded-xl bg-teal-100 text-teal-900"><RotateCcw size={24} aria-hidden="true" /></span>
       <div className="min-w-0 flex-1">
-        <p className="text-lg font-bold text-slate-900">{t('week.revise', { title: task.item.homeLesson?.titleAr ?? task.item.textAr })}</p>
+        <p className="text-lg font-bold text-slate-900">{t('week.revise', { title: task.item.homeLesson?.title ?? task.item.text })}</p>
         <p className="text-sm text-slate-600">{t(`report.grade.${task.item.grade}`)}</p>
       </div>
       {path ? <Link to={path} className="min-h-[44px] rounded-xl bg-nav-accent px-5 py-2.5 font-black text-white">{t('week.open')}</Link>

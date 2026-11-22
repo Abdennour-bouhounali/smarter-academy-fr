@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { GraduationCap, Loader2, BookOpen, Clock } from 'lucide-react';
 import { ArrowForward } from '../../components/common/DirectionalIcons';
-import { getAllGrades } from '@smarter-academy/core';
+import { courseLevels, getAllGrades } from '@smarter-academy/core';
 import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { isDiagnosticAvailableForGrade } from '../../services/diagnosticService';
@@ -17,21 +17,13 @@ const GRADES_BY_LEVEL = getAllGrades().reduce((groups, grade) => {
   return groups;
 }, {});
 
-// La pastille d'une classe : son numéro et son cycle, lisibles d'un coup
-// d'œil. Une classe absente d'ici retombe sur l'icône.
-const GRADE_BADGE = {
-  '1am': { number: '1', cycle: 'م' },
-  '2am': { number: '2', cycle: 'م' },
-  '3am': { number: '3', cycle: 'م' },
-  '4am': { number: '4', cycle: 'م' },
-  terminale_dz: { number: '3', cycle: 'ث' },
-};
+// La pastille d'une classe : son nom court tel que le catalogue l'écrit (« 6e »). Une classe sans nom court retombe
+// sur l'icône.
+const GRADE_BADGE = Object.fromEntries(courseLevels.flatMap((level) => level.grades).map((g) => [g.id, g.shortName]));
 
-// Un dégradé par cycle : l'accent élève pour le moyen, sarcelle → bleu pour
-// le secondaire (les deux teintes du logo).
+// Un dégradé par cycle : l'accent élève pour le collège.
 const LEVEL_GRADIENT = {
-  moyen: '#3B5BDB',
-  thanawi: 'linear-gradient(135deg, #0FA597, #3B82F6)',
+  college: '#3B5BDB',
 };
 
 /**
@@ -93,7 +85,7 @@ export default function ChooseGrade() {
         animate={{ opacity: 1, y: 0 }}
         className="mx-auto w-full max-w-lg z-10 text-center mb-8"
       >
-        <div className="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-blue-500/25" style={{ background: LEVEL_GRADIENT.moyen }}>
+        <div className="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-blue-500/25" style={{ background: LEVEL_GRADIENT.college }}>
           <GraduationCap size={26} />
         </div>
         {hasGrades && (
@@ -150,14 +142,11 @@ export default function ChooseGrade() {
                       >
                         <span
                           className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 flex-col items-center justify-center rounded-xl sm:rounded-2xl text-white shadow-md"
-                          style={{ background: LEVEL_GRADIENT[g.levelId] ?? LEVEL_GRADIENT.moyen }}
+                          style={{ background: LEVEL_GRADIENT[g.levelId] ?? LEVEL_GRADIENT.college }}
                           aria-hidden="true"
                         >
                           {badge ? (
-                            <>
-                              <span className="font-arabic text-xl sm:text-2xl font-bold leading-none">{badge.number}</span>
-                              <span className="font-arabic text-xs font-semibold leading-none mt-1 opacity-90">{badge.cycle}</span>
-                            </>
+                            <span className="font-arabic text-xl sm:text-2xl font-bold leading-none">{badge}</span>
                           ) : (
                             <GraduationCap size={24} />
                           )}
@@ -203,8 +192,7 @@ export default function ChooseGrade() {
             </p>
           </div>
         ) : (
-          // No Algerian grade exists yet (activeGrades.js — roadmap
-          // Phase 7). Rather than show an empty grid, say so plainly and
+          // No grade is active (activeGrades.js). Rather than show an empty grid, say so plainly and
           // let the student continue: StudentLayout's gate already stops
           // redirecting here once there is nothing to choose (see its
           // getAllGrades().length check), so this button is the one path
@@ -221,7 +209,7 @@ export default function ChooseGrade() {
               type="button"
               onClick={() => navigate('/espace')}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-arabic font-semibold text-sm text-white transition-all hover:-translate-y-0.5"
-              style={{ background: LEVEL_GRADIENT.moyen }}
+              style={{ background: LEVEL_GRADIENT.college }}
             >
               {t('chooseGradeContinue')}
               <ArrowForward size={14} />

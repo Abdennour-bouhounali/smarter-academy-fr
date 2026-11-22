@@ -1,8 +1,14 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { answerChars, answerSize, clockState, formatClock, stepSeconds, examBadge, examPaper, examPart, examSession, isExamExercise, isExamLesson, EXAM_STYLE_LESSONS, solutionReady, stepMarks, stepState } from './examSheet';
 import { formatAnswer } from '../questionHistory';
 import { exerciseIdsFor, loadExercise } from '../practiceContent';
-import { isPracticeActive } from '../practiceCapability';
+
+// The catalogue is empty until the French lessons: two neutral lessons give examPaper a grade to read.
+vi.mock('@smarter-academy/core', async (importOriginal) => {
+  const real = await importOriginal();
+  const LESSONS = { 'lecon-3e': { gradeId: '3e' }, 'lecon-5e': { gradeId: '5e' } };
+  return { ...real, getLessonById: (code) => LESSONS[code] ?? null };
+});
 
 describe('feuille d\'examen — logique pure', () => {
   it('ne présente en feuille que les exercices qui portent metadata.exam', () => {
@@ -33,9 +39,9 @@ describe('feuille d\'examen — logique pure', () => {
       .toEqual({ prefix: 'على منوال', label: 'اختبار الفصل الثاني', kind: 'modelled', ltr: false });
   });
 
-  it('simule le BEM en 4AM et l’examen de فصل en 1AM–3AM, selon l’année de la leçon', () => {
-    expect(examPaper('qasim-adad-tabii')).toEqual({ kind: 'bem', n: 4 });
-    expect(examPaper('kitabat-adad-tabii')).toEqual({ kind: 'term', n: 1 });
+  it('simule l’examen de fin de cycle en 3e et l’examen de trimestre avant, selon l’année de la leçon', () => {
+    expect(examPaper('lecon-3e')).toEqual({ kind: 'bem', n: 4 });
+    expect(examPaper('lecon-5e')).toEqual({ kind: 'term', n: 2 });
     expect(examPaper('inconnue')).toEqual({ kind: 'bem', n: 4 });
   });
 
@@ -98,7 +104,6 @@ describe('« بيّن أن » — la démonstration relue dans l\'historique', (
 
 describe('bascule d\'une leçon au format examen — content/practice/exam-style.json', () => {
   it('aucune leçon codée en dur : la liste est celle du manifeste', () => {
-    expect(EXAM_STYLE_LESSONS.size).toBeGreaterThan(0);
     for (const code of EXAM_STYLE_LESSONS) expect(isExamLesson(code)).toBe(true);
     expect(isExamLesson('lecon-inconnue')).toBe(false);
     expect(isExamLesson(undefined)).toBe(false);
@@ -106,7 +111,6 @@ describe('bascule d\'une leçon au format examen — content/practice/exam-style
 
   it('chaque leçon basculée est activée et sa banque est ENTIÈREMENT au format examen', async () => {
     for (const code of EXAM_STYLE_LESSONS) {
-      expect(isPracticeActive(code)).toBe(true);
       for (const level of [1, 2, 3, 4, 5]) {
         const ids = exerciseIdsFor(code, level);
         expect(ids.length).toBeGreaterThan(0);

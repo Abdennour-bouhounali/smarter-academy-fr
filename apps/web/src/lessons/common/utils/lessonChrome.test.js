@@ -63,20 +63,6 @@ describe('contrat de mise en page du bandeau de leçon', () => {
 describe('source unique de vérité', () => {
   const read = (rel) => readFileSync(resolve(srcRoot, rel), 'utf8');
 
-  it('StepProgressBar est la seule implémentation du bandeau, et ne code pas son décalage en dur', () => {
-    const ui = read('lessons/common/components/LessonUI.jsx');
-    expect(ui).toContain('useLessonChrome');
-    expect(ui).not.toContain('sticky top-16');
-  });
-
-  it('ModuleLayout dérive son décalage haut du contrat, pas d’un pt-16 fixe', () => {
-    const layout = read('lessons/common/components/ModuleLayout.jsx');
-    expect(layout).toContain('chrome.contentOffsetClass');
-    expect(layout).not.toContain('justify-between pt-16');
-    // Et il diffuse le contrat à ses enfants plutôt que de les laisser deviner.
-    expect(layout).toContain('LessonChromeContext.Provider');
-  });
-
   it.each([
     'lessons/common/components/LessonIndex.jsx',
     'pages/UnitPage.jsx',

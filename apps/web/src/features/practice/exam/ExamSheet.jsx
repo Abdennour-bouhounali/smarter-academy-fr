@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import RichText from '../RichText';
 import StatementFigure from '../../../lessons/common/components/StatementFigure';
-import ProblemTable from '../../../lessons/common/problems/ProblemTable';
+import ProblemTable from '../../../lessons/common/components/ProblemTable';
 import { StudentAnswer } from '../QuestionHistory';
 import { ToneIcon, TONE_STYLE } from '../toneStyle';
 import SolutionPanel from './SolutionPanel';

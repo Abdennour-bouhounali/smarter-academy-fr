@@ -18,6 +18,7 @@ import WorkNowSection from '../../features/progression/components/WorkNowSection
 import ProgressionToolbar from '../../features/progression/components/ProgressionToolbar';
 import FieldProgressGroup from '../../features/progression/components/FieldProgressGroup';
 import ProgressionEmptyState from '../../features/progression/components/ProgressionEmptyState';
+import NoLessonYet from '../../components/student/NoLessonYet';
 import MasteryExplanationDrawer from '../../features/progression/components/MasteryExplanationDrawer';
 
 /**
@@ -93,6 +94,8 @@ export default function Progression() {
   const nextStep = useMemo(() => pickNextStep(tree), [tree]);
 
   const hasStarted = activity.lessons.some((l) => l.lastVisitedAt > 0);
+  // His grade has no published lesson yet: an honest « no lesson yet », not an invitation to start one.
+  const noLessonYet = Boolean(gradeId) && getAllGrades().find((g) => g.id === gradeId)?.lessonCount === 0;
   const multiGrade = tree.grades.length > 1;
 
   // Le ميدان ouvert par défaut : celui du dernier travail, sinon le premier
@@ -179,6 +182,10 @@ export default function Progression() {
               onShowAll={showAllWork}
             />
           </>
+        ) : noLessonYet ? (
+          <div className="mb-10">
+            <NoLessonYet />
+          </div>
         ) : (
           <ProgressionEmptyState />
         )}

@@ -215,7 +215,6 @@ describe('les états d’écran', () => {
 
 describe('le signalement est atteignable depuis tout le parcours élève', () => {
   const HOSTS = [
-    ['module de leçon', 'src/lessons/common/components/ModuleLayout.jsx'],
     ['sommaire de leçon', 'src/lessons/common/components/LessonIndex.jsx'],
     ['question d’exercice', 'src/pages/student/practice/PracticeSession.jsx'],
     ['diagnostic', 'src/pages/student/diagnostic/DiagnosticRun.jsx'],
@@ -223,13 +222,5 @@ describe('le signalement est atteignable depuis tout le parcours élève', () =>
 
   it.each(HOSTS)('%s porte un bouton de signalement', (_label, file) => {
     expect(read(file)).toContain('ReportButton');
-  });
-
-  it('ModuleLayout le pose dans SES DEUX sorties', () => {
-    // Le composant a une branche « module verrouillé » avec son propre
-    // <main> : un bouton posé dans une seule disparaîtrait sans bruit.
-    const source = read('src/lessons/common/components/ModuleLayout.jsx');
-    const uses = source.split('<ReportButton').length - 1;
-    expect(uses).toBe(2);
   });
 });

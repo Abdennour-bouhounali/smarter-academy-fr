@@ -58,7 +58,7 @@ export default function SchoolClassrooms() {
           <p className="mt-1 max-w-3xl font-inter text-sm text-slate-600">{t('classes.subtitle')}</p>
         </div>
         <button type="button" className={btnPrimary} disabled={teachers.length === 0}
-          onClick={() => { setDraft({ name: '', grade: grades[grades.length - 1]?.id ?? '4am', teacherId: '' }); setError(null); }}>
+          onClick={() => { setDraft({ name: '', grade: grades[grades.length - 1]?.id ?? '', teacherId: '' }); setError(null); }}>
           <Plus size={16} aria-hidden="true" />{t('classes.new')}
         </button>
       </header>

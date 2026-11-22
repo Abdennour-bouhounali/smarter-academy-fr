@@ -16,7 +16,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flag, Clock, PenLine, VolumeX, X, Compass, BookOpenCheck, NotebookPen, LogOut } from 'lucide-react';
 import MathText from '../../components/MathText';
-import ProblemTable from '../../problems/ProblemTable';
+import ProblemTable from '../../components/ProblemTable';
 import ChoiceInput from '../../../../features/practice/inputs/ChoiceInput';
 import IntegerSetInput from '../../../../features/practice/inputs/IntegerSetInput';
 import TemplateInput from '../../../../features/practice/answerTemplates/TemplateInput';

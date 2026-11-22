@@ -19,7 +19,7 @@ describe('the pack of a lesson — the ONE place where it says what it gives the
   });
 
   it('the generated flags say exactly what each pack holds, and every part named really loads', async () => {
-    expect(WITH_PACK).toContain('qasim-adad-tabii');
+    // no lesson has a pack before the first French lesson: the loop below checks every pack the index lists
     for (const id of WITH_PACK) {
       const flags = lessonPackFlags(id);
       const pack = await loadLessonPack(id);

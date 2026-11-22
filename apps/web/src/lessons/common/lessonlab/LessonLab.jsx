@@ -16,6 +16,7 @@ import { createPortal } from 'react-dom';
 import { X, Dices, Minus, Plus, Check, Volume2, VolumeX, ChevronRight, ChevronLeft } from 'lucide-react';
 import { scopedStorage } from '../../../utils/storage';
 import { LabSound } from './sound';
+import { getLessonById } from '@smarter-academy/core';
 import { toolsFor, toolById, clampFor } from './registry';
 import { QUESTS, observe, luckyPair } from './logic';
 import './lessonLab.css';
@@ -492,7 +493,7 @@ export default function LessonLab({
             <p>{tool.hint}</p>
             {tool.lesson !== lessonCode && (
               <em data-ll-from>
-                {L.fromLesson} {tool.lessonTitle}
+                {L.fromLesson} {getLessonById(tool.lesson)?.title ?? tool.lesson}
               </em>
             )}
           </div>

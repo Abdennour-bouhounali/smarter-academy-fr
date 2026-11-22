@@ -9,7 +9,7 @@
  * qu'à la PREMIÈRE question qui l'ouvre, comme sur le papier.
  */
 
-import { getLessonById } from '@smarter-academy/core';
+import { ACTIVE_GRADE_IDS, getLessonById } from '@smarter-academy/core';
 import EXAM_STYLE_LIST from '../../../../../../content/practice/exam-style.json';
 
 /**
@@ -82,19 +82,16 @@ export function examBadge(exam) {
 }
 
 /**
- * QUEL examen la feuille simule, selon l'année de la leçon (2026-10-14) :
- * la شهادة التعليم المتوسط (BEM) en 4AM, l'examen de fin de فصل en 1AM–3AM
- * (« على منوال اختبار الفصل … », docs/sources/moyen/exams/EXAM_PATTERN.md §6).
- * `n` est le numéro de l'année (« 2 متوسط »). Une leçon inconnue du catalogue
- * garde le BEM — le seul format d'examen qui existait avant 1AM–3AM.
+ * QUEL examen la feuille simule, selon l'année de la leçon : l'examen de fin de cycle (`bem`) pour la dernière année du
+ * collège, l'examen de fin de trimestre (`term`) pour les autres. `n` est le rang de l'année dans le cycle (6e → 1,
+ * 3e → 4). Une leçon inconnue du catalogue garde l'examen de fin de cycle.
  *
  * @returns {{kind: 'bem'|'term', n: number}}
  */
 export function examPaper(lessonCode) {
-  const grade = getLessonById(lessonCode)?.gradeId;
-  const n = /^([1-4])am$/.exec(grade ?? '')?.[1];
-  if (!n) return { kind: 'bem', n: 4 };
-  return { kind: Number(n) === 4 ? 'bem' : 'term', n: Number(n) };
+  const n = ACTIVE_GRADE_IDS.indexOf(getLessonById(lessonCode)?.gradeId) + 1;
+  if (!n) return { kind: 'bem', n: ACTIVE_GRADE_IDS.length };
+  return { kind: n === ACTIVE_GRADE_IDS.length ? 'bem' : 'term', n };
 }
 
 /**

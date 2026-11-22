@@ -16,9 +16,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 // قاسم لعدد طبيعي ». Le récit ne promet que ce que la leçon fait vraiment ; si
 // elle change, le récit ET les captures suivent.
 // Les libellés vivent dans le namespace `marketing` (method.*). Les STATIONS
-// montrent les écrans RÉELS de la leçon qasim-adad-tabii (terrain de foot :
-// 15 joueurs en 3 équipes, puis 16 et un joueur dehors), capturés par
-// scripts/capture-methode.mjs + scripts/crop-methode.py → public/images/methode/lesson/.
+// montrent des captures d'écran de la plateforme (public/images/methode/lesson/).
 // Aucune image générée (décision du propriétaire, 2026-10-07) : le héros et le
 // sommet sont typographiques — sobres, professionnels.
 // Toute animation de déplacement se coupe sous prefers-reduced-motion.
@@ -216,7 +214,7 @@ function ActHeader({ act, index, reduce }) {
 // que le cadre DÉFILE d'elle-même pendant que la station traverse la vue :
 // l'élève-lecteur « parcourt » le module comme s'il le faisait défiler.
 const FRAME_MAX = 520;
-// Dimensions des captures (crop-methode.py) : réservent la place avant le
+// Dimensions des captures : réservent la place avant le
 // chargement, sinon la page saute sous le lecteur pendant le défilement.
 const SHOT_SIZE = {
   situation: [1400, 623], manipulate: [1400, 1267], observe: [1400, 1376], question: [1400, 447],

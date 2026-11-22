@@ -1,17 +1,14 @@
 /**
  * « مختبري » — WHERE a lesson sits in the four years (PURE). The lab shows the instruments of the lesson and of every lesson
  * BEFORE it (any grade), never of a lesson after it: a student never meets a tool of something he has not studied yet.
- * The order is the catalogue's: grade (1AM → 4AM), then the lesson's position (`lessonOrder.generated.json`).
+ * The order is the catalogue's: grade (6e → 3e), then the lesson's position (`lessonOrder.generated.json`).
  */
+import { ACTIVE_GRADE_IDS, getAllGrades } from '@smarter-academy/core';
 import ORDER from './lessonOrder.generated.json';
 
-export const GRADES = ['1am', '2am', '3am', '4am'];
-export const GRADE_NAMES = {
-  '1am': 'الأولى متوسط',
-  '2am': 'الثانية متوسط',
-  '3am': 'الثالثة متوسط',
-  '4am': 'الرابعة متوسط',
-};
+export const GRADES = [...ACTIVE_GRADE_IDS];
+/** The grade's name as the catalogue writes it — never a local table. */
+export const GRADE_NAMES = Object.fromEntries(getAllGrades().map((g) => [g.id, g.name]));
 
 const RANK = new Map();
 GRADES.forEach((g, gi) => (ORDER[g] ?? []).forEach((code, i) => RANK.set(code, { grade: g, rank: gi * 1000 + i })));

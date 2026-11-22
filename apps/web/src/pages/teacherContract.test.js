@@ -78,38 +78,11 @@ describe('l’espace enseignant est arabe, sans défaut français', () => {
   });
 
   it('le LECTEUR décide, jamais un rôle écrit en dur dans le moteur de leçon', () => {
-    // Le verrou et l'écriture de progression passent par learningViewer /
-    // moduleGate : aucun composant de leçon ne teste `role === 'teacher'`.
-    for (const rel of ['lessons/common/components/ModuleLayout.jsx', 'lessons/common/components/LessonIndex.jsx', 'lessons/common/hooks/useProgress.js']) {
+    // L'écriture de progression passe par learningViewer : aucun composant de leçon ne teste `role === 'teacher'`.
+    for (const rel of ['lessons/common/components/LessonIndex.jsx', 'lessons/common/hooks/useProgress.js']) {
       const code = readFileSync(resolve(src, rel), 'utf8');
       expect(code, `${rel} ne teste pas un rôle`).not.toMatch(/role === ['"](teacher|student)['"]/);
       expect(code).toMatch(/useLearningViewer|tracksProgress/);
-    }
-    const gate = readFileSync(resolve(src, 'lessons/common/utils/moduleGate.js'), 'utf8');
-    expect(gate).toMatch(/freeNavigation/);
-  });
-
-  it('le verrou des PARTIES passe par la même porte, jamais par un rôle', () => {
-    // §10 : une seule politique, pas des dizaines d'exceptions `if teacher`
-    // éparpillées. Le kit lit le lecteur ; la porte lit `freeNavigation`.
-    const step = readFileSync(resolve(src, 'lessons/common/utils/stepUnlock.js'), 'utf8');
-    expect(step).toMatch(/freeNavigation/);
-    expect(step).not.toMatch(/role === ['"](teacher|student)['"]/);
-
-    for (const rel of ['lessons/common/kit/ContentModule.jsx', 'lessons/common/kit/BossFinal.jsx']) {
-      const code = readFileSync(resolve(src, rel), 'utf8');
-      expect(code, `${rel} ne teste pas un rôle`).not.toMatch(/role === ['"](teacher|student)['"]/);
-      expect(code, `${rel} lit le lecteur`).toMatch(/useLearningViewer/);
-    }
-  });
-
-  it('aucune leçon ne verrouille une partie pour son propre compte', () => {
-    // Le corpus actif ne passe AUCUN `locked=` : tout remonte à ContentModule,
-    // seul point d'injection. Une leçon qui en poserait un rouvrirait un
-    // verrou par-dessus la politique et échapperait au lecteur.
-    for (const file of walk(resolve(src, 'lessons/moyen'))) {
-      const code = readFileSync(file, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
-      expect(code, `${file} verrouille une étape hors de la porte partagée`).not.toMatch(/locked=\{/);
     }
   });
 

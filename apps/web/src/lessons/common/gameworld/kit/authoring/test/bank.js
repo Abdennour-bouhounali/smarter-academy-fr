@@ -25,7 +25,7 @@ const keyOf = (x, y) => [x, y].sort((p, q) => p - q).join(';');
 /** A number standing alone in a text (not a piece of a longer number). */
 export const alone = (n) => new RegExp(`(?<![0-9])${n}(?![0-9])`);
 
-/** The grade folder of a lesson's bank (« 4am »), or null when it has none. */
+/** The grade folder of a lesson's bank (« 3e »), or null when it has none. */
 export function gradeOf(id) {
   if (!existsSync(PRACTICE)) return null;
   return readdirSync(PRACTICE).find((g) => existsSync(join(PRACTICE, g, id))) ?? null;
@@ -84,7 +84,8 @@ export function storiesOf({ exceptId = null } = {}) {
       } else if (name === 'story.js' && dir.endsWith('/world')) out.push(path);
     }
   };
-  walk(join(LESSONS, 'moyen'));
+  // no lesson folder exists before the first French lesson: no story to compare with
+  if (existsSync(join(LESSONS, 'college'))) walk(join(LESSONS, 'college'));
   return out
     .filter((file) => !exceptId || !file.includes(`/${exceptId}/world/`))
     .sort()

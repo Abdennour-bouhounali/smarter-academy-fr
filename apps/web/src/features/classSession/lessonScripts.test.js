@@ -1,8 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { toolsForLesson } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
-import { FAMILIES } from '../../lessons/common/launchkit/families';
-import { T } from '../../lessons/common/gameworld/divisorIsles/strings';
-import { SCRIPT } from '../../lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/qasim-adad-tabii/board/script';
 import {
   reviewCards,
   classLog,
@@ -26,102 +22,50 @@ import {
 } from './lessonScripts';
 
 describe('حصّة القسم — the rules revised before the lesson', () => {
-  const tools = toolsForLesson('qasim-adad-tabii');
+  // A neutral fixture in the shape of the net's tools and of the launch kit's families (both empty until Stage 2).
+  const tools = [
+    { id: '6e.t1.r01', grade: '6e', weight: 'core', lesson: { title: 'Leçon A' } },
+    { id: '6e.t1.r02', grade: '6e', weight: 'support', lesson: { title: 'Leçon B' } },
+    { id: '6e.t1.r03', grade: '6e', weight: 'core', lesson: { title: 'Leçon C' } },
+  ];
+  const families = {
+    '6e.t1.r01': {
+      name: 'Famille A',
+      icon: '➗',
+      rules: [
+        { id: 'a1', title: 'Règle A1' },
+        { id: 'a2', title: 'Règle A2' },
+      ],
+    },
+    '6e.t1.r02': { name: 'Famille B', icon: '✖️', rules: [{ id: 'b1', title: 'Règle B1' }] },
+  };
 
-  it('gives one card per rule the lesson will use, the core الكفاءة first', () => {
-    const cards = reviewCards(tools, FAMILIES);
-    expect(cards.map((c) => c.id)).toEqual(['division', 'rest', 'two-five', 'three-nine', 'four']);
+  it('gives one card per rule of the tools that have a family, the core الكفاءة first', () => {
+    const cards = reviewCards(tools, families);
+    expect(cards.map((c) => c.id)).toEqual(['a1', 'a2', 'b1']);
     expect(cards[0]).toMatchObject({
-      item: '1am.m3.r01',
-      family: 'القسمة الإقليدية',
+      item: '6e.t1.r01',
+      family: 'Famille A',
       weight: 'core',
       score: null,
-      lesson: 'القسمة الإقليدية',
-      grade: '1am',
+      lesson: 'Leçon A',
+      grade: '6e',
     });
-    for (const c of cards) {
-      expect(c.text.length).toBeGreaterThan(20);
-      expect(c.example.length).toBeGreaterThan(8);
-      expect(c.title).toBeTruthy();
-    }
   });
 
   it('puts first the الكفاءة the class missed most in the start test, with its count', () => {
-    const cards = reviewCards(tools, FAMILIES, [
-      { item: '1am.m3.r01', right: 3, total: 4 },
-      { item: '1am.m3.r02', right: 1, total: 4 },
+    const cards = reviewCards(tools, families, [
+      { item: '6e.t1.r01', right: 3, total: 4 },
+      { item: '6e.t1.r02', right: 1, total: 4 },
     ]);
-    expect(cards[0].item).toBe('1am.m3.r02');
+    expect(cards[0].item).toBe('6e.t1.r02');
     expect(cards[0].score).toEqual({ right: 1, total: 4 });
-    expect(cards.at(-1).item).toBe('1am.m3.r01');
+    expect(cards.at(-1).item).toBe('6e.t1.r01');
     expect(reviewCards(tools, {}, null)).toEqual([]); // a lesson whose prerequisites have no rule cards: nothing to revise
-  });
-
-  it('every example of a rule card is TRUE', () => {
-    for (const f of Object.values(FAMILIES))
-      for (const r of f.rules) {
-        const c = r.check;
-        if (c.a) {
-          expect(c.b * c.q + c.r, r.id).toBe(c.a);
-          expect(c.r).toBeLessThan(c.b);
-          expect(r.example).toContain(String(c.a));
-        }
-        if (c.diff != null) {
-          expect(c.x - c.y, r.id).toBe(c.diff);
-          expect(r.example).toContain(`${c.x} - ${c.y} = ${c.diff}`);
-        }
-        if (c.n) {
-          for (const k of c.yes) expect(c.n % k, `${c.n} ÷ ${k}`).toBe(0);
-          for (const k of c.no) expect(c.n % k).not.toBe(0);
-          expect(r.example).toContain(String(c.n));
-          if (c.sum)
-            expect(
-              String(c.n)
-                .split('')
-                .reduce((s, d) => s + Number(d), 0),
-            ).toBe(c.sum);
-        }
-      }
   });
 });
 
-describe('حصّة القسم — the script of the lesson', () => {
-  const script = SCRIPT;
-
-  it('follows the method: the class experiments and concludes BEFORE a rule is named — for each of the four rules', () => {
-    const kinds = script.steps.map((s) => s.kind);
-    expect(kinds[0]).toBe('situation');
-    expect(kinds.at(-1)).toBe('trace');
-    const names = script.steps.filter((s) => s.kind === 'name');
-    expect(names.map((s) => s.tablet)).toEqual(['qasim-baqi', 'qasim-jidaa', 'siyagh-mutakafia', 'wahid-wa-nafsuh']);
-    script.steps.forEach((s, i) => {
-      if (s.kind === 'name')
-        expect(['forge', 'ask', 'statements'], `before « ${s.tablet} » the class does something`).toContain(
-          script.steps[i - 1].kind,
-        );
-    });
-    for (const s of names) expect(T.tablets[s.tablet], s.tablet).toBeTruthy(); // one wording for the student's world and for the board
-    expect(script.steps.find((s) => s.kind === 'trace').tablets).toEqual(names.map((s) => s.tablet));
-    expect(new Set(script.steps.map((s) => s.id)).size).toBe(script.steps.length);
-  });
-
-  it('asks only what is true: every choice is proved by a bridge, every sentence by the equality', () => {
-    for (const s of script.steps.filter((x) => x.kind === 'ask')) {
-      expect(s.options.filter((o) => fills(s, o)).sort((x, y) => x - y)).toEqual([...s.answer].sort((x, y) => x - y));
-      expect(askRight(s, [...s.answer].reverse())).toBe(true);
-      expect(askRight(s, s.options)).toBe(false);
-      expect(askRight(s, s.answer.slice(1))).toBe(false);
-    }
-    const st = script.steps.find((x) => x.kind === 'statements');
-    expect(st.a).toBe(st.b * 20);
-    expect(st.items.map((it) => FORMS[it.form](st.a, st.b))).toEqual([true, false, true, false, true]);
-    for (const it of st.items) expect(it.text).toMatch(/120|6/);
-    const sit = script.steps[0];
-    expect(sit.bridge.a % sit.bridge.b).not.toBe(0); // the opening bridge does not hold: the question is real
-    const lab = script.steps.find((x) => x.kind === 'bridges');
-    expect(lab.suggest.some((c) => c.a % c.b === 0) && lab.suggest.some((c) => c.a % c.b !== 0)).toBe(true);
-  });
-
+describe('حصّة القسم — the helpers of a script', () => {
   it('lets the class conclude only on its own evidence: four bridges, one that held, one that crumbled', () => {
     let log = [];
     for (const c of [
@@ -141,7 +85,6 @@ describe('حصّة القسم — the script of the lesson', () => {
     expect(classRuleText({ q: 'r', c: 'zero' })).toBe('يثبت الجسر عندما: باقي قسمة طول الهوّة على طول اللوح يساوي 0.');
     expect(missingEvidence(classLog(classLog([], { a: 15, b: 3 }), { a: 16, b: 3 }))).toBe('more');
   });
-
   it('speaks in the voice of the class and writes only true equalities', () => {
     expect(classExplain({ q: 'r', c: 'zero' }, 18, 4)).toBe(
       'باقي قسمة 18 على 4 هو 2، و 2 لا يساوي 0: قاعدتنا تقول إنّ الجسر ينهار.',
@@ -159,13 +102,11 @@ describe('حصّة القسم — the script of the lesson', () => {
     ]);
     expect(proofOf('a_divides_b', 120, 6)).toBe('لوح طوله 120 لا يدخل في هوّة من 6 خانات.');
     expect([1, 2, 3, 11].map(leftCells)).toEqual(['بقيت خانة واحدة', 'بقيت خانتان', 'بقيت 3 خانات', 'بقيت 11 خانة']);
-    const st = script.steps.find((x) => x.kind === 'statements');
-    for (const it2 of st.items) expect(proofOf(it2.form, st.a, st.b), it2.form).toMatch(/120/);
+    for (const form of Object.keys(FORMS)) expect(proofOf(form, 120, 6), form).toMatch(/120/);
     expect(proofOf('b_divides_a', 120, 6)).toBe('$120 = 6 \\times 20$: الباقي 0.');
     expect(proofOf('b_multiple_of_a', 120, 6)).toContain('240');
   });
-
-  it('hides the words to recall, never a formula — and every word to recall is really in its rule', () => {
+  it('hides the words to recall, never a formula; the class log keeps the last LOG_MAX bridges', () => {
     expect(blanks('$b$ قاسم للعدد $a$ معناه', ['قاسم'])).toEqual([
       { t: 'math', v: '$b$' },
       { t: 'text', v: ' ' },
@@ -175,32 +116,46 @@ describe('حصّة القسم — the script of the lesson', () => {
       { t: 'text', v: ' معناه' },
     ]);
     expect(blanks('لا شيء', [])).toEqual([{ t: 'text', v: 'لا شيء' }]);
-    for (const s of script.steps.filter((x) => x.kind === 'name')) {
-      const t = T.tablets[s.tablet];
-      const lines = [...t.lines, ...(t.list ?? [])];
-      for (const w of s.recall)
-        expect(
-          lines.some((l) => blanks(l, [w]).some((p) => p.t === 'blank')),
-          `« ${w} » in ${s.tablet}`,
-        ).toBe(true);
-    }
-    for (const s of script.steps) expect(s.cue, s.id).toBeTruthy(); // every step gives the teacher one oral question
-    expect(groupsOf(script).map((g) => g.steps.length)).toEqual([4, 2, 2, 2, 1]);
-    expect(groupsOf(script).map((g) => g.kind)).toEqual(['name', 'name', 'name', 'name', 'trace']);
-    expect(groupsOf(script).flatMap((g) => g.steps)).toEqual(script.steps.map((_, k) => k)); // every step is on the rail, once
-    // the copybook is ONE group, whatever its number of pages
-    const pages = { steps: [...script.steps, { id: 'trace-x', kind: 'trace', chapter: 'نكتب' }] };
-    expect(groupsOf(pages).map((g) => g.kind)).toEqual(['name', 'name', 'name', 'name', 'trace']);
-    expect(groupsOf(pages).at(-1).steps).toHaveLength(2);
     let long = [];
     for (let b = 2; b <= 12; b += 1) long = classLog(long, { a: 60, b });
     expect(long).toHaveLength(LOG_MAX);
     expect(long.at(-1).b).toBe(12);
+  });
+});
+
+describe('حصّة القسم — the rail of a script', () => {
+  // A neutral script: two keys found then named, and a copybook of two pages.
+  const script = {
+    steps: [
+      { id: 's1', kind: 'situation', chapter: 'Découvrir' },
+      { id: 'k1', kind: 'ask', chapter: 'Découvrir', a: 12, options: [3, 5, 6], answer: [3, 6] },
+      { id: 'n1', kind: 'name', chapter: 'Nommer', tablet: 'regle-1' },
+      { id: 'k2', kind: 'forge', chapter: 'Découvrir' },
+      { id: 'n2', kind: 'name', chapter: 'Nommer', tablet: 'regle-2' },
+      { id: 't1', kind: 'trace', chapter: 'Écrire' },
+      { id: 't2', kind: 'trace', chapter: 'Écrire' },
+    ],
+  };
+
+  it('an ask step is right only with all of its answers and nothing else', () => {
+    const ask = script.steps[1];
+    expect(ask.options.filter((o) => fills(ask, o))).toEqual([3, 6]);
+    expect(askRight(ask, [6, 3])).toBe(true);
+    expect(askRight(ask, ask.options)).toBe(false);
+    expect(askRight(ask, [3])).toBe(false);
+  });
+
+  it('one group per key, and ONE group for the copybook whatever its number of pages', () => {
+    expect(groupsOf(script).map((g) => [g.kind, g.steps])).toEqual([
+      ['name', [0, 1, 2]],
+      ['name', [3, 4]],
+      ['trace', [5, 6]],
+    ]);
     expect(
       railOf(script)
         .filter((r) => r.first)
         .map((r) => r.chapter),
-    ).toEqual(['نكتشف', 'نستنتج', 'نسمّي', 'نكتشف', 'نسمّي', 'نكتشف', 'نسمّي', 'نكتشف', 'نسمّي', 'نكتب']);
+    ).toEqual(['Découvrir', 'Nommer', 'Découvrir', 'Nommer', 'Écrire']);
   });
 });
 

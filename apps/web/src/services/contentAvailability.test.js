@@ -26,11 +26,6 @@ describe('l’autorité de publication côté élève', () => {
     expect(source).toMatch(/isAvailable\s*=\s*lesson\.status === 'available' && !isLessonClosed/);
   });
 
-  it('la feuille de route d’une leçon verrouille un module retiré', () => {
-    const source = read('src/lessons/common/components/LessonIndex.jsx');
-    expect(source).toContain('isModuleClosed(config.id, module.number)');
-  });
-
   it('le contexte reste OUVERT tant que la réponse n’est pas arrivée', () => {
     // Politique délibérée : verrouiller sur une requête en vol enfermerait
     // l'élève hors de son parcours pour une raison purement technique. Le
@@ -69,7 +64,6 @@ describe('le cadre de page partagé n’a pas régressé', () => {
   const PAGES = [
     ['Courses', 'src/pages/Courses.jsx'],
     ['Lesson Index', 'src/lessons/common/components/LessonIndex.jsx'],
-    ['Module', 'src/lessons/common/components/ModuleLayout.jsx'],
     ['Exercice', 'src/pages/student/practice/PracticeSession.jsx'],
     ['Espace pratique', 'src/pages/student/practice/PracticeHub.jsx'],
     ['Progression', 'src/pages/student/Progression.jsx'],

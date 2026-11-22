@@ -6,6 +6,7 @@
  */
 import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight, BookOpenCheck, Lightbulb, UserRound, Users, X } from 'lucide-react';
+import { getAllGrades } from '@smarter-academy/core';
 import MathText from '../../lessons/common/components/MathText';
 import { ClassWindow, Speaker, BoardTools, BoardLayers, useBoardTools, BL } from './board';
 import { callName, teamsOf, teamOfStudent } from './session';
@@ -28,13 +29,9 @@ const L = {
   exit: 'خروج',
   core: 'أساسية للدرس',
   pickTitle: 'من يقرأ القاعدة؟ اضغط طاولته.',
-  grade: {
-    '1am': 'السنة الأولى متوسط',
-    '2am': 'السنة الثانية متوسط',
-    '3am': 'السنة الثالثة متوسط',
-    '4am': 'السنة الرابعة متوسط',
-  },
 };
+/** A grade's name as the catalogue writes it — never a local table. */
+const GRADE_NAMES = Object.fromEntries(getAllGrades().map((g) => [g.id, g.name]));
 
 export default function RulesReview({ cards, students, seating, readers, onReader, onLesson, onExit }) {
   const [i, setI] = useState(0);
@@ -128,7 +125,7 @@ export default function RulesReview({ cards, students, seating, readers, onReade
             <i>{card.icon}</i> {card.family}
           </span>
           <span className="cs-chip">
-            {L.from}: {card.lesson} · {L.grade[card.grade] ?? ''}
+            {L.from}: {card.lesson} · {GRADE_NAMES[card.grade] ?? ''}
           </span>
           {card.weight === 'core' && <span className="cs-chip cs-chip--core">{L.core}</span>}
           {card.score && (

@@ -5,16 +5,19 @@
  * later lesson is not listed at all (not even locked).
  *
  * To add an instrument: write `tools/<Name>.jsx` (props: { a, b, setA, setB, play, note }), add its entry here with the code
- * of the lesson that introduces it and that lesson's exact catalogue title (`registry.test.js` checks both), its number
- * ranges, and 2–3 « جرّب » quests in `logic.js › QUESTS`.
+ * of the lesson that introduces it (`lesson`; its title is the catalogue's), its number ranges, and 2–3 « جرّب » quests in
+ * `logic.js › QUESTS`.
+ *
+ * The French catalogue has no lesson yet (2026-11-22): every instrument is kept with `lesson: null` — listed nowhere
+ * until a French lesson introduces it. The Algerian tags are in git (`git show 049380e:<this file>`).
  */
+import { getLessonById } from '@smarter-academy/core';
 import { GRADES, GRADE_NAMES, compareLessons, isReached, placeOf } from './order';
 
 export const TOOLS = [
   {
     id: 'rows',
-    lesson: 'qasim-adad-tabii',
-    lessonTitle: 'التعرّف على قاسم لعدد طبيعي',
+    lesson: null,
     icon: '🟡',
     name: 'صفوف القسمة',
     hint: 'رتّب الحبّات في صفوف متساوية: هل يبقى شيء؟',
@@ -25,8 +28,7 @@ export const TOOLS = [
   },
   {
     id: 'jumps',
-    lesson: 'qasim-adad-tabii',
-    lessonTitle: 'التعرّف على قاسم لعدد طبيعي',
+    lesson: null,
     icon: '🦘',
     name: 'قفزات المضاعفات',
     hint: 'اقفز بخطوات متساوية من 0: هل تصل إلى الراية تمامًا؟',
@@ -37,8 +39,7 @@ export const TOOLS = [
   },
   {
     id: 'sentences',
-    lesson: 'qasim-adad-tabii',
-    lessonTitle: 'التعرّف على قاسم لعدد طبيعي',
+    lesson: null,
     icon: '🗣️',
     name: 'آلة الجمل الأربع',
     hint: 'أربع جمل، معنى واحد: صحيحة معًا أو خاطئة معًا.',
@@ -49,8 +50,7 @@ export const TOOLS = [
   },
   {
     id: 'divisors',
-    lesson: 'qawasim-adad-tabii',
-    lessonTitle: 'قواسم عدد طبيعي',
+    lesson: null,
     icon: '🌈',
     name: 'قوس القواسم',
     hint: 'اكشف كلّ قواسم عدد: كلّ قاسم له رفيق.',
@@ -61,8 +61,7 @@ export const TOOLS = [
   },
   {
     id: 'planks',
-    lesson: 'khawass-qawasim',
-    lessonTitle: 'خواص قواسم عدد طبيعي',
+    lesson: null,
     icon: '🪵',
     name: 'اللوح المشترك',
     hint: 'غيّر طول اللوح: أيّ الأطوال يملؤها تمامًا؟',
@@ -73,8 +72,7 @@ export const TOOLS = [
   },
   {
     id: 'common',
-    lesson: 'qasim-mushtarak-akbar',
-    lessonTitle: 'القاسم المشترك الأكبر لعددين طبيعيين',
+    lesson: null,
     icon: '🤝',
     name: 'القواسم المشتركة',
     hint: 'قواسم عددين جنبًا إلى جنب: أيّها مشترك، وأيّها الأكبر؟',
@@ -85,8 +83,7 @@ export const TOOLS = [
   },
   {
     id: 'lists',
-    lesson: 'tayin-pgcd',
-    lessonTitle: 'تعيين القاسم المشترك الأكبر لعددين طبيعيين',
+    lesson: null,
     icon: '📋',
     name: 'مِنضدة القائمتين',
     hint: 'اكتب قواسم عددين زوجًا زوجًا، جنبًا إلى جنب: أين تلتقي القائمتان؟',
@@ -97,8 +94,7 @@ export const TOOLS = [
   },
   {
     id: 'euclid',
-    lesson: 'bahth-pgcd',
-    lessonTitle: 'البحث عن القاسم المشترك الأكبر لعددين طبيعيين',
+    lesson: null,
     icon: '🟩',
     name: 'مربّعات إقليدس',
     hint: 'اقطع من المستطيل أكبر مربّع ممكن، ثمّ أعد: آخر مربّع يكشف السرّ.',
@@ -111,8 +107,7 @@ export const TOOLS = [
     // three faces on two numbers of the student's own: the two lists of divisors and what is in both, the divisions one
     // after another, one number tried on both — facts only; neither the tile nor the instrument names a key of its lesson
     id: 'duo',
-    lesson: 'awwaliyan-fima-baynahuma',
-    lessonTitle: 'العددان الأوّليّان فيما بينهما',
+    lesson: null,
     icon: '🔬',
     name: 'مِجهر العددين',
     hint: 'انظر إلى عددين من ثلاث جهات: قواسمهما، قسماتهما المتتالية، وعدد تختبره عليهما معًا.',
@@ -123,8 +118,7 @@ export const TOOLS = [
   },
   {
     id: 'paper',
-    lesson: 'qisma-iqlidiya-baqi',
-    lessonTitle: 'القسمة الإقليدية',
+    lesson: null,
     icon: '📝',
     name: 'القسمة على الورقة',
     hint: 'القسمة كما تُكتب على الورقة، خطوة خطوة، بأعدادك أنت.',
@@ -135,8 +129,7 @@ export const TOOLS = [
   },
   {
     id: 'bracket',
-    lesson: 'qisma-iqlidiya-hasr',
-    lessonTitle: 'القسمة الإقليدية وحصر حاصل القسمة',
+    lesson: null,
     icon: '📏',
     name: 'مسطرة الحصر',
     hint: 'ضع الألواح واحدًا بعد الآخر: كم لوحًا كاملًا يدخل؟ وكم لوحًا يلزم؟',
@@ -147,8 +140,7 @@ export const TOOLS = [
   },
   {
     id: 'rules',
-    lesson: 'qawaid-qabiliyat-qisma',
-    lessonTitle: 'قواعد قابلية القسمة',
+    lesson: null,
     icon: '💡',
     name: 'كاشف قابلية القسمة',
     hint: 'أدِر الأرقام كقفل: أيّ المصابيح يضيء؟',
@@ -162,8 +154,7 @@ export const TOOLS = [
     // where k divides both, the strip regroups and the fraction is written in pieces — facts only; neither the tile nor
     // the instrument names a key of its lesson
     id: 'strip',
-    lesson: 'ikhtizal-kasr',
-    lessonTitle: 'اختزال كسر',
+    lesson: null,
     icon: '🎞️',
     name: 'شريط الكسر',
     hint: 'كسر من عندك على شريط مضاء: قطعة بطول تختاره، هل تقع مفاصلها حيث ينتهي الضوء وحيث ينتهي الشريط؟',
@@ -177,8 +168,7 @@ export const TOOLS = [
     // places; once he tried the greatest whole square and the next, the court is written — √a, or between two whole
     // numbers and to 0,01. It names the sign √ (the lab opens after the lesson): it is NOT safe before the lesson's keys
     id: 'court',
-    lesson: 'jidhr-tarbii',
-    lessonTitle: 'الجذر التربيعي لعدد موجب',
+    lesson: null,
     icon: '🔲',
     name: 'ساحة العدد',
     hint: 'رتّب بلاطات ساحتك في مربّع بضلع تختاره: أيّ مربّع كامل يتّسع لها، وأين يقع ضلعها؟',
@@ -192,8 +182,7 @@ export const TOOLS = [
     // numerator his hand sweeps: the platform holds p × p pieces, the court a × b × b — the drawing and the two counts say
     // which is more and by how many, and the nearest rod he reached is kept. Facts only: it names no key of its lesson
     id: 'piece',
-    lesson: 'natiqa-ghayr-natiqa',
-    lessonTitle: 'الأعداد الناطقة والأعداد غير الناطقة',
+    lesson: null,
     icon: '🟦',
     name: 'منصّة الكسر',
     hint: 'مقياس طوله كسر على ساحتك: قطّع البلاطة قطعًا صغيرة، وقارن ما تحمله المنصّة بما تحمله الساحة.',
@@ -228,7 +217,7 @@ export function toolsFor(lesson, { earlierOnly = false } = {}) {
       name: GRADE_NAMES[grade],
       lessons: codes.map((code) => ({
         code,
-        title: earlier.find((t) => t.lesson === code).lessonTitle,
+        title: getLessonById(code)?.title ?? code,
         tools: earlier.filter((t) => t.lesson === code),
       })),
     };

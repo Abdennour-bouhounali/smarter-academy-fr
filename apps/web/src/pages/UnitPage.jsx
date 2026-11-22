@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { BookOpen, Compass, Wand2, ListChecks, Landmark, Lock, ChevronDown, Flag } from 'lucide-react';
-import { getUnitById, getLessonById, formatTextbookPages } from '@smarter-academy/core';
+import { getUnitById, getLessonById } from '@smarter-academy/core';
 import { getLessonProgress } from '../lessons/common/utils/progress/getLessonProgress';
 import { getTotalModules, isLessonBuilt } from '../lessons/registry';
 import { useLessonConfig } from '../lessons/useLessonConfig';
@@ -32,7 +32,6 @@ import { StatusDot, ProgressLine, minutesOf, tileKind } from '../components/stud
  * never blocking — its labs, its محاور for the teacher) are folded, one tap away: reduced, never deleted.
  *
  * Everything comes from the catalogue (packages/core) and the lesson.config.js files: the page writes no content.
- * The textbook reference is shown to the TEACHER only (a student is never sent to the book).
  *
  * A STUDENT of a converted unit (owner, 2026-11-09) sees `UnitMissionView` instead (unit/unitMissions.js); the teacher
  * keeps THIS page.
@@ -87,7 +86,6 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
   const isSynthesis = lesson.kind === 'synthesis';
   const points = lesson.learningPoints;
   const mastered = points.filter((lp) => resolveMasteryState(mastery.get(lp.id)) === 'mastered').length;
-  const textbookPages = formatTextbookPages(lesson.textbookRef?.pages);
   const minutes = minutesOf(lesson.duration);
   const kind = !available ? 'soon' : tileKind('open', progressPercent);
   const [open, setOpen] = useState(next && !isTeacher);
@@ -246,10 +244,6 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
               )}
             </section>
           </div>
-          {/* The textbook page is the TEACHER's reference only: a student is never sent to the book. */}
-          {isTeacher && textbookPages && (
-            <p className="font-inter text-xs text-nav-muted">{t('unit.textbookPages', { pages: textbookPages })}</p>
-          )}
         </div>
       </div>
       {available && <ProgressLine percent={progressPercent} />}
@@ -378,11 +372,11 @@ export default function UnitPage() {
                 ))}
               </ul>
             </details>
-            {unit.challenge?.textAr && (
+            {unit.challenge?.text && (
               <details className={`group ${FOLD}`} data-unit-challenge>
                 <summary className={FOLD_HEAD}>
                   <Flag className="h-4 w-4 text-nav-muted" aria-hidden="true" />
-                  {unit.challenge.titleAr ?? t('unit.challenge')}
+                  {unit.challenge.title ?? t('unit.challenge')}
                   <ChevronDown
                     className="ms-auto h-4 w-4 text-nav-muted transition-transform group-open:rotate-180"
                     aria-hidden="true"
@@ -390,40 +384,30 @@ export default function UnitPage() {
                 </summary>
                 <div className="px-4 pb-4">
                   <p className="text-sm leading-relaxed text-nav-ink">
-                    <MathLabel>{unit.challenge.textAr}</MathLabel>
+                    <MathLabel>{unit.challenge.text}</MathLabel>
                   </p>
                   <UnitOpenerFigure code={unit.id} slot="challenge" />
                   <span className="mt-2 block text-xs text-nav-muted">{t('unit.challengeNote')}</span>
                 </div>
               </details>
             )}
-            {unit.aside?.textAr && (
+            {unit.aside?.text && (
               <details className={`group ${FOLD}`}>
                 <summary className={FOLD_HEAD}>
                   <BookOpen className="h-4 w-4 text-nav-muted" aria-hidden="true" />
-                  {unit.aside.titleAr} — {unit.aside.captionAr}
+                  {unit.aside.title} — {unit.aside.caption}
                   <ChevronDown
                     className="ms-auto h-4 w-4 text-nav-muted transition-transform group-open:rotate-180"
                     aria-hidden="true"
                   />
                 </summary>
                 <div className="px-4 pb-4 text-sm leading-relaxed text-nav-ink">
-                  <MathLabel>{unit.aside.textAr}</MathLabel>
+                  <MathLabel>{unit.aside.text}</MathLabel>
                   <UnitOpenerFigure code={unit.id} slot="aside" />
                 </div>
               </details>
             )}
           </div>
-          {isTeacher && unit.textbook && (
-            <p className="flex items-center gap-1.5 font-inter text-xs text-nav-muted">
-              <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
-              {t('unit.textbookRef', {
-                title: unit.textbook.title,
-                unit: unit.textbook.unit,
-                pages: formatTextbookPages(unit.textbook.pages),
-              })}
-            </p>
-          )}
         </header>
 
         <section className="space-y-3">

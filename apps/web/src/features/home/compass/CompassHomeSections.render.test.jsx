@@ -1,32 +1,40 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import '../../../i18n';
 import CompassHomeSections from './CompassHomeSections';
 
+// The delivered net and school year are EMPTY until Stage 2: the page is rendered on the neutral compass fixture.
+vi.mock('@smarter-academy/core/curriculum/fr/net/learningNet.js', async (importOriginal) =>
+  (await import('../../compass/test/compassFixture.js')).mockLearningNet(importOriginal));
+vi.mock('@smarter-academy/core/compass/scope.js', async (importOriginal) =>
+  (await import('../../compass/test/compassFixture.js')).mockScope(importOriginal));
+vi.mock('@smarter-academy/core/curriculum/fr/calendar/schoolCalendar.js', async (importOriginal) =>
+  (await import('../../compass/test/compassFixture.js')).mockSchoolCalendar(importOriginal));
+
 const TODAY = '2026-11-16';
-const RESUME = { course: { id: 'talis-hisab-atwal', title: 'خاصية طالس' }, progress: 40, resumePath: '/courses/x' };
-const AVAIL = { '4am.m1.r06': [1, 2], '4am.m1.r01': [1, 2] };
+const RESUME = { course: { id: 'l1', title: 'Leçon l1' }, progress: 40, resumePath: '/courses/x' };
+const AVAIL = { '3e.m1.r02': [1, 2], '3e.m1.r01': [1, 2] };
 
 function render(compass, extra = {}) {
   return renderToStaticMarkup(
     <MemoryRouter>
-      <CompassHomeSections compass={compass} gradeId="4am" today={TODAY} resume={RESUME} visits={{}} classroom={null}
+      <CompassHomeSections compass={compass} gradeId="3e" today={TODAY} resume={RESUME} visits={{}} classroom={null}
         challenge={<a href="/espace/defi" data-challenge>defi</a>} {...extra} />
     </MemoryRouter>,
   );
 }
 
 const LAST = {
-  uuid: 'u', finishedAt: '2026-11-15T10:00:00Z', pointerLesson: 'jidhr-tarbii',
-  targets: ['4am.m1.r01', '4am.m1.r06'],
+  uuid: 'u', finishedAt: '2026-11-15T10:00:00Z', pointerLesson: 'l2',
+  targets: ['3e.m1.r01', '3e.m1.r02'],
   answers: [
-    { itemId: '4am.m1.r01', level: 1, correct: true, unsure: false },
-    { itemId: '4am.m1.r06', level: 1, correct: false, unsure: false },
-    { itemId: '4am.m1.r01', level: 2, correct: true, unsure: false },
-    { itemId: '4am.m1.r06', level: 1, correct: false, unsure: false },
+    { itemId: '3e.m1.r01', level: 1, correct: true, unsure: false },
+    { itemId: '3e.m1.r02', level: 1, correct: false, unsure: false },
+    { itemId: '3e.m1.r01', level: 2, correct: true, unsure: false },
+    { itemId: '3e.m1.r02', level: 1, correct: false, unsure: false },
   ],
-  bands: { '4am.m1.r01': 'solid', '4am.m1.r06': 'start' },
+  bands: { '3e.m1.r01': 'solid', '3e.m1.r02': 'start' },
 };
 
 describe('CompassHomeSections — l’accueil mené par بوصلتي', () => {
@@ -53,10 +61,10 @@ describe('CompassHomeSections — l’accueil mené par بوصلتي', () => {
     expect(html).toContain('data-compass-map');
     expect(html).toContain('data-compass-year');
     expect(html).toContain('data-compass-retake="later"');
-    expect(html).toContain('الجذر التربيعي لعدد موجب');
+    expect(html).toContain('Leçon l2');
   });
 
-  it('jauge pas encore ouverte (1AM–3AM) : la même page sans la jauge — leçon, défi, bande de l’année', () => {
+  it('jauge pas encore ouverte : la même page sans la jauge — leçon, défi, bande de l’année', () => {
     const html = render({ enabled: false });
     expect(html).toContain('data-compass-home="off"');
     expect(html).toContain('data-compass-lesson');
@@ -67,7 +75,7 @@ describe('CompassHomeSections — l’accueil mené par بوصلتي', () => {
 
   it('une tâche dont la leçon a été ouverte après la jauge est cochée', () => {
     const html = render({ enabled: true, active: null, last: LAST, availability: AVAIL }, {
-      visits: { 'jidhr-tarbii': Date.parse('2026-11-16T08:00:00Z') },
+      visits: { l2: Date.parse('2026-11-16T08:00:00Z') },
     });
     expect(html).toContain('data-week-task="done"');
   });

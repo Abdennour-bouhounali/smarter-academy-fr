@@ -1,7 +1,7 @@
 import CoordPlane from '../../lessons/common/components/CoordPlane';
 import StatementFigure from '../../lessons/common/components/StatementFigure';
 import RichText from './RichText';
-import ProblemTable from '../../lessons/common/problems/ProblemTable';
+import ProblemTable from '../../lessons/common/components/ProblemTable';
 import PracticeLab from './PracticeLab';
 
 /**

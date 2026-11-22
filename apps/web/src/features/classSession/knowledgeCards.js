@@ -4,8 +4,8 @@
  * الكفاءة »; CLASS_SESSION.md §5quinquies). The cards are the lesson's OWN knowledge (`LESSON_KNOWLEDGE` of the lesson,
  * the single source the student's « بطاقتي » reads) — imported, never retyped. Pure helpers.
  */
-import { getLessonPath } from '@smarter-academy/core';
-import { reviewLinksForLesson } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { getAllGrades, getLessonPath } from '@smarter-academy/core';
+import { reviewLinksForLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { hasPackPart, loadPackPart } from '../../lessons/lessonPack';
 
 /** Has the lesson knowledge sheets to show? It says so in its own pack (`lesson.pack.js › knowledge`). */
@@ -40,12 +40,8 @@ export function cardsOf(knowledge) {
 }
 
 const VIA = { requires: 'يحتاج إلى', extends: 'يوسّع', consolidates: 'يثبّت' };
-const GRADE = {
-  '1am': 'السنة الأولى متوسط',
-  '2am': 'السنة الثانية متوسط',
-  '3am': 'السنة الثالثة متوسط',
-  '4am': 'السنة الرابعة متوسط',
-};
+/** A grade's name as the catalogue writes it — never a local table. */
+const GRADE = Object.fromEntries(getAllGrades().map((g) => [g.id, g.name]));
 /**
  * The earlier lessons the new الكفاءة is connected with (the learning net), core links first — each with its direct
  * link when the lesson is published. For the teacher: one tap to go and look at what the class learnt before.
@@ -56,11 +52,11 @@ export function earlierLessons(lessonCode) {
       const item = g.items[0] ?? {};
       return {
         code: g.lesson.code,
-        title: g.lesson.titleAr,
+        title: g.lesson.title,
         grade: GRADE[g.lesson.grade] ?? g.lesson.grade,
         via: VIA[item.via] ?? VIA.requires,
         core: item.weight !== 'support',
-        what: item.textAr ?? null,
+        what: item.text ?? null,
         path: g.lesson.status === 'available' ? (getLessonPath(g.lesson.code) ?? null) : null,
       };
     })

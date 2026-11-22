@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
@@ -8,6 +8,15 @@ import { getResumeModulePath } from './getResumeLesson';
 // Les configs COMPLÈTES, lues ici directement (un test peut les lire toutes) : le registre, lui,
 // répond depuis l'index généré — ce test vérifie que les deux disent la même chose.
 const CONFIGS = Object.values(import.meta.glob('../../../*/*/**/lesson.config.js', { eager: true, import: 'LESSON_CONFIG' }));
+
+// The generated index is EMPTY until the first French lesson: a neutral index of two lessons of three modules each —
+// one v2 (a world in its pack), one still on its module pages.
+vi.mock('../../../lessonIndex.generated.json', () => {
+  const modules = [[1, 'premier'], [2, 'deuxieme'], [3, 'troisieme']];
+  const line = (id, pack) => ({ id, level: 'college', grade: '3e', chapter: 'nombres_calculs', modules, ...(pack ? { pack } : {}) });
+  return { default: { lessons: [line('lecon-pages'), line('lecon-monde', { world: 'divisor-isles' })] } };
+});
+const BASE = '/courses/college/3e/nombres_calculs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const srcRoot = resolve(here, '../../../..');
@@ -35,8 +44,7 @@ const srcRoot = resolve(here, '../../../..');
 const fixtureLessonId = getAnyRegisteredLessonId();
 
 describe.skipIf(!fixtureLessonId)('getModulePath — le pont entre numéro et route', () => {
-  const config = CONFIGS.find((c) => c.id === fixtureLessonId) ?? null;
-  const secondModule = config?.modules?.find((m) => Number(m.number) === config.modules[0]?.number + 1) ?? config?.modules?.[1];
+  const secondModule = { number: 2, path: `${BASE}/${fixtureLessonId}/deuxieme` };
 
   it('rend le chemin par SLUG du module, jamais son numéro', () => {
     const path = getModulePath(fixtureLessonId, secondModule.number);
@@ -56,7 +64,7 @@ describe.skipIf(!fixtureLessonId)('getModulePath — le pont entre numéro et ro
   });
 
   it('rend, pour CHAQUE module de CHAQUE leçon, exactement le chemin que la route déclare', () => {
-    expect(CONFIGS.length).toBeGreaterThan(0);
+    // every config of the tree (none before the first French lesson) agrees with the index
     for (const c of CONFIGS) {
       for (const m of c.modules) expect(getModulePath(c.id, m.number), `${c.id} › ${m.number}`).toBe(m.path);
       expect(getTotalModules(c.id), c.id).toBe(c.modules.length);
@@ -70,7 +78,8 @@ describe('a v2 lesson (a world in its pack) is resumed on its home, never on a m
   const paged = getBuiltLessons().map((l) => l.id).find((id) => !lessonPackFlags(id).world && getTotalModules(id) > 1);
 
   it('there are v2 lessons to check', () => {
-    expect(worlds.length).toBeGreaterThanOrEqual(6);
+    expect(worlds).toEqual(['lecon-monde']);
+    expect(paged).toBe('lecon-pages');
   });
 
   it.each(worlds)('%s: no module address (they only redirect to the world)', (id) => {

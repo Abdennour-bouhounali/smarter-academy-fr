@@ -9,10 +9,10 @@
  */
 import {
   SCHOOL_YEARS, schoolYearOf, defaultPointer, nextMilestone, upcomingLessons, eventsFor, addDays, daysBetween,
-} from '@smarter-academy/core/curriculum/dz/calendar/schoolCalendar.js';
+} from '@smarter-academy/core/curriculum/fr/calendar/schoolCalendar.js';
 import { buildScope, prereqsOf, itemInfo } from '@smarter-academy/core/compass/scope.js';
 import { replay, bandsOf, bandCounts, priorities, BANDS } from '@smarter-academy/core/compass/engine.js';
-import { getLesson } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { getLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 
 export { BANDS };
 
@@ -53,7 +53,7 @@ export function pointerChoices(year, suggested, before = 4, after = 1) {
   at = Math.max(0, at);
   const pick = order[at];
   return order.slice(Math.max(0, at - before), at + after + 1).map((code) => ({
-    code, titleAr: getLesson(code)?.titleAr ?? code, suggested: code === pick,
+    code, title: getLesson(code)?.title ?? code, suggested: code === pick,
   }));
 }
 
@@ -106,7 +106,7 @@ export function weekV0(report, year, pointer) {
   if (report.also[0]) tasks.push({ kind: 'revise', item: report.also[0] });
   const next = year ? upcomingLessons(year.progression, pointer, 1).find((c) => getLesson(c)?.kind !== 'synthesis') : null;
   const lesson = next ? getLesson(next) : null;
-  if (lesson) tasks.push({ kind: 'prepare', lesson: { code: lesson.code, titleAr: lesson.titleAr } });
+  if (lesson) tasks.push({ kind: 'prepare', lesson: { code: lesson.code, title: lesson.title } });
   return tasks.slice(0, 3);
 }
 

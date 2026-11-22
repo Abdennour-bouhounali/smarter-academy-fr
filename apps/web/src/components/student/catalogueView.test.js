@@ -1,5 +1,4 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { courseLevels } from '@smarter-academy/core';
 import {
   CATALOGUE_VIEW_STORAGE_KEY,
   DEFAULT_CATALOGUE_VIEW,
@@ -8,9 +7,10 @@ import {
   readCatalogueView,
   unitByLessonId,
 } from './catalogueView';
+import { fixtureGrade as grade } from './test/catalogueFixture';
 
-const grade4am = courseLevels.find((l) => l.id === 'moyen').grades.find((g) => g.id === '4am');
-const allLessons = grade4am.chapters.flatMap((c) => c.lessons);
+
+const allLessons = grade.chapters.flatMap((c) => c.lessons);
 
 describe('normalizeCatalogueView', () => {
   it('garde un choix valide et remplace le reste par le défaut', () => {
@@ -32,7 +32,7 @@ describe('readCatalogueView', () => {
 
 describe('groupLessonsByChapter', () => {
   it('montre chaque leçon du niveau exactement une fois, unité par unité, synthèse en dernier', () => {
-    const sections = groupLessonsByChapter(grade4am.chapters, allLessons);
+    const sections = groupLessonsByChapter(grade.chapters, allLessons);
     const shown = sections.flatMap((s) => s.blocks.flatMap((b) => b.lessons.map((l) => l.id)));
     expect(new Set(shown).size).toBe(shown.length);
     expect(shown.length).toBe(allLessons.length);
@@ -43,7 +43,7 @@ describe('groupLessonsByChapter', () => {
   });
 
   it('ne garde que les leçons visibles et efface les unités vides', () => {
-    const chapter = grade4am.chapters[0];
+    const chapter = grade.chapters[0];
     const firstUnit = chapter.units[0];
     const sections = groupLessonsByChapter([chapter], firstUnit.lessons.slice(0, 1));
     expect(sections).toHaveLength(1);
@@ -62,8 +62,8 @@ describe('groupLessonsByChapter', () => {
 
 describe('unitByLessonId', () => {
   it('rattache leçons et synthèse à leur unité', () => {
-    const map = unitByLessonId(grade4am.chapters);
-    const unit = grade4am.chapters[0].units[0];
+    const map = unitByLessonId(grade.chapters);
+    const unit = grade.chapters[0].units[0];
     expect(map.get(unit.lessons[0].id)?.id).toBe(unit.id);
     if (unit.synthesis) expect(map.get(unit.synthesis.id)?.id).toBe(unit.id);
   });

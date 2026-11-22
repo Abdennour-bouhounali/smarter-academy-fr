@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { TX } from './text';
 
-const LESSONS = join(dirname(fileURLToPath(import.meta.url)), '../../../moyen');
+const LESSONS = join(dirname(fileURLToPath(import.meta.url)), '../../../college');
 /** Every `world/knowledge.js` of the lessons, found on disk (never a hand list). */
 const knowledgeFiles = (dir) =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
@@ -15,12 +15,13 @@ const knowledgeFiles = (dir) =>
 
 describe('the knowledge map names every kind of card the lessons use', () => {
   it('each `kind` of a card in any world/knowledge.js has its icon, its word and its family (never « • » alone)', () => {
-    const files = knowledgeFiles(LESSONS);
-    expect(files.length).toBeGreaterThan(0);
+    // no lesson folder before the first French lesson: every kind the kit names is checked as well
+    const files = existsSync(LESSONS) ? knowledgeFiles(LESSONS) : [];
     const used = new Map();
     for (const f of files)
       for (const m of readFileSync(f, 'utf8').matchAll(/\bkind:\s*['"]([a-z_]+)['"]/g))
         used.set(m[1], [...(used.get(m[1]) ?? []), f.slice(LESSONS.length + 1)]);
+    for (const kind of Object.keys(TX.know.kinds)) used.set(kind, used.get(kind) ?? ['kit/text.js']);
     expect(used.size).toBeGreaterThan(0);
     for (const [kind, where] of used) {
       const entry = TX.know.kinds[kind];

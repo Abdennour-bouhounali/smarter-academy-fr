@@ -8,8 +8,8 @@
  *   stage 'build'  the planks are being laid (`buildMs` says how long);
  *   stage 'done'   it holds, or it crumbles.
  */
-import KidFigure from '../../lessons/common/manipulations/primitives/KidFigure';
-import { kidLook } from '../../lessons/common/manipulations/primitives/kidFigure';
+import KidFigure from '../../lessons/common/components/KidFigure';
+import { kidLook } from '../../lessons/common/components/kidFigure';
 import { cellsOf } from './lessonScripts';
 
 const W = 1100;

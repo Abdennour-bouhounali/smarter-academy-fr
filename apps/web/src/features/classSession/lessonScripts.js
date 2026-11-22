@@ -52,7 +52,7 @@ export function reviewCards(tools, families, startItems = null) {
       family: f.name,
       icon: f.icon,
       weight: t.weight ?? null,
-      lesson: t.lesson?.titleAr ?? f.name,
+      lesson: t.lesson?.title ?? f.name,
       grade: t.grade,
       score: s && s.total ? { right: s.right, total: s.total } : null,
     }));

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Compass, CalendarDays, RotateCcw, Target, Check, BookOpen, Users } from 'lucide-react';
 import { getLessonPath } from '@smarter-academy/core';
-import { getLesson } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { getLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import MathLabel from '../../../lessons/common/components/MathLabel';
 import MathText from '../../../lessons/common/components/MathText';
@@ -30,7 +30,7 @@ export default function CompassHomeSections({ compass, gradeId, today, resume, v
   // `off` : la jauge n'est pas encore ouverte pour cette classe (1AM–3AM aujourd'hui) — même page, sans la jauge.
   const stateKey = !compass.enabled ? 'off' : compass.active ? 'active' : compass.last ? 'done' : 'new';
   const pointerCode = (compass.active ?? compass.last)?.pointerLesson ?? null;
-  const pointerTitle = pointerCode ? getLesson(pointerCode)?.titleAr : null;
+  const pointerTitle = pointerCode ? getLesson(pointerCode)?.title : null;
 
   return (
     <div className="space-y-5" data-compass-home={stateKey}>
@@ -182,7 +182,7 @@ function DoneSections({ compass, year, visits }) {
           {report.priority ? (
             <div className="rounded-2xl bg-teal-50 px-4 py-2.5 text-teal-900">
               <p className="text-xs font-black">{t('compassHome.map.startHere')}</p>
-              <p className="font-black"><MathText>{report.priority.textAr}</MathText></p>
+              <p className="font-black"><MathText>{report.priority.text}</MathText></p>
               <p className="text-xs">{t(`compassHome.grades.${report.priority.grade}`)}</p>
             </div>
           ) : <p className="rounded-2xl bg-emerald-50 px-4 py-2.5 font-bold text-emerald-900">{t('compassHome.map.none')}</p>}
@@ -194,8 +194,8 @@ function DoneSections({ compass, year, visits }) {
 }
 
 function taskTitle(t, task) {
-  if (task.kind === 'prepare') return t('compassHome.today.prepare', { title: task.lesson.titleAr });
-  return t('compassHome.today.revise', { title: task.item.homeLesson?.titleAr ?? task.item.textAr });
+  if (task.kind === 'prepare') return t('compassHome.today.prepare', { title: task.lesson.title });
+  return t('compassHome.today.revise', { title: task.item.homeLesson?.title ?? task.item.text });
 }
 
 function TodayHero({ task, done, total }) {

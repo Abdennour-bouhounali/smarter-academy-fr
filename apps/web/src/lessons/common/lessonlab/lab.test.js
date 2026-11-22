@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { buildOrder } from '../../../../scripts/generate-lab-order.mjs';
 import ORDER from './lessonOrder.generated.json';
-import { placeOf, isReached, GRADES } from './order';
+import { placeOf, GRADES } from './order';
 import { TOOLS, toolsFor, hasLab, clampFor } from './registry';
 import {
   rowsLayout,
@@ -32,178 +32,27 @@ import {
   luckyPair,
 } from './logic';
 
-const catalogue = (g) =>
-  JSON.parse(
-    readFileSync(
-      new URL(`../../../../../../packages/core/curriculum/dz/lessons_${g}_2026_2027.json`, import.meta.url),
-      'utf8',
-    ),
-  ).lessons;
-
 describe('مختبري — the order of the lessons', () => {
   it('is the catalogue order of the four grades (run `npm run generate:lab-order` when this fails)', () => {
     expect(ORDER).toEqual(buildOrder());
-    expect(GRADES.reduce((n, g) => n + ORDER[g].length, 0)).toBeGreaterThan(250);
-  });
-  it('puts every earlier grade before a later one, and a lesson before the next of its unit', () => {
-    expect(isReached('qisma-iqlidiya-baqi', 'qasim-adad-tabii')).toBe(true); // 1AM before 4AM
-    expect(isReached('qasim-adad-tabii', 'qasim-adad-tabii')).toBe(true);
-    expect(isReached('bahth-pgcd', 'qasim-adad-tabii')).toBe(false); // a later lesson of the same unit
-    expect(isReached('qasim-adad-tabii', 'qisma-iqlidiya-baqi')).toBe(false);
-    expect(isReached('unknown-lesson', 'qasim-adad-tabii')).toBe(false);
-    expect(placeOf('jidaa-adadayn-nisbiyayn').grade).toBe('3am');
+    expect(Object.keys(ORDER).filter((k) => !k.startsWith('$'))).toEqual(GRADES);
   });
 });
 
 describe('مختبري — the instruments a lesson may show', () => {
-  it('tags every instrument with a real lesson and its exact catalogue title, a module and quests', () => {
-    const titles = new Map(
-      GRADES.flatMap((g) => catalogue(g).map((l) => [l.code, typeof l.title === 'string' ? l.title : l.title.ar])),
-    );
+  it('tags every instrument with the lesson that introduces it (none before the French lessons), a module and quests', () => {
     for (const t of TOOLS) {
-      expect(titles.get(t.lesson), `${t.id} → ${t.lesson}`).toBe(t.lessonTitle);
+      // re-keyed on the French catalogue in a later stage: until then an instrument is listed nowhere
+      expect(t.lesson, t.id).toBeNull();
       expect(typeof t.load).toBe('function');
       expect(QUESTS[t.id].length).toBeGreaterThanOrEqual(2);
       expect(t.range.a[0]).toBeLessThan(t.range.a[1]);
     }
     expect(new Set(TOOLS.map((t) => t.id)).size).toBe(TOOLS.length);
-  });
-
-  it('the first lesson of 4AM: its three instruments, the cabinet of 1AM, and NOTHING of the lessons after it', () => {
-    const lab = toolsFor('qasim-adad-tabii');
-    expect(lab.mine.map((t) => t.id)).toEqual(['rows', 'jumps', 'sentences']);
-    expect(lab.cabinet.map((g) => g.grade)).toEqual(['1am', '2am']);
-    expect(lab.cabinet[0].lessons.map((l) => [l.code, l.tools.map((t) => t.id)])).toEqual([
-      ['qisma-iqlidiya-baqi', ['paper']],
-      ['qawaid-qabiliyat-qisma', ['rules']],
-    ]);
-    expect(lab.cabinet[1].lessons.map((l) => [l.code, l.tools.map((t) => t.id)])).toEqual([
-      ['qisma-iqlidiya-hasr', ['bracket']],
-    ]);
-    expect(lab.all.map((t) => t.id)).not.toContain('euclid');
-    expect(lab.all.map((t) => t.id)).not.toContain('divisors');
-  });
-
-  it('the PGCD lesson: its own instrument, and every instrument of the lessons before it — of this year and of the earlier ones', () => {
-    const lab = toolsFor('bahth-pgcd');
-    expect(lab.mine.map((t) => t.id)).toEqual(['euclid']);
-    expect(lab.cabinet.map((g) => g.grade)).toEqual(['1am', '2am', '4am']);
-    expect(lab.cabinet[2].lessons.map((l) => l.code)).toEqual([
-      'qasim-adad-tabii',
-      'qawasim-adad-tabii',
-      'khawass-qawasim',
-      'qasim-mushtarak-akbar',
-      'tayin-pgcd',
-    ]);
-    // the instruments of lessons 7 and 8 come after it
-    expect(lab.all.length).toBe(TOOLS.filter((t) => !['duo', 'strip', 'court', 'piece'].includes(t.id)).length);
-  });
-
-  it('« تعيين القاسم المشترك الأكبر »: its own instrument (the two lists BUILT), lesson 4’s beside it in the cabinet', () => {
-    const lab = toolsFor('tayin-pgcd');
-    expect(lab.mine.map((t) => t.id)).toEqual(['lists']);
-    expect(lab.cabinet.find((g) => g.grade === '4am').lessons.map((l) => l.code)).toContain('qasim-mushtarak-akbar');
-    expect(lab.all.map((t) => t.id)).not.toContain('euclid'); // lesson 6
-    expect(toolsFor('qasim-mushtarak-akbar').all.map((t) => t.id)).not.toContain('lists');
-    const before = toolsFor('tayin-pgcd', { earlierOnly: true });
-    expect(before.all.map((t) => t.id)).not.toContain('lists'); // never before the lesson: it does what the lesson finds
-    expect(before.all.map((t) => t.id)).toContain('common');
-    // its tile names no key of the lesson (BATCH_2_DESIGN.md §7)
-    const tile = TOOLS.find((t) => t.id === 'lists');
-    expect(`${tile.name} ${tile.hint}`).not.toMatch(/احصر|قاطع|نتائج مباشرة|يقسم الأصغر/);
-  });
-
-  it('« العددان الأوّليّان فيما بينهما »: its own instrument, never before the lesson, naming no key of it', () => {
-    const lab = toolsFor('awwaliyan-fima-baynahuma');
-    expect(lab.mine.map((t) => t.id)).toEqual(['duo']);
-    expect(lab.cabinet.find((g) => g.grade === '4am').lessons.map((l) => l.code)).toEqual([
-      'qasim-adad-tabii',
-      'qawasim-adad-tabii',
-      'khawass-qawasim',
-      'qasim-mushtarak-akbar',
-      'tayin-pgcd',
-      'bahth-pgcd',
-    ]);
-    expect(toolsFor('bahth-pgcd').all.map((t) => t.id)).not.toContain('duo');
-    const before = toolsFor('awwaliyan-fima-baynahuma', { earlierOnly: true });
-    expect(before.all.map((t) => t.id)).not.toContain('duo'); // the launch kit's lab: the cabinet only
-    expect(before.all.map((t) => t.id)).toEqual(expect.arrayContaining(['common', 'lists', 'euclid']));
-    // the words of the lesson's three tablets (world/story.js › TABLETS) never stand on the tile, its quests or the
-    // instrument's own strings: the keys are named in the game
-    const KEY_WORDS = /أوّلي|أولي|فيما بينهما|الوحيد|غير معدوم|يكفي|شاهد/;
-    const tile = TOOLS.find((t) => t.id === 'duo');
-    expect(`${tile.name} ${tile.hint} ${tile.labels.a} ${tile.labels.b}`).not.toMatch(KEY_WORDS);
-    for (const q of QUESTS.duo) expect(q.text).not.toMatch(KEY_WORDS);
-    // lesson 4's « القواسم المشتركة » is the instrument of the launch kit played BEFORE this lesson: its quests too
-    for (const q of QUESTS.common) expect(q.text).not.toMatch(KEY_WORDS);
-    const src = readFileSync(new URL('./tools/Duo.jsx', import.meta.url), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-    const arabic = [
-      ...src.matchAll(/'[^'\n]*[\u0600-\u06FF][^'\n]*'|`[^`]*[\u0600-\u06FF][^`]*`|>[^<>{}]*[\u0600-\u06FF][^<>{}]*</g),
-    ].map((m) => m[0]);
-    expect(arabic.length).toBeGreaterThan(5);
-    for (const s of arabic) expect(s, s).not.toMatch(KEY_WORDS);
-  });
-
-  it('« اختزال كسر »: its own instrument, never before the lesson, naming no key of it', () => {
-    const lab = toolsFor('ikhtizal-kasr');
-    expect(lab.mine.map((t) => t.id)).toEqual(['strip']);
-    expect(lab.cabinet.find((g) => g.grade === '4am').lessons.map((l) => l.code)).toEqual([
-      'qasim-adad-tabii',
-      'qawasim-adad-tabii',
-      'khawass-qawasim',
-      'qasim-mushtarak-akbar',
-      'tayin-pgcd',
-      'bahth-pgcd',
-      'awwaliyan-fima-baynahuma',
-    ]);
-    expect(toolsFor('awwaliyan-fima-baynahuma').all.map((t) => t.id)).not.toContain('strip');
-    const before = toolsFor('ikhtizal-kasr', { earlierOnly: true });
-    expect(before.all.map((t) => t.id)).not.toContain('strip'); // the launch kit's lab: the cabinet only
-    expect(before.all.map((t) => t.id)).toEqual(expect.arrayContaining(['common', 'duo', 'rules']));
-    // the words of the lesson's four tablets (world/story.js › TABLETS: « نختزل كسرًا على مراحل », « كسر غير قابل
-    // للاختزال », « نختزل بالقاسم المشترك الأكبر », « نختزل نتيجة الحساب ») never stand on the tile, its quests or the
-    // instrument's own strings — nor the PGCD, the longest piece, or « reduce »: the keys are named in the game
-    const KEY_WORDS = /اختزال|نختزل|مختزل|مراحل|مرحلة|غير قابل|المشترك الأكبر|PGCD|أطول|أكبر قطعة|نتيجة/;
-    const tile = TOOLS.find((t) => t.id === 'strip');
-    expect(`${tile.name} ${tile.hint} ${tile.labels.a} ${tile.labels.b}`).not.toMatch(KEY_WORDS);
-    for (const q of QUESTS.strip) expect(q.text).not.toMatch(KEY_WORDS);
-    const src = readFileSync(new URL('./tools/Strip.jsx', import.meta.url), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-    const arabic = [...src.matchAll(/'[^'\n]*[؀-ۿ][^'\n]*'|`[^`]*[؀-ۿ][^`]*`|>[^<>{}]*[؀-ۿ][^<>{}]*</g)].map(
-      (m) => m[0],
-    );
-    expect(arabic.length).toBeGreaterThanOrEqual(5);
-    for (const s of arabic) expect(s, s).not.toMatch(KEY_WORDS);
-  });
-
-  it('« خواص قواسم عدد طبيعي »: its own instrument, and the instruments of the two 4AM lessons before it', () => {
-    const lab = toolsFor('khawass-qawasim');
-    expect(lab.mine.map((t) => t.id)).toEqual(['planks']);
-    expect(lab.cabinet.find((g) => g.grade === '4am').lessons.map((l) => l.code)).toEqual([
-      'qasim-adad-tabii',
-      'qawasim-adad-tabii',
-    ]);
-    expect(lab.all.map((t) => t.id)).not.toContain('common');
-    expect(toolsFor('qawasim-adad-tabii').all.map((t) => t.id)).not.toContain('planks');
-  });
-
-  it('the division road: each of its three lessons has an instrument of its own, and finds the ones before it', () => {
-    expect(toolsFor('qisma-iqlidiya-baqi').mine.map((t) => t.id)).toEqual(['paper']);
-    expect(toolsFor('qisma-iqlidiya-baqi').cabinet).toEqual([]);
-    expect(toolsFor('qawaid-qabiliyat-qisma').mine.map((t) => t.id)).toEqual(['rules']);
-    const hasr = toolsFor('qisma-iqlidiya-hasr');
-    expect(hasr.mine.map((t) => t.id)).toEqual(['bracket']);
-    expect(hasr.cabinet.map((g) => [g.grade, g.lessons.map((l) => l.code)])).toEqual([
-      ['1am', ['qisma-iqlidiya-baqi', 'qawaid-qabiliyat-qisma']],
-    ]);
-    expect(toolsFor('qawaid-qabiliyat-qisma').all.map((t) => t.id)).not.toContain('bracket'); // 2AM comes later
+    expect(toolsFor('lecon-inconnue')).toEqual({ mine: [], cabinet: [], all: [] });
   });
 
   it('opened BEFORE the lesson (« عُدّة الانطلاق », `earlierOnly`): only the instruments of the lessons before it', () => {
-    const before = toolsFor('qasim-mushtarak-akbar', { earlierOnly: true });
-    expect(before.mine).toEqual([]);
-    expect(before.all.map((t) => t.id)).not.toContain('common'); // « 🤝 القواسم المشتركة » names the lesson's first key
-    expect(before.all.map((t) => t.id)).toContain('divisors');
-    expect(before.cabinet).toEqual(toolsFor('qasim-mushtarak-akbar').cabinet); // the cabinet is the same
     for (const g of GRADES)
       for (const code of ORDER[g])
         for (const t of toolsFor(code, { earlierOnly: true }).all)
@@ -218,9 +67,7 @@ describe('مختبري — the instruments a lesson may show', () => {
           expect(placeOf(t.lesson).rank, `${t.id} in ${code}`).toBeLessThanOrEqual(placeOf(code).rank);
         expect(lab.cabinet.flatMap((x) => x.lessons).every((l) => l.code !== code)).toBe(true);
       }
-    expect(hasLab('kitabat-adad-tabii')).toBe(false); // the very first lesson of 1AM: nothing before it yet
-    expect(hasLab('qawaid-qabiliyat-qisma')).toBe(true);
-    expect(hasLab('silsila-bidun-aqwas')).toBe(true); // 2AM finds the tools of 1AM
+    expect(hasLab('lecon-inconnue')).toBe(false);
     expect(toolsFor('nope')).toEqual({ mine: [], cabinet: [], all: [] });
   });
 
@@ -462,14 +309,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
     expect(courtOf(30, 5)).toMatchObject({ k: 5, left: 5, lo: 547, hi: 548, out: 5 });
   });
 
-  it('« الجذر التربيعي لعدد موجب »: its own instrument, never before the lesson, the cabinet of three grades', () => {
-    const lab = toolsFor('jidhr-tarbii');
-    expect(lab.mine.map((t) => t.id)).toEqual(['court']);
-    expect(lab.cabinet.map((g) => g.grade)).toEqual(['1am', '2am', '4am']);
-    expect(lab.cabinet.find((g) => g.grade === '4am').lessons.map((l) => l.code)).toContain('ikhtizal-kasr');
-    expect(toolsFor('ikhtizal-kasr').all.map((t) => t.id)).not.toContain('court');
-    const before = toolsFor('jidhr-tarbii', { earlierOnly: true });
-    expect(before.all.map((t) => t.id)).not.toContain('court'); // the launch kit's lab: the cabinet only
+  it('« ساحة العدد » is drawn in code and keeps the measuring word of the world', () => {
     const tile = TOOLS.find((t) => t.id === 'court');
     expect(tile.needs).toBe('a');
     expect(tile.range.a).toEqual([1, 400]); // every whole square up to 20 × 20
@@ -513,13 +353,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
     expect(closerPiece({ q: 3, far: 1 }, { q: 3, far: 1 })).toBe(false); // the same distance keeps the first
   });
 
-  it('« الأعداد الناطقة والأعداد غير الناطقة »: its own instrument, never before the lesson, naming no key of it', () => {
-    const lab = toolsFor('natiqa-ghayr-natiqa');
-    expect(lab.mine.map((t) => t.id)).toEqual(['piece']);
-    expect(lab.all.map((t) => t.id)).toContain('court'); // lesson 1's instrument, in the cabinet
-    expect(toolsFor('jidhr-tarbii').all.map((t) => t.id)).not.toContain('piece');
-    const before = toolsFor('natiqa-ghayr-natiqa', { earlierOnly: true });
-    expect(before.all.map((t) => t.id)).not.toContain('piece'); // the launch kit's lab: the cabinet only
+  it('« منصّة الكسر » names no key of the lesson it serves', () => {
     const tile = TOOLS.find((t) => t.id === 'piece');
     expect(tile.needs).toBe('ab');
     expect(tile.range).toEqual({ a: [1, 50], b: [1, 12] });

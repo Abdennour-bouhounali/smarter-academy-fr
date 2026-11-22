@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { setReturnTo, readReturnTo, clearReturnTo, isAwayFrom, RETURN_KEY } from './returnToLesson';
 
 const memory = () => { const m = new Map(); return { getItem: (k) => (m.has(k) ? m.get(k) : null), setItem: (k, v) => m.set(k, String(v)), removeItem: (k) => m.delete(k) }; };
-const LESSON = { path: '/courses/moyen/4am/ansab/qasim-adad-tabii', title: 'التعرّف على قاسم لعدد طبيعي' };
+const LESSON = { path: '/courses/college/3e/theme-a/lecon-a', title: 'Leçon A' };
 
 describe('returnToLesson — revenir de la révision d’un prérequis en un clic (propriétaire, 2026-11-07)', () => {
   it('retient la leçon de départ et la relit', () => {
@@ -11,7 +11,7 @@ describe('returnToLesson — revenir de la révision d’un prérequis en un cli
     clearReturnTo(s); expect(readReturnTo(s)).toBeNull();
   });
   it('le bouton se montre hors de la leçon de départ, pas dedans', () => {
-    expect(isAwayFrom(LESSON, '/courses/moyen/1am/x/qisma-iqlidiya-baqi/nashat')).toBe(true);
+    expect(isAwayFrom(LESSON, '/courses/college/6e/theme-b/lecon-b/module-1')).toBe(true);
     expect(isAwayFrom(LESSON, LESSON.path)).toBe(false);
     expect(isAwayFrom(LESSON, `${LESSON.path}/astaidd`)).toBe(false);
     // un chemin qui COMMENCE pareil sans être la leçon n'est pas « dedans »

@@ -78,8 +78,8 @@ function gradeSummary() {
     resolveId: (source) => (source === id ? resolved : null),
     load(source) {
       if (source !== resolved) return null;
-      const dz = CORE_CURRICULUM + 'dz/';
-      for (const f of readdirSync(dz)) if (f.endsWith('.json')) this.addWatchFile(dz + f);
+      const fr = CORE_CURRICULUM + 'fr/';
+      for (const f of readdirSync(fr)) if (f.endsWith('.json')) this.addWatchFile(fr + f);
       this.addWatchFile(CORE_CURRICULUM + 'coursesData.js');
       // Un processus Node à part : le catalogue est relu à chaque (re)chargement, jamais figé par le cache d'imports.
       const script = `
@@ -142,8 +142,8 @@ export default defineConfig({
     // Voir docs/architecture/BUNDLE_BOUNDARIES.md.
     dedupe: ['katex'],
   },
-  // Vitest : les textes des manipulations (`lesson:manipulation.*`) sont chargés
-  // à la demande en production ; les tests les enregistrent d'emblée.
+  // Vitest : les espaces `admin` et `teacher` sont chargés à la demande en
+  // production ; les tests les enregistrent d'emblée.
   test: {
     setupFiles: ['./src/test/setupOnDemandStrings.js'],
     // 30 s, not vitest's 5: several tests compute every case of a lesson (2 to 4 s on a laptop). On a loaded CI

@@ -10,6 +10,7 @@ import { useCatalogueView } from '../../components/student/catalogueView';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import GradeLessonSearch, { filterLessonsByQuery } from '../../components/student/GradeLessonSearch';
 import { usePrefetchLessonRuntime } from '../../lessons/common/lessonRuntimeLoader';
+import NoLessonYet from '../../components/student/NoLessonYet';
 
 export default function MesCours() {
   // Cette page mène à des leçons : leur runtime partagé arrive pendant
@@ -82,6 +83,11 @@ export default function MesCours() {
         </Link>
       </div>
 
+      {/* No lesson in his grade yet: one honest line, not a search box over nothing. */}
+      {!gradeData.chapters.some((c) => c.lessons.length > 0) ? (
+        <NoLessonYet />
+      ) : (
+      <>
       <div className="mb-6" data-tour="catalogue.search">
         <GradeLessonSearch value={searchQuery} onChange={setSearchQuery} gradeName={grade.name} className="w-full md:w-96" />
       </div>
@@ -126,6 +132,8 @@ export default function MesCours() {
           view={view}
         />
       </div>
+      </>
+      )}
     </div>
   );
 }
