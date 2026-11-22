@@ -1,6 +1,7 @@
 import { useCallback, useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { formatEur } from '../../../utils/money';
 import { BadgeCheck, Plus } from 'lucide-react';
 import DataTable from '../../../components/admin/ui/DataTable';
 import StatusBadge from '../../../components/admin/ui/StatusBadge';
@@ -31,10 +32,9 @@ export default function AdminPlanList() {
   const [busy, setBusy] = useState(false);
   const [createError, setCreateError] = useState(null);
 
-  // Le prix est INFORMATIF : un montant en dinars que l'administration
-  // communique, jamais un montant réglé par la plateforme.
+  // Le prix de la version, en euros (`formatEur` : « 9,90 € »).
   const price = (p) => (p?.amountCents
-    ? <Num>{`${(p.amountCents / 100).toLocaleString('fr-DZ')} ${p.currency}`}</Num>
+    ? <Num>{formatEur(p.amountCents)}</Num>
     : t('status.free'));
 
   const submit = async (e) => {

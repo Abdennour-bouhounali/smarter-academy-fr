@@ -6,7 +6,7 @@ import { toolLabelKey } from '../../../features/admin/access/accessPolicies';
 import { AdminCard, Loading, ErrorBox, Num } from '../../../pages/admin/adminUi';
 
 /**
- * « الوصول والحدود » d'UN compte, sur sa fiche : son palier (et pourquoi),
+ * « Accès et limites » d'UN compte, sur sa fiche : son palier (et pourquoi),
  * utilisé / limite / restant pour les travaux et les notes, les instruments
  * qui lui sont fermés. Lecture seule — les réglages sont par palier, dans
  * /admin/offres/acces ; une exception individuelle passe par le droit
@@ -69,12 +69,12 @@ function FeatureUsagePanelBody({ userId }) {
             {t('access.lockedTools')} :{' '}
             {data.lockedTools.length === 0
               ? t('access.noLockedTools')
-              : data.lockedTools.map((tool) => t(toolLabelKey(tool), { ns: 'mathlab' })).join('، ')}
+              : data.lockedTools.map((tool) => t(toolLabelKey(tool), { ns: 'mathlab' })).join(', ')}
           </p>
           {Object.keys(data.documentsByToolAllTime ?? {}).length > 0 && (
             <p className="text-xs text-slate-500">
               {t('access.documentsByTool')} :{' '}
-              {Object.entries(data.documentsByToolAllTime).map(([tool, n]) => `${t(toolLabelKey(tool), { ns: 'mathlab', defaultValue: tool })} (${n})`).join('، ')}
+              {Object.entries(data.documentsByToolAllTime).map(([tool, n]) => `${t(toolLabelKey(tool), { ns: 'mathlab', defaultValue: tool })} (${n})`).join(', ')}
             </p>
           )}
         </div>

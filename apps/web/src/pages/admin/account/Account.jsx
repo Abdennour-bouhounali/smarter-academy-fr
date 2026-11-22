@@ -45,7 +45,7 @@ export function AdminProfile() {
       {account && (
         <form onSubmit={submit} className="max-w-xl space-y-4 rounded-xl border border-slate-200 bg-white p-5">
           <Row label={t('common.email')}>
-            {/* Une adresse ne se retourne pas : elle reste LTR dans une page RTL. */}
+            {/* Une adresse se lit de gauche à droite (îlot `dir="ltr"`). */}
             <p dir="ltr" className="font-inter text-sm text-slate-800">{account.email}</p>
             <p className="font-inter text-xs text-slate-500">{t('account.emailChangesInSecurity')}</p>
           </Row>

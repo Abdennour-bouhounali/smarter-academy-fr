@@ -15,7 +15,7 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchTeacher, changeTeacherStatus, grantTeacherOverride, revokeTeacherOverride } from '../../../services/admin/teacherService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
-import { formatDzd } from '../../../utils/dinars';
+import { formatEur } from '../../../utils/money';
 
 /**
  * LA FICHE ENSEIGNANT — la surface de contrôle : compte, offre, activation,
@@ -123,9 +123,9 @@ export default function AdminTeacherDetail() {
               <dl className="grid grid-cols-2 gap-3 font-inter text-sm lg:grid-cols-5">
                 <Info label={t('teachers.capacityUsed')}><Num>{data.capacity.current}{'\u00A0/\u00A0'}{data.capacity.limit ?? '∞'}</Num>{data.capacity.overLimit ? <span className="ms-2 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-800">{t('teachers.overLimit')}</span> : null}</Info>
                 <Info label={t('teachers.seatsRemaining')}><Num>{data.capacity.remaining ?? '∞'}</Num></Info>
-                <Info label={t('teachers.columnClassrooms')}><Num>{data.classrooms.filter((c) => c.status !== 'archived').length}</Num> <span className="text-slate-400">({t('common.unlimited')}{data.entitlements.classes.maximum != null ? `، ${t('teachers.technicalLimit', { value: data.entitlements.classes.maximum })}` : ''})</span></Info>
+                <Info label={t('teachers.columnClassrooms')}><Num>{data.classrooms.filter((c) => c.status !== 'archived').length}</Num> <span className="text-slate-400">({t('common.unlimited')}{data.entitlements.classes.maximum != null ? `, ${t('teachers.technicalLimit', { value: data.entitlements.classes.maximum })}` : ''})</span></Info>
                 <Info label={t('teachers.seatsPurchased')}>{data.entitlements.plan?.studentSeatLimit != null ? <Num>{data.entitlements.plan.studentSeatLimit}</Num> : <span className="text-slate-400">{t('teachers.planAllocation')}</span>}</Info>
-                <Info label={t('teachers.amountOnActivation')}>{data.entitlements.plan?.seatUnitPriceCents != null ? <Num>{formatDzd(data.entitlements.plan.seatUnitPriceCents)} DA × {data.entitlements.plan.studentSeatLimit} = {formatDzd(data.entitlements.plan.seatTotalCents)} DA</Num> : t('common.dash')}</Info>
+                <Info label={t('teachers.amountOnActivation')}>{data.entitlements.plan?.seatUnitPriceCents != null ? <Num>{formatEur(data.entitlements.plan.seatUnitPriceCents)} × {data.entitlements.plan.studentSeatLimit} = {formatEur(data.entitlements.plan.seatTotalCents)}</Num> : t('common.dash')}</Info>
               </dl>
               <p className="mt-2 font-inter text-[11px] text-slate-400">{t('teachers.capacityHint')}</p>
             </section>
@@ -144,7 +144,7 @@ export default function AdminTeacherDetail() {
               selectionLabel={(row) => L.selectRow(row.label ?? row.key)}
               columns={[
                 { key: 'label', label: t('teachers.columnEntitlement'), render: (r) => r.label },
-                { key: 'value', label: t('teachers.value'), render: (r) => (r.type === 'feature' ? (r.value ? t('common.yes') : t('common.no')) : r.type === 'list' ? (Array.isArray(r.value) && r.value.length ? r.value.join('، ') : t('common.all')) : r.value === null ? t('common.unlimited') : <Num>{String(r.value)}</Num>) },
+                { key: 'value', label: t('teachers.value'), render: (r) => (r.type === 'feature' ? (r.value ? t('common.yes') : t('common.no')) : r.type === 'list' ? (Array.isArray(r.value) && r.value.length ? r.value.join(', ') : t('common.all')) : r.value === null ? t('common.unlimited') : <Num>{String(r.value)}</Num>) },
                 { key: 'usage', label: t('teachers.usage'), render: (r) => (usageOf(r.key) === null ? t('common.dash') : <Num>{usageOf(r.key)}{'\u00A0/\u00A0'}{r.value === null ? '∞' : r.value}</Num>) },
                 { key: 'source', label: t('teachers.source'), render: (r) => <StatusBadge status={r.source === 'override' ? 'pending' : 'free'} label={SOURCE_LABELS[r.source] ?? r.source} /> },
               ]}
@@ -169,7 +169,7 @@ export default function AdminTeacherDetail() {
               <ul className="mt-3 divide-y divide-slate-100 font-inter text-xs">
                 {data.overrides.map((o) => (
                   <li key={o.id} className="flex items-center justify-between gap-2 py-1.5">
-                    <span><b>{o.label}</b> ← {o.value === null ? t('common.unlimited') : <Num>{String(o.value)}</Num>}{o.reason ? ` — ${o.reason}` : ''}{o.endsAt ? ` (${t('teachers.untilDate', { date: formatDate(o.endsAt) })})` : ''}</span>
+                    <span><b>{o.label}</b> → {o.value === null ? t('common.unlimited') : <Num>{String(o.value)}</Num>}{o.reason ? ` — ${o.reason}` : ''}{o.endsAt ? ` (${t('teachers.untilDate', { date: formatDate(o.endsAt) })})` : ''}</span>
                     <span className="flex items-center gap-2 text-slate-500">{o.active ? <StatusBadge status="active" /> : <StatusBadge status="revoked" label={o.revokedAt ? t('teachers.overrideWithdrawn') : t('teachers.overrideInactive')} />}{o.active && <button type="button" onClick={() => revoke(o.id)} className="text-rose-700 hover:underline">{t('teachers.withdraw')}</button>}</span>
                   </li>
                 ))}

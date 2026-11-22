@@ -5,7 +5,7 @@ import { activatePlan } from '../../../services/admin/subscriptionService';
 const t = (key, options) => i18n.t(key, { ns: 'admin', ...options });
 
 /**
- * « تفعيل عرض » EN LOT — une action par offre, pour la BulkActionBar.
+ * « Activer une formule » EN LOT — une action par offre, pour la BulkActionBar.
  *
  * Il n'existe pas de route serveur groupée : le lot appelle, élève par élève,
  * la MÊME route que le geste unitaire (`POST /admin/students/{id}/subscriptions`).

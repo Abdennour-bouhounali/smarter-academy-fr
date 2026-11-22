@@ -12,14 +12,14 @@ import { ADMIN_GRADIENT } from '../../pages/admin/adminUi';
  * La barre latérale de l'administration.
  *
  * ELLE ÉTAIT SOMBRE, ELLE NE L'EST PLUS. La livrée `slate-900` disait
- * « autre application » : un administrateur passant de « مساحة التلميذ » à
- * « لوحة الإدارة » changeait de produit, pas de rôle. Elle reprend donc
+ * « autre application » : un administrateur passant de « espace élève » à
+ * « Administration » changeait de produit, pas de rôle. Elle reprend donc
  * exactement la barre de StudentNavbar — fond blanc, bordure `slate-200`,
  * pastille active en dégradé, bloc d'identité en pied, barre d'onglets
  * mobile — et ne garde du rôle que son ACCENT (violet → bleu, là où l'élève
  * a bleu → violet et l'enseignant sarcelle → bleu).
  *
- * Le rôle se lit donc au sur-titre (« لوحة الإدارة ») et à la couleur de
+ * Le rôle se lit donc au sur-titre (« Administration ») et à la couleur de
  * l'accent, pas à un thème séparé. C'est la même règle que l'espace
  * enseignant applique déjà.
  *
@@ -41,7 +41,7 @@ export default function AdminSidebar({ collapsed, onToggle }) {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
 
-  // Un lien qui porte une query (« جديدة », « موقوفون ») n'est actif que si la
+  // Un lien qui porte une query (« Nouveaux », « Suspendus ») n'est actif que si la
   // query correspond aussi — sinon les quatre onglets d'une section
   // s'allumeraient ensemble.
   const isActive = (link) => {
@@ -67,7 +67,7 @@ export default function AdminSidebar({ collapsed, onToggle }) {
     >
       {/* L'en-tête est une MARQUE, pas une porte — même règle que la barre
           élève : on ne quitte pas un espace de travail par son propre titre.
-          « عرض الموقع » est plus bas, explicite, avec son icône de lien
+          « Voir le site » est plus bas, explicite, avec son icône de lien
           sortant. */}
       <div className={`flex items-center h-16 border-b border-slate-100 flex-shrink-0 ${collapsed ? 'justify-center px-0' : 'gap-2.5 px-6'}`}>
         <img src="/brand/mark-color.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-9 w-9 flex-shrink-0" />

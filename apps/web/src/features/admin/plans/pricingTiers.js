@@ -4,16 +4,16 @@
  * revalide tout ; ceci n'est que le miroir pour l'ergonomie.
  */
 
-export const emptyTier = (order = 0) => ({ minStudents: '', maxStudents: '', pricePerStudent: '', currency: 'DZD', isActive: true, sortOrder: order });
+export const emptyTier = (order = 0) => ({ minStudents: '', maxStudents: '', pricePerStudent: '', currency: 'EUR', isActive: true, sortOrder: order });
 
-/** Du serveur (centimes) vers le formulaire (dinars). */
+/** Du serveur (centimes) vers le formulaire (euros). */
 export function tiersToRows(tiers = []) {
   return tiers.map((t, i) => ({
     id: t.id,
     minStudents: t.minStudents,
     maxStudents: t.maxStudents ?? '',
     pricePerStudent: Math.round((t.pricePerStudentCents ?? 0) / 100),
-    currency: t.currency || 'DZD',
+    currency: t.currency || 'EUR',
     isActive: t.isActive !== false,
     sortOrder: t.sortOrder ?? i,
   }));
@@ -25,7 +25,7 @@ export function rowsToPayload(rows = []) {
     minStudents: Number(r.minStudents),
     maxStudents: r.maxStudents === '' || r.maxStudents === null ? null : Number(r.maxStudents),
     pricePerStudentCents: Math.round(Number(r.pricePerStudent || 0) * 100),
-    currency: (r.currency || 'DZD').toUpperCase(),
+    currency: (r.currency || 'EUR').toUpperCase(),
     isActive: r.isActive !== false,
     sortOrder: i,
   }));
@@ -44,7 +44,7 @@ export function rowsToPayload(rows = []) {
  *
  * D'où un `{ code, params }` : la RÈGLE vit ici, la PHRASE dans le catalogue
  * (`admin.plans.tier*`). C'est exactement la règle « l'API parle en codes, le
- * client parle arabe » (ARABIC_RTL_CONTRACT §2), appliquée à une frontière
+ * client parle la langue du produit » (FRENCH_LANGUAGE_CONTRACT), appliquée à une frontière
  * interne.
  *
  * @returns {{code: string, params: object}[]}

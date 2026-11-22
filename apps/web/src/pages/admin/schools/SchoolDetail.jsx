@@ -14,7 +14,7 @@ import { AdminPage, AdminSection, Loading, ErrorBox, formatDate, Num, btnPrimary
 const BLANK_DIRECTOR = { firstName: '', lastName: '', email: '' };
 
 /**
- * « رخصة المؤسسة » (SCHOOL_ADMIN_SPACE.md, D1) : sièges, usage, fin, et le
+ * « Licence de l’établissement » (SCHOOL_ADMIN_SPACE.md, D1) : sièges, usage, fin, et le
  * cycle de vie — activer (une nouvelle annule l'actuelle), suspendre,
  * reprendre, annuler. Le paiement se fait hors de la plateforme.
  */

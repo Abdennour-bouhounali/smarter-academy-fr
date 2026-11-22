@@ -57,8 +57,7 @@ export default function AdminActivityLog() {
 
     return (
       // `dir="ltr"` : un avant/après est une paire de VALEURS techniques
-      // (« draft → published »), et la flèche doit rester dans ce sens même au
-      // milieu d'une page RTL.
+      // (« draft → published »), lue de gauche à droite comme du code.
       <span dir="ltr" className="inline-block font-mono-jetbrains text-xs">
         <span className="text-slate-400">{log.before?.[key] ?? '∅'}</span>
         <span className="mx-1 text-slate-300">→</span>

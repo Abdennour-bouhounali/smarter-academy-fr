@@ -8,10 +8,10 @@ import { useTranslation } from 'react-i18next';
  * seule »), et elle vaut autant pour un daltonien que pour une capture
  * d'écran en noir et blanc dans un ticket.
  *
- * LE TEXTE EST ARABE, et il l'est ICI plutôt que sur chaque appelant : une
+ * LE TEXTE VIENT DU CATALOGUE, et il en vient ICI plutôt que sur chaque appelant : une
  * pastille apparaît dans dix-sept écrans, et traduire au point d'affichage
  * aurait produit dix-sept vocabulaires. Le catalogue `admin.status` est donc
- * la seule source, et `STATUS_LABELS` (français) ne subsiste que comme filet
+ * la seule source, et `STATUS_LABELS` ne subsiste que comme filet
  * pour un `status` hors vocabulaire — auquel cas la pastille dit la clé
  * plutôt que de ne rien dire.
  */
@@ -70,7 +70,7 @@ const STATUS_LABELS = {
   visible: 'Visible',
   left: 'Parti',
   removed: 'Retiré',
-  teacher: 'Enseignant',
+  teacher: 'Professeur',
   student: 'Élève',
   published: 'Publié',
   draft: 'Brouillon',

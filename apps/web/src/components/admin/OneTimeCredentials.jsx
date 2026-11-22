@@ -3,7 +3,7 @@ import { AdminCard, btnSecondary, btnGhost } from '../../pages/admin/adminUi';
 
 /**
  * La carte ambre d'un mot de passe montré UNE SEULE fois — à la création d'un compte ou à sa réinitialisation.
- * L'administrateur le copie et le remet lui-même ; « تمّ » (`onDone`) l'efface de l'écran, et rien ne le rappelle.
+ * L'administrateur le copie et le remet lui-même ; « Terminé » (`onDone`) l'efface de l'écran, et rien ne le rappelle.
  *
  * Les libellés viennent de l'appelant (chaque page a son catalogue) : `labels = { copy, copied, done }`.
  * `login` (courriel ou identifiant) et `password` sont des identités techniques : LTR, toujours.

@@ -13,7 +13,8 @@ import { useDebounced } from '../../../hooks/useDebounced';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { AuthContext } from '../../../context/AuthContext';
 import { fetchPlans } from '../../../services/admin/planService';
-import { quoteSeats, formatDzd } from '../../../features/teacher/subscription/seatPricing';
+import { quoteSeats } from '../../../features/teacher/subscription/seatPricing';
+import { formatEur } from '../../../utils/money';
 import {
   fetchActivationCodes,
   fetchActivationBatches,
@@ -324,8 +325,8 @@ export default function AdminActivationCodes() {
                     {quote
                       ? t('activation.seatsQuote', {
                         tier: quote.tier.label,
-                        unit: formatDzd(quote.unitPriceCents),
-                        total: formatDzd(quote.totalCents),
+                        unit: formatEur(quote.unitPriceCents),
+                        total: formatEur(quote.totalCents),
                       })
                       : t('activation.seatsNoTier')}
                   </p>

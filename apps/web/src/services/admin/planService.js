@@ -2,7 +2,7 @@ import { call, get, send, query } from './adminClient';
 
 /**
  * Les OFFRES : le modèle commercial, configuré depuis le panneau. Aucun prix
- * ici n'est un tarif de fournisseur — tout est informatif, en dinars.
+ * ici n'est un tarif de fournisseur — les montants sont en euros.
  */
 export function fetchEntitlementKeys(token) {
   return call('/admin/entitlements/keys', get(token), 'Impossible de charger le vocabulaire des offres.').then((d) => d.keys);

@@ -19,13 +19,13 @@ function render(role) {
 describe('DeleteUserSection — la suppression définitive', () => {
   it('la zone de danger s’affiche fermée, avec son avertissement propre au rôle', () => {
     const student = render('student');
-    expect(student).toContain('منطقة الخطر');
-    expect(student).toContain('حذف الحساب نهائياً');
-    expect(student).toContain('تعطيل');
+    expect(student).toContain('Zone de danger');
+    expect(student).toContain('Supprimer définitivement le compte');
+    expect(student).toContain('Désactiver');
     // La boîte (et l'e-mail à retaper) n'existe qu'une fois ouverte.
-    expect(student).not.toContain('اكتب البريد الإلكتروني');
+    expect(student).not.toContain('saisissez l’e-mail du compte');
 
-    expect(render('teacher')).toContain('أقسامه');
+    expect(render('teacher')).toContain('toutes ses données et ses classes');
   });
 
   it('le service vise les routes admin, l’e-mail retapé dans le corps', async () => {

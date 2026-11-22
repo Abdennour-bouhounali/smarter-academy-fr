@@ -11,7 +11,7 @@ import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchPlan, fetchEntitlementKeys, updatePlan, changePlanStatus, duplicatePlan, createPlanVersion, updatePlanVersion, publishPlanVersion, fetchPricingQuote } from '../../../services/admin/planService';
 import { tiersToRows, rowsToPayload, tierProblems, emptyTier } from '../../../features/admin/plans/pricingTiers';
 import { quoteSeats } from '../../../features/teacher/subscription/seatPricing';
-import { formatDzd } from '../../../utils/dinars';
+import { formatEur } from '../../../utils/money';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { AdminPage, AdminSection, useAdminLabels, Loading, ErrorBox, formatDate, btnPrimary, btnSecondary, btnGhost, input as inputClass, Num } from '../adminUi';
 
@@ -29,12 +29,12 @@ import { AdminPage, AdminSection, useAdminLabels, Loading, ErrorBox, formatDate,
  * nouvelle, on la règle, on la publie — et les abonnés existants gardent la
  * leur. Le vocabulaire des clés vient du serveur ; rien n'est codé ici.
  *
- * Tous les MONTANTS sont informatifs, en dinars : l'administration les
- * communique, le règlement se fait hors plateforme.
+ * Tous les MONTANTS sont en euros ; le paiement en ligne n'est ouvert que
+ * par l'interrupteur « Paiement en ligne » (plan §4ter).
  */
 
 /**
- * Les problèmes de la grille, dits en arabe.
+ * Les problèmes de la grille, dits en français.
  *
  * `tierProblems` porte la RÈGLE et rend des codes (`{code, params}`) ; le
  * catalogue porte la PHRASE. On ne relit donc pas les lignes une seconde fois
@@ -84,7 +84,7 @@ export default function AdminPlanEditor() {
     if (!version) return;
     setDraft({
       entitlements: { ...version.entitlements },
-      price: { amountCents: version.price?.amountCents ?? 0, currency: version.price?.currency ?? 'DZD', billingInterval: version.price?.billingInterval ?? 'year', intervalCount: version.price?.intervalCount ?? 1, durationDays: version.price?.durationDays ?? '', trialDays: version.price?.trialDays ?? 0 },
+      price: { amountCents: version.price?.amountCents ?? 0, currency: version.price?.currency ?? 'EUR', billingInterval: version.price?.billingInterval ?? 'year', intervalCount: version.price?.intervalCount ?? 1, durationDays: version.price?.durationDays ?? '', trialDays: version.price?.trialDays ?? 0 },
       notes: version.notes ?? '',
       tiers: tiersToRows(version.pricingTiers ?? []),
     });
@@ -243,7 +243,7 @@ export default function AdminPlanEditor() {
                         <input type="number" min={1} value={previewSeats} onChange={(e) => { setPreviewSeats(e.target.value); setServerQuote(null); }} className={`${inputClass} w-24`} aria-label={t('plans.previewSeatsAria')} />
                         <span className="font-inter text-xs text-slate-700">
                           {localQuote
-                            ? <>{t('plans.tier')} <b><Num>{localQuote.tier.label ?? `${localQuote.tier.minStudents}–${localQuote.tier.maxStudents ?? '∞'}`}</Num></b> · <b><Num>{`${formatDzd(localQuote.unitPriceCents)} ${t('plans.dinarShort')}`}</Num></b> {t('plans.perStudent')} · {t('plans.total')} <b><Num>{`${formatDzd(localQuote.totalCents)} ${t('plans.dinarShort')}`}</Num></b> <span className="text-slate-400">({t('plans.localCalc')})</span></>
+                            ? <>{t('plans.tier')} <b><Num>{localQuote.tier.label ?? `${localQuote.tier.minStudents}–${localQuote.tier.maxStudents ?? '∞'}`}</Num></b> · <b><Num>{formatEur(localQuote.unitPriceCents)}</Num></b> {t('plans.perStudent')} · {t('plans.total')} <b><Num>{formatEur(localQuote.totalCents)}</Num></b> <span className="text-slate-400">({t('plans.localCalc')})</span></>
                             : <span className="text-rose-700">{t('plans.noTierCovers')}</span>}
                         </span>
                         <button type="button" className={btnGhost} onClick={askServerQuote}>{t('plans.checkOnServer')}</button>
@@ -251,7 +251,7 @@ export default function AdminPlanEditor() {
                       {serverQuote && (
                         <p className={`mt-2 font-inter text-xs ${serverQuote.ok ? 'text-emerald-800' : 'text-rose-700'}`} data-server-quote>
                           {serverQuote.ok
-                            ? <>{t('plans.serverPrefix')} {t('plans.tier')} <Num>{serverQuote.quote.tier.label}</Num> · <Num>{`${formatDzd(serverQuote.quote.unitPriceCents)} ${t('plans.dinarShort')}`}</Num> {t('plans.perStudent')} · {t('plans.total')} <Num>{`${formatDzd(serverQuote.quote.totalCents)} ${t('plans.dinarShort')}`}</Num></>
+                            ? <>{t('plans.serverPrefix')} {t('plans.tier')} <Num>{serverQuote.quote.tier.label}</Num> · <Num>{formatEur(serverQuote.quote.unitPriceCents)}</Num> {t('plans.perStudent')} · {t('plans.total')} <Num>{formatEur(serverQuote.quote.totalCents)}</Num></>
                             : serverQuote.message}
                         </p>
                       )}

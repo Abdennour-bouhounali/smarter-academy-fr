@@ -13,7 +13,7 @@ const tool = {
   premium: { allowed: true, unlimited: null, limit: null },
 };
 
-describe('accessPolicies — éditeur « الوصول والحدود »', () => {
+describe('accessPolicies — éditeur « Accès et limites »', () => {
   it('nomme chaque instrument par la convention du catalogue mathlab', () => {
     for (const t of MATH_LAB_TOOLS) {
       expect(t.labelKey).toBe(toolLabelKey(t.id));

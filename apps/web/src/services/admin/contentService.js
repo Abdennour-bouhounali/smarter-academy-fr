@@ -2,7 +2,7 @@ import { call, get, send, query } from './adminClient';
 
 export function fetchLessons(token, filters = {}) {
   return call(`/admin/content/lessons${query(filters)}`, get(token), 'Impossible de charger les leçons.')
-    // `units` : les options du filtre « الوحدة », lues en base par l'API.
+    // `units` : les options du filtre « Chapitre », lues en base par l'API.
     .then((data) => ({ ...data.lessons, units: data.units ?? [] }));
 }
 
@@ -68,7 +68,7 @@ export function changeLessonExercisesStatus(token, lessonId, status) {
   return call(
     `/admin/content/lesson/${encodeURIComponent(lessonId)}/exercises-status`,
     send('PATCH', token, { status }),
-    'تعذّر تغيير حالة بنك التمارين.',
+    'Impossible de changer l’état de la banque d’exercices.',
   );
 }
 

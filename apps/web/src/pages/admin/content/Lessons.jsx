@@ -35,7 +35,7 @@ export default function AdminLessons() {
   const [grade, setGrade] = useState();
   const [status, setStatus] = useState();
   const [tier, setTier] = useState();
-  // الوحدة du manuel — les options viennent de l'API (lessonUnits), jamais
+  // Le chapitre du manuel — les options viennent de l'API (lessonUnits), jamais
   // d'une liste écrite ici : une unité importée demain y apparaît seule.
   const [unit, setUnit] = useState();
   const [page, setPage] = useState(1);
@@ -111,7 +111,7 @@ export default function AdminLessons() {
               en faisant défiler n'existe pas vraiment. */}
           {/* Le code de la leçon est un identifiant technique : il reste latin et LTR. */}
           <span dir="ltr" className="block truncate font-mono-jetbrains text-xs text-slate-400 text-start">{row.code}</span>
-          {/* الوحدة d'abord (le niveau que le manuel nomme), puis le ميدان. */}
+          {/* Le chapitre d'abord (le niveau que le manuel nomme), puis le thème. */}
           <span className="block truncate font-inter text-xs text-slate-400">
             {row.unitTitle ? `${t('lessons.columnUnit')} : ${row.unitTitle}` : (row.chapterTitle ?? t('common.dash'))}
           </span>

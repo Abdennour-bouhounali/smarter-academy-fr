@@ -26,7 +26,7 @@ export default function ExerciseBankControl({ lesson, onChanged }) {
   const [error, setError] = useState(null);
 
   // Deux sources : la fiche leçon donne la liste des exercices, la page
-  // « التمارين » (organisée par leçon) donne seulement les compteurs par état
+  // « Exercices » (organisée par leçon) donne seulement les compteurs par état
   // (`exerciseStatusCounts`). Les retirés ne suivent pas (le serveur les écarte).
   const byStatus = lesson.exerciseStatusCounts
     ?? Object.fromEntries(STATUSES.map((status) => [

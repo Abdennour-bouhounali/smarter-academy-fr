@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LOCALE } from '../../../locale';
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
@@ -103,7 +104,7 @@ function AnalyticsScreen({ title, subtitle, loaderFor, withSeries = false }) {
                       formate en `ar-DZ` (chiffres occidentaux, séparateurs
                       locaux) plutôt qu'en `fr-FR`. */}
                   <p dir="ltr" className="mt-1 font-space text-2xl font-black tabular-nums text-slate-900 text-start">
-                    {typeof metric.value === 'number' ? metric.value.toLocaleString('ar-DZ') : metric.value}
+                    {typeof metric.value === 'number' ? metric.value.toLocaleString(LOCALE) : metric.value}
                     {key === 'successRate' && ' %'}
                   </p>
                 </div>
@@ -165,7 +166,7 @@ function SeriesChart({ title, data, color }) {
             <YAxis tick={{ fontSize: 11, fill: '#94A3B8' }} tickLine={false} axisLine={false} allowDecimals={false} />
             <Tooltip
               contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #E2E8F0' }}
-              labelFormatter={(value) => new Date(value).toLocaleDateString('ar-DZ')}
+              labelFormatter={(value) => new Date(value).toLocaleDateString(LOCALE)}
               formatter={(value) => [value, title]}
             />
             <Line type="monotone" dataKey="value" stroke={color} strokeWidth={2} dot={false} name={title} />

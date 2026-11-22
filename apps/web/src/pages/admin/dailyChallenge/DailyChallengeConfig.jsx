@@ -10,7 +10,7 @@ const GROUPS = ['challenge', 'scoring', 'competition'];
 const labelKey = (key) => key.replaceAll('.', '_');
 
 /**
- * « التحدّي اليومي » — le barème et les défauts, réglés ICI sans
+ * « Défi du jour » — le barème et les défauts, réglés ICI sans
  * déploiement. Le serveur valide tout (clés fermées, bornes, paliers de
  * vitesse décroissants, fenêtre non vide) et refuse l'envoi en entier au
  * moindre défaut. Chaque défi FIGE sa configuration : un changement vaut

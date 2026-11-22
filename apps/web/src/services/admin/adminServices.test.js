@@ -67,7 +67,7 @@ describe('signalement côté élève', () => {
 
 describe('navigation d’administration', () => {
   it('couvre toutes les sections de la spécification', () => {
-    // La navigation ne porte plus de TEXTE : depuis que le panneau est arabe,
+    // La navigation ne porte plus de TEXTE : depuis que le panneau parle la langue du produit,
     // chaque entrée porte une CLÉ du catalogue `admin` (admin.json). Le test
     // vérifie donc les clés — il ne casse plus quand on reformule un libellé,
     // et il interdit qu'une entrée reparte avec du français en dur.
@@ -75,7 +75,7 @@ describe('navigation d’administration', () => {
     // « Enseignants » et « Offres » : le modèle commercial configuré depuis
     // le panneau — activation MANUELLE, jamais un paiement en ligne.
     // « Accès » reste : les codes d'activation, liés ou non à une offre
-    // (master spec §17/§18). « الكتب » : la librairie (BOOKS_STORE.md).
+    // (master spec §17/§18). « Livres » : la librairie (BOOKS_STORE.md).
     expect(keys).toEqual([
       null, 'nav.analytics', 'nav.content', 'nav.reports',
       'nav.students', 'nav.teachers', 'nav.plans', 'nav.access',
@@ -153,16 +153,16 @@ describe('la porte du panneau d’administration', () => {
     const app = read('src/App.jsx');
     expect(app).toMatch(/path="\/admin" element=\{<ProtectedRoute allowedRoles=\{\['admin', 'book_manager'\]\} \/>\}/);
     // Le gestionnaire de la librairie partage le panneau : tout ce qui n'est
-    // pas la librairie ni « حسابي » est derrière AdminOnlyOutlet.
+    // pas la librairie ni « Mon compte » est derrière AdminOnlyOutlet.
     expect(app).toMatch(/<Route element=\{<AdminOnlyOutlet \/>\}>/);
   });
 
-  it('le gestionnaire de la librairie ne voit que « الكتب » et son compte', () => {
+  it('le gestionnaire de la librairie ne voit que « Livres » et son compte', () => {
     const sections = adminNavSectionsFor('book_manager');
     expect(sections.map((s) => s.labelKey)).toEqual(['nav.books', 'nav.account']);
     const paths = sections.flatMap((s) => s.links.map((l) => l.path));
     expect(paths).toEqual(['/admin/livres/commandes', '/admin/livres', '/admin/livres/messages', '/admin/compte', '/admin/compte/securite']);
-    // L'administrateur, lui, voit tout — y compris « مسيّرو المكتبة ».
+    // L'administrateur, lui, voit tout — y compris « gestionnaires de la librairie ».
     expect(adminNavSectionsFor('admin').flatMap((s) => s.links)).toHaveLength(adminNavLinks.length);
     expect(adminNavSectionsFor('student')).toEqual([]);
   });
@@ -203,7 +203,7 @@ describe('les états d’écran', () => {
 
     for (const screen of SCREENS) {
       const source = read(screen);
-      // `Loading` / `ErrorBox` sont les équivalents arabes de `adminUi` :
+      // `Loading` / `ErrorBox` sont les équivalents de `adminUi` :
       // même rôle que `LoadingState` / `ErrorState`, mais traduits par le
       // catalogue. Un écran converti reste tenu de rendre les deux états.
       const handles = source.includes('LoadingState') || source.includes('<Loading')

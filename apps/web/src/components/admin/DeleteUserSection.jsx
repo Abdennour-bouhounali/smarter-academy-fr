@@ -14,7 +14,7 @@ const SUMMARY_KEYS = [
 ];
 
 /**
- * « منطقة الخطر » — la suppression DÉFINITIVE d'un compte élève ou enseignant.
+ * « Zone de danger » — la suppression DÉFINITIVE d'un compte élève ou enseignant.
  *
  * Distincte de la désactivation, qui garde tout : ici rien ne reste. D'où un
  * avertissement en trois temps : ce qui sera perdu (compté par le serveur),

@@ -20,11 +20,11 @@ const STATUSES = [
  * retire du contenu à des élèves en train de travailler, et la spec (§33)
  * demande une confirmation pour les opérations conséquentes. Republier, à
  * l'inverse, ne demande rien — ça ne casse rien. Sauf pour une LEÇON : son
- * état est recopié sur tous ses محاور (cascade serveur, 2026-10-07), donc
+ * état est recopié sur toutes ses étapes (cascade serveur, 2026-10-07), donc
  * même la publication se confirme, et le dialogue le dit.
  *
  * `onChanged(status, result)` : `result.modules` (leçon seulement) dit quels
- * محاور ont suivi et lesquels sont restés, faute d'être publiables.
+ * étapes ont suivi et lesquels sont restés, faute d'être publiables.
  *
  * L'état affiché vient du SERVEUR après l'appel, jamais d'une supposition
  * optimiste : si le serveur refuse, l'interface ne doit pas raconter le
@@ -58,7 +58,7 @@ export default function PublicationControl({ type, id, status, onChanged, compac
   const request = (next) => {
     if (!next || next === status) return;
     // Retirer du contenu aux élèves se confirme ; le remettre, non — sauf
-    // pour une leçon, dont tous les محاور prennent le nouvel état.
+    // pour une leçon, dont toutes les étapes prennent le nouvel état.
     if (next === 'published' && !cascades) apply(next);
     else setPending(next);
   };

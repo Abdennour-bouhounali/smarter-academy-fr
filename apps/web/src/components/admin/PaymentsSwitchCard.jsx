@@ -119,7 +119,7 @@ export function PaymentsSwitchView({ t, payments, loading, pending, saving, erro
   );
 }
 
-/** « Paiement en ligne » on the dashboard, beside « التسجيل »: open or close online payment (§4ter). */
+/** « Paiement en ligne » on the dashboard, beside « Inscriptions »: open or close online payment (§4ter). */
 export default function PaymentsSwitchCard() {
   const { t } = useTranslation('admin');
   const { token } = useContext(AuthContext);

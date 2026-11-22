@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
+import { LOCALE } from '../../locale';
 import { Loader2, AlertTriangle } from 'lucide-react';
 
 /**
- * LE CHROME PARTAGÉ DU PANNEAU D'ADMINISTRATION — arabe, RTL, et bâti sur le
+ * LE CHROME PARTAGÉ DU PANNEAU D'ADMINISTRATION — en français, et bâti sur le
  * MÊME système visuel que l'espace élève.
  *
  * Jumeau délibéré de `pages/teacher/teacherUi.jsx` : l'espace enseignant avait
- * déjà résolu ce problème (un espace arabe posé sur la coquille élève, dont
+ * déjà résolu ce problème (un espace posé sur la coquille élève, dont
  * toutes les chaînes viennent d'un catalogue i18n et qui surcharge les défauts
  * français du kit). On ne réinvente pas ce patron ici, on l'étend au troisième
  * rôle — c'est exactement l'arborescence que vise le contrat :
@@ -21,7 +22,7 @@ import { Loader2, AlertTriangle } from 'lucide-react';
  * L'ACCENT distingue le rôle, il ne change PAS le système : mêmes rayons,
  * mêmes ombres, même échelle typographique, même gouttière `.sa-page`, mêmes
  * jetons sémantiques (emerald = succès, rose = erreur, amber = attention).
- * Un administrateur qui passe de « مساحة التلميذ » à « لوحة الإدارة »
+ * Un administrateur qui passe de « espace élève » à « Administration »
  * reconnaît le produit ; seule la densité d'information change.
  */
 
@@ -31,7 +32,7 @@ export const ADMIN_GRADIENT = 'linear-gradient(135deg, #8B5CF6, #3B82F6)';
 /**
  * L'en-tête commun d'un écran d'administration : sur-titre, titre, sous-titre,
  * et une zone d'actions. Même composition que `TeacherPage` et que l'en-tête
- * de « تقدّمي » (Progression.jsx), au sur-titre près, qui porte l'accent du
+ * de « Ma progression » (Progression.jsx), au sur-titre près, qui porte l'accent du
  * rôle.
  */
 export function AdminPage({ eyebrow, title, subtitle, actions, children }) {
@@ -188,18 +189,13 @@ export const input = 'w-full rounded-xl border border-slate-300 bg-white px-3 py
 export const label = 'block mb-1 font-inter text-xs font-semibold text-slate-600';
 
 /**
- * Les dates du panneau, en arabe algérien.
- *
- * `ar-DZ` et non `fr-FR` : une date affichée dans une interface arabe se lit
- * en arabe. Les CHIFFRES restent occidentaux — c'est la convention de la
- * plateforme (le programme algérien les utilise), et `ar-DZ` les rend ainsi
- * par défaut.
+ * Les dates du panneau, au format de `LOCALE` (« 22 nov. 2026 »).
  */
 export function formatDate(iso, { withTime = false } = {}) {
   if (!iso) return '—';
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '—';
-  return d.toLocaleDateString('ar-DZ', {
+  return d.toLocaleDateString(LOCALE, {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
@@ -208,10 +204,9 @@ export function formatDate(iso, { withTime = false } = {}) {
 }
 
 /**
- * Un nombre dans une phrase arabe. `dir="ltr"` + `unicode-bidi: isolate` par
- * l'attribut : « 3 / 10 » ne doit pas se retourner en « 10 / 3 » au milieu
- * d'un texte RTL — le même soin que `.sa-math-inline` prend pour les
- * expressions mathématiques.
+ * Un nombre dans une phrase : un îlot `dir="ltr"` isolé, sans effet dans une
+ * page qui se lit déjà de gauche à droite, gardé pour ne pas toucher aux
+ * nombreux écrans qui l'appellent.
  */
 export function Num({ children, className = '' }) {
   return <span dir="ltr" className={`inline-block ${className}`}>{children}</span>;

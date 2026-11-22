@@ -17,7 +17,7 @@ import { AdminPage, useAdminLabels, Num, btnPrimary, btnSecondary, input, label 
 const BLANK = { name: '', wilaya: '', commune: '', code: '', currentAcademicYear: '' };
 
 /**
- * « المؤسسات » — les établissements de « فضاء الإدارة » (SCHOOL_ADMIN_SPACE.md §5).
+ * « Établissements » — les établissements de l’« espace établissement » (SCHOOL_ADMIN_SPACE.md §5).
  * Créer ici ; le directeur se nomme sur la fiche.
  */
 export default function AdminSchoolList() {

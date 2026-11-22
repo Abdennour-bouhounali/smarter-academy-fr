@@ -11,7 +11,7 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchSubscriptionRequests, rejectSubscriptionRequest } from '../../../services/admin/subscriptionService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
-import { formatDzd } from '../../../utils/dinars';
+import { formatEur } from '../../../utils/money';
 import { AdminPage, useAdminLabels, formatDate, btnPrimary, btnSecondary, input as inputClass, Num } from '../adminUi';
 
 /** La file des DEMANDES d'offre. Une demande n'active rien : on l'honore depuis la fiche du compte, ou on la refuse ici. */
@@ -68,8 +68,8 @@ export default function AdminSubscriptionRequests() {
             { key: 'seats', label: t('requests.columnSeats'), render: (r) => (r.requestedStudentSeats == null ? t('common.dash') : <Num>{r.requestedStudentSeats}</Num>) },
             { key: 'total', label: t('requests.columnTotal'), render: (r) => (r.calculatedTotalCents == null ? t('common.dash') : (
               <span>
-                <Num>{`${formatDzd(r.calculatedTotalCents)} ${t('plans.dinarShort')}`}</Num>
-                {r.seatTierLabel ? <span className="text-slate-400"> · {t('plans.tier')} <Num>{r.seatTierLabel}</Num> — <Num>{`${formatDzd(r.unitPriceCents)} ${t('plans.dinarShort')}`}</Num> {t('plans.perStudent')}</span> : null}
+                <Num>{formatEur(r.calculatedTotalCents)}</Num>
+                {r.seatTierLabel ? <span className="text-slate-400"> · {t('plans.tier')} <Num>{r.seatTierLabel}</Num> — <Num>{formatEur(r.unitPriceCents)}</Num> {t('plans.perStudent')}</span> : null}
               </span>
             )) },
             { key: 'requestedAt', label: t('requests.columnDate'), render: (r) => <Num>{formatDate(r.requestedAt, { withTime: true })}</Num> },

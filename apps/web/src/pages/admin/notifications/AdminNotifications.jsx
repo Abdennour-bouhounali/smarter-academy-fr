@@ -26,10 +26,10 @@ async function currentSubscription() {
 }
 
 /**
- * « الإشعارات على هاتفك » — active, sur CET appareil, une notification à chaque événement du
- * tableau de bord (nouvelle commande, inscription, message, بلاغ, demande d'offre) et laisse
+ * « Notifications sur votre téléphone » — active, sur CET appareil, une notification à chaque événement du
+ * tableau de bord (nouvelle commande, inscription, message, signalement, demande d'abonnement) et laisse
  * choisir les sujets reçus (BOOKS_STORE.md §6quater). L'administrateur l'a sur l'accueil du
- * tableau de bord ; le « مسيّر المكتبة » sur « طلبات الكتب » (ses sujets : la librairie).
+ * tableau de bord ; le gestionnaire de la librairie sur « Commandes de livres » (ses sujets : la librairie).
  * Le service worker `/sw.js` n'est enregistré qu'ici, au clic : jamais chez un élève.
  */
 export default function AdminNotifications() {

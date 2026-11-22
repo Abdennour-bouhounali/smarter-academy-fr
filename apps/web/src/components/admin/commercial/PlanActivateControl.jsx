@@ -5,7 +5,7 @@ import { activatePlan } from '../../../services/admin/subscriptionService';
 import { ConfirmDialog } from '../ui/Modal';
 
 /**
- * « تفعيل عرض » depuis une LIGNE de la liste des élèves — le même geste que
+ * « Activer une formule » depuis une LIGNE de la liste des élèves — le même geste que
  * le formulaire du CommercialPanel (même route, même validation et même
  * journal côté serveur), sans date de fin ni note : l'offre garde sa durée.
  * Pour une date ou une note, la fiche de l'élève reste le chemin complet.

@@ -1,7 +1,7 @@
 import { call, get, send, query } from './adminClient';
 
 /**
- * L'ACTIVATION MANUELLE — le seul geste commercial du produit algérien.
+ * L'ACTIVATION MANUELLE — le geste commercial de l'administrateur.
  * L'argent est reçu hors plateforme ; l'administrateur active l'offre sur le
  * compte, ou envoie un code. Les demandes ne sont qu'une file d'attente.
  * `role` vaut 'teachers' ou 'students'.

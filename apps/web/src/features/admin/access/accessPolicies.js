@@ -1,5 +1,5 @@
 /**
- * « الوصول والحدود » dans l'administration — la logique pure de l'éditeur.
+ * « Accès et limites » dans l'administration — la logique pure de l'éditeur.
  *
  * La page ne décide rien : elle édite une ligne, le serveur la VALIDE
  * (FeatureAccessAdminService) et la renvoie. Ce module ne fait que trois

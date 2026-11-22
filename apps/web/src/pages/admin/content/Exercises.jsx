@@ -17,7 +17,7 @@ import { useDebounced } from '../../../hooks/useDebounced';
 const GRADES = getAllGrades().map((g) => g.id);
 
 /**
- * « التمارين » — organisée PAR LEÇON (propriétaire, 2026-11-11).
+ * « Exercices » — organisée PAR LEÇON (propriétaire, 2026-11-11).
  *
  * On ne publie pas les exercices un par un : on choisit une leçon et on donne
  * un état à TOUTE sa banque d'exercices, d'un seul geste

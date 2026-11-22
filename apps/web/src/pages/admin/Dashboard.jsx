@@ -35,7 +35,7 @@ function useAlertLabel() {
     // vedette du module. Le serveur donne les deux ; la phrase se compose ici.
     // `count` est ce sur quoi i18next choisit la forme du pluriel. Chaque
     // alerte compte quelque chose de différent : le nombre de bulletins pour
-    // les unes, le nombre d'إجابات pour « faible réussite ».
+    // les unes, le nombre de réponses pour « faible réussite ».
     const params = { ...alert.params };
     if (alert.kind === 'low_success_exercise') params.count = alert.params.total;
     if (alert.kind === 'repeated_reports') {
@@ -53,9 +53,9 @@ function useAlertLabel() {
 }
 
 /**
- * L'accueil du panneau — « نظرة عامة ».
+ * L'accueil du panneau — « Tableau de bord ».
  *
- * Les tuiles sont `StatTile`, le MÊME composant que « تقدّمي » et l'accueil de
+ * Les tuiles sont `StatTile`, le MÊME composant que « Ma progression » et l'accueil de
  * l'espace élève : c'est déjà la carte de verre du produit (`.glass-card`), et
  * la réutiliser garantit qu'un indicateur d'administration ne pèse pas plus
  * qu'un indicateur élève. Rien à dupliquer ici.
@@ -76,9 +76,9 @@ export default function AdminDashboard() {
       title={t('dashboard.title')}
       subtitle={t('dashboard.subtitle')}
     >
-      {/* Notifications sur le téléphone : inscriptions, messages, بلاغات, commandes… (BOOKS_STORE.md §6quater). */}
+      {/* Notifications sur le téléphone : inscriptions, messages, signalements, commandes… (BOOKS_STORE.md §6quater). */}
       <AdminNotifications />
-      {/* « التسجيل » : ouvrir / fermer l'inscription publique — hors des données du tableau de bord, pour rester
+      {/* « Inscriptions » : ouvrir / fermer l'inscription publique — hors des données du tableau de bord, pour rester
           visible et utilisable même quand celles-ci ne chargent pas. */}
       <RegistrationCard />
       {/* « Paiement en ligne » : the payments switch (FRANCE_REBUILD_PLAN.md §4ter), beside the registration switch. */}

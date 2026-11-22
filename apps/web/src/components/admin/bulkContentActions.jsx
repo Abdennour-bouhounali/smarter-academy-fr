@@ -32,20 +32,17 @@ import { bulkChangeContentStatus, bulkChangeContentTier } from '../../services/a
 const t = (key, options) => i18n.t(key, { ns: 'admin', ...options });
 
 /**
- * « 24 درساً » — le nom compté, dans la bonne catégorie de pluriel arabe.
+ * « 24 leçons » — le nom compté, dans la bonne forme du pluriel.
  *
- * L'arabe en a six (`zero`, `one`, `two`, `few`, `many`, `other`) et c'est
- * `Intl.PluralRules('ar-DZ')` qui choisit, jamais nous : « درسان » pour 2,
- * « 3 دروس » pour 3, « 11 درساً » pour 11. Une concaténation ne sait pas
- * faire ça — d'où la disparition de l'ancien `countNoun`/`agree` français.
+ * C'est i18next qui choisit (`_one` pour 0 et 1, `_other` au-delà), jamais
+ * une concaténation.
  */
 const counted = (count, noun) => t(`bulk.noun.${noun?.key ?? 'item'}`, { count });
 
 /**
- * Le même nom, au CAS OBLIQUE — « أرشفة درسين » et non « أرشفة درسان ».
- *
- * Seul le duel distingue les deux cas en arabe, mais il les distingue
- * toujours : un `{{counted}}` unique serait faux une fois sur six.
+ * Le même nom, lu dans la famille `bulk.nounOf.*` — héritée d'une langue qui
+ * déclinait le nom complément ; en français, son texte est celui de
+ * `bulk.noun.*`.
  */
 const countedObj = (count, noun) => t(`bulk.nounOf.${noun?.key ?? 'item'}`, { count });
 
@@ -206,7 +203,7 @@ export function buildContentBulkActions({
     key: `status:${action.status}`,
     label: t(action.labelKey),
     tone: action.tone,
-    // Une leçon recopie son état sur tous ses محاور (cascade serveur) : le
+    // Une leçon recopie son état sur toutes ses étapes (cascade serveur) : le
     // dialogue le dit, quel que soit l'état choisi.
     confirm: type === 'lesson'
       ? {

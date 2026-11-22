@@ -1,6 +1,6 @@
 import { call, get, send } from './adminClient';
 
-/** « الوصول والحدود » : réglages par palier et consommation. */
+/** « Accès et limites » : réglages par palier et consommation. */
 export function fetchAccessPolicies(token) {
   return call('/admin/access-policies', get(token), 'Impossible de charger les réglages d’accès.');
 }

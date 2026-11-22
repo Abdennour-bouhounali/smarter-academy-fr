@@ -21,9 +21,9 @@ describe('ExerciseBankControl — toute la banque d’une leçon', () => {
       { publicationStatus: 'hidden' },
       { publicationStatus: 'draft', retiredAt: '2026-10-01' },
     ]);
-    expect(html).toContain('بنك التمارين');
-    expect(html).toContain('نشر كل التمارين');
-    expect(html).toContain('إخفاء كل التمارين');
+    expect(html).toContain('Banque d’exercices');
+    expect(html).toContain('Publier tous les exercices');
+    expect(html).toContain('Masquer tous les exercices');
     expect(html).toContain('>2<');
     expect(html).toContain('>1<');
   });

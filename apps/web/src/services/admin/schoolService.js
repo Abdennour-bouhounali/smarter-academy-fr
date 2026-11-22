@@ -1,6 +1,6 @@
 import { call, get, query, send } from './adminClient';
 
-/** « المؤسسات » — les établissements et leur directeur (SCHOOL_ADMIN_SPACE.md §5). */
+/** « Établissements » — les établissements et leur chef d’établissement (SCHOOL_ADMIN_SPACE.md §5). */
 export function fetchSchools(token, filters = {}) {
   return call(`/admin/schools${query(filters)}`, get(token), 'Impossible de charger les établissements.');
 }

@@ -14,8 +14,8 @@ import {
 import { isFeatureOn } from '../../../config/features';
 
 /**
- * « الوصول والحدود » — ce que chaque palier peut faire des instruments du
- * مختبر, du cahier et des travaux, réglé ICI sans déploiement.
+ * « Accès et limites » — ce que chaque palier peut faire des instruments du
+ * l’atelier, du cahier et des travaux, réglé ICI sans déploiement.
  *
  * La page édite une ligne à la fois ; le serveur valide, journalise
  * (`access_policy.updated`) et renvoie la ligne. Une modification qui FERME

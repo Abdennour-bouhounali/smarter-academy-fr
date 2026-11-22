@@ -5,7 +5,7 @@ export function fetchUserDeletionPreview(token, id) {
   return call(
     `/admin/users/${encodeURIComponent(id)}/deletion-preview`,
     get(token),
-    'تعذّر تحميل ما سيُحذف.',
+    'Impossible de charger ce qui sera supprimé.',
   ).then((data) => data.summary);
 }
 
@@ -17,6 +17,6 @@ export function deleteUser(token, id, confirmEmail) {
   return call(
     `/admin/users/${encodeURIComponent(id)}`,
     send('DELETE', token, { confirmEmail }),
-    'تعذّر حذف الحساب.',
+    'Impossible de supprimer le compte.',
   );
 }

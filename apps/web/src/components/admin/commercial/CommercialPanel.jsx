@@ -9,7 +9,7 @@ import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchAccountSubscription, activatePlan, issueActivationCode, rejectSubscriptionRequest, subscriptionAction } from '../../../services/admin/subscriptionService';
 import { fetchPlans } from '../../../services/admin/planService';
 import { quoteSeats } from '../../../features/teacher/subscription/seatPricing';
-import { formatDzd } from '../../../utils/dinars';
+import { formatEur } from '../../../utils/money';
 
 const INPUT = 'w-full rounded-lg border border-slate-300 bg-white px-3 py-2 font-inter text-xs text-slate-800 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500';
 const BTN = 'rounded-lg border border-slate-300 bg-white px-3 py-1.5 font-inter text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50';
@@ -33,8 +33,8 @@ const SOURCE_KEYS = {
  * Aucun paiement en ligne : l'argent est reçu hors plateforme, puis
  * l'administrateur ACTIVE l'offre ici, ou ENVOIE un code. Les demandes sont
  * une file d'attente, jamais une activation. Tout est journalisé côté serveur.
- * Les montants affichés ici sont INFORMATIFS, en dinars algériens, et
- * correspondent à une somme reçue hors de la plateforme.
+ * Les montants affichés ici sont en euros (`formatEur`) et correspondent à
+ * une somme reçue hors de la plateforme.
  *
  * Une offre enseignant PAR SIÈGES demande un nombre d'élèves : le panneau
  * montre l'aperçu (grille de la version courante) et n'envoie que le nombre —
@@ -63,8 +63,8 @@ export default function CommercialPanel({ role, userId, planType, onChanged }) {
     if (q) {
       return t('commercial.seatQuote', {
         tier: q.tier.label,
-        unit: formatDzd(q.unitPriceCents),
-        total: formatDzd(q.totalCents),
+        unit: formatEur(q.unitPriceCents),
+        total: formatEur(q.totalCents),
       });
     }
     return seats ? t('commercial.noTierCovers') : t('commercial.enterSeats');
@@ -150,7 +150,7 @@ export default function CommercialPanel({ role, userId, planType, onChanged }) {
                       <span>
                         <Num>{ent.plan.studentSeatLimit}</Num>
                         {ent.plan.seatUnitPriceCents != null
-                          ? <span className="text-slate-500"> · {t('commercial.seatUnitAndTotal', { unit: formatDzd(ent.plan.seatUnitPriceCents), total: formatDzd(ent.plan.seatTotalCents) })}</span>
+                          ? <span className="text-slate-500"> · {t('commercial.seatUnitAndTotal', { unit: formatEur(ent.plan.seatUnitPriceCents), total: formatEur(ent.plan.seatTotalCents) })}</span>
                           : null}
                       </span>
                     )
@@ -235,8 +235,8 @@ export default function CommercialPanel({ role, userId, planType, onChanged }) {
               </p>
               {pending.calculatedTotalCents != null && (
                 <p className="font-inter text-xs text-slate-700" data-pending-quote>
-                  {t('commercial.quoteTierUnit', { tier: pending.seatTierLabel ?? t('common.dash'), unit: formatDzd(pending.unitPriceCents) })}{' · '}
-                  <b>{t('commercial.quoteTotal', { total: formatDzd(pending.calculatedTotalCents), currency: pending.currency ?? t('commercial.currencyDzd') })}</b>{' '}
+                  {t('commercial.quoteTierUnit', { tier: pending.seatTierLabel ?? t('common.dash'), unit: formatEur(pending.unitPriceCents) })}{' · '}
+                  <b>{t('commercial.quoteTotal', { total: formatEur(pending.calculatedTotalCents) })}</b>{' '}
                   {t('commercial.quoteServerComputed')}
                 </p>
               )}
@@ -293,7 +293,7 @@ export default function CommercialPanel({ role, userId, planType, onChanged }) {
                       ? (
                         <span title={s.seatTierLabel ? t('commercial.tierNamed', { tier: s.seatTierLabel }) : undefined}>
                           <Num>{s.studentSeatLimit}</Num>
-                          {s.seatUnitPriceCents != null ? <span className="text-slate-400"> · {t('commercial.seatUnitShort', { unit: formatDzd(s.seatUnitPriceCents) })}</span> : null}
+                          {s.seatUnitPriceCents != null ? <span className="text-slate-400"> · {t('commercial.seatUnitShort', { unit: formatEur(s.seatUnitPriceCents) })}</span> : null}
                         </span>
                       )
                       : t('common.dash')}

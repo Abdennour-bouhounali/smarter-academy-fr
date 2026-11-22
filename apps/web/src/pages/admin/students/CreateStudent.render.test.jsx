@@ -5,8 +5,8 @@ import OneTimeCredentials from '../../../components/admin/OneTimeCredentials';
 import { CreateStudentForm, submitStudent } from './CreateStudent';
 
 const t = i18n.getFixedT(null, 'admin');
-const FORM = { firstName: 'أمين', lastName: 'بن علي', email: '', grade: '' };
-const GRADES = [{ value: '4am', label: 'الرابعة متوسط' }];
+const FORM = { firstName: 'Inès', lastName: 'Martin', email: '', grade: '' };
+const GRADES = [{ value: '3e', label: 'Niveau 3e' }];
 
 function mockFetch(status, body) {
   const calls = [];
@@ -33,7 +33,7 @@ const formHtml = (props) =>
     />,
   );
 
-describe('« إنشاء حساب تلميذ »', () => {
+describe('« Créer un compte élève »', () => {
   const original = globalThis.fetch;
   afterEach(() => {
     globalThis.fetch = original;
@@ -41,36 +41,40 @@ describe('« إنشاء حساب تلميذ »', () => {
 
   it('le formulaire : deux noms, un courriel LTR facultatif, un niveau facultatif', () => {
     const out = formHtml();
-    expect(out).toContain('حساب تلميذ جديد');
+    expect(out).toContain('Nouveau compte élève');
     expect(out).toContain('id="cs-email"');
     expect(out).toMatch(/type="email" dir="ltr"/);
-    expect(out).toContain('دون مستوى');
-    expect(out).toContain('الرابعة متوسط');
-    expect(out).toContain('إنشاء الحساب');
+    expect(out).toContain('Sans niveau');
+    expect(out).toContain('Niveau 3e');
+    expect(out).toContain('Créer le compte');
   });
 
-  it('un nom latin est refusé AVANT le serveur, avec le message arabe de l’inscription', async () => {
+  it('un nom hors de l’alphabet latin est refusé AVANT le serveur, avec le message de l’inscription', async () => {
     const calls = mockFetch(201, {});
-    const outcome = await submitStudent('tk', { ...FORM, firstName: 'Amine' }, t);
+    // Un prénom avec un chiffre : `utils/personName` n'accepte que les lettres latines (accents compris).
+    const outcome = await submitStudent('tk', { ...FORM, firstName: 'In3s' }, t);
     expect(calls).toHaveLength(0);
-    expect(outcome.nameErrors).toEqual({ firstName: 'notArabic' });
+    expect(outcome.nameErrors).toEqual({ firstName: 'invalid' });
     const out = formHtml({ nameErrors: outcome.nameErrors });
-    expect(out).toContain('اكتب بالحروف العربية');
+    // La phrase vient du catalogue `auth` (celui de l'inscription), pas d'une copie locale.
+    const message = i18n.t('name.errors.invalid', { ns: 'auth' });
+    expect(message).not.toBe('name.errors.invalid');
+    expect(out).toContain(message);
     expect(out).toContain('aria-invalid="true"');
   });
 
   it('succès : le corps n’envoie ni courriel ni niveau vides ; le mot de passe revient une fois', async () => {
     const calls = mockFetch(201, {
       success: true,
-      student: { id: 9, firstName: 'أمين', lastName: 'بن علي' },
-      login: 'amine.benali.42',
+      student: { id: 9, firstName: 'Inès', lastName: 'Martin' },
+      login: 'ines.martin.42',
       password: 'Xk7-pq2-Lm9',
     });
-    const outcome = await submitStudent('tk', { ...FORM, firstName: '  أمين  ' }, t);
+    const outcome = await submitStudent('tk', { ...FORM, firstName: '  Inès  ' }, t);
     expect(calls[0].url).toContain('/admin/students');
     expect(calls[0].method).toBe('POST');
-    expect(calls[0].body).toEqual({ firstName: 'أمين', lastName: 'بن علي' });
-    expect(outcome.secret).toEqual({ login: 'amine.benali.42', password: 'Xk7-pq2-Lm9' });
+    expect(calls[0].body).toEqual({ firstName: 'Inès', lastName: 'Martin' });
+    expect(outcome.secret).toEqual({ login: 'ines.martin.42', password: 'Xk7-pq2-Lm9' });
 
     const card = renderToStaticMarkup(
       <OneTimeCredentials
@@ -83,25 +87,25 @@ describe('« إنشاء حساب تلميذ »', () => {
         onDone={() => {}}
       />,
     );
-    expect(card).toContain('تظهر مرة واحدة فقط');
+    expect(card).toContain('affiché une seule fois');
     expect(card.match(/Xk7-pq2-Lm9/g)).toHaveLength(1);
-    expect(card).toMatch(/dir="ltr"[^>]*>amine\.benali\.42</);
-    expect(card).toContain('نسخ');
-    expect(card).toContain('تمّ');
+    expect(card).toMatch(/dir="ltr"[^>]*>ines\.martin\.42</);
+    expect(card).toContain('Copier');
+    expect(card).toContain('Terminé');
   });
 
   it('le courriel et le niveau donnés partent', async () => {
-    const calls = mockFetch(201, { success: true, student: {}, login: 'a@b.dz', password: 'p' });
-    await submitStudent('tk', { ...FORM, email: ' a@b.dz ', grade: '4am' }, t);
-    expect(calls[0].body).toEqual({ firstName: 'أمين', lastName: 'بن علي', email: 'a@b.dz', grade: '4am' });
+    const calls = mockFetch(201, { success: true, student: {}, login: 'a@b.fr', password: 'p' });
+    await submitStudent('tk', { ...FORM, email: ' a@b.fr ', grade: '3e' }, t);
+    expect(calls[0].body).toEqual({ firstName: 'Inès', lastName: 'Martin', email: 'a@b.fr', grade: '3e' });
   });
 
-  it('courriel déjà pris : la phrase arabe de la page', async () => {
+  it('courriel déjà pris : la phrase française de la page', async () => {
     mockFetch(422, { success: false, reason: 'email_taken', message: 'server text' });
-    const outcome = await submitStudent('tk', { ...FORM, email: 'a@b.dz' }, t);
-    expect(outcome.formError).toBe('هذا البريد مستعمل في حساب آخر.');
+    const outcome = await submitStudent('tk', { ...FORM, email: 'a@b.fr' }, t);
+    expect(outcome.formError).toBe('Cet e-mail est déjà utilisé par un autre compte.');
     expect(outcome.secret).toBeUndefined();
-    expect(formHtml({ formError: outcome.formError })).toContain('هذا البريد مستعمل في حساب آخر.');
+    expect(formHtml({ formError: outcome.formError })).toContain('Cet e-mail est déjà utilisé par un autre compte.');
   });
 
   it('une autre panne : la phrase de la page, jamais un mot de passe', async () => {

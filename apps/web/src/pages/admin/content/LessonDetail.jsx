@@ -99,7 +99,7 @@ export default function AdminLessonDetail() {
                     type="lesson"
                     id={lesson.id}
                     status={lesson.publicationStatus}
-                    // La cascade a pu changer chaque محور : on relit la leçon
+                    // La cascade a pu changer chaque étape : on relit la leçon
                     // plutôt que de deviner l'état de chacun.
                     onChanged={() => reload()}
                   />

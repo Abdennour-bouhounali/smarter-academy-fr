@@ -5,7 +5,7 @@ import { setTeacherAmbassador } from '../../../services/admin/teacherService';
 import Switch from './Switch';
 
 /**
- * L'interrupteur « سفير » d'un enseignant — désigner / retirer en un geste.
+ * L'interrupteur « ambassadeur » d'un enseignant — désigner / retirer en un geste.
  *
  * Un ambassadeur voit tout le contenu, quel qu'en soit l'état de publication,
  * et peut signaler un problème. Le geste est réversible et ne touche ni les

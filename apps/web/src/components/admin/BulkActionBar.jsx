@@ -18,17 +18,15 @@ import Modal from './ui/Modal';
  *  — elle ne s'affiche PAS quand rien n'est coché : l'interface existante
  *    reste exactement ce qu'elle était ;
  *  — pendant l'exécution, TOUT est désactivé, y compris le bouton qui vient
- *    d'être cliqué : un double clic sur « نشر 24 درساً » ne doit pas lancer
+ *    d'être cliqué : un double clic sur « Publier 24 leçons » ne doit pas lancer
  *    deux lots ;
  *  — le résultat distingue appliqué / déjà dans cet état / refusé, et nomme
  *    les refus. « Succès » alors que 2 contenus sur 12 ont résisté est un
  *    mensonge que la spec §9 interdit.
  *
- * LE NOMBRE, EN ARABE. « 24 درساً » ne s'obtient pas en collant un nombre et
- * un pluriel : l'arabe a SIX catégories (`zero`, `one`, `two`, `few`, `many`,
- * `other`), et c'est `t(clé, { count })` qui choisit via
- * `Intl.PluralRules('ar-DZ')`. L'ancien accord français (`agree`/`countNoun`)
- * a disparu avec la langue qu'il servait.
+ * LE NOMBRE. « 24 leçons » ne s'obtient pas en collant un nombre et un nom :
+ * c'est `t(clé, { count })` qui choisit la forme (`_one` pour 0 et 1,
+ * `_other` au-delà) via les règles de pluriel du français.
  */
 export default function BulkActionBar({
   count,
@@ -49,21 +47,21 @@ export default function BulkActionBar({
   const [error, setError] = useState(null);
   const [detailOpen, setDetailOpen] = useState(false);
   // Le libellé de l'action en cours, figé au lancement : `pending` est remis à
-  // null dès la fin, et « نشر — 24 درساً… » doit survivre à ça.
+  // null dès la fin, et « Publier — 24 leçons… » doit survivre à ça.
   const runningLabel = useRef('');
 
-  // « 24 درساً », catégorie de pluriel comprise — et CAS compris.
+  // « 24 leçons », forme du pluriel comprise.
   //
-  // L'arabe décline le duel : « درسان » est sujet, « درسين » est complément.
-  // `countedOf` donne la forme SUJET (« درسان محدَّدان »), `countedObjOf` la
-  // forme COMPLÉMENT (« أرشفة درسين »), et les confirmations reçoivent la
-  // seconde puisque leur nom y est toujours objet d'un geste.
+  // `countedOf` et `countedObjOf` lisent deux familles de clés
+  // (`bulk.noun.*`, `bulk.nounOf.*`) héritées d'une langue qui déclinait le
+  // nom selon sa fonction ; en français elles portent le même texte. Les
+  // confirmations reçoivent la seconde, où le nom est l'objet du geste.
   const countedOf = (n) => t(`bulk.noun.${noun?.key ?? 'item'}`, { count: n });
   const countedObjOf = (n) => t(`bulk.nounOf.${noun?.key ?? 'item'}`, { count: n });
   const counted = countedObjOf(count);
 
   // Un changement de sélection périme le rapport précédent : laisser
-  // « ✓ 12 دروس منشورة » au-dessus d'une nouvelle sélection ferait lire un
+  // « ✓ 12 leçons publiées » au-dessus d'une nouvelle sélection ferait lire un
   // ancien résultat comme le résultat du prochain geste.
   useEffect(() => { setResult(null); setError(null); }, [count]);
 
@@ -206,8 +204,8 @@ export default function BulkActionBar({
         </div>
       )}
 
-      {/* La confirmation porte le NOMBRE et le geste, jamais « هل أنت
-          متأكّد ؟ » : c'est le nombre qui permet de repérer qu'on a coché une
+      {/* La confirmation porte le NOMBRE et le geste, jamais « Êtes-vous
+          sûr ? » : c'est le nombre qui permet de repérer qu'on a coché une
           ligne de trop. */}
       {pending && (
         <Modal

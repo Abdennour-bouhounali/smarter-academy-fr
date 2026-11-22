@@ -30,7 +30,7 @@ describe('le contrôle du palier dans l’administration', () => {
     for (const page of [
       'src/pages/admin/content/Lessons.jsx',
       // Le palier d'UN exercice se règle sur la fiche de sa leçon : la page
-      // « التمارين » est organisée par leçon depuis le 2026-11-11.
+      // « Exercices » est organisée par leçon depuis le 2026-11-11.
       'src/pages/admin/content/LessonDetail.jsx',
     ]) {
       expect(read(page), page).toContain('TierControl');
@@ -56,7 +56,7 @@ describe('le contrôle du palier dans l’administration', () => {
     expect(control).toContain("next === 'premium'");
     expect(control).toContain('bulk.confirmPremiumOneTitle');
 
-    // Les PHRASES vivent dans le catalogue arabe depuis que le panneau parle
+    // Les PHRASES vivent dans le catalogue depuis que le panneau parle
     // la langue du produit : on les vérifie là où elles sont, ce qui interdit
     // en plus qu'une clé soit citée sans exister.
     for (const key of [
@@ -83,10 +83,10 @@ describe('le contrôle du palier dans l’administration', () => {
     // `premium` retombait sur le gris du défaut — même pastille que
     // « Gratuit » pour deux états opposés.
     expect(badge).toMatch(/premium:\s*'bg-amber/);
-    // Le libellé est arabe et vient du catalogue ; `STATUS_LABELS` ne reste
-    // qu'un filet pour un statut hors vocabulaire.
-    expect(adminCatalogue.status.premium).toMatch(/[\u0600-\u06FF]/);
-    expect(adminCatalogue.status.free).toMatch(/[\u0600-\u06FF]/);
+    // Le libellé est français et vient du catalogue ; `STATUS_LABELS` ne
+    // reste qu'un filet pour un statut hors vocabulaire.
+    expect(adminCatalogue.status.premium).toBe('Payant');
+    expect(adminCatalogue.status.free).toBe('Gratuit');
     expect(adminCatalogue.status.premium).not.toBe(adminCatalogue.status.free);
   });
 });

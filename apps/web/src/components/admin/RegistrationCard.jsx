@@ -75,7 +75,7 @@ export function RegistrationView({ t, registration, loading, saving, error, onCh
   );
 }
 
-/** « التسجيل » sur l'accueil du panneau : ouvrir / fermer l'inscription publique, et le lien de classe. */
+/** « Inscriptions » sur l'accueil du panneau : ouvrir / fermer l'inscription publique, et le lien de classe. */
 export default function RegistrationCard() {
   const { t } = useTranslation('admin');
   const { token } = useContext(AuthContext);

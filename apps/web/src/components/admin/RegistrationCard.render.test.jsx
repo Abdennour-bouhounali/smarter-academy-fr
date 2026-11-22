@@ -30,7 +30,7 @@ function mockFetch(registration) {
   return calls;
 }
 
-describe('« التسجيل » — la carte du tableau de bord', () => {
+describe('« Inscriptions » — la carte du tableau de bord', () => {
   const original = globalThis.fetch;
   afterEach(() => {
     globalThis.fetch = original;
@@ -38,18 +38,18 @@ describe('« التسجيل » — la carte du tableau de bord', () => {
 
   it('dit l’état ouvert, sans l’interrupteur du lien de classe', () => {
     const out = html({ registration: { open: true, classLinks: true } });
-    expect(out).toContain('التسجيل مفتوح');
+    expect(out).toContain('Inscriptions ouvertes');
     expect(out).toContain('role="switch"');
     expect(out).toContain('aria-checked="true"');
-    expect(out).not.toContain('التسجيل برابط القسم');
+    expect(out).not.toContain('Inscription par le lien de la classe');
     expect(out).not.toContain('data-registration-switch="classLinks"');
   });
 
   it('fermé : dit la liste d’attente, et montre le lien de classe avec son explication', () => {
     const out = html({ registration: { open: false, classLinks: true } });
-    expect(out).toContain('التسجيل مغلق — الصفحة تعرض قائمة الانتظار');
-    expect(out).toContain('التسجيل برابط القسم');
-    expect(out).toContain('رغم إغلاق التسجيل');
+    expect(out).toContain('Inscriptions fermées — la page affiche la liste d’attente');
+    expect(out).toContain('Inscription par le lien de la classe');
+    expect(out).toContain('même quand les inscriptions sont fermées');
     expect(out).toMatch(/aria-checked="false"[^>]*data-registration-switch="open"/);
     expect(out).toMatch(/aria-checked="true"[^>]*data-registration-switch="classLinks"/);
   });
@@ -64,14 +64,14 @@ describe('« التسجيل » — la carte du tableau de bord', () => {
     const saving = view({ registration: { open: false, classLinks: false }, saving: true });
     expect(switchOf(saving, 'open').props.disabled).toBe(true);
     expect(switchOf(saving, 'classLinks').props.disabled).toBe(true);
-    expect(renderToStaticMarkup(saving)).toContain('جارٍ الحفظ');
+    expect(renderToStaticMarkup(saving)).toContain('Enregistrement…');
   });
 
   it('montre la ligne d’erreur', () => {
     const out = html({ registration: { open: false, classLinks: false }, error: t('registration.error') });
     expect(out).toContain('role="alert"');
-    expect(out).toContain('تعذّر تغيير حالة التسجيل');
-    expect(html({ registration: null, error: t('registration.loadError') })).toContain('تعذّرت قراءة حالة التسجيل');
+    expect(out).toContain('Impossible de changer l’état des inscriptions');
+    expect(html({ registration: null, error: t('registration.loadError') })).toContain('Impossible de lire l’état des inscriptions');
   });
 
   it('OUVRIR demande une confirmation ; un refus n’envoie rien', async () => {
@@ -108,8 +108,8 @@ describe('« التسجيل » — la carte du tableau de bord', () => {
         <RegistrationCard />
       </AuthContext.Provider>,
     );
-    expect(out).toContain('التسجيل');
-    expect(out).toContain('جارٍ قراءة حالة التسجيل');
+    expect(out).toContain('Inscriptions');
+    expect(out).toContain('Lecture de l’état des inscriptions');
   });
 
   it('Switch : un vrai interrupteur accessible', () => {

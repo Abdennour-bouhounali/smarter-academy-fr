@@ -1,18 +1,18 @@
 import { describe, it, expect } from 'vitest';
 import { tiersToRows, rowsToPayload, tierProblems } from './pricingTiers';
 
-const row = (min, max, price, extra = {}) => ({ minStudents: min, maxStudents: max, pricePerStudent: price, currency: 'DZD', isActive: true, ...extra });
+const row = (min, max, price, extra = {}) => ({ minStudents: min, maxStudents: max, pricePerStudent: price, currency: 'EUR', isActive: true, ...extra });
 
 describe('grille de prix par élève (éditeur)', () => {
-  it('convertit centimes ↔ dinars sans perte', () => {
-    const rows = tiersToRows([{ id: 1, minStudents: 6, maxStudents: 20, pricePerStudentCents: 100000, currency: 'DZD', isActive: true, sortOrder: 1 }]);
+  it('convertit centimes ↔ euros sans perte', () => {
+    const rows = tiersToRows([{ id: 1, minStudents: 6, maxStudents: 20, pricePerStudentCents: 100000, currency: 'EUR', isActive: true, sortOrder: 1 }]);
     expect(rows[0]).toMatchObject({ minStudents: 6, maxStudents: 20, pricePerStudent: 1000 });
     expect(rowsToPayload(rows)[0]).toMatchObject({ minStudents: 6, maxStudents: 20, pricePerStudentCents: 100000, sortOrder: 0 });
     expect(rowsToPayload([row(101, '', 500)])[0].maxStudents).toBeNull();
   });
 
   // `tierProblems` rend des CODES, pas des phrases : la règle vit dans le
-  // module, la phrase dans le catalogue arabe (admin.plans.tier*). Le test
+  // module, la phrase dans le catalogue (admin.plans.tier*). Le test
   // porte donc sur le code et ses paramètres — il ne casse plus quand on
   // reformule un message, et il ne fige plus l'éditeur dans une langue.
   it('signale chevauchements, trous et bornes inversées', () => {

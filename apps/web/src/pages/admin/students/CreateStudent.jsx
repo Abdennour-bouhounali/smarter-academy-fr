@@ -6,7 +6,7 @@ import { normalizeName, personNameErrors } from '../../../utils/personName';
 const EMPTY = { firstName: '', lastName: '', email: '', grade: '' };
 
 /**
- * « إنشاء حساب تلميذ » — envoie le formulaire au serveur et dit ce qui en sort.
+ * « Créer un compte élève » — envoie le formulaire au serveur et dit ce qui en sort.
  *
  * Les noms sont vérifiés ICI d'abord (`utils/personName`, le miroir de PersonName) pour qu'un nom latin reçoive
  * son message arabe sans aller-retour ; le serveur reste l'autorité. Un courriel ou un niveau vide n'est pas

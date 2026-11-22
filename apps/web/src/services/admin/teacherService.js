@@ -22,7 +22,7 @@ export function revokeTeacherOverride(token, id, overrideId, reason) {
   return call(`/admin/teachers/${encodeURIComponent(id)}/entitlements/overrides/${encodeURIComponent(overrideId)}`, send('DELETE', token, { reason }), 'Impossible de retirer la dérogation.');
 }
 
-/** Désigner (`true`) ou retirer (`false`) un ambassadeur (« سفير »). */
+/** Désigner (`true`) ou retirer (`false`) un ambassadeur (« ambassadeur »). */
 export function setTeacherAmbassador(token, id, ambassador) {
   return call(`/admin/teachers/${encodeURIComponent(id)}/ambassador`, send('PATCH', token, { ambassador: Boolean(ambassador) }), 'Impossible de changer le statut d’ambassadeur.')
     .then((data) => data.teacher);
