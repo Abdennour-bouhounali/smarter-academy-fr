@@ -10,6 +10,7 @@ import { useTableLabels, formatDate, btnSecondary, Loading, ErrorBox } from '../
 import CredentialsDialog from './CredentialsDialog';
 import { studentName } from '../insights/insights';
 import { usePayments } from '../../../context/PaymentsContext';
+import { useManagedAccounts } from '../../../hooks/useManagedAccounts';
 import { LOCALE } from '../../../locale.js';
 
 // « Cartes pour les parents » : paresseux — il tire qrcode-generator et le namespace `family` (PARENT_SPACE.md §2bis).
@@ -19,7 +20,8 @@ const ParentCardsDialog = lazy(() => import('./ParentCardsDialog'));
  * « Élèves »: who is in the class and where each one is. ONE line of filters (all · started · not started yet) answers
  * « who has not begun? » without reading 35 rows; the row's actions are two quiet icons (the notebook, take out of the
  * class). The seats line shows only when the plan is nearly full. The login cards and the parents' cards open from the
- * top line.
+ * top line. The login cards issue new passwords: while the administrator keeps the accounts created by a teacher
+ * closed (useManagedAccounts), their button and dialog are absent and one sentence points to the class's code or link.
  */
 const NEAR_FULL = 0.9;
 /** student · progress · lessons · success · actions on a wide screen; on a phone: student and actions, progress under them. */
@@ -71,6 +73,7 @@ export default function MembersTab({ classGroup, entitlements, onChanged, onInvi
 
   // Payments closed: no seat cap and no « widen your plan » — a teacher's seats are not sold (§4ter).
   const { paymentsOpen } = usePayments();
+  const managed = useManagedAccounts();
   const seats = paymentsOpen ? entitlements?.students : null;
   const seatsFull = seats && seats.maximum != null && seats.current >= seats.maximum;
   const seatsNear = seats && seats.maximum != null && seats.current >= seats.maximum * NEAR_FULL;
@@ -158,12 +161,27 @@ export default function MembersTab({ classGroup, entitlements, onChanged, onInvi
               >
                 <QrCode size={14} aria-hidden="true" /> {t('students.parentCards.open')}
               </button>
-              <button type="button" onClick={() => setPrinting(true)} className={btnSecondary} data-credentials-open>
-                <Printer size={14} aria-hidden="true" /> {t('students.credentials.open')}
-              </button>
+              {managed.open && (
+                <button type="button" onClick={() => setPrinting(true)} className={btnSecondary} data-credentials-open>
+                  <Printer size={14} aria-hidden="true" /> {t('students.credentials.open')}
+                </button>
+              )}
             </div>
           )}
         </div>
+      )}
+      {all.length > 0 && classGroup.status === 'active' && managed.loaded && !managed.open && (
+        <p
+          className="flex flex-wrap items-center gap-x-3 gap-y-2 font-inter text-sm text-nav-muted"
+          data-credentials-closed
+        >
+          {t('students.credentials.closed')}
+          {onInvite && (
+            <button type="button" onClick={onInvite} className={btnSecondary} data-students-invite>
+              <UserPlus size={15} aria-hidden="true" /> {t('classes.invite')}
+            </button>
+          )}
+        </p>
       )}
       {loading && <Loading />}
       {error && <ErrorBox message={error} onRetry={reload} />}
@@ -304,12 +322,14 @@ export default function MembersTab({ classGroup, entitlements, onChanged, onInvi
         {...labels.dialog}
       />
 
-      <CredentialsDialog
-        open={printing}
-        onClose={() => setPrinting(false)}
-        classGroup={classGroup}
-        students={students ?? []}
-      />
+      {managed.open && (
+        <CredentialsDialog
+          open={printing}
+          onClose={() => setPrinting(false)}
+          classGroup={classGroup}
+          students={students ?? []}
+        />
+      )}
       {parentCards && (
         <Suspense fallback={null}>
           <ParentCardsDialog

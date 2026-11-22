@@ -287,7 +287,14 @@ lastName, email, password}`. The cards are printed from a portal
 vanish when the dialog closes. The email is therefore shown in this gesture's
 response only; no `/teacher` READ returns it (`TeacherPrivacyContractTest` is
 unchanged), and `pages/teacherContract.test.js` allows `.email` in
-`CredentialsDialog.jsx` alone. Locked by `TeacherStudentCredentialsTest`. The
+`CredentialsDialog.jsx` alone. Locked by `TeacherStudentCredentialsTest`.
+**Closed by default since 2026-11-22** (owner): `ManagedAccountsGate` refuses this
+route (403 `managed_accounts_closed`) until the administrator opens the accounts
+created by a school or a teacher (`ADMIN_PANEL_ARCHITECTURE.md` A12). While
+closed, `MembersTab.jsx` (reading `hooks/useManagedAccounts.js`) shows neither
+« Imprimer les identifiants » nor mounts `CredentialsDialog`, and says instead
+that the students create their account and join with the class's code or link,
+beside « Inviter les élèves ». The parents' cards stay. The
 public join-link preview returns the class name, grade, teacher name,
 `schoolName` (the NAME of the class's school, or null — 2026-10-26),
 `joiningOpen`, and — for a logged-in student only — `alreadyMember` and

@@ -1594,5 +1594,26 @@
     "error": "Impossible de changer l’état du paiement. Réessayez.",
     "loadError": "Impossible de lire l’état du paiement.",
     "refusedNotConfigured": "Ouverture refusée : le fournisseur de paiement n’est pas configuré. Il manque :"
+  },
+  "managedAccounts": {
+    "title": "Comptes créés par un établissement ou un professeur",
+    "loading": "Lecture de l’état des comptes créés par un établissement ou un professeur…",
+    "open": "Ouverts",
+    "openHint": "Un établissement peut importer la liste d’une classe et créer les comptes de ses élèves ; un établissement ou un professeur peut imprimer des cartes de connexion, avec un nouveau mot de passe pour chaque élève.",
+    "closed": "Fermés",
+    "closedHint": "Chaque élève crée son compte lui-même et rejoint sa classe avec le code ou le lien de la classe. L’import de listes et les cartes de connexion sont retirés des espaces établissement et professeur, et le serveur les refuse.",
+    "existing": "Fermer ne touche à aucun compte qui existe déjà : chaque élève continue de se connecter avec son mot de passe actuel. Mais tant que c’est fermé, un élève dont le compte a été créé par un établissement et qui perd son mot de passe ne peut pas en recevoir un nouveau.",
+    "switchLabel": "Ouvrir les comptes créés par un établissement ou un professeur",
+    "lastChange": "Dernier changement par {{name}}, le {{date}}.",
+    "lastChangeNoName": "Dernier changement le {{date}}.",
+    "neverChanged": "Jamais changé ici : c’est la valeur par défaut du serveur.",
+    "confirmOpen": "Ouvrir permettra aux établissements d’importer des listes d’élèves et de leur créer des comptes, et aux établissements comme aux professeurs d’imprimer des cartes de connexion, avec un nouveau mot de passe pour chaque élève choisi.",
+    "confirmClose": "Fermer retirera l’import de listes et les cartes de connexion des espaces établissement et professeur. Les comptes qui existent déjà continuent de fonctionner, et les élèves rejoignent leur classe avec son code ou son lien.",
+    "confirmOpenButton": "Ouvrir ces comptes",
+    "confirmCloseButton": "Fermer ces comptes",
+    "cancel": "Annuler",
+    "saving": "Enregistrement…",
+    "error": "Impossible de changer l’état des comptes créés par un établissement ou un professeur. Réessayez.",
+    "loadError": "Impossible de lire l’état des comptes créés par un établissement ou un professeur."
   }
 }

@@ -15,6 +15,7 @@ import { AdminPage, AdminSection, AdminCard, Loading, ErrorBox, Num, formatDate 
 import AdminNotifications from './notifications/AdminNotifications';
 import RegistrationCard from '../../components/admin/RegistrationCard';
 import PaymentsSwitchCard from '../../components/admin/PaymentsSwitchCard';
+import ManagedAccountsCard from '../../components/admin/ManagedAccountsCard';
 
 /**
  * La phrase d'une alerte, écrite ICI et non par le serveur.
@@ -83,6 +84,8 @@ export default function AdminDashboard() {
       <RegistrationCard />
       {/* « Paiement en ligne » : the payments switch (FRANCE_REBUILD_PLAN.md §4ter), beside the registration switch. */}
       <PaymentsSwitchCard />
+      {/* « Comptes créés par un établissement ou un professeur » : the roster import and the login cards (ManagedAccountsGate). */}
+      <ManagedAccountsCard />
       {loading && <Loading label={t('dashboard.loading')} />}
       {error && <ErrorBox message={error} onRetry={reload} />}
 

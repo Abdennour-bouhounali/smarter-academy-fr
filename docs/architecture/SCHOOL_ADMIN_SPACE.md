@@ -16,6 +16,13 @@
 > keeps its `wilaya` / `commune` columns (searched by the admin, returned by `GET /teacher/school-links/{token}`). The
 > three terms are the French « trimestres » in the interface, but no French school year is written yet (plan 2D).
 > Minors' data in a school space waits for the owner (plan §7, 4). No walk has checked these pages in French.
+>
+> **Closed by default (owner, 2026-11-22): the roster import and the login cards.** `ManagedAccountsGate` refuses
+> `POST /school/roster/preview`, `POST /school/roster` and `POST /school/students/credentials` (403
+> `managed_accounts_closed`) until the administrator opens them (`ADMIN_PANEL_ARCHITECTURE.md` A12). While closed,
+> « Élèves » shows neither « Importer une liste » nor « Cartes de connexion » nor the selection boxes, and says that each
+> student creates his account and joins his class with the code or the link of his teacher; the list, the
+> « Identifiant » column and the transfer stay.
 
 A **school** (« établissement », a collège) is a first-class object: its classes, its
 teachers, its students, and one **director** (« chef d’établissement ») who manages them,
@@ -258,6 +265,9 @@ teacher ends the row and gives the classes back (§4).
   belongs to its student (`not_school_login`). Printed with the teacher's
   login-card sheet (« Cartes de connexion ») (`features/teacher/members/credentials.css`,
   `features/school/SchoolCredentialCards.jsx`).
+- **The import and the login cards are switched off by default** (`ManagedAccountsGate`, see the status above):
+  `pages/school/SchoolStudents.jsx` reads `hooks/useManagedAccounts.js` and, closed, mounts neither the buttons nor
+  `RosterImportDialog` nor the cards' window.
 
 API (`auth:sanctum` + `account.active` + `email.verified` + `can:school`):
 

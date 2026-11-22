@@ -10,7 +10,9 @@
 > payment: a Stripe path exists in the API (`Domain/Billing/CheckoutService`, webhooks) behind `PaymentGate`, CLOSED by
 > default (`config/billing.php › payments.open`, overridden by the admin's `PATCH /admin/payments/switch`,
 > `components/admin/PaymentsSwitchCard.jsx`); Annexe A7's « no online payment » table is the Algerian rule, kept as
-> the rule that applies while payments are closed (see the note there).
+> the rule that applies while payments are closed (see the note there). Accounts created FOR a student by a school
+> or a teacher (roster import, login cards): CLOSED by default behind `ManagedAccountsGate`, the admin's card
+> « Comptes créés par un établissement ou un professeur » (A12).
 
 **Document:** `ADMIN_PANEL_ARCHITECTURE.md`  
 **Status:** Approved product/technical specification  
@@ -2138,4 +2140,31 @@ the possibility to create the account for a student as an admin ».
 Tests : `AdminRegistrationSwitchTest`, `AdminStudentCreationTest`, `RegistrationClosedTest` ;
 `RegistrationCard.render.test.jsx`, `CreateStudent.render.test.jsx`. Composants partagés nés ici :
 `components/admin/ui/Switch.jsx` (l'interrupteur accessible, repris par `AmbassadorSwitch`) et `OneTimeCredentials.jsx`.
+
+## A12. Les comptes créés par un établissement ou un professeur (2026-11-22, web 2026-11-23)
+
+Décision du propriétaire : les comptes qu'un établissement (import d'une liste) ou un professeur (cartes de connexion,
+nouveau mot de passe) crée POUR un élève restent fermés tant que les pages légales ne les couvrent pas ; il les ouvre
+et les ferme depuis le panneau.
+
+- **Où** : la carte « Comptes créés par un établissement ou un professeur » du tableau de bord
+  (`components/admin/ManagedAccountsCard.jsx`, sous « Inscriptions » et « Paiement en ligne »), le même geste que le
+  paiement : l'interrupteur, puis UNE phrase qui dit ce que le changement fait, à confirmer ou annuler ; rien ne part
+  avant. Elle dit aussi qui a changé l'interrupteur en dernier.
+- **Où c'est gardé** : `platform_settings`, ligne `managed_accounts` (`values.open`) ; `ManagedAccountsGate` est le SEUL
+  lecteur, la ligne l'emporte sur `config/registration.php › managed_accounts` (`MANAGED_ACCOUNTS_OPEN`, faux).
+- **Routes** : `GET /admin/managed-accounts` → `{ managedAccounts: { open, default, lastChange } }` ;
+  `PATCH /admin/managed-accounts { open }` (journalisé `managed_accounts.settings_changed`). Tout compte connecté lit
+  `GET /managed-accounts/status` → `{ open }` (`hooks/useManagedAccounts.js`, lu une fois par compte, FERMÉ en cas
+  d'échec).
+- **Fermé**, le serveur refuse (403 `managed_accounts_closed`) `POST /school/roster/preview`, `POST /school/roster`,
+  `POST /school/students/credentials` et `POST /teacher/classrooms/{id}/students/credentials`, et le web n'en montre
+  aucun bouton (`SCHOOL_ADMIN_SPACE.md` §6, `TEACHER_CLASSROOM_ARCHITECTURE.md`). Jamais bloqués : la création par
+  l'administrateur (A10), l'inscription de l'élève lui-même, le code et le lien de la classe, le lien parent et les
+  cartes pour les parents, la lecture et le changement de classe des comptes existants. Les comptes déjà créés
+  continuent de se connecter ; mais un compte à identifiant généré qui perd son mot de passe n'en reçoit pas de nouveau
+  tant que c'est fermé (il n'a pas de « Mot de passe oublié ? », A10).
+
+Tests : `ManagedAccountsGateTest` ; `ManagedAccountsCard.render.test.jsx`, `hooks/useManagedAccounts.test.jsx`,
+`components/managedAccountsSurfaces.test.jsx`.
 
