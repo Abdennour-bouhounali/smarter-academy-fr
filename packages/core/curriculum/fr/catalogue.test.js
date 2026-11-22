@@ -99,6 +99,23 @@ describe.each(GRADES.map(([l, u]) => [l.grade, l, u]))('lesson files (%s)', (gra
     }
   });
 
+  it('marks what goes beyond the official text (`beyondProgramme`) with its points, the owner’s decision and a note', () => {
+    for (const l of lessons.filter((x) => 'beyondProgramme' in x)) {
+      const b = l.beyondProgramme;
+      expect(l.kind, l.code).toBe('lesson');
+      expect(Object.keys(b).sort(), l.code).toEqual(['decidedBy', 'decidedOn', 'note', 'points']);
+      expect(b.points.length, l.code).toBeGreaterThanOrEqual(1);
+      expect(new Set(b.points).size, l.code).toBe(b.points.length);
+      for (const p of b.points) {
+        expect(p, l.code).toMatch(/^P\d+$/);
+        expect(Number(p.slice(1)) <= l.pointsToLearn.length, `${l.code}.${p}`).toBe(true);
+      }
+      expect(b.decidedBy, l.code).toBe('owner');
+      expect(b.decidedOn, l.code).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(b.note?.trim().length, l.code).toBeGreaterThan(20);
+    }
+  });
+
   it('ends every unit with exactly one synthesis, 3 to 6 lessons before it, contiguous in the year', () => {
     for (const u of unitFile.units) {
       const ls = lessons.filter((l) => l.unitId === u.code).sort((a, b) => a.order - b.order);
@@ -128,10 +145,16 @@ describe.each(GRADES.map(([l, u]) => [l.grade, l, u]))('lesson files (%s)', (gra
 });
 
 describe('the 3e catalogue', () => {
-  it('holds 13 units and 59 lessons (46 + 13 syntheses), 161 learning points', () => {
+  it('holds 13 units and 60 lessons (47 + 13 syntheses), 166 learning points', () => {
     expect(units3e.units).toHaveLength(13);
-    expect(lessons3e.lessons).toHaveLength(59);
+    expect(lessons3e.lessons).toHaveLength(60);
     expect(lessons3e.lessons.filter((l) => l.kind === 'synthesis')).toHaveLength(13);
-    expect(lessons3e.lessons.reduce((n, l) => n + l.pointsToLearn.length, 0)).toBe(161);
+    expect(lessons3e.lessons.reduce((n, l) => n + l.pointsToLearn.length, 0)).toBe(166);
+  });
+
+  it('marks the PGCD as going beyond the 2020 programme, by the owner’s decision of 2026-11-23 (item 3e.m1.r07)', () => {
+    const beyond = Object.fromEntries(lessons3e.lessons.filter((l) => l.beyondProgramme).map((l) => [l.code, l.beyondProgramme.points]));
+    expect(beyond).toEqual({ 'trouver-le-pgcd': ['P1', 'P2', 'P3'], 'fraction-irreductible': ['P4'] });
+    expect(lessons3e.lessons.find((l) => l.code === 'trouver-le-pgcd').programmeItems).toEqual(['3e.m1.r07']);
   });
 });

@@ -11,7 +11,7 @@ import programme3e from './fr/programme_3e_2026_2027.json';
 import lessons3e from './fr/lessons_3e_2026_2027.json';
 import units3e from './fr/units_3e_2026_2027.json';
 
-// The builder's rules are checked on this small neutral trio of its own; the delivered catalogue (3e: 59 lessons, all
+// The builder's rules are checked on this small neutral trio of its own; the delivered catalogue (3e: 60 lessons, all
 // `coming_soon`; 6e–4e empty) is checked below on its own facts.
 const lesson = (code, extra) => ({
   code, order: 0, kind: 'lesson', titleSource: 'editorial', title: `Leçon ${code}`, description: `Description ${code}`,
@@ -90,7 +90,7 @@ describe('getAllGrades', () => {
   });
 
   it('counts the announced lessons apart: 3e has its year announced, 6e–4e nothing', () => {
-    expect(grades.map((g) => [g.id, g.catalogueLessonCount])).toEqual([['6e', 0], ['5e', 0], ['4e', 0], ['3e', 59]]);
+    expect(grades.map((g) => [g.id, g.catalogueLessonCount])).toEqual([['6e', 0], ['5e', 0], ['4e', 0], ['3e', 60]]);
   });
 
   it('has no duplicate grade ids', () => {

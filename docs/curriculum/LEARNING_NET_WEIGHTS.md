@@ -9,9 +9,9 @@ order a launch would measure it: at most four are measured, the others are liste
 - **core** — a student cannot pass the exercises of the lesson while failing this one. It can be NAMED as the cause of a difficulty, and a success on the lesson lets us deduce it « looks solid ».
 - **support** — it helps, explains or serves a proof, but the lesson can be passed without it. The reason is written. Nothing is deduced through it.
 
-Classified links: **112** (74 core, 38 support). Classified grades: 3e.
+Classified links: **113** (74 core, 39 support). Classified grades: 3e.
 
-## Nombres premiers et fractions
+## Multiples et diviseurs
 
 ### Décomposer un nombre en facteurs premiers — `decomposer-en-facteurs-premiers`
 
@@ -19,26 +19,27 @@ Classified links: **112** (74 core, 38 support). Classified grades: 3e.
 |---|---|---|---|---|
 | 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers. (`4e.m1.r06`) | _no lesson yet in 4e_ |  |
 
-### Rendre une fraction irréductible — `fraction-irreductible`
-
-| # | Weight | Earlier competence | Its lesson | Why (support only) |
-|---|---|---|---|---|
-| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
-| 2 | **core** | Il utilise les nombres premiers inférieurs à 100 pour : reconnaître et produire des fractions égales ; simplifier des fractions. (`4e.m1.r07`) | _no lesson yet in 4e_ |  |
-
-### Engrenages et rendez-vous : multiples et diviseurs communs — `multiples-et-diviseurs-communs`
+### Trouver le PGCD de deux nombres — `trouver-le-pgcd`
 
 | # | Weight | Earlier competence | Its lesson | Why (support only) |
 |---|---|---|---|---|
 | 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
 | 2 | **core** | Il modélise et résout des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier. (`4e.m1.r08`) | _no lesson yet in 4e_ |  |
 
-### Résoudre des problèmes avec des fractions — `calculer-avec-des-fractions`
+### Rendre une fraction irréductible — `fraction-irreductible`
 
 | # | Weight | Earlier competence | Its lesson | Why (support only) |
 |---|---|---|---|---|
-| 1 | **core** | Il calcule avec les nombres rationnels : addition, soustraction, multiplication, division. (`4e.m1.r01`) | _no lesson yet in 4e_ |  |
-| 2 | support | Il simplifie une fraction pour la rendre irréductible. (`3e.m1.r06`) | Rendre une fraction irréductible — Troisième _(not published)_ | The result is expected in irreducible form, but the computation itself can be right without simplifying. |
+| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
+| 2 | **core** | Il utilise les nombres premiers inférieurs à 100 pour : reconnaître et produire des fractions égales ; simplifier des fractions. (`4e.m1.r07`) | _no lesson yet in 4e_ |  |
+| 3 | support | Il modélise et résout des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes…). (`3e.m1.r07`) | Trouver le PGCD de deux nombres — Troisième _(not published)_ | Dividing once by the PGCD (taught with 3e.m1.r07 by the owner’s decision) is one of the two methods; simplifying the common prime factors makes a fraction irreducible without it. |
+
+### Engrenages et rendez-vous : quand deux rythmes se retrouvent — `multiples-et-diviseurs-communs`
+
+| # | Weight | Earlier competence | Its lesson | Why (support only) |
+|---|---|---|---|---|
+| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
+| 2 | **core** | Il modélise et résout des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier. (`4e.m1.r08`) | _no lesson yet in 4e_ |  |
 
 ## Développer et factoriser
 
@@ -96,6 +97,13 @@ Classified links: **112** (74 core, 38 support). Classified grades: 3e.
 | 2 | support | Les élèves transforment (à la main ou à l’aide d’un logiciel) une figure par symétrie centrale. (`5e.m4.r03`) | _no lesson yet in 5e_ | Point symmetry carries the proof of the butterfly case, but the theorem is used without proving it. |
 
 ## Résoudre des équations
+
+### Résoudre des problèmes avec des fractions — `calculer-avec-des-fractions`
+
+| # | Weight | Earlier competence | Its lesson | Why (support only) |
+|---|---|---|---|---|
+| 1 | **core** | Il calcule avec les nombres rationnels : addition, soustraction, multiplication, division. (`4e.m1.r01`) | _no lesson yet in 4e_ |  |
+| 2 | support | Il simplifie une fraction pour la rendre irréductible. (`3e.m1.r06`) | Rendre une fraction irréductible — Troisième _(not published)_ | The result is expected in irreducible form, but the computation itself can be right without simplifying. |
 
 ### Mettre un problème en équation — `mettre-un-probleme-en-equation`
 

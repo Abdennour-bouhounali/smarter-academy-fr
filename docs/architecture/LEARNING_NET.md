@@ -6,8 +6,9 @@
 >
 > **The 3e net is LIVE since 2026-11-22** (`packages/core/curriculum/fr/`), written from `docs/curriculum/officiel/`
 > and NOT yet validated by the owner (`verified: false`; the sheet to validate is `docs/curriculum/net-3e/REVIEW.md`):
-> 108 programme items — 55 taught in 3e and 53 **stubs** of 4e / 5e / 6e — 112 links (74 core, 38 support), 17 threads,
-> 13 units, 59 lessons (46 + 13 « Vers le brevet » syntheses), 161 learning points, every lesson `coming_soon`.
+> 108 programme items — 55 taught in 3e and 53 **stubs** of 4e / 5e / 6e — 113 links (74 core, 39 support), 17 threads,
+> 13 units, 60 lessons (47 + 13 « Vers le brevet » syntheses), 166 learning points, every lesson `coming_soon`
+> (unit 1 « Multiples et diviseurs » reshaped by the owner on 2026-11-23).
 > 6e, 5e and 4e are still empty skeletons. What the sections below do not say yet:
 > - a **stub** (`stub: true`) is a real prerequisite whose own grade has no lesson: it has NO home lesson
 >   (`homeLessonOf` → `null`, `isStub(id)`), and every resolver result names it with `lesson: null` and
@@ -19,7 +20,11 @@
 > - a lesson's title is the platform's own (`titleSource: "editorial"`); there is no textbook reference anywhere;
 > - **learning-point ids are locked**: `fr/learning_points.lock.json` + `learningPointsLock.test.js`. A point is
 >   appended, then `npm run generate:lp-lock`; a reorder is refused once a lesson has a folder or is `available`;
-> - the FR↔DZ table (which Algerian lesson teaches the same point) is `docs/curriculum/net-3e/fr_dz_table.json`.
+> - the FR↔DZ table (which Algerian lesson teaches the same point) is `docs/curriculum/net-3e/fr_dz_table.json`;
+> - a lesson may carry `beyondProgramme` (`points`, `decidedBy: "owner"`, `decidedOn`, `note`): its points that go
+>   beyond the strict wording of the official text by the owner's decision (today the PGCD and Euclid's algorithm,
+>   `trouver-le-pgcd` P1–P3 and `fraction-irreductible` P4, attached to `3e.m1.r07`). Tested in `catalogue.test.js`;
+>   no reader shows it yet `[Planned: lesson:brief]`.
 
 **Authoritative for:** the official programme of the four grades as data, the links between its items, the lessons
 still to generate (`coming_soon` in the catalogue), cross-year review links, and what the database and Mastery V2 do

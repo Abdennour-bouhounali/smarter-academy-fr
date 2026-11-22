@@ -3,7 +3,8 @@
     "The lessons of 3e — every one `coming_soon` until it is built.",
     "A lesson = one sitting of about 45 minutes on a game world; 2 to 5 learning points (`pointsToLearn`), ids `3e_<code>_P<n>` in that order — APPEND-ONLY, guarded by learning_points.lock.json.",
     "A synthesis (`kind: \"synthesis\"`) declares no programme item and one integrating point that adds no capability beyond its unit (DZ practice, e.g. 3AM unit 1).",
-    "`prerequisiteLessonCodes`: 3e lessons only — the home lessons of the net links into the lesson’s items that come earlier, plus the lessons named by its point prerequisites."
+    "`prerequisiteLessonCodes`: 3e lessons only — the home lessons of the net links into the lesson’s items that come earlier, plus the lessons named by its point prerequisites.",
+    "`beyondProgramme` (optional): the points of a lesson that go beyond the strict wording of the official text, by a decision of the owner — `points` (P<n> of the lesson), `decidedBy`, `decidedOn` (YYYY-MM-DD), `note` (what goes beyond and why). The lesson still declares the official item it serves; no official sentence is ever written for it."
   ],
   "grade": "3e",
   "schoolYear": "2026/2027",
@@ -14,7 +15,7 @@
       "code": "decomposer-en-facteurs-premiers",
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
-      "unitId": "nombres-premiers-et-fractions",
+      "unitId": "multiples-et-diviseurs",
       "order": 0,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
@@ -43,29 +44,81 @@
       "status": "coming_soon"
     },
     {
-      "code": "fraction-irreductible",
+      "code": "trouver-le-pgcd",
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
-      "unitId": "nombres-premiers-et-fractions",
+      "unitId": "multiples-et-diviseurs",
       "order": 1,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
       "titleSource": "editorial",
-      "title": "Rendre une fraction irréductible",
-      "description": "L’élève découvre quand une fraction ne peut plus être simplifiée et comment y arriver en une fois.",
+      "title": "Trouver le PGCD de deux nombres",
+      "description": "L’élève partage des objets en lots identiques, découvre le plus grand diviseur commun de deux nombres, puis deux façons de le trouver : par leurs décompositions et par des divisions successives.",
       "prerequisites": [],
       "prerequisiteLessonCodes": [
         "decomposer-en-facteurs-premiers"
       ],
       "pointsToLearn": [
-        "Reconnaître qu’une fraction est irréductible quand son numérateur et son dénominateur n’ont aucun facteur premier commun",
-        "Rendre une fraction irréductible en divisant numérateur et dénominateur par leurs facteurs premiers communs",
-        "Donner le résultat d’un calcul de fractions sous forme irréductible"
+        "Lister les diviseurs communs de deux entiers et reconnaître le plus grand d’entre eux, leur PGCD",
+        "Trouver le PGCD de deux entiers à partir de leurs décompositions en facteurs premiers, en gardant chaque facteur premier commun avec son plus petit exposant",
+        "Trouver le PGCD de deux entiers avec l’algorithme d’Euclide : enchaîner les divisions euclidiennes jusqu’au reste nul, le PGCD est le dernier reste non nul",
+        "Reconnaître qu’un problème de partage en lots identiques revient à chercher un diviseur commun, et que le plus grand nombre de lots possible est le PGCD"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_trouver-le-pgcd_P1",
+          "3e_decomposer-en-facteurs-premiers_P2"
+        ],
+        "P3": [
+          "3e_trouver-le-pgcd_P1"
+        ],
+        "P4": [
+          "3e_trouver-le-pgcd_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r07"
+      ],
+      "beyondProgramme": {
+        "points": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "decidedBy": "owner",
+        "decidedOn": "2026-11-23",
+        "note": "Owner's decision of 2026-11-23: the chapter names the PGCD and teaches Euclid's algorithm. The 2020 3e programme names neither (see the note of item 3e.m1.r07); its sharing-into-identical-lots problems ask only for the largest common divisor. P4 (identical lots, the largest common divisor) stays within 3e.m1.r07."
+      },
+      "status": "coming_soon"
+    },
+    {
+      "code": "fraction-irreductible",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "multiples-et-diviseurs",
+      "order": 2,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Rendre une fraction irréductible",
+      "description": "L’élève découvre quand une fraction ne peut plus être simplifiée, puis deux façons d’y arriver : simplifier les facteurs premiers communs, ou diviser en une fois par le PGCD.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "decomposer-en-facteurs-premiers",
+        "trouver-le-pgcd"
+      ],
+      "pointsToLearn": [
+        "Reconnaître qu’une fraction est irréductible quand son numérateur et son dénominateur n’ont aucun facteur premier commun, c’est-à-dire quand leur PGCD vaut 1",
+        "Rendre une fraction irréductible en décomposant numérateur et dénominateur en facteurs premiers, puis en simplifiant leurs facteurs premiers communs",
+        "Donner le résultat d’un calcul de fractions sous forme irréductible",
+        "Rendre une fraction irréductible en une seule étape, en divisant numérateur et dénominateur par leur PGCD"
       ],
       "pointPrerequisites": {
         "P1": [
-          "3e_decomposer-en-facteurs-premiers_P1"
+          "3e_decomposer-en-facteurs-premiers_P1",
+          "3e_trouver-le-pgcd_P1"
         ],
         "P2": [
           "3e_fraction-irreductible_P1",
@@ -73,25 +126,37 @@
         ],
         "P3": [
           "3e_fraction-irreductible_P2"
+        ],
+        "P4": [
+          "3e_fraction-irreductible_P1",
+          "3e_trouver-le-pgcd_P3"
         ]
       },
       "programmeItems": [
         "3e.m1.r06"
       ],
-      "status": "coming_soon"
+      "status": "coming_soon",
+      "beyondProgramme": {
+        "points": [
+          "P4"
+        ],
+        "decidedBy": "owner",
+        "decidedOn": "2026-11-23",
+        "note": "Owner's decision of 2026-11-23: the chapter names the PGCD and teaches Euclid's algorithm. The 2020 3e programme names neither (see the note of item 3e.m1.r07); its sharing-into-identical-lots problems ask only for the largest common divisor. Here only P4 (dividing by the PGCD) goes beyond: 3e.m1.r06 asks to make a fraction irreducible, by no named method."
+      }
     },
     {
       "code": "multiples-et-diviseurs-communs",
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
-      "unitId": "nombres-premiers-et-fractions",
-      "order": 2,
+      "unitId": "multiples-et-diviseurs",
+      "order": 3,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
       "titleSource": "editorial",
-      "title": "Engrenages et rendez-vous : multiples et diviseurs communs",
-      "description": "L’élève découvre quand deux roues ou deux signaux se retrouvent dans leur position de départ.",
+      "title": "Engrenages et rendez-vous : quand deux rythmes se retrouvent",
+      "description": "L’élève découvre quand deux roues dentées, deux feux qui clignotent ou deux bus se retrouvent ensemble à leur point de départ.",
       "prerequisites": [],
       "prerequisiteLessonCodes": [
         "decomposer-en-facteurs-premiers"
@@ -99,7 +164,7 @@
       "pointsToLearn": [
         "Reconnaître qu’un problème de répétitions simultanées (engrenages, signaux lumineux) revient à chercher un multiple commun",
         "Trouver le plus petit multiple commun non nul de deux entiers à partir de leurs décompositions en facteurs premiers",
-        "Reconnaître qu’un problème de partage en lots identiques revient à chercher un diviseur commun, et trouver le plus grand à partir des décompositions"
+        "Résoudre un problème de rendez-vous en contexte (engrenages, feux clignotants, bus) et interpréter le plus petit multiple commun comme une durée ou un nombre de tours"
       ],
       "pointPrerequisites": {
         "P2": [
@@ -107,7 +172,7 @@
           "3e_decomposer-en-facteurs-premiers_P2"
         ],
         "P3": [
-          "3e_decomposer-en-facteurs-premiers_P2"
+          "3e_multiples-et-diviseurs-communs_P2"
         ]
       },
       "programmeItems": [
@@ -116,67 +181,33 @@
       "status": "coming_soon"
     },
     {
-      "code": "calculer-avec-des-fractions",
-      "sourceTopicId": "3e.m1",
-      "chapterId": "nombres_calculs",
-      "unitId": "nombres-premiers-et-fractions",
-      "order": 3,
-      "kind": "lesson",
-      "decompositionType": "editorial_lesson",
-      "decisionStatus": "draft",
-      "titleSource": "editorial",
-      "title": "Résoudre des problèmes avec des fractions",
-      "description": "L’élève traduit des énoncés en calculs de fractions et choisit l’opération juste.",
-      "prerequisites": [],
-      "prerequisiteLessonCodes": [
-        "fraction-irreductible"
-      ],
-      "pointsToLearn": [
-        "Choisir l’opération sur les fractions (somme, différence, produit, quotient) qui traduit un énoncé",
-        "Calculer une fraction d’une quantité puis une fraction de ce qui reste, en enchaînant les calculs",
-        "Mener un calcul avec des nombres relatifs et des fractions en respectant les priorités, et donner le résultat sous forme irréductible"
-      ],
-      "pointPrerequisites": {
-        "P2": [
-          "3e_calculer-avec-des-fractions_P1"
-        ],
-        "P3": [
-          "3e_fraction-irreductible_P3"
-        ]
-      },
-      "programmeItems": [
-        "3e.m1.r01"
-      ],
-      "status": "coming_soon"
-    },
-    {
-      "code": "vers-le-brevet-nombres-premiers-et-fractions",
+      "code": "vers-le-brevet-multiples-et-diviseurs",
       "sourceTopicId": null,
       "chapterId": "nombres_calculs",
-      "unitId": "nombres-premiers-et-fractions",
+      "unitId": "multiples-et-diviseurs",
       "order": 4,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
       "titleSource": "editorial",
-      "title": "Vers le brevet — Nombres premiers et fractions",
+      "title": "Vers le brevet — Multiples et diviseurs",
       "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
       "prerequisites": [],
       "prerequisiteLessonCodes": [
         "decomposer-en-facteurs-premiers",
+        "trouver-le-pgcd",
         "fraction-irreductible",
-        "multiples-et-diviseurs-communs",
-        "calculer-avec-des-fractions"
+        "multiples-et-diviseurs-communs"
       ],
       "pointsToLearn": [
-        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Nombres premiers et fractions »"
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Multiples et diviseurs »"
       ],
       "pointPrerequisites": {
         "P1": [
           "3e_decomposer-en-facteurs-premiers_P3",
-          "3e_fraction-irreductible_P3",
-          "3e_multiples-et-diviseurs-communs_P3",
-          "3e_calculer-avec-des-fractions_P3"
+          "3e_trouver-le-pgcd_P4",
+          "3e_fraction-irreductible_P4",
+          "3e_multiples-et-diviseurs-communs_P3"
         ]
       },
       "programmeItems": [],
@@ -490,11 +521,45 @@
       "status": "coming_soon"
     },
     {
-      "code": "mettre-un-probleme-en-equation",
+      "code": "calculer-avec-des-fractions",
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
       "unitId": "resoudre-des-equations",
       "order": 14,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Résoudre des problèmes avec des fractions",
+      "description": "L’élève traduit des énoncés en calculs de fractions et choisit l’opération juste.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "fraction-irreductible"
+      ],
+      "pointsToLearn": [
+        "Choisir l’opération sur les fractions (somme, différence, produit, quotient) qui traduit un énoncé",
+        "Calculer une fraction d’une quantité puis une fraction de ce qui reste, en enchaînant les calculs",
+        "Mener un calcul avec des nombres relatifs et des fractions en respectant les priorités, et donner le résultat sous forme irréductible"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_calculer-avec-des-fractions_P1"
+        ],
+        "P3": [
+          "3e_fraction-irreductible_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r01"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "mettre-un-probleme-en-equation",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "resoudre-des-equations",
+      "order": 15,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -529,7 +594,7 @@
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
       "unitId": "resoudre-des-equations",
-      "order": 15,
+      "order": 16,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -567,7 +632,7 @@
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
       "unitId": "resoudre-des-equations",
-      "order": 16,
+      "order": 17,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -601,7 +666,7 @@
       "sourceTopicId": null,
       "chapterId": "nombres_calculs",
       "unitId": "resoudre-des-equations",
-      "order": 17,
+      "order": 18,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -610,6 +675,7 @@
       "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
       "prerequisites": [],
       "prerequisiteLessonCodes": [
+        "calculer-avec-des-fractions",
         "mettre-un-probleme-en-equation",
         "equation-produit-nul",
         "equation-x-carre-egal-a"
@@ -619,6 +685,7 @@
       ],
       "pointPrerequisites": {
         "P1": [
+          "3e_calculer-avec-des-fractions_P3",
           "3e_mettre-un-probleme-en-equation_P3",
           "3e_equation-produit-nul_P3",
           "3e_equation-x-carre-egal-a_P3"
@@ -632,7 +699,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "la-notion-de-fonction",
-      "order": 18,
+      "order": 19,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -665,7 +732,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "la-notion-de-fonction",
-      "order": 19,
+      "order": 20,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -709,7 +776,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "la-notion-de-fonction",
-      "order": 20,
+      "order": 21,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -749,7 +816,7 @@
       "sourceTopicId": null,
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "la-notion-de-fonction",
-      "order": 21,
+      "order": 22,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -780,7 +847,7 @@
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
       "unitId": "puissances-et-racines",
-      "order": 22,
+      "order": 23,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -813,7 +880,7 @@
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
       "unitId": "puissances-et-racines",
-      "order": 23,
+      "order": 24,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -848,7 +915,7 @@
       "sourceTopicId": "3e.m1",
       "chapterId": "nombres_calculs",
       "unitId": "puissances-et-racines",
-      "order": 24,
+      "order": 25,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -880,7 +947,7 @@
       "sourceTopicId": null,
       "chapterId": "nombres_calculs",
       "unitId": "puissances-et-racines",
-      "order": 25,
+      "order": 26,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -911,7 +978,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "trigonometrie",
-      "order": 26,
+      "order": 27,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -947,7 +1014,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "trigonometrie",
-      "order": 27,
+      "order": 28,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -984,7 +1051,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "trigonometrie",
-      "order": 28,
+      "order": 29,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1023,7 +1090,7 @@
       "sourceTopicId": null,
       "chapterId": "espace_geometrie",
       "unitId": "trigonometrie",
-      "order": 29,
+      "order": 30,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -1054,7 +1121,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "fonctions-lineaires-et-affines",
-      "order": 30,
+      "order": 31,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1096,7 +1163,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "fonctions-lineaires-et-affines",
-      "order": 31,
+      "order": 32,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1135,7 +1202,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "fonctions-lineaires-et-affines",
-      "order": 32,
+      "order": 33,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1168,7 +1235,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "fonctions-lineaires-et-affines",
-      "order": 33,
+      "order": 34,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1208,7 +1275,7 @@
       "sourceTopicId": null,
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "fonctions-lineaires-et-affines",
-      "order": 34,
+      "order": 35,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -1241,7 +1308,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "statistiques-et-probabilites",
-      "order": 35,
+      "order": 36,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1272,7 +1339,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "statistiques-et-probabilites",
-      "order": 36,
+      "order": 37,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1305,7 +1372,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "statistiques-et-probabilites",
-      "order": 37,
+      "order": 38,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1337,7 +1404,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "statistiques-et-probabilites",
-      "order": 38,
+      "order": 39,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1373,7 +1440,7 @@
       "sourceTopicId": "3e.m2",
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "statistiques-et-probabilites",
-      "order": 39,
+      "order": 40,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1409,7 +1476,7 @@
       "sourceTopicId": null,
       "chapterId": "organisation_gestion_donnees_fonctions",
       "unitId": "statistiques-et-probabilites",
-      "order": 40,
+      "order": 41,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -1444,7 +1511,7 @@
       "sourceTopicId": "3e.m5",
       "chapterId": "algorithmique_programmation",
       "unitId": "programmer-avec-des-blocs",
-      "order": 41,
+      "order": 42,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1477,7 +1544,7 @@
       "sourceTopicId": "3e.m5",
       "chapterId": "algorithmique_programmation",
       "unitId": "programmer-avec-des-blocs",
-      "order": 42,
+      "order": 43,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1516,7 +1583,7 @@
       "sourceTopicId": "3e.m5",
       "chapterId": "algorithmique_programmation",
       "unitId": "programmer-avec-des-blocs",
-      "order": 43,
+      "order": 44,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1548,7 +1615,7 @@
       "sourceTopicId": null,
       "chapterId": "algorithmique_programmation",
       "unitId": "programmer-avec-des-blocs",
-      "order": 44,
+      "order": 45,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -1579,7 +1646,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "rotations-et-homotheties",
-      "order": 45,
+      "order": 46,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1612,7 +1679,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "rotations-et-homotheties",
-      "order": 46,
+      "order": 47,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1647,7 +1714,7 @@
       "sourceTopicId": "3e.m3",
       "chapterId": "espace_geometrie",
       "unitId": "rotations-et-homotheties",
-      "order": 47,
+      "order": 48,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1691,7 +1758,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "rotations-et-homotheties",
-      "order": 48,
+      "order": 49,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1731,7 +1798,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "rotations-et-homotheties",
-      "order": 49,
+      "order": 50,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1770,7 +1837,7 @@
       "sourceTopicId": null,
       "chapterId": "espace_geometrie",
       "unitId": "rotations-et-homotheties",
-      "order": 50,
+      "order": 51,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -1805,7 +1872,7 @@
       "sourceTopicId": "3e.m3",
       "chapterId": "grandeurs_mesures",
       "unitId": "grandeurs-et-volumes",
-      "order": 51,
+      "order": 52,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1840,7 +1907,7 @@
       "sourceTopicId": "3e.m3",
       "chapterId": "grandeurs_mesures",
       "unitId": "grandeurs-et-volumes",
-      "order": 52,
+      "order": 53,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1873,7 +1940,7 @@
       "sourceTopicId": "3e.m3",
       "chapterId": "grandeurs_mesures",
       "unitId": "grandeurs-et-volumes",
-      "order": 53,
+      "order": 54,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1908,7 +1975,7 @@
       "sourceTopicId": null,
       "chapterId": "grandeurs_mesures",
       "unitId": "grandeurs-et-volumes",
-      "order": 54,
+      "order": 55,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",
@@ -1939,7 +2006,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "representer-l-espace",
-      "order": 55,
+      "order": 56,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -1971,7 +2038,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "representer-l-espace",
-      "order": 56,
+      "order": 57,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -2000,7 +2067,7 @@
       "sourceTopicId": "3e.m4",
       "chapterId": "espace_geometrie",
       "unitId": "representer-l-espace",
-      "order": 57,
+      "order": 58,
       "kind": "lesson",
       "decompositionType": "editorial_lesson",
       "decisionStatus": "draft",
@@ -2033,7 +2100,7 @@
       "sourceTopicId": null,
       "chapterId": "espace_geometrie",
       "unitId": "representer-l-espace",
-      "order": 58,
+      "order": 59,
       "kind": "synthesis",
       "decompositionType": "editorial_synthesis",
       "decisionStatus": "draft",

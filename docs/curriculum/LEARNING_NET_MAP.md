@@ -4,7 +4,7 @@
 > Contrat et règles : [`docs/architecture/LEARNING_NET.md`](../architecture/LEARNING_NET.md).
 > Données : `packages/core/curriculum/fr/net/`.
 
-**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **112** liens (9 consolidates, 77 requires, 26 extends) · **0** leçons publiées · **59** leçons prévues (13 unités).
+**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **0** leçons publiées · **60** leçons prévues (13 unités).
 
 Légende des liens : `requires` (requiert) — prérequis, lien de révision ; `extends` (prolonge) — même notion plus loin dans la spirale, la leçon n’enseigne QUE la valeur ajoutée ; `consolidates` (consolide) — le programme répète l’item, la leçon le rappelle sans le reconstruire.
 
@@ -31,6 +31,7 @@ flowchart LR
   n_4e_m1_r07 ==>|prolonge| n_3e_m1_r06
   n_3e_m1_r05 --> n_3e_m1_r07
   n_4e_m1_r08 ==>|prolonge| n_3e_m1_r07
+  n_3e_m1_r07 --> n_3e_m1_r06
 ```
 
 ### Fractions, nombres rationnels — `fractions-rationnels`
@@ -574,8 +575,8 @@ Prérequis venus d’autres fils : `3e.m2.r06`.
 | `3e.m1.r03` | Il résout des problèmes avec des puissances, notamment en utilisant la notation scientifique. | `notation-scientifique-en-probleme` _(prévue)_ | consolide `4e.m1.r03`, `3e.m1.r02` |
 | `3e.m1.r04` | Il résout des problèmes mettant en jeu des racines carrées. | `racine-carree-en-probleme` _(prévue)_ | prolonge `4e.m1.r05`, `4e.m4.r05` |
 | `3e.m1.r05` | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). | `decomposer-en-facteurs-premiers` _(prévue)_ | prolonge `4e.m1.r06` |
-| `3e.m1.r06` | Il simplifie une fraction pour la rendre irréductible. | `fraction-irreductible` _(prévue)_ | `3e.m1.r05`, prolonge `4e.m1.r07` |
-| `3e.m1.r07` | Il modélise et résout des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes…). | `multiples-et-diviseurs-communs` _(prévue)_ | `3e.m1.r05`, prolonge `4e.m1.r08` |
+| `3e.m1.r06` | Il simplifie une fraction pour la rendre irréductible. | `fraction-irreductible` _(prévue)_ | `3e.m1.r05`, prolonge `4e.m1.r07`, `3e.m1.r07` |
+| `3e.m1.r07` | Il modélise et résout des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes…). | `trouver-le-pgcd` _(prévue)_ | `3e.m1.r05`, prolonge `4e.m1.r08` |
 | `3e.m1.r08` | Le travail sur les expressions littérales est consolidé avec des transformations d’expressions, des programmes de calcul, des mises en équations, des fonctions… | `prouver-avec-le-calcul-litteral` _(prévue)_ | consolide `4e.m1.r11`, `3e.m1.r10` |
 | `3e.m1.r09` | Il détermine l’opposé d’une expression littérale. | `oppose-d-une-expression` _(prévue)_ | `4e.m1.r10` |
 | `3e.m1.r10` | La double distributivité est abordée. Le lien est fait avec la simple distributivité. | `double-distributivite` _(prévue)_ | prolonge `4e.m1.r10` |
@@ -664,10 +665,10 @@ _Aucune leçon._
 | # | leçon | statut | items |
 |---:|---|---|---|
 | 1 | `decomposer-en-facteurs-premiers` — Décomposer un nombre en facteurs premiers | prévue | `3e.m1.r05` |
-| 2 | `fraction-irreductible` — Rendre une fraction irréductible | prévue | `3e.m1.r06` |
-| 3 | `multiples-et-diviseurs-communs` — Engrenages et rendez-vous : multiples et diviseurs communs | prévue | `3e.m1.r07` |
-| 4 | `calculer-avec-des-fractions` — Résoudre des problèmes avec des fractions | prévue | `3e.m1.r01` |
-| 5 | `vers-le-brevet-nombres-premiers-et-fractions` — Vers le brevet — Nombres premiers et fractions | synthèse | — |
+| 2 | `trouver-le-pgcd` — Trouver le PGCD de deux nombres | prévue | `3e.m1.r07` |
+| 3 | `fraction-irreductible` — Rendre une fraction irréductible | prévue | `3e.m1.r06` |
+| 4 | `multiples-et-diviseurs-communs` — Engrenages et rendez-vous : quand deux rythmes se retrouvent | prévue | `3e.m1.r07` |
+| 5 | `vers-le-brevet-multiples-et-diviseurs` — Vers le brevet — Multiples et diviseurs | synthèse | — |
 | 6 | `oppose-d-une-expression` — L’opposé d’une expression et les parenthèses | prévue | `3e.m1.r09` |
 | 7 | `double-distributivite` — Développer un produit de deux sommes | prévue | `3e.m1.r10` `3e.m1.r11` |
 | 8 | `difference-de-deux-carres` — Factoriser une différence de deux carrés | prévue | `3e.m1.r12` |
@@ -677,49 +678,50 @@ _Aucune leçon._
 | 12 | `thales-configuration-papillon` — Thalès dans le papillon | prévue | `3e.m4.r05` `3e.m2.r09` |
 | 13 | `reciproque-de-thales` — Prouver que deux droites sont parallèles | prévue | `3e.m4.r05` |
 | 14 | `vers-le-brevet-thales-et-triangles-semblables` — Vers le brevet — Thalès et triangles semblables | synthèse | — |
-| 15 | `mettre-un-probleme-en-equation` — Mettre un problème en équation | prévue | `3e.m1.r13` |
-| 16 | `equation-produit-nul` — Résoudre une équation produit nul | prévue | `3e.m1.r14` |
-| 17 | `equation-x-carre-egal-a` — Résoudre l’équation x² = a | prévue | `3e.m1.r15` |
-| 18 | `vers-le-brevet-resoudre-des-equations` — Vers le brevet — Résoudre des équations | synthèse | — |
-| 19 | `notion-de-fonction` — Qu’est-ce qu’une fonction ? Image et antécédent | prévue | `3e.m2.r10` `3e.m2.r11` |
-| 20 | `lire-une-fonction` — Lire une fonction dans un tableau ou sur une courbe | prévue | `3e.m2.r12` `3e.m2.r11` `3e.m2.r13` |
-| 21 | `antecedent-par-le-calcul` — Trouver un antécédent par le calcul | prévue | `3e.m2.r14` |
-| 22 | `vers-le-brevet-la-notion-de-fonction` — Vers le brevet — La notion de fonction | synthèse | — |
-| 23 | `puissances-d-exposant-negatif` — Les puissances d’exposant négatif | prévue | `3e.m1.r02` |
-| 24 | `notation-scientifique-en-probleme` — Très grand, très petit : la notation scientifique | prévue | `3e.m1.r03` |
-| 25 | `racine-carree-en-probleme` — Utiliser la racine carrée pour calculer une longueur | prévue | `3e.m1.r04` |
-| 26 | `vers-le-brevet-puissances-et-racines` — Vers le brevet — Puissances et racine carrée | synthèse | — |
-| 27 | `cosinus-sinus-tangente` — Cosinus, sinus et tangente d’un angle | prévue | `3e.m4.r06` |
-| 28 | `calculer-un-angle` — Calculer un angle dans un triangle rectangle | prévue | `3e.m4.r06` |
-| 29 | `resoudre-un-triangle-rectangle` — Résoudre un triangle rectangle | prévue | `3e.m4.r06` |
-| 30 | `vers-le-brevet-trigonometrie` — Vers le brevet — Trigonométrie | synthèse | — |
-| 31 | `fonction-lineaire` — Fonction linéaire et proportionnalité | prévue | `3e.m2.r15` `3e.m2.r08` |
-| 32 | `fonction-affine` — Fonction affine et sa droite | prévue | `3e.m2.r16` `3e.m2.r17` |
-| 33 | `pourcentage-d-evolution` — Augmenter ou baisser d’un pourcentage | prévue | `3e.m2.r07` |
-| 34 | `modeliser-avec-une-fonction` — Choisir une fonction pour résoudre un problème | prévue | `3e.m2.r18` `3e.m2.r19` |
-| 35 | `vers-le-brevet-fonctions-lineaires-et-affines` — Vers le brevet — Fonctions linéaires et affines | synthèse | — |
-| 36 | `etendue-d-une-serie` — Comparer des séries : moyenne, médiane, étendue | prévue | `3e.m2.r01` `3e.m2.r03` |
-| 37 | `histogramme` — Lire et tracer un histogramme | prévue | `3e.m2.r02` `3e.m2.r03` |
-| 38 | `probabilite-une-epreuve` — Calculer une probabilité en comptant les issues | prévue | `3e.m2.r04` |
-| 39 | `probabilite-deux-epreuves` — Deux tirages : le tableau à double entrée | prévue | `3e.m2.r05` |
-| 40 | `frequence-et-probabilite` — Simuler le hasard : fréquences et probabilité | prévue | `3e.m2.r06` |
-| 41 | `vers-le-brevet-statistiques-et-probabilites` — Vers le brevet — Statistiques et probabilités | synthèse | — |
-| 42 | `programmer-des-blocs-personnalises` — Découper un programme en blocs | prévue | `3e.m5.r01` `3e.m5.r02` |
-| 43 | `boucles-et-conditions` — Boucles « jusqu’à » et conditions | prévue | `3e.m5.r03` |
-| 44 | `scripts-en-parallele` — Faire interagir des lutins | prévue | `3e.m5.r04` |
-| 45 | `vers-le-brevet-programmer-avec-des-blocs` — Vers le brevet — Programmer : blocs, boucles et scripts | synthèse | — |
-| 46 | `rotation` — Faire tourner une figure : la rotation | prévue | `3e.m4.r07` `3e.m3.r06` |
-| 47 | `homothetie` — Agrandir depuis un point : l’homothétie | prévue | `3e.m4.r08` |
-| 48 | `effet-d-une-homothetie` — Longueurs, aires et volumes après une homothétie | prévue | `3e.m3.r07` `3e.m4.r08` |
-| 49 | `frises-pavages-rosaces` — Frises, pavages et rosaces | prévue | `3e.m4.r09` |
-| 50 | `demontrer-en-geometrie` — Rédiger une démonstration en géométrie | prévue | `3e.m4.r10` |
-| 51 | `vers-le-brevet-rotations-et-homotheties` — Vers le brevet — Rotations et homothéties | synthèse | — |
-| 52 | `volume-boule-et-assemblages` — Volume d’une boule et de solides assemblés | prévue | `3e.m3.r01` `3e.m3.r02` |
-| 53 | `grandeurs-composees` — Vitesse, débit, masse volumique | prévue | `3e.m3.r03` `3e.m3.r05` |
-| 54 | `conversions-grandeurs-composees` — Convertir des vitesses, des débits et des volumes | prévue | `3e.m3.r04` `3e.m3.r05` |
-| 55 | `vers-le-brevet-grandeurs-et-volumes` — Vers le brevet — Vitesses, débits et volumes | synthèse | — |
-| 56 | `se-reperer-sur-une-sphere` — Se repérer sur une sphère : latitude et longitude | prévue | `3e.m4.r01` |
-| 57 | `representations-des-solides` — Patrons, perspective et vues d’un solide | prévue | `3e.m4.r02` |
-| 58 | `sections-planes` — Couper un solide : les sections planes | prévue | `3e.m4.r03` |
-| 59 | `vers-le-brevet-representer-l-espace` — Vers le brevet — Représenter l’espace | synthèse | — |
+| 15 | `calculer-avec-des-fractions` — Résoudre des problèmes avec des fractions | prévue | `3e.m1.r01` |
+| 16 | `mettre-un-probleme-en-equation` — Mettre un problème en équation | prévue | `3e.m1.r13` |
+| 17 | `equation-produit-nul` — Résoudre une équation produit nul | prévue | `3e.m1.r14` |
+| 18 | `equation-x-carre-egal-a` — Résoudre l’équation x² = a | prévue | `3e.m1.r15` |
+| 19 | `vers-le-brevet-resoudre-des-equations` — Vers le brevet — Résoudre des équations | synthèse | — |
+| 20 | `notion-de-fonction` — Qu’est-ce qu’une fonction ? Image et antécédent | prévue | `3e.m2.r10` `3e.m2.r11` |
+| 21 | `lire-une-fonction` — Lire une fonction dans un tableau ou sur une courbe | prévue | `3e.m2.r12` `3e.m2.r11` `3e.m2.r13` |
+| 22 | `antecedent-par-le-calcul` — Trouver un antécédent par le calcul | prévue | `3e.m2.r14` |
+| 23 | `vers-le-brevet-la-notion-de-fonction` — Vers le brevet — La notion de fonction | synthèse | — |
+| 24 | `puissances-d-exposant-negatif` — Les puissances d’exposant négatif | prévue | `3e.m1.r02` |
+| 25 | `notation-scientifique-en-probleme` — Très grand, très petit : la notation scientifique | prévue | `3e.m1.r03` |
+| 26 | `racine-carree-en-probleme` — Utiliser la racine carrée pour calculer une longueur | prévue | `3e.m1.r04` |
+| 27 | `vers-le-brevet-puissances-et-racines` — Vers le brevet — Puissances et racine carrée | synthèse | — |
+| 28 | `cosinus-sinus-tangente` — Cosinus, sinus et tangente d’un angle | prévue | `3e.m4.r06` |
+| 29 | `calculer-un-angle` — Calculer un angle dans un triangle rectangle | prévue | `3e.m4.r06` |
+| 30 | `resoudre-un-triangle-rectangle` — Résoudre un triangle rectangle | prévue | `3e.m4.r06` |
+| 31 | `vers-le-brevet-trigonometrie` — Vers le brevet — Trigonométrie | synthèse | — |
+| 32 | `fonction-lineaire` — Fonction linéaire et proportionnalité | prévue | `3e.m2.r15` `3e.m2.r08` |
+| 33 | `fonction-affine` — Fonction affine et sa droite | prévue | `3e.m2.r16` `3e.m2.r17` |
+| 34 | `pourcentage-d-evolution` — Augmenter ou baisser d’un pourcentage | prévue | `3e.m2.r07` |
+| 35 | `modeliser-avec-une-fonction` — Choisir une fonction pour résoudre un problème | prévue | `3e.m2.r18` `3e.m2.r19` |
+| 36 | `vers-le-brevet-fonctions-lineaires-et-affines` — Vers le brevet — Fonctions linéaires et affines | synthèse | — |
+| 37 | `etendue-d-une-serie` — Comparer des séries : moyenne, médiane, étendue | prévue | `3e.m2.r01` `3e.m2.r03` |
+| 38 | `histogramme` — Lire et tracer un histogramme | prévue | `3e.m2.r02` `3e.m2.r03` |
+| 39 | `probabilite-une-epreuve` — Calculer une probabilité en comptant les issues | prévue | `3e.m2.r04` |
+| 40 | `probabilite-deux-epreuves` — Deux tirages : le tableau à double entrée | prévue | `3e.m2.r05` |
+| 41 | `frequence-et-probabilite` — Simuler le hasard : fréquences et probabilité | prévue | `3e.m2.r06` |
+| 42 | `vers-le-brevet-statistiques-et-probabilites` — Vers le brevet — Statistiques et probabilités | synthèse | — |
+| 43 | `programmer-des-blocs-personnalises` — Découper un programme en blocs | prévue | `3e.m5.r01` `3e.m5.r02` |
+| 44 | `boucles-et-conditions` — Boucles « jusqu’à » et conditions | prévue | `3e.m5.r03` |
+| 45 | `scripts-en-parallele` — Faire interagir des lutins | prévue | `3e.m5.r04` |
+| 46 | `vers-le-brevet-programmer-avec-des-blocs` — Vers le brevet — Programmer : blocs, boucles et scripts | synthèse | — |
+| 47 | `rotation` — Faire tourner une figure : la rotation | prévue | `3e.m4.r07` `3e.m3.r06` |
+| 48 | `homothetie` — Agrandir depuis un point : l’homothétie | prévue | `3e.m4.r08` |
+| 49 | `effet-d-une-homothetie` — Longueurs, aires et volumes après une homothétie | prévue | `3e.m3.r07` `3e.m4.r08` |
+| 50 | `frises-pavages-rosaces` — Frises, pavages et rosaces | prévue | `3e.m4.r09` |
+| 51 | `demontrer-en-geometrie` — Rédiger une démonstration en géométrie | prévue | `3e.m4.r10` |
+| 52 | `vers-le-brevet-rotations-et-homotheties` — Vers le brevet — Rotations et homothéties | synthèse | — |
+| 53 | `volume-boule-et-assemblages` — Volume d’une boule et de solides assemblés | prévue | `3e.m3.r01` `3e.m3.r02` |
+| 54 | `grandeurs-composees` — Vitesse, débit, masse volumique | prévue | `3e.m3.r03` `3e.m3.r05` |
+| 55 | `conversions-grandeurs-composees` — Convertir des vitesses, des débits et des volumes | prévue | `3e.m3.r04` `3e.m3.r05` |
+| 56 | `vers-le-brevet-grandeurs-et-volumes` — Vers le brevet — Vitesses, débits et volumes | synthèse | — |
+| 57 | `se-reperer-sur-une-sphere` — Se repérer sur une sphère : latitude et longitude | prévue | `3e.m4.r01` |
+| 58 | `representations-des-solides` — Patrons, perspective et vues d’un solide | prévue | `3e.m4.r02` |
+| 59 | `sections-planes` — Couper un solide : les sections planes | prévue | `3e.m4.r03` |
+| 60 | `vers-le-brevet-representer-l-espace` — Vers le brevet — Représenter l’espace | synthèse | — |
 

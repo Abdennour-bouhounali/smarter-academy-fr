@@ -77,7 +77,7 @@ of `rootCourts`, `oasis-world.html`).
 - **Official French sources**: [`curriculum/officiel/`](./curriculum/officiel/) — its `README.md` says which text
   applies to which grade and year, with the quotes that prove it. Lessons and learning points are defined from these
   texts and from nothing else.
-- **The 3e net**: live in `packages/core/curriculum/fr/` since 2026-11-22 (59 lessons, all `coming_soon`; 6e, 5e, 4e
+- **The 3e net**: live in `packages/core/curriculum/fr/` since 2026-11-22 (60 lessons, all `coming_soon`; 6e, 5e, 4e
   still empty). [`curriculum/net-3e/`](./curriculum/net-3e/) holds `REVIEW.md` — the sheet the owner validates: the
   units, lessons and learning points with the official page of each, and what the 2028 programme changes — and
   `fr_dz_table.json`, which Algerian lesson teaches the same learning point. State and rules:

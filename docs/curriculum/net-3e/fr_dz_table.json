@@ -6,6 +6,56 @@
   "builtOn": "2026-11-22",
   "rows": [
     {
+      "fr": "trouver-le-pgcd",
+      "dz": "qasim-mushtarak-akbar",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_trouver-le-pgcd_P1",
+          "dz": "4am_qasim-mushtarak-akbar_P1"
+        },
+        {
+          "fr": "3e_trouver-le-pgcd_P1",
+          "dz": "4am_qasim-mushtarak-akbar_P2"
+        },
+        {
+          "fr": "3e_trouver-le-pgcd_P4",
+          "dz": "4am_qasim-mushtarak-akbar_P3"
+        }
+      ],
+      "dzIsV2": true,
+      "note": "PORT (v2 ready): common divisors, the PGCD and its notation, sharing into identical bundles. DZ P4 (the common divisors are the divisors of the PGCD) has no FR point."
+    },
+    {
+      "fr": "trouver-le-pgcd",
+      "dz": "tayin-pgcd",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_trouver-le-pgcd_P1",
+          "dz": "4am_tayin-pgcd_P1"
+        }
+      ],
+      "dzIsV2": true,
+      "note": "PORT (v2 ready) the listing method: divisors of each number, then the common ones, then the greatest. DZ P2, P3 (PGCD(a ; a), PGCD(a ; 0), b divides a) have no FR point."
+    },
+    {
+      "fr": "trouver-le-pgcd",
+      "dz": "bahth-pgcd",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_trouver-le-pgcd_P3",
+          "dz": "4am_bahth-pgcd_P4"
+        }
+      ],
+      "dzIsV2": true,
+      "note": "PORT (v2 ready) Euclid’s algorithm (last non-zero remainder). DZ also justifies PGCD(a ; b) = PGCD(b ; r) and teaches the subtraction algorithm (its P1–P3, P5): no FR point. FR P2 (the PGCD from the prime decompositions) has no DZ point — DZ has no prime factorisation."
+    },
+    {
       "fr": "fraction-irreductible",
       "dz": "ikhtizal-kasr",
       "dzGrade": "4am",
@@ -22,24 +72,42 @@
         {
           "fr": "3e_fraction-irreductible_P3",
           "dz": "4am_ikhtizal-kasr_P4"
+        },
+        {
+          "fr": "3e_fraction-irreductible_P4",
+          "dz": "4am_ikhtizal-kasr_P3"
         }
       ],
       "dzIsV2": true,
-      "note": "Same capabilities. DZ reaches « irreducible » through coprimality and the PGCD (its P2, P3); the 2020 French text has no PGCD and works with common prime factors."
+      "note": "PORT (v2 ready). Every FR point has its DZ point. Other method on one point only: FR P2 simplifies the common PRIME factors read on the decompositions, DZ P1 divides successively by any common divisor. Dividing by the PGCD (FR P4) is DZ P3 — beyond the 2020 French text, by the owner’s decision of 2026-11-23."
     },
     {
-      "fr": "multiples-et-diviseurs-communs",
-      "dz": "qasim-mushtarak-akbar",
+      "fr": "fraction-irreductible",
+      "dz": "awwaliyan-fima-baynahuma",
       "dzGrade": "4am",
       "type": "partial",
       "points": [
         {
-          "fr": "3e_multiples-et-diviseurs-communs_P3",
-          "dz": "4am_qasim-mushtarak-akbar_P3"
+          "fr": "3e_fraction-irreductible_P1",
+          "dz": "4am_awwaliyan-fima-baynahuma_P1"
         }
       ],
       "dzIsV2": true,
-      "note": "Only the sharing-into-identical-bundles point. DZ finds the greatest divisor by listing divisors or Euclid; FR by prime decompositions. DZ has no common-multiple lesson (FR P1, P2)."
+      "note": "Coprime numbers (PGCD = 1), the condition of FR P1 read through the PGCD. FR never says « premiers entre eux » here."
+    },
+    {
+      "fr": "multiples-et-diviseurs-communs",
+      "dz": "jam-tarh-kasrayn",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_multiples-et-diviseurs-communs_P2",
+          "dz": "3am_jam-tarh-kasrayn_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Only the smallest common multiple, found inside fraction addition by scanning the multiples of the larger denominator; FR finds it from the prime decompositions and uses it in rendez-vous problems (FR P1, P3 have no DZ point). DZ has no common-multiple lesson: nothing to port whole."
     },
     {
       "fr": "calculer-avec-des-fractions",

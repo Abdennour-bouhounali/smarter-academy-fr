@@ -9,12 +9,22 @@
         "Décomposer un grand nombre à l’aide d’un tableur, d’une calculatrice ou d’un programme qui teste les diviseurs"
       ]
     },
+    "trouver-le-pgcd": {
+      "grade": "3e",
+      "points": [
+        "Lister les diviseurs communs de deux entiers et reconnaître le plus grand d’entre eux, leur PGCD",
+        "Trouver le PGCD de deux entiers à partir de leurs décompositions en facteurs premiers, en gardant chaque facteur premier commun avec son plus petit exposant",
+        "Trouver le PGCD de deux entiers avec l’algorithme d’Euclide : enchaîner les divisions euclidiennes jusqu’au reste nul, le PGCD est le dernier reste non nul",
+        "Reconnaître qu’un problème de partage en lots identiques revient à chercher un diviseur commun, et que le plus grand nombre de lots possible est le PGCD"
+      ]
+    },
     "fraction-irreductible": {
       "grade": "3e",
       "points": [
-        "Reconnaître qu’une fraction est irréductible quand son numérateur et son dénominateur n’ont aucun facteur premier commun",
-        "Rendre une fraction irréductible en divisant numérateur et dénominateur par leurs facteurs premiers communs",
-        "Donner le résultat d’un calcul de fractions sous forme irréductible"
+        "Reconnaître qu’une fraction est irréductible quand son numérateur et son dénominateur n’ont aucun facteur premier commun, c’est-à-dire quand leur PGCD vaut 1",
+        "Rendre une fraction irréductible en décomposant numérateur et dénominateur en facteurs premiers, puis en simplifiant leurs facteurs premiers communs",
+        "Donner le résultat d’un calcul de fractions sous forme irréductible",
+        "Rendre une fraction irréductible en une seule étape, en divisant numérateur et dénominateur par leur PGCD"
       ]
     },
     "multiples-et-diviseurs-communs": {
@@ -22,21 +32,13 @@
       "points": [
         "Reconnaître qu’un problème de répétitions simultanées (engrenages, signaux lumineux) revient à chercher un multiple commun",
         "Trouver le plus petit multiple commun non nul de deux entiers à partir de leurs décompositions en facteurs premiers",
-        "Reconnaître qu’un problème de partage en lots identiques revient à chercher un diviseur commun, et trouver le plus grand à partir des décompositions"
+        "Résoudre un problème de rendez-vous en contexte (engrenages, feux clignotants, bus) et interpréter le plus petit multiple commun comme une durée ou un nombre de tours"
       ]
     },
-    "calculer-avec-des-fractions": {
+    "vers-le-brevet-multiples-et-diviseurs": {
       "grade": "3e",
       "points": [
-        "Choisir l’opération sur les fractions (somme, différence, produit, quotient) qui traduit un énoncé",
-        "Calculer une fraction d’une quantité puis une fraction de ce qui reste, en enchaînant les calculs",
-        "Mener un calcul avec des nombres relatifs et des fractions en respectant les priorités, et donner le résultat sous forme irréductible"
-      ]
-    },
-    "vers-le-brevet-nombres-premiers-et-fractions": {
-      "grade": "3e",
-      "points": [
-        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Nombres premiers et fractions »"
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Multiples et diviseurs »"
       ]
     },
     "oppose-d-une-expression": {
@@ -108,6 +110,14 @@
       "grade": "3e",
       "points": [
         "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Thalès et triangles semblables »"
+      ]
+    },
+    "calculer-avec-des-fractions": {
+      "grade": "3e",
+      "points": [
+        "Choisir l’opération sur les fractions (somme, différence, produit, quotient) qui traduit un énoncé",
+        "Calculer une fraction d’une quantité puis une fraction de ce qui reste, en enchaînant les calculs",
+        "Mener un calcul avec des nombres relatifs et des fractions en respectant les priorités, et donner le résultat sous forme irréductible"
       ]
     },
     "mettre-un-probleme-en-equation": {

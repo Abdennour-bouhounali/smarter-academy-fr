@@ -348,7 +348,7 @@ describe.each([
 });
 
 describe('the delivered net (3e)', () => {
-  it('holds the 3e net: 55 items taught in 3e, 53 stubs of the earlier grades, 59 planned lessons in 13 units', () => {
+  it('holds the 3e net: 55 items taught in 3e, 53 stubs of the earlier grades, 60 planned lessons in 13 units', () => {
     expect(net).toMatchObject({ version: 1 });
     expect(typeof net.builtOn).toBe('string');
     expect(Object.keys(net.linkTypes)).toEqual(['requires', 'extends', 'consolidates']);
@@ -359,9 +359,9 @@ describe('the delivered net (3e)', () => {
     expect(count((i) => i.stub)).toBe(53);
     expect(delivered.ITEMS).toHaveLength(108);
     expect(delivered.THREADS).toHaveLength(17);
-    expect(delivered.LINKS).toHaveLength(112);
+    expect(delivered.LINKS).toHaveLength(113);
     expect(delivered.UNITS).toHaveLength(13);
-    expect(delivered.LESSONS).toHaveLength(59);
+    expect(delivered.LESSONS).toHaveLength(60);
     expect(delivered.LESSONS.every((l) => l.grade === '3e' && l.status === 'planned')).toBe(true);
     expect(delivered.WEIGHTED_GRADES).toEqual(['3e']);
   });

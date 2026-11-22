@@ -19,7 +19,7 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   reads any Algerian file that was since deleted.
 - **Done**: every Algerian lesson, exercise bank, class test, textbook source and the three legacy lesson systems are
   deleted; the tree is the lesson ENGINE and the SHELL around it; the official French texts are filed; **the 3e net
-  is live** (`packages/core/curriculum/fr/`: 13 units, 59 lessons all `coming_soon`, 161 learning points with locked
+  is live** (`packages/core/curriculum/fr/`: 13 units, 60 lessons all `coming_soon`, 166 learning points with locked
   ids, 55 programme items + 53 stubs of earlier grades — not yet validated by the owner; 6e, 5e, 4e are empty
   skeletons); `npm run lesson:brief -- <code>` prints what a lesson must teach; the server side of the payment switch
   is built (plan §4ter) — payments are CLOSED by default.
@@ -34,8 +34,9 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   letters, euros (`utils/money.js`). `src/test/noArabic.test.js` refuses an Arabic character anywhere in `apps/web`
   except the books store (switched off). The routes are French words (`/parent`, `/etablissement/…`,
   `/enseignant/seance/…`, `/espace/enigmes`); the old transliterated paths have NO redirect.
-- **Accounts created by a school or a teacher are CLOSED** behind an admin switch (`ManagedAccountsGate`, API only —
-  the admin's panel and the hiding of the roster buttons in the web are still to build).
+- **Accounts created by a school or a teacher are CLOSED** behind an admin switch (`ManagedAccountsGate`; the admin's
+  card « Comptes créés… » on the dashboard; `hooks/useManagedAccounts.js` hides the roster import and the credential
+  buttons of the teacher's and the school's spaces while closed, and fails closed).
 - **NOT done yet — do not be surprised**: nothing has been SEEN in a browser and no walk has been run since the
   translation; the API has never run on MySQL; root `scripts/` validators (`validate-exercises.mjs`,
   `validate-thinking-lab.mjs`, `generate-compass-index.mjs`) still carry Algerian rules and wait for the first
