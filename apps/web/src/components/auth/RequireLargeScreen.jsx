@@ -32,7 +32,7 @@ export function useIsPhoneScreen() {
 export function LargeScreenOnlyNotice() {
   const { t } = useTranslation('common');
   return (
-    <div dir="rtl" className="min-h-[70vh] flex items-center justify-center px-5 py-10 bg-slate-50">
+    <div className="min-h-[70vh] flex items-center justify-center px-5 py-10 bg-slate-50">
       <div
         role="alert"
         className="max-w-sm w-full rounded-2xl bg-white border border-slate-200 shadow-sm p-6 text-center"

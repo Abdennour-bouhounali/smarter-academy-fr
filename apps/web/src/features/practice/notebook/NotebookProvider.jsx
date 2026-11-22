@@ -14,8 +14,8 @@ import { contextPayload } from './noteContext';
  * cahier qui ne s'ouvre que sur un geste de l'élève.
  *
  * Préchargement : dès qu'une page PUBLIE sa position (`setLocation` non nul,
- * c.-à-d. une leçon, un محور, une pratique), le lot est demandé au prochain
- * moment d'inactivité. La pastille « كرّاسي » s'ouvre donc sans attente là où
+ * c.-à-d. une leçon, une étape, une pratique), le lot est demandé au prochain
+ * moment d'inactivité. La pastille « Mon cahier » s'ouvre donc sans attente là où
  * elle existe, et « / » ne paie rien. Voir docs/architecture/BUNDLE_BOUNDARIES.md.
  */
 const loadNotebookWindow = () => import('./NotebookWindow');
@@ -53,7 +53,7 @@ function preloadNotebookWindow() {
  * aussi la pratique et « Ma progression » — un seul NotebookWindow dans
  * toute l'application, une seule source de vérité.
  *
- * Ouvrir ne crée RIEN en base : la note naît au premier « حفظ », avec le
+ * Ouvrir ne crée RIEN en base : la note naît au premier « Enregistrer », avec le
  * contexte de la session. Le contexte d'une note existante n'est jamais
  * renvoyé au serveur — il appartient à sa création.
  */
@@ -77,7 +77,7 @@ export function NotebookProvider({ children }) {
    * @param {object} opts
    * @param {object} [opts.context]      le contexte capturé (par défaut : la position courante)
    * @param {object} [opts.note]         une note existante à rouvrir (son contexte fait foi)
-   * @param {string} [opts.starterHtml]  contenu de départ (« أضف إلى كرّاسي »)
+   * @param {string} [opts.starterHtml]  contenu de départ (« Ajouter à mon cahier »)
    * @param {function} [opts.onCreate]   remplace la création par défaut (la pratique ajoute ses codes)
    * @param {function} [opts.onUpdate]
    * @param {function} [opts.onSaved]

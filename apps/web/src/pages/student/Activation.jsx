@@ -18,16 +18,12 @@ import { LOCALE } from '../../locale';
  * Modifier cet état dans le navigateur ne donne accès à aucune leçon — c'est
  * ContentAccess, côté API, qui refuse.
  *
- * ── Le code se saisit en caractères latins, dans une page arabe ─────────
- * L'interface est en arabe et lue de droite à gauche ; le code, lui, est une
- * suite de lettres latines et de chiffres imprimée sur une carte. Le champ
- * porte donc `dir="ltr"` : sans cela, les tirets et le curseur sauteraient
- * d'un bout à l'autre pendant la frappe. C'est la même règle que pour les
- * mathématiques (MathText) — l'arabe pour la langue, le latin pour ce qui
- * n'est pas de la langue.
+ * ── Le code ─────────────────────────────────────────────────────────
+ * Une suite de lettres et de chiffres imprimée sur une carte : le champ la
+ * montre en chasse fixe, espacée, centrée, avec l'icône de clé à son début.
  */
 
-/** Une date d'échéance, en arabe algérien et sans heure. */
+/** Une date d'échéance, sans heure (LOCALE). */
 function formatDate(iso) {
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return '';
@@ -49,7 +45,7 @@ function formatCodeInput(raw) {
 
 export default function Activation() {
   const { t } = useTranslation('access');
-  useDocumentMeta('تفعيل الوصول', 'أدخل رمز التفعيل لفتح كامل الدروس.');
+  useDocumentMeta(t('activationTitle'), t('activationSubtitle'));
 
   const { token } = useContext(AuthContext);
   const { access, refresh } = useContentAvailability();
@@ -192,11 +188,7 @@ export default function Activation() {
               </label>
 
               <div className="relative">
-                {/* PHYSIQUEMENT à gauche, et non `start-3` : le champ est
-                    `dir="ltr"`, donc son début est à gauche même dans une page
-                    arabe. Une icône logique se serait posée à droite, c'est-à-
-                    dire à la FIN du champ qu'elle annonce. Même raison que le
-                    bouton « afficher le mot de passe » de la page de connexion. */}
+                {/* L'icône de clé au DÉBUT du champ (à gauche). */}
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3 text-slate-400 pointer-events-none">
                   <KeyRound className="w-5 h-5" />
                 </span>
@@ -207,10 +199,6 @@ export default function Activation() {
                   autoComplete="off"
                   autoCapitalize="characters"
                   spellCheck={false}
-                  // Le champ est LTR dans une page RTL : le code est une suite
-                  // latine, et le laisser suivre la direction de la page ferait
-                  // sauter le curseur et les tirets pendant la frappe.
-                  dir="ltr"
                   value={code}
                   onChange={(e) => setCode(formatCodeInput(e.target.value))}
                   placeholder={t('codePlaceholder')}

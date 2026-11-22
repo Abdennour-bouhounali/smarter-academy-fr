@@ -6,14 +6,14 @@ import RedactionText from '../exam/math/RedactionText';
 import { mathToPlain } from '../../../utils/mathPlain';
 
 /**
- * L'ÉTAPE « بيّن أن »، « برّر » d'une feuille d'examen (décision du propriétaire,
+ * L'ÉTAPE « Démontrer que », « Justifier » d'une feuille d'examen (décision du propriétaire,
  * 2026-10-06) — une démonstration ne se corrige pas automatiquement :
  *
  *  1. l'élève ÉCRIT sa démonstration dans la zone de texte, puis valide
- *     (« سجّل إجابتي ») : `{ text }` est enregistré par le serveur et ne se
+ *     (« Enregistrer ma réponse ») : `{ text }` est enregistré par le serveur et ne se
  *     modifie plus (PracticeEvidenceRecorder refuse un autre texte) ;
  *  2. son texte reste affiché, verrouillé, et le CORRIGÉ TYPE s'ouvre dessous ;
- *  3. il dit s'il est arrivé au même raisonnement — « مطابق / غير مطابق ».
+ *  3. il dit s'il est arrivé au même raisonnement — « Elle correspond / Elle ne correspond pas ».
  *     Ce choix (`onSelfMark`) est envoyé une fois, avec le MÊME texte.
  *
  * Jamais compté pour la maîtrise (countsForMastery). Avant la validation,
@@ -57,7 +57,7 @@ export default function SelfCheckInput({ question, value, onChange, disabled, on
           <RedactionText text={text} className="sa-exam-ink text-base leading-relaxed" />
         </div>
       )}
-      {/* « تصحيح الأستاذ » (2026-10-06) : la démonstration attend l'enseignant —
+      {/* « Correction du professeur » (2026-10-06) : la démonstration attend l'enseignant —
           ni corrigé type ni auto-évaluation (`showSolution` faux, pas de
           `onSelfMark`). Une note de l'enseignant arrivée : corrigé, sans boutons. */}
       {showSolution && <SolutionPanel solution={question.solution} open />}
@@ -67,8 +67,8 @@ export default function SelfCheckInput({ question, value, onChange, disabled, on
 }
 
 /**
- * « هل يطابق حلّك الحلّ النموذجي ؟ » — la note que l'élève se donne, corrigé
- * type sous les yeux : une « بيّن أن », ou une étape répondue en PHOTO
+ * « Ta démonstration correspond-elle au corrigé ? » — la note que l'élève se donne, corrigé
+ * type sous les yeux : une « Démontrer que », ou une étape répondue en PHOTO
  * seulement (élève autonome). Envoyée une fois ; jamais comptée.
  */
 export function SelfMarkChoice({ onSelfMark, mark = null, busy = false }) {

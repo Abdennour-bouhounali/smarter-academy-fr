@@ -7,7 +7,7 @@ import { IGNORE_ATTRIBUTE, isMeaningfulRect, normalizeRect } from './screenshot'
  * L'OUTIL DE CAPTURE, comme celui d'un système d'exploitation.
  *
  * La fenêtre de signalement se retire ; une couche transparente couvre la
- * page. Le relecteur DÉFILE librement (molette, ou mode « تمرير » au doigt),
+ * page. Le relecteur DÉFILE librement (molette, ou mode « Défiler » au doigt),
  * puis GLISSE pour tracer la région voulue — ou prend tout l'écran visible.
  * La couche et sa barre portent `data-report-ignore` : elles n'apparaissent
  * jamais dans l'image.
@@ -19,8 +19,8 @@ import { IGNORE_ATTRIBUTE, isMeaningfulRect, normalizeRect } from './screenshot'
  */
 export default function ScreenSnipper({ onSelect, onFullScreen, onCancel, busy = false }) {
   const { t } = useTranslation('common');
-  // Au doigt, glisser fait défiler : on part en mode « تمرير », on bascule
-  // en « تحديد » pour tracer. À la souris, la molette défile déjà.
+  // Au doigt, glisser fait défiler : on part en mode « Défiler », on bascule
+  // en « Sélectionner » pour tracer. À la souris, la molette défile déjà.
   const coarse = typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches;
   const [mode, setMode] = useState(coarse ? 'scroll' : 'select');
   const [rect, setRect] = useState(null);

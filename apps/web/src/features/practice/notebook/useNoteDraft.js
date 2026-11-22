@@ -60,7 +60,7 @@ function clearDraft(key) {
  * @param {string|null} key  la clé du brouillon ; null désactive tout
  * @returns {{ save: (draft: {html: string, mistakeType: string|null, noteId?: number|null}) => void, flush: () => void, clear: () => void }}
  *   `noteId` : quand le brouillon est celui d'une note DÉJÀ enregistrée
- *   (l'élève a continué d'écrire après un premier « حفظ »), le restaurer doit
+ *   (l'élève a continué d'écrire après un premier « Enregistrer »), le restaurer doit
  *   rouvrir CETTE note, pas en créer une seconde.
  */
 export function useNoteDraft(key) {

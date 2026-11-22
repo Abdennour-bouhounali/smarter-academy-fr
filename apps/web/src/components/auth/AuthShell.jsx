@@ -4,7 +4,7 @@ import { BadgeCheck, Check, Plus } from 'lucide-react';
 
 /**
  * The frame of the visitor's auth pages (Login, Register) — ONE wide card
- * split in two: the form on the reading side (right, in RTL), and a light
+ * split in two: the form on the reading side (left), and a light
  * brand panel on the other, drawn in code. Below `lg` the brand panel folds
  * away and the form takes the whole card.
  *
@@ -48,7 +48,7 @@ export function AuthSubmit({ tone = 'student', loading, children }) {
   );
 }
 
-/** « أو » between Google and the form. */
+/** « ou » between Google and the form. */
 export function AuthDivider() {
   const { t } = useTranslation('auth');
   return (
@@ -61,7 +61,7 @@ export function AuthDivider() {
 }
 
 /**
- * « وفق البرنامج الرسمي لوزارة التربية والتعليم في الجزائر » — the programme
+ * « Programme officiel du collège, de la 6e à la 3e » — the programme
  * promise, as a badge where it is read first: at the top of the brand panel,
  * and (below `lg`, where that panel folds away) above the form title.
  */
@@ -78,7 +78,7 @@ function ProgrammeBadge({ tone, className = '' }) {
 
 /**
  * The brand panel's drawing — a right triangle on a grid, its circumscribed
- * circle and a curve: the 4AM programme's own objects, drawn, not generated.
+ * circle and a curve: objects of the 3e programme, drawn, not generated.
  */
 function BrandFigure({ stroke }) {
   const [from, to] = stroke;
@@ -119,7 +119,7 @@ function BrandPanel({ tone, audience }) {
           {t(`shell.${audience}.title`)}
         </h2>
         {/* Title and badge are centred; the feature list stays on the
-            reading edge (right, in RTL). */}
+            reading edge. */}
         <ul className="mt-8 space-y-4 self-stretch text-start">
           {points.map((point) => (
             <li key={point} className="flex items-start gap-3 text-[15px] text-slate-700">

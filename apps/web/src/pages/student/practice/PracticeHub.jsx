@@ -45,10 +45,10 @@ export default function PracticeHub() {
   const [overview, setOverview] = useState(null);
   const [error, setError] = useState(null);
   const [busyLevel, setBusyLevel] = useState(null);
-  // Prototype BEM : « ما أظهرته » dans une fenêtre centrale, pas en colonne.
+  // Prototype de la feuille d’examen : « Ce que j’ai montré » dans une fenêtre centrale, pas en colonne.
   const [lpsOpen, setLpsOpen] = useState(false);
   const exam = isExamLesson(lessonCode);
-  // La « خزانة الميداليات » (prototype BEM) : élève seulement — l'enseignant n'est pas suivi.
+  // La « Vitrine des médailles » (prototype de la feuille d’examen) : élève seulement — l'enseignant n'est pas suivi.
   const [medals, setMedals] = useState(null);
   useEffect(() => {
     if (!token || !exam || isTeacher) return;
@@ -56,7 +56,7 @@ export default function PracticeHub() {
   }, [token, lessonCode, exam, isTeacher]);
   // Un refus du serveur porte un motif clos (`code`) : « pas de pratique ici »
   // et « leçon non ouverte » se disent différemment ; sinon, le message
-  // arabe générique du service (jamais la phrase française du serveur).
+  // générique du service.
   const refusalText = (e) => (
     e?.code === 'practice_unavailable' || e?.code === 'lesson_unavailable'
       ? t(`practice.unavailable.${e.code}`)
@@ -145,8 +145,8 @@ export default function PracticeHub() {
   );
   const lpsTitle = isTeacher ? t('practice.lessonPoints', { ns: 'teacher' }) : t('practice.whatYouShowed');
 
-  // ── PROTOTYPE BEM (propriétaire, 2026-10-06) : en-tête « محاكاة », niveaux
-  // en cartes sur toute la largeur, « ما أظهرته » dans une fenêtre centrale.
+  // ── PROTOTYPE DE LA FEUILLE D’EXAMEN (propriétaire, 2026-10-06) : en-tête « Brevet blanc », niveaux
+  // en cartes sur toute la largeur, « Ce que j’ai montré » dans une fenêtre centrale.
   if (exam) {
     return (
       <div className="sa-surface-plain sa-page sa-page--flush space-y-5 py-5 sm:py-6" data-practice-hub-exam>
@@ -237,7 +237,7 @@ export default function PracticeHub() {
 
   return (
     // Même cadre que le lecteur d'exercices : toute la largeur, 20 px de
-    // chaque côté (`.sa-page--flush`), le même cadre que « التحدّي اليومي » (py-6 sm:py-8).
+    // chaque côté (`.sa-page--flush`), le même cadre que « Défi du jour » (py-6 sm:py-8).
     <div className="sa-surface-plain sa-page sa-page--flush py-6 sm:py-8 space-y-4">
       <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-slate-600" aria-label={t('nav.breadcrumb', { ns: 'lesson' })}>
         <Link to={coursesPath} className="inline-flex min-h-[44px] items-center gap-1.5 whitespace-nowrap hover:text-nav-accent">
@@ -296,8 +296,8 @@ export default function PracticeHub() {
         </div>
       )}
 
-      {/* Grand écran : les points d'apprentissage en colonne au DÉBUT (à droite
-          en RTL, comme dans le lecteur), les niveaux prennent le reste. Plus
+      {/* Grand écran : les points d'apprentissage en colonne au DÉBUT (à gauche,
+          comme dans le lecteur), les niveaux prennent le reste. Plus
           petit : les niveaux d'abord — choisir un niveau est l'action. */}
       <div className="grid grid-cols-1 gap-5 xl:grid-cols-[30.6rem_minmax(0,1fr)] xl:items-start xl:[grid-template-areas:'side_main']">
         <section className="space-y-2 xl:[grid-area:main]" aria-labelledby="practice-levels-title">

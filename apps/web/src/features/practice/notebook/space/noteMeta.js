@@ -1,4 +1,5 @@
 import { getLessonById } from '@smarter-academy/core';
+import { LOCALE } from '../../../../locale.js';
 import { contextOfNote, lessonLocationPath } from '../noteContext';
 
 /**
@@ -51,7 +52,7 @@ export function questionNumber(questionId) {
   return m ? m[1] : String(questionId ?? '');
 }
 
-/** « ex-4am-qasim-…-l2-003 » → « تمرين · المستوى 2 · 3 » ; un identifiant inconnu → « تمرين ». */
+/** « ex-…-l2-003 » → « Exercice 3 · Niveau 2 » ; un identifiant inconnu → « Exercice ». */
 export function exerciseLabel(note, t) {
   const m = /-l(\d+)-(\d+)$/.exec(String(note?.exerciseId ?? ''));
   const base = t('notebook.space.card.exercise');
@@ -91,8 +92,8 @@ export function notebookPaths(workspaceBase = '/espace') {
   };
 }
 
-/** « il y a 2 jours », en arabe, sans bibliothèque. */
-export function timeAgo(iso, locale = 'ar') {
+/** « il y a 2 jours », sans bibliothèque (`Intl.RelativeTimeFormat`, la langue du produit). */
+export function timeAgo(iso, locale = LOCALE) {
   if (!iso) return '';
   const then = new Date(iso).getTime();
   if (Number.isNaN(then)) return '';
@@ -108,7 +109,8 @@ export function timeAgo(iso, locale = 'ar') {
   return rtf.format(Math.round(diff / (86400 * 365)), 'year');
 }
 
-export function formatDate(iso, locale = 'ar-DZ') {
+/** « 22 novembre 2026 ». */
+export function formatDate(iso, locale = LOCALE) {
   if (!iso) return '';
   try {
     return new Date(iso).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });

@@ -65,14 +65,14 @@ describe('teacherOverview — la MÊME forme que l’aperçu de l’élève, san
 describe('formatStudentAnswer — la réponse d’un élève, lisible', () => {
   const choice = {
     choices: [
-      { id: 'A', content: '1 ، 2 ، 7 ، 14' },
-      { id: 'B', content: '14 فقط' },
+      { id: 'A', content: '1 ; 2 ; 7 ; 14' },
+      { id: 'B', content: '14 seulement' },
     ],
   };
 
   it('un choix : son CONTENU, pas sa lettre', () => {
-    expect(formatStudentAnswer(choice, { choiceId: 'B' })).toBe('14 فقط');
-    expect(formatStudentAnswer(choice, { choiceIds: ['A', 'B'] })).toBe('1 ، 2 ، 7 ، 14 ؛ 14 فقط');
+    expect(formatStudentAnswer(choice, { choiceId: 'B' })).toBe('14 seulement');
+    expect(formatStudentAnswer(choice, { choiceIds: ['A', 'B'] })).toBe('1 ; 2 ; 7 ; 14 ; 14 seulement');
   });
 
   it('une valeur, un point', () => {
@@ -125,12 +125,12 @@ describe('expectedAnswerText — lisible par l’enseignant', () => {
         { id: 'C', content: 'z', isCorrect: true },
       ],
     };
-    expect(expectedAnswerText(q)).toBe('x ؛ z');
+    expect(expectedAnswerText(q)).toBe('x ; z');
   });
 
   it('point, ensemble, nombre', () => {
     expect(expectedAnswerText({ answerType: 'point', expectedAnswer: { x: '12', y: '16' } })).toBe('(12 ; 16)');
-    expect(expectedAnswerText({ answerType: 'integerSet', expectedAnswer: [15, 30] })).toBe('15 ، 30');
+    expect(expectedAnswerText({ answerType: 'integerSet', expectedAnswer: [15, 30] })).toBe('15 ; 30');
     expect(expectedAnswerText({ answerType: 'rational', expectedAnswer: '3/4' })).toBe('3/4');
   });
 
@@ -186,7 +186,7 @@ describe('aucun suivi — garanties de structure', () => {
   it('les routes : le Hub partagé et le lecteur, dans l’espace enseignant ; plus de banque séparée', () => {
     const app = read('src/App.jsx');
     // L'élève garde le Hub. L'enseignant passe par UNE porte (TeacherBankGate, 2026-11-18) : une leçon qui a son tableau
-    // (« حصّة القسم ») a le بنك de l'enseignant et montre un exercice sur le tableau de la classe ; toutes les autres
+    // (« séance en classe ») a la banque de l'enseignant et montre un exercice sur le tableau de la classe ; toutes les autres
     // gardent le Hub partagé et le lecteur — la porte les monte tels quels.
     expect(app.split('path="pratique/:lessonCode" element={<PracticeHub />}').length - 1).toBe(1);
     expect(app).toContain('path="pratique/:lessonCode" element={<TeacherBankGate />}');
@@ -216,9 +216,9 @@ describe('réponses de feuille d’examen relues par l’enseignant (2026-10-06)
     expect(
       formatStudentAnswer(
         { answerType: 'selfCheck' },
-        { text: 'لأن 21 − 14 = 7', selfMark: 'correct' },
+        { text: 'car 21 − 14 = 7', selfMark: 'correct' },
         'self:correct',
       ),
-    ).toBe('لأن 21 − 14 = 7');
+    ).toBe('car 21 − 14 = 7');
   });
 });

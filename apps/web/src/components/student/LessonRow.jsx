@@ -10,7 +10,7 @@ import { useLessonTileState } from './useLessonTileState';
 import { StatusDot, ProgressLine, minutesOf, tileKind } from './lessonTileParts';
 
 /**
- * THE LESSON ROW — `LessonCard` on one line, for the « قائمة » layout of the catalogue (catalogueView.js). The same four
+ * THE LESSON ROW — `LessonCard` on one line, for the « Liste » layout of the catalogue (catalogueView.js). The same four
  * states, read by the same `useLessonTileState(lesson)`: the row decides nothing the card does not.
  *
  * One line: the state, the name, what a tap does now. Nothing else (owner, 2026-11-16: « small content »).

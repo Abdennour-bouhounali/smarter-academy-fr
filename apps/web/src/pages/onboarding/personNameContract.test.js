@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 
 /**
- * « الاسم و اللقب » — the gates that make every student and teacher account
+ * « Prénom et nom » — the gates that make every student and teacher account
  * carry a name (docs/architecture/TEACHER_CLASSROOM_ARCHITECTURE.md § Identity).
  */
 const here = dirname(fileURLToPath(import.meta.url));

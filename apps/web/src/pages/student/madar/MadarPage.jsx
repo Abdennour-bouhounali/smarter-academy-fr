@@ -31,11 +31,11 @@ import { Coach, Countdown, hasBeenCoached, markCoached } from '../../../features
 
 /** La graine du monde qui tourne seul derrière l'accueil. */
 const ATTRACT_SEED = 20261022;
-/** « قنّاص القيم » derrière l'accueil : le niveau 33 (les racines), sous-niveau أ. */
+/** « Le chasseur de valeurs » derrière l'accueil : le niveau 33 (les racines), sous-niveau A. */
 const ATTRACT_POSITION = 96;
 
 /**
- * « مدار » — la page du jeu, PLEIN ÉCRAN, hors de la coquille de l'espace
+ * « Madar » — la page du jeu, PLEIN ÉCRAN, hors de la coquille de l'espace
  * élève (docs/architecture/MADAR_GAME.md). Téléphone et ordinateur.
  *
  *   lobby ─► countdown ─► playing ⇄ paused
@@ -50,9 +50,9 @@ const ATTRACT_POSITION = 96;
  * question d'approvisionnement et le classement ; cette page ne fait que les
  * montrer et jouer.
  *
- * Quatre jeux, la même machine : « قفزة المدار » (GameCanvas), « دفاع الكوكب »
- * (DefenseCanvas + menu de construction), « المستكشف » (ExplorerCanvas,
- * niveaux, commandes tactiles) et « قنّاص القيم » (SniperCanvas — le jeu de
+ * Quatre jeux, la même machine : « Le saut d’orbite » (GameCanvas), « La défense de la planète »
+ * (DefenseCanvas + menu de construction), « L’explorateur » (ExplorerCanvas,
+ * niveaux, commandes tactiles) et « Le chasseur de valeurs » (SniperCanvas — le jeu de
  * mathématiques, gratuit, sans reprise : la fin des boucliers mène au bilan). Le jeu vient de l'URL (/espace/jeux/:game) ;
  * pendant une partie, c'est le jeu de la partie (`run.game`). La salle
  * elle-même (le choix du jeu) est GamesHub.
@@ -62,7 +62,7 @@ const MATH = MATH_GAMES;
 /** Les jeux de mathématiques dessinés en DOM (plateau + affichage intégrés). */
 const BOARDS = { odd: OddBoard, mental: MentalBoard };
 
-/** Le plateau DOM d'un jeu de mathématiques (« الدخيل », « الحساب الذهني »). */
+/** Le plateau DOM d'un jeu de mathématiques (« L’intrus », « Calcul mental »). */
 const BoardFor = forwardRef(function BoardFor({ game, ...props }, ref) {
   const Board = BOARDS[game];
   return <Board ref={ref} {...props} />;
@@ -73,7 +73,7 @@ export default function MadarPage() {
   useDocumentMeta(t('pageTitle'));
   const navigate = useNavigate();
   const { token } = useContext(AuthContext);
-  // L'élève, ou l'enseignant qui joue dans une de ses classes (« نافس أستاذك »).
+  // L'élève, ou l'enseignant qui joue dans une de ses classes (« Défie ton professeur »).
   const scope = useMadarScope();
   const { fetchMadar, startRun, reviveRun, finishRun, chooseShip } = scope.api;
   const reduced = Boolean(useReducedMotion());
@@ -95,7 +95,7 @@ export default function MadarPage() {
   const { game: routeGame } = useParams();
   const lobbyGame = GAMES.includes(routeGame) ? routeGame : null;
   const [selected, setSelected] = useState(null);
-  // Les commandes tactiles de « المستكشف » : sur un écran tactile seulement.
+  // Les commandes tactiles de « L’explorateur » : sur un écran tactile seulement.
   const touch = useMemo(() => typeof window !== 'undefined' && Boolean(window.matchMedia?.('(pointer: coarse)').matches), []);
 
   const audio = useMemo(() => createAudio(), []);
@@ -157,7 +157,7 @@ export default function MadarPage() {
   };
 
   const onCountdownDone = useCallback(() => setPhase('playing'), []);
-  // « قنّاص القيم » : plus de boucliers → le bilan directement (pas de reprise, le jeu est gratuit).
+  // « Le chasseur de valeurs » : plus de boucliers → le bilan directement (pas de reprise, le jeu est gratuit).
   const onSniperOver = useCallback((result) => {
     setLocal(result);
     setPhase('won');
@@ -187,7 +187,7 @@ export default function MadarPage() {
     setPhase('crashed');
   }, []);
 
-  // « دفاع الكوكب » : un emplacement touché ouvre le menu (le temps ralentit).
+  // « La défense de la planète » : un emplacement touché ouvre le menu (le temps ralentit).
   const onSelectSlot = useCallback((slotId) => setSelected(slotId), []);
   const buildTurret = (type) => {
     if (canvasRef.current?.build(selected, type)) {
@@ -283,14 +283,14 @@ export default function MadarPage() {
     setFinish(null);
   };
 
-  // « المستكشف » : le niveau gagné → la fin de partie directement (pas de reprise à proposer).
+  // « L’explorateur » : le niveau gagné → la fin de partie directement (pas de reprise à proposer).
   const onWin = useCallback((result) => {
     setLocal(result);
     setPhase('won');
   }, []);
   useEffect(() => { if (phase === 'won') end(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [phase]);
 
-  // Le coach de « المستكشف » et de « قنّاص القيم » disparaît après quelques secondes de jeu.
+  // Le coach de « L’explorateur » et de « Le chasseur de valeurs » disparaît après quelques secondes de jeu.
   useEffect(() => {
     if (!(coach && phase === 'playing' && ['explorer', ...MATH].includes(run?.game))) return undefined;
     const id = setTimeout(() => { markCoached(run.game); setCoach(false); }, run.game === 'sniper' ? 9000 : 6000);

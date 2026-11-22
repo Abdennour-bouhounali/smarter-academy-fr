@@ -258,7 +258,7 @@
   position: relative;
   min-height: 8rem;
   outline: none;
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.0625rem;
   line-height: 2rem;
   color: #1e293b;
@@ -514,7 +514,7 @@
   text-underline-offset: 3px;
 }
 
-/* La confirmation « مسح الكل » : un feuillet posé SUR le papier, pas un
+/* La confirmation « Tout effacer » : un feuillet posé SUR le papier, pas un
    second dialogue. */
 .sa-nb-confirm {
   position: absolute;
@@ -538,7 +538,7 @@
 
 /* ── Rendu d'une note enregistrée (carnet, aperçu) ────────────────────── */
 .sa-nb-content {
-  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.9;
   color: #1e293b;
   word-break: break-word;
@@ -566,20 +566,20 @@
 .sa-nb-content [data-nb="mistake"] [data-nb="label"] { color: #be123c; }
 
 /* ── Le déclencheur flottant de la leçon ─────────────────────────────────
-   Même famille que « 🧠 بطاقتي » (KnowledgeMap.jsx), PHYSIQUEMENT à gauche
-   dans les deux directions — sous RTL la barre latérale occupe la droite.
+   Même famille que « 🧠 Ma fiche » (KnowledgeMap.jsx), PHYSIQUEMENT à gauche
+   (une position choisie, pas un « début de ligne »).
    Il occupe le HAUT de la colonne flottante (voir classroom.css pour la
-   pile complète) : le ras du coin (1.5rem) est pris par « ⛶ عرض » (mode
+   pile complète) : le ras du coin (1.5rem) est pris par « ⛶ Afficher » (mode
    classe) et 5.5rem par la carte des connaissances ; 9.5rem laisse 1rem
    au-dessus d'elle. */
-/* « 📓 كرّاسي » — LE déclencheur du cahier, en leçon (LessonNotebookAnchor)
+/* « 📓 Mon cahier » — LE déclencheur du cahier, en leçon (LessonNotebookAnchor)
    comme en exercice (NotebookButton) : même pastille, même place. */
 .sa-nb-lesson-trigger {
   position: fixed;
   left: 1.5rem;
-  /* L'étage au-dessus de « بطاقتي », qui est au ras du coin (1.5rem). La
-     colonne ne compte plus que deux pastilles depuis que « وضع القسم » est
-     remonté dans la rangée de repères du محور. Sous `lg`, la pile monte
+  /* L'étage au-dessus de « Ma fiche », qui est au ras du coin (1.5rem). La
+     colonne ne compte plus que deux pastilles depuis que « Mode classe » est
+     remonté dans la rangée de repères de l'étape. Sous `lg`, la pile monte
      au-dessus de la barre de navigation du bas (`--sa-bottom-nav`, index.css). */
   bottom: calc(5.5rem + var(--sa-bottom-nav, 0px));
   z-index: 40;
@@ -601,7 +601,7 @@
 .sa-nb-lesson-trigger:active { transform: scale(0.97); }
 .sa-nb-lesson-trigger[aria-pressed="true"] { background: #4c1d95; color: #ffffff; border-color: #4c1d95; }
 .sa-nb-lesson-trigger:focus-visible { outline: 2px solid #7c3aed; outline-offset: 2px; }
-/* En exercice, sous `lg`, la barre collante « السؤال التالي » occupe
+/* En exercice, sous `lg`, la barre collante « Question suivante » occupe
    l'étage au-dessus de la barre de navigation (4rem) : la pastille monte
    d'un étage pour ne pas s'y poser. Sur ordinateur, même place qu'en leçon. */
 @media (max-width: 1023px) {
@@ -609,7 +609,7 @@
 }
 @media print { .sa-nb-lesson-trigger { display: none; } }
 
-/* « أضف إلى كرّاسي » — une action discrète sur une brique ou une carte. */
+/* « Ajouter à mon cahier » — une action discrète sur une brique ou une carte. */
 .sa-nb-add {
   display: inline-flex;
   align-items: center;

@@ -5,7 +5,7 @@ import { Loader2 } from 'lucide-react';
 import { AuthContext } from '../../../context/AuthContext';
 import { resolveNumber } from '../../../services/thinkingLabService';
 
-/** « التحدّي 318 » : un lien partagé cite le NUMÉRO ; le serveur le résout en id stable (édition courante). */
+/** « Défi 318 » : un lien partagé cite le NUMÉRO ; le serveur le résout en id stable (édition courante). */
 export default function ThinkingNumberPage() {
   const { t } = useTranslation('thinking');
   const { number } = useParams();

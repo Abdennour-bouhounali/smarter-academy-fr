@@ -1,7 +1,7 @@
 /**
  * Squelettes de chargement à la forme du contenu final, pour les SEULES
  * parties qui attendent le serveur : la progression locale s'affiche tout de
- * suite, la maîtrise (pastilles, « للعمل الآن », tuile des compétences)
+ * suite, la maîtrise (pastilles, « À travailler maintenant », tuile des compétences)
  * arrive avec le profil. `animate-pulse` est coupé sous
  * prefers-reduced-motion (`motion-reduce:animate-none`). Tous sont
  * `aria-hidden` : le chargement est annoncé une fois par la page (aria-busy).

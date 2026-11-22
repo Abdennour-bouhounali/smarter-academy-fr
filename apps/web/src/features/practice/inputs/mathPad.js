@@ -1,18 +1,19 @@
 /**
- * « لوحة الرموز » — quand une réponse numérique a besoin d'une écriture mathématique
+ * « Clavier mathématique » — quand une réponse numérique a besoin d'une écriture mathématique
  * (conseil du 2026-11-09, demande du propriétaire). Contrat : EXERCISE_CONTRACT.md
- * § « لوحة الرموز ».
+ * § « The fixed math pad ».
  *
  * Décidé par une règle PURE sur ce que le client connaît toujours, même sans clé de
  * réponse : `answerType`, `answerFormat` et `evaluationPolicy.requiredForm`.
  * Mesuré sur la banque (16 466 réponses `rational`) : ~4 441 attendent une FRACTION,
- * aucune une racine ; « قوة » vise presque toujours un exposant entier. La lettre a donc
+ * aucune une racine ; « puissance » vise presque toujours un exposant entier. La lettre a donc
  * la fraction au centre ; √ et la puissance n'apparaissent que si la consigne les nomme.
  */
 
-const FRACTION = /كسر|ناطق|نسبي|a\s*\/\s*b|حاصل\s*قسمة/;
-const ROOT = /جذر|√/;
-const POWER = /على\s*شكل\s*قوّ?ة|\^/;
+// Les consignes `answerFormat` en français : « fraction », « nombre rationnel », « nombre relatif », « quotient ».
+const FRACTION = /fraction|rationnel|relatif|quotient|a\s*\/\s*b/iu;
+const ROOT = /racine|√/iu;
+const POWER = /puissance|\^/iu;
 
 /** La lettre est-elle utile pour cette question ? */
 export function needsMathPad(question) {

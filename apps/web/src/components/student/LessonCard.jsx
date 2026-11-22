@@ -10,14 +10,14 @@ import MathLabel from '../../lessons/common/components/MathLabel';
 import PublicationBadge from '../content/PublicationBadge';
 
 /**
- * THE LESSON CARD — the one tile of the catalogue (public /courses, « دروسي », « استكشاف », the teacher's lessons).
+ * THE LESSON CARD — the one tile of the catalogue (public /courses, « Mes leçons », « Explorer », the teacher's lessons).
  *
  * Four lines at most (owner, 2026-11-16: « small content »): where it sits (optional `eyebrow`), its NAME, ONE status
  * line (what a tap does now, and how long the lesson is), and a thin progress line. No emoji, no paragraph: the
  * description is the tooltip, and is read on the lesson's own page.
  *
  * The state comes from `useLessonTileState(lesson)`, shared with `LessonRow`:
- *   open    → a link; « ابدأ » / « متابعة · 40 % » / « تمّ »;
+ *   open    → a link; « Commencer » / « Continuer · 40 % » / « Terminée »;
  *   locked  → paid AND outside this student's right: a link to the card-code page;
  *   hidden  → closed by the teacher for this class: said in his words, no commercial lock;
  *   soon    → not published or not written yet: named, never linked.
@@ -83,7 +83,7 @@ const LessonCard = forwardRef(function LessonCard({ lesson, onClick, eyebrow = n
         {!muted && (
           <ArrowForward
             size={16}
-            className="ms-auto text-nav-muted transition-transform group-hover:-translate-x-1 group-hover:text-nav-ink ltr:group-hover:translate-x-1"
+            className="ms-auto text-nav-muted transition-transform group-hover:translate-x-1 group-hover:text-nav-ink"
           />
         )}
       </div>

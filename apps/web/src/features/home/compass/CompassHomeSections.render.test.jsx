@@ -37,17 +37,17 @@ const LAST = {
   bands: { '3e.m1.r01': 'solid', '3e.m1.r02': 'start' },
 };
 
-describe('CompassHomeSections — l’accueil mené par بوصلتي', () => {
-  it('jamais fait : UNE carte « اعرف من أين تنطلق » et un lien vers la leçon, rien d’autre', () => {
+describe('CompassHomeSections — l’accueil mené par Ma boussole', () => {
+  it('jamais fait : UNE carte « Sache d’où tu pars » et un lien vers la leçon, rien d’autre', () => {
     const html = render({ enabled: true, active: null, last: null, availability: AVAIL });
     expect(html).toContain('data-compass-hero="new"');
-    expect(html).toContain('اعرف من أين تنطلق');
+    expect(html).toContain('Sache d’où tu pars');
     expect(html).toContain('data-compass-or-lesson');
     expect(html).not.toContain('data-challenge');
     expect(html).not.toContain('data-compass-week');
   });
 
-  it('jauge en cours : « واصل جولة الانطلاق », puis la leçon et le défi', () => {
+  it('jauge en cours : « Continue ton tour de départ », puis la leçon et le défi', () => {
     const html = render({ enabled: true, active: { ...LAST, finishedAt: null, bands: undefined }, last: null, availability: AVAIL });
     expect(html).toContain('data-compass-hero="active"');
     expect(html).toContain('data-compass-lesson');

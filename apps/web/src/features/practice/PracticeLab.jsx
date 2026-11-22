@@ -9,8 +9,8 @@ import { Suspense } from 'react';
  *
  * Le registre est VIDE depuis le 2026-09-25 : ses deux labos (TankLab,
  * RateProbes) appartenaient à la leçon française « fonction affine » (2nde),
- * retirée avec toutes les leçons hors de l'unité « الأعداد الطبيعيّة والأعداد
- * النّاطقة ». Le mécanisme reste : un labo réutilisable s'ajoute ici ET dans
+ * retirée avec toutes les leçons hors de l'unité algérienne « nombres entiers et
+ * nombres rationnels ». Le mécanisme reste : un labo réutilisable s'ajoute ici ET dans
  * SUPPORT_LABS (scripts/validate-exercises.mjs), jamais dans le contenu.
  */
 const LABS = {};

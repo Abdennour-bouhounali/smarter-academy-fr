@@ -64,7 +64,7 @@ export default function AuthGoogle() {
   // enseignant) que l'inscription classique. Jamais admin.
   const [accountType, setAccountType] = useState(searchParams.get('type') === 'teacher' ? 'teacher' : 'student');
 
-  // « الاسم و اللقب » : PRÉ-REMPLIS avec ce que Google suggère (`prenom`,
+  // « Prénom et nom » : PRÉ-REMPLIS avec ce que Google suggère (`prenom`,
   // `nom`), mais confirmés ici — c'est la première connexion, et le nom
   // enregistré est celui que la personne valide, pas celui de Google.
   // Seuls des noms déjà ARABES sont suggérés (le serveur filtre, et on
@@ -249,7 +249,6 @@ export default function AuthGoogle() {
                       id="google-password"
                       name="password"
                       type={showPassword ? 'text' : 'password'}
-                      dir="ltr"
                       required
                       minLength={8}
                       autoComplete="new-password"
@@ -261,14 +260,14 @@ export default function AuthGoogle() {
                       disabled={loading}
                       aria-invalid={passwordError ? 'true' : undefined}
                       aria-describedby="google-password-hint"
-                      className={`pr-12 text-start ${authInputClass(accountType)}`}
+                      className={`pe-12 text-start ${authInputClass(accountType)}`}
                     />
-                    {/* Toggle at the FIELD's own (LTR) end — see Register.jsx. */}
+                    {/* The reveal toggle sits at the field's end. */}
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       aria-label={showPassword ? t('hidePassword') : t('showPassword')}
-                      className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600 focus:outline-none"
+                      className="absolute inset-y-0 end-0 flex items-center pe-3.5 text-slate-400 hover:text-slate-600 focus:outline-none"
                     >
                       {showPassword ? <EyeOff className="h-5 w-5" aria-hidden="true" /> : <Eye className="h-5 w-5" aria-hidden="true" />}
                     </button>

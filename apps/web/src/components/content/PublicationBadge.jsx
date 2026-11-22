@@ -4,7 +4,7 @@ import { STATUS_TONES } from '../admin/ui/StatusBadge';
 
 /**
  * L'ÉTAT DE PUBLICATION d'une leçon ou d'un module, montré au seul
- * RELECTEUR (administrateur, enseignant ambassadeur « سفير »).
+ * RELECTEUR (administrateur, professeur ambassadeur).
  *
  * Rien n'est rendu pour un contenu publié — ni pour tout autre compte : le
  * contexte de disponibilité ne connaît l'état que pour le relecteur

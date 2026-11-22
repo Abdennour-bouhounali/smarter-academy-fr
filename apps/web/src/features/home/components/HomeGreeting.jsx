@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
 /**
- * « أهلًا … 👋 » — l'en-tête PERSONNEL de l'accueil, volontairement plus
+ * « Bonjour … 👋 » — l'en-tête PERSONNEL de l'accueil, volontairement plus
  * léger que le héros : un prénom, la classe (donnée du catalogue, jamais
  * écrite en dur) et une phrase. Il situe l'élève ; il ne lui demande rien.
  *
- * La classe est annoncée ici parce que « واصل درسك » peut proposer une leçon
+ * La classe est annoncée ici parce que « Reprends ta leçon » peut proposer une leçon
  * d'une autre classe (getResumeLesson n'est pas cadré — ARCHITECTURE.md §10) :
  * le cadre courant doit rester lisible d'un coup d'œil.
  */

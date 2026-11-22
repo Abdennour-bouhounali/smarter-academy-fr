@@ -19,9 +19,9 @@ export default function MesCours() {
   const { t } = useTranslation('student');
   useDocumentMeta(t('courses.metaTitle'), t('courses.metaDescription'));
   const { user } = useContext(AuthContext);
-  // Le ميدان vient de l'URL (`?chapter=`) : le fil d'Ariane d'une unité,
+  // Le thème vient de l'URL (`?chapter=`) : le fil d'Ariane d'une unité,
   // d'une leçon ou d'un module y mène l'élève (catalogueLink.js). Un
-  // identifiant inconnu de son niveau retombe sur « كل الميادين ».
+  // identifiant inconnu de son niveau retombe sur « Tous les thèmes ».
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedChapter = searchParams.get('chapter') || 'all';
 
@@ -38,16 +38,16 @@ export default function MesCours() {
     return gradeData.chapters.find((c) => c.id === activeChapter)?.lessons || [];
   }, [gradeData, activeChapter]);
 
-  // Les ميادين visibles — la vue choisie (وحدات / ميادين / كل الدروس,
-  // شبكة / قائمة) les dessine (CatalogueBrowser, catalogueView.js).
+  // Les thèmes visibles — la vue choisie (chapitres / thèmes / toutes les leçons,
+  // Grille / Liste) les dessine (CatalogueBrowser, catalogueView.js).
   const visibleChapters = useMemo(() => {
     if (!gradeData) return [];
     return activeChapter === 'all' ? gradeData.chapters : gradeData.chapters.filter((c) => c.id === activeChapter);
   }, [gradeData, activeChapter]);
   const [view, setView] = useCatalogueView();
 
-  // La recherche de /courses (GradeLessonSearch) : tous les ميادين du
-  // niveau, titre + description. Vide → la structure en وحدات ci-dessous ;
+  // La recherche de /courses (GradeLessonSearch) : tous les thèmes du
+  // niveau, titre + description. Vide → la structure en chapitres ci-dessous ;
   // sinon les leçons trouvées, à plat.
   const [searchQuery, setSearchQuery] = useState('');
   const searchResults = useMemo(

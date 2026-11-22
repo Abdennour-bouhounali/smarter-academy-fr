@@ -5,9 +5,9 @@ import AnswerImageGallery from './AnswerImageGallery';
 import { MAX_IMAGES_PER_STEP, imageErrorKey, prepareAnswerImage } from './answerImages';
 
 /**
- * « أرفق صورة ورقتك » — jusqu'à 3 photos de la copie manuscrite, À CÔTÉ de la
+ * « Photo de ta copie » — jusqu'à 3 photos de la copie manuscrite, À CÔTÉ de la
  * saisie (le propriétaire : saisie, photo, ou les deux). Sur téléphone
- * « صوّر » ouvre l'appareil photo (`capture="environment"`) ; « اختر صورة »
+ * « Photographier ma copie » ouvre l'appareil photo (`capture="environment"`) ; « Choisir une image »
  * prend un fichier (ordinateur, galerie). Chaque photo part tout de suite
  * (réduite à 1600 px) et se retire tant que l'étape n'est pas répondue ;
  * ensuite elle est verrouillée avec la réponse.

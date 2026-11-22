@@ -2,12 +2,12 @@ import { getNextIncompleteModule } from '@smarter-academy/core';
 import { resolveMasteryState, findLessonMasteryRows } from '../../lessons/common/components/LearningPointMastery';
 
 /**
- * L'ARBRE de la page « تقدّمي » : classe → ميدان (chapter) → وحدة (unit) →
- * درس → الكفاءات, construit à partir de DEUX sources existantes et de
+ * L'ARBRE de la page « Ma progression » : classe → thème (chapter) → chapitre (unit) →
+ * leçon → savoir-faire, construit à partir de DEUX sources existantes et de
  * rien d'autre :
  *
  *  - le catalogue (`courseLevels`, packages/core) donne la STRUCTURE et
- *    l'ordre officiel — les ميادين, leurs unités du manuel, les leçons hors
+ *    l'ordre officiel — les thèmes, leurs unités du manuel, les leçons hors
  *    unité (même règle que components/student/unitGrouping.js), et la liste
  *    complète des points de chaque leçon ;
  *  - l'activité (`getStudentActivity`) donne la progression réelle par leçon
@@ -20,7 +20,7 @@ import { resolveMasteryState, findLessonMasteryRows } from '../../lessons/common
  * Un point « non évalué » n'entre jamais dans un dénominateur de maîtrise.
  *
  * Seules les leçons CONSTRUITES (présentes dans l'activité) portent une
- * progression ; les autres sont comptées « قيد الإعداد » pour que l'élève
+ * progression ; les autres sont comptées « En préparation » pour que l'élève
  * voie l'étendue du programme sans qu'on leur prête un 0 %.
  */
 
@@ -78,7 +78,7 @@ function ctaOf(entry, counts, lesson, getModulePath, getFirstModuleNumber) {
   if (state === 'not_started') return { kind: 'start', path: lesson.path };
   if (state === 'in_progress') {
     // Le premier module n'est pas toujours 1 : une leçon qui ouvre sur
-    // « أستعدّ » commence à 0, et « continuer » doit la reprendre là.
+    // « Je me prépare » commence à 0, et « continuer » doit la reprendre là.
     const first = getFirstModuleNumber?.(lesson.id) ?? 1;
     const next = getNextIncompleteModule(entry.uniqueModules ?? new Set(), entry.totalCount, first);
     return { kind: 'continue', path: getModulePath?.(lesson.id, next) || lesson.path };
@@ -130,7 +130,7 @@ export function aggregateLessons(lessonNodes) {
     done,
     inProgress: started - done,
     // Moyenne de la progression des leçons construites — la même règle que
-    // « دروسي » (getChapterProgress). 0 quand rien n'est construit.
+    // « Mes leçons » (getChapterProgress). 0 quand rien n'est construit.
     avgProgress: lessonNodes.length ? Math.round(progressSum / lessonNodes.length) : 0,
     counts,
     points,
@@ -141,9 +141,9 @@ export function aggregateLessons(lessonNodes) {
 }
 
 function buildUnitNode(unit, ctx, index) {
-  // Les leçons de l'unité dans l'ordre du manuel, puis sa synthèse (« أدمج
-  // تعلّماتي »), qui a ses modules et ses points comme toute leçon, mais
-  // n'est pas comptée parmi les دروس de l'unité (règle de buildDzUnit).
+  // Les leçons de l'unité dans l'ordre du manuel, puis sa synthèse (« Vers le
+  // brevet »), qui a ses modules et ses points comme toute leçon, mais
+  // n'est pas comptée parmi les leçons de l'unité (règle de buildDzUnit).
   const catalogueLessons = [...unit.lessons, ...(unit.synthesis ? [unit.synthesis] : [])];
   const lessons = [];
   let comingSoon = 0;
@@ -168,7 +168,7 @@ function buildUnitNode(unit, ctx, index) {
   };
 }
 
-/** Les leçons hors unité d'un ميدان, présentées comme un groupe à part. */
+/** Les leçons hors unité d'un thème, présentées comme un groupe à part. */
 function buildOtherGroup(chapter, restLessons, ctx, index) {
   const lessons = [];
   let comingSoon = 0;
@@ -246,7 +246,7 @@ export function buildProgressionTree(courseLevels, activity, currentMastery, { g
   return { grades, agg: aggregateLessons(all), lessonCount: all.length };
 }
 
-/** Toutes les leçons construites de l'arbre, avec leur ميدان et leur وحدة. */
+/** Toutes les leçons construites de l'arbre, avec leur thème et leur chapitre. */
 export function flattenTree(tree) {
   const out = [];
   for (const grade of tree.grades) {

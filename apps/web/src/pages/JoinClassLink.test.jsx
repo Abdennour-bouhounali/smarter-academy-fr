@@ -41,7 +41,7 @@ describe('JoinClassLink — ouvrir un lien ne vaut pas consentement', () => {
     expect(src).toMatch(/const consentThen = \(path\) => \{\s*savePendingClassJoin\(/);
   });
 
-  it('le texte de partage partagé avec قسمي est affiché avant les boutons', () => {
+  it('le texte de partage de « Ma classe » est affiché avant les boutons', () => {
     expect(src).toMatch(/import SharingDisclosure from '..\/components\/student\/SharingDisclosure'/);
     // Une classe d'établissement nomme aussi l'établissement dans le MÊME texte.
     const disclosure = src.indexOf('<SharingDisclosure schoolName={preview.schoolName} />');
@@ -49,7 +49,7 @@ describe('JoinClassLink — ouvrir un lien ne vaut pas consentement', () => {
     expect(disclosure).toBeLessThan(src.indexOf("consentThen('/register')"));
   });
 
-  it('après l’adhésion, le compte, le قسم et l’accès sont relus AVANT d’aller à « قسمي » (pas de rechargement)', () => {
+  it('après l’adhésion, le compte, la classe et l’accès sont relus AVANT d’aller à « Ma classe » (pas de rechargement)', () => {
     const goToClass = src.slice(src.indexOf('const goToClass'), src.indexOf("navigate('/espace/qism'"));
     expect(goToClass).toMatch(/refreshUser/);
     expect(goToClass).toMatch(/refreshStudyContext\(\)/);
@@ -58,7 +58,7 @@ describe('JoinClassLink — ouvrir un lien ne vaut pas consentement', () => {
     expect(goToClass).not.toMatch(/if \(!alreadyMember\)/);
   });
 
-  it('déjà dans un AUTRE قسم : l’avis passe avant le bouton de consentement, et rien ne rejoint seul', () => {
+  it('déjà dans une AUTRE classe : l’avis passe avant le bouton de consentement, et rien ne rejoint seul', () => {
     const other = src.indexOf('verifiedStudent && preview.currentClassroomName');
     expect(other).toBeGreaterThan(-1);
     expect(other).toBeLessThan(src.indexOf("join({ link: linkToken, consent: true })"));
@@ -72,16 +72,16 @@ describe('JoinClassLink — ouvrir un lien ne vaut pas consentement', () => {
 });
 
 describe('JoinClassLink — premier rendu', () => {
-  it('un jeton mal formé (ancienne invitation, lien tronqué) → « رابط غير صالح » sans appel', () => {
+  it('un jeton mal formé (ancienne invitation, lien tronqué) → « Lien non valide » sans appel', () => {
     const html = render('/rejoindre/abc');
     expect(html).toContain('data-join-link-invalid');
-    expect(html).toContain('رابط غير صالح');
+    expect(html).toContain('Lien non valide');
     expect(html).toContain('href="/"');
   });
 
   it('un jeton bien formé attend l’aperçu du serveur', () => {
     const html = render(`/rejoindre/classe/${'a'.repeat(32)}`);
-    expect(html).toContain('جاري فتح رابط الانضمام');
+    expect(html).toContain('Ouverture du lien de la classe…');
     expect(html).not.toContain('data-join-link-invalid');
   });
 });

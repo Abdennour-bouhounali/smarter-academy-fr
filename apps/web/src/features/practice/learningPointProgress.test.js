@@ -17,7 +17,7 @@ describe('masteryStage — les étoiles SONT l’état Mastery V2, rien d’autr
 
 describe('currentLearningPoint — le point principal de la question COURANTE', () => {
   const lps = [
-    { code: 'P1', title: 'القسمة', status: 'gap', practice: { exercises: 3 } },
+    { code: 'P1', title: 'La division', status: 'gap', practice: { exercises: 3 } },
     { code: 'P2', title: 'PGCD', status: 'reinforce', practice: { exercises: 5 } },
   ];
   const exercise = {

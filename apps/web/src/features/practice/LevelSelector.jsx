@@ -18,11 +18,11 @@ import { ArrowForward } from '../../components/common/DirectionalIcons';
  * PARCOURS, une rangée par niveau, reliées par un rail — pas une grille de
  * cartes de même poids. Chaque rangée dit, d'un coup d'œil :
  *
- *   (1)  المستوى 1 · أستعيد الأساسيات        [مُقترح]   ابدأ ←
- *        ▰▰▱▱  1 / 3 تمارين أنهيتها
+ *   (1)  Niveau 1 · Je reprends les bases     [Conseillé]   Commencer →
+ *        ▰▰▱▱  1 / 3 exercices terminés
  *
- * Le compteur est isolé LTR (« 1 / 3 ») : l'ancien « {{done}} من {{total}} »
- * dans un `dir="ltr"` se lisait « 0 1 من ». La rangée entière est le bouton
+ * Le compteur est isolé LTR (« 1 / 3 ») : l'ancien « {{done}} sur {{total}} » arabe,
+ * dans un `dir="ltr"`, se lisait à l'envers. La rangée entière est le bouton
  * (cible ≥ 64 px) ; une rangée fermée n'est pas un bouton et dit pourquoi.
  */
 /** Le niveau qui précède `n` dans la liste du serveur (celui qu'il faut terminer). */
@@ -63,7 +63,7 @@ export default function LevelSelector({ levels, recommendedLevel, onSelect, busy
         // d'exercices du niveau, sans barre ni « 0 / N ».
         const progress = !showProgress ? (
           <span className="mt-1 block text-xs font-semibold text-slate-600" data-level-count>
-            {t('practice.levelExerciseCount', { count: level.exerciseCount })}
+            {level.exerciseCount ? t('practice.levelExerciseCount', { count: level.exerciseCount }) : t('practice.levelExerciseNone')}
           </span>
         ) : (
           <span className="mt-1 flex items-center gap-2">

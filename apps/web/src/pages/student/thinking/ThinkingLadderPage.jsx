@@ -7,7 +7,7 @@ import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { fetchLadder } from '../../../services/thinkingLabService';
 import LadderHome from '../../../features/thinkingLab/ladder/LadderHome';
 
-/** « مختبر التفكير » — écran 1, l'échelle. Le serveur dit tout : les numéros, les états, la place libre. */
+/** « Le labo des énigmes » — écran 1, l'échelle. Le serveur dit tout : les numéros, les états, la place libre. */
 export default function ThinkingLadderPage() {
   const { t } = useTranslation('thinking');
   useDocumentMeta(t('meta.title'), t('meta.description'));

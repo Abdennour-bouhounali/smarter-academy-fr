@@ -57,7 +57,7 @@ function useMediaQuery(query) {
  *
  * Deux façons d'arriver ici :
  *  - `context` (exercice, question, réponse, verdict) → une NOUVELLE note,
- *    pré-remplie du contexte réel ; le premier « حفظ » crée, les suivants
+ *    pré-remplie du contexte réel ; le premier « Enregistrer » crée, les suivants
  *    modifient la même note — jamais de doublon.
  *  - `note` (une note enregistrée) → on la rouvre telle quelle : contenu,
  *    type d'erreur, état « traitée » ; rien n'est régénéré par-dessus.
@@ -89,7 +89,7 @@ function useMediaQuery(query) {
  * @param {object} [context]  le contexte capturé à l'ouverture (noteContext.js) — pour un
  *   exercice, augmenté de { exercise, question, answer, evaluation, feedbackMessage }
  * @param {object} [note]     une note existante (sérialisée par l'API) : SON contexte fait foi
- * @param {string} [starterHtml] contenu de départ explicite (« أضف إلى كرّاسي ») ; sinon le
+ * @param {string} [starterHtml] contenu de départ explicite (« Ajouter à mon cahier ») ; sinon le
  *   contexte d'exercice engendre le sien, et une page de leçon ouvre une page blanche
  * @param {(data: {content, mistakeType}) => Promise<{note}>} [onCreate]
  * @param {(id, patch) => Promise<{note}>} onUpdate
@@ -102,7 +102,7 @@ export default function NotebookWindow({
   const { t: tc } = useTranslation('common');
   const { user, token } = useContext(AuthContext);
   const reduceMotion = useReducedMotion();
-  // « الوصول والحدود » : de quoi DESSINER le compteur et le cadenas. Le
+  // « Accès et limites » : de quoi DESSINER le compteur et le cadenas. Le
   // serveur reste l'autorité — une note refusée revient en 403 avec son quota.
   const { summary: accessSummary } = useFeatureAccess();
   const notebookAccess = featureState(accessSummary, NOTEBOOK_FEATURE);
@@ -276,7 +276,7 @@ export default function NotebookWindow({
 
   const onEditorChange = useCallback((html) => {
     // L'éditeur émet aussi au blur : un contenu INCHANGÉ n'est pas une
-    // modification — il ne salit ni l'état « محفوظ » ni le brouillon.
+    // modification — il ne salit ni l'état « Enregistrée » ni le brouillon.
     if (html === htmlRef.current) return;
     htmlRef.current = html;
     markDirty(html);
@@ -346,7 +346,7 @@ export default function NotebookWindow({
         : await onUpdate(noteId, payload);
       const saved = result?.note ?? result;
       if (saved?.id != null) setNoteId(saved.id);
-      // Une note de plus : le compteur « X متبقّية » change.
+      // Une note de plus : le compteur « X restantes » change.
       if (creating) refreshFeatureAccess(token);
       draft.clear();
       setDraftRestored(false);

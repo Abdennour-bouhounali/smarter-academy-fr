@@ -7,17 +7,18 @@ import { getLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.j
 import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import MathLabel from '../../../lessons/common/components/MathLabel';
 import MathText from '../../../lessons/common/components/MathText';
+import { LOCALE } from '../../../locale.js';
 import {
   yearFor, reportOf, weekV0, milestone, yearStrip, teachingWeekNumber, tickTasks,
 } from '../../compass/compassModel';
 
 /**
- * L'accueil de l'élève quand « بوصلتي » est ouverte pour sa classe (YEAR_COMPASS.md §6bis).
+ * L'accueil de l'élève quand « Ma boussole » est ouverte pour sa classe (YEAR_COMPASS.md §6bis).
  * C'est TOUT l'accueil (l'ancien a été retiré le 2026-11-09). Quatre états, lus dans l'état du SERVEUR (`GET /compass`) :
  *   off    → la jauge pas encore ouverte pour la classe : la leçon et le défi, puis la bande de l'année ;
- *   new    → UNE carte « اعرف من أين تنطلق », un lien discret vers la leçon en cours ;
- *   active → « واصل جولة الانطلاق », puis la leçon et le défi ;
- *   done   → « مهمّة اليوم » (la 1re tâche non faite de la semaine), la semaine et la carte
+ *   new    → UNE carte « Sache d’où tu pars », un lien discret vers la leçon en cours ;
+ *   active → « Continue ton tour de départ », puis la leçon et le défi ;
+ *   done   → « Mission du jour » (la 1re tâche non faite de la semaine), la semaine et la carte
  *            des bandes, la leçon et le défi, la bande de l'année, la reprise de la jauge.
  * Lot PARESSEUX (réseau + calendrier) : l'accueil s'affiche sans l'attendre.
  * Rien n'est inventé ici : les bandes viennent du serveur, les tâches de weekV0, la coche
@@ -75,7 +76,7 @@ function Chip({ tone, icon: Icon, children }) {
 const HERO = 'flex flex-wrap items-center gap-6 rounded-3xl bg-white p-6 shadow-xl shadow-indigo-100 ring-2 ring-nav-accent sm:p-8';
 const BIG_BTN = 'inline-flex min-h-[56px] items-center gap-2 rounded-2xl bg-nav-accent px-8 text-xl font-black text-white shadow-[0_4px_0_#3730a3] hover:bg-[#3350c4] focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-300';
 
-/* ── أ · jamais fait : une carte, un bouton ─────────────────────────── */
+/* ── A · jamais fait : une carte, un bouton ─────────────────────────── */
 function NewHero({ resume }) {
   const { t } = useTranslation('student');
   return (
@@ -104,7 +105,7 @@ function NewHero({ resume }) {
   );
 }
 
-/* ── ب · jauge en cours ─────────────────────────────────────────────── */
+/* ── B · jauge en cours ─────────────────────────────────────────────── */
 function ActiveHero({ active }) {
   const { t } = useTranslation('student');
   const answers = active.answers ?? [];
@@ -132,7 +133,7 @@ function ActiveHero({ active }) {
   );
 }
 
-/* ── ج · après la jauge ─────────────────────────────────────────────── */
+/* ── C · après la jauge ─────────────────────────────────────────────── */
 function DoneSections({ compass, year, visits }) {
   const { t } = useTranslation('student');
   const last = compass.last;
@@ -169,7 +170,7 @@ function DoneSections({ compass, year, visits }) {
             <h2 id="compass-map-h" className="text-lg font-black text-slate-900">{t('compassHome.map.title')}</h2>
             {last.finishedAt && (
               <span className="text-xs text-slate-600">
-                {t('compassHome.map.date', { date: new Date(last.finishedAt).toLocaleDateString('ar-DZ', { day: 'numeric', month: 'long' }) })}
+                {t('compassHome.map.date', { date: new Date(last.finishedAt).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' }) })}
               </span>
             )}
           </div>
@@ -332,7 +333,7 @@ function YearStrip({ year, gradeId, today, m }) {
 function RetakeNotice({ nextRetakeAt }) {
   const { t } = useTranslation('student');
   if (nextRetakeAt) {
-    const date = new Date(nextRetakeAt).toLocaleDateString('ar-DZ', { day: 'numeric', month: 'long' });
+    const date = new Date(nextRetakeAt).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' });
     return <p className="rounded-2xl bg-nav-accent-soft px-4 py-3 font-bold text-indigo-950" data-compass-retake="later">{t('compassHome.retake.later', { date })}</p>;
   }
   return (

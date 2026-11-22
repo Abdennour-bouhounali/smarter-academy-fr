@@ -6,11 +6,11 @@ import SectionHeading from './SectionHeading';
 import PathProgress from '../../progression/components/PathProgress';
 
 /**
- * « ↻ واصل مسارك » — les trois dernières leçons touchées, chacune avec son
- * contexte (وحدة, sinon ميدان), sa progression réelle ou sa marque
- * « terminée », et un lien vers le BON endroit : le prochain محور pour une
+ * « ↻ Reprends ton parcours » — les trois dernières leçons touchées, chacune avec son
+ * contexte (chapitre, sinon thème), sa progression réelle ou sa marque
+ * « terminée », et un lien vers le BON endroit : la prochaine étape pour une
  * leçon en cours (chemin du registre, via l'arbre), le sommaire pour une
- * leçon terminée. La liste complète est sur « تقدّمي ».
+ * leçon terminée. La liste complète est sur « Ma progression ».
  */
 export default function RecentLearning({ items, treeIndex }) {
   const { t } = useTranslation('student');
@@ -44,7 +44,7 @@ export default function RecentLearning({ items, treeIndex }) {
                       <Check size={11} aria-hidden="true" /> {t('home.lessonDone')}
                     </span>
                   ) : (
-                    <ArrowForward size={16} aria-hidden="true" className="text-slate-300 group-hover:text-blue-500 transition-all group-hover:translate-x-1 group-hover:rtl:-translate-x-1 flex-shrink-0" />
+                    <ArrowForward size={16} aria-hidden="true" className="text-slate-300 group-hover:text-blue-500 transition-all group-hover:translate-x-1 flex-shrink-0" />
                   )}
                 </Link>
               </li>

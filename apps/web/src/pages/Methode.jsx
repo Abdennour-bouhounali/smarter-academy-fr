@@ -10,17 +10,19 @@ import CtaBanner from '../components/common/CtaBanner';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 // La page est un VOYAGE au défilement : un même élève traverse les neuf
-// étapes de la boucle, regroupées en trois actes, jusqu'au sommet (الإتقان).
+// étapes de la boucle, regroupées en trois actes, jusqu'au sommet (la maîtrise).
 // Chaque étape garde son « pourquoi » (desc) et gagne un récit (story) — un
-// seul fil narratif, VÉCU SUR LA PLATEFORME : la leçon réelle « التعرّف على
-// قاسم لعدد طبيعي ». Le récit ne promet que ce que la leçon fait vraiment ; si
-// elle change, le récit ET les captures suivent.
-// Les libellés vivent dans le namespace `marketing` (method.*). Les STATIONS
-// montrent des captures d'écran de la plateforme (public/images/methode/lesson/).
-// Aucune image générée (décision du propriétaire, 2026-10-07) : le héros et le
-// sommet sont typographiques — sobres, professionnels.
+// seul fil narratif, sur un EXEMPLE de 3e (reconnaître un diviseur d'un nombre
+// entier). Aucune leçon française n'existe encore (2026-11-22) : le récit dit
+// la méthode d'une leçon, il ne prétend montrer aucun écran réel.
+// Les libellés vivent dans le namespace `marketing` (method.*).
+// ENTIÈREMENT TYPOGRAPHIQUE : les dix captures de l'interface arabe
+// (public/images/methode/lesson/*.webp) ont été retirées le 2026-11-22. Chaque
+// station montre une CARTE écrite — la phrase ou l'égalité clé de l'étape
+// (`method.steps.<id>.alt`) sur une page de cahier. Aucune image générée
+// (décision du propriétaire, 2026-10-07). Quand les leçons existeront, une
+// capture RÉELLE de la leçon française pourra revenir dans la carte.
 // Toute animation de déplacement se coupe sous prefers-reduced-motion.
-const IMG = (id) => `/images/methode/lesson/${id}.webp`; // captures réelles
 
 const ACTS = [
   { id: 'touch', steps: [{ id: 'situation', icon: MapPin }, { id: 'manipulate', icon: Hand }, { id: 'observe', icon: Eye }] },
@@ -28,17 +30,17 @@ const ACTS = [
   { id: 'own', steps: [{ id: 'practice', icon: Repeat2 }, { id: 'apply', icon: Shuffle }, { id: 'test', icon: ClipboardCheck }] },
 ];
 const STATIONS = ACTS.flatMap((a) => a.steps);
-// La dernière station, la seule en fond sombre : الإتقان, l'espace d'exercices
-// réel (même leçon). Son image est la feuille d'examen : `shot` la désigne.
-const GOLD = { id: 'master', icon: Trophy, n: STATIONS.length + 1, shot: 'exercises' };
+// La dernière station, la seule en fond sombre : la maîtrise, l'espace
+// d'exercices et ses cinq niveaux.
+const GOLD = { id: 'master', icon: Trophy, n: STATIONS.length + 1 };
 const ALL_STOPS = [...STATIONS, GOLD];
 const EXERCISE_LEVELS = [1, 2, 3, 4, 5];
 
 const pad = (n) => String(n).padStart(2, '0');
 const EASE = [0.22, 1, 0.36, 1];
 
-// Révélation mot à mot : on découpe aux espaces (jamais à la lettre — les
-// lettres arabes sont liées), chaque mot monte depuis un masque. Le déclencheur
+// Révélation mot à mot : on découpe aux espaces (jamais à la lettre, pour que
+// la césure et les ligatures restent celles du texte), chaque mot monte depuis un masque. Le déclencheur
 // « in view » est sur le conteneur : un mot caché sous son masque n'intersecte
 // jamais le viewport, il ne pourrait pas se déclencher lui-même.
 const MotionTags = { span: motion.span, h1: motion.h1, h2: motion.h2, h3: motion.h3, p: motion.p };
@@ -210,53 +212,33 @@ function ActHeader({ act, index, reduce }) {
   );
 }
 
-// L'ÉCRAN RÉEL de la leçon, dans un cadre de fenêtre. Une capture plus haute
-// que le cadre DÉFILE d'elle-même pendant que la station traverse la vue :
-// l'élève-lecteur « parcourt » le module comme s'il le faisait défiler.
-const FRAME_MAX = 520;
-// Dimensions des captures : réservent la place avant le
-// chargement, sinon la page saute sous le lecteur pendant le défilement.
-const SHOT_SIZE = {
-  situation: [1400, 623], manipulate: [1400, 1267], observe: [1400, 1376], question: [1400, 447],
-  discover: [1400, 1320], understand: [1400, 1101], practice: [1400, 1261], apply: [1400, 1554],
-  exercises: [1400, 619], test: [1400, 1685],
-};
-
-function ScreenFrame({ step, n, progress, reduce }) {
+// LA CARTE de la station, dans un cadre de fenêtre : la phrase ou l'égalité
+// clé de l'étape, écrite sur une page de cahier — du texte vivant, pas une
+// image. Une égalité ne se coupe jamais sur deux lignes (`whitespace-nowrap`
+// quand la carte porte un « = »), une phrase se coupe normalement.
+function ScreenFrame({ step, n, reduce }) {
   const { t } = useTranslation('marketing');
-  const overflow = useRef(0);
-  const innerY = useTransform(progress, (p) => {
-    if (reduce) return 0;
-    const k = Math.min(1, Math.max(0, (p - 0.3) / 0.4));
-    return -k * overflow.current;
-  });
-  const onLoad = (e) => {
-    const img = e.currentTarget;
-    overflow.current = Math.max(0, img.offsetHeight - FRAME_MAX);
-  };
+  const text = t(`method.steps.${step.id}.alt`);
 
   return (
     <div className="group relative rounded-[22px] bg-white shadow-2xl shadow-violet-200/70 ring-1 ring-slate-200/80 overflow-hidden">
-      <div dir="ltr" className="flex items-center gap-1.5 px-4 h-9 bg-slate-50 border-b border-slate-200/80">
+      <div className="flex items-center gap-1.5 px-4 h-9 bg-slate-50 border-b border-slate-200/80">
         <span className="w-2.5 h-2.5 rounded-full bg-rose-300" />
         <span className="w-2.5 h-2.5 rounded-full bg-amber-300" />
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-300" />
-        <span dir="rtl" className="mx-auto text-[11px] font-inter font-semibold text-slate-400">{t('method.screenLabel')}</span>
+        <span className="mx-auto text-[11px] font-inter font-semibold text-slate-400">{t('method.screenLabel')}</span>
         <span className="font-mono-jetbrains text-[11px] font-black text-violet-400">{pad(n)}</span>
       </div>
-      <div className="relative overflow-hidden" style={{ maxHeight: FRAME_MAX }}>
-        <motion.img
-          src={IMG(step.shot ?? step.id)}
-          alt={t(`method.steps.${step.id}.alt`)}
-          loading="lazy"
-          decoding="async"
-          width={SHOT_SIZE[step.shot ?? step.id][0]}
-          height={SHOT_SIZE[step.shot ?? step.id][1]}
-          onLoad={onLoad}
-          style={{ y: innerY }}
-          className="block w-full h-auto"
-        />
-        {/* Reflet qui balaie l'écran à son apparition */}
+      <div
+        className="relative overflow-hidden flex items-center justify-center px-8 py-14 sm:py-20 min-h-[14rem]"
+        style={{ backgroundImage: 'linear-gradient(#E2E8F0 1px, transparent 1px), linear-gradient(90deg, #E2E8F0 1px, transparent 1px)', backgroundSize: '24px 24px' }}
+        data-method-card={step.id}
+      >
+        <span aria-hidden className="absolute inset-y-0 start-10 w-px bg-rose-200" />
+        <p className={`relative font-space font-bold text-2xl sm:text-3xl text-slate-800 text-center text-balance leading-snug ${text.includes('=') ? 'whitespace-nowrap' : ''}`}>
+          {text}
+        </p>
+        {/* Reflet qui balaie la carte à son apparition */}
         {!reduce && (
           <motion.div
             aria-hidden
@@ -287,7 +269,7 @@ function Station({ step, n, flip, reduce, onEnter, children }) {
       className="relative grid lg:grid-cols-2 gap-6 lg:gap-20 items-center ps-12 lg:ps-0 py-10 lg:py-16"
     >
       {/* Nœud sur le chemin : s'allume (ressort + halo) quand la station est au centre */}
-      <span className="absolute z-10 start-[11px] lg:start-1/2 lg:-translate-x-1/2 rtl:lg:translate-x-1/2 top-12 lg:top-1/2 lg:-translate-y-1/2 w-4 h-4">
+      <span className="absolute z-10 start-[11px] lg:start-1/2 lg:-translate-x-1/2 top-12 lg:top-1/2 lg:-translate-y-1/2 w-4 h-4">
         <motion.span
           initial={{ scale: 0.4, backgroundColor: '#E2E8F0' }}
           whileInView={{ scale: 1, backgroundColor: '#8B5CF6' }}
@@ -314,7 +296,7 @@ function Station({ step, n, flip, reduce, onEnter, children }) {
         style={{ rotate: tilt }}
         className={`relative ${flip ? 'lg:order-2' : ''}`}
       >
-        <ScreenFrame step={step} n={n} progress={scrollYProgress} reduce={reduce} />
+        <ScreenFrame step={step} n={n} reduce={reduce} />
       </motion.figure>
 
       <div className={flip ? 'lg:order-1' : ''}>
@@ -330,7 +312,7 @@ function Station({ step, n, flip, reduce, onEnter, children }) {
             <Icon size={20} />
           </motion.span>
           <motion.span
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -356,7 +338,7 @@ function Station({ step, n, flip, reduce, onEnter, children }) {
           {t(`method.steps.${step.id}.story`)}
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.65 }}
@@ -456,10 +438,9 @@ function Summit({ reduce, onEnter }) {
   const { t } = useTranslation('marketing');
   const Icon = GOLD.icon;
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
 
-  // La station 10 : الإتقان. Fond sombre, un seul accent ambre — la fin du
-  // chemin. Elle montre l'espace d'exercices réel et ses cinq niveaux.
+  // La station 10 : la maîtrise. Fond sombre, un seul accent ambre — la fin du
+  // chemin. Elle montre les cinq niveaux de l'espace d'exercices.
   return (
     <motion.section
       ref={ref}
@@ -508,7 +489,7 @@ function Summit({ reduce, onEnter }) {
           {t(`method.steps.${GOLD.id}.desc`)}
         </motion.p>
         <div className="mx-auto max-w-2xl mb-10">
-          <ScreenFrame step={GOLD} n={GOLD.n} progress={scrollYProgress} reduce={reduce} />
+          <ScreenFrame step={GOLD} n={GOLD.n} reduce={reduce} />
         </div>
         <div className="mx-auto max-w-md text-start">
           <ExerciseLevels dark />
@@ -562,7 +543,7 @@ export default function Methode() {
       <motion.div
         aria-hidden
         style={{ scaleX: pageBar }}
-        className="fixed top-0 inset-x-0 h-1 z-[60] origin-right ltr:origin-left bg-gradient-to-l from-blue-500 via-violet-500 to-amber-500"
+        className="fixed top-0 inset-x-0 h-1 z-[60] origin-left bg-gradient-to-r from-blue-500 via-violet-500 to-amber-500"
       />
 
       <Hero reduce={reduce} />
@@ -571,11 +552,11 @@ export default function Methode() {
         {/* Le chemin : une ligne qui se remplit au fil du défilement */}
         <section ref={pathRef} className="relative max-w-6xl mx-auto px-4 pb-24">
           {SHAPES.map((s, i) => <FloatingShape key={i} shape={s} progress={scrollYProgress} reduce={reduce} />)}
-          <div aria-hidden className="absolute top-0 bottom-0 start-[34px] lg:start-1/2 w-[3px] -translate-x-1/2 rtl:translate-x-1/2 bg-slate-200 rounded-full" />
+          <div aria-hidden className="absolute top-0 bottom-0 start-[34px] lg:start-1/2 w-[3px] -translate-x-1/2 bg-slate-200 rounded-full" />
           <motion.div
             aria-hidden
             style={{ scaleY: pathFill, transformOrigin: 'top' }}
-            className="absolute top-0 bottom-0 start-[34px] lg:start-1/2 w-[3px] -translate-x-1/2 rtl:translate-x-1/2 rounded-full bg-gradient-to-b from-blue-500 via-violet-500 to-amber-500 shadow-[0_0_12px_rgba(139,92,246,0.6)]"
+            className="absolute top-0 bottom-0 start-[34px] lg:start-1/2 w-[3px] -translate-x-1/2 rounded-full bg-gradient-to-b from-blue-500 via-violet-500 to-amber-500 shadow-[0_0_12px_rgba(139,92,246,0.6)]"
           />
           <motion.p
             initial={{ opacity: 0, y: 20 }}

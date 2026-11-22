@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { CircleCheckBig, Target, Flame, Zap } from 'lucide-react';
 
 /**
- * « مسارك » — quatre repères, dans une seule bande discrète, SOUS le héros :
- * l'accueil oriente, il n'analyse pas (l'analyse est « تقدّمي »).
+ * « Ton parcours » — quatre repères, dans une seule bande discrète, SOUS le héros :
+ * l'accueil oriente, il n'analyse pas (l'analyse est « Ma progression »).
  *
  * Trois parlent d'apprentissage (terminées, compétences maîtrisées, en
  * cours) ; les XP sont un indicateur d'activité et leur place est la

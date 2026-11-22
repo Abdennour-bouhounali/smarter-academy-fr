@@ -93,7 +93,7 @@ export function formatAnswer(question, answer) {
         .map((id) => choices.find((c) => c.id === id))
         .filter(Boolean)
         .map((c) => c.content ?? String(c.id));
-      return picked.length ? { text: picked.join(' ، '), ltr: false, markup: true } : null;
+      return picked.length ? { text: picked.join(' ; '), ltr: false, markup: true } : null;
     }
     case 'rational':
     case 'integerSet': {
@@ -143,10 +143,10 @@ const paragraphs = (text) => String(text ?? '')
  * Fabriqué à partir du vrai contexte — jamais figé dans la base autrement que
  * comme partie du `content` que l'élève choisit d'enregistrer. Les blocs
  * portent `data-nb` pour être stylés (et reconnus) comme du contexte, distinct
- * de l'écriture de l'élève ; ils restent éditables et « مسح الكل » les
+ * de l'écriture de l'élève ; ils restent éditables et « Tout effacer » les
  * emporte avec le reste.
  *
- * Le bloc « خطئي » n'existe QUE si l'élève a répondu et que la réponse n'est
+ * Le bloc « Mon erreur » n'existe QUE si l'élève a répondu et que la réponse n'est
  * pas juste. Pas de réponse, pas d'erreur inventée.
  *
  * @param {object} p
@@ -155,8 +155,8 @@ const paragraphs = (text) => String(text ?? '')
  * @param {*}      [p.answer]      la saisie de l'élève (forme du widget)
  * @param {object} [p.evaluation]  le résultat de evaluateAnswer, s'il a validé
  * @param {string} [p.feedbackMessage] le message de FeedbackPanel (dialecte exercice)
- * @param {string} [p.verdict]     le titre arabe du verdict (practice.verdict.*)
- * @param {object} p.labels        libellés arabes : exercise, question, mistake, myAnswer, verdict, noAnswer
+ * @param {string} [p.verdict]     le titre du verdict (practice.verdict.*)
+ * @param {object} p.labels        libellés : exercise, question, mistake, myAnswer, verdict, noAnswer
  */
 export function buildDefaultContent({
   exercise, question, answer = null, evaluation = null, feedbackMessage = '', verdict = '', labels,
@@ -186,8 +186,8 @@ export function buildDefaultContent({
 
     const mistakeBody = [
       `<p data-nb="label">${escapeHtml(labels.mistake)}</p>`,
-      `<p><strong>${escapeHtml(labels.myAnswer)} :</strong> ${answerSpan}</p>`,
-      verdictLine ? `<p><strong>${escapeHtml(labels.verdict)} :</strong> ${verdictLine}</p>` : '',
+      `<p><strong>${escapeHtml(labels.myAnswer)}\u00A0:</strong> ${answerSpan}</p>`,
+      verdictLine ? `<p><strong>${escapeHtml(labels.verdict)}\u00A0:</strong> ${verdictLine}</p>` : '',
     ];
     parts.push(`<section data-nb="mistake">${mistakeBody.join('')}</section>`);
   }

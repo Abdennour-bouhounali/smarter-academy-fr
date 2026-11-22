@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import LearningPointProgress from './LearningPointProgress';
 
-const LONG = 'حل وضعية إدماجية بتعبئة قابلية القسمة والقواسم والقاسم المشترك الأكبر';
+const LONG = 'Résoudre un problème en utilisant la divisibilité, les diviseurs et le plus grand diviseur commun';
 const render = (point) => renderToStaticMarkup(<LearningPointProgress point={point} />);
 const lit = (html) => (html.match(/fill-amber-400/g) ?? []).length;
 
@@ -23,7 +23,7 @@ describe('LearningPointProgress — le point, son chemin, ses deux compteurs', (
     expect(html).toMatch(/>0(?:<!-- -->)? \/ (?:<!-- -->)?15</);
   });
 
-  it('scénario E : tout fait + متحكَّم فيها — trois étoiles', () => {
+  it('scénario E : tout fait + maîtrisé — trois étoiles', () => {
     const html = render({ code: 'P1', title: 'x', status: 'mastered', practice: { exercises: 3, exercisesCompleted: 3, questions: 13, questionsAnswered: 13 } });
     expect(lit(html)).toBe(3);
     expect(html).toMatch(/>3(?:<!-- -->)? \/ (?:<!-- -->)?3</);
@@ -32,6 +32,6 @@ describe('LearningPointProgress — le point, son chemin, ses deux compteurs', (
   it('les compteurs ne disent jamais un mot de maîtrise', () => {
     const html = render({ code: 'P1', title: 'x', status: 'gap', practice: { exercises: 1, exercisesCompleted: 0, questions: 2, questionsAnswered: 0 } });
     const metrics = html.slice(html.indexOf('data-lp-metric'));
-    expect(metrics).not.toMatch(/إتقان|متحكَّم|تحكّم/);
+    expect(metrics).not.toMatch(/maîtris|ma[iî]trise/i);
   });
 });

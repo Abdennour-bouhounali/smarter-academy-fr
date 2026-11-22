@@ -5,14 +5,14 @@ import MathLabel from '../../lessons/common/components/MathLabel';
 import { setReturnTo } from '../../lessons/common/components/returnToLesson';
 
 /**
- * « راجع قبل أن تنطلق » sur la PREMIÈRE vue de la leçon (propriétaire, 2026-11-07) : les leçons à comprendre ou réviser
+ * « Revois avant de commencer » sur la PREMIÈRE vue de la leçon (propriétaire, 2026-11-07) : les leçons à comprendre ou réviser
  * avant celle-ci (`prerequisiteLessonCodes` du catalogue, souvent d'une année antérieure). Un clic ouvre la leçon et retient
  * le retour (returnToLesson.js) : pendant la révision, un bouton ramène ici en un clic. Une leçon pas encore publiée se voit
- * (« قيد الإعداد ») mais ne s'ouvre pas. Prérequis pédagogique, jamais un verrou.
+ * (« En préparation ») mais ne s'ouvre pas. Prérequis pédagogique, jamais un verrou.
  */
 /**
- * `priority` (revue de « أستعدّ ») : la leçon de la كفاءة la plus fragile — sa carte seule en grand, les autres en petit dessous
- * (« وأيضًا »), jamais retirées.
+ * `priority` (revue de « Je me prépare ») : la leçon du savoir-faire le plus fragile — sa carte seule en grand, les autres en petit dessous
+ * (« Et aussi »), jamais retirées.
  */
 export default function ReviseFirst({ lessonId, title, basePath, className = '', columns = 2, priority = null, variant = 'card' }) {
   const { t } = useTranslation('lesson');
@@ -27,7 +27,7 @@ export default function ReviseFirst({ lessonId, title, basePath, className = '',
     setReturnTo(typeof window !== 'undefined' ? window.sessionStorage : null, { path: basePath, title });
     navigate(p.path);
   };
-  // `variant="slim"` (première vue de la mission, propriétaire 2026-11-09) : UNE ligne — « قبل أن تبدأ: » puis chaque leçon en pastille
+  // `variant="slim"` (première vue de la mission, propriétaire 2026-11-09) : UNE ligne — « Avant de commencer : » puis chaque leçon en pastille
   if (variant === 'slim') {
     return (
       <div className={`flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-teal-200 bg-teal-50/70 px-4 py-2.5 ${className}`} data-revise-first data-revise-variant="slim">

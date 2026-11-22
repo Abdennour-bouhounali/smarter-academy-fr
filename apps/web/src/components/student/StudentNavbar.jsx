@@ -41,7 +41,7 @@ export default function StudentNavbar() {
       identity={{ name: getDisplayName(user), initials: getInitials(user), sub: grade?.name }}
       access={isPremium ? 'full' : canSeeUpgrade ? 'invite' : null}
       onLogout={handleLogout}
-      // « صحّح أستاذك إجابتك » : the bell, in the application only.
+      // « Ton professeur a corrigé ta réponse » : the bell, in the application only.
       tools={(direction) => (
         <NotificationBell direction={direction} align={direction === 'up' ? 'start' : 'end'} className={BELL} />
       )}

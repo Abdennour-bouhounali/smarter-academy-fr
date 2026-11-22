@@ -5,11 +5,11 @@ import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import SectionHeading from './SectionHeading';
 
 /**
- * « 🧭 فضاؤك » — les portes des trois espaces de l'élève, avec leur
- * question : دروسي (« que puis-je apprendre ? »), تقدّمي (« où en suis-je ? »),
- * كرّاسي (« qu'ai-je noté ? »). L'accueil les RELIE, il ne les résume pas.
+ * « 🧭 Ton espace » — les portes des trois espaces de l'élève, avec leur
+ * question : Mes leçons (« que puis-je apprendre ? »), Ma progression (« où en suis-je ? »),
+ * Mon cahier (« qu'ai-je noté ? »). L'accueil les RELIE, il ne les résume pas.
  *
- * Les chemins sont ceux du routeur (App.jsx) — rien d'autre. « خريطتي » (la
+ * Les chemins sont ceux du routeur (App.jsx) — rien d'autre. « Ma carte » (la
  * carte des connaissances) n'a pas de page propre : elle vit dans chaque
  * leçon, donc elle n'a pas de carte ici.
  */
@@ -62,7 +62,7 @@ export default function LearningSpaceNav() {
                 <span className="block font-space font-bold text-slate-900 text-sm sm:text-base">{t(s.titleKey)}</span>
                 <span className="block font-inter text-slate-500 text-xs mt-0.5">{t(s.hintKey)}</span>
               </span>
-              <ArrowForward size={16} aria-hidden="true" className={`text-slate-300 transition-all group-hover:translate-x-1 group-hover:rtl:-translate-x-1 flex-shrink-0 sm:self-end ${s.arrow}`} />
+              <ArrowForward size={16} aria-hidden="true" className={`text-slate-300 transition-all group-hover:translate-x-1 flex-shrink-0 sm:self-end ${s.arrow}`} />
             </Link>
           </li>
         ))}

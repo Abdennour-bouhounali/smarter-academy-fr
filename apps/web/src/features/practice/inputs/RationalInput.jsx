@@ -26,12 +26,12 @@ function asciiToAnswer(ascii) {
  */
 export default function RationalInput({ question, value, onChange, disabled, exam = false }) {
   const { t } = useTranslation('student');
-  // La consigne de format peut porter une formule (« اكتب قيمة $K$ فقط ») : jamais
+  // La consigne de format peut porter une formule (« Écris seulement la valeur de $K$ ») : jamais
   // de dollars à l'écran — MathLabel pour le texte, mathToPlain pour les attributs.
   const formatPlain = question.answerFormat ? mathToPlain(question.answerFormat) : '';
   const fieldRef = useRef(null);
-  // « لوحة الرموز » (conseil, 2026-11-09) : une réponse qui peut être une FRACTION s'écrit dans un
-  // champ MathLive avec la lettre fixe À CÔTÉ — sur toutes les surfaces (بوصلتي, défi, مدار, pratique,
+  // « Clavier mathématique » (conseil, 2026-11-09) : une réponse qui peut être une FRACTION s'écrit dans un
+  // champ MathLive avec la lettre fixe À CÔTÉ — sur toutes les surfaces (Ma boussole, défi, Espace jeux, pratique,
   // copie d'examen), pas seulement la copie. À gauche du champ dès `lg` (RTL : bout de la ligne),
   // dessous en tablette portrait. Cachée quand la question est close (étape déjà répondue).
   if (needsMathPad(question)) {

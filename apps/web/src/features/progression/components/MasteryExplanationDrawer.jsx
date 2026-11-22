@@ -30,7 +30,7 @@ function formatDate(iso) {
 }
 
 /**
- * « لماذا؟ » — le tiroir d'explication de la maîtrise d'UN point
+ * « Pourquoi ? » — le tiroir d'explication de la maîtrise d'UN point
  * d'apprentissage (plan §18, `GET /students/me/learning-points/{code}/explanation`).
  *
  * Il rend ce que le serveur sait, et rien qu'il ne dise : l'état et sa
@@ -41,8 +41,8 @@ function formatDate(iso) {
  * « pas encore de preuve ».
  *
  * Accessibilité : `role="dialog"` modal, titre lié, focus posé sur la
- * fermeture à l'ouverture, Échap et clic sur le fond ferment. RTL : le
- * tiroir s'ancre sur le bord de DÉBUT (`start-0`) — la droite en arabe.
+ * fermeture à l'ouverture, Échap et clic sur le fond ferment. Le
+ * tiroir s'ancre sur le bord de DÉBUT (`start-0`), à gauche.
  */
 export default function MasteryExplanationDrawer({ code, title, open, onClose }) {
   const { t } = useTranslation('student');

@@ -8,9 +8,10 @@ import { fetchChallengeHistory } from '../../../services/dailyChallengeService';
 import ArenaPanel from '../../../features/dailyChallenge/components/ArenaPanel';
 import StreakDisplay from '../../../features/dailyChallenge/components/StreakDisplay';
 import { formatSeconds, reasonKey } from '../../../features/dailyChallenge/challengeModel';
+import { LOCALE } from '../../../locale.js';
 
 /**
- * « سجلّ التحدّي اليومي » : chaque jour de défi, son score — ou « فاتك ».
+ * « Historique du défi du jour » : chaque jour de défi, son score — ou « Manqué ».
  * Un jour joué s'ouvre en REVUE (lecture seule, jamais rejouable).
  */
 export default function ChallengeHistoryPage() {
@@ -29,7 +30,7 @@ export default function ChallengeHistoryPage() {
     return () => { cancelled = true; };
   }, [token, t]);
 
-  const date = (d) => new Intl.DateTimeFormat('ar-DZ', { weekday: 'short', day: 'numeric', month: 'short' }).format(new Date(`${d}T12:00:00`));
+  const date = (d) => new Intl.DateTimeFormat(LOCALE, { weekday: 'short', day: 'numeric', month: 'short' }).format(new Date(`${d}T12:00:00`));
 
   return (
     <div className="sa-surface-plain sa-page sa-page--flush py-6 sm:py-8 space-y-4" data-challenge-history>
@@ -48,7 +49,7 @@ export default function ChallengeHistoryPage() {
         <>
           <ArenaPanel className="p-5">
             <StreakDisplay streak={data.streak} />
-            <p className="mt-3 font-inter text-sm text-slate-600">{t('intro.cumulative')}: <span dir="ltr" className="font-space font-black text-slate-900">{data.cumulativeScore.toLocaleString('fr-FR')}</span></p>
+            <p className="mt-3 font-inter text-sm text-slate-600">{t('intro.cumulative')} : <span className="font-space font-black text-slate-900">{data.cumulativeScore.toLocaleString(LOCALE)}</span></p>
           </ArenaPanel>
 
           {data.days.length === 0 ? (
@@ -64,7 +65,7 @@ export default function ChallengeHistoryPage() {
                       <>
                         <span dir="ltr" className="font-space text-lg font-black text-slate-900">{t('history.points', { n: d.score.total })}</span>
                         <span dir="ltr" className="font-mono-jetbrains text-sm text-emerald-700">✓ {t('history.correct', { correct: d.correctCount, total: d.questionCount })}</span>
-                        <span dir="ltr" className="hidden font-mono-jetbrains text-sm text-slate-500 sm:inline">⚡ {formatSeconds(d.averageResponseTimeMs)} ث</span>
+                        <span dir="ltr" className="hidden font-mono-jetbrains text-sm text-slate-500 sm:inline">⚡ {formatSeconds(d.averageResponseTimeMs)} s</span>
                         {d.status !== 'completed' && <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">{t(`history.${d.status}`)}</span>}
                         {d.status !== 'in_progress' && <span className="ms-auto font-inter text-sm font-semibold text-nav-accent">{t('history.open')}</span>}
                       </>

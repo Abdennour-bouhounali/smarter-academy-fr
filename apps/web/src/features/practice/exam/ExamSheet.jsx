@@ -1,4 +1,4 @@
-import { forwardRef, useEffect } from 'react';
+import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import RichText from '../RichText';
 import StatementFigure from '../../../lessons/common/components/StatementFigure';
@@ -6,26 +6,27 @@ import ProblemTable from '../../../lessons/common/components/ProblemTable';
 import { StudentAnswer } from '../QuestionHistory';
 import { ToneIcon, TONE_STYLE } from '../toneStyle';
 import SolutionPanel from './SolutionPanel';
-import { examBadge, examPaper, examPart, examSession, formatClock, stepMarks, stepSeconds, stepState, solutionReady } from './examSheet';
+import { examBadge, examPaper, examPart, examPoints, examSession, formatClock, stepLabel, stepMarks, stepSeconds, stepState, solutionReady } from './examSheet';
 import { Timer } from 'lucide-react';
 import StepTimer from './StepTimer';
 import RedactionText from './math/RedactionText';
 import Medal from '../medals/Medal';
 import { medalFor } from './medals';
-import { ensureExamFont } from './examFont';
 import AnswerImageGallery from './images/AnswerImageGallery';
 import ReviewStatus from './images/ReviewStatus';
 
 /**
- * LA FEUILLE D'EXAMEN — un exercice de pratique présenté comme un sujet de
- * شهادة التعليم المتوسط (décision du propriétaire, 2026-10-06 : « l'élève doit
- * se dire : c'est exactement l'examen »).
+ * LA FEUILLE D'EXAMEN — un exercice de pratique présenté comme un sujet du
+ * brevet (décision du propriétaire, 2026-10-06 : « l'élève doit se dire : c'est
+ * exactement l'examen »). Elle se lit de gauche à droite, dans la police à
+ * empattements de `.sa-exam-paper` (index.css : Georgia, Times New Roman — des
+ * polices du système, rien à télécharger).
  *
  * Ce que le papier montre, la feuille le montre :
- *  - l'en-tête « التمرين الأول (02,5 ن) » souligné, et le ruban de session
- *    « BEM 2008 » (ou « على منوال BEM 2015 ») à l'autre bout ;
+ *  - le bandeau « Exercice 1 » et son barème « (2,5 points) », et la provenance
+ *    (« Brevet 2027 », « Sur le modèle du brevet 2027 ») dans l'en-tête ;
  *  - l'énoncé de mise en place, puis les formules CENTRÉES sur leur ligne ;
- *  - les étapes 01 / 02 / 03 et leurs (ا)(ب)(ج), numéros encadrés — révélées
+ *  - les étapes 1 / 2 / 3 et leurs a) b) c), numéros encadrés — révélées
  *    UNE À UNE : la 02 s'ajoute sous la 01 quand l'élève l'a résolue, rien ne
  *    disparaît (demande du propriétaire, 2026-10-06).
  *
@@ -38,7 +39,6 @@ import ReviewStatus from './images/ReviewStatus';
  */
 const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, history, children, timer = null, started = true, onStart = null, startReady = true, imageLoader = null, answeredThrough = questionIndex - 1 }, currentRef) {
   const { t } = useTranslation('student');
-  useEffect(() => { ensureExamFont(); }, []);
 
   const exam = exercise.metadata.exam;
   const badge = examBadge(exam);
@@ -48,6 +48,7 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
   const marks = stepMarks(exercise.questions);
   const statement = exercise.statement ?? {};
   const minutes = exercise.metadata?.estimatedMinutes;
+  const points = examPoints(exam.points);
 
   return (
     <article
@@ -57,12 +58,12 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
     >
       {/* ── L'en-tête du sujet (maquette du propriétaire, 2026-10-06) ──────
           Trois lignes centrées comme une feuille d'examen, puis le cadre
-          d'informations : niveau, durée conseillée, دورة (sujet officiel),
-          provenance. « اختبار تجريبي » dit que c'est un entraînement. */}
+          d'informations : niveau, durée conseillée, session (sujet officiel),
+          source. « Sujet d'entraînement » dit que ce n'est pas l'épreuve. */}
       {/* Une seule rangée (propriétaire, 2026-10-06) : le titre au MILIEU, les
-          informations sur les côtés — المستوى et الدورة à droite, المدة et
-          المصدر à gauche — comme l'en-tête d'un sujet. Sur téléphone : le
-          titre d'abord, les deux côtés dessous. */}
+          informations sur les côtés — niveau et session au début de la ligne,
+          durée et source à la fin — comme l'en-tête d'un sujet. Sur téléphone :
+          le titre d'abord, les deux côtés dessous. */}
       <header
         className="mb-3 grid grid-cols-2 items-center gap-x-4 gap-y-2 border-b border-slate-300 pb-2.5 text-[13px] sm:grid-cols-[1fr_auto_1fr]"
         data-exam-paper-header
@@ -73,36 +74,36 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
           <p className="text-sm font-bold text-slate-800">{t('practice.exam.paper.subject')}</p>
         </div>
         <dl className="space-y-0.5 justify-self-start sm:order-1 [&_dd]:whitespace-nowrap [&_dt]:whitespace-nowrap" data-exam-info>
-          <div className="flex gap-1"><dt className="font-bold">{t('practice.exam.paper.level')}:</dt><dd>{t('practice.exam.paper.levelValue', { n: paper.n })}</dd></div>
+          <div className="flex gap-1"><dt className="font-bold">{t('practice.exam.paper.level')} :</dt><dd>{t('practice.exam.paper.levelValue', { n: paper.n })}</dd></div>
           <div className="flex gap-1" data-exam-session={session ?? undefined}>
-            <dt className="font-bold">{t('practice.exam.year')}:</dt>
-            <dd>{session ? <bdi dir="ltr">{session}</bdi> : t('practice.exam.paper.training')}</dd>
+            <dt className="font-bold">{t('practice.exam.year')} :</dt>
+            <dd>{session ?? t('practice.exam.paper.training')}</dd>
           </div>
         </dl>
         <dl className="space-y-0.5 justify-self-end sm:order-3 [&_dd]:whitespace-nowrap [&_dt]:whitespace-nowrap">
           {minutes ? (
-            <div className="flex gap-1"><dt className="font-bold">{t('practice.exam.paper.duration')}:</dt><dd>{t('practice.meta.minutes', { count: minutes })}</dd></div>
+            <div className="flex gap-1"><dt className="font-bold">{t('practice.exam.paper.duration')} :</dt><dd>{t('practice.meta.minutes', { count: minutes })}</dd></div>
           ) : null}
           <div className="flex gap-1" data-exam-badge={badge?.kind ?? 'adapted'}>
-            <dt className="font-bold">{t('practice.exam.paper.source')}:</dt>
+            <dt className="font-bold">{t('practice.exam.paper.source')} :</dt>
             <dd>
               {badge ? (
-                <>{badge.prefix && <span>{badge.prefix} </span>}<bdi dir={badge.ltr ? 'ltr' : 'rtl'} className="font-bold text-violet-800">{badge.label}</bdi></>
+                <span className="font-bold text-violet-800" data-exam-badge-model={badge.model}>{badgeText(badge, t)}</span>
               ) : t('practice.exam.paper.lessonExercise')}
             </dd>
           </div>
         </dl>
       </header>
 
-      {/* « الجزء الثاني » coiffe la وضعية الإدماجية, comme sur le sujet. */}
-      {part === 2 && <p className="mb-2 text-lg font-bold text-slate-900 sm:text-xl" data-exam-part>{t('practice.exam.part.2')}:</p>}
-      {/* Le bandeau de l'exercice : « التمرين الأول: » d'un côté, « (02,5 ن) » de l'autre. */}
+      {/* « Partie 2 » coiffe un exercice de la deuxième partie, comme sur le sujet. */}
+      {part === 2 && <p className="mb-2 text-lg font-bold text-slate-900 sm:text-xl" data-exam-part>{t('practice.exam.part.2')}</p>}
+      {/* Le bandeau de l'exercice : « Exercice 1 » d'un côté, « (2,5 points) » de l'autre. */}
       <h2
         id="exam-sheet-heading"
         className="mb-2.5 flex items-center justify-between gap-3 rounded-md bg-slate-100 px-4 py-1.5 text-base font-bold text-slate-900 sm:text-lg"
       >
-        <span>{exam.heading}:</span>
-        <span data-exam-points>(<bdi dir="ltr">{exam.points}</bdi> {t('practice.exam.pointsUnit')})</span>
+        <span>{exam.heading}</span>
+        <span className="whitespace-nowrap" data-exam-points>({points.label}{'\u00A0'}{t('practice.exam.pointsUnit', { count: points.count })})</span>
       </h2>
 
       {/* ── Mise en place ────────────────────────────────────────────────── */}
@@ -129,14 +130,14 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
           const mark = marks[i];
           const entry = state === 'done' ? history.find((e) => e.questionId === q.id) : null;
           const isPrevious = state === 'done' && i === questionIndex - 1;
-          // « ابدأ » (propriétaire, 2026-10-06) : l'étape courante reste CACHÉE
+          // « Commencer » (propriétaire, 2026-10-06) : l'étape courante reste CACHÉE
           // tant que l'élève n'a pas lancé son chrono ; l'appui révèle l'énoncé.
           if (state === 'current' && !started && onStart) {
             return (
               <li key={q.id} ref={currentRef} data-exam-step="current" data-step-locked aria-current="step" className="scroll-mt-20 lg:scroll-mt-6">
                 <div className="flex flex-wrap items-center gap-3 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50/70 px-3 py-3">
                   {mark.step && <StepBox step={mark.step} />}
-                  {mark.sub && <span className="font-bold">({mark.sub})</span>}
+                  {mark.sub && <span className="font-bold">{mark.sub})</span>}
                   <span className="flex-1 text-sm text-slate-600">
                     {t('practice.exam.timer.hidden', { limit: formatClock(stepSeconds(q, exercise)) })}
                   </span>
@@ -175,7 +176,7 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
                 state === 'current' ? 'font-semibold text-slate-900' : 'text-slate-800'
               } ${mark.step && !q.lead ? '' : 'ps-9'}`} data-exam-question={q.id}>
                 {mark.step && !q.lead && <StepBox step={mark.step} />}
-                {mark.sub && <span className="shrink-0 font-bold">({mark.sub})</span>}
+                {mark.sub && <span className="shrink-0 font-bold">{mark.sub})</span>}
                 <span className="min-w-0 flex-1"><RichText>{q.statement}</RichText></span>
                 {/* Le chrono de l'étape EN COURS, au bout de sa ligne. */}
                 {state === 'current' && timer && <span className="mt-1 shrink-0">{timer}</span>}
@@ -203,7 +204,7 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
                   )}
                   {/* Les photos de la copie (prototype BEM, 2026-10-06) — annotées par l'enseignant le cas échéant. */}
                   {entry.images?.length > 0 && imageLoader && <AnswerImageGallery images={entry.images} loader={imageLoader} size="sm" />}
-                  {/* « تصحيح الأستاذ » : en attente (ni corrigé ni médaille), ou verdict et commentaire. */}
+                  {/* « Correction du professeur » : en attente (ni corrigé ni médaille), ou verdict et commentaire. */}
                   <ReviewStatus review={entry.review} pending={entry.normalized === 'review:pending'} />
                   {(q.answerType !== 'selfCheck' || entry.evaluatedBy === 'teacher') && !['syntax_error', 'abandoned'].includes(entry.outcome) && solutionReady(exercise.questions, i, answeredThrough) && <SolutionPanel solution={q.solution} />}
                 </div>
@@ -223,16 +224,26 @@ const ExamSheet = forwardRef(function ExamSheet({ exercise, questionIndex, histo
   );
 });
 
-/** Le numéro d'étape encadré, comme sur le sujet (« 01 » dans un carré rouge). */
+/**
+ * La provenance, en français : « Brevet 2027 », « Sur le modèle du brevet 2027 », « Sur le modèle d'un contrôle » —
+ * ou le texte du badge tel quel quand il n'est d'aucun de ces genres (examBadge).
+ */
+function badgeText(badge, t) {
+  if (badge.model === 'official') return t('practice.exam.badgeOfficial', { year: badge.year });
+  if (badge.model === 'modelled') return t('practice.exam.badgeModelled', { year: badge.year });
+  if (badge.model === 'term') return t('practice.exam.badgeTerm');
+  return badge.label;
+}
+
+/** Le numéro d'étape encadré, comme sur le sujet (« 1 » dans un carré rouge ; la donnée dit « 01 »). */
 function StepBox({ step }) {
   return (
-    <bdi
-      dir="ltr"
+    <span
       className="mt-1 inline-flex h-6 min-w-[1.85rem] shrink-0 items-center justify-center rounded-[4px] border-[1.5px] border-rose-500 bg-rose-50 px-1 font-sans text-sm font-bold leading-none text-rose-600"
       data-exam-step-box
     >
-      {step}
-    </bdi>
+      {stepLabel(step)}
+    </span>
   );
 }
 

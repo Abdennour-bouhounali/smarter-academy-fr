@@ -4,11 +4,11 @@ import RichText from '../RichText';
 import { templateValue } from './templateFor';
 
 /**
- * « الإجابة تُكتب في شكلها » — la saisie d'une réponse dessinée comme la mathématique qu'elle
- * complète (EXERCISE_CONTRACT.md § « قوالب الإجابة »). Le modèle vient de `templateFor(question)` ;
+ * « La réponse s’écrit dans sa forme » — la saisie d'une réponse dessinée comme la mathématique qu'elle
+ * complète (EXERCISE_CONTRACT.md § « Answer templates »). Le modèle vient de `templateFor(question)` ;
  * l'élève ne tape QUE l'inconnue : unités, « x = », « % », barres de fraction et formes sont imprimées.
  *
- * La formule est LTR et isolée dans la page arabe ; les cases sont de vrais <input> (pas de clavier
+ * La formule est LTR et isolée ; les cases sont de vrais <input> (pas de clavier
  * flottant : le pavé numérique du système suffit, la fraction a deux cases). `onChange({ value })`
  * envoie ce que lit AnswerEvaluator, `null` tant que c'est incomplet.
  *

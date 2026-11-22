@@ -15,7 +15,7 @@ import AfterSolve from '../../../features/thinkingLab/replay/AfterSolve';
 import { errorKey } from '../../../features/thinkingLab/thinkingModel';
 
 /**
- * « مختبر التفكير » — un défi : l'espace de travail (écran 2), puis, porte franchie, la relecture
+ * « Le labo des énigmes » — un défi : l'espace de travail (écran 2), puis, porte franchie, la relecture
  * (écran 3). Le SERVEUR tient l'état ; recharger la page revient exactement où l'on était.
  * Un défi résolu ou appris ouvre directement sa relecture.
  */

@@ -1,9 +1,9 @@
 /**
- * « قسمي » — la logique pure du consentement et des suggestions.
+ * « Ma classe » — la logique pure du consentement et des suggestions.
  *
- * Rejoindre un قسم, c'est accepter que l'enseignant voie, pour les leçons
- * de ce قسم : la progression, la maîtrise par point d'apprentissage, les
- * réponses aux exercices et aux tests finaux, et les notes du كرّاسي (pas
+ * Rejoindre une classe, c'est accepter que l'enseignant voie, pour les leçons
+ * de cette classe : la progression, la maîtrise par point d'apprentissage, les
+ * réponses aux exercices et aux tests finaux, et les notes de « Mon cahier » (pas
  * les notes archivées). Jamais l'adresse électronique. Le serveur l'exige
  * (`consent: true`, sinon 422 `consent_required`) ; ce module garantit
  * que le client ne l'envoie qu'après un geste explicite.
@@ -17,7 +17,7 @@ export const SHARED_ITEMS = ['progress', 'mastery', 'answers', 'notebook'];
  * consenti : pas de consentement, pas de requête.
  *
  * @param {{code?: string, link?: string}} by
- * @param {boolean} consented  vrai seulement après « أوافق وأنضمّ »
+ * @param {boolean} consented  vrai seulement après « J’accepte et je rejoins la classe »
  */
 export function joinRequest(by, consented) {
   if (consented !== true) return null;

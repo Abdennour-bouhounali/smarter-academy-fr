@@ -7,7 +7,7 @@ import AuthShell, { AuthSubmit, authInputClass } from '../components/auth/AuthSh
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 /**
- * « نسيت كلمة المرور » — demande du lien par courriel.
+ * « Mot de passe oublié » — demande du lien par courriel.
  *
  * Après l'envoi, le message est le même que l'adresse existe ou non : le
  * serveur ne le révèle pas, l'écran non plus.
@@ -65,7 +65,6 @@ export default function ForgotPassword() {
               id="email"
               name="email"
               type="email"
-              dir="ltr"
               required
               autoComplete="email"
               value={email}

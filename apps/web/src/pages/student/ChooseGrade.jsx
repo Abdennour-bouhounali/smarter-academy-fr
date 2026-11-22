@@ -37,7 +37,7 @@ export function pathAfterGrade(gradeId) {
 
 /**
  * The onboarding step between account creation and the student space:
- * picking a grade. It comes AFTER « الاسم و اللقب » — an account without a
+ * picking a grade. It comes AFTER « Prénom et nom » — an account without a
  * name is sent to /espace/bienvenue/nom first (CompleteName.jsx). Registration
  * collects the name but not the grade, so a freshly-created account always
  * lands here with `user.grade === null`
@@ -60,10 +60,10 @@ export default function ChooseGrade() {
   }
 
   // Venu par le lien de classe de son enseignant (propriétaire, 2026-10-22) :
-  // l'année est celle du قسم, pas un choix. Une adhésion encore en attente
+  // l'année est celle de la classe, pas un choix. Une adhésion encore en attente
   // dans ce navigateur (inscription Google, ordre des redirections) renvoie
   // à la page du lien, qui rejoint — et le serveur donne alors la classe
-  // scolaire du قسم (ClassroomMembershipService::join).
+  // scolaire de la classe (ClassroomMembershipService::join).
   const pendingJoinPath = postAuthPath(user, null);
   if (pendingJoinPath) {
     return <Navigate to={pendingJoinPath} replace />;
@@ -100,11 +100,11 @@ export default function ChooseGrade() {
             {ts('chooseGrade.step')}
           </p>
         )}
-        <h1 className="font-arabic font-bold text-2xl sm:text-3xl text-slate-900">
+        <h1 className="font-bold text-2xl sm:text-3xl text-slate-900">
           {t('chooseGradeWelcome')} {getDisplayName(user)} 👋
         </h1>
         {hasGrades && (
-          <p className="mt-3 font-arabic text-base text-slate-500 text-balance">
+          <p className="mt-3 text-base text-slate-500 text-balance">
             {t('chooseGradeSubtitle')}
           </p>
         )}
@@ -126,11 +126,10 @@ export default function ChooseGrade() {
           <div className="space-y-7">
             {Object.entries(GRADES_BY_LEVEL).map(([levelTitle, grades]) => (
               <section key={levelTitle} aria-label={levelTitle}>
-                {/* Le cycle : un intitulé arabe ordinaire — pas de chasse
-                    monospace ni d'espacement des lettres, qui disloquent
-                    l'écriture liée. */}
+                {/* Le cycle : un intitulé ordinaire, sans chasse monospace ni
+                    espacement des lettres. */}
                 <div className="flex items-center gap-3 mb-3">
-                  <h2 className="font-arabic text-sm font-bold text-slate-500 whitespace-nowrap">{levelTitle}</h2>
+                  <h2 className="text-sm font-bold text-slate-500 whitespace-nowrap">{levelTitle}</h2>
                   <span className="h-px flex-1 bg-slate-200" aria-hidden="true" />
                 </div>
                 <div className="space-y-3">
@@ -153,17 +152,17 @@ export default function ChooseGrade() {
                           aria-hidden="true"
                         >
                           {badge ? (
-                            <span className="font-arabic text-xl sm:text-2xl font-bold leading-none">{badge}</span>
+                            <span className="text-xl sm:text-2xl font-bold leading-none">{badge}</span>
                           ) : (
                             <GraduationCap size={24} />
                           )}
                         </span>
 
                         <span className="min-w-0 flex-1">
-                          <span className="block font-arabic text-[17px] sm:text-lg font-bold text-slate-900 whitespace-nowrap">
+                          <span className="block text-[17px] sm:text-lg font-bold text-slate-900 whitespace-nowrap">
                             {g.name}
                           </span>
-                          <span className="mt-1 flex items-center gap-1.5 font-arabic text-[13px] sm:text-sm whitespace-nowrap">
+                          <span className="mt-1 flex items-center gap-1.5 text-[13px] sm:text-sm whitespace-nowrap">
                             {soon ? (
                               <>
                                 <Clock size={14} className="shrink-0 text-amber-500" aria-hidden="true" />
@@ -174,7 +173,7 @@ export default function ChooseGrade() {
                               <>
                                 <BookOpen size={14} className="shrink-0 text-emerald-500" aria-hidden="true" />
                                 <span className="text-emerald-600 font-semibold">{ts('chooseGrade.available')}</span>
-                                <span className="text-slate-400">· {ts('chooseGrade.lessons', { count: g.lessonCount })}</span>
+                                <span className="text-slate-400">· {g.lessonCount > 0 ? ts('chooseGrade.lessons', { count: g.lessonCount }) : ts('chooseGrade.noLessons')}</span>
                               </>
                             )}
                           </span>
@@ -194,7 +193,7 @@ export default function ChooseGrade() {
               </section>
             ))}
 
-            <p className="text-center font-arabic text-sm text-slate-400">
+            <p className="text-center text-sm text-slate-400">
               {ts('chooseGrade.changeLater')}
             </p>
           </div>
@@ -206,16 +205,16 @@ export default function ChooseGrade() {
           // back in for a student who lands here directly (e.g. a stale
           // bookmark/tab) while grade is still null.
           <div className="glass-card p-6 sm:p-8 text-center">
-            <p className="font-arabic font-bold text-lg text-slate-800 mb-2">
+            <p className="font-bold text-lg text-slate-800 mb-2">
               {t('chooseGradeComingSoonTitle')}
             </p>
-            <p className="font-arabic text-sm text-slate-500 mb-6 max-w-md mx-auto">
+            <p className="text-sm text-slate-500 mb-6 max-w-md mx-auto">
               {t('chooseGradeComingSoonBody')}
             </p>
             <button
               type="button"
               onClick={() => navigate('/espace')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-arabic font-semibold text-sm text-white transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white transition-all hover:-translate-y-0.5"
               style={{ background: LEVEL_GRADIENT.college }}
             >
               {t('chooseGradeContinue')}

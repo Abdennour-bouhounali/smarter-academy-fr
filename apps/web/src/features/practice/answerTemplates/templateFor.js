@@ -1,16 +1,17 @@
 /**
- * « الإجابة تُكتب في شكلها » — le STANDARD des saisies de réponse (propriétaire, 2026-11-09 :
- * « une norme globale pour tous les exercices et questions » ; appliqué d'abord à « جولة الانطلاق »).
- * Contrat : EXERCISE_CONTRACT.md § « قوالب الإجابة ».
+ * « La réponse s’écrit dans sa forme » — le STANDARD des saisies de réponse (propriétaire, 2026-11-09 :
+ * « une norme globale pour tous les exercices et questions »).
+ * Contrat : EXERCISE_CONTRACT.md § « Answer templates ».
  *
  * Une fonction PURE : à partir de ce que le client a toujours (énoncé de la question, `answerFormat`,
- * `evaluationPolicy`) — jamais la réponse attendue — elle dit À QUOI ressemble la saisie :
+ * `evaluationPolicy`) — jamais la réponse attendue — elle dit À QUOI ressemble la saisie. Les consignes
+ * `answerFormat` sont lues EN FRANÇAIS (« en euros », « fraction irréductible », « nombre entier »…) :
  *
  *   gap       « 4,826 × [ ] = 48,26 » — la case remplace « … » (ou l'exposant n) DANS la formule
  *   form      « A = a x + [b] » — le coefficient demandé est une case, la forme est imprimée
  *   fraction  ± [ ] / [ ] — vraie barre ; dénominateur vide = entier
  *   percent   [ ] %
- *   quantity  [ ] دج / m / ° / cm … — l'unité est imprimée, jamais tapée
+ *   quantity  [ ] € / m / ° / cm / h / min … — l'unité est imprimée, jamais tapée
  *   solution  x = [ ]
  *   digit     0 … 9 en boutons
  *   natural   chiffres seulement, milliers espacés
@@ -22,23 +23,28 @@
 
 const GAP_TOKENS = ['\\ldots', '\\dots', '\\cdots', '…', '\\square', '\\Box'];
 
+// L'unité imprimée après la case. L'ordre compte : « mètres carrés » avant « mètres », « kilomètres par heure »
+// avant « kilomètres ».
 const UNITS = [
-  [/بالدينار|\(دج\)|\bDA\b/u, 'دج'],
-  [/بالسنتيمتر المربع|\(cm²\)/u, 'cm²'],
-  [/بالمتر المربع|\(m²\)/u, 'm²'],
-  [/بالسنتيمتر المكعب|\(cm³\)/u, 'cm³'],
-  [/بالكيلومتر في الساعة|km\/h/u, 'km/h'],
-  [/بالكيلومتر|\(km\)/u, 'km'],
-  [/بالسنتيمتر|\(cm\)/u, 'cm'],
-  [/بالمليمتر|\(mm\)/u, 'mm'],
-  [/بالمتر|\(m\)/u, 'm'],
-  [/بالدرجة|\(°\)/u, '°'],
-  [/باللتر|\(L\)/u, 'L'],
-  [/بالكيلوغرام|\(kg\)/u, 'kg'],
-  [/بالغرام|\(g\)/u, 'g'],
-  [/بالساعة/u, 'سا'],
-  [/بالدقيقة/u, 'د'],
+  [/en\s+euros?\b|\(€\)/iu, '€'],
+  [/en\s+centimètres?\s+carrés?|\(cm²\)/iu, 'cm²'],
+  [/en\s+mètres?\s+carrés?|\(m²\)/iu, 'm²'],
+  [/en\s+centimètres?\s+cubes?|\(cm³\)/iu, 'cm³'],
+  [/en\s+kilomètres?\s+par\s+heure|km\/h/iu, 'km/h'],
+  [/en\s+kilomètres?|\(km\)/iu, 'km'],
+  [/en\s+centimètres?|\(cm\)/iu, 'cm'],
+  [/en\s+millimètres?|\(mm\)/iu, 'mm'],
+  [/en\s+mètres?|\(m\)/iu, 'm'],
+  [/en\s+degrés?|\(°\)/iu, '°'],
+  [/en\s+litres?|\(L\)/u, 'L'],
+  [/en\s+kilogrammes?|\(kg\)/iu, 'kg'],
+  [/en\s+grammes?|\(g\)/iu, 'g'],
+  [/en\s+heures?\b|\(h\)/iu, 'h'],
+  [/en\s+minutes?\b|\(min\)/iu, 'min'],
 ];
+
+// « nombre relatif », « entier relatif » : la réponse peut être négative.
+const SIGNED = /relatif|négatif/iu;
 
 /** Les segments `$…$` d'un texte : [{ math, text }]. */
 export function splitMath(text) {
@@ -93,8 +99,8 @@ function gapTemplate(question) {
   const statement = String(question.statement ?? '');
   const format = String(question.answerFormat ?? '');
   const parts = splitMath(statement);
-  // Un exposant à trouver (« الأسّ $n$ ») : la case va À LA PLACE de n dans 10^{n}.
-  const exp = /الأسّ?\s*\$(\w)\$/.exec(format)?.[1];
+  // Un exposant à trouver (« l'exposant $n$ ») : la case va À LA PLACE de n dans 10^{n}.
+  const exp = /l['’]exposant\s*\$(\w)\$/iu.exec(format)?.[1];
   const tokens = exp ? [...GAP_TOKENS, `^{${exp}}`] : GAP_TOKENS;
   for (let k = 0; k < parts.length; k += 1) {
     if (!parts[k].math) continue;
@@ -107,7 +113,7 @@ function gapTemplate(question) {
       post: cut.post,
       after: joinParts(parts.slice(k + 1)),
       raised: Boolean(exp) && cut.tok === `^{${exp}}`,
-      signed: /نسبي|صحيح/.test(format),
+      signed: SIGNED.test(format),
     };
   }
   return null;
@@ -115,12 +121,13 @@ function gapTemplate(question) {
 
 function formTemplate(question) {
   const format = String(question.answerFormat ?? '');
-  const m = /على\s+الشكل\s*\$([^$]+)\$\s*[:：،]?\s*اكتب\s+(?:العدد|المعامل|قيمة)\s*\$(\w)\$\s*فقط/.exec(format);
+  // « $A$ s'écrit sous la forme $ax + b$ : écris seulement le nombre $b$ ».
+  const m = /sous\s+la\s+forme\s*\$([^$]+)\$\s*[:;,]?\s*(?:[ée]cris|donne)\s+(?:seulement\s+|uniquement\s+)?(?:le\s+nombre|le\s+coefficient|la\s+valeur\s+de)\s*\$(\w)\$/iu.exec(format);
   if (!m) return null;
   const [, form, letter] = m;
   const cut = cutLetter(form, letter);
   if (!cut) return null;
-  const subject = /يُ?كتب\s*\$([^$]+)\$/.exec(format)?.[1] ?? null;
+  const subject = /\$([^$]+)\$\s*s['’][ée]crit/iu.exec(format)?.[1] ?? null;
   return { kind: 'form', subject, pre: cut.pre, post: cut.post, letter };
 }
 
@@ -133,18 +140,19 @@ export function templateFor(question) {
   if (gap) return gap;
   const form = formTemplate(question);
   if (form) return form;
-  if (/(^|\s)رقم\s+واحد(?!\s*بعد)/.test(format)) return { kind: 'digit' };
-  if (/كسر|حاصل\s*قسمة|a\s*\/\s*b/.test(format) || required === 'irreducible' || required === 'fraction') {
-    return { kind: 'fraction', irreducible: /لا\s*يقبل\s*الاختزال|غير\s*قابل\s*للاختزال/.test(format) || required === 'irreducible' };
+  if (/\bun\s+seul\s+chiffre(?!\s+après)/iu.test(format)) return { kind: 'digit' };
+  if (/fraction|quotient|a\s*\/\s*b/iu.test(format) || required === 'irreducible' || required === 'fraction') {
+    return { kind: 'fraction', irreducible: /irréductible/iu.test(format) || required === 'irreducible' };
   }
-  if (/مئوية|%/.test(format)) return { kind: 'percent' };
+  if (/pourcentage|%/iu.test(format)) return { kind: 'percent' };
   const unit = UNITS.find(([re]) => re.test(format));
-  if (unit) return { kind: 'quantity', unit: unit[1], signed: /نسبي/.test(format) };
-  const sol = /قيمة\s*\$([a-z])\$/.exec(format);
+  if (unit) return { kind: 'quantity', unit: unit[1], signed: SIGNED.test(format) };
+  const sol = /valeur\s+de\s*\$([a-z])\$/u.exec(format);
   if (sol) return { kind: 'solution', letter: sol[1], signed: true };
-  if (/عدد\s+طبيعي/.test(format) || /^عدد\s+(?!عشري|نسبي|ناطق|صحيح|\()[^\s(]+$/.test(format)) return { kind: 'natural' };
-  if (/نسبي|صحيح/.test(format) && !/عشري|الفاصلة/.test(format)) return { kind: 'signed' };
-  return { kind: 'decimal', signed: /نسبي/.test(format) };
+  // « nombre entier », « entier naturel », « nombre de boîtes » (un compte) ; pas « entier relatif ».
+  if (/entier\s+naturel|nombre\s+entier(?!\s+relatif)/iu.test(format) || /^nombre\s+d(?:e\s+|['’])\s*[^\s(]+$/iu.test(format)) return { kind: 'natural' };
+  if (SIGNED.test(format) && !/décimal|virgule/iu.test(format)) return { kind: 'signed' };
+  return { kind: 'decimal', signed: SIGNED.test(format) };
 }
 
 /** La valeur lue par l'évaluateur, depuis les cases d'un modèle. `null` tant que c'est incomplet. */

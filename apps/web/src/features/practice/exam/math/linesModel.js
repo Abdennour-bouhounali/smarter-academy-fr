@@ -1,12 +1,11 @@
 /**
- * Les LIGNES d'une rédaction de feuille d'examen (« مراحل الحساب »، démonstration
- * « بيّن أن ») — modèle pur, sans React ni MathLive.
+ * Les LIGNES d'une rédaction de feuille d'examen (« Étapes du calcul », démonstration
+ * « Démontrer que ») — modèle pur, sans React ni MathLive.
  *
- * Une ligne est soit du TEXTE (arabe, de droite à gauche), soit une FORMULE
- * (LaTeX saisi dans MathLive, de gauche à droite). Le texte enregistré reste une
+ * Une ligne est soit du TEXTE, soit une FORMULE (LaTeX saisi dans MathLive). Le texte enregistré reste une
  * simple chaîne — une ligne par ligne, une formule écrite `$…$` — que RichText
- * relit telle quelle : l'arabe en RTL, chaque formule isolée en LTR. C'est ce qui
- * rend « لأن 21 − 14 = 7 » lisible, là où un champ de texte unique l'inversait.
+ * relit telle quelle, chaque formule isolée dans son îlot KaTeX : « car 21 − 14 = 7 »
+ * se lit comme il s'écrit, et une formule n'est jamais coupée par la saisie du texte.
  */
 
 /** @typedef {{kind: 'text'|'math', value: string}} Line */

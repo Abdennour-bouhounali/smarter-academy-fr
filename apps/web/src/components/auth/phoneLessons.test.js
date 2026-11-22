@@ -8,7 +8,7 @@ const HOME = `${BASE}/qasim-adad-tabii`;
  * PHONES ARE PAUSED (owner, 2026-11-18): every pack says `phone: false`, so a phone opens NO lesson. When phones resume,
  * set `phone: true` in the pack of a lesson whose home was walked on a phone and restore the checks that were here: its
  * home opens (student and teacher's preview), and only the memo and the lesson
- * file of that lesson open for a teacher (never « حصّة القسم », « متابعة القسم » or « بطاقة المعارف »).
+ * file of that lesson open for a teacher (never « séance en classe », the class tracking or « fiche de connaissances »).
  */
 describe('the pages a phone may open — while phones are paused', () => {
   it('opens no lesson: no pack asks for a phone', () => {

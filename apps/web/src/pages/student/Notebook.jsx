@@ -1,5 +1,5 @@
 /**
- * « Mon cahier » (كرّاسي) — les trois pages de l'espace des notes :
+ * « Mon cahier » — les trois pages de l'espace des notes :
  *   /espace/cahier            retrouver, filtrer, ranger, imprimer
  *   /espace/cahier/revision   la révision active de la file « à revoir »
  *   /espace/cahier/:noteId    une note, dans le même éditeur que le cahier

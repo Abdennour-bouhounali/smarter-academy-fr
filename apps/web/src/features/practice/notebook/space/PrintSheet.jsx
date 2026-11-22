@@ -42,7 +42,7 @@ function PrintSheet({ notes, options = {}, onDone }) {
   }, [onDone]);
 
   return createPortal(
-    <div className="sa-ns-print" dir="rtl">
+    <div className="sa-ns-print">
       <h1>📓 {t('notebook.space.print.docTitle')}</h1>
       <p className="sa-ns-print-sub">
         {options.subtitle ? `${options.subtitle} · ` : ''}

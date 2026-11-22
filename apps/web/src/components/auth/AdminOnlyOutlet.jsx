@@ -6,7 +6,7 @@ import { isFeatureOn } from '../../config/features';
 /**
  * Sous /admin, les pages de l'administrateur SEUL. Le gestionnaire de la
  * librairie (`book_manager`, BOOKS_STORE.md §6ter) partage le panneau mais n'y
- * ouvre que « الكتب » et son compte : toute autre adresse le ramène aux
+ * ouvre que « Livres » et son compte : toute autre adresse le ramène aux
  * commandes, au lieu de lui montrer une page que le serveur refuserait (403).
  *
  * Le chemin est écrit ici, sans importer data/adminNavigation.js : ce module

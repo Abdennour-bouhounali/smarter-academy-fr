@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { fetchStudentSettings, updateStudentSettings } from '../../services/studentSettingsService';
 
 /**
- * « الإعدادات » — les réglages de l'élève, en FENÊTRE (propriétaire, 2026-10-06 :
+ * « Réglages » — les réglages de l'élève, en FENÊTRE (propriétaire, 2026-10-06 :
  * « une fenêtre, pas une page » ; voir SettingsButton). Premier
  * réglage : les cinq niveaux de difficulté de l'espace d'exercices ouverts
  * d'emblée, pour l'élève qui n'a pas besoin de passer par les premiers.
@@ -24,7 +24,7 @@ export default function StudentSettingsPanel() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
   const [saved, setSaved] = useState(false);
-  // « الصوت » : préférence de l'APPAREIL (comme le volume), pas du compte —
+  // « Son » : préférence de l'APPAREIL (comme le volume), pas du compte —
   // la même que les leçons (useEffectsPreference), désactivée par défaut.
   const { enabled: soundOn, toggle: toggleSound } = useEffectsPreference();
 
@@ -82,10 +82,10 @@ export default function StudentSettingsPanel() {
             <Users className="h-4 w-4 shrink-0" aria-hidden="true" /> {t('settings.managedByTeacher')}
           </p>
         )}
-        {/* Qui corrige les photos de copie et les « بيّن أن » (réglé par l'enseignant). */}
+        {/* Qui corrige les photos de copie et les « Montrer que » (réglé par l'enseignant). */}
         {managed && (
           <p className="text-sm text-slate-700" data-settings-validation={state?.effectiveValidation ?? 'self'}>
-            <span className="font-bold">{t('settings.practice.validation.label')}: </span>
+            <span className="font-bold">{t('settings.practice.validation.label')} : </span>
             {t(`settings.practice.validation.${state?.effectiveValidation === 'teacher' ? 'teacher' : 'self'}`)}
           </p>
         )}

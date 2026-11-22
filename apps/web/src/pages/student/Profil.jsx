@@ -13,16 +13,14 @@ import { getFullName, getInitials } from '../../utils/userDisplay';
 import NameEditor from '../../components/account/NameEditor';
 import { LOCALE } from '../../locale.js';
 
-// « وليّ الأمر » — le « رابط الوليّ », sans compte parent (PARENT_SPACE.md §2) :
+// « Parent » — le « lien parent », sans compte parent (PARENT_SPACE.md §2) :
 // chaînes du namespace à la demande `family` et QR (qrcode-generator) — carte
 // paresseuse, sous son propre <Suspense>.
 const ParentLinkCard = lazy(() => import('../../features/family/ParentLinkCard'));
 
 /**
  * Une date d'échéance, sans heure : l'élève a besoin du jour, pas de la
- * minute. Le format suit LOCALE (ar-DZ) — une date d'accès affichée en
- * français dans une interface arabe était le dernier reste du produit
- * d'origine sur cette page.
+ * minute. Le format suit LOCALE (fr-FR).
  */
 function formatDate(iso) {
   const date = new Date(iso);
@@ -182,8 +180,8 @@ export default function Profil() {
           </div>
         </div>
         {/* Les deux publics mènent au MÊME endroit — la saisie d'un code :
-            il n'existe ni abonnement à gérer ni tarif à consulter dans le
-            produit algérien (master spec §17/§18). Un élève déjà servi peut
+            aucun tarif n'est affiché ici (les paiements sont fermés,
+            plan §4ter). Un élève déjà servi peut
             y empiler une seconde carte ; un élève sans accès y entre la
             sienne. Seul le libellé change. */}
         {!plan.free && <Link
@@ -194,7 +192,7 @@ export default function Profil() {
           style={plan.premium ? undefined : { background: 'linear-gradient(135deg, #F59E0B, #F97316)' }}
         >
           {!plan.premium && <Crown size={14} />}
-          تفعيل الوصول
+          {t('home.premiumLockedCta')}
         </Link>}
       </motion.div>
 
@@ -202,7 +200,7 @@ export default function Profil() {
         <ParentLinkCard />
       </Suspense>
 
-      {/* « الإعدادات » — les réglages de l'élève (niveaux de l'espace d'exercices…). */}
+      {/* « Réglages » — les réglages de l'élève (niveaux de l'espace d'exercices…). */}
       <SettingsButton
         className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
         testId="profile"

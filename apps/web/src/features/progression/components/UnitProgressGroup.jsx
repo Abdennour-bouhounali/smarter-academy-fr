@@ -8,8 +8,8 @@ import LessonProgressRow from './LessonProgressRow';
 import { ChipsSkeleton } from './ProgressionSkeleton';
 
 /**
- * Une الوحدة du manuel dans l'arbre — ou, pour les leçons hors unité d'un
- * ميدان, le groupe « مواضيع أخرى في هذا الميدان » (même règle que
+ * Un chapitre dans l'arbre — ou, pour les leçons hors unité d'un
+ * thème, le groupe « Autres notions de ce thème » (même règle que
  * unitGrouping.js). Le titre est un <button> qui déplie les leçons ; la
  * progression agrégée et le résumé de maîtrise restent lisibles repliés.
  */

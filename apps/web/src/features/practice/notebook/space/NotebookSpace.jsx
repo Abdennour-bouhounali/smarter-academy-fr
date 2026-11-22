@@ -25,7 +25,7 @@ import './notebookSpace.css';
 const VIEW_ICON = { all: NotebookPen, review: RotateCcw, errors: CircleX, questions: CircleHelp, pinned: Star, archived: Archive };
 
 /**
- * « Mon cahier » (كرّاسي) — l'espace où l'élève RETROUVE, range et révise
+ * « Mon cahier » — l'espace où l'élève RETROUVE, range et révise
  * tout ce qu'il a écrit.
  *
  * Le cahier flottant sert à écrire MAINTENANT, dans la leçon ; cette page
@@ -41,7 +41,7 @@ const VIEW_ICON = { all: NotebookPen, review: RotateCcw, errors: CircleX, questi
  */
 export default function NotebookSpace() {
   const { t } = useTranslation('student');
-  // Le compteur des NOUVELLES notes (« الوصول والحدود ») — lu, jamais décidé ici.
+  // Le compteur des NOUVELLES notes (« Accès et limites ») — lu, jamais décidé ici.
   const notebookQuota = featureState(useFeatureAccess().summary, NOTEBOOK_FEATURE).quota;
   const { t: tc } = useTranslation('common');
   const s = (key, opts) => t(`notebook.space.${key}`, opts);
@@ -218,7 +218,7 @@ export default function NotebookSpace() {
 
       {/* ── Barre d'outils ─────────────────────────────────────────── */}
       <div className="flex flex-wrap items-center gap-2 mb-5">
-        <p className="text-sm text-slate-500 me-auto" data-nb-results>{loading ? s('loading') : s('results', { count: meta.total })}</p>
+        <p className="text-sm text-slate-500 me-auto" data-nb-results>{loading ? s('loading') : meta.total ? s('results', { count: meta.total }) : s('resultsNone')}</p>
         {view === 'review' && counts?.review > 0 && (
           <Link to={paths.review} className="sa-ns-btn sa-ns-btn--primary" data-nb-review-start>
             <Brain size={18} aria-hidden="true" /> {s('review.start')}

@@ -60,18 +60,18 @@ const { evaluateAnswer, feedbackFor, isSuccessOutcome, isInertOutcome } = practi
 
 // L'action principale de la carte — vérifier, puis passer à la suite. Même
 // forme pour les deux : l'élève a UN bouton plein à chercher à chaque étape.
-// La taille de texte est EXPLICITE : dans le cadre de وضع القسم, un bouton
+// La taille de texte est EXPLICITE : dans le cadre de mode classe, un bouton
 // qui l'hérite prend `1rem × échelle` et devient minuscule.
 // (Pas `ValidateButton` de LessonUI : petit, en chasse fixe, sans `type` —
 // il sert les 132 leçons et n'est pas modifié ici.)
 const PRIMARY_BUTTON = 'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-nav-accent px-6 py-3 text-base font-bold text-white shadow-sm transition-colors hover:bg-[#3350c4] focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none motion-reduce:transition-none';
 
-// Secondaire : contour, jamais plein — « أعِد المحاولة », « السؤال التالي »
+// Secondaire : contour, jamais plein — « Réessaie », « Question suivante »
 // tant qu'aucune réponse n'est vérifiée.
 const SECONDARY_BUTTON = 'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border-2 border-slate-300 bg-white px-5 py-2.5 text-base font-bold text-slate-700 transition-colors hover:border-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-400 motion-reduce:transition-none';
 
-// Tertiaire : du texte avec une icône, sans fond — « إرشاد », « السؤال السابق ».
-// Feuille d'examen : un petit bouton « تحقّق », discret, à côté du champ —
+// Tertiaire : du texte avec une icône, sans fond — « Indice », « Question précédente ».
+// Feuille d'examen : un petit bouton « Vérifier », discret, à côté du champ —
 // pas le gros bouton plein d'une plateforme (propriétaire, 2026-10-06).
 const EXAM_CHECK_BUTTON = 'inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-md border-[1.5px] border-[#1f5c4c] bg-white px-3.5 py-1.5 text-sm font-bold text-[#1f5c4c] transition-colors hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400 motion-reduce:transition-none';
 
@@ -95,7 +95,7 @@ const reducedMotion = () => typeof window !== 'undefined'
  * (`outcome`), puis REMPLACÉE par `evaluation` de sa réponse — c'est elle
  * qui s'affiche, et elle qui compte les bonnes réponses. Quand les deux
  * divergent, le serveur gagne, le retour se réaffiche et une petite note le
- * dit (« تم التحقق من إجابتك على الخادم »).
+ * dit (« Ta réponse a été vérifiée sur le serveur »).
  *
  * Une réponse fausse ne bloque jamais : « Continuer » est toujours là. On
  * peut réessayer, mais on n'y est jamais obligé — c'est l'invariant de
@@ -116,35 +116,35 @@ export default function PracticeSession() {
   // l'ordre du contenu n'est plus qu'un repli (features/practice/nextExercise.js).
   const [currentId, setCurrentId] = useState(null);
   // Les exercices terminés dans CETTE visite : ils comptent la position
-  // (« التمرين n من total ») et excluent le repli par ordre du contenu.
+  // (« Exercice n sur total ») et excluent le repli par ordre du contenu.
   const [completedIds, setCompletedIds] = useState([]);
   // La décision qui a ouvert l'exercice courant — sa raison nourrit la
-  // petite phrase « اخترنا لك هذا التمرين… ».
+  // petite phrase « Nous avons choisi cet exercice pour toi… ».
   const [selection, setSelection] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
-  // « مراحل الحساب » de l'étape courante (feuille d'examen) : envoyé AVEC la
+  // « Étapes du calcul » de l'étape courante (feuille d'examen) : envoyé AVEC la
   // réponse (`answer.work`), donc enregistré en base et verrouillé avec elle.
   const [work, setWork] = useState('');
-  // PHOTOS DE COPIE de l'étape courante (prototype BEM, 2026-10-06) : envoyées
+  // PHOTOS DE COPIE de l'étape courante (prototype de la feuille d’examen, 2026-10-06) : envoyées
   // une à une avant la réponse, puis verrouillées avec elle. `review` : la
-  // correction de l'enseignant (« تصحيح الأستاذ ») ; `evaluatedBy` : qui a jugé.
+  // correction de l'enseignant (« Correction du professeur ») ; `evaluatedBy` : qui a jugé.
   const [images, setImages] = useState([]);
   const [review, setReview] = useState(null);
   const [evaluatedBy, setEvaluatedBy] = useState(null);
   // Feuille d'examen : une saisie ILLISIBLE n'est pas envoyée (elle verrouillerait
   // l'étape) — un mot sous le champ, et l'élève corrige.
   const [unreadable, setUnreadable] = useState(false);
-  // Feuille d'examen : « الكفاءة » et la navigation dans une FENÊTRE CENTRALE.
+  // Feuille d'examen : « savoir-faire » et la navigation dans une FENÊTRE CENTRALE.
   const [panelOpen, setPanelOpen] = useState(false);
   // Le chrono de l'étape : l'instant (ms) où elle s'est ouverte — gardé en
   // localStorage par tentative, pour qu'un rechargement ne le remette pas à zéro.
   const [stepStartedAt, setStepStartedAt] = useState(null);
-  // La question ouverte côté serveur (« exercice:question ») : « ابدأ » attend
+  // La question ouverte côté serveur (« exercice:question ») : « Commencer » attend
   // qu'elle le soit — sinon la réponse tardive du serveur effaçait le départ.
   const [openedFor, setOpenedFor] = useState(null);
-  // LES MÉDAILLES (prototype BEM, 2026-10-06) : la célébration en cours, et la
-  // خزانة de la leçon (lue en base, puis augmentée à chaque médaille gagnée).
+  // LES MÉDAILLES (prototype de la feuille d’examen, 2026-10-06) : la célébration en cours, et la
+  // La vitrine de la leçon (lue en base, puis augmentée à chaque médaille gagnée).
   const [award, setAward] = useState(null);
   const [lessonMedals, setLessonMedals] = useState(null);
   const { enabled: soundOn } = useEffectsPreference();
@@ -155,10 +155,10 @@ export default function PracticeSession() {
   }, [token, lessonCode]);
   const [attemptUuid, setAttemptUuid] = useState(null);
   const [evaluation, setEvaluation] = useState(null);
-  // La question dont le corrigé type a été OUVERT : plus de « أعِد المحاولة » pour elle (propriétaire, 2026-10-08).
+  // La question dont le corrigé type a été OUVERT : plus de « Réessaie » pour elle (propriétaire, 2026-10-08).
   const [solutionSeenFor, setSolutionSeenFor] = useState(null);
   // Vrai quand le verdict du serveur a contredit la prédiction locale : la
-  // note « تم التحقق من إجابتك على الخادم » s'affiche sous le retour.
+  // note « Ta réponse a été vérifiée sur le serveur » s'affiche sous le retour.
   const [serverOverrode, setServerOverrode] = useState(false);
   const [hints, setHints] = useState([]);
   const [hintsRemaining, setHintsRemaining] = useState(0);
@@ -169,7 +169,7 @@ export default function PracticeSession() {
   // état d'exercice : le serveur reste la vérité des tentatives. Remis à
   // zéro à chaque nouvel exercice.
   const [history, setHistory] = useState([]);
-  // « التمرين السابق » (propriétaire, 2026-10-06) : les exercices terminés de
+  // « Exercice précédent » (propriétaire, 2026-10-06) : les exercices terminés de
   // la séance, RELUS EN BASE (GET /practice/sessions/{id}/answers) — ce que
   // l'élève a réellement enregistré, encore après un rechargement. Les revoir
   // est une LECTURE : rejouer un exercice compterait deux fois pour la maîtrise.
@@ -177,9 +177,9 @@ export default function PracticeSession() {
   const [reviews, setReviews] = useState([]);
   const [reviewIndex, setReviewIndex] = useState(null);
   // Validations faites sur la question courante (1 = du premier coup) :
-  // l'historique dit « صُحّحت بعد إعادة المحاولة ».
+  // l'historique dit « Corrigée après un nouvel essai ».
   const [tries, setTries] = useState(0);
-  // Posé par « السؤال التالي » / « التمرين التالي » : QuestionArrival amène
+  // Posé par « Question suivante » / « Exercice suivant » : QuestionArrival amène
   // le regard et le focus sur la nouvelle question, une fois affichée.
   const [arrival, setArrival] = useState(null);
   const clearArrival = useCallback(() => setArrival(null), []);
@@ -188,7 +188,7 @@ export default function PracticeSession() {
   // (`practice`). Relu après chaque réponse enregistrée et chaque exercice
   // terminé — les étoiles et les barres avancent sous les yeux de l'élève.
   const [learningPoints, setLearningPoints] = useState([]);
-  // Le titre de la leçon (barre « الدرس: … » de la feuille d'examen).
+  // Le titre de la leçon (barre « Leçon : … » de la feuille d'examen).
   const [lessonTitle, setLessonTitle] = useState('');
   const refreshLearningPoints = useCallback(() => {
     if (!token) return;
@@ -290,28 +290,27 @@ export default function PracticeSession() {
   const question = exercise?.questions?.[questionIndex] ?? null;
   // Une clé par question d'UN exercice (l'id de question « q1 » se répète d'un exercice à l'autre).
   const questionKey = `${exercise?.id ?? ''}:${question?.id ?? questionIndex}`;
-  // « مدرّب الامتحان » (pilot lessons, features/practice/exam/ExamCoach.jsx): the hall, the two modes, the paper notebook.
+  // « Le coach du brevet » (pilot lessons, features/practice/exam/ExamCoach.jsx): the hall, the two modes, the paper notebook.
   // Declared here, before any early return (rules of hooks).
   const coach = useExamCoach(lessonCode, Boolean(exercise) && isExamExercise(exercise));
 
   // Le titre de l'exercice, AUGMENTÉ du numéro de question :
-  //   « تمرين 2 — القسمة على 6 »  →  « تمرين 2 — السؤال 1 : القسمة على 6 »
-  //   « 420 كتابًا في رفوف »      →  « 420 كتابًا في رفوف — السؤال 1 »
-  // Les titres du manuel ont la forme « تمرين n — <sujet> » : on glisse donc
+  //   « Exercice 2 — Diviser par 6 »  →  « Exercice 2 — Question 1 : diviser par 6 »
+  //   « 420 livres sur des étagères »      →  « 420 livres sur des étagères — Question 1 »
+  // Les titres du manuel ont la forme « Exercice n — <sujet> » : on glisse donc
   // le numéro après le tiret, devant le sujet. Sans tiret, il s'ajoute à la
-  // fin — les deux lectures restent naturelles en arabe.
+  // fin.
   const exerciseHeading = (() => {
     // Le numéro s'affiche MÊME pour un exercice à une seule question : c'est
     // un repère de position, pas un compteur — l'élève doit lire la même
     // forme partout, sans avoir à se demander pourquoi elle disparaît ici.
-    // Un titre peut contenir une égalité ou une fraction (« 120 = 6 × 20 », « 28/42 ») :
-    // isolée LTR, sinon le RTL l'affiche à l'envers (« 20 × 6 = 120 »).
+    // Un titre peut contenir une égalité ou une fraction (« 120 = 6 × 20 », « 28/42 ») : isolateMathRuns la garde d'un bloc.
     const title = isolateMathRuns(exercise?.metadata?.title ?? '');
     if (!title) return title;
     const label = t('practice.questionNumber', { n: questionIndex + 1 });
     const dash = title.indexOf('—');
     if (dash === -1) return `${title} — ${label}`;
-    return `${title.slice(0, dash + 1)} ${label} : ${title.slice(dash + 1).trim()}`;
+    return `${title.slice(0, dash + 1)} ${label}\u00A0: ${title.slice(dash + 1).trim()}`;
   })();
 
   // Ouvre la question côté serveur : c'est cette tentative qui portera les
@@ -328,7 +327,7 @@ export default function PracticeSession() {
         // (un autre identifiant que celui proposé) et sa réponse enregistrée.
         const used = data.attempt?.attemptUuid ?? uuid;
         setAttemptUuid(used);
-        // Le chrono ne part qu'à « ابدأ » (propriétaire, 2026-10-06) ; un départ
+        // Le chrono ne part qu'à « Commencer » (propriétaire, 2026-10-06) ; un départ
         // déjà donné (rechargement) est relu, pour ne pas offrir un temps neuf.
         let started = null;
         try {
@@ -389,7 +388,7 @@ export default function PracticeSession() {
     setBusy(true);
     setError(null);
     try {
-      // La réponse ENVOYÉE : la valeur, plus « مراحل الحساب » quand l'étape en a.
+      // La réponse ENVOYÉE : la valeur, plus « Étapes du calcul » quand l'étape en a.
       const base = answer ?? (images.length > 0 ? {} : null);
       let sent = question.work && base && work.trim() ? { ...base, work } : base;
       // Le temps mis sur l'étape part avec la réponse (enregistré en base).
@@ -397,7 +396,7 @@ export default function PracticeSession() {
       if (sent !== answer) setAnswer(sent);
       // 1. Prédiction locale — affichée tout de suite, jamais comptée. SAUF
       //    sur une étape d'examen avec photo ou démonstration : le client ne
-      //    sait pas si elle part chez l'enseignant (« تصحيح الأستاذ ») ou en
+      //    sait pas si elle part chez l'enseignant (« Correction du professeur ») ou en
       //    auto-évaluation — afficher sa prédiction montrerait le corrigé type
       //    avant que le serveur n'ait dit qui juge.
       const predicted = evaluateAnswer(sent, question);
@@ -436,13 +435,13 @@ export default function PracticeSession() {
       setEvaluatedBy(data?.attempt?.evaluatedBy ?? null);
       setReview(data?.review ?? null);
       // Une réponse juste sur une feuille d'examen gagne une médaille : or,
-      // argent ou bronze selon les إرشادات et le temps (medals.js).
+      // argent ou bronze selon les indices et le temps (medals.js).
       if (isExamExercise(exercise)) {
         const facts = { outcome: shown.outcome, answerType: question.answerType, hintsUsed: hints.length, seconds: sent?.seconds ?? null, limit: stepSeconds(question, exercise), evaluatedBy: data?.attempt?.evaluatedBy ?? null };
         const medal = data?.recorded === false ? null : medalFor(facts);
         if (medal) {
           setAward({ id: Date.now(), medal, reason: medalReason(facts) });
-          playMedal(medal, soundOn && !isCoachLesson(lessonCode)); // « مدرّب الامتحان »: an exam is silent
+          playMedal(medal, soundOn && !isCoachLesson(lessonCode)); // « Le coach du brevet »: an exam is silent
           setLessonMedals((prev) => {
             const total = { ...(prev?.total ?? { gold: 0, silver: 0, bronze: 0, points: 0 }) };
             total[medal] += 1;
@@ -452,7 +451,7 @@ export default function PracticeSession() {
         }
       }
       if (verdict && !waitForServer && verdict.outcome !== predicted.outcome) setServerOverrode(true);
-      // « أعِد المحاولة » : le serveur juge la nouvelle réponse sans
+      // « Réessaie » : le serveur juge la nouvelle réponse sans
       // l'enregistrer (`recorded: false`) — rien n'a bougé côté compteurs.
       if (data?.recorded !== false) refreshLearningPoints();
     } catch (e) {
@@ -462,10 +461,10 @@ export default function PracticeSession() {
     }
   }, [question, exercise, attemptUuid, answer, work, images, stepStartedAt, hints, soundOn, token, sessionId, busy, refreshLearningPoints]);
 
-  // « بيّن أن » (selfCheck), second temps : la démonstration est déjà
+  // « Montrer que » (selfCheck), second temps : la démonstration est déjà
   // enregistrée et verrouillée ; le corrigé type sous les yeux, l'élève se
   // note. Même tentative, MÊME texte — le serveur refuse tout autre texte.
-  // « ابدأ » : l'élève lance le chrono de l'étape, ce qui révèle l'énoncé.
+  // « Commencer » : l'élève lance le chrono de l'étape, ce qui révèle l'énoncé.
   const startStep = useCallback(() => {
     const now = Date.now();
     try { if (attemptUuid) window.localStorage.setItem(`sa-step-start:${attemptUuid}`, String(now)); } catch { /* confort local */ }
@@ -473,7 +472,7 @@ export default function PracticeSession() {
   }, [attemptUuid]);
 
   const selfMark = useCallback(async (mark) => {
-    // Une « بيّن أن » (texte), ou une étape répondue en PHOTO seulement.
+    // Un « Montrer que » (texte), ou une étape répondue en PHOTO seulement.
     if (!question || !attemptUuid || busy || (!answer?.text && images.length === 0)) return;
     const marked = { ...(answer ?? {}), selfMark: mark };
     setBusy(true);
@@ -526,7 +525,7 @@ export default function PracticeSession() {
       }));
       setReviews(built.filter(Boolean));
     } catch {
-      // Lecture facultative : sans elle, « التمرين السابق » n'apparaît pas.
+      // Lecture facultative : sans elle, « Exercice précédent » n'apparaît pas.
     }
   }, [token, session, sessionId, lessonCode]);
   useEffect(() => { loadReviews(); }, [loadReviews]);
@@ -592,7 +591,7 @@ export default function PracticeSession() {
     }
   }, [questionIndex, exercise, question, answer, evaluation, hints, tries, images, review, evaluatedBy, token, sessionId, completedIds, exerciseIds, navigate, lessonCode, refreshLearningPoints, loadReviews]);
 
-  // « أعِد المحاولة » GARDE la réponse : l'élève corrige ce qu'il a écrit
+  // « Réessaie » GARDE la réponse : l'élève corrige ce qu'il a écrit
   // (une faute de frappe, un signe) au lieu de tout retaper. Le focus revient
   // au champ — ou au choix sélectionné d'un QCM.
   const retry = useCallback(() => {
@@ -605,7 +604,7 @@ export default function PracticeSession() {
     });
   }, []);
 
-  // « السؤال السابق » : ramène la carte de la question précédente sous les
+  // « Question précédente » : ramène la carte de la question précédente sous les
   // yeux (et le focus dessus). Relire, pas rejouer.
 
   const openReview = useCallback((i) => {
@@ -635,7 +634,7 @@ export default function PracticeSession() {
   // Ce que le cahier sait de la question au moment où il s'ouvre : l'énoncé,
   // la question, et — seulement si l'élève a validé — sa réponse et le
   // verdict. Le cahier n'invente pas d'erreur : sans validation, pas de bloc
-  // « خطئي ».
+  // « Mon erreur ».
   const feedbackMessage = evaluation && question ? feedbackFor(question, evaluation, MISCONCEPTIONS, { syntaxError: t('practice.syntaxErrorFeedback') }) : '';
   const notebookContext = {
     lessonCode, exercise, question, answer, evaluation, feedbackMessage,
@@ -685,7 +684,7 @@ export default function PracticeSession() {
 
   const questionTones = history.map((e) => e.tone);
   const isChoice = question.answerType === 'choice' || question.answerType === 'multiChoice';
-  // Le titre seul, pour le h1 ; `exerciseHeading` (titre + « السؤال n »)
+  // Le titre seul, pour le h1 ; `exerciseHeading` (titre + « Question n »)
   // reste le titre de la présentation en classe, où le chrome est retiré.
   const exerciseTitle = isolateMathRuns(exercise.metadata?.title ?? '');
 
@@ -698,12 +697,12 @@ export default function PracticeSession() {
   const point = currentLearningPoint(question, exercise, learningPoints);
   const minutes = exercise.metadata?.estimatedMinutes;
   const tags = exercise.metadata?.tags ?? [];
-  // Avant la réponse, « السؤال التالي » est secondaire (contour, inactif) ;
+  // Avant la réponse, « Question suivante » est secondaire (contour, inactif) ;
   // après, il devient L'action — un seul bouton plein à la fois.
   const nextClass = answered ? `${PRIMARY_BUTTON} min-w-[10rem]` : SECONDARY_BUTTON;
-  // FEUILLE D'EXAMEN (pratique au format BEM, 2026-10-06) : un exercice qui
-  // porte `metadata.exam` se présente comme le sujet — en-tête « التمرين (03 ن) »,
-  // ruban « BEM 2008 », toutes les étapes visibles. Seule la PRÉSENTATION
+  // FEUILLE D'EXAMEN (pratique sur le modèle de l’examen, 2026-10-06) : un exercice qui
+  // porte `metadata.exam` se présente comme le sujet — en-tête « Exercice 1 (3 points) »,
+  // ruban de la session, toutes les étapes visibles. Seule la PRÉSENTATION
   // change : l'état ci-dessus (une question à la fois, jugée par le serveur)
   // est le même.
   const isExam = isExamExercise(exercise);
@@ -712,7 +711,7 @@ export default function PracticeSession() {
   // Feuille d'examen : l'action principale prend le vert sombre de la maquette.
   const examTone = (cls) => (isExam ? cls.replace('bg-nav-accent', 'bg-[#1f5c4c]').replace('hover:bg-[#3350c4]', 'hover:bg-[#174a3d]').replace('focus-visible:ring-nav-accent', 'focus-visible:ring-emerald-600') : cls);
   // Ce que l'étape attend : la note de l'élève (`self` — démonstration, ou
-  // copie en photo seulement) ou l'ENSEIGNANT (`review`, « تصحيح الأستاذ » :
+  // copie en photo seulement) ou l'ENSEIGNANT (`review`, « Correction du professeur » :
   // l'élève continue sans attendre ; ni verdict, ni corrigé, ni médaille).
   const pending = answered ? pendingKind(evaluation.normalized) : null;
   const selfPending = pending === 'self';
@@ -746,14 +745,14 @@ export default function PracticeSession() {
         if (!answered && canSubmit && !busy) validate();
       }}
       // Feuille d'examen : le champ à la mesure de la réponse (`answerSize`)
-      // et « تحقّق » sur la même ligne — on écrit sur la copie.
+      // et « Vérifier » sur la même ligne — on écrit sur la copie.
       className={isExam ? (size === 'proof' ? 'flex flex-col items-start gap-2' : 'flex flex-wrap items-end gap-x-4 gap-y-2') : 'space-y-3'}
       data-answer-form
       data-answer-size={isExam ? size : undefined}
       style={isExam ? { '--answer-ch': answerChars(question) } : undefined}
     >
       {coach.on && <CoachStrip coach={coach} />}
-      {/* « مراحل الحساب » au-dessus de la ligne de réponse, sur toute la largeur. */}
+      {/* « Étapes du calcul » au-dessus de la ligne de réponse, sur toute la largeur. */}
       {isExam && question.work && (
         <div className="w-full basis-full">
           <WorkArea key={question.id} question={question} value={work} onChange={setWork} disabled={answered} />
@@ -834,11 +833,11 @@ export default function PracticeSession() {
     </form>
 
     {/* Le verdict, et ce qu'il enseigne. */}
-    {/* « تصحيح الأستاذ » : envoyée, en attente — l'élève continue. */}
+    {/* « Correction du professeur » : envoyée, en attente — l'élève continue. */}
     {reviewPending && <ReviewStatus pending review={review} />}
 
     {/* Copie en PHOTO seulement (élève autonome) : corrigé type, puis l'élève
-        se note — comme une « بيّن أن ». */}
+        se note — comme un « Montrer que ». */}
     {selfPending && !isSelfCheck && (
       <div className="space-y-3" data-image-self-check>
         <SolutionPanel solution={question.solution} open />
@@ -855,8 +854,8 @@ export default function PracticeSession() {
             <span aria-hidden="true">☁</span> {t('practice.serverVerdict')}
           </p>
         )}
-        {/* « راجع: <درس> (<السنة>) » — une réponse fausse renvoie, d'un pas, à
-            l'année antérieure (réseau des الكفاءات, décision D7). */}
+        {/* « À revoir : <leçon> (<année>) » — une réponse fausse renvoie, d'un pas, à
+            l'année antérieure (réseau des savoir-faire, décision D7). */}
         {!evaluation.isCorrect && !isInertOutcome(evaluation.outcome) && !isSelfCheck && (
           <EarlierYearReview
             learningPointCode={question.learningPoints?.find((lp) => lp.role === 'primary')?.code ?? null}
@@ -871,7 +870,7 @@ export default function PracticeSession() {
     {/* Le corrigé type se MÉRITE (propriétaire, 2026-10-06) : seulement après
         une vraie tentative. Une saisie illisible (`syntax_error`) ou vide
         n'ouvre rien. */}
-    {/* Feuille coachée : le corrigé replié laisse la place au coach — « أرشدني » ne montre JAMAIS la réponse, « اشرح لي » la raconte pas à pas. */}
+    {/* Feuille coachée : le corrigé replié laisse la place au coach — « Guide-moi » ne montre JAMAIS la réponse, « Explique-moi » la raconte pas à pas. */}
     {coach.on && answered && !isSelfCheck && !isInertOutcome(evaluation.outcome) && !selfPending && !reviewPending && (
       <CoachAfter key={`coach-${questionKey}-${coach.mode}`} coach={coach} lessonCode={lessonCode} question={question} isCorrect={evaluation.isCorrect} why={question.feedback?.incorrect ?? ''} onReveal={() => setSolutionSeenFor(questionKey)} />
     )}
@@ -886,9 +885,9 @@ export default function PracticeSession() {
         par-dessus une question déjà rouverte. */}
     {/* Feuille d'examen : UNE tentative par étape, comme à l'examen — la
         réponse est enregistrée et verrouillée, le corrigé type est visible :
-        pas de « أعد المحاولة ». */}
+        pas de « Réessaie ». */}
     {/* Corrigé type ouvert : la réponse est sous les yeux — la retaper ne prouverait rien. */}
-    {/* « أرشدني فقط » : la réponse n'a pas été montrée — l'élève réessaie lui-même, même sur une feuille d'examen. */}
+    {/* « Guide-moi seulement » : la réponse n'a pas été montrée — l'élève réessaie lui-même, même sur une feuille d'examen. */}
     {answered && !evaluation.isCorrect && !isSelfCheck && (!isExam || (coach.on && coach.mode === 'guide')) && solutionSeenFor !== questionKey && (
       <button type="button" disabled={busy} onClick={retry} className={SECONDARY_BUTTON} data-retry>
         <RotateCcw className="h-4 w-4" aria-hidden="true" />
@@ -900,7 +899,7 @@ export default function PracticeSession() {
         la garde ouverte ; une réponse juste la referme. `key` par
         question : repliée à chaque nouvelle question. */}
     {/* Feuille d'examen : pas de grand bandeau d'aide permanent — le lien
-        « إرشاد » à côté du champ suffit ; le panneau n'apparaît qu'une fois
+        « Indice » à côté du champ suffit ; le panneau n'apparaît qu'une fois
         un indice demandé, ou après une réponse fausse. */}
     {(!isExam || hints.length > 0 || (answered && !evaluation.isCorrect && !isSelfCheck && !pending)) && (
     <HintPanel
@@ -956,7 +955,7 @@ export default function PracticeSession() {
     {/* Le geste TERTIAIRE « à propos de cette question » : signaler.
         `key` par question pour que le panneau se referme en
         changeant de question. Le cahier, lui, n'est plus ici : c'est
-        la pastille flottante « 📓 كرّاسي », la même qu'en leçon. */}
+        la pastille flottante « 📓 Mon cahier », la même qu'en leçon. */}
     <ClassroomHidden><div className="flex flex-wrap items-center justify-end gap-2 border-t border-slate-100 pt-2.5" data-question-tools>
       <ReportButton
         key={`report-${question.id}`}
@@ -982,7 +981,7 @@ export default function PracticeSession() {
     <div className={`sa-surface-plain sa-page sa-page--flush ${isExam ? 'py-3 sm:py-4' : 'py-6 sm:py-8'}`}>
       <MotionConfig reducedMotion="user">
       {isExam && <MedalCelebration award={award} onDone={clearAward} />}
-      {/* MODE CLASSE (وضع القسم) : la coquille enveloppe TOUTE la page pour que
+      {/* MODE CLASSE : la coquille enveloppe TOUTE la page pour que
           le bouton d'entrée (dans la rangée de navigation) et le contenu
           présenté partagent la même session ; en présentation, le chrome de
           séance (retour, colonne latérale, en-tête, cahier, signalement)
@@ -1005,8 +1004,8 @@ export default function PracticeSession() {
           donc quitter ne perd rien — et la séance reste ouverte, le Hub
           propose de la « Reprendre ». */}
       <ClassroomHidden><nav className="flex items-center justify-between gap-3 flex-wrap pb-2" aria-label={t('nav.breadcrumb', { ns: 'lesson' })}>
-        {/* Un vrai bouton « رجوع إلى المستويات », puis le titre du cours en
-            contexte — un simple lien « الدرس: … » ne se lisait pas comme un retour. */}
+        {/* Un vrai bouton « Retour aux niveaux », puis le titre du cours en
+            contexte — un simple lien « Leçon : … » ne se lisait pas comme un retour. */}
         <span className="inline-flex min-w-0 flex-wrap items-center gap-3">
           <Link
             to={`/espace/pratique/${lessonCode}`}
@@ -1018,7 +1017,7 @@ export default function PracticeSession() {
           </Link>
           {isExam && lessonTitle && (
             <span className="max-w-[14rem] truncate text-sm text-slate-600 lg:max-w-md">
-              <span className="font-semibold text-slate-500">{t('practice.exam.nav.lesson')}:</span> {lessonTitle}
+              <span className="font-semibold text-slate-500">{t('practice.exam.nav.lesson')} :</span> {lessonTitle}
             </span>
           )}
           {/* Feuille d'examen : le niveau courant vit ici, à côté du cours,
@@ -1030,7 +1029,7 @@ export default function PracticeSession() {
             </span>
           )}
         </span>
-        {/* « محاكاة شهادة التعليم المتوسط » — la pastille de la maquette. */}
+        {/* « Brevet blanc » — la pastille de la maquette. */}
         {isExam && (
           <p className="hidden items-center gap-2 rounded-xl bg-slate-100 px-3.5 py-1.5 text-sm font-semibold text-slate-700 md:inline-flex" data-exam-simulation>
             <GraduationCap className="h-4 w-4 text-[#1f5c4c]" aria-hidden="true" />
@@ -1038,7 +1037,7 @@ export default function PracticeSession() {
             <span className="text-slate-500">· {t('practice.exam.nav.subject', { n: examPaper(lessonCode).n })}</span>
           </p>
         )}
-        {/* ⛶ عرض التمرين — le mode classe de CET exercice (présentateur
+        {/* ⛶ Afficher l’exercice — le mode classe de CET exercice (présentateur
             seulement). Le bouton est hors de la coquille, le contenu dedans :
             entrer ne remonte rien, la réponse en cours et la correction
             restent. */}
@@ -1053,16 +1052,16 @@ export default function PracticeSession() {
       {/* ── L'ESPACE DE TRAVAIL ─────────────────────────────────────────────
           Téléphone/tablette : une colonne — point d'apprentissage, puis
           l'exercice. À partir de `xl` : UNE colonne latérale étroite (point
-          d'apprentissage + « سياق السؤال ») au début (à droite en RTL), et
+          d'apprentissage + « Contexte de la question ») au début (à gauche), et
           l'exercice qui prend tout le reste — la tâche mathématique est ce
-          qui compte. En وضع القسم (`data-sa-classroom` sur <html>), la grille
+          qui compte. En mode classe (`data-sa-classroom` sur <html>), la grille
           redevient un bloc et la colonne est retirée. */}
       {/* Feuille d'examen : pas de colonne latérale — une fenêtre au centre,
-          ouverte par « إظهار الكفاءة », fermée par ✕, Échap ou un clic à côté. */}
+          ouverte par « Afficher le savoir-faire », fermée par ✕, Échap ou un clic à côté. */}
       {isExam && (
         <Modal open={panelOpen} onClose={() => setPanelOpen(false)} title={t('practice.sideLearningPoint')} closeLabel={t('practice.exam.panelClose')} size="xl">
           {/* Large, les blocs l'un sous l'autre sur toute la largeur : aucun
-              libellé ne passe à la ligne (la الكفاءة a des titres longs). */}
+              libellé ne passe à la ligne (un savoir-faire a des titres longs). */}
           <div className="space-y-3" data-exam-panel>
             <LearningPointProgress point={point} />
             <ExamNavigator exercise={exercise} questionIndex={questionIndex} history={history} onJump={() => setPanelOpen(false)} />
@@ -1075,7 +1074,7 @@ export default function PracticeSession() {
       {!isExam && <ClassroomHidden><aside className={`space-y-3 xl:sticky xl:top-4 ${sideHidden ? 'xl:hidden' : ''}`} data-practice-side>
         {/* ── 1 — CE QUE J'ENTRAÎNE, et où j'en suis : toujours en tête. ── */}
         <LearningPointProgress point={point} />
-        {/* ── « سياق السؤال » — grand écran seulement ─────────────────── */}
+        {/* ── « Contexte de la question » — grand écran seulement ─────────────────── */}
         <div className={isExam ? 'hidden' : 'hidden xl:block'} data-question-context-column>
           <QuestionContextPanel questions={exercise.questions} questionIndex={questionIndex} history={history} />
         </div>
@@ -1095,7 +1094,7 @@ export default function PracticeSession() {
               {t('practice.meta.minutes', { count: minutes })}
             </span>
           ) : null}
-          {tags.length > 0 && <span>{tags.join(' ، ')}</span>}
+          {tags.length > 0 && <span>{tags.join(', ')}</span>}
         </p>}
         <h1
           id="practice-exercise-title"
@@ -1167,7 +1166,7 @@ export default function PracticeSession() {
                 />
                 </div>
                 {/* Revenir / continuer — en haut, à côté de la position (propriétaire, 2026-10-06). */}
-                {/* La خزانة de la leçon, en direct. */}
+                {/* La vitrine de la leçon, en direct. */}
               {lessonMedals && <MedalTray counts={lessonMedals.total} label={t('practice.medals.trayTitle')} />}
               <nav className="flex flex-wrap items-center gap-1.5" aria-label={t('practice.exam.nav.title')} data-exam-nav>
                   {history.length > 0 && (
@@ -1185,7 +1184,7 @@ export default function PracticeSession() {
                   </button>
                 </nav>
               </div>
-              {/* « قاعة الامتحان » : la porte de la feuille — avant la première étape (leçons pilotes du coach). */}
+              {/* « Salle d’examen » : la porte de la feuille — avant la première étape (leçons pilotes du coach). */}
               {coach.on && !coach.entered && <ExamHall coach={coach} title={exercise.metadata?.title ?? ''} />}
               <ExamSheet
               ref={cardRef}
@@ -1222,7 +1221,7 @@ export default function PracticeSession() {
               </section>
             )}
 
-            {/* ── ce que l'élève a DÉJÀ fait : « السؤال السابق » + les anciennes ── */}
+            {/* ── ce que l'élève a DÉJÀ fait : « Question précédente » + les anciennes ── */}
             <QuestionHistory entries={history} total={totalQuestions} />
 
             {/* ── LA QUESTION COURANTE : la seule surface en relief, filet
@@ -1238,8 +1237,8 @@ export default function PracticeSession() {
               data-current-question={questionIndex + 1}
               className="relative scroll-mt-20 overflow-hidden rounded-2xl border-s-4 border-nav-accent bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_10px_28px_-16px_rgba(15,23,42,0.22)] ring-1 ring-slate-200 lg:scroll-mt-6"
             >
-              {/* « السؤال n من N » (N = les questions de CET exercice) et
-                  « التمرين n من N » : la position, une seule fois, ici. */}
+              {/* « Question n sur N » (N = les questions de CET exercice) et
+                  « Exercice n sur N » : la position, une seule fois, ici. */}
               <header className="border-b border-indigo-100 bg-indigo-50/50 px-5 py-3.5 sm:px-6">
                 <SessionProgress
                   index={position}
@@ -1267,8 +1266,8 @@ export default function PracticeSession() {
             </>
           )}
 
-          {/* Le cahier : LA pastille flottante « 📓 كرّاسي » de la leçon, au
-              même étage (au-dessus de la barre « السؤال التالي »). Atteignable
+          {/* Le cahier : LA pastille flottante « 📓 Mon cahier » de la leçon, au
+              même étage (au-dessus de la barre « Question suivante »). Atteignable
               à tout moment — pendant la recherche comme après le verdict.
               `key` par question ET par verdict : une réponse validée ouvre une
               nouvelle note, pré-remplie de la réponse et du verdict (c'est le
@@ -1282,16 +1281,16 @@ export default function PracticeSession() {
             />
           </ClassroomHidden>
 
-          {/* ── LA SUITE — pied de colonne. « السؤال التالي » est TOUJOURS là,
+          {/* ── LA SUITE — pied de colonne. « Question suivante » est TOUJOURS là,
               actif dès qu'une réponse est vérifiée, juste ou fausse (invariant
-              non bloquant) — secondaire avant, principal après. « السؤال
-              السابق » ramène à la question précédente — on la relit ; on ne
+              non bloquant) — secondaire avant, principal après. « Question
+              précédente » ramène à la question précédente — on la relit ; on ne
               rouvre pas une tentative déjà jugée par le serveur. Sur téléphone
               la barre colle au bas de l'écran, au-dessus de la barre d'onglets,
               sous le pouce — sauf sur un écran très bas (téléphone en paysage) :
               collée, elle ne laisserait plus voir le champ de réponse. Sur
-              ordinateur, `lg:pe-36` laisse à sa fin (la gauche, en RTL) la
-              place de la pastille « 📓 كرّاسي », posée au même étage. */}
+              ordinateur, `lg:pe-36` laisse à sa fin (la droite) la
+              place de la pastille « 📓 Mon cahier », posée au même étage. */}
           {/* Feuille d'examen : la navigation est EN HAUT (bandeau de position). */}
           {!isExam && (
           <div

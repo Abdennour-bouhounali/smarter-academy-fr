@@ -6,13 +6,13 @@ import { Mail, Send, CheckCircle, Inbox, MailOpen, Reply, Sparkles } from 'lucid
 import { submitContactRequest } from '../../services/contactService';
 import { ArrowForward } from '../common/DirectionalIcons';
 import { usePayments } from '../../context/PaymentsContext';
+import { CONTACT_EMAIL } from '../../data/contact';
 
-// Les clés de sujet restent stables ; seul le libellé arabe est affiché.
+// Les clés de sujet restent stables ; seul le libellé français est affiché.
 // Le libellé est envoyé au serveur tel quel : la boîte de réception de
 // l'administration l'affiche sans traduction.
 const SUBJECTS = ['general', 'pricing', 'technical', 'other'];
 const MESSAGE_MAX = 5000;
-const CONTACT_EMAIL = 'contact@smarter-academy.com';
 
 const STEPS = [
   { key: 'received', icon: Inbox },
@@ -110,7 +110,6 @@ export default function ContactSection() {
               <p className="font-inter text-xs uppercase tracking-wider text-white/70 mb-2">{t('contact.emailLabel')}</p>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                dir="ltr"
                 className="inline-flex items-center gap-2 font-inter font-semibold text-sm sm:text-base hover:underline underline-offset-4 break-all"
               >
                 <Mail size={16} className="flex-shrink-0" />
@@ -239,7 +238,6 @@ export default function ContactSection() {
                         required
                         maxLength={255}
                         autoComplete="email"
-                        dir="ltr"
                         value={form.email}
                         onChange={handleChange}
                         placeholder="name@example.com"
@@ -259,7 +257,6 @@ export default function ContactSection() {
                       type="tel"
                       maxLength={50}
                       autoComplete="tel"
-                      dir="ltr"
                       value={form.phone}
                       onChange={handleChange}
                       placeholder={t('contact.phonePlaceholder')}
@@ -272,7 +269,7 @@ export default function ContactSection() {
                       <label htmlFor="contact-message" className="font-inter text-sm font-semibold text-slate-700">
                         {t('contact.messageLabel')} <span className="text-red-500">*</span>
                       </label>
-                      <span dir="ltr" className="font-inter text-xs text-slate-400 tabular-nums">
+                      <span className="font-inter text-xs text-slate-400 tabular-nums">
                         {form.message.length}{'\u00A0/\u00A0'}{MESSAGE_MAX}
                       </span>
                     </div>

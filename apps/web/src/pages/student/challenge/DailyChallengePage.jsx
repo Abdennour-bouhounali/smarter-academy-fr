@@ -12,7 +12,7 @@ import ChallengeComplete from '../../../features/dailyChallenge/components/Chall
 import { reasonKey } from '../../../features/dailyChallenge/challengeModel';
 
 /**
- * « التحدّي اليومي » — une page, trois moments : l'intro, la séance, la fin.
+ * « Défi du jour » — une page, trois moments : l'intro, la séance, la fin.
  *
  * Le SERVEUR tient l'état : la tentative, la question ouverte et l'instant
  * où elle a été servie. Recharger la page, changer d'onglet, perdre le

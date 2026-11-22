@@ -22,16 +22,16 @@ import NoLessonYet from '../../components/student/NoLessonYet';
 import MasteryExplanationDrawer from '../../features/progression/components/MasteryExplanationDrawer';
 
 /**
- * « تقدّمي » — le tableau de bord de PROGRESSION de l'élève, dans l'ordre
+ * « Ma progression » — le tableau de bord de PROGRESSION de l'élève, dans l'ordre
  * de ses questions :
  *
  *   où en suis-je ?            → en-tête + indicateurs
- *   que dois-je faire là ?     → « للعمل الآن »
- *   où suis-je dans le programme ? → الميدان → الوحدة → الدرس → الكفاءات
+ *   que dois-je faire là ?     → « À travailler maintenant »
+ *   où suis-je dans le programme ? → thème → chapitre → leçon → savoir-faire
  *
  * La page n'invente rien : la structure vient du catalogue, la progression
  * de getStudentActivity, la maîtrise du profil serveur (useLearningProfile).
- * Elle ne parle QUE de progression — les notes ont leur espace (« كرّاسي »),
+ * Elle ne parle QUE de progression — les notes ont leur espace (« Mon cahier »),
  * la carte des connaissances le sien.
  */
 export default function Progression() {
@@ -101,7 +101,7 @@ export default function Progression() {
   const lessonsAnnounced = noLessonYet && gradeEntry.catalogueLessonCount > 0;
   const multiGrade = tree.grades.length > 1;
 
-  // Le ميدان ouvert par défaut : celui du dernier travail, sinon le premier
+  // Le thème ouvert par défaut : celui du dernier travail, sinon le premier
   // qui a des leçons construites.
   const defaultFieldId = useMemo(() => {
     const fields = tree.grades.flatMap((g) => g.fields);
@@ -109,7 +109,7 @@ export default function Progression() {
     return recent?.id ?? fields.find((f) => f.agg.lessons > 0)?.id ?? null;
   }, [tree]);
 
-  // Le point dont l'élève demande « لماذا؟ » — `{code, title}` ou null.
+  // Le point dont l'élève demande « Pourquoi ? » — `{code, title}` ou null.
   const [explaining, setExplaining] = useState(null);
   const closeExplaining = useCallback(() => setExplaining(null), []);
 
@@ -244,7 +244,7 @@ export default function Progression() {
           {t('progression.footnote')}
         </p>
 
-        {/* « لماذا؟ » — le tiroir d'explication d'un point (plan §18). */}
+        {/* « Pourquoi ? » — le tiroir d'explication d'un point (plan §18). */}
         <MasteryExplanationDrawer
           open={explaining !== null}
           code={explaining?.code ?? null}

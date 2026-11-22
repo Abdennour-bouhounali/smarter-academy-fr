@@ -136,23 +136,15 @@ export default function Hero() {
               <div className="flex items-center gap-3 px-5 sm:px-7 pt-5 sm:pt-7 pb-4">
                 <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl flex-shrink-0">🎮</div>
                 <div className="min-w-0 text-start">
-                  <h3 className="font-space font-bold text-xl sm:text-2xl text-slate-900 leading-none">Touch Math</h3>
+                  <h3 className="font-space font-bold text-xl sm:text-2xl text-slate-900 leading-none">{t('hero.widgetTitle')}</h3>
                   <p className="text-xs sm:text-sm text-slate-500 font-inter mt-1 leading-snug">
                     {t('hero.simulatorHint')}
                   </p>
                 </div>
               </div>
 
-              {/* Equation display
-                  `dir="ltr"` : une ÉCRITURE MATHÉMATIQUE, pas du texte arabe.
-                  L'équation est une rangée flex de plusieurs <span> (« f(x) = »,
-                  le coefficient, « x », le signe, la constante) ; sous la
-                  direction RTL de la page, le navigateur les pose de droite à
-                  gauche et « f(x) = 1x + 0 » s'affichait « 0 + 1x = f(x) ».
-                  Isoler le bloc le rend à l'endroit sans toucher au reste de la
-                  carte, qui reste bien en arabe RTL. Même règle que les scores
-                  du kit de leçon (BossFinal, PrerequisiteDiagnostic). */}
-              <div dir="ltr" className="mx-5 sm:mx-7 mb-4 bg-slate-900 rounded-2xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 shadow-inner flex-wrap">
+              {/* Equation display */}
+              <div className="mx-5 sm:mx-7 mb-4 bg-slate-900 rounded-2xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 shadow-inner flex-wrap">
                 <span className="font-mono text-slate-300 text-base sm:text-xl font-medium">f(x) =</span>
                 {/* coefficient·x — no flex gap between them */}
                 <span className="inline-flex items-baseline">
@@ -196,11 +188,7 @@ export default function Hero() {
                     <span className="block text-[11px] sm:text-xs font-bold text-nav-accent uppercase tracking-widest">{t('hero.slope')}</span>
                     <span className="font-mono text-blue-400 text-[10px]">{t('hero.slopeCoefficient')}</span>
                   </div>
-                  {/* `dir="ltr"` : « − valeur + » est une commande NUMÉRIQUE.
-                      Sous RTL le navigateur la posait « + valeur − », donc le
-                      bouton d'augmentation tombait à gauche et celui de
-                      diminution à droite — l'inverse du geste attendu. */}
-                  <div dir="ltr" className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <button
                       onClick={() => setA(Math.max(-5, a - 1))}
                       aria-label={t('hero.decreaseA')}
@@ -226,11 +214,7 @@ export default function Hero() {
                     <span className="block text-[11px] sm:text-xs font-bold text-amber-700 uppercase tracking-widest">{t('hero.intercept')}</span>
                     <span className="font-mono text-amber-400 text-[10px]">{t('hero.interceptConstant')}</span>
                   </div>
-                  {/* `dir="ltr"` : « − valeur + » est une commande NUMÉRIQUE.
-                      Sous RTL le navigateur la posait « + valeur − », donc le
-                      bouton d'augmentation tombait à gauche et celui de
-                      diminution à droite — l'inverse du geste attendu. */}
-                  <div dir="ltr" className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <button
                       onClick={() => setB(Math.max(-5, b - 1))}
                       aria-label={t('hero.decreaseB')}

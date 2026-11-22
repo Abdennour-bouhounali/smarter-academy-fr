@@ -2,8 +2,8 @@
  * L'HISTORIQUE DES QUESTIONS d'un exercice — ce que l'élève a déjà fait.
  *
  * Quand un exercice enchaîne plusieurs questions, la question 2 s'appuie
- * souvent sur le résultat de la question 1 (« جِد أكبر قيمة للعدد x » puis
- * « كم مرة استعملنا هذا الدنّ… ? »). L'ancien lecteur effaçait tout en passant
+ * souvent sur le résultat de la question 1 (« Trouve la plus grande valeur de x » puis
+ * « Combien de fois a-t-on rempli ce récipient… ? »). L'ancien lecteur effaçait tout en passant
  * à la suite : l'élève perdait sa propre réponse au moment précis où il en
  * avait besoin.
  *
@@ -66,7 +66,7 @@ export function formatAnswer(question, answer) {
     case 'multiChoice': {
       const ids = answer.choiceIds ?? [];
       const picked = (question.choices ?? []).filter((c) => ids.includes(c.id));
-      return picked.length ? { kind: 'rich', text: picked.map((c) => c.content).join(' ، ') } : null;
+      return picked.length ? { kind: 'rich', text: picked.map((c) => c.content).join(' ; ') } : null;
     }
     case 'rational':
       // Saisie MathLive (feuille d'examen) : on relit la formule telle qu'écrite.
@@ -89,7 +89,7 @@ export function formatAnswer(question, answer) {
       return { kind: 'math', text: `(${x || '?'} ; ${y || '?'})` };
     }
     case 'selfCheck': {
-      // « بيّن أن » : la démonstration écrite, et la note que l'élève s'est
+      // « Démontrer que » : la démonstration écrite, et la note que l'élève s'est
       // donnée après le corrigé type (absente tant qu'il ne s'est pas noté).
       const text = trim(answer.text);
       if (!text) return null;
@@ -136,9 +136,9 @@ export function historyEntry({
     number: index + 1,
     statement: question.statement ?? '',
     // Une démonstration jugée par l'ENSEIGNANT (ou qui l'attend) n'a pas de
-    // note de l'élève : pas de « لم تُقارن بعد » (ReviewStatus dit le reste).
+    // note de l'élève : pas de « Pas encore comparée » (ReviewStatus dit le reste).
     answer: teacherHandled(evaluatedBy, evaluation) ? withoutSelfMark(formatAnswer(question, answer)) : formatAnswer(question, answer),
-    // « مراحل الحساب » écrites avec la réponse (feuille d'examen), relues telles quelles.
+    // « Étapes du calcul » écrites avec la réponse (feuille d'examen), relues telles quelles.
     work: typeof answer?.work === 'string' && answer.work.trim() ? answer.work : null,
     // Le temps mis (feuille d'examen, chrono de l'étape), en secondes.
     seconds: Number.isFinite(answer?.seconds) ? answer.seconds : null,
@@ -149,11 +149,11 @@ export function historyEntry({
     misconceptionId: evaluation?.misconceptionId ?? null,
     feedback: feedbackMessage || '',
     hintsUsed,
-    // Corrigée après « أعِد المحاولة » : l'historique le dit, parce que le
+    // Corrigée après « Réessayer » : l'historique le dit, parce que le
     // serveur, lui, n'a compté que la PREMIÈRE réponse pour la maîtrise.
     retried: tries > 1,
     // Feuille d'examen (2026-10-06) : les photos de la copie, la correction de
-    // l'enseignant (« تصحيح الأستاذ »), et qui a jugé (`server`, `self`, `teacher`).
+    // l'enseignant (« Correction du professeur »), et qui a jugé (`server`, `self`, `teacher`).
     images: Array.isArray(images) ? images : [],
     review: review ?? null,
     evaluatedBy: evaluatedBy ?? null,
@@ -176,7 +176,7 @@ export function recordQuestion(history, entry) {
 
 /**
  * Combien de réponses justes dans l'exercice, question courante comprise
- * (pour le bilan « أتممت هذا التمرين »).
+ * (pour le bilan « Tu as terminé cet exercice »).
  */
 export function exerciseScore(history, currentEvaluation) {
   const past = history.filter((e) => e.isCorrect).length;

@@ -3,7 +3,7 @@ import { Eye } from 'lucide-react';
 import { SHARED_ITEMS } from '../../pages/student/qismConsent';
 
 /**
- * Ce que l'enseignant voit — le MÊME texte au formulaire du code (قسمي), sur
+ * Ce que l'enseignant voit — le MÊME texte au formulaire du code (Ma classe), sur
  * la page du lien de classe (/rejoindre/classe/…) et sur la carte de
  * confirmation : un consentement ne se donne pas sur trois versions d'un
  * texte. `schoolName` (page du lien d'une classe d'établissement) ajoute la

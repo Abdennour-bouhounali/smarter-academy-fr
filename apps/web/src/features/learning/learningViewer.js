@@ -13,7 +13,7 @@ import { AuthContext } from '../../context/AuthContext';
  *
  * Le moteur de leçon ne teste jamais un rôle : il lit `freeNavigation`
  * (le verrou) et `tracksProgress` (l'écriture), et les espaces lisent
- * `workspaceBase` pour construire leurs liens (cahier, مختبر). Le serveur
+ * `workspaceBase` pour construire leurs liens (cahier, atelier). Le serveur
  * reste l'autorité : les écritures de progression sont refusées aux
  * non-élèves par le middleware `learner`, quoi que le client envoie.
  */
@@ -33,7 +33,7 @@ export function describeLearningViewer(user) {
     // Le trajet d'apprentissage est celui de l'élève (le visiteur garde son
     // brouillon local, comme avant). Aucune écriture pour un enseignant.
     tracksProgress: role === 'student' || role === 'visitor',
-    // La racine des liens de l'espace de travail : cahier, مختبر, cours.
+    // La racine des liens de l'espace de travail : cahier, atelier, cours.
     workspaceBase: WORKSPACE_BASE[role] ?? null,
     // Les deux espaces de travail rendent la même coquille (barre latérale,
     // en-tête mobile) ; le visiteur et l'administrateur, la coquille visiteur.

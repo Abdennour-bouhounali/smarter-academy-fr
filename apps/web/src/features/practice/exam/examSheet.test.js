@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { answerChars, answerSize, clockState, formatClock, stepSeconds, examBadge, examPaper, examPart, examSession, isExamExercise, isExamLesson, EXAM_STYLE_LESSONS, solutionReady, stepMarks, stepState } from './examSheet';
+import { answerChars, answerSize, clockState, formatClock, stepSeconds, examBadge, examPaper, examPart, examPoints, examSession, isExamExercise, isExamLesson, EXAM_STYLE_LESSONS, resultIsWords, solutionReady, stepLabel, stepMarks, stepState } from './examSheet';
 import { formatAnswer } from '../questionHistory';
 import { exerciseIdsFor, loadExercise } from '../practiceContent';
 
@@ -18,43 +18,60 @@ describe('feuille d\'examen — logique pure', () => {
   });
 
   it('n\'écrit le numéro d\'étape et la sous-étape qu\'à leur première question', () => {
-    // BEM 2024 : 01 = deux questions (10cm / 18cm), 02 seule ;
-    // BEM 2022 : 01(ا), puis (ب) sur deux questions.
+    // 01 = deux questions (10 cm / 18 cm), 02 seule ;
+    // 01 a), puis b) sur deux questions.
     expect(stepMarks([{ step: '01' }, { step: '01' }, { step: '02' }])).toEqual([
       { step: '01', sub: null }, { step: null, sub: null }, { step: '02', sub: null },
     ]);
-    expect(stepMarks([{ step: '01', sub: 'ا' }, { step: '01', sub: 'ب' }, { step: '01', sub: 'ب' }])).toEqual([
-      { step: '01', sub: 'ا' }, { step: null, sub: 'ب' }, { step: null, sub: null },
+    expect(stepMarks([{ step: '01', sub: 'a' }, { step: '01', sub: 'b' }, { step: '01', sub: 'b' }])).toEqual([
+      { step: '01', sub: 'a' }, { step: null, sub: 'b' }, { step: null, sub: null },
     ]);
   });
 
-  it('découpe le badge pour isoler « BEM 2015 » du préfixe arabe', () => {
-    expect(examBadge({ badge: 'BEM 2008', kind: 'official' })).toEqual({ prefix: '', label: 'BEM 2008', kind: 'official', ltr: true });
-    expect(examBadge({ badge: 'على منوال BEM 2015', kind: 'modelled' })).toEqual({ prefix: 'على منوال', label: 'BEM 2015', kind: 'modelled', ltr: true });
+  it('affiche le numéro d’étape et le barème à la française', () => {
+    expect(stepLabel('01')).toBe('1');
+    expect(stepLabel('10')).toBe('10');
+    expect(stepLabel(null)).toBe('');
+    expect(examPoints('02,5')).toEqual({ label: '2,5', count: 2.5 });
+    expect(examPoints('01')).toEqual({ label: '1', count: 1 });
+    expect(examPoints('14')).toEqual({ label: '14', count: 14 });
+  });
+
+  it('écrit en texte un résultat en mots, en formule un résultat mathématique', () => {
+    expect(resultIsWords('oui')).toBe(true);
+    expect(resultIsWords('4 fois')).toBe(true);
+    expect(resultIsWords('\\dfrac{3}{4}')).toBe(false);
+    expect(resultIsWords('PGCD(945 ; 1215) = 135')).toBe(false);
+    expect(resultIsWords('x = 4')).toBe(false);
+  });
+
+  it('lit l’année du badge et dit d’où vient l’exercice, sans afficher le texte du badge', () => {
+    expect(examBadge({ badge: 'BEM 2008', kind: 'official' })).toEqual({ kind: 'official', model: 'official', year: 2008, label: 'BEM 2008' });
+    expect(examBadge({ badge: 'DNB 2027', kind: 'excerpt' })).toEqual({ kind: 'excerpt', model: 'official', year: 2027, label: 'DNB 2027' });
+    expect(examBadge({ badge: 'Sur le modèle du DNB 2027', kind: 'modelled' })).toEqual({ kind: 'modelled', model: 'modelled', year: 2027, label: 'Sur le modèle du DNB 2027' });
     expect(examBadge({ badge: null, kind: 'adapted' })).toBeNull();
   });
 
-  it('garde ARABE (aucun îlot LTR) le badge d’un examen de فصل 1AM–3AM', () => {
-    expect(examBadge({ badge: 'على منوال اختبار الفصل الثاني', kind: 'modelled' }))
-      .toEqual({ prefix: 'على منوال', label: 'اختبار الفصل الثاني', kind: 'modelled', ltr: false });
+  it('un badge « sur le modèle » sans année est celui d’un contrôle d’un autre niveau', () => {
+    expect(examBadge({ badge: 'Sur le modèle d’un contrôle', kind: 'modelled' })).toMatchObject({ model: 'term', year: null });
   });
 
-  it('simule l’examen de fin de cycle en 3e et l’examen de trimestre avant, selon l’année de la leçon', () => {
-    expect(examPaper('lecon-3e')).toEqual({ kind: 'bem', n: 4 });
-    expect(examPaper('lecon-5e')).toEqual({ kind: 'term', n: 2 });
-    expect(examPaper('inconnue')).toEqual({ kind: 'bem', n: 4 });
+  it('simule le brevet en 3e et un contrôle avant, et donne le niveau à afficher', () => {
+    expect(examPaper('lecon-3e')).toEqual({ kind: 'bem', n: '3e' });
+    expect(examPaper('lecon-5e')).toEqual({ kind: 'term', n: '5e' });
+    expect(examPaper('inconnue')).toEqual({ kind: 'bem', n: '3e' });
   });
 
-  it('range la وضعية الإدماجية dans le الجزء الثاني', () => {
+  it('range un exercice dans la partie 1 ou la partie 2 du sujet', () => {
     expect(examPart({ metadata: { source: { type: 'bem', part: 2 }, exam: {} } })).toBe(2);
-    expect(examPart({ metadata: { exam: { heading: 'الوضعية الإدماجية' } } })).toBe(2);
-    expect(examPart({ metadata: { exam: { heading: 'التمرين الأول' } } })).toBe(1);
+    expect(examPart({ metadata: { exam: { heading: 'Partie 2 — Exercice 1' } } })).toBe(2);
+    expect(examPart({ metadata: { exam: { heading: 'Exercice 1' } } })).toBe(1);
   });
 
   it('donne l\'année de la session aux seuls exercices tirés d\'un sujet officiel', () => {
     expect(examSession({ metadata: { exam: { kind: 'official' }, source: { type: 'bem', year: 2008 } } })).toBe(2008);
     expect(examSession({ metadata: { exam: { kind: 'excerpt' }, source: { type: 'bem', year: 2021 } } })).toBe(2021);
-    expect(examSession({ metadata: { exam: { kind: 'modelled', badge: 'على منوال BEM 2015' }, source: { type: 'platform_addition' } } })).toBeNull();
+    expect(examSession({ metadata: { exam: { kind: 'modelled', badge: 'Sur le modèle du DNB 2027' }, source: { type: 'platform_addition' } } })).toBeNull();
     expect(examSession({ metadata: { exam: { kind: 'adapted' }, source: { type: 'textbook' } } })).toBeNull();
   });
 
@@ -72,10 +89,10 @@ describe('feuille d\'examen — logique pure', () => {
     expect(answerChars({ expectedAnswer: '135' })).toBe(5);
     expect(answerChars({ expectedAnswer: '7' })).toBe(4);
     // Le texte indicatif du champ vide tient en entier.
-    expect(answerChars({ expectedAnswer: '7', answerFormat: 'عدد طبيعي' })).toBe(9);
-    expect(answerChars({ expectedAnswer: '28800', answerFormat: 'عدد' })).toBe(7);
+    expect(answerChars({ expectedAnswer: '7', answerFormat: 'Nombre entier' })).toBe(13);
+    expect(answerChars({ expectedAnswer: '28800', answerFormat: 'Nombre' })).toBe(7);
     expect(answerChars({ expectedAnswer: '22816/19251' })).toBe(13);
-    expect(answerChars({ expectedAnswer: [1, 2, 3] })).toBe(11); // « 1 ؛ 2 ؛ 3 » + 2
+    expect(answerChars({ expectedAnswer: [1, 2, 3] })).toBe(11); // « 1 ; 2 ; 3 » + 2
   });
 
   it('donne à chaque étape son temps, et lit le chrono', () => {
@@ -93,11 +110,11 @@ describe('feuille d\'examen — logique pure', () => {
   });
 });
 
-describe('« بيّن أن » — la démonstration relue dans l\'historique', () => {
+describe('« Démontrer que » — la démonstration relue dans l\'historique', () => {
   const q = { answerType: 'selfCheck' };
   it('relit le texte écrit et la note, « pending » tant qu\'il ne s\'est pas noté', () => {
     expect(formatAnswer(q, { text: ' PGCD(21 ; 14) = 7 ' })).toEqual({ kind: 'self', text: 'PGCD(21 ; 14) = 7', mark: 'pending' });
-    expect(formatAnswer(q, { text: 'برهان', selfMark: 'correct' })).toEqual({ kind: 'self', text: 'برهان', mark: 'correct' });
+    expect(formatAnswer(q, { text: 'Démonstration', selfMark: 'correct' })).toEqual({ kind: 'self', text: 'Démonstration', mark: 'correct' });
     expect(formatAnswer(q, { text: '   ' })).toBeNull();
   });
 });
@@ -126,8 +143,8 @@ describe('bascule d\'une leçon au format examen — content/practice/exam-style
 });
 
 describe('corrigé d\'une étape coupée en plusieurs questions — solutionReady', () => {
-  // 01 : le borne puis le sens (même étape) ; 02 (ا) puis (ب) ; 03 seule.
-  const qs = [{ step: '01' }, { step: '01' }, { step: '02', sub: 'ا' }, { step: '02', sub: 'ب' }, { step: '03' }];
+  // 01 : la borne puis le sens (même étape) ; 02 a) puis b) ; 03 seule.
+  const qs = [{ step: '01' }, { step: '01' }, { step: '02', sub: 'a' }, { step: '02', sub: 'b' }, { step: '03' }];
 
   it('reste fermé tant qu\'une question plus loin dans la même étape n\'a pas de réponse', () => {
     expect(solutionReady(qs, 0, 0)).toBe(false); // la borne répondue, le sens pas encore
@@ -135,7 +152,7 @@ describe('corrigé d\'une étape coupée en plusieurs questions — solutionRead
     expect(solutionReady(qs, 1, 1)).toBe(true);
   });
 
-  it('les sous-étapes (ا)(ب) et les étapes différentes ne se retiennent pas', () => {
+  it('les sous-étapes a) b) et les étapes différentes ne se retiennent pas', () => {
     expect(solutionReady(qs, 2, 2)).toBe(true);
     expect(solutionReady(qs, 4, 4)).toBe(true);
   });

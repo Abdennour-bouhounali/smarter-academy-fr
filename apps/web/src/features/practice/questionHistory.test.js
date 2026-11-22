@@ -3,16 +3,16 @@ import {
   outcomeTone, formatAnswer, historyEntry, recordQuestion, exerciseScore,
 } from './questionHistory';
 
-// La vraie forme du contenu : « الدنّان » (سلسلة التفوق، الوضعية 7), trois
-// questions dont la 2e et la 3e reposent sur le x de la 1re.
-const q1 = { id: 'q1', statement: 'جِد أكبر قيمة للعدد x.', answerType: 'rational' };
-const q2 = { id: 'q2', statement: 'كم مرة استعملنا هذا الدنّ لملء الدنّ الأول؟', answerType: 'rational' };
+// La vraie forme du contenu : « Les deux récipients », trois questions dont la
+// 2e et la 3e reposent sur le x de la 1re.
+const q1 = { id: 'q1', statement: 'Trouve la plus grande valeur possible de x.', answerType: 'rational' };
+const q2 = { id: 'q2', statement: 'Combien de fois a-t-on rempli ce récipient pour remplir le premier ?', answerType: 'rational' };
 const qcm = {
   id: 'q1',
   answerType: 'choice',
   choices: [
-    { id: 'A', content: 'لا، لأن PGCD(2175 ; 1044) = 87' },
-    { id: 'B', content: 'نعم، لأن PGCD(2175 ; 1044) = 1' },
+    { id: 'A', content: 'Non, car PGCD(2175 ; 1044) = 87' },
+    { id: 'B', content: 'Oui, car PGCD(2175 ; 1044) = 1' },
   ],
 };
 
@@ -35,13 +35,13 @@ describe('formatAnswer — relire SA réponse, telle qu’il l’a écrite', () 
   });
 
   it('un QCM relit le CONTENU du choix, jamais sa lettre', () => {
-    expect(formatAnswer(qcm, { choiceId: 'A' })).toEqual({ kind: 'rich', text: 'لا، لأن PGCD(2175 ; 1044) = 87' });
+    expect(formatAnswer(qcm, { choiceId: 'A' })).toEqual({ kind: 'rich', text: 'Non, car PGCD(2175 ; 1044) = 87' });
     expect(formatAnswer(qcm, { choiceId: 'Z' })).toBeNull();
   });
 
-  it('un QCM multiple joint les choix par la virgule arabe', () => {
+  it('un QCM multiple joint les choix par le point-virgule', () => {
     const q = { ...qcm, answerType: 'multiChoice' };
-    expect(formatAnswer(q, { choiceIds: ['A', 'B'] }).text).toContain(' ، ');
+    expect(formatAnswer(q, { choiceIds: ['A', 'B'] }).text).toBe('Non, car PGCD(2175 ; 1044) = 87 ; Oui, car PGCD(2175 ; 1044) = 1');
   });
 
   it('couple, fonction affine, intervalle : la notation du programme', () => {
@@ -75,7 +75,7 @@ describe('historyEntry — la photographie d’une question quittée', () => {
     expect(Object.isFrozen(e)).toBe(true);
   });
 
-  it('dit qu’une réponse a été corrigée après « أعِد المحاولة »', () => {
+  it('dit qu’une réponse a été corrigée après « Réessayer »', () => {
     const e = historyEntry({ question: q1, index: 0, answer: { value: '6' }, evaluation: { outcome: 'correct', isCorrect: true }, tries: 2 });
     expect(e.retried).toBe(true);
   });

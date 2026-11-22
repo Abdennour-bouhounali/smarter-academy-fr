@@ -4,40 +4,45 @@ import '../../../i18n';
 import { templateFor, templateValue, splitMath } from './templateFor';
 import TemplateInput from './TemplateInput';
 
-const r = (answerFormat, statement = 'سؤال', extra = {}) => ({ id: 'q', answerType: 'rational', answerFormat, statement, ...extra });
+const r = (answerFormat, statement = 'Question', extra = {}) => ({ id: 'q', answerType: 'rational', answerFormat, statement, ...extra });
 
 describe('templateFor — la saisie a la forme de la réponse (formats réels de la banque)', () => {
   it('une forme : le coefficient demandé devient une case, la forme est imprimée', () => {
-    const t = templateFor(r('يُكتب $A$ على الشكل $ax + b$ : اكتب العدد $b$ فقط', 'العدد $b$ :'));
+    const t = templateFor(r('$A$ s’écrit sous la forme $ax + b$ : écris seulement le nombre $b$', 'Le nombre $b$ :'));
     expect(t).toMatchObject({ kind: 'form', subject: 'A', pre: 'ax + ', post: '', letter: 'b' });
-    const t2 = templateFor(r('يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط'));
+    const t2 = templateFor(r('$E$ s’écrit sous la forme $ax^2 + bx + c$ : écris seulement le nombre $b$'));
     expect(t2).toMatchObject({ kind: 'form', pre: 'ax^2 + ', post: 'x + c' });
-    expect(templateFor(r('اكتب على الشكل $a + b\\sqrt{2}$ : اكتب العدد $b$ فقط'))).toMatchObject({ kind: 'form', pre: 'a + ', post: '\\sqrt{2}' });
+    expect(templateFor(r('Écris-le sous la forme $a + b\\sqrt{2}$ : écris seulement le nombre $b$'))).toMatchObject({ kind: 'form', pre: 'a + ', post: '\\sqrt{2}' });
   });
   it('« … » dans la formule : la case prend sa place', () => {
-    const t = templateFor(r('عدد', 'أتمم: $4{,}826 \\times \\ldots = 48{,}26$'));
-    expect(t).toMatchObject({ kind: 'gap', before: 'أتمم: ', pre: '4{,}826 \\times ', post: ' = 48{,}26' });
+    const t = templateFor(r('Nombre', 'Complète : $4{,}826 \\times \\ldots = 48{,}26$'));
+    expect(t).toMatchObject({ kind: 'gap', before: 'Complète : ', pre: '4{,}826 \\times ', post: ' = 48{,}26' });
   });
   it('l’exposant n : la case est surélevée à la place de n', () => {
-    const t = templateFor(r('الأسّ $n$ (عدد صحيح نسبي)', '$1\\ \\mathrm{km} = 10^{n}\\ \\mathrm{mm}$'));
+    const t = templateFor(r('L’exposant $n$ (un entier relatif)', '$1\\ \\mathrm{km} = 10^{n}\\ \\mathrm{mm}$'));
     expect(t).toMatchObject({ kind: 'gap', raised: true, signed: true });
   });
   it('un trou au milieu d’un groupe {…} ne coupe pas la formule', () => {
-    expect(templateFor(r('عدد', '$\\dfrac{\\ldots}{5} = 2$')).kind).not.toBe('gap');
+    expect(templateFor(r('Nombre', '$\\dfrac{\\ldots}{5} = 2$')).kind).not.toBe('gap');
   });
   it('fraction, pourcentage, unité, valeur de x, chiffre, naturel, relatif, décimal', () => {
-    expect(templateFor(r('كسر غير قابل للاختزال'))).toMatchObject({ kind: 'fraction', irreducible: true });
-    expect(templateFor(r('النسبة المئوية (بدون الرمز %)')).kind).toBe('percent');
-    expect(templateFor(r('عدد بالدينار (دج)'))).toMatchObject({ kind: 'quantity', unit: 'دج' });
-    expect(templateFor(r('عدد بالسنتيمتر'))).toMatchObject({ kind: 'quantity', unit: 'cm' });
-    expect(templateFor(r('عدد بالمتر (m)'))).toMatchObject({ kind: 'quantity', unit: 'm' });
-    expect(templateFor(r('عدد صحيح: قيمة $x$ (قد يكون سالبًا)'))).toMatchObject({ kind: 'solution', letter: 'x' });
-    expect(templateFor(r('رقم واحد')).kind).toBe('digit');
-    expect(templateFor(r('عدد عشري برقم واحد بعد الفاصلة')).kind).toBe('decimal');
-    expect(templateFor(r('عدد طبيعي')).kind).toBe('natural');
-    expect(templateFor(r('عدد العلب')).kind).toBe('natural');
-    expect(templateFor(r('عدد نسبي')).kind).toBe('signed');
-    expect(templateFor(r('عدد عشري (بالفاصلة)')).kind).toBe('decimal');
+    expect(templateFor(r('Une fraction irréductible'))).toMatchObject({ kind: 'fraction', irreducible: true });
+    expect(templateFor(r('Le pourcentage (sans le symbole %)')).kind).toBe('percent');
+    expect(templateFor(r('Un nombre, en euros'))).toMatchObject({ kind: 'quantity', unit: '€' });
+    expect(templateFor(r('Une durée en minutes'))).toMatchObject({ kind: 'quantity', unit: 'min' });
+    expect(templateFor(r('Une aire en mètres carrés'))).toMatchObject({ kind: 'quantity', unit: 'm²' });
+    expect(templateFor(r('Une longueur en millimètres'))).toMatchObject({ kind: 'quantity', unit: 'mm' });
+    expect(templateFor(r('Un nombre, en centimètres'))).toMatchObject({ kind: 'quantity', unit: 'cm' });
+    expect(templateFor(r('Une longueur (m)'))).toMatchObject({ kind: 'quantity', unit: 'm' });
+    expect(templateFor(r('Un entier : la valeur de $x$ (elle peut être négative)'))).toMatchObject({ kind: 'solution', letter: 'x' });
+    expect(templateFor(r('Un seul chiffre')).kind).toBe('digit');
+    expect(templateFor(r('Un nombre décimal avec un seul chiffre après la virgule')).kind).toBe('decimal');
+    expect(templateFor(r('Un nombre entier')).kind).toBe('natural');
+    expect(templateFor(r('Un entier naturel')).kind).toBe('natural');
+    expect(templateFor(r('Nombre de boîtes')).kind).toBe('natural');
+    expect(templateFor(r('Un nombre relatif')).kind).toBe('signed');
+    expect(templateFor(r('Un nombre entier relatif')).kind).toBe('signed');
+    expect(templateFor(r('Un nombre décimal (avec une virgule)')).kind).toBe('decimal');
     expect(templateFor({ answerType: 'choice' })).toBeNull();
   });
 });
@@ -59,10 +64,10 @@ describe('TemplateInput — rendu', () => {
   const html = (q) => renderToStaticMarkup(<TemplateInput template={templateFor(q)} question={q} onChange={() => {}} />);
   it('chaque genre montre ses cases et jamais un « $ » brut', () => {
     const cases = [
-      r('يُكتب $A$ على الشكل $ax + b$ : اكتب العدد $b$ فقط'),
-      r('عدد', 'أتمم: $4{,}826 \\times \\ldots = 48{,}26$'),
-      r('كسر على الشكل a/b'), r('النسبة المئوية'), r('عدد بالدينار (دج)'), r('عدد صحيح: قيمة $x$'),
-      r('رقم واحد'), r('عدد طبيعي'), r('عدد نسبي'), r('عدد عشري (بالفاصلة)'),
+      r('$A$ s’écrit sous la forme $ax + b$ : écris seulement le nombre $b$'),
+      r('Nombre', 'Complète : $4{,}826 \\times \\ldots = 48{,}26$'),
+      r('Une fraction de la forme a/b'), r('Le pourcentage'), r('Un prix en euros'), r('La valeur de $x$'),
+      r('Un seul chiffre'), r('Un nombre entier'), r('Un nombre relatif'), r('Un nombre décimal'),
     ];
     for (const q of cases) {
       const out = html(q);
@@ -71,16 +76,17 @@ describe('TemplateInput — rendu', () => {
     }
   });
   it('la fraction a deux cases et le signe ; l’unité est imprimée', () => {
-    expect(html(r('كسر'))).toContain('data-template-box="den"');
-    expect(html(r('كسر'))).toContain('data-template-sign');
-    expect(html(r('عدد بالدينار (دج)'))).toContain('دج');
+    expect(html(r('Une fraction'))).toContain('data-template-box="den"');
+    expect(html(r('Une fraction'))).toContain('data-template-sign');
+    expect(html(r('Un prix en euros'))).toContain('€');
+    expect(html(r('Un prix en euros'))).not.toMatch(/[\u0600-\u06FF]/);
   });
 });
 
 describe('splitMath', () => {
   it('coupe texte et formules', () => {
-    expect(splitMath('أتمم: $a$ و $b$')).toEqual([
-      { math: false, text: 'أتمم: ' }, { math: true, text: 'a' }, { math: false, text: ' و ' }, { math: true, text: 'b' },
+    expect(splitMath('Complète : $a$ et $b$')).toEqual([
+      { math: false, text: 'Complète : ' }, { math: true, text: 'a' }, { math: false, text: ' et ' }, { math: true, text: 'b' },
     ]);
   });
 });

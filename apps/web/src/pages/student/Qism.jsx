@@ -21,7 +21,7 @@ import SharingDisclosure from '../../components/student/SharingDisclosure';
 import { joinRequest, classroomsAwaitingConsent, visibleRecommendations } from './qismConsent';
 
 /**
- * « قسمي » — la classe de l'enseignant que l'élève a rejointe, ou peut
+ * « Ma classe » — la classe de l'enseignant que l'élève a rejointe, ou peut
  * rejoindre par code (six symboles, en LTR comme un code d'activation). Le
  * LIEN de classe a sa propre page (pages/JoinClassLink.jsx) et revient ici
  * une fois l'adhésion faite, avec `state.joinedClassroom`.
@@ -31,16 +31,16 @@ import { joinRequest, classroomsAwaitingConsent, visibleRecommendations } from '
  * d'apprentissage, et la confirmation le dit.
  *
  * ── Rejoindre = consentir, et seulement par un geste ─────────────────────
- * L'enseignant verra, pour les leçons du قسم, la progression, la maîtrise,
- * les réponses et le كرّاسي (voir qismConsent.js). La page le DIT avant
- * d'envoyer quoi que ce soit, et la requête ne part qu'après « أوافق
- * وأنضمّ ». Le lien de classe applique la même règle sur sa page.
+ * L'enseignant verra, pour les leçons de la classe, la progression, la maîtrise,
+ * les réponses et « Mon cahier » (voir qismConsent.js). La page le DIT avant
+ * d'envoyer quoi que ce soit, et la requête ne part qu'après « J’accepte et
+ * je rejoins la classe ». Le lien de classe applique la même règle sur sa page.
  * Une adhésion antérieure au texte (`consentRequired`) reçoit une carte
  * non bloquante : confirmer, ou quitter.
  *
- * ── Un seul قسم à la fois (2026-10-24) ─────────────────────────────────
- * Un élève déjà dans un قسم ne voit PAS le formulaire du code : la page dit
- * qu'il faut quitter son قسم pour en rejoindre un autre. Le serveur tient la
+ * ── Une seule classe à la fois (2026-10-24) ─────────────────────────────────
+ * Un élève déjà dans une classe ne voit PAS le formulaire du code : la page dit
+ * qu'il faut quitter sa classe pour en rejoindre une autre. Le serveur tient la
  * règle (`already_in_class`) ; masquer le formulaire n'en est que le reflet.
  */
 function formatDate(iso) {
@@ -103,8 +103,8 @@ export default function Qism() {
     }
     setPending(true);
     try {
-      // Le bouton de ce formulaire EST le geste de consentement : « أوافق
-      // وأنضمّ », sous le texte de partage.
+      // Le bouton de ce formulaire EST le geste de consentement : « J’accepte et
+      // je rejoins la classe », sous le texte de partage.
       const result = await joinClassGroup(token, joinRequest({ code }, true));
       await afterJoin(result);
     } catch (err) {
@@ -178,7 +178,7 @@ export default function Qism() {
           </motion.div>
         )}
 
-        {/* Adhésions antérieures au texte de partage : une carte par قسم,
+        {/* Adhésions antérieures au texte de partage : une carte par classe,
             jamais un mur — le reste de l'espace reste ouvert. */}
         {awaitingConsent.map((c) => (
           <section key={c.id} className="glass-card p-5 sm:p-6 border-amber-200 bg-amber-50/40" aria-labelledby={`qism-consent-${c.id}`} data-qism-consent-required={c.id}>
@@ -216,7 +216,7 @@ export default function Qism() {
                     <div className="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center shrink-0"><Users size={18} /></div>
                     <div className="min-w-0 flex-1">
                       <p className="font-space font-bold text-slate-900">{c.name}</p>
-                      <p className="text-sm text-slate-600">{t('qism.teacherLabel')}: {c.teacherName || '—'} · {t('qism.gradeLabel')}: {gradeName(c.grade)}</p>
+                      <p className="text-sm text-slate-600">{t('qism.teacherLabel')} : {c.teacherName || '—'} · {t('qism.gradeLabel')} : {gradeName(c.grade)}</p>
                       {c.joinedAt && <p className="text-xs text-slate-400 mt-0.5">{t('qism.joinedAt', { date: formatDate(c.joinedAt) })}</p>}
                     </div>
                     <button type="button" onClick={() => setLeaving(c)} className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500 hover:text-rose-700">
@@ -225,7 +225,7 @@ export default function Qism() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-sm text-slate-500">{t('qism.hiddenLessons', { count: hiddenByClassCount })}</p>
+              <p className="mt-3 text-sm text-slate-500">{hiddenByClassCount > 0 ? t('qism.hiddenLessons', { count: hiddenByClassCount }) : t('qism.noHiddenLessons')}</p>
               <p className="mt-2 text-sm text-slate-500" data-qism-one-class>{t('qism.oneClassOnly')}</p>
             </>
           ) : (
@@ -247,10 +247,10 @@ export default function Qism() {
                   <div className="min-w-0 flex-1 space-y-1">
                     <p className="font-semibold text-slate-900">{t(`qism.recommendations.kinds.${r.kind}`)}</p>
                     {r.learningPoint?.title && (
-                      <p className="text-sm text-slate-700">{t('qism.recommendations.learningPointLabel')}: {r.learningPoint.title}</p>
+                      <p className="text-sm text-slate-700">{t('qism.recommendations.learningPointLabel')} : {r.learningPoint.title}</p>
                     )}
                     {r.lesson?.title && (
-                      <p className="text-sm text-slate-700">{t('qism.recommendations.lessonLabel')}: {r.lesson.title}</p>
+                      <p className="text-sm text-slate-700">{t('qism.recommendations.lessonLabel')} : {r.lesson.title}</p>
                     )}
                     {r.message && (
                       <blockquote className="mt-2 border-s-4 border-teal-200 ps-3 text-sm text-slate-700" aria-label={t('qism.recommendations.messageLabel')}>

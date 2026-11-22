@@ -1,8 +1,8 @@
 /**
- * « الوصول والحدود » côté client — de la LECTURE, jamais une décision.
+ * « Accès et limites » côté client — de la LECTURE, jamais une décision.
  *
  * Le serveur (FeatureAccessService) décide qui peut se servir d'un instrument
- * du مختبر, du cahier, et combien il lui reste ; il le résume dans
+ * de l'atelier, du cahier, et combien il lui reste ; il le résume dans
  * GET /me/feature-access et le rappelle dans chaque refus 403. Ce module ne
  * fait que LIRE ce résumé pour dessiner un cadenas ou un compteur.
  *

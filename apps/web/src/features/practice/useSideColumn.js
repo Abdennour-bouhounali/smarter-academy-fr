@@ -12,7 +12,7 @@ function read() {
 
 /**
  * La colonne latérale du lecteur d'exercices (point d'apprentissage chez
- * l'élève, « إجابات تلاميذي » chez l'enseignant) se REPLIE d'un geste : l'exercice
+ * l'élève, « Réponses de mes élèves » chez l'enseignant) se REPLIE d'un geste : l'exercice
  * prend alors toute la largeur. Le choix est retenu dans CE navigateur
  * (confort personnel, jamais une donnée — d'où le try/catch : stockage
  * bloqué = colonne visible, la page marche quand même).
@@ -33,7 +33,7 @@ export function useSideColumn() {
 
 /** La grille du lecteur : deux colonnes, ou l'exercice seul sur toute la largeur. */
 // `narrow` : la feuille d'examen (pratique BEM) — la colonne ne porte plus que
-// la الكفاءة (« سياق السؤال » est sur la feuille elle-même) : le sujet prend la place.
+// le savoir-faire (« Le fil de l'exercice » est sur la feuille elle-même) : le sujet prend la place.
 export const practiceGridClass = (hidden, { narrow = false } = {}) => (hidden
   ? 'grid grid-cols-1 gap-3 [[data-sa-classroom]_&]:block'
   : narrow

@@ -4,7 +4,7 @@ import { Crown } from 'lucide-react';
 import { ArrowForward } from '../../../components/common/DirectionalIcons';
 
 /**
- * MÊME COMPTE, DEUX LECTURES. « 3 دروس مدفوعة » est une bonne nouvelle pour
+ * MÊME COMPTE, DEUX LECTURES. « 3 leçons de l’abonnement » est une bonne nouvelle pour
  * l'abonné (du contenu qui l'attend) et une invitation pour qui ne l'est
  * pas. La décision (`isPremium` / `canSeeUpgrade`) vient du serveur via
  * usePremiumStatus, et rien n'est peint tant qu'elle n'est pas arrivée.
@@ -49,7 +49,7 @@ export default function PremiumCard({ premiumCount, isPremium, canSeeUpgrade }) 
         }`}
       >
         {open ? t('home.premiumOpenCta') : t('home.premiumLockedCta')}
-        <ArrowForward size={15} aria-hidden="true" className="transition-transform group-hover:translate-x-1 group-hover:rtl:-translate-x-1" />
+        <ArrowForward size={15} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
       </Link>
     </section>
   );

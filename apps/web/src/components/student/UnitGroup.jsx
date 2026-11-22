@@ -8,14 +8,14 @@ import { getTotalModules } from '../../lessons/registry';
 import { ProgressLine } from './lessonTileParts';
 
 /**
- * THE UNIT CARD (الوحدة) of the catalogue — the level chosen after the ميدان and before the درس; it leads to the unit
- * page. The same short form as `LessonCard` (owner, 2026-11-16: « small content »): « الوحدة n », its NAME, ONE line
+ * THE UNIT CARD (chapitre) of the catalogue — the level chosen after the thème and before the leçon; it leads to the unit
+ * page. The same short form as `LessonCard` (owner, 2026-11-16: « small content »): « chapitre n », its NAME, ONE line
  * (how many lessons, how many done) and a thin progress line. No icon, no paragraph of objectives: they are on the
  * unit page.
  *
- * `layout="rows"` (the « قائمة » layout, catalogueView.js): the same unit on one line.
+ * `layout="rows"` (the « Liste » layout, catalogueView.js): the same unit on one line.
  * A unit with no lesson written yet (1AM–3AM) stays a link — its page shows what the lessons will teach — and says
- * « قيد الإعداد » instead of a 0 / N that would read as being late.
+ * « En préparation » instead of a 0 / N that would read as being late.
  *
  * `forwardRef`: rendered inside <AnimatePresence mode="popLayout">, which needs the ref.
  */
@@ -28,7 +28,7 @@ const UnitGroup = forwardRef(function UnitGroup({ unit, layout = 'grid' }, ref) 
   ).length;
   const pct = total ? Math.round((done / total) * 100) : 0;
   const drafting = !unit.lessons.some((l) => l.status === 'available');
-  const count = tc('lessonsCount', { count: total });
+  const count = total > 0 ? tc('lessonsCount', { count: total }) : t('courses.emptyGroup');
   const tally = drafting ? (
     <span
       className="rounded-full border border-dashed border-nav-line px-2.5 py-0.5 text-xs font-semibold text-nav-muted"
@@ -48,7 +48,7 @@ const UnitGroup = forwardRef(function UnitGroup({ unit, layout = 'grid' }, ref) 
   const arrow = (
     <ArrowForward
       size={16}
-      className="ms-auto flex-shrink-0 text-nav-muted transition-transform group-hover:-translate-x-1 group-hover:text-nav-ink"
+      className="ms-auto flex-shrink-0 text-nav-muted transition-transform group-hover:translate-x-1 group-hover:text-nav-ink"
     />
   );
 

@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bookmark, Info, Lock } from 'lucide-react';
 import { ToneIcon, TONE_STYLE } from '../toneStyle';
-import { stepState } from './examSheet';
+import { stepState, examPoints, stepLabel } from './examSheet';
 
 /**
- * « التنقل في التمرين » — la colonne d'une feuille d'examen (maquette du
+ * « Se repérer dans l'exercice » — la colonne d'une feuille d'examen (maquette du
  * propriétaire, 2026-10-06) : l'exercice et ses points, la liste de ses
  * questions (faite ✓/✕, en cours, à venir — verrouillée tant que la précédente
  * n'est pas résolue : les étapes se révèlent une à une), et le marque-page
- * « أريد العودة إلى هذا السؤال لاحقًا ».
+ * « Je veux revenir à cette question plus tard ».
  *
  * Le marque-page est un confort LOCAL (localStorage, protégé) : il ne change
  * rien à la séance ni à la maîtrise. Cliquer une question faite ou marquée
@@ -54,14 +54,14 @@ export default function ExamNavigator({ exercise, questionIndex, history, onJump
 
       <div className="rounded-xl bg-slate-50 px-3 py-2 text-sm ring-1 ring-slate-200">
         <span className="font-bold text-slate-900">{exam.heading}</span>{' '}
-        <span className="text-slate-600">(<bdi dir="ltr">{exam.points}</bdi> {t('practice.exam.pointsUnit')})</span>
+        <span className="whitespace-nowrap text-slate-600">({examPoints(exam.points).label}{'\u00A0'}{t('practice.exam.pointsUnit', { count: examPoints(exam.points).count })})</span>
       </div>
 
       <ol className="space-y-1">
         {exercise.questions.map((q, i) => {
           const state = stepState(i, questionIndex);
           const entry = state === 'done' ? history.find((e) => e.questionId === q.id) : null;
-          const label = `${t('practice.exam.nav.question')} ${q.step ?? String(i + 1).padStart(2, '0')}${q.sub ? ` (${q.sub})` : ''}`;
+          const label = `${t('practice.exam.nav.question')} ${q.step ? stepLabel(q.step) : i + 1}${q.sub ? ` ${q.sub})` : ''}`;
           const isFlagged = flags.includes(q.id);
           const content = (
             <>

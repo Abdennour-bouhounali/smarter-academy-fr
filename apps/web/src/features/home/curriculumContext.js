@@ -1,9 +1,9 @@
 import { flattenTree } from '../progression/buildProgressionTree';
 
 /**
- * « 📚 أين أنت » — la TRANCHE de programme que l'accueil montre : un seul
- * ميدان, sa وحدة (s'il y en a une) et une seule leçon. Pas l'arbre : l'arbre
- * est la page « تقدّمي ». Ici on oriente, on n'analyse pas.
+ * « 📚 Où tu en es » — la TRANCHE de programme que l'accueil montre : un seul
+ * thème, son chapitre (s'il y en a un) et une seule leçon. Pas l'arbre : l'arbre
+ * est la page « Ma progression ». Ici on oriente, on n'analyse pas.
  *
  * La leçon de référence est, dans l'ordre :
  *   1. la leçon visée par le héros (`focusLessonId`), si elle est dans la
@@ -12,7 +12,7 @@ import { flattenTree } from '../progression/buildProgressionTree';
  *   3. sinon la première leçon construite, dans l'ordre officiel — un élève
  *      qui n'a rien commencé voit le DÉBUT de son programme.
  *
- * Les pourcentages sont ceux de l'arbre (progression dans les محاور, jamais
+ * Les pourcentages sont ceux de l'arbre (progression dans les étapes, jamais
  * une maîtrise) ; rien n'est recalculé ici.
  */
 export function pickCurriculumContext(tree, focusLessonId = null) {
@@ -43,7 +43,7 @@ export function pickCurriculumContext(tree, focusLessonId = null) {
 
 /**
  * Index des nœuds de l'arbre par identifiant de leçon — pour que la liste
- * « واصل مسارك » retrouve la وحدة / le ميدان et le bon chemin de reprise
+ * « Reprends ton parcours » retrouve le chapitre / le thème et le bon chemin de reprise
  * (`cta.path`, le pont numéro → chemin du registre) d'une leçon récente sans
  * re-parcourir l'arbre à chaque ligne.
  */
@@ -54,8 +54,8 @@ export function indexTreeByLesson(tree) {
 }
 
 /**
- * Le contexte CATALOGUE d'une leçon, toutes classes confondues : son ميدان,
- * sa وحدة (ou null), sa classe. Sert au héros, qui peut proposer une leçon
+ * Le contexte CATALOGUE d'une leçon, toutes classes confondues : son thème,
+ * son chapitre (ou null), sa classe. Sert au héros, qui peut proposer une leçon
  * d'une AUTRE classe que celle de l'élève (getResumeLesson n'est pas cadré,
  * et c'est voulu) — l'arbre de la page, lui, est cadré.
  */

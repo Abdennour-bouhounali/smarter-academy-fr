@@ -5,12 +5,12 @@ import { Star } from 'lucide-react';
 import { STAR_COUNT, masteryStage, practiceRatios } from './learningPointProgress';
 
 /**
- * « الكفاءة » — l'identité de ce que l'élève entraîne, en tête du lecteur.
+ * « Savoir-faire » — l'identité de ce que l'élève entraîne, en tête du lecteur.
  *
- *   الكفاءة
- *   حلّ وضعية إدماجية بتعبئة قابلية القسمة…          ← le nom, en titre
- *   ★━━★━━☆  قيد التحسّن                           ← le CHEMIN de maîtrise
- *   1 / 10  تمارين أنهيتها   ▰▱▱   4 / 23  أسئلة أجبت عنها ▰▱▱
+ *   SAVOIR-FAIRE
+ *   Résoudre un problème avec la divisibilité…          ← le nom, en titre
+ *   ★━━★━━☆  En progrès                            ← le CHEMIN de maîtrise
+ *   1 / 10  exercices terminés   ▰▱▱   4 / 23  questions répondues ▰▱▱
  *
  * LE CHEMIN D'ÉTOILES — trois étoiles reliées, allumées selon l'état Mastery
  * V2 renvoyé par le serveur (learningPointProgress.js). Retenu parmi trois
@@ -23,8 +23,8 @@ import { STAR_COUNT, masteryStage, practiceRatios } from './learningPointProgres
  * — jamais un pourcentage inventé.
  *
  * LES COMPTEURS — exercices et questions SÉPARÉS : un exercice peut compter
- * 2 questions, un autre 5. Vocabulaire d'ACHÈVEMENT (« أنهيتها »,
- * « أجبت عنها »), jamais celui de la maîtrise.
+ * 2 questions, un autre 5. Vocabulaire d'ACHÈVEMENT (« terminés »,
+ * « répondues »), jamais celui de la maîtrise.
  */
 function StarPath({ stage }) {
   return (
@@ -78,7 +78,7 @@ function Metric({ done, total, ratio, label, bar, testId }) {
 
 /**
  * @param {object} point         une ligne `learningPoints[]` de l'aperçu de pratique
- * @param {boolean} [eyebrow]    le surtitre « الكفاءة » (inutile dans une LISTE de points)
+ * @param {boolean} [eyebrow]    le surtitre « Savoir-faire » (inutile dans une LISTE de points)
  * @param {'h2'|'h3'} [headingTag]
  */
 export default function LearningPointProgress({ point, eyebrow = true, headingTag: Heading = 'h2' }) {
@@ -97,7 +97,7 @@ export default function LearningPointProgress({ point, eyebrow = true, headingTa
       data-mastery-stage={stage}
     >
       {eyebrow && <p className="text-xs font-bold text-nav-accent">{t('practice.lp.eyebrow')}</p>}
-      {/* Un nom long (« حل وضعية إدماجية بتعبئة قابلية القسمة… ») tient en deux
+      {/* Un nom long (« Résoudre un problème avec la divisibilité… ») tient en deux
           lignes sous `xl` — la question doit rester près du haut de l'écran ;
           le nom entier reste dans `title` et s'affiche dans la colonne. */}
       <Heading

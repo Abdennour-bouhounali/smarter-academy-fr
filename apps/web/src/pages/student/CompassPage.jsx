@@ -20,9 +20,10 @@ import RichText from '../../features/practice/RichText';
 import MathText from '../../lessons/common/components/MathText';
 import { canSubmit } from '../../features/dailyChallenge/challengeModel';
 import { playSfx } from '../../lessons/common/utils/playEffect';
+import { LOCALE } from '../../locale.js';
 
 /**
- * « بوصلتي » — /espace/bawsala (P1). Contrat : docs/architecture/YEAR_COMPASS.md §6.
+ * « Ma boussole » — /espace/bawsala (P1). Contrat : docs/architecture/YEAR_COMPASS.md §6.
  *
  * Le SERVEUR sert, corrige et recalcule les bandes ; cette page rejoue le
  * moteur pur (packages/core/compass) sur ses réponses pour savoir quoi
@@ -35,7 +36,7 @@ const STREAK_MS = 1700;
 const ROUND = 12;
 const SOUND_KEY = 'smarter_compass_sound';
 
-/** Le son est ACTIF par défaut dans بوصلتي (décision 3 du propriétaire) ; un interrupteur le coupe. */
+/** Le son est ACTIF par défaut dans Ma boussole (décision 3 du propriétaire) ; un interrupteur le coupe. */
 function useCompassSound() {
   const [on, setOn] = useState(() => {
     try { return window.localStorage.getItem(SOUND_KEY) !== '0'; } catch { return true; }
@@ -174,7 +175,7 @@ function FullWindow({ title, children, onClose, sound, dots }) {
   const { t } = useTranslation('compass');
   return (
     // Dès `lg`, la fenêtre s'arrête au BORD de la barre latérale (propriétaire, 2026-11-09) : <main> pose
-    // `--sa-sidebar-w` (StudentLayout) ; en RTL, `inset-inline-start` est le bord droit. Sous `lg`, pas de barre.
+    // `--sa-sidebar-w` (StudentLayout) ; `inset-inline-start` est le bord gauche. Sous `lg`, pas de barre.
     <div className="fixed inset-0 z-50 flex flex-col gap-4 overflow-hidden bg-[#F5F6FF] p-4 sm:p-6 lg:[inset-inline-start:var(--sa-sidebar-w,0px)]" data-compass-player>
       <div className="flex h-16 shrink-0 items-center justify-between gap-4 rounded-2xl bg-indigo-900 px-5 text-white">
         <span className="flex items-center gap-2 font-bold"><Compass size={22} aria-hidden="true" />{title}</span>
@@ -196,7 +197,7 @@ function FullWindow({ title, children, onClose, sound, dots }) {
   );
 }
 
-/* ── 1b · « أين وصل قسمك؟ » ─────────────────────────────────────── */
+/* ── 1b · « Où en est ta classe ? » ─────────────────────────────────────── */
 function PointerStep({ year, profile, today, classroomName, error, onConfirm, onClose, sound }) {
   const { t } = useTranslation('compass');
   const suggested = useMemo(() => resolvePointer({ profile, year, today }).pointer, [profile, year, today]);
@@ -365,7 +366,7 @@ function Player({ state, setState, token, sound, onFinished, onStop, onShowRepor
             <p className="text-sm font-bold text-slate-600">{t('play.position', { n: inRound + 1 })}</p>
             {(st?.content || st?.formulas || st?.table || st?.figure) && <div className="rounded-2xl bg-slate-50 p-3"><ExerciseStatement content={st.content} visual={st.visual} formulas={st.formulas} table={st.table} figure={st.figure} /></div>}
             {q?.lead && <p className="text-lg text-slate-800"><RichText>{q.lead}</RichText></p>}
-            {/* « الإجابة تُكتب في شكلها » (EXERCISE_CONTRACT.md § « قوالب الإجابة ») : une réponse tapée se saisit dans
+            {/* « La réponse s’écrit dans sa forme » (EXERCISE_CONTRACT.md § « Modèles de réponse ») : une réponse tapée se saisit dans
                 son modèle ; un modèle « gap » dessine lui-même la formule de la question, avec la case à la place des « … ». */}
             {tpl?.kind !== 'gap' && <h1 className="text-2xl font-bold leading-relaxed text-slate-900"><RichText>{q?.statement ?? ''}</RichText></h1>}
             {q && (tpl
@@ -440,7 +441,7 @@ function BandCounts({ counts, withUnseen = true }) {
   );
 }
 
-/* ── 3 · « خريطة نقاطي » + la semaine v0 ─────────────────────────── */
+/* ── 3 · « La carte de mes savoir-faire » + la semaine v0 ─────────────────────────── */
 function Report({ state, year, grade, today, live, onContinue, onRetake }) {
   const { t } = useTranslation('compass');
   const session = live ? state.active : state.last;
@@ -450,7 +451,7 @@ function Report({ state, year, grade, today, live, onContinue, onRetake }) {
   const tasks = weekV0(report, year, session.pointerLesson);
   const m = milestone(year, grade, today);
   const measured = report.all.filter((l) => l.band !== BANDS.UNSEEN).length;
-  const retakeDate = state.nextRetakeAt ? new Date(state.nextRetakeAt).toLocaleDateString('ar-DZ', { day: 'numeric', month: 'long' }) : null;
+  const retakeDate = state.nextRetakeAt ? new Date(state.nextRetakeAt).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' }) : null;
 
   return (
     <div className="sa-page py-8" data-compass-report>

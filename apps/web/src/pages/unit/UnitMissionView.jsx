@@ -16,12 +16,12 @@ import { unitState, unmetPrerequisites } from './unitMissions';
 /**
  * LA PAGE D'UNE UNITÉ, REGARD ÉLÈVE (propriétaire, 2026-11-09 — maquette validée docs/experiments/unit-home-mockup-2026-11-09.html, puis
  * fenêtre centrée décidée par le conseil). UN ÉCRAN, aucun défilement (règle du lecteur de mission) :
- *   1. « درسك الآن » — UNE chose à faire : la leçon en cours, son nom de mission, sa progression, UN grand « واصل الدرس » ;
- *   2. le défi de l'unité, reformulé par la plateforme (unitMissions.js), et ses « مفاتيح الحلّ » gagnés leçon après leçon ;
- *   3. le chemin de l'unité : une station par leçon (✓ + étoiles, « أنت هنا », ⏱), puis le drapeau du défi ;
+ *   1. « Ta leçon maintenant » — UNE chose à faire : la leçon en cours, son nom de mission, sa progression, UN grand « Continuer la leçon » ;
+ *   2. le défi de l'unité, reformulé par la plateforme (unitMissions.js), et ses « Clés du défi » gagnées leçon après leçon ;
+ *   3. le chemin de l'unité : une station par leçon (✓ + étoiles, « Tu es ici », ⏱), puis le drapeau du défi ;
  *   4. le reste de l'ancienne page, REPLIÉ (jamais supprimé) : des pastilles qui ouvrent la même fenêtre.
- * La fenêtre (MissionDialog `card`, 760 px, titre centré) : une ligne d'infos, 3 objectifs, « المزيد » pour le reste (objectifs, outils, prérequis), un
- * prérequis NON fait montré d'emblée (« راجع أولًا »), un seul grand bouton. Elle est pensée pour ne pas défiler (e2e/unit-mission-view.mjs).
+ * La fenêtre (MissionDialog `card`, 760 px, titre centré) : une ligne d'infos, 3 objectifs, « Plus » pour le reste (objectifs, outils, prérequis), un
+ * prérequis NON fait montré d'emblée (« Revois d’abord »), un seul grand bouton. Elle est pensée pour ne pas défiler (e2e/unit-mission-view.mjs).
  * La page s’AGRANDIT pour remplir l’écran (jamais au-delà de ×1,6), ou se réduit un peu (jamais sous ×0,72) : `useFitZoom`.
  * Aucune référence au manuel n'est montrée à l'élève (indépendance du manuel).
  */
@@ -70,7 +70,7 @@ function useFitZoom(deps) {
   useLayoutEffect(() => {
     fit();
     window.addEventListener('resize', fit);
-    // les polices arabes et les configs des leçons (outils de la mission) arrivent APRÈS le premier rendu : on refait la mesure quand le
+    // les polices et les configs des leçons (outils de la mission) arrivent APRÈS le premier rendu : on refait la mesure quand le
     // contenu change de taille naturelle (un seul passage par image ; la même taille ne relance rien)
     document.fonts?.ready?.then(fit).catch(() => {});
     let raf = 0; let last = '';
@@ -92,16 +92,13 @@ function useFitZoom(deps) {
 const nb = (a, b) => `${a} / ${b}`;
 
 /**
- * Un objectif du catalogue écrit ses formules en clair (« PGCD (a ; b) = b », « a = b × q ») au milieu d'une phrase arabe : sans
- * isolement, l'algorithme bidi retourne les parenthèses. Chaque passage latin devient un îlot LTR insécable ; un texte avec `$…$` garde MathLabel.
+ * Un objectif du catalogue : un texte avec `$…$` passe par MathLabel, le reste est du texte. (Le produit arabe isolait ici
+ * chaque passage latin dans un îlot LTR insécable ; en français, ce serait la phrase entière, qui ne passerait plus à la ligne.)
  */
-const LATIN_RUN = /([A-Za-z(][A-Za-z0-9 ;()=×−+.]*[A-Za-z0-9)])/g;
 function Bidi({ text }) {
   const s = String(text ?? '');
   if (s.includes('$')) return <MathLabel>{s}</MathLabel>;
-  return s.split(LATIN_RUN).map((part, i) => (i % 2 === 1
-    ? <bdi key={i} dir="ltr" className="whitespace-nowrap">{part}</bdi>
-    : <React.Fragment key={i}>{part}</React.Fragment>));
+  return s;
 }
 
 /** Le nombre de la phrase en pastille ambre ; le reste reste du texte (MathLabel lit les formules). */
@@ -113,13 +110,13 @@ function Highlighted({ text, numbers }) {
     : <React.Fragment key={i}>{part}</React.Fragment>));
 }
 
-/** La carte « درسك الآن » : elle lit la config de la leçon (nom de mission, outils) quand elle est chargée. */
+/** La carte « Ta leçon maintenant » : elle lit la config de la leçon (nom de mission, outils) quand elle est chargée. */
 function NowCard({ lesson, n, total, icon, progress, first, compact, t, onDetails }) {
   const config = useLessonConfig(lesson.id);
   const tools = config?.mission?.tools ?? [];
   return (
     <article className={`relative grid ${compact ? 'grid-cols-1' : 'grid-cols-[minmax(0,1fr)_8.5rem]'} gap-4 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm`} data-unit-now={lesson.id}>
-      <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-l from-violet-600 to-indigo-600" aria-hidden="true" />
+      <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-violet-600 to-indigo-600" aria-hidden="true" />
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2 text-sm font-black text-nav-accent">
           {first ? t('unit.mission.startTag') : t('unit.mission.nowTag')}
@@ -154,7 +151,7 @@ function NowCard({ lesson, n, total, icon, progress, first, compact, t, onDetail
   );
 }
 
-/** La fenêtre d'une leçon : une ligne d'infos, 3 objectifs, « المزيد » pour le reste, un prérequis non fait d'emblée, un seul bouton. */
+/** La fenêtre d'une leçon : une ligne d'infos, 3 objectifs, « Plus » pour le reste, un prérequis non fait d'emblée, un seul bouton. */
 function LessonWindow({ lesson, n, total, icon, status, unmet, onOpenLesson, available, t }) {
   const config = useLessonConfig(lesson.id);
   const [more, setMore] = useState(false);
@@ -242,7 +239,7 @@ export default function UnitMissionView({ unit, mission }) {
   const total = rows.length;
   const [win, setWin] = useState(null); // { kind: 'lesson', id } | { kind: 'goals' | 'challenge' | 'history' | 'review' }
   const { area, box, width } = useFitZoom([state.done, state.current]);
-  // une page dessinée étroite (tablette, barre latérale ouverte) : la carte « درسك الآن » laisse tomber sa vignette
+  // une page dessinée étroite (tablette, barre latérale ouverte) : la carte « Ta leçon maintenant » laisse tomber sa vignette
   const compact = width < 860;
   const solvedAfter = all.find((l) => l.id === mission.challenge.solvedAfter);
   const statusOf = (r) => (r.done ? 'done' : r.id === state.current ? 'now' : 'later');
@@ -280,7 +277,7 @@ export default function UnitMissionView({ unit, mission }) {
               first={state.done === 0 && current.progress === 0} compact={compact} t={t} onDetails={() => openLesson(current.id)} />
           ) : (
             <article className="relative grid grid-cols-[minmax(0,1fr)_8.5rem] gap-4 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" data-unit-finished>
-              <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-l from-violet-600 to-indigo-600" aria-hidden="true" />
+              <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-violet-600 to-indigo-600" aria-hidden="true" />
               <div className="min-w-0">
                 <div className="text-sm font-black text-nav-accent">{t('unit.mission.finishedTag')} <span className="rounded-full bg-amber-50 px-2.5 text-amber-800">⭐ {starsTotal}</span></div>
                 <h2 className="mt-1.5 text-2xl font-black text-slate-900">{t('unit.mission.finishedTitle')}</h2>
@@ -323,7 +320,7 @@ export default function UnitMissionView({ unit, mission }) {
               const st = statusOf(r);
               return (
                 <button key={r.id} type="button" onClick={() => openLesson(r.id)} data-unit-station={r.id} data-status={st}
-                  aria-label={`${t('unit.mission.lessonOf', { n: i + 1, total })}: ${r.lesson.title}`}
+                  aria-label={`${t('unit.mission.lessonOf', { n: i + 1, total })} : ${r.lesson.title}`}
                   className="group relative flex flex-col items-center gap-1.5 px-0.5 pt-6 text-center">
                   {st === 'now' && <span className="absolute top-0 z-10 whitespace-nowrap rounded-full bg-nav-accent px-2.5 text-[11px] font-black text-white">{t('unit.mission.here')}</span>}
                   <span className={`relative flex h-16 w-16 items-center justify-center rounded-full border-[3px] text-[28px] transition-transform group-hover:-translate-y-0.5 ${
@@ -344,7 +341,7 @@ export default function UnitMissionView({ unit, mission }) {
         </section>
 
         {/* ce que l'ancienne page montrait d'un coup : replié, à un toucher (jamais supprimé) */}
-        <nav className="flex flex-wrap gap-2" aria-label="المزيد" data-unit-chips>
+        <nav className="flex flex-wrap gap-2" aria-label={t('unit.about')} data-unit-chips>
           {[['goals', 'chipGoals'], ['challenge', 'chipChallenge'], ['history', 'chipHistory'], ['review', 'chipReview']].map(([kind, key]) => (
             <button key={kind} type="button" onClick={() => setWin({ kind })} data-unit-chip={kind}
               className="min-h-[40px] rounded-full border border-slate-200 bg-white px-3.5 text-sm font-extrabold text-slate-700 hover:border-indigo-300 hover:text-nav-accent">{t(`unit.mission.${key}`)}</button>

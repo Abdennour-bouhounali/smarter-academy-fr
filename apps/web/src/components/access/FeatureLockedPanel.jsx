@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Lock, Gauge } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
 import { usePayments } from '../../context/PaymentsContext';
+import { LOCALE } from '../../locale';
 
 /**
  * L'état « fermé » d'une fonctionnalité — un instrument verrouillé, un
@@ -12,12 +13,12 @@ import { usePayments } from '../../context/PaymentsContext';
  *
  * `reason` et `quota` viennent tels quels du serveur (résumé ou refus 403) ;
  * ce composant ne décide rien. L'appel à activer ne s'adresse qu'à un élève :
- * un enseignant n'a pas de code d'activation à saisir.
+ * un professeur n'a pas de code d'activation à saisir.
  *
  * @param {{reason: string, quota?: object|null, resource?: 'documents'|'notebook', compact?: boolean}} props
  */
 export default function FeatureLockedPanel({ reason, quota = null, resource = null, compact = false }) {
-  const { t, i18n } = useTranslation('access');
+  const { t } = useTranslation('access');
   const { user } = useContext(AuthContext);
   // Payments closed: a refusal still says what happened, never « activate full access » (§4ter).
   const { paymentsOpen } = usePayments();
@@ -26,7 +27,7 @@ export default function FeatureLockedPanel({ reason, quota = null, resource = nu
   const key = !paymentsOpen && known === 'premium_required' ? 'not_available' : known;
   const Icon = isQuota ? Gauge : Lock;
   const canActivate = paymentsOpen && user?.role === 'student' && (reason === 'premium_required' || isQuota);
-  const resetsAt = quota?.resetsAt ? new Date(quota.resetsAt).toLocaleDateString(i18n.language || 'ar-DZ', { day: 'numeric', month: 'long' }) : null;
+  const resetsAt = quota?.resetsAt ? new Date(quota.resetsAt).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' }) : null;
 
   return (
     <div

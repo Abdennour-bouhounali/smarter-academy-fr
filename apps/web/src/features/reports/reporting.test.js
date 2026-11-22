@@ -76,7 +76,7 @@ describe('un envoi unique — le clic n’envoie rien (2026-10-05)', () => {
   });
 });
 
-describe('réservé aux relecteurs (admin, سفير)', () => {
+describe('réservé aux relecteurs (admin, ambassadeur)', () => {
   const button = read('src/features/reports/ReportButton.jsx');
 
   it('ne rend rien sans `user.canReviewContent`', () => {

@@ -6,7 +6,7 @@ const PER_PAGE = 20;
 
 /**
  * La requête de « Mon cahier » : une vue, une recherche, des filtres, un
- * tri — et des pages qu'on empile (« تحميل المزيد »).
+ * tri — et des pages qu'on empile (« Afficher plus »).
  *
  * Le serveur fait le travail (recherche sur le texte nu, filtres par
  * relations, tri, pagination) ; ici on ne fait que : différer la frappe

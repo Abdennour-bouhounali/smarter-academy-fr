@@ -14,11 +14,11 @@ import ReportDialog from './ReportDialog';
  * PracticeSession, DiagnosticRun) plutôt que 132 fois à la main.
  *
  * RÉSERVÉ AUX RELECTEURS (2026-10-05) : l'administrateur et les enseignants
- * ambassadeurs (« سفراء », `user.canReviewContent`). Pour tout autre compte,
+ * ambassadeurs (`user.canReviewContent`). Pour tout autre compte,
  * rien n'est rendu — et le serveur refuse de toute façon (middleware
  * `reviewer`).
  *
- * Le CLIC n'ouvre que le formulaire : rien ne part avant « إرسال ». L'envoi
+ * Le CLIC n'ouvre que le formulaire : rien ne part avant « Envoyer ». L'envoi
  * est unique (POST multipart), capture d'écran comprise.
  *
  * @param {'lesson'|'module'|'exercise'|'question'|'diagnostic'} source

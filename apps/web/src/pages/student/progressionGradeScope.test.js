@@ -12,7 +12,7 @@ const studentAr = JSON.parse(
 );
 const home = readFileSync(resolve(here, 'StudentHome.jsx'), 'utf8');
 // La tuile des compétences vit dans son propre composant depuis la refonte
-// de la page en arbre (ميدان → وحدة → درس → الكفاءات).
+// de la page en arbre (thème → chapitre → leçon → savoir-faire).
 const stats = readFileSync(resolve(here, '../../features/progression/components/ProgressionStats.jsx'), 'utf8');
 
 /**

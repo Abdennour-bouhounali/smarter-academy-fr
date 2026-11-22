@@ -10,7 +10,7 @@
  *   short   — { lessonId: libellé court } : le nom de la station sur le chemin (2 lignes au plus) ;
  *   challenge — { lead, full, question, numbers: [n…], solvedAfter: lessonId } : `lead` tient en 3 lignes sur la carte, `full` dans la
  *              fenêtre ; chaque nombre de `numbers` est mis en valeur ; `solvedAfter` : la leçon après laquelle l'élève a de quoi le résoudre ;
- *   keys    — [{ icon, label, after: lessonId }] : les « مفاتيح الحلّ », une par grande كفاءة de l'unité, gagnée quand `after` est terminée ;
+ *   keys    — [{ icon, label, after: lessonId }] : les « Clés du défi », une par grand savoir-faire de l'unité, gagnée quand `after` est terminée ;
  *   history — { title, text } : l'aparté historique, en une ou deux phrases.
  * unitMissions.test.js vérifie que chaque leçon a son icône et son libellé, que chaque `after` est une leçon de l'unité, que les nombres
  * sont dans le texte, et qu'aucune ligne ne renvoie au manuel.

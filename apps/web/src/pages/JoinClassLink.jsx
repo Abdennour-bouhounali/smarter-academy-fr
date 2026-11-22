@@ -22,22 +22,22 @@ import {
  * « /rejoindre/classe/:token » — le LIEN DE CLASSE, ouvert depuis WhatsApp,
  * un SMS ou le tableau, avec ou sans compte.
  *
- * La page ne décide de rien : elle montre ce que le serveur révèle (nom du
- * قسم, enseignant, classe scolaire — jamais un identifiant) et conduit
+ * La page ne décide de rien : elle montre ce que le serveur révèle (nom de la
+ * classe, professeur, niveau — jamais un identifiant) et conduit
  * l'élève. Chaque cas :
  *
  *   lien invalide / renouvelé         → message clair, retour à l'accueil
- *   adhésions fermées                 → « الانضمام مغلق » (sauf pour un membre)
- *   visiteur                          → texte de partage, puis « أوافق، أنشئ
- *                                       حسابي وأنضمّ » / « أوافق، سجّل دخولي
- *                                       وأنضمّ » : le geste est gardé
+ *   adhésions fermées                 → « Inscriptions fermées » (sauf pour un membre)
+ *   visiteur                          → texte de partage, puis « J’accepte, je
+ *                                       crée mon compte… » / « J’accepte, je me
+ *                                       connecte… » : le geste est gardé
  *                                       (pendingClassJoin) et l'adhésion se fait
  *                                       seule au retour, sans code
  *   élève non vérifié                 → d'abord l'adresse ; l'attente survit
- *   élève déjà membre                 → directement قسمي (idempotent)
- *   élève revenu après son geste      → rejoint sans second clic → قسمي
- *   élève connecté, sans geste        → texte de partage + « أوافق وأنضمّ »
- *   enseignant / admin                → « réservé aux élèves »
+ *   élève déjà membre                 → directement « Ma classe » (idempotent)
+ *   élève revenu après son geste      → rejoint sans second clic → « Ma classe »
+ *   élève connecté, sans geste        → texte de partage + « J’accepte et je rejoins la classe »
+ *   professeur / admin                → « réservé aux élèves »
  *
  * ── Ouvrir un lien ne vaut jamais consentement ───────────────────────────
  * Aucune adhésion ne part d'un effet SAUF `autoJoinRequest`, qui n'existe
@@ -92,11 +92,11 @@ export default function JoinClassLink() {
   const goToClass = useCallback(async (alreadyMember) => {
     clearPendingClassJoin();
     // Tout ce que l'adhésion vient de changer, relu AVANT d'arriver sur
-    // « قسمي », sans rechargement de la page :
-    //   — le compte : un compte neuf reçoit la classe scolaire du قسم, et la
-    //     garde « choisis ta classe » de l'espace élève l'arrêterait sinon ;
-    //   — le contexte d'étude : le قسم, son enseignant, le bandeau d'accueil ;
-    //   — l'accès : la couverture par l'offre de l'enseignant (« وصول كامل »).
+    // « Ma classe », sans rechargement de la page :
+    //   — le compte : un compte neuf reçoit le niveau de la classe, et la
+    //     garde « choisis ton niveau » de l'espace élève l'arrêterait sinon ;
+    //   — le contexte d'étude : la classe, son professeur, le bandeau d'accueil ;
+    //   — l'accès : la couverture par la formule du professeur (« Accès complet »).
     // Aussi quand l'élève était « déjà membre » : la vérification d'adresse a
     // pu rejoindre côté serveur après que ces lectures ont été faites.
     await Promise.all([
@@ -140,7 +140,7 @@ export default function JoinClassLink() {
       return;
     }
     if (request && preview.currentClassroomName) {
-      // Déjà dans un autre قسم : rien ne rejoint, l'attente est levée et la
+      // Déjà dans une autre classe : rien ne rejoint, l'attente est levée et la
       // page explique qu'il faut d'abord quitter sa classe.
       autoTried.current = true;
       clearPendingClassJoin();

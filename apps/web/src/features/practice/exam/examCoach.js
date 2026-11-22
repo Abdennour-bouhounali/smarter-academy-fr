@@ -1,15 +1,15 @@
 /**
- * « مدرّب الامتحان » — the exam coach of the exercise bank (PILOT on the lessons whose pack has `coach`; owner, 2026-11-15).
+ * « Le coach du brevet » — the exam coach of the exercise bank (PILOT on the lessons whose pack has `coach`; owner, 2026-11-15).
  * The bank keeps its exam sheet; the coach makes it FEEL like the exam (a hall to enter, silence, pen and paper) and gives the
  * student the choice of how he is helped after a mistake:
- *   guide   « أرشدني فقط »      the answer is NEVER shown: a question to re-read, the rule, the trap — then he tries again himself;
- *   explain « اشرح لي الحلّ »    the solution is shown, but as a lesson: what is asked, which rule, each line and why, the trap.
- * In both modes a mistake goes to the paper notebook (« دفتر أخطائي »).
+ *   guide   « Guide-moi seulement »      the answer is NEVER shown: a question to re-read, the rule, the trap — then he tries again himself;
+ *   explain « Explique-moi la solution » the solution is shown, but as a lesson: what is asked, which rule, each line and why, the trap.
+ * In both modes a mistake goes to the paper notebook (« Mes erreurs »).
  * PURE logic here (which lessons, the steps of an explanation, the notebook entry); the screens are ExamCoach.jsx.
  */
 import { hasPackPart, loadPackPart } from '../../../lessons/lessonPack';
 
-/** A lesson has the coach when ITS pack says which knowledge sheet stands behind each الكفاءة (`lesson.pack.js › coach`). */
+/** A lesson has the coach when ITS pack says which knowledge sheet stands behind each savoir-faire (`lesson.pack.js › coach`). */
 export const isCoachLesson = (lessonCode) => hasPackPart(lessonCode, 'coach');
 export const MODES = ['guide', 'explain'];
 export const modeKey = 'smarter_exam_coach_mode';
@@ -53,8 +53,8 @@ export function guideSteps(question, rule) {
 
 /** What the student copies into his paper notebook after a mistake. The answer is in it only in explain mode. */
 export function notebookEntry(question, rule, mode, why = '') {
-  const lines = [{ label: 'السؤال', text: text(question) }, { label: 'خطئي', text: why, own: true }];
-  if (rule) lines.push({ label: 'لأتذكّر', text: rule.hook, rule: rule.rule });
-  if (mode === 'explain' && question?.solution?.result) lines.push({ label: 'الصواب', text: question.solution.result, result: true });
+  const lines = [{ label: 'Question', text: text(question) }, { label: 'Mon erreur', text: why, own: true }];
+  if (rule) lines.push({ label: 'À retenir', text: rule.hook, rule: rule.rule });
+  if (mode === 'explain' && question?.solution?.result) lines.push({ label: 'La bonne réponse', text: question.solution.result, result: true });
   return lines;
 }

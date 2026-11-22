@@ -18,7 +18,7 @@ const TRAIL_ICON = { lesson: BookOpen, place: MapPin, exercise: PencilLine, ques
  * contexte — seulement les niveaux qui existent), QUAND.
  *
  * Le menu « ⋮ » porte les gestes de rangement (importante, à revoir,
- * archiver, supprimer, imprimer) ; « افتح » ouvre la page de la note ; le
+ * archiver, supprimer, imprimer) ; « Ouvrir » ouvre la page de la note ; le
  * lien de source ramène dans la leçon ou vers l'exercice.
  *
  * @param {(action: string, note: object) => void} onAction  pin | review | archive | delete | print
@@ -171,7 +171,7 @@ export default function NoteCard({ note, selected = false, onToggleSelect, onAct
 function textStart(excerpt) {
   const s = String(excerpt ?? '').trim();
   if (!s) return '';
-  const cut = s.split(/[.!?؟\n]/)[0].trim();
+  const cut = s.split(/[.!?\n]/)[0].trim();
 
   return (cut.length > 3 ? cut : s).slice(0, 80);
 }

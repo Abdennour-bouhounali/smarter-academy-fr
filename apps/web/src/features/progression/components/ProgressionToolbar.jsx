@@ -216,7 +216,7 @@ export default function ProgressionToolbar({ view, onChange, fields, matched, to
       )}
 
       <p className="text-xs font-inter text-slate-500" aria-live="polite" data-progression-results>
-        {t('progression.curriculum.results', { count: matched })}
+        {matched > 0 ? t('progression.curriculum.results', { count: matched }) : t('progression.curriculum.resultsNone')}
         {matched !== total && ` ${t('progression.curriculum.resultsOf', { total })}`}
         {(view.query || view.filter !== 'all' || advancedCount > 0) && (
           <>

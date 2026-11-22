@@ -2,15 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { Search } from 'lucide-react';
 
 /**
- * LA recherche de leçon des pages de catalogue — /courses, « دروسي »,
- * « استكشاف » et /enseignant/cours partagent ce champ et cette règle, pour
+ * LA recherche de leçon des pages de catalogue — /courses, « Mes leçons »,
+ * « Explorer » et /enseignant/cours partagent ce champ et cette règle, pour
  * qu'une recherche se comporte partout pareil.
  *
  * Règle (celle de /courses, reprise telle quelle) : le texte est cherché
- * dans le titre ET la description, sans casse, à travers TOUS les ميادين
+ * dans le titre ET la description, sans casse, à travers TOUS les thèmes
  * du niveau ; une recherche vide rend la sélection courante. Pendant une
  * recherche, les pages montrent les leçons à plat (hors unités) ; sans
- * recherche, elles gardent leur structure en وحدات.
+ * recherche, elles gardent leur structure en chapitres.
  */
 export function filterLessonsByQuery(allLessons, query) {
   const q = (query ?? '').trim().toLowerCase();

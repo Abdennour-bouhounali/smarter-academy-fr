@@ -8,7 +8,7 @@ import { dirname, join, resolve } from 'node:path';
  * vérifié sur la SOURCE comme teacherContract.test.js.
  *
  * Un parent qui confie un ordinateur doit pouvoir compter sur ceci : depuis
- * une leçon, un exercice, le مختبر, un jeu ou le profil, AUCUN lien ne mène
+ * une leçon, un exercice, l’atelier, un jeu ou le profil, AUCUN lien ne mène
  * hors de la plateforme — pas de vidéo intégrée, pas de réseau social, pas de
  * publicité. Une adresse externe dans ces dossiers fait échouer ce test ; une
  * exception (une ressource, jamais un lien cliquable) s'ajoute à ALLOWED avec
@@ -39,7 +39,6 @@ const STUDENT_DIRS = [
 // Adresses permises : des RESSOURCES, jamais un lien que l'élève suit.
 const ALLOWED = [
   /^https?:\/\/www\.w3\.org\//, // espaces de noms SVG / XML
-  /^https:\/\/fonts\.googleapis\.com\//, // la police Amiri de la feuille d'examen (examFont.js)
   /^http:\/\/localhost:3000\/api\/v1/, // repli de VITE_API_URL (services)
 ];
 
@@ -70,7 +69,7 @@ describe('l’espace élève est un jardin clos', () => {
     }, 60_000);
   }
 
-  it('la سبّورة refuse les intégrations et n’ouvre aucun lien sortant', () => {
+  it('le tableau blanc refuse les intégrations et n’ouvre aucun lien sortant', () => {
     const code = readFileSync(resolve(src, 'features/mathlab/tools/whiteboard/WhiteboardTool.jsx'), 'utf8');
     expect(code).toMatch(/validateEmbeddable=\{BLOCK_ALL_EMBEDS\}/);
     expect(code).toMatch(/const BLOCK_ALL_EMBEDS = \(\) => false;/);

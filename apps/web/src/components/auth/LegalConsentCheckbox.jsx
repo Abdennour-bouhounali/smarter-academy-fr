@@ -49,7 +49,7 @@ export default function LegalConsentCheckbox({
           aria-describedby={error ? errorId : undefined}
           className="mt-0.5 h-6 w-6 shrink-0 cursor-pointer rounded border-slate-300 text-nav-accent focus:ring-2 focus:ring-nav-accent focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
         />
-        <label htmlFor={id} lang="fr" dir="ltr" className="text-sm leading-relaxed text-slate-700 cursor-pointer select-none">
+        <label htmlFor={id} className="text-sm leading-relaxed text-slate-700 cursor-pointer select-none">
           J’accepte les{' '}
           <Link
             to="/cgu"

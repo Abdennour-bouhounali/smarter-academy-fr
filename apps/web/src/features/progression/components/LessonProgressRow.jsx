@@ -156,7 +156,7 @@ export default function LessonProgressRow({ node, profileStatus, onExplain }) {
                 state={p.state}
                 confidence={p.confidence}
                 row={p}
-                // « لماذا؟ » ouvre le tiroir d'explication (page « تقدّمي ») ;
+                // « Pourquoi ? » ouvre le tiroir d'explication (page « Ma progression ») ;
                 // un point jamais évalué n'a rien à expliquer.
                 onExplain={onExplain && p.state !== 'unassessed' ? () => onExplain({ code: p.code, title: p.title }) : undefined}
                 message={t(MASTERY_MESSAGE_KEY[p.state])}

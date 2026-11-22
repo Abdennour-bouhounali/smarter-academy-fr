@@ -35,7 +35,7 @@ const QUESTIONS = [
   },
 ];
 
-describe('مدرّب الامتحان — the exam coach of the exercise bank', () => {
+describe('Le coach du brevet — the exam coach of the exercise bank', () => {
   it('is on for a lesson whose pack names its coach, with two modes', () => {
     expect(isCoachLesson('lecon-a')).toBe(true);
     expect(isCoachLesson('lecon-b')).toBe(false);
@@ -86,8 +86,8 @@ describe('مدرّب الامتحان — the exam coach of the exercise bank', 
   it('the notebook entry always asks the student to write his mistake in his own words', async () => {
     const q = QUESTIONS[0];
     const rule = await loadRule('lecon-a', primaryPoint(q));
-    const entry = notebookEntry(q, rule, 'guide', 'استعمل التعريف');
-    expect(entry.map((l) => l.label)).toEqual(['السؤال', 'خطئي', 'لأتذكّر']);
+    const entry = notebookEntry(q, rule, 'guide', 'Utiliser la définition');
+    expect(entry.map((l) => l.label)).toEqual(['Question', 'Mon erreur', 'À retenir']);
     expect(entry[1].own).toBe(true);
   });
 });

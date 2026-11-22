@@ -18,10 +18,10 @@ import './notebook/notebook.css';
  * même fenêtre qu'en leçon, ouverte ici sur le CONTEXTE RÉEL de la question
  * — leçon, point d'apprentissage, exercice, question, et, s'il y a eu une
  * réponse fausse, la réponse donnée et le verdict. Rien n'est inventé : sans
- * réponse, pas de bloc « خطئي ».
+ * réponse, pas de bloc « Mon erreur ».
  *
  * Le déclencheur est LE MÊME qu'en leçon (LessonNotebookAnchor) : la
- * pastille flottante « 📓 كرّاسي », même classe, même place, même bascule
+ * pastille flottante « 📓 Mon cahier », même classe, même place, même bascule
  * ouvrir/fermer (aria-pressed). L'élève reconnaît son cahier partout.
  *
  * Après un enregistrement, la pastille ROUVRE cette note pour la compléter
@@ -61,7 +61,7 @@ export default function NotebookButton({ context, onSave, onUpdate, defaultType 
     : openNotebook({
       context: fullContext,
       // Une note prise après une réponse fausse EST une erreur pour le cahier
-      // (« أخطائي ») ; sans verdict ou avec une bonne réponse, une note.
+      // (« Mes erreurs ») ; sans verdict ou avec une bonne réponse, une note.
       onCreate: (data) => onSave({
         ...data,
         mistakeType: data.mistakeType ?? defaultType,

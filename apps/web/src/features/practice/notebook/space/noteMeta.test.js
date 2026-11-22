@@ -12,9 +12,9 @@ vi.mock('@smarter-academy/core', async (importOriginal) => {
 });
 
 const t = (key, opts) => {
-  if (key === 'notebook.space.card.exercise') return 'تمرين';
-  if (key === 'practice.levelLabel') return `المستوى ${opts.level}`;
-  if (key === 'notebook.space.card.question') return `السؤال ${opts.id}`;
+  if (key === 'notebook.space.card.exercise') return 'Exercice';
+  if (key === 'practice.levelLabel') return `Niveau ${opts.level}`;
+  if (key === 'notebook.space.card.question') return `Question ${opts.id}`;
   return key;
 };
 
@@ -31,8 +31,8 @@ describe('ce qu’une carte dit d’une note', () => {
     expect(questionNumber('q3')).toBe('3');
     expect(questionNumber('Q12')).toBe('12');
     expect(questionNumber('autre')).toBe('autre');
-    expect(exerciseLabel({ exerciseId: 'ex-4am-lecon-a-l2-003' }, t)).toBe('تمرين 3 · المستوى 2');
-    expect(exerciseLabel({ exerciseId: 'mystere' }, t)).toBe('تمرين');
+    expect(exerciseLabel({ exerciseId: 'ex-4am-lecon-a-l2-003' }, t)).toBe('Exercice 3 · Niveau 2');
+    expect(exerciseLabel({ exerciseId: 'mystere' }, t)).toBe('Exercice');
   });
 
   it('la source : le hub de pratique pour un exercice, la leçon (ou rien) sinon', () => {
@@ -62,7 +62,8 @@ describe('ce qu’une carte dit d’une note', () => {
   it('« il y a… » en arabe, robuste aux dates absentes', () => {
     expect(timeAgo(null)).toBe('');
     expect(timeAgo('pas une date')).toBe('');
-    expect(timeAgo(new Date(Date.now() - 2 * 86400 * 1000).toISOString())).toMatch(/يوم|أمس|قبل/);
+    expect(timeAgo(new Date(Date.now() - 2 * 86400 * 1000).toISOString())).toMatch(/il y a 2 jours|avant-hier/);
+    expect(timeAgo(new Date(Date.now() - 2 * 86400 * 1000).toISOString())).not.toMatch(/[\u0600-\u06FF]/);
   });
 });
 

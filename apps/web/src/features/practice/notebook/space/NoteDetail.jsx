@@ -2,8 +2,9 @@ import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
-  ArrowRight, Star, RotateCcw, Archive, ArchiveRestore, Trash2, Printer, ExternalLink, Check, Circle, LoaderCircle, CloudOff, BookOpen, MapPin, PencilLine, CircleHelp,
+  Star, RotateCcw, Archive, ArchiveRestore, Trash2, Printer, ExternalLink, Check, Circle, LoaderCircle, CloudOff, BookOpen, MapPin, PencilLine, CircleHelp,
 } from 'lucide-react';
+import { ArrowBack } from '../../../../components/common/DirectionalIcons';
 import { AuthContext } from '../../../../context/AuthContext';
 import { useDocumentMeta } from '../../../../hooks/useDocumentMeta';
 import { fetchNote, updateNote, deleteNote } from '../../../../services/practiceService';
@@ -272,7 +273,7 @@ export default function NoteDetail() {
           <div className="text-xs text-slate-400 space-y-1">
             <p>{s('detail.created', { date: formatDate(note.createdAt) })}</p>
             {note.updatedAt && note.updatedAt !== note.createdAt && <p>{s('detail.updated', { date: formatDate(note.updatedAt) })}</p>}
-            <p>{s('detail.reviewed', { count: note.reviewCount ?? 0 })}</p>
+            <p>{note.reviewCount ? s('detail.reviewed', { count: note.reviewCount }) : s('detail.reviewedNever')}</p>
           </div>
         </aside>
       </div>
@@ -289,7 +290,7 @@ function BackLink() {
 
   return (
     <Link to={paths.root} className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 hover:text-violet-800 min-h-[44px]" data-nb-back>
-      <ArrowRight size={16} aria-hidden="true" /> {t('notebook.space.detail.back')}
+      <ArrowBack size={16} aria-hidden="true" /> {t('notebook.space.detail.back')}
     </Link>
   );
 }

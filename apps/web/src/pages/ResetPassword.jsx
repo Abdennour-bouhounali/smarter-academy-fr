@@ -7,7 +7,7 @@ import AuthShell, { AuthSubmit, authInputClass } from '../components/auth/AuthSh
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 /**
- * « اختر كلمة مرور جديدة » — la page où mène le lien du courriel
+ * « Choisissez un nouveau mot de passe » — la page où mène le lien du courriel
  * (`?token=…&email=…`, voir ResetPasswordNotification).
  *
  * Le jeton et l'adresse viennent de l'URL et ne servent qu'à être renvoyés au
@@ -55,7 +55,6 @@ export default function ResetPassword() {
         id={id}
         name={id}
         type="password"
-        dir="ltr"
         required
         minLength={8}
         autoComplete={autoComplete}

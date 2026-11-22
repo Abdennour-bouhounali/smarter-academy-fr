@@ -6,6 +6,9 @@ import { useTranslation } from 'react-i18next';
  * Premier contrôle de l'ordre de préférence maison (INTERACTION_PEDAGOGY §16 :
  * tap → stepper → chip → slider → draw → drag).
  */
+/** « A », « B », « C »… — la lettre d'un choix d'après sa place. */
+export const choiceLetter = (index) => String.fromCharCode(65 + index);
+
 export default function ChoiceInput({ question, value, onChange, disabled }) {
   const { t } = useTranslation('student');
   const multi = question.answerType === 'multiChoice';
@@ -24,7 +27,7 @@ export default function ChoiceInput({ question, value, onChange, disabled }) {
         <p className="text-xs font-mono text-slate-500">{t('practice.multipleAnswers')}</p>
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {question.choices.map((choice) => {
+        {question.choices.map((choice, index) => {
           const on = picked.includes(choice.id);
 
           return (
@@ -38,9 +41,10 @@ export default function ChoiceInput({ question, value, onChange, disabled }) {
                 on ? 'border-nav-accent bg-nav-accent-soft text-slate-900' : 'border-slate-200 bg-white text-slate-700 hover:border-slate-400'
               } ${disabled ? 'opacity-70 cursor-default' : ''}`}
             >
-              {/* Pas de lettre latine affichée (A, B…) : dans une phrase arabe
-                  elle se mêlait au premier chiffre du contenu (« A6 مضاعف »).
-                  `choice.id` reste l'identifiant interne de la réponse. */}
+              {/* La lettre du choix, comme sur un sujet français : A, B, C, D — d'après sa PLACE, pas
+                  d'après `choice.id`, qui reste l'identifiant interne de la réponse. Elle est dans sa propre
+                  case : elle ne se colle jamais au premier chiffre du contenu (« A 6 », pas « A6 »). */}
+              <span className="me-3 shrink-0 font-bold text-slate-500" data-choice-letter>{choiceLetter(index)}</span>
               <span className="min-w-0 flex-1"><RichText>{choice.content}</RichText></span>
             </button>
           );

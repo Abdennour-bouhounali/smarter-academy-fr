@@ -3,13 +3,13 @@ import { LazyMathLinesEditor } from './math/lazy';
 import RedactionText from './math/RedactionText';
 
 /**
- * « مراحل الحساب » — la zone où l'élève ÉCRIT son calcul (propriétaire,
- * 2026-10-06 : « احسب PGCD(21957 ; 43351) مع كتابة مراحل الحساب » ne tient pas
+ * « Étapes du calcul » — la zone où l'élève ÉCRIT son calcul (propriétaire,
+ * 2026-10-06 : « Calcule PGCD(21957 ; 43351) en écrivant les étapes du calcul » ne tient pas
  * sur un trait). Des lignes réglées, comme la copie, qui s'agrandissent à la
  * poignée ; le minimum est la hauteur de départ.
  *
- * `question.work` : « required » (l'énoncé exige les étapes — « مع كتابة مراحل
- * الحساب »، « باستعمال خوارزمية … ») ou « optional ». Le texte part avec la réponse
+ * `question.work` : « required » (l'énoncé exige les étapes — « en écrivant les
+ * étapes du calcul », « à l'aide de l'algorithme … ») ou « optional ». Le texte part avec la réponse
  * (`answer.work`) : il est ENREGISTRÉ en base et verrouillé avec elle.
  */
 export const MIN_WORK_CHARS = 10;
@@ -47,7 +47,7 @@ export default function WorkArea({ question, value, onChange, disabled }) {
 
 /**
  * Le numéro de zone (« 1 » mise en calcul, « 2 » résultat final) : même pastille
- * pour « مراحل الحساب » et « النتيجة النهائية », afin que l'élève lise l'ordre.
+ * pour « Étapes du calcul » et « Résultat final », afin que l'élève lise l'ordre.
  */
 export function ZoneNumber({ n, tone = 'amber' }) {
   const color = tone === 'green' ? 'bg-[#1f5c4c] text-white' : 'bg-amber-500 text-white';

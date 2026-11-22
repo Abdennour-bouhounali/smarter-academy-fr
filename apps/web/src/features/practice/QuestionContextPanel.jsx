@@ -6,19 +6,19 @@ import { StudentAnswer } from './QuestionHistory';
 import { ToneIcon, TONE_STYLE } from './toneStyle';
 
 /**
- * « سياق السؤال » — la colonne de CONTEXTE du lecteur, sur grand écran.
+ * « Le fil de l'exercice » — la colonne de CONTEXTE du lecteur, sur grand écran.
  *
  * Toutes les questions de l'exercice, dans l'ordre, chacune dans son état :
  *  - FAITE : ✓/✕/◐ + libellé, la réponse de l'élève ; un geste la déplie
  *    (énoncé entier, retour) — la question précédente se relit toujours ;
- *  - COURANTE : cerclée, « (الحالي) » ;
- *  - À VENIR : « سيظهر بعد السؤال n » — l'élève sait ce qui l'attend, sans
+ *  - COURANTE : cerclée, « (en cours) » ;
+ *  - À VENIR : « S'affiche après la question n » — l'élève sait ce qui l'attend, sans
  *    rien en lire : l'énoncé d'une question future n'est PAS montré (elle
  *    peut contenir la réponse de la courante).
  *
  * Tout vient de l'historique (questionHistory.js) et du contenu : aucun état
  * propre à ce panneau hormis « déplié ». Sous `xl`, il n'est pas rendu : la
- * frise de la colonne centrale porte le même historique. (La carte « تذكّر »
+ * frise de la colonne centrale porte le même historique. (La carte « Rappel »
  * de la première passe a été retirée : un conseil générique, répété à chaque
  * question, n'apprenait rien.)
  */

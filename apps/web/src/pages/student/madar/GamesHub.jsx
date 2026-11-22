@@ -111,14 +111,14 @@ function Art({ game }) {
 }
 
 /**
- * « فضاء الألعاب » — la salle des jeux de l'élève (/espace/jeux), plein écran.
+ * « Espace jeux » — la salle des jeux de l'élève (/espace/jeux), plein écran.
  *
- * Ce qui est COMMUN aux jeux vit ici : les cœurs, la « محطة التزوّد » (où une
+ * Ce qui est COMMUN aux jeux vit ici : les cœurs, la « station de ravitaillement » (où une
  * réponse juste rend un cœur), les messages de l'enseignant, la limite de
  * parties du jour. Les jeux sont rangés en DEUX familles (`games[].category`),
- * les MATHÉMATIQUES D'ABORD (choix du propriétaire) : « ألعاب رياضيات » (gratuits,
+ * les MATHÉMATIQUES D'ABORD (choix du propriétaire) : « Jeux de maths » (gratuits,
  * leurs mathématiques sont le jeu, ils s'adaptent au niveau de l'élève), puis
- * « ألعاب ترفيهية » (ils coûtent un cœur). Chaque jeu est une carte (ce qu'il entraîne, le
+ * « Jeux de détente » (ils coûtent un cœur). Chaque jeu est une carte (ce qu'il entraîne, le
  * record, le rang de la semaine) qui ouvre /espace/jeux/:game. Un jeu fermé par
  * l'enseignant — pour la classe ou pour CET élève — reste visible, verrouillé.
  */
@@ -126,7 +126,7 @@ export default function GamesHub() {
   const { t } = useTranslation('madar');
   useDocumentMeta(t('hub.title'));
   const { token } = useContext(AuthContext);
-  // L'élève, ou l'enseignant qui joue dans une de ses classes (« نافس أستاذك »).
+  // L'élève, ou l'enseignant qui joue dans une de ses classes (« Défie ton professeur »).
   const scope = useMadarScope();
   const reduce = useReducedMotion();
   const [state, setState] = useState(null);
@@ -195,7 +195,7 @@ export default function GamesHub() {
           {!scope.teacher && <div className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
             <div className="rounded-2xl bg-white/[0.06] p-3 ring-1 ring-white/10">
               <p className="font-inter text-sm text-white/80">{t('hub.heartsRule', { n: state.dailyFreeHearts })}</p>
-              <p className="mt-0.5 font-inter text-xs text-white/55">{t('lobby.runsToday')}: <bdi dir="ltr">{t('lobby.runsTodayValue', { n: state.runsToday, cap: state.dailyRunCap })}</bdi></p>
+              <p className="mt-0.5 font-inter text-xs text-white/55">{t('lobby.runsToday')} : <bdi dir="ltr">{t('lobby.runsTodayValue', { n: state.runsToday, cap: state.dailyRunCap })}</bdi></p>
             </div>
             {state.hearts < state.maxHearts && state.available && (
               <button type="button" onClick={() => { audio.unlock(); setRefuel(true); }}
@@ -248,7 +248,7 @@ export default function GamesHub() {
                           </div>
                           {open ? (
                             <Link to={`${scope.hub}/${card.id}`} className="mt-2 flex min-h-[52px] items-center justify-center gap-2 rounded-2xl bg-white font-space text-lg font-black text-slate-950 transition group-hover:bg-amber-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/60" data-action="open-game">
-                              <Play size={18} className="-scale-x-100" aria-hidden="true" /> {t('hub.play')}
+                              <Play size={18} aria-hidden="true" /> {t('hub.play')}
                             </Link>
                           ) : (
                             <p className="mt-2 flex min-h-[52px] items-center justify-center gap-2 rounded-2xl bg-white/5 px-3 text-center font-inter text-sm text-white/60" data-closed-by={g.closedBy ?? 'all'}>

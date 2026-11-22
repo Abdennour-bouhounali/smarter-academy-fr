@@ -163,9 +163,9 @@ export default function CoursesPage() {
     return getResumeLesson(courseLevels);
   }, [lastFocus]);
 
-  // La vue du catalogue (وحدات / ميادين / كل الدروس, شبكة / قائمة) —
-  // préférence partagée avec « دروسي » et « استكشاف » (catalogueView.js).
-  // Le rendu ne reçoit que les ميادين visibles ; la recherche, elle,
+  // La vue du catalogue (par chapitre / par thème / toutes les leçons, grille / liste) —
+  // préférence partagée avec « Mes leçons » et l'exploration (catalogueView.js).
+  // Le rendu ne reçoit que les thèmes visibles ; la recherche, elle,
   // traverse tout le niveau et s'affiche à plat.
   const [view, setView] = useCatalogueView();
   const visibleChapters = gradeData
@@ -378,7 +378,7 @@ export default function CoursesPage() {
                     <h4 className="font-space font-bold text-slate-900 text-lg group-hover:text-nav-accent transition-colors">
                       {continueCourse.course.title} — {continueCourse.grade.name}
                     </h4>
-                    <span className="text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 group-hover:rtl:-translate-x-1 transition-transform text-nav-accent">
+                    <span className="text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform text-nav-accent">
                       {t('continue')} <ArrowForward size={14} />
                     </span>
                   </div>
@@ -405,8 +405,8 @@ export default function CoursesPage() {
         )}
 
         {/* PROGRAMME — les SUJETS officiels, quand aucune leçon n'existe encore.
-            Une classe peut être ACTIVE sans porter de leçon : le programme 4AM
-            est arrêté, son découpage en leçons ne l'est pas (phase 7). Montrer
+            Un niveau peut être ACTIF sans porter de leçon : son programme est
+            arrêté, son découpage en leçons ne l'est pas encore. Montrer
             « aucun cours ne correspond » serait alors faux deux fois — il n'y a
             pas d'erreur de sélection, et il y a bien un programme à lire. */}
         {!searchQuery && visibleTopicChapters.length > 0 && (

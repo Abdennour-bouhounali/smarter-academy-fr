@@ -8,7 +8,7 @@ import { clockState, formatClock } from './examSheet';
  * l'a résolue dans le temps »). Il décompte le temps de l'étape
  * (`stepSeconds`) depuis son ouverture :
  *  - « ⏱ 02:45 » ; ambre dans le dernier cinquième ;
- *  - à zéro, « انتهى الوقت » puis le DÉPASSEMENT (+00:12) — il ne bloque
+ *  - à zéro, « Temps écoulé » puis le DÉPASSEMENT (+00:12) — il ne bloque
  *    jamais : on peut toujours répondre (invariant non bloquant) ;
  *  - réponse donnée (`stoppedSeconds`) : le bilan figé — dans le temps ✓, ou
  *    le dépassement.

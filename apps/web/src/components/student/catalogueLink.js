@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
  * Où mène un lien « vers le catalogue » du fil d'Ariane (page d'unité,
  * sommaire de leçon, module) — décision du propriétaire, 2026-10-07 :
  *
- *   élève            → « دروسي » (/espace/cours), son espace, le ميدان
+ *   élève            → « Mes leçons » (/espace/cours), son espace, le thème
  *                      présélectionné par `?chapter=` ;
  *   tout autre       → le catalogue public /courses?level=&grade=&chapter=
  *                      (/espace n'admet que les élèves : un visiteur, un

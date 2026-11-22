@@ -19,7 +19,7 @@ describe('le carnet est atteignable à tout moment', () => {
   const session = read('pages/student/practice/PracticeSession.jsx');
 
   // Depuis 2026-09-24, le déclencheur n'est plus dans la carte de la
-  // question : c'est la pastille flottante « 📓 كرّاسي » de la leçon, rendue
+  // question : c'est la pastille flottante « 📓 Mon cahier » de la leçon, rendue
   // quel que soit l'état de la question.
   it('un NotebookButton est rendu hors du bloc « répondu »', () => {
     const at = session.indexOf('<NotebookButton');
@@ -46,14 +46,13 @@ describe('le carnet est atteignable à tout moment', () => {
     // Le champ d'écriture vit désormais dans le cahier (NotebookWindow) ;
     // c'est lui qui porte le texte d'invite.
     const windowSrc = read('features/practice/notebook/NotebookWindow.jsx');
-    const notebookAr = JSON.parse(read('i18n/locales/ar/student.json')).notebook;
+    const notebookFr = JSON.parse(read('i18n/locales/ar/student.json')).notebook;
     // « Ce que je DOIS retenir » cadrait la note comme un constat d'échec ;
     // « ce que je VEUX retenir » en fait un choix de l'élève. La nuance doit
-    // survivre à la traduction : l'arabe dit « ما أريد أن أتذكّره » — أريد
-    // (je veux), et surtout PAS يجب (je dois).
+    // survivre à la réécriture : « veux », et surtout PAS « dois ».
     expect(windowSrc).toMatch(/notebook\.notePlaceholder/);
-    expect(notebookAr.notePlaceholder).toContain('أريد');
-    expect(notebookAr.notePlaceholder).not.toContain('يجب');
+    expect(notebookFr.notePlaceholder).toContain('veux');
+    expect(notebookFr.notePlaceholder).not.toMatch(/dois|faut/);
   });
 
   it('le type d’erreur reste facultatif', () => {
@@ -81,7 +80,7 @@ describe('le cahier s’ouvre en fenêtre, pré-rempli du contexte réel', () =>
     expect(session).toMatch(/onUpdate=\{patchNote\}/);
   });
 
-  it('« مسح الكل » efface TOUT, contexte compris, avec confirmation seulement si l’élève a écrit', () => {
+  it('« Tout effacer » efface TOUT, contexte compris, avec confirmation seulement si l’élève a écrit', () => {
     expect(windowSrc).toMatch(/setHtml\('<p><br><\/p>'\)/);
     expect(windowSrc).toMatch(/untouched \? doClear\(\) : setConfirmClear\(true\)|if \(untouched\) doClear\(\);/);
     expect(studentAr.notebook.window.clear.trim()).not.toBe('');

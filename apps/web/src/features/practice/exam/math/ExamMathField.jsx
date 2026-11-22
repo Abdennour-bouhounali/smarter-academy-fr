@@ -25,7 +25,7 @@ export default function ExamMathField({ value = '', onChange, onEnter, disabled 
   useLayoutEffect(() => {
     const field = ref.current;
     if (!field) return undefined;
-    // Avec « لوحة الرموز » (pad) à côté du champ, le clavier flottant de MathLive reste fermé, et sur un
+    // Avec le « Clavier mathématique » (pad) à côté du champ, le clavier flottant de MathLive reste fermé, et sur un
     // écran tactile le clavier du SYSTÈME ne s'ouvre pas par-dessus (conseil, 2026-11-09) : seule la lettre.
     field.mathVirtualKeyboardPolicy = pad ? 'manual' : 'auto';
     if (pad && typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches) {
@@ -53,7 +53,7 @@ export default function ExamMathField({ value = '', onChange, onEnter, disabled 
       }
     };
     let restore = () => {};
-    // `keyboard` : une autre disposition nommée (le « مختبر التفكير » a la sienne) ; sinon celle de la copie.
+    // `keyboard` : une autre disposition nommée (le « labo des énigmes » a la sienne) ; sinon celle de la copie.
     const handleFocus = () => { if (!pad) restore = installExamKeyboard(keyboard ?? undefined); };
     const handleBlur = () => restore();
     field.addEventListener('input', handleInput);

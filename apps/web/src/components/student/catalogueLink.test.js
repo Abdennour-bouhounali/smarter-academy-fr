@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { catalogueHref } from './catalogueLink';
 
 describe('catalogueHref — le fil d’Ariane vers le catalogue', () => {
-  it('mène l’élève à « دروسي », le ميدان présélectionné', () => {
+  it('mène l’élève à « Mes leçons », le thème présélectionné', () => {
     expect(catalogueHref('student')).toBe('/espace/cours');
     expect(catalogueHref('student', { level: 'moyen', grade: '4am' })).toBe('/espace/cours');
     expect(catalogueHref('student', { level: 'moyen', grade: '4am', chapter: 'handasa' })).toBe('/espace/cours?chapter=handasa');

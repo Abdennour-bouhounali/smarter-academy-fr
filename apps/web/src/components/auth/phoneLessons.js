@@ -27,5 +27,5 @@ export function isPhoneLessonPath(pathname) {
   return parts[0] === 'courses' && PHONE_LESSONS.includes(parts[parts.length - 1]);
 }
 
-/** The ids of the lesson tools (`LessonToolsBar › lessonTools`) a phone opens; the others are shown as « على الحاسوب ». */
+/** The ids of the lesson tools (`LessonToolsBar › lessonTools`) a phone opens; the others are shown as « Sur ordinateur ». */
 export const PHONE_TOOL_IDS = ['lesson', 'memo', 'file'];

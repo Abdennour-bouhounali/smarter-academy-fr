@@ -20,18 +20,18 @@ import ClassJoinNotice from '../components/auth/ClassJoinNotice';
  */
 function postLoginPath(user) {
   if (user.role === 'admin') return '/admin';
-  // « مسيّر المكتبة » (BOOKS_STORE.md §6ter) : le panneau, réduit à la librairie.
+  // Le gestionnaire de la librairie (BOOKS_STORE.md §6ter) : le panneau, réduit à la librairie.
   if (user.role === 'book_manager') return '/admin/livres/commandes';
   if (user.role === 'student') {
     // Venu du lien d'une classe : retour sur le lien, qui rejoint seul
     // (pendingClassJoin.js — jamais une URL lue dans la requête).
     return postAuthPath(user, user.emailVerified === false ? '/verification-email' : '/espace');
   }
-  // L'enseignant vérifie son adresse comme l'élève, puis entre dans SON espace.
+  // Le professeur vérifie son adresse comme l'élève, puis entre dans SON espace.
   if (user.role === 'teacher') {
     return user.emailVerified === false ? '/verification-email' : '/enseignant';
   }
-  // Le وليّ (PARENT_SPACE.md) : même vérification, puis فضاء الوليّ.
+  // Le parent (PARENT_SPACE.md) : même vérification, puis l'espace parent.
   if (user.role === 'parent') {
     return user.emailVerified === false ? '/verification-email' : '/wali';
   }
@@ -109,13 +109,10 @@ export default function Login() {
           <label htmlFor="email" className="block text-sm font-medium text-slate-700">
             {t('emailLabel')}
           </label>
-          {/* dir="ltr": an address is Latin-script data ('@', '.') that reads
-              better LTR even inside the RTL form; only the field is pinned. */}
           <input
             id="email"
             name="email"
             type="email"
-            dir="ltr"
             required
             autoComplete="email"
             value={email}
@@ -133,21 +130,18 @@ export default function Login() {
               id="password"
               name="password"
               type={showPassword ? 'text' : 'password'}
-              dir="ltr"
               required
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`pr-12 text-start ${authInputClass()}`}
+              className={`pe-12 text-start ${authInputClass()}`}
             />
-            {/* The reveal toggle sits at the FIELD's own end. The field is
-                dir="ltr" (a password is Latin-script data), so that end is the
-                physical right in both page directions — a deliberate `right-0`. */}
+            {/* The reveal toggle sits at the field's end. */}
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               aria-label={showPassword ? t('hidePassword') : t('showPassword')}
-              className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600 focus:outline-none"
+              className="absolute inset-y-0 end-0 flex items-center pe-3.5 text-slate-400 hover:text-slate-600 focus:outline-none"
             >
               {showPassword ? <EyeOff className="h-5 w-5" aria-hidden="true" /> : <Eye className="h-5 w-5" aria-hidden="true" />}
             </button>

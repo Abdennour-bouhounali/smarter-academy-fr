@@ -12,7 +12,7 @@ const render = (user, token = user ? 't' : null) => renderToStaticMarkup(
   </AuthContext.Provider>,
 );
 
-describe('ReportButton — qui voit « الإبلاغ عن مشكل »', () => {
+describe('ReportButton — qui voit « Signaler un problème »', () => {
   it('un visiteur ne voit rien', () => {
     expect(render(null)).toBe('');
   });
@@ -30,7 +30,7 @@ describe('ReportButton — qui voit « الإبلاغ عن مشكل »', () => {
   it('un ambassadeur voit le bouton', () => {
     const html = render({ role: 'teacher', isAmbassador: true, canReviewContent: true });
     expect(html).toContain('aria-haspopup="dialog"');
-    expect(html).toContain('الإبلاغ عن مشكل');
+    expect(html).toContain('Signaler un problème');
   });
 
   it('un administrateur voit le bouton', () => {

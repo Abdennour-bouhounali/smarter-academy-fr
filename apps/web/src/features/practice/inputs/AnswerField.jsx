@@ -11,8 +11,8 @@
  * (des entiers positifs) est bien celui qu'il sert.
  *
  * LARGEUR — le champ GRANDIT avec la place disponible au lieu d'être figé.
- * Une largeur fixe convenait à « 7/4 » mais pas à « 1 ؛ 2 ؛ 3 ؛ 4 ؛ 5 ؛ 6 ؛
- * 10 ؛ 12 ؛ 15 ؛ 20 ؛ 30 ؛ 60 » (les douze diviseurs de 60) : l'élève
+ * Une largeur fixe convenait à « 7/4 » mais pas à « 1 ; 2 ; 3 ; 4 ; 5 ; 6 ;
+ * 10 ; 12 ; 15 ; 20 ; 30 ; 60 » (les douze diviseurs de 60) : l'élève
  * écrivait sa réponse à l'aveugle, le début du texte sortant du cadre.
  * `width` fixe donc un MINIMUM (`min-w-…`), et le champ s'étire jusqu'à la
  * largeur de sa ligne. Sur mobile il occupe toute la largeur disponible.

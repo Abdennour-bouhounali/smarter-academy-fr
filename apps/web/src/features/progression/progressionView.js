@@ -1,7 +1,7 @@
 /**
  * La VUE de l'arbre de progression : recherche, filtres et tri, appliqués
- * SANS jamais aplatir la hiérarchie. Une leçon retenue reste sous sa وحدة
- * et son ميدان ; une وحدة ou un ميدان sans descendant retenu disparaît.
+ * SANS jamais aplatir la hiérarchie. Une leçon retenue reste sous son chapitre
+ * et son thème ; un chapitre ou un thème sans descendant retenu disparaît.
  *
  * Tout est pur (aucun état React) : l'arbre entre, un arbre annoté sort.
  * Chaque nœud de leçon retenu porte `visiblePoints` — les points à montrer
@@ -23,18 +23,18 @@ export const DEFAULT_VIEW = Object.freeze({
 });
 
 /**
- * Normalisation pour la recherche en arabe (et en latin) : casse,
- * diacritiques (tashkīl), tatwīl, variantes de l'alif, tā marbūta et alif
- * maqsūra — pour que « الكسور » trouve « الكُسُور » et « كسور ».
+ * Normalisation pour la recherche en français : casse, accents (« équation »
+ * trouve « equation »), ligatures (« œ », « æ »), apostrophe typographique —
+ * pour que l'élève trouve une leçon quelle que soit sa façon de taper.
  */
 export function normalizeText(s) {
   return String(s || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
-    .replace(/[ً-ْٰـ]/g, '')
-    .replace(/[أإآٱ]/g, 'ا')
-    .replace(/ة/g, 'ه')
-    .replace(/ى/g, 'ي')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/œ/g, 'oe')
+    .replace(/æ/g, 'ae')
+    .replace(/’/g, "'")
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -156,7 +156,7 @@ export function applyProgressionView(tree, view = DEFAULT_VIEW) {
               })
               .filter(Boolean)
               .sort(lessonSort);
-            // Hors de toute vue active, une unité encore « قيد الإعداد »
+            // Hors de toute vue active, une unité encore « En préparation »
             // reste visible (comptée, non dépliable) : l'élève voit
             // l'étendue du programme. Dès qu'on cherche ou filtre, seul ce
             // qui correspond reste.

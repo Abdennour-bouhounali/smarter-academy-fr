@@ -4,22 +4,22 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
 import { mathToPlain } from '../../../utils/mathPlain';
 
 /**
- * Un ENSEMBLE d'entiers naturels (« عيّن كل قواسم العدد 84 ») : l'élève tape
- * la liste, séparateurs libres (virgule, فاصلة عربية، فاصلة منقوطة، espace),
- * chiffres arabes acceptés. L'évaluateur (`integerSet`,
+ * Un ENSEMBLE d'entiers naturels (« Donne tous les diviseurs de 84 ») : l'élève tape
+ * la liste, séparateurs libres (virgule, point-virgule, espace),
+ * chiffres arabes orientaux acceptés aussi par l'évaluateur. L'évaluateur (`integerSet`,
  * packages/core/practice/answerEvaluator.js) ignore l'ordre et les doublons,
  * et lit un sous-ensemble strict comme une réponse partielle.
  *
  * UN CHAMP QUI REVIENT À LA LIGNE, et non une ligne unique : la réponse
- * attendue peut être longue (« 1 ؛ 2 ؛ 3 ؛ 4 ؛ 5 ؛ 6 ؛ 10 ؛ 12 ؛ 15 ؛ 20 ؛
- * 30 ؛ 60 » — les douze diviseurs de 60). Sur un téléphone, une ligne unique
+ * attendue peut être longue (« 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 10 ; 12 ; 15 ; 20 ;
+ * 30 ; 60 » — les douze diviseurs de 60). Sur un téléphone, une ligne unique
  * faisait défiler le texte hors du cadre : l'élève relisait sa réponse à
  * l'aveugle, et ne pouvait pas vérifier qu'il n'avait rien oublié. Le
  * `textarea` GRANDIT donc tout seul avec le contenu (la hauteur suit
  * `scrollHeight` à chaque frappe) au lieu de fuir en largeur : la réponse
  * entière reste lisible, quelle que soit sa longueur, sans que l'élève ait
  * à faire défiler quoi que ce soit. La validation reste le bouton
- * « تحقّق من إجابتي » : la page ne passe pas de `onEnter` aux champs, donc
+ * « Vérifier ma réponse » : la page ne passe pas de `onEnter` aux champs, donc
  * on n'invente pas un raccourci qui n'existe nulle part ailleurs.
  */
 export default function IntegerSetInput({ question, value, onChange, disabled }) {
@@ -51,7 +51,7 @@ export default function IntegerSetInput({ question, value, onChange, disabled })
         spellCheck="false"
         value={text}
         aria-label={(question.answerFormat && mathToPlain(question.answerFormat)) || t('practice.integerSetAria')}
-        placeholder={(question.answerFormat && mathToPlain(question.answerFormat)) || '1 ؛ 2 ؛ 3 ؛ …'}
+        placeholder={(question.answerFormat && mathToPlain(question.answerFormat)) || '1 ; 2 ; 3 ; …'}
         disabled={disabled}
         onChange={(e) => onChange({ value: e.target.value })}
         className={`w-full min-h-[76px] resize-y overflow-hidden rounded-xl border-2 px-3 py-2.5 text-start font-mono text-lg sm:text-xl leading-relaxed tabular-nums transition-colors focus:outline-none focus:ring-2 focus:ring-blue-200 ${

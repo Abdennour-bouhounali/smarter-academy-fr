@@ -13,9 +13,9 @@ const TONE = {
 };
 
 /**
- * « 🎯 للعمل الآن » — la section ACTIONNABLE : quelques compétences à
+ * « 🎯 À travailler maintenant » — la section ACTIONNABLE : quelques compétences à
  * retravailler (règle dans pickWorkNow.js), chacune avec son contexte
- * complet (درس, وحدة, ميدان) et un lien direct vers la leçon existante.
+ * complet (leçon, chapitre, thème) et un lien direct vers la leçon existante.
  *
  * Rien n'est proposé tant que le profil n'est pas chargé (squelette) ; en
  * erreur la section se tait, car « rien à retravailler » et « impossible de
@@ -61,7 +61,7 @@ export default function WorkNowSection({ items, total, nextStep, unassessedCount
                   <Link
                     to={lesson.lesson.path}
                     className="mt-auto min-h-[44px] px-4 rounded-xl bg-nav-accent text-white text-sm font-bold inline-flex items-center justify-center gap-1.5 hover:bg-[#3350c4] focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent self-start"
-                    aria-label={`${t('progression.workNow.cta')}: ${mathToPlain(lesson.lesson.title)}`}
+                    aria-label={`${t('progression.workNow.cta')} : ${mathToPlain(lesson.lesson.title)}`}
                   >
                     {t('progression.workNow.cta')} <ArrowForward size={15} aria-hidden="true" />
                   </Link>

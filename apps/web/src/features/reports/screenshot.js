@@ -57,7 +57,7 @@ export async function captureRegion(rect) {
   return canvas;
 }
 
-/** La partie VISIBLE de la page entière (le geste « تصوير الشاشة كاملة »). */
+/** La partie VISIBLE de la page entière (le geste « Capturer tout l’écran »). */
 export function capturePage() {
   return captureRegion({ x: 0, y: 0, width: window.innerWidth, height: window.innerHeight });
 }

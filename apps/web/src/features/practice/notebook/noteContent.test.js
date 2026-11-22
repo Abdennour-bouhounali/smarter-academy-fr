@@ -39,20 +39,20 @@ describe('le format d’une note', () => {
 describe('la réponse de l’élève, telle que saisie', () => {
   const choiceQ = {
     answerType: 'choice',
-    choices: [{ id: 'A', content: 'الأعداد **الزوجية**' }, { id: 'B', content: '$\\frac{1}{2}$' }],
+    choices: [{ id: 'A', content: 'Les nombres **pairs**' }, { id: 'B', content: '$\\frac{1}{2}$' }],
   };
 
   it('QCM : le texte du choix, dans le dialecte des exercices', () => {
     expect(formatAnswer(choiceQ, { choiceId: 'B' })).toEqual({ text: '$\\frac{1}{2}$', ltr: false, markup: true });
     expect(formatAnswer({ ...choiceQ, answerType: 'multiChoice' }, { choiceIds: ['A', 'B'] }).text)
-      .toBe('الأعداد **الزوجية** ، $\\frac{1}{2}$');
+      .toBe('Les nombres **pairs** ; $\\frac{1}{2}$');
     // Un identifiant inconnu n'invente rien.
     expect(formatAnswer(choiceQ, { choiceId: 'Z' })).toBeNull();
   });
 
   it('nombres et ensembles : la saisie brute, isolée gauche-à-droite', () => {
     expect(formatAnswer({ answerType: 'rational' }, { value: ' 21/12 ' })).toEqual({ text: '21/12', ltr: true, markup: false });
-    expect(formatAnswer({ answerType: 'integerSet' }, { value: '1، 2، 3' }).text).toBe('1، 2، 3');
+    expect(formatAnswer({ answerType: 'integerSet' }, { value: '1 ; 2 ; 3' }).text).toBe('1 ; 2 ; 3');
     expect(formatAnswer({ answerType: 'rational' }, { value: '' })).toBeNull();
   });
 
@@ -73,30 +73,30 @@ describe('la réponse de l’élève, telle que saisie', () => {
 
 describe('le contenu de départ d’une note ouverte depuis un exercice', () => {
   const labels = {
-    exercise: 'التمرين', question: 'السؤال', mistake: 'خطئي', myAnswer: 'إجابتي', verdict: 'التقييم', noAnswer: 'بدون إجابة',
+    exercise: 'Exercice', question: 'Question', mistake: 'Mon erreur', myAnswer: 'Ma réponse', verdict: 'Évaluation', noAnswer: 'Sans réponse',
   };
   const exercise = {
-    metadata: { title: 'معارف — 12 و 18' },
-    statement: { content: 'قواسم 12 هي **1 ، 2 ، 3 ، 4 ، 6 و 12**.\n\nقواسم 18 هي 1 ، 2 ، 3 ، 6 ، 9 و 18.' },
+    metadata: { title: 'Diviseurs — 12 et 18' },
+    statement: { content: 'Les diviseurs de 12 sont **1 ; 2 ; 3 ; 4 ; 6 et 12**.\n\nLes diviseurs de 18 sont 1 ; 2 ; 3 ; 6 ; 9 et 18.' },
   };
-  const question = { id: 'q1', answerType: 'integerSet', statement: 'اكتب القواسم المشتركة $\\gcd(12, 18)$.' };
+  const question = { id: 'q1', answerType: 'integerSet', statement: 'Calcule $\\text{PGCD}(12 ; 18)$.' };
 
   it('commence TOUJOURS par le bloc exercice : titre, énoncé en paragraphes, question', () => {
     const html = buildDefaultContent({ exercise, question, labels });
     expect(html.startsWith('<section data-nb="exercise">')).toBe(true);
-    expect(html).toContain('<p data-nb="label">التمرين — معارف — 12 و 18</p>');
-    expect(html).toContain('<p>قواسم 12 هي <strong>1 ، 2 ، 3 ، 4 ، 6 و 12</strong>.</p><p>قواسم 18 هي 1 ، 2 ، 3 ، 6 ، 9 و 18.</p>');
-    expect(html).toContain('<p data-nb="label">السؤال</p><p>اكتب القواسم المشتركة $\\gcd(12, 18)$.</p>');
+    expect(html).toContain('<p data-nb="label">Exercice — Diviseurs — 12 et 18</p>');
+    expect(html).toContain('<p>Les diviseurs de 12 sont <strong>1 ; 2 ; 3 ; 4 ; 6 et 12</strong>.</p><p>Les diviseurs de 18 sont 1 ; 2 ; 3 ; 6 ; 9 et 18.</p>');
+    expect(html).toContain('<p data-nb="label">Question</p><p>Calcule $\\text{PGCD}(12 ; 18)$.</p>');
     // Et se termine par la ligne où l'élève écrit.
     expect(html.endsWith('<p><br></p>')).toBe(true);
   });
 
-  it('sans validation, pas de bloc « خطئي » — on n’invente pas d’erreur', () => {
+  it('sans validation, pas de bloc « Mon erreur » — on n’invente pas d’erreur', () => {
     const html = buildDefaultContent({ exercise, question, answer: { value: '1, 2' }, labels });
     expect(html).not.toContain('data-nb="mistake"');
   });
 
-  it('réponse juste : pas de bloc « خطئي » non plus', () => {
+  it('réponse juste : pas de bloc « Mon erreur » non plus', () => {
     const html = buildDefaultContent({
       exercise, question, answer: { value: '1, 2, 3, 6' }, evaluation: { outcome: 'correct', isCorrect: true }, labels,
     });
@@ -107,22 +107,22 @@ describe('le contenu de départ d’une note ouverte depuis un exercice', () => 
     const html = buildDefaultContent({
       exercise, question, answer: { value: '1, 2, 3' },
       evaluation: { outcome: 'incorrect', isCorrect: false },
-      feedbackMessage: 'قارن **القائمتين** عددًا عددًا.',
-      verdict: 'ليس بعد',
+      feedbackMessage: 'Compare les **deux listes** nombre par nombre.',
+      verdict: 'Pas encore',
       labels,
     });
-    expect(html).toContain('<section data-nb="mistake"><p data-nb="label">خطئي</p>');
-    expect(html).toContain('<p><strong>إجابتي :</strong> <span dir="ltr">1, 2, 3</span></p>');
-    expect(html).toContain('<p><strong>التقييم :</strong> ليس بعد — قارن <strong>القائمتين</strong> عددًا عددًا.</p>');
+    expect(html).toContain('<section data-nb="mistake"><p data-nb="label">Mon erreur</p>');
+    expect(html).toContain('<p><strong>Ma réponse\u00A0:</strong> <span dir="ltr">1, 2, 3</span></p>');
+    expect(html).toContain('<p><strong>Évaluation\u00A0:</strong> Pas encore — Compare les <strong>deux listes</strong> nombre par nombre.</p>');
   });
 
-  it('réponse fausse illisible : « بدون إجابة » plutôt qu’un vide', () => {
+  it('réponse fausse illisible : « Sans réponse » plutôt qu’un vide', () => {
     const html = buildDefaultContent({
       exercise, question, answer: null, evaluation: { outcome: 'incorrect', isCorrect: false }, labels,
     });
-    expect(html).toContain('<strong>إجابتي :</strong> بدون إجابة</p>');
-    // Sans verdict ni message, pas de ligne « التقييم » vide.
-    expect(html).not.toContain('التقييم');
+    expect(html).toContain('<strong>Ma réponse\u00A0:</strong> Sans réponse</p>');
+    // Sans verdict ni message, pas de ligne « Évaluation » vide.
+    expect(html).not.toContain('Évaluation');
   });
 
   it('le contenu venu des fichiers est échappé, jamais interprété', () => {

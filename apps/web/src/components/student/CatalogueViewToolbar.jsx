@@ -6,12 +6,12 @@ const LAYOUT_ICONS = { grid: LayoutGrid, rows: Rows3 };
 
 /**
  * Le sélecteur de VUE du catalogue (catalogueView.js) : l'organisation
- * (الوحدات / حسب الميادين / كل الدروس), toujours nommée en toutes lettres,
- * et la disposition (شبكة / قائمة), en icônes nommées par `aria-label`.
+ * (Par chapitre / Par thème / Toutes les leçons), toujours nommée en toutes lettres,
+ * et la disposition (Grille / Liste), en icônes nommées par `aria-label`.
  * Pendant une recherche, l'organisation n'a pas de sens (les résultats sont
  * à plat) : elle est désactivée, la disposition reste.
  *
- * Le sélecteur ouvre la ligne (à droite en arabe), le compte la ferme.
+ * Le sélecteur ouvre la ligne (à gauche), le compte la ferme.
  */
 export default function CatalogueViewToolbar({ view, onChange, count, searching = false }) {
   const { t } = useTranslation('student');
@@ -53,7 +53,7 @@ export default function CatalogueViewToolbar({ view, onChange, count, searching 
         </div>
       </div>
       <p className="font-inter text-xs font-semibold text-slate-500" aria-live="polite" data-catalogue-count>
-        {tc('lessonsCount', { count })}
+        {count > 0 ? tc('lessonsCount', { count }) : t('courses.emptyGroup')}
       </p>
     </div>
   );

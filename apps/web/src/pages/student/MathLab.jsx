@@ -1,6 +1,6 @@
 /**
- * Le مختبر الرياضيات (Math Lab) — les pages de l'espace élève :
- *   /espace/atelier                          l'accueil : instruments, « أعمالي »
+ * L'atelier (Math Lab) — les pages de l'espace élève :
+ *   /espace/atelier                          l'accueil : instruments, « Mes travaux »
  *   /espace/atelier/:toolSlug                un document neuf dans un instrument
  *   /espace/atelier/:toolSlug/:documentId    un document enregistré
  *

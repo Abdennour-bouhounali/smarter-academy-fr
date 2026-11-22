@@ -6,7 +6,7 @@ import { UNIT_MISSIONS, unitState, unmetPrerequisites } from './unitMissions';
  * Le contenu de la page d'unité (regard élève, 2026-11-09) est écrit par la plateforme : il doit couvrir CHAQUE leçon de l'unité, ses
  * clés doivent pointer vers de vraies leçons, ses nombres être dans son texte — et aucune ligne ne renvoie au manuel (indépendance).
  */
-const BOOK = /الكتاب|كتاب|ص\s*\d|صفحة/;
+const BOOK = /manuel|livre|\bp\.\s*\d|\bpages?\s*\d/i;
 
 describe.each(Object.entries(UNIT_MISSIONS))('unit mission content « %s »', (unitId, m) => {
   const unit = getUnitById(unitId);

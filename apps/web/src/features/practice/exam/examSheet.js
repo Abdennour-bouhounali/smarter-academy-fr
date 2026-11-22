@@ -1,12 +1,15 @@
 /**
  * La logique PURE de la feuille d'examen (ExamSheet.jsx) — sans React ni i18n.
  *
- * Un exercice est rendu comme un sujet de شهادة التعليم المتوسط quand il porte
- * `metadata.exam` (contrat : docs/architecture/EXERCISE_CONTRACT.md § « Présentation
- * examen (BEM) »). Ses questions sont les ÉTAPES du sujet : `step` « 01 », « 02 »…
- * et, dedans, `sub` (ا)(ب)(ج). Plusieurs questions peuvent partager une étape ou
- * une sous-étape (BEM 2024 01 : « 10cm ؟ 18cm ؟ ») : le numéro ne s'affiche
- * qu'à la PREMIÈRE question qui l'ouvre, comme sur le papier.
+ * Un exercice est rendu comme un sujet de brevet quand il porte `metadata.exam` (contrat :
+ * docs/architecture/EXERCISE_CONTRACT.md § « The exam sheet »). Ses questions sont les ÉTAPES du
+ * sujet : `step` « 01 », « 02 »… (affichées « 1 », « 2 ») et, dedans, `sub` a) b) c). Plusieurs
+ * questions peuvent partager une étape ou une sous-étape (« 10 cm ? » puis « 18 cm ? ») : le numéro
+ * ne s'affiche qu'à la PREMIÈRE question qui l'ouvre, comme sur le papier.
+ *
+ * Le FORMAT des données (`step` sur deux chiffres, `points` « 02,5 », `badge` « BEM 2015 », `source.type: "bem"`)
+ * est encore celui de la banque algérienne : il n'est pas renommé ici — le contrat de la banque française
+ * (plan §5, 2G) le fixera. Ce module le LIT et l'affiche à la française.
  */
 
 import { ACTIVE_GRADE_IDS, getLessonById } from '@smarter-academy/core';
@@ -26,8 +29,8 @@ export const isExamLesson = (lessonCode) => EXAM_STYLE_LESSONS.has(lessonCode);
 
 /**
  * Le corrigé type d'une question est-il PRÊT à s'ouvrir ? Une étape du sujet peut être
- * coupée en plusieurs questions (« الحد » puis « اتجاه المتراجحة »، « الحل الأصغر » puis
- * « الأكبر »، 10cm ؟ puis 18cm ؟) : le corrigé de l'étape donnerait la réponse de la
+ * coupée en plusieurs questions (la borne puis le sens d'une inéquation, la plus petite
+ * solution puis la plus grande, 10 cm ? puis 18 cm ?) : le corrigé de l'étape donnerait la réponse de la
  * question suivante. Il reste donc fermé tant qu'une question PLUS LOIN dans le même
  * groupe (même `step`, même `sub`) n'a pas reçu de réponse (déploiement BEM, 2026-10-07).
  *
@@ -65,39 +68,44 @@ export function stepMarks(questions = []) {
 }
 
 /**
- * Le badge de provenance, découpé pour l'isolement bidi : la partie arabe
- * (« على منوال ») reste RTL, « BEM 2015 » est un îlot LTR (`ltr: true`). Le badge
- * d'un examen de fin de فصل (1AM–3AM, « على منوال اختبار الفصل الأول ») est
- * entièrement arabe : aucun îlot LTR (`ltr: false`).
+ * Le badge de provenance, À DIRE en français. Le texte du badge dans les données n'est pas affiché tel quel :
+ * seule son ANNÉE est lue (« BEM 2015 » → 2015), et `kind` dit de quoi il s'agit :
+ *  - `official`, `excerpt` → `model: 'official'` : « Brevet 2015 » ;
+ *  - `modelled` avec une année → `model: 'modelled'` : « Sur le modèle du brevet 2015 » ;
+ *  - `modelled` sans année (un sujet de contrôle d'une autre classe) → `model: 'term'` ;
+ *  - autre chose → `model: 'raw'`, le texte du badge tel quel (`label`).
  *
- * @returns {{prefix: string, label: string, kind: string, ltr: boolean}|null}
+ * @returns {{kind: string, model: 'official'|'modelled'|'term'|'raw', year: number|null, label: string}|null}
  */
 export function examBadge(exam) {
   if (!exam?.badge) return null;
-  const m = /^(.*?)\s*(BEM\s+\d{4})$/.exec(exam.badge);
-  if (m) return { prefix: m[1].trim(), label: m[2], kind: exam.kind, ltr: true };
-  const term = /^(على منوال)\s+(اختبار الفصل .+)$/.exec(exam.badge);
-  if (term) return { prefix: term[1], label: term[2], kind: exam.kind, ltr: false };
-  return { prefix: '', label: exam.badge, kind: exam.kind, ltr: false };
+  const found = /(\d{4})\s*$/.exec(exam.badge)?.[1];
+  const year = found ? Number(found) : null;
+  const label = exam.badge;
+  if ((exam.kind === 'official' || exam.kind === 'excerpt') && year) return { kind: exam.kind, model: 'official', year, label };
+  if (exam.kind === 'modelled') return { kind: exam.kind, model: year ? 'modelled' : 'term', year, label };
+  return { kind: exam.kind, model: 'raw', year, label };
 }
 
 /**
- * QUEL examen la feuille simule, selon l'année de la leçon : l'examen de fin de cycle (`bem`) pour la dernière année du
- * collège, l'examen de fin de trimestre (`term`) pour les autres. `n` est le rang de l'année dans le cycle (6e → 1,
- * 3e → 4). Une leçon inconnue du catalogue garde l'examen de fin de cycle.
+ * QUEL examen la feuille simule, selon le niveau de la leçon : le brevet (`kind: 'bem'`, nom de donnée gardé) pour la
+ * 3e, un contrôle (`term`) pour les autres niveaux. `n` est le NIVEAU affiché (« 6e »… « 3e ») — c'est la variable
+ * `{{n}}` des textes `practice.exam.paper.levelValue` et `practice.exam.nav.subject`. Une leçon inconnue du
+ * catalogue garde le brevet.
  *
- * @returns {{kind: 'bem'|'term', n: number}}
+ * @returns {{kind: 'bem'|'term', n: string}}
  */
 export function examPaper(lessonCode) {
-  const n = ACTIVE_GRADE_IDS.indexOf(getLessonById(lessonCode)?.gradeId) + 1;
-  if (!n) return { kind: 'bem', n: ACTIVE_GRADE_IDS.length };
-  return { kind: n === ACTIVE_GRADE_IDS.length ? 'bem' : 'term', n };
+  const rank = ACTIVE_GRADE_IDS.indexOf(getLessonById(lessonCode)?.gradeId) + 1;
+  const last = ACTIVE_GRADE_IDS.length;
+  if (!rank) return { kind: 'bem', n: ACTIVE_GRADE_IDS[last - 1] };
+  return { kind: rank === last ? 'bem' : 'term', n: ACTIVE_GRADE_IDS[rank - 1] };
 }
 
 /**
  * La session d'un exercice TIRÉ d'un sujet officiel (official / excerpt) —
- * affichée « شهادة التعليم المتوسط — دورة 2008 », comme l'en-tête des annales.
- * `null` pour un exercice adapté ou « على منوال » (son badge dit déjà le modèle).
+ * affichée « Session : 2008 », comme l'en-tête des annales.
+ * `null` pour un exercice adapté ou « sur le modèle » (son badge dit déjà le modèle).
  */
 export function examSession(exercise) {
   const exam = exercise?.metadata?.exam;
@@ -105,18 +113,43 @@ export function examSession(exercise) {
   return (exam?.kind === 'official' || exam?.kind === 'excerpt') && Number.isInteger(year) ? year : null;
 }
 
-/** Le « جزء » du sujet : la وضعية الإدماجية est le الجزء الثاني. */
+/**
+ * La PARTIE du sujet : 1 ou 2, lue dans `source.part`, sinon dans un intitulé « Partie 2 ». (Dans les données
+ * algériennes, la partie 2 était la « situation d'intégration » ; au brevet, la partie 2 est celle des problèmes.)
+ */
 export function examPart(exercise) {
   const part = exercise?.metadata?.source?.part;
   if (part === 1 || part === 2) return part;
-  return exercise?.metadata?.exam?.heading === 'الوضعية الإدماجية' ? 2 : 1;
+  return /^partie\s*2\b/iu.test(String(exercise?.metadata?.exam?.heading ?? '')) ? 2 : 1;
+}
+
+/** Le numéro d'étape tel qu'il s'affiche : « 01 » → « 1 » (la donnée garde ses deux chiffres). */
+export const stepLabel = (step) => String(step ?? '').replace(/^0+(?=\d)/, '');
+
+/**
+ * Le barème d'un exercice tel qu'il s'affiche, et le nombre qui accorde « point » / « points » :
+ * « 02,5 » → { label: '2,5', count: 2.5 } — « (2,5 points) » ; « 01 » → « (1 point) ».
+ */
+export function examPoints(points) {
+  const label = String(points ?? '').trim().replace(/^0+(?=\d)/, '');
+  const count = Number(label.replace(',', '.'));
+  return { label, count: Number.isFinite(count) ? count : 0 };
+}
+
+/**
+ * Un résultat de corrigé ÉCRIT EN MOTS (« oui », « 4 fois ») plutôt qu'une formule : il s'affiche en texte,
+ * KaTeX ne compose pas une phrase. Une commande LaTeX (`\dfrac`, `\text`) ne compte pas comme un mot.
+ */
+export function resultIsWords(text) {
+  const plain = String(text ?? '').replace(/\\[a-zA-Z]+/g, ' ');
+  return /\p{L}{3,}/u.test(plain.replace(/\b(?:PGCD|PPCM)\b/g, ' '));
 }
 
 /**
  * La TAILLE de la zone de réponse d'une étape (propriétaire, 2026-10-06 : « une
  * petite réponse, un petit champ ; une grande réponse, un grand champ »).
- *  - `proof`  : « بيّن أن » — des lignes réglées qui s'allongent ;
- *  - `choice` : une question fermée — « ☐ نعم ☐ لا » ;
+ *  - `proof`  : « Démontrer que » — des lignes réglées qui s'allongent ;
+ *  - `choice` : une question fermée — « ☐ oui ☐ non » ;
  *  - `short`  : un nombre court (« 135 ») — un trait de quelques centimètres ;
  *  - `medium` : une fraction, un grand nombre, un couple, une courte liste ;
  *  - `long`   : une longue liste (les diviseurs d'un nombre).
@@ -127,7 +160,7 @@ export function answerSize(question) {
   if (type === 'selfCheck') return 'proof';
   if (type === 'choice' || type === 'multiChoice') return 'choice';
   if (type === 'point' || type === 'affine' || type === 'interval') return 'medium';
-  const text = Array.isArray(ea) ? ea.join(' ؛ ') : String(ea ?? '');
+  const text = Array.isArray(ea) ? ea.join(' ; ') : String(ea ?? '');
   if (type === 'integerSet') return text.length > 16 ? 'long' : 'medium';
   return text.length <= 5 && !text.includes('/') ? 'short' : 'medium';
 }
@@ -141,8 +174,8 @@ export function answerSize(question) {
  */
 export function answerChars(question) {
   const ea = question?.expectedAnswer;
-  const text = Array.isArray(ea) ? ea.join(' ؛ ') : String(ea ?? '');
-  // Le champ vide affiche `answerFormat` (« عدد طبيعي ») : il doit tenir en entier (propriétaire, 2026-10-08).
+  const text = Array.isArray(ea) ? ea.join(' ; ') : String(ea ?? '');
+  // Le champ vide affiche `answerFormat` (« Nombre entier ») : il doit tenir en entier (propriétaire, 2026-10-08).
   const format = String(question?.answerFormat ?? '');
   return Math.max(4, text.length + 2, format.length);
 }

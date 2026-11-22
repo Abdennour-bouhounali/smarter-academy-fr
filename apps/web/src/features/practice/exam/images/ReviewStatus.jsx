@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { CheckCircle2, Hourglass, MessageSquareText, XCircle } from 'lucide-react';
 
 /**
- * La correction de l'enseignant d'une étape (« تصحيح الأستاذ ») : en attente,
+ * La correction de l'enseignant d'une étape (« Correction du professeur ») : en attente,
  * ou son verdict et son commentaire. `review` = { kind, status, verdict,
  * comment } (AnswerReview::toClient). Une demande retirée (l'élève a quitté la
  * classe et s'est noté) ne s'affiche pas.

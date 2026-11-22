@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Brain, Check, RotateCcw, Eye } from 'lucide-react';
+import { Brain, Check, RotateCcw, Eye } from 'lucide-react';
+import { ArrowBack } from '../../../../components/common/DirectionalIcons';
 import { AuthContext } from '../../../../context/AuthContext';
 import { useDocumentMeta } from '../../../../hooks/useDocumentMeta';
 import { fetchNotes, reviewNote } from '../../../../services/practiceService';
@@ -17,9 +18,9 @@ import './notebookSpace.css';
  *
  *   question (le titre, ou l'endroit de la note)
  *        ↓  l'élève écrit ce qu'il se rappelle
- *   « أظهر ملاحظتي »  →  sa propre note, en face de sa réponse
+ *   « Afficher ma note »  →  sa propre note, en face de sa réponse
  *        ↓
- *   « أعرفها » (sort de la file)  |  « أعيدها لاحقًا » (revient plus tard)
+ *   « Je la connais » (sort de la file)  |  « À revoir plus tard » (revient plus tard)
  *
  * Le serveur tient le compte (review_count, last_reviewed_at, next_review_at)
  * : une répétition espacée viendra s'y greffer sans refaire cet écran.
@@ -68,7 +69,7 @@ export default function ReviewSession() {
 
   const back = (
     <Link to={paths.reviewView} className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 hover:text-violet-800 min-h-[44px]">
-      <ArrowRight size={16} aria-hidden="true" /> {r('back')}
+      <ArrowBack size={16} aria-hidden="true" /> {r('back')}
     </Link>
   );
 

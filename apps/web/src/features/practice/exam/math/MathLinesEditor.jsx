@@ -5,10 +5,9 @@ import ExamMathField from './ExamMathField';
 import { parseLines, serializeLines } from './linesModel';
 
 /**
- * La RÉDACTION en lignes (propriétaire, 2026-10-06 : « l'arabe de droite à
- * gauche, les maths de gauche à droite ») — « مراحل الحساب » et la démonstration
- * « بيّن أن ». Chaque ligne est soit du TEXTE (champ RTL), soit une FORMULE
- * (MathLive, LTR). Entrée ajoute une ligne du même genre ; ✕ en retire une.
+ * La RÉDACTION en lignes (propriétaire, 2026-10-06) — « Étapes du calcul » et la
+ * démonstration « Démontrer que ». Chaque ligne est soit du TEXTE (un champ texte),
+ * soit une FORMULE (MathLive). Entrée ajoute une ligne du même genre ; ✕ en retire une.
  * Ce qui est enregistré reste une chaîne (`serializeLines`) : `$…$` par formule.
  */
 export default function MathLinesEditor({ value, onChange, startWith = 'math', ariaLabel, placeholder }) {
@@ -57,14 +56,13 @@ export default function MathLinesEditor({ value, onChange, startWith = 'math', a
             ) : (
               <input
                 type="text"
-                dir="rtl"
                 value={line.value}
                 onChange={(e) => update(i, e.target.value)}
                 onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); insertAfter(i, 'text'); } }}
                 placeholder={i === 0 ? placeholder : ''}
                 aria-label={t('practice.exam.lines.textLine', { n: i + 1 })}
                 autoFocus={focusIndex === i}
-                className="min-w-0 flex-1 bg-transparent py-1.5 text-right focus:outline-none"
+                className="min-w-0 flex-1 bg-transparent py-1.5 text-start focus:outline-none"
                 data-line-text
               />
             )}

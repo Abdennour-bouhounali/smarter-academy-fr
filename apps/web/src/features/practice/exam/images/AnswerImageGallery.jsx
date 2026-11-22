@@ -10,8 +10,8 @@ import Modal from '../../../../components/admin/ui/Modal';
  * agrandit ; une copie annotée par l'enseignant s'ouvre sur l'annotation,
  * l'original à un appui.
  *
- * `onRemove` (avant la réponse seulement) ajoute la croix « حذف ».
- * `onAnnotate` (enseignant) ajoute « صحّح على الصورة ».
+ * `onRemove` (avant la réponse seulement) ajoute la croix « Supprimer ».
+ * `onAnnotate` (enseignant) ajoute « Corriger sur la photo ».
  */
 export default function AnswerImageGallery({ images = [], loader, onRemove = null, onAnnotate = null, size = 'md' }) {
   const { t } = useTranslation('student');

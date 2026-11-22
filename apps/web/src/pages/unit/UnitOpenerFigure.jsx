@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
 
 /**
- * Les figures de l'OUVERTURE d'unité (تحدّ, encadré historique) : quand leur texte renvoie à « الشكل المقابل », la page
+ * Les figures de l'OUVERTURE d'unité (défi, encadré historique) : quand leur texte renvoie à « la figure ci-contre », la page
  * montre le dessin qu'une leçon de l'unité a déjà fait (jamais une seconde copie), chargé à la demande pour que la page
  * d'unité n'embarque pas les leçons des autres unités.
  *

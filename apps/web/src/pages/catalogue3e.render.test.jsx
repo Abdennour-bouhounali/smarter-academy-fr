@@ -50,7 +50,7 @@ describe('3e — a catalogue of coming-soon lessons', () => {
     ['teacher', { role: 'teacher' }],
   ])('unit page (%s): every lesson a non-clickable « coming soon » line with its learning points, no link to it', (_, user) => {
     for (const unit of units) {
-      // MathLabel wraps formulas in bidi isolates (the interface is still RTL): read the text without them.
+      // MathLabel may wrap formulas in bidi isolates: read the text without them.
       const html = render(<UnitPage />, unit.path, user).replace(/[\u2066-\u2069]/g, '');
       expect(html, unit.id).toContain(`data-unit="${unit.id}"`);
       for (const l of [...unit.lessons, unit.synthesis]) {

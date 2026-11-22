@@ -91,7 +91,7 @@ export default function PracticeSummary() {
           { key: 'statIncorrect', value: s.incorrectCount ?? 0 },
           { key: 'statHints', value: s.hintsUsed ?? 0 },
           ...(typeof s.successRate === 'number'
-            ? [{ key: 'statSuccessRate', value: `${Math.round(s.successRate)}٪` }]
+            ? [{ key: 'statSuccessRate', value: `${Math.round(s.successRate)} %` }]
             : []),
         ].map((stat) => (
           <div key={stat.key} className="rounded-2xl border-2 border-slate-200 bg-white p-4 text-center" data-practice-stat={stat.key}>

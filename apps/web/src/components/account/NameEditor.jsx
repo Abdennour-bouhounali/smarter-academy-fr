@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { normalizeName, personNameErrors } from '../../utils/personName';
 
 /**
- * « الاسم و اللقب » on a profile page — read, then edit in place. Shared by
+ * « Prénom et nom » on a profile page — read, then edit in place. Shared by
  * the student profile (Profil.jsx) and the teacher profile (TeacherProfile.jsx);
  * only the accent differs (`tone`). Writes through AuthContext.updateProfile
  * (PATCH /auth/profile), so the greeting, the sidebar and the teacher's view

@@ -5,11 +5,11 @@ import QuestionContextPanel from './QuestionContextPanel';
 import HintPanel from './HintPanel';
 import { historyEntry } from './questionHistory';
 
-// « الدنّان » : trois questions, la 2e et la 3e reposent sur le x de la 1re.
+// « Les deux récipients » : trois questions, la 2e et la 3e reposent sur le x de la 1re.
 const questions = [
-  { id: 'q1', statement: 'جِد أكبر قيمة للعدد x.', answerType: 'rational' },
-  { id: 'q2', statement: 'كم مرة استعملنا هذا الدنّ لملء الدنّ الأول؟', answerType: 'rational' },
-  { id: 'q3', statement: 'كم مرة استعملنا هذا الدنّ لملء الدنّ الثاني؟', answerType: 'rational' },
+  { id: 'q1', statement: 'Trouve la plus grande valeur possible de x.', answerType: 'rational' },
+  { id: 'q2', statement: 'Combien de fois a-t-on rempli ce récipient pour remplir le premier ?', answerType: 'rational' },
+  { id: 'q3', statement: 'Combien de fois a-t-on rempli ce récipient pour remplir le second ?', answerType: 'rational' },
 ];
 const done = [
   historyEntry({ question: questions[0], index: 0, answer: { value: '6' }, evaluation: { outcome: 'correct', isCorrect: true }, feedbackMessage: 'PGCD(24 ; 18) = 6.' }),
@@ -73,7 +73,7 @@ describe('HintPanel — l’échelle des indices, sans fuite', () => {
 
   it('un indice révélé s’affiche, le suivant devient demandable', () => {
     const html = renderToStaticMarkup(
-      <HintPanel hints={[{ index: 1, type: 'look', content: 'احسب PGCD(24 ; 18).' }]} remaining={2} hintTypes={types} onRequest={() => {}} />,
+      <HintPanel hints={[{ index: 1, type: 'look', content: 'Calcule PGCD(24 ; 18).' }]} remaining={2} hintTypes={types} onRequest={() => {}} />,
     );
     expect(html).toContain('PGCD(24 ; 18)');
     expect(html).toMatch(/data-hint-slot="2" data-hint-state="next"/);

@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 import AnswerField from './AnswerField';
 
 /**
- * Un couple de coordonnées — la ثنائية (x ; y) du manuel. La rangée est isolée `dir="ltr"` : sous la
+ * Un couple de coordonnées — le couple (x ; y). La rangée est isolée `dir="ltr"` : sous la
  * page RTL, une rangée flex placerait « ( » à droite et x à droite de y, soit « ) y ; x ( » à l'écran
- * (première utilisation au banc DZ : unité 5 « جمل معادلتين », 2026-10-01).
+ * (première utilisation au banc DZ : unité 5 « systèmes de deux équations », 2026-10-01).
  */
 export default function PointInput({ value, onChange, disabled }) {
   const { t } = useTranslation('student');

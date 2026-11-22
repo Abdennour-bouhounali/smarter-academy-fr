@@ -28,14 +28,14 @@ export default function Register() {
 
   const { login, user } = useContext(AuthContext);
   const navigate = useNavigate();
-  // Venu du LIEN d'une classe, après « أوافق، أنشئ حسابي وأنضمّ » : le compte
+  // Venu du LIEN d'une classe, après le bouton d'accord qui crée le compte : le compte
   // est un compte élève, et l'intention part avec l'inscription pour que le
   // serveur rejoigne à la vérification, même dans un autre navigateur.
   const [pendingJoin] = useState(() => readPendingClassJoin());
   // Le TYPE de compte se choisit ici : élève (défaut) ou enseignant
   // (`?type=enseignant`). Un seul formulaire, une seule vérification
   // d'adresse ; le serveur tient la liste blanche. Le parent n'a PAS de compte
-  // à créer : il lit par le « رابط الوليّ » (PARENT_SPACE.md §2, 2026-10-23).
+  // à créer : il lit par le « lien parent » (PARENT_SPACE.md §2, 2026-10-23).
   const [registration, setRegistration] = useState(null);
   useEffect(() => {
     let alive = true;
@@ -85,7 +85,7 @@ export default function Register() {
     setErrorMsg('');
     setConsentError('');
 
-    // « الاسم و اللقب » : le message arabe du champ fautif, avant tout
+    // « Prénom et nom » : le message du champ fautif, en français, avant tout
     // aller-retour (le serveur applique la même règle, PersonName).
     const errors = personNameErrors(names);
     setNameErrors(errors);
@@ -120,7 +120,7 @@ export default function Register() {
       //
       // `verificationEmailSent: false` : le compte est créé mais le serveur
       // de courriel a refusé le premier envoi. L'écran le dit, au lieu
-      // d'affirmer « أرسلنا رابطًا » pour un courriel qui n'existe pas.
+      // d'affirmer « Nous avons envoyé un lien » pour un courriel qui n'existe pas.
       navigate(data.verificationEmailSent === false
         ? '/verification-email?statut=envoi-echoue'
         : '/verification-email');
@@ -206,13 +206,10 @@ export default function Register() {
           <label htmlFor="email" className="block text-sm font-medium text-slate-700">
             {t('emailLabel')}
           </label>
-          {/* dir="ltr": see Login.jsx — an address reads better LTR even
-              inside an RTL form. */}
           <input
             id="email"
             name="email"
             type="email"
-            dir="ltr"
             required
             autoComplete="email"
             value={email}
@@ -230,21 +227,19 @@ export default function Register() {
               id="password"
               name="password"
               type={showPassword ? 'text' : 'password'}
-              dir="ltr"
               required
               minLength={8}
               autoComplete="new-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`pr-12 text-start ${authInputClass(tone)}`}
+              className={`pe-12 text-start ${authInputClass(tone)}`}
             />
-            {/* Toggle at the FIELD's own (LTR) end — physical right in both
-                page directions; see Login.jsx. */}
+            {/* The reveal toggle sits at the field's end. */}
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               aria-label={showPassword ? t('hidePassword') : t('showPassword')}
-              className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600 focus:outline-none"
+              className="absolute inset-y-0 end-0 flex items-center pe-3.5 text-slate-400 hover:text-slate-600 focus:outline-none"
             >
               {showPassword ? <EyeOff className="h-5 w-5" aria-hidden="true" /> : <Eye className="h-5 w-5" aria-hidden="true" />}
             </button>

@@ -5,17 +5,17 @@ import { useClassroomMode } from '../../lessons/common/classroom';
  * L'ARRIVÉE sur une nouvelle question — où va le regard, où va le focus.
  *
  * Composant sans rendu, monté DANS la coquille de classe pour lire son état :
- * en وضع القسم, la présentation est cadrée et ne défile pas — on n'y touche
+ * en mode classe, la présentation est cadrée et ne défile pas — on n'y touche
  * ni au défilement ni au focus.
  *
  * `arrival` = `{ type: 'question' | 'exercise', from }`, posé par le lecteur
- * au moment où l'élève appuie sur « السؤال التالي » / « التمرين التالي ».
+ * au moment où l'élève appuie sur « Question suivante » / « Exercice suivant ».
  * L'effet ne se déclenche que lorsque la clé de la question AFFICHÉE a changé
  * (`from` ≠ `questionKey`) : pour un changement d'exercice, l'exercice suivant
  * se charge de façon asynchrone et l'on attend qu'il soit là.
  *
  *  - Question suivante : sur un écran assez haut, on amène en haut la carte
- *    « السؤال السابق » (son résultat est le contexte), la question courante
+ *    « Question précédente » (son résultat est le contexte), la question courante
  *    juste dessous ; sur un téléphone, la question courante elle-même.
  *  - Exercice suivant : retour en haut de page, sur le titre du nouvel exercice.
  *
@@ -47,7 +47,7 @@ export default function QuestionArrival({
       return;
     }
 
-    // Sur un écran assez haut, la carte « السؤال السابق » monte en haut et
+    // Sur un écran assez haut, la carte « Question précédente » monte en haut et
     // la question courante suit dessous. Sur un téléphone, les deux ne
     // tiennent pas ensemble : on amène la question courante (la précédente
     // reste juste au-dessus, à un geste).

@@ -13,10 +13,10 @@ describe('PublicationBadge — l’état de publication, pour le relecteur', () 
   });
 
   it.each([
-    ['draft', 'مسودّة'],
-    ['hidden', 'مخفي'],
-    ['archived', 'مؤرشف'],
-  ])('%s est nommé en arabe, pas seulement coloré', (status, word) => {
+    ['draft', 'Brouillon'],
+    ['hidden', 'Masqué'],
+    ['archived', 'Archivé'],
+  ])('%s est nommé en toutes lettres, pas seulement coloré', (status, word) => {
     const html = render(status);
     expect(html).toContain(`data-publication-status="${status}"`);
     expect(html).toContain(word);

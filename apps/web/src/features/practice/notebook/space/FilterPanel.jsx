@@ -85,7 +85,7 @@ export default function FilterPanel({ filters, facets, onChange, onReset }) {
   );
 }
 
-/** Combien de filtres s'écartent du défaut — pour la pastille du bouton « تصفية ». */
+/** Combien de filtres s'écartent du défaut — pour la pastille du bouton « Filtrer ». */
 export function activeFilterCount(filters) {
   let n = 0;
   if (filters?.origin && filters.origin !== 'all') n += 1;

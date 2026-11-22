@@ -3,7 +3,7 @@
  * de calcul du programme (4AM) — chiffres, opérations, fraction, racine,
  * parenthèses, « ; » et la touche « PGCD ». Le clavier est GLOBAL dans MathLive :
  * on pose celui-ci à l'ouverture d'un champ et on rend l'ancien à la fermeture,
- * comme les instruments du مختبر.
+ * comme les instruments de L'atelier.
  */
 const EXAM_KEYBOARD = Object.freeze({
   label: '123',
@@ -43,7 +43,7 @@ const EXAM_KEYBOARD = Object.freeze({
 });
 
 /**
- * Le clavier du « مختبر التفكير » (THINKING_LAB.md §4) : une expression, pas une ligne de copie —
+ * Le clavier du « labo des énigmes » (THINKING_LAB.md §4) : une expression, pas une ligne de copie —
  * π, √, puissance, fraction, parenthèses, valeur absolue et les variables du défi.
  * @param {string[]} vars  les variables de la réponse (`answer.vars`)
  */

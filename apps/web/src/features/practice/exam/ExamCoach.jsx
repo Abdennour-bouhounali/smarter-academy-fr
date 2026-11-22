@@ -1,5 +1,5 @@
 /**
- * « مدرّب الامتحان » — the screens of the exam coach of the exercise bank (logic: examCoach.js; pilot lessons only).
+ * « Le coach du brevet » — the screens of the exam coach of the exercise bank (logic: examCoach.js; pilot lessons only).
  *   useExamCoach  the state of a sheet: is the coach on, which mode, has the student entered the hall;
  *   ExamHall      the door of the exam: phone away, paper and pen out, silence — and the choice of the mode;
  *   CoachStrip    the reminder that stays above the answer: exam mode, no music, « solve on paper first », the mode (changeable);
@@ -7,27 +7,29 @@
  *                 solution told step by step: what is asked, which rule, each line, the trap, the exam tip).
  */
 import { useEffect, useMemo, useState } from 'react';
-import { PenLine, VolumeX, Compass, BookOpenCheck, NotebookPen, Smartphone, Clock, ArrowLeft, Check, AlertTriangle, Target } from 'lucide-react';
+import { PenLine, VolumeX, Compass, BookOpenCheck, NotebookPen, Smartphone, Clock, Check, AlertTriangle, Target } from 'lucide-react';
 import RichText from '../RichText';
+import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import { scopedStorage as storage } from '../../../utils/storage';
+import { resultIsWords } from './examSheet';
 import { isCoachLesson, loadRule, explainSteps, guideSteps, notebookEntry, primaryPoint, modeKey } from './examCoach';
 
 const L = {
-  hall: 'قاعة الامتحان', hallSub: 'هذه ورقة امتحان حقيقيّة. استعدّ كما تستعدّ يوم الامتحان.',
-  rules: [[Smartphone, 'ضع هاتفك بعيدًا عنك'], [PenLine, 'ضع أمامك ورقة وقلمًا: كلّ حساب يُكتب على الورقة أوّلًا'], [VolumeX, 'لا موسيقى ولا مؤثّرات: هدوء القسم'], [Clock, 'الوقت محسوب لكلّ سؤال: راقبه دون أن تتعجّل']],
-  choose: 'إذا أخطأتَ، كيف تريد أن أساعدك؟', change: 'تستطيع تغيير اختيارك في أيّ وقت.',
+  hall: 'Salle d’examen', hallSub: 'Ce sujet se passe comme le vrai. Prépare-toi comme le jour du brevet.',
+  rules: [[Smartphone, 'Pose ton téléphone loin de toi'], [PenLine, 'Prends une feuille et un stylo : chaque calcul s’écrit d’abord sur la feuille'], [VolumeX, 'Ni musique ni effets sonores : le calme d’une salle d’examen'], [Clock, 'Chaque question a son temps : surveille-le sans te précipiter']],
+  choose: 'Si tu te trompes, comment veux-tu que je t’aide ?', change: 'Tu peux changer ce choix à tout moment.',
   modes: {
-    guide: { icon: Compass, name: 'أرشدني فقط', text: 'لا تُرني الجواب أبدًا. أعطني تلميحًا وذكّرني بالقاعدة، ثمّ أعيد المحاولة بنفسي.' },
-    explain: { icon: BookOpenCheck, name: 'اشرح لي الحلّ', text: 'أرني الحلّ خطوة بخطوة: كيف نفكّر، وأيّ قاعدة نستعمل، وأين الفخّ.' },
+    guide: { icon: Compass, name: 'Guide-moi seulement', text: 'Ne me montre jamais la réponse. Donne-moi une piste, rappelle-moi la règle, puis je réessaie seul.' },
+    explain: { icon: BookOpenCheck, name: 'Explique-moi la solution', text: 'Montre-moi la solution pas à pas : comment on raisonne, quelle règle on utilise, où est le piège.' },
   },
-  ready: 'ورقتي وقلمي أمامي', start: 'أبدأ الامتحان',
-  strip: 'وضع الامتحان', silent: 'بلا موسيقى', paperFirst: 'حلّ على ورقتك أوّلًا، ثمّ انقل جوابك.',
-  notebook: 'خذ كرّاسك واكتب خطأك، حتّى لا تكرّره', notebookSub: 'انقل هذه الأسطر إلى «دفتر أخطائي» في كرّاسك:', own: 'اكتب بكلماتك: أين أخطأت؟',
-  wrote: 'كتبتُه في كرّاسي', wroteDone: 'مكتوب في الكرّاس', 
-  guideTitle: 'لن أريك الجواب: فكّر معي', guideMore: 'تلميح آخر', guideEnd: 'الآن أعد المحاولة على ورقتك، ثمّ اكتب جوابك من جديد.',
-  explainTitle: 'شرح الحلّ خطوة بخطوة', explainOpen: 'أرني طريقة الحلّ', next: 'الخطوة التالية',
-  kinds: { reread: 'أعد قراءة السؤال: ما المطلوب بالضبط؟', asked: 'أوّلًا: ما المطلوب؟', rule: 'القاعدة التي أستعملها', line: (n) => `أكتب على ورقتي — السطر ${n}`, result: 'الجواب', trap: 'انتبه إلى الفخّ', exam: 'في الامتحان', write: 'والآن دورك' },
-  rewrite: 'أغلق الشرح وأعد كتابة الحلّ كاملًا في كرّاسك، دون أن تنظر.', rewrote: 'أعدتُ كتابته في كرّاسي',
+  ready: 'J’ai ma feuille et mon stylo devant moi', start: 'Commencer l’épreuve',
+  strip: 'Mode examen', silent: 'Sans musique', paperFirst: 'Résous d’abord sur ta feuille, puis recopie ta réponse.',
+  notebook: 'Prends ton cahier et note ton erreur, pour ne pas la refaire', notebookSub: 'Recopie ces lignes dans la partie « Mes erreurs » de ton cahier :', own: 'Écris avec tes mots : où t’es-tu trompé ?',
+  wrote: 'Je l’ai noté dans mon cahier', wroteDone: 'Noté dans le cahier',
+  guideTitle: 'Je ne te donne pas la réponse : réfléchis avec moi', guideMore: 'Une autre piste', guideEnd: 'Maintenant, réessaie sur ta feuille, puis écris de nouveau ta réponse.',
+  explainTitle: 'La solution pas à pas', explainOpen: 'Montre-moi la méthode', next: 'Étape suivante',
+  kinds: { reread: 'Relis la question : que demande-t-elle exactement ?', asked: 'D’abord : que demande-t-on ?', rule: 'La règle que j’utilise', line: (n) => `J’écris sur ma feuille — ligne ${n}`, result: 'La réponse', trap: 'Attention au piège', exam: 'Le jour du brevet', write: 'À toi maintenant' },
+  rewrite: 'Ferme l’explication et réécris toute la solution dans ton cahier, sans regarder.', rewrote: 'Je l’ai réécrite dans mon cahier',
 };
 const GREEN = 'bg-[#1f5c4c] text-white hover:bg-[#174a3d]';
 
@@ -63,7 +65,7 @@ function ModeCards({ mode, chosen, setMode, small = false }) {
 export function ExamHall({ coach, title }) {
   const [ready, setReady] = useState(false);
   return (
-    <div className="fixed inset-0 z-[60] grid place-items-center overflow-hidden bg-slate-900/80 p-4" dir="rtl" data-exam-hall>
+    <div className="fixed inset-0 z-[60] grid place-items-center overflow-hidden bg-slate-900/80 p-4" data-exam-hall>
       <div className="w-full max-w-3xl rounded-3xl border-4 border-double border-slate-800 bg-[#fffdf6] p-6 shadow-2xl sm:p-8">
         <p className="text-center text-sm font-bold text-[#1f5c4c]">{title}</p>
         <h2 className="mt-1 text-center font-serif text-3xl font-black text-slate-900">{L.hall}</h2>
@@ -105,7 +107,7 @@ function useRule(lessonCode, question) {
   return rule;
 }
 
-/** « دفتر أخطائي »: after a mistake, the student WRITES — on paper — what went wrong and what to remember. */
+/** « Mes erreurs »: after a mistake, the student WRITES — on paper — what went wrong and what to remember. */
 function Notebook({ question, rule, mode, why }) {
   const [done, setDone] = useState(false);
   const lines = notebookEntry(question, rule, mode, why);
@@ -115,8 +117,8 @@ function Notebook({ question, rule, mode, why }) {
       <p className="mt-0.5 text-sm text-amber-900/80">{L.notebookSub}</p>
       <div className="mt-2 rounded-lg bg-white px-4 py-2 font-serif text-[15px] leading-8 text-slate-800 shadow-inner" style={{ backgroundImage: 'repeating-linear-gradient(#fff 0 31px, #dbe4f3 31px 32px)' }}>
         {lines.map((l) => (
-          <p key={l.label}><b className="text-[#1d3fae]">{l.label}:</b>{' '}
-            {l.own ? <span className="text-slate-500">{l.text ? <><RichText>{l.text}</RichText> — </> : null}<i>{L.own}</i></span> : l.result ? <RichText>{/[؀-ۿ]/.test(l.text) ? l.text : `$${l.text}$`}</RichText> : <><RichText>{l.text}</RichText>{l.rule && <> <RichText>{`$${l.rule}$`}</RichText></>}</>}
+          <p key={l.label}><b className="text-[#1d3fae]">{l.label} :</b>{' '}
+            {l.own ? <span className="text-slate-500">{l.text ? <><RichText>{l.text}</RichText> — </> : null}<i>{L.own}</i></span> : l.result ? <RichText>{resultIsWords(l.text) ? l.text : `$${l.text}$`}</RichText> : <><RichText>{l.text}</RichText>{l.rule && <> <RichText>{`$${l.rule}$`}</RichText></>}</>}
           </p>
         ))}
       </div>
@@ -135,14 +137,14 @@ function Step({ step }) {
     <li className={`rounded-xl border-2 px-4 py-2.5 ${STEP_TONE[step.kind] ?? 'border-slate-200 bg-white'}`} data-coach-step={step.kind}>
       <p className="flex items-center gap-1.5 text-xs font-extrabold text-slate-600">{Icon && <Icon className="h-4 w-4" aria-hidden="true" />}{label}</p>
       {step.kind === 'rule' && <><p className="font-bold text-slate-900">{step.title}</p><p className="py-1 text-center text-lg" dir="ltr"><RichText>{`$${step.rule}$`}</RichText></p><p className="text-sm text-slate-700">{step.hook}</p></>}
-      {step.kind === 'result' && <p className="text-center text-lg font-bold"><RichText>{/[؀-ۿ]/.test(step.text) ? step.text : `$${step.text}$`}</RichText></p>}
+      {step.kind === 'result' && <p className="text-center text-lg font-bold"><RichText>{resultIsWords(step.text) ? step.text : `$${step.text}$`}</RichText></p>}
       {step.kind === 'write' && <p className="font-semibold text-amber-900">{L.rewrite}</p>}
       {!['rule', 'result', 'write'].includes(step.kind) && <p className="text-[15px] leading-relaxed text-slate-800"><RichText>{step.text}</RichText></p>}
     </li>
   );
 }
 
-/** One step at a time: the student moves forward himself (« الخطوة التالية »), so each line is read, not skimmed. */
+/** One step at a time: the student moves forward himself (« Étape suivante »), so each line is read, not skimmed. */
 function Walk({ steps, title, icon: Icon, more, end, attr, onFirst }) {
   const [n, setN] = useState(1);
   useEffect(() => { onFirst?.(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -151,7 +153,7 @@ function Walk({ steps, title, icon: Icon, more, end, attr, onFirst }) {
       <h4 className="flex items-center gap-2 text-base font-extrabold text-slate-900"><Icon className="h-5 w-5 text-[#1f5c4c]" aria-hidden="true" />{title}</h4>
       <ol className="mt-2 space-y-2">{steps.slice(0, n).map((s, i) => <Step key={i} step={s} />)}</ol>
       {n < steps.length
-        ? <button type="button" onClick={() => setN((v) => v + 1)} data-coach-next className={`mt-3 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-extrabold ${GREEN}`}>{more} <ArrowLeft className="h-4 w-4" aria-hidden="true" /></button>
+        ? <button type="button" onClick={() => setN((v) => v + 1)} data-coach-next className={`mt-3 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-extrabold ${GREEN}`}>{more} <ArrowForward className="h-4 w-4" aria-hidden="true" /></button>
         : end && <p className="mt-3 font-bold text-[#1f5c4c]">{end}</p>}
     </section>
   );
@@ -159,7 +161,7 @@ function Walk({ steps, title, icon: Icon, more, end, attr, onFirst }) {
 
 /**
  * After an answer on a coached sheet.
- * wrong:  the notebook, then GUIDE (three nudges, never the answer — the sheet's « أعد المحاولة » comes back) or EXPLAIN;
+ * wrong:  the notebook, then GUIDE (three nudges, never the answer — the sheet's « Réessayer » comes back) or EXPLAIN;
  * right:  nothing in guide mode; in explain mode the method can still be read on demand.
  * `onReveal` tells the sheet that the solution was shown (a retry would then prove nothing).
  */

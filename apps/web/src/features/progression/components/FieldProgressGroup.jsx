@@ -9,12 +9,12 @@ import { ChipsSkeleton } from './ProgressionSkeleton';
 import MathLabel from '../../../lessons/common/components/MathLabel';
 
 /**
- * Un ميدان (chapter du catalogue) : le sommet de la hiérarchie affichée.
+ * Un thème (chapter du catalogue) : le sommet de la hiérarchie affichée.
  * Repliée, la carte dit déjà l'essentiel — progression agrégée, résumé de
- * maîtrise, nombre de leçons ; dépliée, elle montre ses وحدات.
+ * maîtrise, nombre de leçons ; dépliée, elle montre ses chapitres.
  *
- * Un ميدان dont aucune leçon n'est encore construite est une ligne
- * compacte « قيد الإعداد », non dépliable : l'élève voit l'étendue du
+ * Un thème dont aucune leçon n'est encore construite est une ligne
+ * compacte « En préparation », non dépliable : l'élève voit l'étendue du
  * programme sans qu'on lui prête un 0 % qu'il n'a pas mérité.
  */
 export default function FieldProgressGroup({ field, defaultOpen = false, profileStatus, onExplain }) {

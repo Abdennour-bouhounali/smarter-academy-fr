@@ -23,7 +23,9 @@ export default function ProgressionStats({ activity, agg, profileStatus, gradeLa
     ? (profileStatus === 'loading' ? t('progression.loadingAcquis') : t('progression.errorTitle'))
     : agg.assessed === 0
       ? t('progression.statNothingAssessed')
-      : t('progression.statMasteredHintUnassessed', { count: agg.counts.unassessed });
+      : agg.counts.unassessed > 0
+        ? t('progression.statMasteredHintUnassessed', { count: agg.counts.unassessed })
+        : t('progression.statAllAssessed');
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" data-progression-stats>

@@ -21,11 +21,11 @@ describe('la colonne latérale du lecteur se replie', () => {
   });
 
   it('le bouton dit ce qu’il fait, et son état', () => {
-    const shown = renderToStaticMarkup(<SideColumnToggle hidden={false} onToggle={() => {}} label="الكفاءة" />);
-    expect(shown).toContain('إخفاء الكفاءة');
+    const shown = renderToStaticMarkup(<SideColumnToggle hidden={false} onToggle={() => {}} label="le savoir-faire" />);
+    expect(shown).toContain('Masquer le savoir-faire');
     expect(shown).toContain('aria-pressed="false"');
-    const hidden = renderToStaticMarkup(<SideColumnToggle hidden onToggle={() => {}} label="الكفاءة" />);
-    expect(hidden).toContain('إظهار الكفاءة');
+    const hidden = renderToStaticMarkup(<SideColumnToggle hidden onToggle={() => {}} label="le savoir-faire" />);
+    expect(hidden).toContain('Afficher le savoir-faire');
     expect(hidden).toContain('aria-pressed="true"');
   });
 
@@ -54,13 +54,13 @@ describe('la colonne latérale du lecteur se replie', () => {
 });
 
 describe('LevelSelector sans suivi (enseignant)', () => {
-  it('dit le NOMBRE d’exercices, jamais « أنهيتها » ni une barre de progression', async () => {
+  it('dit le NOMBRE d’exercices, jamais « terminés » ni une barre de progression', async () => {
     const { default: LevelSelector } = await import('./LevelSelector');
     const html = renderToStaticMarkup(
       <LevelSelector levels={[{ level: 1, unlocked: true, completedCount: 0, exerciseCount: 2 }]} onSelect={() => {}} showProgress={false} />,
     );
-    expect(html).toContain('تمرينان');
-    expect(html).not.toContain('أنهيتها');
+    expect(html).toContain('2\u00A0exercices');
+    expect(html).not.toContain('terminés');
     expect(html).not.toContain('bg-indigo-500');
   });
 });

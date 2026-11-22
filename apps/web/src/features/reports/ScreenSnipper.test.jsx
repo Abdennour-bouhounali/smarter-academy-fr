@@ -33,7 +33,7 @@ describe('ScreenSnipper — l’outil de capture', () => {
 
   it('dit qu’il capture pendant la capture', () => {
     const busy = renderToStaticMarkup(<ScreenSnipper busy onSelect={noop} onFullScreen={noop} onCancel={noop} />);
-    expect(busy).toContain('جارٍ الالتقاط');
+    expect(busy).toContain('Capture…');
   });
 });
 
@@ -46,6 +46,6 @@ describe('ReportButton — la variante « prominent » en haut de page', () => {
     );
     expect(html).toContain('data-report-trigger="prominent"');
     expect(html).toContain('min-h-[44px]');
-    expect(html).toContain('الإبلاغ عن مشكل');
+    expect(html).toContain('Signaler un problème');
   });
 });

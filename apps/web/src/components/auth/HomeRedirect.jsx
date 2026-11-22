@@ -14,9 +14,9 @@ import { AuthContext } from '../../context/AuthContext';
  * Chaque rôle est donc renvoyé chez lui :
  *
  *   élève      → /espace      son tableau de bord (reprendre sa leçon)
- *   enseignant → /enseignant  ses classes
- *   parent     → /wali        فضاء الوليّ (ses enfants liés)
- *   directeur  → /idara       فضاء الإدارة (son établissement)
+ *   professeur → /enseignant  ses classes
+ *   parent     → /wali        l'espace parent (ses enfants liés)
+ *   directeur  → /idara       l'espace établissement
  *   admin      → /admin       le panneau d'administration
  *   visiteur → la page d'accueil, inchangée
  *

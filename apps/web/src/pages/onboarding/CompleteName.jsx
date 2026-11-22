@@ -24,7 +24,7 @@ function nextPathFor(user, from) {
 }
 
 /**
- * « عرّفنا بنفسك » — the onboarding step that asks « الاسم و اللقب » of any
+ * « Présente-toi » — the onboarding step that asks « Prénom et nom » of any
  * student or teacher account that has none yet (`user.nameComplete === false`).
  *
  * New accounts give their name at registration (email form or Google

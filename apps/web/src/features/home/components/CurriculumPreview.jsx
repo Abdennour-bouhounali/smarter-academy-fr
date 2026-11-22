@@ -5,10 +5,10 @@ import SectionHeading from './SectionHeading';
 import PathProgress from '../../progression/components/PathProgress';
 
 /**
- * « 📚 أين أنت » — une TRANCHE du programme, pas l'arbre : le ميدان courant,
- * sa وحدة quand il y en a une, la leçon courante. Trois lignes, en escalier,
- * pour que la hiérarchie officielle (الميدان ← الوحدة ← الدرس) se lise
- * d'elle-même. Les الكفاءات restent sur « تقدّمي ».
+ * « 📚 Où tu en es » — une TRANCHE du programme, pas l'arbre : le thème courant,
+ * son chapitre quand il y en a un, la leçon courante. Trois lignes, en escalier,
+ * pour que la hiérarchie officielle (le thème ← chapitre ← la leçon) se lise
+ * d'elle-même. Les savoir-faire restent sur « Ma progression ».
  *
  * La tranche est choisie par pickCurriculumContext (la leçon du héros,
  * sinon la plus récente, sinon le début du programme) ; les pourcentages

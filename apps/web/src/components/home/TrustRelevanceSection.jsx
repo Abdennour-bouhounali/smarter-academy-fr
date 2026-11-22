@@ -29,8 +29,9 @@ export default function TrustRelevanceSection() {
             {t('trust.title')}
           </p>
           <h2 className="section-title !mb-3">{t('trust.subtitle')}</h2>
+          {/* No lesson is open yet: a sentence that says so, never « 0 leçon ». */}
           <p className="font-inter text-slate-500 text-base">
-            {t('trust.lessonsAvailable', { lessonCount })}
+            {lessonCount > 0 ? t('trust.lessonsAvailable', { lessonCount }) : t('trust.lessonsNone')}
           </p>
         </m.div>
 
@@ -42,7 +43,8 @@ export default function TrustRelevanceSection() {
           className="flex flex-wrap items-center justify-center gap-2.5"
         >
           {ALL_GRADES.map((grade) => {
-            const isFlagship = grade.id === '6e';
+            // 3e: the grade whose lessons are being written first.
+            const isFlagship = grade.id === '3e';
             return (
               <Link
                 key={grade.id}
@@ -61,7 +63,7 @@ export default function TrustRelevanceSection() {
         </m.div>
 
         <div className="text-center mt-8">
-          <Link to="/register" className="inline-flex items-center gap-2 font-inter text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+          <Link to="/courses" className="inline-flex items-center gap-2 font-inter text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
             {t('trust.seeFullProgramme')}
             <ArrowForward size={15} />
           </Link>

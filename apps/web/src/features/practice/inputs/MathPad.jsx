@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Delete, ArrowLeft, ArrowRight } from 'lucide-react';
 
 /**
- * « لوحة الرموز » — une lettre FIXE, toujours visible à côté du champ (conseil du 2026-11-09).
+ * « Clavier mathématique » — une lettre FIXE, toujours visible à côté du champ (conseil du 2026-11-09).
  * Ce n'est PAS le clavier flottant de MathLive (un singleton global qui couvre la carte) :
  * des boutons de la page qui écrivent dans LE champ de la question (`getField()`).
  *

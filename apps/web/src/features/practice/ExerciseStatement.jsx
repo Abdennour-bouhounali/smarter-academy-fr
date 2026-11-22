@@ -15,7 +15,7 @@ import PracticeLab from './PracticeLab';
  * un plan vide en silence.
  *
  * `figure` (unité 9, 2026-10-02) est une figure de géométrie DÉCLARATIVE dessinée par GeoFigure —
- * points nommés, segments, droites, angles — pour qu'un énoncé « في الشكل المقابل » montre le shape ;
+ * points nommés, segments, droites, angles — pour qu'un énoncé « Sur la figure ci-contre » montre le shape ;
  * le validateur la vérifie avec `validateGeoFigure`. Une figure de l'ESPACE (unité 14, 2026-10-05) porte `kind: 'space'` et
  * est dessinée par SpaceFigure (pointillés pour les parties cachées) ; le validateur la vérifie avec `validateSpaceFigure`.
  * Un DIAGRAMME statistique (unité 8, 2026-10-08) porte `kind: 'chart'` et est dessiné par StatChart ; un seul aiguillage,
@@ -34,7 +34,7 @@ export default function ExerciseStatement({ content, formulas, table, visual, fi
         </div>
       )}
 
-      {/* Les DONNÉES de l'énoncé (« A = … », un tableau) : sans elles, « إليك العدد A حيث: » restait
+      {/* Les DONNÉES de l'énoncé (« A = … », un tableau) : sans elles, « Soit le nombre A tel que : » restait
           seul et la question était insoluble (811 énoncés à formules, 361 à tableau — corrigé le 2026-11-09).
           Même rendu que la feuille d'examen (ExamSheet). */}
       {formulas?.length > 0 && (

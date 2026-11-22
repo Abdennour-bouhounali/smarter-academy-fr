@@ -13,10 +13,12 @@ import { LargeScreenOnlyNotice, PHONE_QUERY } from './RequireLargeScreen';
 const app = readFileSync(new URL('../../App.jsx', import.meta.url), 'utf8');
 
 describe('RequireLargeScreen — pas de leçon ni d’exercice sur un téléphone', () => {
-  it('rend le message du propriétaire, mot pour mot', () => {
+  it('rend le message, en français et de gauche à droite', () => {
     const html = renderToStaticMarkup(<MemoryRouter><LargeScreenOnlyNotice /></MemoryRouter>);
-    expect(html).toContain('محتوى الدروس يظهر فقط في شاشة الحاسوب');
-    expect(html).toContain('رجاء افتح المنصة في الحاسوب لاستفادة قصوى');
+    expect(html).toContain('Les leçons s’affichent sur un écran d’ordinateur');
+    expect(html).toContain('Ouvre la plateforme sur un ordinateur pour en profiter pleinement.');
+    expect(html).not.toMatch(/[\u0600-\u06FF]/);
+    expect(html).not.toContain('dir="rtl"');
     expect(html).toContain('href="/espace"');
   });
 

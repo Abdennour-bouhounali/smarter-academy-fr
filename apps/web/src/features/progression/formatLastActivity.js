@@ -3,7 +3,7 @@ import { LOCALE } from '../../locale.js';
 const DAY = 24 * 60 * 60 * 1000;
 
 /**
- * « آخر نشاط : أمس » — un libellé RELATIF pour les jours proches, une date
+ * « Dernière activité : hier » — un libellé RELATIF pour les jours proches, une date
  * absolue au-delà d'un mois. `lastVisitedAt` est l'horodatage déjà stocké
  * par la progression de leçon ; rien n'est généré côté client.
  *
@@ -27,6 +27,6 @@ export function formatLastActivity(lastVisitedAt, t, now = Date.now()) {
   try {
     return new Date(lastVisitedAt).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' });
   } catch {
-    return new Date(lastVisitedAt).toLocaleDateString();
+    return new Date(lastVisitedAt).toLocaleDateString(LOCALE);
   }
 }

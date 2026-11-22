@@ -4,20 +4,19 @@ import { TONE_STYLE } from './toneStyle';
 /**
  * OÙ SUIS-JE DANS CET EXERCICE ? — l'en-tête de la carte de la question.
  *
- *   السؤال 2 من 3                              التمرين 1 من 2
+ *   Question 2 sur 3                           Exercice 1 sur 2
  *   ▰▰▰▰▰▰▰ ▰▰▰▰▰▰▰ ▱▱▱▱▱▱▱       ← UNE case par question RÉELLE de l'exercice
  *
  * Deuxième passe (2026-09-24) : la bande vit dans l'en-tête de la carte
- * courante — là où l'élève regarde — et nulle part ailleurs. « من N » est le
+ * courante — là où l'élève regarde — et nulle part ailleurs. « sur N » est le
  * nombre de questions DE CET EXERCICE (`exercise.questions.length`), jamais un
  * nombre supposé commun : un exercice en compte 2, un autre 5. Chaque segment
  * d'une question faite prend la tonalité de son issue (`toneStyle.jsx`).
  *
- * Le titre « السؤال n من N » est le `h2` de la carte (focalisable, cible de
+ * Le titre « Question n sur N » est le `h2` de la carte (focalisable, cible de
  * QuestionArrival). La phrase « ce qu'il reste » n'est plus affichée — la
  * barre le montre — mais reste lue par le lecteur d'écran (`aria-live`,
- * `sr-only`), en clés plurielles à six formes (« بقي سؤالان », pas « بقي 2
- * سؤال »).
+ * `sr-only`), en clés plurielles (« Encore 2 questions », « Encore 1 question »).
  *
  * Pas de minuteur : la pratique entraîne, elle ne chronomètre pas.
  */

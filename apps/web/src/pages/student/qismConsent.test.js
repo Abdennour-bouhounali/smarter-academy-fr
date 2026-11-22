@@ -14,7 +14,7 @@ const studentAr = JSON.parse(
 const qismSrc = readFileSync(new URL('./Qism.jsx', import.meta.url), 'utf8');
 
 /**
- * Rejoindre un قسم = consentir au partage. Ce fichier défend la règle :
+ * Rejoindre une classe = consentir au partage. Ce fichier défend la règle :
  * aucune requête d'adhésion sans geste explicite, et un lien de classe
  * n'adhère JAMAIS tout seul.
  */
@@ -54,9 +54,9 @@ describe('visibleRecommendations', () => {
 
   it('écarte les kinds inconnus et résout le lien de leçon', () => {
     const out = visibleRecommendations([
-      { id: 1, kind: 'recommend_lesson', lesson: { code: 'known', title: 'د' } },
-      { id: 2, kind: 'recommend_lesson', lesson: { code: 'unknown', title: 'د' } },
-      { id: 3, kind: 'review_prerequisite', lesson: null, learningPoint: { code: 'lp', title: 'ن' } },
+      { id: 1, kind: 'recommend_lesson', lesson: { code: 'known', title: 'L' } },
+      { id: 2, kind: 'recommend_lesson', lesson: { code: 'unknown', title: 'L' } },
+      { id: 3, kind: 'review_prerequisite', lesson: null, learningPoint: { code: 'lp', title: 'P' } },
       { id: 4, kind: 'something_new' },
     ], resolve);
     expect(out.map((r) => [r.id, r.lessonPath])).toEqual([[1, '/courses/x/known'], [2, null], [3, null]]);

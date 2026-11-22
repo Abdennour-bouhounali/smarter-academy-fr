@@ -16,8 +16,8 @@ import RedactionText from './exam/math/RedactionText';
  * suivante » sans que la page change de nature.
  *
  * Divulgation progressive, pour que la frise n'écrase jamais la question :
- *  - la question PRÉCÉDENTE est une carte « السؤال السابق » : énoncé entier,
- *    réponse, verdict, et le retour derrière « عرض التوضيح » — c'est souvent
+ *  - la question PRÉCÉDENTE est une carte « Question précédente » : énoncé entier,
+ *    réponse, verdict, et le retour derrière « Voir l'explication » — c'est souvent
  *    sur son résultat que repose la question courante ;
  *  - les plus anciennes sont repliées sur une ligne (numéro, verdict, SA
  *    réponse), et se rouvrent d'un geste pour relire la question entière.
@@ -118,15 +118,15 @@ function HistoryItem({ entry, defaultOpen }) {
 }
 
 /**
- * « السؤال السابق » — la question qu'on vient de quitter, en RÉSUMÉ compact
+ * « Question précédente » — la question qu'on vient de quitter, en RÉSUMÉ compact
  * (deuxième passe 2026-09-24 : plus de grande carte pour une question faite).
  *
- *   ✓ السؤال السابق · السؤال 1   [✓ إجابة صحيحة]        إجابتك: 6
- *   جِد أكبر قيمة للعدد x.                         ← 2 lignes au plus, dépliable
- *   عرض التوضيح ⌄
+ *   ✓ Question précédente · Question 1   [✓ Réponse juste]        Ta réponse : 6
+ *   Trouve la plus grande valeur de x.              ← 2 lignes au plus, dépliable
+ *   Voir l'explication ⌄
  *
  * Toujours visibles : le numéro, le verdict en toutes lettres, la RÉPONSE de
- * l'élève. L'énoncé est coupé à deux lignes ; « عرض التوضيح » déplie l'énoncé
+ * l'élève. L'énoncé est coupé à deux lignes ; « Voir l'explication » déplie l'énoncé
  * entier et le retour. C'est le contexte immédiat de la question courante,
  * posé juste au-dessus d'elle.
  */
@@ -211,7 +211,7 @@ export default function QuestionHistory({ entries, total }) {
   return (
     <section aria-label={t('practice.history.title')} className="space-y-2" data-question-history>
       {/* Les plus anciennes : une ligne chacune, sur un rail. Sur grand écran
-          (`xl`), la colonne « سياق السؤال » les porte déjà — on ne les répète
+          (`xl`), la colonne « Le fil de l'exercice » les porte déjà — on ne les répète
           pas au centre. Le rail passe par le CENTRE des nœuds : marge du
           `ol` + demi-nœud − demi-trait. */}
       {older.length > 0 && (

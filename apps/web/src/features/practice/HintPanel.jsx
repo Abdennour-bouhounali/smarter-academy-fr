@@ -17,19 +17,19 @@ import RichText from './RichText';
  * progression.
  *
  * FORME (refonte 2026-09-24, maquette) — visible sans dominer :
- *   💡 الإرشادات                                   ⌄ (repliable)
- *   ① ملاحظة   — le texte de l'indice révélé
- *   ② توجيه    [اطلب الإرشاد 2]      ← le SEUL bouton : le suivant
- *   ③ خطّة     🔒 يُفتح بعد الإرشاد 2
+ *   💡 Indices                                     ⌄ (repliable)
+ *   ① Observe  — le texte de l'indice révélé
+ *   ② Piste    [Demander l'indice 2]  ← le SEUL bouton : le suivant
+ *   ③ Plan     🔒 S'ouvre après l'indice 2
  * L'élève voit combien d'aides existent et de quelle NATURE (le `type` du
  * contenu : look / direction / strategy) — jamais leur contenu avant de le
  * demander. Aucune de ces étiquettes ne révèle la réponse.
  */
 export default function HintPanel({ hints, remaining, hintTypes = [], onRequest, busy, disabled }) {
   const { t } = useTranslation('student');
-  // Replié tant qu'aucun indice n'est demandé : UNE ligne « 💡 الإرشادات · 3
-  // متاحة ». Il s'ouvre de lui-même dès qu'un indice arrive (y compris par le
-  // raccourci « إرشاد » à côté de « تحقّق »), et l'élève peut le replier.
+  // Replié tant qu'aucun indice n'est demandé : UNE ligne « 💡 Indices · 3
+  // indices disponibles ». Il s'ouvre de lui-même dès qu'un indice arrive (y compris par le
+  // raccourci « Indice » à côté de « Vérifier »), et l'élève peut le replier.
   const [open, setOpen] = useState(hints.length > 0);
   useEffect(() => { if (hints.length > 0) setOpen(true); }, [hints.length]);
   const total = hints.length + remaining;

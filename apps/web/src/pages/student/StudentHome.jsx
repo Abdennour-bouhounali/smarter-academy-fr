@@ -29,7 +29,7 @@ import { usePrefetchLessonRuntime } from '../../lessons/common/lessonRuntimeLoad
 import NoLessonYet from '../../components/student/NoLessonYet';
 import { isFeatureOn } from '../../config/features';
 
-// « بوصلتي » sur l'accueil (YEAR_COMPASS.md §6bis) : un lot PARESSEUX — réseau + calendrier n'entrent
+// « Ma boussole » sur l'accueil (YEAR_COMPASS.md §6bis) : un lot PARESSEUX — réseau + calendrier n'entrent
 // pas dans le lot de l'accueil ; la page s'affiche, puis la section arrive.
 const CompassHomeSections = lazy(() => import('../../features/home/compass/CompassHomeSections'));
 
@@ -40,20 +40,20 @@ function localToday() {
 }
 
 /**
- * « 🏠 فضائي » — l'ACCUEIL de l'espace élève, MENÉ PAR « بوصلتي » (YEAR_COMPASS.md §6bis ; maquette
+ * « 🏠 Mon espace » — l'ACCUEIL de l'espace élève, MENÉ PAR « Ma boussole » (YEAR_COMPASS.md §6bis ; maquette
  * validée par le propriétaire le 2026-11-09, l'ancien accueil a été retiré le même jour).
  *
  *   qui je suis                 → salutation
- *   ████ ce que je fais LÀ ████ → la section بوصلتي (CompassHomeSections) : la jauge, « مهمّة اليوم »,
+ *   ████ ce que je fais LÀ ████ → la section Ma boussole (CompassHomeSections) : la jauge, « Mission du jour »,
  *                                  la semaine et les bandes, la leçon + le défi, la bande de l'année.
  *                                  Une classe où la jauge n'est pas encore ouverte voit la même page
  *                                  sans la jauge (état `off`).
- *   tout le reste                → replié sous « المزيد », jamais supprimé : quatre repères, la tranche
+ *   tout le reste                → replié sous « Plus », jamais supprimé : quatre repères, la tranche
  *                                  du programme, les leçons récentes, mes espaces, premium, autres classes.
  *
  * La page N'INVENTE rien : la reprise vient de getResumeLesson (toutes classes, ARCHITECTURE.md §10),
  * l'activité de getStudentActivity, la maîtrise du profil serveur (useLearningProfile), l'arbre des
- * mêmes modules que « تقدّمي », l'état de بوصلتي du serveur (GET /compass).
+ * mêmes modules que « Ma progression », l'état de Ma boussole du serveur (GET /compass).
  */
 export default function StudentHome() {
   // Cette page mène à des leçons : leur runtime partagé arrive pendant l'inactivité (lessonRuntimeLoader.js).
@@ -67,7 +67,7 @@ export default function StudentHome() {
   // Le palier vient du serveur (lessons.tier, décidé par l'administrateur) : le catalogue n'en porte aucun.
   const { isLessonPremium } = useContentAvailability();
 
-  // L'état de « بوصلتي » (serveur). Une erreur réseau laisse l'accueil sans la jauge (état `off`), jamais vide.
+  // L'état de « Ma boussole » (serveur). Une erreur réseau laisse l'accueil sans la jauge (état `off`), jamais vide.
   // The compass off (config/features.js): never asked for — the home opens at once in its `off` state.
   const compassOn = isFeatureOn('compass');
   const [compass, setCompass] = useState(null);
@@ -85,7 +85,7 @@ export default function StudentHome() {
   const classroom = studyContext?.mode === 'classroom' ? (studyContext.primary ?? studyContext.classrooms?.[0] ?? null) : null;
 
   // L'activité est lue dans le stockage local au montage ; la fusion des lignes du serveur et le retour sur
-  // l'onglet la rendent obsolète : `tick` force le recalcul (même réflexe que « تقدّمي »).
+  // l'onglet la rendent obsolète : `tick` force le recalcul (même réflexe que « Ma progression »).
   const [tick, setTick] = useState(0);
   useEffect(() => {
     const bump = () => setTick((n) => n + 1);

@@ -3,12 +3,12 @@ import { storage } from '../../utils/storage';
 
 /**
  * La VUE du catalogue de leçons — le choix de l'élève (ou de l'enseignant)
- * sur /courses, « دروسي » (/espace/cours) et « استكشاف » (/espace/explorer,
+ * sur /courses, « Mes leçons » (/espace/cours) et « Explorer » (/espace/explorer,
  * /enseignant/cours). Deux axes indépendants :
  *
  *   group  — comment la sélection est ORGANISÉE
- *     'units'    les cartes d'unité du manuel (le niveau الوحدة, défaut) ;
- *     'chapters' ميدان → وحدة → ses leçons, toutes visibles sur la page ;
+ *     'units'    les cartes d'unité du manuel (le niveau chapitre, défaut) ;
+ *     'chapters' thème → chapitre → ses leçons, toutes visibles sur la page ;
  *     'all'      toutes les leçons à plat, dans l'ordre du catalogue.
  *   layout — comment chaque élément est DESSINÉ
  *     'grid'     des cartes ;
@@ -61,10 +61,10 @@ export function unitByLessonId(chapters) {
 }
 
 /**
- * La vue « حسب الميادين » : pour chaque ميدان visible, ses unités dans
+ * La vue « Par thème » : pour chaque thème visible, ses unités dans
  * l'ordre du manuel — chacune avec ses leçons PUIS sa synthèse — et enfin
  * les leçons hors unité (`unit: null`). Seules les leçons de `lessons`
- * apparaissent ; un ميدان ou une unité sans leçon visible disparaît.
+ * apparaissent ; un thème ou une unité sans leçon visible disparaît.
  *
  * @returns {Array<{ chapter, blocks: Array<{ unit: object|null, lessons: Array }> }>}
  */

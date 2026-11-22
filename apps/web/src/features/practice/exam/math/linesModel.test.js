@@ -3,8 +3,8 @@ import { parseLines, serializeLines } from './linesModel';
 
 describe('rédaction en lignes — texte RTL / formule LTR', () => {
   it('relit une rédaction enregistrée : formules `$…$`, texte arabe', () => {
-    expect(parseLines('لدينا:\n$1215 = 945 \\times 1 + 270$')).toEqual([
-      { kind: 'text', value: 'لدينا:' },
+    expect(parseLines('On a :\n$1215 = 945 \\times 1 + 270$')).toEqual([
+      { kind: 'text', value: 'On a :' },
       { kind: 'math', value: '1215 = 945 \\times 1 + 270' },
     ]);
   });
@@ -15,8 +15,8 @@ describe('rédaction en lignes — texte RTL / formule LTR', () => {
   });
 
   it('enregistre une chaîne simple, sans lignes vides, lisible par RichText', () => {
-    const lines = [{ kind: 'math', value: ' 945 = 270 \\times 3 + 135 ' }, { kind: 'text', value: '' }, { kind: 'text', value: 'إذن PGCD هو 135' }, { kind: 'math', value: '' }];
-    expect(serializeLines(lines)).toBe('$945 = 270 \\times 3 + 135$\nإذن PGCD هو 135');
-    expect(parseLines(serializeLines(lines))).toEqual([{ kind: 'math', value: '945 = 270 \\times 3 + 135' }, { kind: 'text', value: 'إذن PGCD هو 135' }]);
+    const lines = [{ kind: 'math', value: ' 945 = 270 \\times 3 + 135 ' }, { kind: 'text', value: '' }, { kind: 'text', value: 'Donc le PGCD est 135' }, { kind: 'math', value: '' }];
+    expect(serializeLines(lines)).toBe('$945 = 270 \\times 3 + 135$\nDonc le PGCD est 135');
+    expect(parseLines(serializeLines(lines))).toEqual([{ kind: 'math', value: '945 = 270 \\times 3 + 135' }, { kind: 'text', value: 'Donc le PGCD est 135' }]);
   });
 });

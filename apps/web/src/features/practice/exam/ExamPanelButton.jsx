@@ -4,7 +4,7 @@ import { PanelsTopLeft } from 'lucide-react';
 /**
  * Feuille d'examen : le bouton qui ouvre la FENÊTRE CENTRALE (propriétaire,
  * 2026-10-06) — à la place de la colonne latérale, la feuille garde toute la
- * largeur. Élève : « التنقل » + « الكفاءة » ; enseignant : « التنقل » + les
+ * largeur. Élève : « Se repérer » + « Savoir-faire » ; enseignant : « Se repérer » + les
  * réponses des élèves. Visible à toutes les tailles d'écran.
  */
 export default function ExamPanelButton({ label, onOpen }) {

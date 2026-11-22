@@ -3,7 +3,7 @@ import { getLessonById } from '@smarter-academy/core';
 import { levelCounts } from './practiceCounts';
 
 /**
- * « بنك التمارين » de l'ENSEIGNANT — logique pure, sans React.
+ * « Banque d'exercices » de l'ENSEIGNANT — logique pure, sans React.
  *
  * L'enseignant parcourt et essaie les exercices de pratique SANS AUCUN SUIVI :
  * le contenu est dans le bundle (practiceContent.js), la vérification se fait
@@ -71,7 +71,7 @@ export function localHint(question, index) {
 
 /**
  * La réponse attendue, en texte lisible — pour l'enseignant seulement.
- * Les choix renvoient leur CONTENU (pas leur lettre), joints par « ؛ ».
+ * Les choix renvoient leur CONTENU (pas leur lettre), joints par « ; ».
  *
  * @returns {string|null}
  */
@@ -81,13 +81,13 @@ export function expectedAnswerText(question) {
 
   if (answerType === 'choice' || answerType === 'multiChoice') {
     const correct = (question.choices ?? []).filter((c) => c.isCorrect).map((c) => c.content);
-    return correct.length ? correct.join(' ؛ ') : null;
+    return correct.length ? correct.join(' ; ') : null;
   }
   if (expectedAnswer == null) return null;
   if (answerType === 'point' && typeof expectedAnswer === 'object') {
     return `(${expectedAnswer.x} ; ${expectedAnswer.y})`;
   }
-  if (Array.isArray(expectedAnswer)) return expectedAnswer.join(' ، ');
+  if (Array.isArray(expectedAnswer)) return expectedAnswer.join(' ; ');
   if (typeof expectedAnswer === 'object') return JSON.stringify(expectedAnswer);
   return String(expectedAnswer);
 }
@@ -103,12 +103,12 @@ export function formatStudentAnswer(question, answer, normalized = null) {
     const choices = question?.choices ?? [];
     const label = (id) => choices.find((c) => c.id === id)?.content ?? id;
     if (answer.choiceId != null) return label(answer.choiceId);
-    if (Array.isArray(answer.choiceIds)) return answer.choiceIds.map(label).join(' ؛ ');
+    if (Array.isArray(answer.choiceIds)) return answer.choiceIds.map(label).join(' ; ');
     if (answer.x != null || answer.y != null) return `(${answer.x ?? ''} ; ${answer.y ?? ''})`;
     // Saisie MathLive (feuille d'examen) : la formule telle que l'élève l'a écrite.
     if (typeof answer.latex === 'string' && answer.latex.trim()) return `$${answer.latex}$`;
     if (answer.value != null && typeof answer.value !== 'object') return String(answer.value);
-    // « بيّن أن » : la démonstration écrite (le panneau la rend ligne par ligne).
+    // « Démontrer que » : la démonstration écrite (le panneau la rend ligne par ligne).
     if (typeof answer.text === 'string' && answer.text.trim()) return answer.text;
   }
   if (typeof answer === 'string' && answer.trim()) return answer;

@@ -7,7 +7,7 @@ import { MEDAL_POINTS } from '../exam/medals';
 /**
  * LA CÉLÉBRATION d'une médaille (propriétaire, 2026-10-06) : la médaille entre
  * en tournant, un reflet la traverse, l'or fait jaillir des confettis ; un mot
- * dit POURQUOI (« دون إرشاد وفي الوقت ») et ce qu'elle rapporte (+3). Elle ne
+ * dit POURQUOI (« Sans indice et dans le temps ») et ce qu'elle rapporte (+3). Elle ne
  * bloque rien (`pointer-events: none`) et s'efface seule. Annoncée une fois
  * (`aria-live`), sans animation en mouvement réduit.
  *

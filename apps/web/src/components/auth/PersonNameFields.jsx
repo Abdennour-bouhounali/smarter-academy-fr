@@ -7,18 +7,20 @@ const INPUT =
   'block h-12 w-full appearance-none rounded-xl border ps-4 pe-10 text-[15px] text-slate-900 placeholder-slate-400 shadow-sm transition focus:outline-none focus:ring-4 bg-white text-start disabled:opacity-60';
 
 /**
- * « الاسم و اللقب » — the ONE pair of name inputs, wherever a name is written:
+ * « Prénom et nom » — the ONE pair of name inputs, wherever a name is written:
  * the register form, the Google confirmation step, the onboarding step for an
  * account that has no name yet, and the student/teacher profile editors.
  *
  * Controlled: `value = { firstName, lastName }`, `onChange(next)` receives the
- * whole pair. Names are written in ARABIC letters (PersonName on the server).
+ * whole pair. Names are written in the letters of the French alphabet, with a
+ * space, a hyphen or an apostrophe between two letters (`utils/personName.js`,
+ * the mirror of PersonName on the server).
  *
- * Validation is LIVE: a Latin letter, a digit or a symbol is flagged as it is
- * typed (`notArabic` / `invalid`); `required` / `tooShort` wait until the field
- * is left, so nobody is scolded after their first letter. A valid field shows
- * a check. `errors` (codes from a submit attempt) wins over the live code.
- * `lang="ar"` hints mobile keyboards toward Arabic.
+ * Validation is LIVE: a digit, another script or a symbol is flagged as it is
+ * typed (`invalid`), and so is a name too long (`tooLong`); `required` waits
+ * until the field is left, so nobody is scolded before their first letter. A
+ * valid field shows a check. `errors` (codes from a submit attempt) wins over
+ * the live code.
  *
  * @param {{
  *   value: {firstName: string, lastName: string},
@@ -60,10 +62,8 @@ export default function PersonNameFields({
           id={id}
           name={key}
           type="text"
-          lang="ar"
-          dir="rtl"
           // aria-required, not `required`: the browser's own bubble would
-          // speak the browser's language; utils/personName.js answers in Arabic.
+          // speak the browser's language; utils/personName.js answers in French.
           aria-required="true"
           maxLength={60}
           autoComplete={autoComplete}

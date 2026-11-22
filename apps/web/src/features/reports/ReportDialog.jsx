@@ -21,9 +21,9 @@ import ScreenSnipper from './ScreenSnipper';
  * boutons radio (radiogroup) — pas des <div> cliquables, qui ne se
  * parcourent pas aux flèches.
  *
- * CAPTURE D'ÉCRAN (facultative, 2026-10-05) : « التقاط الصفحة » photographie
+ * CAPTURE D'ÉCRAN (facultative, 2026-10-05) : « Capturer la page » photographie
  * la partie visible de la page SANS cette fenêtre (attribut
- * data-report-ignore), « رفع صورة » prend une image du relecteur ; dans les
+ * data-report-ignore), « Envoyer une image » prend une image du relecteur ; dans les
  * deux cas il encadre la zone fautive (ScreenshotAnnotator) et les cadres
  * sont brûlés dans l'image à l'envoi.
  *
@@ -122,7 +122,7 @@ export default function ReportDialog({ open, onClose, onSubmit, busy, error, sub
     setShotError(null);
   };
 
-  // « التقاط منطقة » : la fenêtre se retire, l'outil de capture prend la
+  // « Capturer une zone » : la fenêtre se retire, l'outil de capture prend la
   // main ; la région choisie revient dans la fenêtre, qui réapparaît.
   const capture = () => {
     setShotError(null);
@@ -383,7 +383,7 @@ export default function ReportDialog({ open, onClose, onSubmit, busy, error, sub
                 disabled={!noteReady || busy}
                 className="inline-flex items-center gap-2 rounded-lg bg-nav-accent px-6 py-2.5 font-inter text-sm font-semibold text-white disabled:opacity-40"
               >
-                <Send size={16} aria-hidden="true" className="rtl:-scale-x-100" />
+                <Send size={16} aria-hidden="true" />
                 {busy ? t('report.sending') : t('report.send')}
               </button>
             </div>

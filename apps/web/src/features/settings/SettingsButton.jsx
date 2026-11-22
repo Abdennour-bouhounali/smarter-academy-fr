@@ -5,7 +5,7 @@ import Modal from '../../components/admin/ui/Modal';
 import StudentSettingsPanel from './StudentSettingsPanel';
 
 /**
- * « الإعدادات » s'ouvre dans une FENÊTRE centrale (propriétaire, 2026-10-06),
+ * « Réglages » s'ouvre dans une FENÊTRE centrale (propriétaire, 2026-10-06),
  * depuis n'importe quel bouton : la roue de la barre latérale, le profil, la
  * page des niveaux. `className` habille le bouton ; `iconOnly` pour la roue.
  */

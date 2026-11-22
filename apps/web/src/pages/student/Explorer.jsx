@@ -43,16 +43,16 @@ export default function Explorer() {
     return gradeData.chapters.find((c) => c.id === activeChapter)?.lessons || [];
   }, [gradeData, activeChapter]);
 
-  // Les ميادين visibles — la vue choisie les dessine (CatalogueBrowser,
-  // catalogueView.js ; même préférence que /courses et « دروسي »).
+  // Les thèmes visibles — la vue choisie les dessine (CatalogueBrowser,
+  // catalogueView.js ; même préférence que /courses et « Mes leçons »).
   const visibleChapters = useMemo(() => {
     if (!gradeData) return [];
     return activeChapter === 'all' ? gradeData.chapters : gradeData.chapters.filter((c) => c.id === activeChapter);
   }, [gradeData, activeChapter]);
   const [view, setView] = useCatalogueView();
 
-  // La recherche de /courses (GradeLessonSearch) : tous les ميادين du
-  // niveau, titre + description. Vide → la structure en وحدات ci-dessous ;
+  // La recherche de /courses (GradeLessonSearch) : tous les thèmes du
+  // niveau, titre + description. Vide → la structure en chapitres ci-dessous ;
   // sinon les leçons trouvées, à plat.
   const [searchQuery, setSearchQuery] = useState('');
   const searchResults = useMemo(

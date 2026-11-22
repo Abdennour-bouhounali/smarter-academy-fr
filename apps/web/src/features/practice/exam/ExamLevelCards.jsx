@@ -9,7 +9,7 @@ import MedalTray from '../medals/MedalTray';
  * Les cinq niveaux d'une leçon au format BEM, en CARTES (propriétaire,
  * 2026-10-06 : « améliorer l'interface ») — une rangée de cinq sur grand écran,
  * empilées sur téléphone. Chaque carte dit : le niveau et son nom, combien
- * d'exercices viennent d'un VRAI sujet de شهادة التعليم المتوسط, la progression,
+ * d'exercices viennent d'un VRAI sujet d'examen, la progression,
  * et l'action. Un niveau fermé dit pourquoi (même texte que LevelSelector).
  */
 function useBemCounts(lessonCode, levels) {
@@ -86,7 +86,7 @@ export default function ExamLevelCards({ lessonCode, levels, recommendedLevel, o
                 </p>
               </div>
             ) : (
-              <p className="text-xs font-semibold text-slate-600">{t('practice.levelExerciseCount', { count: level.exerciseCount })}</p>
+              <p className="text-xs font-semibold text-slate-600">{level.exerciseCount ? t('practice.levelExerciseCount', { count: level.exerciseCount }) : t('practice.levelExerciseNone')}</p>
             )}
 
             {/* Les médailles gagnées à ce niveau. */}

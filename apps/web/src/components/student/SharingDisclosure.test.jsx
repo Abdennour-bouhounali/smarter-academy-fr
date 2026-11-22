@@ -12,13 +12,13 @@ describe('SharingDisclosure — l’établissement', () => {
   it('une classe sans établissement annonce le rattachement automatique', () => {
     const html = renderToStaticMarkup(<SharingDisclosure />);
     expect(html).toContain('data-qism-sharing-school-future');
-    expect(html).toContain('تنضمّ إليها تلقائيًّا');
+    expect(html).toContain('tu y entres automatiquement');
     expect(html).not.toContain('data-qism-sharing-school=');
   });
 
   it('une classe d’établissement le nomme', () => {
-    const html = renderToStaticMarkup(<SharingDisclosure schoolName="متوسطة النور" />);
-    expect(html).toContain('متوسطة النور');
+    const html = renderToStaticMarkup(<SharingDisclosure schoolName="Collège des Tilleuls" />);
+    expect(html).toContain('Collège des Tilleuls');
     expect(html).not.toContain('data-qism-sharing-school-future');
   });
 });

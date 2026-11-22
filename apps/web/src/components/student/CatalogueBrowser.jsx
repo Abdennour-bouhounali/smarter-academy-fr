@@ -10,27 +10,27 @@ import { groupLessonsByUnit } from './unitGrouping';
 import { groupLessonsByChapter, unitByLessonId } from './catalogueView';
 
 /**
- * LE rendu de la sélection du catalogue — /courses, « دروسي » et
- * « استكشاف » (et /enseignant/cours) le partagent, pour qu'une vue choisie
- * se comporte partout pareil. La page garde ses filtres (niveau, ميدان,
+ * LE rendu de la sélection du catalogue — /courses, « Mes leçons » et
+ * « Explorer » (et /enseignant/cours) le partagent, pour qu'une vue choisie
+ * se comporte partout pareil. La page garde ses filtres (niveau, thème,
  * recherche) ; ce composant ne fait que DESSINER ce qu'elle lui donne,
  * selon la vue de l'utilisateur (catalogueView.js) :
  *
  *   recherche active → les résultats à plat, chacun avec son unité ;
  *   'units'          → cartes d'unité, puis leçons hors unité (défaut) ;
- *   'chapters'       → ميدان → وحدة → leçons + synthèse, tout déplié ;
+ *   'chapters'       → thème → chapitre → leçons + synthèse, tout déplié ;
  *   'all'            → toutes les leçons à plat, chacune avec son unité.
  *
- * @param {Array}  chapters      les ميادين visibles (un seul, ou tous)
- * @param {Array}  lessons       les leçons visibles (déjà filtrées par ميدان)
- * @param {Array}  gradeChapters TOUS les ميادين du niveau — d'où l'unité de
+ * @param {Array}  chapters      les thèmes visibles (un seul, ou tous)
+ * @param {Array}  lessons       les leçons visibles (déjà filtrées par thème)
+ * @param {Array}  gradeChapters TOUS les thèmes du niveau — d'où l'unité de
  *                               chaque résultat de recherche (qui traverse
- *                               les ميادين) est lue
+ *                               les thèmes) est lue
  * @param {Array|null} searchResults  `filterLessonsByQuery(...)` — null hors recherche
  * @param {{group, layout}} view
  */
 export default function CatalogueBrowser(props) {
-  // Un changement de ميدان, de vue ou de recherche REMONTE la liste au lieu
+  // Un changement de thème, de vue ou de recherche REMONTE la liste au lieu
   // de l'animer : avec <AnimatePresence mode="popLayout">, jusqu'à 74 tuiles
   // sortantes gardaient leur place pendant l'animation — la page restait
   // haute, une grande bande vide sous la liste (vu par le propriétaire,
@@ -43,7 +43,7 @@ export default function CatalogueBrowser(props) {
     props.searchResults ? `q:${props.searchQuery}` : '',
   ].join('/');
   // Une classe dont AUCUNE leçon n'est encore publiée (1AM–3AM, 2026-10-14) :
-  // le programme et le découpage du manuel sont là, en cartes « قيد الإعداد » —
+  // le programme et le découpage du manuel sont là, en cartes « En préparation » —
   // on le dit une fois, en tête, pour que l'élève ne prenne pas ça pour une panne.
   const lessons = props.lessons ?? [];
   const drafting = !props.searchResults && lessons.length > 0 && !lessons.some((l) => l.status === 'available');
@@ -123,7 +123,7 @@ function CatalogueSelection({
                       {unit.title}
                     </h3>
                     <Link to={unit.path} className="group inline-flex items-center gap-1 text-xs font-bold text-nav-accent hover:text-indigo-900" data-unit-group={unit.id}>
-                      {t('unit.unitCard.open')} <ArrowForward size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:rtl:-translate-x-0.5" />
+                      {t('unit.unitCard.open')} <ArrowForward size={12} className="transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 ) : (
@@ -142,7 +142,7 @@ function CatalogueSelection({
     return <div data-catalogue-view="all">{box(tiles(lessons, { withUnit: true }))}</div>;
   }
 
-  // 'units' — le niveau الوحدة (phase 8) : dans un ميدان du manuel, l'élève
+  // 'units' — le niveau chapitre (phase 8) : dans un thème du manuel, l'élève
   // choisit d'abord une UNITÉ ; ses leçons vivent sur la page d'unité. Les
   // leçons hors unité restent des tuiles. Sans unité : les leçons seules.
   const unitGroups = groupLessonsByUnit(chapters, lessons);

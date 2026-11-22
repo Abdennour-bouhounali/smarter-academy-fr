@@ -1,7 +1,7 @@
 import { Users } from 'lucide-react';
 
 /**
- * « بعد تسجيل الدخول، تنضمّ مباشرةً إلى القسم … » — rappelé sur la connexion et
+ * « Après ta connexion, tu rejoins directement la classe … » — rappelé sur la connexion et
  * l'inscription quand l'élève arrive du lien d'une classe : il sait qu'il n'a
  * rien d'autre à faire (pas de code à taper) après s'être authentifié.
  */

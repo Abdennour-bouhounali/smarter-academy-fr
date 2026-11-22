@@ -1,16 +1,16 @@
 import { flattenTree } from './buildProgressionTree';
 
 /**
- * « للعمل الآن » — une règle DÉTERMINISTE et lisible, pas un moteur de
+ * « À travailler maintenant » — une règle DÉTERMINISTE et lisible, pas un moteur de
  * recommandation : on ne pioche que dans les états réels du profil.
  *
- *  1. les points « gap » (🔴 يحتاج إلى تدعيم) d'abord, puis « reinforce »
- *     (🟡 قيد التحسّن) ;
+ *  1. les points « gap » (🔴 À retravailler) d'abord, puis « reinforce »
+ *     (🟡 En progrès) ;
  *  2. à état égal, la leçon la plus RÉCEMMENT visitée d'abord (c'est là que
  *     l'élève est) ;
- *  3. puis l'ordre officiel du programme (ميدان, وحدة, درس, point) ;
+ *  3. puis l'ordre officiel du programme (thème, chapitre, leçon, point) ;
  *  4. et on n'en montre qu'un petit nombre (`limit`) — le reste se retrouve
- *     dans l'arbre avec le filtre « للعمل ».
+ *     dans l'arbre avec le filtre « À travailler ».
  *
  * L'arbre est déjà cadré sur la classe de l'élève : la règle n'a pas à
  * refiltrer. Les points « non évalués » ne sont JAMAIS proposés ici — ne pas

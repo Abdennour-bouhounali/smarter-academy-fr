@@ -26,11 +26,11 @@ function render(studyContext, url = '/espace/qism') {
 const INDEPENDENT = { mode: 'independent', classrooms: [], primary: null, hiddenLessonCodes: [] };
 
 describe('Qism — rejoindre, c’est consentir', () => {
-  it('le formulaire montre le texte de partage et « أوافق وأنضمّ »', () => {
+  it('le formulaire montre le texte de partage et « J’accepte et je rejoins la classe »', () => {
     const html = render(INDEPENDENT);
     expect(html).toContain('data-qism-sharing');
-    expect(html).toContain('أوافق وأنضمّ');
-    expect(html).toContain('بريدك الإلكتروني');
+    expect(html).toContain('J’accepte et je rejoins la classe');
+    expect(html).toContain('ton adresse e-mail');
   });
 
   it('une adhésion à confirmer reçoit sa carte, les autres non', () => {
@@ -39,15 +39,15 @@ describe('Qism — rejoindre, c’est consentir', () => {
       primary: null,
       hiddenLessonCodes: [],
       classrooms: [
-        { id: 1, name: 'قسم أ', grade: '4am', consentRequired: true },
-        { id: 2, name: 'قسم ب', grade: '4am', consentRequired: false },
+        { id: 1, name: 'Classe A', grade: '4am', consentRequired: true },
+        { id: 2, name: 'Classe B', grade: '4am', consentRequired: false },
       ],
     });
     expect(html).toContain('data-qism-consent-required="1"');
     expect(html).not.toContain('data-qism-consent-required="2"');
   });
 
-  it('sans suggestion, la section « اقتراحات أستاذك » est absente', () => {
+  it('sans suggestion, la section « Les conseils de ton professeur » est absente', () => {
     expect(render(INDEPENDENT)).not.toContain('data-qism-recommendations');
   });
 
@@ -57,30 +57,30 @@ describe('Qism — rejoindre, c’est consentir', () => {
     expect(html).not.toContain('data-qism-joined');
   });
 
-  it('arrivé depuis le lien de classe : la confirmation nomme le قسم rejoint', () => {
-    const html = render(INDEPENDENT, { pathname: '/espace/qism', state: { joinedClassroom: 'رياضيات 4م2', alreadyMember: false } });
+  it('arrivé depuis le lien de classe : la confirmation nomme la classe rejointe', () => {
+    const html = render(INDEPENDENT, { pathname: '/espace/qism', state: { joinedClassroom: 'Maths 3e B', alreadyMember: false } });
     expect(html).toContain('data-qism-joined');
-    expect(html).toContain('رياضيات 4م2');
+    expect(html).toContain('Maths 3e B');
   });
 
-  it('déjà membre : « أنت في هذا القسم بالفعل » plutôt qu’une nouvelle adhésion', () => {
-    const html = render(INDEPENDENT, { pathname: '/espace/qism', state: { joinedClassroom: 'رياضيات 4م2', alreadyMember: true } });
-    expect(html).toContain('أنت في هذا القسم بالفعل');
+  it('déjà membre : « Tu es déjà dans cette classe » plutôt qu’une nouvelle adhésion', () => {
+    const html = render(INDEPENDENT, { pathname: '/espace/qism', state: { joinedClassroom: 'Maths 3e B', alreadyMember: true } });
+    expect(html).toContain('Tu es déjà dans cette classe');
   });
 
-  it('déjà dans un قسم : pas de formulaire du code, et la règle « قسم واحد » est dite', () => {
+  it('déjà dans une classe : pas de formulaire du code, et la règle « une seule classe » est dite', () => {
     const html = render({
       mode: 'classroom',
-      primary: { id: 1, name: 'قسم أ', grade: '4am' },
+      primary: { id: 1, name: 'Classe A', grade: '4am' },
       hiddenLessonCodes: [],
-      classrooms: [{ id: 1, name: 'قسم أ', grade: '4am', consentRequired: false }],
+      classrooms: [{ id: 1, name: 'Classe A', grade: '4am', consentRequired: false }],
     });
     expect(html).not.toContain('data-qism-join');
     expect(html).not.toContain('id="join-code"');
     expect(html).toContain('data-qism-one-class');
   });
 
-  it('sans قسم : le formulaire du code est là', () => {
+  it('sans classe : le formulaire du code est là', () => {
     const html = render(INDEPENDENT);
     expect(html).toContain('data-qism-join');
     expect(html).toContain('id="join-code"');

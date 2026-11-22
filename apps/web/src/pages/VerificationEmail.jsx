@@ -7,6 +7,7 @@ import { AuthContext } from '../context/AuthContext';
 import { resendVerificationEmail } from '../services/authService';
 import { postAuthPath } from '../features/classJoin/pendingClassJoin';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { CONTACT_EMAIL } from '../data/contact';
 
 /**
  * « VÉRIFIEZ VOTRE ADRESSE E-MAIL ».
@@ -20,7 +21,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
  *     aussi le lien expiré ou altéré) ;
  *   - celui dont le PREMIER envoi a échoué à l'inscription
  *     (`?statut=envoi-echoue`, posé par Register.jsx) : on ne lui dit pas
- *     « أرسلنا », on lui propose le renvoi.
+ *     « Nous avons envoyé », on lui propose le renvoi.
  *
  * ── Ce que cette page n'est PAS ──────────────────────────────────────────
  * Elle ne garde aucune porte. La fermeture de l'espace élève est le fait du
@@ -52,7 +53,7 @@ export default function VerificationEmail() {
 
   // On relit le compte à CHAQUE arrivée, pas seulement au retour du lien :
   // l'élève a pu cliquer le lien sur son téléphone, et cet onglet — renvoyé
-  // ici par ProtectedRoute en tentant d'ouvrir فضائي — croirait encore
+  // ici par ProtectedRoute en tentant d'ouvrir son espace — croirait encore
   // l'adresse non vérifiée. C'est le serveur qui sait ; s'il dit « vérifiée »,
   // l'effet suivant ouvre l'espace.
   useEffect(() => {
@@ -204,8 +205,8 @@ export default function VerificationEmail() {
 
           <p className="mt-6 text-center text-xs text-slate-500">
             {t('wrongAddress')}{' '}
-            <a href="mailto:abdennour.bouhounali@gmail.com" className="font-medium text-nav-accent hover:text-nav-accent">
-              abdennour.bouhounali@gmail.com
+            <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-nav-accent hover:text-nav-accent">
+              {CONTACT_EMAIL}
             </a>
             .
           </p>

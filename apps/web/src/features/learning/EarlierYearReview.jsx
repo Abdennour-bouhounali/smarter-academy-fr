@@ -6,16 +6,16 @@ import { getLessonPath } from '@smarter-academy/core';
 import MathLabel from '../../lessons/common/components/MathLabel';
 
 /**
- * « راجع: <درس> (<السنة>) » — le renvoi COMPACT vers une année antérieure, sous le
+ * « À revoir : <leçon> (<année>) » — le renvoi COMPACT vers une année antérieure, sous le
  * verdict d'une réponse FAUSSE (décision D7 du propriétaire : les liens vers les
- * années antérieures vont aussi dans les exercices, pas seulement dans « أستعدّ »).
+ * années antérieures vont aussi dans les exercices, pas seulement dans « Je me prépare »).
  * Un seul composant pour la pratique (PracticeSession) et l'évaluation de leçon
  * (BossFinal) — docs/architecture/EXERCISE_CONTRACT.md § « Earlier-year review link ».
  *
- * Rien n'est écrit dans les exercices : le lien se DÉRIVE du réseau des الكفاءات —
- * الكفاءة principale de la question → sa leçon → `reviewLinksForLesson`, réduit aux
+ * Rien n'est écrit dans les exercices : le lien se DÉRIVE du réseau des savoir-faire —
+ * Le savoir-faire principal de la question → sa leçon → `reviewLinksForLesson`, réduit aux
  * années antérieures (`earlierYearReviewFor`). Leçon publiée : un lien. Leçon pas
- * encore écrite : le texte officiel de la كفاءة, sans lien (il s'allume le jour de
+ * encore écrite : le texte officiel du savoir-faire, sans lien (il s'allume le jour de
  * la publication). Rien à montrer : rien n'est rendu.
  *
  * Le résolveur porte ~430 KB de JSON (programme, réseau, catalogues) : il est

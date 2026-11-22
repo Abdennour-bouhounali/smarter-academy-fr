@@ -19,7 +19,7 @@ import { ToneIcon, TONE_STYLE } from './toneStyle';
  * de `toneStyle.jsx`, jamais le rouge d'alarme : c'est un moment
  * d'apprentissage, pas une sanction. `role="status"` annonce le verdict ;
  * le conteneur est focalisable (`tabIndex=-1`) pour que le lecteur y amène
- * le focus après « تحقّق من إجابتي » — le bouton qui l'avait disparaît.
+ * le focus après « Vérifier ma réponse » — le bouton qui l'avait disparaît.
  */
 
 // Le VERDICT est la phrase la plus lue de tout l'espace d'exercices : elle

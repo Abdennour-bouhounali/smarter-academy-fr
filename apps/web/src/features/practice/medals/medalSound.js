@@ -1,7 +1,7 @@
 /**
  * La petite fanfare d'une médaille — synthétisée (WebAudio), sans fichier.
  * Or : arpège montant complet + accord ; argent : trois notes ; bronze : deux.
- * Joue seulement si l'élève a activé « الصوت » (préférence de l'appareil,
+ * Joue seulement si l'élève a activé « Le son » (préférence de l'appareil,
  * useEffectsPreference, désactivée par défaut). Une erreur audio ne casse rien.
  */
 let ctx = null;

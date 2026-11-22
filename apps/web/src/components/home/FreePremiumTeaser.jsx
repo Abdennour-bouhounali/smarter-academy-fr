@@ -35,8 +35,8 @@ export default function FreePremiumTeaser() {
           {t('freePremium.body')}
         </p>
         {/* Mène à l'INSCRIPTION, et non à un tarif : il n'y a pas de page de
-            prix dans le produit algérien, et la saisie d'un code exige un
-            compte. Un visiteur anonyme doit donc d'abord en créer un. */}
+            prix, et la saisie d'un code exige un compte. Un visiteur anonyme
+            doit donc d'abord en créer un. */}
         <Link to="/register" className="inline-flex items-center gap-1.5 font-inter text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
           {t('freePremium.cta')}
           <ArrowForward size={15} />

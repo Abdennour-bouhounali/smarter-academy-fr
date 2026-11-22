@@ -11,12 +11,12 @@ const TONE = {
 };
 
 /**
- * Le résumé de maîtrise d'un nœud (درس, وحدة ou ميدان) : un compteur par
+ * Le résumé de maîtrise d'un nœud (leçon, chapitre ou thème) : un compteur par
  * état, toujours avec l'emoji ET le nombre ET un libellé accessible — jamais
  * la couleur seule. Les états à zéro ne s'affichent pas, sauf demande
  * (`showZero`), pour ne pas encombrer une ligne de leçon.
  *
- * `⚪ لم تُقيَّم بعد` a la même place que les autres, mais un ton neutre :
+ * `⚪ Pas encore évalué` a la même place que les autres, mais un ton neutre :
  * ne pas avoir été évalué n'est pas une lacune, et rien ici ne doit le
  * laisser croire.
  */

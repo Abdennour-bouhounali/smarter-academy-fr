@@ -24,12 +24,12 @@ import { unitMissionOf } from './unit/unitMissions';
 import { StatusDot, ProgressLine, minutesOf, tileKind } from '../components/student/lessonTileParts';
 
 /**
- * THE PAGE OF A UNIT (الوحدة) — the level between the ميدان and the درس.
+ * THE PAGE OF A UNIT (chapitre) — the level between the thème and the leçon.
  *
  * Short on purpose (owner, 2026-11-16: « small content »): the unit's name and how far it is, then ONE LINE per lesson
- * in the order of the progression — the synthesis « أدمج تعلّماتي » last. What the unit opens with (its goals, its
- * challenge, its historical aside) and what a lesson holds (its الكفاءات and their mastery, its prerequisites — shown,
- * never blocking — its labs, its محاور for the teacher) are folded, one tap away: reduced, never deleted.
+ * in the order of the progression — the synthesis « Vers le brevet » last. What the unit opens with (its goals, its
+ * challenge, its historical aside) and what a lesson holds (its savoir-faire and their mastery, its prerequisites — shown,
+ * never blocking — its labs, its étapes for the teacher) are folded, one tap away: reduced, never deleted.
  *
  * Everything comes from the catalogue (packages/core) and the lesson.config.js files: the page writes no content.
  *
@@ -64,8 +64,8 @@ function masteryIndex(profile) {
 
 /**
  * ONE LINE per lesson — its rank, its name, two facts, what a tap does now — and everything else folded behind
- * « التفاصيل »: its الكفاءات with their mastery, its prerequisites (shown, never blocking), its labs and methods, and
- * for the teacher its محاور. `next` marks the lesson the student should open now: its line is the filled one and its
+ * « Détails » : its savoir-faire with their mastery, its prerequisites (shown, never blocking), its labs and methods, and
+ * for the teacher its étapes. `next` marks the lesson the student should open now: its line is the filled one and its
  * details are open.
  */
 function LessonBlock({ lesson, index, mastery, next, t }) {

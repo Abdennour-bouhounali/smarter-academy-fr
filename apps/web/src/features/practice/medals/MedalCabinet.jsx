@@ -5,7 +5,7 @@ import Medal from './Medal';
 import { rankFor } from '../exam/medals';
 
 /**
- * « خزانة الميداليات » — la page des niveaux (prototype BEM, 2026-10-06) : les
+ * « Ma vitrine de médailles » — la page des niveaux (prototype BEM, 2026-10-06) : les
  * médailles gagnées dans la leçon, le RANG atteint et ce qu'il manque pour le
  * suivant, et la règle en une ligne (ce qui rapporte l'or).
  */

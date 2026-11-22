@@ -17,7 +17,7 @@ export default function SideColumnToggle({ hidden, onToggle, label }) {
       className="hidden min-h-[44px] items-center gap-1.5 rounded-lg px-3 text-sm font-bold text-slate-700 hover:bg-white hover:text-nav-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 xl:inline-flex"
       data-side-toggle={hidden ? 'hidden' : 'shown'}
     >
-      <Icon className="h-4 w-4 rtl:-scale-x-100" aria-hidden="true" />
+      <Icon className="h-4 w-4" aria-hidden="true" />
       {hidden ? t('practice.sideShow', { what: label }) : t('practice.sideHide', { what: label })}
     </button>
   );

@@ -15,7 +15,7 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
 function answerText(question, answer) {
   if (!answer) return null;
   if (answer.choiceId) return question?.choices?.find((c) => c.id === answer.choiceId)?.content ?? null;
-  if (answer.choiceIds) return answer.choiceIds.map((id) => question?.choices?.find((c) => c.id === id)?.content).filter(Boolean).join(' ؛ ');
+  if (answer.choiceIds) return answer.choiceIds.map((id) => question?.choices?.find((c) => c.id === id)?.content).filter(Boolean).join(' ; ');
   return typeof answer.value === 'string' ? answer.value : null;
 }
 
@@ -73,7 +73,7 @@ export default function ChallengeReviewPage() {
                     </span>
                     <span className="font-space font-bold text-slate-900">{q.position}</span>
                     {q.learningPoint?.title && <span className="font-inter text-xs text-nav-accent"><MathLabel>{q.learningPoint.title}</MathLabel></span>}
-                    <span dir="ltr" className="ms-auto font-mono-jetbrains text-xs text-slate-500">{formatSeconds(q.responseTimeMs)} ث · +{q.score.total}</span>
+                    <span dir="ltr" className="ms-auto font-mono-jetbrains text-xs text-slate-500">{formatSeconds(q.responseTimeMs)} s · +{q.score.total}</span>
                   </div>
                   {q.content?.statement?.content && <div className="mt-3 rounded-2xl bg-slate-50 p-3"><ExerciseStatement content={q.content.statement.content} visual={q.content.statement.visual} formulas={q.content.statement.formulas} table={q.content.statement.table} figure={q.content.statement.figure} /></div>}
                   <p className="mt-3 text-lg font-bold text-slate-900"><RichText>{question?.statement ?? ''}</RichText></p>

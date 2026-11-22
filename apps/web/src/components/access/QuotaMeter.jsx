@@ -3,9 +3,9 @@ import { Gauge } from 'lucide-react';
 import { usePayments } from '../../context/PaymentsContext';
 
 /**
- * « 7 متبقّية من 10 · هذا الشهر » — le quota tel que le serveur l'a compté.
- * Rien si le serveur n'a pas (encore) répondu ; « غير محدود » si le palier
- * n'a pas de limite. Les chiffres restent des chiffres : isolés en LTR.
+ * « 7 restants sur 10 · ce mois-ci » — le quota tel que le serveur l'a compté.
+ * Rien si le serveur n'a pas (encore) répondu ; « Illimité » si le palier
+ * n'a pas de limite.
  */
 export default function QuotaMeter({ quota, className = '' }) {
   const { t } = useTranslation('access');
@@ -24,7 +24,7 @@ export default function QuotaMeter({ quota, className = '' }) {
       <Gauge size={12} aria-hidden="true" />
       {quota.unlimited
         ? t('feature.meter.unlimited')
-        : <bdi>{t('feature.meter.remaining', { remaining: quota.remaining, limit: quota.limit })}</bdi>}
+        : t('feature.meter.remaining', { remaining: quota.remaining, limit: quota.limit })}
       <span className="text-slate-400">· {t(`feature.meter.${quota.period === 'lifetime' ? 'lifetime' : 'month'}`)}</span>
     </span>
   );
