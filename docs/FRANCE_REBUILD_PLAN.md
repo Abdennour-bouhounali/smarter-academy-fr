@@ -163,6 +163,27 @@ file and why.
 
 New, for tests that need content: `buildCourseLevels(gradeSources)` is exported, `createLearningNet({ programme, net, lessonFiles, unitFiles, weightedGrades })`, and `scope.js` / `moduleLayoutMigrations.js` functions take an optional net / table — a test builds a 2–3 item neutral fixture in its own file, never real curriculum content. The shipped school year is EMPTY (`start`/`end` null) and `validateSchoolYear` refuses it on purpose until Stage 2D. The catalogue builder still hides a thème that has no lesson, so every grade exports `chapters: []` today.
 
+### 4ter. The payment switch (owner, 2026-11-22) — part of step 1F
+
+The owner: « in the fr platform I must be able to toggle this: open or close the online payment … when I develop the
+platform to the best version I will open the activity to be able to receive money from the platform ». France starts
+with payments CLOSED: the platform is free, takes no money by any path, and shows nothing that sells.
+
+One authority, built like the registration switch (`Domain/Registration/RegistrationGate`):
+`app/Domain/Billing/PaymentGate.php`, the ONLY reader of `config/billing.php › payments.open` (env `PAYMENTS_OPEN`,
+default **false**), overridden by the administrator's row `payments` of `platform_settings`.
+
+| While payments are CLOSED | |
+|---|---|
+| Starting a payment | refused by the SERVER: `POST /billing/checkout`, a subscription request, a plan quote → 403 `payments_closed`. Hiding a button is never the protection |
+| What is shown | `GET /billing/status` (public) says `open: false`; the plans list is empty; the web shows no price, no « Premium », no lock, no pricing page, no subscription page |
+| Access | nobody is locked by a tier, a plan or a paid limit: every account has full access (a paywall nobody can pay is a dead end). `/me/access` says why (`payments_closed`) |
+| Never blocked, open or closed | a provider's webhook (an event is never refused); cancelling or managing a subscription that exists; redeeming an activation code (a grant by the administrator, not a payment) |
+| The administrator | `GET` / `PATCH /admin/payments` — the switch, written in the activity log with the old and the new value. Opening is refused with `payments_not_configured` while Stripe has no secret or no price: an open switch on a broken checkout is worse than a closed one |
+
+Opening the switch restores the tiers, the plans and the limits exactly as they are configured — nothing is lost
+while it is closed. The legal pages and the public copy say what is true at the time: free while closed.
+
 Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
 French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,
 drawn-in-code and the one screen size 1366×768 are kept as they are.
@@ -207,7 +228,7 @@ What is left of this track:
 | 2 | May the engine boundary go into DZ, and when? | ANSWERED 2026-11-22: « do not touch the dz platform ». The boundary lives here only; a DZ lesson is brought over by a tool of THIS repository that reads DZ and converts (§8) |
 | 3 | Which DZ features does France get? | all, books off; thinking lab, compass, daily challenge hidden until French content exists |
 | 4 | Minors' data in France (parent link, teacher-made accounts, school space, push, answer photos) | features kept; privacy policy to be rewritten and read by a lawyer before they go live |
-| 5 | Price; « 1 mois offert » is advertised and not implemented | 35 €/year kept; the claim removed until a trial exists |
+| 5 | Price; « 1 mois offert » is advertised and not implemented | PARTLY ANSWERED 2026-11-22: payments start CLOSED behind a switch (§4ter) — nothing is sold or priced in public until the owner opens it. The price and the trial are decided when he opens it; 35 €/year stays configured meanwhile |
 | 6 | Lycée | not carried; « 6e à Terminale » leaves the copy |
 | 7 | Culture rules; dice, coins, urns in probabilities (brevet material) | allowed as experiments, never betting |
 | 8 | Brand: DZ's ring-and-cube or FR's current logo | DZ's mark |
