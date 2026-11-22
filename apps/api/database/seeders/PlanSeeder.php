@@ -46,7 +46,7 @@ class PlanSeeder extends Seeder
         K::ANALYTICS_ADVANCED => true,
         K::REPORTS_EXPORT => true,
         K::STUDENTS_COVERED => true,
-        K::CONTENT_ALLOWED_GRADES => ['4am'],
+        K::CONTENT_ALLOWED_GRADES => ['3e'],
     ];
 
     /** La grille de départ : [min, max (null = sans borne), prix par élève en centimes]. */
@@ -83,7 +83,7 @@ class PlanSeeder extends Seeder
             K::ANALYTICS_ADVANCED => false,
             K::REPORTS_EXPORT => false,
             K::STUDENTS_COVERED => false,
-            K::CONTENT_ALLOWED_GRADES => ['4am'],
+            K::CONTENT_ALLOWED_GRADES => ['3e'],
         ], ['amount_cents' => 0, 'billing_interval' => PlanPrice::INTERVAL_ONE_TIME, 'duration_days' => null]);
 
         $this->seed('teacher-seats', [

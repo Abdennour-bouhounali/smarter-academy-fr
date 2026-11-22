@@ -5,13 +5,14 @@ namespace Tests\Support;
 use App\Domain\ThinkingLab\ChallengeRepository;
 
 /**
- * Un contenu de « مختبر التفكير » FIXE pour les tests : le vrai #318 (lu dans content/) et trois
+ * Un contenu de « مختبر التفكير » FIXE pour les tests : #318 (une copie figée dans tests/Fixtures — la
+ * banque de content/ est vidée par la reconstruction française) et trois
  * défis synthétiques aux chaînes reconnaissables (SECRET-…), pour que le balayage des fuites sache
  * exactement quoi chercher et que les tests ne bougent pas quand la banque grandit.
  *
  *   tl-first   #5    primaire, entier 4096, erreur 2048, jumeau tl-twin, plafond 8192, une suite (12)
  *   tl-second  #150  collège, entier 7777
- *   four-arcs-area  #318 (le vrai)
+ *   four-arcs-area  #318 (copie figée)
  *   tl-twin    #333  collège, entier 33
  */
 trait ThinkingLabFixtures
@@ -20,7 +21,7 @@ trait ThinkingLabFixtures
 
     protected function useThinkingLabFixture(): void
     {
-        $real = json_decode((string) file_get_contents(base_path('../../content/thinking-lab/challenges/0318-four-arcs-area.json')), true, 512, JSON_THROW_ON_ERROR);
+        $real = json_decode((string) file_get_contents(base_path('tests/Fixtures/content/thinking-lab/0318-four-arcs-area.json')), true, 512, JSON_THROW_ON_ERROR);
         unset($real['$schema']);
 
         $challenges = [

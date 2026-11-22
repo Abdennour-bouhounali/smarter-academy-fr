@@ -29,18 +29,18 @@ class RepeatedAttemptsFlowTest extends TestCase
         parent::setUp();
         config(['mastery.engine_version' => 2]);
 
-        $grade = Grade::create(['code' => '4am', 'name' => '4AM', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'الأعداد', 'order' => 0]);
-        $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'tayin-pgcd', 'title' => 'PGCD', 'status' => 'available', 'order' => 0]);
-        $this->p1 = LearningPoint::create(['lesson_id' => $lesson->id, 'code' => '4am_tayin-pgcd_P1', 'title' => 'P1', 'order' => 1]);
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres', 'order' => 0]);
+        $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-e', 'title' => 'PGCD', 'status' => 'available', 'order' => 0]);
+        $this->p1 = LearningPoint::create(['lesson_id' => $lesson->id, 'code' => '3e_lecon-e_P1', 'title' => 'P1', 'order' => 1]);
     }
 
     private function practice(User $u, string $attemptId, string $exercise, string $question, string $outcome = 'correct', int $level = 1): void
     {
-        app(ProgressEngine::class)->recordEvidence($u, 'tayin-pgcd', [
+        app(ProgressEngine::class)->recordEvidence($u, 'lecon-e', [
             'attemptId' => $attemptId, 'exerciseCode' => $exercise, 'questionId' => $question,
             'assessmentType' => ProgressEngine::SOURCE_PRACTICE, 'outcome' => $outcome,
-            'learningPointRefs' => [['code' => '4am_tayin-pgcd_P1', 'role' => 'primary']],
+            'learningPointRefs' => [['code' => '3e_lecon-e_P1', 'role' => 'primary']],
             'level' => $level, 'difficulty' => $level, 'hintsUsed' => 0, 'evaluatedBy' => EvidenceEvent::EVALUATED_BY_SERVER,
         ]);
     }
@@ -52,8 +52,8 @@ class RepeatedAttemptsFlowTest extends TestCase
 
     public function test_the_same_question_ten_times_is_not_ten_distinct_questions(): void
     {
-        $farmer = User::factory()->create(['role' => 'student', 'grade' => '4am']);
-        $learner = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $farmer = User::factory()->create(['role' => 'student', 'grade' => '3e']);
+        $learner = User::factory()->create(['role' => 'student', 'grade' => '3e']);
 
         for ($i = 1; $i <= 10; $i++) {
             $this->practice($farmer, "f{$i}", 'ex-l1-001', 'q1');
@@ -79,8 +79,8 @@ class RepeatedAttemptsFlowTest extends TestCase
 
     public function test_three_distinct_successes_beat_one_question_three_times(): void
     {
-        $same = User::factory()->create(['role' => 'student', 'grade' => '4am']);
-        $three = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $same = User::factory()->create(['role' => 'student', 'grade' => '3e']);
+        $three = User::factory()->create(['role' => 'student', 'grade' => '3e']);
 
         foreach ([1, 2, 3] as $i) {
             $this->practice($same, "s{$i}", 'ex-l3-001', 'q1', 'correct', 3);
@@ -94,13 +94,13 @@ class RepeatedAttemptsFlowTest extends TestCase
 
     public function test_recovering_a_failed_question_counts_but_less_than_a_new_one(): void
     {
-        $u = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $u = User::factory()->create(['role' => 'student', 'grade' => '3e']);
         $this->practice($u, 'a1', 'ex-l2-001', 'q1', 'incorrect', 2);
         $afterFail = (float) $this->state($u)->confidence;
         $this->practice($u, 'a2', 'ex-l2-001', 'q1', 'correct', 2);
         $afterRetry = (float) $this->state($u)->confidence;
 
-        $v = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $v = User::factory()->create(['role' => 'student', 'grade' => '3e']);
         $this->practice($v, 'b1', 'ex-l2-001', 'q1', 'incorrect', 2);
         $this->practice($v, 'b2', 'ex-l2-002', 'q1', 'correct', 2);
         $afterNew = (float) $this->state($v)->confidence;
@@ -115,7 +115,7 @@ class RepeatedAttemptsFlowTest extends TestCase
         // leçon, et une leçon peut être `completed` sans état de maîtrise :
         // deux tables, deux questions. (La table de progression n'est pas
         // touchée par le moteur ; on vérifie qu'aucune ligne n'apparaît.)
-        $u = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $u = User::factory()->create(['role' => 'student', 'grade' => '3e']);
         foreach ([1, 2, 3] as $i) {
             $this->practice($u, "m{$i}", "ex-l5-00{$i}", 'q1', 'correct', 5);
         }

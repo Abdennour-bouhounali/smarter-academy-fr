@@ -16,7 +16,7 @@ use Tests\Support\LearningFixtures;
 use Tests\TestCase;
 
 /**
- * « مدار » d'un élève INDÉPENDANT, de bout en bout, sur le vrai contenu 4AM :
+ * « مدار » d'un élève INDÉPENDANT, de bout en bout, sur le contenu de pratique des tests :
  * cœurs quotidiens, parties, borne du score, reprises, محطة التزوّد (question
  * sans clé, cœur contre réponse juste, preuve d'apprentissage), vaisseaux.
  */

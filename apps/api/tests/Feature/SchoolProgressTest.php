@@ -28,13 +28,13 @@ class SchoolProgressTest extends TestCase
     {
         config(['mastery.engine_version' => 2]);
         $this->freeSeatsPlan(30);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $point = $this->point($lesson, 1);
 
         ['school' => $school, 'token' => $token] = $this->schoolWithDirector();
-        $a = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '4م1']);
-        $b = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '4م2']);
+        $a = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '3e A']);
+        $b = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '3e B']);
 
         [$s1, $s2, $s3, $silent] = [$this->student(), $this->student(), $this->student(), $this->student()];
         $this->enrol($a, [$s1, $s2, $silent]);
@@ -47,8 +47,8 @@ class SchoolProgressTest extends TestCase
 
         $map = $this->withToken($token)->getJson('/api/v1/school/learning-map')
             ->assertOk()
-            ->assertJsonPath('grades', ['4am'])
-            ->assertJsonPath('map.classes.0.name', '4م1')
+            ->assertJsonPath('grades', ['3e'])
+            ->assertJsonPath('map.classes.0.name', '3e A')
             ->assertJsonPath('map.classes.0.students', 2)
             ->assertJsonPath('map.classes.1.students', 1)
             ->json('map');
@@ -71,7 +71,7 @@ class SchoolProgressTest extends TestCase
     public function test_the_student_file_is_the_parents_shape_and_404_outside_the_school(): void
     {
         $this->freeSeatsPlan(30);
-        $this->grade4am(1);
+        $this->grade3e(1);
         ['school' => $school, 'token' => $token] = $this->schoolWithDirector();
         $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school));
         $readable = $this->student(['first_name' => 'أمين', 'last_name' => 'بوعلام']);

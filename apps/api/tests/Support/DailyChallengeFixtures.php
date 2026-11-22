@@ -11,10 +11,10 @@ use App\Models\Lesson;
 use Illuminate\Support\Carbon;
 
 /**
- * Le défi quotidien sur le VRAI contenu : les leçons de l'unité 4AM, leurs
- * points d'apprentissage et un registre d'items construit depuis les
- * fichiers content/practice — exactement ce que l'import produirait. Les
- * réponses justes sont LUES dans le contenu, jamais écrites à la main.
+ * Le défi quotidien sur le contenu de pratique des tests (tests/Fixtures/content) :
+ * deux leçons neutres de 3e, leurs points d'apprentissage et un registre d'items
+ * construit depuis les fichiers d'exercices — exactement ce que l'import
+ * produirait. Les réponses justes sont LUES dans le contenu, jamais écrites à la main.
  */
 trait DailyChallengeFixtures
 {
@@ -31,15 +31,15 @@ trait DailyChallengeFixtures
     }
 
     /** @param  string[]  $lessonCodes */
-    protected function challengeCurriculum(array $lessonCodes = ['qasim-adad-tabii', 'bahth-pgcd']): void
+    protected function challengeCurriculum(array $lessonCodes = ['lecon-a', 'lecon-b']): void
     {
         config(['mastery.engine_version' => 2, 'mastery.server_evaluation' => true]);
-        $grade = Grade::firstOrCreate(['code' => '4am'], ['name' => 'السنة الرابعة متوسط', 'level' => 'moyen', 'order' => 1, 'is_active' => true]);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'الأعداد', 'order' => 0]);
+        $grade = Grade::firstOrCreate(['code' => '3e'], ['name' => 'Troisième', 'level' => 'college', 'order' => 1, 'is_active' => true]);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres', 'order' => 0]);
         $repo = app(ExerciseRepository::class);
 
         foreach ($lessonCodes as $i => $code) {
-            $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => $code, 'title' => "درس {$code}", 'status' => 'available', 'order' => $i]);
+            $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => $code, 'title' => "Leçon {$code}", 'status' => 'available', 'order' => $i]);
             $this->dcLessons[$code] = $lesson;
 
             foreach ($repo->indexFor($code) as $level => $ids) {
@@ -49,7 +49,7 @@ trait DailyChallengeFixtures
                         $refs = [];
                         foreach ($q['learningPoints'] as $lp) {
                             $point = $this->dcPoints[$lp['code']] ??= LearningPoint::create([
-                                'lesson_id' => $lesson->id, 'code' => $lp['code'], 'title' => 'نقطة '.$lp['code'],
+                                'lesson_id' => $lesson->id, 'code' => $lp['code'], 'title' => 'Point '.$lp['code'],
                                 'order' => (int) preg_replace('/\D/', '', substr($lp['code'], -2)),
                             ]);
                             $refs[$point->id] = ['role' => $lp['role']];

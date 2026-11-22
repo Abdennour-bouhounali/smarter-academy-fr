@@ -31,12 +31,12 @@ class TeacherCapacityTest extends TestCase
     public function test_le_gratuit_donne_des_sieges_et_des_classes_illimitees(): void
     {
         $this->freeSeatsPlan(5);
-        $this->grade4am(0);
+        $this->grade3e(0);
         $teacher = $this->teacher();
         $token = $this->tokenOf($teacher);
 
         for ($i = 1; $i <= 10; $i++) {
-            $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => "Classe {$i}", 'grade' => '4am'])->assertCreated();
+            $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => "Classe {$i}", 'grade' => '3e'])->assertCreated();
         }
         $this->assertSame(10, Classroom::ownedBy($teacher)->count());
 
@@ -124,8 +124,8 @@ class TeacherCapacityTest extends TestCase
         $this->join($students[0], $students[0]->classroomMemberships()->first()->classroom_id === $a->id ? $b : $a)
             ->assertStatus(422)->assertJsonPath('reason', 'already_in_class');
         // Et une nouvelle classe reste possible : les classes ne sont pas l'unité de vente.
-        $this->grade4am(0);
-        $this->withToken($this->tokenOf($teacher))->postJson('/api/v1/teacher/classrooms', ['name' => 'C', 'grade' => '4am'])->assertCreated();
+        $this->grade3e(0);
+        $this->withToken($this->tokenOf($teacher))->postJson('/api/v1/teacher/classrooms', ['name' => 'C', 'grade' => '3e'])->assertCreated();
         $this->assertSame('cancelled', Subscription::find($sub['id'])->status);
     }
 
@@ -147,12 +147,12 @@ class TeacherCapacityTest extends TestCase
     public function test_une_limite_technique_de_classes_reste_possible_si_configuree(): void
     {
         $this->freeSeatsPlan(5, ['classrooms.max' => 2]);
-        $this->grade4am(0);
+        $this->grade3e(0);
         $token = $this->tokenOf($this->teacher());
 
-        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => 'A', 'grade' => '4am'])->assertCreated();
-        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => 'B', 'grade' => '4am'])->assertCreated();
-        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => 'C', 'grade' => '4am'])->assertStatus(422)->assertJsonPath('reason', 'limit_reached');
+        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => 'A', 'grade' => '3e'])->assertCreated();
+        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => 'B', 'grade' => '3e'])->assertCreated();
+        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => 'C', 'grade' => '3e'])->assertStatus(422)->assertJsonPath('reason', 'limit_reached');
     }
 
     public function test_la_fiche_administrateur_montre_la_capacite(): void

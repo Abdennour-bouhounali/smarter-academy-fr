@@ -14,40 +14,41 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
- * Le cycle moyen, phase 2 (2026-10-14) : les leçons 1AM–3AM entrent en base
- * AVANT d'être écrites (`coming_soon`, décision D2 du propriétaire), avec toutes
- * leurs الكفاءات — mais le serveur ne les ouvre pas, et Mastery V2 ne s'en sert
- * pas, tant qu'elles ne sont pas publiées (docs/architecture/LEARNING_NET.md §3bis).
+ * Une leçon `coming_soon` entre en base AVANT d'être écrite, avec tous ses
+ * points d'apprentissage — mais le serveur ne l'ouvre pas, et Mastery V2 ne
+ * s'en sert pas, tant qu'elle n'est pas publiée (docs/architecture/LEARNING_NET.md
+ * §3bis). Export neutre : une leçon de 4e à écrire, une leçon de 3e publiée qui
+ * s'appuie sur elle.
  */
-class MoyenComingSoonImportTest extends TestCase
+class ComingSoonImportTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** 3AM : une leçon à générer ; 4AM : une leçon publiée qui s'appuie sur elle. */
-    private function export(string $status3am = 'coming_soon', array $lp4amPrerequisites = []): array
+    /** 4e : une leçon à générer ; 3e : une leçon publiée qui s'appuie sur elle. */
+    private function export(string $statusDraft = 'coming_soon', array $publishedPrerequisites = []): array
     {
         $grade = fn (string $code, int $order, array $lesson) => [
-            'code' => $code, 'name' => $code, 'level' => 'moyen', 'order' => $order, 'active' => true,
-            'chapters' => [['code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان', 'order' => 0, 'topics' => [], 'units' => [], 'lessons' => [$lesson]]],
+            'code' => $code, 'name' => $code, 'level' => 'college', 'order' => $order, 'active' => true,
+            'chapters' => [['code' => 'nombres_calculs', 'title' => 'Nombres et calculs', 'order' => 0, 'topics' => [], 'units' => [], 'lessons' => [$lesson]]],
         ];
 
         return ['grades' => [
-            $grade('3am', 2, [
-                'code' => 'quwa-asas-nisbi', 'officialObjectCode' => null, 'title' => 'قوى عدد نسبي', 'description' => '',
-                'status' => $status3am, 'durationMinutes' => null, 'order' => 0, 'kind' => 'lesson',
+            $grade('4e', 2, [
+                'code' => 'lecon-a', 'officialObjectCode' => null, 'title' => 'Leçon A', 'description' => '',
+                'status' => $statusDraft, 'durationMinutes' => null, 'order' => 0, 'kind' => 'lesson',
                 'prerequisiteLessonCodes' => [],
                 'learningPoints' => [
-                    ['code' => '3am_quwa-asas-nisbi_P1', 'title' => 'كتابة جداء عوامل متساوية على شكل قوة', 'order' => 1, 'prerequisites' => []],
-                    ['code' => '3am_quwa-asas-nisbi_P2', 'title' => 'حساب قوة عدد نسبي', 'order' => 2, 'prerequisites' => []],
+                    ['code' => '4e_lecon-a_P1', 'title' => 'Point A1', 'order' => 1, 'prerequisites' => []],
+                    ['code' => '4e_lecon-a_P2', 'title' => 'Point A2', 'order' => 2, 'prerequisites' => []],
                 ],
             ]),
-            $grade('4am', 3, [
-                'code' => 'jidhr-tarbii', 'officialObjectCode' => null, 'title' => 'الجذر التربيعي', 'description' => '',
+            $grade('3e', 3, [
+                'code' => 'lecon-b', 'officialObjectCode' => null, 'title' => 'Leçon B', 'description' => '',
                 'status' => 'available', 'durationMinutes' => 45, 'order' => 0, 'kind' => 'lesson',
                 // Prérequis de LEÇON tiré du réseau, d'une année antérieure.
-                'prerequisiteLessonCodes' => ['quwa-asas-nisbi'],
+                'prerequisiteLessonCodes' => ['lecon-a'],
                 'learningPoints' => [
-                    ['code' => '4am_jidhr-tarbii_P1', 'title' => 'الجذر التربيعي', 'order' => 1, 'prerequisites' => $lp4amPrerequisites],
+                    ['code' => '3e_lecon-b_P1', 'title' => 'Point B1', 'order' => 1, 'prerequisites' => $publishedPrerequisites],
                 ],
             ]),
         ]];
@@ -57,30 +58,30 @@ class MoyenComingSoonImportTest extends TestCase
     {
         (new CurriculumImporter)->import($this->export());
 
-        $draft = Lesson::where('code', 'quwa-asas-nisbi')->firstOrFail();
+        $draft = Lesson::where('code', 'lecon-a')->firstOrFail();
         $this->assertSame('coming_soon', $draft->status);
         $this->assertSame(Lesson::PUB_DRAFT, $draft->publication_status, 'coming_soon naît draft, jamais published');
         $this->assertFalse($draft->isVisibleToStudents());
         $this->assertSame(AccessTier::FREE, $draft->tier, 'une leçon nouvelle naît gratuite');
-        $this->assertSame(2, LearningPoint::where('lesson_id', $draft->id)->whereNull('retired_at')->count(), 'toutes ses الكفاءات sont en base');
+        $this->assertSame(2, LearningPoint::where('lesson_id', $draft->id)->whereNull('retired_at')->count(), 'tous ses points d’apprentissage sont en base');
 
-        $published = Lesson::where('code', 'jidhr-tarbii')->firstOrFail();
+        $published = Lesson::where('code', 'lecon-b')->firstOrFail();
         $this->assertSame(Lesson::PUB_PUBLISHED, $published->publication_status, 'available naît published (comportement d’avant)');
         $this->assertNotNull($published->published_at);
 
         // Le prérequis de leçon d'une année antérieure est résolu (second passage).
         $this->assertDatabaseHas('lesson_prerequisites', ['lesson_id' => $published->id, 'prerequisite_lesson_id' => $draft->id]);
-        $this->assertSame(0, Lesson::visibleToStudents()->where('code', 'quwa-asas-nisbi')->count());
+        $this->assertSame(0, Lesson::visibleToStudents()->where('code', 'lecon-a')->count());
     }
 
     public function test_publishing_flips_coming_soon_to_available_and_opens_the_lesson_without_touching_its_tier(): void
     {
         (new CurriculumImporter)->import($this->export());
-        Lesson::where('code', 'quwa-asas-nisbi')->update(['tier' => AccessTier::PREMIUM]);
+        Lesson::where('code', 'lecon-a')->update(['tier' => AccessTier::PREMIUM]);
 
         (new CurriculumImporter)->import($this->export('available'));
 
-        $lesson = Lesson::where('code', 'quwa-asas-nisbi')->firstOrFail();
+        $lesson = Lesson::where('code', 'lecon-a')->firstOrFail();
         $this->assertSame('available', $lesson->status);
         $this->assertSame(Lesson::PUB_PUBLISHED, $lesson->publication_status);
         $this->assertNotNull($lesson->published_at);
@@ -96,46 +97,46 @@ class MoyenComingSoonImportTest extends TestCase
         (new CurriculumImporter)->import($this->export('available'));
         // Pousser en production publie (2026-11-11) : une leçon écrite restée
         // en brouillon est publiée ; l'administrateur la RETIENT en la masquant.
-        Lesson::where('code', 'quwa-asas-nisbi')->update(['publication_status' => Lesson::PUB_DRAFT]);
+        Lesson::where('code', 'lecon-a')->update(['publication_status' => Lesson::PUB_DRAFT]);
         (new CurriculumImporter)->import($this->export('available'));
-        $this->assertSame(Lesson::PUB_PUBLISHED, Lesson::where('code', 'quwa-asas-nisbi')->value('publication_status'));
-        Lesson::where('code', 'quwa-asas-nisbi')->update(['publication_status' => Lesson::PUB_HIDDEN]);
+        $this->assertSame(Lesson::PUB_PUBLISHED, Lesson::where('code', 'lecon-a')->value('publication_status'));
+        Lesson::where('code', 'lecon-a')->update(['publication_status' => Lesson::PUB_HIDDEN]);
         (new CurriculumImporter)->import($this->export('available'));
-        $this->assertSame(Lesson::PUB_HIDDEN, Lesson::where('code', 'quwa-asas-nisbi')->value('publication_status'));
+        $this->assertSame(Lesson::PUB_HIDDEN, Lesson::where('code', 'lecon-a')->value('publication_status'));
 
         // Une leçon redevenue coming_soon ne peut pas rester published ; hidden est gardé.
-        Lesson::where('code', 'quwa-asas-nisbi')->update(['publication_status' => Lesson::PUB_PUBLISHED]);
+        Lesson::where('code', 'lecon-a')->update(['publication_status' => Lesson::PUB_PUBLISHED]);
         (new CurriculumImporter)->import($this->export());
-        $this->assertSame(Lesson::PUB_DRAFT, Lesson::where('code', 'quwa-asas-nisbi')->value('publication_status'));
-        Lesson::where('code', 'quwa-asas-nisbi')->update(['publication_status' => Lesson::PUB_HIDDEN]);
+        $this->assertSame(Lesson::PUB_DRAFT, Lesson::where('code', 'lecon-a')->value('publication_status'));
+        Lesson::where('code', 'lecon-a')->update(['publication_status' => Lesson::PUB_HIDDEN]);
         (new CurriculumImporter)->import($this->export());
-        $this->assertSame(Lesson::PUB_HIDDEN, Lesson::where('code', 'quwa-asas-nisbi')->value('publication_status'));
+        $this->assertSame(Lesson::PUB_HIDDEN, Lesson::where('code', 'lecon-a')->value('publication_status'));
     }
 
     public function test_a_recommendation_never_sends_a_student_to_an_unpublished_prerequisite(): void
     {
         config(['mastery.engine_version' => 2]);
-        $prerequisite = [['code' => '3am_quwa-asas-nisbi_P2', 'requiredMastery' => 0.7]];
+        $prerequisite = [['code' => '4e_lecon-a_P2', 'requiredMastery' => 0.7]];
         (new CurriculumImporter)->import($this->export('coming_soon', $prerequisite));
         $this->assertDatabaseCount('learning_point_prerequisites', 1);
 
-        $student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
         $fail = fn (string $lesson, string $lp, string $id) => app(ProgressEngine::class)->recordEvidence($student, $lesson, [
             'attemptId' => $id, 'exerciseCode' => "ex-{$id}", 'questionId' => 'q1',
             'assessmentType' => ProgressEngine::SOURCE_PRACTICE, 'outcome' => 'incorrect',
             'learningPointRefs' => [['code' => $lp, 'role' => 'primary']], 'level' => 1,
             'evaluatedBy' => EvidenceEvent::EVALUATED_BY_SERVER,
         ]);
-        $fail('jidhr-tarbii', '4am_jidhr-tarbii_P1', 'a1');
+        $fail('lecon-b', '3e_lecon-b_P1', 'a1');
         // Un état en « gap » sur le prérequis (ex. venu d'avant la mise en brouillon).
-        $fail('quwa-asas-nisbi', '3am_quwa-asas-nisbi_P2', 'a2');
+        $fail('lecon-a', '4e_lecon-a_P2', 'a2');
 
-        $recs = fn () => collect(app(RecommendationService::class)->forLesson($student->id, Lesson::where('code', 'jidhr-tarbii')->firstOrFail()))
+        $recs = fn () => collect(app(RecommendationService::class)->forLesson($student->id, Lesson::where('code', 'lecon-b')->firstOrFail()))
             ->keyBy('learningPoint.code');
 
-        $this->assertSame('reteach', $recs()['4am_jidhr-tarbii_P1']['kind'], 'prérequis non publié : on ne renvoie pas vers lui');
+        $this->assertSame('reteach', $recs()['3e_lecon-b_P1']['kind'], 'prérequis non publié : on ne renvoie pas vers lui');
 
         (new CurriculumImporter)->import($this->export('available', $prerequisite));
-        $this->assertSame('prerequisite', $recs()['4am_jidhr-tarbii_P1']['kind'], 'publié : le renvoi s’allume de lui-même');
+        $this->assertSame('prerequisite', $recs()['3e_lecon-b_P1']['kind'], 'publié : le renvoi s’allume de lui-même');
     }
 }

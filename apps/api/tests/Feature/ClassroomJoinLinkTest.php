@@ -30,7 +30,7 @@ class ClassroomJoinLinkTest extends TestCase
     private function classroom(array $attributes = []): Classroom
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
 
         return Classroom::factory()->create($attributes);
     }
@@ -45,13 +45,13 @@ class ClassroomJoinLinkTest extends TestCase
     public function test_chaque_classe_nait_avec_un_jeton_aleatoire_unique_et_non_derive(): void
     {
         $this->defaultTeacherPlan([K::CLASSROOMS_MAX => null]);
-        $this->grade4am(0);
+        $this->grade3e(0);
         $teacher = $this->teacher();
         $token = $this->tokenOf($teacher);
 
         $tokens = [];
         for ($i = 0; $i < 5; $i++) {
-            $created = $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => "4AM {$i}", 'grade' => '4am'])->assertCreated();
+            $created = $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => "3e {$i}", 'grade' => '3e'])->assertCreated();
             $link = $created->json('classroom.joinLinkToken');
             $this->assertTrue(JoinLinkToken::isWellFormed($link));
             $classroom = Classroom::findOrFail($created->json('classroom.id'));
@@ -82,13 +82,13 @@ class ClassroomJoinLinkTest extends TestCase
 
     public function test_l_apercu_public_rassure_sans_rien_reveler(): void
     {
-        $classroom = $this->classroom(['name' => 'رياضيات — 4م2']);
+        $classroom = $this->classroom(['name' => 'Maths — 3e B']);
         $classroom->teacher->forceFill(['first_name' => 'أمين', 'last_name' => 'بن علي'])->save();
 
         $this->getJson("/api/v1/join-links/{$classroom->join_link_token}")
             ->assertOk()
-            ->assertJsonPath('joinLink.classroomName', 'رياضيات — 4م2')
-            ->assertJsonPath('joinLink.grade', '4am')
+            ->assertJsonPath('joinLink.classroomName', 'Maths — 3e B')
+            ->assertJsonPath('joinLink.grade', '3e')
             ->assertJsonPath('joinLink.teacherName', 'أمين بن علي')
             ->assertJsonPath('joinLink.joiningOpen', true)
             ->assertJsonPath('joinLink.alreadyMember', null)
@@ -188,13 +188,13 @@ class ClassroomJoinLinkTest extends TestCase
     {
         $classroom = $this->classroom();
         $fresh = $this->student(['grade' => null]);
-        $chosen = $this->student(['grade' => '3am']);
+        $chosen = $this->student(['grade' => '4e']);
 
         $this->joinByLink($fresh, $classroom->join_link_token)->assertCreated();
         $this->joinByLink($chosen, $classroom->join_link_token)->assertCreated();
 
-        $this->assertSame('4am', $fresh->fresh()->grade);
-        $this->assertSame('3am', $chosen->fresh()->grade);
+        $this->assertSame('3e', $fresh->fresh()->grade);
+        $this->assertSame('4e', $chosen->fresh()->grade);
     }
 
     // ── Fermer, renouveler ─────────────────────────────────────────────
@@ -299,7 +299,7 @@ class ClassroomJoinLinkTest extends TestCase
         $this->assertSame($classroom->join_link_token, $student->pending_class_join_token);
         // …mais la classe scolaire du قسم, DÈS l'inscription : l'accueil ne
         // demandera pas l'année (propriétaire, 2026-10-22).
-        $this->assertSame('4am', $student->grade);
+        $this->assertSame('3e', $student->grade);
 
         // Le lien du courriel, ouvert SANS session (autre navigateur).
         $this->get(EmailVerificationLink::for($student))->assertRedirect();
@@ -309,7 +309,7 @@ class ClassroomJoinLinkTest extends TestCase
         ]);
         $student->refresh();
         $this->assertNull($student->pending_class_join_token);
-        $this->assertSame('4am', $student->grade);
+        $this->assertSame('3e', $student->grade);
 
         // Le navigateur d'origine rejoint à son tour : idempotent.
         $this->joinByLink($student, $classroom->join_link_token)->assertOk()->assertJsonPath('alreadyMember', true);

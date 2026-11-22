@@ -35,7 +35,7 @@ class ClassroomInsightScaleTest extends TestCase
     {
         config(['mastery.engine_version' => 2]);
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(2);
+        ['lessons' => $lessons] = $this->grade3e(2);
         $points = [$this->point($lessons[0], 1), $this->point($lessons[0], 2), $this->point($lessons[1], 1)];
         $classroom = Classroom::factory()->create();
         $students = collect(range(1, $size))->map(fn () => $this->student());

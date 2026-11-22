@@ -20,7 +20,7 @@ use Tests\TestCase;
 
 /**
  * Le défi quotidien d'un élève INDÉPENDANT, de bout en bout, sur le vrai
- * contenu 4AM : génération stable, chronométrage serveur, idempotence,
+ * contenu de pratique des tests : génération stable, chronométrage serveur, idempotence,
  * expiration, score, série, preuve d'apprentissage.
  */
 class DailyChallengeFlowTest extends TestCase
@@ -44,9 +44,9 @@ class DailyChallengeFlowTest extends TestCase
 
         // Ce que l'élève a déjà travaillé : quatre points de la première leçon,
         // maîtrisés (items difficiles, D2) il y a 40 jours — la fraîcheur décline.
-        $lesson = $this->dcLessons['qasim-adad-tabii'];
+        $lesson = $this->dcLessons['lecon-a'];
         foreach (['P1', 'P2', 'P3', 'P4'] as $p) {
-            $this->answers($this->student, $lesson, $this->dcPoints["4am_qasim-adad-tabii_{$p}"], 'correct', 4, 5, now()->subDays(40));
+            $this->answers($this->student, $lesson, $this->dcPoints["3e_lecon-a_{$p}"], 'correct', 4, 5, now()->subDays(40));
         }
     }
 
@@ -111,7 +111,7 @@ class DailyChallengeFlowTest extends TestCase
         $points = DailyChallengeQuestion::orderBy('position')->pluck('learning_point_id')->all();
         $this->assertCount(4, array_unique(array_slice($points, 0, 4)), 'une question par point tant qu\'il y en a');
         // Récupération, pas nouveauté : aucune question de la leçon jamais travaillée.
-        $this->assertSame(0, DailyChallengeQuestion::where('lesson_id', $this->dcLessons['bahth-pgcd']->id)->count());
+        $this->assertSame(0, DailyChallengeQuestion::where('lesson_id', $this->dcLessons['lecon-b']->id)->count());
         // Les points maîtrisés il y a 40 jours sont des candidats de récupération.
         $this->assertContains('retrieval', DailyChallengeQuestion::pluck('reason')->all());
     }
@@ -240,8 +240,8 @@ class DailyChallengeFlowTest extends TestCase
     {
         $fresh = $this->student();
         $this->token = $this->tokenOf($fresh);
-        $lesson = $this->dcLessons['qasim-adad-tabii'];
-        $this->answer($fresh, $lesson, $this->dcPoints['4am_qasim-adad-tabii_P1'], 'incorrect', 1);
+        $lesson = $this->dcLessons['lecon-a'];
+        $this->answer($fresh, $lesson, $this->dcPoints['3e_lecon-a_P1'], 'incorrect', 1);
 
         $uuid = $this->api('POST', '/daily-challenge/start')->json('attempt.id');
         $this->answerRight($uuid, 1)->assertCreated();

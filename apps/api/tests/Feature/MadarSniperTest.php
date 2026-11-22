@@ -37,7 +37,7 @@ class MadarSniperTest extends TestCase
         parent::setUp();
         $this->onChallengeDay();
         $this->challengeCurriculum();
-        $this->classroom = Classroom::factory()->create(['grade' => '4am']);
+        $this->classroom = Classroom::factory()->create(['grade' => '3e']);
         $this->students = [$this->student(['first_name' => 'Amine', 'last_name' => 'Benali']), $this->student(['first_name' => 'Sara', 'last_name' => 'Haddad'])];
         $this->enrol($this->classroom, $this->students);
     }
@@ -143,14 +143,14 @@ class MadarSniperTest extends TestCase
     {
         $scoring = new SniperScoring(config('madar.sniper'));
         $student = $this->students[0];
-        $student->update(['grade' => '4am']);
+        $student->update(['grade' => '3e']);
         $this->as($student, 'GET', '/madar')->assertOk()
             ->assertJsonPath('sniper.level', 19)->assertJsonPath('sniper.sub', 1)->assertJsonPath('sniper.entryLevel', 19)
             ->assertJsonPath('sniper.unlockedUpTo', 19)->assertJsonPath('sniper.levels', 50)->assertJsonPath('sniper.subLevels', 3);
         $this->as($student, 'POST', '/madar/runs', ['game' => 'sniper'])->assertCreated()->assertJsonPath('run.position', $scoring->positionOf(19));
 
         $young = $this->students[1];
-        $young->update(['grade' => '1am']);
+        $young->update(['grade' => '6e']);
         $this->as($young, 'GET', '/madar')->assertJsonPath('sniper.level', 1)->assertJsonPath('sniper.unlockedUpTo', 1);
     }
 
@@ -158,7 +158,7 @@ class MadarSniperTest extends TestCase
     {
         $scoring = new SniperScoring(config('madar.sniper'));
         $student = $this->students[0];
-        $student->update(['grade' => '3am']);
+        $student->update(['grade' => '4e']);
         $this->as($student, 'POST', '/madar/runs', ['game' => 'sniper', 'level' => 5])->assertCreated()->assertJsonPath('run.position', $scoring->positionOf(5));
         $this->as($student, 'POST', '/madar/runs', ['game' => 'sniper', 'level' => 40])->assertStatus(422)->assertJsonPath('reason', 'level_locked');
         $this->as($student, 'POST', '/madar/runs', ['game' => 'sniper', 'level' => 51])->assertStatus(404);
@@ -168,7 +168,7 @@ class MadarSniperTest extends TestCase
     {
         $scoring = new SniperScoring(config('madar.sniper'));
         $student = $this->students[0];
-        $student->update(['grade' => '2am']);
+        $student->update(['grade' => '5e']);
         $start = $scoring->positionOf(5);
         $seconds = (int) ceil($scoring->roundStart(4)) + 1;
 
@@ -193,7 +193,7 @@ class MadarSniperTest extends TestCase
     {
         $scoring = new SniperScoring(config('madar.sniper'));
         $student = $this->students[0];
-        $student->update(['grade' => '4am']);
+        $student->update(['grade' => '3e']);
         $start = $scoring->positionOf(19);
         // L'échauffement commence deux niveaux plus bas : finir là, sans manche jouée, est permis.
         $this->snipe($student, 5, 0, 0, 0, ['position' => $start - 6, 'peak' => $start - 6])->assertOk()

@@ -12,17 +12,17 @@ class CurriculumSqlCommandTest extends TestCase
         $dir = sys_get_temp_dir().'/sa-curriculum-sql-'.uniqid();
         mkdir($dir);
         file_put_contents("{$dir}/curriculum.json", json_encode(['grades' => [[
-            'code' => '4am', 'name' => '4AM', 'level' => 'moyen', 'order' => 0, 'active' => true,
+            'code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0, 'active' => true,
             'chapters' => [[
-                'code' => 'ch', 'title' => 'ميدان', 'order' => 0, 'topics' => [],
-                'units' => [['code' => 'u1', 'title' => 'الوحدة', 'number' => 1, 'objectives' => ['أ'], 'sourceTopicCodes' => ['pgcd'], 'textbook' => null, 'order' => 0]],
+                'code' => 'ch', 'title' => 'Thème', 'order' => 0, 'topics' => [],
+                'units' => [['code' => 'u1', 'title' => 'Unité', 'number' => 1, 'objectives' => ['A'], 'sourceTopicCodes' => ['pgcd'], 'textbook' => null, 'order' => 0]],
                 'lessons' => [['code' => 'l1', 'officialObjectCode' => null, 'title' => "L'1", 'description' => null, 'status' => 'available', 'durationMinutes' => 45, 'tier' => 'free', 'order' => 0, 'unitCode' => 'u1', 'kind' => 'lesson', 'titleSource' => 'textbook', 'textbookRef' => ['a' => 1], 'prerequisiteLessonCodes' => ['l0'],
-                    'learningPoints' => [['code' => '4am_l1_P1', 'title' => 'p', 'order' => 1, 'prerequisites' => [['code' => '4am_l0_P1', 'requiredMastery' => 0.7]]]]]],
+                    'learningPoints' => [['code' => '3e_l1_P1', 'title' => 'p', 'order' => 1, 'prerequisites' => [['code' => '3e_l0_P1', 'requiredMastery' => 0.7]]]]]],
             ]],
         ]]]));
-        file_put_contents("{$dir}/registry.json", json_encode(['lessons' => [['code' => 'l1', 'grade' => '4am', 'modules' => [['code' => '01', 'number' => 1, 'slug' => 's', 'title' => 'm', 'stage' => 'trigger', 'estimatedMin' => 10, 'difficulty' => 1, 'teachesLearningPointCodes' => ['4am_l1_P1']]],
-            'resources' => [['code' => 'r1', 'kind' => 'manipulation', 'type' => 'divisor-explorer', 'title' => 'x', 'module' => 1, 'learningPointIds' => ['4am_l1_P1'], 'sourceElementIds' => ['act-1'], 'config' => null]]]],
-            'exercises' => [['lessonCode' => 'l1', 'exerciseCode' => 'ex-4am-l1-l1-001', 'level' => 1, 'title' => 't', 'questionCount' => 2]]]));
+        file_put_contents("{$dir}/registry.json", json_encode(['lessons' => [['code' => 'l1', 'grade' => '3e', 'modules' => [['code' => '01', 'number' => 1, 'slug' => 's', 'title' => 'm', 'stage' => 'trigger', 'estimatedMin' => 10, 'difficulty' => 1, 'teachesLearningPointCodes' => ['3e_l1_P1']]],
+            'resources' => [['code' => 'r1', 'kind' => 'manipulation', 'type' => 'divisor-explorer', 'title' => 'x', 'module' => 1, 'learningPointIds' => ['3e_l1_P1'], 'sourceElementIds' => ['act-1'], 'config' => null]]]],
+            'exercises' => [['lessonCode' => 'l1', 'exerciseCode' => 'ex-3e-l1-l1-001', 'level' => 1, 'title' => 't', 'questionCount' => 2]]]));
 
         $out = "{$dir}/out.sql";
         $this->artisan('smarter:curriculum-sql', ['--from-json' => "{$dir}/curriculum.json", '--registry-json' => "{$dir}/registry.json", '--out' => $out, '--retire-lesson' => ['pgcd']])->assertSuccessful();
@@ -30,7 +30,7 @@ class CurriculumSqlCommandTest extends TestCase
 
         $this->assertStringContainsString('INSERT INTO `grades`', $sql);
         $this->assertStringContainsString('INSERT INTO `units`', $sql);
-        $this->assertStringContainsString("WHERE g.code = '4am' AND c.code = 'ch'", $sql);
+        $this->assertStringContainsString("WHERE g.code = '3e' AND c.code = 'ch'", $sql);
         $this->assertStringContainsString("(SELECT u.id FROM `units` u WHERE u.chapter_id = c.id AND u.code = 'u1')", $sql);
         $this->assertStringContainsString("'L\\'1'", $sql, 'les apostrophes sont échappées');
         $this->assertStringContainsString('INSERT IGNORE INTO `lesson_prerequisites`', $sql);

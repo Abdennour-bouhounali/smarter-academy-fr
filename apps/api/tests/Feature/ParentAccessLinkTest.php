@@ -130,7 +130,7 @@ class ParentAccessLinkTest extends TestCase
 
     public function test_the_teacher_prints_parent_cards_without_breaking_an_existing_link(): void
     {
-        $classroom = Classroom::factory()->create(['grade' => '4am']);
+        $classroom = Classroom::factory()->create(['grade' => '3e']);
         $teacher = $classroom->teacher;
         $withLink = $this->student(['first_name' => 'أمين']);
         $without = $this->student(['first_name' => 'ياسين']);
@@ -155,7 +155,7 @@ class ParentAccessLinkTest extends TestCase
 
         $this->as($teacher, 'POST', "/teacher/classrooms/{$classroom->id}/students/parent-cards", ['studentIds' => [$outsider->id]])
             ->assertStatus(422)->assertJsonPath('reason', 'not_member');
-        $other = Classroom::factory()->create(['grade' => '4am'])->teacher;
+        $other = Classroom::factory()->create(['grade' => '3e'])->teacher;
         $this->assertContains(
             $this->as($other, 'POST', "/teacher/classrooms/{$classroom->id}/students/parent-cards", ['studentIds' => [$without->id]])->status(),
             [403, 404],

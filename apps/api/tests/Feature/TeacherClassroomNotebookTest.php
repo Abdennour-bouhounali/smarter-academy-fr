@@ -32,7 +32,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_l_enseignant_lit_le_cahier_d_un_eleve_de_sa_classe(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(2);
+        ['lessons' => $lessons] = $this->grade3e(2);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();
@@ -60,7 +60,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_une_note_se_lit_seule(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(2);
+        ['lessons' => $lessons] = $this->grade3e(2);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();
@@ -81,7 +81,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_le_cahier_d_un_eleve_d_une_AUTRE_classe_est_refuse(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $mine = Classroom::factory()->create();
         $theirs = Classroom::factory()->create();
         $stranger = $this->student();
@@ -105,7 +105,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_un_eleve_ne_peut_pas_lire_le_cahier_d_un_autre_par_cette_porte(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         $curious = $this->student();
@@ -121,7 +121,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_un_visiteur_est_refuse(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();
@@ -135,7 +135,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_une_note_hors_du_perimetre_de_la_classe_reste_privee(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(2);
+        ['lessons' => $lessons] = $this->grade3e(2);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();
@@ -183,7 +183,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_la_note_d_un_AUTRE_eleve_ne_s_ouvre_pas_par_l_identifiant_d_un_eleve_legitime(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $mine = $this->student();
         $other = $this->student();
@@ -206,7 +206,7 @@ class TeacherClassroomNotebookTest extends TestCase
     public function test_aucune_ecriture_n_est_exposee_et_celle_de_l_eleve_reste_refusee(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();

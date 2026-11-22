@@ -13,9 +13,9 @@ class GradeFactory extends Factory
     public function definition(): array
     {
         return [
-            'code' => '4am',
-            'name' => 'السنة الرابعة متوسط',
-            'level' => 'moyen',
+            'code' => '3e',
+            'name' => 'Troisième',
+            'level' => 'college',
             'order' => 1,
             'is_active' => true,
         ];

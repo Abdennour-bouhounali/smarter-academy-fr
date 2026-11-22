@@ -52,7 +52,7 @@ class SniperScoring
         return $this->clampPosition(($level - 1) * (int) $this->c['sub_levels'] + ($sub - 1));
     }
 
-    /** Le niveau d'entrée d'une année (« 4am » → 32) ; 1 par défaut. */
+    /** Le niveau d'entrée d'une année (« 3e » → 19) ; 1 par défaut. */
     public function entryLevel(?string $grade): int
     {
         return (int) (((array) $this->c['entry'])[strtolower((string) $grade)] ?? 1);

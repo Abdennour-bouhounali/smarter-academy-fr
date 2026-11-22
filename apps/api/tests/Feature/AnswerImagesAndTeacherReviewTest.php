@@ -22,11 +22,11 @@ use Illuminate\Support\Str;
 use Tests\TestCase;
 
 /**
- * Réponses en PHOTO et correction par l'ENSEIGNANT (prototype BEM `bahth-pgcd`,
+ * Réponses en PHOTO et correction par l'ENSEIGNANT (prototype BEM `lecon-b`,
  * décisions du propriétaire 2026-10-06 — EXERCISE_CONTRACT.md § « Image
  * answers and teacher validation »).
  *
- * Exercice utilisé : ex-4am-bahth-pgcd-l2-002 — q1 « احسب الفرق 117 − 91 »
+ * Exercice utilisé : ex-3e-lecon-b-l2-002 — q1 « احسب الفرق 117 − 91 »
  * (rational, 26), q3 « بيّن أن … » (selfCheck), q2 PGCD par différences
  * (rational, rédaction exigée, 13).
  */
@@ -34,7 +34,7 @@ class AnswerImagesAndTeacherReviewTest extends TestCase
 {
     use RefreshDatabase;
 
-    private const EXERCISE = 'ex-4am-bahth-pgcd-l2-002';
+    private const EXERCISE = 'ex-3e-lecon-b-l2-002';
 
     protected function setUp(): void
     {
@@ -43,17 +43,17 @@ class AnswerImagesAndTeacherReviewTest extends TestCase
         PracticeCapability::forget();
         Storage::fake(AnswerImageStore::DISK);
 
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان أنساب الأعداد والحساب', 'order' => 0]);
-        $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'bahth-pgcd', 'title' => 'البحث عن PGCD', 'status' => 'available', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres_calculs', 'title' => 'Nombres et calculs', 'order' => 0]);
+        $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-b', 'title' => 'Leçon B', 'status' => 'available', 'order' => 0]);
         foreach ([1, 2] as $n) {
-            LearningPoint::create(['lesson_id' => $lesson->id, 'code' => "4am_bahth-pgcd_P{$n}", 'title' => "P{$n}", 'order' => $n]);
+            LearningPoint::create(['lesson_id' => $lesson->id, 'code' => "3e_lecon-b_P{$n}", 'title' => "P{$n}", 'order' => $n]);
         }
     }
 
     private function student(): User
     {
-        return User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        return User::factory()->create(['role' => 'student', 'grade' => '3e']);
     }
 
     /** Une classe de l'enseignant, l'élève dedans, en « تصحيح الأستاذ ». */
@@ -71,7 +71,7 @@ class AnswerImagesAndTeacherReviewTest extends TestCase
     private function practiceSession(User $student): string
     {
         $sessionId = (string) Str::uuid();
-        $this->actingAs($student)->postJson('/api/v1/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 2])->assertSuccessful();
+        $this->actingAs($student)->postJson('/api/v1/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 2])->assertSuccessful();
 
         return $sessionId;
     }
@@ -167,7 +167,7 @@ class AnswerImagesAndTeacherReviewTest extends TestCase
             ->assertStatus(201)->assertJsonPath('evaluation.outcome', 'correct');
         $this->assertDatabaseHas('question_attempts', ['attempt_uuid' => $attempt, 'evaluated_by' => 'self']);
         $this->assertSame(0, LearningEvidence::count());
-        $this->actingAs($student)->getJson('/api/v1/lessons/bahth-pgcd/practice/medals')->assertJsonPath('total.points', 0);
+        $this->actingAs($student)->getJson('/api/v1/lessons/lecon-b/practice/medals')->assertJsonPath('total.points', 0);
         $this->assertSame(0, AnswerReview::count());
 
         // « التمرين السابق » relit la photo.
@@ -184,10 +184,10 @@ class AnswerImagesAndTeacherReviewTest extends TestCase
     {
         $student = $this->student();
         $sessionId = (string) Str::uuid();
-        $this->actingAs($student)->postJson('/api/v1/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 4])->assertSuccessful();
+        $this->actingAs($student)->postJson('/api/v1/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 4])->assertSuccessful();
         $attempt = (string) Str::uuid();
         $this->actingAs($student)->postJson("/api/v1/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l4-005', 'questionId' => 'q1', 'attemptUuid' => $attempt,
+            'exerciseId' => 'ex-3e-lecon-b-l4-005', 'questionId' => 'q1', 'attemptUuid' => $attempt,
         ])->assertSuccessful();
         $this->upload($student, $attempt)->assertSuccessful();
         $this->answer($student, $sessionId, $attempt, ['seconds' => 30])
@@ -248,7 +248,7 @@ class AnswerImagesAndTeacherReviewTest extends TestCase
         // La décision est l'issue : preuve « teacher », médaille d'or (40 s < 90 s).
         $this->assertDatabaseHas('question_attempts', ['attempt_uuid' => $proof, 'outcome' => 'correct', 'evaluated_by' => 'teacher']);
         $this->assertDatabaseHas('learning_evidence', ['attempt_id' => $proof, 'evaluated_by' => 'teacher']);
-        $medals = $this->actingAs($student)->getJson('/api/v1/lessons/bahth-pgcd/practice/medals')->json('total');
+        $medals = $this->actingAs($student)->getJson('/api/v1/lessons/lecon-b/practice/medals')->json('total');
         $this->assertSame(3, $medals['gold']); // q1, q2 (serveur) + q3 (enseignant)
 
         // La cloche de l'élève, et la correction qu'elle ouvre.

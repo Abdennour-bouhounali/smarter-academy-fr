@@ -21,13 +21,13 @@ class PublishAvailableContentTest extends TestCase
 
     private function lesson(string $code, string $status, string $pub, string $tier = 'free'): Lesson
     {
-        $grade = Grade::firstOrCreate(['code' => '4am'], ['name' => '4am', 'level' => 'moyen', 'order' => 0, 'is_active' => true]);
-        $chapter = Chapter::firstOrCreate(['grade_id' => $grade->id, 'code' => 'midan'], ['title' => 'ميدان', 'order' => 0]);
+        $grade = Grade::firstOrCreate(['code' => '3e'], ['name' => '3e', 'level' => 'college', 'order' => 0, 'is_active' => true]);
+        $chapter = Chapter::firstOrCreate(['grade_id' => $grade->id, 'code' => 'theme'], ['title' => 'Thème', 'order' => 0]);
         $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => $code, 'title' => $code, 'status' => $status, 'order' => 0, 'tier' => $tier]);
         $lesson->forceFill(['publication_status' => $pub])->save();
 
-        LessonModule::create(['lesson_id' => $lesson->id, 'code' => 'm1', 'number' => 1, 'title' => 'م', 'publication_status' => 'draft']);
-        LessonModule::create(['lesson_id' => $lesson->id, 'code' => 'old', 'number' => 2, 'title' => 'ق', 'publication_status' => 'draft', 'retired_at' => now()]);
+        LessonModule::create(['lesson_id' => $lesson->id, 'code' => 'm1', 'number' => 1, 'title' => 'M', 'publication_status' => 'draft']);
+        LessonModule::create(['lesson_id' => $lesson->id, 'code' => 'old', 'number' => 2, 'title' => 'Q', 'publication_status' => 'draft', 'retired_at' => now()]);
         PracticeExercise::create(['lesson_id' => $lesson->id, 'exercise_code' => $code.'-e1', 'level' => 1, 'publication_status' => 'draft']);
 
         return $lesson;

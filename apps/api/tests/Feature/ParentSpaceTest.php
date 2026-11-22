@@ -260,7 +260,7 @@ class ParentSpaceTest extends TestCase
     public function test_the_detailed_progress_is_lesson_by_lesson_and_identical_for_the_student(): void
     {
         [$student, $parent] = $this->linked();
-        $lesson = Lesson::factory()->create(['title' => 'القاسم المشترك']);
+        $lesson = Lesson::factory()->create(['title' => 'Diviseur commun']);
         $strong = $this->point($lesson, 1);
         $weak = $this->point($lesson, 2);
         $this->answers($student, $lesson, $strong, 'correct', 6);
@@ -275,7 +275,7 @@ class ParentSpaceTest extends TestCase
         $this->assertSame($forParent, $forStudent);
 
         $row = collect($forParent['lessons'])->firstWhere('code', $lesson->code);
-        $this->assertSame('القاسم المشترك', $row['title']);
+        $this->assertSame('Diviseur commun', $row['title']);
         $this->assertSame(2, $row['modulesCompleted']);
         $this->assertSame([$strong->code, $weak->code], array_column($row['learningPoints'], 'code'));
 

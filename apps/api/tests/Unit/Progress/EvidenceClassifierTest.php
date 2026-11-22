@@ -12,28 +12,28 @@ class EvidenceClassifierTest extends TestCase
     public function test_item_keys_are_source_lesson_exercise_question(): void
     {
         $this->assertSame(
-            'practice:qasim-mushtarak-akbar:ex-4am-qasim-mushtarak-akbar-l2-001:q2',
-            EvidenceClassifier::itemKey('practice', 'qasim-mushtarak-akbar', 'ex-4am-qasim-mushtarak-akbar-l2-001', 'q2'),
+            'practice:lecon-c:ex-3e-lecon-c-l2-001:q2',
+            EvidenceClassifier::itemKey('practice', 'lecon-c', 'ex-3e-lecon-c-l2-001', 'q2'),
         );
         $this->assertSame(
-            'final_test:qasim-mushtarak-akbar:final:E1',
-            EvidenceClassifier::itemKey('final_test', 'qasim-mushtarak-akbar', null, 'E1'),
+            'final_test:lecon-c:final:E1',
+            EvidenceClassifier::itemKey('final_test', 'lecon-c', null, 'E1'),
         );
     }
 
     public function test_legacy_question_codes_resolve_to_the_same_identity(): void
     {
-        $final = EvidenceClassifier::identityFromQuestionCode('assessment', 'tayin-pgcd', 'E3');
-        $this->assertSame('final_test:tayin-pgcd:final:E3', $final['itemKey']);
+        $final = EvidenceClassifier::identityFromQuestionCode('assessment', 'lecon-e', 'E3');
+        $this->assertSame('final_test:lecon-e:final:E3', $final['itemKey']);
         $this->assertNull($final['exerciseCode']);
 
-        $practice = EvidenceClassifier::identityFromQuestionCode('practice_exercise', 'tayin-pgcd', 'ex-4am-tayin-pgcd-l1-001:q1');
-        $this->assertSame('practice:tayin-pgcd:ex-4am-tayin-pgcd-l1-001:q1', $practice['itemKey']);
-        $this->assertSame('ex-4am-tayin-pgcd-l1-001', $practice['exerciseCode']);
+        $practice = EvidenceClassifier::identityFromQuestionCode('practice_exercise', 'lecon-e', 'ex-3e-lecon-e-l1-001:q1');
+        $this->assertSame('practice:lecon-e:ex-3e-lecon-e-l1-001:q1', $practice['itemKey']);
+        $this->assertSame('ex-3e-lecon-e-l1-001', $practice['exerciseCode']);
         $this->assertSame('q1', $practice['questionId']);
 
         // Le jeu de démonstration écrivait deux deux-points.
-        $demo = EvidenceClassifier::identityFromQuestionCode('practice_exercise', 'tayin-pgcd', 'ex-4am-tayin-pgcd-l1-001::q1');
+        $demo = EvidenceClassifier::identityFromQuestionCode('practice_exercise', 'lecon-e', 'ex-3e-lecon-e-l1-001::q1');
         $this->assertSame($practice['itemKey'], $demo['itemKey']);
     }
 

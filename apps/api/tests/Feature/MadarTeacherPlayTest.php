@@ -39,10 +39,10 @@ class MadarTeacherPlayTest extends TestCase
         parent::setUp();
         $this->onChallengeDay();
         $this->challengeCurriculum();
-        $this->a = Classroom::factory()->create(['grade' => '4am', 'name' => 'A']);
+        $this->a = Classroom::factory()->create(['grade' => '3e', 'name' => 'A']);
         $this->teacherUser = $this->a->teacher;
         $this->teacherUser->update(['first_name' => 'Nadia', 'last_name' => 'Kaci']);
-        $this->b = Classroom::factory()->create(['grade' => '4am', 'name' => 'B', 'teacher_id' => $this->teacherUser->id]);
+        $this->b = Classroom::factory()->create(['grade' => '3e', 'name' => 'B', 'teacher_id' => $this->teacherUser->id]);
         $this->student = $this->student(['first_name' => 'Amine', 'last_name' => 'Benali']);
         $this->enrol($this->a, [$this->student]);
     }

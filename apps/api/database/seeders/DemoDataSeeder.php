@@ -41,7 +41,7 @@ use RuntimeException;
  *
  * Ce n'est pas un jeu de lignes aléatoires : chaque compte porte un portrait
  * (DemoPersona), chaque portrait est déroulé jour par jour sur le contenu
- * RÉEL de l'unité 1 de 4AM (DemoStudentSimulator), et la maîtrise est
+ * RÉEL publié de la 3e (DemoStudentSimulator), et la maîtrise est
  * rejouée par le modèle de production. Ouvrir la plateforme après ce
  * peuplement doit donner la même impression qu'ouvrir un vrai carnet de
  * classe au milieu du trimestre.
@@ -84,10 +84,10 @@ class DemoDataSeeder extends Seeder
         $this->guardProduction();
 
         $this->command?->info('Audit du contenu réel…');
-        $this->content = new DemoContent('4am');
+        $this->content = new DemoContent('3e');
         if ($this->content->lessons->isEmpty()) {
             throw new RuntimeException(
-                'Aucune leçon 4AM publiée en base : importez le curriculum avant de peupler la démonstration.'
+                'Aucune leçon 3e publiée en base : importez le curriculum avant de peupler la démonstration.'
             );
         }
         $this->command?->info(
@@ -289,15 +289,13 @@ class DemoDataSeeder extends Seeder
                 density: 0.4, reach: 0.62, noteAppetite: 3, hintAppetite: 2),
             new DemoPersona('s06', 'Amine', 'Saidi', 'student06', 'average',
                 accuracy: 0.65, persistence: 0.65, startedDaysAgo: 87, lastSeenDaysAgo: 2,
-                density: 0.38, reach: 0.6, noteAppetite: 3, hintAppetite: 2,
-                weakPoints: ['4am_bahth-pgcd_P4']),
+                density: 0.38, reach: 0.6, noteAppetite: 3, hintAppetite: 2),
             new DemoPersona('s07', 'Maria', 'Benali', 'student07', 'average',
                 accuracy: 0.7, persistence: 0.72, startedDaysAgo: 80, lastSeenDaysAgo: 4,
                 density: 0.36, reach: 0.58, noteAppetite: 3, hintAppetite: 2),
             new DemoPersona('s08', 'Anis', 'Belkacem', 'student08', 'average',
                 accuracy: 0.63, persistence: 0.6, startedDaysAgo: 84, lastSeenDaysAgo: 5,
-                density: 0.34, reach: 0.55, noteAppetite: 2, hintAppetite: 2,
-                weakPoints: ['4am_ikhtizal-kasr_P3']),
+                density: 0.34, reach: 0.55, noteAppetite: 2, hintAppetite: 2),
             new DemoPersona('s09', 'Aya', 'Bensalem', 'student09', 'average',
                 accuracy: 0.72, persistence: 0.7, startedDaysAgo: 78, lastSeenDaysAgo: 2,
                 density: 0.38, reach: 0.6, noteAppetite: 3, hintAppetite: 1),
@@ -306,18 +304,15 @@ class DemoDataSeeder extends Seeder
                 density: 0.33, reach: 0.52, noteAppetite: 2, hintAppetite: 2),
             new DemoPersona('s11', 'Nour', 'Belhadj', 'student11', 'slow-persistent',
                 accuracy: 0.58, persistence: 0.92, startedDaysAgo: 91, lastSeenDaysAgo: 1,
-                density: 0.6, reach: 0.6, noteAppetite: 8, hintAppetite: 3,
-                weakPoints: ['4am_qawasim-adad-tabii_P3']),
+                density: 0.6, reach: 0.6, noteAppetite: 8, hintAppetite: 3),
 
             // --- en difficulté / irréguliers (3/16) ---------------------
             new DemoPersona('s12', 'Sofiane', 'Torki', 'student12', 'struggling',
                 accuracy: 0.38, persistence: 0.5, startedDaysAgo: 86, lastSeenDaysAgo: 3,
-                density: 0.3, reach: 0.38, noteAppetite: 7, hintAppetite: 3,
-                weakPoints: ['4am_qasim-adad-tabii_P1', '4am_qawasim-adad-tabii_P2', '4am_tayin-pgcd_P1']),
+                density: 0.3, reach: 0.38, noteAppetite: 7, hintAppetite: 3),
             new DemoPersona('s13', 'Wassim', 'Guerrouj', 'student13', 'error-heavy',
                 accuracy: 0.34, persistence: 0.75, startedDaysAgo: 88, lastSeenDaysAgo: 2,
-                density: 0.45, reach: 0.45, noteAppetite: 11, hintAppetite: 3,
-                weakPoints: ['4am_qasim-adad-tabii_P2', '4am_qasim-mushtarak-akbar_P3', '4am_ikhtizal-kasr_P3', '4am_awwaliyan-fima-baynahuma_P1']),
+                density: 0.45, reach: 0.45, noteAppetite: 11, hintAppetite: 3),
             new DemoPersona('s14', 'Imene', 'Ferhat', 'student14', 'irregular',
                 accuracy: 0.6, persistence: 0.45, startedDaysAgo: 90, lastSeenDaysAgo: 4,
                 density: 0.55, reach: 0.5, noteAppetite: 2, hintAppetite: 2,
@@ -346,7 +341,7 @@ class DemoDataSeeder extends Seeder
                 'user' => $this->account(
                     $persona->email.self::DEMO_DOMAIN,
                     $persona->firstName, $persona->lastName,
-                    User::ROLE_STUDENT, self::STUDENT_PASSWORD, '4am',
+                    User::ROLE_STUDENT, self::STUDENT_PASSWORD, '3e',
                     $persona->startedDaysAgo
                 ),
             ];
@@ -374,17 +369,17 @@ class DemoDataSeeder extends Seeder
         $created = 0;
         $joined = 0;
 
-        // --- Enseignant principal : deux classes de 4AM ------------------
+        // --- Enseignant principal : deux classes de 3e ------------------
         $groupA = $classService->create($teachers['main'], [
             'name' => 'الرابعة متوسط — الفوج أ',
             'description' => 'فوج الصباح — متوسطة الأمير عبد القادر',
-            'grade' => '4am',
+            'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
         $groupB = $classService->create($teachers['main'], [
             'name' => 'الرابعة متوسط — الفوج ب',
             'description' => 'فوج المساء',
-            'grade' => '4am',
+            'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
         $created += 2;
@@ -405,7 +400,7 @@ class DemoDataSeeder extends Seeder
         $groupC = $classService->create($teachers['second'], [
             'name' => 'الرابعة متوسط — فوج الدعم',
             'description' => 'حصص الدعم — يومي الثلاثاء والخميس',
-            'grade' => '4am',
+            'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
         $created++;
@@ -417,7 +412,7 @@ class DemoDataSeeder extends Seeder
         $groupD = $classService->create($teachers['free'], [
             'name' => 'الرابعة متوسط — مجموعة تجريبية',
             'description' => 'مجموعة صغيرة لتجربة المنصّة',
-            'grade' => '4am',
+            'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
         $created++;

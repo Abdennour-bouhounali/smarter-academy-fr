@@ -16,7 +16,7 @@ class ClassroomMembershipFactory extends Factory
     {
         return [
             'classroom_id' => Classroom::factory(),
-            'student_id' => User::factory()->state(['role' => User::ROLE_STUDENT, 'grade' => '4am']),
+            'student_id' => User::factory()->state(['role' => User::ROLE_STUDENT, 'grade' => '3e']),
             'status' => ClassroomMembership::STATUS_ACTIVE,
             'joined_at' => now()->subDay(),
             'joined_via' => ClassroomMembership::VIA_JOIN_CODE,

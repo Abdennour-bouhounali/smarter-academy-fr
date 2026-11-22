@@ -125,13 +125,13 @@ class AdminPushTest extends TestCase
     {
         $student = User::factory()->create(['role' => User::ROLE_STUDENT]);
         $report = StudentReport::forceCreate([
-            'user_id' => $student->id, 'category' => StudentReport::CATEGORY_MATH_ERROR, 'lesson_code' => 'tayin-pgcd',
+            'user_id' => $student->id, 'category' => StudentReport::CATEGORY_MATH_ERROR, 'lesson_code' => 'lecon-e',
             'status' => StudentReport::STATUS_NEW, 'priority' => 'normal', 'fingerprint' => str_repeat('a', 64),
         ]);
 
         $payload = app(AdminPush::class)->payload('student_report', $report->id);
         $this->assertSame('بلاغ جديد', $payload['title']);
-        $this->assertSame('خطأ رياضي · tayin-pgcd', $payload['body']);
+        $this->assertSame('خطأ رياضي · lecon-e', $payload['body']);
         $this->assertSame('/admin/signalements/'.$report->id, $payload['url']);
     }
 

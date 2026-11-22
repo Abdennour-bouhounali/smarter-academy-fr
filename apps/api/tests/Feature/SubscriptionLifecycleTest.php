@@ -60,11 +60,11 @@ class SubscriptionLifecycleTest extends TestCase
     {
         Carbon::setTestNow('2026-09-26 10:00:00');
         [$teacher, , , $subscription] = $this->activated();
-        $this->grade4am(0);
+        $this->grade3e(0);
         $token = $this->tokenOf($teacher);
 
         foreach (['A', 'B', 'C'] as $name) {
-            $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => "4AM {$name}", 'grade' => '4am'])->assertCreated();
+            $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => "3e {$name}", 'grade' => '3e'])->assertCreated();
         }
 
         Carbon::setTestNow('2027-10-01 10:00:00');
@@ -81,7 +81,7 @@ class SubscriptionLifecycleTest extends TestCase
         $this->assertFalse($entitlements['classes']['canCreate']);
 
         $this->assertSame(3, Classroom::ownedBy($teacher)->count());
-        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => '4AM D', 'grade' => '4am'])->assertStatus(422)->assertJsonPath('reason', 'limit_reached');
+        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => '3e D', 'grade' => '3e'])->assertStatus(422)->assertJsonPath('reason', 'limit_reached');
         // Les classes existantes restent consultables.
         $this->withToken($token)->getJson('/api/v1/teacher/classrooms')->assertOk()->assertJsonCount(3, 'classrooms');
         $this->assertDatabaseHas('subscriptions', ['id' => $subscription->id]);

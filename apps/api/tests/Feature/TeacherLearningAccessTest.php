@@ -27,7 +27,7 @@ class TeacherLearningAccessTest extends TestCase
 
     private function publishedPremiumLesson(): Lesson
     {
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons->first();
         $lesson->update(['tier' => 'premium', 'publication_status' => Lesson::PUB_PUBLISHED]);
 
@@ -54,7 +54,7 @@ class TeacherLearningAccessTest extends TestCase
         $this->freeSeatsPlan();
         $lesson = $this->publishedPremiumLesson();
         $teacher = $this->teacher();
-        $classroom = Classroom::factory()->ownedBy($teacher)->create(['grade' => '4am']);
+        $classroom = Classroom::factory()->ownedBy($teacher)->create(['grade' => '3e']);
         $hidden = new ClassroomLesson(['status' => ClassroomLesson::STATUS_HIDDEN, 'created_by' => $teacher->id]);
         $hidden->classroom_id = $classroom->id;
         $hidden->lesson_id = $lesson->id;
@@ -74,7 +74,7 @@ class TeacherLearningAccessTest extends TestCase
     public function test_le_non_publie_reste_ferme_a_l_enseignant(): void
     {
         $this->freeSeatsPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons->first();
         $lesson->update(['publication_status' => Lesson::PUB_DRAFT]);
 

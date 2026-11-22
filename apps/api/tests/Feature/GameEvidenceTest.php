@@ -24,28 +24,28 @@ class GameEvidenceTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $grade = Grade::create(['code' => '4am', 'name' => '4AM', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'أنساب الأعداد', 'order' => 0]);
-        $this->lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'qasim-adad-tabii', 'title' => 'قاسم عدد طبيعي', 'status' => 'available', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres et calculs', 'order' => 0]);
+        $this->lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-a', 'title' => 'Leçon A', 'status' => 'available', 'order' => 0]);
         foreach ([1, 2, 3, 4] as $i) {
-            LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => "4am_qasim-adad-tabii_P{$i}", 'title' => "P{$i}", 'order' => $i]);
+            LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => "3e_lecon-a_P{$i}", 'title' => "P{$i}", 'order' => $i]);
         }
         $other = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'autre', 'title' => 'Autre', 'status' => 'available', 'order' => 1]);
-        LearningPoint::create(['lesson_id' => $other->id, 'code' => '4am_autre_P1', 'title' => 'P1', 'order' => 1]);
+        LearningPoint::create(['lesson_id' => $other->id, 'code' => '3e_autre_P1', 'title' => 'P1', 'order' => 1]);
     }
 
     private function student(string $role = 'student'): array
     {
-        $user = User::factory()->create(['role' => $role, 'grade' => '4am']);
+        $user = User::factory()->create(['role' => $role, 'grade' => '3e']);
 
         return [$user, $user->createToken('t')->plainTextToken];
     }
 
-    private function send(string $token, array $overrides = [], string $lesson = 'qasim-adad-tabii')
+    private function send(string $token, array $overrides = [], string $lesson = 'lecon-a')
     {
         return $this->withHeader('Authorization', "Bearer {$token}")->postJson("/api/v1/lessons/{$lesson}/game-evidence", array_merge([
             'attemptId' => 'gw-0001',
-            'learningPoint' => '4am_qasim-adad-tabii_P1',
+            'learningPoint' => '3e_lecon-a_P1',
             'context' => 'trainer',
             'claim' => ['kind' => 'division', 'a' => 756, 'b' => 36, 'q' => 21, 'r' => 0, 'fits' => true],
         ], $overrides));
@@ -95,7 +95,7 @@ class GameEvidenceTest extends TestCase
         [, $token] = $this->student();
 
         $this->send($token, ['claim' => ['kind' => 'truth', 'a' => 1, 'b' => 1]])->assertStatus(422);
-        $this->send($token, ['attemptId' => 'gw-0002', 'learningPoint' => '4am_autre_P1'])->assertStatus(422);
+        $this->send($token, ['attemptId' => 'gw-0002', 'learningPoint' => '3e_autre_P1'])->assertStatus(422);
         $this->send($token, ['attemptId' => 'gw-0003'], 'lecon-inconnue')->assertStatus(404);
         $this->assertDatabaseCount('learning_evidence', 0);
     }
@@ -110,7 +110,7 @@ class GameEvidenceTest extends TestCase
 
     public function test_a_visitor_writes_no_evidence(): void
     {
-        $this->postJson('/api/v1/lessons/qasim-adad-tabii/game-evidence', [])->assertStatus(401);
+        $this->postJson('/api/v1/lessons/lecon-a/game-evidence', [])->assertStatus(401);
     }
 
     public function test_a_game_alone_never_declares_a_learning_point_mastered(): void

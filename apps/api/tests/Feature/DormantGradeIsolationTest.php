@@ -56,9 +56,9 @@ class DormantGradeIsolationTest extends TestCase
 
     public function test_une_lecon_sous_une_classe_active_reste_ouverte(): void
     {
-        $this->createLesson('4am', 'fractions-4am', active: true);
+        $this->createLesson('3e', 'fractions-3e', active: true);
 
-        ContentAccess::assertLessonAvailable('fractions-4am');
+        ContentAccess::assertLessonAvailable('fractions-3e');
         $this->assertTrue(true, 'aucune exception attendue');
     }
 
@@ -66,7 +66,7 @@ class DormantGradeIsolationTest extends TestCase
     public function test_un_code_partage_entre_classe_dormante_et_active_reste_ouvert(): void
     {
         $this->createLesson('seconde', 'code-partage', active: false);
-        $this->createLesson('4am', 'code-partage', active: true);
+        $this->createLesson('3e', 'code-partage', active: true);
 
         ContentAccess::assertLessonAvailable('code-partage');
         $this->assertTrue(true, "la version active garde l'accès ouvert malgré l'homonyme dormant");
@@ -92,20 +92,20 @@ class DormantGradeIsolationTest extends TestCase
     public function test_l_administration_ne_liste_pas_les_classes_dormantes_par_defaut(): void
     {
         $this->createLesson('seconde', 'fonction-affine-2nde', active: false);
-        $this->createLesson('4am', 'fractions-4am', active: true);
+        $this->createLesson('3e', 'fractions-3e', active: true);
         $admin = User::factory()->create(['role' => User::ROLE_ADMIN]);
 
         $codes = $this->actingAs($admin, 'sanctum')
             ->getJson('/api/v1/admin/content/lessons')
             ->assertOk()
             ->json('lessons.data.*.code');
-        $this->assertSame(['fractions-4am'], $codes);
+        $this->assertSame(['fractions-3e'], $codes);
 
         $all = $this->actingAs($admin, 'sanctum')
             ->getJson('/api/v1/admin/content/lessons?scope=all')
             ->assertOk()
             ->json('lessons.data.*.code');
         sort($all);
-        $this->assertSame(['fonction-affine-2nde', 'fractions-4am'], $all);
+        $this->assertSame(['fonction-affine-2nde', 'fractions-3e'], $all);
     }
 }

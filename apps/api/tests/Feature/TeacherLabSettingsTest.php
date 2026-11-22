@@ -18,7 +18,7 @@ class TeacherLabSettingsTest extends TestCase
     public function test_l_enseignant_coupe_et_rallume_pour_son_seul_compte(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $url = "/api/v1/teacher/labs/{$lessons[0]->code}";
         $teacher = $this->tokenOf(Classroom::factory()->create()->teacher);
         $other = $this->tokenOf(Classroom::factory()->create()->teacher);
@@ -34,7 +34,7 @@ class TeacherLabSettingsTest extends TestCase
     public function test_un_eleve_ne_peut_ni_lire_ni_couper_et_les_entrees_illisibles_sont_refusees(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $url = "/api/v1/teacher/labs/{$lessons[0]->code}";
         $student = $this->tokenOf($this->student());
         $teacher = $this->tokenOf(Classroom::factory()->create()->teacher);

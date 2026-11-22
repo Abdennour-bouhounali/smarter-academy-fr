@@ -1,0 +1,123 @@
+{
+  "id": "ex-3e-lecon-b-l2-001",
+  "lessonCode": "lecon-b",
+  "level": 2,
+  "metadata": {
+    "title": "Exercice",
+    "estimatedMinutes": 4,
+    "tags": [
+      "méthode"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère la situation suivante."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "112",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "$a = 252 - 140 = 112$",
+          "Ligne de solution."
+        ],
+        "result": "\\text{PGCD}(252 ; 140) = \\text{PGCD}(140 ; 112)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-FURUQ-AKHIR-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "$252 - 140 = 112$",
+          "$140 - 112 = 28$",
+          "$112 - 28 = 84$",
+          "$84 - 28 = 56$",
+          "$56 - 28 = 28$",
+          "$28 - 28 = 0$",
+          "Ligne de solution."
+        ],
+        "result": "\\text{PGCD}(252 ; 140) = 28"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    }
+  ]
+}

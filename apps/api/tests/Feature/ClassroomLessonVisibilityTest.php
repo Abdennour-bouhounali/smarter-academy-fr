@@ -30,7 +30,7 @@ class ClassroomLessonVisibilityTest extends TestCase
     private function classWithStudent(array $entitlements = []): array
     {
         $this->defaultTeacherPlan($entitlements);
-        ['lessons' => $lessons] = $this->grade4am(3);
+        ['lessons' => $lessons] = $this->grade3e(3);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();
@@ -114,7 +114,7 @@ class ClassroomLessonVisibilityTest extends TestCase
         $this->withToken($this->tokenOf($a->teacher))->patchJson("/api/v1/teacher/classrooms/{$b->id}/lessons/{$lessons[0]->id}", ['status' => 'hidden'])->assertStatus(403);
         $this->assertDatabaseCount('classroom_lessons', 0);
 
-        $otherGrade = Grade::create(['code' => 'terminale_dz', 'name' => 'T', 'level' => 'secondaire', 'order' => 2, 'is_active' => true]);
+        $otherGrade = Grade::create(['code' => '4e', 'name' => 'Quatrième', 'level' => 'college', 'order' => 2, 'is_active' => true]);
         $chapter = Chapter::factory()->create(['grade_id' => $otherGrade->id]);
         $foreign = Lesson::factory()->inChapter($chapter)->create();
         $this->withToken($this->tokenOf($a->teacher))->patchJson("/api/v1/teacher/classrooms/{$a->id}/lessons/{$foreign->id}", ['status' => 'hidden'])

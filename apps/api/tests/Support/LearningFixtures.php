@@ -47,7 +47,7 @@ trait LearningFixtures
 
     protected function point(Lesson $lesson, int $n): LearningPoint
     {
-        return LearningPoint::create(['lesson_id' => $lesson->id, 'code' => "4am_{$lesson->code}_P{$n}", 'title' => "Point {$n}", 'order' => $n]);
+        return LearningPoint::create(['lesson_id' => $lesson->id, 'code' => "3e_{$lesson->code}_P{$n}", 'title' => "Point {$n}", 'order' => $n]);
     }
 
     /** @param  User[]  $students */

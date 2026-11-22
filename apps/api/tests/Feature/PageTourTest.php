@@ -18,7 +18,7 @@ class PageTourTest extends TestCase
 
     public function test_a_new_student_has_no_closed_tour_and_is_eligible(): void
     {
-        $student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
 
         $this->actingAs($student)->getJson('/api/v1/me/tours')
             ->assertOk()
@@ -29,8 +29,8 @@ class PageTourTest extends TestCase
 
     public function test_finishing_or_skipping_closes_the_tour_for_this_account_only(): void
     {
-        $student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
-        $other = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
+        $other = User::factory()->create(['role' => 'student', 'grade' => '3e']);
 
         $this->actingAs($student)->postJson('/api/v1/me/tours/student.home', ['status' => 'completed', 'step' => 4])
             ->assertOk()->assertJsonPath('status', 'completed');
@@ -59,7 +59,7 @@ class PageTourTest extends TestCase
 
     public function test_a_tour_of_another_role_or_a_malformed_key_is_refused(): void
     {
-        $student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
 
         $this->actingAs($student)->postJson('/api/v1/me/tours/teacher.home', ['status' => 'completed'])->assertForbidden();
         $this->actingAs($student)->postJson('/api/v1/me/tours/admin.home', ['status' => 'completed'])->assertNotFound();
@@ -78,7 +78,7 @@ class PageTourTest extends TestCase
 
     public function test_an_unverified_account_cannot_reach_the_tours(): void
     {
-        $student = User::factory()->unverified()->create(['role' => 'student', 'grade' => '4am']);
+        $student = User::factory()->unverified()->create(['role' => 'student', 'grade' => '3e']);
 
         $this->actingAs($student)->getJson('/api/v1/me/tours')->assertForbidden();
     }
@@ -86,8 +86,8 @@ class PageTourTest extends TestCase
     public function test_eligible_since_limits_automatic_tours_to_newer_accounts(): void
     {
         config(['tours.eligible_since' => '2026-10-07']);
-        $older = User::factory()->create(['role' => 'student', 'grade' => '4am', 'created_at' => '2026-09-20 10:00:00']);
-        $newer = User::factory()->create(['role' => 'student', 'grade' => '4am', 'created_at' => '2026-10-07 08:00:00']);
+        $older = User::factory()->create(['role' => 'student', 'grade' => '3e', 'created_at' => '2026-09-20 10:00:00']);
+        $newer = User::factory()->create(['role' => 'student', 'grade' => '3e', 'created_at' => '2026-10-07 08:00:00']);
 
         $this->actingAs($older)->getJson('/api/v1/me/tours')->assertJsonPath('eligible', false);
         $this->actingAs($newer)->getJson('/api/v1/me/tours')->assertJsonPath('eligible', true);

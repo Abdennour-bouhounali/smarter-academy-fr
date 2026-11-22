@@ -84,7 +84,7 @@ class AdminRegistrationSwitchTest extends TestCase
     {
         config(['registration.open' => false, 'registration.class_links' => true]);
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $viaLink = [...self::PAYLOAD, 'classJoinLink' => $classroom->join_link_token, 'classJoinConsent' => true];
 

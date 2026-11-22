@@ -26,7 +26,7 @@ class ClassSessionTest extends TestCase
 {
     use CommercialFixtures, LearningFixtures, RefreshDatabase;
 
-    private const LESSON = 'qasim-adad-tabii';
+    private const LESSON = 'lecon-a';
 
     private Classroom $classroom;
 
@@ -36,8 +36,8 @@ class ClassSessionTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->grade4am(1)['lessons'][0]->update(['code' => self::LESSON]);
-        $this->classroom = Classroom::factory()->create(['grade' => '4am']);
+        $this->grade3e(1)['lessons'][0]->update(['code' => self::LESSON]);
+        $this->classroom = Classroom::factory()->create(['grade' => '3e']);
         foreach ([['Omar', 'Benali'], ['Meriem', 'Haddad'], ['Yacine', 'Mansouri']] as [$first, $last]) {
             $this->students[] = $this->student(['first_name' => $first, 'last_name' => $last]);
         }
@@ -61,10 +61,10 @@ class ClassSessionTest extends TestCase
             'uuid' => (string) Str::uuid(), 'lessonCode' => self::LESSON, 'moment' => 'start', 'startedAt' => 1_800_000_000_000, 'finishedAt' => 1_800_000_300_000,
             'absent' => [$this->students[2]->id],
             'answers' => [
-                ['questionId' => 's1', 'item' => '1am.m3.r01', 'studentId' => $this->students[0]->id, 'teamId' => 'row-0', 'correct' => true, 'pickedBy' => 'order', 'ms' => 9000],
-                ['questionId' => 's2', 'item' => '1am.m3.r01', 'studentId' => $this->students[1]->id, 'teamId' => 'row-0', 'correct' => false, 'pickedBy' => 'teacher', 'ms' => 14000],
+                ['questionId' => 's1', 'item' => '6e.m3.r01', 'studentId' => $this->students[0]->id, 'teamId' => 'row-0', 'correct' => true, 'pickedBy' => 'order', 'ms' => 9000],
+                ['questionId' => 's2', 'item' => '6e.m3.r01', 'studentId' => $this->students[1]->id, 'teamId' => 'row-0', 'correct' => false, 'pickedBy' => 'teacher', 'ms' => 14000],
             ],
-            'summary' => ['right' => 99, 'total' => 99, 'percent' => 100, 'revise' => ['1am.m3.r01'], 'teams' => [['id' => 'row-0', 'name' => 'الخوارزمي', 'right' => 1, 'total' => 2]]],
+            'summary' => ['right' => 99, 'total' => 99, 'percent' => 100, 'revise' => ['6e.m3.r01'], 'teams' => [['id' => 'row-0', 'name' => 'الخوارزمي', 'right' => 1, 'total' => 2]]],
         ], $over);
     }
 
@@ -146,8 +146,8 @@ class ClassSessionTest extends TestCase
         $body = $this->sessionBody();
         $res = $this->own('POST', "/classrooms/{$this->classroom->id}/class-sessions", $body)->assertCreated();
         $this->assertSame(['right' => 1, 'total' => 2, 'percent' => 50], array_intersect_key($res->json('session.summary'), array_flip(['right', 'total', 'percent']))); // 99 / 99 was not believed
-        $this->assertSame(['1am.m3.r01'], $res->json('session.summary.revise'));
-        $this->assertSame([['item' => '1am.m3.r01', 'right' => 1, 'total' => 2]], $res->json('session.summary.items')); // per الكفاءة, recomputed too
+        $this->assertSame(['6e.m3.r01'], $res->json('session.summary.revise'));
+        $this->assertSame([['item' => '6e.m3.r01', 'right' => 1, 'total' => 2]], $res->json('session.summary.items')); // per الكفاءة, recomputed too
         $this->own('POST', "/classrooms/{$this->classroom->id}/class-sessions", $body)->assertOk(); // sent again after a lost connection
         $this->assertSame(1, ClassSession::count());
         $this->assertDatabaseCount('class_session_answers', 2);
@@ -173,7 +173,7 @@ class ClassSessionTest extends TestCase
     /** « ملفّ الدرس » : la leçon mène à UN document de la سبّورة du مختبر, celui de l'enseignant — jamais celui d'un autre. */
     public function test_the_lesson_file_is_the_teachers_own_whiteboard_document_of_the_lesson(): void
     {
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $me = $this->teacher();
         $other = $this->teacher();
         $uri = "/api/v1/teacher/lesson-files/{$lessons[0]->code}";

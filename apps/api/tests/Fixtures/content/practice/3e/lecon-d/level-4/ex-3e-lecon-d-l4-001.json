@@ -1,0 +1,207 @@
+{
+  "id": "ex-3e-lecon-d-l4-001",
+  "lessonCode": "lecon-d",
+  "level": 4,
+  "metadata": {
+    "title": "Exercice",
+    "estimatedMinutes": 7,
+    "tags": [
+      "√(a²) = a",
+      "méthode"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère la situation suivante.",
+    "formulas": [
+      "A = \\sqrt{(3 - \\pi)^2} \\qquad ; \\qquad B = \\sqrt{(\\pi - 5)^2}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Consigne.",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Choix 1",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-MURABBA-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "Choix 2",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Écris ta réponse.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "Ligne de solution."
+        ],
+        "result": "3 - \\pi < 0"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Choix 1",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-MURABBA-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "Choix 2",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Écris ta réponse.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution."
+        ],
+        "result": "\\pi - 5 < 0"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "Ligne de solution."
+        ],
+        "result": "A = \\pi - 3 \\quad ; \\quad B = 5 - \\pi"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "$A + B = \\pi - 3 + 5 - \\pi = 2$.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "$A + B = (\\pi - 3) + (5 - \\pi)$"
+        ],
+        "result": "A + B = 2"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

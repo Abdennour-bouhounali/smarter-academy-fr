@@ -22,7 +22,7 @@ class ClassroomProgressTest extends TestCase
     public function test_la_liste_des_eleves_lit_la_progression_sur_les_lecons_effectives(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(4);
+        ['lessons' => $lessons] = $this->grade3e(4);
         $classroom = Classroom::factory()->create();
         $a = $this->student(['last_activity_at' => now()]);
         $b = $this->student(['last_activity_at' => now()]);
@@ -62,7 +62,7 @@ class ClassroomProgressTest extends TestCase
     public function test_le_dossier_d_un_eleve_est_cadre_sur_la_classe_et_ne_contient_pas_son_cahier(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(2);
+        ['lessons' => $lessons] = $this->grade3e(2);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();
@@ -82,7 +82,7 @@ class ClassroomProgressTest extends TestCase
     public function test_quitter_ou_etre_retire_ne_detruit_aucune_donnee_d_apprentissage(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         $this->withToken($this->tokenOf($student))->postJson('/api/v1/student/classrooms/join', ['consent' => true, 'code' => $classroom->join_code])->assertCreated();
@@ -102,7 +102,7 @@ class ClassroomProgressTest extends TestCase
     public function test_un_eleve_qui_n_est_pas_dans_la_classe_repond_404(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $stranger = $this->student();
 

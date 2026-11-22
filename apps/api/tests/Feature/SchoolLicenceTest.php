@@ -44,7 +44,7 @@ class SchoolLicenceTest extends TestCase
     public function test_the_admin_grants_a_licence_and_its_students_get_full_access(): void
     {
         $this->freeSeatsPlan(5);
-        $this->grade4am(1);
+        $this->grade3e(1);
         $adminToken = $this->tokenOf($this->admin());
         ['school' => $school, 'token' => $directorToken] = $this->schoolWithDirector();
         $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school));
@@ -85,7 +85,7 @@ class SchoolLicenceTest extends TestCase
     public function test_covered_students_use_the_schools_seats_not_the_teachers(): void
     {
         $this->freeSeatsPlan(5);
-        $this->grade4am(1);
+        $this->grade3e(1);
         ['school' => $school, 'token' => $directorToken] = $this->schoolWithDirector();
         $teacher = $this->teacherInSchool($school);
         $schoolClass = $this->schoolClassroom($school, $teacher);
@@ -121,7 +121,7 @@ class SchoolLicenceTest extends TestCase
     public function test_licence_refusals(): void
     {
         $this->freeSeatsPlan(5);
-        $this->grade4am(1);
+        $this->grade3e(1);
         $adminToken = $this->tokenOf($this->admin());
         ['school' => $school] = $this->schoolWithDirector();
         $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school));

@@ -5,8 +5,8 @@ return [
     // La banque générée par scripts/generate-compass-index.mjs (références seulement, aucune réponse).
     'index_path' => env('COMPASS_INDEX_PATH', base_path('../../content/compass/index.generated.json')),
 
-    // Les niveaux où la jauge est ouverte (P1 : 4AM seulement).
-    'grades' => ['4am'],
+    // Les niveaux où la jauge est ouverte (P1 : la dernière année du collège seulement).
+    'grades' => ['3e'],
 
     // Une jauge complète refaite au plus tous les 7 jours (décision 7 du propriétaire).
     'retake_days' => 7,

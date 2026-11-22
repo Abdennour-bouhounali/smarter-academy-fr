@@ -21,7 +21,7 @@ class TeacherRegistrationTest extends TestCase
     {
         Notification::fake();
         $this->defaultTeacherPlan();
-        $this->grade4am(0);
+        $this->grade3e(0);
 
         $response = $this->postJson('/api/v1/auth/register', [
             'firstName' => 'أمين', 'lastName' => 'بن علي',
@@ -43,8 +43,8 @@ class TeacherRegistrationTest extends TestCase
         $this->assertDatabaseCount('subscriptions', 0);
 
         // Et les limites gratuites s'exercent : une classe, pas deux.
-        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => '4AM A', 'grade' => '4am'])->assertCreated();
-        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => '4AM B', 'grade' => '4am'])
+        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => '3e A', 'grade' => '3e'])->assertCreated();
+        $this->withToken($token)->postJson('/api/v1/teacher/classrooms', ['name' => '3e B', 'grade' => '3e'])
             ->assertStatus(422)->assertJsonPath('reason', 'limit_reached');
     }
 

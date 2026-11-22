@@ -24,7 +24,7 @@ class ClassroomOneClassTest extends TestCase
     {
         parent::setUp();
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
     }
 
     private function join(User $student, array $door)
@@ -72,14 +72,14 @@ class ClassroomOneClassTest extends TestCase
 
     public function test_l_apercu_du_lien_nomme_la_classe_actuelle_de_l_eleve(): void
     {
-        $a = Classroom::factory()->create(['name' => 'رياضيات 4م1']);
+        $a = Classroom::factory()->create(['name' => 'Maths 3e A']);
         $b = Classroom::factory()->create();
         $student = $this->student();
         $this->join($student, ['code' => $a->join_code])->assertCreated();
 
         $this->withToken($this->tokenOf($student))->getJson("/api/v1/join-links/{$b->join_link_token}")->assertOk()
             ->assertJsonPath('joinLink.alreadyMember', false)
-            ->assertJsonPath('joinLink.currentClassroomName', 'رياضيات 4م1');
+            ->assertJsonPath('joinLink.currentClassroomName', 'Maths 3e A');
         // Sur le lien de SA classe : déjà membre, aucun autre nom.
         $this->withToken($this->tokenOf($student))->getJson("/api/v1/join-links/{$a->join_link_token}")->assertOk()
             ->assertJsonPath('joinLink.alreadyMember', true)

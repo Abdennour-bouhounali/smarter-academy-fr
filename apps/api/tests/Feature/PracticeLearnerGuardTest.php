@@ -26,11 +26,11 @@ class PracticeLearnerGuardTest extends TestCase
     {
         parent::setUp();
 
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres_calculs', 'title' => 'Thème', 'order' => 0]);
         Lesson::create([
-            'chapter_id' => $chapter->id, 'code' => 'qasim-mushtarak-akbar',
-            'title' => 'القاسم المشترك الأكبر', 'status' => 'available', 'order' => 0,
+            'chapter_id' => $chapter->id, 'code' => 'lecon-c',
+            'title' => 'Leçon C', 'status' => 'available', 'order' => 0,
             'publication_status' => Lesson::PUB_PUBLISHED,
         ]);
         PracticeCapability::forget();
@@ -42,7 +42,7 @@ class PracticeLearnerGuardTest extends TestCase
         $uuid = '00000000-0000-4000-8000-000000000000';
 
         return [
-            'ouvrir une séance' => ['POST', '/api/v1/lessons/qasim-mushtarak-akbar/practice/sessions'],
+            'ouvrir une séance' => ['POST', '/api/v1/lessons/lecon-c/practice/sessions'],
             'ouvrir une question' => ['POST', "/api/v1/practice/sessions/{$uuid}/questions"],
             'répondre' => ['POST', "/api/v1/practice/sessions/{$uuid}/answers"],
             'terminer un exercice' => ['POST', "/api/v1/practice/sessions/{$uuid}/exercise-completions"],
@@ -79,17 +79,17 @@ class PracticeLearnerGuardTest extends TestCase
 
     public function test_l_eleve_garde_l_acces_a_l_ecriture(): void
     {
-        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '4am']);
+        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e']);
 
         $response = $this->actingAs($student, 'sanctum')
-            ->postJson('/api/v1/lessons/qasim-mushtarak-akbar/practice/sessions', ['level' => 1]);
+            ->postJson('/api/v1/lessons/lecon-c/practice/sessions', ['level' => 1]);
         $this->assertNotSame(403, $response->status(), 'le garde ne doit jamais refuser un élève');
     }
 
     public function test_l_enseignant_lit_toujours_la_liste_des_exercices(): void
     {
         $this->actingAs(User::factory()->create(['role' => User::ROLE_TEACHER]), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')
+            ->getJson('/api/v1/lessons/lecon-c/exercises')
             ->assertOk()
             ->assertJsonPath('success', true);
     }

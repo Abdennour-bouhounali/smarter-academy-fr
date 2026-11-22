@@ -38,22 +38,22 @@ class MasteryReplayTest extends TestCase
         parent::setUp();
         config(['mastery.engine_version' => 2]);
 
-        $grade = Grade::create(['code' => '4am', 'name' => '4AM', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'الأعداد', 'order' => 0]);
-        $this->lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'tayin-pgcd', 'title' => 'PGCD', 'status' => 'available', 'order' => 0]);
-        $this->p1 = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '4am_tayin-pgcd_P1', 'title' => 'P1', 'order' => 1]);
-        $this->student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres', 'order' => 0]);
+        $this->lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-e', 'title' => 'PGCD', 'status' => 'available', 'order' => 0]);
+        $this->p1 = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '3e_lecon-e_P1', 'title' => 'P1', 'order' => 1]);
+        $this->student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
     }
 
     private function record(string $attemptId, string $questionId, string $outcome, string $type = ProgressEngine::SOURCE_ASSESSMENT, ?string $exercise = null, ?int $level = null): void
     {
-        app(ProgressEngine::class)->recordEvidence($this->student, 'tayin-pgcd', [
+        app(ProgressEngine::class)->recordEvidence($this->student, 'lecon-e', [
             'attemptId' => $attemptId,
             'exerciseCode' => $exercise,
             'questionId' => $questionId,
             'assessmentType' => $type,
             'outcome' => $outcome,
-            'learningPointCodes' => ['4am_tayin-pgcd_P1'],
+            'learningPointCodes' => ['3e_lecon-e_P1'],
             'level' => $level,
             'evaluatedBy' => EvidenceEvent::EVALUATED_BY_SERVER,
         ]);
@@ -178,7 +178,7 @@ class MasteryReplayTest extends TestCase
 
         $this->artisan('smarter:evidence:backfill')->assertSuccessful();
         $fresh = $legacy->fresh();
-        $this->assertSame('final_test:tayin-pgcd:final:E1', $fresh->item_key);
+        $this->assertSame('final_test:lecon-e:final:E1', $fresh->item_key);
         $this->assertSame('correct', $fresh->outcome);
         $this->assertSame(3, (int) $fresh->difficulty);
         $this->assertSame(1, (int) $fresh->attempt_number);

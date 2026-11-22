@@ -32,7 +32,7 @@ trait CommercialFixtures
             K::PROGRESS_CLASS => true,
             K::PROGRESS_STUDENT => true,
             K::STUDENTS_COVERED => false,
-            K::CONTENT_ALLOWED_GRADES => ['4am'],
+            K::CONTENT_ALLOWED_GRADES => ['3e'],
         ], $entitlements))->create(['slug' => 'teacher-free', 'name' => 'Gratuit']);
     }
 
@@ -49,7 +49,7 @@ trait CommercialFixtures
             K::PROGRESS_STUDENT => true,
             K::ANALYTICS_ADVANCED => true,
             K::STUDENTS_COVERED => true,
-            K::CONTENT_ALLOWED_GRADES => ['4am'],
+            K::CONTENT_ALLOWED_GRADES => ['3e'],
         ], $entitlements), ['amount_cents' => 1500000, 'duration_days' => 365])
             ->create(array_merge(['slug' => 'teacher-pro', 'name' => 'Pro'], $attributes));
     }
@@ -85,7 +85,7 @@ trait CommercialFixtures
             K::PROGRESS_CLASS => true,
             K::PROGRESS_STUDENT => true,
             K::STUDENTS_COVERED => true,
-            K::CONTENT_ALLOWED_GRADES => ['4am'],
+            K::CONTENT_ALLOWED_GRADES => ['3e'],
         ], $entitlements), ['amount_cents' => 0, 'duration_days' => 365], $tiers ?? self::SEAT_TIERS)
             ->create(array_merge(['slug' => 'teacher-seats', 'name' => 'Par élève'], $attributes));
     }
@@ -108,7 +108,7 @@ trait CommercialFixtures
 
     protected function student(array $attributes = []): User
     {
-        return User::factory()->create(array_merge(['role' => User::ROLE_STUDENT, 'grade' => '4am'], $attributes));
+        return User::factory()->create(array_merge(['role' => User::ROLE_STUDENT, 'grade' => '3e'], $attributes));
     }
 
     protected function tokenOf(User $user): string
@@ -132,13 +132,13 @@ trait CommercialFixtures
     }
 
     /**
-     * La classe scolaire 4AM avec N leçons publiées.
+     * La classe scolaire 3e avec N leçons publiées.
      *
      * @return array{grade: Grade, chapter: Chapter, lessons: Collection<int, Lesson>}
      */
-    protected function grade4am(int $lessons = 3): array
+    protected function grade3e(int $lessons = 3): array
     {
-        $grade = Grade::firstOrCreate(['code' => '4am'], ['name' => 'السنة الرابعة متوسط', 'level' => 'moyen', 'order' => 1, 'is_active' => true]);
+        $grade = Grade::firstOrCreate(['code' => '3e'], ['name' => 'Troisième', 'level' => 'college', 'order' => 1, 'is_active' => true]);
         $chapter = Chapter::factory()->create(['grade_id' => $grade->id]);
         $rows = Lesson::factory()->count($lessons)->inChapter($chapter)->create();
 

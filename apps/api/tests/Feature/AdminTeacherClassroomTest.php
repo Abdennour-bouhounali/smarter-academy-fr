@@ -41,7 +41,7 @@ class AdminTeacherClassroomTest extends TestCase
     public function test_une_derogation_releve_la_limite_et_se_retire(): void
     {
         $this->defaultTeacherPlan([K::CLASSROOMS_MAX => 1]);
-        $this->grade4am(0);
+        $this->grade3e(0);
         $teacher = $this->teacher();
         $admin = $this->admin();
         $adminToken = $this->tokenOf($admin);
@@ -55,7 +55,7 @@ class AdminTeacherClassroomTest extends TestCase
 
         $teacherToken = $this->tokenOf($teacher);
         foreach (['A', 'B', 'C'] as $name) {
-            $this->withToken($teacherToken)->postJson('/api/v1/teacher/classrooms', ['name' => $name, 'grade' => '4am'])->assertCreated();
+            $this->withToken($teacherToken)->postJson('/api/v1/teacher/classrooms', ['name' => $name, 'grade' => '3e'])->assertCreated();
         }
 
         $this->withToken($adminToken)->deleteJson("/api/v1/admin/teachers/{$teacher->id}/entitlements/overrides/{$overrideId}")->assertOk()
@@ -78,12 +78,12 @@ class AdminTeacherClassroomTest extends TestCase
     public function test_les_classes_sont_consultables_par_l_administration(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
-        $classroom = Classroom::factory()->create(['name' => '4AM Z']);
+        $this->grade3e(1);
+        $classroom = Classroom::factory()->create(['name' => '3e Z']);
         ClassroomMembership::factory()->in($classroom)->create();
         $token = $this->tokenOf($this->admin());
 
-        $this->withToken($token)->getJson('/api/v1/admin/classrooms?search=4AM%20Z')->assertOk()->assertJsonPath('classrooms.data.0.name', '4AM Z');
+        $this->withToken($token)->getJson('/api/v1/admin/classrooms?search=3e%20Z')->assertOk()->assertJsonPath('classrooms.data.0.name', '3e Z');
         $detail = $this->withToken($token)->getJson("/api/v1/admin/classrooms/{$classroom->id}")->assertOk()->json();
         $this->assertCount(1, $detail['students']);
         $this->assertCount(1, $detail['lessons']['chapters'][0]['lessons']);

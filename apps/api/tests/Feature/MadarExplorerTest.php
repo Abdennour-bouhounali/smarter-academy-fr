@@ -36,7 +36,7 @@ class MadarExplorerTest extends TestCase
         parent::setUp();
         $this->onChallengeDay();
         $this->challengeCurriculum();
-        $this->classroom = Classroom::factory()->create(['grade' => '4am']);
+        $this->classroom = Classroom::factory()->create(['grade' => '3e']);
         $this->student = $this->student(['first_name' => 'Amine', 'last_name' => 'Benali']);
         $this->enrol($this->classroom, [$this->student]);
         $this->api('GET', '/madar')->assertOk();

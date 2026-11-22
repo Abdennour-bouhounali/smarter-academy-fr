@@ -27,7 +27,7 @@ class LearningPointTransitionTest extends TestCase
     public function test_each_state_change_leaves_one_line_and_the_last_line_is_the_current_state(): void
     {
         config(['mastery.engine_version' => 2]);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $point = $this->point($lesson, 1);
         $student = $this->student();
@@ -54,7 +54,7 @@ class LearningPointTransitionTest extends TestCase
     public function test_a_duplicate_attempt_or_an_inert_answer_writes_no_history(): void
     {
         config(['mastery.engine_version' => 2]);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $point = $this->point($lesson, 1);
         $student = $this->student();
@@ -75,7 +75,7 @@ class LearningPointTransitionTest extends TestCase
     public function test_history_is_rebuilt_from_evidence_and_the_rebuild_is_idempotent(): void
     {
         config(['mastery.engine_version' => 2]);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $point = $this->point($lesson, 1);
         $student = $this->student();
@@ -99,7 +99,7 @@ class LearningPointTransitionTest extends TestCase
     public function test_a_replay_that_changes_the_state_is_recorded_as_a_recalculation(): void
     {
         config(['mastery.engine_version' => 2]);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $point = $this->point($lesson, 1);
         $student = $this->student();

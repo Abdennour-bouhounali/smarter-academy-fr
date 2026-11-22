@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Process;
  * clés étrangères sont résolues par sous-requête au moment de l'exécution :
  *
  *   INSERT INTO lessons (chapter_id, code, …)
- *   SELECT c.id, 'qasim-adad-tabii', … FROM chapters c JOIN grades g ON g.id = c.grade_id
- *   WHERE g.code = '4am' AND c.code = 'ansab_al_aadad_wal_hisab'
+ *   SELECT c.id, 'lecon-a', … FROM chapters c JOIN grades g ON g.id = c.grade_id
+ *   WHERE g.code = '3e' AND c.code = 'nombres_calculs'
  *   ON DUPLICATE KEY UPDATE title = VALUES(title), …
  *
  * Idempotent (rejouable), additif (jamais de DELETE), et il ne touche JAMAIS
@@ -35,7 +35,7 @@ class CurriculumSql extends Command
         {--out= : Fichier .sql à écrire (défaut : storage/app/curriculum-upsert.sql)}
         {--from-json= : Export du curriculum déjà généré}
         {--registry-json= : Export du registre de contenu déjà généré}
-        {--grade= : Ne garder que cette classe (code), ex. 4am}
+        {--grade= : Ne garder que cette classe (code), ex. 3e}
         {--retire-lesson=* : Codes de leçons à archiver (publication_status = archived) — ex. pgcd}';
 
     protected $description = 'Écrit le SQL d\'upsert (clés par code, FK par sous-requête) du miroir de curriculum, pour une base sans artisan';

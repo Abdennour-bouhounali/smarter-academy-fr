@@ -39,7 +39,7 @@ class TeacherCoverageAccessTest extends TestCase
     {
         $this->defaultTeacherPlan();
         $pro = $this->paidTeacherPlan([K::STUDENTS_COVERED => true]);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $lesson->update(['tier' => 'premium']);
         $teacher = $this->teacher();
@@ -105,7 +105,7 @@ class TeacherCoverageAccessTest extends TestCase
     public function test_l_offre_gratuite_ne_couvre_personne_et_l_offre_seule_sans_abonnement_non_plus(): void
     {
         $this->defaultTeacherPlan([K::STUDENTS_COVERED => true]); // même réglée ainsi, sans abonnement : rien
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         $this->withToken($this->tokenOf($student))->postJson('/api/v1/student/classrooms/join', ['consent' => true, 'code' => $classroom->join_code])->assertCreated();

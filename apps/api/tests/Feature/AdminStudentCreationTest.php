@@ -23,7 +23,7 @@ class AdminStudentCreationTest extends TestCase
     {
         parent::setUp();
         config(['registration.open' => false]);
-        Grade::create(['code' => '4am', 'name' => 'الرابعة متوسط', 'level' => 'moyen', 'is_active' => true]);
+        Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college', 'is_active' => true]);
         $this->admin = User::factory()->create(['role' => User::ROLE_ADMIN]);
     }
 
@@ -51,7 +51,7 @@ class AdminStudentCreationTest extends TestCase
             'firstName' => '  ياسين ',
             'lastName' => 'بلقاسم',
             'email' => '  Yacine@Example.TEST ',
-            'grade' => '4am',
+            'grade' => '3e',
         ]);
 
         $response->assertStatus(201)
@@ -59,7 +59,7 @@ class AdminStudentCreationTest extends TestCase
             ->assertJsonPath('login', 'yacine@example.test')
             ->assertJsonPath('student.firstName', 'ياسين')
             ->assertJsonPath('student.email', 'yacine@example.test')
-            ->assertJsonPath('student.grade', '4am')
+            ->assertJsonPath('student.grade', '3e')
             ->assertJsonPath('student.accountStatus', User::STATUS_ACTIVE);
         $this->assertStringContainsString('no-store', (string) $response->headers->get('Cache-Control'));
 

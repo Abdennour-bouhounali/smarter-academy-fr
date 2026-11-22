@@ -45,7 +45,7 @@ class LessonTrackingTest extends TestCase
     {
         config(['mastery.engine_version' => 2]);
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $p1 = $this->point($lesson, 1);
         $this->point($lesson, 2);
@@ -94,7 +94,7 @@ class LessonTrackingTest extends TestCase
     public function test_only_the_teacher_of_the_class_reads_it_and_only_for_a_lesson_of_the_class(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $uri = "/api/v1/teacher/classrooms/{$classroom->id}/lesson-tracking/{$lessons[0]->code}";
 

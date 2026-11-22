@@ -29,22 +29,22 @@ class CurriculumScopeTest extends TestCase
     use RefreshDatabase;
 
     /** L'export minimal, de la forme qu'écrit exportCurriculum.mjs. */
-    private function export(array $gradeCodes = ['4am', 'terminale_dz']): string
+    private function export(array $gradeCodes = ['3e', '4e']): string
     {
         $grades = [];
         foreach ($gradeCodes as $i => $code) {
             $grades[] = [
                 'code' => $code,
                 'name' => $code,
-                'level' => $code === '4am' ? 'moyen' : 'thanawi',
+                'level' => 'college',
                 'order' => $i,
                 'active' => true,
-                'curriculumStatus' => $code === '4am' ? 'programme_only' : 'not_supplied',
-                'chapters' => $code === '4am' ? [[
-                    'code' => 'handasa',
-                    'title' => 'ميدان الهندسة',
+                'curriculumStatus' => $code === '3e' ? 'programme_only' : 'not_supplied',
+                'chapters' => $code === '3e' ? [[
+                    'code' => 'espace_geometrie',
+                    'title' => 'Espace et géométrie',
                     'order' => 0,
-                    'topics' => [['id' => 'thales', 'title' => 'خاصية طالس']],
+                    'topics' => [['id' => 'thales', 'title' => 'Théorème de Thalès']],
                     'lessons' => [],
                 ]] : [],
             ];
@@ -56,10 +56,10 @@ class CurriculumScopeTest extends TestCase
         return $path;
     }
 
-    /** Une classe française héritée, avec chapitre, leçon et point. */
-    private function seedFrenchGrade(string $code = '6e'): Lesson
+    /** Une classe hors catalogue (le lycée, non repris), avec chapitre, leçon et point. */
+    private function seedOutOfScopeGrade(string $code = 'seconde'): Lesson
     {
-        $grade = Grade::create(['code' => $code, 'name' => $code, 'level' => 'college', 'order' => 0, 'is_active' => false]);
+        $grade = Grade::create(['code' => $code, 'name' => $code, 'level' => 'lycee', 'order' => 0, 'is_active' => false]);
         $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres', 'order' => 0]);
         $lesson = Lesson::create([
             'chapter_id' => $chapter->id, 'code' => "fractions-{$code}", 'title' => 'Fractions',
@@ -72,16 +72,16 @@ class CurriculumScopeTest extends TestCase
 
     private function seedRetainedGrades(): void
     {
-        $g = Grade::create(['code' => '4am', 'name' => '4am', 'level' => 'moyen', 'order' => 0, 'is_active' => true]);
-        Chapter::create(['grade_id' => $g->id, 'code' => 'handasa', 'title' => 'ميدان الهندسة', 'order' => 0]);
-        Grade::create(['code' => 'terminale_dz', 'name' => 'terminale_dz', 'level' => 'thanawi', 'order' => 1, 'is_active' => true]);
+        $g = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0, 'is_active' => true]);
+        Chapter::create(['grade_id' => $g->id, 'code' => 'espace_geometrie', 'title' => 'Espace et géométrie', 'order' => 0]);
+        Grade::create(['code' => '4e', 'name' => '4e', 'level' => 'college', 'order' => 1, 'is_active' => true]);
     }
 
     public function test_it_retains_only_the_grades_the_catalogue_declares(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
-        $this->seedFrenchGrade('seconde');
+        $this->seedOutOfScopeGrade('seconde');
+        $this->seedOutOfScopeGrade('premiere');
 
         $this->assertSame(4, Grade::count());
 
@@ -92,13 +92,13 @@ class CurriculumScopeTest extends TestCase
             )
             ->assertSuccessful();
 
-        $this->assertEqualsCanonicalizing(['4am', 'terminale_dz'], Grade::pluck('code')->all());
+        $this->assertEqualsCanonicalizing(['3e', '4e'], Grade::pluck('code')->all());
     }
 
     public function test_every_remaining_row_belongs_to_a_retained_grade(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
 
         $this->artisan('smarter:scope-curriculum', ['--from-json' => $this->export(), '--force' => true])
             ->expectsConfirmation(
@@ -111,15 +111,15 @@ class CurriculumScopeTest extends TestCase
         $this->assertSame(0, Chapter::whereNotIn('grade_id', $retainedIds)->count());
         $this->assertSame(0, Lesson::whereNotIn('chapter_id', Chapter::pluck('id'))->count());
         $this->assertSame(0, LearningPoint::whereNotIn('lesson_id', Lesson::pluck('id'))->count());
-        // Et rien de français ne subsiste, sous aucune forme.
-        $this->assertSame(0, Lesson::where('code', 'like', '%-6e')->count());
-        $this->assertSame(0, LearningPoint::where('code', 'like', '6e_%')->count());
+        // Et rien de la classe retirée ne subsiste, sous aucune forme.
+        $this->assertSame(0, Lesson::where('code', 'like', '%-seconde')->count());
+        $this->assertSame(0, LearningPoint::where('code', 'like', 'seconde_%')->count());
     }
 
     public function test_it_preserves_accounts_entitlements_and_activation_codes(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
 
         $user = User::factory()->create();
         $entitlement = Entitlement::factory()->create(['user_id' => $user->id]);
@@ -145,7 +145,7 @@ class CurriculumScopeTest extends TestCase
     public function test_it_refuses_when_student_data_would_be_destroyed(): void
     {
         $this->seedRetainedGrades();
-        $lesson = $this->seedFrenchGrade('6e');
+        $lesson = $this->seedOutOfScopeGrade();
 
         $user = User::factory()->create();
         StudentLessonProgress::create([
@@ -166,7 +166,7 @@ class CurriculumScopeTest extends TestCase
     public function test_allow_student_data_loss_alone_deletes_nothing(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
 
         // Lever le refus n'autorise PAS la suppression : --force reste exigé.
         // C'est la confusion qui coûterait le plus cher sur cette commande.
@@ -181,7 +181,7 @@ class CurriculumScopeTest extends TestCase
     public function test_dry_run_deletes_nothing(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
 
         $this->artisan('smarter:scope-curriculum', ['--from-json' => $this->export(), '--dry-run' => true])
             ->assertSuccessful();
@@ -205,7 +205,7 @@ class CurriculumScopeTest extends TestCase
     {
         $this->app['env'] = 'production';
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
 
         $this->artisan('smarter:scope-curriculum', ['--from-json' => $this->export(), '--force' => true])
             ->assertFailed();
@@ -218,13 +218,13 @@ class CurriculumScopeTest extends TestCase
      *
      * L'import est un upsert sur TOUT l'export : c'est donc l'export, et lui
      * seul, qui détermine ce que la base contient. Ce test échouera si
-     * quelqu'un ré-élargit l'export ou y réintroduit l'arbre français — la
-     * seule façon dont les 133 leçons pourraient revenir.
+     * quelqu'un ré-élargit l'export ou y réintroduit une classe retirée — la
+     * seule façon dont ses leçons pourraient revenir.
      */
     public function test_importing_after_cleanup_does_not_resurrect_removed_grades(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
         $export = $this->export();
 
         $this->artisan('smarter:scope-curriculum', ['--from-json' => $export, '--force' => true])
@@ -236,7 +236,7 @@ class CurriculumScopeTest extends TestCase
 
         $this->artisan('smarter:import-curriculum', ['--from-json' => $export])->assertSuccessful();
 
-        $this->assertEqualsCanonicalizing(['4am', 'terminale_dz'], Grade::pluck('code')->all());
+        $this->assertEqualsCanonicalizing(['3e', '4e'], Grade::pluck('code')->all());
         $this->assertSame(0, Lesson::count());
     }
 
@@ -251,21 +251,21 @@ class CurriculumScopeTest extends TestCase
     {
         $this->artisan('smarter:import-curriculum', ['--from-json' => $this->export()])->assertSuccessful();
 
-        $chapter = Chapter::where('code', 'handasa')->firstOrFail();
-        $this->assertSame([['id' => 'thales', 'title' => 'خاصية طالس']], $chapter->topics);
+        $chapter = Chapter::where('code', 'espace_geometrie')->firstOrFail();
+        $this->assertSame([['id' => 'thales', 'title' => 'Théorème de Thalès']], $chapter->topics);
 
         // Un chapitre sans sujets reçoit null, pas un tableau vide : l'absence
         // de sujets n'est pas une liste vide de sujets.
         $this->assertNull(
-            Chapter::whereHas('grade', fn ($q) => $q->where('code', 'terminale_dz'))->first()?->topics
+            Chapter::whereHas('grade', fn ($q) => $q->where('code', '4e'))->first()?->topics
         );
     }
 
     public function test_it_reports_orphaned_user_grades_without_touching_accounts(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
-        $user = User::factory()->create(['grade' => '6e']);
+        $this->seedOutOfScopeGrade();
+        $user = User::factory()->create(['grade' => 'seconde']);
 
         $this->artisan('smarter:scope-curriculum', ['--from-json' => $this->export(), '--force' => true])
             ->expectsConfirmation(
@@ -276,21 +276,21 @@ class CurriculumScopeTest extends TestCase
 
         // `users.grade` est une chaîne libre : elle pend, et c'est signalé.
         // Reclasser un élève est une décision produit, pas un effet de bord.
-        $this->assertSame('6e', $user->fresh()->grade);
+        $this->assertSame('seconde', $user->fresh()->grade);
         $this->assertDatabaseCount('users', 1);
     }
 
     public function test_registry_health_gate_fails_on_an_out_of_scope_grade(): void
     {
         $this->seedRetainedGrades();
-        $this->seedFrenchGrade('6e');
+        $this->seedOutOfScopeGrade();
 
         config(['curriculum.export_output_path' => $this->export()]);
 
         // La porte doit NOMMER la classe hors périmètre : c'est ce qui rend
         // le diagnostic actionnable plutôt qu'alarmant.
         $this->artisan('smarter:registry-health', ['--gate' => true])
-            ->expectsOutputToContain('6e')
+            ->expectsOutputToContain('seconde')
             ->assertFailed();
     }
 
@@ -303,13 +303,13 @@ class CurriculumScopeTest extends TestCase
     }
 
     /**
-     * Un 4am actif, un ميدان, une leçon — et l'export qui la déclare, SANS
+     * Une 3e active, un thème, une leçon — et l'export qui la déclare, SANS
      * palier (le catalogue n'en porte plus).
      */
     private function seedActiveLesson(?string $tier, string $code = 'thales'): string
     {
-        $grade = Grade::create(['code' => '4am', 'name' => '4am', 'level' => 'moyen', 'order' => 0, 'is_active' => true]);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'handasa', 'title' => 'ميدان الهندسة', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0, 'is_active' => true]);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'espace_geometrie', 'title' => 'Espace et géométrie', 'order' => 0]);
         Lesson::create([
             'chapter_id' => $chapter->id, 'code' => $code, 'title' => 'Thalès',
             'status' => 'available', 'order' => 0,
@@ -320,8 +320,8 @@ class CurriculumScopeTest extends TestCase
 
         $export = tempnam(sys_get_temp_dir(), 'tier').'.json';
         file_put_contents($export, json_encode(['grades' => [[
-            'code' => '4am', 'active' => true, 'chapters' => [[
-                'code' => 'handasa', 'lessons' => [['code' => 'thales']],
+            'code' => '3e', 'active' => true, 'chapters' => [[
+                'code' => 'espace_geometrie', 'lessons' => [['code' => 'thales']],
             ]],
         ]]]));
 

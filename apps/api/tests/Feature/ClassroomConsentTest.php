@@ -21,7 +21,7 @@ class ClassroomConsentTest extends TestCase
     public function test_joining_by_code_without_consent_is_refused_and_creates_nothing(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
 
@@ -33,7 +33,7 @@ class ClassroomConsentTest extends TestCase
     public function test_a_join_link_without_consent_is_refused(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
 
         $this->withToken($this->tokenOf($this->student()))->postJson('/api/v1/student/classrooms/join', ['link' => $classroom->join_link_token])
@@ -44,7 +44,7 @@ class ClassroomConsentTest extends TestCase
     public function test_consent_is_dated_and_versioned(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
 
@@ -60,7 +60,7 @@ class ClassroomConsentTest extends TestCase
     public function test_a_member_from_before_the_text_is_asked_once_and_can_confirm(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->withoutConsent()->create();
@@ -80,7 +80,7 @@ class ClassroomConsentTest extends TestCase
     public function test_changing_the_text_asks_again(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         ClassroomMembership::factory()->in($classroom)->of($student)->create();

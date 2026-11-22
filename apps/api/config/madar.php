@@ -119,7 +119,7 @@ return [
         'max_drop_per_round' => 3,
         // Le niveau de départ de chaque année : tout ce qui précède est ouvert.
         // On ne commence JAMAIS par du difficile (propriétaire) : l'entrée est dans les acquis des années d'avant.
-        'entry' => ['1am' => 1, '2am' => 5, '3am' => 12, '4am' => 19],
+        'entry' => ['6e' => 1, '5e' => 5, '4e' => 12, '3e' => 19],
         // Chaque partie s'échauffe deux niveaux sous la position de l'élève (sniper/adapt.js › WARMUP_DROP).
         'warmup_drop' => 6,
         'tolerance' => 1.1,
@@ -155,7 +155,7 @@ return [
         'max_multiplier' => 4,
         'speed_factor' => 1,
         'max_drop_per_round' => 3,
-        'entry' => ['1am' => 3, '2am' => 7, '3am' => 11, '4am' => 15],
+        'entry' => ['6e' => 3, '5e' => 7, '4e' => 11, '3e' => 15],
         'tolerance' => 1.1,
         'slack' => 100,
     ],

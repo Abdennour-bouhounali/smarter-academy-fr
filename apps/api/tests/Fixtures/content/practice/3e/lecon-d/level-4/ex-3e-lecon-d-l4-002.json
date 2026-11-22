@@ -1,0 +1,161 @@
+{
+  "id": "ex-3e-lecon-d-l4-002",
+  "lessonCode": "lecon-d",
+  "level": 4,
+  "metadata": {
+    "title": "Exercice",
+    "estimatedMinutes": 8,
+    "tags": [
+      "méthode",
+      "méthode",
+      "méthode"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère la situation suivante."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 1^2 + 2^2 = 5$.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "$BC^2 = 1 + 4$"
+        ],
+        "result": "BC^2 = 5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Choix 1",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Choix 2",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIBA-MUDBUTA"
+        }
+      ],
+      "answerFormat": "Écris ta réponse.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}236067978^2 = 5{,}000000002237008484 \\neq 5$",
+          "Ligne de solution."
+        ],
+        "result": "BC = \\sqrt{5}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-d_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "2.23",
+      "misconceptionSignatures": [
+        {
+          "value": "2.24",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{5} = 2{,}236067\\ldots$",
+          "$2{,}23 \\leqslant \\sqrt{5} < 2{,}24$"
+        ],
+        "result": "BC \\approx 2{,}23cm"
+      },
+      "timeSeconds": 75,
+      "counted": false
+    }
+  ]
+}

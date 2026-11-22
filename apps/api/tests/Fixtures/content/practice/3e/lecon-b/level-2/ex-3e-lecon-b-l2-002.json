@@ -1,0 +1,199 @@
+{
+  "id": "ex-3e-lecon-b-l2-002",
+  "lessonCode": "lecon-b",
+  "level": 2,
+  "metadata": {
+    "title": "Exercice",
+    "estimatedMinutes": 5,
+    "tags": [
+      "méthode"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère la situation suivante."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "26",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "$117 - 91 = 26$.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "$117 - 91 = 26$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "b",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "Ligne de solution."
+        ],
+        "result": "\\text{PGCD}(117 ; 91) = \\text{PGCD}(91 ; 26)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-FURUQ-AKHIR-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "$117 - 91 = 26$",
+          "$91 - 26 = 65$",
+          "$65 - 26 = 39$",
+          "$39 - 26 = 13$",
+          "$26 - 13 = 13$",
+          "$13 - 13 = 0$",
+          "Ligne de solution."
+        ],
+        "result": "\\text{PGCD}(117 ; 91) = 13"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "9/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore.",
+        "notIrreducible": "Simplifie encore."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{117}{91} = \\dfrac{117 \\div 13}{91 \\div 13}$"
+        ],
+        "result": "\\dfrac{117}{91} = \\dfrac{9}{7}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

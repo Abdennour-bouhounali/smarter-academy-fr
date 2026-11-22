@@ -36,8 +36,8 @@ class MadarOddTest extends TestCase
         parent::setUp();
         $this->onChallengeDay();
         $this->challengeCurriculum();
-        $this->classroom = Classroom::factory()->create(['grade' => '4am']);
-        $this->student = $this->student(['first_name' => 'Amine', 'grade' => '3am']);
+        $this->classroom = Classroom::factory()->create(['grade' => '3e']);
+        $this->student = $this->student(['first_name' => 'Amine', 'grade' => '4e']);
         $this->enrol($this->classroom, [$this->student]);
     }
 

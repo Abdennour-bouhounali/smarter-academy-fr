@@ -33,7 +33,7 @@ final class DemoContent
     /** @var array<string, array<int, array<int, array<string, mixed>>>> code leçon → niveau → exercices */
     public readonly array $exercisesByLesson;
 
-    public function __construct(string $gradeCode = '4am')
+    public function __construct(string $gradeCode = '3e')
     {
         $this->lessons = Lesson::query()
             ->whereHas('chapter', fn ($q) => $q->whereHas('grade', fn ($g) => $g->where('code', $gradeCode)))

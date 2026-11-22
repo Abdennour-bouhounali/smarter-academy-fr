@@ -25,7 +25,7 @@ class ClassroomLearningLoopTest extends TestCase
     {
         config(['mastery.engine_version' => 2]);
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $p1 = $this->point($lesson, 1);
         $p2 = $this->point($lesson, 2);
@@ -146,7 +146,7 @@ class ClassroomLearningLoopTest extends TestCase
     public function test_a_learning_point_gesture_needs_a_point_in_scope(): void
     {
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $student = $this->student();
         $this->enrol($classroom, [$student]);

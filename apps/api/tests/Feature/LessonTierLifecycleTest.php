@@ -50,27 +50,27 @@ class LessonTierLifecycleTest extends TestCase
             $lessons[] = array_merge([
                 'code' => $code,
                 'officialObjectCode' => null,
-                'title' => "عنوان {$code}",
+                'title' => "Titre {$code}",
                 'description' => 'وصف',
                 'status' => 'available',
                 'durationMinutes' => 45,
                 'order' => $i,
-                'unitCode' => 'wahda-1',
+                'unitCode' => 'unite-1',
                 'kind' => 'lesson',
                 'titleSource' => 'textbook',
                 'textbookRef' => null,
                 'prerequisiteLessonCodes' => [],
                 'learningPoints' => [
-                    ['code' => "4am_{$code}_P1", 'title' => 'نقطة 1', 'order' => 1, 'prerequisites' => []],
+                    ['code' => "3e_{$code}_P1", 'title' => 'Point 1', 'order' => 1, 'prerequisites' => []],
                 ],
             ], $lessonOverrides[$code] ?? []);
         }
 
         return ['exportedAt' => null, 'grades' => [[
-            'code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen', 'order' => 0, 'active' => true,
+            'code' => '3e', 'name' => 'Troisième', 'level' => 'college', 'order' => 0, 'active' => true,
             'chapters' => [[
-                'code' => 'midan-1', 'title' => 'ميدان', 'order' => 0, 'topics' => [],
-                'units' => [['code' => 'wahda-1', 'title' => 'وحدة', 'order' => 0]],
+                'code' => 'theme-1', 'title' => 'Thème', 'order' => 0, 'topics' => [],
+                'units' => [['code' => 'unite-1', 'title' => 'Unité', 'order' => 0]],
                 'lessons' => $lessons,
             ]],
         ]]];
@@ -104,7 +104,7 @@ class LessonTierLifecycleTest extends TestCase
 
     private function studentToken(bool $premium = false): string
     {
-        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '4am']);
+        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e']);
         if ($premium) {
             Entitlement::factory()->subscription()->create(['user_id' => $student->id]);
         }
@@ -185,9 +185,9 @@ class LessonTierLifecycleTest extends TestCase
 
         // C — une resynchronisation (et même un changement de contenu) ne
         // la remet pas gratuite.
-        $this->importer->import($this->export(lessonOverrides: ['lecon-alpha' => ['title' => 'عنوان جديد']]));
+        $this->importer->import($this->export(lessonOverrides: ['lecon-alpha' => ['title' => 'Nouveau titre']]));
         $this->assertSame('premium', $this->tier('lecon-alpha'));
-        $this->assertSame('عنوان جديد', Lesson::where('code', 'lecon-alpha')->value('title'));
+        $this->assertSame('Nouveau titre', Lesson::where('code', 'lecon-alpha')->value('title'));
         $this->progress($student, 'lecon-alpha')->assertStatus(422);
 
         // D — l'administrateur la repasse gratuite ; la resynchronisation ne

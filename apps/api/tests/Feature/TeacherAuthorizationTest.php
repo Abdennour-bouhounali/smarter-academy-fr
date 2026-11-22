@@ -102,15 +102,15 @@ class TeacherAuthorizationTest extends TestCase
     public function test_le_corps_ne_choisit_jamais_le_proprietaire(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(0);
+        $this->grade3e(0);
         $teacher = $this->teacher();
         $victim = $this->teacher();
 
         $this->withToken($this->tokenOf($teacher))
-            ->postJson('/api/v1/teacher/classrooms', ['name' => '4AM A', 'grade' => '4am', 'teacherId' => $victim->id, 'teacher_id' => $victim->id])
+            ->postJson('/api/v1/teacher/classrooms', ['name' => '3e A', 'grade' => '3e', 'teacherId' => $victim->id, 'teacher_id' => $victim->id])
             ->assertCreated();
 
-        $this->assertDatabaseHas('classrooms', ['name' => '4AM A', 'teacher_id' => $teacher->id]);
+        $this->assertDatabaseHas('classrooms', ['name' => '3e A', 'teacher_id' => $teacher->id]);
         $this->assertDatabaseMissing('classrooms', ['teacher_id' => $victim->id]);
         $this->assertSame(User::ROLE_TEACHER, $teacher->fresh()->role);
     }

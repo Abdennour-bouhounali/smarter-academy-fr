@@ -32,18 +32,18 @@ class TeacherPracticeResponsesTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'ميدان', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Thème', 'order' => 0]);
         $this->lesson = Lesson::create([
-            'chapter_id' => $chapter->id, 'code' => 'qasim-adad-tabii', 'title' => 'قاسم', 'status' => 'available', 'order' => 0,
+            'chapter_id' => $chapter->id, 'code' => 'lecon-a', 'title' => 'Diviseur', 'status' => 'available', 'order' => 0,
         ]);
         $this->teacher = User::factory()->create(['role' => User::ROLE_TEACHER]);
-        $this->classroom = Classroom::factory()->ownedBy($this->teacher)->create(['name' => '4م 2']);
+        $this->classroom = Classroom::factory()->ownedBy($this->teacher)->create(['name' => '3e B']);
     }
 
     private function member(?Classroom $classroom = null, string $status = ClassroomMembership::STATUS_ACTIVE): User
     {
-        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '4am', 'first_name' => 'أمين', 'last_name' => 'سعدي']);
+        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e', 'first_name' => 'أمين', 'last_name' => 'سعدي']);
         ClassroomMembership::factory()->in($classroom ?? $this->classroom)->of($student)->create(['status' => $status]);
 
         return $student;
@@ -85,7 +85,7 @@ class TeacherPracticeResponsesTest extends TestCase
         $this->answer($b, 'ex-1', 'q1', ['value' => '14'], 'correct', 2);
         $this->answer($a, 'ex-2', 'q1', ['value' => '1'], 'correct'); // autre exercice
 
-        $response = $this->teacherGet('/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students')
+        $response = $this->teacherGet('/api/v1/teacher/practice/lecon-a/exercises/ex-1/students')
             ->assertOk()->assertJsonPath('total', 2);
 
         $rows = collect($response->json('students'))->keyBy('id');
@@ -94,7 +94,7 @@ class TeacherPracticeResponsesTest extends TestCase
         // La DERNIÈRE tentative fait foi : b a fini par réussir q1.
         $this->assertSame(1, $rows[$b->id]['questionsAnswered']);
         $this->assertSame(1, $rows[$b->id]['questionsCorrect']);
-        $this->assertSame('4م 2', $rows[$a->id]['classrooms'][0]['name']);
+        $this->assertSame('3e B', $rows[$a->id]['classrooms'][0]['name']);
         $this->assertSame('أمين', $rows[$a->id]['firstName']);
         $this->assertArrayNotHasKey('email', $rows[$a->id], 'jamais l’email d’un élève');
     }
@@ -106,7 +106,7 @@ class TeacherPracticeResponsesTest extends TestCase
         $this->answer($a, 'ex-1', 'q1', ['value' => '14'], 'correct', 2);
         $this->answer($a, 'ex-1', 'q2', ['choiceId' => 'B'], 'partially_correct');
 
-        $response = $this->teacherGet("/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students/{$a->id}")
+        $response = $this->teacherGet("/api/v1/teacher/practice/lecon-a/exercises/ex-1/students/{$a->id}")
             ->assertOk()
             ->assertJsonPath('student.id', $a->id)
             ->assertJsonMissingPath('student.email');
@@ -133,10 +133,10 @@ class TeacherPracticeResponsesTest extends TestCase
             $this->answer($s, 'ex-1', 'q1', ['value' => '14'], 'correct');
         }
 
-        $this->teacherGet('/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students')
+        $this->teacherGet('/api/v1/teacher/practice/lecon-a/exercises/ex-1/students')
             ->assertOk()->assertJsonPath('total', 0)->assertJsonPath('students', []);
         foreach ([$foreign, $left, $old] as $s) {
-            $this->teacherGet("/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students/{$s->id}")->assertNotFound();
+            $this->teacherGet("/api/v1/teacher/practice/lecon-a/exercises/ex-1/students/{$s->id}")->assertNotFound();
         }
     }
 
@@ -146,13 +146,13 @@ class TeacherPracticeResponsesTest extends TestCase
         $a = $this->member();
         $this->answer($a, 'ex-1', 'q1', ['value' => '1'], 'correct', 1, 'autre');
 
-        $this->teacherGet('/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students')->assertOk()->assertJsonPath('total', 0);
+        $this->teacherGet('/api/v1/teacher/practice/lecon-a/exercises/ex-1/students')->assertOk()->assertJsonPath('total', 0);
     }
 
     public function test_reserve_aux_enseignants(): void
     {
         foreach ([User::factory()->create(['role' => User::ROLE_STUDENT]), User::factory()->create(['role' => User::ROLE_ADMIN])] as $user) {
-            $this->teacherGet('/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students', $user)->assertStatus(403);
+            $this->teacherGet('/api/v1/teacher/practice/lecon-a/exercises/ex-1/students', $user)->assertStatus(403);
         }
     }
 
@@ -162,8 +162,8 @@ class TeacherPracticeResponsesTest extends TestCase
         $this->answer($a, 'ex-1', 'q1', ['value' => '14'], 'correct');
         $before = [DB::table('practice_sessions')->count(), DB::table('question_attempts')->count()];
 
-        $this->teacherGet('/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students')->assertOk();
-        $this->teacherGet("/api/v1/teacher/practice/qasim-adad-tabii/exercises/ex-1/students/{$a->id}")->assertOk();
+        $this->teacherGet('/api/v1/teacher/practice/lecon-a/exercises/ex-1/students')->assertOk();
+        $this->teacherGet("/api/v1/teacher/practice/lecon-a/exercises/ex-1/students/{$a->id}")->assertOk();
 
         $this->assertSame($before, [DB::table('practice_sessions')->count(), DB::table('question_attempts')->count()]);
     }

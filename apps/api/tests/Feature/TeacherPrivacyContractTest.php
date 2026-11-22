@@ -39,7 +39,7 @@ class TeacherPrivacyContractTest extends TestCase
     {
         config(['mastery.engine_version' => 2]);
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $point = $this->point($lesson, 1);
         $classroom = Classroom::factory()->create();
@@ -208,7 +208,7 @@ class TeacherPrivacyContractTest extends TestCase
     public function test_the_join_link_preview_reveals_no_address_no_id_and_no_roster(): void
     {
         $this->defaultTeacherPlan();
-        $this->grade4am(1);
+        $this->grade3e(1);
         $classroom = Classroom::factory()->create();
         $member = $this->student(['email' => 'membre.secret@example.dz']);
         $this->withToken($this->tokenOf($member))->postJson('/api/v1/student/classrooms/join', ['consent' => true, 'code' => $classroom->join_code])->assertCreated();

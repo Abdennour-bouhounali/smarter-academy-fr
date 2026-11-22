@@ -14,8 +14,8 @@ use Throwable;
  *
  *   php artisan smarter:mastery:replay --all --dry-run --report=storage/replay.json
  *   php artisan smarter:mastery:replay --all --engine=2
- *   php artisan smarter:mastery:replay --user=42 --lp=4am_tayin-pgcd_P1
- *   php artisan smarter:mastery:replay --lesson=tayin-pgcd --engine=1     # retour arrière
+ *   php artisan smarter:mastery:replay --user=42 --lp=<code>
+ *   php artisan smarter:mastery:replay --lesson=<code> --engine=1     # retour arrière
  *
  * Déterministe (même preuve + même version ⇒ même état), idempotent (rejouer
  * deux fois ne change rien), par lots, et journalisé dans mastery_replays. Le

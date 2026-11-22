@@ -68,10 +68,10 @@ class MasteryScaleTest extends TestCase
         config(['mastery.engine_version' => 2]);
         Cache::flush();
         $this->defaultTeacherPlan();
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $lesson = $lessons[0];
         $lps = collect(range(1, 5))->map(fn ($i) => LearningPoint::create([
-            'lesson_id' => $lesson->id, 'code' => "4am_{$lesson->code}_P{$i}", 'title' => "P{$i}", 'order' => $i,
+            'lesson_id' => $lesson->id, 'code' => "3e_{$lesson->code}_P{$i}", 'title' => "P{$i}", 'order' => $i,
         ]));
 
         // ── La banque : perLevel × 5 exercices, une question chacun ──────────
@@ -123,7 +123,7 @@ class MasteryScaleTest extends TestCase
 
         // ── Une classe, douze élèves, le même parcours pour chaque taille ────
         $classroom = Classroom::factory()->create();
-        $students = collect(range(1, self::STUDENTS))->map(fn () => $this->student(['grade' => '4am']));
+        $students = collect(range(1, self::STUDENTS))->map(fn () => $this->student(['grade' => '3e']));
         foreach ($students as $s) {
             ClassroomMembership::factory()->in($classroom)->of($s)->create();
         }

@@ -44,11 +44,11 @@ class DailyChallengeClassTest extends TestCase
         $this->classroom = Classroom::factory()->create();
         $this->teacherToken = $this->tokenOf($this->classroom->teacher);
 
-        $lesson = $this->dcLessons['qasim-adad-tabii'];
+        $lesson = $this->dcLessons['lecon-a'];
         foreach (['Amine', 'Yasmine', 'Mohamed', 'Sara'] as $name) {
             $s = $this->student(['first_name' => $name, 'last_name' => 'Kaci', 'email' => strtolower($name).'@example.dz']);
-            $this->answers($s, $lesson, $this->dcPoints['4am_qasim-adad-tabii_P1'], 'correct', 2, 3, now()->subDays(10));
-            $this->answers($s, $lesson, $this->dcPoints['4am_qasim-adad-tabii_P2'], 'incorrect', 2, 2, now()->subDays(2));
+            $this->answers($s, $lesson, $this->dcPoints['3e_lecon-a_P1'], 'correct', 2, 3, now()->subDays(10));
+            $this->answers($s, $lesson, $this->dcPoints['3e_lecon-a_P2'], 'incorrect', 2, 2, now()->subDays(2));
             $this->students[$name] = $s;
         }
         $this->enrol($this->classroom, array_values($this->students));
@@ -231,11 +231,11 @@ class DailyChallengeClassTest extends TestCase
         $this->settings(['questionCount' => 4])->assertStatus(422);
         $this->settings(['availableFrom' => '18:00', 'availableUntil' => '08:00'])->assertStatus(422);
         $this->settings(['lessonCodes' => ['lesson-of-another-grade']])->assertStatus(422);
-        $this->settings(['questionCount' => 3, 'difficulty' => 'easy', 'lessonCodes' => ['qasim-adad-tabii']])->assertOk()
+        $this->settings(['questionCount' => 3, 'difficulty' => 'easy', 'lessonCodes' => ['lecon-a']])->assertOk()
             ->assertJsonPath('settings.questionCount', 3)->assertJsonPath('settings.difficulty', 'easy');
 
         $this->as($this->students['Amine'])->getJson('/api/v1/daily-challenge')->assertJsonPath('challenge.questionCount', 3);
-        $this->assertSame(0, DailyChallengeQuestion::where('lesson_id', $this->dcLessons['bahth-pgcd']->id)->count());
+        $this->assertSame(0, DailyChallengeQuestion::where('lesson_id', $this->dcLessons['lecon-b']->id)->count());
     }
 
     public function test_only_the_owner_teacher_reaches_the_class_challenge(): void

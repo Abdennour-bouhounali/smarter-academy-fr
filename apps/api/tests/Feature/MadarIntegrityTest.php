@@ -42,7 +42,7 @@ class MadarIntegrityTest extends TestCase
         parent::setUp();
         $this->onChallengeDay();
         $this->challengeCurriculum();
-        $this->classroom = Classroom::factory()->create(['grade' => '4am']);
+        $this->classroom = Classroom::factory()->create(['grade' => '3e']);
         $this->teacherToken = $this->tokenOf($this->classroom->teacher);
         $this->student = $this->student(['first_name' => 'Amine', 'last_name' => 'Benali']);
         $this->token = $this->tokenOf($this->student);

@@ -19,7 +19,7 @@ use Tests\TestCase;
 /**
  * La feuille d'examen BEM ne dépend d'AUCUNE leçon (déploiement à toutes les
  * leçons, 2026-10-06) : le serveur lit `metadata.exam` exercice par exercice.
- * On le prouve sur une leçon qui n'est PAS le prototype (`jidhr-tarbii`), avec
+ * On le prouve sur une leçon qui n'est PAS le prototype (`lecon-d`), avec
  * un dossier de contenu temporaire : une feuille copiée du prototype, ses
  * codes renommés. Verrouillage d'une étape répondue, « بيّن أن » en attente,
  * étape `counted: false` jamais preuve, médailles servies.
@@ -28,9 +28,9 @@ class ExamSheetAnyLessonTest extends TestCase
 {
     use RefreshDatabase;
 
-    private const LESSON = 'jidhr-tarbii';
+    private const LESSON = 'lecon-d';
 
-    private const EXERCISE = 'ex-4am-jidhr-tarbii-l2-002';
+    private const EXERCISE = 'ex-3e-lecon-d-l2-002';
 
     private string $content;
 
@@ -42,23 +42,23 @@ class ExamSheetAnyLessonTest extends TestCase
         config(['mastery.engine_version' => 2, 'mastery.server_evaluation' => true]);
 
         $this->content = sys_get_temp_dir().'/exam-any-lesson-'.Str::uuid();
-        $source = base_path('../../content/practice/4am/bahth-pgcd/level-2/ex-4am-bahth-pgcd-l2-002.json');
-        $exercise = str_replace('bahth-pgcd', self::LESSON, (string) file_get_contents($source));
-        File::ensureDirectoryExists($this->content.'/4am/'.self::LESSON.'/level-2');
-        File::put($this->content.'/4am/'.self::LESSON.'/level-2/'.self::EXERCISE.'.json', $exercise);
+        $source = config('practice.content_path').'/3e/lecon-b/level-2/ex-3e-lecon-b-l2-002.json';
+        $exercise = str_replace('lecon-b', self::LESSON, (string) file_get_contents($source));
+        File::ensureDirectoryExists($this->content.'/3e/'.self::LESSON.'/level-2');
+        File::put($this->content.'/3e/'.self::LESSON.'/level-2/'.self::EXERCISE.'.json', $exercise);
         File::put($this->content.'/index.generated.json', json_encode([self::LESSON => ['2' => [self::EXERCISE]]]));
         File::put($this->content.'/active.json', json_encode([self::LESSON]));
         config(['practice.content_path' => $this->content, 'practice.active_lessons_path' => $this->content.'/active.json']);
         Cache::flush();
         PracticeCapability::forget();
 
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان أنساب الأعداد والحساب', 'order' => 0]);
-        $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => self::LESSON, 'title' => 'الجذر التربيعي', 'status' => 'available', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres_calculs', 'title' => 'Nombres et calculs', 'order' => 0]);
+        $lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => self::LESSON, 'title' => 'Leçon D', 'status' => 'available', 'order' => 0]);
         foreach ([1, 2] as $n) {
-            LearningPoint::create(['lesson_id' => $lesson->id, 'code' => '4am_'.self::LESSON."_P{$n}", 'title' => "P{$n}", 'order' => $n]);
+            LearningPoint::create(['lesson_id' => $lesson->id, 'code' => '3e_'.self::LESSON."_P{$n}", 'title' => "P{$n}", 'order' => $n]);
         }
-        $this->student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $this->student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
     }
 
     protected function tearDown(): void

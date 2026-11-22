@@ -28,7 +28,7 @@ class PlanAdminTest extends TestCase
 
         $plan = $this->withToken($token)->postJson('/api/v1/admin/plans', [
             'name' => 'Enseignant — Établissement', 'type' => 'teacher', 'isPublic' => true,
-            'entitlements' => [K::CLASSROOMS_MAX => 20, K::LESSONS_VISIBILITY => true, K::CONTENT_ALLOWED_GRADES => ['4am']],
+            'entitlements' => [K::CLASSROOMS_MAX => 20, K::LESSONS_VISIBILITY => true, K::CONTENT_ALLOWED_GRADES => ['3e']],
             'price' => ['amountCents' => 5000000, 'currency' => 'dzd', 'billingInterval' => 'year'],
         ])->assertCreated()->json('plan');
 

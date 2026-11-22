@@ -26,10 +26,10 @@ class SchoolReportTest extends TestCase
     {
         config(['mastery.engine_version' => 2]);
         $this->freeSeatsPlan(30);
-        ['lessons' => $lessons] = $this->grade4am(1);
+        ['lessons' => $lessons] = $this->grade3e(1);
         $point = $this->point($lessons[0], 1);
         ['school' => $school, 'token' => $token] = $this->schoolWithDirector();
-        $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '4م1']);
+        $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '3e A']);
         $student = $this->student(['first_name' => 'أمين', 'last_name' => 'بوعلام']);
         $this->enrol($classroom, [$student]);
         ClassroomMembership::where('student_id', $student->id)->update(['school_consent_at' => now(), 'school_consent_by' => 'school']);
@@ -47,7 +47,7 @@ class SchoolReportTest extends TestCase
 
         $requests = [
             ['type' => 'class', 'scope' => (string) $classroom->id, 'termId' => $term->id],
-            ['type' => 'grade', 'scope' => '4am'],
+            ['type' => 'grade', 'scope' => '3e'],
             ['type' => 'student', 'scope' => (string) $student->id],
             ['type' => 'school_term', 'termId' => $term->id],
             ['type' => 'teachers'],
@@ -61,7 +61,7 @@ class SchoolReportTest extends TestCase
         }
 
         $class = SchoolReportSnapshot::where('type', 'class')->firstOrFail();
-        $this->assertSame('4م1', $class->title);
+        $this->assertSame('3e A', $class->title);
         $this->assertSame(1, $class->payload['students']);
         $this->assertSame($student->id, $class->payload['studentsToWatch'][0]['id']);
         $this->assertSame(1, $class->term->term);
@@ -86,7 +86,7 @@ class SchoolReportTest extends TestCase
 
         $this->withToken($token)->postJson('/api/v1/school/reports', ['type' => 'student', 'scope' => (string) $outsider->id])
             ->assertStatus(422)->assertJsonPath('reason', 'student_not_in_school');
-        $this->withToken($token)->postJson('/api/v1/school/reports', ['type' => 'grade', 'scope' => '1am'])
+        $this->withToken($token)->postJson('/api/v1/school/reports', ['type' => 'grade', 'scope' => '6e'])
             ->assertStatus(422)->assertJsonPath('reason', 'invalid_report');
         $this->withToken($token)->postJson('/api/v1/school/reports', ['type' => 'nope'])->assertStatus(422);
 

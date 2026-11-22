@@ -195,13 +195,13 @@ class NotebookFlowTest extends TestCase
     private function lessonWithStructure(): Lesson
     {
         $lesson = Lesson::create([
-            'chapter_id' => $this->lesson->chapter_id, 'code' => 'qasim-mushtarak-akbar',
-            'title' => 'القاسم المشترك الأكبر', 'status' => 'available', 'order' => 2,
+            'chapter_id' => $this->lesson->chapter_id, 'code' => 'lecon-c',
+            'title' => 'Leçon C', 'status' => 'available', 'order' => 2,
         ]);
-        LearningPoint::create(['lesson_id' => $lesson->id, 'code' => '4am_qasim-mushtarak-akbar_P1', 'title' => 'P1', 'order' => 1]);
+        LearningPoint::create(['lesson_id' => $lesson->id, 'code' => '3e_lecon-c_P1', 'title' => 'P1', 'order' => 1]);
         LessonModule::create([
-            'lesson_id' => $lesson->id, 'code' => 'qasim-mushtarak-akbar:02', 'number' => 2, 'slug' => 'maarif',
-            'title' => 'معارف', 'publication_status' => 'published',
+            'lesson_id' => $lesson->id, 'code' => 'lecon-c:02', 'number' => 2, 'slug' => 'maarif',
+            'title' => 'Connaissances', 'publication_status' => 'published',
         ]);
         // Un point d'une AUTRE leçon, pour les tentatives de mélange.
         LearningPoint::create(['lesson_id' => $this->otherLesson->id, 'code' => 'seconde_ensembles_P1', 'title' => 'Autre', 'order' => 1]);
@@ -215,18 +215,18 @@ class NotebookFlowTest extends TestCase
 
         $response = $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
             'content' => 'Ce que je retiens du module 2.',
-            'lessonCode' => 'qasim-mushtarak-akbar',
+            'lessonCode' => 'lecon-c',
             'moduleNumber' => 2,
-            'learningPointCode' => '4am_qasim-mushtarak-akbar_P1',
+            'learningPointCode' => '3e_lecon-c_P1',
         ]);
 
         $response->assertCreated()
-            ->assertJsonPath('note.lessonCode', 'qasim-mushtarak-akbar')
-            ->assertJsonPath('note.lessonTitle', 'القاسم المشترك الأكبر')
+            ->assertJsonPath('note.lessonCode', 'lecon-c')
+            ->assertJsonPath('note.lessonTitle', 'Leçon C')
             ->assertJsonPath('note.moduleNumber', 2)
-            ->assertJsonPath('note.moduleTitle', 'معارف')
+            ->assertJsonPath('note.moduleTitle', 'Connaissances')
             ->assertJsonPath('note.moduleSlug', 'maarif')
-            ->assertJsonPath('note.learningPointCode', '4am_qasim-mushtarak-akbar_P1')
+            ->assertJsonPath('note.learningPointCode', '3e_lecon-c_P1')
             ->assertJsonPath('note.learningPointTitle', 'P1')
             ->assertJsonPath('note.exerciseId', null);
 
@@ -235,7 +235,7 @@ class NotebookFlowTest extends TestCase
         // Et la liste porte les mêmes titres, sans une requête par note.
         $this->actingAs($this->student)->getJson('/api/v1/practice/notes')
             ->assertOk()
-            ->assertJsonPath('notes.0.moduleTitle', 'معارف');
+            ->assertJsonPath('notes.0.moduleTitle', 'Connaissances');
     }
 
     /**
@@ -248,26 +248,26 @@ class NotebookFlowTest extends TestCase
 
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
             'content' => 'J’ai comparé les listes trop vite.',
-            'lessonCode' => 'qasim-mushtarak-akbar',
-            'learningPointCode' => '4am_qasim-mushtarak-akbar_P1',
-            'exerciseId' => 'ex-4am-qasim-mushtarak-akbar-l1-001',
+            'lessonCode' => 'lecon-c',
+            'learningPointCode' => '3e_lecon-c_P1',
+            'exerciseId' => 'ex-3e-lecon-c-l1-001',
             'questionId' => 'q1',
             'mistakeType' => 'lecture',
         ])->assertCreated()
-            ->assertJsonPath('note.exerciseId', 'ex-4am-qasim-mushtarak-akbar-l1-001')
+            ->assertJsonPath('note.exerciseId', 'ex-3e-lecon-c-l1-001')
             ->assertJsonPath('note.questionId', 'q1')
-            ->assertJsonPath('note.learningPointCode', '4am_qasim-mushtarak-akbar_P1');
+            ->assertJsonPath('note.learningPointCode', '3e_lecon-c_P1');
 
         // Une question qui n'existe pas dans cet exercice.
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
-            'content' => 'x', 'lessonCode' => 'qasim-mushtarak-akbar',
-            'exerciseId' => 'ex-4am-qasim-mushtarak-akbar-l1-001', 'questionId' => 'q9',
+            'content' => 'x', 'lessonCode' => 'lecon-c',
+            'exerciseId' => 'ex-3e-lecon-c-l1-001', 'questionId' => 'q9',
         ])->assertStatus(422);
 
         // Un exercice d'une autre leçon.
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
             'content' => 'x', 'lessonCode' => 'ensembles-et-intervalles-2nde',
-            'exerciseId' => 'ex-4am-qasim-mushtarak-akbar-l1-001',
+            'exerciseId' => 'ex-3e-lecon-c-l1-001',
         ])->assertStatus(422);
     }
 
@@ -282,17 +282,17 @@ class NotebookFlowTest extends TestCase
 
         // Point d'une autre leçon.
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
-            'content' => 'x', 'lessonCode' => 'qasim-mushtarak-akbar', 'learningPointCode' => 'seconde_ensembles_P1',
+            'content' => 'x', 'lessonCode' => 'lecon-c', 'learningPointCode' => 'seconde_ensembles_P1',
         ])->assertStatus(422);
 
         // Module inexistant dans la leçon.
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
-            'content' => 'x', 'lessonCode' => 'qasim-mushtarak-akbar', 'moduleNumber' => 9,
+            'content' => 'x', 'lessonCode' => 'lecon-c', 'moduleNumber' => 9,
         ])->assertStatus(422);
 
         // Module sans leçon, question sans exercice, leçon inconnue.
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', ['content' => 'x', 'moduleNumber' => 2])->assertStatus(422);
-        $this->actingAs($this->student)->postJson('/api/v1/practice/notes', ['content' => 'x', 'lessonCode' => 'qasim-mushtarak-akbar', 'questionId' => 'q1'])->assertStatus(422);
+        $this->actingAs($this->student)->postJson('/api/v1/practice/notes', ['content' => 'x', 'lessonCode' => 'lecon-c', 'questionId' => 'q1'])->assertStatus(422);
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', ['content' => 'x', 'lessonCode' => 'nexiste-pas'])->assertStatus(422);
 
         $this->assertSame(0, NotebookNote::count());
@@ -304,8 +304,8 @@ class NotebookFlowTest extends TestCase
         $lesson = $this->lessonWithStructure();
 
         $this->actingAs($this->student)->postJson('/api/v1/practice/notes', [
-            'content' => 'x', 'learningPointCode' => '4am_qasim-mushtarak-akbar_P1',
-        ])->assertCreated()->assertJsonPath('note.lessonCode', 'qasim-mushtarak-akbar');
+            'content' => 'x', 'learningPointCode' => '3e_lecon-c_P1',
+        ])->assertCreated()->assertJsonPath('note.lessonCode', 'lecon-c');
 
         $this->assertDatabaseHas('notebook_notes', ['lesson_id' => $lesson->id]);
     }
@@ -326,7 +326,7 @@ class NotebookFlowTest extends TestCase
             ])
             ->assertOk()
             ->assertJsonPath('note.moduleNumber', 2)
-            ->assertJsonPath('note.lessonCode', 'qasim-mushtarak-akbar');
+            ->assertJsonPath('note.lessonCode', 'lecon-c');
 
         $fresh = $note->fresh();
         $this->assertSame($lesson->id, $fresh->lesson_id);

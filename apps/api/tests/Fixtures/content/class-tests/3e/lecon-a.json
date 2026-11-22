@@ -1,0 +1,23 @@
+{
+  "_comment": "Neutral test fixture of a default class test (docs/architecture/CLASS_SESSION.md shape): start, end, pool.",
+  "lesson": "lecon-a",
+  "grade": "3e",
+  "version": 1,
+  "start": [
+    { "id": "s1", "item": "3e.m1.r01", "kind": "choice", "text": "Combien font 6 × 7 ?", "options": ["41", "42", "48"], "answer": 1 },
+    { "id": "s2", "item": "3e.m1.r01", "kind": "number", "text": "Quel est le reste de la division de 38 par 5 ?", "answer": 3 },
+    { "id": "s3", "item": "3e.m1.r02", "kind": "truefalse", "text": "135 est divisible par 5.", "answer": true },
+    { "id": "s4", "item": "3e.m1.r01", "kind": "number", "text": "Quel est le quotient de la division de 47 par 6 ?", "answer": 7 },
+    { "id": "s5", "item": "3e.m1.r02", "kind": "truefalse", "text": "124 est divisible par 3.", "answer": false },
+    { "id": "s6", "item": "3e.m1.r01", "kind": "number", "text": "Combien font 9 × 8 ?", "answer": 72 },
+    { "id": "s7", "item": "3e.m1.r03", "kind": "truefalse", "text": "7 est un diviseur de 56.", "answer": true, "teaser": true }
+  ],
+  "end": [
+    { "id": "e1", "item": "3e.m1.r03", "pairOf": "s7", "kind": "truefalse", "text": "9 est un diviseur de 54.", "answer": true },
+    { "id": "e2", "item": "3e.m1.r03", "kind": "number", "text": "Combien 12 a-t-il de diviseurs ?", "answer": 6 }
+  ],
+  "pool": [
+    { "id": "p1", "item": "3e.m1.r01", "kind": "number", "text": "Quel est le reste de la division de 75 par 9 ?", "answer": 3 },
+    { "id": "p2", "item": "3e.m1.r03", "kind": "truefalse", "text": "4 est un diviseur de 30.", "answer": false }
+  ]
+}

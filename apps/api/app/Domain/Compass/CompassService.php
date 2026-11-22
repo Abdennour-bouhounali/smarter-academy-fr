@@ -27,7 +27,8 @@ use Illuminate\Support\Str;
  */
 final class CompassService
 {
-    private const ITEM_ID = '/^[1-4]am\.m\d+\.[rx]\d+$/';
+    // Un item du programme : « <classe>.m<n>.r<n> » (classes du collège).
+    private const ITEM_ID = '/^[3-6]e\.m\d+\.[rx]\d+$/';
 
     public function __construct(
         private CompassBank $bank,

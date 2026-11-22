@@ -36,18 +36,18 @@ class MasteryOperationsTest extends TestCase
         parent::setUp();
         config(['mastery.engine_version' => 2]);
 
-        $grade = Grade::create(['code' => '4am', 'name' => '4AM', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'الأعداد', 'order' => 0]);
-        $this->lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'tayin-pgcd', 'title' => 'PGCD', 'status' => 'available', 'order' => 0]);
-        $this->p1 = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '4am_tayin-pgcd_P1', 'title' => 'P1', 'order' => 1]);
-        $this->p2 = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '4am_tayin-pgcd_P2', 'title' => 'P2', 'order' => 2]);
-        LessonModule::create(['lesson_id' => $this->lesson->id, 'code' => '2', 'number' => 2, 'title' => 'معارف', 'stage' => 'formalization', 'teaches_learning_point_codes' => ['4am_tayin-pgcd_P1']]);
-        $this->student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres', 'order' => 0]);
+        $this->lesson = Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-e', 'title' => 'PGCD', 'status' => 'available', 'order' => 0]);
+        $this->p1 = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '3e_lecon-e_P1', 'title' => 'P1', 'order' => 1]);
+        $this->p2 = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '3e_lecon-e_P2', 'title' => 'P2', 'order' => 2]);
+        LessonModule::create(['lesson_id' => $this->lesson->id, 'code' => '2', 'number' => 2, 'title' => 'Connaissances', 'stage' => 'formalization', 'teaches_learning_point_codes' => ['3e_lecon-e_P1']]);
+        $this->student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
     }
 
     private function answer(string $attemptId, string $lp, string $exercise, string $outcome, int $level): void
     {
-        app(ProgressEngine::class)->recordEvidence($this->student, 'tayin-pgcd', [
+        app(ProgressEngine::class)->recordEvidence($this->student, 'lecon-e', [
             'attemptId' => $attemptId, 'exerciseCode' => $exercise, 'questionId' => 'q1',
             'assessmentType' => ProgressEngine::SOURCE_PRACTICE, 'outcome' => $outcome,
             'learningPointRefs' => [['code' => $lp, 'role' => 'primary']], 'level' => $level,
@@ -61,7 +61,7 @@ class MasteryOperationsTest extends TestCase
         $admin = User::factory()->create(['role' => 'admin']);
 
         $r = $this->actingAs($admin, 'sanctum')->postJson('/api/v1/admin/mastery/replays', [
-            'engineVersion' => 1, 'scope' => 'lesson', 'scopeId' => 'tayin-pgcd', 'dryRun' => true,
+            'engineVersion' => 1, 'scope' => 'lesson', 'scopeId' => 'lecon-e', 'dryRun' => true,
         ])->assertStatus(202);
 
         // QUEUE_CONNECTION=sync en test : le job a déjà tourné.
@@ -92,11 +92,11 @@ class MasteryOperationsTest extends TestCase
         // P1 en gap (échec facile), P2 jamais vu.
         $this->answer('a1', $this->p1->code, 'ex-1', 'incorrect', 1);
 
-        $r = $this->actingAs($this->student, 'sanctum')->getJson('/api/v1/students/me/lessons/tayin-pgcd/recommendations')->assertOk();
+        $r = $this->actingAs($this->student, 'sanctum')->getJson('/api/v1/students/me/lessons/lecon-e/recommendations')->assertOk();
         $recs = collect($r->json('recommendations'))->keyBy('learningPoint.code');
 
         $this->assertSame('reteach', $recs[$this->p1->code]['kind']);
-        $this->assertSame([['number' => 2, 'title' => 'معارف']], $recs[$this->p1->code]['modules']);
+        $this->assertSame([['number' => 2, 'title' => 'Connaissances']], $recs[$this->p1->code]['modules']);
         $this->assertSame('start', $recs[$this->p2->code]['kind']);
         $this->assertSame($this->p1->code, $r->json('recommendations.0.learningPoint.code'), 'le plus urgent d\'abord');
     }
@@ -112,7 +112,7 @@ class MasteryOperationsTest extends TestCase
         $this->assertSame('reinforce', $e->json('explanation.status'));
 
         // Le profil filtré par leçon porte les champs V2.
-        $p = $this->actingAs($this->student, 'sanctum')->getJson('/api/v1/students/me/learning-profile?lesson=tayin-pgcd')->assertOk();
+        $p = $this->actingAs($this->student, 'sanctum')->getJson('/api/v1/students/me/learning-profile?lesson=lecon-e')->assertOk();
         $row = $p->json('profile.currentMastery.0.lessons.0.learningPoints.0');
         $this->assertSame(1, $row['distinctItemsSuccess']);
         $this->assertSame(2, $row['engineVersion']);

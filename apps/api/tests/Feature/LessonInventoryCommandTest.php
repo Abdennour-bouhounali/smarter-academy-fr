@@ -19,14 +19,14 @@ class LessonInventoryCommandTest extends TestCase
 
     public function test_tiers_only_prints_one_comparable_line_per_lesson(): void
     {
-        $grade = Grade::create(['code' => '4am', 'name' => '4am', 'level' => 'moyen', 'order' => 0, 'is_active' => true]);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'midan', 'title' => 'ميدان', 'order' => 0]);
-        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-a', 'title' => 'أ', 'status' => 'available', 'order' => 0, 'tier' => 'free']);
-        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-b', 'title' => 'ب', 'status' => 'available', 'order' => 1, 'tier' => 'premium']);
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0, 'is_active' => true]);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'theme', 'title' => 'Thème', 'order' => 0]);
+        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-a', 'title' => 'A', 'status' => 'available', 'order' => 0, 'tier' => 'free']);
+        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-b', 'title' => 'B', 'status' => 'available', 'order' => 1, 'tier' => 'premium']);
 
         $this->artisan('smarter:lesson-inventory', ['--tiers-only' => true])
-            ->expectsOutput('4am/lecon-a free')
-            ->expectsOutput('4am/lecon-b premium')
+            ->expectsOutput('3e/lecon-a free')
+            ->expectsOutput('3e/lecon-b premium')
             ->assertSuccessful();
 
         $this->artisan('smarter:lesson-inventory')

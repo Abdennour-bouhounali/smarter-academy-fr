@@ -32,14 +32,14 @@ class SchoolRosterTest extends TestCase
     {
         parent::setUp();
         $this->freeSeatsPlan(30);
-        $this->grade4am(1);
+        $this->grade3e(1);
     }
 
     /** @return array{school: \App\Models\School, token: string, classroom: \App\Models\Classroom} */
     private function scene(): array
     {
         ['school' => $school, 'token' => $token] = $this->schoolWithDirector();
-        $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '4م2']);
+        $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '3e B']);
 
         return compact('school', 'token', 'classroom');
     }
@@ -75,7 +75,7 @@ class SchoolRosterTest extends TestCase
         $response = $this->withToken($token)->postJson('/api/v1/school/roster', ['classroomId' => $classroom->id, 'rows' => self::ROWS])
             ->assertCreated()
             ->assertJsonCount(2, 'cards')
-            ->assertJsonPath('classroomName', '4م2');
+            ->assertJsonPath('classroomName', '3e B');
         $this->assertStringContainsString('no-store', (string) $response->headers->get('Cache-Control'));
 
         $card = $response->json('cards.0');
@@ -84,7 +84,7 @@ class SchoolRosterTest extends TestCase
         $this->assertTrue($student->hasSchoolLogin());
         $this->assertNotNull($student->email_verified_at);
         $this->assertSame('2012-03-14', $student->birth_date->format('Y-m-d'));
-        $this->assertSame('4am', $student->grade);
+        $this->assertSame('3e', $student->grade);
 
         $membership = ClassroomMembership::where('student_id', $student->id)->firstOrFail();
         $this->assertSame('school_enrolment', $membership->joined_via);
@@ -135,12 +135,12 @@ class SchoolRosterTest extends TestCase
     public function test_the_director_transfers_a_student_and_reissues_cards_for_school_logins_only(): void
     {
         ['school' => $school, 'token' => $token, 'classroom' => $classroom] = $this->scene();
-        $other = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '4م3']);
+        $other = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '3e C']);
         $id = $this->withToken($token)->postJson('/api/v1/school/roster', ['classroomId' => $classroom->id, 'rows' => [self::ROWS[0]]])
             ->assertCreated()->json('cards.0.id');
 
         $this->withToken($token)->patchJson("/api/v1/school/students/{$id}/classroom", ['classroomId' => $other->id])
-            ->assertOk()->assertJsonPath('students.0.classroom.name', '4م3');
+            ->assertOk()->assertJsonPath('students.0.classroom.name', '3e C');
         $this->assertSame(1, ClassroomMembership::where('student_id', $id)->active()->count());
 
         $this->withToken($token)->postJson('/api/v1/school/students/credentials', ['studentIds' => [$id]])

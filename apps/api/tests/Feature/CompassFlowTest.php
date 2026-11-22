@@ -15,25 +15,25 @@ use Tests\TestCase;
 
 /**
  * « بوصلتي » (P1) — la jauge de départ côté serveur. Contrat : docs/architecture/YEAR_COMPASS.md.
- * Verrouille : 4AM seulement, questions SANS clé, correction serveur, bandes recalculées par le
+ * Verrouille : la 3e seulement, questions SANS clé, correction serveur, bandes recalculées par le
  * serveur, jamais de preuve de maîtrise, une jauge complète tous les 7 jours, une session à soi.
  */
 class CompassFlowTest extends TestCase
 {
     use RefreshDatabase;
 
-    private const ITEM = '4am.m1.r06'; // الجذر التربيعي — banque niveaux 1 et 2
+    private const ITEM = '3e.m1.r06'; // الجذر التربيعي — banque niveaux 1 et 2
 
     protected function setUp(): void
     {
         parent::setUp();
-        $grade = Grade::create(['code' => '4am', 'name' => '4AM', 'level' => 'moyen', 'order' => 0]);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab', 'title' => 'الأعداد', 'order' => 0]);
-        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'jidhr-tarbii', 'title' => 'الجذر التربيعي', 'status' => 'available',
+        $grade = Grade::create(['code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0]);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres', 'title' => 'Nombres', 'order' => 0]);
+        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-d', 'title' => 'Leçon D', 'status' => 'available',
             'duration_minutes' => 45, 'tier' => 'free', 'order' => 0]);
     }
 
-    private function student(string $grade = '4am'): array
+    private function student(string $grade = '3e'): array
     {
         $user = User::factory()->create(['role' => 'student', 'grade' => $grade]);
 
@@ -48,7 +48,7 @@ class CompassFlowTest extends TestCase
     private function start(string $token)
     {
         return $this->api($token)->postJson('/api/v1/compass/sessions', [
-            'targets' => [self::ITEM], 'pointerLesson' => 'jidhr-tarbii', 'pointerSource' => 'student', 'schoolYear' => '2026/2027',
+            'targets' => [self::ITEM], 'pointerLesson' => 'lecon-d', 'pointerSource' => 'student', 'schoolYear' => '2026/2027',
         ]);
     }
 
@@ -79,9 +79,9 @@ class CompassFlowTest extends TestCase
         return $response->json('result.bands')[self::ITEM] ?? null;
     }
 
-    public function test_only_4am_students_can_start(): void
+    public function test_only_3e_students_can_start(): void
     {
-        [, $token] = $this->student('3am');
+        [, $token] = $this->student('4e');
         $this->api($token)->getJson('/api/v1/compass')->assertOk()->assertJsonPath('compass.enabled', false);
         $this->start($token)->assertStatus(403)->assertJsonPath('code', 'compass_grade_unavailable');
     }
@@ -153,8 +153,8 @@ class CompassFlowTest extends TestCase
     public function test_the_pointer_is_saved_and_checked(): void
     {
         [, $token] = $this->student();
-        $this->api($token)->putJson('/api/v1/compass/pointer', ['mode' => 'lesson', 'lesson' => 'jidhr-tarbii'])
-            ->assertOk()->assertJsonPath('compass.profile.lesson', 'jidhr-tarbii');
+        $this->api($token)->putJson('/api/v1/compass/pointer', ['mode' => 'lesson', 'lesson' => 'lecon-d'])
+            ->assertOk()->assertJsonPath('compass.profile.lesson', 'lecon-d');
         $this->api($token)->putJson('/api/v1/compass/pointer', ['mode' => 'lesson', 'lesson' => 'nope'])
             ->assertStatus(422)->assertJsonPath('code', 'compass_unknown_lesson');
         $this->api($token)->putJson('/api/v1/compass/pointer', ['mode' => 'not_following'])

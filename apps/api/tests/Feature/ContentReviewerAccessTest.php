@@ -38,11 +38,11 @@ class ContentReviewerAccessTest extends TestCase
     {
         parent::setUp();
 
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres_calculs', 'title' => 'Thème', 'order' => 0]);
         $this->lesson = Lesson::create([
-            'chapter_id' => $chapter->id, 'code' => 'qasim-mushtarak-akbar',
-            'title' => 'القاسم المشترك الأكبر', 'status' => 'available', 'order' => 0,
+            'chapter_id' => $chapter->id, 'code' => 'lecon-c',
+            'title' => 'Leçon C', 'status' => 'available', 'order' => 0,
             'publication_status' => Lesson::PUB_PUBLISHED,
         ]);
         $this->module = LessonModule::create([
@@ -92,7 +92,7 @@ class ContentReviewerAccessTest extends TestCase
             'admin' => User::factory()->create(['role' => User::ROLE_ADMIN]),
             'ambassador' => $this->ambassador(),
             'teacher' => User::factory()->create(['role' => User::ROLE_TEACHER]),
-            'student' => User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '4am']),
+            'student' => User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e']),
             'guest' => null,
         };
     }
@@ -109,15 +109,15 @@ class ContentReviewerAccessTest extends TestCase
         $user = $this->viewer($kind);
 
         try {
-            ContentAccess::assertLessonAvailable('qasim-mushtarak-akbar', $user);
+            ContentAccess::assertLessonAvailable('lecon-c', $user);
             $lessonOpen = true;
         } catch (DomainException) {
             $lessonOpen = false;
         }
 
         $this->assertSame($sees, $lessonOpen, "leçon {$state} pour {$kind}");
-        $this->assertSame($sees, ContentAccess::isModuleAvailable('qasim-mushtarak-akbar', 1, $user), "module {$state} pour {$kind}");
-        $this->assertSame($sees, ContentAccess::isExerciseAvailable('qasim-mushtarak-akbar', 'ex-a', $user), "exercice {$state} pour {$kind}");
+        $this->assertSame($sees, ContentAccess::isModuleAvailable('lecon-c', 1, $user), "module {$state} pour {$kind}");
+        $this->assertSame($sees, ContentAccess::isExerciseAvailable('lecon-c', 'ex-a', $user), "exercice {$state} pour {$kind}");
     }
 
     /** Un module n'a pas d'état propre (2026-11-11) : sous une leçon publiée, il est ouvert. */
@@ -125,12 +125,12 @@ class ContentReviewerAccessTest extends TestCase
     {
         $this->module->update(['publication_status' => LessonModule::PUB_DRAFT]);
 
-        $this->assertTrue(ContentAccess::isModuleAvailable('qasim-mushtarak-akbar', 1, $this->ambassador()));
-        $this->assertTrue(ContentAccess::isModuleAvailable('qasim-mushtarak-akbar', 1, User::factory()->create(['role' => User::ROLE_TEACHER])));
+        $this->assertTrue(ContentAccess::isModuleAvailable('lecon-c', 1, $this->ambassador()));
+        $this->assertTrue(ContentAccess::isModuleAvailable('lecon-c', 1, User::factory()->create(['role' => User::ROLE_TEACHER])));
 
         $this->lesson->update(['publication_status' => Lesson::PUB_HIDDEN]);
-        $this->assertTrue(ContentAccess::isModuleAvailable('qasim-mushtarak-akbar', 1, $this->ambassador()));
-        $this->assertFalse(ContentAccess::isModuleAvailable('qasim-mushtarak-akbar', 1, User::factory()->create(['role' => User::ROLE_TEACHER])));
+        $this->assertTrue(ContentAccess::isModuleAvailable('lecon-c', 1, $this->ambassador()));
+        $this->assertFalse(ContentAccess::isModuleAvailable('lecon-c', 1, User::factory()->create(['role' => User::ROLE_TEACHER])));
     }
 
     public function test_un_ambassadeur_retire_redevient_un_enseignant_ordinaire(): void
@@ -140,7 +140,7 @@ class ContentReviewerAccessTest extends TestCase
         $ambassador->forceFill(['is_ambassador' => false])->save();
 
         $this->expectException(DomainException::class);
-        ContentAccess::assertLessonAvailable('qasim-mushtarak-akbar', $ambassador->fresh());
+        ContentAccess::assertLessonAvailable('lecon-c', $ambassador->fresh());
     }
 
     // ------------------------------------------------- L'INVENTAIRE (HTTP)
@@ -154,7 +154,7 @@ class ContentReviewerAccessTest extends TestCase
             ->assertOk()
             ->assertJsonPath('closed.lessons', [])
             ->assertJsonPath('closed.modules', [])
-            ->assertJsonPath('closed.statuses.lessons.qasim-mushtarak-akbar', 'hidden')
+            ->assertJsonPath('closed.statuses.lessons.lecon-c', 'hidden')
             // Un module n'a pas d'état propre (2026-11-11) : aucun état de module.
             ->assertJsonPath('closed.statuses.modules', []);
     }
@@ -169,14 +169,14 @@ class ContentReviewerAccessTest extends TestCase
             ->assertJsonPath('closed.lessons', [])
             // Le module suit sa leçon masquée, que l'ambassadeur voit : rien de fermé.
             ->assertJsonPath('closed.modules', [])
-            ->assertJsonPath('closed.statuses.lessons.qasim-mushtarak-akbar', 'hidden')
-            ->assertJsonMissingPath('closed.statuses.modules.qasim-mushtarak-akbar');
+            ->assertJsonPath('closed.statuses.lessons.lecon-c', 'hidden')
+            ->assertJsonMissingPath('closed.statuses.modules.lecon-c');
 
         $this->lesson->update(['publication_status' => Lesson::PUB_ARCHIVED]);
         $this->actingAs($this->ambassador(), 'sanctum')->getJson('/api/v1/content/availability')
             ->assertOk()
-            ->assertJsonPath('closed.lessons', ['qasim-mushtarak-akbar'])
-            ->assertJsonMissingPath('closed.statuses.lessons.qasim-mushtarak-akbar');
+            ->assertJsonPath('closed.lessons', ['lecon-c'])
+            ->assertJsonMissingPath('closed.statuses.lessons.lecon-c');
     }
 
     public function test_un_contenu_publie_n_apparait_pas_dans_les_etats(): void
@@ -193,32 +193,32 @@ class ContentReviewerAccessTest extends TestCase
 
         foreach ([
             User::factory()->create(['role' => User::ROLE_TEACHER]),
-            User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '4am']),
+            User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e']),
         ] as $user) {
             $response = $this->actingAs($user, 'sanctum')->getJson('/api/v1/content/availability')
                 ->assertOk()
-                ->assertJsonPath('closed.lessons', ['qasim-mushtarak-akbar']);
+                ->assertJsonPath('closed.lessons', ['lecon-c']);
             $this->assertArrayNotHasKey('statuses', $response->json('closed'), $user->role.' ne doit pas recevoir les états');
         }
 
         $this->getJson('/api/v1/content/availability/public')->assertOk()
-            ->assertJsonPath('closed.lessons', ['qasim-mushtarak-akbar'])
+            ->assertJsonPath('closed.lessons', ['lecon-c'])
             ->assertJsonMissingPath('closed.statuses');
     }
 
     public function test_un_code_dont_une_version_est_publiee_n_est_pas_marque(): void
     {
         // Deux leçons sous le même code (deux classes) : une seule publiée suffit.
-        $otherGrade = Grade::create(['code' => '3am', 'name' => 'السنة الثالثة متوسط', 'level' => 'moyen']);
-        $otherChapter = Chapter::create(['grade_id' => $otherGrade->id, 'code' => 'ansab', 'title' => 'ميدان', 'order' => 0]);
+        $otherGrade = Grade::create(['code' => '4e', 'name' => 'Quatrième', 'level' => 'college']);
+        $otherChapter = Chapter::create(['grade_id' => $otherGrade->id, 'code' => 'nombres', 'title' => 'Thème', 'order' => 0]);
         Lesson::create([
-            'chapter_id' => $otherChapter->id, 'code' => 'qasim-mushtarak-akbar',
+            'chapter_id' => $otherChapter->id, 'code' => 'lecon-c',
             'title' => 'Homonyme', 'status' => 'available', 'order' => 1, 'publication_status' => Lesson::PUB_DRAFT,
         ]);
 
         $this->actingAs($this->ambassador(), 'sanctum')->getJson('/api/v1/content/availability')
             ->assertOk()
-            ->assertJsonMissingPath('closed.statuses.lessons.qasim-mushtarak-akbar');
+            ->assertJsonMissingPath('closed.statuses.lessons.lecon-c');
     }
 
     // ------------------------------------------------- LES EXERCICES (HTTP)
@@ -226,19 +226,19 @@ class ContentReviewerAccessTest extends TestCase
     public function test_le_relecteur_liste_les_exercices_non_publies_avec_leur_etat(): void
     {
         PracticeExercise::create([
-            'lesson_id' => $this->lesson->id, 'exercise_code' => 'ex-4am-qasim-mushtarak-akbar-l1-001',
+            'lesson_id' => $this->lesson->id, 'exercise_code' => 'ex-3e-lecon-c-l1-001',
             'level' => 1, 'publication_status' => PracticeExercise::PUB_HIDDEN,
         ]);
 
         $rows = collect($this->actingAs($this->ambassador(), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk()->json('exercises'))
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk()->json('exercises'))
             ->keyBy('exerciseCode');
-        $this->assertSame('hidden', $rows['ex-4am-qasim-mushtarak-akbar-l1-001']['publicationStatus'] ?? null);
+        $this->assertSame('hidden', $rows['ex-3e-lecon-c-l1-001']['publicationStatus'] ?? null);
 
         // Un enseignant ordinaire ne voit pas l'exercice masqué, ni le champ d'état.
         $plain = collect($this->actingAs(User::factory()->create(['role' => User::ROLE_TEACHER]), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk()->json('exercises'));
-        $this->assertFalse($plain->pluck('exerciseCode')->contains('ex-4am-qasim-mushtarak-akbar-l1-001'));
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk()->json('exercises'));
+        $this->assertFalse($plain->pluck('exerciseCode')->contains('ex-3e-lecon-c-l1-001'));
         $this->assertFalse($plain->contains(fn ($row) => array_key_exists('publicationStatus', $row)));
     }
 
@@ -247,36 +247,36 @@ class ContentReviewerAccessTest extends TestCase
         $this->lesson->update(['publication_status' => Lesson::PUB_HIDDEN]);
 
         $response = $this->actingAs($this->ambassador(), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk();
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk();
         $this->assertNotSame('lesson_unavailable', $response->json('reason'));
         $this->assertNotEmpty($response->json('exercises'));
 
         // Un brouillon : l'admin le liste, l'ambassadeur non.
         $this->lesson->update(['publication_status' => Lesson::PUB_DRAFT]);
         $this->actingAs($this->ambassador(), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk()
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk()
             ->assertJsonPath('reason', 'lesson_unavailable');
         $admin = $this->actingAs($this->reviewer('admin'), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk();
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk();
         $this->assertNotSame('lesson_unavailable', $admin->json('reason'));
     }
 
     public function test_l_ambassadeur_ne_liste_pas_un_exercice_en_brouillon(): void
     {
         PracticeExercise::create([
-            'lesson_id' => $this->lesson->id, 'exercise_code' => 'ex-4am-qasim-mushtarak-akbar-l1-001',
+            'lesson_id' => $this->lesson->id, 'exercise_code' => 'ex-3e-lecon-c-l1-001',
             'level' => 1, 'publication_status' => PracticeExercise::PUB_DRAFT,
         ]);
 
         $codes = collect($this->actingAs($this->ambassador(), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk()->json('exercises'))
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk()->json('exercises'))
             ->pluck('exerciseCode');
-        $this->assertFalse($codes->contains('ex-4am-qasim-mushtarak-akbar-l1-001'));
+        $this->assertFalse($codes->contains('ex-3e-lecon-c-l1-001'));
 
         $adminRows = collect($this->actingAs($this->reviewer('admin'), 'sanctum')
-            ->getJson('/api/v1/lessons/qasim-mushtarak-akbar/exercises')->assertOk()->json('exercises'))
+            ->getJson('/api/v1/lessons/lecon-c/exercises')->assertOk()->json('exercises'))
             ->keyBy('exerciseCode');
-        $this->assertSame('draft', $adminRows['ex-4am-qasim-mushtarak-akbar-l1-001']['publicationStatus'] ?? null);
+        $this->assertSame('draft', $adminRows['ex-3e-lecon-c-l1-001']['publicationStatus'] ?? null);
     }
 
     // ------------------------------------------------- AUCUNE ÉCRITURE
@@ -285,7 +285,7 @@ class ContentReviewerAccessTest extends TestCase
     {
         $this->lesson->update(['publication_status' => Lesson::PUB_DRAFT]);
 
-        $this->actingAs($this->ambassador(), 'sanctum')->putJson('/api/v1/lessons/qasim-mushtarak-akbar/progress', [
+        $this->actingAs($this->ambassador(), 'sanctum')->putJson('/api/v1/lessons/lecon-c/progress', [
             'completedModules' => ['1'], 'currentModule' => 1, 'status' => 'in_progress', 'lastActivityAt' => now()->toIso8601String(),
         ])->assertStatus(403)->assertJsonPath('reason', 'not_a_learner');
 

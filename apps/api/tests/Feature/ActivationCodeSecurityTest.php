@@ -130,7 +130,7 @@ class ActivationCodeSecurityTest extends TestCase
         config(['curriculum.enforce_active_grades' => true]);
 
         $grade = Grade::create([
-            'code' => '4am', 'name' => '4AM', 'level' => 'moyen', 'order' => 0, 'is_active' => true,
+            'code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0, 'is_active' => true,
         ]);
         $chapter = Chapter::create([
             'grade_id' => $grade->id, 'code' => 'ch-actif', 'title' => 'Chapitre', 'order' => 0,
@@ -167,7 +167,7 @@ class ActivationCodeSecurityTest extends TestCase
     public function test_un_code_n_ouvre_pas_une_lecon_masquee(): void
     {
         $grade = Grade::create([
-            'code' => '4am', 'name' => '4AM', 'level' => 'moyen', 'order' => 0, 'is_active' => true,
+            'code' => '3e', 'name' => '3e', 'level' => 'college', 'order' => 0, 'is_active' => true,
         ]);
         $chapter = Chapter::create([
             'grade_id' => $grade->id, 'code' => 'ch', 'title' => 'C', 'order' => 0,

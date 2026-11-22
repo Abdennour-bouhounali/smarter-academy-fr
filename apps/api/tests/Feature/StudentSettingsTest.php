@@ -25,20 +25,20 @@ class StudentSettingsTest extends TestCase
     {
         parent::setUp();
         PracticeCapability::forget();
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان أنساب الأعداد والحساب', 'order' => 0]);
-        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'bahth-pgcd', 'title' => 'البحث عن PGCD', 'status' => 'available', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres_calculs', 'title' => 'Nombres et calculs', 'order' => 0]);
+        Lesson::create(['chapter_id' => $chapter->id, 'code' => 'lecon-b', 'title' => 'Leçon B', 'status' => 'available', 'order' => 0]);
     }
 
     private function student(): User
     {
-        return User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        return User::factory()->create(['role' => 'student', 'grade' => '3e']);
     }
 
     /** @return array<int, bool> niveau → ouvert */
     private function levels(User $student): array
     {
-        $levels = $this->actingAs($student)->getJson('/api/v1/lessons/bahth-pgcd/practice/overview')->assertOk()->json('levels');
+        $levels = $this->actingAs($student)->getJson('/api/v1/lessons/lecon-b/practice/overview')->assertOk()->json('levels');
 
         return collect($levels)->mapWithKeys(fn ($l) => [$l['level'] => (bool) $l['unlocked']])->all();
     }

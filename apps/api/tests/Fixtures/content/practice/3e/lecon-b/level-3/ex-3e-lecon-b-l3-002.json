@@ -1,0 +1,201 @@
+{
+  "id": "ex-3e-lecon-b-l3-002",
+  "lessonCode": "lecon-b",
+  "level": 3,
+  "metadata": {
+    "title": "Exercice",
+    "estimatedMinutes": 6,
+    "tags": [
+      "méthode"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère la situation suivante."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "266",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "$1938 = 836 \\times 2 + 266$.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "$1938 = 836 \\times 2 + 266$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "b",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "Ligne de solution."
+        ],
+        "result": "\\text{PGCD}(1938 ; 836) = \\text{PGCD}(836 ; 266)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "38",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore."
+      },
+      "solution": {
+        "lines": [
+          "Ligne de solution.",
+          "$1938 = 836 \\times 2 + 266$",
+          "$836 = 266 \\times 3 + 38$",
+          "$266 = 38 \\times 7 + 0$",
+          "Ligne de solution."
+        ],
+        "result": "\\text{PGCD}(1938 ; 836) = 38"
+      },
+      "work": "required",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Énoncé de l’étape.",
+      "learningPoints": [
+        {
+          "code": "3e_lecon-b_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Écris ta réponse.",
+      "expectedAnswer": "22/51",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Indice."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Indice."
+        }
+      ],
+      "feedback": {
+        "correct": "Juste.",
+        "incorrect": "Pas encore.",
+        "notIrreducible": "Simplifie encore."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{836}{1938} = \\dfrac{836 \\div 38}{1938 \\div 38}$"
+        ],
+        "result": "\\dfrac{836}{1938} = \\dfrac{22}{51}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

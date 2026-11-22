@@ -43,26 +43,26 @@ class EvidenceTrustBoundaryTest extends TestCase
         config(['mastery.engine_version' => 2, 'mastery.server_evaluation' => true]);
         PracticeCapability::forget();
 
-        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان أنساب الأعداد والحساب', 'order' => 0]);
+        $grade = Grade::create(['code' => '3e', 'name' => 'Troisième', 'level' => 'college']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'nombres_calculs', 'title' => 'Nombres et calculs', 'order' => 0]);
         $this->lesson = Lesson::create([
-            'chapter_id' => $chapter->id, 'code' => 'bahth-pgcd',
-            'title' => 'البحث عن PGCD', 'status' => 'available', 'order' => 0,
+            'chapter_id' => $chapter->id, 'code' => 'lecon-b',
+            'title' => 'Leçon B', 'status' => 'available', 'order' => 0,
         ]);
-        $this->lpFinal = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '4am_bahth-pgcd_P5', 'title' => 'P5', 'order' => 5]);
-        $this->lpClaimed = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '4am_bahth-pgcd_P4', 'title' => 'P4', 'order' => 4]);
-        $this->lpPractice = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '4am_bahth-pgcd_P3', 'title' => 'P3', 'order' => 3]);
+        $this->lpFinal = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '3e_lecon-b_P5', 'title' => 'P5', 'order' => 5]);
+        $this->lpClaimed = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '3e_lecon-b_P4', 'title' => 'P4', 'order' => 4]);
+        $this->lpPractice = LearningPoint::create(['lesson_id' => $this->lesson->id, 'code' => '3e_lecon-b_P3', 'title' => 'P3', 'order' => 3]);
 
         // L'item du test final au registre : la clé de réponse est la sienne.
         $item = AssessmentItem::create([
-            'lesson_id' => $this->lesson->id, 'item_key' => 'final_test:bahth-pgcd:final:fa-e8',
+            'lesson_id' => $this->lesson->id, 'item_key' => 'final_test:lecon-b:final:fa-e8',
             'source_kind' => 'final_test', 'exercise_code' => null, 'question_id' => 'fa-e8', 'difficulty' => 4,
             'answer_type' => 'choice', 'learning_points' => [['code' => $this->lpFinal->code, 'role' => 'primary']],
             'answer_key' => ['correct' => 0, 'optionCount' => 4], 'evaluation' => 'server', 'content_version' => 'v1',
         ]);
         $item->learningPointRows()->sync([$this->lpFinal->id => ['role' => 'primary']]);
 
-        $this->student = User::factory()->create(['role' => 'student', 'grade' => '4am']);
+        $this->student = User::factory()->create(['role' => 'student', 'grade' => '3e']);
         $this->token = $this->student->createToken('t')->plainTextToken;
     }
 
@@ -75,7 +75,7 @@ class EvidenceTrustBoundaryTest extends TestCase
 
     public function test_a_client_cannot_claim_correct_for_a_wrong_pick(): void
     {
-        $r = $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $r = $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-e8', 'attemptId' => 'x1', 'answer' => ['picked' => 2],
             'isCorrect' => true, 'learningPointCodes' => [$this->lpFinal->code],
         ]);
@@ -89,7 +89,7 @@ class EvidenceTrustBoundaryTest extends TestCase
 
     public function test_a_client_cannot_credit_another_learning_point(): void
     {
-        $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-e8', 'attemptId' => 'x2', 'answer' => ['picked' => 0],
             'isCorrect' => true, 'learningPointCodes' => [$this->lpClaimed->code],
         ])->assertStatus(201)->assertJsonPath('outcome', 'correct');
@@ -101,7 +101,7 @@ class EvidenceTrustBoundaryTest extends TestCase
 
     public function test_the_v2_payload_is_judged_by_the_server_and_extra_fields_are_ignored(): void
     {
-        $r = $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $r = $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-e8', 'attemptId' => 'x3', 'answer' => ['picked' => 0],
             // Tout ce qui suit n'a aucun effet.
             'difficulty' => 1, 'hintsUsed' => 3, 'weight' => 9, 'userId' => 999, 'evaluatedBy' => 'server', 'level' => 1,
@@ -118,7 +118,7 @@ class EvidenceTrustBoundaryTest extends TestCase
 
     public function test_an_unanswered_final_test_question_is_abandoned_not_incorrect(): void
     {
-        $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-e8', 'attemptId' => 'x4', 'answer' => ['picked' => null],
         ])->assertStatus(201)->assertJsonPath('outcome', 'abandoned');
         $this->assertDatabaseMissing('student_learning_point_progress', ['user_id' => $this->student->id]);
@@ -126,11 +126,11 @@ class EvidenceTrustBoundaryTest extends TestCase
 
     public function test_a_client_cannot_choose_the_source_and_unknown_items_are_refused_without_a_legacy_body(): void
     {
-        $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-e8', 'attemptId' => 'x5', 'answer' => ['picked' => 0], 'assessmentType' => 'practice_exercise',
         ])->assertStatus(422);
 
-        $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-unknown', 'attemptId' => 'x6', 'answer' => ['picked' => 0],
         ])->assertStatus(422);
     }
@@ -138,7 +138,7 @@ class EvidenceTrustBoundaryTest extends TestCase
     public function test_legacy_payload_is_refused_once_the_transition_window_closes(): void
     {
         config(['mastery.accept_legacy_evidence_payload' => false]);
-        $this->postApi('/lessons/bahth-pgcd/evidence', [
+        $this->postApi('/lessons/lecon-b/evidence', [
             'questionCode' => 'fa-unknown', 'attemptId' => 'x7', 'isCorrect' => true, 'learningPointCodes' => [$this->lpFinal->code],
         ])->assertStatus(422);
     }
@@ -148,15 +148,15 @@ class EvidenceTrustBoundaryTest extends TestCase
     public function test_practice_answers_are_evaluated_by_the_server(): void
     {
         $sessionId = (string) Str::uuid();
-        $this->postApi('/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])
+        $this->postApi('/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])
             ->assertSuccessful();
 
         $attempt = (string) Str::uuid();
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l3-001', 'questionId' => 'q1', 'attemptUuid' => $attempt,
+            'exerciseId' => 'ex-3e-lecon-b-l3-001', 'questionId' => 'q1', 'attemptUuid' => $attempt,
         ])->assertSuccessful();
 
-        // La bonne réponse est 90 (PGCD, 4AM) ; le client prétend « correct » pour 999.
+        // La bonne réponse est 90 (PGCD) ; le client prétend « correct » pour 999.
         $r = $this->postApi("/practice/sessions/{$sessionId}/answers", [
             'attemptUuid' => $attempt, 'outcome' => 'correct', 'answer' => ['value' => '999'],
         ]);
@@ -171,19 +171,19 @@ class EvidenceTrustBoundaryTest extends TestCase
         $this->assertDatabaseHas('question_attempts', ['attempt_uuid' => $attempt, 'outcome' => 'incorrect', 'client_outcome' => 'correct']);
 
         // Et une vraie bonne réponse, écrite autrement, est reconnue équivalente.
-        // (Banc bahth-pgcd en feuille d'examen depuis 2026-10-06 : une étape
+        // (Banc lecon-b en feuille d'examen depuis 2026-10-06 : une étape
         // répondue ne se rouvre plus — l'équivalence se vérifie sur l'étape
         // suivante, PGCD(765 ; 135) = 45 écrit « 90/2 ».)
         $attempt2 = (string) Str::uuid();
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l3-001', 'questionId' => 'q2', 'attemptUuid' => $attempt2,
+            'exerciseId' => 'ex-3e-lecon-b-l3-001', 'questionId' => 'q2', 'attemptUuid' => $attempt2,
         ])->assertSuccessful();
         $this->postApi("/practice/sessions/{$sessionId}/answers", ['attemptUuid' => $attempt2, 'answer' => ['value' => '90/2']])
             ->assertStatus(201)->assertJsonPath('evaluation.outcome', 'equivalent_correct');
     }
 
     /**
-     * Le cas signalé le 2026-09-24 (qasim-adad-tabii l3-001 q2) : une erreur,
+     * Le cas signalé le 2026-09-24 (lecon-a l3-001 q2) : une erreur,
      * « أعِد المحاولة », puis la bonne réponse. La bonne réponse doit être
      * jugée juste ; la preuve de maîtrise, elle, ne retient que la première
      * issue.
@@ -191,10 +191,10 @@ class EvidenceTrustBoundaryTest extends TestCase
     public function test_a_retried_answer_is_judged_on_its_own_and_never_recorded_twice(): void
     {
         $sessionId = (string) Str::uuid();
-        $this->postApi('/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])->assertSuccessful();
+        $this->postApi('/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])->assertSuccessful();
         $attempt = (string) Str::uuid();
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l3-001', 'questionId' => 'q1', 'attemptUuid' => $attempt,
+            'exerciseId' => 'ex-3e-lecon-b-l3-001', 'questionId' => 'q1', 'attemptUuid' => $attempt,
         ])->assertSuccessful();
 
         // 1. Faux.
@@ -226,12 +226,12 @@ class EvidenceTrustBoundaryTest extends TestCase
     public function test_self_checked_and_uncounted_exam_steps_never_become_evidence(): void
     {
         $sessionId = (string) Str::uuid();
-        $this->postApi('/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 2])->assertSuccessful();
+        $this->postApi('/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 2])->assertSuccessful();
 
         // « بيّن أن … » : l'élève se déclare juste après le corrigé type.
         $self = (string) Str::uuid();
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l2-002', 'questionId' => 'q3', 'attemptUuid' => $self,
+            'exerciseId' => 'ex-3e-lecon-b-l2-002', 'questionId' => 'q3', 'attemptUuid' => $self,
         ])->assertSuccessful();
         // 1. La démonstration écrite est enregistrée et VERROUILLÉE, en attente.
         $proof = 'PGCD(117 ; 91) = PGCD(91 ; 26) لأن 117 − 91 = 26';
@@ -250,7 +250,7 @@ class EvidenceTrustBoundaryTest extends TestCase
         // Le calcul de fraction d'un sujet de BEM : juste, mais hors de cette leçon.
         $uncounted = (string) Str::uuid();
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l2-002', 'questionId' => 'q4', 'attemptUuid' => $uncounted,
+            'exerciseId' => 'ex-3e-lecon-b-l2-002', 'questionId' => 'q4', 'attemptUuid' => $uncounted,
         ])->assertSuccessful();
         $this->postApi("/practice/sessions/{$sessionId}/answers", ['attemptUuid' => $uncounted, 'answer' => ['value' => '9/7']])
             ->assertStatus(201)->assertJsonPath('evaluation.outcome', 'correct');
@@ -270,18 +270,18 @@ class EvidenceTrustBoundaryTest extends TestCase
     public function test_an_answered_exam_step_reopens_locked_with_its_saved_answer(): void
     {
         $sessionId = (string) Str::uuid();
-        $this->postApi('/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])->assertSuccessful();
+        $this->postApi('/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])->assertSuccessful();
 
         $first = (string) Str::uuid();
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l3-004', 'questionId' => 'q1', 'attemptUuid' => $first,
+            'exerciseId' => 'ex-3e-lecon-b-l3-004', 'questionId' => 'q1', 'attemptUuid' => $first,
         ])->assertSuccessful()->assertJsonPath('attempt.answered', false);
         $this->postApi("/practice/sessions/{$sessionId}/answers", ['attemptUuid' => $first, 'answer' => ['value' => '270']])
             ->assertStatus(201)->assertJsonPath('evaluation.outcome', 'incorrect');
 
         // Rouvrir avec un AUTRE identifiant : on récupère la tentative d'origine, verrouillée.
         $this->postApi("/practice/sessions/{$sessionId}/questions", [
-            'exerciseId' => 'ex-4am-bahth-pgcd-l3-004', 'questionId' => 'q1', 'attemptUuid' => (string) Str::uuid(),
+            'exerciseId' => 'ex-3e-lecon-b-l3-004', 'questionId' => 'q1', 'attemptUuid' => (string) Str::uuid(),
         ])->assertSuccessful()
             ->assertJsonPath('attempt.attemptUuid', $first)
             ->assertJsonPath('attempt.answered', true)
@@ -291,7 +291,7 @@ class EvidenceTrustBoundaryTest extends TestCase
 
         $this->withToken($this->token)->getJson("/api/v1/practice/sessions/{$sessionId}/answers")
             ->assertOk()
-            ->assertJsonPath('exercises.0.exerciseId', 'ex-4am-bahth-pgcd-l3-004')
+            ->assertJsonPath('exercises.0.exerciseId', 'ex-3e-lecon-b-l3-004')
             ->assertJsonPath('exercises.0.questions.0.answer.value', '270')
             ->assertJsonPath('exercises.0.questions.0.outcome', 'incorrect');
     }
@@ -300,18 +300,18 @@ class EvidenceTrustBoundaryTest extends TestCase
     public function test_medals_are_derived_from_saved_answers(): void
     {
         $sessionId = (string) Str::uuid();
-        $this->postApi('/lessons/bahth-pgcd/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])->assertSuccessful();
+        $this->postApi('/lessons/lecon-b/practice/sessions', ['sessionId' => $sessionId, 'level' => 3])->assertSuccessful();
 
         // q1 juste, sans إرشاد, en 20 s (temps de l'étape : 210 s) → or.
         $gold = (string) Str::uuid();
-        $this->postApi("/practice/sessions/{$sessionId}/questions", ['exerciseId' => 'ex-4am-bahth-pgcd-l3-004', 'questionId' => 'q1', 'attemptUuid' => $gold])->assertSuccessful();
+        $this->postApi("/practice/sessions/{$sessionId}/questions", ['exerciseId' => 'ex-3e-lecon-b-l3-004', 'questionId' => 'q1', 'attemptUuid' => $gold])->assertSuccessful();
         $this->postApi("/practice/sessions/{$sessionId}/answers", ['attemptUuid' => $gold, 'answer' => ['value' => '135', 'seconds' => 20]])->assertStatus(201);
         // q2 fausse → rien.
         $wrong = (string) Str::uuid();
-        $this->postApi("/practice/sessions/{$sessionId}/questions", ['exerciseId' => 'ex-4am-bahth-pgcd-l3-004', 'questionId' => 'q2', 'attemptUuid' => $wrong])->assertSuccessful();
+        $this->postApi("/practice/sessions/{$sessionId}/questions", ['exerciseId' => 'ex-3e-lecon-b-l3-004', 'questionId' => 'q2', 'attemptUuid' => $wrong])->assertSuccessful();
         $this->postApi("/practice/sessions/{$sessionId}/answers", ['attemptUuid' => $wrong, 'answer' => ['value' => '9/7', 'seconds' => 20]])->assertStatus(201);
 
-        $this->withToken($this->token)->getJson('/api/v1/lessons/bahth-pgcd/practice/medals')
+        $this->withToken($this->token)->getJson('/api/v1/lessons/lecon-b/practice/medals')
             ->assertOk()
             ->assertJsonPath('total.gold', 1)
             ->assertJsonPath('total.silver', 0)
@@ -323,7 +323,7 @@ class EvidenceTrustBoundaryTest extends TestCase
     {
         $teacher = User::factory()->create(['role' => 'teacher']);
         $this->withToken($teacher->createToken('t')->plainTextToken)
-            ->postJson('/api/v1/lessons/bahth-pgcd/evidence', ['questionCode' => 'fa-e8', 'attemptId' => 'x9', 'answer' => ['picked' => 0]])
+            ->postJson('/api/v1/lessons/lecon-b/evidence', ['questionCode' => 'fa-e8', 'attemptId' => 'x9', 'answer' => ['picked' => 0]])
             ->assertStatus(403);
     }
 }

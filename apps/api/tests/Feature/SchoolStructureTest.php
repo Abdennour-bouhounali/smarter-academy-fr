@@ -28,7 +28,7 @@ class SchoolStructureTest extends TestCase
     {
         parent::setUp();
         $this->freeSeatsPlan(30);
-        $this->grade4am(1);
+        $this->grade3e(1);
     }
 
     public function test_terms_are_set_as_one_ordered_block(): void
@@ -109,11 +109,11 @@ class SchoolStructureTest extends TestCase
         $b = $this->teacherInSchool($school);
         $outsider = $this->teacher();
 
-        $this->withToken($token)->postJson('/api/v1/school/classrooms', ['name' => '4م1', 'grade' => '4am', 'teacherId' => $outsider->id])
+        $this->withToken($token)->postJson('/api/v1/school/classrooms', ['name' => '3e A', 'grade' => '3e', 'teacherId' => $outsider->id])
             ->assertStatus(422)->assertJsonPath('reason', 'teacher_not_in_school');
 
-        $id = $this->withToken($token)->postJson('/api/v1/school/classrooms', ['name' => '4م1', 'grade' => '4am', 'teacherId' => $a->id])
-            ->assertCreated()->assertJsonPath('classrooms.0.name', '4م1')->json('classrooms.0.id');
+        $id = $this->withToken($token)->postJson('/api/v1/school/classrooms', ['name' => '3e A', 'grade' => '3e', 'teacherId' => $a->id])
+            ->assertCreated()->assertJsonPath('classrooms.0.name', '3e A')->json('classrooms.0.id');
         $classroom = Classroom::find($id);
         $this->assertSame($a->id, $classroom->teacher_id);
         $this->assertSame($school->id, $classroom->school_id);

@@ -97,7 +97,7 @@ class ThinkingLabLeakTest extends TestCase
         $this->hit('GET', '');
         $this->hit('GET', '/n/318');
 
-        $real = json_decode((string) file_get_contents(base_path('../../content/thinking-lab/challenges/0318-four-arcs-area.json')), true);
+        $real = json_decode((string) file_get_contents(base_path('tests/Fixtures/content/thinking-lab/0318-four-arcs-area.json')), true);
         $secrets318 = [
             $real['answer']['value'],
             'sqrt(3)',

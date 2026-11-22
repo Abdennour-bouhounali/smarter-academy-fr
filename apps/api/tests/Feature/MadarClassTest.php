@@ -38,7 +38,7 @@ class MadarClassTest extends TestCase
         parent::setUp();
         $this->onChallengeDay();
         $this->challengeCurriculum();
-        $this->classroom = Classroom::factory()->create(['grade' => '4am']);
+        $this->classroom = Classroom::factory()->create(['grade' => '3e']);
         $this->teacherToken = $this->tokenOf($this->classroom->teacher);
         foreach (['a' => ['Amine', 'Benali'], 'b' => ['Sara', 'Haddad'], 'c' => ['Yacine', 'Mansouri']] as $k => [$first, $last]) {
             $this->students[$k] = $this->student(['first_name' => $first, 'last_name' => $last]);
@@ -140,13 +140,13 @@ class MadarClassTest extends TestCase
 
     public function test_refuel_lessons_are_scoped_by_the_teacher(): void
     {
-        $this->teacher('PATCH', '/madar/settings', ['lessonCodes' => ['bahth-pgcd']])->assertOk()->assertJsonPath('settings.lessonCodes', ['bahth-pgcd']);
+        $this->teacher('PATCH', '/madar/settings', ['lessonCodes' => ['lecon-b']])->assertOk()->assertJsonPath('settings.lessonCodes', ['lecon-b']);
         $this->teacher('PATCH', '/madar/settings', ['lessonCodes' => ['not-a-lesson']])->assertStatus(422)->assertJsonPath('reason', 'lesson_out_of_scope');
 
         $student = $this->students['a'];
         $this->as($student, 'GET', '/madar')->assertOk();
         MadarProfile::where('user_id', $student->id)->update(['hearts' => 0]);
-        $this->as($student, 'POST', '/madar/refuel')->assertOk()->assertJsonPath('refuel.lesson.code', 'bahth-pgcd');
+        $this->as($student, 'POST', '/madar/refuel')->assertOk()->assertJsonPath('refuel.lesson.code', 'lecon-b');
     }
 
     public function test_the_teacher_sees_the_week_of_each_student(): void
