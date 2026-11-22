@@ -1,12 +1,15 @@
 # France rebuild plan — the French platform rebuilt on the DZ core
 
-**Status (2026-11-22, end of the first day): Stage 0 and step 1B done — the tree is the lesson engine and the shell
-around a French catalogue; the 3e net is live with 59 lessons announced and none built; the server side of the
-payment switch is built on both sides and payments are closed; what has no French content is hidden; the API
-speaks French (names, mails, time, euros). NEXT: the web in French — the 18 string files, the engine's sentences,
-the direction, the tests that assert Arabic (1C–1D) — then the first French lesson (§8). The WEB interface still
-speaks Arabic. Everything is committed and pushed on `rebuild/dz-core`; nothing is
-deployed. Owed from 1A: the API suite on MySQL, a local database, one browser walk. The progress log is §9.**
+**Status (2026-11-23): Stage 1 is done except what needs eyes — the tree is the lesson engine and the shell around a
+French catalogue; the API and the WHOLE web interface speak French, left to right (`locales/fr`, French routes, a
+test refuses an Arabic character anywhere in the web but the switched-off books store); payments, registration and
+accounts created by a school or a teacher are each CLOSED behind an admin switch; the 3e net is live with its lessons
+announced (« bientôt ») and none built. IN PROGRESS: chapter 1 of 3e reshaped to « Multiples et diviseurs » (owner),
+the web side of the managed-accounts switch, the math lab re-sorted to the French collège, the lesson skill and the
+validators adapted to France. NEXT: the first French lesson, « Décomposer un nombre en facteurs premiers », PORTED
+from DZ 4AM unit 1 on `divisorIsles` (§8). Everything is committed and pushed on `rebuild/dz-core`; nothing is
+deployed. Owed: one look at the French interface in a browser (nothing has been seen), the walks run, the API suite
+on MySQL, a local database. The progress log is §9.**
 
 This folder is the French platform being rebuilt from the Algerian one. It is the mirror image of
 `docs/ALGERIA_PLATFORM_MASTER_SPEC.md` (how DZ was made from FR in September 2026), and that spec's rule still binds:
@@ -312,6 +315,23 @@ What is left of this track:
 | 7 | Culture rules; dice, coins, urns in probabilities (brevet material) | allowed as experiments, never betting |
 | 8 | Brand: DZ's ring-and-cube or FR's current logo | DZ's mark |
 | 9 | Commits on this branch | ANSWERED 2026-11-22: commits and pushes are allowed in the FR repository |
+| 10 | The legal pages | ANSWERED 2026-11-22: « use them as they are ». Kept word for word; what does not fit is listed in `docs/reports/LEGAL_PAGES_REVIEW_2026-11-22.md`, not fixed |
+| 11 | Accounts created for a student by a school or a teacher | ANSWERED 2026-11-22: switched OFF, opened and closed from the admin panel (`ManagedAccountsGate`). This also parks question 4's hardest point until a lawyer has read it |
+| 12 | The 59 announced lessons | ANSWERED 2026-11-22: shown as « bientôt »; ONE complete lesson is built first, on divisors |
+| 13 | 3e chapter 1 | ANSWERED 2026-11-23: « Multiples et diviseurs » — prime decomposition; PGCD (common prime factors, Euclid); irreducible fraction (by the PGCD, by the prime factors); gears and meetings (conjunction of periodic phenomena); then « Vers le brevet ». The PGCD is beyond the strict wording of the 2020 programme: the owner's choice. The world is DZ unit 1's, `divisorIsles` |
+| 14 | What DZ already has | ANSWERED 2026-11-23: « for the things that already exist in the dz platform use them » — lessons, banks, class tests, instruments, warm-up families, checkers and walks are PORTED and adapted; only what DZ lacks is built. This overrides the council's opinion that banks be rebuilt per country |
+
+### 7bis. Verdicts of the third council (2026-11-22), accepted by the owner's go
+
+| Point | Verdict |
+|---|---|
+| Characters | ordinary clothes, varied hair; no headscarf by default (`KidFigure`) |
+| Math lab | the collège side only, re-sorted to the French programme (probability and statistics in, vectors and systems on the hidden lycée side) |
+| Visitors | one open demo lesson; a free account for the rest |
+| Probability contexts | dice, coins, urns, spinners as experiments; no playing cards; never betting |
+| Exercise bank | two tags added — brevet part 1 / part 2, calculator yes / no; the five « paliers » stay for progression |
+| Build order of 3e | the lessons that survive the 2028 programme first |
+| World problems of `divisorIsles` | implausible euro amounts rescaled, tests regenerated — with lesson 1 |
 
 ## 8. Stage 3 — the 3e lessons
 
@@ -332,7 +352,11 @@ What is left of this track:
 | The API still reads `content/class-tests/`; the web guard that checked a default class test's answers was deleted with the Algerian tests | docs pass | the first French class test |
 | `.claude/skills/lesson-v2/` tells agents to read deleted Algerian documents | docs pass | §8 (the skill is adapted first) |
 | `deploy.yml` has steps that fail on a fresh French deployment (the `/books/smart-protocol` check, the backup that refuses a database under 1 KB, content checks expecting non-empty lists) | API pass | the first deployment (§6) |
-| The web still validates a name as Arabic and formats money as dinars; the roster error codes it reads are the old ones | API pass | step 1D |
+| ~~The web still validates a name as Arabic and formats money as dinars~~ SETTLED 2026-11-23 (`utils/personName.js`, `utils/money.js`) | API pass | — |
+| No walk has been run since the translation: the French label handles in `apps/web/e2e/` are unconfirmed; `_phase6-activation.mjs` and `access-limits.mjs` fail while payments are closed | closing pass, 2026-11-23 | the first look in a browser |
+| The old transliterated routes (`/wali`, `/idara`, `/w/:token`…) have no redirect — right while no user exists | closing pass | — (noted so nobody looks for them) |
+| The admin's per-seat PRICE tiers are also called « palier », the word of a practice step | closing pass | when payments open |
+| Two wording mismatches: « L’échauffement » vs « Je me prépare »; « On commence par là » vs « Notre point de départ » | closing pass | when the compass is switched on |
 | The legal pages are the old site's, restored unchanged at the owner's word; what does not fit the product today is listed for him, not fixed | owner, 2026-11-22 | before registration opens |
 | Code comments cite deleted documents (about 80 places in `apps/api`, `apps/web/src`, `scripts`) | docs pass | with each file's next change |
 | The thinking-lab leak detector treats Latin letters as mathematics: on French prose a formula is caught only after a colon or `=` | tooling pass | the first French challenge |
@@ -346,6 +370,9 @@ Working rule learned on 2026-11-22: while agents share this folder, **every comm
 
 | Date | Step | What happened |
 |---|---|---|
+| 2026-11-23 | 1C–1D (end) | **The web is French.** Seven areas translated by agents (foundation, admin, teacher/school/family, games, math lab, student and public pages, engine), then a closing pass: `locales/ar` → `locales/fr`, French routes with no redirect, one word for a practice step (« palier ») and for the mastery states, the dinars helper deleted, the production build repaired (`TourOverlay` imported a constant that no longer existed — lint had not seen it), 41 walks rewritten and none run. Re-run by the main session before the commit (`c542dc82`): core 36 files / 958 tests, scripts 12 / 104, web 369 / 5,495, all pass; lint, `check:unused` (baseline 233), `check:unreached` (1,292 reached, 14 kept), `check:format`, `check:lessons` (entry 190.5 KB gzip) pass. **Nothing seen in a browser** |
+| 2026-11-22 | 1F (accounts) | API: `ManagedAccountsGate`, closed by default — accounts created by a school or a teacher (`a72f5528`); the mails write the French paths. The web side follows |
+| 2026-11-22 | legal | The three legal pages of the old site restored word for word (versions 2026-09-12); findings in `docs/reports/LEGAL_PAGES_REVIEW_2026-11-22.md` |
 | 2026-11-22 | 1B | **The empty French house.** The owner: no real user exists, no lesson is kept, DZ is never touched, commits and pushes are allowed here. Deleted: 140 DZ lessons, their banks, class tests and textbook sources (10,483 files). `packages/core`: the curriculum is an empty French skeleton, 6e–3e (74 test files, 1,581 tests pass). `apps/api`: French grade ladder, tests on neutral fixtures under `apps/api/tests/Fixtures/content` (1,506 tests, 1,497 pass, the same 8 MySQL-only tests as the baseline do not; no migration touched). Tooling: every check and generator runs on the empty catalogue, `check-dormant-isolation` inverted, 139 per-lesson oracles / 46 Arabic challenges / 193 lesson walks deleted (scripts tests: 97 pass). Web: in progress. Known and left for later: `check:activation-drift` cannot run without a local database; the thinking-lab leak detector is weaker on French prose (a formula is caught only after a colon or `=`); the exporter's « no tier » invariant has no lesson to be tested on |
 | 2026-11-22 | 1B (end) | Web: the app on the empty catalogue, the legacy lesson systems deleted (1,283 files reached from `main.jsx`, 4,938 before). Then everything the deletions left unused: 337 strings, 548 exports, 39 arithmetic modules of core; the unused baseline shrank from 399 to 233 lines. Lint, `check:unused`, `check:unreached`, `check:format`, the entry budget (192 KB gzip) pass. NOT seen in a browser |
 | 2026-11-22 | 1I (first pass) | Documentation: 181 documents of things that are gone deleted, ~65 contracts corrected with a status block, `CLAUDE.md` and `docs/README.md` rewritten for this product; §8bis lists the debts found |
