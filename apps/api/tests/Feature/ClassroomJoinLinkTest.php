@@ -83,13 +83,13 @@ class ClassroomJoinLinkTest extends TestCase
     public function test_l_apercu_public_rassure_sans_rien_reveler(): void
     {
         $classroom = $this->classroom(['name' => 'Maths — 3e B']);
-        $classroom->teacher->forceFill(['first_name' => 'أمين', 'last_name' => 'بن علي'])->save();
+        $classroom->teacher->forceFill(['first_name' => 'Lucas', 'last_name' => 'Martin'])->save();
 
         $this->getJson("/api/v1/join-links/{$classroom->join_link_token}")
             ->assertOk()
             ->assertJsonPath('joinLink.classroomName', 'Maths — 3e B')
             ->assertJsonPath('joinLink.grade', '3e')
-            ->assertJsonPath('joinLink.teacherName', 'أمين بن علي')
+            ->assertJsonPath('joinLink.teacherName', 'Lucas Martin')
             ->assertJsonPath('joinLink.joiningOpen', true)
             ->assertJsonPath('joinLink.alreadyMember', null)
             ->assertJsonMissingPath('joinLink.id')
@@ -288,7 +288,7 @@ class ClassroomJoinLinkTest extends TestCase
         $classroom = $this->classroom();
 
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'سارة', 'lastName' => 'بن علي',
+            'firstName' => 'Sarah', 'lastName' => 'Martin',
             'email' => 'sara@example.dz', 'password' => 'Passw0rd123', 'accept_legal' => true,
             'classJoinLink' => $classroom->join_link_token, 'classJoinConsent' => true,
         ])->assertCreated()->assertJsonMissingPath('user.pendingClassJoinToken');
@@ -322,7 +322,7 @@ class ClassroomJoinLinkTest extends TestCase
         $classroom = $this->classroom();
 
         $payload = fn (string $email, array $extra) => array_merge([
-            'firstName' => 'سارة', 'lastName' => 'بن علي', 'email' => $email, 'password' => 'Passw0rd123', 'accept_legal' => true,
+            'firstName' => 'Sarah', 'lastName' => 'Martin', 'email' => $email, 'password' => 'Passw0rd123', 'accept_legal' => true,
         ], $extra);
 
         $this->postJson('/api/v1/auth/register', $payload('a@example.dz', ['classJoinLink' => $classroom->join_link_token]))->assertCreated();
@@ -340,7 +340,7 @@ class ClassroomJoinLinkTest extends TestCase
         $classroom = $this->classroom();
 
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'سارة', 'lastName' => 'بن علي', 'email' => 'late@example.dz', 'password' => 'Passw0rd123', 'accept_legal' => true,
+            'firstName' => 'Sarah', 'lastName' => 'Martin', 'email' => 'late@example.dz', 'password' => 'Passw0rd123', 'accept_legal' => true,
             'classJoinLink' => $classroom->join_link_token, 'classJoinConsent' => true,
         ])->assertCreated();
         $this->withToken($this->tokenOf($classroom->teacher))->postJson("/api/v1/teacher/classrooms/{$classroom->id}/join-link/rotate")->assertOk();

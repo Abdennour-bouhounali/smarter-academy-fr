@@ -1,13 +1,13 @@
-السلام عليكم{{ $firstName !== '' ? ' '.$firstName : '' }}،
+Bonjour{{ $firstName !== '' ? ' '.$firstName : '' }},
 
-أهلًا بك في Smarter Academy! بقيت خطوة واحدة لتفعيل حسابك: تأكيد أنّ هذا البريد الإلكتروني بريدك فعلًا.
+Bienvenue sur {{ config('app.name') }}. Pour activer votre compte, il reste à confirmer que cette adresse est bien la vôtre.
 
-افتح هذا الرابط لتأكيد بريدك:
+Ouvrez ce lien pour confirmer votre adresse :
 {{ $url }}
 
-هذا الرابط صالح لمدة {{ $hours }} ساعة.
+Ce lien est valable {{ $hours }} h.
 
-لست صاحب هذا التسجيل؟ تجاهل هذه الرسالة: لن يُفعَّل أيّ حساب دون هذا التأكيد.
+Vous n’êtes pas à l’origine de cette inscription ? Ignorez ce message : aucun compte n’est activé sans cette confirmation.
 
-فريق Smarter Academy
-contact@smarter-academy.com
+L’équipe {{ config('app.name') }}
+{{ config('mail.contact_address') }}

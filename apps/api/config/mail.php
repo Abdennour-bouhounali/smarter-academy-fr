@@ -112,7 +112,13 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
+        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Smarter Academy')),
     ],
+
+    /*
+     * L'adresse à laquelle une personne peut répondre — écrite au pied de
+     * chaque courriel. Jamais en dur dans un gabarit.
+     */
+    'contact_address' => env('MAIL_CONTACT_ADDRESS', 'contact@smarter-academy.fr'),
 
 ];

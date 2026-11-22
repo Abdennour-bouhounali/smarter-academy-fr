@@ -52,7 +52,7 @@ class ParentSpaceTest extends TestCase
     /** Un élève et un parent liés par le vrai chemin : consentement, code, saisie. */
     private function linked(): array
     {
-        $student = $this->student(['first_name' => 'أمين', 'last_name' => 'بن علي']);
+        $student = $this->student(['first_name' => 'Lucas', 'last_name' => 'Martin']);
         $parent = $this->parent();
         $code = $this->as($student, 'POST', '/student/parents/code', ['consent' => true])->json('code.code');
         $this->as($parent, 'POST', '/parent/children/link', ['code' => $code])->assertCreated();
@@ -65,8 +65,8 @@ class ParentSpaceTest extends TestCase
         // Depuis le 2026-10-23, le parent lit par le « رابط الوليّ » (ParentAccessLinkTest) ;
         // le rôle reste pour plus tard, hors de la liste blanche d'inscription.
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'فاطمة',
-            'lastName' => 'حداد',
+            'firstName' => 'Fatima',
+            'lastName' => 'Haddad',
             'email' => 'wali@example.com',
             'password' => 'secret123',
             'accept_legal' => true,
@@ -96,14 +96,14 @@ class ParentSpaceTest extends TestCase
 
     public function test_a_parent_links_with_the_code_once_and_never_sees_an_email(): void
     {
-        $student = $this->student(['first_name' => 'سارة', 'last_name' => 'منصوري']);
-        $parent = $this->parent(['first_name' => 'كريم', 'last_name' => 'منصوري']);
+        $student = $this->student(['first_name' => 'Sarah', 'last_name' => 'Mansouri']);
+        $parent = $this->parent(['first_name' => 'Karim', 'last_name' => 'Mansouri']);
         $code = $this->as($student, 'POST', '/student/parents/code', ['consent' => true])->json('code.code');
 
         // Saisi en minuscules, avec un tiret : normalisé.
         $spaced = strtolower(substr($code, 0, 4).'-'.substr($code, 4));
         $this->as($parent, 'POST', '/parent/children/link', ['code' => $spaced])
-            ->assertCreated()->assertJsonPath('child.firstName', 'سارة');
+            ->assertCreated()->assertJsonPath('child.firstName', 'Sarah');
 
         // Usage unique.
         $this->as($this->parent(), 'POST', '/parent/children/link', ['code' => $code])
@@ -119,7 +119,7 @@ class ParentSpaceTest extends TestCase
 
         // L'élève voit qui le suit.
         $this->as($student, 'GET', '/student/parents')
-            ->assertOk()->assertJsonPath('parents.0.parent.firstName', 'كريم')->assertJsonPath('code', null);
+            ->assertOk()->assertJsonPath('parents.0.parent.firstName', 'Karim')->assertJsonPath('code', null);
     }
 
     public function test_expired_and_already_linked_codes_are_refused_by_reason(): void
@@ -190,21 +190,21 @@ class ParentSpaceTest extends TestCase
         StudyTimeDay::create(['user_id' => $student->id, 'day' => '2026-10-19', 'surface' => 'lesson', 'active_seconds' => 1500, 'away_seconds' => 120, 'leave_count' => 3]);
         StudyTimeDay::create(['user_id' => $student->id, 'day' => '2026-10-19', 'surface' => 'game', 'active_seconds' => 600]);
         StudyTimeDay::create(['user_id' => $student->id, 'day' => '2026-10-20', 'surface' => 'practice', 'active_seconds' => 900]);
-        // La semaine précédente ne compte pas.
-        StudyTimeDay::create(['user_id' => $student->id, 'day' => '2026-10-17', 'surface' => 'lesson', 'active_seconds' => 999]);
+        // La semaine précédente (elle finit le dimanche 18) ne compte pas.
+        StudyTimeDay::create(['user_id' => $student->id, 'day' => '2026-10-18', 'surface' => 'lesson', 'active_seconds' => 999]);
 
         $forParent = $this->as($parent, 'GET', "/parent/children/{$student->id}/report")->assertOk()->json('report');
         $forStudent = $this->as($student, 'GET', '/student/parents/report')->assertOk()->json('report');
 
         $this->assertSame($forParent, $forStudent);
-        $this->assertSame('2026-10-18', $forParent['weekStart']);
-        $this->assertSame('2026-10-24', $forParent['weekEnd']);
+        $this->assertSame('2026-10-19', $forParent['weekStart']);
+        $this->assertSame('2026-10-25', $forParent['weekEnd']);
         $this->assertSame(2400, $forParent['time']['studySeconds']);
         $this->assertSame(600, $forParent['time']['gameSeconds']);
         $this->assertSame(120, $forParent['time']['awaySeconds']);
         $this->assertSame(3, $forParent['time']['leaves']);
         $this->assertSame(2, $forParent['time']['activeDays']);
-        $this->assertSame(1500, $forParent['time']['days'][1]['studySeconds']);
+        $this->assertSame(1500, $forParent['time']['days'][0]['studySeconds']);
         $this->assertSame(['answered' => 0, 'correct' => 0, 'partial' => 0], $forParent['practice']);
 
         $children = $this->as($parent, 'GET', '/parent/children')->json('children.0');
@@ -241,10 +241,10 @@ class ParentSpaceTest extends TestCase
         $this->as($parent, 'GET', '/parent/children')->assertJsonCount(0, 'children');
     }
 
-    public function test_the_sunday_email_goes_once_per_week_and_respects_the_switch(): void
+    public function test_the_monday_email_goes_once_per_week_and_respects_the_switch(): void
     {
         Notification::fake();
-        Carbon::setTestNow(Carbon::parse('2026-10-25 07:00:00', 'UTC')); // dimanche 08:00 à Alger
+        Carbon::setTestNow(Carbon::parse('2026-10-26 07:00:00', 'UTC')); // lundi 08:00 à Paris
         [$student, $parent] = $this->linked();
         [$muted, $mutedParent] = $this->linked();
         ParentLink::where('parent_id', $mutedParent->id)->update(['weekly_email' => false]);
@@ -254,7 +254,7 @@ class ParentSpaceTest extends TestCase
 
         Notification::assertSentToTimes($parent, ParentWeeklyReportNotification::class, 1);
         Notification::assertNotSentTo($mutedParent, ParentWeeklyReportNotification::class);
-        $this->assertSame('2026-10-18', ParentLink::where('parent_id', $parent->id)->value('last_weekly_report_week'));
+        $this->assertSame('2026-10-19', ParentLink::where('parent_id', $parent->id)->value('last_weekly_report_week'));
     }
 
     public function test_the_detailed_progress_is_lesson_by_lesson_and_identical_for_the_student(): void

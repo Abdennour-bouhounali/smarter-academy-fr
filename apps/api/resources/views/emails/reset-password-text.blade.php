@@ -1,13 +1,13 @@
-السلام عليكم{{ $firstName !== '' ? ' '.$firstName : '' }}،
+Bonjour{{ $firstName !== '' ? ' '.$firstName : '' }},
 
-تلقّينا طلبًا لإعادة تعيين كلمة مرور حسابك في Smarter Academy.
+Nous avons reçu une demande de réinitialisation du mot de passe de votre compte {{ config('app.name') }}.
 
-افتح هذا الرابط لاختيار كلمة مرور جديدة:
+Ouvrez ce lien pour choisir un nouveau mot de passe :
 {{ $url }}
 
-هذا الرابط صالح لمدة {{ $minutes }} دقيقة ويُستعمل مرة واحدة.
+Ce lien est valable {{ $minutes }} minutes et ne sert qu’une fois.
 
-لم تطلب هذا؟ تجاهل هذه الرسالة: تبقى كلمة مرورك كما هي.
+Vous n’avez rien demandé ? Ignorez ce message : votre mot de passe reste le même.
 
-فريق Smarter Academy
-contact@smarter-academy.com
+L’équipe {{ config('app.name') }}
+{{ config('mail.contact_address') }}

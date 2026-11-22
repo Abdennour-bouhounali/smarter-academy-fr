@@ -1,11 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{{-- Copie du gabarit de Laravel, avec UNE différence : `dir`. Les courriels
-     de la plateforme sont en arabe (locale `ar`) — sans `dir="rtl"`, le
-     client de messagerie les aligne à gauche et désordonne la ponctuation.
-     Le thème voisin (themes/default.css) remplace `text-align: left` par
-     `start` pour la même raison. --}}
-@php($dir = str_starts_with(app()->getLocale(), 'ar') ? 'rtl' : 'ltr')
-<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ $dir }}">
+{{-- Copie du gabarit de Laravel, avec UNE différence : `lang`, fixé au
+     français — la seule langue des courriels de la plateforme
+     (User::preferredLocale). --}}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <title>{{ config('app.name') }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,9 +28,9 @@ width: 100% !important;
 </style>
 {!! $head ?? '' !!}
 </head>
-<body dir="{{ $dir }}">
+<body>
 
-<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation" dir="{{ $dir }}">
+<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
 <tr>
 <td align="center">
 <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation">

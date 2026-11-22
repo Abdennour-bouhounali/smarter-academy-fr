@@ -48,8 +48,8 @@ class AdminStudentCreationTest extends TestCase
     public function test_with_an_email_the_student_is_created_verified_and_the_password_logs_in(): void
     {
         $response = $this->asAdmin()->postJson('/api/v1/admin/students', [
-            'firstName' => '  ياسين ',
-            'lastName' => 'بلقاسم',
+            'firstName' => '  Yanis ',
+            'lastName' => 'Bernard',
             'email' => '  Yacine@Example.TEST ',
             'grade' => '3e',
         ]);
@@ -57,7 +57,7 @@ class AdminStudentCreationTest extends TestCase
         $response->assertStatus(201)
             ->assertJsonPath('success', true)
             ->assertJsonPath('login', 'yacine@example.test')
-            ->assertJsonPath('student.firstName', 'ياسين')
+            ->assertJsonPath('student.firstName', 'Yanis')
             ->assertJsonPath('student.email', 'yacine@example.test')
             ->assertJsonPath('student.grade', '3e')
             ->assertJsonPath('student.accountStatus', User::STATUS_ACTIVE);
@@ -76,7 +76,7 @@ class AdminStudentCreationTest extends TestCase
 
     public function test_without_an_email_a_login_is_generated_and_logs_in(): void
     {
-        $response = $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'مريم', 'lastName' => 'سعيدي'])
+        $response = $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'Myriam', 'lastName' => 'Saïdi'])
             ->assertStatus(201);
 
         $login = $response->json('login');
@@ -94,18 +94,18 @@ class AdminStudentCreationTest extends TestCase
         User::factory()->create(['email' => 'pris@example.test']);
 
         $this->asAdmin()->postJson('/api/v1/admin/students', [
-            'firstName' => 'ياسين', 'lastName' => 'بلقاسم', 'email' => 'PRIS@example.test',
+            'firstName' => 'Yanis', 'lastName' => 'Bernard', 'email' => 'PRIS@example.test',
         ])->assertStatus(422)->assertJson(['success' => false, 'reason' => 'email_taken']);
         $this->assertSame(2, User::count());
     }
 
-    public function test_a_latin_name_an_invalid_email_or_an_unknown_grade_is_refused(): void
+    public function test_an_invalid_name_an_invalid_email_or_an_unknown_grade_is_refused(): void
     {
-        $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'Yacine', 'lastName' => 'بلقاسم'])
+        $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'Yacine9', 'lastName' => 'Bernard'])
             ->assertStatus(422)->assertJsonValidationErrors('firstName');
-        $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'ياسين', 'lastName' => 'بلقاسم', 'email' => 'pas-une-adresse'])
+        $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'Yanis', 'lastName' => 'Bernard', 'email' => 'pas-une-adresse'])
             ->assertStatus(422)->assertJsonValidationErrors('email');
-        $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'ياسين', 'lastName' => 'بلقاسم', 'grade' => '9zz'])
+        $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'Yanis', 'lastName' => 'Bernard', 'grade' => '9zz'])
             ->assertStatus(422)->assertJsonValidationErrors('grade');
         $this->assertSame(1, User::count());
     }
@@ -113,10 +113,10 @@ class AdminStudentCreationTest extends TestCase
     public function test_it_works_while_registration_is_closed_and_is_logged_without_the_password(): void
     {
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'ياسين', 'lastName' => 'بلقاسم', 'email' => 'x@example.test', 'password' => 'motdepasse1', 'accept_legal' => true,
+            'firstName' => 'Yanis', 'lastName' => 'Bernard', 'email' => 'x@example.test', 'password' => 'motdepasse1', 'accept_legal' => true,
         ])->assertStatus(403);
 
-        $response = $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'ياسين', 'lastName' => 'بلقاسم'])
+        $response = $this->asAdmin()->postJson('/api/v1/admin/students', ['firstName' => 'Yanis', 'lastName' => 'Bernard'])
             ->assertStatus(201);
 
         $log = AdminActivityLog::where('action', ActivityLogger::STUDENT_CREATED)->sole();
@@ -130,9 +130,9 @@ class AdminStudentCreationTest extends TestCase
         foreach ([User::ROLE_STUDENT, User::ROLE_TEACHER] as $role) {
             $user = User::factory()->create(['role' => $role]);
             $this->actingAs($user, 'sanctum')
-                ->postJson('/api/v1/admin/students', ['firstName' => 'ياسين', 'lastName' => 'بلقاسم'])
+                ->postJson('/api/v1/admin/students', ['firstName' => 'Yanis', 'lastName' => 'Bernard'])
                 ->assertStatus(403);
         }
-        $this->assertSame(0, User::where('first_name', 'ياسين')->count());
+        $this->assertSame(0, User::where('first_name', 'Yanis')->count());
     }
 }

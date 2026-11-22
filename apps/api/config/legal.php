@@ -35,12 +35,12 @@ return [
     /*
      * Conditions Générales d'Utilisation — page /cgu.
      */
-    'terms_version' => env('LEGAL_TERMS_VERSION', '2026-10-04'),
+    'terms_version' => env('LEGAL_TERMS_VERSION', '2026-09-12'),
 
     /*
      * Politique de confidentialité — page /confidentialite.
      */
-    'privacy_version' => env('LEGAL_PRIVACY_VERSION', '2026-10-04'),
+    'privacy_version' => env('LEGAL_PRIVACY_VERSION', '2026-09-12'),
 
     /*
      * L'ÉDITEUR. Repris tel quel par les mentions légales : une seule

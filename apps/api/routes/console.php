@@ -15,10 +15,11 @@ Artisan::command('inspire', function () {
 // Photos de copie (prototype BEM, 2026-10-06) : effacées au bout de 12 mois.
 \Illuminate\Support\Facades\Schedule::command('smarter:answer-images:purge')->dailyAt('04:10')->withoutOverlapping();
 
-// « فضاء الوليّ » : le résumé de la semaine écoulée, chaque dimanche matin à Alger
-// (PARENT_SPACE.md §5). La commande est idempotente.
+// L'espace parent : le résumé de la semaine écoulée (du lundi au dimanche),
+// chaque lundi matin dans le fuseau de l'école (PARENT_SPACE.md §5). La
+// commande est idempotente.
 \Illuminate\Support\Facades\Schedule::command('smarter:family:weekly-reports')
-    ->weeklyOn(0, '08:00')->timezone('Africa/Algiers')->withoutOverlapping();
+    ->weeklyOn(1, '08:00')->timezone((string) config('app.school_timezone'))->withoutOverlapping();
 
 /*
 | Clés VAPID des notifications de commandes de livres (BOOKS_STORE.md §6quater). À lancer UNE
@@ -29,5 +30,5 @@ Artisan::command('books:vapid-keys', function () {
     $keys = \Minishlink\WebPush\VAPID::createVapidKeys();
     $this->line('VAPID_PUBLIC_KEY='.$keys['publicKey']);
     $this->line('VAPID_PRIVATE_KEY='.$keys['privateKey']);
-    $this->line('VAPID_SUBJECT=mailto:contact@smarter-academy.com');
+    $this->line('VAPID_SUBJECT=mailto:'.config('mail.contact_address'));
 })->purpose('Generate the Web Push (VAPID) key pair for book-order notifications');

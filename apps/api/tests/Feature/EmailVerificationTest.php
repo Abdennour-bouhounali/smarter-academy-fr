@@ -27,7 +27,7 @@ class EmailVerificationTest extends TestCase
     private function registerStudent(string $email = 'eleve@example.com'): array
     {
         $response = $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => $email,
             'password' => 'password123',
             'accept_legal' => true,
@@ -343,7 +343,7 @@ class EmailVerificationTest extends TestCase
         $this->smtpEnPanne();
 
         $response = $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => 'panne@example.com',
             'password' => 'password123',
             'accept_legal' => true,
@@ -360,7 +360,7 @@ class EmailVerificationTest extends TestCase
         Notification::fake();
 
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => 'ok@example.com',
             'password' => 'password123',
             'accept_legal' => true,
@@ -383,30 +383,36 @@ class EmailVerificationTest extends TestCase
     // ── LE COURRIEL LUI-MÊME ────────────────────────────────────────────
 
     /**
-     * Arabe, RTL, au gabarit de marque (logo PNG du frontend), sans phrase
-     * anglaise du gabarit de Laravel, avec une version texte.
+     * Français, de gauche à droite, au gabarit de marque (logo PNG du
+     * frontend), sans phrase anglaise du gabarit de Laravel ni lettre arabe,
+     * avec une version texte.
      */
-    public function test_le_courriel_est_en_arabe_et_en_rtl(): void
+    public function test_le_courriel_est_en_francais_de_gauche_a_droite(): void
     {
         Notification::fake();
 
         [$user] = $this->registerStudent();
 
         Notification::assertSentTo($user, VerifyEmailAddress::class, function (VerifyEmailAddress $n, array $channels, object $notifiable, ?string $locale) use ($user) {
-            $this->assertSame('ar', $locale);
+            $this->assertSame('fr', $locale);
 
             // Ce que fait le canal mail : rendre sous la locale du destinataire.
             app()->setLocale($locale);
-            $html = (string) $n->toMail($user)->render();
+            $mail = $n->toMail($user);
+            $html = (string) $mail->render();
 
-            $this->assertStringContainsString('dir="rtl"', $html);
-            $this->assertStringContainsString('تأكيد بريدي', $html);
-            $this->assertStringContainsString('انسخ هذا الرابط', $html);
+            $this->assertSame('Confirmez votre adresse e-mail — '.config('app.name'), $mail->subject);
+            $this->assertStringContainsString('lang="fr"', $html);
+            $this->assertStringNotContainsString('dir="rtl"', $html);
+            $this->assertStringNotContainsString('text-align:right', $html);
+            $this->assertDoesNotMatchRegularExpression('/\p{Arabic}/u', $html);
+            $this->assertStringContainsString('Confirmer mon adresse', $html);
+            $this->assertStringContainsString('Copiez ce lien', $html);
             $this->assertStringContainsString(rtrim(config('app.frontend_url'), '/').'/email/logo.png', $html);
-            $this->assertStringContainsString('family=Amiri', $html);
-            $this->assertStringContainsString('السلام عليكم أمين', $html, 'la salutation islamique et le prénom');
-            $this->assertStringNotContainsString('مرحبًا', $html);
-            $this->assertStringContainsString('جميع الحقوق محفوظة', $html);
+            $this->assertStringContainsString('family=Inter', $html);
+            $this->assertStringContainsString('Bonjour Lucas', $html, 'la salutation et le prénom');
+            $this->assertStringContainsString('Tous droits réservés', $html);
+            $this->assertStringContainsString(config('mail.contact_address'), $html);
             $this->assertStringNotContainsString("If you're having trouble", $html);
             $this->assertStringNotContainsString('All rights reserved', $html);
             $this->assertStringContainsString('/api/v1/auth/email/verify/'.$user->id.'/', $html);

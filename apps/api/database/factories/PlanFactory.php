@@ -94,7 +94,7 @@ class PlanFactory extends Factory
 
             PlanPrice::create(array_merge([
                 'plan_version_id' => $version->id,
-                'currency' => 'DZD',
+                'currency' => 'EUR',
                 'amount_cents' => 0,
                 'billing_interval' => PlanPrice::INTERVAL_YEAR,
                 'duration_days' => 365,
@@ -106,7 +106,7 @@ class PlanFactory extends Factory
                     'min_students' => $min,
                     'max_students' => $max,
                     'price_per_student_cents' => $cents,
-                    'currency' => 'DZD',
+                    'currency' => 'EUR',
                     'sort_order' => $i,
                     'is_active' => true,
                 ]);

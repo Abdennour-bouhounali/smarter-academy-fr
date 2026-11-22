@@ -30,7 +30,7 @@ class SchoolReportTest extends TestCase
         $point = $this->point($lessons[0], 1);
         ['school' => $school, 'token' => $token] = $this->schoolWithDirector();
         $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school), ['name' => '3e A']);
-        $student = $this->student(['first_name' => 'أمين', 'last_name' => 'بوعلام']);
+        $student = $this->student(['first_name' => 'Lucas', 'last_name' => 'Moreau']);
         $this->enrol($classroom, [$student]);
         ClassroomMembership::where('student_id', $student->id)->update(['school_consent_at' => now(), 'school_consent_by' => 'school']);
         $this->answers($student, $lessons[0], $point, 'incorrect', 4, 1);

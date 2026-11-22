@@ -6,7 +6,7 @@ use App\Models\AnswerReview;
 use Illuminate\Notifications\Notification;
 
 /**
- * « صحّح أستاذك إجابتك » — la cloche de l'élève (canal `database` SEULEMENT :
+ * « Ton professeur a corrigé ta réponse » — la cloche de l'élève (canal `database` SEULEMENT :
  * pas de courriel, décision du propriétaire 2026-10-06). Le contenu ne porte
  * ni la photo ni le commentaire : seulement de quoi ouvrir la correction
  * (`reviewId`) et la titrer. La correction elle-même se relit par

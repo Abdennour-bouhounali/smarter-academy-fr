@@ -48,7 +48,7 @@ use RuntimeException;
  *
  * TROIS GARANTIES
  *
- *   Reconnaissable  tous les comptes sont en @smarter-academy-dz.test, un
+ *   Reconnaissable  tous les comptes sont en @smarter-academy-fr.test, un
  *                   domaine réservé (RFC 6761) qui ne peut appartenir à
  *                   personne. Aucune donnée réelle n'est touchée.
  *   Idempotent      relancer efface d'abord les comptes de démonstration et
@@ -62,7 +62,7 @@ use RuntimeException;
 class DemoDataSeeder extends Seeder
 {
     /** Le domaine réservé qui marque un compte comme fictif. */
-    public const DEMO_DOMAIN = '@smarter-academy-dz.test';
+    public const DEMO_DOMAIN = '@smarter-academy-fr.test';
 
     public const ADMIN_PASSWORD = 'TestPassword123!';
 
@@ -202,7 +202,7 @@ class DemoDataSeeder extends Seeder
 
     private function admin(): User
     {
-        $admin = $this->account('admin'.self::DEMO_DOMAIN, 'Karim', 'Bouzid', User::ROLE_ADMIN, self::ADMIN_PASSWORD, null, 100);
+        $admin = $this->account('admin'.self::DEMO_DOMAIN, 'Claire', 'Lambert', User::ROLE_ADMIN, self::ADMIN_PASSWORD, null, 100);
         $this->totals['admins'] = 1;
 
         return $admin;
@@ -226,18 +226,18 @@ class DemoDataSeeder extends Seeder
         // 01 — l'enseignant principal : une offre à sièges activée par
         // l'administration il y a dix semaines, payée hors plateforme.
         $teachers['main'] = $this->account(
-            'teacher01'.self::DEMO_DOMAIN, 'Mourad', 'Belkacem', User::ROLE_TEACHER, self::TEACHER_PASSWORD, null, 95
+            'teacher01'.self::DEMO_DOMAIN, 'Julien', 'Moreau', User::ROLE_TEACHER, self::TEACHER_PASSWORD, null, 95
         );
         if ($seatsPlan !== null) {
             $activation->activate(
                 $admin, $teachers['main'], $seatsPlan, null,
-                Carbon::now()->addDays(275), 'Paiement reçu hors plateforme — virement CCP', 60
+                Carbon::now()->addDays(275), 'Paiement reçu hors plateforme — virement bancaire', 60
             );
         }
 
         // 02 — un second enseignant au même modèle, plus petit.
         $teachers['second'] = $this->account(
-            'teacher02'.self::DEMO_DOMAIN, 'Samira', 'Hamdani', User::ROLE_TEACHER, self::TEACHER_PASSWORD, null, 72
+            'teacher02'.self::DEMO_DOMAIN, 'Samira', 'Haddad', User::ROLE_TEACHER, self::TEACHER_PASSWORD, null, 72
         );
         if ($seatsPlan !== null) {
             $activation->activate(
@@ -249,7 +249,7 @@ class DemoDataSeeder extends Seeder
         // 03 — resté sur l'offre gratuite (5 sièges) : c'est le compte qui
         // montre la limite commerciale à l'œuvre.
         $teachers['free'] = $this->account(
-            'teacher03'.self::DEMO_DOMAIN, 'Nabil', 'Cherifi', User::ROLE_TEACHER, self::TEACHER_PASSWORD, null, 40
+            'teacher03'.self::DEMO_DOMAIN, 'Thomas', 'Nguyen', User::ROLE_TEACHER, self::TEACHER_PASSWORD, null, 40
         );
 
         $this->totals['teachers'] = count($teachers);
@@ -270,66 +270,66 @@ class DemoDataSeeder extends Seeder
     {
         $personas = [
             // --- éléments moteurs (3/16) -------------------------------
-            new DemoPersona('s01', 'Ahmed', 'Benali', 'student01', 'high-performer',
+            new DemoPersona('s01', 'Lucas', 'Martin', 'student01', 'high-performer',
                 accuracy: 0.88, persistence: 0.9, startedDaysAgo: 92, lastSeenDaysAgo: 0,
                 density: 0.62, reach: 0.95, noteAppetite: 6, hintAppetite: 1),
-            new DemoPersona('s02', 'Lina', 'Meziane', 'student02', 'high-performer',
+            new DemoPersona('s02', 'Inès', 'Benali', 'student02', 'high-performer',
                 accuracy: 0.85, persistence: 0.88, startedDaysAgo: 90, lastSeenDaysAgo: 1,
                 density: 0.55, reach: 0.88, noteAppetite: 5, hintAppetite: 1),
-            new DemoPersona('s03', 'Yacine', 'Mansouri', 'student03', 'high-performer',
+            new DemoPersona('s03', 'Hugo', 'Lefèvre', 'student03', 'high-performer',
                 accuracy: 0.82, persistence: 0.85, startedDaysAgo: 88, lastSeenDaysAgo: 2,
                 density: 0.5, reach: 0.82, noteAppetite: 4, hintAppetite: 1),
 
             // --- le gros de la classe (8/16) ---------------------------
-            new DemoPersona('s04', 'Rayane', 'Boudiaf', 'student04', 'average',
+            new DemoPersona('s04', 'Rayan', 'Diallo', 'student04', 'average',
                 accuracy: 0.68, persistence: 0.7, startedDaysAgo: 89, lastSeenDaysAgo: 1,
                 density: 0.42, reach: 0.68, noteAppetite: 4, hintAppetite: 2),
-            new DemoPersona('s05', 'Inès', 'Rahmani', 'student05', 'average',
+            new DemoPersona('s05', 'Chloé', 'Dubois', 'student05', 'average',
                 accuracy: 0.71, persistence: 0.68, startedDaysAgo: 85, lastSeenDaysAgo: 3,
                 density: 0.4, reach: 0.62, noteAppetite: 3, hintAppetite: 2),
-            new DemoPersona('s06', 'Amine', 'Saidi', 'student06', 'average',
+            new DemoPersona('s06', 'Nathan', 'Petit', 'student06', 'average',
                 accuracy: 0.65, persistence: 0.65, startedDaysAgo: 87, lastSeenDaysAgo: 2,
                 density: 0.38, reach: 0.6, noteAppetite: 3, hintAppetite: 2),
-            new DemoPersona('s07', 'Maria', 'Benali', 'student07', 'average',
+            new DemoPersona('s07', 'Maria', 'Da Silva', 'student07', 'average',
                 accuracy: 0.7, persistence: 0.72, startedDaysAgo: 80, lastSeenDaysAgo: 4,
                 density: 0.36, reach: 0.58, noteAppetite: 3, hintAppetite: 2),
-            new DemoPersona('s08', 'Anis', 'Belkacem', 'student08', 'average',
+            new DemoPersona('s08', 'Louis', 'Garnier', 'student08', 'average',
                 accuracy: 0.63, persistence: 0.6, startedDaysAgo: 84, lastSeenDaysAgo: 5,
                 density: 0.34, reach: 0.55, noteAppetite: 2, hintAppetite: 2),
-            new DemoPersona('s09', 'Aya', 'Bensalem', 'student09', 'average',
+            new DemoPersona('s09', 'Léa', 'Roux', 'student09', 'average',
                 accuracy: 0.72, persistence: 0.7, startedDaysAgo: 78, lastSeenDaysAgo: 2,
                 density: 0.38, reach: 0.6, noteAppetite: 3, hintAppetite: 1),
-            new DemoPersona('s10', 'Islam', 'Haddad', 'student10', 'average',
+            new DemoPersona('s10', 'Adam', 'Mercier', 'student10', 'average',
                 accuracy: 0.66, persistence: 0.62, startedDaysAgo: 82, lastSeenDaysAgo: 6,
                 density: 0.33, reach: 0.52, noteAppetite: 2, hintAppetite: 2),
-            new DemoPersona('s11', 'Nour', 'Belhadj', 'student11', 'slow-persistent',
+            new DemoPersona('s11', 'Jade', 'Fontaine', 'student11', 'slow-persistent',
                 accuracy: 0.58, persistence: 0.92, startedDaysAgo: 91, lastSeenDaysAgo: 1,
                 density: 0.6, reach: 0.6, noteAppetite: 8, hintAppetite: 3),
 
             // --- en difficulté / irréguliers (3/16) ---------------------
-            new DemoPersona('s12', 'Sofiane', 'Torki', 'student12', 'struggling',
+            new DemoPersona('s12', 'Enzo', 'Lopez', 'student12', 'struggling',
                 accuracy: 0.38, persistence: 0.5, startedDaysAgo: 86, lastSeenDaysAgo: 3,
                 density: 0.3, reach: 0.38, noteAppetite: 7, hintAppetite: 3),
-            new DemoPersona('s13', 'Wassim', 'Guerrouj', 'student13', 'error-heavy',
+            new DemoPersona('s13', 'Emma', 'Girard', 'student13', 'error-heavy',
                 accuracy: 0.34, persistence: 0.75, startedDaysAgo: 88, lastSeenDaysAgo: 2,
                 density: 0.45, reach: 0.45, noteAppetite: 11, hintAppetite: 3),
-            new DemoPersona('s14', 'Imene', 'Ferhat', 'student14', 'irregular',
+            new DemoPersona('s14', 'Camille', 'Nguyen', 'student14', 'irregular',
                 accuracy: 0.6, persistence: 0.45, startedDaysAgo: 90, lastSeenDaysAgo: 4,
                 density: 0.55, reach: 0.5, noteAppetite: 2, hintAppetite: 2,
                 gapLengths: [16, 11]),
 
             // --- cas de bord (3/16) ------------------------------------
-            new DemoPersona('s15', 'Farid', 'Ziani', 'student15', 'inactive',
+            new DemoPersona('s15', 'Sarah', 'Bertrand', 'student15', 'inactive',
                 accuracy: 0.55, persistence: 0.5, startedDaysAgo: 89, lastSeenDaysAgo: 38,
                 density: 0.4, reach: 0.3, noteAppetite: 2, hintAppetite: 2),
-            new DemoPersona('s16', 'Malak', 'Ouali', 'student16', 'returning',
+            new DemoPersona('s16', 'Manon', 'Rousseau', 'student16', 'returning',
                 accuracy: 0.62, persistence: 0.6, startedDaysAgo: 87, lastSeenDaysAgo: 0,
                 density: 0.5, reach: 0.48, noteAppetite: 3, hintAppetite: 2,
                 gapLengths: [31]),
-            new DemoPersona('s17', 'Adem', 'Slimani', 'student17', 'new',
+            new DemoPersona('s17', 'Yanis', 'Morel', 'student17', 'new',
                 accuracy: 0.6, persistence: 0.6, startedDaysAgo: 9, lastSeenDaysAgo: 1,
                 density: 0.5, reach: 0.12, noteAppetite: 1, hintAppetite: 2),
-            new DemoPersona('s18', 'Khadidja', 'Brahimi', 'student18', 'new',
+            new DemoPersona('s18', 'Zoé', 'Traoré', 'student18', 'new',
                 accuracy: 0.74, persistence: 0.7, startedDaysAgo: 5, lastSeenDaysAgo: 0,
                 density: 0.7, reach: 0.12, noteAppetite: 1, hintAppetite: 1),
         ];
@@ -371,14 +371,14 @@ class DemoDataSeeder extends Seeder
 
         // --- Enseignant principal : deux classes de 3e ------------------
         $groupA = $classService->create($teachers['main'], [
-            'name' => 'الرابعة متوسط — الفوج أ',
-            'description' => 'فوج الصباح — متوسطة الأمير عبد القادر',
+            'name' => '3e A',
+            'description' => 'Collège Jean-Moulin — le matin',
             'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
         $groupB = $classService->create($teachers['main'], [
-            'name' => 'الرابعة متوسط — الفوج ب',
-            'description' => 'فوج المساء',
+            'name' => '3e B',
+            'description' => 'Collège Jean-Moulin — l’après-midi',
             'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
@@ -398,8 +398,8 @@ class DemoDataSeeder extends Seeder
 
         // --- Seconde enseignante : une classe ---------------------------
         $groupC = $classService->create($teachers['second'], [
-            'name' => 'الرابعة متوسط — فوج الدعم',
-            'description' => 'حصص الدعم — يومي الثلاثاء والخميس',
+            'name' => '3e C — soutien',
+            'description' => 'Collège Marie-Curie — soutien le mardi et le jeudi',
             'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
@@ -410,8 +410,8 @@ class DemoDataSeeder extends Seeder
 
         // --- Enseignant au forfait gratuit : petite classe, 5 sièges -----
         $groupD = $classService->create($teachers['free'], [
-            'name' => 'الرابعة متوسط — مجموعة تجريبية',
-            'description' => 'مجموعة صغيرة لتجربة المنصّة',
+            'name' => '3e D',
+            'description' => 'Une petite classe pour essayer la plateforme',
             'grade' => '3e',
             'academicYear' => '2026/2027',
         ]);
@@ -478,8 +478,8 @@ class DemoDataSeeder extends Seeder
                 'kind' => 'recommend_practice',
                 'studentIds' => $improvers[$pointId],
                 'learningPointCode' => $code,
-                'note' => 'راجعنا القاعدة معًا في الحصّة، واقترحت عليهم تمارين المستوى الأوّل.',
-                'studentMessage' => 'تمرّن على هذه النقطة قبل الفرض.',
+                'note' => 'Nous avons revu la règle ensemble en classe, et je leur ai proposé les exercices du premier niveau.',
+                'studentMessage' => 'Entraîne-toi sur ce point avant le contrôle.',
                 'sourceSignal' => 'repeated_difficulty',
             ]);
             $this->backdate($iv, $then);
@@ -494,7 +494,7 @@ class DemoDataSeeder extends Seeder
                 'kind' => 'class_reinforcement',
                 'studentIds' => array_column($shared['students'], 'id'),
                 'learningPointCode' => $shared['learningPoint']['code'],
-                'note' => 'حصّة دعم مبرمجة يوم الخميس على هذه النقطة.',
+                'note' => 'Séance de soutien prévue jeudi sur ce point.',
                 'reviewAfter' => now()->addDays(7)->toDateString(),
                 'sourceSignal' => 'class_difficulty',
             ]);
@@ -508,7 +508,7 @@ class DemoDataSeeder extends Seeder
             $service->create($teacher, $classroom, [
                 'kind' => 'observation',
                 'studentIds' => [$silent['students'][0]['id']],
-                'note' => 'غائب عن المنصّة، لكنه يُنجز أعماله على الكرّاس الورقي. سأتحدّث مع وليّه.',
+                'note' => 'Absent de la plateforme, mais il fait son travail sur son cahier. J’en parlerai à ses parents.',
             ]);
             $created++;
         }

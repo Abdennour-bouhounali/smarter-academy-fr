@@ -44,7 +44,7 @@ class SeatPricingTest extends TestCase
             $this->assertSame($label, $quote['tier']['label'], "palier pour {$seats}");
             $this->assertSame($unit, $quote['unitPriceCents'], "prix unitaire pour {$seats}");
             $this->assertSame($total, $quote['totalCents'], "total pour {$seats}");
-            $this->assertSame('DZD', $quote['currency']);
+            $this->assertSame('EUR', $quote['currency']);
         }
         $this->assertTrue($this->pricing()->quote($version, 5)['free']);
         $this->assertFalse($this->pricing()->quote($version, 6)['free']);

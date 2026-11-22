@@ -275,8 +275,8 @@ class SchoolRosterService
 
     /**
      * Une ligne nettoyée : [prénom, nom, date Y-m-d, problème|null]. Les noms
-     * suivent la règle de tout compte (lettres arabes, PersonName) ; la date
-     * doit donner un âge plausible d'élève du moyen (8 à 20 ans).
+     * suivent la règle de tout compte (PersonName) ; la date
+     * doit donner un âge plausible d’élève de collège (8 à 20 ans).
      *
      * @return array{0: ?string, 1: ?string, 2: ?string, 3: ?string}
      */
@@ -293,7 +293,7 @@ class SchoolRosterService
             }
             $length = mb_strlen($name);
             if ($length < PersonName::MIN || $length > PersonName::MAX || ! preg_match(PersonName::PATTERN, $name)) {
-                return [$first, $last, null, "{$field}_not_arabic"];
+                return [$first, $last, null, "{$field}_invalid"];
             }
         }
 

@@ -20,7 +20,7 @@ class LessonFactory extends Factory
         return [
             'chapter_id' => Chapter::factory(),
             'code' => 'lesson-'.fake()->unique()->lexify('??????'),
-            'title' => 'درس تجريبي',
+            'title' => 'Leçon d’essai',
             'status' => 'available',
             'order' => 0,
             'tier' => 'free',

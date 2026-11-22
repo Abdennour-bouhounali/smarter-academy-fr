@@ -23,15 +23,15 @@ return [
         // les questions non répondues sont « abandoned » (0 point, preuve
         // inerte) et la tentative est close comme `expired`.
         'attempt_window_minutes' => 30,
-        // Fenêtre quotidienne (heure locale de `timezone`). Hors fenêtre, on
-        // ne COMMENCE pas ; une tentative ouverte reste finissable.
+        // Fenêtre quotidienne, à l'heure du fuseau de l'école
+        // (config('app.school_timezone')). Hors fenêtre, on ne COMMENCE pas ;
+        // une tentative ouverte reste finissable.
         'available_from' => '06:00',
         'available_until' => '23:59',
-        'timezone' => 'Africa/Algiers',
         // Jours de défi, ISO-8601 (1 = lundi … 7 = dimanche). Un jour hors de
         // cette liste n'existe pas pour la série : il ne la casse pas, il ne
-        // coûte rien. Défaut : vendredi (5) chômé.
-        'challenge_weekdays' => [1, 2, 3, 4, 6, 7],
+        // coûte rien. Défaut : la semaine d'école, du lundi au vendredi.
+        'challenge_weekdays' => [1, 2, 3, 4, 5],
         // Secondes estimées par question, pour « ~4 دقائق ».
         'estimated_seconds_per_question' => 45,
     ],

@@ -119,7 +119,7 @@ class AdminAuthorizationTest extends TestCase
     public function test_une_inscription_ne_peut_pas_se_donner_le_role_admin(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => 'malin@example.com',
             'password' => 'motdepasse123',
             'role' => 'admin',

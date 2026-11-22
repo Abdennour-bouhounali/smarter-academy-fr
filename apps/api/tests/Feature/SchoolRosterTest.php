@@ -13,7 +13,7 @@ use Tests\TestCase;
 
 /**
  * L'import d'une liste de classe par la direction (SCHOOL_ADMIN_SPACE.md §7,
- * décisions D2 et « معرّف الدخول ») : aperçu sans écriture, création tout ou
+ * décisions D2 et « identifiant de connexion ») : aperçu sans écriture, création tout ou
  * rien, identifiants générés sans courriel, changement de classe, cartes.
  */
 class SchoolRosterTest extends TestCase
@@ -24,8 +24,8 @@ class SchoolRosterTest extends TestCase
     use SchoolFixtures;
 
     private const ROWS = [
-        ['firstName' => 'أمين', 'lastName' => 'بوعلام', 'birthDate' => '2012-03-14'],
-        ['firstName' => 'ليلى', 'lastName' => 'حداد', 'birthDate' => '2012-11-02'],
+        ['firstName' => 'Inès', 'lastName' => 'Moreau', 'birthDate' => '2012-03-14'],
+        ['firstName' => 'Théo', 'lastName' => 'Lefèvre', 'birthDate' => '2012-11-02'],
     ];
 
     protected function setUp(): void
@@ -51,15 +51,15 @@ class SchoolRosterTest extends TestCase
 
         $rows = [
             ...self::ROWS,
-            ['firstName' => 'Karim', 'lastName' => 'بن علي', 'birthDate' => '2012-01-01'],
-            ['firstName' => 'أمين', 'lastName' => 'بوعلام', 'birthDate' => '2012-03-14'],
-            ['firstName' => 'سارة', 'lastName' => 'قاسم', 'birthDate' => '2012-02-30'],
+            ['firstName' => 'كريم', 'lastName' => 'Benali', 'birthDate' => '2012-01-01'],
+            ['firstName' => 'Inès', 'lastName' => 'Moreau', 'birthDate' => '2012-03-14'],
+            ['firstName' => 'Sarah', 'lastName' => 'Dupont', 'birthDate' => '2012-02-30'],
         ];
         $this->withToken($token)->postJson('/api/v1/school/roster/preview', ['classroomId' => $classroom->id, 'rows' => $rows])
             ->assertOk()
             ->assertJsonPath('rows.0.status', 'new')
             ->assertJsonPath('rows.2.status', 'invalid')
-            ->assertJsonPath('rows.2.problem', 'firstName_not_arabic')
+            ->assertJsonPath('rows.2.problem', 'firstName_invalid')
             ->assertJsonPath('rows.3.status', 'duplicate_in_file')
             ->assertJsonPath('rows.4.problem', 'birthDate_invalid')
             ->assertJsonPath('counts.new', 2)
@@ -79,7 +79,7 @@ class SchoolRosterTest extends TestCase
         $this->assertStringContainsString('no-store', (string) $response->headers->get('Cache-Control'));
 
         $card = $response->json('cards.0');
-        $this->assertMatchesRegularExpression('/^s'.$school->id.'\.[a-z2-9]{6}@eleve\.smarter-academy\.com$/', $card['login']);
+        $this->assertMatchesRegularExpression('/^s'.$school->id.'\.[a-z2-9]{6}@eleve\.smarter-academy\.fr$/', $card['login']);
         $student = User::findOrFail($card['id']);
         $this->assertTrue($student->hasSchoolLogin());
         $this->assertNotNull($student->email_verified_at);
@@ -121,12 +121,12 @@ class SchoolRosterTest extends TestCase
 
         $this->withToken($token)->postJson('/api/v1/school/roster', [
             'classroomId' => $classroom->id,
-            'rows' => [...self::ROWS, ['firstName' => 'Karim', 'lastName' => 'x', 'birthDate' => '2012-01-01']],
+            'rows' => [...self::ROWS, ['firstName' => 'Karim3', 'lastName' => 'Benali', 'birthDate' => '2012-01-01']],
         ])->assertStatus(422)->assertJsonPath('reason', 'invalid_roster');
         $this->assertSame($users, User::count());
 
         // 31 lignes pour 30 sièges : tout est annulé.
-        $rows = collect(range(1, 31))->map(fn ($i) => ['firstName' => 'تلميذ', 'lastName' => 'رقم'.str_repeat('ا', $i % 5 + 1), 'birthDate' => sprintf('2012-01-%02d', $i)])->all();
+        $rows = collect(range(1, 31))->map(fn ($i) => ['firstName' => 'Élève', 'lastName' => 'Numéro'.str_repeat('a', $i % 5 + 1), 'birthDate' => sprintf('2012-01-%02d', $i)])->all();
         $this->withToken($token)->postJson('/api/v1/school/roster', ['classroomId' => $classroom->id, 'rows' => $rows])
             ->assertStatus(422)->assertJsonPath('reason', 'seats_exhausted');
         $this->assertSame($users, User::count());

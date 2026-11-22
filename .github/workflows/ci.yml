@@ -95,7 +95,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: smarter_academy_dz_test
+          MYSQL_DATABASE: smarter_academy_fr_test
         ports:
           - 3306:3306
         options: >-
@@ -108,13 +108,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 8.4, la version que le serveur algérien sert en production.
+      # 8.4 : la version qu'exige le lockfile (voir ci-dessous) — le serveur
+      # français doit la servir aussi.
       #
       # Ce n'est PAS un choix libre. composer.json annonce « php ^8.3 », mais
       # composer.lock épingle symfony/* 8.1.x, qui exige « php >=8.4.1 ».
       # Une CI en 8.3 échoue donc dès `composer install` (constaté :
       # 17 conflits), et le serveur l'aurait refusé de la même façon.
-      # smarter-academy.com a été passé en 8.4 dans hPanel pour cette raison.
+      # (Le serveur algérien a été passé en 8.4 dans hPanel pour cette raison.)
       # Baisser ce numéro sans re-résoudre le lockfile recasse tout.
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -145,7 +146,7 @@ jobs:
         working-directory: apps/api
         run: |
           cat > .env <<'ENVFILE'
-          APP_NAME=SmarterAcademyDzCI
+          APP_NAME="Smarter Academy"
           APP_ENV=testing
           # Left empty on purpose: `key:generate` below rewrites this line, and
           # it only rewrites a key that is already declared.
@@ -156,7 +157,7 @@ jobs:
           DB_CONNECTION=mysql
           DB_HOST=127.0.0.1
           DB_PORT=3306
-          DB_DATABASE=smarter_academy_dz_test
+          DB_DATABASE=smarter_academy_fr_test
           DB_USERNAME=root
           DB_PASSWORD=root
           CACHE_STORE=array
@@ -203,7 +204,7 @@ jobs:
           DB_CONNECTION: mysql
           DB_HOST: 127.0.0.1
           DB_PORT: 3306
-          DB_DATABASE: smarter_academy_dz_test
+          DB_DATABASE: smarter_academy_fr_test
           DB_USERNAME: root
           DB_PASSWORD: root
         # No --configuration flag: `artisan test` already passes one through to

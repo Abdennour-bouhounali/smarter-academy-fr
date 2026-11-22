@@ -26,6 +26,10 @@ class DatabaseSeeder extends Seeder
         // Les offres initiales : des valeurs de départ que l'administration
         // modifie ensuite depuis le panneau. Idempotent, jamais destructif.
         $this->call(PlanSeeder::class);
-        $this->call(BookSeeder::class);
+        // La librairie est fermée en France tant qu'il n'y a pas de livre
+        // français (config/books.php) : ses livres ne sont semés qu'ouverte.
+        if (config('books.enabled')) {
+            $this->call(BookSeeder::class);
+        }
     }
 }

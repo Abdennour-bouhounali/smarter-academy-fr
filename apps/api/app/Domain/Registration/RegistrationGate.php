@@ -23,7 +23,7 @@ class RegistrationGate
 {
     public const CLOSED_CODE = 'registration_closed';
 
-    public const CLOSED_MESSAGE = 'المنصّة في مرحلة التجربة: التسجيل مغلق مؤقّتًا.';
+    public const CLOSED_MESSAGE = 'La plateforme est en test : les inscriptions sont fermées pour le moment.';
 
     /** La ligne de l'administrateur, lue une fois par instance (null = pas encore lue ; [] = aucune ligne). */
     private ?array $overrides = null;

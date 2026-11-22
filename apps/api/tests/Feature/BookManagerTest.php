@@ -20,7 +20,7 @@ class BookManagerTest extends TestCase
     public function test_l_admin_cree_un_gestionnaire_qui_peut_se_connecter(): void
     {
         $response = $this->actingAs($this->admin())->postJson('/api/v1/admin/book-managers', [
-            'firstName' => 'سمير', 'lastName' => 'بلقاسم', 'email' => 'Libraire@Example.com',
+            'firstName' => 'Samir', 'lastName' => 'Bernard', 'email' => 'Libraire@Example.com',
         ])->assertStatus(201);
 
         $password = $response->json('password');
@@ -41,7 +41,7 @@ class BookManagerTest extends TestCase
         User::factory()->create(['email' => 'pris@example.com', 'role' => User::ROLE_STUDENT]);
 
         $this->actingAs($this->admin())->postJson('/api/v1/admin/book-managers', [
-            'firstName' => 'أ', 'lastName' => 'ب', 'email' => 'pris@example.com',
+            'firstName' => 'A', 'lastName' => 'B', 'email' => 'pris@example.com',
         ])->assertStatus(422)->assertJsonPath('reason', 'email_taken');
 
         $this->assertSame(User::ROLE_STUDENT, User::where('email', 'pris@example.com')->first()->role);

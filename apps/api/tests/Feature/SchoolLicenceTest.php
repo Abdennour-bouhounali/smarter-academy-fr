@@ -94,7 +94,7 @@ class SchoolLicenceTest extends TestCase
         $licence->save();
 
         // 10 élèves importés dans la classe couverte : bien plus que les 5 sièges gratuits du professeur.
-        $rows = collect(range(1, 10))->map(fn ($i) => ['firstName' => 'تلميذ', 'lastName' => 'رقم'.str_repeat('ا', $i), 'birthDate' => sprintf('2012-02-%02d', $i)])->all();
+        $rows = collect(range(1, 10))->map(fn ($i) => ['firstName' => 'Élève', 'lastName' => 'Numéro'.str_repeat('a', $i), 'birthDate' => sprintf('2012-02-%02d', $i)])->all();
         $this->withToken($directorToken)->postJson('/api/v1/school/roster/preview', ['classroomId' => $schoolClass->id, 'rows' => $rows])
             ->assertOk()->assertJsonPath('seatsFrom', 'school')->assertJsonPath('seatsRemaining', 12);
         $this->withToken($directorToken)->postJson('/api/v1/school/roster', ['classroomId' => $schoolClass->id, 'rows' => $rows])
@@ -108,7 +108,7 @@ class SchoolLicenceTest extends TestCase
         $this->enrol($own, [$this->student()]);
 
         // Sièges de l'établissement épuisés : 3 lignes pour les 2 sièges restants.
-        $more = collect(range(11, 13))->map(fn ($i) => ['firstName' => 'تلميذ', 'lastName' => 'آخر'.str_repeat('ا', $i - 10), 'birthDate' => sprintf('2012-03-%02d', $i)])->all();
+        $more = collect(range(11, 13))->map(fn ($i) => ['firstName' => 'Élève', 'lastName' => 'Autre'.str_repeat('a', $i - 10), 'birthDate' => sprintf('2012-03-%02d', $i)])->all();
         $this->withToken($directorToken)->postJson('/api/v1/school/roster', ['classroomId' => $schoolClass->id, 'rows' => $more])
             ->assertStatus(422)->assertJsonPath('reason', 'seats_exhausted');
 

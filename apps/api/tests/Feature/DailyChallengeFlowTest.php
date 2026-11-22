@@ -274,19 +274,27 @@ class DailyChallengeFlowTest extends TestCase
         $last->assertJsonPath('attempt.streakBefore', 0)->assertJsonPath('attempt.streakAfter', 1)->assertJsonPath('attempt.score.penalty', 15);
         $this->assertSame($day1 - 15 + $last->json('attempt.score.total'), (int) DailyChallengeStanding::first()->cumulative_score);
 
-        // Vendredi 25 (chômé) puis samedi 26 : la série traverse le vendredi.
-        $this->onChallengeDay('2026-09-26');
-        $this->api('GET', '/daily-challenge')->assertJsonPath('streak.current', 1);
+        // Vendredi 25 joué, samedi 26 et dimanche 27 (hors semaine d'école),
+        // puis lundi 28 : la série traverse le week-end.
+        $this->onChallengeDay('2026-09-25');
         $uuid = $this->api('POST', '/daily-challenge/start')->json('attempt.id');
         for ($p = 1; $p <= 5; $p++) {
             $last = $this->answerRight($uuid, $p);
         }
-        $last->assertJsonPath('attempt.streakAfter', 2)->assertJsonPath('attempt.score.penalty', 0);
+        $last->assertJsonPath('attempt.streakAfter', 2);
+
+        $this->onChallengeDay('2026-09-28');
+        $this->api('GET', '/daily-challenge')->assertJsonPath('streak.current', 2);
+        $uuid = $this->api('POST', '/daily-challenge/start')->json('attempt.id');
+        for ($p = 1; $p <= 5; $p++) {
+            $last = $this->answerRight($uuid, $p);
+        }
+        $last->assertJsonPath('attempt.streakAfter', 3)->assertJsonPath('attempt.score.penalty', 0);
     }
 
     public function test_a_rest_day_and_a_closed_window_refuse_to_start(): void
     {
-        $this->onChallengeDay('2026-09-25');
+        $this->onChallengeDay('2026-09-26'); // un samedi
         $this->api('GET', '/daily-challenge')->assertOk()->assertJsonPath('available', false)->assertJsonPath('reason', 'rest_day');
         $this->api('POST', '/daily-challenge/start')->assertStatus(422)->assertJsonPath('reason', 'rest_day');
 

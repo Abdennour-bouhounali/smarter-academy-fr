@@ -22,8 +22,8 @@ class AdminRegistrationSwitchTest extends TestCase
     use RefreshDatabase;
 
     private const PAYLOAD = [
-        'firstName' => 'ياسين',
-        'lastName' => 'بلقاسم',
+        'firstName' => 'Yanis',
+        'lastName' => 'Bernard',
         'email' => 'eleve@example.test',
         'password' => 'motdepasse1',
         'accept_legal' => true,

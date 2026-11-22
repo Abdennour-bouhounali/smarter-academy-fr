@@ -16,8 +16,8 @@ class RegistrationClosedTest extends TestCase
     use RefreshDatabase;
 
     private const PAYLOAD = [
-        'firstName' => 'ياسين',
-        'lastName' => 'بلقاسم',
+        'firstName' => 'Yanis',
+        'lastName' => 'Bernard',
         'email' => 'eleve@example.test',
         'password' => 'motdepasse1',
         'accept_legal' => true,
@@ -53,23 +53,42 @@ class RegistrationClosedTest extends TestCase
         $this->assertSame(1, User::count());
     }
 
-    public function test_the_waiting_list_keeps_a_phone_number_once(): void
+    public function test_the_waiting_list_keeps_an_email_address_once(): void
     {
-        $this->postJson('/api/v1/waitlist', ['phone' => '0550 12 34 56', 'name' => 'أمّ ياسين', 'role' => 'parent'])
+        $this->postJson('/api/v1/waitlist', ['email' => 'Parent.Yanis@Example.fr', 'name' => 'Mère de Yanis', 'role' => 'parent', 'phone' => '06 12 34 56 78'])
             ->assertStatus(201)
             ->assertJson(['success' => true]);
-        $this->postJson('/api/v1/waitlist', ['phone' => '0550123456'])->assertOk();
+        $this->postJson('/api/v1/waitlist', ['email' => 'parent.yanis@example.fr'])->assertOk();
 
         $rows = Contact::where('objectif', 'waitlist')->get();
         $this->assertCount(1, $rows);
-        $this->assertSame('0550123456', $rows[0]->phone);
-        $this->assertSame('أمّ ياسين', $rows[0]->name);
+        $this->assertSame('parent.yanis@example.fr', $rows[0]->email);
+        $this->assertSame('0612345678', $rows[0]->phone);
+        $this->assertSame('Mère de Yanis', $rows[0]->name);
     }
 
-    public function test_the_waiting_list_refuses_what_is_not_a_phone_number(): void
+    /** L'adresse suffit : ni nom, ni rôle, ni téléphone ne sont exigés. */
+    public function test_the_waiting_list_needs_only_an_email_address(): void
     {
-        $this->postJson('/api/v1/waitlist', ['phone' => 'bonjour'])->assertStatus(422);
-        $this->postJson('/api/v1/waitlist', [])->assertStatus(422);
+        $this->postJson('/api/v1/waitlist', ['email' => 'zoe@example.fr'])->assertStatus(201);
+        $this->assertNull(Contact::where('email', 'zoe@example.fr')->value('phone'));
+    }
+
+    public function test_the_waiting_list_accepts_a_french_phone_number_in_its_usual_shapes(): void
+    {
+        foreach (['01 23 45 67 89', '06.12.34.56.78', '+33 6 12 34 56 78', '+33612345678', '0033 7 12 34 56 78'] as $i => $phone) {
+            $this->postJson('/api/v1/waitlist', ['email' => "p{$i}@example.fr", 'phone' => $phone])->assertStatus(201);
+        }
+        $this->assertSame(5, Contact::count());
+    }
+
+    public function test_the_waiting_list_refuses_what_is_not_an_email_or_a_french_phone_number(): void
+    {
+        $this->postJson('/api/v1/waitlist', ['email' => 'bonjour'])->assertStatus(422)->assertJsonValidationErrors('email');
+        $this->postJson('/api/v1/waitlist', [])->assertStatus(422)->assertJsonValidationErrors('email');
+        // un numéro algérien n'est pas demandé, et n'est pas un numéro français
+        $this->postJson('/api/v1/waitlist', ['email' => 'a@example.fr', 'phone' => '+213 550 12 34 56'])->assertStatus(422)->assertJsonValidationErrors('phone');
+        $this->postJson('/api/v1/waitlist', ['email' => 'a@example.fr', 'phone' => 'bonjour'])->assertStatus(422)->assertJsonValidationErrors('phone');
         $this->assertSame(0, Contact::count());
     }
 }

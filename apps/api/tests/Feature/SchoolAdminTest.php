@@ -21,7 +21,7 @@ class SchoolAdminTest extends TestCase
     use CommercialFixtures;
     use RefreshDatabase;
 
-    private const DIRECTOR = ['firstName' => 'كريم', 'lastName' => 'بن علي', 'email' => 'Directeur@Ecole.dz'];
+    private const DIRECTOR = ['firstName' => 'Karim', 'lastName' => 'Martin', 'email' => 'Directeur@Ecole.dz'];
 
     private function createSchool(string $adminToken, array $attrs = []): int
     {
@@ -95,8 +95,8 @@ class SchoolAdminTest extends TestCase
         $this->withToken($token)->postJson("/api/v1/admin/schools/{$id}/director", [...self::DIRECTOR, 'email' => 'prof@ecole.dz'])
             ->assertStatus(422)->assertJsonPath('reason', 'email_taken');
 
-        // Le nom est en lettres arabes, comme pour tout compte.
-        $this->withToken($token)->postJson("/api/v1/admin/schools/{$id}/director", [...self::DIRECTOR, 'firstName' => 'Karim'])
+        // Le nom suit la règle de tout compte (PersonName) : des lettres, pas de chiffres.
+        $this->withToken($token)->postJson("/api/v1/admin/schools/{$id}/director", [...self::DIRECTOR, 'firstName' => 'Karim2'])
             ->assertStatus(422)->assertJsonValidationErrors('firstName');
 
         $this->withToken($token)->postJson("/api/v1/admin/schools/{$id}/director", self::DIRECTOR)->assertCreated();

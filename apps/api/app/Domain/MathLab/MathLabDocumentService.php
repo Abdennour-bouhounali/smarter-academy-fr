@@ -257,6 +257,6 @@ class MathLabDocumentService
     {
         $clean = trim((string) preg_replace('/\s+/u', ' ', $title));
 
-        return $clean === '' ? 'بدون عنوان' : mb_substr($clean, 0, 160);
+        return $clean === '' ? 'Sans titre' : mb_substr($clean, 0, 160);
     }
 }

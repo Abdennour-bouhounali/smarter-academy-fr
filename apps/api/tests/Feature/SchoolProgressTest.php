@@ -74,14 +74,14 @@ class SchoolProgressTest extends TestCase
         $this->grade3e(1);
         ['school' => $school, 'token' => $token] = $this->schoolWithDirector();
         $classroom = $this->schoolClassroom($school, $this->teacherInSchool($school));
-        $readable = $this->student(['first_name' => 'أمين', 'last_name' => 'بوعلام']);
+        $readable = $this->student(['first_name' => 'Lucas', 'last_name' => 'Moreau']);
         $notConsented = $this->student();
         $this->enrol($classroom, [$readable, $notConsented]);
         ClassroomMembership::where('student_id', $readable->id)->update(['school_consent_at' => now(), 'school_consent_by' => 'school']);
 
         $this->withToken($token)->getJson("/api/v1/school/students/{$readable->id}/progress")
             ->assertOk()
-            ->assertJsonPath('student.firstName', 'أمين')
+            ->assertJsonPath('student.firstName', 'Lucas')
             ->assertJsonPath('student.classroom.id', $classroom->id)
             ->assertJsonStructure(['progress' => ['summary', 'needsSupport', 'lessons', 'timeline']])
             ->assertJsonMissingPath('student.email');

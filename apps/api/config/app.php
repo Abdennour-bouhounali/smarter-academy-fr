@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Smarter Academy'),
 
     /*
     |--------------------------------------------------------------------------
@@ -86,6 +86,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Le fuseau de l'école
+    |--------------------------------------------------------------------------
+    |
+    | Le stockage reste en UTC (ci-dessus). Ce qui se compte en JOURS et en
+    | SEMAINES pour un élève, un parent ou un professeur — le défi du jour,
+    | les cœurs de l'espace jeux, la semaine du rapport aux parents, les
+    | fenêtres « récemment » du professeur, les envois planifiés — se découpe
+    | dans CE fuseau, lu ici et nulle part ailleurs.
+    |
+    */
+
+    'school_timezone' => env('SCHOOL_TIMEZONE', 'Europe/Paris'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     |
@@ -95,11 +110,11 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'fr'),
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'fr'),
 
-    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+    'faker_locale' => env('APP_FAKER_LOCALE', 'fr_FR'),
 
     /*
     |--------------------------------------------------------------------------

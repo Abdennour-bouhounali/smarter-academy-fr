@@ -15,7 +15,7 @@ class PlanPriceFactory extends Factory
     {
         return [
             'plan_version_id' => PlanVersion::factory(),
-            'currency' => 'DZD',
+            'currency' => 'EUR',
             'amount_cents' => 500000,
             'billing_interval' => PlanPrice::INTERVAL_YEAR,
             'interval_count' => 1,

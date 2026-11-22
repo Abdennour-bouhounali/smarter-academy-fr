@@ -91,7 +91,7 @@ return [
     'webpush' => [
         'public_key' => env('VAPID_PUBLIC_KEY'),
         'private_key' => env('VAPID_PRIVATE_KEY'),
-        'subject' => env('VAPID_SUBJECT', 'mailto:contact@smarter-academy.com'),
+        'subject' => env('VAPID_SUBJECT', 'mailto:'.env('MAIL_CONTACT_ADDRESS', 'contact@smarter-academy.fr')),
     ],
 
 ];

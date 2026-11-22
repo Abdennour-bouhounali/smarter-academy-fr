@@ -9,9 +9,9 @@ use Illuminate\Notifications\Notification;
 use Throwable;
 
 /**
- * Le courriel « إعادة تعيين كلمة المرور ».
+ * Le courriel « Réinitialisez votre mot de passe ».
  *
- * Même gabarit de marque et même langue (arabe) que VerifyEmailAddress. Le
+ * Même gabarit de marque et même langue (français) que VerifyEmailAddress. Le
  * lien pointe directement vers le FRONTEND (`/reinitialiser-mot-de-passe`) :
  * le jeton est à usage unique, haché en base par le broker de Laravel, et
  * expire (config auth.passwords.users.expire). Le courriel ne contient aucun
@@ -55,7 +55,7 @@ class ResetPasswordNotification extends Notification
         $minutes = (int) config('auth.passwords.users.expire', 60);
 
         return (new MailMessage)
-            ->subject('إعادة تعيين كلمة المرور — Smarter Academy')
+            ->subject('Réinitialisez votre mot de passe — '.config('app.name'))
             ->view(
                 ['html' => 'emails.reset-password', 'text' => 'emails.reset-password-text'],
                 [

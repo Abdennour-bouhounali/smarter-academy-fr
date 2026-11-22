@@ -97,8 +97,8 @@ class AdminPushTest extends TestCase
         app(AdminPush::class)->send('new_student', $student->id);
         [$endpoints, $payload] = $this->last();
         $this->assertSame(['https://push.example/admin'], $endpoints);
-        $this->assertSame('تلميذ جديد', $payload['title']);
-        $this->assertSame('تسجيلات التلاميذ اليوم: 1', $payload['body']);
+        $this->assertSame('Nouvel élève', $payload['title']);
+        $this->assertSame('Inscriptions d’élèves aujourd’hui : 1', $payload['body']);
         $this->assertSame('new_student', $payload['tag'], 'une seule notification d\'inscription, remplacée');
         $this->assertSame('/admin/eleves/'.$student->id, $payload['url']);
         $this->assertStringNotContainsString('Yasmine', json_encode($payload, JSON_UNESCAPED_UNICODE));
@@ -115,7 +115,7 @@ class AdminPushTest extends TestCase
         $this->postJson('/api/v1/contact', ['name' => 'Karim', 'email' => 'k@example.com', 'message' => 'Un message assez long.'])->assertCreated();
 
         [, $payload] = $this->last();
-        $this->assertSame('رسالة جديدة', $payload['title']);
+        $this->assertSame('Nouveau message', $payload['title']);
         $this->assertSame('/admin/systeme/messages', $payload['url']);
         $this->assertStringNotContainsString('Karim', json_encode($payload, JSON_UNESCAPED_UNICODE));
         $this->assertStringNotContainsString('assez long', json_encode($payload, JSON_UNESCAPED_UNICODE));
@@ -130,8 +130,8 @@ class AdminPushTest extends TestCase
         ]);
 
         $payload = app(AdminPush::class)->payload('student_report', $report->id);
-        $this->assertSame('بلاغ جديد', $payload['title']);
-        $this->assertSame('خطأ رياضي · lecon-e', $payload['body']);
+        $this->assertSame('Nouveau signalement', $payload['title']);
+        $this->assertSame('Erreur mathématique · lecon-e', $payload['body']);
         $this->assertSame('/admin/signalements/'.$report->id, $payload['url']);
     }
 

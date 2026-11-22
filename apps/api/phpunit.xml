@@ -23,6 +23,8 @@
         <env name="REGISTRATION_OPEN" value="true"/>
         <!-- the billing, access and limits tests were written for a platform that sells: the suite runs with payments OPEN; PaymentGateTest closes them itself -->
         <env name="PAYMENTS_OPEN" value="true"/>
+        <!-- the books store tests were written for an open store: the suite runs with it ON; BooksSwitchTest closes it itself -->
+        <env name="BOOKS_ENABLED" value="true"/>
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="BROADCAST_CONNECTION" value="null"/>

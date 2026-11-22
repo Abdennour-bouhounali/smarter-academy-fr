@@ -20,22 +20,12 @@ return [
     'allowed_methods' => ['*'],
 
     /*
-     * Les origines autorisées à appeler cette API.
-     *
-     * Héritées du produit français, elles contenaient en dur
-     * « https://smarter-academy.fr » — le domaine de production FRANÇAIS —
-     * et rien d'algérien. Deux conséquences, toutes deux réelles :
-     *
-     *   — le domaine de production algérien ne pouvait pas appeler son
-     *     propre serveur sans qu'on édite ce fichier au déploiement ;
-     *   — une page servie depuis le domaine français restait autorisée à
-     *     parler à l'API algérienne, ce que ALGERIA_PLATFORM_MASTER_SPEC.md
-     *     §2 interdit explicitement (« aucune dépendance runtime entre les
-     *     deux produits »).
-     *
-     * La liste vient donc désormais de l'environnement, avec pour défaut les
-     * deux ports de développement local (Vite en mode dev, et son aperçu de
-     * production sur 4173 — celui qu'utilise la QA navigateur).
+     * Les origines autorisées à appeler cette API : celles du site français
+     * (en production « https://smarter-academy.fr »), et elles seules — le
+     * produit algérien est un autre produit, sans aucune dépendance runtime
+     * avec celui-ci. La liste vient de l'environnement (CORS_ALLOWED_ORIGINS),
+     * avec pour défaut les ports de développement local (Vite en mode dev,
+     * et son aperçu de production sur 4173 — celui qu'utilise la QA navigateur).
      */
     'allowed_origins' => array_values(array_filter(array_map(
         'trim',

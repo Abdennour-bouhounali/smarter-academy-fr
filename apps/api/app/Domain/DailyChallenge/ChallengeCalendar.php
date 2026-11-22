@@ -6,11 +6,11 @@ use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
 
 /**
- * Le CALENDRIER du défi : quel jour sommes-nous (à Alger, pas en UTC),
- * quels jours sont des jours de défi, combien en a-t-on manqué.
+ * Le CALENDRIER du défi : quel jour sommes-nous (dans le fuseau de l'école,
+ * pas en UTC), quels jours sont des jours de défi, combien en a-t-on manqué.
  *
- * Un jour hors de `challenge_weekdays` (le vendredi par défaut) n'existe pas
- * pour la série : il ne la casse pas et ne coûte rien.
+ * Un jour hors de `challenge_weekdays` (le samedi et le dimanche par défaut)
+ * n'existe pas pour la série : il ne la casse pas et ne coûte rien.
  *
  * Pur : l'instant « maintenant » est passé en argument ou lu une fois.
  */
@@ -21,13 +21,13 @@ final class ChallengeCalendar
 
     public static function fromConfig(DailyChallengeConfig $config): self
     {
-        return new self($config->timezone(), array_map('intval', $config->get('challenge.challenge_weekdays', [1, 2, 3, 4, 5, 6, 7])));
+        return new self($config->timezone(), array_map('intval', $config->get('challenge.challenge_weekdays', [1, 2, 3, 4, 5])));
     }
 
     /** @param  array<string, mixed>  $snapshot  config_snapshot d'un défi */
     public static function fromSnapshot(array $snapshot): self
     {
-        return new self($snapshot['timezone'] ?? 'Africa/Algiers', array_map('intval', $snapshot['challengeWeekdays'] ?? [1, 2, 3, 4, 5, 6, 7]));
+        return new self($snapshot['timezone'] ?? (string) config('app.school_timezone'), array_map('intval', $snapshot['challengeWeekdays'] ?? [1, 2, 3, 4, 5]));
     }
 
     public function now(?Carbon $now = null): CarbonImmutable

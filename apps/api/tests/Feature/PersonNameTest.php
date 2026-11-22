@@ -11,7 +11,7 @@ use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 /**
- * « الاسم و اللقب » — le nom de chaque compte, et les trois portes qui l'écrivent
+ * Prénom et nom — le nom de chaque compte, et les trois portes qui l'écrivent
  * (inscription, fin d'inscription Google, profil). Une seule règle pour les
  * trois : PersonName.
  */
@@ -22,9 +22,9 @@ class PersonNameTest extends TestCase
     private function registerPayload(array $overrides = []): array
     {
         return array_merge([
-            'firstName' => 'أمين',
-            'lastName' => 'بن علي',
-            'email' => 'amine@example.dz',
+            'firstName' => 'Zoé',
+            'lastName' => 'D\'Almeida',
+            'email' => 'zoe@example.fr',
             'password' => 'password123',
             'accept_legal' => true,
         ], $overrides);
@@ -48,7 +48,7 @@ class PersonNameTest extends TestCase
             ->assertStatus(422)
             ->assertJsonValidationErrors(['firstName', 'lastName']);
 
-        $this->assertDatabaseMissing('users', ['email' => 'amine@example.dz']);
+        $this->assertDatabaseMissing('users', ['email' => 'zoe@example.fr']);
     }
 
     public function test_l_inscription_enregistre_le_nom_normalise(): void
@@ -56,12 +56,12 @@ class PersonNameTest extends TestCase
         Notification::fake();
 
         $this->postJson('/api/v1/auth/register', $this->registerPayload([
-            'firstName' => '  محمد   أمين ',
-            'lastName' => 'بن  علي',
+            'firstName' => '  Jean   Pierre ',
+            'lastName' => 'Le  Goff',
         ]))
             ->assertCreated()
-            ->assertJsonPath('user.firstName', 'محمد أمين')
-            ->assertJsonPath('user.lastName', 'بن علي')
+            ->assertJsonPath('user.firstName', 'Jean Pierre')
+            ->assertJsonPath('user.lastName', 'Le Goff')
             ->assertJsonPath('user.nameComplete', true);
     }
 
@@ -79,60 +79,75 @@ class PersonNameTest extends TestCase
         $user = $this->verifiedUser();
         Sanctum::actingAs($user);
 
-        $this->patchJson('/api/v1/auth/profile', ['firstName' => ' سارة ', 'lastName' => 'آيت-يحيى'])
+        $this->patchJson('/api/v1/auth/profile', ['firstName' => ' Jean-Pierre ', 'lastName' => 'O’Neil'])
             ->assertOk()
-            ->assertJsonPath('user.firstName', 'سارة')
-            ->assertJsonPath('user.lastName', 'آيت-يحيى')
+            ->assertJsonPath('user.firstName', 'Jean-Pierre')
+            ->assertJsonPath('user.lastName', 'O’Neil')
             ->assertJsonPath('user.nameComplete', true);
 
-        $this->assertSame('سارة', $user->fresh()->first_name);
+        $this->assertSame('Jean-Pierre', $user->fresh()->first_name);
     }
 
     public function test_un_enseignant_modifie_aussi_son_nom(): void
     {
         Sanctum::actingAs($this->verifiedUser(['role' => User::ROLE_TEACHER]));
 
-        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'كريمة', 'lastName' => 'بوزيد'])
+        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'Hélène', 'lastName' => 'Benali'])
             ->assertOk()
-            ->assertJsonPath('user.firstName', 'كريمة');
+            ->assertJsonPath('user.firstName', 'Hélène');
     }
 
-    /** Lettres ARABES seulement : ni latin, ni chiffres (même ٠-٩), ni ponctuation, ni balises. */
-    public function test_le_profil_refuse_ce_qui_n_est_pas_un_nom_arabe(): void
+    /** Des lettres seulement : ni chiffres, ni ponctuation, ni balises, ni séparateur en tête, en queue ou doublé. */
+    public function test_le_profil_refuse_ce_qui_n_est_pas_un_nom(): void
     {
-        Sanctum::actingAs($this->verifiedUser(['first_name' => 'علي', 'last_name' => 'قاسي']));
+        Sanctum::actingAs($this->verifiedUser(['first_name' => 'Léa', 'last_name' => 'Martin']));
 
-        foreach (['Ali', 'Léa', 'علي Ali', 'ب', 'علي3', 'علي٣', 'علي،', '<b>علي</b>', '😀😀', '-علي', 'علي-', 'بن - علي', str_repeat('ب', 51)] as $bad) {
-            $this->patchJson('/api/v1/auth/profile', ['firstName' => $bad, 'lastName' => 'قاسي'])
+        foreach (['Léa3', '3', 'Léa!', 'Léa,', 'Léa.', '<script>', '<b>Léa</b>', '😀😀', '-Léa', 'Léa-', 'Jean - Pierre', 'Jean--Pierre', "'Léa", 'Léa_Martin', 'Léa@', str_repeat('a', 51)] as $bad) {
+            $this->patchJson('/api/v1/auth/profile', ['firstName' => $bad, 'lastName' => 'Martin'])
                 ->assertStatus(422)
                 ->assertJsonValidationErrors('firstName');
         }
 
-        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'علي'])
+        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'Léa'])
             ->assertStatus(422)
             ->assertJsonValidationErrors('lastName');
     }
 
-    public function test_les_harakat_et_la_tatweel_sont_acceptees(): void
+    /** Un nom en lettres arabes est refusé avec la même erreur qu'un nom à chiffres. */
+    public function test_le_profil_refuse_un_nom_en_lettres_arabes(): void
+    {
+        Sanctum::actingAs($this->verifiedUser(['first_name' => 'Léa', 'last_name' => 'Martin']));
+
+        foreach (['علي', 'Léa علي'] as $bad) {
+            $this->patchJson('/api/v1/auth/profile', ['firstName' => $bad, 'lastName' => 'Martin'])
+                ->assertStatus(422)
+                ->assertJsonValidationErrors(['firstName' => 'Le prénom ne peut contenir que des lettres']);
+        }
+    }
+
+    public function test_les_accents_les_apostrophes_et_les_traits_d_union_sont_acceptes(): void
     {
         Sanctum::actingAs($this->verifiedUser());
 
-        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'مُحَمَّد', 'lastName' => 'الجزائـري'])
-            ->assertOk()
-            ->assertJsonPath('user.firstName', 'مُحَمَّد');
+        foreach ([['Zoé', 'D\'Almeida'], ['Jean-Pierre', 'O’Neil'], ['Maëlle', 'Lefèvre'], ['Françoise', 'Œuvray'], ['Noé', 'Ü']] as [$first, $last]) {
+            $this->patchJson('/api/v1/auth/profile', ['firstName' => $first, 'lastName' => $last])
+                ->assertOk()
+                ->assertJsonPath('user.firstName', $first)
+                ->assertJsonPath('user.lastName', $last);
+        }
     }
 
-    /** Un nom latin d'avant la règle arabe ne compte pas : le compte repasse par l'étape. */
-    public function test_un_nom_latin_existant_rend_le_compte_incomplet(): void
+    /** Un nom enregistré qui ne passe pas la règle ne compte pas : le compte repasse par l'étape. */
+    public function test_un_nom_invalide_existant_rend_le_compte_incomplet(): void
     {
-        Sanctum::actingAs($this->verifiedUser(['first_name' => 'Amine', 'last_name' => 'Kaci']));
+        Sanctum::actingAs($this->verifiedUser(['first_name' => 'أمين', 'last_name' => 'Kaci']));
 
         $this->getJson('/api/v1/auth/me')->assertJsonPath('user.nameComplete', false);
     }
 
-    public function test_l_inscription_refuse_un_nom_latin(): void
+    public function test_l_inscription_refuse_un_nom_avec_des_chiffres(): void
     {
-        $this->postJson('/api/v1/auth/register', $this->registerPayload(['firstName' => 'Amine']))
+        $this->postJson('/api/v1/auth/register', $this->registerPayload(['firstName' => 'Zoé2']))
             ->assertStatus(422)
             ->assertJsonValidationErrors('firstName');
     }
@@ -141,13 +156,13 @@ class PersonNameTest extends TestCase
     {
         Sanctum::actingAs($this->verifiedUser(['email_verified_at' => null]));
 
-        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'علي', 'lastName' => 'قاسي'])
+        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'Léa', 'lastName' => 'Martin'])
             ->assertStatus(403);
     }
 
     public function test_le_profil_exige_une_session(): void
     {
-        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'علي', 'lastName' => 'قاسي'])
+        $this->patchJson('/api/v1/auth/profile', ['firstName' => 'Léa', 'lastName' => 'Martin'])
             ->assertStatus(401);
     }
 
@@ -171,23 +186,23 @@ class PersonNameTest extends TestCase
             'handoff' => $this->handoff(),
             'accept_legal' => true,
             'password' => 'Secret123',
-            'firstName' => 'ليا',
-            'lastName' => 'مرابط',
+            'firstName' => 'Léa-Rose',
+            'lastName' => 'Mercier',
         ])->assertCreated()->assertJsonPath('user.nameComplete', true);
 
         $user = User::where('email', 'lea@gmail.com')->firstOrFail();
-        $this->assertSame('ليا', $user->first_name);
-        $this->assertSame('مرابط', $user->last_name);
+        $this->assertSame('Léa-Rose', $user->first_name);
+        $this->assertSame('Mercier', $user->last_name);
     }
 
-    public function test_google_refuse_le_nom_latin_de_google(): void
+    public function test_google_refuse_un_nom_invalide(): void
     {
         $this->postJson('/api/v1/auth/google/complete', [
             'handoff' => $this->handoff(),
             'accept_legal' => true,
             'password' => 'Secret123',
-            'firstName' => 'Léa',
-            'lastName' => 'M',
+            'firstName' => 'L3a',
+            'lastName' => '<b>M</b>',
         ])->assertStatus(422)->assertJsonValidationErrors(['firstName', 'lastName']);
 
         $this->assertDatabaseCount('users', 0);

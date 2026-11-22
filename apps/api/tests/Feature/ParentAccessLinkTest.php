@@ -57,7 +57,7 @@ class ParentAccessLinkTest extends TestCase
 
     public function test_the_student_creates_the_link_only_by_consenting_and_the_parent_reads_without_an_account(): void
     {
-        $student = $this->student(['first_name' => 'سارة', 'last_name' => 'منصوري']);
+        $student = $this->student(['first_name' => 'Sarah', 'last_name' => 'Mansouri']);
 
         $this->as($student, 'POST', '/student/parent-link', [])->assertStatus(422)->assertJsonPath('reason', 'consent_required');
         $this->assertSame(0, ParentAccessLink::count());
@@ -67,7 +67,7 @@ class ParentAccessLinkTest extends TestCase
         $this->assertNotSame($token, ParentAccessLink::first()->getRawOriginal('token_hash'));
 
         $show = $this->guest('GET', "/parent-link/{$token}")->assertOk()
-            ->assertJsonPath('child.firstName', 'سارة')->assertJsonPath('unlocked', true)->assertJsonPath('pinSet', false)
+            ->assertJsonPath('child.firstName', 'Sarah')->assertJsonPath('unlocked', true)->assertJsonPath('pinSet', false)
             ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
         $this->assertStringContainsString('no-store', $show->headers->get('Cache-Control'));
         $this->assertStringNotContainsString($student->email, $show->getContent());
@@ -132,8 +132,8 @@ class ParentAccessLinkTest extends TestCase
     {
         $classroom = Classroom::factory()->create(['grade' => '3e']);
         $teacher = $classroom->teacher;
-        $withLink = $this->student(['first_name' => 'أمين']);
-        $without = $this->student(['first_name' => 'ياسين']);
+        $withLink = $this->student(['first_name' => 'Lucas']);
+        $without = $this->student(['first_name' => 'Yanis']);
         $outsider = $this->student();
         $this->enrol($classroom, [$withLink, $without]);
         $existing = $this->linkOf($withLink);
@@ -147,7 +147,7 @@ class ParentAccessLinkTest extends TestCase
 
         // Le lien créé par l'enseignant est visible, et révocable, par l'élève.
         $this->as($without, 'GET', '/student/parent-link')->assertJsonPath('link.createdBy', 'teacher');
-        $this->guest('GET', '/parent-link/'.$this->tokenFrom($cards[$without->id]['url']))->assertOk()->assertJsonPath('child.firstName', 'ياسين');
+        $this->guest('GET', '/parent-link/'.$this->tokenFrom($cards[$without->id]['url']))->assertOk()->assertJsonPath('child.firstName', 'Yanis');
 
         // Réimprimer redonne les mêmes liens.
         $again = collect($this->as($teacher, 'POST', "/teacher/classrooms/{$classroom->id}/students/parent-cards", ['studentIds' => [$without->id]])->json('cards'));

@@ -18,7 +18,7 @@ class PlanPricingTierFactory extends Factory
             'min_students' => 1,
             'max_students' => null,
             'price_per_student_cents' => 100000,
-            'currency' => 'DZD',
+            'currency' => 'EUR',
             'sort_order' => 0,
             'is_active' => true,
         ];

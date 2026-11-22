@@ -29,7 +29,7 @@ class PlanAdminTest extends TestCase
         $plan = $this->withToken($token)->postJson('/api/v1/admin/plans', [
             'name' => 'Enseignant — Établissement', 'type' => 'teacher', 'isPublic' => true,
             'entitlements' => [K::CLASSROOMS_MAX => 20, K::LESSONS_VISIBILITY => true, K::CONTENT_ALLOWED_GRADES => ['3e']],
-            'price' => ['amountCents' => 5000000, 'currency' => 'dzd', 'billingInterval' => 'year'],
+            'price' => ['amountCents' => 5000000, 'currency' => 'eur', 'billingInterval' => 'year'],
         ])->assertCreated()->json('plan');
 
         $this->assertSame('draft', $plan['status']);
@@ -38,7 +38,7 @@ class PlanAdminTest extends TestCase
         $version = $plan['versions'][0];
         $this->assertSame('draft', $version['status']);
         $this->assertSame(20, $version['entitlements'][K::CLASSROOMS_MAX]);
-        $this->assertSame('DZD', $version['price']['currency']);
+        $this->assertSame('EUR', $version['price']['currency']);
 
         // Activer sans version publiée : refus. Publier, puis activer.
         $this->withToken($token)->patchJson("/api/v1/admin/plans/{$plan['id']}/status", ['status' => 'active'])->assertStatus(422);

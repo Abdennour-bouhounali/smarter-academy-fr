@@ -10,12 +10,12 @@ use Illuminate\Notifications\Notification;
 use Throwable;
 
 /**
- * Le courriel « أكّد بريدك الإلكتروني ».
+ * Le courriel « Confirmez votre adresse e-mail ».
  *
- * Écrit en ARABE, comme tout ce que l'élève lit, et envoyé avec la locale
- * `ar` (User::preferredLocale). Mis en page par le gabarit de marque
- * `resources/views/emails/layouts/brand.blade.php` (logo, Cairo / Amiri,
- * couleurs de la plateforme, RTL), et non par le gabarit Markdown de Laravel.
+ * Écrit en français, au « vous » (un parent peut le lire), et envoyé avec la
+ * locale `fr` (User::preferredLocale). Mis en page par le gabarit de marque
+ * `resources/views/emails/layouts/brand.blade.php` (logo, Inter / Space
+ * Grotesk, couleurs de la plateforme), et non par le gabarit Markdown de Laravel.
  *
  * Ce courriel ne contient AUCUN secret réutilisable : le lien est signé et
  * expire (voir EmailVerificationLink). Il ne contient pas non plus de mot de
@@ -55,10 +55,10 @@ class VerifyEmailAddress extends Notification
         $url = EmailVerificationLink::for($notifiable);
         $hours = (int) (EmailVerificationLink::EXPIRES_AFTER_MINUTES / 60);
 
-        // Le gabarit de marque (logo, Cairo / Amiri, couleurs du logo),
+        // Le gabarit de marque (logo, Inter / Space Grotesk, couleurs du logo),
         // et sa version texte pour les clients qui n'affichent pas le HTML.
         return (new MailMessage)
-            ->subject('أكّد بريدك الإلكتروني — Smarter Academy')
+            ->subject('Confirmez votre adresse e-mail — '.config('app.name'))
             ->view(
                 ['html' => 'emails.verify-email', 'text' => 'emails.verify-email-text'],
                 [

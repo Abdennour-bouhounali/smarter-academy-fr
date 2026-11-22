@@ -22,7 +22,7 @@ final class CompassBank
         $path = (string) config('compass.index_path');
         if ($this->index === null || $this->loadedFrom !== $path) {
             if (! is_file($path)) {
-                throw new DomainException('Banque « بوصلتي » introuvable : '.$path);
+                throw new DomainException('Banque « Ma boussole » introuvable : '.$path);
             }
             $data = json_decode((string) file_get_contents($path), true);
             $this->index = is_array($data['items'] ?? null) ? $data['items'] : [];

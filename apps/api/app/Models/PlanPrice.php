@@ -41,7 +41,7 @@ class PlanPrice extends Model
     ];
 
     protected $attributes = [
-        'currency' => 'DZD',
+        'currency' => 'EUR',
         'amount_cents' => 0,
         'billing_interval' => self::INTERVAL_YEAR,
         'interval_count' => 1,

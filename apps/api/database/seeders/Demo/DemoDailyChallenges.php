@@ -66,7 +66,7 @@ final class DemoDailyChallenges
 
         $service = app(DailyChallengeService::class);
         $calendar = ChallengeCalendar::fromConfig(app(DailyChallengeConfig::class));
-        $today = CarbonImmutable::parse($calendar->today(), 'Africa/Algiers');
+        $today = CarbonImmutable::parse($calendar->today(), (string) config('app.school_timezone'));
 
         try {
             for ($daysAgo = self::DAYS; $daysAgo >= 1; $daysAgo--) {

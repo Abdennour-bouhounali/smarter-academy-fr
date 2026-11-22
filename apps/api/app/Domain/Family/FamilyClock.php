@@ -6,14 +6,14 @@ use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
 
 /**
- * Le jour et la semaine de l'espace parent, comptés à Alger. La semaine
- * commence le DIMANCHE, comme la semaine scolaire algérienne.
+ * Le jour et la semaine de l'espace parent, comptés dans le fuseau de
+ * l'école. La semaine commence le LUNDI, comme la semaine scolaire.
  */
 class FamilyClock
 {
     public static function timezone(): string
     {
-        return (string) config('family.timezone', 'Africa/Algiers');
+        return (string) config('app.school_timezone');
     }
 
     public static function now(): CarbonImmutable
@@ -26,11 +26,11 @@ class FamilyClock
         return self::now()->toDateString();
     }
 
-    /** Le dimanche (Alger, 00:00) de la semaine qui précède de `$weeksBack` la semaine en cours. */
+    /** Le lundi (00:00, fuseau de l'école) de la semaine qui précède de `$weeksBack` la semaine en cours. */
     public static function weekStart(int $weeksBack = 0, ?CarbonImmutable $now = null): CarbonImmutable
     {
         $local = ($now ?? self::now())->setTimezone(self::timezone())->startOfDay();
 
-        return $local->subDays($local->dayOfWeek)->subWeeks($weeksBack);
+        return $local->startOfWeek(CarbonImmutable::MONDAY)->subWeeks($weeksBack);
     }
 }

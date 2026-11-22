@@ -43,7 +43,7 @@ class TeacherPracticeResponsesTest extends TestCase
 
     private function member(?Classroom $classroom = null, string $status = ClassroomMembership::STATUS_ACTIVE): User
     {
-        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e', 'first_name' => 'أمين', 'last_name' => 'سعدي']);
+        $student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '3e', 'first_name' => 'Lucas', 'last_name' => 'Petit']);
         ClassroomMembership::factory()->in($classroom ?? $this->classroom)->of($student)->create(['status' => $status]);
 
         return $student;
@@ -95,7 +95,7 @@ class TeacherPracticeResponsesTest extends TestCase
         $this->assertSame(1, $rows[$b->id]['questionsAnswered']);
         $this->assertSame(1, $rows[$b->id]['questionsCorrect']);
         $this->assertSame('3e B', $rows[$a->id]['classrooms'][0]['name']);
-        $this->assertSame('أمين', $rows[$a->id]['firstName']);
+        $this->assertSame('Lucas', $rows[$a->id]['firstName']);
         $this->assertArrayNotHasKey('email', $rows[$a->id], 'jamais l’email d’un élève');
     }
 

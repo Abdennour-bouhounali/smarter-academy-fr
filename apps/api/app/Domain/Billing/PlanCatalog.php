@@ -36,9 +36,8 @@ class PlanCatalog
         }
 
         // ── Les offres CONFIGURÉES EN BASE ─────────────────────────────
-        // Le produit algérien n'a aucun paiement en ligne : ces offres
-        // n'ont pas de tarif chez un fournisseur (price_id vide), donc
-        // purchasable() les refuse — c'est voulu. Elles sont rendues ici
+        // Ces offres n'ont pas de tarif chez un fournisseur (price_id
+        // vide), donc purchasable() les refuse — c'est voulu. Elles sont rendues ici
         // pour que `subscriptions.plan` reste lisible (nom, montant
         // informatif) par SubscriptionManager et l'administration.
         return $this->fromDatabase($key);
@@ -65,7 +64,7 @@ class PlanCatalog
             'description' => $plan->description,
             'price_id' => $price?->provider_price_id,
             'amount_cents' => $price?->amount_cents,
-            'currency' => $price?->currency ?? 'DZD',
+            'currency' => $price?->currency ?? 'EUR',
             'interval' => $price?->billing_interval,
             'active' => $plan->status === Plan::STATUS_ACTIVE,
         ];
@@ -74,8 +73,10 @@ class PlanCatalog
     /**
      * L'offre est-elle réellement achetable MAINTENANT ?
      *
-     * Deux conditions : elle est proposée à la vente, et son tarif est
-     * configuré chez le fournisseur.
+     * Trois conditions : elle est proposée à la vente, son tarif est
+     * configuré chez le fournisseur, et elle a un prix — une offre à 0 est
+     * une offre dont le propriétaire n'a pas encore fixé le prix
+     * (PlanSeeder::PRICE_TO_BE_DECIDED_BY_OWNER), jamais un cadeau.
      */
     public function purchasable(string $key): bool
     {
@@ -83,7 +84,8 @@ class PlanCatalog
 
         return $plan !== null
             && ($plan['active'] ?? false) === true
-            && ! empty($plan['price_id']);
+            && ! empty($plan['price_id'])
+            && (int) ($plan['amount_cents'] ?? 0) > 0;
     }
 
     /**

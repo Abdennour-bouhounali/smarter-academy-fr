@@ -30,11 +30,24 @@ use Illuminate\Database\Seeder;
  *
  * IDEMPOTENT et NON DESTRUCTIF : une offre dont le slug existe déjà n'est
  * pas touchée. Aucun abonnement n'est créé ici. Les montants sont en
- * centimes de dinar, INFORMATIFS : la plateforme n'encaisse rien
- * (ALGERIA_PLATFORM_MASTER_SPEC.md §17/§18).
+ * centimes d'euro.
+ *
+ * LES PRIX : le propriétaire ne les a pas encore fixés (le paiement est
+ * fermé par défaut — PaymentGate). Seul le prix de l'élève est connu : celui
+ * de config/billing.php (35 € par an). Tout autre montant payant vaut
+ * PRICE_TO_BE_DECIDED_BY_OWNER (0) ; une formule à 0 ne se demande pas et ne
+ * s'achète pas (SubscriptionRequestService, PlanCatalog::purchasable). Les
+ * gratuités de structure (la formule gratuite du professeur, ses 5 premiers
+ * élèves) valent FREE.
  */
 class PlanSeeder extends Seeder
 {
+    /** Un prix que le propriétaire n'a pas encore fixé : rien ne se vend à ce prix. */
+    public const PRICE_TO_BE_DECIDED_BY_OWNER = 0;
+
+    /** Une gratuité voulue par la structure de l'offre, pas un prix en attente. */
+    public const FREE = 0;
+
     /** Les fonctionnalités de l'offre enseignant payante. */
     private const PAID_TEACHER_FEATURES = [
         K::CLASSROOMS_MAX => null,
@@ -49,23 +62,27 @@ class PlanSeeder extends Seeder
         K::CONTENT_ALLOWED_GRADES => ['3e'],
     ];
 
-    /** La grille de départ : [min, max (null = sans borne), prix par élève en centimes]. */
+    /**
+     * La grille de départ : [min, max (null = sans borne), prix par élève en
+     * centimes d'euro]. Les paliers sont gardés ; leurs prix attendent le
+     * propriétaire.
+     */
     private const INITIAL_TIERS = [
-        [1, 5, 0],
-        [6, 20, 100000],
-        [21, 30, 80000],
-        [31, 50, 70000],
-        [51, 100, 60000],
-        [101, null, 50000],
+        [1, 5, self::FREE],
+        [6, 20, self::PRICE_TO_BE_DECIDED_BY_OWNER],
+        [21, 30, self::PRICE_TO_BE_DECIDED_BY_OWNER],
+        [31, 50, self::PRICE_TO_BE_DECIDED_BY_OWNER],
+        [51, 100, self::PRICE_TO_BE_DECIDED_BY_OWNER],
+        [101, null, self::PRICE_TO_BE_DECIDED_BY_OWNER],
     ];
 
     public function run(): void
     {
         $this->seed('teacher-free', [
-            // Les NOMS et descriptions sont ce que l'enseignant et l'élève lisent
-            // dans leur espace (arabe) ; l'administration les modifie depuis le panneau.
-            'name' => 'الأستاذ — مجاني',
-            'description' => 'حتى 5 تلاميذ وعدد غير محدود من الأقسام. العرض الافتراضي لكل حساب أستاذ.',
+            // Les NOMS et descriptions sont ce que le professeur et l'élève lisent
+            // dans leur espace ; l'administration les modifie depuis le panneau.
+            'name' => 'Professeur — gratuit',
+            'description' => 'Jusqu’à 5 élèves et autant de classes que vous voulez. La formule de départ de tout compte professeur.',
             'type' => Plan::TYPE_TEACHER,
             'status' => Plan::STATUS_ACTIVE,
             'display_order' => 0,
@@ -84,11 +101,11 @@ class PlanSeeder extends Seeder
             K::REPORTS_EXPORT => false,
             K::STUDENTS_COVERED => false,
             K::CONTENT_ALLOWED_GRADES => ['3e'],
-        ], ['amount_cents' => 0, 'billing_interval' => PlanPrice::INTERVAL_ONE_TIME, 'duration_days' => null]);
+        ], ['amount_cents' => self::FREE, 'billing_interval' => PlanPrice::INTERVAL_ONE_TIME, 'duration_days' => null]);
 
         $this->seed('teacher-seats', [
-            'name' => 'الأستاذ — حسب عدد التلاميذ',
-            'description' => 'اختر عدد التلاميذ الذين تريد تأطيرهم؛ يقلّ سعر التلميذ الواحد كلّما زاد العدد. الأقسام غير محدودة، ويحصل تلاميذك على المحتوى المدفوع عبر عرضك.',
+            'name' => 'Professeur — selon le nombre d’élèves',
+            'description' => 'Choisissez le nombre d’élèves que vous suivez ; plus il est grand, plus le prix par élève baisse. Les classes sont illimitées, et vos élèves ont accès à tout le contenu grâce à votre formule.',
             'type' => Plan::TYPE_TEACHER,
             'status' => Plan::STATUS_ACTIVE,
             'display_order' => 1,
@@ -96,22 +113,23 @@ class PlanSeeder extends Seeder
             'is_default' => false,
             'allows_requests' => true,
         ], self::PAID_TEACHER_FEATURES,
-            ['amount_cents' => 0, 'billing_interval' => PlanPrice::INTERVAL_YEAR, 'duration_days' => 365],
+            // Le prix se lit dans la grille (par élève) ; la ligne de prix n'est que le support de l'intervalle.
+            ['amount_cents' => self::FREE, 'billing_interval' => PlanPrice::INTERVAL_YEAR, 'duration_days' => 365],
             self::INITIAL_TIERS);
 
         // L'offre ÉLÈVE payante : ce à quoi l'administration lie un lot de
         // codes ou une activation directe. Le gratuit élève reste une règle
         // (EntitlementService), pas une offre : aucune offre élève par défaut.
         $this->seed('student-premium', [
-            'name' => 'التلميذ — وصول كامل',
-            'description' => 'كل دروس السنة وتمارينها.',
+            'name' => 'Élève — accès complet',
+            'description' => 'Toutes les leçons et tous les exercices de l’année.',
             'type' => Plan::TYPE_STUDENT,
             'status' => Plan::STATUS_ACTIVE,
             'display_order' => 0,
             'is_public' => true,
             'is_default' => false,
             'allows_requests' => true,
-        ], [], ['amount_cents' => 300000, 'billing_interval' => PlanPrice::INTERVAL_YEAR, 'duration_days' => 365]);
+        ], [], ['amount_cents' => (int) config('billing.plans.annual.amount_cents'), 'billing_interval' => PlanPrice::INTERVAL_YEAR, 'duration_days' => 365]);
     }
 
     /**
@@ -146,7 +164,7 @@ class PlanSeeder extends Seeder
             ]);
         }
 
-        PlanPrice::create(['plan_version_id' => $version->id, 'currency' => 'DZD'] + $price);
+        PlanPrice::create(['plan_version_id' => $version->id, 'currency' => 'EUR'] + $price);
 
         foreach ($tiers as $i => [$min, $max, $cents]) {
             PlanPricingTier::create([
@@ -154,7 +172,7 @@ class PlanSeeder extends Seeder
                 'min_students' => $min,
                 'max_students' => $max,
                 'price_per_student_cents' => $cents,
-                'currency' => 'DZD',
+                'currency' => 'EUR',
                 'sort_order' => $i,
                 'is_active' => true,
             ]);

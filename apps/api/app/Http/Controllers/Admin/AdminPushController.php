@@ -43,7 +43,7 @@ class AdminPushController extends Controller
 
     public function subscribe(Request $request): JsonResponse
     {
-        abort_unless($this->sender->enabled(), 409, 'Notifications are not configured on the server.');
+        abort_unless($this->sender->enabled(), 409, 'Les notifications ne sont pas configurées sur le serveur.');
         $allowed = AdminPush::topicsFor($request->user()->role);
 
         $data = $request->validate([
@@ -100,7 +100,7 @@ class AdminPushController extends Controller
 
     public function test(Request $request, AdminPush $push): JsonResponse
     {
-        abort_unless($this->sender->enabled(), 409, 'Notifications are not configured on the server.');
+        abort_unless($this->sender->enabled(), 409, 'Les notifications ne sont pas configurées sur le serveur.');
 
         return response()->json(['sent' => $push->test($request->user())]);
     }

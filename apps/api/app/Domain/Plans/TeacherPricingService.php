@@ -190,7 +190,7 @@ class TeacherPricingService
                 'min_students' => (int) $min,
                 'max_students' => ($max === null || $max === '') ? null : (int) $max,
                 'price_per_student_cents' => (int) $price,
-                'currency' => strtoupper((string) ($row['currency'] ?? 'DZD')),
+                'currency' => strtoupper((string) ($row['currency'] ?? 'EUR')),
                 'sort_order' => (int) ($row['sortOrder'] ?? $row['sort_order'] ?? $i),
                 'is_active' => filter_var($row['isActive'] ?? $row['is_active'] ?? true, FILTER_VALIDATE_BOOL),
             ];

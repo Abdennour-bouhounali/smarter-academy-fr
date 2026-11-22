@@ -50,7 +50,7 @@ class PaymentGateTest extends TestCase
     use RefreshDatabase;
     use SchoolFixtures;
 
-    private const CLOSED = ['success' => false, 'code' => 'payments_closed', 'message' => "Le paiement en ligne n'est pas ouvert."];
+    private const CLOSED = ['success' => false, 'code' => 'payments_closed', 'message' => 'Le paiement en ligne n’est pas ouvert.'];
 
     protected function setUp(): void
     {
@@ -296,7 +296,7 @@ class PaymentGateTest extends TestCase
         $licence->save();
         $rows = fn (int $from) => collect(range($from, $from + 1))->map(fn ($i) => [
             // Les noms sont encore en lettres arabes tant que l'étape 1C n'est pas faite (PersonName).
-            'firstName' => 'تلميذ', 'lastName' => 'رقم'.str_repeat('ا', $i), 'birthDate' => sprintf('2012-02-%02d', $i),
+            'firstName' => 'Élève', 'lastName' => 'Numéro'.str_repeat('a', $i), 'birthDate' => sprintf('2012-02-%02d', $i),
         ])->all();
 
         $this->withToken($directorToken)->postJson('/api/v1/school/roster', ['classroomId' => $classroom->id, 'rows' => $rows(1)])

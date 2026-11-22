@@ -24,7 +24,7 @@ class TeacherRegistrationTest extends TestCase
         $this->grade3e(0);
 
         $response = $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => 'prof@example.dz', 'password' => 'Passw0rd123', 'accept_legal' => true, 'accountType' => 'teacher',
         ])->assertCreated()->assertJsonPath('user.role', 'teacher');
 
@@ -51,7 +51,7 @@ class TeacherRegistrationTest extends TestCase
     public function test_le_type_de_compte_est_une_liste_blanche(): void
     {
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => 'x@example.dz', 'password' => 'Passw0rd123', 'accept_legal' => true, 'accountType' => 'admin',
         ])->assertStatus(422);
 
@@ -61,7 +61,7 @@ class TeacherRegistrationTest extends TestCase
     public function test_sans_type_l_inscription_reste_un_eleve(): void
     {
         $this->postJson('/api/v1/auth/register', [
-            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'firstName' => 'Lucas', 'lastName' => 'Martin',
             'email' => 'e@example.dz', 'password' => 'Passw0rd123', 'accept_legal' => true,
         ])->assertCreated()->assertJsonPath('user.role', 'student');
     }

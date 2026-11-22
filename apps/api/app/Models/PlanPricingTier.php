@@ -29,7 +29,7 @@ class PlanPricingTier extends Model
 
     protected $attributes = [
         'price_per_student_cents' => 0,
-        'currency' => 'DZD',
+        'currency' => 'EUR',
         'sort_order' => 0,
         'is_active' => true,
     ];

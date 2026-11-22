@@ -15,8 +15,8 @@ class ChapterFactory extends Factory
     {
         return [
             'grade_id' => Grade::factory(),
-            'code' => 'ansab_'.fake()->unique()->lexify('????'),
-            'title' => 'أنشطة عددية',
+            'code' => 'theme_'.fake()->unique()->lexify('????'),
+            'title' => 'Activités numériques',
             'order' => 0,
         ];
     }

@@ -21,7 +21,8 @@
 return [
     'enabled' => (bool) env('MADAR_ENABLED', true),
 
-    'timezone' => 'Africa/Algiers',
+    // Le jour (cœurs, limite de parties) et la semaine du classement (du
+    // lundi au dimanche) : fuseau de l'école, config('app.school_timezone').
 
     'hearts' => [
         'max' => 5,

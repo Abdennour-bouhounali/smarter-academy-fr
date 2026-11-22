@@ -54,6 +54,13 @@ class SubscriptionRequestService
         $version = $plan->currentVersion;
         $seat = $this->seatTerms($user, $type, $version, $studentSeats);
 
+        // Un prix à 0 est un prix que le propriétaire n'a pas encore fixé
+        // (PlanSeeder::PRICE_TO_BE_DECIDED_BY_OWNER) : rien ne se vend à 0.
+        $total = $version?->isSeatBased() ? $seat['calculated_total_cents'] : $version?->activePrice?->amount_cents;
+        if ((int) $total <= 0) {
+            throw new SubscriptionRequestException(SubscriptionRequestException::NOT_PRICED, 'Cette formule n’a pas encore de prix : elle ne peut pas être demandée.');
+        }
+
         return DB::transaction(function () use ($user, $plan, $version, $note, $seat) {
             $pending = SubscriptionRequest::where('user_id', $user->id)
                 ->where('status', SubscriptionRequest::STATUS_PENDING)

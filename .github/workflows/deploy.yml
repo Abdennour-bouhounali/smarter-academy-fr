@@ -67,7 +67,7 @@ jobs:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
         run: |
           if [ -z "${VITE_API_URL}" ]; then
-            echo "::error::The VITE_API_URL repository variable is not set. Define it under Settings > Secrets and variables > Actions > Variables (for example https://smarter-academy.com/api/v1). apps/web/.env.production cannot supply it: it is gitignored and absent from this checkout."
+            echo "::error::The VITE_API_URL repository variable is not set. Define it under Settings > Secrets and variables > Actions > Variables (for example https://smarter-academy.fr/api/v1). apps/web/.env.production cannot supply it: it is gitignored and absent from this checkout."
             exit 1
           fi
           echo "Building against ${VITE_API_URL}"
@@ -190,27 +190,29 @@ jobs:
           echo "Production vendor/ verified."
 
       # ──────────────────────────────── SSH ──────────────────────────────────
-      # ──────────────── Garde-fou d'indépendance (master spec §2) ───────────
+      # ──────────────── Garde-fou d'indépendance (deux produits) ────────────
       # Les deux produits ont des dépôts, des serveurs et des domaines
       # séparés, mais les mêmes NOMS de secrets. Coller par erreur l'hôte
-      # français dans les secrets de ce dépôt déploierait la plateforme
-      # algérienne par-dessus la française — sans qu'aucune autre étape ne
-      # s'en aperçoive, puisque la structure des deux serveurs est identique.
-      - name: Refuse to deploy onto the French infrastructure
+      # ALGÉRIEN (smarter-academy.com, ou tout domaine en .dz) dans les
+      # variables de ce dépôt déploierait la plateforme française par-dessus
+      # l'algérienne — sans qu'aucune autre étape ne s'en aperçoive, puisque
+      # la structure des deux serveurs est identique.
+      - name: Refuse to deploy onto the Algerian infrastructure
         env:
           PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
           VITE_API_URL: ${{ vars.VITE_API_URL }}
         run: |
           set -euo pipefail
           for value in "$PRODUCTION_URL" "$VITE_API_URL"; do
-            case "$value" in
-              *smarter-academy.fr*)
-                echo "::error::A French domain (smarter-academy.fr) appears in this repository's variables. The Algerian product must never deploy onto French infrastructure (master spec §2)."
+            host="$(printf '%s' "$value" | sed -E 's#^[a-zA-Z]+://##; s#[/:].*$##' | tr 'A-Z' 'a-z')"
+            case "$host" in
+              smarter-academy.com|*.smarter-academy.com|*.dz)
+                echo "::error::An Algerian domain ($host) appears in this repository's variables. The French product must never deploy onto Algerian infrastructure."
                 exit 1
                 ;;
             esac
           done
-          echo "Variables point away from the French infrastructure."
+          echo "Variables point away from the Algerian infrastructure."
 
       - name: Prepare SSH
         env:

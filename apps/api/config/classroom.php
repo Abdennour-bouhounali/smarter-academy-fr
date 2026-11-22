@@ -23,6 +23,6 @@ return [
     'school_auto_consent_since' => '2026-10-28',
 
     // Le fuseau des fenêtres « cette semaine », « les 14 derniers jours » que
-    // lit l'enseignant. Le stockage reste en UTC.
-    'timezone' => env('CLASSROOM_TIMEZONE', 'Africa/Algiers'),
+    // lit le professeur : celui de l'école, config('app.school_timezone')
+    // (InsightWindow). Le stockage reste en UTC.
 ];

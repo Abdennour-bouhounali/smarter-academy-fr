@@ -7,7 +7,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
- * « ألغى ابنك الربط » — l'élève a rompu le lien depuis son profil. Le parent
+ * « Votre enfant a retiré le lien » — l'élève a rompu le lien depuis son profil. Le parent
  * en est TOUJOURS averti (PARENT_SPACE.md §2) : une rupture silencieuse
  * ferait croire à un enfant qui n'étudie plus.
  */
@@ -26,12 +26,15 @@ class ParentLinkRevokedNotification extends Notification
         $name = trim(($this->student->first_name ?? '').' '.($this->student->last_name ?? ''));
         $base = rtrim((string) config('app.frontend_url'), '/');
 
+        $brand = (string) config('app.name');
+
+        // `/wali` : le chemin de l'espace parent du frontend (apps/web App.jsx).
         return (new MailMessage)
-            ->subject('تمّ إلغاء الربط بحساب '.$name.' — Smarter Academy')
-            ->greeting('السلام عليكم،')
-            ->line("ألغى {$name} الربط بين حسابه وحسابك من صفحة ملفّه الشخصي.")
-            ->line('لن تصلك تقارير عمله بعد الآن. إن كان ذلك خطأً، اطلب منه رمزًا جديدًا وأدخله في فضاء الوليّ.')
-            ->action('فضاء الوليّ', $base.'/wali')
-            ->salutation('فريق Smarter Academy');
+            ->subject($name.' a retiré le lien avec votre compte — '.$brand)
+            ->greeting('Bonjour,')
+            ->line("{$name} a retiré, depuis son profil, le lien entre son compte et le vôtre.")
+            ->line('Vous ne recevrez plus le résumé de son travail. S’il s’agit d’une erreur, demandez-lui un nouveau code et saisissez-le dans votre espace parent.')
+            ->action('Ouvrir mon espace parent', $base.'/wali')
+            ->salutation('L’équipe '.$brand);
     }
 }

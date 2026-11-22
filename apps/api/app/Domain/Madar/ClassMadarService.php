@@ -330,7 +330,7 @@ class ClassMadarService
     {
         $game = in_array($game, MadarRun::GAMES, true) ? $game : MadarRun::GAME_ORBIT;
         $week = $this->config->weekStart($week);
-        $tz = (string) $this->config->get('timezone');
+        $tz = $this->config->timezone();
         $weekFrom = CarbonImmutable::parse($week, $tz)->utc();
         $weekTo = CarbonImmutable::parse($week, $tz)->addDays(7)->utc();
         $settings = $this->config->forClassroom($classroom);

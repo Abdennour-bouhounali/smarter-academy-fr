@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Middleware\EnsureAccountIsActive;
-use App\Http\Middleware\EnsureEmailIsVerified;
+use App\Http\Middleware\EnsureBooksEnabled;
 use App\Http\Middleware\EnsureContentReviewer;
+use App\Http\Middleware\EnsureEmailIsVerified;
 use App\Http\Middleware\EnsureLearnerRole;
+use Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -45,7 +47,15 @@ return Application::configure(basePath: dirname(__DIR__))
             'learner' => EnsureLearnerRole::class,
             // Le signalement de problèmes : administrateur et ambassadeurs.
             'reviewer' => EnsureContentReviewer::class,
+            // La librairie, fermée par défaut (config/books.php) : 404.
+            'books.enabled' => EnsureBooksEnabled::class,
         ]);
+        // Fermée, la librairie répond 404 AVANT l'authentification (sinon un
+        // visiteur lirait 401 : « cette route existe et demande un compte »).
+        $middleware->prependToPriorityList(
+            before: AuthenticatesRequests::class,
+            prepend: EnsureBooksEnabled::class,
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

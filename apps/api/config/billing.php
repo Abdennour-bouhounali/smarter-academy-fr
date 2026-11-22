@@ -86,7 +86,7 @@ return [
         'annual' => [
             'key' => 'annual',
             'name' => 'Premium annuel',
-            'description' => "L'intégralité du programme, de la 6e à la Terminale.",
+            'description' => 'Tout le programme de mathématiques du collège, de la 6e à la 3e.',
             'price_id' => env('STRIPE_PRICE_ANNUAL'),
             'amount_cents' => 3500,
             'currency' => 'EUR',

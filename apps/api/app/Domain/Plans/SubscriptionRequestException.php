@@ -6,7 +6,7 @@ use DomainException;
 
 /**
  * Un refus de demande d'offre qui porte un MOTIF lisible par la machine :
- * le client rend l'arabe à partir du motif, jamais du message français.
+ * le client choisit son texte à partir du motif.
  */
 class SubscriptionRequestException extends DomainException
 {
@@ -21,6 +21,9 @@ class SubscriptionRequestException extends DomainException
     public const NOT_REQUESTABLE = 'not_requestable';
 
     public const ALREADY_PENDING = 'already_pending';
+
+    /** La formule n'a pas encore de prix (0) : elle ne se demande pas, ne s'achète pas. */
+    public const NOT_PRICED = 'not_priced';
 
     public function __construct(public readonly string $reason, string $message)
     {

@@ -116,16 +116,18 @@ class DailyChallengeScoringTest extends TestCase
 
     public function test_calendar_skips_rest_days_for_streaks_and_penalties(): void
     {
-        // 2026-09-25 est un vendredi : jour chômé par défaut.
-        $cal = new ChallengeCalendar('Africa/Algiers', [1, 2, 3, 4, 6, 7]);
-        $this->assertFalse($cal->isChallengeDay('2026-09-25'));
-        $this->assertSame('2026-09-24', $cal->previousChallengeDay('2026-09-26'));
-        $this->assertSame(0, $cal->challengeDaysBetween('2026-09-24', '2026-09-26'), 'le vendredi ne compte pas comme manqué');
+        // 2026-09-26 et 27 sont un samedi et un dimanche : hors de la semaine d'école.
+        $cal = new ChallengeCalendar('Europe/Paris', [1, 2, 3, 4, 5]);
+        $this->assertFalse($cal->isChallengeDay('2026-09-26'));
+        $this->assertFalse($cal->isChallengeDay('2026-09-27'));
+        $this->assertTrue($cal->isChallengeDay('2026-09-25'), 'le vendredi est un jour d’école');
+        $this->assertSame('2026-09-25', $cal->previousChallengeDay('2026-09-28'));
+        $this->assertSame(0, $cal->challengeDaysBetween('2026-09-25', '2026-09-28'), 'le week-end ne compte pas comme manqué');
         $this->assertSame(2, $cal->challengeDaysBetween('2026-09-21', '2026-09-24'));
 
-        $played = ['2026-09-23' => true, '2026-09-24' => true, '2026-09-22' => true];
-        $this->assertSame(3, $cal->streakEndingBefore('2026-09-26', $played), 'la série traverse le vendredi');
-        $this->assertSame(0, $cal->streakEndingBefore('2026-09-28', $played), 'un jour manqué casse la série');
+        $played = ['2026-09-23' => true, '2026-09-24' => true, '2026-09-25' => true];
+        $this->assertSame(3, $cal->streakEndingBefore('2026-09-28', $played), 'la série traverse le week-end');
+        $this->assertSame(0, $cal->streakEndingBefore('2026-09-30', $played), 'un jour manqué casse la série');
     }
 
     public function test_tie_breaking_is_total_and_documented(): void

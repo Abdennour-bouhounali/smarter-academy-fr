@@ -24,10 +24,10 @@ trait DailyChallengeFixtures
     /** @var array<string, LearningPoint> */
     protected array $dcPoints = [];
 
-    /** Mardi 22 septembre 2026, 10 h à Alger : un jour de défi, fenêtre ouverte. */
+    /** Mardi 22 septembre 2026, 10 h à l'heure de l'école : un jour de défi, fenêtre ouverte. */
     protected function onChallengeDay(string $date = '2026-09-22', string $time = '10:00:00'): void
     {
-        Carbon::setTestNow(Carbon::parse("{$date} {$time}", 'Africa/Algiers'));
+        Carbon::setTestNow(Carbon::parse("{$date} {$time}", (string) config('app.school_timezone')));
     }
 
     /** @param  string[]  $lessonCodes */

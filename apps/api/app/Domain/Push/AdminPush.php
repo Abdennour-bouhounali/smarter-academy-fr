@@ -38,15 +38,16 @@ class AdminPush
     ];
 
     private const REPORT_LABELS = [
-        StudentReport::CATEGORY_MATH_ERROR => 'خطأ رياضي',
-        StudentReport::CATEGORY_MANIPULATION => 'النشاط لا يعمل',
-        StudentReport::CATEGORY_UNCLEAR => 'سؤال غير واضح',
-        StudentReport::CATEGORY_ANSWER => 'مشكل في الإجابة أو التصحيح',
-        StudentReport::CATEGORY_DISPLAY => 'مشكل في العرض',
-        StudentReport::CATEGORY_TYPO => 'خطأ في الكتابة',
-        StudentReport::CATEGORY_OTHER => 'أخرى',
+        StudentReport::CATEGORY_MATH_ERROR => 'Erreur mathématique',
+        StudentReport::CATEGORY_MANIPULATION => 'L’activité ne fonctionne pas',
+        StudentReport::CATEGORY_UNCLEAR => 'Question pas claire',
+        StudentReport::CATEGORY_ANSWER => 'Problème de réponse ou de correction',
+        StudentReport::CATEGORY_DISPLAY => 'Problème d’affichage',
+        StudentReport::CATEGORY_TYPO => 'Faute de frappe',
+        StudentReport::CATEGORY_OTHER => 'Autre',
     ];
 
+    // La librairie est fermée en France (config/books.php) : ses textes restent ceux d'origine jusqu'à son ouverture.
     private const BOOK_SUBJECTS = [
         'general' => 'سؤال عام', 'feedback' => 'ملاحظات حول الكتاب', 'support' => 'دعم تقني',
         'mentoring' => 'حصة إرشاد', 'teacher_collab' => 'تعاون مع الأساتذة',
@@ -96,20 +97,20 @@ class AdminPush
             ] : null,
             'new_student', 'new_teacher' => $this->signupPayload($topic, $id),
             'contact_message' => Contact::find($id) ? [
-                'title' => 'رسالة جديدة',
-                'body' => 'وصلت رسالة من صفحة «تواصل معنا».',
+                'title' => 'Nouveau message',
+                'body' => 'Un message est arrivé par la page « Contact ».',
                 'url' => '/admin/systeme/messages',
                 'tag' => 'contact-'.$id,
             ] : null,
             'student_report' => ($r = StudentReport::find($id)) ? [
-                'title' => 'بلاغ جديد',
+                'title' => 'Nouveau signalement',
                 'body' => (self::REPORT_LABELS[$r->category] ?? $r->category).($r->lesson_code ? ' · '.$r->lesson_code : ''),
                 'url' => '/admin/signalements/'.$r->id,
                 'tag' => 'report-'.$r->id,
             ] : null,
             'subscription_request' => ($q = SubscriptionRequest::with('plan')->find($id)) ? [
-                'title' => 'طلب اشتراك جديد',
-                'body' => trim(($q->plan?->name ?? '').($q->requested_student_seats ? ' · '.$q->requested_student_seats.' مقعد' : ''), ' ·') ?: 'طلب عرض جديد',
+                'title' => 'Nouvelle demande d’abonnement',
+                'body' => trim(($q->plan?->name ?? '').($q->requested_student_seats ? ' · '.$q->requested_student_seats.' '.($q->requested_student_seats > 1 ? 'places' : 'place') : ''), ' ·') ?: 'Nouvelle demande de formule',
                 'url' => '/admin/offres/demandes',
                 'tag' => 'subscription-request-'.$q->id,
             ] : null,
@@ -136,7 +137,7 @@ class AdminPush
 
     /**
      * Inscriptions : UNE notification par type, REMPLACÉE à chaque nouvelle (même `tag`) et qui
-     * compte celles du jour (heure d'Alger) — une vague d'inscriptions ne remplit pas l'écran.
+     * compte celles du jour (fuseau de l'école) — une vague d'inscriptions ne remplit pas l'écran.
      */
     private function signupPayload(string $topic, int $id): ?array
     {
@@ -146,13 +147,13 @@ class AdminPush
             return null;
         }
         $today = User::where('role', $role)
-            ->where('created_at', '>=', Carbon::now('Africa/Algiers')->startOfDay()->utc())
+            ->where('created_at', '>=', Carbon::now((string) config('app.school_timezone'))->startOfDay()->utc())
             ->count();
         $teacher = $role === User::ROLE_TEACHER;
 
         return [
-            'title' => $teacher ? 'أستاذ جديد' : 'تلميذ جديد',
-            'body' => ($teacher ? 'تسجيلات الأساتذة اليوم: ' : 'تسجيلات التلاميذ اليوم: ').$today,
+            'title' => $teacher ? 'Nouveau professeur' : 'Nouvel élève',
+            'body' => ($teacher ? 'Inscriptions de professeurs aujourd’hui : ' : 'Inscriptions d’élèves aujourd’hui : ').$today,
             'url' => ($teacher ? '/admin/enseignants/' : '/admin/eleves/').$user->id,
             'tag' => $topic,
         ];
@@ -163,8 +164,8 @@ class AdminPush
     {
         $subs = PushSubscription::where('user_id', $user->id)->get();
         $this->deliver($subs, [
-            'title' => 'الإشعارات تعمل',
-            'body' => 'ستصلك هنا رسالة عند كل جديد في المنصّة.',
+            'title' => 'Les notifications fonctionnent',
+            'body' => 'Vous recevrez ici un message à chaque nouveauté sur la plateforme.',
             'url' => '/admin',
             'tag' => 'push-test',
         ]);

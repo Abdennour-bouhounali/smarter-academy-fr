@@ -30,7 +30,7 @@ class ChallengeRepository
             return $this->memo[$path];
         }
         if (! is_file($path)) {
-            throw new DomainException('Contenu du مختبر التفكير introuvable : '.$path);
+            throw new DomainException('Contenu du labo des énigmes introuvable : '.$path);
         }
         $index = json_decode((string) file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
         $list = array_values($index['challenges'] ?? []);

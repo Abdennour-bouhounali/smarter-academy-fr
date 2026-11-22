@@ -24,7 +24,7 @@ class StudentService
     /** Le préfixe du « معرّف الدخول » d'un compte créé par l'administrateur (`s<id>` est celui d'un établissement). */
     public const ADMIN_LOGIN_PREFIX = 'a';
 
-    public const EMAIL_TAKEN_MESSAGE = 'هذا البريد الإلكتروني مرتبط بحساب موجود.';
+    public const EMAIL_TAKEN_MESSAGE = 'Cette adresse e-mail est déjà liée à un compte.';
 
     public function __construct(private ActivityLogger $log) {}
 

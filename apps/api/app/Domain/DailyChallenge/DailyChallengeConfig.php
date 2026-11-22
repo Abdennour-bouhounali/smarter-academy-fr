@@ -139,7 +139,7 @@ class DailyChallengeConfig
         return [
             'questionCount' => $questionCount,
             'attemptWindowMinutes' => (int) $g['challenge']['attempt_window_minutes'],
-            'timezone' => $g['challenge']['timezone'],
+            'timezone' => $this->timezone(),
             'challengeWeekdays' => array_values($g['challenge']['challenge_weekdays']),
             'scoring' => $g['scoring'],
             'difficulty' => $class['difficulty'] ?? null,
@@ -148,9 +148,10 @@ class DailyChallengeConfig
         ];
     }
 
+    /** Le fuseau de l'école — le même pour toute la plateforme, pas une valeur du défi. */
     public function timezone(): string
     {
-        return (string) $this->get('challenge.timezone', 'Africa/Algiers');
+        return (string) config('app.school_timezone');
     }
 
     // ── Administration ───────────────────────────────────────────────────────
@@ -173,7 +174,7 @@ class DailyChallengeConfig
         return [
             'fields' => $fields,
             'tieBreaking' => $effective['competition']['tie_breaking'],
-            'timezone' => $effective['challenge']['timezone'],
+            'timezone' => $this->timezone(),
             'updatedAt' => DailyChallengePolicy::where('key', DailyChallengePolicy::GLOBAL_KEY)->value('updated_at'),
         ];
     }

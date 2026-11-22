@@ -5,11 +5,11 @@ namespace App\Domain\Classroom\Insights;
 use Illuminate\Support\Carbon;
 
 /**
- * « Récemment », pour un enseignant algérien : N jours pleins, comptés dans
- * le fuseau de la classe (Africa/Algiers), rendus en UTC pour les requêtes.
+ * « Récemment », pour un professeur : N jours pleins, comptés dans le fuseau
+ * de l'école (config('app.school_timezone')), rendus en UTC pour les requêtes.
  *
- * Minuit à Alger est 23 h UTC la veille : une fenêtre découpée en UTC
- * rangerait l'heure de 00 h à 01 h dans le mauvais jour. Le stockage reste
+ * Minuit à Paris est 23 h ou 22 h UTC la veille : une fenêtre découpée en UTC
+ * rangerait la première heure du jour dans le mauvais jour. Le stockage reste
  * en UTC ; seul le découpage est local.
  */
 final class InsightWindow
@@ -31,13 +31,13 @@ final class InsightWindow
 
     public static function timezone(): string
     {
-        return (string) config('classroom.timezone', 'Africa/Algiers');
+        return (string) config('app.school_timezone');
     }
 
     /**
-     * Les fins de semaine (dimanche → samedi en Algérie, la semaine scolaire
-     * commence le dimanche), de la plus ancienne à la plus récente, la
-     * dernière étant « maintenant ». En UTC.
+     * Les fins de semaine (du lundi au dimanche, la semaine de l'école), de
+     * la plus ancienne à la plus récente, la dernière étant « maintenant ».
+     * En UTC.
      *
      * @return Carbon[]
      */
@@ -46,7 +46,7 @@ final class InsightWindow
         $now = ($now ?? Carbon::now())->copy()->utc();
         $local = $now->copy()->setTimezone(self::timezone());
         $weekStart = $local->copy()->startOfDay();
-        while ($weekStart->dayOfWeek !== Carbon::SUNDAY) {
+        while ($weekStart->dayOfWeek !== Carbon::MONDAY) {
             $weekStart->subDay();
         }
 

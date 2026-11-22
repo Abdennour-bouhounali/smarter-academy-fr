@@ -16,8 +16,8 @@ return [
     // des nombres de l'élève (params). La renumérotation est la phase 7.
     'edition' => (int) env('THINKING_LAB_EDITION', 1),
 
-    // Le fuseau des journées de réflexion (le serveur, jamais l'horloge du client).
-    'timezone' => 'Africa/Algiers',
+    // Le fuseau des journées de réflexion : celui de l'école,
+    // config('app.school_timezone') — le serveur, jamais l'horloge du client.
 
     'gate' => [
         // D3 : trois tentatives honnêtes ET au moins un jour de réflexion.

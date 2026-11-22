@@ -29,7 +29,7 @@ class SeatSubscriptionFlowTest extends TestCase
 
         $this->withToken($token)->postJson('/api/v1/teacher/subscription-requests', ['planId' => $plan->id, 'studentSeats' => 25])->assertCreated()
             ->assertJsonPath('request.status', 'pending')->assertJsonPath('request.requestedStudentSeats', 25)
-            ->assertJsonPath('request.calculatedTotalCents', 2000000)->assertJsonPath('request.currency', 'DZD')
+            ->assertJsonPath('request.calculatedTotalCents', 2000000)->assertJsonPath('request.currency', 'EUR')
             ->assertJsonPath('entitlements.students.maximum', 5);
         $this->assertDatabaseCount('subscriptions', 0);
     }

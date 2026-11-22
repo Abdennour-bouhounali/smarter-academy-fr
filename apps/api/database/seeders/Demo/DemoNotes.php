@@ -29,74 +29,74 @@ final class DemoNotes
      */
     private const BY_MISCONCEPTION = [
         'MISC-QISMA-BAQI-KABIR' => [
-            'title' => 'الباقي دائمًا أصغر من المقسوم عليه',
-            'body' => 'وقعت في الخطأ مرّة أخرى: كتبت 137 = 5 × 25 + 12 وقبلتها. لكن 12 أكبر من 5، إذن القسمة لم تكتمل. القاعدة: الباقي يجب أن يكون أصغر تمامًا من المقسوم عليه.',
+            'title' => 'Le reste est toujours plus petit que le diviseur',
+            'body' => 'Encore le même piège : j’ai écrit 137 = 5 × 25 + 12 et je l’ai accepté. Mais 12 est plus grand que 5, donc la division n’est pas finie. La règle : le reste doit être strictement plus petit que le diviseur.',
             'type' => 'erreur',
         ],
         'MISC-QISMA-HASIL-BAQI' => [
-            'title' => 'لا أخلط بين حاصل القسمة والباقي',
-            'body' => 'في a = b × q + r، العدد q هو حاصل القسمة و r هو الباقي. في 72 = 24 × 3 الباقي معدوم، و3 ليس الباقي بل حاصل القسمة. أكتب دائمًا المساواة كاملة قبل أن أجيب.',
+            'title' => 'Ne pas confondre quotient et reste',
+            'body' => 'Dans a = b × q + r, q est le quotient et r le reste. Dans 72 = 24 × 3, le reste est nul, et 3 n’est pas le reste mais le quotient. J’écris toujours l’égalité en entier avant de répondre.',
             'type' => 'erreur',
         ],
         'MISC-QISMA-6-ZAWJI-FAQAT' => [
-            'title' => 'زوجي لا يعني يقبل القسمة على 6',
-            'body' => 'العدد 14 زوجي لكنه لا يقبل القسمة على 6. ليقبل عدد القسمة على 6 يجب أن يقبلها على 2 وعلى 3 معًا.',
+            'title' => 'Pair ne veut pas dire divisible par 6',
+            'body' => '14 est pair, mais il n’est pas divisible par 6. Pour être divisible par 6, un nombre doit être divisible à la fois par 2 et par 3.',
             'type' => 'erreur',
         ],
         'MISC-QASIM-MUDAAF-ITTIJAH' => [
-            'title' => 'اتجاه «يقسم» و«مضاعف»',
-            'body' => 'إذا كان 3 يقسم 12 فإنّ 12 مضاعف للعدد 3، وليس العكس. القاسم هو الأصغر، والمضاعف هو الأكبر. أعيد قراءة الجملة ببطء قبل الإجابة.',
+            'title' => 'Le sens de « divise » et de « multiple »',
+            'body' => 'Si 3 divise 12, alors 12 est un multiple de 3, et pas l’inverse. Le diviseur est le plus petit, le multiple le plus grand. Je relis la phrase lentement avant de répondre.',
             'type' => 'rappel',
         ],
         'MISC-QAWASIM-NASY-1-WA-N' => [
-            'title' => 'لا أنسى 1 والعدد نفسه',
-            'body' => 'كلّما عيّنت قواسم عدد نسيت 1 ونسيت العدد نفسه. هما دائمًا قاسمان. أبدأ قائمتي بهما ثم أكمل.',
+            'title' => 'Ne pas oublier 1 et le nombre lui-même',
+            'body' => 'Chaque fois que je cherche les diviseurs d’un nombre, j’oublie 1 et le nombre lui-même. Ce sont toujours des diviseurs. Je commence ma liste par eux, puis je complète.',
             'type' => 'erreur',
         ],
         'MISC-QAWASIM-A-BADAL-A-ZAID-7' => [
-            'title' => 'أجيب عمّا سُئلت عنه',
-            'body' => 'طُلبت منّي قيم a فأعطيت قواسم 24. أقرأ السؤال مرّتين وأسطّر تحت ما هو مطلوب فعلًا.',
+            'title' => 'Répondre à la question posée',
+            'body' => 'On me demandait les valeurs de a, et j’ai donné les diviseurs de 24. Je lis la question deux fois et je souligne ce qui est vraiment demandé.',
             'type' => 'erreur',
         ],
         'MISC-PGCD-HASIL-BADAL-QASIM' => [
-            'title' => 'القاسم المشترك الأكبر ليس حاصل القسمة',
-            'body' => 'في وضعية الباقات: عدد الباقات هو PGCD، وما يوضع في كل باقة هو حاصل قسمة كل عدد على PGCD. أكتب الاثنين بوضوح حتى لا أخلط.',
+            'title' => 'Le PGCD n’est pas le quotient',
+            'body' => 'Dans le problème des bouquets : le nombre de bouquets est le PGCD, et ce qu’on met dans chaque bouquet est le quotient de chaque nombre par le PGCD. J’écris les deux clairement pour ne pas les mélanger.',
             'type' => 'erreur',
         ],
         'MISC-PGCD-LAYSA-AKBAR' => [
-            'title' => 'الأكبر، لا أيّ قاسم مشترك',
-            'body' => 'عيّنت قاسمًا مشتركًا وتوقّفت. لكن المطلوب هو الأكبر. أكتب كل القواسم المشتركة ثم أختار أكبرها.',
+            'title' => 'Le plus grand, pas n’importe quel diviseur commun',
+            'body' => 'J’ai trouvé un diviseur commun et j’ai arrêté là. Mais on demande le plus grand. J’écris tous les diviseurs communs, puis je choisis le plus grand.',
             'type' => 'erreur',
         ],
         'MISC-PGCD-SIFR' => [
-            'title' => 'PGCD(a ; 0) = a',
-            'body' => 'ظننت أنّ PGCD مع الصفر يساوي صفرًا. كل عدد يقسم 0، إذن القاسم المشترك الأكبر هو a نفسه.',
+            'title' => 'PGCD(a ; 0) = a',
+            'body' => 'Je croyais que le PGCD avec 0 valait 0. Tout nombre divise 0, donc le plus grand diviseur commun est a lui-même.',
             'type' => 'rappel',
         ],
         'MISC-PGCD-MUDAAF-15' => [
-            'title' => 'قاسم، لا مضاعف',
-            'body' => 'عندما يُطلب PGCD(a ; 15) = 5 يجب أن يكون 5 قاسمًا مشتركًا: أبحث عن عدد يقبل القسمة على 5 لا عن مضاعف للعدد 15.',
+            'title' => 'Diviseur, pas multiple',
+            'body' => 'Quand on demande PGCD(a ; 15) = 5, 5 doit être un diviseur commun : je cherche un nombre divisible par 5, pas un multiple de 15.',
             'type' => 'erreur',
         ],
         'MISC-AWWALIYAN-ADAD-AWWALI' => [
-            'title' => 'أوّليان فيما بينهما ≠ عددان أوّليان',
-            'body' => 'العددان 8 و9 ليسا أوّليين، لكنّهما أوّليان فيما بينهما لأنّ PGCD(8 ; 9) = 1. الشرط الوحيد هو أن يكون قاسمهما المشترك الأكبر يساوي 1.',
+            'title' => 'Premiers entre eux ≠ nombres premiers',
+            'body' => '8 et 9 ne sont pas premiers, mais ils sont premiers entre eux car PGCD(8 ; 9) = 1. La seule condition : leur plus grand diviseur commun vaut 1.',
             'type' => 'erreur',
         ],
         'MISC-IKHTIZAL-NAQIS' => [
-            'title' => 'أتحقّق أنّ الاختزال اكتمل',
-            'body' => 'اختزلت الكسر مرّة وتوقّفت، لكنّه بقي قابلًا للاختزال. الطريقة المضمونة: أقسم البسط والمقام على PGCD مباشرة، ثم أتأكّد أنّهما أوّليان فيما بينهما.',
+            'title' => 'Vérifier que la fraction est irréductible',
+            'body' => 'J’ai simplifié la fraction une fois et j’ai arrêté là, mais elle se simplifiait encore. La méthode sûre : diviser le numérateur et le dénominateur par le PGCD, puis vérifier qu’ils sont premiers entre eux.',
             'type' => 'erreur',
         ],
     ];
 
     /** Des notes qui ne viennent pas d'une erreur : méthode, rappel, résumé. */
     private const FREE_NOTES = [
-        ['title' => 'طريقة إقليدس — الخطوات', 'body' => 'أقسم الأكبر على الأصغر، آخذ الباقي، أعيد القسمة على الباقي، وهكذا. آخر باقٍ غير معدوم هو PGCD. أسرع بكثير من طريقة الفروق عندما يكون العددان متباعدين.', 'type' => 'astuce'],
-        ['title' => 'قواعد قابلية القسمة', 'body' => 'على 2: الرقم الأخير زوجي. على 3: مجموع الأرقام يقبل القسمة على 3. على 5: ينتهي بـ0 أو 5. على 9: مجموع الأرقام يقبل القسمة على 9.', 'type' => 'resume'],
-        ['title' => 'متى أتوقّف عن البحث عن القواسم؟', 'body' => 'أختبر الأعداد التي مربّعها أصغر من العدد أو يساويه. كل قاسم وجدته يعطيني قاسمًا ثانيًا معه.', 'type' => 'astuce'],
-        ['title' => 'سؤال لأستاذي', 'body' => 'هل يمكن أن يكون PGCD لعددين أكبر من أصغرهما؟ أظنّ لا، لكنّي أريد أن أتأكّد.', 'type' => 'question'],
-        ['title' => 'مثال أعود إليه', 'body' => 'PGCD(42 ; 60): قواسم 42 هي 1، 2، 3، 6، 7، 14، 21، 42 — وقواسم 60 فيها 1، 2، 3، 6. المشتركة: 1، 2، 3، 6. الأكبر: 6.', 'type' => 'exemple'],
+        ['title' => 'Algorithme d’Euclide — les étapes', 'body' => 'Je divise le plus grand par le plus petit, je garde le reste, je divise à nouveau par le reste, et ainsi de suite. Le dernier reste non nul est le PGCD. Bien plus rapide que la méthode des soustractions quand les deux nombres sont éloignés.', 'type' => 'astuce'],
+        ['title' => 'Les critères de divisibilité', 'body' => 'Par 2 : le dernier chiffre est pair. Par 3 : la somme des chiffres est divisible par 3. Par 5 : il se termine par 0 ou 5. Par 9 : la somme des chiffres est divisible par 9.', 'type' => 'resume'],
+        ['title' => 'Quand arrêter de chercher les diviseurs ?', 'body' => 'Je teste les nombres dont le carré est inférieur ou égal au nombre. Chaque diviseur trouvé m’en donne un deuxième avec lui.', 'type' => 'astuce'],
+        ['title' => 'Une question pour mon professeur', 'body' => 'Le PGCD de deux nombres peut-il être plus grand que le plus petit des deux ? Je pense que non, mais je veux vérifier.', 'type' => 'question'],
+        ['title' => 'Un exemple à revoir', 'body' => 'PGCD(42 ; 60) : les diviseurs de 42 sont 1, 2, 3, 6, 7, 14, 21, 42 — et parmi ceux de 60 il y a 1, 2, 3, 6. Les diviseurs communs : 1, 2, 3, 6. Le plus grand : 6.', 'type' => 'exemple'],
     ];
 
     /**

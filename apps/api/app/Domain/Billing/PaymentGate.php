@@ -31,7 +31,7 @@ class PaymentGate implements PaidAccessSwitch
 {
     public const CLOSED_CODE = 'payments_closed';
 
-    public const CLOSED_MESSAGE = "Le paiement en ligne n'est pas ouvert.";
+    public const CLOSED_MESSAGE = 'Le paiement en ligne n’est pas ouvert.';
 
     public const NOT_CONFIGURED_CODE = 'payments_not_configured';
 

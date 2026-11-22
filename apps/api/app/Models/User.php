@@ -253,14 +253,14 @@ class User extends Authenticatable implements HasLocalePreference
     /**
      * La langue des courriels et notifications envoyés à ce compte.
      *
-     * Toujours l'arabe : c'est la langue de la plateforme. Laravel l'applique
-     * à chaque notification, si bien que le gabarit de courriel traduit ses
-     * propres phrases depuis `lang/ar.json` et passe en RTL — sans toucher à
-     * APP_LOCALE, dont dépendent les messages de validation.
+     * Toujours le français : la plateforme n'a qu'une langue. Laravel
+     * l'applique à chaque notification, si bien que le gabarit de courriel
+     * traduit ses propres phrases depuis `lang/fr.json`, même si APP_LOCALE
+     * était mal réglé sur un serveur.
      */
     public function preferredLocale(): string
     {
-        return 'ar';
+        return 'fr';
     }
 
     public function getEmailForVerification(): string

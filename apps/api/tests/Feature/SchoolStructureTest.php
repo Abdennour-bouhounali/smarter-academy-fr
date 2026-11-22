@@ -54,7 +54,7 @@ class SchoolStructureTest extends TestCase
     public function test_a_teacher_joins_by_the_link_after_consenting_and_sees_what_the_school_sees(): void
     {
         ['school' => $school, 'token' => $directorToken] = $this->schoolWithDirector();
-        $teacher = $this->teacher(['first_name' => 'سعاد', 'last_name' => 'مراد']);
+        $teacher = $this->teacher(['first_name' => 'Chloé', 'last_name' => 'Mourad']);
         $teacherToken = $this->tokenOf($teacher);
         $link = $this->withToken($directorToken)->getJson('/api/v1/school/teachers')->assertOk()->json('joinLinkToken');
 
@@ -67,7 +67,7 @@ class SchoolStructureTest extends TestCase
         // D4 : le directeur et l'enseignant lisent EXACTEMENT les mêmes faits.
         $this->schoolClassroom($school, $teacher);
         $seenBySchool = $this->withToken($directorToken)->getJson('/api/v1/school/teachers')
-            ->assertOk()->assertJsonPath('teachers.0.firstName', 'سعاد')->json('teachers.0.facts');
+            ->assertOk()->assertJsonPath('teachers.0.firstName', 'Chloé')->json('teachers.0.facts');
         $seenByTeacher = $this->withToken($teacherToken)->getJson('/api/v1/teacher/school')->assertOk()->json('facts');
         $this->assertSame($seenBySchool, $seenByTeacher);
         $this->assertSame(1, $seenByTeacher['classes']);

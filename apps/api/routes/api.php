@@ -114,8 +114,9 @@ Route::prefix('v1')->group(function () {
     Route::get('/billing/status', [BillingStatusController::class, 'show'])->middleware('throttle:60,1');
 
     // ── La LIBRAIRIE : vitrine publique (livres papier, commande sans paiement
-    // en ligne). Voir docs/architecture/BOOKS_STORE.md.
-    Route::prefix('books')->group(function () {
+    // en ligne). Voir docs/architecture/BOOKS_STORE.md. Fermée par défaut
+    // (config/books.php) : 404.
+    Route::prefix('books')->middleware('books.enabled')->group(function () {
         Route::get('/', [BookStoreController::class, 'index']);
         Route::get('/wilayas', [BookStoreController::class, 'wilayas']);
         Route::post('/messages', [BookStoreController::class, 'message'])->middleware('throttle:book-messages');
@@ -730,23 +731,16 @@ Route::prefix('v1')->group(function () {
     // La LIBRAIRIE : l'administrateur ET le gestionnaire « مسيّر المكتبة »
     // (porte `books`, BOOKS_STORE.md §6ter). Le gestionnaire n'atteint RIEN
     // d'autre sous /admin (AdminAuthorizationTest balaie toutes les routes).
-    Route::middleware(['auth:sanctum', 'account.active', 'can:books'])->prefix('admin')->group(function () {
-        // La librairie : fiches livres, commandes (états, livraison,
-        // paiements en lignes), messages reçus.
+    // La librairie : fiches livres, commandes (états, livraison, paiements
+    // en lignes), messages reçus. `books.enabled` d'abord : fermée, la route
+    // répond 404 avant de demander un compte (config/books.php).
+    Route::middleware(['books.enabled', 'auth:sanctum', 'account.active', 'can:books'])->prefix('admin')->group(function () {
         Route::get('/books', [AdminBookController::class, 'index']);
         Route::post('/books', [AdminBookController::class, 'store']);
         Route::get('/books/{id}', [AdminBookController::class, 'show'])->whereNumber('id');
         Route::put('/books/{id}', [AdminBookController::class, 'update'])->whereNumber('id');
         Route::get('/book-orders', [AdminBookOrderController::class, 'index']);
         Route::get('/book-orders/stats', [AdminBookOrderController::class, 'stats']);
-        // Notifications du tableau de bord sur l'appareil du compte connecté (BOOKS_STORE.md
-        // §6quater) : l'administrateur choisit parmi tous les sujets, le gestionnaire parmi ceux
-        // de la librairie (AdminPush::TOPICS).
-        Route::get('/push', [AdminPushController::class, 'show']);
-        Route::post('/push/subscriptions', [AdminPushController::class, 'subscribe']);
-        Route::patch('/push/subscriptions', [AdminPushController::class, 'updateTopics']);
-        Route::delete('/push/subscriptions', [AdminPushController::class, 'unsubscribe']);
-        Route::post('/push/test', [AdminPushController::class, 'test']);
         Route::get('/book-orders/{id}', [AdminBookOrderController::class, 'show'])->whereNumber('id');
         Route::patch('/book-orders/{id}', [AdminBookOrderController::class, 'update'])->whereNumber('id');
         Route::patch('/book-orders/{id}/status', [AdminBookOrderController::class, 'updateStatus'])->whereNumber('id');
@@ -755,6 +749,17 @@ Route::prefix('v1')->group(function () {
         Route::delete('/book-order-payments/{id}', [AdminBookOrderController::class, 'removePayment'])->whereNumber('id');
         Route::get('/book-messages', [AdminBookMessageController::class, 'index']);
         Route::patch('/book-messages/{id}', [AdminBookMessageController::class, 'update'])->whereNumber('id');
+    });
+
+    Route::middleware(['auth:sanctum', 'account.active', 'can:books'])->prefix('admin')->group(function () {
+        // Notifications du tableau de bord sur l'appareil du compte connecté (BOOKS_STORE.md
+        // §6quater) : l'administrateur choisit parmi tous les sujets, le gestionnaire parmi ceux
+        // de la librairie (AdminPush::TOPICS).
+        Route::get('/push', [AdminPushController::class, 'show']);
+        Route::post('/push/subscriptions', [AdminPushController::class, 'subscribe']);
+        Route::patch('/push/subscriptions', [AdminPushController::class, 'updateTopics']);
+        Route::delete('/push/subscriptions', [AdminPushController::class, 'unsubscribe']);
+        Route::post('/push/test', [AdminPushController::class, 'test']);
 
         // « حسابي » : son propre profil, son adresse, son mot de passe.
         Route::get('/account', [AdminAccountController::class, 'show']);
@@ -763,19 +768,22 @@ Route::prefix('v1')->group(function () {
         Route::patch('/account/password', [AdminAccountController::class, 'updatePassword']);
     });
 
+    // Les gestionnaires de la librairie (« مسيّرو المكتبة ») : créés, suspendus
+    // et réinitialisés par l'administrateur SEUL. Librairie fermée : 404
+    // avant de demander un compte (config/books.php).
+    Route::middleware(['books.enabled', 'auth:sanctum', 'account.active', 'can:admin'])->prefix('admin')->group(function () {
+        Route::get('/book-managers', [AdminBookManagerController::class, 'index']);
+        Route::post('/book-managers', [AdminBookManagerController::class, 'store']);
+        Route::patch('/book-managers/{id}/status', [AdminBookManagerController::class, 'updateStatus'])->whereNumber('id');
+        Route::post('/book-managers/{id}/password', [AdminBookManagerController::class, 'resetPassword'])->whereNumber('id');
+    });
+
     // Protected routes — admin only
     Route::middleware(['auth:sanctum', 'account.active', 'can:admin'])->group(function () {
         Route::get('/contact', [ContactController::class, 'index']);
 
         Route::prefix('admin')->group(function () {
             Route::get('/dashboard', [AdminDashboardController::class, 'index']);
-
-            // Les gestionnaires de la librairie (« مسيّرو المكتبة ») : créés,
-            // suspendus et réinitialisés par l'administrateur SEUL.
-            Route::get('/book-managers', [AdminBookManagerController::class, 'index']);
-            Route::post('/book-managers', [AdminBookManagerController::class, 'store']);
-            Route::patch('/book-managers/{id}/status', [AdminBookManagerController::class, 'updateStatus'])->whereNumber('id');
-            Route::post('/book-managers/{id}/password', [AdminBookManagerController::class, 'resetPassword'])->whereNumber('id');
 
             Route::get('/analytics/platform', [AdminDashboardController::class, 'platform']);
             Route::get('/analytics/learning', [AdminDashboardController::class, 'learning']);

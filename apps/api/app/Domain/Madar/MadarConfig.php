@@ -56,24 +56,29 @@ class MadarConfig
         return (array) $this->get('physics', []);
     }
 
-    public function now(?Carbon $now = null): CarbonImmutable
+    /** Le fuseau de l'école (config/app.php), le même pour toute la plateforme. */
+    public function timezone(): string
     {
-        return CarbonImmutable::instance($now ?? Carbon::now())->setTimezone((string) $this->get('timezone', 'Africa/Algiers'));
+        return (string) config('app.school_timezone');
     }
 
-    /** Le jour (Alger) — celui des cœurs quotidiens et de la limite de parties. */
+    public function now(?Carbon $now = null): CarbonImmutable
+    {
+        return CarbonImmutable::instance($now ?? Carbon::now())->setTimezone($this->timezone());
+    }
+
+    /** Le jour (fuseau de l'école) — celui des cœurs quotidiens et de la limite de parties. */
     public function today(): string
     {
         return $this->now()->format('Y-m-d');
     }
 
-    /** Le dimanche (Alger) de la semaine d'une date : la saison du classement. */
+    /** Le lundi (fuseau de l'école) de la semaine d'une date : la saison du classement. */
     public function weekStart(?string $date = null): string
     {
-        $tz = (string) $this->get('timezone', 'Africa/Algiers');
-        $day = $date !== null ? CarbonImmutable::parse($date, $tz) : $this->now();
+        $day = $date !== null ? CarbonImmutable::parse($date, $this->timezone()) : $this->now();
 
-        return $day->startOfWeek(CarbonImmutable::SUNDAY)->format('Y-m-d');
+        return $day->startOfWeek(CarbonImmutable::MONDAY)->format('Y-m-d');
     }
 
     /**

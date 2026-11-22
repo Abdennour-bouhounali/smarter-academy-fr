@@ -16,9 +16,8 @@ return [
     'max_children' => 6,
     'max_parents' => 4,
 
-    // Le jour et la semaine du rapport se comptent à Alger ; la semaine
-    // commence le dimanche, comme la semaine scolaire.
-    'timezone' => 'Africa/Algiers',
+    // Le jour et la semaine du rapport (du lundi au dimanche) se comptent
+    // dans le fuseau de l'école : config('app.school_timezone'), FamilyClock.
 
     // Le temps d'étude : un battement couvre au plus `heartbeat_max_seconds`,
     // et une journée d'une surface au plus `day_max_seconds` par compteur.
