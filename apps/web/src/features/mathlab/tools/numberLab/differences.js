@@ -9,7 +9,7 @@
  *                       6 − 6  = 0   →  PGCD(48 ; 18) = 6
  *
  * La trace vient de `@smarter-academy/core` (`differenceSteps`) — la MÊME que
- * celle des leçons de 4AM (manuel p. 13 : on continue jusqu'au fruit nul, le
+ * celle du moteur des leçons (on continue jusqu'à une différence nulle, le
  * PGCD est la dernière différence non nulle). Ce module n'écrit pas un
  * deuxième algorithme : il ajoute ce dont le laboratoire a besoin autour.
  *
@@ -145,7 +145,7 @@ export function stepEquation(step) {
 
 /* ── Exemples ─────────────────────────────────────────────────────────── */
 
-/** Les exemples par niveau — ceux du manuel de 4AM en priorité. */
+/** Les exemples par niveau. */
 export const DIFFERENCE_EXAMPLES = Object.freeze([
   { id: 'd-48-18', level: 'beginner', a: 48, b: 18 },
   { id: 'd-20-12', level: 'beginner', a: 20, b: 12 },

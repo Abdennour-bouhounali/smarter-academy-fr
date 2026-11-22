@@ -27,7 +27,7 @@ import { divisionFrames, divisionDrawStage, divisionProblem } from './divisionFr
  * a : des cubes qu'on compte ; grand a : un ruban à l'échelle, coupé tous les b.
  *
  * Le mode « Opérations » garde sa lecture de la division (partage/groupement
- * sur des jetons) ; celui-ci est la division EUCLIDIENNE du programme de 4AM.
+ * sur des jetons) ; celui-ci est la division EUCLIDIENNE (cycle 3, réinvestie au collège).
  */
 export default function DivisionMode({ state, onChange, compact }) {
   const { t } = useTranslation('mathlab');

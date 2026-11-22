@@ -10,7 +10,7 @@ import { displayToggles } from './scope.js';
  * ouvrir une expérience guidée (§41), régler ce qui s'affiche (§34, §45,
  * §46) et répéter un motif (§37).
  *
- * Tout est en boutons et en cases, rien en menu caché : un élève de 4AM doit
+ * Tout est en boutons et en cases, rien en menu caché : un élève de collège doit
  * voir ce qu'il peut faire.
  */
 export default function TransformControls({

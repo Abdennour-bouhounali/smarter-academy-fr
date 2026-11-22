@@ -5,15 +5,24 @@ import { FACTOR_EXAMPLES, FUNCTION_EXAMPLES, SIMPLIFY_EXAMPLES } from './example
 /**
  * L'atelier d'algèbre dans les deux scopes (labScope.js, MATH_LAB.md §2.1).
  *
- * Le découpage hérité du programme algérien de 4AM (calcul littéral, 3.1–3.9) couvre les six sections —
- * équations, inéquations, systèmes 2×2, développement, factorisation,
- * fonctions — mais pas tout ce qu'elles savent faire :
+ * Au collège, ce que le programme français en vigueur (cycle 4, 2020) demande en
+ * 4e et en 3e — quatre sections sur six :
  *
- *   factorisation  facteur commun et identités remarquables SEULEMENT
- *                  (3.2) ; « somme et produit », la méthode « ac » et le discriminant
- *                  (Δ) sont du lycée ;
- *   fonctions      linéaires et affines (3.7, 3.8) ; pas de second degré ;
- *   simplification pas de fraction rationnelle (x² − 1)/(x − 1).
+ *   équations      premier degré (`4e.m1.r13`, `3e.m1.r13`) ; le moteur lit aussi
+ *                  le produit nul et x² = a (`3e.m1.r14`, `3e.m1.r15`) ;
+ *   développement  simple et double distributivité (`4e.m1.r10`, `3e.m1.r10`,
+ *                  `3e.m1.r11`) ;
+ *   factorisation  facteur commun (`4e.m1.r10`) et a² − b² SEULEMENT
+ *                  (`3e.m1.r12`) ; les carrés (a ± b)², « somme et produit »,
+ *                  la méthode « ac » et le discriminant (Δ) n'y sont pas ;
+ *   fonctions      linéaires et affines (`3e.m2.r15`, `3e.m2.r16`) ; pas de
+ *                  second degré.
+ *
+ * Hors du collège : les SYSTÈMES de deux équations (décision du propriétaire,
+ * 2026-11-23 — absents des textes du collège) et les INÉQUATIONS (absentes du
+ * programme de 2020 ; celui de 2026 fait entrer ax ⩾ b et les trois identités
+ * remarquables en 3e à la rentrée 2028 — `net/horizon_2028.json`). Pas de
+ * fraction rationnelle (x² − 1)/(x − 1) non plus.
  *
  * Au lycée : tout.
  */
@@ -27,11 +36,12 @@ const BEYOND_MOYEN_STATUSES = new Set(['noPair', 'irreducibleReal', 'irreducible
 export const ALGEBRA_CAPABILITIES = Object.freeze({
   moyen: Object.freeze({
     descriptionKey: 'tools.algebra.descriptionMoyen',
+    sections: Object.freeze(['equations', 'simplify', 'factor', 'functions']),
     factor: Object.freeze({
       methods: 'moyen',
       discriminant: false,
-      examples: Object.freeze(['fa-common', 'fa-diff', 'fa-square', 'fa-combo']),
-      rules: Object.freeze(['commonFactorRule', 'diffSquares', 'perfectSquareSum', 'perfectSquareDiff']),
+      examples: Object.freeze(['fa-common', 'fa-diff', 'fa-combo']),
+      rules: Object.freeze(['commonFactorRule', 'diffSquares']),
       placeholder: '4x^2 - 9',
     }),
     functions: Object.freeze({

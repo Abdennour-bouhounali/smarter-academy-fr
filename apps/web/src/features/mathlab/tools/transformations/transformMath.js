@@ -63,7 +63,7 @@ export function translation(vx, vy) {
  *
  *     (x, y) ↦ centre + R(θ)·(point − centre)
  *
- * L'angle est reçu en degrés parce que c'est l'unité du manuel de 4AM et
+ * L'angle est reçu en degrés parce que c'est l'unité du collège et
  * celle de toutes les commandes de l'instrument ; la conversion est faite
  * ici, une fois, et jamais dans un composant.
  *

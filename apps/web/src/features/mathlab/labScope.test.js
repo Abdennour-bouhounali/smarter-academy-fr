@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
@@ -11,23 +11,30 @@ import { MATH_LAB_TOOLS, getMathLabTool } from './toolRegistry.js';
 import { mathLabToolPath, newMathLabDocument } from './mathLabDocument.js';
 import { selectWorks, activeWorkFilterCount, DEFAULT_WORK_FILTERS } from './work/workFilters.js';
 
+// Ce fichier tient la mécanique des DEUX ateliers : il ouvre donc le côté lycée,
+// caché en France (labConfig.js). Ce que l'atelier fait quand il est caché —
+// le réglage livré — est tenu par labScope.closed.test.js.
+vi.mock('./labConfig.js', () => ({ LYCEE_LAB_ENABLED: true }));
+
 const here = dirname(fileURLToPath(import.meta.url));
 const catalog = JSON.parse(readFileSync(resolve(here, '../../i18n/locales/fr/mathlab.json'), 'utf8'));
 const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], catalog);
 
 /**
  * LES DEUX ateliers (MATH_LAB.md §2.1) — la logique pure, et la CLASSIFICATION
- * des quatorze instruments. Cette classification est une décision
- * pédagogique : la changer doit se faire ici, consciemment, pas par accident.
+ * des quatorze instruments selon le programme FRANÇAIS (le collège : cycle 4,
+ * 2020 ; ce qu'il n'enseigne pas est au lycée). Cette classification est une
+ * décision pédagogique : la changer doit se faire ici, consciemment, pas par
+ * accident.
  */
 describe('la classification des instruments', () => {
   const EXPECTED = {
     whiteboard: 'common',
     functionGrapher: ['moyen', 'secondaire'],
     geometry3d: ['moyen'],
-    probabilityStats: ['secondaire'],
+    probabilityStats: ['moyen', 'secondaire'],
     algebra: ['moyen', 'secondaire'],
-    vectors: ['moyen', 'secondaire'],
+    vectors: ['secondaire'],
     trigonometry: ['moyen', 'secondaire'],
     sequences: ['secondaire'],
     transformations: ['moyen', 'secondaire'],
@@ -51,9 +58,10 @@ describe('la classification des instruments', () => {
 
   it('atelier du collège ne montre aucun instrument du seul lycée', () => {
     const moyen = toolsForScope(MATH_LAB_TOOLS, 'moyen').map((tool) => tool.id);
-    for (const id of ['sequences', 'conics', 'analysis', 'probabilityStats', 'whiteboard']) expect(moyen, id).not.toContain(id);
+    for (const id of ['sequences', 'conics', 'analysis', 'vectors', 'whiteboard']) expect(moyen, id).not.toContain(id);
     expect(moyen).toContain('measurement');
     expect(moyen).toContain('geometry3d');
+    expect(moyen).toContain('probabilityStats');
   });
 
   it('atelier du lycée : les instruments partagés, plus les siens ; sans la géométrie dans l’espace', () => {
@@ -61,7 +69,7 @@ describe('la classification des instruments', () => {
     const secondaire = toolsForScope(MATH_LAB_TOOLS, 'secondaire').map((tool) => tool.id);
     for (const id of moyen.filter((tool) => tool !== 'geometry3d')) expect(secondaire, id).toContain(id);
     expect(secondaire).not.toContain('geometry3d');
-    for (const id of ['sequences', 'conics', 'analysis', 'probabilityStats']) expect(secondaire, id).toContain(id);
+    for (const id of ['sequences', 'conics', 'analysis', 'vectors', 'probabilityStats']) expect(secondaire, id).toContain(id);
   });
 
   it('un instrument PARTAGÉ l’est une seule fois : un objet, un composant, une route', () => {
@@ -167,11 +175,11 @@ describe('le document se souvient de son atelier', () => {
     expect(summaryLabScope({ scope: 'x' })).toBeNull();
   });
 
-  it('un document neuf naît dans son atelier : l’algèbre n’ouvre pas le collège sur x² + 5x + 6', () => {
+  it('un document neuf naît dans son atelier : l’algèbre ouvre le collège sur a² − b², pas sur x² + 5x + 6', () => {
     const algebra = getMathLabTool('algebra');
     const moyen = newMathLabDocument(algebra, { title: 't', scope: 'moyen', capabilities: toolCapabilities(algebra, 'moyen') });
     const secondaire = newMathLabDocument(algebra, { title: 't', scope: 'secondaire', capabilities: toolCapabilities(algebra, 'secondaire') });
-    expect(moyen.data.factor.source).toBe('x^2 + 6x + 9');
+    expect(moyen.data.factor.source).toBe('4x^2 - 9');
     expect(secondaire.data.factor.source).toBe('x^2 + 5x + 6');
   });
 

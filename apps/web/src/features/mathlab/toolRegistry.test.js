@@ -1,10 +1,14 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { MATH_LAB_TOOLS, PLANNED_MATH_LAB_TOOLS, getMathLabTool, getMathLabToolBySlug } from './toolRegistry.js';
+import { MATH_LAB_TOOLS, PLANNED_MATH_LAB_TOOLS, REGISTERED_MATH_LAB_TOOLS, getMathLabTool, getMathLabToolBySlug } from './toolRegistry.js';
 import { defineMathLabTool } from './toolContract.js';
 import { WORK_SORTS, WORK_PERIODS } from './work/workFilters.js';
+
+// Le registre ENTIER, lycée compris : ce fichier ouvre le côté lycée, caché en France
+// (labConfig.js) — le réglage livré est tenu par labScope.closed.test.jsx.
+vi.mock('./labConfig.js', () => ({ LYCEE_LAB_ENABLED: true }));
 
 const here = dirname(fileURLToPath(import.meta.url));
 
@@ -115,7 +119,8 @@ describe('registre des instruments', () => {
   it('le registre serveur (MathLabTools.php) connaît exactement les mêmes identifiants', () => {
     const php = readFileSync(resolve(here, '../../../../api/app/Domain/MathLab/MathLabTools.php'), 'utf8');
     const serverIds = [...php.matchAll(/^\s*'([a-zA-Z0-9]+)'\s*=>\s*\['maxBytes'/gm)].map((m) => m[1]).sort();
-    const clientIds = MATH_LAB_TOOLS.map((t) => t.id).sort();
+    // Les instruments ENREGISTRÉS : le serveur garde ceux du lycée, même cachés.
+    const clientIds = REGISTERED_MATH_LAB_TOOLS.map((t) => t.id).sort();
     expect(serverIds).toEqual(clientIds);
   });
 

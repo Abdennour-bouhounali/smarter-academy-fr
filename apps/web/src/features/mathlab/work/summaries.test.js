@@ -1,6 +1,10 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { MATH_LAB_TOOLS } from '../toolRegistry.js';
 import { summarizeDocument } from '../toolContract.js';
+
+// Le registre ENTIER, lycée compris : ce fichier ouvre le côté lycée, caché en France
+// (labConfig.js) — le réglage livré est tenu par labScope.closed.test.jsx.
+vi.mock('../labConfig.js', () => ({ LYCEE_LAB_ENABLED: true }));
 
 /**
  * Le RÉSUMÉ est le contrat entre un instrument et « Mes travaux » : c'est lui

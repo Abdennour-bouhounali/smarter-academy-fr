@@ -12,6 +12,7 @@ import { numberLabTool } from './tools/numberLab/index.js';
 import { analysisTool } from './tools/analysis/index.js';
 import { logicTool } from './tools/logic/index.js';
 import { measurementTool } from './tools/measurement/index.js';
+import { publishedTool } from './labScope.js';
 
 /**
  * Le REGISTRE des instruments de l’atelier de mathématiques (Math Lab).
@@ -24,9 +25,13 @@ import { measurementTool } from './tools/measurement/index.js';
  *
  * L'ordre est celui de l'accueil.
  *
+ * Ce sont les instruments ENREGISTRÉS — tous, lycée compris : le serveur les
+ * connaît tous (MathLabTools.php) et leur code reste entier. Ce que les pages
+ * voient est `MATH_LAB_TOOLS`, plus bas.
+ *
  * @type {ReadonlyArray<import('./toolContract.js').MathLabTool>}
  */
-export const MATH_LAB_TOOLS = Object.freeze([
+export const REGISTERED_MATH_LAB_TOOLS = Object.freeze([
   whiteboardTool,
   functionGrapherTool,
   geometry3dTool,
@@ -42,6 +47,18 @@ export const MATH_LAB_TOOLS = Object.freeze([
   logicTool,
   measurementTool,
 ]);
+
+/**
+ * Les instruments PUBLIÉS — la seule liste que lisent l'accueil, le sélecteur,
+ * « Nouveau travail », les filtres de « Mes travaux » et la résolution des
+ * routes : chacun ramené aux ateliers ouverts (labScope.js › publishedTool).
+ * Côté lycée caché (labConfig.js), un instrument du lycée seul n'y figure pas
+ * — ni carte, ni route, ni filtre — et un instrument partagé n'y porte que son
+ * atelier du collège.
+ *
+ * @type {ReadonlyArray<import('./toolContract.js').MathLabTool>}
+ */
+export const MATH_LAB_TOOLS = Object.freeze(REGISTERED_MATH_LAB_TOOLS.map(publishedTool).filter(Boolean));
 
 /**
  * Les instruments ANNONCÉS, pas encore construits : un nom et une icône,

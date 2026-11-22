@@ -75,7 +75,10 @@ export default function MyWorkSpace({ labRoot, initialLab = 'all' }) {
     setState((s) => ({ ...s, status: 'loading' }));
     try {
       const { documents } = await fetchMathLabDocuments(token);
-      setState({ status: 'ready', works: documents.map(fromApiDocument) });
+      // Un travail d'un instrument non publié (un instrument du lycée, côté
+      // lycée caché — labConfig.js) n'est ni montré ni cherchable ; il reste
+      // sur le serveur, intact, et réapparaît si l'instrument est publié.
+      setState({ status: 'ready', works: documents.map(fromApiDocument).filter((work) => getMathLabTool(work.tool)) });
     } catch {
       setState({ status: 'error', works: [] });
     }

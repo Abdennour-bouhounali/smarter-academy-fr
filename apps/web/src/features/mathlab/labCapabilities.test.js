@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getMathLabTool } from './toolRegistry.js';
-import { toolCapabilities } from './labScope.js';
+import { REGISTERED_MATH_LAB_TOOLS } from './toolRegistry.js';
 
 import { grapherFeatures, MOYEN_PRESETS } from './tools/functionGrapher/scope.js';
 import { MOYEN_KEYBOARD_LAYOUT, GRAPHER_KEYBOARD_LAYOUT } from './tools/functionGrapher/mathliveSetup.js';
@@ -36,12 +35,15 @@ import { createLogicData } from './tools/logic/logicState.js';
  * « Advanced features never appear in atelier du collège » — et un instrument
  * partagé expose, dans chaque atelier, EXACTEMENT ce qui lui revient.
  *
- * Chaque bloc prend les capacités DÉCLARÉES par l'instrument (le registre,
- * pas une copie) et vérifie ce que le collège n'a pas, puis que le lycée a
+ * Chaque bloc prend les capacités DÉCLARÉES par l'instrument (le registre
+ * des instruments ENREGISTRÉS, pas une copie — le côté lycée caché garde son
+ * code, labConfig.js) et vérifie ce que le collège n'a pas, puis que le lycée a
  * tout. Les générateurs d'exercices sont tirés des centaines de fois : une
  * question du lycée posée au collège ne passe pas au hasard d'une graine.
  */
-const features = (id, scope, resolve) => resolve(toolCapabilities(getMathLabTool(id), scope));
+const registered = (id) => REGISTERED_MATH_LAB_TOOLS.find((tool) => tool.id === id);
+const declared = (id, scope) => registered(id).capabilities?.[scope] ?? null;
+const features = (id, scope, resolve) => resolve(declared(id, scope));
 
 describe('traceur de courbes', () => {
   const moyen = features('functionGrapher', 'moyen', grapherFeatures);
@@ -79,34 +81,28 @@ describe('traceur de courbes', () => {
 });
 
 /**
- * Aucun atelier ne restreint aujourd'hui Probabilités et statistiques (atelier du lycée seulement,
- * toutes sections). La MÉCANIQUE de filtrage reste, et elle est tenue par ce
- * jeu de capacités d'essai — celui qu'un atelier restreint déclarerait.
+ * Probabilités et statistiques : du COLLÈGE en France (programme du cycle 4,
+ * 2020) — expériences et série statistique ; l'arbre (« la notion d'arbre ne
+ * figurant pas au programme »), la loi normale, les quartiles, la boîte, les
+ * effectifs cumulés, la variance et le mode restent au lycée.
  */
-const RESTRICTED = Object.freeze({
-  sections: ['experiment', 'dataset'],
-  charts: ['bars', 'histogram', 'pie', 'cumulative'],
-  stats: ['count', 'min', 'max', 'range', 'mean', 'median', 'mode'],
-  explanations: ['mean', 'median', 'mode', 'range'],
-});
-
 describe('Probabilités et statistiques', () => {
-  const moyen = probabilityFeatures(RESTRICTED);
+  const moyen = features('probabilityStats', 'moyen', probabilityFeatures);
   const secondaire = features('probabilityStats', 'secondaire', probabilityFeatures);
 
-  it('instrument du seul lycée, sans aucune restriction déclarée', () => {
-    expect(getMathLabTool('probabilityStats').scopes).toEqual(['secondaire']);
-    expect(toolCapabilities(getMathLabTool('probabilityStats'), 'secondaire')).toBeNull();
-    expect(toolCapabilities(getMathLabTool('probabilityStats'), 'moyen')).toBeNull();
+  it('instrument des deux ateliers : restreint au collège, entier au lycée', () => {
+    expect(registered('probabilityStats').scopes).toEqual(['moyen', 'secondaire']);
+    expect(declared('probabilityStats', 'moyen')).not.toBeNull();
+    expect(declared('probabilityStats', 'secondaire')).toBeNull();
   });
 
-  it('la mécanique : des capacités restreintes n’offrent ni arbre, ni loi normale, ni quartiles', () => {
+  it('au collège : expériences et série — ni arbre, ni loi normale, ni quartiles, ni boîte, ni cumulés', () => {
     expect(moyen.sections).toEqual(['experiment', 'dataset']);
-    expect(moyen.charts).not.toContain('box');
-    expect(moyen.charts).toContain('cumulative');
-    for (const lycee of ['q1', 'q3', 'iqr', 'variance', 'sd']) expect(moyen.stats, lycee).not.toContain(lycee);
-    for (const lycee of ['quartiles', 'variance', 'sd']) expect(moyen.explanations, lycee).not.toContain(lycee);
-    for (const college of ['mean', 'median', 'mode', 'range']) expect(moyen.stats, college).toContain(college);
+    expect(moyen.charts).toEqual(['bars', 'histogram', 'pie']);
+    for (const lycee of ['q1', 'q3', 'iqr', 'variance', 'sd', 'mode']) expect(moyen.stats, lycee).not.toContain(lycee);
+    for (const lycee of ['quartiles', 'variance', 'sd', 'mode']) expect(moyen.explanations, lycee).not.toContain(lycee);
+    for (const college of ['count', 'min', 'max', 'mean', 'median', 'range']) expect(moyen.stats, college).toContain(college);
+    for (const college of ['mean', 'median', 'range']) expect(moyen.explanations, college).toContain(college);
   });
 
   it('au lycée : les quatre sections, la boîte, les quartiles, la variance', () => {
@@ -116,10 +112,11 @@ describe('Probabilités et statistiques', () => {
     expect(secondaire.explanations).toContain('quartiles');
   });
 
-  it('la mécanique : un document ouvert sur l’arbre ou la boîte revient à ce qui est montré', () => {
+  it('un document ouvert sur l’arbre, la boîte ou les cumulés revient au collège', () => {
     const base = createProbabilityStatsData();
     expect(clampProbability({ ...base, mode: 'tree' }, moyen).mode).toBe('experiment');
     expect(clampProbability({ ...base, mode: 'normal', chart: 'box' }, moyen)).toMatchObject({ mode: 'experiment', chart: null });
+    expect(clampProbability({ ...base, mode: 'dataset', chart: 'cumulative' }, moyen)).toMatchObject({ mode: 'dataset', chart: null });
     expect(clampProbability({ ...base, mode: 'dataset', chart: 'pie' }, moyen)).toMatchObject({ mode: 'dataset', chart: 'pie' });
     // Le lycée garde tout.
     expect(clampProbability({ ...base, mode: 'normal', chart: 'box' }, secondaire)).toMatchObject({ mode: 'normal', chart: 'box' });
@@ -130,11 +127,12 @@ describe('outil Algèbre', () => {
   const moyen = features('algebra', 'moyen', algebraFeatures);
   const secondaire = features('algebra', 'secondaire', algebraFeatures);
 
-  it('au collège : les six sections, mais ni discriminant, ni second degré, ni « somme et produit »', () => {
-    expect(moyen.sections).toHaveLength(6);
+  it('au collège : quatre sections — ni inéquations, ni systèmes —, ni discriminant, ni second degré, ni « somme et produit »', () => {
+    expect(moyen.sections).toEqual(['equations', 'simplify', 'factor', 'functions']);
+    expect(secondaire.sections).toHaveLength(6);
     expect(moyen.factor.discriminant).toBe(false);
     expect(moyen.factor.methods).toBe('moyen');
-    expect(moyen.factor.rules).not.toContain('sumProductRule');
+    expect(moyen.factor.rules).toEqual(['commonFactorRule', 'diffSquares']);
     expect(moyen.functions.families).toEqual(['linear', 'affine']);
     expect(moyen.functions.examples.every((example) => example.value.family !== 'quadratic')).toBe(true);
   });
@@ -146,7 +144,21 @@ describe('outil Algèbre', () => {
       expect(result.ok, example.id).toBe(true);
       expect(isBeyondMoyenFactorization(result), example.id).toBe(false);
       expect(result.status, example.id).toBe('factored');
+      // Facteur commun et a² − b² (programme de 3e, 2020) : jamais un carré (a ± b)².
+      expect(result.steps.some((step) => step.kind === 'perfectSquare'), example.id).toBe(false);
     }
+  });
+
+  it('un document ouvert sur les systèmes ou les inéquations rouvre sur les équations au collège', () => {
+    const data = createAlgebraData();
+    for (const section of ['systems', 'inequalities']) {
+      expect(clampAlgebra({ ...data, section }, moyen).section, section).toBe('equations');
+      expect(clampAlgebra({ ...data, section }, secondaire).section, section).toBe(section);
+    }
+  });
+
+  it('un document neuf du collège ouvre la factorisation sur a² − b²', () => {
+    expect(createAlgebraData(undefined, { scope: 'moyen', capabilities: declared('algebra', 'moyen') }).factor.source).toBe('4x^2 - 9');
   });
 
   it('ce qui exige « somme et produit », la méthode ac ou le discriminant est reconnu', () => {
@@ -181,21 +193,38 @@ describe('outil Algèbre', () => {
   });
 });
 
+/**
+ * Le labo des vecteurs est du LYCÉE seul en France (décision du propriétaire,
+ * 2026-11-23). La mécanique de restriction reste, tenue par ce jeu de
+ * capacités d'essai — la restriction de l'ancien atelier du collège.
+ */
+const RESTRICTED_VECTORS = Object.freeze({
+  scale: false,
+  factor: false,
+  analysis: ['none'],
+  experiments: ['addition', 'parallelogram', 'subtraction', 'translation', 'shape', 'midpoint'],
+});
+
 describe('outil Vecteurs', () => {
-  const moyen = features('vectors', 'moyen', vectorsFeatures);
+  const restricted = vectorsFeatures(RESTRICTED_VECTORS);
   const secondaire = features('vectors', 'secondaire', vectorsFeatures);
 
-  it('au collège : ni k·u, ni v = k·u, ni produit scalaire, ni analyse avancée', () => {
-    expect(moyen.scale).toBe(false);
-    expect(moyen.factor).toBe(false);
-    expect(moyen.analysis).toEqual(['none']);
-    const ids = moyen.experiments.map((entry) => entry.id);
+  it('instrument du seul lycée, sans restriction', () => {
+    expect(registered('vectors').scopes).toEqual(['secondaire']);
+    expect(declared('vectors', 'secondaire')).toBeNull();
+  });
+
+  it('la mécanique : des capacités restreintes n’offrent ni k·u, ni v = k·u, ni analyse', () => {
+    expect(restricted.scale).toBe(false);
+    expect(restricted.factor).toBe(false);
+    expect(restricted.analysis).toEqual(['none']);
+    const ids = restricted.experiments.map((entry) => entry.id);
     for (const lycee of ['scalar', 'parallel', 'collinear', 'perpendicular']) expect(ids, lycee).not.toContain(lycee);
     expect(ids).toEqual(expect.arrayContaining(['addition', 'parallelogram', 'translation']));
   });
 
-  it('aucune expérience du collège n’allume une analyse du lycée', () => {
-    for (const entry of moyen.experiments) {
+  it('la mécanique : aucune expérience restreinte n’allume une analyse', () => {
+    for (const entry of restricted.experiments) {
       const built = entry.build();
       expect(['none', undefined], entry.id).toContain(built.settings?.analysis ?? entry.settings?.analysis);
       expect(built.scene.vectors.every((vector) => vector.source?.kind !== 'scaled'), entry.id).toBe(true);
@@ -208,9 +237,9 @@ describe('outil Vecteurs', () => {
     expect(secondaire.experiments).toHaveLength(10);
   });
 
-  it('une analyse du lycée enregistrée s’éteint au collège', () => {
+  it('la mécanique : une analyse enregistrée s’éteint sous une restriction', () => {
     const data = createVectorsData();
-    expect(clampVectors({ ...data, settings: { ...data.settings, analysis: 'dot' } }, moyen).settings.analysis).toBe('none');
+    expect(clampVectors({ ...data, settings: { ...data.settings, analysis: 'dot' } }, restricted).settings.analysis).toBe('none');
     expect(clampVectors({ ...data, settings: { ...data.settings, analysis: 'dot' } }, secondaire).settings.analysis).toBe('dot');
   });
 });
@@ -308,8 +337,8 @@ describe('outil Transformations', () => {
 });
 
 describe('labo des nombres', () => {
-  const moyen = numberLabModes(toolCapabilities(getMathLabTool('numberLab'), 'moyen'));
-  const secondaire = numberLabModes(toolCapabilities(getMathLabTool('numberLab'), 'secondaire'));
+  const moyen = numberLabModes(declared('numberLab', 'moyen'));
+  const secondaire = numberLabModes(declared('numberLab', 'secondaire'));
 
   it('les seize modes dans les DEUX ateliers : le lycée étend, il ne retire rien', () => {
     expect(moyen).toEqual(NUMBER_MODES);

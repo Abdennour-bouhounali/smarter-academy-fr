@@ -5,11 +5,15 @@
 > Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22. Since 2026-11-22 the interface is French and
 > left to right: every string is in `i18n/locales/fr/mathlab.json`, the whiteboard engine runs with
 > `langCode="fr-FR"`; the language, typography and number formats are `FRENCH_LANGUAGE_CONTRACT.md`. The labels quoted
-> below are the current French ones. Still true here: every instrument and its engine, as described. Still
-> Algerian: the two labs keep their code ids (`?lab=moyen|secondaire`, shown as « L’atelier du collège » — « De la 6e
-> à la 3e » — and « L’atelier du lycée » — « De la seconde à la terminale »), but the assignment of capabilities to
-> them, the grade codes (1AM–4AM, 1AS–3AS, Bac) and every « the 4AM programme asks… » below are the ALGERIAN
-> programme — the French split (collège only, lycée not carried: plan §7 n° 6) is not made yet. The 15 lesson-lab
+> below are the current French ones. Still true here: every instrument and its engine, as described. **Since
+> 2026-11-23 the Lab shows the collège side only** (owner, after a council): the lycée side is hidden behind ONE flag,
+> `features/mathlab/labConfig.js › LYCEE_LAB_ENABLED` (default `false`) — its code is kept whole, no menu, route,
+> filter or search reaches it while the flag is off (§2.1). The instruments and capabilities are sorted to the FRENCH
+> programme (§2.1 table: the collège = cycle 4, 2020 text and its repères, ids of
+> `packages/core/curriculum/fr/net/official_programme_college.json`). The two labs keep their code ids
+> (`?lab=moyen|secondaire`). Still Algerian, and NOT corrected below §2: the sections per instrument cite the grade
+> codes (1AM–4AM, 1AS–3AS, Bac) and « the 4AM programme asks… » — read them as history; the classification of §2.1
+> wins. The 15 lesson-lab
 > instruments lost their DZ lesson tags (`LESSON_LAB.md`); no lesson exists to open the Lab. The browser walks of §8
 > were written against the Arabic interface and none has been run against the French one [NOT CHECKED 2026-11-22].
 
@@ -85,20 +89,18 @@ Should the list fill again, an announced instrument exists only as a name
 and an icon in `PLANNED_MATH_LAB_TOOLS`, rendered as a disabled « Bientôt »
 chip on the home page: no route, no component, no placeholder screen.
 
-### 1.1 Audience — collège AND lycée, in two labs (owner, 2026-09-30)
+### 1.1 Audience — the collège; the lycée side kept but hidden (owner, 2026-11-23)
 
-The Math Lab is used by **every** student of collège and lycée, not only by
-4AM. Since 2026-09-30 the cycle boundary is **structural**: the Lab home offers
-the common « Tableau blanc », then two labs — **« L’atelier du collège »** (shown « De la 6e à la 3e »; the
-capabilities are still those of the Algerian 1AM → 4AM) and **« L’atelier du lycée »** (« De la seconde à la
-terminale »; Algerian 1AS → 3AS, Bac content) — and each shared instrument exposes the
-capabilities of the lab it is opened in (§2.1). The split follows the
-concepts each cycle actually teaches (the 2025 curriculum's *initialisée →
-réutilisée → approfondie*), not « easy vs advanced tools »: a shared
-instrument's lycée capabilities **extend** its college ones and never remove
-from them. Two instruments were assigned to a single cycle by the owner
-(2026-09-30): « Géométrie dans l’espace » to the collège lab, « Probabilités et statistiques » to
-the lycée lab.
+The platform teaches the French collège (6e, 5e, 4e, 3e). The architecture of two labs, inherited from the
+Algerian platform (2026-09-30), stays: the common « Tableau blanc », then **« L’atelier du collège »** (shown « De
+la 6e à la 3e ») and **« L’atelier du lycée »** (« De la seconde à la terminale »), each shared instrument exposing
+the capabilities of the lab it is opened in (§2.1). **In France only the collège lab is open**
+(`labConfig.js › LYCEE_LAB_ENABLED = false`): the home shows the whiteboard and the one collège lab; the lycée lab,
+its four lycée-only instruments and every `secondaire` capability exist in the code and are reached by nothing.
+The split follows the concepts the FRENCH collège teaches (§2.1), not « easy vs advanced tools »: a shared
+instrument's lycée capabilities **extend** its collège ones and never remove from them. « Géométrie dans
+l’espace » is a collège-only instrument; « Labo des vecteurs », « Suites », « Coniques » and « Analyse » are
+lycée-only (hidden).
 
 Consequences, binding on every instrument:
 
@@ -106,7 +108,7 @@ Consequences, binding on every instrument:
   cycle does not teach is simply not offered in its lab; the lycée lab shows
   it as first-class content. The one explicit sentence of this kind is a
   pointer, not a label: in the collège lab, a factorisation that needs « somme et
-  produit » or Δ says those methods are in the lycée lab (`factor.beyondLab`, §2.1).
+  produit » or Δ says those methods are « au programme du lycée » (`factor.beyondLab`, §2.1).
 - Where a tool groups examples, it groups them **by cycle** or by difficulty
   (« Débutant » · « Intermédiaire » · « Avancé »).
 - The older « one click away » rules (§5f.10, §5g.1, §5h, §5m.1, §5j.1, §5k.1)
@@ -122,7 +124,7 @@ allowedRoles={['student']}`), French route slugs like the rest of `/espace`:
 | Route | Page | Role |
 |---|---|---|
 | `/espace/atelier` | `MathLabHome` (landing) | « Tableau blanc » (common, on top), the two lab choices, the announced instruments (none today), and « Mes travaux » — the personal **workspace** (§5i) |
-| `/espace/atelier?lab=moyen` · `?lab=secondaire` | `MathLabHome` (lab view) | one lab: its instruments, a lab switch, « Tableau blanc » still at hand, « Mes travaux » pre-filtered on that lab (§2.1) |
+| `/espace/atelier?lab=moyen` (· `?lab=secondaire`, ignored while the lycée side is hidden) | `MathLabHome` (lab view) | one lab: its instruments, a lab switch, « Tableau blanc » still at hand, « Mes travaux » pre-filtered on that lab (§2.1) |
 | `/espace/atelier/:toolSlug[?lab=]` | `MathLabToolPage` | a **new** document in that instrument, in that lab (`tableau`, `grapheur`, `geometrie-3d`, `probabilites-statistiques`, `algebre`, `vecteurs`, `trigonometrie`, `suites`, `transformations`, `coniques`, `nombres` (alias `nombres-calcul`), `logique`, `mesure`) |
 | `/espace/atelier/:toolSlug/:documentId[?lab=]` | `MathLabToolPage` | a saved document (it keeps the lab it was born in) |
 
@@ -166,7 +168,28 @@ instrument *exposes*, declared by the instrument itself.
 
 **Pure logic:** `features/mathlab/labScope.js` (`LAB_SCOPES`, `resolveToolScope`,
 `toolsForScope`, `toolCapabilities`, `attachLabScope`/`stripLabScope`,
-`workLabScope`, `scopeDeclarationError`…), tested in `labScope.test.js`.
+`workLabScope`, `publishedTool`, `scopeDeclarationError`…), tested in `labScope.test.js`.
+
+#### The lycée side is hidden (owner, 2026-11-23) — one flag
+
+- `features/mathlab/labConfig.js › LYCEE_LAB_ENABLED` — `false` in France. It is the ONLY switch.
+- `labScope.js`: `DECLARED_LAB_SCOPES` (`moyen`, `secondaire`) is what a tool may declare
+  (`scopeDeclarationError`); `LAB_SCOPES` is the OPEN labs — `['moyen']` while the flag is off. `isLabScope`
+  answers for an open lab only, so `?lab=secondaire`, a stored `data.labScope: 'secondaire'`, a remembered
+  `sa-ml-lab` and a summary's `scope: 'secondaire'` are ignored (the document reopens in the collège).
+- `toolRegistry.js`: `REGISTERED_MATH_LAB_TOOLS` holds the fourteen definitions untouched (the server's registry
+  `MathLabTools.php` still knows them all); `MATH_LAB_TOOLS` — the only list a page reads (home, lab switch, overlay
+  picker, « Nouveau travail », « Mes travaux » filters, `getMathLabTool`, `getMathLabToolBySlug`) — is each tool passed
+  through `publishedTool`: its scopes and capabilities cut down to the open labs, and a tool left with none dropped.
+  `/espace/atelier/vecteurs` (or `suites`, `coniques`, `analyse`) is therefore an unknown slug and redirects to the
+  Lab home; `WORK_LABS` is `['all', …LAB_SCOPES]`; « Mes travaux » does not list (nor search) a saved document of an
+  unpublished tool — it stays on the server.
+- Pinned by `labScope.closed.test.jsx` (the shipped setting: nothing of the lycée listed, routed or searchable).
+  The tests of the two-lab mechanics (`labScope.test.js`, `toolRegistry.test.js`, `work/summaries.test.js`) open
+  the flag with `vi.mock('./labConfig.js')`; `labCapabilities.test.js` and `labScope.render.test.jsx` read the
+  DECLARED capabilities from `REGISTERED_MATH_LAB_TOOLS`.
+- Not changed by the flag: the home's landing still says « Choisis ton atelier » above a single lab card, and the
+  lab view still draws a one-tab switch.
 
 #### Declaring an instrument's labs (tool contract, §3.1)
 
@@ -181,28 +204,33 @@ instrument *exposes*, declared by the instrument itself.
   carry `descriptionKey`: the card's description in that lab.
 - `createInitialData(seed, { scope, capabilities })` — a new document may
   open on something within its lab (the grapher opens on `2x+1` in `moyen`,
-  `x²` in `secondaire`; the algebra factor section on `x² + 6x + 9` vs
+  `x²` in `secondaire`; the algebra factor section on `4x² − 9` vs
   `x² + 5x + 6`).
 - The component receives `scope` and `capabilities` props; it filters its
   section bar, buttons, examples and generators with them, and guards every
   transition (a hidden section cannot be reached by a stale click or a
   « show in lab » jump).
 
-#### The classification (asserted by `labScope.test.js`)
+#### The classification (asserted by `labScope.test.js`) — the French programme (2026-11-23)
 
-| Instrument | `moyen` (collège) | `secondaire` (lycée) |
+The collège column follows the programme of cycle 4 in force (2020 text, its « repères annuels » and the « attendus
+de fin d’année »; ids of `packages/core/curriculum/fr/net/official_programme_college.json`) and, for 6e, the cycle 3
+programme. What it does not teach is in the lycée column (hidden). Where the 2026 programme brings a notion back
+into 3e from 2028-2029 (`net/horizon_2028.json`), it is said: the capability is one line of `scope.js` away.
+
+| Instrument | `moyen` (collège) | `secondaire` (lycée — hidden) |
 |---|---|---|
 | Tableau blanc `whiteboard` | common — on top of the home, for everyone | |
-| Traceur de courbes `functionGrapher` | lines only: linear/affine examples, keyboard without sin/cos/tan/ln/log/e, **no « Tangente »** (a stored tangent opens switched off), opens on `2x+1` | everything (tangent, f′, transcendental examples) |
-| Géométrie dans l’espace `geometry3d` | ✅ (the five solids) — **this lab only** (owner, 2026-09-30) | — |
-| Probabilités et statistiques `probabilityStats` | — | ✅ all four sections, every chart and indicator — **this lab only** (owner, 2026-09-30). Its `scope.js` keeps the filtering mechanism (sections, charts, indicators, explanation folds, `clampToFeatures`), tested with a restricted fixture, ready if it ever joins a lab with fewer capabilities. |
-| Algèbre `algebra` | six sections; factorisation by common factor and remarkable identities only (a trinomial that needs « somme et produit », the ac-method or Δ shows `factor.beyondLab` instead of a walkthrough; no Δ fold); functions linear/affine; no rational-fraction example | everything |
-| Labo des vecteurs `vectors` | components, distance, sum (tip-to-tail, parallelogram), opposite, translation — **no** k·u, no `v = k·u` factor, no analysis selector (parallel/collinear/perpendicular/dot) | everything |
-| Trigonométrie `trigonometry` | right triangle in degrees, 30°/45°/60°, presets `triangle`/`sohcahtoa`, tan panel — **no** circle, radians, rotation, quadrant, sign table, symmetries, inverses, comparison, experiments | everything |
-| Transformations `transformations` | axial and central symmetry, translation, rotation, **homothety** — ONE transformation at a time (adding replaces), no matrix, no intermediate figures, no order experiment, no two-step puzzle, single-step practice | composition stack (6), matrix, every experiment/puzzle |
-| Le labo des nombres `numberLab` | all sixteen modes | all sixteen modes (the lycée extends; the mode-filter machinery and its context stay ready for a lycée-only mode) |
-| Logique et raisonnement `logic` | limited: statements, implication (direct + converse only, no set diagram, no truth table), counterexample, fallacies; practice levels 1–3 on those families | all eleven areas, four forms, four levels |
-| Grandeurs et mesures `measurement` | ✅ | ✅ (initialised in collège, reused in lycée) |
+| Traceur de courbes `functionGrapher` | lines only (`3e.m2.r15`, `3e.m2.r16`): linear/affine examples, keyboard without sin/cos/tan/ln/log/e, **no « Tangente »** (a stored tangent opens switched off), opens on `2x+1` | everything (tangent, f′, transcendental examples) |
+| Géométrie dans l’espace `geometry3d` | ✅ the five solids (`4e.m3.r01`, `3e.m3.r01`, `3e.m4.r02`) — **this lab only** | — |
+| Probabilités et statistiques `probabilityStats` | **moved to the collège** (Algeria: lycée only): « Expériences » (coin, die, two dice, random integer; frequency vs probability, `3e.m2.r04`–`r06`) and « Série statistique » (counts and frequencies, bars / histogram / pie — `4e.m2.r01`, `3e.m2.r02` —, mean, median `4e.m2.r02`, range `3e.m2.r01`). **Not**: the tree (« la notion d’arbre ne figurant pas au programme », repères of 3e), the normal law, quartiles, IQR, box plot, cumulative counts, variance, standard deviation, mode | all four sections, every chart and indicator |
+| Algèbre `algebra` | **four sections**: equations (first degree `4e.m1.r13`, `3e.m1.r13`), simplify (simple and double distributivity `3e.m1.r10`–`r11`), factor (common factor and **a² − b² only**, `3e.m1.r12` — no (a ± b)², no sum–product, ac-method or Δ: such a trinomial shows `factor.beyondLab`; opens on `4x² − 9`), functions linear/affine. **Not**: systems of two equations (owner), inequalities (absent from the 2020 text; ax ⩾ b and the three identities come in 3e in 2028) | everything |
+| Labo des vecteurs `vectors` | — (**moved to the lycée**, owner: the 2020 collège names the translation but « aucune connaissance n’est attendue sur l’objet “vecteur” »; vectors come in 3e in 2028) | ✅ everything |
+| Trigonométrie `trigonometry` | right triangle in degrees (`4e.m4.r06`, `3e.m4.r06`), 30°/45°/60°, presets `triangle`/`sohcahtoa`, tan panel — **no** circle, radians, rotation, quadrant, sign table, symmetries, inverses, comparison, experiments | everything |
+| Transformations `transformations` | axial and central symmetry (6e, `5e.m4.r03`), translation (`4e.m4.r07`), rotation and **homothety** (`3e.m4.r07`, `3e.m4.r08`) — ONE transformation at a time (adding replaces), no matrix, no intermediate figures, no order experiment, no two-step puzzle, single-step practice | composition stack (6), matrix, every experiment/puzzle |
+| Le labo des nombres `numberLab` | all sixteen modes (fractions, decimals, percentages, proportionality, divisibility and primes `4e.m1.r06`–`r08`, `3e.m1.r05`–`r07`, powers `4e.m1.r02`–`r04`, `3e.m1.r02`–`r03`, roots `4e.m1.r05`, `3e.m1.r04`…) | all sixteen modes (the lycée extends; the mode-filter machinery and its context stay ready for a lycée-only mode) |
+| Logique et raisonnement `logic` | limited: statements, implication (direct + converse only — the converse of Pythagoras and Thalès, `4e.m4.r04`–`r05`; no set diagram, no truth table), counterexample, fallacies; practice levels 1–3 on those families | all eleven areas, four forms, four levels |
+| Grandeurs et mesures `measurement` | ✅ (areas, perimeters, volumes, conversions, Pythagoras, angle sum — `5e.m3.r01`, `3e.m3.r03`–`r05`) | ✅ (reused in lycée) |
 | Suites `sequences` · Coniques `conics` · Analyse `analysis` | — | ✅ |
 
 `labCapabilities.test.js` checks, per instrument, that the college never
@@ -5226,12 +5254,18 @@ another instrument. Each tool documents its own seed shape:
 > browser walks (`apps/web/e2e/mathlab*.mjs`) were written for the Arabic, right-to-left interface: 15 of the 19
 > files still check `rtl` (the « RTL … » items of the rows below), so they are expected to fail on those checks
 > against the French interface. None has been run since the conversion [NOT CHECKED 2026-11-22].
+> **2026-11-23.** Since the lycée side is hidden (§2.1), the walks that open `?lab=secondaire` or a lycée-only tool
+> (`mathlab-vectors`, `-sequences`, `-conics`, `-analysis`, and the `?lab=secondaire` parts of `-algebra`, `-numbers`,
+> `-logic`, `-grapher`, `-trigonometry`, `-transformations`, `-probability`, `-geometry3d`, `-labs-sections`,
+> `-step-practice`, `-step-reveal`) are expected to fail until they are rewritten for the collège lab; none was edited
+> or run [NOT CHECKED 2026-11-23].
 
 | What | Where |
 |---|---|
 | Registry ↔ server ids, contract, labels, the required `scopes` declaration | `features/mathlab/toolRegistry.test.js` |
-| The two labs (§2.1): the exact classification of the fourteen instruments, lab resolution order, `?lab=` paths, `data.labScope` strip/attach, summary scope, per-lab opening state, « Mes travaux » lab filter, lab strings and plurals | `features/mathlab/labScope.test.js` |
-| Per-lab capabilities of every shared instrument: the college never receives a lycée feature (grapher tangent/keyboard/presets; the statistics filtering mechanism on a restricted fixture; algebra Δ, sum–product, second degree; vectors k·u and analyses; trigonometry circle/radians/panels, 300 drawn exercises; transformations composition and matrix, 400 drawn exercises; logic areas, forms and 900 drawn exercises), the lycée has everything, stored states clamped without data loss | `features/mathlab/labCapabilities.test.js` |
+| The two labs (§2.1), lycée side opened by `vi.mock`: the exact classification of the fourteen instruments (French programme), lab resolution order, `?lab=` paths, `data.labScope` strip/attach, summary scope, per-lab opening state, « Mes travaux » lab filter, lab strings and plurals | `features/mathlab/labScope.test.js` |
+| The shipped setting, lycée side hidden (`labConfig.js`): one open lab, the fourteen tools still registered, no lycée lab or lycée-only tool listed (registry, overlay picker), routed (ids, slugs, aliases, `?lab=`, stored/remembered/summary scope) or searchable (« Mes travaux » filters) | `features/mathlab/labScope.closed.test.jsx` |
+| Per-lab capabilities of every shared instrument: the college never receives a lycée feature (grapher tangent/keyboard/presets; statistics: no tree, normal law, box, cumulative, quartiles, variance or mode; algebra systems, inequalities, (a ± b)², Δ, sum–product, second degree; vectors k·u and analyses on a restricted fixture (lycée-only tool); trigonometry circle/radians/panels, 300 drawn exercises; transformations composition and matrix, 400 drawn exercises; logic areas, forms and 900 drawn exercises), the lycée has everything, stored states clamped without data loss | `features/mathlab/labCapabilities.test.js` |
 | The same components rendered in both labs: absent/present DOM hooks per lab | `features/mathlab/labScope.render.test.jsx` |
 | Browser, the two labs: landing order (Tableau blanc → two choices → Mes travaux), exact tool sets per lab, `?lab=` links, switch and back, every shared tool opened in both labs with absent/present hooks, single-lab tools redirected to their lab, a document born in `moyen` reopening there without `?lab=` and even when asked for `secondaire`, `data.labScope` and `summary.scope` on the server, « Mes travaux » badge / filter / grouped « Nouveau travail », teacher routes, the lesson overlay opening on the lesson's lab, 1280 and 390 px without overflow — **141 checks** | `apps/web/e2e/mathlab-labs-scope.mjs` — deleted 2026-11-22 (Vite 5173, API 8000, QA student + QA teacher; the free QA student's document quota is exhausted, so persistence runs on the teacher) |
 | Document helpers, launch helper, whiteboard state, whiteboard import validation, file policy (incl. server parity, size boundary, board/account/combined/multi-select plans) | `mathLabDocument.test.js`, `openMathLab.test.js`, `tools/whiteboard/whiteboardState.test.js`, `tools/whiteboard/whiteboardImport.test.js`, `attachments/attachmentPolicy.test.js` |

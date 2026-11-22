@@ -15,6 +15,7 @@
  */
 
 import { LOCALE } from '../../../locale.js';
+import { LAB_SCOPES } from '../labScope.js';
 
 /** Les tris offerts. `updated` est le défaut : on revient à ce qu'on vient de quitter. */
 export const WORK_SORTS = Object.freeze(['updated', 'created', 'oldest', 'titleAsc', 'titleDesc']);
@@ -22,8 +23,8 @@ export const WORK_SORTS = Object.freeze(['updated', 'created', 'oldest', 'titleA
 /** Les fenêtres de temps. `all` ne filtre rien. */
 export const WORK_PERIODS = Object.freeze(['all', 'today', 'week', 'month']);
 
-/** Les ateliers (labScope.js). `all` ne filtre rien. */
-export const WORK_LABS = Object.freeze(['all', 'moyen', 'secondaire']);
+/** Les ateliers OUVERTS (labScope.js) — le collège seul en France. `all` ne filtre rien. */
+export const WORK_LABS = Object.freeze(['all', ...LAB_SCOPES]);
 
 export const DEFAULT_WORK_FILTERS = Object.freeze({ lab: 'all', tool: 'all', period: 'all', favorite: false });
 

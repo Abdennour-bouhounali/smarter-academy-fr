@@ -44,8 +44,8 @@ export const SYSTEM_METHODS = Object.freeze(['substitution', 'elimination', 'gra
 export const DEFAULT_INEQUALITY_SOURCE = '-2x + 3 < 9';
 const DEFAULT_SIMPLIFY_SOURCE = '(x + 2)(x - 3)';
 const DEFAULT_FACTOR_SOURCE = 'x^2 + 5x + 6';
-/** La factorisation d'ouverture du collège (scope.js). */
-const MOYEN_FACTOR_SOURCE = 'x^2 + 6x + 9';
+/** La factorisation d'ouverture du collège (scope.js) : a² − b², l'identité du programme de 3e. */
+const MOYEN_FACTOR_SOURCE = '4x^2 - 9';
 
 /** Le chemin des inéquations est plus court : deux chemins doivent tenir ensemble sous le plafond. */
 export const MAX_INEQUALITY_STEPS = 30;
@@ -244,8 +244,8 @@ export function createAlgebraData(seed = undefined, context = {}) {
     showSolution: false,
     parameters: isPlainObject(seed) && seed.parameters === true ? { a: 2, b: 3, c: 11 } : null,
     section: isPlainObject(seed) && ALGEBRA_SECTIONS.includes(seed.section) ? seed.section : 'equations',
-    // Le scope choisit la factorisation d'ouverture : une identité remarquable
-    // au collège, pas un trinôme à « somme et produit » (scope.js).
+    // Le scope choisit la factorisation d'ouverture : a² − b² au collège, pas
+    // un trinôme à « somme et produit » (scope.js).
     factor: { source: context?.capabilities?.factor?.methods === 'moyen' ? MOYEN_FACTOR_SOURCE : DEFAULT_FACTOR_SOURCE },
   });
 }

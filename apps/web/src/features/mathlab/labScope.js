@@ -1,5 +1,7 @@
 /**
  * LES DEUX ateliers — atelier du collège et atelier du lycée — logique pure, sans React.
+ * En France, seul l’atelier du collège est OUVERT (labConfig.js) : le code du
+ * lycée est gardé, aucune page ne l’atteint.
  *
  * L’atelier n'a qu'UN registre d'instruments et qu'UNE famille de routes. Ce
  * qui change d'un atelier à l'autre n'est pas l'instrument, c'est ce qu'il
@@ -18,7 +20,21 @@
  * se rouvre au collège, d'où qu'on vienne. Voir MATH_LAB.md §2.1.
  */
 
-export const LAB_SCOPES = Object.freeze(['moyen', 'secondaire']);
+import { LYCEE_LAB_ENABLED } from './labConfig.js';
+
+/**
+ * Les ateliers qu'un instrument peut DÉCLARER (toolContract.js) — le code des
+ * deux existe.
+ */
+export const DECLARED_LAB_SCOPES = Object.freeze(['moyen', 'secondaire']);
+
+/**
+ * Les ateliers OUVERTS — ceux que l'accueil, les menus, les routes, les filtres
+ * et l'URL connaissent. En France, le collège seul tant que le côté lycée est
+ * caché (labConfig.js › LYCEE_LAB_ENABLED) : `secondaire` n'est alors plus un
+ * atelier pour personne, ni dans `?lab=`, ni dans un document, ni dans un résumé.
+ */
+export const LAB_SCOPES = Object.freeze(LYCEE_LAB_ENABLED ? [...DECLARED_LAB_SCOPES] : ['moyen']);
 
 /** L'instrument d'usage commun, hors des ateliers (le tableau). */
 const COMMON_SCOPE = 'common';
@@ -32,8 +48,29 @@ const LAB_SCOPE_DATA_KEY = 'labScope';
 /** Le dernier atelier choisi dans ce navigateur (une préférence, jamais une vérité). */
 const LAB_SCOPE_STORAGE_KEY = 'sa-ml-lab';
 
+/** Vrai pour un atelier OUVERT (LAB_SCOPES). */
 export function isLabScope(value) {
   return LAB_SCOPES.includes(value);
+}
+
+/**
+ * L'instrument tel que l’atelier le PUBLIE : ses ateliers ramenés aux ateliers
+ * ouverts, ses capacités ramenées à eux. Un instrument dont aucun atelier n'est
+ * ouvert (un instrument du lycée seulement, côté lycée caché) n'est pas publié :
+ * null. Le tableau, commun, est publié tel quel. La définition d'origine n'est
+ * pas touchée — elle garde ses capacités `secondaire` pour le jour où le côté
+ * lycée rouvre.
+ */
+export function publishedTool(tool) {
+  if (isCommonTool(tool)) return tool;
+  const scopes = toolScopes(tool).filter(isLabScope);
+  if (scopes.length === 0) return null;
+  if (scopes.length === tool.scopes.length) return tool;
+  const capabilities = tool.capabilities
+    ? Object.freeze(Object.fromEntries(Object.entries(tool.capabilities).filter(([scope]) => scopes.includes(scope))))
+    : undefined;
+
+  return Object.freeze({ ...tool, scopes: Object.freeze(scopes), ...(capabilities ? { capabilities } : {}) });
 }
 
 /** Vrai pour le tableau : présente pour tous, sans atelier. */
@@ -189,7 +226,7 @@ export function scopeDeclarationError(definition) {
     return capabilities === undefined ? null : 'un instrument commun ne déclare pas de capabilities';
   }
   if (!Array.isArray(scopes) || scopes.length === 0) return 'scopes doit valoir « common » ou une liste d’ateliers';
-  if (scopes.some((scope) => !isLabScope(scope)) || new Set(scopes).size !== scopes.length) {
+  if (scopes.some((scope) => !DECLARED_LAB_SCOPES.includes(scope)) || new Set(scopes).size !== scopes.length) {
     return `scopes invalides (${scopes.join(', ')})`;
   }
   if (capabilities !== undefined) {

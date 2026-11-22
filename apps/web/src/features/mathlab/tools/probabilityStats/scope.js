@@ -2,19 +2,39 @@ import { MODES } from './probabilityState.js';
 import { CHART_TYPES } from './descriptiveStats.js';
 
 /**
- * Probabilités et statistiques — le labo du lycée (`secondaire`) seulement (décision du propriétaire,
- * 2026-09-30 ; labScope.js, MATH_LAB.md §2.1), avec toutes ses sections.
+ * Probabilités et statistiques dans les deux ateliers (labScope.js, MATH_LAB.md §2.1).
  *
- * La mécanique ci-dessous reste en place : le laboratoire sait filtrer ses
- * sections, ses graphiques, ses indicateurs et ses plis
- * (`probabilityFeatures`), et ramener un état hors de portée
- * (`clampToFeatures`). Aucun labo ne la restreint aujourd'hui ; le jour où
- * l'instrument rejoint un autre labo avec moins de capacités, il suffit de
- * les déclarer ici.
+ * En France, les probabilités et les statistiques sont du COLLÈGE (programme du
+ * cycle 4, 2020, et ses repères annuels ; ids du réseau `4e.m2.r01`–`r05`,
+ * `3e.m2.r01`–`r06`) :
+ *
+ *   expériences  pièce, dé, deux dés, nombre au hasard ; la fréquence qui se
+ *                stabilise vers la probabilité (`3e.m2.r06`) ;
+ *   série        effectifs et fréquences, diagrammes en barres, circulaire,
+ *                histogramme (`4e.m2.r01`, `3e.m2.r02`), moyenne (5e), médiane
+ *                (`4e.m2.r02`), étendue (`3e.m2.r01`).
+ *
+ * Ne sont PAS du collège, et restent au lycée : l'arbre de probabilités (les
+ * repères de 3e : « la notion d'arbre ne figurant pas au programme » — les
+ * expériences à deux épreuves se dénombrent sur un tableau à double entrée),
+ * la loi normale, les quartiles, l'écart interquartile, la boîte à moustaches,
+ * les effectifs cumulés, la variance et l'écart-type, et le mode (que les
+ * textes du collège ne nomment pas). Le programme de 2026 fait entrer quartiles,
+ * boîtes à moustaches et effectifs cumulés en 3e à la rentrée 2028
+ * (`net/horizon_2028.json`) : ce jour-là, il suffira de les ajouter ici.
  */
-export const PROBABILITY_SCOPES = Object.freeze(['secondaire']);
+export const PROBABILITY_SCOPES = Object.freeze(['moyen', 'secondaire']);
 
-export const PROBABILITY_CAPABILITIES = Object.freeze({ secondaire: null });
+export const PROBABILITY_CAPABILITIES = Object.freeze({
+  moyen: Object.freeze({
+    descriptionKey: 'tools.probabilityStats.descriptionMoyen',
+    sections: Object.freeze(['experiment', 'dataset']),
+    charts: Object.freeze(['bars', 'histogram', 'pie']),
+    stats: Object.freeze(['count', 'min', 'max', 'range', 'mean', 'median']),
+    explanations: Object.freeze(['mean', 'median', 'range']),
+  }),
+  secondaire: null,
+});
 
 /** Tous les indicateurs de la grille, et tous les plis « Comment calcule-t-on les indicateurs ? ». */
 const ALL_STATS = Object.freeze(['count', 'min', 'max', 'range', 'mean', 'median', 'mode', 'q1', 'q3', 'iqr', 'variance', 'sd']);
