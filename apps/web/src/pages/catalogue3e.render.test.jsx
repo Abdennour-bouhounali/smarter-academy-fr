@@ -37,7 +37,7 @@ function render(ui, url, user) {
 describe('3e — a catalogue of coming-soon lessons', () => {
   it('has 13 units, every lesson coming soon, and no lesson path', () => {
     expect(units).toHaveLength(13);
-    expect(lessons).toHaveLength(59);
+    expect(lessons).toHaveLength(60);
     for (const l of lessons) {
       expect(l.status).toBe('coming_soon');
       expect(getLessonPath(l.id), l.id).toBeNull();
