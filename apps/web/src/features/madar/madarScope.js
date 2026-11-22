@@ -4,7 +4,7 @@ import { madarApi } from '../../services/madarService';
 
 /**
  * Qui joue, et où : l'ÉLÈVE (/espace/jeux) ou l'ENSEIGNANT dans une de ses
- * classes (/enseignant/classes/:classId/jeux — « نافس أستاذك »). La page et ses
+ * classes (/enseignant/classes/:classId/jeux — « Défie ton professeur »). La page et ses
  * liens restent les mêmes ; seuls l'API, les adresses et quelques textes changent.
  */
 export function useMadarScope() {

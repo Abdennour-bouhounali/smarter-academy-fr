@@ -1,7 +1,7 @@
 /**
- * « قنّاص القيم » — le paquet de cartes (pur : aucun DOM, aucune horloge).
+ * « Chasseur de valeurs » — le paquet de cartes (pur : aucun DOM, aucune horloge).
  *
- * CINQUANTE niveaux, chacun en trois sous-niveaux (أ، ب، ج) : tout le
+ * CINQUANTE niveaux, chacun en trois sous-niveaux (A, B, C) : tout le
  * programme du cycle moyen, des sommes de 1AM aux rapports trigonométriques
  * de 4AM (levels.js donne l'ordre, les familles et l'entrée par année).
  *
@@ -181,7 +181,7 @@ const productOf = (list) => list.reduce((acc, [p, e]) => acc * p ** e, 1);
 
 const B = {};
 
-// 1 · الجمع
+// 1 · Addition
 B.add = (rng, sub) => {
   const t = rng.int(...by(sub, [10, 20], [21, 60], [61, 150]));
   return {
@@ -198,7 +198,7 @@ B.add = (rng, sub) => {
   };
 };
 
-// 2 · الطرح
+// 2 · Soustraction
 B.sub = (rng, sub) => {
   const t = rng.int(...by(sub, [5, 15], [16, 50], [51, 120]));
   const big = by(sub, 9, 30, 80);
@@ -217,7 +217,7 @@ B.sub = (rng, sub) => {
   };
 };
 
-// 3 · جدول الضرب
+// 3 · Tables de multiplication
 B.mul = (rng, sub) => {
   const [lo, hi] = by(sub, [2, 5], [2, 9], [6, 12]);
   const a = rng.int(lo, hi);
@@ -242,7 +242,7 @@ B.mul = (rng, sub) => {
   };
 };
 
-// 4 · القسمة
+// 4 · Division
 B.div = (rng, sub) => {
   const q = rng.int(...by(sub, [2, 9], [5, 15], [10, 30]));
   const dr = by(sub, [2, 5], [2, 9], [3, 12]);
@@ -262,7 +262,7 @@ B.div = (rng, sub) => {
   };
 };
 
-// 5 · الجمع والطرح معًا
+// 5 · Additions et soustractions mêlées
 B.addSub = (rng, sub) => {
   const t = rng.int(...by(sub, [10, 30], [20, 80], [50, 200]));
   return {
@@ -280,7 +280,7 @@ B.addSub = (rng, sub) => {
   };
 };
 
-// 6 · الضرب قبل الجمع
+// 6 · La multiplication avant l’addition
 B.prio = (rng, sub) => {
   const n = rng.int(...by(sub, [10, 30], [20, 60], [40, 100]));
   const smallDiv = divisorsOf(n).filter((c) => n / c >= 2 && c <= 9);
@@ -302,7 +302,7 @@ B.prio = (rng, sub) => {
   };
 };
 
-// 7 · الأقواس
+// 7 · Les parenthèses
 B.parens = (rng, sub) => {
   const n = rng.int(...by(sub, [12, 30], [20, 72], [40, 120]));
   const ds = divisorsOf(n).filter((c) => n / c >= 2 && c <= 12);
@@ -322,7 +322,7 @@ B.parens = (rng, sub) => {
   };
 };
 
-// 8 · أولويات مركّبة
+// 8 · Priorités enchaînées
 B.prio2 = (rng, sub) => {
   const n = rng.int(...by(sub, [10, 40], [30, 90], [50, 150]));
   return {
@@ -341,7 +341,7 @@ B.prio2 = (rng, sub) => {
   };
 };
 
-// 9 · التحليل إلى جداء عوامل أولية
+// 9 · Décomposition en facteurs premiers
 B.factor = (rng, sub) => {
   const t = rng.pick(by(sub, [12, 18, 20, 24, 28, 36, 40, 45], [48, 60, 72, 84, 90, 100, 108], [120, 144, 180, 200, 240, 360]));
   const f = primeFactors(t);
@@ -364,7 +364,7 @@ B.factor = (rng, sub) => {
   };
 };
 
-// 10 · القاسم المشترك الأكبر
+// 10 · Le plus grand diviseur commun
 B.pgcd = (rng, sub) => {
   const g = rng.int(...by(sub, [2, 6], [4, 12], [6, 25]));
   const coprime = () => { for (;;) { const a = rng.int(2, 9); const b = rng.int(2, 9); if (a !== b && gcd(a, b) === 1) return [a, b]; } };
@@ -382,7 +382,7 @@ B.pgcd = (rng, sub) => {
   };
 };
 
-// 11 · المضاعف المشترك الأصغر
+// 11 · Le plus petit multiple commun
 B.ppcm = (rng, sub) => {
   const l = rng.pick(by(sub, [12, 18, 20, 24, 30], [36, 40, 42, 48, 60], [72, 84, 90, 120]));
   const ds = [...divisorsOf(l), l];
@@ -410,7 +410,7 @@ const fracTarget = (rng, qs, improper = false) => {
   return [p, q];
 };
 
-// 12 · الكسور المتكافئة
+// 12 · Fractions égales
 B.fracEq = (rng, sub) => {
   const [p, q] = fracTarget(rng, by(sub, [2, 3, 4, 5], [3, 4, 5, 6, 7, 8], [6, 7, 8, 9, 10, 12]));
   const kmax = by(sub, 5, 8, 12);
@@ -426,7 +426,7 @@ B.fracEq = (rng, sub) => {
   };
 };
 
-// 13 · اختزال الكسور
+// 13 · Simplifier une fraction
 B.fracSimplify = (rng, sub) => {
   const [p, q] = fracTarget(rng, by(sub, [2, 3, 4, 5], [3, 4, 5, 6, 8], [4, 6, 8, 9, 12]));
   const k = rng.int(...by(sub, [2, 4], [3, 6], [4, 9]));
@@ -449,7 +449,7 @@ B.fracSimplify = (rng, sub) => {
   };
 };
 
-// 14 · جمع كسرين لهما نفس المقام
+// 14 · Additionner des fractions de même dénominateur
 B.fracSameDen = (rng, sub) => {
   const q = rng.pick(by(sub, [3, 4, 5], [5, 6, 7, 8], [7, 9, 10, 12]));
   const p = rng.int(2, 2 * q - 1);
@@ -466,7 +466,7 @@ B.fracSameDen = (rng, sub) => {
   };
 };
 
-// 15 · جمع وطرح كسور بمقامات مختلفة
+// 15 · Additionner et soustraire des fractions de dénominateurs différents
 B.fracAdd = (rng, sub) => {
   const [p, q] = fracTarget(rng, by(sub, [2, 4, 6], [3, 4, 6, 8, 10], [5, 6, 8, 9, 10, 12]), true);
   const v = rat(p, q);
@@ -489,7 +489,7 @@ B.fracAdd = (rng, sub) => {
   };
 };
 
-// 16 · ضرب الكسور
+// 16 · Multiplier des fractions
 B.fracMul = (rng, sub) => {
   const [p, q] = fracTarget(rng, by(sub, [4, 6, 8, 9], [6, 8, 10, 12, 15], [10, 12, 14, 15, 18, 20]));
   const v = rat(p, q);
@@ -517,7 +517,7 @@ B.fracMul = (rng, sub) => {
   };
 };
 
-// 17 · قسمة الكسور
+// 17 · Diviser des fractions
 B.fracDiv = (rng, sub) => {
   const [p, q] = fracTarget(rng, by(sub, [2, 3, 4], [3, 4, 5, 6], [5, 6, 7, 8, 9]), true);
   const v = rat(p, q);
@@ -534,7 +534,7 @@ B.fracDiv = (rng, sub) => {
   };
 };
 
-// 18 · كسر من عدد
+// 18 · Fraction d’un nombre
 B.fracOf = (rng, sub) => {
   const t = rng.int(...by(sub, [2, 12], [6, 30], [12, 60]));
   const make = () => {
@@ -559,7 +559,7 @@ B.fracOf = (rng, sub) => {
   };
 };
 
-// 19 · الكسر والعدد العشري
+// 19 · Fraction et nombre décimal
 B.decFrac = (rng, sub) => {
   const [p, q] = fracTarget(rng, by(sub, [2, 4, 5, 10], [4, 5, 8, 10, 20], [8, 16, 20, 25, 40]), sub > 1);
   const v = rat(p, q);
@@ -582,7 +582,7 @@ B.decFrac = (rng, sub) => {
   };
 };
 
-// 20 · العمليات على الأعداد العشرية
+// 20 · Calculs sur les nombres décimaux
 B.decOps = (rng, sub) => {
   const unit = by(sub, 10, 100, 100);
   const T = rng.int(...by(sub, [11, 99], [101, 999], [1001, 4999]));
@@ -605,7 +605,7 @@ B.decOps = (rng, sub) => {
   };
 };
 
-// 21 · النسبة المئوية
+// 21 · Pourcentages
 B.percent = (rng, sub) => {
   const [p, q] = rng.pick(by(sub, [[1, 2], [1, 4], [3, 4], [1, 10]], [[1, 5], [2, 5], [3, 10], [7, 10], [3, 5]], [[1, 20], [3, 20], [1, 8], [3, 8], [9, 25], [6, 25]]));
   const v = rat(p, q);
@@ -627,7 +627,7 @@ B.percent = (rng, sub) => {
   };
 };
 
-// 22 · نسبة مئوية من مقدار
+// 22 · Pourcentage d’une quantité
 B.percentOf = (rng, sub) => {
   const ps = by(sub, [10, 20, 25, 50], [5, 10, 15, 20, 25, 40, 75], [5, 12, 15, 35, 45, 60, 80]);
   const t = rng.int(...by(sub, [2, 20], [3, 40], [6, 90]));
@@ -654,7 +654,7 @@ B.percentOf = (rng, sub) => {
   };
 };
 
-// 23 · جمع الأعداد النسبية
+// 23 · Additionner des nombres relatifs
 B.relAdd = (rng, sub) => {
   const R = by(sub, 10, 30, 80);
   const t = nonZero(rng, -R, R);
@@ -675,7 +675,7 @@ B.relAdd = (rng, sub) => {
   };
 };
 
-// 24 · طرح الأعداد النسبية
+// 24 · Soustraire des nombres relatifs
 B.relSub = (rng, sub) => {
   const R = by(sub, 10, 30, 80);
   const t = nonZero(rng, -R, R);
@@ -691,7 +691,7 @@ B.relSub = (rng, sub) => {
   };
 };
 
-// 25 · ضرب وقسمة الأعداد النسبية
+// 25 · Multiplier et diviser des nombres relatifs
 B.relMul = (rng, sub) => {
   const [lo, hi] = by(sub, [2, 5], [2, 9], [3, 12]);
   const a = rng.int(lo, hi) * rng.pick([-1, 1]);
@@ -713,7 +713,7 @@ B.relMul = (rng, sub) => {
   };
 };
 
-// 26 · عمليات مركّبة على الأعداد النسبية
+// 26 · Calculs enchaînés sur les nombres relatifs
 B.relMix = (rng, sub) => {
   const R = by(sub, 15, 40, 90);
   const t = nonZero(rng, -R, R);
@@ -730,7 +730,7 @@ B.relMix = (rng, sub) => {
   };
 };
 
-// 27 · قوى عدد طبيعي
+// 27 · Puissances d’un nombre entier
 B.powNat = (rng, sub) => {
   const b = rng.int(...by(sub, [2, 5], [2, 10], [2, 12]));
   const k = rng.int(2, by(sub, 3, 4, b <= 3 ? 6 : 4));
@@ -759,7 +759,7 @@ const POWER_BASES = [
   { b: 5, ks: [2, 3] },
 ];
 
-// 28 · ضرب وقسمة قوى لها نفس الأساس
+// 28 · Produit et quotient de puissances
 B.powRules = (rng, sub) => {
   const { b, ks } = rng.pick(POWER_BASES.slice(0, by(sub, 2, 3, 3)));
   const k = rng.pick(ks);
@@ -783,7 +783,7 @@ B.powRules = (rng, sub) => {
   };
 };
 
-// 29 · قوى العدد 10
+// 29 · Puissances de 10
 B.pow10 = (rng, sub) => {
   const k = rng.pick(by(sub, [-2, -1, 2, 3], [-3, -2, 2, 3, 4], [-6, -5, -4, -3, 4, 5, 6]));
   const v = powValue(10, k);
@@ -804,7 +804,7 @@ B.pow10 = (rng, sub) => {
   };
 };
 
-// 30 · الكتابة العلمية
+// 30 · Écriture scientifique
 B.sci = (rng, sub) => {
   const M = rng.int(11, 99);
   const e = rng.int(...by(sub, [1, 3], [-3, 4], [-6, 6]));
@@ -823,7 +823,7 @@ B.sci = (rng, sub) => {
   };
 };
 
-// 31 · قوة جداء
+// 31 · Puissance d’un produit
 B.powProd = (rng, sub) => {
   const a = rng.int(2, by(sub, 3, 5, 6));
   let b = rng.int(2, by(sub, 3, 5, 7));
@@ -846,7 +846,7 @@ B.powProd = (rng, sub) => {
   };
 };
 
-// 32 · الجذر التربيعي لمربع تام
+// 32 · Racine carrée d’un carré parfait
 B.rootSq = (rng, sub) => {
   const n = rng.int(...by(sub, [2, 10], [6, 15], [11, 25]));
   return {
@@ -868,7 +868,7 @@ B.rootSq = (rng, sub) => {
 
 const RADICANDS = [2, 3, 5, 6, 7];
 
-// 33 · تبسيط جذر
+// 33 · Simplifier une racine carrée
 B.rootSimplify = (rng, sub) => {
   const r = rng.pick(by(sub, [2, 3], [2, 3, 5], RADICANDS));
   const a = rng.int(2, by(sub, 4, 5, r <= 3 ? 7 : 5));
@@ -893,7 +893,7 @@ B.rootSimplify = (rng, sub) => {
   };
 };
 
-// 34 · جداء وحاصل قسمة جذرين
+// 34 · Produit et quotient de racines carrées
 B.rootMul = (rng, sub) => {
   const r = rng.pick(by(sub, [2, 3], [2, 3, 5], RADICANDS));
   const a = rng.int(2, by(sub, 4, 5, 6));
@@ -913,7 +913,7 @@ B.rootMul = (rng, sub) => {
   };
 };
 
-// 35 · جمع جذور
+// 35 · Sommes de racines carrées
 B.rootAdd = (rng, sub) => {
   const r = rng.pick(by(sub, [2, 3], [2, 3, 5], RADICANDS));
   const a = rng.int(by(sub, 2, 3, 4), by(sub, 5, 7, 9));
@@ -937,7 +937,7 @@ B.rootAdd = (rng, sub) => {
   };
 };
 
-// 36 · جعل المقام عددًا ناطقًا
+// 36 · Rendre rationnel un dénominateur
 B.rootRational = (rng, sub) => {
   const r = rng.pick(by(sub, [2, 3], [2, 3, 5], [2, 3, 5, 6, 7]));
   const k = rng.int(1, by(sub, 1, 3, 6));
@@ -960,7 +960,7 @@ B.rootRational = (rng, sub) => {
   };
 };
 
-// 37 · اختزال عبارة حرفية
+// 37 · Réduire une expression littérale
 B.reduce = (rng, sub) => {
   const a = nonZero(rng, by(sub, 2, -6, -9), by(sub, 6, 6, 9));
   const b = nonZero(rng, by(sub, 1, -12, -20), by(sub, 12, 12, 20));
@@ -982,7 +982,7 @@ B.reduce = (rng, sub) => {
   };
 };
 
-// 38 · النشر البسيط
+// 38 · Développer (simple distributivité)
 B.expand = (rng, sub) => {
   const k = nonZero(rng, by(sub, 2, -5, -9), by(sub, 6, 6, 9));
   const a = nonZero(rng, by(sub, 1, -6, -9), by(sub, 6, 6, 9));
@@ -1005,7 +1005,7 @@ B.expand = (rng, sub) => {
   };
 };
 
-// 39 · النشر المضاعف
+// 39 · Développer (double distributivité)
 B.expand2 = (rng, sub) => {
   const a = nonZero(rng, by(sub, 1, -6, -9), by(sub, 6, 6, 9));
   const b = nonZero(rng, by(sub, 1, -6, -9), by(sub, 6, 6, 9));
@@ -1063,12 +1063,12 @@ function identity(rng, sub, type) {
     ],
   };
 }
-// 40–42 · المتطابقات الشهيرة
+// 40–42 · Les identités remarquables
 B.idPlus = (rng, sub) => identity(rng, sub, 'plus');
 B.idMinus = (rng, sub) => identity(rng, sub, 'minus');
 B.idDiff = (rng, sub) => identity(rng, sub, 'diff');
 
-// 43 · التحليل إلى جداء
+// 43 · Factoriser
 B.factorize = (rng, sub) => {
   if (sub === 3) {
     const k = rng.int(2, 7);
@@ -1109,7 +1109,7 @@ B.factorize = (rng, sub) => {
   };
 };
 
-// 44 · معادلة x + a = b
+// 44 · Équations x + a = b
 B.eqAdd = (rng, sub) => {
   const R = by(sub, 10, 20, 40);
   const s = rng.int(sub === 1 ? 1 : -R, R);
@@ -1130,7 +1130,7 @@ B.eqAdd = (rng, sub) => {
   };
 };
 
-// 45 · معادلة ax + b = c
+// 45 · Équations ax + b = c
 B.eqLin = (rng, sub) => {
   const s = rng.int(by(sub, 1, -6, -10), by(sub, 9, 9, 12));
   const A = () => rng.int(2, by(sub, 5, 7, 9));
@@ -1148,7 +1148,7 @@ B.eqLin = (rng, sub) => {
   };
 };
 
-// 46 · معادلات بأقواس أو بالمجهول في الطرفين
+// 46 · Équations avec parenthèses ou inconnue des deux côtés
 B.eqBoth = (rng, sub) => {
   const s = rng.int(by(sub, 1, -6, -9), by(sub, 8, 8, 10));
   const A = () => rng.int(2, by(sub, 4, 6, 8));
@@ -1165,7 +1165,7 @@ B.eqBoth = (rng, sub) => {
   };
 };
 
-// 47 · حساب قيمة عبارة
+// 47 · Calculer la valeur d’une expression
 B.evalAt = (rng, sub) => {
   const x0 = nonZero(rng, by(sub, 1, -3, -5), by(sub, 4, 4, 5));
   const forms = [
@@ -1191,7 +1191,7 @@ B.evalAt = (rng, sub) => {
   };
 };
 
-// 48–50 · حساب المثلثات : un catalogue d'écritures aux valeurs exactes.
+// 48–50 · Trigonométrie : un catalogue d'écritures aux valeurs exactes.
 const H = rat(1, 2);
 const S3H = surd(H, 3);
 const S2H = surd(H, 2);

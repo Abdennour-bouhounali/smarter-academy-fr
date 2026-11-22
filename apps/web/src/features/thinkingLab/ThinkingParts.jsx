@@ -8,18 +8,18 @@ import { loadFigure } from './figures';
 import { mathRuns, phaseOf } from './thinkingModel';
 
 /**
- * Les petites pièces partagées des trois écrans du « مختبر التفكير » : le texte arabe avec
- * ses îlots mathématiques LTR, la figure (lot paresseux par nom), la saisie de la réponse,
- * la pastille de phase et l'interrupteur « الصوت » (éteint par défaut, la préférence de l'appareil).
+ * Les petites pièces partagées des trois écrans du labo des énigmes : le texte avec
+ * ses îlots mathématiques, la figure (lot paresseux par nom), la saisie de la réponse,
+ * la pastille de phase et l'interrupteur « Son » (éteint par défaut, la préférence de l'appareil).
  */
 
-/** Un texte arabe dont les formules restent LTR (sauts de ligne gardés). */
+/** Un texte dont les formules restent d'un bloc, de gauche à droite (sauts de ligne gardés). */
 export function MathRun({ text, className = '' }) {
   return (
     <span className={`whitespace-pre-line ${className}`}>
       {mathRuns(text).map((run, i) => (run.math
-        // inline-block : une formule qui passe à la ligne se coupe en LTR DANS sa boîte (sinon le bidi
-        // de la page arabe range ses morceaux à l'envers : « − 7) + (1 − 7 »).
+        // inline-block + bdi : une formule reste d'un bloc, isolée de l'algorithme bidirectionnel ;
+        // si elle passe à la ligne, elle se coupe DANS sa boîte, de gauche à droite.
         ? <bdi key={i} dir="ltr" className="inline-block max-w-full font-inter font-semibold text-slate-900">{run.text}</bdi>
         : <span key={i}>{run.text}</span>))}
     </span>
@@ -85,7 +85,7 @@ export function PhaseChip({ phase }) {
   );
 }
 
-/** Le même interrupteur « الصوت » que les labos (EffectsToggle de LessonUI) : une seule préférence d'appareil. */
+/** Le même interrupteur « Son » que les labos (EffectsToggle de LessonUI) : une seule préférence d'appareil. */
 export function SoundToggle() {
   const { enabled, toggle } = useEffectsPreference();
   return <EffectsToggle enabled={enabled} onToggle={toggle} />;
@@ -93,7 +93,7 @@ export function SoundToggle() {
 
 /**
  * La saisie d'une réponse : des choix (check `choice`) ou le champ MathLive avec le clavier du
- * « مختبر التفكير » (π, √, puissances, fractions, et les variables du défi). La valeur rendue est
+ * « Le labo des énigmes » (π, √, puissances, fractions, et les variables du défi). La valeur rendue est
  * l'ascii-math que lit le juge du serveur.
  */
 export function AnswerInput({ format, value, onChange, onEnter, disabled = false, ariaLabel }) {

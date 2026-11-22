@@ -15,10 +15,10 @@ const run = (game, seconds, onEvent = () => {}) => {
     for (const e of step(game, DT)) if (e) onEvent(e, game);
   }
 };
-/** Un joueur parfait et rapide : il touche « الدخيل » dès que l'énigme paraît. */
+/** Un joueur parfait et rapide : il touche « L’intrus » dès que l'énigme paraît. */
 const perfect = (game) => { if (!game.reveal) pick(game, game.puzzle.oddIndex); };
 
-describe('odd one out « الدخيل »', () => {
+describe('odd one out « L’intrus »', () => {
   it('every puzzle of every level has exactly ONE odd card, and all the others share one value', () => {
     for (const level of LEVELS) {
       for (let sub = 1; sub <= 3; sub += 1) {

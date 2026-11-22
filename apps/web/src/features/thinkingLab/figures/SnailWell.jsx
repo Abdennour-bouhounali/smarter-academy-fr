@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #12 « الحلزون في البئر » — une coupe du puits avec sa règle graduée (m) et le trajet du
+ * #12 « L’escargot dans le puits » — une coupe du puits avec sa règle graduée (m) et le trajet du
  * colimaçon jour par jour : montée de jour (trait plein), glissade de nuit (pointillé).
  * Le trajet est SIMULÉ à partir de props { depth, up, down } (jamais dessiné à l'œil) ;
  * l'axe horizontal du puits est le temps (une colonne par jour).

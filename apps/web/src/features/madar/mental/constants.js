@@ -1,5 +1,5 @@
 /**
- * « الحساب الذهني » — les constantes du jeu.
+ * « Calcul mental » — les constantes du jeu.
  *
  * SCHEDULE est le MIROIR de apps/api/config/madar.php › mental. Après chaque
  * réponse, le résultat reste affiché `feedbackMs` : un problème ne se résout

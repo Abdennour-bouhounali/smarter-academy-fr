@@ -1,5 +1,5 @@
 /**
- * La borne du serveur pour « قنّاص القيم » — MIROIR de
+ * La borne du serveur pour « Chasseur de valeurs » — MIROIR de
  * apps/api/app/Domain/Madar/SniperScoring.php (sans la tolérance ni la marge).
  * `sim.test.js` vérifie qu'une partie parfaite ne la dépasse jamais.
  *

@@ -4,8 +4,8 @@ import Panel from './Panel';
 import TurretIcon from './TurretIcon';
 
 /**
- * Les tourelles de « دفاع الكوكب » : ouvertes ou non, et ce qui les ouvre —
- * tenir plus de vagues, ou répondre juste à la محطة التزوّد. Jamais une leçon
+ * Les tourelles de « Défense de la planète » : ouvertes ou non, et ce qui les ouvre —
+ * tenir plus de vagues, ou répondre juste à la station de ravitaillement. Jamais une leçon
  * terminée, jamais un achat.
  */
 export default function TurretBay({ turrets }) {
@@ -30,7 +30,7 @@ export default function TurretBay({ turrets }) {
                     {tur.rule.kind === 'wave' ? t('defense.turrets.ruleWave', { n: tur.rule.threshold }) : t('ships.ruleRefuel', { n: tur.rule.threshold })}
                   </span>
                   <span className="mt-0.5 h-1 w-full overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-                    <span className="block h-full rounded-full bg-gradient-to-l from-cyan-300 to-violet-500" style={{ width: `${ratio * 100}%` }} />
+                    <span className="block h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-500" style={{ width: `${ratio * 100}%` }} />
                   </span>
                 </>
               )}

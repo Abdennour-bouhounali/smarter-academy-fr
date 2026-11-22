@@ -14,9 +14,9 @@ import HeartsRow from './HeartsRow';
 import MathLabel from '../../../lessons/common/components/MathLabel';
 
 /**
- * « محطة التزوّد » — là où le jeu rejoint l'apprentissage.
+ * « station de ravitaillement » — là où le jeu rejoint l'apprentissage.
  *
- * Une question à la fois, choisie par le serveur dans les كفاءات de l'élève
+ * Une question à la fois, choisie par le serveur dans les savoir-faire de l'élève
  * (celles à reprendre d'abord), servie SANS clé de réponse. Juste : un cœur,
  * qui bat dans la jauge. Faux : aucun cœur, la bonne réponse et une phrase
  * d'explication — puis une autre question. La question est sur une carte
@@ -25,7 +25,7 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
  * d'exercices (QuestionRenderer), pas un second clavier.
  *
  * `context="revive"` : on vient d'un crash sans cœur ; après une réponse
- * juste, « واصل الرحلة » reprend la partie là où elle s'était arrêtée.
+ * juste, « Reprendre la partie » reprend la partie là où elle s'était arrêtée.
  *
  * Intégrité (MADAR_GAME.md §5bis) — rendre l'aide extérieure coûteuse, sans
  * prétendre la prouver : un chronomètre (l'horloge du serveur ; à zéro, la
@@ -262,7 +262,7 @@ export default function RefuelStation({ context = 'base', hearts, maxHearts, aud
                             className={primary
                               ? 'flex min-h-[58px] w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-500 px-6 font-space text-lg font-black text-slate-950 focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-200 lg:w-auto lg:min-w-[220px]'
                               : 'flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-white/10 px-5 font-inter text-sm font-bold text-white ring-1 ring-white/20 lg:w-auto lg:bg-slate-900 lg:text-white'}>
-                            <Icon size={18} aria-hidden="true" className={Icon === Rocket ? '-scale-x-100' : ''} /> {label}
+                            <Icon size={18} aria-hidden="true" /> {label}
                           </button>
                         ))}
                         <button type="button" onClick={onClose} data-action="close" className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-5 font-inter text-sm font-bold text-white/80 ring-1 ring-white/15 lg:w-auto lg:text-slate-600 lg:ring-slate-200">

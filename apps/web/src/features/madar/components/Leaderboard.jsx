@@ -7,7 +7,7 @@ import ShipIcon from './ShipIcon';
 const MEDALS = ['from-amber-200 to-amber-500 text-amber-950', 'from-slate-100 to-slate-400 text-slate-900', 'from-orange-200 to-orange-500 text-orange-950'];
 
 /**
- * « ترتيب الأسبوع » : les dix premiers du قسم (prénom + initiale, vaisseau,
+ * « Classement de la semaine » : les dix premiers de la classe (prénom + initiale, vaisseau,
  * meilleur score de la semaine), l'élève surligné, sa ligne sous le podium
  * s'il n'y est pas. Un élève sans classe voit une invitation, pas un vide.
  */
@@ -30,7 +30,7 @@ export default function Leaderboard({ competition, classroom, game = 'orbit' }) 
     <Panel aria-labelledby="madar-board-title" data-madar-board>
       <div className="flex items-baseline justify-between gap-2">
         <h2 id="madar-board-title" className="flex items-center gap-2 font-space text-lg font-black text-white"><Trophy size={18} className="text-amber-300" aria-hidden="true" /> {t('board.title')}</h2>
-        <span className="font-inter text-xs text-white/60">{t('board.participants', { count: participants })}</span>
+        {participants > 0 && <span className="font-inter text-xs text-white/60">{t('board.participants', { count: participants })}</span>}
       </div>
       {classroom?.name && <p className="mt-0.5 font-inter text-xs text-white/50">{t('board.subtitle', { name: classroom.name })}</p>}
 

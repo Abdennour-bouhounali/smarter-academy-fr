@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from 'lucide-react';
+import { Pause, Play, RotateCcw } from 'lucide-react';
+import { ChevronBack, ChevronForward } from '../../../components/common/DirectionalIcons';
 import useStepReveal from '../../mathlab/shared/useStepReveal';
 import { playSfx } from '../../../lessons/common/utils/playEffect';
 import { ChallengeFigure, MathRun, PhaseChip } from '../ThinkingParts';
 
 /**
  * La RELECTURE d'une pensée (THINKING_LAB.md §7) : les pas `replay[]` découverts un à un sur le
- * curseur du مختبر (useStepReveal — l'état d'interface n'est jamais sérialisé). Chaque pas allume
- * ses couches de la figure ; les lignes de calcul s'accumulent dans le « دفتر » ; un pas `ask`
- * (« اشرح لنفسك ») bloque « التالي » tant que l'élève n'a pas choisi.
+ * curseur du labo (useStepReveal — l'état d'interface n'est jamais sérialisé). Chaque pas allume
+ * ses couches de la figure ; les lignes de calcul s'accumulent dans le « cahier de calcul » ; un pas `ask`
+ * (« Explique-toi ») bloque « Suivant » tant que l'élève n'a pas choisi.
  * Sons (éteints par défaut) : stepTick, spark (👁), slide (↩).
  */
 function StepCard({ step: s, index: i, answers, setAnswers, current = false }) {
@@ -113,11 +114,11 @@ export default function ReplayPlayer({ steps, figure, onDone }) {
         <div className="flex flex-wrap items-center gap-2 rounded-2xl bg-white/95 p-2 shadow ring-1 ring-slate-200 backdrop-blur">
           <button type="button" onClick={player.previous} disabled={player.cursor <= 1}
             className="inline-flex min-h-[44px] items-center gap-1 rounded-xl px-3 font-inter text-sm font-bold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40">
-            <ChevronRight size={18} aria-hidden="true" /> {t('replay.prev')}
+            <ChevronBack size={18} aria-hidden="true" /> {t('replay.prev')}
           </button>
           <button type="button" onClick={player.next} disabled={blocked || player.done} data-replay-next
             className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-1 rounded-xl bg-nav-accent px-5 font-space text-sm font-black text-white enabled:hover:bg-[#3350c4] disabled:opacity-40">
-            {player.done ? t('replay.done') : t('replay.next')} {!player.done && <ChevronLeft size={18} aria-hidden="true" />}
+            {player.done ? t('replay.done') : t('replay.next')} {!player.done && <ChevronForward size={18} aria-hidden="true" />}
           </button>
           {player.playing ? (
             <button type="button" onClick={player.pause} className="inline-flex min-h-[44px] items-center gap-1 rounded-xl px-3 font-inter text-sm font-bold text-slate-600 hover:bg-slate-100">

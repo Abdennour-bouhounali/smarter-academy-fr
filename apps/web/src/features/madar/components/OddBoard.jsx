@@ -11,10 +11,10 @@ import MathTokens from './MathTokens';
 import { SUB_LETTERS, WarmupChip } from './SniperHud';
 
 /**
- * « الدخيل » — le plateau, en DOM (des cartes à toucher, du texte réel) : 4 ou
+ * « L’intrus » — le plateau, en DOM (des cartes à toucher, du texte réel) : 4 ou
  * 5 cartes blanches, toutes égales sauf une. Pas de cible : l'élève doit VOIR
  * ce qu'elles partagent. Après chaque choix, la réponse reste à l'écran —
- * « كلّها = 12 » et ce que vaut « الدخيل » — puis l'énigme suivante arrive.
+ * « Toutes valent 12 » et ce que vaut « L’intrus » — puis l'énigme suivante arrive.
  *
  *   mode="attract"  le jeu se joue seul derrière l'accueil
  *   mode="play"     la partie de l'élève (graine du serveur, position de départ)
@@ -137,7 +137,7 @@ const OddBoard = forwardRef(function OddBoard({
         {play && isWarmingUp(game) && <div className="text-center"><WarmupChip /></div>}
 
         <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-          <div ref={barRef} className="h-full origin-right rounded-full bg-gradient-to-l from-amber-300 to-rose-400" style={{ transform: 'scaleX(1)' }} />
+          <div ref={barRef} className="h-full origin-left rounded-full bg-gradient-to-r from-amber-300 to-rose-400" style={{ transform: 'scaleX(1)' }} />
         </div>
 
         <AnimatePresence>

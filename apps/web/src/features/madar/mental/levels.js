@@ -1,9 +1,9 @@
 /**
- * « الحساب الذهني » — les 50 niveaux du calcul mental et leurs problèmes (pur).
+ * « Calcul mental » — les 50 niveaux du calcul mental et leurs problèmes (pur).
  *
  * Du plus facile (2 + 1) au plus grand (2569 + 176, 11 × 25, 288 ÷ 12, les
  * décimaux, les relatifs, les enchaînements d'opérations), en neuf familles.
- * Chaque niveau a trois sous-niveaux أ / ب / ج : des nombres plus grands, des
+ * Chaque niveau a trois sous-niveaux A / B / C : des nombres plus grands, des
  * retenues, des tables plus hautes. Les positions (0…149), l'adaptation et
  * les points sont ceux des autres jeux de mathématiques (sniper/levels.js,
  * sniper/adapt.js) ; seuls le catalogue et l'entrée par année sont propres.
@@ -33,7 +33,7 @@ const digitPair = (rng, carry) => {
 };
 
 const B = {
-  // ── الجمع والطرح ──
+  // ── Addition et soustraction ──
   add10: (rng, sub) => { const s = rng.int(2, by(sub, 5, 8, 10)); const a = rng.int(1, s - 1); return P(T(`${a} + ${s - a}`), s); },
   sub10: (rng, sub) => { const a = rng.int(2, by(sub, 5, 8, 10)); const b = rng.int(1, a - 1); return P(T(`${a} − ${b}`), a - b); },
   add20: (rng, sub) => { const s = rng.int(by(sub, 8, 11, 13), by(sub, 12, 16, 20)); const a = rng.int(by(sub, 1, 2, 4), s - 1); return P(T(`${a} + ${s - a}`), s); },
@@ -70,7 +70,7 @@ const B = {
     return P(T(`${a} + ${b} + ${c}`), a + b + c);
   },
 
-  // ── الضرب ──
+  // ── Multiplication et tables ──
   tab2510: (rng, sub) => { const a = rng.pick([2, 5, 10]); const b = rng.int(1, by(sub, 5, 8, 10)); return P(T(rng.chance(0.5) ? `${a} × ${b}` : `${b} × ${a}`), a * b); },
   tab34: (rng, sub) => { const a = rng.pick([3, 4]); const b = rng.int(2, by(sub, 5, 8, 10)); return P(T(rng.chance(0.5) ? `${a} × ${b}` : `${b} × ${a}`), a * b); },
   tab67: (rng, sub) => { const a = rng.pick([6, 7]); const b = rng.int(2, by(sub, 5, 8, 10)); return P(T(rng.chance(0.5) ? `${a} × ${b}` : `${b} × ${a}`), a * b); },
@@ -81,7 +81,7 @@ const B = {
   mul2d2d: (rng, sub) => { const a = rng.int(11, by(sub, 15, 19, 25)); const b = rng.int(11, by(sub, 13, 15, 19)); return P(T(`${a} × ${b}`), a * b); },
   mul2d2dHard: (rng, sub) => { const a = rng.int(21, 99); const b = rng.int(21, by(sub, 40, 60, 99)); return P(T(`${a} × ${b}`), a * b); },
 
-  // ── القسمة ──
+  // ── Division ──
   div2510: (rng, sub) => { const d = rng.pick([2, 5, 10]); const q = rng.int(1, by(sub, 5, 8, 10)); return P(T(`${q * d} ÷ ${d}`), q); },
   divTo5: (rng, sub) => { const d = rng.int(2, 5); const q = rng.int(2, by(sub, 5, 8, 10)); return P(T(`${q * d} ÷ ${d}`), q); },
   divTo9: (rng, sub) => { const d = rng.int(by(sub, 3, 5, 6), 9); const q = rng.int(2, by(sub, 9, 10, 12)); return P(T(`${q * d} ÷ ${d}`), q); },
@@ -90,7 +90,7 @@ const B = {
   div3dBy1d: (rng, sub) => { const d = rng.int(2, 9); const q = rng.int(20, by(sub, 40, 80, 150)); return P(T(`${q * d} ÷ ${d}`), q); },
   div2d: (rng, sub) => { const d = rng.int(11, by(sub, 15, 19, 25)); const q = rng.int(11, by(sub, 20, 30, 40)); return P(T(`${q * d} ÷ ${d}`), q); },
 
-  // ── الأعداد الكبيرة ──
+  // ── Les grands nombres ──
   add3d2d: (rng, sub) => { const a = rng.int(100, by(sub, 400, 700, 999)); const b = rng.int(by(sub, 10, 20, 50), 99); return P(T(`${a} + ${b}`), a + b); },
   subFromHundreds: (rng, sub) => { const k = rng.int(1, by(sub, 3, 6, 9)); const b = rng.int(by(sub, 11, 21, 31), 99); return P(T(`${100 * k} − ${b}`), 100 * k - b); },
   add3d: (rng, sub) => { const a = rng.int(100, by(sub, 400, 700, 999)); const b = rng.int(100, by(sub, 400, 700, 999)); return P(T(`${a} + ${b}`), a + b); },
@@ -104,12 +104,12 @@ const B = {
     return P(T(`${a} + ${b} − ${c}`), a + b - c);
   },
 
-  // ── حيل الحساب ──
+  // ── Astuces de calcul rapide ──
   mul5_25_50: (rng, sub) => { const k = rng.pick(by(sub, [5], [5, 25], [5, 25, 50])); const n = 2 * rng.int(2, by(sub, 20, 30, 50)); return P(T(`${n} × ${k}`), n * k); },
   mul11: (rng, sub) => { const n = rng.int(11, by(sub, 40, 70, 99)); return P(T(rng.chance(0.5) ? `11 × ${n}` : `${n} × 11`), 11 * n); },
   mul9_99: (rng, sub) => { const k = rng.pick(by(sub, [9], [9, 99], [99, 999])); const n = rng.int(by(sub, 11, 12, 13), by(sub, 50, 80, 99)); return P(T(`${n} × ${k}`), n * k); },
 
-  // ── العمليات المركّبة ──
+  // ── Calculs enchaînés ──
   parens: (rng, sub) => {
     const a = rng.int(2, by(sub, 5, 9, 12)); const b = rng.int(2, by(sub, 6, 12, 25)); const c = rng.int(1, by(sub, 6, 12, 25));
     return rng.chance(0.5) ? P(T(`${a} × (${b} + ${c})`), a * (b + c)) : P(T(`(${b} + ${c}) × ${a}`), a * (b + c));
@@ -124,7 +124,7 @@ const B = {
     return P(T(`${q * b} ÷ ${b} × ${c} − ${d}`), q * c - d);
   },
 
-  // ── الأعداد العشرية والكسور ──
+  // ── Décimaux, fractions et pourcentages ──
   decAdd: (rng, sub) => {
     const u = by(sub, 10, 10, 100);
     const a = rng.int(1, by(sub, 9, 49, 499)); const b = rng.int(1, by(sub, 9, 49, 499));
@@ -146,7 +146,7 @@ const B = {
     return P(T(`${p} % × ${n}`), (p * n) / 100);
   },
 
-  // ── الأعداد النسبية ──
+  // ── Nombres relatifs ──
   relAdd: (rng, sub) => {
     const R = by(sub, 10, 30, 99);
     const a = rng.int(-R, R) || 1; const b = rng.int(-R, R) || -1;
@@ -163,7 +163,7 @@ const B = {
     return P(T(`${minus(a)} + ${rel(b)} × ${rel(c)}`), a + b * c);
   },
 
-  // ── القوى والجذور ──
+  // ── Carrés, puissances et racines ──
   squares15: (rng, sub) => { const n = rng.int(2, by(sub, 10, 13, 15)); return P([String(n), { sup: '2' }], n * n); },
   squares25: (rng, sub) => {
     if (sub === 3 || (sub === 2 && rng.chance(0.4))) { const n = rng.int(2, sub === 3 ? 10 : 5); return P([String(n), { sup: '3' }], n ** 3); }
@@ -176,7 +176,7 @@ const B = {
   },
 };
 
-// 50 · التحدّي : un problème des niveaux les plus durs, à leur sous-niveau le plus haut.
+// 50 · Le défi : un problème des niveaux les plus durs, à leur sous-niveau le plus haut.
 const CHAMPION = ['add4d3d', 'subFromThousands', 'mul2d2dHard', 'div2d', 'mul9_99', 'chain', 'relMix', 'decMul10', 'percentOf', 'powers', 'bigMix'];
 B.champion = (rng) => B[rng.pick(CHAMPION)](rng, 3);
 

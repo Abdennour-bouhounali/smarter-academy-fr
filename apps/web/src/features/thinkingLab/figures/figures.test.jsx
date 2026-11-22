@@ -15,7 +15,7 @@ const challenges = (existsSync(DIR) ? readdirSync(DIR) : []).filter((f) => f.end
 const fill = (props, values) => JSON.parse(JSON.stringify(props ?? {}).replace(/\{([a-zA-Z]\w*)\}/g, (w, n) => (n in values ? String(values[n]) : w)));
 const firstTuple = (params) => Object.fromEntries(Object.entries(params?.vars ?? {}).map(([k, v]) => [k, v[0]]));
 
-describe('figures du « مختبر التفكير »', () => {
+describe('figures du labo des énigmes', () => {
   for (const name of FIGURE_NAMES) {
     it(`${name} : contrat et dessin`, async () => {
       const mod = await loadFigure(name);

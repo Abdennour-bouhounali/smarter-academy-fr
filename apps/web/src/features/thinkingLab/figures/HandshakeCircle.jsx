@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #5 « المصافحات الأولى » — n amis = n points sur un cercle, une poignée de main = un segment.
+ * #5 « Les premières poignées de main » — n amis = n points sur un cercle, une poignée de main = un segment.
  * Les points sont placés à angles égaux (calculés), le premier en haut, puis dans le sens des aiguilles.
  * `props.n` : le nombre d'amis de l'élève (3 à 10).
  */

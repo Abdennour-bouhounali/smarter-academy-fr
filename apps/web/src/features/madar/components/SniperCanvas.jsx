@@ -6,7 +6,7 @@ import { levelOfPos, subOfPos } from '../sniper/levels';
 import { buzz } from '../engine/audio';
 
 /**
- * Le canevas de « قنّاص القيم » : la boucle, le toucher, le rendu. Le jeu est
+ * Le canevas de « Chasseur de valeurs » : la boucle, le toucher, le rendu. Le jeu est
  * une simulation pure (sniper/sim.js) ; ce composant l'avance, la dessine et
  * traduit ses événements en sons, éclats, vibrations — et en RETOUR LISIBLE :
  * un piège touché montre ce qu'il valait vraiment, une carte égale qui tombe
@@ -162,7 +162,7 @@ const SniperCanvas = forwardRef(function SniperCanvas({
         break;
       }
       case 'roundEnd':
-        // Le niveau a changé : l'affichage l'annonce (« ارتقيت » / « نتمرّن قليلًا »).
+        // Le niveau a changé : l'affichage l'annonce (« Tu passes au palier… » / « On s’entraîne un peu… »).
         if (e.change !== 'same') game.lastChange = { kind: e.change, level: e.level, sub: e.sub, id: e.k };
         if (play && e.change === 'up') audio?.multiplier(2);
         if (play && e.perfect) {
@@ -208,7 +208,7 @@ const SniperCanvas = forwardRef(function SniperCanvas({
 
   return (
     <div ref={hostRef} className="absolute inset-0 touch-none select-none" onPointerDown={onPointerDown} data-madar-canvas={`sniper-${mode}`}>
-      {/* Le canevas en LTR : les expressions s'écrivent de gauche à droite (la page est en RTL). */}
+      {/* Le canevas en LTR, explicitement : les expressions s'écrivent de gauche à droite. */}
       <canvas ref={canvasRef} dir="ltr" className="block h-full w-full" aria-hidden="true" />
     </div>
   );

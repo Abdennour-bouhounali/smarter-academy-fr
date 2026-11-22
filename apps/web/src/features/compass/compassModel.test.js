@@ -79,6 +79,15 @@ describe('accueil : bande de l’année, semaine, tâches cochées', () => {
     expect(strip.some((w) => w.kind === 'bem')).toBe(true);
     expect(yearStrip(year, '6e', TODAY).some((w) => w.kind === 'bem')).toBe(false);
   });
+  it('une semaine de la bande va du lundi au dimanche (la semaine d’école française)', () => {
+    const strip = yearStrip(year, '3e', TODAY);
+    for (const w of strip) {
+      expect(new Date(`${w.from}T00:00:00Z`).getUTCDay(), w.from).toBe(1);
+      expect(new Date(`${w.to}T00:00:00Z`).getUTCDay(), w.to).toBe(0);
+    }
+    expect(strip[0].from <= CALENDAR.start).toBe(true);
+    expect(strip.find((w) => w.now).from).toBe('2026-09-21');
+  });
   it('le rang de la semaine de classe', () => {
     expect(teachingWeekNumber(year, TODAY)).toEqual({ n: 3, total: 10 });
   });

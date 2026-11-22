@@ -1,5 +1,5 @@
 /**
- * Le registre des figures du « مختبر التفكير » : UN fichier par figure, nommé comme
+ * Le registre des figures du labo des énigmes : UN fichier par figure, nommé comme
  * `figure.component` / `whiteboard.seed` du contenu (FourArcs.jsx…). Aucune liste à
  * tenir à jour : le glob les trouve, chacune devient un lot paresseux À PART, chargé
  * seulement par le défi qui l'affiche (BUNDLE_BOUNDARIES.md : ce glob vit sous la

@@ -1,5 +1,5 @@
 /**
- * Les constantes de « دفاع الكوكب ».
+ * Les constantes de « Défense de la planète ».
  *
  * `SCHEDULE` est le MIROIR de `config/madar.php › defense` (apps/api) : le
  * serveur borne la vague et le score avec ces mêmes valeurs (DefenseScoring).

@@ -1,5 +1,5 @@
 /**
- * « الحساب الذهني » — la simulation (pure : aucun DOM, aucune horloge).
+ * « Calcul mental » — la simulation (pure : aucun DOM, aucune horloge).
  *
  * Un problème après l'autre. L'élève tape la réponse (clavier ou pavé) ; la
  * réponse part TOUTE SEULE quand toutes les cases sont remplies (le nombre de

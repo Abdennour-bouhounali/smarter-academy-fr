@@ -6,12 +6,12 @@ import { SUB_LETTERS } from './SniperHud';
 
 /**
  * Où en est l'élève dans les 50 niveaux d'un jeu de mathématiques : sa
- * position (niveau · أ/ب/ج, une barre sur les 150 sous-niveaux), puis la carte
+ * position (niveau · A/B/C, une barre sur les 150 sous-niveaux), puis la carte
  * des onze familles. Un niveau ouvert se rejoue d'un toucher ; un niveau
  * fermé attend (on l'ouvre en y arrivant, le jeu s'adapte tout seul).
  *
  * `progress` : `GET /madar › sniper | odd | mental` — position, unlockedUpTo, entryLevel.
- * `catalog` : `sniper` (les 50 niveaux de « قنّاص القيم » et « الدخيل ») ou
+ * `catalog` : `sniper` (les 50 niveaux de « Chasseur de valeurs » et « L’intrus ») ou
  * `mental` (les 50 niveaux du calcul mental).
  */
 export default function MathLevelMap({ progress, catalog = 'sniper', disabled, onPlay }) {
@@ -34,7 +34,7 @@ export default function MathLevelMap({ progress, catalog = 'sniper', disabled, o
         </p>
         <p className="font-inter text-[11px] text-white/50">{current ? t(`${ns}.domains.${current.domain}`) : ''}</p>
         <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-          <span className="block h-full rounded-full bg-gradient-to-l from-amber-300 to-emerald-400" style={{ width: `${((position + 1) / POSITIONS) * 100}%` }} />
+          <span className="block h-full rounded-full bg-gradient-to-r from-amber-300 to-emerald-400" style={{ width: `${((position + 1) / POSITIONS) * 100}%` }} />
         </span>
         <p className="mt-1.5 font-inter text-[11px] leading-relaxed text-white/55">{t('sniper.lobby.adaptHint')}</p>
       </div>

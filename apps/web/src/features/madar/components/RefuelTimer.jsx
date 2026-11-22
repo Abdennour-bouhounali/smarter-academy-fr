@@ -11,7 +11,7 @@ const TONES = {
 };
 
 /**
- * Le chronomètre d'une question de la « محطة التزوّد » : un anneau qui se
+ * Le chronomètre d'une question de la « station de ravitaillement » : un anneau qui se
  * vide, les secondes au centre. L'horloge est celle du SERVEUR (servedAt +
  * serverNow corrigent l'heure du téléphone) ; à zéro, `onExpire` — la page
  * envoie ce que l'élève a écrit, et le serveur tranche « hors délai ».

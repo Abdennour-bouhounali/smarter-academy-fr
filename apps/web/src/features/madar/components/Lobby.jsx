@@ -24,18 +24,18 @@ import TurretIcon from './TurretIcon';
  * lancer, classement, hangar. Ordinateur : deux colonnes de part et d'autre
  * de l'orbite, qui reste au centre.
  *
- * L'accueil d'UN jeu de « فضاء الألعاب » (le choix du jeu se fait sur la page
+ * L'accueil d'UN jeu de « Espace jeux » (le choix du jeu se fait sur la page
  * de la salle, /espace/jeux) : records, classement, collection (vaisseaux,
- * tourelles) ou carte des niveaux (« المستكشف »), ou les six familles
- * d'écritures de « قنّاص القيم » (jeu de mathématiques, GRATUIT : son bouton ne
- * montre pas de coût). Les cœurs et la محطة التزوّد sont communs aux jeux.
+ * tourelles) ou carte des niveaux (« L’explorateur »), ou les six familles
+ * d'écritures de « Chasseur de valeurs » (jeu de mathématiques, GRATUIT : son bouton ne
+ * montre pas de coût). Les cœurs et la station de ravitaillement sont communs aux jeux.
  */
 export default function Lobby({ state, game = 'orbit', busy, error, muted, onToggleMute, onPlay, onRefuel, onSelectShip, onDismissNotices, hubPath = '/espace/jeux' }) {
   const { t } = useTranslation('madar');
   const reduce = useReducedMotion();
   const isDefense = game === 'defense';
   const isExplorer = game === 'explorer';
-  // Un jeu de mathématiques (« قنّاص القيم », « الدخيل ») : sa position dans les 50 niveaux.
+  // Un jeu de mathématiques (« Chasseur de valeurs », « L’intrus ») : sa position dans les 50 niveaux.
   const isSniper = MATH_GAMES.includes(game);
   const math = isSniper ? state[game] : null;
   const free = isFreeGame(state, game);
@@ -57,7 +57,7 @@ export default function Lobby({ state, game = 'orbit', busy, error, muted, onTog
       </header>
 
       <div className="mx-auto grid max-w-[1500px] gap-4 px-4 pb-10 sm:px-8 lg:grid-cols-[minmax(340px,420px)_1fr_minmax(320px,400px)] lg:items-start lg:gap-6">
-        {/* ── Colonne de lancement (à droite en RTL) ── */}
+        {/* ── Colonne de lancement (côté début) ── */}
         <div className="space-y-4 lg:sticky lg:top-24">
           <motion.div initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center lg:text-start">
             <p className="font-inter text-xs font-bold uppercase tracking-widest text-amber-200/80">{t('hub.title')}</p>
@@ -151,7 +151,7 @@ export default function Lobby({ state, game = 'orbit', busy, error, muted, onTog
                   data-action="play"
                 >
                   <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition duration-700 group-hover:translate-x-full" aria-hidden="true" />
-                  <Rocket size={26} aria-hidden="true" className="-scale-x-100" />
+                  <Rocket size={26} aria-hidden="true" />
                   {t('lobby.play')}
                   {free ? <span className="rounded-full bg-slate-950/15 px-2 py-0.5 font-inter text-xs font-black" data-free>{t('sniper.free')}</span> : <CostBadge />}
                 </motion.button>
@@ -190,7 +190,7 @@ export default function Lobby({ state, game = 'orbit', busy, error, muted, onTog
                           : t('ships.ruleRefuel', { n: goal.rule.threshold })}
                   </p>
                   <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-                    <span className="block h-full rounded-full bg-gradient-to-l from-amber-300 to-orange-500" style={{ width: `${goal.ratio * 100}%` }} />
+                    <span className="block h-full rounded-full bg-gradient-to-r from-amber-300 to-orange-500" style={{ width: `${goal.ratio * 100}%` }} />
                   </span>
                 </div>
                 <span className="font-space text-xs font-bold text-white/60" dir="ltr">{formatScore(goal.rule.progress)}{'\u00A0/\u00A0'}{formatScore(goal.rule.threshold)}</span>

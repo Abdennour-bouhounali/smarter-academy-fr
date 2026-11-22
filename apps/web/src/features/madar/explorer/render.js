@@ -1,11 +1,17 @@
 import { H, PHYSICS } from './sim.js';
 
 /**
- * Le rendu de « المستكشف » au canevas 2D — tout est dessiné en code.
+ * Écran ← monde : x croissant vers la DROITE (le palier se lit de gauche à
+ * droite, comme la page). `camX` est le bord gauche de la vue, en tuiles.
+ */
+export const screenX = (x, camX, T) => (x - camX) * T;
+
+/**
+ * Le rendu de « L’explorateur » au canevas 2D — tout est dessiné en code.
  *
- * Le niveau se lit de DROITE à GAUCHE (le sens de l'arabe) : l'avant du
- * niveau (x croissant) est dessiné vers la gauche de l'écran. La caméra garde
- * l'astronaute au tiers droit, pour voir ce qui vient.
+ * Le palier se lit de GAUCHE à DROITE, comme la page : l'avant du palier
+ * (x croissant) est dessiné vers la droite de l'écran. La caméra garde
+ * l'astronaute au tiers gauche, pour voir ce qui vient.
  *
  * La taille d'une tuile suit l'écran : au téléphone (portrait), la hauteur du
  * niveau tient au-dessus des commandes tactiles ; à l'ordinateur, ~26 tuiles
@@ -45,8 +51,7 @@ export function createExplorerRenderer(canvas) {
     top = 64 + Math.max(0, (avail - T * H) / 2);
   }
 
-  /** Écran ← monde, en miroir : x croissant vers la gauche. */
-  const sx = (x) => w - (x - camX) * T;
+  const sx = (x) => screenX(x, camX, T);
   const sy = (y) => top + y * T;
 
   function follow(g, dt) {
@@ -64,30 +69,32 @@ export function createExplorerRenderer(canvas) {
     ctx.fillStyle = sky;
     ctx.fillRect(0, 0, w, h);
     for (const st of stars) {
-      const x = ((st.x * w + camX * T * 0.05) % w + w) % w;
+      // Le décor défile dans le même sens que le palier, plus lentement (parallaxe).
+      const x = ((st.x * w - camX * T * 0.05) % w + w) % w;
       ctx.globalAlpha = 0.4 + 0.4 * Math.sin(time * 1.3 + st.tw);
       ctx.fillStyle = '#fff';
-      ctx.fillRect(w - x, st.y * h, st.s, st.s);
+      ctx.fillRect(x, st.y * h, st.s, st.s);
     }
     ctx.globalAlpha = 1;
     // Une grande planète au loin, presque immobile.
-    const px = w * 0.25 + camX * T * 0.02;
-    const grad = ctx.createRadialGradient(w - px, h * 0.2, 4, w - px, h * 0.2, h * 0.22);
+    const px = w * 0.75 - camX * T * 0.02;
+    const grad = ctx.createRadialGradient(px, h * 0.2, 4, px, h * 0.2, h * 0.22);
     grad.addColorStop(0, theme.accent);
     grad.addColorStop(1, theme.planet);
     ctx.globalAlpha = 0.45;
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.arc(w - px, h * 0.2, h * 0.16, 0, Math.PI * 2);
+    ctx.arc(px, h * 0.2, h * 0.16, 0, Math.PI * 2);
     ctx.fill();
     ctx.globalAlpha = 1;
     // Collines lointaines (parallaxe).
     ctx.fillStyle = `${theme.groundDark}aa`;
     const base = sy(H - 2);
     for (const hl of hills) {
-      const x = ((hl.x * w * 2 + camX * T * 0.3) % (w * 2.2)) - w * 0.1;
+      const span = w * 2.2;
+      const x = (((hl.x * w * 2 - camX * T * 0.3) % span) + span) % span - w * 0.1;
       ctx.beginPath();
-      ctx.arc(w - x, base, hl.r * h, Math.PI, 0);
+      ctx.arc(x, base, hl.r * h, Math.PI, 0);
       ctx.fill();
     }
   }
@@ -99,7 +106,7 @@ export function createExplorerRenderer(canvas) {
       for (let x = x0; x <= x1; x++) {
         const ch = g.grid[y][x];
         if (ch === '.') continue;
-        const X = sx(x + 1);
+        const X = sx(x);
         const Y = sy(y);
         if (ch === '#') {
           ctx.fillStyle = theme.ground;
@@ -244,7 +251,7 @@ export function createExplorerRenderer(canvas) {
   function enemies(g, time) {
     for (const e of g.enemies) {
       if (!e.alive) continue;
-      const X = sx(e.x + e.w);
+      const X = sx(e.x);
       const Y = sy(e.y);
       const ew = e.w * T;
       const eh = e.h * T;
@@ -312,12 +319,12 @@ export function createExplorerRenderer(canvas) {
     if (pl.invuln > 0 && Math.floor(time * 14) % 2 === 0) return;
     const pw = PHYSICS.playerW * T;
     const ph = PHYSICS.playerH * T;
-    const X = sx(pl.x + PHYSICS.playerW);
+    const X = sx(pl.x);
     const Y = sy(pl.y);
     ctx.save();
     ctx.translate(X + pw / 2, Y + ph / 2);
-    // Le personnage regarde vers l'avant du niveau : la gauche de l'écran.
-    if (pl.facing > 0) ctx.scale(-1, 1);
+    // Le dessin regarde vers la droite (l'avant du palier) ; il se retourne quand on recule.
+    if (pl.facing < 0) ctx.scale(-1, 1);
     const run = pl.onGround && Math.abs(pl.vx) > 0.5 ? Math.sin(pl.runPhase * 3) : 0;
     // Jambes.
     ctx.fillStyle = '#e2e8f0';
@@ -368,7 +375,7 @@ export function createExplorerRenderer(canvas) {
     for (const f of fx.floaters) {
       const k = f.life / f.max;
       ctx.globalAlpha = Math.min(1, k * 1.5);
-      ctx.font = `900 ${Math.round(T * 0.5)}px "Space Grotesk", sans-serif`;
+      ctx.font = `900 ${Math.round(T * 0.5)}px "Space Grotesk", Inter, system-ui, sans-serif`;
       ctx.lineWidth = 3;
       ctx.strokeStyle = 'rgba(2,6,23,0.85)';
       ctx.strokeText(f.text, sx(f.x), sy(f.y) - (1 - k) * T);

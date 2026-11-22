@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #333 « العدسة » — deux cercles de même rayon r, chaque centre sur le cercle de l'autre,
+ * #333 « La lentille » — deux cercles de même rayon r, chaque centre sur le cercle de l'autre,
  * et la lentille commune aux deux disques.
  *
  * Géométrie en unités de r, puis mise à l'échelle : O₁ = (0, 0), O₂ = (1, 0), les points

@@ -10,7 +10,7 @@ const HIT_R = 0.11;
 const SLOW_MO = 0.3;
 
 /**
- * Le canevas de « دفاع الكوكب » : la boucle, le toucher, le rendu. Le monde
+ * Le canevas de « Défense de la planète » : la boucle, le toucher, le rendu. Le monde
  * est une simulation pure (defense/sim.js) ; ce composant l'avance, la
  * dessine, et traduit ses événements en sons, éclats et vibrations.
  *

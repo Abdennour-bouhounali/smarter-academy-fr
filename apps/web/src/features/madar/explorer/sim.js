@@ -1,14 +1,14 @@
 import LEVELS from '../../../../../api/resources/games/explorer/levels.json';
 
 /**
- * « المستكشف » — le jeu de plates-formes de « فضاء الألعاب ». Une simulation
+ * « L’explorateur » — le jeu de plates-formes de « Espace jeux ». Une simulation
  * PURE (aucun DOM, aucune horloge), à pas fixe.
  *
  * Les cartes, la physique et le barème viennent du fichier COMMUN avec l'API
  * (apps/api/resources/games/explorer/levels.json) : le serveur borne le score
  * par le maximum du niveau et refuse un « terminé » plus rapide que la carte ne
- * le permet. Repère : x vers l'avant du niveau (le rendu le dessine de DROITE
- * à GAUCHE, sens de lecture de l'arabe), y vers le bas, une tuile = 1.
+ * le permet. Repère : x vers l'avant du niveau (le rendu le dessine de GAUCHE
+ * à DROITE : on avance vers la droite), y vers le bas, une tuile = 1.
  *
  *   createExplorer(n)        le niveau n
  *   step(game, dt, input)    input = { forward, back, jump } ; renvoie les événements
@@ -19,6 +19,17 @@ export const PHYSICS = LEVELS.physics;
 export const SCORING = LEVELS.scoring;
 export const LEVEL_COUNT = LEVELS.levels.length;
 export const H = 14;
+
+/**
+ * Le clavier → les commandes de `step`. Le palier avance vers la DROITE de
+ * l'écran (la page se lit de gauche à droite) : → ou D fait avancer, ← ou A
+ * fait reculer. Choix verrouillé par `render.test.js`.
+ */
+export const INPUT_KEYS = Object.freeze({
+  ArrowRight: 'forward', d: 'forward', D: 'forward',
+  ArrowLeft: 'back', a: 'back', A: 'back',
+  ' ': 'jump', ArrowUp: 'jump', w: 'jump', W: 'jump',
+});
 const STEP = 1 / 120;
 
 const SOLID = new Set(['#', 'B', '?', 'U', 'P', 'S']);

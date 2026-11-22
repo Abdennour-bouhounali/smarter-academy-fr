@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { animate, useReducedMotion } from 'framer-motion';
+import { LOCALE } from '../../../locale';
 
 /**
  * Un score qui MONTE jusqu'à sa valeur — une fois, brièvement (≤ 0,9 s).
@@ -27,7 +28,7 @@ export default function ScoreCounter({ value, className = '', duration = 0.9 }) 
   return (
     <span dir="ltr" className={`tabular-nums ${className}`}>
       {/* Le lecteur d'écran lit la valeur finale, pas le décompte. */}
-      <span aria-hidden="true">{shown.toLocaleString('fr-FR')}</span>
+      <span aria-hidden="true">{shown.toLocaleString(LOCALE)}</span>
       <span className="sr-only">{value}</span>
     </span>
   );

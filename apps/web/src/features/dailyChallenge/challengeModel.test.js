@@ -49,7 +49,7 @@ describe('challengeModel', () => {
   it('shows the content of the correct choice, never a letter', () => {
     const q = { choices: [{ id: 'A', content: '12' }, { id: 'B', content: '18' }] };
     expect(correctAnswerText(q, { correctChoiceIds: ['B'], correctAnswer: null })).toBe('18');
-    expect(correctAnswerText({}, { correctChoiceIds: [], correctAnswer: [120, 132] })).toBe('120 ؛ 132');
+    expect(correctAnswerText({}, { correctChoiceIds: [], correctAnswer: [120, 132] })).toBe('120\u202F; 132');
     expect(correctAnswerText({}, { correctChoiceIds: [], correctAnswer: '7/4' })).toBe('7/4');
     expect(correctAnswerText({}, null)).toBeNull();
   });
@@ -69,5 +69,21 @@ describe('challengeModel', () => {
     expect(reasonKey('something_else')).toBe('generic');
     expect(percent(0.823)).toBe('82 %');
     expect(percent(null)).toBe('—');
+  });
+});
+
+// The daily challenge runs Monday to Friday (apps/api/config/daily_challenge.php › challenge_weekdays): the server
+// sends each day of the frieze with its ISO weekday (1 = Monday … 7 = Sunday) and its state; the screen only names
+// the day. The letters and the sentences must say the same week.
+describe('a Monday-to-Friday challenge', () => {
+  it('names the ISO weekdays in French, Monday first', async () => {
+    const challenge = (await import('../../i18n/locales/ar/challenge.json')).default;
+    expect(challenge.streak.weekday).toEqual({ 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' });
+  });
+  it('says there is no challenge at the weekend, and that the weekend does not break a streak', async () => {
+    const challenge = (await import('../../i18n/locales/ar/challenge.json')).default;
+    expect(challenge.reasons.rest_day).toMatch(/du lundi au vendredi/);
+    expect(challenge.intro.rulesBody).toMatch(/le week-end ne la casse pas/);
+    expect(challenge.intro.doneHint).not.toMatch(/demain/);
   });
 });

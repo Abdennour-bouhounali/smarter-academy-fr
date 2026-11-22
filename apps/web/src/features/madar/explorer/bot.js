@@ -1,7 +1,7 @@
 import { H, PHYSICS } from './sim.js';
 
 /**
- * Un pilote automatique simple pour « المستكشف » (fond de l'accueil, tests) :
+ * Un pilote automatique simple pour « L’explorateur » (fond de l'accueil, tests) :
  * il court vers l'avant et saute devant un mur, un trou, un danger ou un
  * ennemi. S'il termine un niveau, le niveau est jouable.
  */

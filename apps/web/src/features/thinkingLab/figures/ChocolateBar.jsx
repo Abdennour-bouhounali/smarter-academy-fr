@@ -1,7 +1,7 @@
-import { FIG, ltrText } from './palette';
+import { FIG, ltrText, wordText } from './palette';
 
 /**
- * #490 « لوح الحلوى » — un lav de `rows` × `cols` carrés, puis deux cassures montrées
+ * #490 « La tablette de chocolat » — un lav de `rows` × `cols` carrés, puis deux cassures montrées
  * pièce par pièce (une cassure prend UNE pièce et en rend deux).
  *
  * Les pièces sont calculées, jamais posées à l'œil :
@@ -84,8 +84,8 @@ export default function ChocolateBar({ layers = BASE_LAYERS, props = {}, ariaLab
         })}
       {on.has('count') && (
         <g fill={FIG.build} fontSize="15" fontWeight="700" textAnchor="middle">
-          <text x={W / 2 + 70} y={H - 14} direction="rtl">{`القطع: ${pieces.length}`}</text>
-          <text x={W / 2 - 70} y={H - 14} direction="rtl">{`الكسرات: ${pieces.length - 1}`}</text>
+          <text x={W / 2 - 75} y={H - 14} style={wordText}>{`Morceaux\u00A0: ${pieces.length}`}</text>
+          <text x={W / 2 + 75} y={H - 14} style={wordText}>{`Cassures\u00A0: ${pieces.length - 1}`}</text>
         </g>
       )}
     </svg>

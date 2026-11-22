@@ -18,7 +18,7 @@ function toJs(tokens) {
 const evaluate = (tokens) => new Function(`return (${toJs(tokens)});`)();
 const readAnswer = (text) => Number(text.replace('−', '-').replace(',', '.'));
 
-describe('mental arithmetic « الحساب الذهني » — 50 levels × 3 sub-levels', () => {
+describe('mental arithmetic « Calcul mental » — 50 levels × 3 sub-levels', () => {
   it('has 50 distinct levels, from 2 + 1 to the champion', () => {
     expect(MENTAL_LEVELS).toHaveLength(50);
     expect(new Set(MENTAL_LEVELS.map((l) => l.id)).size).toBe(50);

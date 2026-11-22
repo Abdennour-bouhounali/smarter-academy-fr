@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #325 « الدائرة في المثلّث القائم » — le triangle ABC rectangle en C (CB = b horizontal,
+ * #325 « Le cercle dans le triangle rectangle » — le triangle ABC rectangle en C (CB = b horizontal,
  * CA = a vertical), son cercle inscrit de centre I et de rayon r, les rayons vers les
  * points de contact, le carré de côté r à l'angle droit, et les tangentes égales.
  *

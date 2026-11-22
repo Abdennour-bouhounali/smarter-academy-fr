@@ -1,9 +1,11 @@
 /**
- * Mise en forme pure de « مدار » (aucun appel réseau, aucun DOM).
+ * Mise en forme pure de « Espace jeux » (aucun appel réseau, aucun DOM).
  */
-const NUMBER = new Intl.NumberFormat('en-US');
+import { LOCALE } from '../../locale';
 
-/** Les nombres du jeu en chiffres occidentaux groupés (ar-DZ), toujours en `dir="ltr"`. */
+const NUMBER = new Intl.NumberFormat(LOCALE);
+
+/** Les nombres du jeu, groupés à la française (« 12 345 », espace fine insécable). */
 export function formatScore(n) {
   return NUMBER.format(Math.max(0, Math.round(n ?? 0)));
 }
@@ -68,7 +70,7 @@ export function playBlocker(state, game = null) {
   return null;
 }
 
-/** Les jeux de la salle, rangés par famille : ترفيه puis رياضيات. */
+/** Les jeux de la salle, rangés par famille : adresse puis maths. */
 export function gamesByCategory(games) {
   const groups = { fun: [], math: [] };
   for (const g of games ?? []) (groups[g.category] ?? groups.fun).push(g);

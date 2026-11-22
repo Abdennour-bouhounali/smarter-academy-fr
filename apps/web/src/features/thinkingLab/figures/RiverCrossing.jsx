@@ -1,17 +1,18 @@
-import { FIG, ltrText } from './palette';
+import { FIG, ltrText, wordText } from './palette';
 
 /**
- * #33 « الراعي والنهر » — figure STATIQUE (la rivière jouable est prévue plus tard) :
- * les deux rives, l'oued, la barque, et quatre étiquettes (الراعي، الذئب، الخروف، البرسيم).
+ * #33 « Le berger et la rivière » — figure STATIQUE (la rivière jouable est prévue plus tard) :
+ * les deux rives, la rivière, la barque, et quatre étiquettes (berger, loup, chèvre, chou).
  * Une couche d'ÉTAT place les étiquettes (la dernière de STATE_ORDER présente l'emporte) ;
- * `danger` dessine la chaîne « يأكل » ; `plan` la suite des 7 traversées.
+ * `danger` dessine la chaîne « mange », lue de gauche à droite ; `plan` la suite des 7
+ * traversées, dans l'ordre de lecture (la 1re à gauche).
  * Pas de personnage dessiné : le berger est une étiquette (règle des personnages).
  */
 export const LAYERS = ['scene', 'start', 'wolfFirst', 'sheepFirst', 'sheepBack', 'end', 'danger', 'plan'];
 export const BASE_LAYERS = ['scene', 'start'];
 
 const STATE_ORDER = ['start', 'wolfFirst', 'sheepFirst', 'sheepBack', 'end'];
-const NAMES = { wolf: 'الذئب', sheep: 'الخروف', clover: 'البرسيم', shepherd: 'الراعي' };
+const NAMES = { wolf: 'Loup', sheep: 'Chèvre', clover: 'Chou', shepherd: 'Berger' };
 /** left / right : sur les rives ; boat : 'L' | 'R' et sa cargaison (le berger y est toujours). */
 const STATES = {
   start: { left: ['wolf', 'sheep', 'clover'], right: [], boat: 'L', cargo: [] },
@@ -26,13 +27,12 @@ const PLAN = [
 
 const BW = 62;
 const BH = 24;
-const arabic = { fontFamily: 'Cairo, Tajawal, system-ui, sans-serif' };
 
 function Badge({ x, y, who, stroke = FIG.ink, fill = FIG.paper }) {
   return (
     <g>
       <rect x={x - BW / 2} y={y - BH / 2} width={BW} height={BH} rx="8" fill={fill} stroke={stroke} strokeWidth="1.8" />
-      <text x={x} y={y + 1} fill={FIG.label} fontSize="12" fontWeight="700" textAnchor="middle" dominantBaseline="middle" style={arabic}>{NAMES[who]}</text>
+      <text x={x} y={y + 1} fill={FIG.label} fontSize="12" fontWeight="700" textAnchor="middle" dominantBaseline="middle" style={wordText}>{NAMES[who]}</text>
     </g>
   );
 }
@@ -72,13 +72,13 @@ export default function RiverCrossing({ layers = BASE_LAYERS, ariaLabel }) {
       )}
       {on.has('danger') && (
         <g>
-          <Badge x={340} y={214} who="wolf" />
+          <Badge x={80} y={214} who="wolf" />
           <Badge x={210} y={214} who="sheep" fill={FIG.observeFill} stroke={FIG.observe} />
-          <Badge x={80} y={214} who="clover" />
-          {[[306, 244], [176, 114]].map(([from, to]) => (
+          <Badge x={340} y={214} who="clover" />
+          {[[114, 176], [244, 306]].map(([from, to]) => (
             <g key={`d${from}`} stroke={FIG.observe} strokeWidth="2" fill="none">
-              <path d={`M ${from} 214 L ${to} 214 M ${to + 7} 209 L ${to} 214 L ${to + 7} 219`} />
-              <text x={(from + to) / 2} y="203" fill={FIG.observe} stroke="none" fontSize="11" fontWeight="700" textAnchor="middle" style={arabic}>يأكل</text>
+              <path d={`M ${from} 214 L ${to} 214 M ${to - 7} 209 L ${to} 214 L ${to - 7} 219`} />
+              <text x={(from + to) / 2} y="203" fill={FIG.observe} stroke="none" fontSize="11" fontWeight="700" textAnchor="middle" style={wordText}>mange</text>
             </g>
           ))}
         </g>
@@ -86,12 +86,12 @@ export default function RiverCrossing({ layers = BASE_LAYERS, ariaLabel }) {
       {on.has('plan') && (
         <g>
           {PLAN.map(([arrow, who], i) => {
-            const x = 386 - i * 58; // de droite à gauche : on lit en arabe
+            const x = 34 + i * 58; // dans l'ordre de lecture : la 1re traversée à gauche
             return (
               <g key={`t${i}`}>
                 <rect x={x - 26} y="244" width="52" height="48" rx="7" fill={who === 'sheep' && arrow === '←' ? FIG.observeFill : FIG.buildFill} stroke={FIG.build} strokeWidth="1.4" />
                 <text x={x} y="258" fill={FIG.build} fontSize="12" fontWeight="700" textAnchor="middle" dominantBaseline="middle" style={ltrText}>{`${i + 1} ${arrow}`}</text>
-                <text x={x} y="279" fill={FIG.label} fontSize="11" fontWeight="600" textAnchor="middle" dominantBaseline="middle" style={arabic}>{who ? NAMES[who] : 'وحده'}</text>
+                <text x={x} y="279" fill={FIG.label} fontSize="11" fontWeight="600" textAnchor="middle" dominantBaseline="middle" style={wordText}>{who ? NAMES[who] : 'seul'}</text>
               </g>
             );
           })}

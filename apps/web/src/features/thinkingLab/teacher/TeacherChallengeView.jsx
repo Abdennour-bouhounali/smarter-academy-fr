@@ -1,14 +1,15 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, Eye, Mountain, Wrench } from 'lucide-react';
+import { Eye, Mountain, Wrench } from 'lucide-react';
+import { ChevronBack, ChevronForward } from '../../../components/common/DirectionalIcons';
 import { AuthContext } from '../../../context/AuthContext';
 import { checkTeacherAnswer } from '../../../services/teacher/thinkingLabTeacherService';
 import ReplayPlayer from '../replay/ReplayPlayer';
 import { AnswerInput, ChallengeFigure, MathRun, PhaseChip, answerText, prettyMath } from '../ThinkingParts';
 
 /**
- * Un défi du « مختبر التفكير » vu par l'ENSEIGNANT — tout ouvert (réponse, clés, erreurs, relecture,
+ * Un défi du labo des énigmes vu par l'ENSEIGNANT — tout ouvert (réponse, clés, erreurs, relecture,
  * suites, plafond, jumeau), une réponse à TESTER, rien d'écrit (THINKING_LAB.md §8bis).
  */
 function Card({ title, children, tone = 'bg-white ring-slate-200' }) {
@@ -66,7 +67,7 @@ export default function TeacherChallengeView({ challenge: c, onTuple }) {
     <div className="space-y-5" data-teacher-thinking={c.number}>
       <div className="flex flex-wrap items-center gap-3">
         <Link to="/enseignant/tafkir" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
-          <ChevronRight size={14} aria-hidden="true" /> {t('teacher.back')}
+          <ChevronBack size={14} aria-hidden="true" /> {t('teacher.back')}
         </Link>
         <h1 className="font-space text-3xl font-black text-slate-900">{t('challengeNumber', { number: c.number })}</h1>
         {c.summit && <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2.5 py-1 font-inter text-xs font-bold text-violet-700 ring-1 ring-violet-200"><Mountain size={14} aria-hidden="true" /> {t('summit')}</span>}
@@ -82,10 +83,10 @@ export default function TeacherChallengeView({ challenge: c, onTuple }) {
         <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-slate-50 px-4 py-2.5 ring-1 ring-slate-200" data-teacher-tuple>
           <span className="font-inter text-sm font-bold text-slate-700">{t('teacher.numbers')}</span>
           <button type="button" onClick={() => onTuple(tuple.index - 1)} disabled={tuple.index <= 0} aria-label="‹"
-            className="rounded-lg p-1.5 ring-1 ring-slate-200 enabled:hover:bg-white disabled:opacity-40"><ChevronRight size={16} /></button>
+            className="rounded-lg p-1.5 ring-1 ring-slate-200 enabled:hover:bg-white disabled:opacity-40"><ChevronBack size={16} /></button>
           <span className="font-inter text-sm" dir="ltr">{t('teacher.tupleOf', { n: tuple.index + 1, count: tuple.count })}</span>
           <button type="button" onClick={() => onTuple(tuple.index + 1)} disabled={tuple.index >= tuple.count - 1} aria-label="›"
-            className="rounded-lg p-1.5 ring-1 ring-slate-200 enabled:hover:bg-white disabled:opacity-40"><ChevronLeft size={16} /></button>
+            className="rounded-lg p-1.5 ring-1 ring-slate-200 enabled:hover:bg-white disabled:opacity-40"><ChevronForward size={16} /></button>
           <span className="font-inter text-xs text-slate-500" dir="ltr">{values.map(([k, v]) => `${k} = ${v}`).join(' · ')}</span>
         </div>
       )}
@@ -173,7 +174,7 @@ export default function TeacherChallengeView({ challenge: c, onTuple }) {
       )}
       {c.twin && (
         <Link to={`/enseignant/tafkir/${c.twin.id}`} className="inline-flex items-center gap-2 font-inter text-sm font-bold text-teal-800 hover:underline">
-          {t('teacher.twin')}: {t('challengeNumber', { number: c.twin.number })} <ChevronLeft size={16} aria-hidden="true" />
+          {t('teacher.twin')}: {t('challengeNumber', { number: c.twin.number })} <ChevronForward size={16} aria-hidden="true" />
         </Link>
       )}
     </div>

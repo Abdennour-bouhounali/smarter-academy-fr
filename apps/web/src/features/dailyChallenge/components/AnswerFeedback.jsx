@@ -8,13 +8,13 @@ import { correctAnswerText, formatSeconds } from '../challengeModel';
 /**
  * Le verdict d'une réponse, tel que le SERVEUR l'a rendu.
  *
- * Juste : « ✓ صحيح! », la base, le bonus de vitesse qui arrive un temps
- * après (l'effet qui récompense), le total. Faux : « ليس هذه المرّة »,
+ * Juste : « ✓ Juste ! », la base, le bonus de vitesse qui arrive un temps
+ * après (l'effet qui récompense), le total. Faux : « Pas cette fois. »,
  * 0 point sans dramatiser, la bonne réponse et UNE phrase d'explication —
  * le défi n'est pas une leçon ; la remédiation vient ensuite, en pratique.
  *
  * Le titre reçoit le focus : le lecteur d'écran lit le verdict, et le
- * clavier repart de là vers « السؤال التالي ».
+ * clavier repart de là vers « Question suivante ».
  */
 export default function AnswerFeedback({ result, question }) {
   const { t } = useTranslation('challenge');

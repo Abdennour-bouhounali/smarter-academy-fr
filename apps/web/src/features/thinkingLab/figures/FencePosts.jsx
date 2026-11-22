@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #25 « السياج » (قمّة) — trois bandes, chacune à l'échelle calculée :
+ * #25 « La clôture » (sommet) — trois bandes, chacune à l'échelle calculée :
  *   1. le grillage droit de `length` m (l'énoncé n'en montre que les deux premiers poteaux,
  *      sinon on compterait la réponse sur le dessin) ;
  *   2. le petit cas d'essai : 4 m, un poteau tous les 2 m ;

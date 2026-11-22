@@ -1,14 +1,14 @@
 /**
- * « الدخيل » — la simulation (pure : aucun DOM, aucune horloge).
+ * « L’intrus » — la simulation (pure : aucun DOM, aucune horloge).
  *
  * Une énigme après l'autre ; chacune montre 4 ou 5 cartes égales sauf une.
  *
- *   « الدخيل » touché          +points (ceux du niveau × multiplicateur ≤ ×4)
+ *   « L’intrus » touché          +points (ceux du niveau × multiplicateur ≤ ×4)
  *   une carte égale touchée  −1 bouclier, la série retombe
  *   le temps écoulé          −1 bouclier
  *
  * Après chaque choix, la RÉPONSE reste affichée `revealMs` : ce que les cartes
- * partagent, ce que vaut « الدخيل ». Toutes les `puzzlesPerRound` énigmes, la
+ * partagent, ce que vaut « L’intrus ». Toutes les `puzzlesPerRound` énigmes, la
  * manche se clôt : parfaite → +bonus, un bouclier rendu, un sous-niveau plus
  * haut ; deux fautes → plus bas (sniper/adapt.js). Plus de bouclier : fin, sans
  * reprise (le jeu est gratuit).

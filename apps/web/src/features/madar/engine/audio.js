@@ -1,5 +1,5 @@
 /**
- * Les sons de « مدار », synthétisés (WebAudio) — aucun fichier audio.
+ * Les sons de « Saut d’orbite », synthétisés (WebAudio) — aucun fichier audio.
  *
  * Le contexte audio naît au premier geste de l'élève (règle des navigateurs).
  * Muet : mémorisé par appareil (`localStorage`, une commodité, jamais une

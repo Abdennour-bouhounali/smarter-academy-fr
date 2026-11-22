@@ -1,7 +1,7 @@
 import { PHYSICS, createExplorer, step } from './sim.js';
 
 /**
- * La PREUVE qu'un niveau de « المستكشف » se termine, avec la vraie physique :
+ * La PREUVE qu'un niveau de « L’explorateur » se termine, avec la vraie physique :
  * une recherche en profondeur sur des copies du monde. Depuis chaque position
  * au sol, on essaie courir, attendre, et des sauts de plusieurs hauteurs ; on
  * garde les coups qui se reposent vivant (hors des trous) et on explore

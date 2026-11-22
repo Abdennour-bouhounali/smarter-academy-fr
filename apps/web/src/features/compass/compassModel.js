@@ -1,5 +1,5 @@
 /**
- * « بوصلتي » — la logique PURE de l'écran (testée). Contrat :
+ * « Ma boussole » — la logique PURE de l'écran (testée). Contrat :
  * docs/architecture/YEAR_COMPASS.md.
  *
  * Elle relie ce que le serveur a décidé (état, réponses corrigées, bandes) au
@@ -27,7 +27,7 @@ export function yearFor(grade, today) {
 /**
  * La position de la classe. P1 : le tap de l'élève (seul ou en classe — la
  * couche enseignant arrive en P3), sinon le défaut par la date.
- * « لا أتابع قسمًا » : le défaut par la date en attendant le suivi des leçons
+ * « Je ne suis pas les cours d'une classe » : le défaut par la date en attendant le suivi des leçons
  * terminées sur la plateforme (P2).
  * → { pointer, source: 'student' | 'default' }
  */
@@ -38,7 +38,7 @@ export function resolvePointer({ profile, year, today }) {
   return { pointer: year ? defaultPointer(year.calendar, year.progression, today) : null, source: 'default' };
 }
 
-/** Les leçons à proposer dans « أين وصل قسمك؟ » autour du pointeur suggéré (synthèses exclues). */
+/** Les leçons à proposer dans « Où en est ta classe ? » autour du pointeur suggéré (synthèses exclues). */
 export function pointerChoices(year, suggested, before = 4, after = 1) {
   if (!year) return [];
   const order = year.progression.weeks.flatMap((w) => w.lessons)
@@ -74,9 +74,9 @@ export function sessionView(session, availability) {
 }
 
 /**
- * Le rapport « خريطة نقاطي ». À la fin, les bandes sont celles du SERVEUR
+ * Le rapport « Ma carte des savoir-faire ». À la fin, les bandes sont celles du SERVEUR
  * (`session.bands`) ; le moteur ne sert qu'à classer la priorité. Un item
- * jamais mesuré est « لم نفحصها بعد », jamais faible.
+ * jamais mesuré est « Pas encore vérifié », jamais faible.
  */
 export function reportOf(session, availability) {
   const view = sessionView(session, availability);
@@ -96,7 +96,7 @@ export function reportOf(session, availability) {
 }
 
 /**
- * La semaine v0 (P1) : la priorité à réviser, une « وأيضًا », et la
+ * La semaine v0 (P1) : la priorité à réviser, une « Et aussi », et la
  * préparation de la prochaine leçon de la classe — 3 tâches au plus, jamais
  * de retard compté (la semaine glissante complète arrive en P2).
  */
@@ -111,10 +111,11 @@ export function weekV0(report, year, pointer) {
 }
 
 /**
- * L'année en bandes de semaines (dimanche → samedi), du début à la fin du calendrier,
- * pour la bande « السنة » de l'accueil. Chaque semaine : `kind` parmi
- * taught | now | coming | devoir | exam | break | eval | bem, et le mois (1–12) de son dimanche.
- * Une semaine prend l'évènement qui la touche (examen > devoir > vacances > BEM > évaluation),
+ * L'année en bandes de semaines (lundi → dimanche : la semaine d'école française commence le
+ * lundi), du début à la fin du calendrier, pour la bande « L'année » de l'accueil. Chaque
+ * semaine : `kind` parmi taught | now | coming | devoir | exam | break | eval | bem, et le
+ * mois (1–12) de son lundi.
+ * Une semaine prend l'évènement qui la touche (examen > devoir > vacances > sprint du brevet `bem_sprint` > évaluation),
  * sinon son statut de classe par rapport à aujourd'hui.
  */
 export function yearStrip(year, grade, today) {
@@ -123,8 +124,9 @@ export function yearStrip(year, grade, today) {
   const events = eventsFor(calendar, grade);
   const PRIORITY = ['exam', 'devoir', 'break', 'bem_sprint', 'evaluation'];
   const KIND = { exam: 'exam', devoir: 'devoir', break: 'break', bem_sprint: 'bem', evaluation: 'eval' };
-  const startDay = new Date(`${calendar.start}T00:00:00Z`).getUTCDay();
-  let from = addDays(calendar.start, -startDay);
+  // Jours écoulés depuis le lundi de la semaine du début (getUTCDay : 0 = dimanche).
+  const sinceMonday = (new Date(`${calendar.start}T00:00:00Z`).getUTCDay() + 6) % 7;
+  let from = addDays(calendar.start, -sinceMonday);
   const out = [];
   while (from <= calendar.end) {
     const to = addDays(from, 6);
@@ -140,7 +142,7 @@ export function yearStrip(year, grade, today) {
   return out;
 }
 
-/** « الأسبوع N من 25 » : le rang de la semaine de classe en cours (ou de la dernière commencée). */
+/** « Semaine N sur 25 » : le rang de la semaine de classe en cours (ou de la dernière commencée). */
 export function teachingWeekNumber(year, today) {
   if (!year) return null;
   const weeks = year.calendar.weeks;

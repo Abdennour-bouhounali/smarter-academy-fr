@@ -6,7 +6,7 @@ import Sheet, { primaryBtn, secondaryBtn } from './Sheet';
 
 /**
  * Le crash : le score atteint, puis le CHOIX — continuer (un cœur), gagner
- * un cœur à la محطة التزوّد pour continuer, ou terminer la rangée. C'est ici
+ * un cœur à la station de ravitaillement pour continuer, ou terminer la rangée. C'est ici
  * que la boucle « résoudre pour rejouer » se ferme.
  */
 export default function CrashSheet({ game = 'orbit', score, wave = 0, level = 1, hearts, revives, maxRevives, busy, error, onRevive, onRefuel, onEnd }) {

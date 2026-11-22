@@ -1,5 +1,5 @@
 /**
- * « التحدّي اليومي » — la logique PURE de l'écran (testée).
+ * « Défi du jour » — la logique PURE de l'écran (testée).
  *
  * Elle FORMATE ce que le serveur a décidé ; elle ne calcule aucun score,
  * aucun rang, aucune justesse. Le chronomètre affiché est celui du SERVEUR
@@ -14,7 +14,7 @@ export function formatClock(ms) {
   return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
 
-/** « 14,2 » secondes — virgule décimale, comme tout le contenu 4AM. */
+/** « 14,2 » secondes — virgule décimale, comme tout le contenu. */
 export function formatSeconds(ms) {
   if (ms === null || ms === undefined) return '—';
   return (Math.round(ms / 100) / 10).toFixed(1).replace('.', ',');
@@ -55,7 +55,7 @@ export function scoreParts(score) {
   return parts;
 }
 
-/** La réponse est-elle saisie ? (Le bouton « تحقّق » ne s'allume qu'alors.) */
+/** La réponse est-elle saisie ? (Le bouton « Vérifier » ne s'allume qu'alors.) */
 export function canSubmit(question, value) {
   if (!question || !value) return false;
   switch (question.answerType) {
@@ -65,6 +65,9 @@ export function canSubmit(question, value) {
   }
 }
 
+/** Le séparateur d'une liste de valeurs, à la française : « 120 ; 132 » (espace fine insécable avant). */
+const LIST_SEPARATOR = '\u202F; ';
+
 /**
  * La bonne réponse, en texte à afficher. Pour un QCM, le CONTENU des bons
  * choix (jamais une lettre latine) ; sinon la valeur attendue.
@@ -73,10 +76,10 @@ export function correctAnswerText(question, reveal) {
   if (!reveal) return null;
   if (reveal.correctChoiceIds?.length) {
     const byId = new Map((question?.choices ?? []).map((c) => [c.id, c.content]));
-    return reveal.correctChoiceIds.map((id) => byId.get(id)).filter(Boolean).join(' ؛ ');
+    return reveal.correctChoiceIds.map((id) => byId.get(id)).filter(Boolean).join(LIST_SEPARATOR);
   }
   const value = reveal.correctAnswer;
-  if (Array.isArray(value)) return value.join(' ؛ ');
+  if (Array.isArray(value)) return value.join(LIST_SEPARATOR);
   return value === null || value === undefined ? null : String(value);
 }
 

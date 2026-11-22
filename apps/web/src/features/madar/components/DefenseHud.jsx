@@ -8,9 +8,9 @@ import { formatScore } from '../madarModel';
 import HeartsRow from './HeartsRow';
 
 /**
- * L'affichage de « دفاع الكوكب » : le score, la vague et le temps avant la
+ * L'affichage de « Défense de la planète » : le score, la vague et le temps avant la
  * suivante, les cristaux (la monnaie des tourelles), la santé de la planète,
- * les cœurs ; une bannière à chaque vague (avec « زعيم! » quand un boss vient).
+ * les cœurs ; une bannière à chaque vague (avec « Boss ! » quand un boss vient).
  * Il lit `statsRef` à son propre rythme et ne re-rend que si une valeur change.
  */
 export default function DefenseHud({ statsRef, hearts, maxHearts, muted, onToggleMute, onPause }) {

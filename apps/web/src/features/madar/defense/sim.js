@@ -5,7 +5,7 @@ import {
 import { createRng } from '../engine/rng.js';
 
 /**
- * « دفاع الكوكب » — une simulation PURE (aucun DOM, aucune horloge).
+ * « Défense de la planète » — une simulation PURE (aucun DOM, aucune horloge).
  *
  * Des vaisseaux ennemis arrivent du bord en spirale vers la planète. L'élève
  * pose des tourelles sur des emplacements autour d'elle, les améliore ou les

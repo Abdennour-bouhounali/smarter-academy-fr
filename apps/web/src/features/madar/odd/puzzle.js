@@ -1,6 +1,6 @@
 /**
- * « الدخيل » — une énigme (pure) : 4 ou 5 cartes, toutes ÉGALES entre elles
- * sauf UNE, « الدخيل ». Elle vient du paquet de « قنّاص القيم » (sniper/cards.js) :
+ * « L’intrus » — une énigme (pure) : 4 ou 5 cartes, toutes ÉGALES entre elles
+ * sauf UNE, « L’intrus ». Elle vient du paquet de « Chasseur de valeurs » (sniper/cards.js) :
  * les cartes égales à la cible de la manche, plus UN piège — l'erreur typique
  * qui ressemble aux autres sans valoir la même chose. La vérité est donc celle
  * du paquet (valeurs exactes, relues par cards.test.js).

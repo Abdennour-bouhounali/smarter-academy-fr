@@ -11,7 +11,7 @@ const DAY_STYLE = {
 };
 
 /**
- * « سلسلتك » : la flamme, le nombre de jours, et la frise des derniers jours
+ * « Ta série » : la flamme, le nombre de jours, et la frise des derniers jours
  * de défi. Chaque état a son SYMBOLE (✓ ✕ ● – ○) et son nom lu à voix
  * haute : la couleur n'est jamais la seule information.
  */
@@ -38,7 +38,9 @@ export default function StreakDisplay({ streak, compact = false }) {
       </div>
 
       {/* La frise occupe toute la largeur : 7 jours sur téléphone, 14 dès sm.
-          Ordre de la page (RTL) : le plus ancien à droite, aujourd'hui à gauche. */}
+          Ordre de lecture : le plus ancien à gauche, aujourd'hui à droite. Le
+          samedi et le dimanche n'ont pas de défi (« Pas de défi ») : ils ne
+          cassent pas la série — c'est le serveur qui le décide. */}
       <ol className="mt-3 flex justify-between gap-1" aria-label={t('streak.calendar')}>
         {days.map((d, i) => (
           <li key={d.date} className={`${!compact && i < days.length - 7 ? 'hidden sm:flex' : 'flex'} min-w-0 flex-col items-center gap-1`}>

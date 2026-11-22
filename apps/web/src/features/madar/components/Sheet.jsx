@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 /**
- * Une feuille modale de « مدار » : collée en bas sur téléphone (à portée de
+ * Une feuille modale de « Espace jeux » : collée en bas sur téléphone (à portée de
  * pouce), centrée sur ordinateur. Le focus entre dans la feuille ; Échap
  * appelle `onEscape` s'il existe.
  */

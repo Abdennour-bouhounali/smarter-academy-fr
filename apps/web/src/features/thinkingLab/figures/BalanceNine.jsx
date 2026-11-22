@@ -1,7 +1,7 @@
-import { FIG, ltrText } from './palette';
+import { FIG, ltrText, wordText } from './palette';
 
 /**
- * #47 « الكرة الأثقل » — figure STATIQUE (la balance jouable est prévue plus tard) :
+ * #47 « La bille la plus lourde » — figure STATIQUE (la balance jouable est prévue plus tard) :
  * une balance à deux plateaux et 9 boules numérotées. Une couche de DISPOSITION les place
  * (la dernière de ARRANGEMENTS présente l'emporte) :
  *   row     les 9 boules alignées devant la balance ;
@@ -19,7 +19,7 @@ const LEFT_PAN = 110;
 const RIGHT_PAN = 290;
 const PAN_TOP = 168;
 const ASIDE_Y = 268;
-const arabic = { fontFamily: 'Cairo, Tajawal, system-ui, sans-serif' };
+const OUTCOMES = [[LEFT_PAN, 'Gauche ↓'], [200, 'Équilibre'], [RIGHT_PAN, 'Droite ↓']];
 
 /** Positions d'un tas de k boules posé sur un plateau centré en cx (rangées de 3 au plus). */
 function onPan(k, cx) {
@@ -68,8 +68,8 @@ export default function BalanceNine({ layers = BASE_LAYERS, ariaLabel }) {
     <svg viewBox="0 0 400 290" role="img" aria-label={ariaLabel} className="h-auto w-full max-w-[460px]" data-figure="BalanceNine">
       <rect x="0" y="0" width="400" height="290" fill={FIG.paper} />
       {on.has('outcomes') && (
-        <g fontSize="12" fontWeight="700" textAnchor="middle" style={arabic}>
-          {[[LEFT_PAN, 'تميل يسارًا'], [200, 'تتوازن'], [RIGHT_PAN, 'تميل يمينًا']].map(([x, t]) => (
+        <g fontSize="12" fontWeight="700" textAnchor="middle" style={wordText}>
+          {OUTCOMES.map(([x, t]) => (
             <g key={t}>
               <rect x={x - 40} y="14" width="80" height="26" rx="13" fill={FIG.observeFill} stroke={FIG.observe} strokeWidth="1.6" />
               <text x={x} y="28" fill={FIG.label} dominantBaseline="middle">{t}</text>

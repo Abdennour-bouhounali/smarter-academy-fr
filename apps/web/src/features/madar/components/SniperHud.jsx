@@ -16,14 +16,14 @@ export function WarmupChip() {
   );
 }
 
-/** أ / ب / ج — le sous-niveau. */
-export const SUB_LETTERS = ['أ', 'ب', 'ج'];
+/** A / B / C — le sous-niveau. */
+export const SUB_LETTERS = ['A', 'B', 'C'];
 
 /**
- * L'affichage de « قنّاص القيم » : la CIBLE au centre, sur une carte blanche
+ * L'affichage de « Chasseur de valeurs » : la CIBLE au centre, sur une carte blanche
  * (les maths se lisent noir sur blanc) avec sa consigne selon le niveau
- * (« يساوي », « حلّها », « قيمتها عندما x = … »), le score, les boucliers, le
- * multiplicateur, le niveau (1…50 · أ/ب/ج) et son nom. Quand le niveau change,
+ * (« Touche ce qui vaut », « … dont la solution est », « … pour x = … »), le score, les boucliers, le
+ * multiplicateur, le niveau (1…50 · A/B/C) et son nom. Quand le niveau change,
  * une bannière le dit — toujours sur un ton qui encourage.
  * Il lit `statsRef` à son rythme et ne re-rend que si une valeur change.
  */

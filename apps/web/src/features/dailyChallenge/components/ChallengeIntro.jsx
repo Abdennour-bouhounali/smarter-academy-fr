@@ -6,6 +6,7 @@ import ArenaPanel from './ArenaPanel';
 import StreakDisplay from './StreakDisplay';
 import Leaderboard from './Leaderboard';
 import { reasonKey } from '../challengeModel';
+import { LOCALE } from '../../../locale';
 
 /**
  * L'écran d'avant : ce qui attend l'élève (nombre de questions, durée,
@@ -101,11 +102,11 @@ export default function ChallengeIntro({ today, onStart, onSeeResult, busy }) {
           <dl className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
             <div className="rounded-2xl bg-slate-50 p-3">
               <dt className="font-inter text-[11px] text-slate-500">{t('intro.cumulative')}</dt>
-              <dd className="font-space text-xl font-black" dir="ltr" data-cumulative>{today.cumulativeScore.toLocaleString('fr-FR')}</dd>
+              <dd className="font-space text-xl font-black" dir="ltr" data-cumulative>{today.cumulativeScore.toLocaleString(LOCALE)}</dd>
             </div>
             <div className="rounded-2xl bg-slate-50 p-3">
               <dt className="font-inter text-[11px] text-slate-500">{t('intro.best')}</dt>
-              <dd className="font-space text-xl font-black" dir="ltr">{today.personalBest.toLocaleString('fr-FR')}</dd>
+              <dd className="font-space text-xl font-black" dir="ltr">{today.personalBest.toLocaleString(LOCALE)}</dd>
             </div>
             {myRank && (
               <div className="rounded-2xl bg-slate-50 p-3">

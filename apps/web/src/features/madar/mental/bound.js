@@ -1,7 +1,7 @@
 /**
- * La borne du serveur pour « الحساب الذهني » — MIROIR de
+ * La borne du serveur pour « Calcul mental » — MIROIR de
  * apps/api/app/Domain/Madar/OddScoring.php avec config('madar.mental') (sans la
- * tolérance ni la marge) : la même borne que « الدخيل », plus le bonus de vitesse.
+ * tolérance ni la marge) : la même borne que « L’intrus », plus le bonus de vitesse.
  */
 import { SCHEDULE } from './constants';
 import { perHit } from '../sniper/constants';

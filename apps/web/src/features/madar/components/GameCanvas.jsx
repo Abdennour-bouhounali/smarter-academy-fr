@@ -6,7 +6,7 @@ import { buzz } from '../engine/audio';
 import { LANE_R } from '../engine/constants';
 
 /**
- * Le canevas de « مدار » : la boucle (requestAnimationFrame), l'entrée et le
+ * Le canevas de « Saut d’orbite » : la boucle (requestAnimationFrame), l'entrée et le
  * rendu. Le monde est une simulation pure (engine/world.js) ; ce composant ne
  * fait que l'avancer, le dessiner et traduire ses événements en sons, éclats
  * et vibrations.

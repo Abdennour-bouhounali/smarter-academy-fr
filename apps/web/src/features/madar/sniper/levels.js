@@ -1,7 +1,7 @@
 /**
- * « قنّاص القيم » — les 50 niveaux des jeux de mathématiques (pur).
+ * « Chasseur de valeurs » — les 50 niveaux des jeux de mathématiques (pur).
  *
- * Chaque niveau a trois sous-niveaux (أ، ب، ج : des nombres plus grands, des
+ * Chaque niveau a trois sous-niveaux (A, B, C : des nombres plus grands, des
  * pièges plus fins). Une POSITION est un sous-niveau : 0 … 149.
  *
  *   position = (niveau − 1) × 3 + (sous-niveau − 1)

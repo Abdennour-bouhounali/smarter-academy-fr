@@ -1,5 +1,5 @@
 /**
- * La borne du serveur pour « الدخيل » — MIROIR de
+ * La borne du serveur pour « L’intrus » — MIROIR de
  * apps/api/app/Domain/Madar/OddScoring.php (sans la tolérance ni la marge).
  */
 import { SCHEDULE } from './constants';

@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
-import { createExplorer, progressOf, resultOf, revive, scoreOf, step } from '../explorer/sim';
+import { INPUT_KEYS, createExplorer, progressOf, resultOf, revive, scoreOf, step } from '../explorer/sim';
 import { createExplorerRenderer } from '../explorer/render';
 import { botInput } from '../explorer/bot';
 import { buzz } from '../engine/audio';
@@ -8,14 +8,14 @@ import { buzz } from '../engine/audio';
 const TOUCH_RESERVE = 150;
 
 /**
- * Le canevas de « المستكشف » : la boucle, le clavier, le rendu. Les commandes
+ * Le canevas de « L’explorateur » : la boucle, le clavier, le rendu. Les commandes
  * tactiles (TouchControls) écrivent dans `touchRef` par la poignée impérative.
  *
- *   mode="attract"  un pilote automatique parcourt le niveau derrière la carte des niveaux
- *   mode="play"     la partie de l'élève (le niveau choisi)
+ *   mode="attract"  un pilote automatique parcourt le palier derrière la carte des paliers
+ *   mode="play"     la partie de l'élève (le palier choisi)
  *
- * Clavier, dans le sens du niveau (de droite à gauche) : ← ou A avance,
- * → ou D recule, Espace / ↑ / W saute (garder appuyé saute plus haut).
+ * Clavier, dans le sens du palier (de gauche à droite) : → ou D avance,
+ * ← ou A recule, Espace / ↑ / W saute (garder appuyé saute plus haut).
  */
 const ExplorerCanvas = forwardRef(function ExplorerCanvas({
   mode = 'play', level = 1, paused = false, reduced = false, touch = false, audio, statsRef, onDeath, onWin,
@@ -159,10 +159,9 @@ const ExplorerCanvas = forwardRef(function ExplorerCanvas({
 
   useEffect(() => {
     if (mode !== 'play') return undefined;
-    // Le niveau avance vers la GAUCHE de l'écran.
-    const map = { ArrowLeft: 'forward', a: 'forward', A: 'forward', ArrowRight: 'back', d: 'back', D: 'back', ' ': 'jump', ArrowUp: 'jump', w: 'jump', W: 'jump' };
+    // Le palier avance vers la DROITE de l'écran (INPUT_KEYS).
     const set = (down) => (e) => {
-      const part = map[e.key];
+      const part = INPUT_KEYS[e.key];
       if (!part) return;
       const tag = e.target?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA') return;

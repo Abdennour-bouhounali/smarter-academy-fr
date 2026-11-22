@@ -1,8 +1,8 @@
 /**
- * Les couleurs des figures du « مختبر التفكير » — une seule palette pour toutes, pour
+ * Les couleurs des figures du labo des énigmes — une seule palette pour toutes, pour
  * qu'une même couche (la région cherchée, l'observation 👁, la construction) garde la
  * même couleur d'un défi à l'autre. Jamais de rouge : il est réservé… à rien ici
- * (« ليس بعد » n'est jamais rouge, THINKING_LAB.md §7).
+ * (« Pas encore » n'est jamais rouge, THINKING_LAB.md §7).
  */
 export const FIG = Object.freeze({
   ink: '#1e293b', // traits de la figure
@@ -19,5 +19,8 @@ export const FIG = Object.freeze({
   label: '#0f172a',
 });
 
-/** Les attributs d'un texte de figure : lettres et nombres toujours LTR dans une page RTL. */
+/** Les attributs d'un texte de figure : lettres et nombres de gauche à droite, isolés du texte autour. */
 export const ltrText = { direction: 'ltr', unicodeBidi: 'isolate', fontFamily: 'Inter, system-ui, sans-serif' };
+
+/** Un mot dans une figure (une étiquette, un verdict) : la police de l'interface. */
+export const wordText = { fontFamily: 'Inter, system-ui, sans-serif' };

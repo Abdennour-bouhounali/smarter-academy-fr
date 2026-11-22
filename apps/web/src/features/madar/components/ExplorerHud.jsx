@@ -5,7 +5,7 @@ import { formatScore } from '../madarModel';
 import HeartsRow from './HeartsRow';
 
 /**
- * L'affichage de « المستكشف » : le niveau, le score, les cristaux (x / total —
+ * L'affichage de « L’explorateur » : le niveau, le score, les cristaux (x / total —
  * la 2e étoile), le chrono (rouge dans les 15 dernières secondes), la
  * progression vers la fusée, le bouclier, les cœurs.
  */
@@ -49,8 +49,8 @@ export default function ExplorerHud({ statsRef, hearts, maxHearts, muted, onTogg
           <Gem size={14} aria-hidden="true" /> {s.crystals}/{s.total}
         </span>
         <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/15" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.progress} aria-label={t('explorer.progress')}>
-          {/* Le niveau avance vers la gauche : la barre se remplit depuis la droite (début en RTL). */}
-          <div className="h-full rounded-full bg-gradient-to-l from-amber-300 to-orange-500 transition-all" style={{ width: `${s.progress}%` }} />
+          {/* Le palier avance vers la droite : la barre se remplit depuis la gauche. */}
+          <div className="h-full rounded-full bg-gradient-to-r from-amber-300 to-orange-500 transition-all" style={{ width: `${s.progress}%` }} />
         </div>
         {s.shield && <Shield size={18} className="text-cyan-200" aria-label={t('hud.shield')} />}
         <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 font-space text-sm font-black ring-1 ${s.time <= 15 ? 'bg-rose-500/30 text-rose-50 ring-rose-300/40' : 'bg-black/30 text-white ring-white/20'}`} dir="ltr">

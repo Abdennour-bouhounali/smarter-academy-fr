@@ -1,5 +1,5 @@
 /**
- * Le contenu du « مختبر التفكير » contient les RÉPONSES : seul le serveur le lit
+ * Le contenu du labo des énigmes contient les RÉPONSES : seul le serveur le lit
  * (THINKING_LAB.md §2, BUNDLE_BOUNDARIES.md §4 règle 9). Aucun module web hors test
  * n'importe content/thinking-lab/ — ni l'index généré, ni un défi.
  */
@@ -17,7 +17,7 @@ function* sources(dir) {
   }
 }
 
-describe('le contenu du « مختبر التفكير » reste côté serveur', () => {
+describe('le contenu du labo des énigmes reste côté serveur', () => {
   it('aucun module web n\'importe content/thinking-lab', () => {
     const offenders = [...sources(SRC)].filter((f) => /content\/thinking-lab/.test(readFileSync(f, 'utf8')));
     expect(offenders).toEqual([]);

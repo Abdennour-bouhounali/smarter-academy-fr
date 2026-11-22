@@ -2,7 +2,7 @@ import { ENEMIES, PLANET_HEALTH, PLANET_R, SCHEDULE, SLOTS, SPAWN_R, TURRETS, en
 import { enemyPos, nextWaveIn } from './sim.js';
 
 /**
- * Le rendu de « دفاع الكوكب » au canevas 2D — dessiné en code, sans image.
+ * Le rendu de « Défense de la planète » au canevas 2D — dessiné en code, sans image.
  *
  * Le plateau est un disque centré : la planète au milieu, deux anneaux
  * d'emplacements, le bord d'où viennent les ennemis. Il tient à l'écran en
@@ -394,7 +394,7 @@ export function createDefenseRenderer(canvas) {
       const k = f.life / f.max;
       const [x, y] = P(f.x, f.y);
       ctx.globalAlpha = Math.min(1, k * 1.5);
-      ctx.font = `900 ${Math.round(S * (f.big ? 0.07 : 0.05))}px "Space Grotesk", "Inter", sans-serif`;
+      ctx.font = `900 ${Math.round(S * (f.big ? 0.07 : 0.05))}px "Space Grotesk", Inter, system-ui, sans-serif`;
       ctx.lineWidth = 3;
       ctx.strokeStyle = 'rgba(2,6,23,0.8)';
       ctx.strokeText(f.text, x, y - (1 - k) * S * 0.1);

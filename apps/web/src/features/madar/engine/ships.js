@@ -1,5 +1,5 @@
 /**
- * Les vaisseaux de « مدار ». Les RÈGLES de déblocage vivent au serveur
+ * Les vaisseaux de « Saut d’orbite ». Les RÈGLES de déblocage vivent au serveur
  * (MadarShips::CATALOGUE) ; ici, l'apparence : la silhouette (tracée au
  * canevas pendant la partie, en SVG dans les listes) et les couleurs.
  *

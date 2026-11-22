@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Hand, Keyboard } from 'lucide-react';
 
 /**
- * 3 · 2 · 1 · انطلق! — et, la première fois seulement, le geste à faire
+ * 3 · 2 · 1 · C’est parti ! — et, la première fois seulement, le geste à faire
  * (un anneau qui pulse sous le vaisseau et UNE phrase). Le coach se range
  * au premier changement d'orbite et ne revient plus sur cet appareil.
  */
@@ -64,7 +64,7 @@ export function Coach({ game = 'orbit' }) {
   const { t } = useTranslation('madar');
   const k = game === 'defense' ? 'defense.coach' : game === 'explorer' ? 'explorer.coach' : game === 'sniper' ? 'sniper.coach' : game === 'odd' ? 'odd.coach' : game === 'mental' ? 'mental.coach' : 'coach';
   const reduce = useReducedMotion();
-  // « قنّاص القيم » : la cible occupe le haut de l'écran ; le coach se place sous le champ.
+  // « Chasseur de valeurs » : la cible occupe le haut de l'écran ; le coach se place sous le champ.
   const place = game === 'sniper'
     ? 'bottom-[14%] lg:bottom-auto lg:top-1/2'
     : 'top-[13%] lg:top-1/2';

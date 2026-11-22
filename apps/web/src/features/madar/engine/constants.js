@@ -1,5 +1,5 @@
 /**
- * Les constantes du moteur « مدار ».
+ * Les constantes du moteur « Saut d’orbite ».
  *
  * `PHYSICS` est le MIROIR de `config/madar.php › physics` (apps/api) : le
  * serveur borne le score annoncé avec ces mêmes valeurs (MadarScoring). Une
@@ -40,7 +40,7 @@ export const SECTOR_RAD = Math.PI * 2 * 5;
 /** Toutes les COMBO_STEP étoiles d'affilée, le multiplicateur monte d'un cran. */
 export const COMBO_STEP = 5;
 
-/** Fenêtre d'un « قريب! » : on a quitté le couloir de l'obstacle juste avant (s). */
+/** Fenêtre d'un « frôlement » : on a quitté le couloir de l'obstacle juste avant (s). */
 export const NEAR_MISS_WINDOW = 0.28;
 
 /** Invulnérabilité après une reprise (s). */

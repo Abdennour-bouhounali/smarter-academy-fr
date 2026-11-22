@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Check, KeyRound, Lock, Mountain, PauseCircle, Sparkles } from 'lucide-react';
+import { Check, KeyRound, Lock, Mountain, PauseCircle, Sparkles } from 'lucide-react';
+import { ArrowBack } from '../../../components/common/DirectionalIcons';
 import { stateLines, draftReady } from '../thinkingModel';
 import { AnswerInput, ChallengeFigure, MathRun, PhaseChip, SoundToggle, prettyMath } from '../ThinkingParts';
 
 /**
  * Écran 2 — l'espace de travail : la figure et l'énoncé, l'exemple résolu (tranche primaire),
- * la réponse (champ MathLive ou choix), la mesure « ماذا غيّرت هذه المرّة؟ », UNE action principale
- * « تحقّق », les clés (une par tentative comptée), l'historique et « أرجئه ».
+ * la réponse (champ MathLive ou choix), la mesure « Qu’as-tu changé cette fois ? », UNE action principale
+ * « Vérifier », les clés (une par tentative comptée), l'historique et « Mettre de côté ».
  *
- * « ليس بعد » n'est JAMAIS rouge : ambre et ardoise. Le serveur juge ; cet écran n'affiche que
+ * « Pas encore » n'est JAMAIS rouge : ambre et ardoise. Le serveur juge ; cet écran n'affiche que
  * son verdict (THINKING_LAB.md §6).
  */
 function Verdict({ result }) {
@@ -61,7 +62,7 @@ export default function Workspace({ challenge, busy, result, error, onSubmit, on
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
           <Link to="/espace/tafkir" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
-            <ArrowRight size={14} aria-hidden="true" /> {t('workspace.back')}
+            <ArrowBack size={14} aria-hidden="true" /> {t('workspace.back')}
           </Link>
           <h1 className="font-space text-3xl font-black text-slate-900">
             {t('challengeNumber', { number: challenge.number })}

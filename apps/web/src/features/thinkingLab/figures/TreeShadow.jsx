@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #250 « ظلّ الشجرة » — même instant, même soleil : un bâton de 1,5 m d'ombre 2 m et un arbre
+ * #250 « L’ombre de l’arbre » — même instant, même soleil : un bâton de 1,5 m d'ombre 2 m et un arbre
  * d'ombre T m, À LA MÊME ÉCHELLE. La hauteur de l'arbre est CALCULÉE (1,5 / 2 × T) ; les
  * rayons passent par le sommet de chaque objet et le bout de son ombre, donc ils sont parallèles.
  */

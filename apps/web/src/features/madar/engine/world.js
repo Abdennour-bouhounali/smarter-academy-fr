@@ -5,7 +5,7 @@ import {
 import { createRng } from './rng.js';
 
 /**
- * Le monde de « مدار » — une simulation PURE, sans DOM ni horloge.
+ * Le monde de « Saut d’orbite » — une simulation PURE, sans DOM ni horloge.
  *
  * Le vaisseau tourne autour d'une planète sur l'un de deux couloirs
  * (intérieur 0, extérieur 1). Un seul geste : changer de couloir. Les

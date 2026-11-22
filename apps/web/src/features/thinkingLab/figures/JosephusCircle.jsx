@@ -1,7 +1,7 @@
-import { FIG, ltrText } from './palette';
+import { FIG, ltrText, wordText } from './palette';
 
 /**
- * #500 « الدائرة الأخيرة » — n enfants (des jetons numérotés, pas de personnages)
+ * #500 « Le dernier du cercle » — n enfants (des jetons numérotés, pas de personnages)
  * sur un cercle, numérotés 1…n dans le sens des aiguilles d'une montre à partir du haut.
  *
  * Couches :
@@ -83,8 +83,8 @@ export default function JosephusCircle({ layers = BASE_LAYERS, props = {}, ariaL
           <text x={C} y={C - 8} fill={FIG.sought} fontSize="30" fontWeight="700" textAnchor="middle" dominantBaseline="middle" style={ltrText}>
             {p}
           </text>
-          <text x={C} y={C + 22} fill={FIG.sought} fontSize="13" fontWeight="600" textAnchor="middle" direction="rtl">
-            طفلًا باقيًا
+          <text x={C} y={C + 22} fill={FIG.sought} fontSize="13" fontWeight="600" textAnchor="middle" style={wordText}>
+            enfants restants
           </text>
         </g>
       )}

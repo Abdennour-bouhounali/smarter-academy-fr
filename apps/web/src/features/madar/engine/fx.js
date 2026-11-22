@@ -1,5 +1,5 @@
 /**
- * Les effets « hors monde » de « مدار » : traînée, particules, chiffres qui
+ * Les effets « hors monde » de « Saut d’orbite » : traînée, particules, chiffres qui
  * s'envolent, secousse, éclair. Purement visuels — jamais lus par le score.
  */
 export function createFx() {

@@ -10,7 +10,7 @@ const WORLD_TONE = {
 };
 
 /**
- * La carte des niveaux de « المستكشف » : trois mondes de quatre niveaux, les
+ * La carte des niveaux de « L’explorateur » : trois mondes de quatre niveaux, les
  * étoiles gagnées, le niveau suivant mis en avant ; un niveau verrouillé dit
  * ce qui l'ouvre (réussir le précédent). Choisir un niveau ouvert le lance
  * (−1 ❤️).

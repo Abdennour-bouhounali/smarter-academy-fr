@@ -35,7 +35,7 @@ function useCountUp(target, reduce) {
 const CONFETTI = ['#fde68a', '#f472b6', '#67e8f9', '#a78bfa', '#fb923c', '#86efac'];
 
 /**
- * La fin de la rangée : le score qui monte, « رقم قياسي جديد! » quand c'est
+ * La fin de la rangée : le score qui monte, « Nouveau record ! » quand c'est
  * vrai (et des confettis), ce que la partie a fait (étoiles, passages
  * frôlés, série, planète la plus lointaine), la montée au classement — jamais
  * une descente — et le vaisseau débloqué. Puis : rejouer, ou faire le plein.
@@ -120,7 +120,7 @@ export default function Results({ game = 'orbit', local, result, saving, error, 
 
       {unlocked.map((id) => (
         <motion.div key={id} initial={reduce ? false : { y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}
-          className="mt-3 flex items-center gap-3 rounded-2xl bg-gradient-to-l from-fuchsia-500/25 to-amber-300/15 p-3 ring-1 ring-fuchsia-300/40" data-unlocked={id}>
+          className="mt-3 flex items-center gap-3 rounded-2xl bg-gradient-to-r from-fuchsia-500/25 to-amber-300/15 p-3 ring-1 ring-fuchsia-300/40" data-unlocked={id}>
           <ShipIcon id={id} size={52} />
           <div className="min-w-0 flex-1">
             <p className="font-space text-base font-black">{t('ships.unlockedTitle')}</p>
@@ -132,7 +132,7 @@ export default function Results({ game = 'orbit', local, result, saving, error, 
 
       {(result?.unlockedTurrets ?? []).map((id) => (
         <motion.div key={id} initial={reduce ? false : { y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}
-          className="mt-3 flex items-center gap-3 rounded-2xl bg-gradient-to-l from-cyan-500/25 to-violet-400/15 p-3 ring-1 ring-cyan-300/40" data-unlocked-turret={id}>
+          className="mt-3 flex items-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-500/25 to-violet-400/15 p-3 ring-1 ring-cyan-300/40" data-unlocked-turret={id}>
           <TurretIcon type={id} size={46} />
           <div className="min-w-0 flex-1">
             <p className="font-space text-base font-black">{t('defense.results.turretsUnlocked')}</p>

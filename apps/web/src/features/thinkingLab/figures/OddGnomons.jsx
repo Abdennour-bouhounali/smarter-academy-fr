@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #210 « مجموع الأعداد الفردية » — un carré 5 × 5 de cases, découpé en équerres : l'équerre k
+ * #210 « La somme des nombres impairs » — un carré 5 × 5 de cases, découpé en équerres : l'équerre k
  * (couche `g<k>`) est l'ensemble des cases (i, j) avec max(i, j) = k − 1 depuis le coin bas
  * gauche. Elle compte 2k − 1 cases (couche `counts`) ; les k premières forment un carré k × k.
  */

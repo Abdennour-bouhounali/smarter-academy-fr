@@ -1,9 +1,9 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #340 « الطرق على الشبكة » — une grille de n × n carrés (props.n, 4 par défaut), le coin A
+ * #340 « Les chemins sur la grille » — une grille de n × n carrés (props.n, 4 par défaut), le coin A
  * en bas à gauche, le coin B en haut à droite, un chemin exemple, le chemin écrit comme un
- * MOT de lettres « ي » (يمين) et « أ » (أعلى), et le nombre de chemins vers chaque nœud
+ * MOT de lettres « D » (droite) et « H » (haut), et le nombre de chemins vers chaque nœud
  * (triangle de Pascal), CALCULÉ par la règle « gauche + dessous ».
  */
 export const LAYERS = ['grid', 'ends', 'path', 'manyPaths', 'word', 'pascal'];
@@ -95,8 +95,8 @@ export default function GridPaths({ layers = BASE_LAYERS, props = {}, ariaLabel 
             const right = path[k] === 'R';
             const m = P([(start[0] + end[0]) / 2, (start[1] + end[1]) / 2]);
             return (
-              <Label key={k} at={m} dx={right ? 0 : 13} dy={right ? -12 : 0} color={FIG.build} size={15} ltr={false}>
-                {right ? 'ي' : 'أ'}
+              <Label key={k} at={m} dx={right ? 0 : 13} dy={right ? -12 : 0} color={FIG.build} size={15}>
+                {right ? 'D' : 'H'}
               </Label>
             );
           })}

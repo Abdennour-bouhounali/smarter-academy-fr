@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #318 « المساحة بين الأقواس الأربعة » — le carré ABCD, les quatre quarts de cercle
+ * #318 « L’aire entre les quatre arcs » — le carré ABCD, les quatre quarts de cercle
  * de rayon x centrés aux sommets, et la région commune aux QUATRE disques (pas une
  * lentille : la publication d'origine ombrait une lentille, c'était faux).
  *

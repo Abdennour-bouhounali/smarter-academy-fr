@@ -3,7 +3,7 @@ import { adjustmentKind, countsAsLeft, crashOptions, formatScore, gamesByCategor
 
 describe('madarModel', () => {
   it('formats scores in grouped western digits', () => {
-    expect(formatScore(12345)).toBe('12,345');
+    expect(formatScore(12345)).toBe('12\u202F345');
     expect(formatScore(-3)).toBe('0');
     expect(formatScore(undefined)).toBe('0');
   });

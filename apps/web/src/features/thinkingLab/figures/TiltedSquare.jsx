@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #182 « المربّع المائل » — un carré de côté s, et le carré intérieur dont chaque sommet est
+ * #182 « Le carré penché » — un carré de côté s, et le carré intérieur dont chaque sommet est
  * sur un côté, à d du coin (sens direct). Sommets intérieurs (repère : origine au coin bas
  * gauche, y vers le haut) : (d, 0), (s, d), (s − d, s), (0, s − d) — CALCULÉS depuis props.
  * Les quatre triangles des coins ont les côtés de l'angle droit d et s − d.

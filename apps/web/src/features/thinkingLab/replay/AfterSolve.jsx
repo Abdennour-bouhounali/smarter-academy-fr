@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, ArrowRight, Check, Mountain, Sparkles, Wrench } from 'lucide-react';
+import { Check, Mountain, Sparkles, Wrench } from 'lucide-react';
+import { ArrowBack, ArrowForward } from '../../../components/common/DirectionalIcons';
 import { AuthContext } from '../../../context/AuthContext';
 import { checkExtra } from '../../../services/thinkingLabService';
 import { playSfx } from '../../../lessons/common/utils/playEffect';
@@ -12,7 +13,7 @@ import ReplayPlayer from './ReplayPlayer';
  * Écran 3 — après la porte (THINKING_LAB.md §7) :
  *   résolu SEUL      → les « keyMoves » d'abord (expertise reversal), le replay complet sur demande ;
  *   appris / clés    → le replay pas à pas ;
- * puis « ماذا تأخذ معك؟ » (la carte du mouvement), les suites du sommet, le jumeau, « ارفع السقف ».
+ * puis « Ce que tu emportes » (la carte du mouvement), les suites du sommet, le jumeau, « Plus haut ».
  * Les suites et le plafond se vérifient au serveur, sans limite de tentatives : c'est l'entraînement.
  */
 function ExtraQuestion({ challengeId, kind, index = 0, prompt, format, solved: solvedInitially, title }) {
@@ -71,7 +72,7 @@ export default function AfterSolve({ replay }) {
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
           <Link to="/espace/tafkir" className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-inter text-xs font-bold text-slate-600 ring-1 ring-slate-200 hover:text-slate-900">
-            <ArrowRight size={14} aria-hidden="true" /> {t('workspace.back')}
+            <ArrowBack size={14} aria-hidden="true" /> {t('workspace.back')}
           </Link>
           <h1 className="font-space text-2xl font-black text-slate-900 sm:text-3xl">
             {t(replay.outcome === 'alone' || replay.outcome === 'keys' ? 'after.solvedTitle' : 'after.learnedTitle', { number: replay.number })}
@@ -150,7 +151,7 @@ export default function AfterSolve({ replay }) {
                 <p className="mt-1 font-inter text-sm text-sky-900/80">{t('after.twinHint')}</p>
                 <Link to={`/espace/tafkir/${replay.twin.id}`}
                   className="mt-3 inline-flex min-h-[44px] items-center gap-2 rounded-2xl bg-sky-600 px-5 font-space text-sm font-black text-white hover:bg-sky-700">
-                  {t('after.twinGo', { number: replay.twin.number })} <ArrowLeft size={16} aria-hidden="true" />
+                  {t('after.twinGo', { number: replay.twin.number })} <ArrowForward size={16} aria-hidden="true" />
                 </Link>
               </section>
             )}
@@ -161,7 +162,7 @@ export default function AfterSolve({ replay }) {
           </div>
 
           <Link to="/espace/tafkir" className="inline-flex items-center gap-2 font-inter text-sm font-bold text-nav-accent hover:underline">
-            <ArrowRight size={16} aria-hidden="true" /> {t('after.backToLadder')}
+            <ArrowBack size={16} aria-hidden="true" /> {t('after.backToLadder')}
           </Link>
         </div>
       )}

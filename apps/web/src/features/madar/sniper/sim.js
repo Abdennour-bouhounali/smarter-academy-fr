@@ -1,5 +1,5 @@
 /**
- * « قنّاص القيم » — la simulation (pure : aucun DOM, aucune horloge).
+ * « Chasseur de valeurs » — la simulation (pure : aucun DOM, aucune horloge).
  *
  * Des cartes tombent ; chacune porte une écriture. En haut, la CIBLE (une
  * valeur). L'élève touche les cartes qui lui sont ÉGALES :
@@ -11,7 +11,7 @@
  *   manche parfaite         +bonus et un bouclier rendu (3 au plus)
  *
  * Le niveau S'ADAPTE (adapt.js) : chaque manche se joue à la position de
- * l'élève (niveau 1…50, sous-niveau أ/ب/ج) ; une manche parfaite le fait monter,
+ * l'élève (niveau 1…50, sous-niveau A/B/C) ; une manche parfaite le fait monter,
  * deux fautes le font descendre. La partie commence à la position que donne le
  * serveur et lui rend la position atteinte.
  *

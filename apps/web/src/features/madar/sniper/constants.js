@@ -1,5 +1,5 @@
 /**
- * « قنّاص القيم » — les constantes du jeu.
+ * « Chasseur de valeurs » — les constantes du jeu.
  *
  * SCHEDULE est le MIROIR de apps/api/config/madar.php › sniper : le calendrier
  * des manches est FIXE (la manche k commence à un instant connu), et le niveau

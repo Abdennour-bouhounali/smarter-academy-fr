@@ -1,7 +1,7 @@
 import { FIG, ltrText } from './palette';
 
 /**
- * #200 « السلّم المنزلق » — un mur vertical, le sol, et l'échelle de longueur L dans ses deux
+ * #200 « L’échelle qui glisse » — un mur vertical, le sol, et l'échelle de longueur L dans ses deux
  * positions : pied à f₁ puis à f₂ du mur. Les hauteurs du sommet sont CALCULÉES
  * (√(L² − f²)), jamais posées à l'œil. Figure statique (l'échelle déplaçable viendra plus tard).
  */

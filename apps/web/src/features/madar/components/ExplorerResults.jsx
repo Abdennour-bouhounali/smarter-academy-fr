@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeftCircle, Fuel, Gem, Home, Loader2, Map, RotateCcw, Star } from 'lucide-react';
+import { Fuel, Gem, Home, Loader2, Map, RotateCcw, Star } from 'lucide-react';
+import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import { formatScore, rankMovement } from '../madarModel';
 import CostBadge from './CostBadge';
 import HeartsRow from './HeartsRow';
 import Sheet, { primaryBtn, secondaryBtn } from './Sheet';
 
 /**
- * La fin d'un niveau de « المستكشف » : réussi ou non, les étoiles qui
+ * La fin d'un niveau de « L’explorateur » : réussi ou non, les étoiles qui
  * s'allument une à une (terminé · tous les cristaux · sans reprise — calculées
  * par le serveur), les cristaux, le score, le niveau suivant débloqué. Puis :
  * niveau suivant, rejouer, faire le plein, carte des niveaux.
@@ -67,7 +68,7 @@ export default function ExplorerResults({ local, result, saving, error, hearts, 
       <div className="mt-3 space-y-2.5">
         {completed && level?.next && canPlay && (
           <button type="button" className={primaryBtn} onClick={() => onNext(level.next)} disabled={saving} data-action="next-level" data-autofocus>
-            <ArrowLeftCircle size={20} aria-hidden="true" /> {t('explorer.results.next', { n: level.next })} <CostBadge />
+            <ArrowForward size={20} aria-hidden="true" /> {t('explorer.results.next', { n: level.next })} <CostBadge />
           </button>
         )}
         {(!completed || !level?.next) && canPlay && (

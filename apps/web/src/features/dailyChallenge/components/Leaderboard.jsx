@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Trophy } from 'lucide-react';
+import { LOCALE } from '../../../locale';
 
 const MEDALS = ['🥇', '🥈', '🥉'];
 
@@ -29,7 +30,7 @@ export default function Leaderboard({ competition }) {
                 <li key={row.rank} className={`flex items-center gap-3 rounded-2xl px-3 py-2 ${row.isMe ? 'bg-amber-50 ring-1 ring-amber-300' : 'bg-slate-50'}`}>
                   <span className="text-xl" aria-label={t('leaderboard.rank', { rank: row.rank })}>{MEDALS[row.rank - 1] ?? row.rank}</span>
                   <span className="min-w-0 flex-1 truncate font-inter font-semibold text-slate-900"><bdi>{row.displayName}</bdi>{row.isMe ? ` · ${t('leaderboard.you')}` : ''}</span>
-                  <span dir="ltr" className="font-mono-jetbrains text-sm font-bold tabular-nums text-amber-700">{row.score.toLocaleString('fr-FR')}</span>
+                  <span dir="ltr" className="font-mono-jetbrains text-sm font-bold tabular-nums text-amber-700">{row.score.toLocaleString(LOCALE)}</span>
                 </li>
               ))}
             </ol>

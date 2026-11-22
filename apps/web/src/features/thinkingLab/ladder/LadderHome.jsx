@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, Brain, Gamepad2, Lock, Mountain } from 'lucide-react';
+import { Brain, Gamepad2, Lock, Mountain } from 'lucide-react';
+import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import { stateLines } from '../thinkingModel';
 import { SoundToggle } from '../ThinkingParts';
 
 /**
- * Écran 1 « سُلَّمي » : le prochain numéro, les défis ouverts (au plus 3) avec leur état EN MOTS,
+ * Écran 1 « Mon échelle » : le prochain numéro, les défis ouverts (au plus 3) avec leur état EN MOTS,
  * le chemin de pierres, et — quand un défi attend son jour — des activités légères (l'incubation
  * est plus forte avec une activité peu exigeante, plan §6.3). L'élève ne voit que des numéros.
  */
@@ -65,7 +66,7 @@ export default function LadderHome({ home }) {
               ) : (
                 <Link to={`/espace/tafkir/${home.next.id}`} data-start-next
                   className="mt-5 inline-flex min-h-[52px] items-center gap-2 rounded-2xl bg-white px-6 font-space text-base font-black text-nav-accent transition hover:bg-nav-accent-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-300">
-                  {t('ladder.start', { number: home.next.number })} <ArrowLeft size={18} aria-hidden="true" />
+                  {t('ladder.start', { number: home.next.number })} <ArrowForward size={18} aria-hidden="true" />
                 </Link>
               )}
             </>

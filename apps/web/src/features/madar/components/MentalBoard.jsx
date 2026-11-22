@@ -11,7 +11,7 @@ import MathTokens from './MathTokens';
 import { SUB_LETTERS, WarmupChip } from './SniperHud';
 
 /**
- * « الحساب الذهني » — le plateau, en DOM : un problème, des cases pour la
+ * « Calcul mental » — le plateau, en DOM : un problème, des cases pour la
  * réponse, un pavé numérique (téléphone) et le clavier (ordinateur). La
  * réponse part seule quand les cases sont pleines : le jeu va VITE.
  *
@@ -160,7 +160,7 @@ const MentalBoard = forwardRef(function MentalBoard({
           animation: starSpeed ? `mental-stars ${starSpeed}s linear infinite` : 'none',
         }} />
 
-      {/* La fusée et son ascension vers la prochaine planète (côté début, en RTL). */}
+      {/* La fusée et son ascension vers la prochaine planète (côté début). */}
       <div className="pointer-events-none absolute bottom-6 start-3 top-28 z-10 flex w-12 flex-col items-center sm:start-8 sm:w-16" aria-hidden="true">
         <span className="h-9 w-9 rounded-full shadow-[0_0_24px_rgba(255,255,255,0.25)] sm:h-12 sm:w-12" style={{ background: `radial-gradient(circle at 35% 30%, ${nextPlanet.planet[0]}, ${nextPlanet.planet[1]} 55%, ${nextPlanet.planet[2]})` }} />
         <span className="mt-1 whitespace-nowrap font-inter text-[10px] font-bold text-white/70">{t(`sectors.${nextPlanet.id}`)}</span>

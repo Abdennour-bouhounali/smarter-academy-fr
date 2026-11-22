@@ -1,4 +1,4 @@
-/** « −1 ❤️ » : ce que coûte un geste, toujours lu de gauche à droite, même en RTL. */
+/** « −1 ❤️ » : ce que coûte un geste, toujours lu de gauche à droite. */
 export default function CostBadge({ className = '' }) {
   return (
     <span className={`inline-flex items-center gap-1 rounded-full bg-slate-950/15 px-2 py-0.5 font-inter text-sm font-bold ${className}`} dir="ltr" style={{ unicodeBidi: 'isolate' }}>

@@ -1,13 +1,13 @@
 import { useId } from 'react';
 import { hullPath, shipById } from '../engine/ships';
 
-/** Un vaisseau en SVG (listes, classement, déblocage) — la même silhouette qu'en vol. */
+/** Un vaisseau en SVG (listes, classement, déblocage) — la même silhouette qu'en vol, nez vers la droite (le sens de la marche). */
 export default function ShipIcon({ id, size = 40, locked = false, flame = true, className = '' }) {
   const ship = shipById(id);
   const gid = useId().replace(/:/g, '');
   const [kx, ky, kw, kh] = ship.cockpit;
   return (
-    <svg viewBox="-1.6 -1.2 2.8 2.4" width={size} height={size} className={className} aria-hidden="true" style={{ transform: 'scaleX(-1)' }}>
+    <svg viewBox="-1.6 -1.2 2.8 2.4" width={size} height={size} className={className} aria-hidden="true">
       <defs>
         <linearGradient id={`b${gid}`} x1="0" y1="-1" x2="0" y2="1" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#ffffff" />

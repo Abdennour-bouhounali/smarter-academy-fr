@@ -1,11 +1,11 @@
 /**
- * « الدخيل » — les constantes du jeu.
+ * « L’intrus » — les constantes du jeu.
  *
  * SCHEDULE est le MIROIR de apps/api/config/madar.php › odd. Une énigme ne se
  * résout pas plus vite que `minPuzzleMs` (la réponse reste affichée
  * `revealMs`) ; le niveau s'adapte toutes les `puzzlesPerRound` énigmes et monte
  * d'au plus un sous-niveau par manche. Les 50 niveaux et les points sont ceux
- * de « قنّاص القيم » (sniper/levels.js, sniper/constants.js).
+ * de « Chasseur de valeurs » (sniper/levels.js, sniper/constants.js).
  */
 export const SCHEDULE = Object.freeze({
   puzzlesPerRound: 5,

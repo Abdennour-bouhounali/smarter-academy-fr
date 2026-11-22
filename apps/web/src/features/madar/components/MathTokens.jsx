@@ -1,7 +1,7 @@
 import { plain } from '../sniper/cards';
 
 /**
- * Une expression de « قنّاص القيم » écrite en DOM (la cible de l'affichage, le
+ * Une expression de « Chasseur de valeurs » écrite en DOM (la cible de l'affichage, le
  * bilan) : fractions superposées, racine avec sa barre, exposants. Toujours
  * en `dir="ltr"` ; le texte plat sert aux lecteurs d'écran.
  */

@@ -5,8 +5,8 @@ import Panel from './Panel';
 import ShipIcon from './ShipIcon';
 
 /**
- * « حظيرة السفن » : chaque vaisseau, ouvert ou non, et ce qui le débloque —
- * un record (voler loin) ou des réponses justes à la محطة التزوّد. Jamais
+ * « Le hangar » : chaque vaisseau, ouvert ou non, et ce qui le débloque —
+ * un record (voler loin) ou des réponses justes à la station de ravitaillement. Jamais
  * une leçon terminée, jamais un achat.
  */
 export default function ShipBay({ ships, selected, onSelect, busy }) {
@@ -31,7 +31,7 @@ export default function ShipBay({ ships, selected, onSelect, busy }) {
                 }`}
                 data-ship={ship.id}
               >
-                <ShipIcon id={ship.id} size={46} locked={!ship.unlocked} className="transition group-hover:-translate-x-1" />
+                <ShipIcon id={ship.id} size={46} locked={!ship.unlocked} className="transition group-hover:translate-x-1" />
                 <span className={`font-inter text-xs font-bold ${ship.unlocked ? 'text-white' : 'text-white/50'}`}>{t(`ships.names.${ship.id}`)}</span>
                 {isSelected && <span className="inline-flex items-center gap-0.5 font-inter text-[10px] font-bold text-amber-200"><Check size={11} aria-hidden="true" />{t('ships.selected')}</span>}
                 {!ship.unlocked && ship.rule && (
@@ -41,7 +41,7 @@ export default function ShipBay({ ships, selected, onSelect, busy }) {
                       {ship.rule.kind === 'best' ? t('ships.ruleBest', { n: formatScore(ship.rule.threshold) }) : t('ships.ruleRefuel', { n: ship.rule.threshold })}
                     </span>
                     <span className="mt-0.5 h-1 w-full overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-                      <span className="block h-full rounded-full bg-gradient-to-l from-amber-300 to-orange-500" style={{ width: `${ratio * 100}%` }} />
+                      <span className="block h-full rounded-full bg-gradient-to-r from-amber-300 to-orange-500" style={{ width: `${ratio * 100}%` }} />
                     </span>
                   </>
                 )}

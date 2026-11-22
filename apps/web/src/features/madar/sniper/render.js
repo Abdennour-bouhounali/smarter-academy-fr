@@ -3,7 +3,7 @@ import { cardY } from './sim';
 import { drawMath, mathHeight, measureMath } from './mathDraw';
 
 /**
- * Le rendu de « قنّاص القيم » au canevas 2D — dessiné en code, sans image.
+ * Le rendu de « Chasseur de valeurs » au canevas 2D — dessiné en code, sans image.
  *
  * Un champ d'astéroïdes qui tombent vers une base au sol ; chaque astéroïde
  * porte une PLAQUE BLANCHE où l'expression s'écrit en noir (les maths se
@@ -253,7 +253,7 @@ export function createSniperRenderer(canvas) {
       const y = f.y - (1 - k) * 40;
       ctx.globalAlpha = Math.min(1, k * 2);
       if (f.tokens) {
-        // « = ما تساويه حقًّا » : la vraie valeur d'un piège touché, ou la cible manquée.
+        // « = ce qu’elle vaut vraiment » : la vraie valeur d'un piège touché, ou la cible manquée.
         const size = 18;
         const tw = measureMath(ctx, f.tokens, size) + (f.prefix ? 22 : 0);
         const ph = mathHeight(f.tokens, size) + 12;
@@ -268,7 +268,7 @@ export function createSniperRenderer(canvas) {
         ctx.save();
         ctx.direction = 'ltr';
         ctx.textAlign = 'center';
-        ctx.font = `900 ${f.big ? 30 : 22}px "Space Grotesk", Inter, sans-serif`;
+        ctx.font = `900 ${f.big ? 30 : 22}px "Space Grotesk", Inter, system-ui, sans-serif`;
         ctx.fillStyle = f.color;
         ctx.fillText(f.text, f.x, y);
         ctx.restore();

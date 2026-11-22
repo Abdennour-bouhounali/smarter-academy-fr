@@ -2,13 +2,17 @@ import { LANE_R, SPAWN_AHEAD, sectorAt } from './constants.js';
 import { shipById } from './ships.js';
 
 /**
- * Le rendu de « مدار » au canevas 2D — dessiné en code, paramétré par l'état
+ * Le rendu de « Saut d’orbite » au canevas 2D — dessiné en code, paramétré par l'état
  * du monde, sans aucune image.
  *
  * Caméra : le vaisseau reste EN BAS de l'orbite, à portée de pouce ; c'est le
- * monde qui tourne. Un angle du monde α s'affiche en  s = α − θ + π/2  (le bas
- * de l'écran est π/2, l'axe y descend) : ce qui arrive vient de la GAUCHE et
- * descend vers le vaisseau — le sens de lecture de l'arabe.
+ * monde qui tourne. Un angle du monde α se dessine en  s = α − θ + π/2  (le bas
+ * de l'écran est π/2, l'axe y descend), puis le monde entier est retourné
+ * autour de l'axe vertical (`mirrorX`) : ce qui arrive vient de la DROITE et
+ * descend vers le vaisseau, dont le nez pointe vers la droite — le sens de
+ * lecture de la page. Les textes (« +3 ») et les éclats se posent APRÈS le
+ * retournement, en coordonnées écran (`project`), pour rester lisibles.
+ * Choix verrouillé par `render.test.js`.
  *
  * Coûts : pas de `shadowBlur` (ruineux sur téléphone) ; les halos sont des
  * sprites pré-rendus posés en mode additif ; le fond (nébuleuse) est rendu
@@ -16,6 +20,19 @@ import { shipById } from './ships.js';
  */
 
 const TAU = Math.PI * 2;
+
+/** Le retournement du monde : x ↦ 2·cx − x (la page se lit de gauche à droite). */
+export const mirrorX = (x, cx) => 2 * cx - x;
+
+/**
+ * Position ÉCRAN d'un point du monde (angle α, rayon r en unités de R), le
+ * vaisseau étant à l'angle θ : pur, testé. Un point devant le vaisseau
+ * (α > θ) est à DROITE de l'axe, et rejoint le bas de l'orbite quand θ avance.
+ */
+export function projectPoint(alpha, theta, r, { cx, cy, R }) {
+  const s = alpha - theta + Math.PI / 2;
+  return [mirrorX(cx + Math.cos(s) * r * R, cx), cy + Math.sin(s) * r * R];
+}
 
 function glowSprite(color, size = 64) {
   const c = document.createElement('canvas');
@@ -458,7 +475,7 @@ export function createRenderer(canvas) {
     const flipping = world.flipT < 1 ? Math.sin(Math.PI * world.flipT) : 0;
     const dir = world.lane === 1 ? 1 : -1;
     const tilt = dir * flipping * 0.45;
-    const angle = s + Math.PI / 2 + tilt; // nez dans le sens du mouvement (vers la gauche en bas)
+    const angle = s + Math.PI / 2 + tilt; // nez dans le sens du mouvement (vers la gauche AVANT le retournement : la droite à l'écran)
     const invuln = world.t < world.invulnUntil;
     if (invuln && Math.floor(time * 14) % 2 === 0) return [x, y];
 
@@ -534,14 +551,14 @@ export function createRenderer(canvas) {
     }
     ctx.restore();
     ctx.save();
-    // Le canevas hérite du `dir="rtl"` de la page : « +3 » s'afficherait « 3+ ».
+    // Le texte du canevas se lit de gauche à droite, quelle que soit la page.
     ctx.direction = 'ltr';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     for (const f of fx.floaters) {
       const k = f.life / f.max;
       ctx.globalAlpha = Math.min(1, k * 1.6);
-      ctx.font = `900 ${Math.round(R * (0.085 + (f.big ? 0.04 : 0)))}px "Space Grotesk", "Inter", sans-serif`;
+      ctx.font = `900 ${Math.round(R * (0.085 + (f.big ? 0.04 : 0)))}px "Space Grotesk", Inter, system-ui, sans-serif`;
       ctx.lineWidth = Math.max(2, R * 0.014);
       ctx.strokeStyle = 'rgba(15, 10, 40, 0.75)';
       ctx.strokeText(f.text, f.x, f.y - (1 - k) * R * 0.25);
@@ -565,13 +582,19 @@ export function createRenderer(canvas) {
       oy = (Math.random() - 0.5) * fx.shake;
     }
     ctx.translate(ox, oy);
+    // Le monde se dessine retourné (voir l'en-tête) ; particules et textes, à l'endroit.
+    ctx.save();
+    ctx.translate(2 * cx, 0);
+    ctx.scale(-1, 1);
     drawBackground(world, time);
     drawPlanet(world, time);
     drawLanes(world);
     drawPickups(world, time);
     drawObstacles(world, time);
     drawTrail(world, fx, ship);
-    const pos = world.status === 'crashed' ? polar(Math.PI / 2, world.r) : drawShip(world, fx, ship, time);
+    const at = world.status === 'crashed' ? polar(Math.PI / 2, world.r) : drawShip(world, fx, ship, time);
+    ctx.restore();
+    const pos = [mirrorX(at[0], cx), at[1]];
     drawParticles(fx);
     if (!reduced && fx.flash > 0.01) {
       ctx.fillStyle = fx.flashColor ?? 'rgba(255,255,255,1)';
@@ -590,7 +613,7 @@ export function createRenderer(canvas) {
 
   /** Position écran d'un objet du monde (pour poser un éclat là où l'étoile a été prise). */
   function project(world, alpha, laneR) {
-    return polar(screenAngle(alpha, world.theta), laneR);
+    return projectPoint(alpha, world.theta, laneR, { cx, cy, R });
   }
 
   return { resize, draw, project, get radius() { return R; } };

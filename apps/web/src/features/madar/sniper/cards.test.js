@@ -88,7 +88,7 @@ describe('sniper card deck — 50 levels × 3 sub-levels', () => {
         for (const seed of SEEDS) {
           for (const k of ROUNDS) {
             const round = makeRound(seed, k, { level: level.n, sub });
-            const where = `(level ${level.n}${'ابج'[sub - 1]}, seed ${seed}, round ${k}, target ${plain(round.target.tokens)})`;
+            const where = `(level ${level.n}${'ABC'[sub - 1]}, seed ${seed}, round ${k}, target ${plain(round.target.tokens)})`;
             expect(round.cards, where).toHaveLength(8);
             expect(new Set(round.cards.map((c) => c.text)).size, where).toBe(8);
             const equal = round.cards.filter((c) => c.equal).length;

@@ -28,9 +28,9 @@ function box(ctx, t, size) {
 
 /**
  * Écrire un texte de maths de gauche à droite, morceau par morceau (nombre,
- * opérateur, parenthèse). La page est en RTL : laissé à l'algorithme
- * bidirectionnel, « 2 × 16 − 1 » s'afficherait « 1 − 16 × 2 ». Chaque morceau
- * est posé à sa place, la largeur totale reste celle de measureText.
+ * opérateur, parenthèse), sans rien laisser à l'algorithme bidirectionnel du
+ * navigateur : chaque morceau est posé à sa place, la largeur totale reste
+ * celle de measureText.
  */
 function runs(ctx, text, x, y) {
   let cx = x;
