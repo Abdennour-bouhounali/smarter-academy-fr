@@ -15,8 +15,8 @@ import '../../../features/practice/notebook/notebook.css';
  *     point d'apprentissage si le module n'en enseigne qu'un — auprès du
  *     cahier (NotebookProvider). Elle est retirée au démontage : hors d'une
  *     leçon, le cahier ne sait pas où l'élève est, et ne l'invente pas.
- *  2. Rendre le DÉCLENCHEUR flottant « 📓 كرّاسي », posé au-dessus de
- *     « 🧠 بطاقتي » : reconnaissable partout dans la leçon, du sommaire au
+ *  2. Rendre le DÉCLENCHEUR flottant « 📓 Mon cahier », posé au-dessus de
+ *     « 🧠 Ma carte » : reconnaissable partout dans la leçon, du sommaire au
  *     dernier module, sans qu'aucun module n'ait à le poser lui-même.
  *
  * Montée UNE fois par page de leçon, par la fabrique de routes de l'unité
@@ -40,7 +40,7 @@ export default function LessonNotebookAnchor({ config, module = null }) {
   }, [location, setLocation]);
 
   // A v2 lesson has no page to take notes on: the student is in its world (a full-window screen), the teacher on his
-  // card — the floating « كرّاسي » is not shown there (owner, 2026-11-20).
+  // card — the floating « Mon cahier » is not shown there (owner, 2026-11-20).
   if (!token || !location || lessonPackFlags(config?.id).world) return null;
 
   const label = isOpen ? t('notebook.window.closeMyNotebook') : t('notebook.window.openMyNotebook');

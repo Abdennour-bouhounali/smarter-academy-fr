@@ -13,7 +13,7 @@ import {
 } from './logic';
 import { explain, waveSay } from './strings';
 
-describe('أرخبيل القواسم — logic', () => {
+describe('L’archipel des diviseurs — logic', () => {
   it('divides: a = b × q + r with r < b', () => {
     for (const a of [7, 15, 16, 42, 48, 120, 756])
       for (let b = 1; b <= 40; b += 1) {
@@ -82,17 +82,17 @@ describe('أرخبيل القواسم — logic', () => {
   });
 });
 
-describe('أرخبيل القواسم — a practice wave the lesson wrote itself', () => {
+describe('L’archipel des diviseurs — a practice wave the lesson wrote itself', () => {
   it('a type this world does not know speaks its own `say` and its own guidance `why`', () => {
     const w = {
       type: 'lessonOwn',
-      say: 'عدد يقسم $21 + 35$',
-      why: { right: '7 يقسم 21 و 35', wrong: { 3: '3 لا يقسم 56', 5: '5 لا يقسم 56' } },
+      say: 'Un nombre qui divise $21 + 35$',
+      why: { right: '7 divise 21 et 35', wrong: { 3: '3 ne divise pas 56', 5: '5 ne divise pas 56' } },
       gates: [3, 7, 5],
       good: 1,
     };
-    expect(waveSay(w)).toBe('عدد يقسم $21 + 35$');
-    expect(explain(w, 5)).toEqual({ wrong: '5 لا يقسم 56', right: '7 يقسم 21 و 35' });
+    expect(waveSay(w)).toBe('Un nombre qui divise $21 + 35$');
+    expect(explain(w, 5)).toEqual({ wrong: '5 ne divise pas 56', right: '7 divise 21 et 35' });
     expect(explain({ type: 'lessonOwn', say: 'x', gates: [1, 2, 3], good: 0 }, 2)).toEqual({ wrong: '', right: '' });
   });
 });

@@ -1,6 +1,6 @@
 /**
- * « جزيرة المهمّات » — THE WORLD OF A UNIT'S LAST LESSON (« أدمج تعلّماتي », `INTEGRATION_LESSON_PLAN.md` §4): one island,
- * the oasis depot, and nothing to forge. The lesson gives its missions as DATA (`lesson.missions`); this world shows
+ * « L’île des missions » — THE WORLD OF A UNIT'S LAST LESSON (« Vers le brevet », `INTEGRATION_LESSON_PLAN.md` §4): one island,
+ * the orchard cooperative's depot, and nothing to forge. The lesson gives its missions as DATA (`lesson.missions`); this world shows
  * them from the island's home, plays the one he opens (the scenes are the depot's: `divisorIsles/Depot.js`), keeps
  * what he finished (stars, coins) in his save, and opens the lesson's exam sitting (the bank, the kit's screen).
  * It names no lesson. The robot does not walk here: the island is the stage of the missions.
@@ -13,7 +13,7 @@ import { glow, makeHoverboard } from '../engine/builders';
 const SKY = [0x3a8dff, 0xcfeeff, 0xfff6e6, 2.6, 1.0, 0];
 const MISSION_PAN = new THREE.Vector3(0, 2.4, 3.2); // the notebook and the paper stand on the two sides
 const CENTRE = { x: -340, z: 280 };
-// « سباق الأعداد »: the rail of light, out at sea beside the island. The robot stays at RUN.x; the gates come to him.
+// the endless game: the rail of light, out at sea beside the island. The robot stays at RUN.x; the gates come to him.
 // The lanes, the gap between two gates and the hearts are those of lesson 1's run (`divisorIsles/logic.js › DASH`).
 const RUN = { x: CENTRE.x - 10, z: CENTRE.z + 60, y: 0.3, lanes: [-2.5, 0, 2.5], gap: 34, hearts: 3, pause: 2.4 };
 const laneZ = (lane) => RUN.z + RUN.lanes[lane];
@@ -47,7 +47,7 @@ export class MissionIsleGame extends WorldRuntime {
     this.buildTrack();
   }
 
-  // ───────────────────────────── « سباق الأعداد » — the endless game ─────────────────────────────
+  // ───────────────────────────── the endless game ─────────────────────────────
   /**
    * THE RAIL OF LIGHT — the gate run of the unit's first lesson, design for design (owner, 2026-11-20: « use 100% the same
    * design of the game of the lesson 1 »; `divisorIsles/Game.js › buildRail`): two glowing rails, a floor of light with its
@@ -144,7 +144,7 @@ export class MissionIsleGame extends WorldRuntime {
       ar.veil.material.opacity = good == null ? 0.16 : lane === good ? 0.35 : lane === picked ? 0.3 : 0.12;
     });
   }
-  /** The door of the home: the game's card first (its rule, his best), then « أبدأ ». */
+  /** The door of the home: the game's card first (its rule, his best), then « Lance la course ». */
   openRun() {
     this.audio.unlock();
     this.track.visible = true;
@@ -212,7 +212,7 @@ export class MissionIsleGame extends WorldRuntime {
     this.dressGates(set);
     this.publishRun();
   }
-  /** « إيقاف مؤقّت »: the run freezes where it is — the gate, the speed, the hearts — until he comes back to it. */
+  /** « Pause »: the run freezes where it is — the gate, the speed, the hearts — until he comes back to it. */
   pauseRun(on = true) {
     const r = this.runner;
     if (!r || r.pause > 0 || Boolean(r.held) === on) return;

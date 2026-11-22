@@ -1,5 +1,5 @@
 /**
- * « أرخبيل القواسم » — PURE logic of the game world (no three.js, no React). It names no lesson: the content comes from the pack.
+ * « L’archipel des diviseurs » — PURE logic of the game world (no three.js, no React). It names no lesson: the content comes from the pack.
  * The world is a chain of floating islands; a bridge of length `a` holds only when planks of ONE length `b` fill it exactly:
  * a = b × q + r, and the bridge holds ⇔ r = 0 ⇔ b is a divisor of a. Everything the scene shows is computed here.
  */
@@ -13,7 +13,7 @@ export function divide(a, b) {
 export const isDivisor = (a, b) => b >= 1 && a % b === 0;
 
 /**
- * The remainders offered before a forge (« كم خانة ستبقى فارغة؟ »). A remainder is always smaller than b, so for a small
+ * The remainders offered before a forge (« Combien de cases resteront vides ? »). A remainder is always smaller than b, so for a small
  * mould every possible remainder is offered (0 … b − 1); for a long one, five plausible values that contain the true one.
  */
 export function predictOptions(a, b) {
@@ -36,15 +36,15 @@ export function bridgeStars({ firstPrediction, falls }) {
 
 /** The islands (name, radius, palette) and the segments between them. `turn` = heading change (radians) when leaving the island. */
 export const ISLANDS = [
-  { id: 'A', name: 'مرسى البداية', R: 8, theme: 'meadow', turn: 0 },
-  { id: 'B', name: 'جزيرة الرياح', R: 8, theme: 'meadow', turn: 0.38, keepMould: true },
-  { id: 'C', name: 'جزيرة الاختيار', R: 9, theme: 'pine', turn: -0.55 },
-  { id: 'D', name: 'جزيرة المرايا', R: 9, theme: 'crystal', turn: 0.42 },
-  { id: 'E', name: 'جزيرة الجداء', R: 9, theme: 'crystal', turn: -0.3 },
-  { id: 'F', name: 'جزيرة الحرّاس', R: 10.5, theme: 'stone', turn: 0.2, feature: 'guardians' },
-  { id: 'G', name: 'الجزيرة العنيدة', R: 9, theme: 'autumn', turn: -0.42, feature: 'anvil' },
-  { id: 'H', name: 'المرفأ الأخير', R: 8.5, theme: 'autumn', turn: 0.3, feature: 'stone' },
-  { id: 'I', name: 'منارة المكتبة', R: 12, theme: 'snow', turn: 0 },
+  { id: 'A', name: 'Le port du départ', R: 8, theme: 'meadow', turn: 0 },
+  { id: 'B', name: 'L’île des vents', R: 8, theme: 'meadow', turn: 0.38, keepMould: true },
+  { id: 'C', name: 'L’île du choix', R: 9, theme: 'pine', turn: -0.55 },
+  { id: 'D', name: 'L’île des miroirs', R: 9, theme: 'crystal', turn: 0.42 },
+  { id: 'E', name: 'L’île du produit', R: 9, theme: 'crystal', turn: -0.3 },
+  { id: 'F', name: 'L’île des gardiens', R: 10.5, theme: 'stone', turn: 0.2, feature: 'guardians' },
+  { id: 'G', name: 'L’île têtue', R: 9, theme: 'autumn', turn: -0.42, feature: 'anvil' },
+  { id: 'H', name: 'Le dernier port', R: 8.5, theme: 'autumn', turn: 0.3, feature: 'stone' },
+  { id: 'I', name: 'Le phare de la bibliothèque', R: 12, theme: 'snow', turn: 0 },
 ];
 
 /**
@@ -85,14 +85,14 @@ export const SEGMENTS = [
 
 /** The gate dash: one sentence, three gates, exactly one right. `kind` names which of the four phrasings is used. */
 export const DASH_WAVES = [
-  { say: 'قاسم للعدد 20', gates: [3, 4, 6], test: (n) => 20 % n === 0 },
-  { say: 'قاسم للعدد 36', gates: [8, 9, 10], test: (n) => 36 % n === 0 },
-  { say: 'عدد يقسم 60', gates: [7, 8, 12], test: (n) => 60 % n === 0 },
-  { say: 'مضاعف للعدد 7', gates: [40, 42, 45], test: (n) => n % 7 === 0 },
-  { say: 'عدد يقبل القسمة على 9', gates: [54, 56, 58], test: (n) => n % 9 === 0 },
-  { say: 'مضاعف للعدد 8', gates: [2, 4, 24], test: (n) => n % 8 === 0 },
-  { say: 'قاسم للعدد 30', gates: [15, 60, 90], test: (n) => 30 % n === 0 },
-  { say: 'عدد يقسم 56', gates: [6, 8, 9], test: (n) => 56 % n === 0 },
+  { say: 'Un diviseur de 20', gates: [3, 4, 6], test: (n) => 20 % n === 0 },
+  { say: 'Un diviseur de 36', gates: [8, 9, 10], test: (n) => 36 % n === 0 },
+  { say: 'Un nombre qui divise 60', gates: [7, 8, 12], test: (n) => 60 % n === 0 },
+  { say: 'Un multiple de 7', gates: [40, 42, 45], test: (n) => n % 7 === 0 },
+  { say: 'Un nombre divisible par 9', gates: [54, 56, 58], test: (n) => n % 9 === 0 },
+  { say: 'Un multiple de 8', gates: [2, 4, 24], test: (n) => n % 8 === 0 },
+  { say: 'Un diviseur de 30', gates: [15, 60, 90], test: (n) => 30 % n === 0 },
+  { say: 'Un nombre qui divise 56', gates: [6, 8, 9], test: (n) => 56 % n === 0 },
 ];
 export const DASH = { first: 44, gap: 34, lanes: [-2.5, 0, 2.5], hearts: 3 };
 
@@ -127,10 +127,10 @@ export const STATUES = {
   big: 120,
   q: 20,
   sentences: [
-    { id: 'qasim', before: '', mid: 'قاسم للعدد', smallFirst: true },
-    { id: 'yaqsim', before: '', mid: 'يقسم', smallFirst: true },
-    { id: 'yaqbal', before: '', mid: 'يقبل القسمة على', smallFirst: false },
-    { id: 'mudaaf', before: '', mid: 'مضاعف للعدد', smallFirst: false },
+    { id: 'qasim', before: '', mid: 'est un diviseur de', smallFirst: true },
+    { id: 'yaqsim', before: '', mid: 'divise', smallFirst: true },
+    { id: 'yaqbal', before: '', mid: 'est divisible par', smallFirst: false },
+    { id: 'mudaaf', before: '', mid: 'est un multiple de', smallFirst: false },
   ],
 };
 

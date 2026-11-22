@@ -5,31 +5,34 @@ const inline = (...pieces) => ({ type: 'inline', pieces });
 
 describe('mathSegments — a Latin word attached to a formula shares its LTR island', () => {
   it('keeps the plain cases unchanged: text, one formula per island, block math', () => {
-    expect(mathSegments('$a$ و $b$ عددان')).toEqual([
-      inline({ math: 'a' }), { type: 'text', text: ' و ' }, inline({ math: 'b' }), { type: 'text', text: ' عددان' },
+    expect(mathSegments('$a$, $b$ sont deux nombres')).toEqual([
+      inline({ math: 'a' }), { type: 'text', text: ', ' }, inline({ math: 'b' }), { type: 'text', text: ' sont deux nombres' },
     ]);
-    expect(mathSegments('$a$ ، $b$')).toEqual([inline({ math: 'a' }), { type: 'text', text: ' ، ' }, inline({ math: 'b' })]);
+    expect(mathSegments('$a$ ; $b$')).toEqual([inline({ math: 'a' }), { type: 'text', text: ' ; ' }, inline({ math: 'b' })]);
     expect(mathSegments('$$x = 1$$')).toEqual([{ type: 'block', math: 'x = 1' }]);
-    expect(mathSegments('بدون رياضيات')).toEqual([{ type: 'text', text: 'بدون رياضيات' }]);
+    expect(mathSegments('sans formule')).toEqual([{ type: 'text', text: 'sans formule' }]);
   });
 
   it('joins « PGCD$(a ; b)$ » and « PGCD $(a ; b)$ » into one island', () => {
     expect(mathSegments('PGCD$(a ; a) = a$')).toEqual([inline({ text: 'PGCD' }, { math: '(a ; a) = a' })]);
-    expect(mathSegments('ويرمز له بالرمز PGCD $(a ; b)$.')).toEqual([
-      { type: 'text', text: 'ويرمز له بالرمز ' }, inline({ text: 'PGCD ' }, { math: '(a ; b)' }), { type: 'text', text: '.' },
+    expect(mathSegments('On le note PGCD $(a ; b)$.')).toEqual([
+      { type: 'text', text: 'On le note ' }, inline({ text: 'PGCD ' }, { math: '(a ; b)' }), { type: 'text', text: '.' },
     ]);
   });
 
-  it('keeps a whole equality chain in ONE island — two islands side by side would be reordered by RTL', () => {
-    expect(mathSegments('PGCD$(a ; b) = $ PGCD$(b ; a - b)$ مع $a \\geq b$')).toEqual([
+  it('keeps a whole equality chain in ONE island — it never breaks across two islands', () => {
+    expect(mathSegments('PGCD$(a ; b) = $ PGCD$(b ; a - b)$ où $a \\geq b$')).toEqual([
       inline({ text: 'PGCD' }, { math: '(a ; b) = ' }, { text: ' PGCD' }, { math: '(b ; a - b)' }),
-      { type: 'text', text: ' مع ' },
+      { type: 'text', text: ' où ' },
       inline({ math: 'a \\geq b' }),
     ]);
   });
 
-  it('never pulls Arabic, digits or punctuation into an island', () => {
-    expect(mathSegments('العدد 12$x$')).toEqual([{ type: 'text', text: 'العدد 12' }, inline({ math: 'x' })]);
-    expect(mathSegments('k حيث $m = d \\times k$')).toEqual([{ type: 'text', text: 'k حيث ' }, inline({ math: 'm = d \\times k' })]);
+  it('never pulls digits, accented words or punctuation into an island', () => {
+    expect(mathSegments('le nombre 12$x$')).toEqual([{ type: 'text', text: 'le nombre 12' }, inline({ math: 'x' })]);
+    expect(mathSegments('k, où $m = d \\times k$')).toEqual([{ type: 'text', text: 'k, où ' }, inline({ math: 'm = d \\times k' })]);
+    // an accented word is never cut in two: « écrit » stays whole, outside the island
+    expect(mathSegments('tu as écrit $x$')).toEqual([{ type: 'text', text: 'tu as écrit ' }, inline({ math: 'x' })]);
+    expect(mathSegments('la clé $k$')).toEqual([{ type: 'text', text: 'la clé ' }, inline({ math: 'k' })]);
   });
 });

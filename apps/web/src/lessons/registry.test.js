@@ -76,8 +76,8 @@ function flattenRoutes(element, out = []) {
 
 // Modules DÉCLARÉS dans une config mais sans fichier `modules/Module<NN>*.jsx` — donc sans route : leur URL
 // retombe sur l'accueil. Trouvé le 2026-10-14 par ce test (docs/reports/BUNDLE_ENTRY_REPORT_2026-10-14.md) :
-// la synthèse de l'unité 4 est passée au format à 9 modules (2b1e7342, 2026-10-13) sans ses six « وضعيات
-// تدريبية ». Une dette de CONTENU, à générer — pas à masquer : ce test échoue dès qu'elle est réglée (retirer
+// la synthèse de l'unité 4 est passée au format à 9 modules (2b1e7342, 2026-10-13) sans ses six « situations
+// d’entraînement ». Une dette de CONTENU, à générer — pas à masquer : ce test échoue dès qu'elle est réglée (retirer
 // l'entrée) et pour toute autre leçon.
 // Réglée le 2026-11-12 (la synthèse de l'unité 4 dans le lecteur de mission : Module01…06 recréés) — l'entrée est retirée.
 const KNOWN_UNMOUNTED_MODULES = {};
@@ -106,7 +106,7 @@ describe('registry — every indexed lesson loads with its own routes', () => {
     if (lessonPackFlags(id).world) {
       const modules = flattenRoutes(factory()).filter((p) => p.path && p.path !== basePath);
       for (const route of modules) expect(route.element?.props?.to, `${id} ${route.path}`).toBe(basePath);
-      // ONE knowledge source: the pack's (the world's « خريطة المعارف »). The home mounts no 🧠 map of its own.
+      // ONE knowledge source: the pack's (the world's « carte des connaissances »). The home mounts no 🧠 map of its own.
       const home = flattenRoutes(factory()).find((p) => p.path === basePath);
       const frame = home.element?.props?.children;
       expect(frame?.props?.Component, `${id} home frame`).toBeTruthy();

@@ -1,5 +1,5 @@
 /**
- * « قصر الساحات » — THE LAW OF THE WORLD (pure; it names no lesson).
+ * « Le palais des dalles » — THE LAW OF THE WORLD (pure; it names no lesson).
  *
  * A COURT is a square whose area is known, in tiles. A ROD is a length: a number (`rod('5,47')`), or the wall of a
  * court — the length whose square is that court's area, which may have no number (`wall(30)`). The world builds a

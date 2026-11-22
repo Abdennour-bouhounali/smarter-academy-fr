@@ -1,6 +1,6 @@
 /**
- * « قصر الساحات » — the rule forge IN THIS WORLD (PURE; the frame is kit/forge.js, the screen kit/RuleForge.jsx, the
- * drawing of a case forgeParts.jsx). It names no lesson: a lesson's `world/forges.js` builds its forges on these cases.
+ * « Le palais des dalles » — the rule forge IN THIS WORLD (PURE; the frame is kit/forge.js, the screen kit/RuleForge.jsx,
+ * the drawing of a case forgeParts.jsx). It names no lesson: a lesson's `world/forges.js` builds its forges on these cases.
  *
  * A CASE is a court and a rod: `{ a: '30', s: { q: '5,47' }, held, kind, …extras }`
  *   a      the court's area, as TEXT (« 30 », « 0,25 », « 49/64 ») — written on its gate as it is given
@@ -9,36 +9,33 @@
  *          question of the same platform passes its own `held` in the extras; the drawing still shows what the world did
  *   kind   what the world did: 'ride' | 'band' | 'jam' (always computed, never given)
  *   extras what a lesson adds — `tag` (a short word shown in the line of evidence), `head` (the case's own name in that
- *          line, when « ساحة 36 · مقياس 6 » is not what it is about), `id` (an identity of its own), `zoom` (a forced
+ *          line, when « salle 36 · toise 6 » is not what it is about), `id` (an identity of its own), `zoom` (a forced
  *          magnifier factor for the mirror).
  * Every number is exact (logic.js): a rod of 5,477225575 does not ride the court of 30, and the forge knows it.
  */
-import { counted, ltr } from '../kit/authoring/numbers';
 import { read, write, rod as rodOfNumber, wall, isWall, outcome, rodText, rodTex, tex } from './logic';
+import { TILES as TILE_FORMS, tiles as tilesOfText, tileWord as tileWordOfText } from './strings';
 
 // ───────────────────────────── the words: a number of tiles, agreed ─────────────────────────────
 
-/** Tiles, as a subject or a predicate: « بلاطة واحدة », « بلاطتان », « 5 بلاطات », « 30 بلاطة », « 100 بلاطة ». */
-export const TILES = ['بلاطة واحدة', 'بلاطتان', 'بلاطات', 'بلاطة', 'بلاطة'];
+/** Tiles, [singular, plural] (strings.js › TILES): « 0 dalle », « 1 dalle », « 2 dalles ». */
+export const TILES = TILE_FORMS;
 const isWhole = (x) => read(x).d === 1n;
 const asText = (x) => (typeof x === 'string' ? x.trim() : write(x));
+/** A whole number as the world writes it (« 030 » is « 30 »); anything else as it was given. */
+const written = (t) => (isWhole(t) ? String(read(t).n) : t);
 
 /**
- * A number of tiles with its noun (defects.md B11): a whole number through the kit's `counted` (1, 2, 3–10, 11+, the
- * hundreds); a decimal or a fraction takes « بلاطة » (« 0,0791 بلاطة », « 49/64 بلاطة »). The number is written as it was
- * given (a fraction stays a fraction).
+ * A number of tiles with its noun (defects.md B11), joined by a no-break space: below 2 the singular, from 2 the plural
+ * (« 1 dalle », « 0,0791 dalle », « 30 dalles »); a fraction is a part of a tile (« 49/64 de dalle »). The number is
+ * written as it was given (a fraction stays a fraction).
  */
 export function tiles(x) {
-  const t = asText(x);
-  return isWhole(t) ? counted(Number(read(t).n), TILES) : `${t} بلاطة`;
+  return tilesOfText(written(asText(x)));
 }
-/** The noun alone, for a number already written above it (a gate's plaque): « بلاطة واحدة », « بلاطتان », « بلاطات », « بلاطة ». */
+/** The noun alone, for a number already written above it (a gate's plaque): « dalle », « dalles », « de dalle ». */
 export function tileWord(x) {
-  const t = asText(x);
-  if (!isWhole(t)) return 'بلاطة';
-  const n = Number(read(t).n);
-  const full = counted(n, TILES);
-  return n === 1 || n === 2 ? full : full.slice(String(n).length + 1);
+  return tileWordOfText(written(asText(x)));
 }
 /**
  * A number in the writing of its court: a court given as a fraction (« 49/64 ») has its band and its platform written as
@@ -49,12 +46,9 @@ export function inCourtWriting(x, area) {
   const { n, d } = read(x);
   return d === 1n ? String(n) : `${n}/${d}`;
 }
-/** « بـ » and a number of tiles (genitive): « ببلاطة واحدة », « ببلاطتين », « بـ 6 بلاطات », « بـ 0,0304 بلاطة ». */
+/** « de » and a number of tiles — how much sticks out: « de 1 dalle », « de 6 dalles », « de 0,0304 dalle ». */
 export function byTiles(x) {
-  const t = asText(x);
-  if (isWhole(t) && read(t).n === 1n) return 'ببلاطة واحدة';
-  if (isWhole(t) && read(t).n === 2n) return 'ببلاطتين';
-  return `بـ ${tiles(t)}`;
+  return `de ${tiles(x)}`;
 }
 
 // ───────────────────────────── a court and a rod as a case ─────────────────────────────
@@ -117,8 +111,8 @@ export function courtPool({ areas, rods, extra }) {
 
 // ───────────────────────────── the wording of a case ─────────────────────────────
 
-/** A rod inside an Arabic sentence, isolated left to right (« √30 », « -9 » would else be drawn « 30√ », « 9- »). */
-const rodIn = (s) => ltr(rodText(s));
+/** A rod inside a sentence: its writing (« √30 », « -9 », « 5,47 »). */
+const rodIn = (s) => rodText(s);
 /** A number written in LaTeX as it was given: a fraction keeps its bar, a decimal its comma. */
 const texOf = (t) => {
   const [n, d] = String(t).split('/');
@@ -128,21 +122,23 @@ const KIND_COLOUR = { ride: '#34d399', band: '#fbbf24', jam: '#c4b5fd' };
 const KIND_SIGN = { ride: '=', band: '<', jam: '>' };
 
 /**
- * What the world did, as ONE fact (never « wrong »): « تركب المنصّة المصعد », « يبقى شريط مساحته … », « تعلق: تزيد بـ … ».
- * A MathText sentence: a difference that is a fraction is written over a real bar (« $\\dfrac{33}{64}$ بلاطة »), never
- * « 33/64 » as text.
+ * What the world did, as ONE fact (never « wrong »): « La plateforme monte… », « Il reste une bande de … »,
+ * « Elle coince sur le rebord : elle dépasse la salle de … ». A MathText sentence: a difference that is a fraction is
+ * written over a real bar (« $\\dfrac{33}{64}$ de dalle »), never « 33/64 » as text.
  */
 export function courtFact(c) {
   const o = runCase(c);
   const diff = inCourtWriting(o.diff, c.a);
-  if (o.kind === 'ride') return 'تركب المنصّة المصعد: غطّت الساحة بالضبط.';
-  const frac = diff.includes('/') ? `$${texOf(diff)}$ بلاطة` : null;
-  if (o.kind === 'band') return `يبقى شريط مساحته ${frac ?? tiles(diff)}.`;
-  return `تعلق على الحافّة: تزيد على الساحة ${frac ? `بـ ${frac}` : byTiles(diff)}.`;
+  if (o.kind === 'ride') return 'La plateforme monte : elle couvre la salle exactement.';
+  const frac = diff.includes('/') ? `$${texOf(diff)}$ de dalle` : null;
+  if (o.kind === 'band') return `Il reste une bande de ${frac ?? tiles(diff)}.`;
+  return `Elle coince sur le rebord : elle dépasse la salle ${frac ? `de ${frac}` : byTiles(diff)}.`;
 }
-/** The case in words: « ساحة مساحتها 30 بلاطة، ومقياس طوله 5,47 ». */
-const courtCase = (c) => `ساحة مساحتها ${tiles(c.a)}، ومقياس طوله ${rodIn(c.s)}`;
-const rides = (yes) => (yes ? 'تركب' : 'لا تركب');
+/** The case in words: « une salle de 30 dalles et une toise de 5,47 ». */
+const courtCase = (c) => `une salle de ${tiles(c.a)} et une toise de ${rodIn(c.s)}`;
+const rides = (yes) => (yes ? 'elle monte' : 'elle ne monte pas');
+/** A sentence's first letter in capital. */
+const cap = (t) => t[0].toUpperCase() + t.slice(1);
 
 /**
  * The wording of a court as a case — shared by the forges of this world; a lesson's forge overrides what its rule
@@ -151,12 +147,12 @@ const rides = (yes) => (yes ? 'تركب' : 'لا تركب');
  * rule of the unit) — a forge that must not show the product (its tiles are about it) sets `eq: () => null`.
  */
 export const COURT_TEXT = {
-  title: 'قاعة المرايا',
-  sub: 'اصنع مفتاحك: قاعدة تصمد أمام المرآة.',
-  log: 'سجلّ منصّاتك',
-  ask: (c) => `${courtCase(c)}. هل تركب المنصّة المصعد؟`,
-  yes: 'تركب',
-  no: 'لا تركب',
+  title: 'La salle des miroirs',
+  sub: 'Forge ta clé : une règle qui tient face au miroir.',
+  log: 'Tes plateformes',
+  ask: (c) => `${cap(courtCase(c))}. La plateforme monte-t-elle ?`,
+  yes: 'Elle monte',
+  no: 'Elle ne monte pas',
   fact: (c) => courtFact(c),
   eq: (c) => {
     if (isWall(c.s)) return null;
@@ -164,20 +160,22 @@ export const COURT_TEXT = {
     const q = c.s.q.startsWith('-') ? `(${tex(c.s.q)})` : rodTex(c.s);
     return `$${q} \\times ${q} = ${texOf(inCourtWriting(o.covers, c.a))} \\; \\textcolor{${KIND_COLOUR[o.kind]}}{${KIND_SIGN[o.kind]}} \\; ${texOf(c.a)}$`;
   },
-  next: 'منصّة أخرى',
-  frame: 'تركب المنصّة المصعد عندما:',
-  buildLead: 'اختر بطاقتين. المرآة لا تصدّق أحدًا: ستجرّب قاعدتك على منصّاتك.',
-  testing: 'المرآة تمرّ على منصّاتك واحدةً واحدة…',
-  says: (yes) => `قاعدتك: ${rides(yes)}`,
+  next: 'Une autre plateforme',
+  frame: 'La plateforme monte quand :',
+  buildLead: 'Choisis deux cartes. Le miroir ne croit personne : il essaie ta règle sur tes plateformes.',
+  testing: 'Le miroir passe sur tes plateformes, une par une…',
+  says: (yes) => `Ta règle : ${rides(yes)}`,
   refuted: (m) =>
-    `قاعدتك تقول إنّ المنصّة على المقياس ${rodIn(m.s)} في ساحة ${tiles(m.a)} ${rides(m.says)} — لكنّك رأيتها ${rides(m.held)}.`,
-  agreed: 'قاعدتك توافق كلّ المنصّات التي رأيتَها. الآن المرآة تتحدّاها بساحة جديدة.',
-  attack: (c) => `المرآة تتحدّى قاعدتك: ${courtCase(c)}. ماذا تقول قاعدتك؟`,
-  fire: 'أنزِل المنصّة',
-  survived: 'صمدت قاعدتك: المنصّة فعلت ما قالته.',
-  broken: (yes) => `قاعدتك انكسرت هنا: قالت « ${rides(yes)} »، والمنصّة ${yes ? 'لم تركب' : 'ركبت'}.`,
-  wordsHint: 'مثال: تركب المنصّة عندما…',
-  compare: (cases) => `قارن هاتين المنصّتين في الساحة نفسها (${tiles(cases[0].a)}). ماذا فعلت كلّ واحدة؟`,
-  experiment: 'انظر جيّدًا: الساحة نفسها، مقياس ثمّ مقياس أطول منه. ماذا فعلت كلّ منصّة؟',
-  useOk: 'مفتاحك يعمل حتّى حيث لا ترى الساحة!',
+    `Avec la toise de ${rodIn(m.s)} dans la salle de ${tiles(m.a)}, ta règle dit « ${rides(m.says)} » — mais tu as vu : ${rides(m.held)}.`,
+  agreed:
+    'Ta règle est d’accord avec toutes les plateformes que tu as vues. Le miroir la met au défi avec une nouvelle salle.',
+  attack: (c) => `Le miroir met ta règle au défi : ${courtCase(c)}. Que dit ta règle ?`,
+  fire: 'Abaisse la plateforme',
+  survived: 'Ta règle a tenu : la plateforme a fait ce qu’elle disait.',
+  broken: (yes) =>
+    `Ta règle casse ici : elle disait « ${rides(yes)} », et la plateforme ${yes ? 'n’est pas montée' : 'est montée'}.`,
+  wordsHint: 'Par exemple : la plateforme monte quand…',
+  compare: (cases) => `Compare ces deux plateformes dans la même salle (${tiles(cases[0].a)}). Qu’a fait chacune ?`,
+  experiment: 'Regarde bien : la même salle, une toise puis une toise plus longue. Qu’a fait chaque plateforme ?',
+  useOk: 'Ta clé marche même là où tu ne vois pas la salle !',
 };

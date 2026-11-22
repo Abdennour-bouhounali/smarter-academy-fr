@@ -20,7 +20,7 @@ import { Span, Calc, restTex } from './InquiryCombine';
 import { INQUIRY_TEXT } from './strings';
 import { FAST, expose, X0, SPAN } from './inquiryParts';
 
-const mark = (v) => (v === true ? '✓' : v === false ? '✗' : '؟');
+const mark = (v) => (v === true ? '✓' : v === false ? '✗' : '?');
 
 // ───────────────────────── peel ─────────────────────────
 const YP = 50;
@@ -231,7 +231,7 @@ export function Peel({ spec, play, onDone }) {
 
       {/* the table of every round: what fills a, what fills b — and, after his guess, what fills the piece */}
       <div className="iq-ptable" dir="ltr" data-iq-ptable>
-        <div className="iq-pcol iq-pcol--head" dir="rtl">
+        <div className="iq-pcol iq-pcol--head">
           <span />
           <span>{T.cols.plank}</span>
           <span>{T.cols.a}</span>
@@ -266,7 +266,7 @@ export function Peel({ spec, play, onDone }) {
                         className={`${x ? (x.fitsR ? 'is-yes' : 'is-no') : ''} ${x && x.guess !== x.fitsR ? 'is-missed' : ''}`}
                         data-iq-r={x ? (x.fitsR ? '1' : '0') : ''}
                       >
-                        {x ? mark(x.fitsR) : active ? '؟' : ''}
+                        {x ? mark(x.fitsR) : active ? '?' : ''}
                       </span>
                     </div>
                   );

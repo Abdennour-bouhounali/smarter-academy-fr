@@ -11,7 +11,7 @@
  *   longest  he taps the longest linked plank; a shorter one is answered by a longer linked plank, shown. Not played
  *            with `crown: false` (the round, or the spec): the round ends on the two lists and their links.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `lists`). Nothing here states a rule:
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `lists`). Nothing here states a rule:
  * every sentence says what the strips have just done. The screen is a pure VIEW of the reducer's state (`ListsView`).
  */
 import { useEffect, useReducer, useState } from 'react';
@@ -124,20 +124,10 @@ function ListRows({ s, now, T, onTap }) {
   const building = s.stage === 'build' || s.stage === 'buildLay' || s.stage === 'closed';
   return (
     <g data-iq-links={s.links.join(',')}>
-      <text
-        className={`iq-li-label ${building && s.side === 'a' ? 'is-now' : ''}`}
-        x={X0 + SPAN}
-        y={LABEL_A}
-        direction="rtl"
-      >
+      <text className={`iq-li-label ${building && s.side === 'a' ? 'is-now' : ''}`} x={X0} y={LABEL_A}>
         {T.listLabel(now.a)}
       </text>
-      <text
-        className={`iq-li-label ${building && s.side === 'b' ? 'is-now' : ''}`}
-        x={X0 + SPAN}
-        y={LABEL_B}
-        direction="rtl"
-      >
+      <text className={`iq-li-label ${building && s.side === 'b' ? 'is-now' : ''}`} x={X0} y={LABEL_B}>
         {T.listLabel(now.b)}
       </text>
       {s.links.map((d) => (
@@ -266,7 +256,7 @@ export function ListsView({ spec, state, act, input = '' }) {
             <p className="iq-askline">
               <MathText>{T.buildAsk({ n, list: s.lists[s.side] })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num
                   value={input}

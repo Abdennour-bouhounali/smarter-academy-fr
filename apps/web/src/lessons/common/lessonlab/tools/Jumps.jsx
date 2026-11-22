@@ -1,11 +1,12 @@
 /**
- * « قفزات المضاعفات » — equal jumps of b from 0 on the number line; the flag stands on a.
+ * « Les sauts des multiples » — equal jumps of b from 0 on the number line; the flag stands on a.
  * The student's hand holds the FLAG (the number) and the FIRST LANDING (the length of a jump). The jumps land on the multiples
  * of b: on the flag exactly, or just before it — and what is missing can be read on the line.
  */
 import { useEffect, useRef, useState } from 'react';
 import { VW, VH, useDrag, useChime, Tool, M } from '../kit';
 import { jumpsOf } from '../logic';
+import { counted } from '../../gameworld/kit/authoring/numbers';
 
 const X0 = 40;
 const X1 = 900;
@@ -100,7 +101,7 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
           disabled={at !== null || J.q === 0}
           data-ll-run
         >
-          ▶ اقفز
+          ▶ Saute
         </button>
       }
       reading={
@@ -108,11 +109,11 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
           <M>{`${a} = ${b} \\times ${J.q} + ${J.r}`}</M>
           {J.hit ? (
             <span className="ll-chip ll-chip--good">
-              {J.q} قفزات تصل تمامًا: {a} مضاعف للعدد {b}
+              Pile en {counted(J.q, ['saut', 'sauts'])} : {a} est un multiple de {b}
             </span>
           ) : (
             <span className="ll-chip ll-chip--warm">
-              بعد {J.q} قفزات يبقى {J.r}: {a} ليس مضاعفًا للعدد {b}
+              Après {counted(J.q, ['saut', 'sauts'])}, il reste {J.r} : {a} n’est pas un multiple de {b}
             </span>
           )}
         </>
@@ -163,15 +164,8 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
           <>
             <path d={arc(lastLand, J.over)} className="ll-arc" stroke="#fbbf24" strokeDasharray="7 8" opacity=".75" />
             <path d={`M ${x(lastLand)} ${Y + 44} v 9 H ${fx} v -9`} fill="none" stroke="#fbbf24" strokeWidth="3" />
-            <text
-              x={(x(lastLand) + fx) / 2}
-              y={Y + 76}
-              textAnchor="middle"
-              fontSize="18"
-              direction="rtl"
-              style={{ fill: '#fbbf24' }}
-            >
-              يبقى {J.r}
+            <text x={(x(lastLand) + fx) / 2} y={Y + 76} textAnchor="middle" fontSize="18" style={{ fill: '#fbbf24' }}>
+              reste {J.r}
             </text>
           </>
         )}
@@ -212,8 +206,8 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
           <circle cx={x(b)} cy={Y} r="11" fill="#7dfcff" stroke="#06262c" strokeWidth="3" />
         </g>
         {!moved && (
-          <text x={VW / 2} y="26" textAnchor="middle" fontSize="16" direction="rtl" style={{ fill: '#7dfcff' }}>
-            اسحب الراية لتغيّر العدد، والنقطة الزرقاء لتغيّر طول القفزة
+          <text x={VW / 2} y="26" textAnchor="middle" fontSize="16" style={{ fill: '#7dfcff' }}>
+            Fais glisser le drapeau pour changer le nombre, et le point bleu pour changer la longueur du saut
           </text>
         )}
       </svg>

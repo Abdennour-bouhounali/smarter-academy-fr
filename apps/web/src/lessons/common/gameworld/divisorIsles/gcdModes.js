@@ -1,7 +1,7 @@
 /**
  * FOUR MODES of the investigations of the greatest common divisor — PURE logic and the state machine of each screen
  * (screens: `InquiryGcdModes.jsx`, mounted by `InquiryGcd.jsx › Common | Ladder | Nest` when `spec.mode` names them;
- * contract: GAME_WORLD.md « استكشف », spec shapes of `common`, `ladder`, `nest`). A gap of a cells is filled by planks of
+ * contract: GAME_WORLD.md « Explore », spec shapes of `common`, `ladder`, `nest`). A gap of a cells is filled by planks of
  * d when d divides a.
  *
  *   common · witness  the tray is the planks the divisibility rules give; he takes a plank, says BEFORE whether it fills

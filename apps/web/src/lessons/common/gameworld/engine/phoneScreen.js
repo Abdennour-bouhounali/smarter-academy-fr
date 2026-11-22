@@ -16,7 +16,7 @@ const COMPACT_ROOT_PX = 13;
 /** The colour behind the game: a phone shows the page's background beside its camera cut-out. */
 const NIGHT = '#0b1a3a';
 
-/** Is this a phone held sideways? For the pages that zoom themselves to the window (launch kit, « مختبري »). */
+/** Is this a phone held sideways? For the pages that zoom themselves to the window (launch kit, « Mon labo »). */
 export const isShortScreen = () => typeof window !== 'undefined' && Boolean(window.matchMedia?.(SHORT_SCREEN).matches);
 
 function useMedia(query) {

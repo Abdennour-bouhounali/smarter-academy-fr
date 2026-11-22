@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `lists` — PURE logic (screen: `InquiryLists.jsx`; contract: GAME_WORLD.md « استكشف », « spec shape
+ * THE INVESTIGATION `lists` — PURE logic (screen: `InquiryLists.jsx`; contract: GAME_WORLD.md « Explore », « spec shape
  * of `lists` »). Its rule is a PROCEDURE on two lists: to find the longest plank of two gaps, list the planks of each gap
  * (by pairs: a plank and its partner), cross the two lists, and take the longest plank they share.
  *

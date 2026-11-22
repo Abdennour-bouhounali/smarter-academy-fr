@@ -65,22 +65,24 @@ describe('the workshop', () => {
     expect(out).toContain('data-di-in="plank"');
     expect(out).toContain(`>${T.workshop.unit}<`);
     expect(out).toContain('data-di-gaps="32,44"');
-    expect(out).toContain('القالب للهوّتين 32 و 44');
+    expect(out).toContain('Le moule pour les fossés 32 et 44');
     expect(out).toMatch(/type="submit"[^>]*data-di-craft/);
     expect(out).not.toContain('data-di-minus');
     expect(out).not.toContain('data-di-bench-open');
     // one gap only
-    expect(html({ type: 'workshop', a: 15, seg: 1, gaps: [15], typed: true })).toContain('القالب للهوّة 15');
-    expect(T.workshop.forGaps([12, 18, 30])).toBe('القالب للهوّات 12 ، 18 و 30');
+    expect(html({ type: 'workshop', a: 15, seg: 1, gaps: [15], typed: true })).toContain('Le moule pour le fossé 15');
+    expect(T.workshop.forGaps([12, 18, 30])).toBe('Le moule pour les fossés 12, 18 et 30');
   });
 
   it('`typed`: an empty box, 0, or a length past the longest gap is answered by a sentence; 1 … the longest is made', () => {
     const W = T.workshop;
     expect(plankRefusal('', [32, 44], W)).toBe(W.empty);
     expect(plankRefusal('0', [32, 44], W)).toBe(W.tooShort);
-    expect(plankRefusal('45', [32, 44], W)).toBe('قالب طوله 45 أطول من كلّ هوّة هنا: أطولها 44.');
+    expect(plankRefusal('45', [32, 44], W)).toBe(
+      'Un moule de 45 est plus long que chaque fossé ici\u00a0: le plus long fait 44.',
+    );
     expect(plankRefusal('16', [16], W)).toBeNull();
-    expect(plankRefusal('17', [16], W)).toBe('قالب طوله 17 أطول من الهوّة كلّها (16).');
+    expect(plankRefusal('17', [16], W)).toBe('Un moule de 17 est plus long que tout le fossé (16).');
     for (const t of ['1', '4', '33', '44']) expect(plankRefusal(t, [32, 44], W)).toBeNull();
   });
 

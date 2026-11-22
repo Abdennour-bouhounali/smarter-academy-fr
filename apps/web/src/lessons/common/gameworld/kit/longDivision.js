@@ -1,5 +1,5 @@
 /**
- * « وضع الورقة » — PURE logic of the paper mode: what a student WRITES and THINKS on an exam sheet.
+ * « mode papier » — PURE logic of the paper mode: what a student WRITES and THINKS on an exam sheet.
  *
  * `longDivision(a, b)` poses the Euclidean division as it is drawn on paper (dividend on the left, divisor top right,
  * quotient under it) and returns its steps one by one: the part of the dividend looked at, the digit of the quotient, the
@@ -58,42 +58,46 @@ export const quotientSoFar = (d, shown) =>
     .join('');
 
 /** What the student says to himself at step i (0-based) — short sentences, `$…$` is maths. */
+const NB = '\u00a0'; // the no-break space French puts before « : »
+const NNB = '\u202f'; // the narrow one, before « ? »
+
 export function thinking(d, i) {
   const s = d.steps[i];
   const { b } = d;
   const lines = [];
-  if (i === 0 && s.col > 0) lines.push(`${String(d.a).slice(0, s.col)} أصغر من ${b}: آخذ ${s.part}.`);
-  if (s.digit === 0) lines.push(`${s.part} أصغر من ${b}: ${b} لا يدخل فيه. أكتب 0 في حاصل القسمة.`);
+  if (i === 0 && s.col > 0)
+    lines.push(`${String(d.a).slice(0, s.col)} est plus petit que ${b}${NB}: je prends ${s.part}.`);
+  if (s.digit === 0) lines.push(`${s.part} est plus petit que ${b}${NB}: ${b} n’y va pas. J’écris 0 au quotient.`);
   else {
-    lines.push(`في ${s.part}، كم مرّة ${b}؟`);
+    lines.push(`Dans ${s.part}, combien de fois ${b}${NNB}?`);
     lines.push(
-      `$${b} \\times ${s.digit} = ${s.product}$، و $${b} \\times ${s.digit + 1} = ${b * (s.digit + 1)}$ أكبر من ${s.part}: أكتب ${s.digit}.`,
+      `$${b} \\times ${s.digit} = ${s.product}$ et $${b} \\times ${s.digit + 1} = ${b * (s.digit + 1)}$ dépasse ${s.part}${NB}: j’écris ${s.digit}.`,
     );
-    lines.push(`أطرح: $${s.part} - ${s.product} = ${s.rest}$.`);
+    lines.push(`Je soustrais${NB}: $${s.part} - ${s.product} = ${s.rest}$.`);
   }
-  if (s.next != null) lines.push(`أُنزل الرقم ${s.next}: أحصل على ${s.rest * 10 + s.next}.`);
-  else lines.push(`لم يبقَ أيّ رقم لأنزله: حاصل القسمة ${d.q} والباقي ${d.r}.`);
+  if (s.next != null) lines.push(`J’abaisse le chiffre ${s.next}${NB}: j’obtiens ${s.rest * 10 + s.next}.`);
+  else lines.push(`Il n’y a plus de chiffre à abaisser${NB}: le quotient est ${d.q} et le reste est ${d.r}.`);
   return lines;
 }
 
 /** After the division: the check every sheet should carry, and the sentence that answers the question. */
 export function conclusion(d) {
   return {
-    check: `أتحقّق: $${d.b} \\times ${d.q} + ${d.r} = ${d.b * d.q + d.r}$، والباقي ${d.r} أصغر من ${d.b}.`,
+    check: `Je vérifie${NB}: $${d.b} \\times ${d.q} + ${d.r} = ${d.b * d.q + d.r}$, et le reste ${d.r} est plus petit que ${d.b}.`,
     equality: `$${d.a} = ${d.b} \\times ${d.q}${d.r ? ` + ${d.r}` : ''}$`,
     sentence:
       d.r === 0
-        ? `الباقي 0، إذن ${d.b} قاسم للعدد ${d.a}.`
-        : `الباقي ${d.r} ليس معدومًا، إذن ${d.b} ليس قاسمًا للعدد ${d.a}.`,
+        ? `Le reste est 0, donc ${d.b} est un diviseur de ${d.a}.`
+        : `Le reste ${d.r} n’est pas nul, donc ${d.b} n’est pas un diviseur de ${d.a}.`,
   };
 }
 
 /** The six gestures of an exam answer — shown as a strip in paper mode; the model lights the one it is doing. */
 export const METHOD = [
-  { id: 'read', text: 'أقرأ وأسطّر المعطيات' },
-  { id: 'ask', text: 'أحدّد المطلوب' },
-  { id: 'tool', text: 'أختار القاعدة' },
-  { id: 'compute', text: 'أحسب على الورقة' },
-  { id: 'verify', text: 'أتحقّق' },
-  { id: 'write', text: 'أحرّر الجواب بجملة' },
+  { id: 'read', text: 'Je lis et je souligne les données' },
+  { id: 'ask', text: 'Je repère ce qu’on demande' },
+  { id: 'tool', text: 'Je choisis la règle' },
+  { id: 'compute', text: 'Je calcule sur ma feuille' },
+  { id: 'verify', text: 'Je vérifie' },
+  { id: 'write', text: 'Je rédige la réponse par une phrase' },
 ];

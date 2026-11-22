@@ -124,7 +124,7 @@ describe('the investigation screen `sort`', () => {
     expect(out).not.toContain('data-iq-panel');
     expect(out).not.toMatch(/undefined|NaN/);
     // the kit writes no word of its own: every word on screen is the lesson's
-    expect(out).not.toMatch(/[؀-ۿ]/);
+    expect(out).not.toMatch(/[\u0600-\u06ff]/);
   });
 
   it('the three instruments show their facts: the lists with the common planks, the summit, the ladder', () => {
@@ -139,6 +139,12 @@ describe('the investigation screen `sort`', () => {
     expect(out).toContain('panelLists85');
     expect(out).toMatch(/data-iq-plank="17" data-iq-both="1"/);
     expect(out).toMatch(/data-iq-plank="5" data-iq-both="0"/);
+    // read left to right (the French screen, 2026-11-22): the label and the tag on the LEFT, then the chips, smallest first
+    const xOf = (html, plank) => Number(html.match(new RegExp(`data-iq-plank="${plank}"[^>]*><rect x="([\\d.]+)"`))[1]);
+    expect(out).toMatch(/<text class="iqs-label" x="40"/);
+    expect(out).toMatch(/<rect class="iqs-tag" x="40"/);
+    expect(xOf(out, 1)).toBeLessThan(xOf(out, 5));
+    expect(xOf(out, 5)).toBeLessThan(xOf(out, 17));
     expect(out).toContain('seen[lists:1,17::]');
     expect(out).not.toContain('data-iq-open='); // one instrument per card
     expect(out).toContain('ask[85:119:lists]');
@@ -149,6 +155,10 @@ describe('the investigation screen `sort`', () => {
     expect(out).toMatch(/data-iq-plank="85" data-iq-rest="34"/);
     expect(out).toContain('85 = 85 \\times 1 + \\textcolor{#8dffb0}{0}');
     expect(out).toContain('119 = 85 \\times 1 + \\textcolor{#fbbf24}{34}');
+    // the descent reads left to right: the longest plank first, on the LEFT
+    expect(out).toMatch(/<text class="iqs-label" x="40"/);
+    expect(xOf(out, 85)).toBeLessThan(xOf(out, 17));
+    expect(xOf(out, 17)).toBeLessThan(xOf(out, 5));
 
     out = html(
       play([{ type: 'open', tool: 'ladder' }, { type: 'tick' }, { type: 'tick' }], {
@@ -158,6 +168,8 @@ describe('the investigation screen `sort`', () => {
       }),
     );
     expect(out).toContain('data-iq-panel="ladder" data-iq-rows="2"');
+    // the ladder's first column is the LEFT one
+    expect(Number(out.match(/x="([\d.]+)"[^>]*data-iq-row="0"/)[1])).toBeLessThan(500);
     expect(out).toMatch(/data-iq-row="0"[^>]*>45 = 44 × 1 \+ <tspan class="is-rest">1<\/tspan>/);
     expect(out).toMatch(/data-iq-row="1"[^>]*>44 = 1 × 44 \+ <tspan class="is-zero">0<\/tspan>/);
     expect(out).toContain('seen[ladder:::2]');

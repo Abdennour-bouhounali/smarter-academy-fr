@@ -8,9 +8,9 @@ import MathLabel from './MathLabel';
  * page d'unité et sommaire de leçon. Prérequis pédagogique, jamais un verrou.
  *
  * Depuis le 2026-10-14 (cycle moyen, phase 2), un prérequis peut être d'une
- * année ANTÉRIEURE (tiré du réseau des الكفاءات) et pas encore écrit
+ * année ANTÉRIEURE (tiré du réseau des savoir-faire) et pas encore écrit
  * (`coming_soon`) : la pastille dit alors l'année, et n'est un lien que si la
- * leçon est publiée — sinon le titre seul, avec « قيد الإعداد ». Le lien
+ * leçon est publiée — sinon le titre seul, avec « En préparation ». Le lien
  * s'allume de lui-même le jour où la leçon est publiée.
  */
 export default function PrerequisiteLessonChips({ lessonId }) {

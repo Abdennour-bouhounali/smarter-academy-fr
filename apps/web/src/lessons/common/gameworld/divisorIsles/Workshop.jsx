@@ -1,5 +1,5 @@
 /**
- * The WORKSHOP of an island of « أرخبيل القواسم » (`Game.actAnvil` opens it; the segment declares
+ * The WORKSHOP of an island of « L’archipel des diviseurs » (`Game.actAnvil` opens it; the segment declares
  * `workshop: { min, max, open?, typed?, bench? }` — GAME_WORLD.md §2ter-1 « A WORKSHOP »).
  *
  *   the stepper (no `typed`)   − / + between `min` and `max`, then « make » — the pilot's stubborn island
@@ -106,7 +106,7 @@ function Typed({ o, game }) {
         <p className="di-fact" data-di-gaps={gaps.join(',')}>
           {W.forGaps(gaps)}
         </p>
-        <div className="di-template" dir="rtl">
+        <div className="di-template">
           <Num
             value={text}
             onChange={(v) => {
@@ -174,7 +174,7 @@ function Bench({ o, game }) {
   }));
   const back = () => game.closeBench(latest.current);
   return (
-    <div className="rf-root di-bench" dir="rtl" data-di-bench={spec.kind}>
+    <div className="rf-root di-bench" data-di-bench={spec.kind}>
       <div className="rf-fit" style={{ zoom: z, '--di-min-font': `${Math.ceil(1200 / z) / 100}px` }}>
         <header className="rf-head">
           <div className="rf-brand">

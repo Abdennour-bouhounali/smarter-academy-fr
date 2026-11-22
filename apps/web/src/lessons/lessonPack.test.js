@@ -51,7 +51,7 @@ describe('the pack of a lesson — the ONE place where it says what it gives the
     // when the whole suite imports beside it (measured 2026-11-19, seven packs) — so this test has its own limit
   }, 60_000);
 
-  it('the exam coach finds a knowledge sheet behind every الكفاءة the pack names', async () => {
+  it('the exam coach finds a knowledge sheet behind every learning point (savoir-faire) the pack names', async () => {
     for (const id of lessonsWithPack('coach')) {
       const coach = await loadPackPart(id, 'coach');
       const items = Object.values((await loadPackPart(id, 'knowledge')).modules)
@@ -64,7 +64,7 @@ describe('the pack of a lesson — the ONE place where it says what it gives the
   it('shared code names no lesson that has a pack — a lesson is reached through its pack, never by its id', () => {
     const SRC = fileURLToPath(new URL('..', import.meta.url));
     const SHARED = ['lessons/common', 'features', 'components', 'services', 'utils', 'hooks', 'contexts'];
-    // an instrument of « مختبري » is tagged with the lesson that introduces it: shared CODE that belongs to a lesson
+    // an instrument of « Mon labo » is tagged with the lesson that introduces it: shared CODE that belongs to a lesson
     const ALLOWED = ['lessons/common/lessonlab/registry.js'];
     const files = [];
     const walk = (dir) => {

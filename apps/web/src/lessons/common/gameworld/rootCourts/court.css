@@ -1,4 +1,4 @@
-/* « قصر الساحات » — the drawing of a court (courtParts.jsx). Prefix crt- (the world's other screens use rc-: their
+/* « Le palais des dalles » — the drawing of a court (courtParts.jsx). Prefix crt- (the world's other screens use rc-: their
    .rc-plaque, .rc-fact, .rc-rod would style this drawing). Shapes in the brand blue (#3B5BDB and its tints, light
    enough for the mirror's night); amber = a band, violet = what sticks out, green = it rides. Never black, never the
    red of an error. A screen on a light ground overrides the --crt-* tokens. */
@@ -22,7 +22,7 @@
   max-width: 100%;
   overflow: visible;
   direction: ltr;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 .crt-court.is-tight {
   height: 9.5rem;
@@ -87,7 +87,7 @@
   transform: translate(0, 0);
 }
 .crt-plat.is-ask {
-  transform: translate(-9px, -11px);
+  transform: translate(9px, -11px);
 }
 .crt-plat.is-ask .crt-plat__slab {
   stroke-dasharray: 8 6;
@@ -110,7 +110,7 @@
 }
 .crt-plat.is-jam {
   /* it rests ON the rim: a little higher than the floor, after one jolt */
-  transform: translate(-3px, -4px);
+  transform: translate(3px, -4px);
   animation: crt-jam 0.45s ease-out;
 }
 .crt-plat.is-jam .crt-plat__slab {
@@ -291,7 +291,7 @@
 /* ── motion ── */
 @keyframes crt-lower {
   from {
-    transform: translate(-9px, -11px);
+    transform: translate(9px, -11px);
     opacity: 0.85;
   }
   to {
@@ -317,18 +317,18 @@
     transform: translate(0, 0);
   }
   40% {
-    transform: translate(-5px, -6px);
+    transform: translate(5px, -6px);
   }
   70% {
-    transform: translate(-2px, -3px);
+    transform: translate(2px, -3px);
   }
   100% {
-    transform: translate(-3px, -4px);
+    transform: translate(3px, -4px);
   }
 }
 @keyframes crt-tilt {
   40% {
-    transform: translate(-3px, -1px);
+    transform: translate(3px, -1px);
   }
 }
 @keyframes crt-pulse {

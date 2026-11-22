@@ -96,7 +96,7 @@ let intentPrefetchInstalled = false;
 /**
  * PRÉCHARGEMENT À L'INTENTION (2026-10-17) : survoler, viser au doigt ou
  * atteindre au clavier N'IMPORTE QUEL lien vers une leçon (carte d'unité,
- * « واصل », « دروسي », lien de prérequis…) lance le chargement de ses routes et
+ * « Continue », « Mes leçons », lien de prérequis…) lance le chargement de ses routes et
  * du runtime. Le clic, ≈ 100–300 ms plus tard, trouve le code déjà en route.
  * Un seul écouteur délégué sur le document, posé une fois ; rien n'est chargé
  * pour un lien qui ne mène pas à une leçon.
@@ -123,7 +123,7 @@ function installIntentPrefetch() {
 
 /** L'élément de la route d'attente : suspend jusqu'à l'arrivée des routes réelles. */
 function LessonRoutesLoader({ lessonId }) {
-  // « جرّب كتلميذ » : l'enseignant ouvre le monde lui aussi — même préchargement (idempotent).
+  // « Essayer comme un élève » : l'enseignant ouvre le monde lui aussi — même préchargement (idempotent).
   if (useOpensWorld(lessonId)) preloadWorld(lessonId);
   if (loadedRoutes.has(lessonId)) return <LessonWaiting lessonId={lessonId} />; // App remonte les routes réelles
   if (failures.has(lessonId)) {

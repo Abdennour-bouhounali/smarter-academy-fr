@@ -93,8 +93,8 @@ export function judgeClaim(b, lens, values, from = 0) {
 }
 /**
  * What a claim takes in, as values of its lens. A plank says its claim in one of two ways (its `link`):
- *   equals   the lens shows one of the values he pressed              « رقم الآحاد · يساوي · 0 أو 5 »
- *   divides  the lens shows a number divisible by the one he pressed  « مجموع الأرقام · يقبل القسمة على · 9 »
+ *   equals   the lens shows one of the values he pressed              « le chiffre des unités · est égal à · 0 ou 5 »
+ *   divides  the lens shows a number divisible by the one he pressed  « la somme des chiffres · est divisible par · 9 »
  */
 export const claimValues = (link, lens, picked, from = 0) =>
   link === 'divides' ? LENSES[lens].values(from).filter((v) => picked.some((k) => v % k === 0)) : picked;
@@ -316,7 +316,7 @@ export function commonOf(a, b, candidates) {
 }
 
 /**
- * common — what « تحقّق » does with what he said: `said` = { longest, count } (longest = the plank he marked, null when
+ * common — what « Vérifier » does with what he said: `said` = { longest, count } (longest = the plank he marked, null when
  * none; count = the number typed, null when the box is empty). `crown` false: the longest is not asked — the count alone
  * is judged and a mark is never missing. `needLong` / `needCount` = what is still missing before it can be judged.
  */

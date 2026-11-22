@@ -70,7 +70,7 @@ export function getTotalModules(lessonId) {
 /**
  * Le NUMÉRO du premier module d'une leçon — pas toujours 1.
  *
- * Une leçon qui ouvre sur « أستعدّ » (stage `prerequisite_check`) commence à
+ * Une leçon qui ouvre sur « Je me prépare » (stage `prerequisite_check`) commence à
  * 0. Sans cette information, « continuer » balayait 1..N et proposait le
  * module 1 à un élève qui n'avait pas encore fait le module 0.
  *

@@ -10,8 +10,8 @@ import { rng } from './random';
 
 const sheet = (id) => ({
   id,
-  metadata: { title: id, estimatedMinutes: 4, exam: { heading: 'التمرين', points: '02' } },
-  statement: { content: 'نعتبر العدد 30.' },
+  metadata: { title: id, estimatedMinutes: 4, exam: { heading: 'Exercice', points: '02' } },
+  statement: { content: 'On considère le nombre 30.' },
   questions: [
     {
       id: 'q1',
@@ -69,7 +69,7 @@ describe('a sitting is evidence whatever happened before it', () => {
     const { w, sent } = runtime(sittings);
     const before = JSON.stringify(w.exam);
     sittings.makeSubject(rng(1), 1, [], keyOf); // shown…
-    w.quitSitting.call({ state: { overlay: null } }); // …then « خروج »
+    w.quitSitting.call({ state: { overlay: null } }); // …then « Quitter »
     expect(sent).toEqual([]);
     expect(JSON.stringify(w.exam)).toBe(before);
     expect(sittings.makeSubject(rng(3), 1, [], keyOf).exercises[0].questions.every((q) => q.counted)).toBe(true);

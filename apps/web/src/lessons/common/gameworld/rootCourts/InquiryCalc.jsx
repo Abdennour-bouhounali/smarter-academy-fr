@@ -3,10 +3,10 @@
  * area `spec.a` is in front of him, and rods lie ready beside its wall — a whole number, a decimal, the number a drawn
  * calculator shows. For each rod he says BEFORE whether its platform will ride; the world lowers it (`Court`, from
  * `courtParts.jsx`) and the row stays in the table: the rod, the tiles its platform covers, what is left or what sticks
- * out — exact. A gap too thin to see is magnified by HIS hand (« كبّر », × 10 at each press) until it is seen. Last
+ * out — exact. A gap too thin to see is magnified by HIS hand (« Agrandis », × 10 at each press) until it is seen. Last
  * (`spec.wall`), he clamps the rod on the court's own wall, corner to corner: it rides, and its cell has no number.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `calc`): this file writes no word, and
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `calc`): this file writes no word, and
  * nothing it draws names the rule. The screen is a pure VIEW of the reducer's state (`CalcView`).
  */
 import { useReducer } from 'react';

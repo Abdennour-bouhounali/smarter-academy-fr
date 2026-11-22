@@ -1,6 +1,6 @@
 /**
- * THE INVESTIGATION `peel` — PURE logic (screen: `InquiryPeel.jsx`; contract: GAME_WORLD.md « استكشف », spec shape of
- * `peel` of « قصر الساحات »). Its rule is of the nature of a PROCEDURE HE UNDOES STEP BY STEP. A round shows a PLAQUE that
+ * THE INVESTIGATION `peel` — PURE logic (screen: `InquiryPeel.jsx`; contract: GAME_WORLD.md « Explore », spec shape of
+ * `peel` of « Le palais des dalles »). Its rule is of the nature of a PROCEDURE HE UNDOES STEP BY STEP. A round shows a PLAQUE that
  * is not yet the area of ONE court: it was written for SEVERAL equal courts together (3 courts: 75 tiles), for a part of
  * a court (two thirds of a court: 1350), for a court with a pile of tiles ADDED or TAKEN (a court and 4 tiles more: 0),
  * or a short chain of these. He PEELS one operation at a time — share between the courts, multiply the courts, add
@@ -31,8 +31,8 @@ import { read, write, compare, equal, platform, rootOf, isDecimal, tex } from '.
 /**
  * THE LAYOUT of the screen at 1366 × 768 (the ONE size), in rem of the forge's frame (`.rf-fit`, designed 1280 × 720 and
  * zoomed 1.067: 1rem ≈ 17 px). The experiment's panel is 1205 × 587 px of the frame (measured for `calc`, the same panel).
- * Columns, right to left: the main column (the scene, the question, the peels or the rods, the fact) and the table of
- * rounds. `inquiryPeel.render.test.jsx` adds the widths and the heights and checks that every text he reads is ≥ 18 px.
+ * Columns, left to right (`columns`): the main column (the scene, the question, the peels or the rods, the fact), then
+ * the table of rounds. `inquiryPeel.render.test.jsx` adds the widths and the heights and checks that every text he reads is ≥ 18 px.
  */
 export const PEEL_LAYOUT = {
   zoom: 1.067,
@@ -50,6 +50,8 @@ export const PEEL_LAYOUT = {
   maxK: 12,
   /** the table shows at most this many peels of a round (the first, « … », the last ones) — all are in the result */
   maxTags: 5,
+  /** the columns, left to right: the first one is on the LEFT (the screen's DOM order, pinned by the render test) */
+  columns: ['main', 'table'],
   gap: 1, // rem between the two columns
   rowGap: 0.55, // rem (`.rq-iq` gap)
   head: 3.52, // rem: the lead (1.2rem × 1.5) and the goal (1.08rem × 1.45), one line each

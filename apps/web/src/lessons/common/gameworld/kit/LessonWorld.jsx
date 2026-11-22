@@ -19,8 +19,8 @@
  *   playing(s), busy(s), quiet(s), paperOn(s), held(s)   when the student is in the world, in the middle of something, when
  *                       the robot keeps silent, when written work is on screen, what he carries
  *   devHandles          what it exposes on `window` for the walks, in development
- * The kit's own overlays: the rule tablet, the practice hub, « خريطة المعارف », the exam sitting and its promotion,
- * « تقدّمي », « مختبري », « عُدّة الانطلاق », the result of a level, the end.
+ * The kit's own overlays: the rule tablet, the practice hub, « fiche de connaissances », the exam sitting and its promotion,
+ * « Ma progression », « Mon labo », « L’échauffement », the result of a level, the end.
  */
 import { Suspense, lazy, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
@@ -61,7 +61,7 @@ const hasWebGL = () => {
   }
 };
 
-// « مختبري »: the lab of the lesson, the same for every lesson (lessons/common/lessonlab) — loaded when opened
+// « Mon labo »: the lab of the lesson, the same for every lesson (lessons/common/lessonlab) — loaded when opened
 const LessonLab = lazy(() => import('../../lessonlab/LessonLab'));
 
 const LaunchKit = lazy(() => import('../../launchkit/LaunchKit'));
@@ -96,7 +96,7 @@ export default function LessonWorld({
   }, [game]);
   const onModuleRef = useRef(onModule);
   onModuleRef.current = onModule;
-  // الكفاءات: the answers that count are sent to the server, which re-computes their verdict (GameEvidenceController)
+  // learning points: the answers that count are sent to the server, which re-computes their verdict (GameEvidenceController)
   const auth = useContext(AuthContext);
   const tokenRef = useRef(null);
   tokenRef.current = auth?.token ?? null;
@@ -181,7 +181,7 @@ export default function LessonWorld({
     };
   }, []);
 
-  // « من البداية » restarts the STORY only: what the practice earned (levels, keys ever owned) stays
+  // « Recommencer depuis le début » restarts the STORY only: what the practice earned (levels, keys ever owned) stays
   const restart = () => {
     const old = readSave(config.id);
     writeSave(config.id, {
@@ -196,7 +196,7 @@ export default function LessonWorld({
 
   if (failed) {
     return (
-      <div className="di-fallback" dir="rtl">
+      <div className="di-fallback">
         <p>{KT.noWebgl}</p>
         <Link to={exitTo} className="di-btn di-btn--primary">
           {KT.hud.exit}
@@ -206,11 +206,11 @@ export default function LessonWorld({
   }
 
   return createPortal(
-    <div className="di-root" dir="rtl" ref={root} data-gameworld={world.id}>
+    <div className="di-root" ref={root} data-gameworld={world.id}>
       {preview && (
         <div className="di-preview" data-di-preview>
-          <span>معاينة الأستاذ: ما يراه التلميذ. لا شيء يُسجَّل.</span>
-          <a href={exitTo}>خروج من المعاينة</a>
+          <span>{KT.preview.text}</span>
+          <a href={exitTo}>{KT.preview.exit}</a>
         </div>
       )}
       <canvas ref={canvas} className="di-canvas" />
@@ -313,7 +313,7 @@ function Shell({ world, game, rootRef, exitTo, basePath, config, onRestart, mast
               </button>
             </>
           )}
-          {/* « قواعدي »: every rule he owns, from anywhere — a tablet he closes flies here (`Tablet › flyToRules`) */}
+          {/* « Mes règles »: every rule he owns, from anywhere — a tablet he closes flies here (`Tablet › flyToRules`) */}
           {(s.keys.length > 0 || o?.type === 'tablet') && (
             <button
               type="button"

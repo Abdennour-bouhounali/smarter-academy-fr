@@ -3,7 +3,7 @@ import { getNextIncompleteModule, getFlatAvailableLessons } from '@smarter-acade
 import { getTotalModules, getModulePath, getFirstModuleNumber, lessonPackFlags } from '../../../registry';
 
 /**
- * The address « واصل » opens for module `moduleNumber` of a lesson — or null, and the caller falls back to the lesson's
+ * The address « Continue » opens for module `moduleNumber` of a lesson — or null, and the caller falls back to the lesson's
  * home. A lesson whose pack has a WORLD (a v2 lesson, LESSON_V2.md §2) is resumed on its home, the world: its module
  * pages are deleted and their addresses only redirect there (and the world never records a current module). Driven by
  * the lesson's own pack, never by a list of lessons.

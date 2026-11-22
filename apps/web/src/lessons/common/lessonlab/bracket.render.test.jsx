@@ -8,15 +8,15 @@ const draw = (a, b, start) =>
     <Bracket a={a} b={b} start={start} play={noop} report={noop} range={{ a: [1, 9999], b: [2, 999] }} />,
   ).replaceAll('<!-- -->', '');
 
-describe('مختبري — « مسطرة الحصر » draws what it reads', () => {
+describe('Mon labo — « L’encadrement par planches » draws what it reads', () => {
   it('opens on ONE plank laid along the length: what is left, the product compared with a, and no bracket yet', () => {
     const html = draw(100, 7);
     expect(html).toContain('data-n="1"');
     expect(html).toContain('data-q="14"');
     expect(html).toContain('data-ll-left="93"'); // 100 − 7
     expect(html).toContain('1 × 7 = 7 &lt; 100');
-    expect(html).toContain('الطول 100');
-    expect(html).toContain('طول اللوح 7');
+    expect(html).toContain('Longueur 100');
+    expect(html).toContain('Planche de 7');
     // the bracket is written only once the hand has laid the full planks and the one more: never on opening
     expect(html).not.toContain('data-ll-bracket=');
     expect(html).not.toContain('data-ll-found');
@@ -32,7 +32,7 @@ describe('مختبري — « مسطرة الحصر » draws what it reads', () 
     expect(html).toContain('data-q="0"');
     expect(html).toContain('data-over="5"');
     expect(html).toContain('1 × 14 = 14 &gt; 9');
-    expect(html).toContain('تتجاوز الطول بـ 5');
+    expect(html).toContain('La longueur est dépassée de 5');
   });
 
   it('a great many planks is drawn as one bar, never thousands of rectangles', () => {

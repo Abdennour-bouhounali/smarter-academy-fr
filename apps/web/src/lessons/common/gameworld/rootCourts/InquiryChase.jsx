@@ -10,7 +10,7 @@
  *
  * The court is THIS file's drawing: the shared `Court` lowers ONE platform and writes the world's own words beside it
  * (it stacks a fraction too, since 2026-11-21); here the drawing holds no word. `spec.text` is the lesson's wording
- * (GAME_WORLD.md « استكشف », spec shape of `chase`): this file writes no word, and nothing it draws names the rule.
+ * (GAME_WORLD.md « Explore », spec shape of `chase`): this file writes no word, and nothing it draws names the rule.
  * The screen is a pure VIEW of the reducer's state (`ChaseView`).
  */
 import { useReducer } from 'react';
@@ -42,9 +42,9 @@ function Frac({ p, q, big = false }) {
 
 // ───────────────────────── the court, drawn to scale, and the magnifier on its far corner ─────────────────────────
 const { w: VW, h: VH } = CHASE_LAYOUT.court.view;
-const POST = { x: 300, y: 222 }; // the corner post: bottom right; the far corner is top left
-const ROOM = 172; // the longest side drawn (the court, or the platform when it is longer)
-const LENS = { cx: 64, cy: 82, r: 52 };
+/** The court's drawing, left to right: its post at the bottom LEFT (the court grows right and up), the lens right of it. */
+export const CHASE_COURT = { post: { x: 20, y: 222 }, room: 172, lens: { cx: 256, cy: 82, r: 52 } };
+const { post: POST, room: ROOM, lens: LENS } = CHASE_COURT; // the far corner is the top RIGHT
 const LENS_FONT = CHASE_LAYOUT.court.font;
 const r2 = (v) => Math.round(v * 100) / 100;
 
@@ -61,7 +61,7 @@ function Floor({ L, u }) {
         <rect
           key={`${i}-${j}`}
           className={`rq-ch__tile ${w < step - 1e-9 || h < step - 1e-9 ? 'is-cut' : ''}`}
-          x={r2(POST.x - (i * step + w) * u)}
+          x={r2(POST.x + i * step * u)}
           y={r2(POST.y - (j * step + h) * u)}
           width={r2(w * u)}
           height={r2(h * u)}
@@ -99,8 +99,9 @@ function Lens({ kind, g, k, corner }) {
   const { cx, cy, r } = LENS;
   const gk = g * 10 ** k;
   const big = r * 3;
-  const cc = kind === 'jam' ? { x: cx + gk / 2, y: cy + gk / 2 } : { x: cx - gk / 2, y: cy - gk / 2 };
-  const pc = kind === 'jam' ? { x: cc.x - gk, y: cc.y - gk } : { x: cc.x + gk, y: cc.y + gk };
+  // the court's far corner (top right) in the lens: the court lies left of and below it; `pc` the platform's corner
+  const cc = kind === 'jam' ? { x: cx - gk / 2, y: cy + gk / 2 } : { x: cx + gk / 2, y: cy - gk / 2 };
+  const pc = kind === 'jam' ? { x: cc.x + gk, y: cc.y - gk } : { x: cc.x - gk, y: cc.y + gk };
   const dx = corner.x - cx;
   const dy = corner.y - cy;
   const len = Math.hypot(dx, dy) || 1;
@@ -120,22 +121,22 @@ function Lens({ kind, g, k, corner }) {
       </clipPath>
       <g clipPath={`url(#${id})`}>
         <rect className="rq-ch__void" x={cx - r} y={cy - r} width={2 * r} height={2 * r} />
-        {kind === 'jam' && <rect className="rq-ch__over" x={r2(pc.x)} y={r2(pc.y)} width={big} height={big} />}
+        {kind === 'jam' && <rect className="rq-ch__over" x={r2(pc.x - big)} y={r2(pc.y)} width={big} height={big} />}
         <rect
           className={kind === 'band' ? 'rq-ch__band' : 'rq-ch__lensfloor'}
-          x={r2(cc.x)}
+          x={r2(cc.x - big)}
           y={r2(cc.y)}
           width={big}
           height={big}
         />
         <rect
           className="rq-ch__slab"
-          x={r2(Math.max(pc.x, cc.x))}
+          x={r2(Math.min(pc.x, cc.x) - big)}
           y={r2(Math.max(pc.y, cc.y))}
           width={big}
           height={big}
         />
-        <path className="rq-ch__wallline" d={`M${r2(cc.x + big)} ${r2(cc.y)} H${r2(cc.x)} V${r2(cc.y + big)}`} />
+        <path className="rq-ch__wallline" d={`M${r2(cc.x - big)} ${r2(cc.y)} H${r2(cc.x)} V${r2(cc.y + big)}`} />
       </g>
       <circle className="rq-ch__ring" cx={cx} cy={cy} r={r} />
       <Factor k={k} />
@@ -151,9 +152,9 @@ function Court({ a, p, q, stage, kind, gap }) {
   const L = Math.sqrt(Number(a));
   const l = Number(p) / Number(q);
   const u = ROOM / Math.max(L, l);
-  const xL = POST.x - L * u;
+  const xR = POST.x + L * u; // the court's far (right) wall
   const yT = POST.y - L * u;
-  const xl = POST.x - l * u;
+  const xr = POST.x + l * u; // the platform's far edge
   const yl = POST.y - l * u;
   const done = stage === 'done';
   // the thickness of the gap at the far corner, in units — from the exact gap (chase.js › lensPower)
@@ -171,20 +172,20 @@ function Court({ a, p, q, stage, kind, gap }) {
       data-iq-court-kind={done ? kind : undefined}
     >
       <Floor L={L} u={u} />
-      <rect className="rq-ch__wall" x={r2(xL)} y={r2(yT)} width={r2(L * u)} height={r2(L * u)} />
+      <rect className="rq-ch__wall" x={POST.x} y={r2(yT)} width={r2(L * u)} height={r2(L * u)} />
       {done && kind === 'band' && (
         <path
           className="rq-ch__band"
-          d={`M${r2(xL)} ${r2(yT)} H${POST.x} V${r2(yl)} H${r2(xl)} V${POST.y} H${r2(xL)} Z`}
+          d={`M${r2(xR)} ${r2(yT)} H${POST.x} V${r2(yl)} H${r2(xr)} V${POST.y} H${r2(xR)} Z`}
           data-iq-band={gap}
         />
       )}
       {stage === 'say' ? (
-        <rect className="rq-ch__ghost" x={r2(xl)} y={r2(yl)} width={r2(l * u)} height={r2(l * u)} />
+        <rect className="rq-ch__ghost" x={POST.x} y={r2(yl)} width={r2(l * u)} height={r2(l * u)} />
       ) : (
         <rect
           className={`rq-ch__slab ${stage === 'build' ? 'is-lowering' : ''}`}
-          x={r2(Math.max(xl, xL))}
+          x={POST.x}
           y={r2(Math.max(yl, yT))}
           width={r2(Math.min(l, L) * u)}
           height={r2(Math.min(l, L) * u)}
@@ -193,14 +194,14 @@ function Court({ a, p, q, stage, kind, gap }) {
       {done && kind === 'jam' && (
         <path
           className="rq-ch__over"
-          d={`M${r2(xl)} ${r2(yl)} H${POST.x} V${r2(yT)} H${r2(xL)} V${POST.y} H${r2(xl)} Z`}
+          d={`M${r2(xr)} ${r2(yl)} H${POST.x} V${r2(yT)} H${r2(xR)} V${POST.y} H${r2(xr)} Z`}
           data-iq-over={gap}
         />
       )}
       <rect className="rq-ch__post" x={POST.x - 7} y={POST.y - 7} width="14" height="14" rx="3" />
       {/* the rod along the near wall, from the post */}
-      <rect className="rq-ch__rod" x={r2(xl)} y={POST.y + 8} width={r2(l * u)} height="7" rx="3.5" />
-      {k > 0 && <Lens kind={kind} g={g} k={k} corner={{ x: xL, y: yT }} />}
+      <rect className="rq-ch__rod" x={POST.x} y={POST.y + 8} width={r2(l * u)} height="7" rx="3.5" />
+      {k > 0 && <Lens kind={kind} g={g} k={k} corner={{ x: r2(xR), y: r2(yT) }} />}
     </svg>
   );
 }
@@ -224,7 +225,7 @@ function SmallTile({ q }) {
             </g>
           );
         })}
-      <rect className="rq-ch__keysmall" x={r2(2 + S - s)} y={r2(2 + S - s)} width={r2(s)} height={r2(s)} />
+      <rect className="rq-ch__keysmall" x="2" y={r2(2 + S - s)} width={r2(s)} height={r2(s)} />
     </svg>
   );
 }

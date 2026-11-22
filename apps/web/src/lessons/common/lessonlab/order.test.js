@@ -6,7 +6,7 @@ vi.mock('./lessonOrder.generated.json', () => ({
   default: { '6e': ['a6', 'b6'], '5e': ['a5'], '4e': [], '3e': ['a3'] },
 }));
 
-describe('مختبري — where a lesson sits in the four years', () => {
+describe('Mon labo — where a lesson sits in the four years', () => {
   it('the four French grades in order, named as the catalogue names them', () => {
     expect(GRADES).toEqual(['6e', '5e', '4e', '3e']);
     expect(GRADES.every((g) => typeof GRADE_NAMES[g] === 'string' && GRADE_NAMES[g].length > 0)).toBe(true);

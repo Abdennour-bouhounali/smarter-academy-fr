@@ -10,7 +10,7 @@
  *             gap on the other from the longest down — then « next » takes the card to its basket.
  *   end       both baskets stay on screen with their cards.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `sort`): before the key is forged the
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `sort`): before the key is forged the
  * baskets are named by what the world shows, never by the mathematical name — this file writes no word of its own.
  * The screen is a pure VIEW of the reducer's state (`SortView`).
  */
@@ -42,7 +42,7 @@ const YB = 100;
 const H = 30;
 const PY = 160; // the baseline of the panel's label
 const ROW0 = 194; // the centre of the panel's first row of chips
-const RIGHT = X0 + SPAN; // the panel reads from the right
+const LEFT = X0; // the panel reads from the left: its label, then its first chip
 const PER_LINE = 13;
 
 /** A card's face: a pair « a ; b » read left to right, or a fraction with a real bar. */
@@ -97,31 +97,31 @@ function Chip({ x, y, w, n, cls, under, underCls, hook }) {
   );
 }
 
-/** Where the k-th chip of a row stands: from the right, PER_LINE a line. */
-const at = (k, from, step, y0, lh) => ({ x: from - (k % PER_LINE) * step, y: y0 + Math.floor(k / PER_LINE) * lh });
+/** Where the k-th chip of a row stands: from the left, PER_LINE a line. */
+const at = (k, from, step, y0, lh) => ({ x: from + (k % PER_LINE) * step, y: y0 + Math.floor(k / PER_LINE) * lh });
 const linesOf = (n) => Math.max(1, Math.ceil(n / PER_LINE));
 
-/** lists — the planks of a, then of b, shortest first from the right; the planks of both are marked. */
+/** lists — the planks of a, then of b, shortest first from the left; the planks of both are marked. */
 function ListsPanel({ label, a, b, shown }) {
   const L = listsOf(a, b);
   const w = chipW([...L.a, ...L.b]);
   const step = w + 6;
   const lh = 38;
   const tagW = 12 * String(Math.max(a, b)).length + 30;
-  const from = RIGHT - tagW - 14 - w / 2;
+  const from = LEFT + tagW + 14 + w / 2;
   const rows = [
     { tag: 'a', n: a, list: L.a, y0: ROW0 },
     { tag: 'b', n: b, list: L.b, y0: ROW0 + linesOf(L.a.length) * lh + 4 },
   ];
   return (
     <g data-iq-panel="lists" data-iq-common={shown >= 2 ? L.common.join(',') : ''}>
-      <text className="iqs-label" x={RIGHT} y={PY} direction="rtl">
+      <text className="iqs-label" x={LEFT} y={PY}>
         {label}
       </text>
       {rows.slice(0, shown).map((r) => (
         <g key={r.tag} data-iq-list={r.tag}>
-          <rect className="iqs-tag" x={RIGHT - tagW} y={r.y0 - 17} width={tagW} height="34" rx="9" />
-          <text className="iqs-tagnum" x={RIGHT - tagW / 2} y={r.y0 + 7} direction="ltr">
+          <rect className="iqs-tag" x={LEFT} y={r.y0 - 17} width={tagW} height="34" rx="9" />
+          <text className="iqs-tagnum" x={LEFT + tagW / 2} y={r.y0 + 7} direction="ltr">
             {r.n}
           </text>
           {r.list.map((d, k) => {
@@ -146,7 +146,7 @@ function ListsPanel({ label, a, b, shown }) {
 }
 
 /**
- * The planks of the shorter gap from the longest down (from the right), each laid on the longer gap; under each plank laid,
+ * The planks of the shorter gap from the longest down (from the left), each laid on the longer gap; under each plank laid,
  * the rest it leaves there (amber, or a green 0). Used by the instrument `summit` (it stops on the first that fills) and by
  * the world's answer « none but 1 » (it lays them all).
  */
@@ -162,11 +162,11 @@ function DescentPanel({ label, all, tried, shown, hook }) {
         .map((t) => t.d)
         .join(',')}
     >
-      <text className="iqs-label" x={RIGHT} y={PY} direction="rtl">
+      <text className="iqs-label" x={LEFT} y={PY}>
         {label}
       </text>
       {all.map((d, k) => {
-        const p = at(k, RIGHT - w / 2, step, ROW0, lh);
+        const p = at(k, LEFT + w / 2, step, ROW0, lh);
         const t = k < shown ? tried[k] : null;
         const cls = t ? (t.r === 0 ? 'is-fills' : 'is-no') : k < tried.length ? 'is-wait' : 'is-untried';
         return (
@@ -187,7 +187,7 @@ function DescentPanel({ label, all, tried, shown, hook }) {
   );
 }
 
-/** ladder — the rows of Euclid's divisions, right column first; the rest of each row amber, the 0 green. */
+/** ladder — the rows of Euclid's divisions, left column first; the rest of each row amber, the 0 green. */
 function LadderPanel({ label, a, b, shown }) {
   const rows = ladderFactsOf(a, b);
   const perCol = Math.max(4, Math.ceil(rows.length / 3));
@@ -195,7 +195,7 @@ function LadderPanel({ label, a, b, shown }) {
   const colW = SPAN / 3;
   return (
     <g data-iq-panel="ladder" data-iq-rows={rows.length}>
-      <text className="iqs-label" x={RIGHT} y={PY} direction="rtl">
+      <text className="iqs-label" x={LEFT} y={PY}>
         {label}
       </text>
       {rows.slice(0, shown).map((r, k) => {
@@ -204,7 +204,7 @@ function LadderPanel({ label, a, b, shown }) {
           <text
             key={`${r.a}-${r.b}`}
             className="iqs-row"
-            x={RIGHT - colW * (col + 0.5)}
+            x={LEFT + colW * (col + 0.5)}
             y={ROW0 + 6 + (k % perCol) * lh}
             direction="ltr"
             data-iq-row={k}

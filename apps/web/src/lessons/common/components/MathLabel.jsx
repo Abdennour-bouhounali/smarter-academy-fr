@@ -12,9 +12,9 @@ const MathText = lazy(() => import('./MathText'));
  * d'apprentissage, prérequis, objectif, consigne d'un module ou d'une ressource.
  *
  * Ces textes viennent du catalogue et des LESSON_CONFIG, écrits comme le contenu des leçons
- * (« الترميز $x \longmapsto ax + b$ »). Imprimés par `bidi()` seul, l'élève lisait les dollars
+ * (« la notation $x \longmapsto ax + b$ »). Imprimés par `bidi()` seul, l'élève lisait les dollars
  * et les antislashs. Sans formule, MathLabel rend exactement `bidi(text)` ; avec formule,
- * MathText (KaTeX, île LTR, isolement des égalités en clair — ARABIC_RTL_CONTRACT.md).
+ * MathText (KaTeX, île isolée, isolement des égalités en clair).
  *
  * Pour un contexte qui n'accepte qu'une chaîne (`<option>`, `title`, `aria-label`, un
  * gabarit), utiliser `mathToPlain` (utils/mathPlain.js).

@@ -10,7 +10,7 @@
   padding: 1.5rem;
   overflow: hidden;
   color: #e8f6ff;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: radial-gradient(900px 500px at 75% -10%, #1d4f8f 0%, transparent 60%),
     radial-gradient(700px 500px at 10% 110%, #2b2a78 0%, transparent 60%), linear-gradient(165deg, #0a1a3a, #0d2552);
 }
@@ -109,7 +109,8 @@
   background: #7dfcff;
   transition: width 0.3s linear;
 }
-/* a light that keeps crossing the bar: between two real steps the screen is never still */
+/* a light that keeps crossing the bar, left to right like the bar fills: between two real steps the screen is never
+   still */
 .gw-loading__bar::after {
   content: '';
   position: absolute;
@@ -128,7 +129,7 @@
   background: #7dfcff;
   color: #06122c;
   font:
-    900 1.125rem 'Cairo',
+    900 1.125rem 'Inter',
     sans-serif;
   cursor: pointer;
 }
@@ -172,10 +173,10 @@
 }
 @keyframes gw-sweep {
   from {
-    transform: translateX(320%);
+    transform: translateX(-120%);
   }
   to {
-    transform: translateX(-120%);
+    transform: translateX(320%);
   }
 }
 @keyframes gw-leave {

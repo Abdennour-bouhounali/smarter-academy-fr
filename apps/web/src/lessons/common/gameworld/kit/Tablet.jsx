@@ -52,7 +52,7 @@ function TabletBody({ id, mine = null }) {
 
 /**
  * THE RULE GOES TO ITS CORNER (owner, 2026-11-21, every world): when he closes a tablet he has just received, the card
- * shrinks and flies to the button « قواعدي » of the top bar, which then beats — he SEES where his rule went and that he
+ * shrinks and flies to the button « Mes règles » of the top bar, which then beats — he SEES where his rule went and that he
  * can read it again whenever he wants. No motion for a reader who asked for none.
  */
 function flyToRules(card, done) {
@@ -98,7 +98,7 @@ export function Tablet({ id, onClose, fresh, closeLabel, mine = null }) {
 }
 
 /**
- * « قواعدي » — every rule he owns, readable from anywhere in the world (the button of the top bar): one tab a rule,
+ * « Mes règles » — every rule he owns, readable from anywhere in the world (the button of the top bar): one tab a rule,
  * his own forged sentence above its name when he has one.
  */
 export function RulesSheet({ keys, sel = null, mine = {}, onClose }) {

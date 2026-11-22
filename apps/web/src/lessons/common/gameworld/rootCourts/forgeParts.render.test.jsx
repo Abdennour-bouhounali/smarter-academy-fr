@@ -30,29 +30,31 @@ describe('the mirror of this world draws a case with THE court', () => {
 
 describe('a line of evidence — in the world’s words, for each outcome', () => {
   const line = (c, kids) => renderToString(<Line c={c}>{kids}</Line>);
-  it('a ride, a band, a jam: « ساحة · مقياس », the world’s word, its colour, a thumbnail', () => {
+  it('a ride, a band, a jam: « salle · toise », the world’s word, its colour, a thumbnail', () => {
     for (const [a, s, kind, word] of [
-      ['36', '6', 'ride', 'تركب'],
-      ['30', '5', 'band', 'يبقى شريط'],
-      ['30', '6', 'jam', 'تعلق'],
+      ['36', '6', 'ride', 'Elle monte'],
+      ['30', '5', 'band', 'Une bande'],
+      ['30', '6', 'jam', 'Elle coince'],
     ]) {
       const out = line(caseOf(a, s));
       expect(out).toContain(`data-rc-line="${kind}"`);
       expect(out).toContain(`crt-kind--${kind}">${word}<`);
       expect(out).toContain(`<strong dir="ltr">${a}</strong>`);
       expect(out).toContain(`<strong dir="ltr">${s}</strong>`);
-      expect(out).toContain('ساحة');
-      expect(out).toContain('مقياس');
+      expect(out).toContain('<span>salle</span>');
+      expect(out).toContain('<span>toise</span>');
+      expect(out).not.toMatch(/[\u0600-\u06FF]/);
       expect(out).toContain(`crt-mini is-${kind}`);
-      expect(out).not.toMatch(/لوح|خانة|جسر/); // never the first world's words (defects.md A10)
+      expect(out).not.toMatch(/planche|pont|fossé|règle/i); // never the first world's words (defects.md A10)
     }
   });
   it('a wall is written « √30 » left to right; the tag, the mirror’s mark and what his rule says are shown', () => {
-    const out = line({ ...caseOf('30', 'wall', { tag: 'جدار' }), mirror: true }, <small className="rf-says">✓</small>);
+    const out = line({ ...caseOf('30', 'wall', { tag: 'mur' }), mirror: true }, <small className="rf-says">✓</small>);
     // a real radical (KaTeX: the bar over the number), inside a left-to-right isolate
     expect(out).toMatch(/<strong dir="ltr">.*katex.*sqrt.*30.*<\/strong>/s);
-    expect(out).toContain('crt-line__tag">جدار<');
+    expect(out).toContain('crt-line__tag">mur<');
     expect(out).toContain('rf-inmirror');
+    expect(out).toContain('title="Construite par le miroir"');
     expect(out).toContain('rf-says');
   });
   it('a court or a rod that is a fraction is stacked over a real bar — never « p/q » as text (defects.md D41)', () => {
@@ -69,8 +71,8 @@ describe('a line of evidence — in the world’s words, for each outcome', () =
     expect(line(caseOf('30', '5,47'))).toContain('<strong dir="ltr">30</strong>');
   });
   it('a case with a `head` is named by it, not by its court and rod', () => {
-    const out = line(caseOf('30', '5,47', { head: 'مقياس الحاسبة' }));
-    expect(out).toContain('crt-line__name">مقياس الحاسبة<');
+    const out = line(caseOf('30', '5,47', { head: 'toise de la calculatrice' }));
+    expect(out).toContain('crt-line__name">toise de la calculatrice<');
     expect(out).not.toContain('<strong dir="ltr">30</strong>');
     expect(out).toContain('crt-kind--band');
   });

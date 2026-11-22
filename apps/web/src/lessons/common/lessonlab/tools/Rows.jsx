@@ -1,13 +1,15 @@
 /**
- * « صفوف القسمة » — a counters set in rows of b. The student's hand holds the WALL: its place IS the divisor.
+ * « Les rangées de la division » — a counters set in rows of b. The student's hand holds the WALL: its place IS the divisor.
  * Full rows are teal, the counters left over are amber; when nothing is left the whole tray turns green.
  */
 import { useRef, useState } from 'react';
 import { VW, VH, useDrag, useChime, Tool, M } from '../kit';
 import { rowsLayout } from '../logic';
+import { counted } from '../../gameworld/kit/authoring/numbers';
 
-const RIGHT = 910;
-const LEFT = 150;
+// the counters are laid from the LEFT (the first row starts at LEFT); the labels stand right of the wall
+const LEFT = 30;
+const RIGHT = 790;
 const TOP = 36;
 const H = 312;
 const MAXB = 24;
@@ -22,9 +24,9 @@ export default function Rows({ a, b, setB, play, range }) {
   const rh = Math.min(CW, H / L.rows);
   const rad = Math.min(CW, rh) * 0.4;
   const exact = L.r === 0;
-  const wallX = RIGHT - b * CW - 7;
+  const wallX = LEFT + b * CW + 7;
   const toB = (p) => {
-    const nb = Math.max(range.b[0], Math.min(range.b[1], MAXB, Math.round((RIGHT - 7 - p.x) / CW)));
+    const nb = Math.max(range.b[0], Math.min(range.b[1], MAXB, Math.round((p.x - LEFT - 7) / CW)));
     if (nb !== last.current) {
       last.current = nb;
       setB(nb);
@@ -40,12 +42,12 @@ export default function Rows({ a, b, setB, play, range }) {
     onMove: toB,
   });
   const key = (e) => {
-    if (e.key === 'ArrowLeft') {
+    if (e.key === 'ArrowRight') {
       setB(b + 1);
       setMoved(true);
       play('tick', b + 1);
     }
-    if (e.key === 'ArrowRight') {
+    if (e.key === 'ArrowLeft') {
       setB(b - 1);
       setMoved(true);
       play('tick', b - 1);
@@ -60,11 +62,11 @@ export default function Rows({ a, b, setB, play, range }) {
           <M>{`${a} = ${b} \\times ${L.q} + ${L.r}`}</M>
           {exact ? (
             <span className="ll-chip ll-chip--good">
-              الباقي 0: {b} قاسم للعدد {a}
+              Reste 0 : {b} est un diviseur de {a}
             </span>
           ) : (
             <span className="ll-chip ll-chip--warm">
-              يبقى {L.r}: {b} ليس قاسمًا للعدد {a}
+              Il reste {L.r} : {b} n’est pas un diviseur de {a}
             </span>
           )}
         </>
@@ -81,15 +83,8 @@ export default function Rows({ a, b, setB, play, range }) {
           stroke="rgba(125,252,255,.2)"
           strokeWidth="1.5"
         />
-        <text
-          x={RIGHT - (b * CW) / 2}
-          y={TOP - 18}
-          textAnchor="middle"
-          fontSize="17"
-          style={{ fill: '#7dfcff' }}
-          direction="rtl"
-        >
-          {b} في كلّ صفّ
+        <text x={LEFT + (b * CW) / 2} y={TOP - 18} textAnchor="middle" fontSize="17" style={{ fill: '#7dfcff' }}>
+          {b} par rangée
         </text>
         <g className={exact ? 'll-glow' : ''}>
           {L.cells.map((c) => (
@@ -97,33 +92,31 @@ export default function Rows({ a, b, setB, play, range }) {
               key={c.i}
               className="ll-counter"
               r={rad}
-              style={{ transform: `translate(${RIGHT - (c.col + 0.5) * CW}px, ${TOP + (c.row + 0.5) * rh}px)` }}
+              style={{ transform: `translate(${LEFT + (c.col + 0.5) * CW}px, ${TOP + (c.row + 0.5) * rh}px)` }}
               fill={exact ? '#34d399' : c.rest ? '#fbbf24' : '#2dd4bf'}
             />
           ))}
         </g>
         {L.q > 0 && (
           <text
-            x={wallX - 18}
+            x={wallX + 18}
             y={TOP + (L.q * rh) / 2 + 6}
-            direction="rtl"
             textAnchor="start"
             fontSize="19"
             style={{ fill: exact ? '#6ee7b7' : '#5eead4' }}
           >
-            {L.q} {L.q > 10 ? 'صفًّا' : L.q > 2 ? 'صفوف' : L.q === 2 ? 'صفّان' : 'صفّ'}
+            {counted(L.q, ['rangée', 'rangées'])}
           </text>
         )}
         {L.r > 0 && (
           <text
-            x={wallX - 18}
+            x={wallX + 18}
             y={TOP + (L.q + 0.5) * rh + 6}
-            direction="rtl"
             textAnchor="start"
             fontSize="19"
             style={{ fill: '#fbbf24' }}
           >
-            يبقى {L.r}
+            reste {L.r}
           </text>
         )}
         <g
@@ -132,7 +125,7 @@ export default function Rows({ a, b, setB, play, range }) {
           tabIndex={0}
           onKeyDown={key}
           role="slider"
-          aria-label="عدد الحبّات في كلّ صفّ"
+          aria-label="Nombre de jetons par rangée"
           aria-valuenow={b}
           data-ll-wall
         >
@@ -147,14 +140,13 @@ export default function Rows({ a, b, setB, play, range }) {
         </g>
         {!moved && (
           <text
-            x={Math.max(120, wallX - 18)}
+            x={Math.min(VW - 190, wallX + 18)}
             y={TOP + H + 16}
-            direction="rtl"
             textAnchor="start"
             fontSize="15"
             style={{ fill: '#7dfcff', opacity: 0.9 }}
           >
-            اسحب الجدار ← →
+            Fais glisser le mur ← →
           </text>
         )}
       </svg>

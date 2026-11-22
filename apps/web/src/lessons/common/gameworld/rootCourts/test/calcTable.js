@@ -1,5 +1,5 @@
 /**
- * Test helpers of the experiment ✍️ « الحاسبة » (calc.js) — imported by tests only (the `test/` folder, like
+ * Test helpers of the experiment ✍️ « La calculatrice » (calc.js) — imported by tests only (the `test/` folder, like
  * kit/authoring/test/): what the layout of its table is measured against.
  */
 import { rodOf } from '../calc';

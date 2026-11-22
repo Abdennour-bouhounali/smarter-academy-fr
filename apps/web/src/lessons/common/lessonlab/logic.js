@@ -1,5 +1,5 @@
 /**
- * « مختبري » — PURE mathematics of the instruments and their « جرّب » quests. No DOM here: every drawing READS these values.
+ * « Mon labo » — PURE mathematics of the instruments and their « Essaie » quests. No DOM here: every drawing READS these values.
  */
 export const divide = (a, b) => ({ q: Math.floor(a / b), r: a % b });
 export const divisorsOf = (a) => {
@@ -15,7 +15,7 @@ export const divisorPairs = (a) =>
 export const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
 /**
- * « مِنضدة القائمتين »: the divisors of a and of b written by PAIRS, after the numbers 1, 2, … `tried` were tried on both.
+ * « L’établi des deux listes »: the divisors of a and of b written by PAIRS, after the numbers 1, 2, … `tried` were tried on both.
  * The list of n stops once a number whose square passes n was reached (`last` = its biggest number to try): it is then
  * complete. For each list: `smalls` (the divisors tried, d × d ≤ n), `partners` (n / d, the pair's other end, never the
  * divisor itself again), `done`. Once BOTH lists are complete: `common` (in both) and `g`, the greatest of them.
@@ -47,7 +47,7 @@ export function twoLists(a, b, tried) {
   };
 }
 
-/** صفوف القسمة: where each of the a counters sits (column, row) in rows of b; the counters of the incomplete row are `rest`. */
+/** Les rangées de la division: where each of the a counters sits (column, row) in rows of b; the counters of the incomplete row are `rest`. */
 export function rowsLayout(a, b) {
   const { q, r } = divide(a, b);
   return {
@@ -58,7 +58,7 @@ export function rowsLayout(a, b) {
   };
 }
 
-/** قفزات المضاعفات: the landings of jumps of b starting at 0, up to the flag a (and one past it when the flag is missed). */
+/** Les sauts des multiples: the landings of jumps of b starting at 0, up to the flag a (and one past it when the flag is missed). */
 export function jumpsOf(a, b) {
   const { q, r } = divide(a, b);
   return {
@@ -70,7 +70,7 @@ export function jumpsOf(a, b) {
   };
 }
 
-/** آلة الجمل الأربع: the four sentences about (a, b) — b « divides » a — true together or false together. */
+/** La machine aux quatre phrases: the four sentences about (a, b) — b « divides » a — true together or false together. */
 export function sentences(a, b) {
   const ok = b !== 0 && a % b === 0;
   const { q, r } = divide(a, b);
@@ -78,16 +78,21 @@ export function sentences(a, b) {
     ok,
     q,
     r,
-    list: [`${b} قاسم للعدد ${a}`, `${a} مضاعف للعدد ${b}`, `${a} يقبل القسمة على ${b}`, `${b} يقسم ${a}`],
+    list: [
+      `${b} est un diviseur de ${a}`,
+      `${a} est un multiple de ${b}`,
+      `${a} est divisible par ${b}`,
+      `${b} divise ${a}`,
+    ],
     proof: ok
       ? `$${a} = ${b} \\times ${q}$`
       : a < b
-        ? `$${a} < ${b}$: القاسم لا يكون أكبر من العدد.`
-        : `$${a} = ${b} \\times ${q} + ${r}$: الباقي ${r} ليس معدومًا.`,
+        ? `$${a} < ${b}$ : un diviseur n’est jamais plus grand que le nombre.`
+        : `$${a} = ${b} \\times ${q} + ${r}$ : le reste ${r} n’est pas nul.`,
   };
 }
 
-/** كاشف قابلية القسمة: for each rule, the verdict, the digits it looks at (indexes from the left) and what it reads. */
+/** Le détecteur de divisibilité: for each rule, the verdict, the digits it looks at (indexes from the left) and what it reads. */
 export function digitRules(n) {
   const s = String(n);
   const d = s.split('').map(Number);
@@ -97,32 +102,42 @@ export function digitRules(n) {
   const two = d.length > 1 ? [last - 1, last] : [last];
   const tail = n % 100;
   return [
-    { by: 2, ok: n % 2 === 0, digits: [last], reads: `آخر رقم ${d[last]}: ${d[last] % 2 === 0 ? 'زوجي' : 'فردي'}` },
+    {
+      by: 2,
+      ok: n % 2 === 0,
+      digits: [last],
+      reads: `Dernier chiffre ${d[last]} : ${d[last] % 2 === 0 ? 'pair' : 'impair'}`,
+    },
     {
       by: 3,
       ok: n % 3 === 0,
       digits: all,
-      reads: `مجموع الأرقام ${sum}: ${sum % 3 === 0 ? 'مضاعف للعدد 3' : 'ليس مضاعفًا للعدد 3'}`,
+      reads: `Somme des chiffres ${sum} : ${sum % 3 === 0 ? 'un multiple de 3' : 'pas un multiple de 3'}`,
     },
     {
       by: 4,
       ok: n % 4 === 0,
       digits: two,
-      reads: `العدد المكوَّن من آخر رقمين ${tail}: ${tail % 4 === 0 ? 'مضاعف للعدد 4' : 'ليس مضاعفًا للعدد 4'}`,
+      reads: `Deux derniers chiffres ${tail} : ${tail % 4 === 0 ? 'un multiple de 4' : 'pas un multiple de 4'}`,
     },
     {
       by: 5,
       ok: n % 5 === 0,
       digits: [last],
-      reads: `آخر رقم ${d[last]}: ${d[last] === 0 || d[last] === 5 ? 'هو 0 أو 5' : 'ليس 0 ولا 5'}`,
+      reads: `Dernier chiffre ${d[last]} : ${d[last] === 0 || d[last] === 5 ? 'c’est 0 ou 5' : 'ni 0 ni 5'}`,
     },
     {
       by: 9,
       ok: n % 9 === 0,
       digits: all,
-      reads: `مجموع الأرقام ${sum}: ${sum % 9 === 0 ? 'مضاعف للعدد 9' : 'ليس مضاعفًا للعدد 9'}`,
+      reads: `Somme des chiffres ${sum} : ${sum % 9 === 0 ? 'un multiple de 9' : 'pas un multiple de 9'}`,
     },
-    { by: 10, ok: n % 10 === 0, digits: [last], reads: `آخر رقم ${d[last]}: ${d[last] === 0 ? 'هو 0' : 'ليس 0'}` },
+    {
+      by: 10,
+      ok: n % 10 === 0,
+      digits: [last],
+      reads: `Dernier chiffre ${d[last]} : ${d[last] === 0 ? 'c’est 0' : 'ce n’est pas 0'}`,
+    },
   ];
 }
 /** Rolls the digit at `index` (from the left) of n by ±1, as on a padlock (9 → 0, 0 → 9). `width` keeps leading zeros apart. */
@@ -132,7 +147,7 @@ export function rollDigit(n, index, step, width) {
   return Number(d.join(''));
 }
 
-/** مربّعات إقليدس: the squares cut from an a × b rectangle, biggest first — [{ x, y, side, step }] — and the side of the last. */
+/** Les carrés d’Euclide: the squares cut from an a × b rectangle, biggest first — [{ x, y, side, step }] — and the side of the last. */
 export function euclidSquares(a, b) {
   const out = [];
   let x = 0;
@@ -171,7 +186,7 @@ export function euclidLines(a, b) {
 }
 
 /**
- * « مِجهر العددين » — what the instrument reads about two numbers, never a conclusion:
+ * « Le microscope à deux nombres » — what the instrument reads about two numbers, never a conclusion:
  *   `lists`  the divisors of a and of b, and those in both (`common`, smallest first);
  *   `probe`  one number d tried on both: the two divisions and which of the two it divides (`both`, `a`, `b` or `none`).
  * The divisions one after another are `euclidLines`.
@@ -205,7 +220,7 @@ export function decText(n, k) {
 export const hundredths = (h) => `${Math.floor(h / 100)},${String(h % 100).padStart(2, '0')}`;
 
 /**
- * « ساحة العدد » — a court of `a` whole tiles laid, from its corner, into a square of side `s` the hand chooses: row by
+ * « La salle du nombre » — a court of `a` whole tiles laid, from its corner, into a square of side `s` the hand chooses: row by
  * row, `inside` tiles in the square, `out` tiles that do not fit in it, `holes` places of the square left empty.
  * `verdict`: 'fits' (s × s = a), 'out' (s × s < a) or 'holes' (s × s > a). And what the court is, computed EXACTLY in
  * integers: `k` the side of the greatest whole square that fits (k × k ≤ a < (k + 1) × (k + 1)), `left` = a − k × k,
@@ -238,7 +253,7 @@ export const courtSettled = (a, tried = []) => {
 };
 
 /**
- * « منصّة الكسر » — a court of `a` whole tiles, each tile cut into q × q small pieces (pieces of side 1/q), and the square
+ * « La plateforme de la fraction » — a court of `a` whole tiles, each tile cut into q × q small pieces (pieces of side 1/q), and the square
  * platform built on a rod of p/q laid from the court's corner: it holds p × p pieces, the court a × q × q. Integers
  * only, never a root: `plat`, `court`, `diff` (plat − court), `far` (its size), `verdict` 'fits' (equal), 'band' (the
  * platform is smaller: `far` pieces of the court stay uncovered) or 'jam' (it is larger by `far` pieces). `pMax`: the
@@ -267,7 +282,7 @@ export function pieceOf(a, q, p) {
 export const closerPiece = (x, best) => !best || x.far * best.q * best.q < best.far * x.q * x.q;
 
 /**
- * « شريط الكسر » — a strip of b cells with its first a cells lit (the fraction a/b), and a piece of length k laid along it
+ * « La bande de la fraction » — a strip of b cells with its first a cells lit (the fraction a/b), and a piece of length k laid along it
  * from 0. What the drawing reads, never a conclusion: the two divisions (the lit part by k, the whole strip by k), where
  * the light ends — on a joint between two pieces or INSIDE a piece (`cut`: the start and end of that piece) —, what is
  * left at the end of the strip, and, only when k divides both, the fraction written in pieces: (a ÷ k)/(b ÷ k).
@@ -289,7 +304,7 @@ export function stripOf(a, b, k) {
 }
 
 /**
- * اللوح المشترك: the lengths a plank of d is laid along — the two numbers, their sum, their difference, the remainder of
+ * La planche commune: the lengths a plank of d is laid along — the two numbers, their sum, their difference, the remainder of
  * the greater by the smaller, three times the first — each with its planks and what is left. `fits` is computed per row,
  * never stated: the drawing shows which lengths the plank fills.
  */
@@ -309,7 +324,7 @@ export function plankRows(a, b, d) {
 }
 
 /**
- * مسطرة الحصر: n planks of length b laid from 0 along a length a. What the drawing reads — never a rule: how long the n
+ * L’encadrement par planches: n planks of length b laid from 0 along a length a. What the drawing reads — never a rule: how long the n
  * planks are, what is left of a (`left`, when they do not pass a) or how far they pass it (`over`), and the two counts that
  * frame a ÷ b: the full planks `q` (the most that do not pass a) and the planks NEEDED `need` (the fewest that cover a — q
  * itself when a remainder 0 makes them one). `top` is the most planks the hand may lay: one past the full ones, never more.
@@ -333,87 +348,120 @@ export function bracketOf(a, b, n) {
 }
 
 /**
- * « جرّب »: the small missions of each instrument. `seen` is the instrument's memory of what the student has already made
+ * « Essaie »: the small missions of each instrument. `seen` is the instrument's memory of what the student has already made
  * (a Set of facts written by `observe`); a quest is done when its fact is in it. Nothing here states a rule: a quest only
  * names something to MAKE; the instrument shows what happens.
  */
 export const QUESTS = {
   rows: [
-    { id: 'zero', text: 'اجعل الباقي 0 (بصفوف فيها أكثر من حبّة واحدة).' },
-    { id: 'two', text: 'جد عددين مختلفين في كلّ صفّ يعطيان الباقي 0 للعدد نفسه.' },
-    { id: 'max', text: 'اجعل الباقي أكبر ما يمكن.' },
+    { id: 'zero', text: 'Obtiens un reste de 0 (avec plus d’un jeton par rangée).' },
+    { id: 'two', text: 'Pour un même nombre de jetons, trouve deux rangées différentes qui donnent un reste de 0.' },
+    { id: 'max', text: 'Rends le reste le plus grand possible.' },
   ],
   jumps: [
-    { id: 'hit', text: 'صِل إلى الراية تمامًا بقفزة أطول من 1.' },
-    { id: 'miss1', text: 'اجعل القفزة الأخيرة تتوقّف قبل الراية بخطوة واحدة فقط.' },
-    { id: 'three', text: 'صِل إلى الراية نفسها بثلاثة أطوال مختلفة.' },
+    { id: 'hit', text: 'Tombe pile sur le drapeau avec un saut plus long que 1.' },
+    { id: 'miss1', text: 'Fais que le dernier saut s’arrête juste un pas avant le drapeau.' },
+    { id: 'three', text: 'Atteins le même drapeau avec trois longueurs de saut différentes.' },
   ],
   sentences: [
-    { id: 'true', text: 'اجعل الجمل الأربع صحيحة.' },
-    { id: 'swap', text: 'اقلب العددين: متى تبقى الجمل صحيحة بعد القلب؟ جد مثالًا.' },
-    { id: 'big', text: 'اجعلها صحيحة بعددين أكبر من 20.' },
+    { id: 'true', text: 'Rends les quatre phrases vraies.' },
+    { id: 'swap', text: 'Échange les deux nombres : quand les phrases restent-elles vraies ? Trouve un exemple.' },
+    { id: 'big', text: 'Rends-les vraies avec deux nombres plus grands que 20.' },
   ],
   divisors: [
-    { id: 'all', text: 'اكشف كلّ قواسم عدد أكبر من 20.' },
-    { id: 'odd', text: 'جد عددًا عدد قواسمه فردي.' },
-    { id: 'two', text: 'جد عددًا أكبر من 10 له قاسمان فقط.' },
+    { id: 'all', text: 'Découvre tous les diviseurs d’un nombre plus grand que 20.' },
+    { id: 'odd', text: 'Trouve un nombre qui a un nombre impair de diviseurs.' },
+    { id: 'two', text: 'Trouve un nombre plus grand que 10 qui n’a que deux diviseurs.' },
   ],
   planks: [
-    { id: 'both', text: 'جد لوحًا أطول من 1 يملأ الطولين الأوّلين معًا (بطولين مختلفين).' },
-    { id: 'sum', text: 'جد لوحًا يملأ المجموع ولا يملأ أيًّا من الطولين الأوّلين.' },
-    { id: 'rest', text: 'اجعل الباقي غير معدوم، ثمّ املأ الطولين الأوّلين بلوح أطول من 1.' },
+    {
+      id: 'both',
+      text: 'Trouve une planche plus longue que 1 qui remplit les deux premières longueurs (deux longueurs différentes).',
+    },
+    { id: 'sum', text: 'Trouve une planche qui remplit la somme sans remplir aucune des deux premières longueurs.' },
+    {
+      id: 'rest',
+      text: 'Obtiens un reste non nul, puis remplis les deux premières longueurs avec une planche plus longue que 1.',
+    },
   ],
   common: [
-    // never « قاسمهما المشترك الوحيد هو 1 »: those are the words of lesson 7's first tablet, and this instrument is the one its
+    // never « leur seul diviseur commun est 1 »: those are the words of lesson 7's first tablet, and this instrument is the one its
     // launch kit opens BEFORE that lesson
-    { id: 'one', text: 'اجعل التاج على العدد 1 بعددين أكبر من 1.' },
-    { id: 'self', text: 'اجعل القاسم المشترك الأكبر يساوي أحد العددين.' },
-    { id: 'six', text: 'جد عددين مختلفين قاسمهما المشترك الأكبر 6.' },
+    { id: 'one', text: 'Pose la couronne sur le nombre 1 avec deux nombres plus grands que 1.' },
+    { id: 'self', text: 'Fais que le plus grand diviseur commun soit l’un des deux nombres.' },
+    { id: 'six', text: 'Trouve deux nombres différents dont le plus grand diviseur commun est 6.' },
   ],
   lists: [
-    { id: 'full', text: 'أكمل القائمتين لعددين أكبر من 50.' },
-    { id: 'inside', text: 'جد عددين مختلفين يلتقيان في كلّ قائمة أصغرهما.' },
-    { id: 'six', text: 'أكمل القائمتين لعددين يلتقيان في 6 أعداد على الأقلّ.' },
+    { id: 'full', text: 'Complète les deux listes pour deux nombres plus grands que 50.' },
+    {
+      id: 'inside',
+      text: 'Trouve deux nombres différents dont les listes ont en commun toute la liste du plus petit.',
+    },
+    { id: 'six', text: 'Complète les deux listes pour deux nombres qui ont au moins 6 nombres en commun.' },
   ],
   euclid: [
-    { id: 'one', text: 'اقطع مستطيلًا حتى النهاية.' },
-    { id: 'unit', text: 'جد مستطيلًا آخر مربّع فيه ضلعه 1.' },
-    { id: 'three', text: 'جد مستطيلًا يحتاج ثلاث مراحل قطع على الأقلّ.' },
+    { id: 'one', text: 'Découpe un rectangle jusqu’au bout.' },
+    { id: 'unit', text: 'Trouve un rectangle dont le dernier carré a un côté de 1.' },
+    { id: 'three', text: 'Trouve un rectangle qui demande au moins trois étapes de découpe.' },
   ],
   paper: [
-    { id: 'end', text: 'أكمل قسمة حتى آخر خطوة.' },
-    { id: 'zero', text: 'جد قسمة في حاصلها الرقم 0.' },
-    { id: 'exact', text: 'أكمل قسمة باقيها 0 ومقسومها أكبر من 500.' },
+    { id: 'end', text: 'Mène une division jusqu’à la dernière étape.' },
+    { id: 'zero', text: 'Trouve une division dont le quotient contient le chiffre 0.' },
+    { id: 'exact', text: 'Termine une division de reste 0 dont le dividende est plus grand que 500.' },
   ],
   bracket: [
-    { id: 'over', text: 'اجعل آخر لوح وحده يتجاوز الطول.' },
-    { id: 'exact', text: 'املأ الطول تمامًا بأكثر من 10 ألواح.' },
-    { id: 'big', text: 'جد الألواح الكاملة والألواح اللازمة لطول من أربعة أرقام ولوح من رقمين.' },
+    { id: 'over', text: 'Fais que seule la dernière planche dépasse la longueur.' },
+    { id: 'exact', text: 'Remplis la longueur exactement avec plus de 10 planches.' },
+    {
+      id: 'big',
+      text: 'Trouve les planches entières et les planches nécessaires pour une longueur à quatre chiffres et une planche à deux chiffres.',
+    },
   ],
   duo: [
-    { id: 'lists', text: 'اعرض قائمتي عددين أكبر من 100 تلتقيان في 4 أعداد على الأقلّ.' },
-    { id: 'chain', text: 'اكتب القسمات حتى الباقي 0 لعددين تلزمهما 5 قسمات على الأقلّ.' },
-    { id: 'probe', text: 'اختبر عددًا أكبر من 10 يقسم العددين معًا.' },
+    {
+      id: 'lists',
+      text: 'Affiche les listes de deux nombres plus grands que 100 qui ont au moins 4 nombres en commun.',
+    },
+    { id: 'chain', text: 'Écris les divisions jusqu’au reste 0 pour deux nombres qui en demandent au moins 5.' },
+    { id: 'probe', text: 'Essaie un nombre plus grand que 10 qui divise les deux nombres.' },
   ],
   strip: [
-    { id: 'both', text: 'جد قطعة يزيد طولها على 10 وتقسم البسط والمقام معًا.' },
-    { id: 'big', text: 'اكتب كسرًا مقامه أكبر من 500 بقطع تجعل مقامه أصغر من 50.' },
-    { id: 'split', text: 'جد قطعة تقسم المقام ولا تقسم البسط، والمقام أكبر من 100.' },
+    { id: 'both', text: 'Trouve un morceau plus long que 10 qui divise le numérateur et le dénominateur.' },
+    {
+      id: 'big',
+      text: 'Écris une fraction de dénominateur plus grand que 500 avec des morceaux qui rendent son dénominateur plus petit que 50.',
+    },
+    {
+      id: 'split',
+      text: 'Trouve un morceau qui divise le dénominateur mais pas le numérateur, avec un dénominateur plus grand que 100.',
+    },
   ],
   court: [
-    { id: 'exact', text: 'جد ساحة أكبر من 100 بلاطة يملؤها مربّع كامل، فلا يبقى منها شيء.' },
-    { id: 'bracket', text: 'احصر ضلع ساحة أكبر من 150 بلاطة بين ضلعَي مربّعين جرّبتهما.' },
-    { id: 'most', text: 'اجعل ما يبقى خارج أكبر مربّع كامل 20 بلاطة على الأقلّ.' },
+    { id: 'exact', text: 'Trouve une salle de plus de 100 dalles qu’un carré entier remplit sans reste.' },
+    {
+      id: 'bracket',
+      text: 'Encadre le côté d’une salle de plus de 150 dalles entre les côtés de deux carrés que tu as essayés.',
+    },
+    { id: 'most', text: 'Fais qu’il reste au moins 20 dalles hors du plus grand carré entier.' },
   ],
   piece: [
-    { id: 'exact', text: 'اجعل منصّة مقامُ مقياسها أكبر من 1 تغطّي ساحة أكبر من 10 بلاطات بالضبط.' },
-    { id: 'one', text: 'اجعل الفرق بين المنصّة والساحة قطعة واحدة فقط، والمقام أكبر من 4.' },
-    { id: 'close', text: 'قرّب منصّة من ساحتها حتى يصير الفرق أصغر من جزء من مئة من البلاطة، دون أن يساويها.' },
+    {
+      id: 'exact',
+      text: 'Avec une toise de dénominateur plus grand que 1, fais qu’une plateforme couvre exactement une salle de plus de 10 dalles.',
+    },
+    {
+      id: 'one',
+      text: 'Fais que l’écart entre la plateforme et la salle soit de 1 morceau seulement, avec un dénominateur plus grand que 4.',
+    },
+    {
+      id: 'close',
+      text: 'Approche une plateforme de sa salle jusqu’à un écart plus petit qu’un centième de dalle, sans l’égaler.',
+    },
   ],
   rules: [
-    { id: 'three', text: 'أضِئ ثلاثة مصابيح معًا.' },
-    { id: 'nine', text: 'أضِئ مصباح 9 بعدد من ثلاثة أرقام.' },
-    { id: 'all', text: 'أضِئ المصابيح الستّة كلّها.' },
+    { id: 'three', text: 'Allume trois lampes à la fois.' },
+    { id: 'nine', text: 'Allume la lampe du 9 avec un nombre à trois chiffres.' },
+    { id: 'all', text: 'Allume les six lampes.' },
   ],
 };
 

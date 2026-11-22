@@ -1,25 +1,24 @@
 /**
- * Un DIAGRAMME STATISTIQUE déclaratif — مخطط بالأعمدة، مدرّج تكراري، مضلّع (التكرارات أو التكرارات المجمّعة)،
- * مخطط دائري / نصف دائري — dessiné par StatChart.jsx dans un énoncé de pratique (`statement.figure` avec
- * `kind: 'chart'`) et dans une مسألة (ProblemSupport). Né avec la feuille BEM de l'unité 8 « الإحصاء »
- * (2026-10-08) : un énoncé qui dit « يمثّل المخطط » MONTRE le diagramme, au lieu de recopier ses nombres
- * dans un tableau.
+ * Un DIAGRAMME STATISTIQUE déclaratif — diagramme en barres, histogramme, polygone (des effectifs ou des
+ * effectifs cumulés), diagramme circulaire / semi-circulaire — dessiné par StatChart.jsx dans un énoncé de pratique
+ * (`statement.figure` avec `kind: 'chart'`) et dans un problème (ProblemSupport). Un énoncé qui dit « le diagramme
+ * représente » MONTRE le diagramme, au lieu de recopier ses nombres dans un tableau.
  *
  * Sans DOM : ce module valide la donnée (le validateur des exercices l'importe) et calcule la géométrie.
  *
- *   { kind: 'chart', type: 'bar', ariaLabel: 'مخطط بالأعمدة لأعمار …',
- *     xTitle: 'العمر (سنة)', yTitle: 'عدد التلاميذ', y: { max: 12, step: 2, minor: 2 },
+ *   { kind: 'chart', type: 'bar', ariaLabel: 'Diagramme en barres des âges …',
+ *     xTitle: 'Âge (ans)', yTitle: 'Nombre d’élèves', y: { max: 12, step: 2, minor: 2 },
  *     bars: [{ label: '13', value: 5 }, { label: '14', value: 9 }, { label: '15', missing: true }] }
  *   { kind: 'chart', type: 'histogram', edges: [20, 30, 40, 50], values: [4, 10, 6], y: { max: 10, step: 2 }, polygon: true }
  *   { kind: 'chart', type: 'line', x: { min: 0, max: 50, step: 10 }, points: [[0, 0], [10, 4], [20, 9]], y: { max: 10, step: 2 } }
- *   { kind: 'chart', type: 'pie', half: false, show: 'angle', parts: [{ label: 'كرة القدم', value: 12 }, …] }
+ *   { kind: 'chart', type: 'pie', half: false, show: 'angle', parts: [{ label: 'Football', value: 12 }, …] }
  *
  * Règles de LECTURE (un diagramme d'énoncé se LIT, contrat EXERCISE_CONTRACT « Statistical charts ») :
  * - la valeur d'une barre / d'un rectangle / d'un sommet n'est PAS écrite (sauf `values: true`) : elle doit
  *   tomber sur une ligne du quadrillage (multiple de `y.step / y.minor`), sinon l'élève ne peut pas la lire ;
- * - `missing: true` : la barre (ou le secteur) que l'élève doit compléter — case pointillée « ؟ », sans valeur ;
- * - le corps du diagramme se lit de GAUCHE à DROITE (ARABIC_RTL_CONTRACT « Charts read left to right ») ;
- *   les titres d'axes et les noms de catégories restent du texte arabe.
+ * - `missing: true` : la barre (ou le secteur) que l'élève doit compléter — case pointillée « ? », sans valeur ;
+ * - le corps du diagramme se lit de GAUCHE à DROITE, comme toute la page ; titres d'axes et noms de
+ *   catégories sont du texte français.
  */
 const STAT_CHART_TYPES = Object.freeze(['bar', 'histogram', 'line', 'pie']);
 const STAT_CHART_KEYS = Object.freeze([
@@ -67,7 +66,7 @@ export function validateStatChart(c) {
   for (const k of Object.keys(c)) if (!STAT_CHART_KEYS.includes(k)) errors.push(`clé inconnue « ${k} »`);
   if (c.kind !== 'chart') errors.push('kind = « chart »');
   if (!STAT_CHART_TYPES.includes(c.type)) errors.push(`type inconnu « ${c.type} » (${STAT_CHART_TYPES.join(', ')})`);
-  if (typeof c.ariaLabel !== 'string' || !/[؀-ۿ]/.test(c.ariaLabel)) errors.push('ariaLabel arabe obligatoire');
+  if (typeof c.ariaLabel !== 'string' || !c.ariaLabel.trim() || /[\u0600-\u06FF]/.test(c.ariaLabel)) errors.push('ariaLabel en français obligatoire');
 
   if (c.type === 'bar') {
     const bars = c.bars;
@@ -96,8 +95,8 @@ export function validateStatChart(c) {
       }
       if (edges.length - 1 > MAX_BARS) errors.push(`au plus ${MAX_BARS} classes`);
       (c.missing ?? []).forEach((m) => { if (!(Number.isInteger(m) && m >= 0 && m < edges.length - 1)) errors.push(`missing : indice de classe inconnu ${m}`); });
-      // Le مضلّع passerait par le sommet de la classe manquante : il donnerait la réponse.
-      if (c.polygon && (c.missing ?? []).length) errors.push('polygon et missing ensemble : le مضلّع dévoilerait la classe à compléter');
+      // Le polygone passerait par le sommet de la classe manquante : il donnerait la réponse.
+      if (c.polygon && (c.missing ?? []).length) errors.push('polygon et missing ensemble : le polygone dévoilerait la classe à compléter');
     }
   }
 
@@ -124,7 +123,7 @@ export function validateStatChart(c) {
       if (parts.length > 8) errors.push('parts : au plus 8 secteurs');
       parts.forEach((p, i) => {
         if (typeof p?.label !== 'string' || !p.label.trim()) errors.push(`parts[${i}] : label obligatoire`);
-        if (!(isNum(p?.value) && p.value > 0)) errors.push(`parts[${i}] : value > 0 (même un secteur « ؟ » a sa taille)`);
+        if (!(isNum(p?.value) && p.value > 0)) errors.push(`parts[${i}] : value > 0 (même un secteur « ? » a sa taille)`);
       });
     }
     if (c.show != null && !PIE_SHOW.includes(c.show)) errors.push(`show : ${PIE_SHOW.join(' | ')}`);
@@ -197,7 +196,7 @@ export function layoutAxisChart(c) {
     });
     c.edges.forEach((e) => out.xLabels.push({ x: X(e), text: fmtNum(e) }));
     if (c.polygon) {
-      // مضلّع التكرارات : les milieux des côtés supérieurs, fermé sur l'axe à une demi-classe de chaque bout.
+      // Le polygone des effectifs : les milieux des côtés supérieurs, fermé sur l'axe à une demi-classe de chaque bout.
       const first = c.edges[1] - c.edges[0]; const last = c.edges[c.edges.length - 1] - c.edges[c.edges.length - 2];
       const mids = c.values.map((v, i) => [X((c.edges[i] + c.edges[i + 1]) / 2), Y(v ?? 0)]);
       const left = Math.max(x0, X(lo - first / 2)); const right = Math.min(x1, X(hi + last / 2));
@@ -217,16 +216,16 @@ export function layoutAxisChart(c) {
   return out;
 }
 
-/** Le nombre écrit dans un secteur selon `show` (« 72° »، « 20% »، « 12 »), ou « ؟ » pour un secteur manquant. */
+/** Le nombre écrit dans un secteur selon `show` (« 72° », « 20 % », « 12 »), ou « ? » pour un secteur manquant. */
 export function pieText(part, total, { half = false, show = 'value' } = {}) {
-  if (part.missing) return '؟';
+  if (part.missing) return '?';
   if (show === 'none') return null;
   if (show === 'angle') return `${fmtNum((part.value / total) * (half ? 180 : 360))}°`;
-  if (show === 'percent') return `${fmtNum((part.value / total) * 100)}%`;
+  if (show === 'percent') return `${fmtNum((part.value / total) * 100)} %`;
   return fmtNum(part.value);
 }
 
-/** Les secteurs d'un مخطط دائري (ou نصف دائري) : chemins SVG + position du nombre de chaque secteur. */
+/** Les secteurs d'un diagramme circulaire (ou semi-circulaire) : chemins SVG + position du nombre de chaque secteur. */
 export function layoutPie(c) {
   const R = 96;
   const half = Boolean(c.half);

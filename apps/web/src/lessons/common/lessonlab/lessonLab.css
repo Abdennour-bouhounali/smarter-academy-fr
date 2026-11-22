@@ -1,11 +1,11 @@
-/* « مختبري » — the lab of a lesson: a workbench on graph paper. Designed at 1280 × 720, zoomed to the window: nothing scrolls. */
+/* « Mon labo » — the lab of a lesson: a workbench on graph paper. Designed at 1280 × 720, zoomed to the window: nothing scrolls. */
 .ll-root {
   position: fixed;
   inset: 0;
   z-index: 1300;
   overflow: hidden;
   color: #eafcff;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: inherit;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
@@ -211,7 +211,7 @@
   color: #7dfcff;
   margin-top: 0.15rem;
 }
-/* the group « أدوات هذا الدرس »: a hook for the walks, laid out as if its children stood in the rail */
+/* the group « Les outils de cette leçon »: a hook for the walks, laid out as if its children stood in the rail */
 .ll-rail__mine {
   display: contents;
 }
@@ -239,7 +239,8 @@
     background 0.15s;
 }
 .ll-tile:hover {
-  transform: translateX(-3px);
+  /* the rail stands on the left: a tile leans toward the bench */
+  transform: translateX(3px);
   border-color: rgba(125, 252, 255, 0.6);
 }
 .ll-tile.is-on {
@@ -373,7 +374,7 @@
   align-items: stretch;
   justify-content: center;
 }
-/* numbers and equalities are written left to right; an Arabic label sets direction="rtl" on itself */
+/* numbers, equalities and labels are written left to right */
 .ll-draw > svg {
   width: 100%;
   height: 100%;
@@ -382,7 +383,7 @@
   direction: ltr;
 }
 .ll-draw text {
-  font-family: 'Cairo', sans-serif;
+  font-family: inherit;
   font-weight: 800;
   fill: #eafcff;
 }
@@ -444,7 +445,7 @@
 .ll-chip--dim {
   background: rgba(255, 255, 255, 0.12);
 }
-/* what a platform holds MORE than its court (« منصّة الكسر »): the world's violet of a jam, never the red of an error */
+/* what a platform holds MORE than its court (« La plateforme de la fraction »): the world's violet of a jam, never the red of an error */
 .ll-chip--jam {
   background: #c4b5fd;
   color: #2e1065 !important;
@@ -484,7 +485,7 @@
   box-shadow: none;
   border: 1.5px solid rgba(255, 255, 255, 0.3);
 }
-/* a button that was never pressed calls the hand (« مِنضدة القائمتين »: the first try) */
+/* a button that was never pressed calls the hand (« L’établi des deux listes »: the first try) */
 .ll-btn--call {
   animation: ll-call 1.4s ease-in-out infinite;
 }
@@ -868,7 +869,7 @@
 }
 
 /* common divisors */
-/* « ساحة العدد »: the court and its ruler on one side, what the court is on the other (its facts are DOM text: the
+/* « La salle du nombre »: the court and its ruler on one side, what the court is on the other (its facts are DOM text: the
    sign √ through MathText) */
 .ll-court {
   width: 100%;
@@ -1018,7 +1019,8 @@
   color: #1f2937;
   background-image: linear-gradient(rgba(59, 130, 246, 0.18) 1px, transparent 1px);
   background-size: 100% 2.6rem;
-  font-family: 'Cairo', monospace;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
 }
 .ll-sheet * {
   color: #1f2937 !important;
@@ -1362,7 +1364,7 @@
     font-size: 0.95rem;
     white-space: nowrap;
   }
-  /* THE RAIL FITS: three instruments and « خزانتي » in the height of a phone — the cabinet's button was cut and the
+  /* THE RAIL FITS: three instruments and « Mon armoire » in the height of a phone — the cabinet's button was cut and the
      rail slid. A tile is one tight line; the cabinet says its name only. */
   .ll-rail {
     gap: 0.3rem;
@@ -1400,7 +1402,7 @@
     overscroll-behavior: contain;
     align-items: flex-start;
   }
-  /* « خزانتي »: its title is one line and its shelves are tighter — the second shelf was cut at the bottom */
+  /* « Mon armoire »: its title is one line and its shelves are tighter — the second shelf was cut at the bottom */
   .ll-cabinet {
     gap: 0.35rem;
     padding: 0.5rem 0.8rem;
@@ -1418,8 +1420,8 @@
     gap: 0.5rem;
     padding: 0.3rem 0.6rem;
   }
-  /* « آلة الجمل الأربع »: the four sentences and the machine stand ABOVE the reading line — at their desk size the
-     last two sentences and « اقلب العددين » were under it, and the button could not be tapped */
+  /* « La machine aux quatre phrases »: the four sentences and the machine stand ABOVE the reading line — at their desk size the
+     last two sentences and « Échange les deux nombres » were under it, and the button could not be tapped */
   .ll-reading {
     height: auto;
     min-height: 2.6rem;

@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────────────
-   MODE CLASSE — « وضع القسم » (lessons/common/classroom/)
+   MODE CLASSE — « Mode classe » (lessons/common/classroom/)
 
    Tout est préfixé `sa-classroom-` : rien ici ne s'appelle .fullscreen,
    .toolbar ou .container. La racine est un simple bloc au repos ; active,
@@ -109,7 +109,7 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
   padding: 2px 4px 4px;
 }
 
-/* La barre de navigation du bas : deux groupes, chacun « saut de محور » +
+/* La barre de navigation du bas : deux groupes, chacun « saut d'étape » +
    « pas d'unité ». Les sauts sont visuellement plus discrets que le pas —
    c'est le pas qu'on fait le plus souvent. */
 .sa-classroom-nav {
@@ -123,31 +123,31 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
   padding: 2px 4px 0;
 }
 
-/* La ligne de la SORTIE — sous « التالي », du même côté que lui. Elle prend
+/* La ligne de la SORTIE — sous « Suivant », du même côté que lui. Elle prend
    toute la largeur (flex-basis: 100%) pour passer sous les deux groupes de
-   navigation, et aligne son bouton sur le bord de fin : « خروج » tombe donc
-   exactement SOUS « التالي », pas au milieu de l'écran.
-   (Sous RTL, ce bord de fin est le bord physique GAUCHE — les deux boutons
-   partagent alors leur `x`, ce que verrouille le kit e2e.)
+   navigation, et aligne son bouton sur le bord de fin : « Quitter » tombe donc
+   exactement SOUS « Suivant », pas au milieu de l'écran.
+   (Ce bord de fin est le bord physique DROIT — les deux boutons partagent
+   alors leur `x`, ce que verrouille le kit e2e.)
 
    ELLE COÛTE DE LA HAUTEUR À LA SCÈNE. La barre est mesurée par le moteur
    d'ajustement (usePresentationFit, `reservedRefs`) : tout ce qu'elle prend,
    la manipulation présentée ne l'a plus, et une scène qui remplissait déjà
-   son cadre se met à déborder — la bibliothèque de « نشاط 1 » débordait de
+   son cadre se met à déborder — la bibliothèque de « Activité 1 » débordait de
    25 px, échelle déjà au plancher (MIN_FIT_FACTOR, qu'on ne baisse pas :
    en dessous, les objets de la manipulation ne se lisent plus au tableau).
 
-   « خروج » GARDE POURTANT sa ligne, et son blanc au-dessus : c'est là que
+   « Quitter » GARDE POURTANT sa ligne, et son blanc au-dessus : c'est là que
    l'enseignant le cherche, sous le pas qu'il vient de faire. La hauteur
    qu'il coûte est reprise sur le CHROME, jamais sur le dessin — marges des
    deux barres resserrées ici, et rembourrage de l'atelier de manipulation
    rendu à la scène (voir `[data-manipulation-workspace]` plus bas). À
    768 px de haut — un vidéoprojecteur, un portable — la bibliothèque de
-   « نشاط 1 » retrouve ainsi sa place. Ne rien regonfler sans relancer
+   « Activité 1 » retrouve ainsi sa place. Ne rien regonfler sans relancer
    `e2e/lesson-kit/classroom.mjs`, qui mesure ce débordement. */
 
 /* UNE BARRE SANS AUCUN PAS (une manipulation ou un exercice présenté seul)
-   n'a plus rien à porter depuis que « خروج » est remonté dans la barre
+   n'a plus rien à porter depuis que « Quitter » est remonté dans la barre
    d'outils : elle se réduit à rien plutôt que de voler à la scène une bande
    qui ne sépare plus rien. `:has()` : la barre se reconnaît elle-même. */
 .sa-classroom-nav:not(:has([data-classroom-nav-unit])):not(:has([data-classroom-nav-module])) {
@@ -193,7 +193,7 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
 }
 
 /* L'ATELIER DE MANIPULATION présenté (ManipulationWorkspace) rend ses
-   marges à la SCÈNE. Sa bordure, son fond et ses onglets مبتدئ/متقدم restent
+   marges à la SCÈNE. Sa bordure, son fond et ses onglets Débutant/Avancé restent
    — on doit savoir quel niveau est affiché au tableau — mais le rembourrage
    et les interlignes d'une page (p-4, space-y-3) sont du luxe sur un
    vidéoprojecteur : ils y coûtent une quarantaine de pixels que le dessin
@@ -202,11 +202,11 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
    rend ici va directement aux livres.
 
    C'est la réserve où l'on puise quand le chrome de séance grandit : la
-   barre du bas porte désormais « خروج » sur sa propre ligne, et sans ces
-   pixels la bibliothèque de « نشاط 1 » débordait à 768 px de haut.
+   barre du bas porte désormais « Quitter » sur sa propre ligne, et sans ces
+   pixels la bibliothèque de « Activité 1 » débordait à 768 px de haut.
 
    Dans TOUTES les portées : présentée seule, la manipulation n'a qu'une
-   barre courte (« خروج » et rien d'autre), mais cette barre lui coûte quand
+   barre courte (« Quitter » et rien d'autre), mais cette barre lui coûte quand
    même l'échelle — la bibliothèque à 16 rayons révélés tombait de 1 à 0,84,
    et les boutons projetés cessaient d'être plus grands qu'en page. Rendre
    le rembourrage la ramène au-dessus du seuil que vérifie
@@ -296,32 +296,33 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
 .sa-classroom-module-main { width: 100%; }
 .sa-classroom-module-content { width: 100%; }
 
-/* ── Le bouton flottant « ⛶ عرض » (mode classe du module) ───────────────
+/* ── Le bouton flottant « ⛶ Projeter » (mode classe du module) ───────────────
    La colonne, du bas vers le haut :
 
-     bottom: 1.5rem   « ⛶ عرض »        ← nous, au RAS DU COIN
-     bottom: 5.5rem   « 🧠 بطاقتي »     (KnowledgeMap, bottom-22)
-     bottom: 9.5rem   « 📓 كرّاسي »     (LessonNotebookAnchor)
+     bottom: 1.5rem   « ⛶ Projeter »    ← nous, au RAS DU COIN
+     bottom: 5.5rem   « 🧠 Ma carte »   (KnowledgeMap, bottom-22)
+     bottom: 9.5rem   « 📓 Mon cahier » (LessonNotebookAnchor)
 
-   « عرض » se pose JUSTE SOUS la carte des connaissances, au ras du coin :
-   son écart au BAS (1.5rem) égale son écart à GAUCHE (1.5rem), la pastille
+   « Projeter » se pose JUSTE SOUS la carte des connaissances, au ras du coin :
+   son écart au BAS (1.5rem) égale son écart à DROITE (1.5rem), la pastille
    est posée dans l'angle. La carte et le cahier s'empilent au-dessus.
 
-   Le coin est libre : l'ancienne pastille « Ctrl+K » du site, posée en
-   `end-6` (donc physiquement à GAUCHE sous RTL), l'occupait et interceptait
-   les clics de cet étage. Elle a été retirée, puis la palette elle-même
+   Le coin est libre : l'ancienne pastille « Ctrl+K » du site, posée dans ce
+   coin, l'occupait et interceptait les clics de cet étage. Elle a été retirée, puis la palette elle-même
    (2026-11-17, décision du propriétaire : pas de recherche globale).
 
    Les trois hauteurs se tiennent : changer l'une sans les autres fait se
    recouvrir deux pastilles.
 
-   `left` est PHYSIQUE, pas logique : sous RTL, `start` placerait le bouton
-   à droite, sous la barre latérale de l'espace élève, qui intercepte les
-   clics (leçon de QA consignée dans KnowledgeMap.jsx).
+   La colonne est en bas à DROITE, au bord de FIN : la barre latérale de
+   l'espace élève occupe le bord de début (la gauche) et intercepterait les
+   clics (leçon de QA consignée dans KnowledgeMap.jsx). Le cahier
+   (`.sa-nb-lesson-trigger`, features/practice/notebook/notebook.css) doit
+   tenir le même bord.
    Il disparaît à l'impression, comme les autres déclencheurs. */
 .sa-classroom-fab {
   position: fixed;
-  left: 1.5rem;
+  right: 1.5rem;
   bottom: 1.5rem;
   z-index: 40;
   box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.18);
@@ -330,8 +331,8 @@ html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.s
 
 @media print { .sa-classroom-fab { display: none; } }
 
-/* Pendant une séance, le chrome FLOTTANT de la page disparaît : « كرّاسي » et
-   « بطاقتي » n'ont pas leur place sur un projecteur. Ils reviennent à la
+/* Pendant une séance, le chrome FLOTTANT de la page disparaît : « Mon cahier » et
+   « Ma carte » n'ont pas leur place sur un projecteur. Ils reviennent à la
    sortie, car c'est la classe sur <body> qui part, pas les composants
    (aucun démontage, donc aucun état perdu). La sortie, elle, n'est plus
    dans cette colonne : elle est au bas de la barre de navigation. */
@@ -340,18 +341,18 @@ body.sa-classroom-session [data-km-trigger] {
   display: none;
 }
 
-/* « 🧪 المختبر » n'est pas dans cette liste, et c'est voulu : il vit dans la
+/* « 🧪 L’atelier » n'est pas dans cette liste, et c'est voulu : il vit dans la
    rangée de repères du module, que la présentation rend elle-même. Il reste
    donc disponible pendant une séance — c'est au tableau, devant la classe,
    qu'on a le plus besoin de sortir un instrument au milieu d'une
    explication. */
 
 /* ── UN TEST PRÉSENTÉ : une question à la fois ─────────────────────────
-   (kit/TestPresentation.jsx — module 0 « أستعدّ » et test final « إتقان »)
+   (kit/TestPresentation.jsx — module 0 « Je me prépare » et test final « Maîtrise »)
 
    L'écran appartient à LA QUESTION. Pas de sommaire, pas de carte dans une
    carte, pas de liste verticale de tout le test : le titre est sur la barre
-   d'outils, le repère « السؤال 3 من 10 » aussi, et il reste ici l'énoncé,
+   d'outils, le repère « Question 3 sur 10 » aussi, et il reste ici l'énoncé,
    les choix, la validation. Les autres questions sont rendues mais `hidden`
    — rien ne se remonte, donc aucune réponse n'est perdue. */
 .sa-test-presentation {
@@ -392,7 +393,7 @@ body.sa-classroom-session [data-km-trigger] {
 /* LES QUESTIONS LONGUES (brief §17). On ne rétrécit PAS la typographie
    jusqu'à l'illisible : le moteur d'ajustement a déjà son plancher (0.55),
    et au-delà la question défile À L'INTÉRIEUR d'elle-même. La barre du bas
-   (السابق / التالي) et le bouton de validation restent donc toujours
+   (Précédent / Suivant) et le bouton de validation restent donc toujours
    atteignables, hors de la zone qui défile. */
 .sa-classroom-root--active .sa-test-presentation__body {
   max-height: calc(var(--sa-classroom-h, 100vh) * 0.62);
@@ -413,10 +414,10 @@ body.sa-classroom-session [data-km-trigger] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   LE POINTEUR DE CLASSE (« المؤشّر ») — ClassroomPointer.jsx.
+   LE POINTEUR DE CLASSE (« Pointeur ») — ClassroomPointer.jsx.
 
    Un calque fixe DANS la racine de la séance (donc visible en plein écran
-   natif), au-dessus de tout ce qu'elle contient — y compris le مختبر (80)
+   natif), au-dessus de tout ce qu'elle contient — y compris l’atelier (80)
    et le fantôme de glisser. `pointer-events: none` partout : il ne prend
    jamais un clic. La position est écrite en `transform` par un seul
    requestAnimationFrame ; `--sa-pointer-d` vient de pointerDiameter().
@@ -460,7 +461,7 @@ body.sa-classroom-session [data-km-trigger] {
   box-shadow: 0 0 0 max(2px, calc(var(--sa-pointer-d, 96px) * 0.03)) #fff, 0 0 0 max(3px, calc(var(--sa-pointer-d, 96px) * 0.05)) rgba(127, 29, 29, 0.55);
 }
 
-/* « تسليط الضوء » : tout s'assombrit sauf un disque autour du pointeur, au
+/* « Projecteur » : tout s'assombrit sauf un disque autour du pointeur, au
    bord adouci. Les coordonnées sont des variables écrites par le même rAF. */
 .sa-classroom-spotlight {
   position: absolute;

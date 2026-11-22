@@ -1,5 +1,5 @@
 /**
- * The sounds of « مختبري » — synthesised with WebAudio (no asset), its OWN small instrument (2026-11-17).
+ * The sounds of « Mon labo » — synthesised with WebAudio (no asset), its OWN small instrument (2026-11-17).
  *
  * The rule of the lab's sound: it says WHAT HAPPENED under the hand, never the rule of the lesson.
  *   - a NUMBER has a note (`pitchOf`): the wall, the flag, a digit, a divisor are heard as they move — 12 does not sound like 13;
@@ -123,7 +123,7 @@ export const SOUND_NAMES = Object.keys(SOUNDS);
 export const GAP = { tick: 0.035, click: 0.03, miss: 0.06, fit: 0.12, found: 0.05, lamps: 0.3, enter: 1 };
 
 export class LabSound {
-  /** `palette` / `gaps`: another page (« عُدّة الانطلاق ») brings its own sounds to the same small instrument. */
+  /** `palette` / `gaps`: another page (« L’échauffement ») brings its own sounds to the same small instrument. */
   constructor(palette = SOUNDS, gaps = GAP, log = '__labSounds') {
     this.ctx = null;
     this.out = null;

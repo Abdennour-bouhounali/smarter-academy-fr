@@ -4,8 +4,8 @@ import { storage } from '../../../utils/storage';
 let sharedCtx = null;
 
 /**
- * Les EFFETS DE JEU (2026-10-28, propriétaire : « ajoute des effets sonores » — labos, questions pendant le labo, défi « اختبر ذاكرتك »).
- * Synthétisés (aucun fichier), muets tant que l'élève n'a pas activé « الصوت » (préférence de l'appareil,
+ * Les EFFETS DE JEU (2026-10-28, propriétaire : « ajoute des effets sonores » — labos, questions pendant le labo, défi « Teste ta mémoire »).
+ * Synthétisés (aucun fichier), muets tant que l'élève n'a pas activé « Son » (préférence de l'appareil,
  * `smarter_effects_enabled`, lue AU MOMENT de jouer : le bouton de la page et celui du défi disent la même chose), jamais bloquants.
  *   pop      la carte de questions s'ouvre        correct  une bonne réponse        wrong   une erreur / temps écoulé
  *   tick     une seconde des 3 dernières           start    le défi démarre          step    une étape du labo est faite
@@ -24,8 +24,8 @@ const SFX = {
   bell: [[1568, 0, 0.28, 'sine', 0.08], [2093, 0.01, 0.22, 'sine', 0.035]],
   flag: [[784, 0, 0.1, 'triangle', 0.12], [1175, 0.09, 0.28, 'triangle', 0.12]],
   over: [[160, 0, 0.2, 'sawtooth', 0.07]],
-  // « مختبر التفكير » (2026-11-01, THINKING_LAB.md §7) : une clé qui s'ouvre, l'étincelle d'une observation 👁,
-  // une piste abandonnée ↩, « ليس بعد » (deux notes douces qui descendent — jamais un buzzer), le pas d'une relecture.
+  // « Le labo des énigmes » (2026-11-01, THINKING_LAB.md §7) : une clé qui s'ouvre, l'étincelle d'une observation 👁,
+  // une piste abandonnée ↩, « pas encore » (deux notes douces qui descendent — jamais un buzzer), le pas d'une relecture.
   lock: [[880, 0, 0.05, 'square', 0.05], [1320, 0.06, 0.12, 'triangle', 0.09]],
   spark: [[1568, 0, 0.08, 'sine', 0.07], [2349, 0.06, 0.14, 'sine', 0.06]],
   slide: [[440, 0, 0.18, 'triangle', 0.07], [330, 0.12, 0.22, 'triangle', 0.06]],
@@ -35,7 +35,7 @@ const SFX = {
     [784, 0.52, 0.1, 'triangle', 0.1], [1047, 0.62, 0.45, 'triangle', 0.15], [1319, 0.62, 0.45, 'sine', 0.06]],
 };
 
-/** La préférence « الصوت » de l'appareil, lue maintenant (aucun hook : utilisable depuis n'importe quel geste). */
+/** La préférence « Son » de l'appareil, lue maintenant (aucun hook : utilisable depuis n'importe quel geste). */
 export function effectsEnabledNow() {
   return storage.getItem('smarter_effects_enabled') === '1';
 }

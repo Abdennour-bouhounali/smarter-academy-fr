@@ -1,13 +1,15 @@
 /**
- * « الامتحان الأبيض » — the FRAME of an exam SITTING (PURE; it names no lesson): a real exam in three phases.
+ * « brevet blanc » — the FRAME of an exam SITTING (PURE; it names no lesson): a real exam in three phases.
  *   read  the whole subject, a minute to read and underline — nothing can be answered yet;
  *   sit   silence: the student works on PAPER and copies only his final answers; NO verdict, no hint, no sound;
  *   back  the copy handed back: a mark per question (the marking scheme), the model copy, his own paper to check.
  * Its subjects are the lesson's EXERCISE BANK, served as it is (bankSitting.js, owner 2026-11-18) — never generated.
  *
  * A question of a subject is a step of a bank sheet (bankSitting.js › fromBank): its answer has the shape of its
- * `answerType` (`{ choiceId }`, `{ value }`), and a step written on the paper only (`paper`, a « بيّن أن ») has none.
+ * `answerType` (`{ choiceId }`, `{ value }`), and a step written on the paper only (`paper`, a « Montrer que ») has none.
  */
+
+import { APPRECIATION } from './text';
 import { answeredBank } from './bankSitting';
 
 export const PASS = 0.8;
@@ -22,7 +24,7 @@ export const allQuestions = (subject) =>
   subject.exercises.flatMap((e) => e.questions.map((q) => ({ ...q, exercise: e.id })));
 
 /**
- * Is the answer complete enough to be read? An empty answer earns 0 and is shown as « لم تُجب » — and an exercise whose
+ * Is the answer complete enough to be read? An empty answer earns 0 and is shown as « Sans réponse » — and an exercise whose
  * every box is empty is « forgotten » (a box of the shape fills its answer only once complete).
  */
 export const answered = answeredBank;
@@ -54,9 +56,9 @@ export const appreciation = (m, total) =>
   total <= 0
     ? ''
     : m >= total * 0.9
-      ? 'ممتاز'
+      ? APPRECIATION.top
       : m >= total * 0.7
-        ? 'جيّد'
+        ? APPRECIATION.good
         : m >= total * 0.5
-          ? 'متوسّط: راجع أخطاءك'
-          : 'يحتاج إلى عمل: لا تيأس';
+          ? APPRECIATION.fair
+          : APPRECIATION.work;

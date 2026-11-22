@@ -1,11 +1,11 @@
-/* « مصهر القاعدة » — the mirror of island « المرايا ». Designed at 1280 × 720, zoomed to the window: nothing scrolls. Prefix rf-. */
+/* « Forge ta règle » — the mirror of the islands. Designed at 1280 × 720, zoomed to the window: nothing scrolls. Prefix rf-. */
 .rf-root {
   position: absolute;
   inset: 0;
   z-index: 14;
   overflow: hidden;
   color: #e8f6ff;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   user-select: none;
   -webkit-user-select: none;
   animation: di-fade 0.3s;
@@ -215,7 +215,7 @@
   display: grid;
   gap: 0.12rem;
   padding: 0.26rem 0.6rem;
-  line-height: 1.3; /* Cairo's own line height is nearly 1.9: eight lines must fit at 1280 × 720 */
+  line-height: 1.3; /* a tight line height: eight lines must fit at 1280 × 720 */
   border-radius: 0.8rem;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid transparent;
@@ -382,9 +382,8 @@
 .rf-cap {
   fill: #cfe9ff;
   font:
-    800 17px 'Cairo',
+    800 17px 'Inter',
     sans-serif;
-  direction: rtl;
 }
 .rf-cap--a {
   fill: #9fd8ff;
@@ -605,7 +604,7 @@
   background: rgba(125, 252, 255, 0.1);
   color: #7dfcff;
   font:
-    900 2rem 'Cairo',
+    900 2rem 'Inter',
     sans-serif;
   text-align: center;
   outline: none;
@@ -777,10 +776,6 @@
 .rf-uselines:not([data-rf-lines='1']) .rf-use input {
   height: 2.4rem;
   font-size: 1.25rem;
-}
-.rf-uselines[data-rf-lines='1'] .rf-use[dir='rtl'] {
-  align-items: center;
-  font-size: 1.5rem;
 }
 .rf-sentence--alone {
   font-size: 2.3rem;

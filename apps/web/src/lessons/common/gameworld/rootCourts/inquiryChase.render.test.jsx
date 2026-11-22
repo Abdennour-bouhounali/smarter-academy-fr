@@ -2,22 +2,22 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import Inquiry from './Inquiry';
-import { ChaseView } from './InquiryChase';
+import { ChaseView, CHASE_COURT } from './InquiryChase';
 import { initChase, chaseReducer, CHASE_LAYOUT } from './chase';
 import { tiles } from './strings';
 
 // the screens expose their state to the walks on `window` (dev only): give the server render one
 globalThis.window = globalThis.window ?? {};
 
-/** A small tile agreed with its number (« بلاطة صغيرة واحدة », « بلاطتان صغيرتان », « 9 بلاطات صغيرة », « 49 بلاطة صغيرة »). */
-const small = (n) => {
-  const t = tiles(n);
-  return t === 'بلاطة واحدة' ? 'بلاطة صغيرة' : t === 'بلاطتان' ? 'بلاطتان صغيرتان' : `${t.replace(/^\d+ /, '')} صغيرة`;
-};
-const KIND = { band: 'يبقى شريط', jam: 'تعلق', ride: 'تركب المصعد' };
+/** A small tile (« un carreau ») agreed with its number: « 1 carreau », « 49 carreaux » — the noun alone. */
+const small = (n) => (Number(n) < 2 ? 'carreau' : 'carreaux');
+const KIND = { band: 'il reste une bande', jam: 'elle coince', ride: 'elle monte' };
+/** A sentence after his prediction: as it is when he saw right, after the fact of a miss when he did not. */
+const MISS = 'Ta prédiction ne s’est pas vérifiée cette fois';
+const after = (right, t) => (right ? t[0].toUpperCase() + t.slice(1) : `${MISS} : ${t}`);
 
 /**
- * A COMPLETE example of the spec of `chase`, in Arabic — every key the screen reads (GAME_WORLD.md « spec shape of
+ * A COMPLETE example of the spec of `chase`, in French — every key the screen reads (GAME_WORLD.md « spec shape of
  * `chase` »). Facts only: no sentence names the rule, says « exact », « never », « impossible », « root », or shows the
  * sign. A number inside a sentence goes through MathText as `$…$`; a fraction is `\\dfrac` (a real bar).
  */
@@ -26,37 +26,41 @@ const CHASE_SPEC = {
   a: '2',
   fracs: ['3/2', '7/5', '17/12', '41/29', '99/70'],
   text: {
-    lead: ({ a }) => `الساحة التي مساحتها ${tiles(a)}: مقاييس طولها كسر، كلّ واحد أقرب من الذي قبله.`,
-    goal: ({ n }) => `جرّب المقاييس الـ $${n}$ واحدًا واحدًا: قبل كلّ منصّة، قل ماذا ستفعل.`,
-    ask: ({ rodTex }) => `المقياس $${rodTex}$: ماذا ستفعل منصّته؟`,
-    sayBand: 'يبقى شريط',
-    sayJam: 'تعلق',
-    sayRide: 'تركب',
-    rodName: 'المقياس',
-    platformName: 'المنصّة',
-    courtName: 'الساحة',
-    smallTile: ({ q, perTile }) => `بلاطة صغيرة ضلعها $\\dfrac{1}{${q}}$: في البلاطة $${perTile}$ منها.`,
+    lead: ({ a }) =>
+      `La salle de ${tiles(a)} : des toises dont la longueur est une fraction, chacune plus proche que la précédente.`,
+    goal: ({ n }) => `Essaie les $${n}$ toises une par une : avant chaque plateforme, dis ce qu’elle va faire.`,
+    ask: ({ rodTex }) => `La toise de $${rodTex}$ : que va faire sa plateforme ?`,
+    sayBand: 'Il reste une bande',
+    sayJam: 'Elle coince',
+    sayRide: 'Elle monte',
+    rodName: 'Toise',
+    platformName: 'Plateforme',
+    courtName: 'Salle',
+    smallTile: ({ q, perTile }) => `Un carreau de côté $\\dfrac{1}{${q}}$ : il en faut $${perTile}$ pour une dalle.`,
     unit: (n) => small(n),
-    unknown: '؟',
+    unknown: '?',
     fact: ({ kind, platform, court, gap, right }) =>
-      `${right ? '' : 'توقّعك لم يصب هذه المرّة: '}المنصّة $${platform}$ والساحة $${court}$ بلاطة صغيرة — ${
-        kind === 'ride' ? 'تركب المصعد' : `${KIND[kind]}، الفرق $${gap}$`
-      }.`,
-    colRod: 'المقياس',
-    colPlatform: 'المنصّة',
-    colCourt: 'الساحة',
-    colFact: 'ما حدث (بلاطة صغيرة)',
-    band: 'ينقص',
-    jam: 'يزيد',
-    rides: 'تركب',
-    next: 'المقياس التالي',
-    countAsk: ({ n }) => `في كم مقياسًا من هذه الـ $${n}$ ركبت المنصّة المصعد؟`,
-    countNone: 'ولا مرّة',
-    countOne: 'مرّة واحدة',
-    countAll: 'كلّ مرّة',
+      after(
+        right,
+        `la plateforme fait $${platform}$ carreaux et la salle $${court}$ — ${
+          kind === 'ride' ? KIND.ride : `${KIND[kind]}, écart $${gap}$`
+        }.`,
+      ),
+    colRod: 'Toise',
+    colPlatform: 'Plateforme',
+    colCourt: 'Salle',
+    colFact: 'Ce qui se passe (carreaux)',
+    band: 'Moins',
+    jam: 'Plus',
+    rides: 'Monte',
+    next: 'Toise suivante',
+    countAsk: ({ n }) => `Sur ces $${n}$ toises, combien de fois la plateforme est-elle montée ?`,
+    countNone: 'Aucune fois',
+    countOne: 'Une fois',
+    countAll: 'À chaque fois',
     countFact: ({ rides, right }) =>
-      `${right ? '' : 'توقّعك لم يصب هذه المرّة: '}انظر الجدول: ركبت المنصّة ${rides ? `$${rides}$ مرّة` : 'ولا مرّة'}.`,
-    done: 'انتهيت',
+      after(right, `regarde le tableau : la plateforme est montée ${rides ? `$${rides}$ fois` : 'aucune fois'}.`),
+    done: 'J’ai fini',
   },
 };
 
@@ -73,7 +77,7 @@ const seen = (out) =>
     .replace(/<[^>]+>/g, ' ')
     .replace(/&[a-z]+;|&#\d+;/g, ' ');
 /** Never on this screen: the rule's words, its sign, a verdict of « wrong ». */
-const TOLD = /جذر|√|sqrt|بالضبط|مستحيل|لا يمكن|أبدًا|أبدا|ناطق|خطأ|خاطئ|غلط/;
+const TOLD = /racine|√|sqrt|exact|impossible|jamais|irrationnel|rationnel|faux|fausse|erreur|[\u0600-\u06FF]/i;
 /** A fraction is never written « p/q » as text. */
 const SLASH = /\d\s*\/\s*\d/;
 
@@ -107,7 +111,7 @@ describe('the investigation screen `chase`', () => {
     expect(out).toContain('data-iq-frac="3/2"');
     for (const k of ['band', 'jam', 'ride']) expect(out).toContain(`data-iq-say="${k}"`);
     expect(out).toContain('data-iq-table="0"');
-    // the facts wait for his prediction: the card's numbers are « ؟ », no relation, no row, no fact
+    // the facts wait for his prediction: the card's numbers are « ? », no relation, no row, no fact
     expect(out).toContain('data-iq-platform=""');
     expect(out).toContain('data-iq-relation=""');
     expect(out).not.toContain('data-iq-row=');
@@ -117,7 +121,7 @@ describe('the investigation screen `chase`', () => {
     expect(seen(out)).not.toMatch(SLASH);
   });
 
-  it('3/2 jams — 9 against 8 small tiles, seen without a lens; his « band » is answered by the fact', () => {
+  it('3/2 jams — 9 against 8 small tiles, seen without a lens; his « band » is answered by the fact', () => {
     let s = play([{ type: 'say', v: 'band' }]);
     let out = html(s);
     expect(out).toContain('data-iq-court-stage="build"');
@@ -137,7 +141,7 @@ describe('the investigation screen `chase`', () => {
     expect(out).toContain('data-iq-cell-court="8"');
     expect(out).toContain('data-iq-cell="jam"');
     expect(out).toContain('data-iq-next');
-    expect(seen(out)).toContain('توقّعك لم يصب هذه المرّة');
+    expect(seen(out)).toContain(MISS);
     expect(seen(out)).not.toMatch(TOLD);
     expect(seen(out)).not.toMatch(SLASH);
   });
@@ -155,7 +159,7 @@ describe('the investigation screen `chase`', () => {
     expect(out).toContain('data-iq-table="2"');
     expect(out).toContain('data-iq-frac="7/5"');
     expect(out).toContain('data-iq-smalltile="5"');
-    expect(seen(out)).not.toContain('توقّعك لم يصب'); // he said « band »: no miss
+    expect(seen(out)).not.toContain(MISS); // he said « band »: no miss
     expect(seen(out)).not.toMatch(SLASH);
   });
 
@@ -179,29 +183,29 @@ describe('the investigation screen `chase`', () => {
     expect(k).toBeGreaterThanOrEqual(2);
     expect(out).toContain('data-iq-table="5"');
     for (const f of ['3/2', '7/5', '17/12', '41/29', '99/70']) expect(out).toContain(`data-iq-frac="${f}"`);
-    expect(seen(out)).toContain('توقّعك لم يصب هذه المرّة');
+    expect(seen(out)).toContain(MISS);
     expect(seen(out)).not.toMatch(TOLD);
   });
 
-  it('the closing question: three taps (0 / 1 / all); then the count, and « انتهيت »', () => {
+  it('the closing question: three taps (0 / 1 / all); then the count, and « J’ai fini »', () => {
     const states = allStates();
     const count = states.find((s) => s.stage === 'count');
     let out = html(count);
     for (const v of ['0', '1', 'all']) expect(out).toContain(`data-iq-count="${v}"`);
     expect(out).not.toContain('data-iq-next');
     expect(out).not.toContain('data-iq-say=');
-    expect(seen(out)).toContain('في كم مقياسًا');
+    expect(seen(out)).toContain('combien de fois');
     expect(out).toContain('data-iq-table="5"');
     const counted = states.find((s) => s.stage === 'counted');
     out = html(counted);
     expect(out).not.toContain('data-iq-count=');
     expect(out).toContain('data-iq-next');
-    expect(seen(out)).toContain('انتهيت');
-    expect(seen(out)).toContain('ولا مرّة');
+    expect(seen(out)).toContain('J’ai fini');
+    expect(seen(out)).toContain('aucune fois');
     expect(seen(out)).not.toMatch(TOLD);
   });
 
-  it('every state: no fraction as « p/q » text, nothing undefined, never the rule', () => {
+  it('every state: no fraction as « p/q » text, nothing undefined, never the rule', () => {
     const states = allStates();
     expect(new Set(states.map((s) => s.stage))).toEqual(new Set(['say', 'build', 'seen', 'count', 'counted']));
     for (const s of states) {
@@ -214,7 +218,7 @@ describe('the investigation screen `chase`', () => {
     }
   });
 
-  it('on a square court the right fraction rides: the slab seated, « = », no lens', () => {
+  it('on a square court the right fraction rides: the slab seated, « = », no lens', () => {
     const spec = { ...CHASE_SPEC, a: '4', fracs: ['3/2', '4/2', '5/2'] };
     const s = play([...lower('band'), { type: 'next' }, ...lower('ride')], spec);
     const out = html(s, spec);
@@ -225,7 +229,7 @@ describe('the investigation screen `chase`', () => {
   });
 });
 
-/** The kind writes no word of its own: every text is the lesson's (here Latin tags — not one Arabic letter may appear). */
+/** The kind writes no word of its own: every text is the lesson's (here Latin tags — not one word of its own may appear). */
 describe('the kind `chase` writes no word of its own', () => {
   const tag =
     (name) =>
@@ -237,7 +241,7 @@ describe('the kind `chase` writes no word of its own', () => {
       Object.entries(CHASE_SPEC.text).map(([k, v]) => [k, typeof v === 'function' ? tag(k) : k]),
     ),
   };
-  const ARABIC = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/;
+  const ARABIC = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
 
   it('every stage, every row', () => {
     for (const s of allStates(TAGS)) {
@@ -286,7 +290,8 @@ describe('the chase screen at 1366 × 768: one screen, nothing past its place, e
   const courtH = px(L.court.h);
   const courtW = (courtH * L.court.view.w) / L.court.view.h;
   const cardW = mainW - courtW - px(L.gap);
-  /** Cairo: a digit ≈ 0.55 em, an Arabic letter ≈ 0.55 em at most (measured on the walk's screenshots for `calc`). */
+  /** A digit ≈ 0.55 em, a letter ≈ 0.55 em at most (measured in Cairo on the walk's screenshots for `calc` — NOT yet
+   *  re-measured in the French font). */
   const CH = 0.55;
   /** KaTeX draws its formulas 1.21 times the text's size. */
   const KATEX = 1.21;
@@ -354,5 +359,33 @@ describe('the chase screen at 1366 × 768: one screen, nothing past its place, e
     expect(chase).toMatch(/th:nth-child\(4\) \{\s*width: 10\.4rem/);
     // never the red of an error
     expect(chase).not.toMatch(/#(ef4444|dc2626|f87171|ff0000|e11d48)/i);
+  });
+});
+
+describe('the chase screen reads LEFT to right', () => {
+  const num = (tag, name) => Number(tag.match(new RegExp(` ${name}="([\\d.-]+)"`))?.[1]);
+  it('the columns: the main column on the LEFT, then the table — the court, then its card', () => {
+    expect(CHASE_LAYOUT.columns).toEqual(['main', 'table']);
+    const out = renderToString(<Inquiry spec={CHASE_SPEC} onDone={() => {}} />);
+    expect(out.indexOf('class="rq-ch__main"')).toBeGreaterThan(-1);
+    expect(out.indexOf('class="rq-ch__main"')).toBeLessThan(out.indexOf('class="rq-table rq-ch__table"'));
+    expect(out.indexOf('data-iq-court-box')).toBeLessThan(out.indexOf('data-iq-card'));
+    expect(out).not.toMatch(/dir="rtl"|direction="rtl"/);
+    const css = readFileSync(new URL('./inquiry.css', import.meta.url), 'utf8');
+    expect(css).not.toMatch(/direction: rtl|row-reverse|Cairo|Tajawal/);
+  });
+  it('the court grows from its post at the bottom LEFT; the lens looks at the top RIGHT corner, right of the court', () => {
+    const { post, room, lens } = CHASE_COURT;
+    expect(lens.cx - lens.r).toBeGreaterThan(post.x + room);
+    const s = play([...lower('jam'), { type: 'next' }, ...lower('band')]);
+    const out = html(s);
+    const wall = out.match(/<rect class="rq-ch__wall"[^>]*>/)[0];
+    const slab = out.match(/<rect class="rq-ch__slab[^"]*"[^>]*>/)[0];
+    const rod = out.match(/<rect class="rq-ch__rod"[^>]*>/)[0];
+    for (const r of [wall, slab, rod]) expect(num(r, 'x')).toBe(post.x);
+    const xs = [...out.matchAll(/<rect class="rq-ch__tile[^"]*"[^>]*>/g)].map(([t]) => num(t, 'x'));
+    expect(Math.min(...xs)).toBe(post.x);
+    const spot = out.match(/<circle class="rq-ch__spot" cx="([\d.]+)"/);
+    expect(Number(spot[1])).toBeGreaterThan(post.x + 100);
   });
 });

@@ -1,5 +1,5 @@
 /**
- * « مصهر القاعدة » — the FRAME of a rule forge (PURE; it names no lesson and no world). The screen is RuleForge.jsx.
+ * « Forge ta règle » — the FRAME of a rule forge (PURE; it names no lesson and no world). The screen is RuleForge.jsx.
  *
  * A rule is not told, and it is not written in an empty box either: the student DEFENDS it.
  *   predict  cases he has not seen: « what will happen? » — three right in a row and the rule is in his head;

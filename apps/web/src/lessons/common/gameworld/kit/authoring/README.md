@@ -1,18 +1,18 @@
 # The authoring kit — write a lesson's world by filling content, not by rewriting machinery
 
-The three lessons built on « أرخبيل القواسم » (unit 1 of 4AM, lessons 4–6) each re-derived the same helpers, forge
+The three lessons built on « L’archipel des diviseurs » (an Algerian unit, lessons 4–6) each re-derived the same helpers, forge
 blocks and tests: 31 + 39 agent minutes for lesson 6's written world. This folder holds that machinery ONCE, tested (it
 was proved on two of those lessons; the proofs left with the Algerian lessons on 2026-11-22). Since 2026-11-20 the `world/math.js` of
 lessons 4–7 RE-EXPORT `numbers.js` (their copies are deleted) and lesson 6's `forges.js` is assembled from
 `forgeBlocks.js`: a block or a helper no lesson uses is deleted, never kept « for later » (`npm run check:unused`).
 
-| File                              | Side   | What it gives                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `numbers.js`                      | app    | the PGCD, divisors, `euclid`, `differences`, `roadOf` (a convoy's road), LaTeX (`pgcdTex`, `divTex`, `divisionTex`, `subTex`), `listAr` (no-break space before the comma), `ltr` (isolated equality), `counted` and the world's noun tables (`COINS`, `PLANKS`, `ROWS`…), `planks`, `planksFill`, `planksOf`, `emptyCells`, `coinsLeft`                                                                                                                                     |
-| `forgeBlocks.js`                  | app    | `judge` (tiles → `slots`, `says`, `isTheRule`), `noPredictions`, `pairCase` / `plankCase`, `pairPool`, `gather` / `fromLog` / `fromRounds` (evidence), `firstBreak` / `hard` / `attacksOf` (attacks), the last step's lines (`givenDivision`, `divisionRow`, `subtractionRow`, `differenceBox`, `pgcdBox`, `pgcdPairBox`, `line`; a fraction over a real bar: `fractionBox`, `givenFraction`, and `boxesOf` — the boxes of a line), `makerOf`, `pairsOutside`, `firstWrong` |
-| `test/suites.js`                  | vitest | `describeStory`, `describeForges`, `describeExperiments`, `describeEvidence`, `describeTrainer`, `describeKnowledge`, `describeLimits` (+ `PROVEN_LIMITS`), `describeSitting`; helpers `said`, `plain`, `trueEqualities`, `agreementErrors`, `looseComma`, `stringsIn`, `allRules` (every rule a forge's tiles write), `buildersOf` (the planks that build a road; marked gaps too), `holdsOn`, `convoyBuilders`, `storeHolders`, `fractionOf`, `answersOnLine`             |
-| `test/bank.js`                    | Node   | `readBank(id)`, `bankPairs`, `pairLines`, `collisions`, `storiesOf`, `islandNamesIn`                                                                                                                                                                                                                                                                                                                                                                                        |
-| `scripts/lesson-bank-numbers.mjs` | CLI    | `node scripts/lesson-bank-numbers.mjs <id> [--check 119,85 1833,546 …] [--js]`                                                                                                                                                                                                                                                                                                                                                                                              |
+| File                              | Side   | What it gives                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `numbers.js`                      | app    | the PGCD, divisors, `euclid`, `differences`, `roadOf` (a convoy's road), LaTeX (`pgcdTex`, `divTex`, `divisionTex`, `subTex`), `listFr` (« 1, 2 et 4 »), `counted(n, [singular, plural])` (French agreement: 0 and 1 singular; a no-break space after the number) and the world's noun tables (`COINS`, `PLANKS`, `ROWS`, `CELLS`…), `planks`, `planksFill`, `planksOf`, `emptyCells`, `coinsLeft`                                                                                                              |
+| `forgeBlocks.js`                  | app    | `judge` (tiles → `slots`, `says`, `isTheRule`), `noPredictions`, `pairCase` / `plankCase`, `pairPool`, `gather` / `fromLog` / `fromRounds` (evidence), `firstBreak` / `hard` / `attacksOf` (attacks), the last step's lines (`givenDivision`, `divisionRow`, `subtractionRow`, `differenceBox`, `pgcdBox`, `pgcdPairBox`, `line`; a fraction over a real bar: `fractionBox`, `givenFraction`, and `boxesOf` — the boxes of a line), `makerOf`, `pairsOutside`, `firstWrong`                                     |
+| `test/suites.js`                  | vitest | `describeStory`, `describeForges`, `describeExperiments`, `describeEvidence`, `describeTrainer`, `describeKnowledge`, `describeLimits` (+ `PROVEN_LIMITS`), `describeSitting`; helpers `said`, `plain`, `trueEqualities`, `agreementErrors`, `typographyErrors` (and its kept alias `looseComma`), `BIDI`, `stringsIn`, `allRules` (every rule a forge's tiles write), `buildersOf` (the planks that build a road; marked gaps too), `holdsOn`, `convoyBuilders`, `storeHolders`, `fractionOf`, `answersOnLine` |
+| `test/bank.js`                    | Node   | `readBank(id)`, `bankPairs`, `pairLines`, `collisions`, `storiesOf`, `islandNamesIn`                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `scripts/lesson-bank-numbers.mjs` | CLI    | `node scripts/lesson-bank-numbers.mjs <id> [--check 119,85 1833,546 …] [--js]`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 The kit names no lesson and no world's key: the lesson is always the argument. `test/` is a test folder for the repo's checks: it is never in the app.
 
@@ -34,18 +34,7 @@ The kit names no lesson and no world's key: the lesson is always the argument. `
 
 ```js
 // math.js
-export {
-  gcd,
-  euclid,
-  differences,
-  listAr,
-  ltr,
-  counted,
-  COINS,
-  ROWS,
-  planksFill,
-  coinsLeft,
-} from '<kit>/authoring/numbers';
+export { gcd, euclid, differences, listFr, counted, COINS, ROWS, planksFill, coinsLeft } from '<kit>/authoring/numbers';
 export const NUMBERS = { tarh: { gaps: [259, 185], purse: 12, plank: 37 }, boss: { lanes: [1176, 868], plank: 28 } };
 ```
 
@@ -118,7 +107,7 @@ describeStory({
   story: STORY,
   tablets: TABLETS,
   keys: KEYS,
-  before: { '<key>': { words: /يحفظ|مشترك/, lines: [STORY.text.say.hello /* every sentence before its forge */] } },
+  before: { '<key>': { words: /garde|commun/, lines: [STORY.text.say.hello /* every sentence before its forge */] } },
 });
 
 // forges.test.js — roads: the log as the world writes it ([{ a, b }]) on three roads; solve: the last step's answer
@@ -139,8 +128,8 @@ describeExperiments({
   linesOf: (key, spec) => [
     /* every sentence it can say */
   ],
-  never: /PGCD|قاسم/,
-  own: { '<key>': /حتّى يصير/ },
+  never: /PGCD|diviseur/,
+  own: { '<key>': /jusqu’à obtenir/ },
 });
 
 // evidence.test.js
@@ -201,8 +190,8 @@ describeSitting({ id: '<id>', lesson, sittings, levels: LEVELS });
   never an adapted view; `onArrive` run twice gives the same forges, never a held key's; `pendingForge` agrees with
   `onArrive`; no pair of the bank, no pair on one line of the bank or of another story; headline numbers in no other
   story; island names unique across all stories; the gate dash; the tablets (true equalities, 2 lines, 2 formulas,
-  1 plain note with isolated equalities — an equality of FRACTIONS, `\frac{66}{78} = \frac{11}{13}` or a sum of
-  them, is checked by cross-multiplication, `fractionOf`); Arabic agreement and list commas over every fixed sentence; no key's words
+  1 plain note with no bidi control — an equality of FRACTIONS, `\frac{66}{78} = \frac{11}{13}` or a sum of
+  them, is checked by cross-multiplication, `fractionOf`); French agreement (« 1 dalle », « 2 dalles ») and French typography (no-break spaces, ’, « 3e ») over every fixed sentence; no key's words
   before its forge (the lesson lists the sentences — it knows which are played before which key). NOT: what
   `objective` / `recall` say on a given island (the lesson's own fake-game test), the boss's mission wording.
 - **describeForges** — every rule the tiles write is refuted but one, on EVERY road; evidence idempotent, a mirror

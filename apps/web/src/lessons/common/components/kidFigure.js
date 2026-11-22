@@ -25,11 +25,17 @@ export const OUTFITS = {
   teal: { top: '#1098AD', topDark: '#0C8599', trim: '#D0F4F9', pants: '#203046', shoes: '#15AABF' },
   red: { top: '#E03131', topDark: '#C92A2A', trim: '#FFE3E3', pants: '#283149', shoes: '#E03131' },
 };
-/** Garçons : 'short' | 'curly' ; filles : 'hijab' (tenue islamique, demande du propriétaire, 2026-10-14). */
-export const HAIR_STYLES = ['short', 'curly', 'hijab'];
 /**
- * Les foulards du hijab (2026-10-14, demande du propriétaire : les filles en tenue islamique) : `main` le foulard, `dark` ses
- * plis, `inner` le bandeau (sous-foulard) au front. Couleurs douces, distinctes de la tunique pour que le hijab se lise.
+ * Les coiffures dessinées : 'short' | 'curly' | 'hijab' (un foulard, dessiné pour la plateforme algérienne, 2026-10-14).
+ * Le dessin des personnages pour la France est une décision OUVERTE du propriétaire (plan §7, 7) : aucune coiffure n'est
+ * imposée par défaut, le foulard ne vient que si une scène le demande (`hairStyle: 'hijab'`).
+ */
+export const HAIR_STYLES = ['short', 'curly', 'hijab'];
+/** Les coiffures que `kidLook` choisit par défaut : aucune n'est imposée à personne, le foulard est sur demande. */
+export const DEFAULT_HAIR_STYLES = ['short', 'curly'];
+/**
+ * Les couleurs du foulard (2026-10-14) : `main` le foulard, `dark` ses plis, `inner` le bandeau (sous-foulard) au front.
+ * Couleurs douces, distinctes du haut pour que le foulard se lise.
  */
 export const SCARVES = {
   rose: { main: '#F7A8C4', dark: '#DE7FA6', inner: '#FFF1F6' },
@@ -79,6 +85,6 @@ export function kidLook(index = 0) {
     skin: skins[(index * 3 + 1) % skins.length],
     hair: hairs[index % hairs.length],
     outfit: outfits[index % outfits.length],
-    hairStyle: HAIR_STYLES[index % HAIR_STYLES.length],
+    hairStyle: DEFAULT_HAIR_STYLES[index % DEFAULT_HAIR_STYLES.length],
   };
 }

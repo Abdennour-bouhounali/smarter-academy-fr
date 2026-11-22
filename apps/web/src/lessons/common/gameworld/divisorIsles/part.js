@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `part` — PURE logic (screen: `InquiryPart.jsx`; contract: GAME_WORLD.md « استكشف », « spec shapes of
+ * THE INVESTIGATION `part` — PURE logic (screen: `InquiryPart.jsx`; contract: GAME_WORLD.md « Explore », « spec shapes of
  * `measure` and `part` »). ONE strip, the whole, with a part painted in strokes the world paints one after the other: he
  * writes the fraction painted (cells over cells); then he picks a plank that fills the painted part AND the whole — the
  * strip is RE-CUT in that unit: the painted length does not move, the cuts and the writing do.

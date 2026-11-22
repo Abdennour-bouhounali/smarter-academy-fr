@@ -1,5 +1,5 @@
 /**
- * « قصر الساحات » — THE drawing of a court in 2D (pure SVG; it names no lesson). Used by the forge's mirror, the
+ * « Le palais des dalles » — THE drawing of a court in 2D (pure SVG; it names no lesson). Used by the forge's mirror, the
  * experiments, the board: one court, drawn one way everywhere.
  *
  *   <Court area="30" rod={{ q: '5,47' }} stage="ask|build|done" tight={false} zoom={null} label={true} />
@@ -17,18 +17,20 @@
  *   label  false draws the court alone (no plaque, no rod label, no fact) — a thumbnail
  *   fast   (optional) the walks' fast mode: every animation in a few ms
  *
- * The geometry, in a viewBox of 640 × 240 drawn left to right (`direction="ltr"` — a number never runs right to left):
- *   right  the gate's plaque: the area, and its noun agreed (« 30 » over « بلاطة »)
- *   middle the court, TO SCALE: its corner POST at the bottom right (the side of the gate, where an Arabic reader
- *          starts); the rod runs from the post along the near (bottom) wall; the platform is the square built on it,
- *          from the post. The far walls are the top and the left one: there the tiles are CUT when the side is not whole
- *   left   what the world did, in words, and the magnifier on the far corner when it is needed
+ * The geometry, in a viewBox of 640 × 240 drawn left to right (`direction="ltr"`), read in that order:
+ *   left   the gate's plaque: the area, and its noun agreed (« 30 » over « dalles »)
+ *   middle the court, TO SCALE: its corner POST at the bottom left (the side of the gate, where the reader starts — and
+ *          where the 3D world's post stands, the rod pulled to the right); the rod runs from the post along the near
+ *          (bottom) wall; the platform is the square built on it, from the post. The far walls are the top and the
+ *          right one: there the tiles are CUT when the side is not whole
+ *   right  what the world did, in words, and the magnifier on the far corner when it is needed
  * The floor: unit tiles up to 150 tiles; above, blocks of 10 × 10 (100 × 100 for a court of thousands — never more than
  * 15 blocks a side); under one tile, ONE enlarged tile and its subdivisions (4 × 4, 8 × 8 or 10 × 10), the court in its
  * corner — the picture stays honest (MANIPULATION_DNA.md §17.6).
  * Numbers: every number the drawing writes goes through `Num` — a fraction (the gate's area, the rod, a wall's radicand,
  * the difference in the fact) is STACKED over a real bar, never « p/q » text; a whole number or a decimal is one line.
- * A fraction rod's label hangs lower, so the view slides down (`ROD_FRAC`); `aria-label` reads « 23 على 7 ».
+ * A fraction rod's label hangs lower, so the view slides down (`ROD_FRAC`); `aria-label` reads « 23 sur 7 ».
+ * Every word the drawing writes comes from strings.js › DRAWING_TEXT.
  * Text: every glyph is FONT = 27 units. Drawn at 11rem in the forge (1366 × 768: zoom 1.067) that is 27 × 176 / 240 ×
  * 1.067 = 21.1 px; tight (9.5rem) 18.2 px. A screen that draws the court smaller must keep `FONT × height / 240` ≥ 18 px.
  * Hooks: data-court, data-court-rod, data-court-stage, data-court-kind (at done), data-court-zoom (the lens factor, « 1 »
@@ -37,15 +39,24 @@
 import { approx, isWall, lengthOf, outcome, rodText, rootOf } from './logic';
 import { counted } from '../kit/authoring/numbers';
 import { TILES, inCourtWriting, tiles, tileWord } from './ruleForge';
+import { DRAWING_TEXT } from './strings';
 import './court.css';
 
 export const COURT_VIEW = { w: 640, h: 240, font: 27 };
 const { w: W, h: H, font: F } = COURT_VIEW;
-const POST = { x: 476, y: 196 }; // the corner post: bottom right of the court
-const ROOM = 168; // the longest side drawn (the court or the platform)
-const LEFT_MID = 150; // the centre of the left zone (the facts)
-const PLAQUE = { x0: 496, x1: 638, mid: 567 };
-const LENS = { cx: 186, cy: 60, r: 46 };
+/**
+ * The zones, left to right: the plaque (2 … 144), the court from its post (164 … 332 at most), the facts and the lens
+ * (centred on 490). Exported for the test that pins this order (`courtParts.render.test.jsx`).
+ */
+export const COURT_LAYOUT = {
+  post: { x: 164, y: 196 }, // the corner post: bottom LEFT of the court
+  room: 168, // the longest side drawn (the court or the platform)
+  factMid: 490, // the centre of the right zone (the facts)
+  plaque: { x0: 2, x1: 144, mid: 73 },
+  lens: { cx: 454, cy: 60, r: 46 },
+  factor: 570, // the lens's factor, right of the lens
+};
+const { post: POST, room: ROOM, factMid: FACT_MID, plaque: PLAQUE, lens: LENS } = COURT_LAYOUT;
 const THIN = 4; // units (≈ px at 11rem): thinner than this, the band or the overhang cannot be seen
 const EPS = 1e-9;
 /**
@@ -56,34 +67,25 @@ const EPS = 1e-9;
  */
 const ROD_FRAC = { q: { y: 249, drop: 26 }, wall: { y: 255, drop: 34 } };
 
-/** The width a text takes, in units — an estimate for the layout (Cairo's digits ≈ 0.6 em). */
-const widthOf = (text, f) =>
+/** The width a text takes, in units — an estimate for the layout (a digit ≈ 0.6 em, a letter ≈ 0.55 em). */
+export const widthOf = (text, f) =>
   [...String(text)].reduce(
     (t, ch) => t + f * (/[0-9]/.test(ch) ? 0.6 : /[,.]/.test(ch) ? 0.3 : /[/\-−]/.test(ch) ? 0.42 : 0.55),
     0,
   );
-/** A text holds an Arabic letter? Then it is laid right to left; else ALWAYS left to right (a number, a formula). */
-const isArabic = (t) => /[؀-ۿ]/.test(t);
+/** A text holds a word (a letter)? Then it is never squeezed; a number may be. */
+const isWord = (t) => /\p{L}/u.test(t);
 
 /**
- * One line of text, its direction from its content. A NUMBER wider than `max` is squeezed sideways (never shrunk in
- * height: a 20-digit difference stays 27 units tall); an Arabic text is never forced to a length — its width is only
- * estimated, and `textLength` would stretch it when the estimate is long. The zones are sized for the longest sentence.
+ * One line of text, left to right. A NUMBER wider than `max` is squeezed sideways (never shrunk in height: a 20-digit
+ * difference stays 27 units tall); a word is never forced to a length — its width is only estimated, and `textLength`
+ * would stretch it when the estimate is long. The zones are sized for the longest sentence.
  */
 function Txt({ x, y, f = F, max, anchor = 'middle', cls = '', children }) {
   const t = String(children);
-  const squeeze =
-    max && !isArabic(t) && widthOf(t, f) > max ? { textLength: max, lengthAdjust: 'spacingAndGlyphs' } : {};
+  const squeeze = max && !isWord(t) && widthOf(t, f) > max ? { textLength: max, lengthAdjust: 'spacingAndGlyphs' } : {};
   return (
-    <text
-      x={x}
-      y={y}
-      textAnchor={anchor}
-      direction={isArabic(t) ? 'rtl' : 'ltr'}
-      fontSize={f}
-      className={`crt-t ${cls}`}
-      {...squeeze}
-    >
+    <text x={x} y={y} textAnchor={anchor} direction="ltr" fontSize={f} className={`crt-t ${cls}`} {...squeeze}>
       {t}
     </text>
   );
@@ -99,8 +101,8 @@ const numWidth = (text, f, g = f * 0.8) => {
   const fr = fracOf(text);
   return fr ? Math.max(widthOf(fr.n, g), widthOf(fr.d, g)) + 8 : widthOf(text, f);
 };
-/** A number read aloud (`aria-label`): « 23/7 » → « 23 على 7 »; anything else as written. */
-const spoken = (text) => String(text).replace(/(\d+)\/(\d+)/g, '$1 على $2');
+/** A number read aloud (`aria-label`): « 23/7 » → « 23 sur 7 »; anything else as written. */
+const spoken = (text) => String(text).replace(/(\d+)\/(\d+)/g, `$1 ${DRAWING_TEXT.over} $2`);
 
 /**
  * THE way the court writes a number: a fraction « 49/64 » stacked — its numerator over a real bar over its denominator,
@@ -134,14 +136,15 @@ function Num({ x, y, f, g = f * 0.8, text, cls = '', max }) {
 
 /**
  * The radical sign drawn as a stroke over its number (never a glyph that bidi could turn round). A radicand that is a
- * fraction is stacked under a radical as tall as it (`y` is then the line's baseline of `Num`).
+ * fraction is stacked under a radical as tall as it (`y` is then the line's baseline of `Num`). It never starts left of
+ * `minLeft` (the post's side).
  */
-function Radical({ cx, y, radicand, f, maxRight }) {
+function Radical({ cx, y, radicand, f, minLeft }) {
   if (fracOf(radicand)) {
     const fw = numWidth(radicand, f, f);
     const rw = f * 0.62;
     const total = rw + fw + 6;
-    const x0 = Math.min(cx - total / 2, maxRight - total);
+    const x0 = Math.max(cx - total / 2, minLeft);
     const top = y - f * 1.32 - 4;
     const bottom = y + f * 0.62 + 2;
     return (
@@ -156,7 +159,7 @@ function Radical({ cx, y, radicand, f, maxRight }) {
   const dw = widthOf(radicand, f);
   const rw = f * 0.62;
   const total = rw + dw + 6;
-  const x0 = Math.min(cx - total / 2, maxRight - total);
+  const x0 = Math.max(cx - total / 2, minLeft);
   const top = y - f * 0.86;
   return (
     <g className="crt-radical" data-court-radical={radicand}>
@@ -201,7 +204,7 @@ function cellsOf(L, step, u, l, lit) {
       const h = Math.min(step, L - j * step);
       out.push({
         key: `${i}-${j}`,
-        x: POST.x - (i * step + w) * u,
+        x: POST.x + i * step * u,
         y: POST.y - (j * step + h) * u,
         w: w * u,
         h: h * u,
@@ -230,9 +233,10 @@ function Lens({ kind, g, k, corner }) {
   const { cx, cy, r } = LENS;
   const gk = g * k;
   const big = r * 3;
-  // the court's corner in the lens: the band lies inside the court (right of and below the corner), the overhang outside
-  const cc = kind === 'jam' ? { x: cx + gk / 2, y: cy + gk / 2 } : { x: cx - gk / 2, y: cy - gk / 2 };
-  const pc = kind === 'jam' ? { x: cc.x - gk, y: cc.y - gk } : kind === 'band' ? { x: cc.x + gk, y: cc.y + gk } : cc;
+  // the court's far corner (its top RIGHT) in the lens: the court lies left of and below it — the band inside the
+  // court, the overhang outside; `pc` is the platform's far corner
+  const cc = kind === 'jam' ? { x: cx - gk / 2, y: cy + gk / 2 } : { x: cx + gk / 2, y: cy - gk / 2 };
+  const pc = kind === 'jam' ? { x: cc.x + gk, y: cc.y - gk } : kind === 'band' ? { x: cc.x - gk, y: cc.y + gk } : cc;
   const id = `crt-lens-${kind}-${Math.round(Math.log10(k))}`;
   // the leader from the lens to the far corner of the court
   const dx = corner.x - cx;
@@ -254,27 +258,33 @@ function Lens({ kind, g, k, corner }) {
       </clipPath>
       <g clipPath={`url(#${id})`}>
         <rect x={cx - r} y={cy - r} width={2 * r} height={2 * r} className="crt-lens__void" />
-        {kind === 'jam' && <rect x={pc.x} y={pc.y} width={big} height={big} className="crt-over" />}
-        <rect x={cc.x} y={cc.y} width={big} height={big} className={kind === 'band' ? 'crt-band' : 'crt-lens__floor'} />
+        {kind === 'jam' && <rect x={pc.x - big} y={pc.y} width={big} height={big} className="crt-over" />}
         <rect
-          x={Math.max(pc.x, cc.x)}
+          x={cc.x - big}
+          y={cc.y}
+          width={big}
+          height={big}
+          className={kind === 'band' ? 'crt-band' : 'crt-lens__floor'}
+        />
+        <rect
+          x={Math.min(pc.x, cc.x) - big}
           y={Math.max(pc.y, cc.y)}
           width={big}
           height={big}
           className={`crt-lens__plat is-${kind}`}
         />
-        <path d={`M${cc.x + big} ${cc.y} H${cc.x} V${cc.y + big}`} className="crt-lens__wall" />
+        <path d={`M${cc.x - big} ${cc.y} H${cc.x} V${cc.y + big}`} className="crt-lens__wall" />
       </g>
       <circle cx={cx} cy={cy} r={r} className="crt-lens__ring" />
       <line
-        x1={cx - r * 0.72}
+        x1={cx + r * 0.72}
         y1={cy + r * 0.72}
-        x2={cx - r * 0.72 - 20}
+        x2={cx + r * 0.72 + 20}
         y2={cy + r * 0.72 + 20}
         className="crt-lens__handle"
       />
       <text
-        x={70}
+        x={COURT_LAYOUT.factor}
         y={cy + F * 0.4}
         textAnchor="middle"
         direction="ltr"
@@ -292,27 +302,27 @@ function Lens({ kind, g, k, corner }) {
   );
 }
 
-/** What the world did, in words, in the left zone: its fact, and the exact difference (`outcome().diff`). */
+/** What the world did, in words, in the right zone: its fact, and the exact difference (`outcome().diff`). */
 function Fact({ o, area, lens }) {
   const diff = inCourtWriting(o.diff, area);
   const lines =
     o.kind === 'ride'
       ? [
-          { t: 'تركب المصعد', cls: 'crt-t--ride' },
-          { t: 'غطّت الساحة بالضبط', cls: 'crt-t--soft' },
+          { t: DRAWING_TEXT.fact.ride[0], cls: 'crt-t--ride' },
+          { t: DRAWING_TEXT.fact.ride[1], cls: 'crt-t--soft' },
         ]
-      : [{ t: o.kind === 'band' ? 'يبقى شريط مساحته' : 'تعلق: ما يبرز منها', cls: `crt-t--${o.kind}` }];
+      : [{ t: DRAWING_TEXT.fact[o.kind], cls: `crt-t--${o.kind}` }];
   if (o.kind !== 'ride') {
     const whole = tiles(diff);
     if (fracOf(diff)) {
-      // a fraction: drawn stacked, and its noun (what `tiles` writes after it) to its LEFT — the sentence read right to
-      // left meets the number first, the fraction one unit; too wide with its noun: the fraction, then its noun
-      const word = whole.startsWith(`${diff} `) ? whole.slice(diff.length + 1) : tileWord(diff);
+      // a fraction: drawn stacked, and its noun (what `tiles` writes after it) to its RIGHT — the line read left to
+      // right meets the number first, the fraction one unit; too wide with its noun: the fraction, then its noun
+      const word = tileWord(diff);
       const fw = numWidth(diff, F, F);
       if (fw + FRAC_SPACE + widthOf(word, F) <= 270) lines.push({ frac: diff, word, fw, cls: 'crt-t--diff' });
       else lines.push({ frac: diff, fw, cls: 'crt-t--diff' }, { t: word, cls: 'crt-t--soft' });
     }
-    // a short difference with its noun on one line (« 5 بلاطات »); a long one: the number, then its noun
+    // a short difference with its noun on one line (« 5 dalles »); a long one: the number, then its noun
     else if (widthOf(whole, F) <= 270) lines.push({ t: whole, cls: 'crt-t--diff' });
     else lines.push({ t: diff, cls: 'crt-t--diff', num: true }, { t: tileWord(diff), cls: 'crt-t--soft' });
   }
@@ -327,7 +337,7 @@ function Fact({ o, area, lens }) {
         line.frac ? (
           <FracLine key={i} line={line} y={ys[i]} />
         ) : (
-          <Txt key={i} x={LEFT_MID} y={ys[i]} f={line.num ? F * 1.05 : F} max={288} cls={line.cls}>
+          <Txt key={i} x={FACT_MID} y={ys[i]} f={line.num ? F * 1.05 : F} max={288} cls={line.cls}>
             {line.t}
           </Txt>
         ),
@@ -339,18 +349,18 @@ function Fact({ o, area, lens }) {
 const FRAC_SPACE = 12; // between a stacked fraction and the word after it
 /**
  * A line of the fact holding a fraction: the fraction stacked (its parts at 27 units, like every glyph of the court)
- * and, when it has one, its noun to its left, both centred as one group on the left zone. The noun is drawn right to
- * left from its own right edge (`direction="rtl"`, anchor start: D23), on the line's baseline.
+ * and, when it has one, its noun to its RIGHT, both centred as one group on the right zone. The noun is drawn left to
+ * right from its own left edge (anchor start), on the line's baseline.
  */
 function FracLine({ line, y }) {
   const ww = line.word ? widthOf(line.word, F) + FRAC_SPACE : 0;
-  const right = LEFT_MID + Math.min(line.fw + ww, 288) / 2;
-  const fx = line.word ? right - line.fw / 2 : LEFT_MID;
+  const left = FACT_MID - Math.min(line.fw + ww, 288) / 2;
+  const fx = line.word ? left + line.fw / 2 : FACT_MID;
   return (
     <g className="crt-fact__frac" data-court-fact-frac={line.frac}>
       <Num x={fx} y={y} f={F} g={F} text={line.frac} cls={line.cls} max={288} />
       {line.word && (
-        <Txt x={right - line.fw - FRAC_SPACE} y={y} anchor="start" cls={line.cls}>
+        <Txt x={left + line.fw + FRAC_SPACE} y={y} anchor="start" cls={line.cls}>
           {line.word}
         </Txt>
       )}
@@ -383,7 +393,7 @@ function Plaque({ area, floor }) {
   );
 }
 
-/** Under the plaque: what one square of the floor holds — « بلاطة واحدة » (the dashed tile) or « 100 بلاطة » (a block). */
+/** Under the plaque: what one square of the floor holds — « 1 dalle » (the dashed tile) or « 100 dalles » (a block). */
 function FloorKey({ floor }) {
   const s = 22;
   const x = PLAQUE.mid - s / 2;
@@ -392,7 +402,7 @@ function FloorKey({ floor }) {
       <g className="crt-key" data-court-key="tile">
         <rect x={x} y={160} width={s} height={s} className="crt-key__tile" />
         <Txt x={PLAQUE.mid} y={214} max={140} cls="crt-t--soft">
-          بلاطة
+          {DRAWING_TEXT.tile}
         </Txt>
       </g>
     );
@@ -431,9 +441,10 @@ export function Court({
   const seated = stage !== 'ask';
   const done = stage === 'done' && o;
   const cells = cellsOf(L, floor.step, u, l, Boolean(rod) && seated);
-  const xL = POST.x - L * u;
+  // the court and the platform grow from the post (bottom left) to the right and up: xR / xr their far (right) edges
+  const xR = POST.x + L * u;
   const yT = POST.y - L * u;
-  const xl = POST.x - l * u;
+  const xr = POST.x + l * u;
   const yl = POST.y - l * u;
   // the gap between the platform's far edges and the court's far walls, in units — from the EXACT difference
   // (diff / (side + rod)): 5,477225575 against √30 is a gap of 5·10⁻¹¹ tile, which a subtraction of floats would lose
@@ -443,7 +454,7 @@ export function Court({
   const wallRod = rod && isWall(rod);
   const rt = rod ? rodText(rod) : '';
   const rodLabelW = wallRod ? numWidth(rod.root, F, F) + F * 0.62 + 6 : numWidth(rt, F, F);
-  const rodCx = Math.min(POST.x - (l * u) / 2, POST.x + 14 - rodLabelW / 2);
+  const rodCx = Math.max(POST.x + (l * u) / 2, POST.x - 14 + rodLabelW / 2);
   // a rod that is a FRACTION is written stacked under it (its parts at 27 units, like every glyph): ROD_FRAC
   const rodFrac = label && rod && fracOf(wallRod ? rod.root : rt) ? ROD_FRAC[wallRod ? 'wall' : 'q'] : null;
   const rodY = rodFrac ? rodFrac.y : 236;
@@ -453,7 +464,7 @@ export function Court({
       className={`crt-court is-${stage} ${done ? `is-${kind}` : ''} ${tight ? 'is-tight' : ''} ${fast ? 'is-fast' : ''} ${className}`}
       direction="ltr"
       role="img"
-      aria-label={`ساحة ${spoken(A)}${rod ? ` · مقياس ${spoken(rt)}` : ''}`}
+      aria-label={`${DRAWING_TEXT.court} ${spoken(A)}${rod ? ` · ${DRAWING_TEXT.rod} ${spoken(rt)}` : ''}`}
       data-court={A}
       data-court-rod={rod ? rt : undefined}
       data-court-stage={stage}
@@ -464,13 +475,13 @@ export function Court({
       {/* the floor: the whole tile and its subdivisions under a court smaller than one tile */}
       {floor.mode === 'sub' && (
         <g className="crt-onetile" data-court-sub={floor.n}>
-          <rect x={POST.x - u} y={POST.y - u} width={u} height={u} className="crt-onetile__edge" />
+          <rect x={POST.x} y={POST.y - u} width={u} height={u} className="crt-onetile__edge" />
           {Array.from({ length: floor.n - 1 }, (_, i) => {
             const d = ((i + 1) * u) / floor.n;
             return (
               <g key={i}>
-                <line x1={POST.x - d} x2={POST.x - d} y1={POST.y - u} y2={POST.y} className="crt-onetile__line" />
-                <line x1={POST.x - u} x2={POST.x} y1={POST.y - d} y2={POST.y - d} className="crt-onetile__line" />
+                <line x1={POST.x + d} x2={POST.x + d} y1={POST.y - u} y2={POST.y} className="crt-onetile__line" />
+                <line x1={POST.x} x2={POST.x + u} y1={POST.y - d} y2={POST.y - d} className="crt-onetile__line" />
               </g>
             );
           })}
@@ -498,22 +509,22 @@ export function Court({
               </Txt>
             ))}
       </g>
-      <rect x={xL} y={yT} width={L * u} height={L * u} className="crt-wall" />
+      <rect x={POST.x} y={yT} width={L * u} height={L * u} className="crt-wall" />
 
       {/* what the world did: the band it leaves, or what sticks out */}
       {done && kind === 'band' && (
         <path
-          d={`M${xL} ${yT} H${POST.x} V${yl} H${xl} V${POST.y} H${xL} Z`}
+          d={`M${xR} ${yT} H${POST.x} V${yl} H${xr} V${POST.y} H${xR} Z`}
           className="crt-band"
           data-court-band={o.diff}
         />
       )}
       {rod && l > 0 && (
         <g className={`crt-plat is-${stage} ${done ? `is-${kind}` : ''}`} data-court-platform={o.covers}>
-          <rect x={xl} y={yl} width={l * u} height={l * u} className="crt-plat__slab" />
+          <rect x={POST.x} y={yl} width={l * u} height={l * u} className="crt-plat__slab" />
           {done && kind === 'jam' && (
             <path
-              d={`M${xl} ${yl} H${POST.x} V${yT} H${xL} V${POST.y} H${xl} Z`}
+              d={`M${xr} ${yl} H${POST.x} V${yT} H${xR} V${POST.y} H${xr} Z`}
               className="crt-over"
               data-court-over={o.diff}
             />
@@ -526,8 +537,8 @@ export function Court({
       </g>
       {rod && l > 0 && (
         <g className={`crt-rod ${wallRod ? 'is-wall' : ''}`}>
-          <rect x={xl} y={POST.y + 7} width={l * u} height="7" rx="3.5" className="crt-rod__bar" />
-          <circle cx={xl} cy={POST.y + 10.5} r="5.5" className="crt-rod__knob" />
+          <rect x={POST.x} y={POST.y + 7} width={l * u} height="7" rx="3.5" className="crt-rod__bar" />
+          <circle cx={xr} cy={POST.y + 10.5} r="5.5" className="crt-rod__knob" />
         </g>
       )}
 
@@ -536,11 +547,11 @@ export function Court({
           <Plaque area={A} floor={floor} />
           {rod &&
             (wallRod ? (
-              <Radical cx={rodCx} y={rodY} radicand={rod.root} f={F} maxRight={POST.x + 14} />
+              <Radical cx={rodCx} y={rodY} radicand={rod.root} f={F} minLeft={POST.x - 14} />
             ) : (
               <Num x={rodCx} y={rodY} f={F} g={F} text={rt} cls="crt-t--rod" />
             ))}
-          {k && <Lens kind={kind} g={g} k={k} corner={{ x: xL, y: yT }} />}
+          {k && <Lens kind={kind} g={g} k={k} corner={{ x: xR, y: yT }} />}
           {done && <Fact o={o} area={A} lens={Boolean(k)} />}
         </>
       )}

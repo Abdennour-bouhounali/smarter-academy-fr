@@ -14,6 +14,7 @@ import {
   COURT_TEXT,
 } from './ruleForge';
 import { outcome } from './logic';
+import { tiles as tilesOfText } from './strings';
 
 const AREAS = ['1', '2', '4', '9', '16', '30', '36', '0,25', '49/64'];
 const RODS = ['1', '2', '3', '4', '5', '6', '0,5', '0,875', '-3', 'wall'];
@@ -23,36 +24,45 @@ const num = (t) => (t === '49/64' ? 49 / 64 : Number(t.replace(',', '.')));
 const ridesByHand = (a, s) => s === 'wall' || num(s) ** 2 === num(a);
 
 describe('a number of tiles, agreed (defects.md B11)', () => {
-  it('1, 2, 3–10, 11+, the hundreds — and a decimal or a fraction takes « بلاطة »', () => {
-    expect(tiles(1)).toBe('بلاطة واحدة');
-    expect(tiles('2')).toBe('بلاطتان');
-    expect(tiles(3)).toBe('3 بلاطات');
-    expect(tiles(10)).toBe('10 بلاطات');
-    expect(tiles(11)).toBe('11 بلاطة');
-    expect(tiles(30)).toBe('30 بلاطة');
-    expect(tiles(100)).toBe('100 بلاطة');
-    expect(tiles(103)).toBe('103 بلاطات');
-    expect(tiles(0)).toBe('0 بلاطة');
-    expect(tiles('0,0791')).toBe('0,0791 بلاطة');
-    expect(tiles('49/64')).toBe('49/64 بلاطة');
-    expect(TILES).toHaveLength(5);
+  it('the singular for 0 and 1 and below 2, the plural from 2 — the number and its noun joined by a no-break space', () => {
+    expect(tiles(0)).toBe('0 dalle');
+    expect(tiles(1)).toBe('1 dalle');
+    expect(tiles('2')).toBe('2 dalles');
+    expect(tiles(3)).toBe('3 dalles');
+    expect(tiles(11)).toBe('11 dalles');
+    expect(tiles(49)).toBe('49 dalles');
+    expect(tiles(103)).toBe('103 dalles');
+    expect(tiles('0,0791')).toBe('0,0791 dalle');
+    expect(tiles('0,25')).toBe('0,25 dalle');
+    expect(tiles('1,96')).toBe('1,96 dalle');
+    expect(tiles('2,5')).toBe('2,5 dalles');
+    // a fraction is a part of a tile
+    expect(tiles('49/64')).toBe('49/64 de dalle');
+    expect(tiles('88/49')).toBe('88/49 de dalle');
+    expect(TILES).toEqual(['dalle', 'dalles']);
   });
-  it('the noun alone under a written number, and after « بـ »', () => {
-    expect([1, 2, 5, 30, 103, '0,25', '49/64'].map(tileWord)).toEqual([
-      'بلاطة واحدة',
-      'بلاطتان',
-      'بلاطات',
-      'بلاطة',
-      'بلاطات',
-      'بلاطة',
-      'بلاطة',
+  it('the world’s `tiles` (strings.js, a number given as text) says the same', () => {
+    for (const t of ['0', '1', '2', '30', '0,25', '2,5', '49/64']) expect(tilesOfText(t)).toBe(tiles(t));
+    expect(tilesOfText(' 7 ')).toBe('7 dalles');
+  });
+  it('the noun alone under a written number, and after « de »', () => {
+    expect([0, 1, 2, 5, 30, 103, '0,25', '2,25', '49/64'].map(tileWord)).toEqual([
+      'dalle',
+      'dalle',
+      'dalles',
+      'dalles',
+      'dalles',
+      'dalles',
+      'dalle',
+      'dalles',
+      'de dalle',
     ]);
     expect([1, 2, 6, 15, '0,0304'].map(byTiles)).toEqual([
-      'ببلاطة واحدة',
-      'ببلاطتين',
-      'بـ 6 بلاطات',
-      'بـ 15 بلاطة',
-      'بـ 0,0304 بلاطة',
+      'de 1 dalle',
+      'de 2 dalles',
+      'de 6 dalles',
+      'de 15 dalles',
+      'de 0,0304 dalle',
     ]);
   });
 });
@@ -129,33 +139,39 @@ describe('a pool of cases', () => {
 
 describe('what the mirror says about a case — facts, agreed, isolated', () => {
   it('names what the world did, with the right agreement at 1, 2, 3–10 and 11+', () => {
-    expect(courtFact(caseOf('36', '6'))).toBe('تركب المنصّة المصعد: غطّت الساحة بالضبط.');
-    expect(courtFact(caseOf('26', '5'))).toBe('يبقى شريط مساحته بلاطة واحدة.');
-    expect(courtFact(caseOf('27', '5'))).toBe('يبقى شريط مساحته بلاطتان.');
-    expect(courtFact(caseOf('30', '5'))).toBe('يبقى شريط مساحته 5 بلاطات.');
-    expect(courtFact(caseOf('36', '5'))).toBe('يبقى شريط مساحته 11 بلاطة.');
-    expect(courtFact(caseOf('35', '6'))).toBe('تعلق على الحافّة: تزيد على الساحة ببلاطة واحدة.');
-    expect(courtFact(caseOf('34', '6'))).toBe('تعلق على الحافّة: تزيد على الساحة ببلاطتين.');
-    expect(courtFact(caseOf('30', '6'))).toBe('تعلق على الحافّة: تزيد على الساحة بـ 6 بلاطات.');
-    expect(courtFact(caseOf('30', '5,47'))).toBe('يبقى شريط مساحته 0,0791 بلاطة.');
+    expect(courtFact(caseOf('36', '6'))).toBe('La plateforme monte : elle couvre la salle exactement.');
+    expect(courtFact(caseOf('26', '5'))).toBe('Il reste une bande de 1 dalle.');
+    expect(courtFact(caseOf('27', '5'))).toBe('Il reste une bande de 2 dalles.');
+    expect(courtFact(caseOf('30', '5'))).toBe('Il reste une bande de 5 dalles.');
+    expect(courtFact(caseOf('36', '5'))).toBe('Il reste une bande de 11 dalles.');
+    expect(courtFact(caseOf('35', '6'))).toBe('Elle coince sur le rebord : elle dépasse la salle de 1 dalle.');
+    expect(courtFact(caseOf('34', '6'))).toBe('Elle coince sur le rebord : elle dépasse la salle de 2 dalles.');
+    expect(courtFact(caseOf('30', '6'))).toBe('Elle coince sur le rebord : elle dépasse la salle de 6 dalles.');
+    expect(courtFact(caseOf('30', '5,47'))).toBe('Il reste une bande de 0,0791 dalle.');
     // a fraction over a real bar (a MathText sentence), never « 33/64 » as text (defects.md D41)
-    expect(courtFact(caseOf('49/64', '0,5'))).toBe('يبقى شريط مساحته $\\dfrac{33}{64}$ بلاطة.');
-    expect(courtFact(caseOf('49/64', '1'))).toBe('تعلق على الحافّة: تزيد على الساحة بـ $\\dfrac{15}{64}$ بلاطة.');
-    expect(courtFact(caseOf('2', '17/12'))).toBe('تعلق على الحافّة: تزيد على الساحة بـ $\\dfrac{1}{144}$ بلاطة.');
+    expect(courtFact(caseOf('49/64', '0,5'))).toBe('Il reste une bande de $\\dfrac{33}{64}$ de dalle.');
+    expect(courtFact(caseOf('49/64', '1'))).toBe(
+      'Elle coince sur le rebord : elle dépasse la salle de $\\dfrac{15}{64}$ de dalle.',
+    );
+    expect(courtFact(caseOf('2', '17/12'))).toBe(
+      'Elle coince sur le rebord : elle dépasse la salle de $\\dfrac{1}{144}$ de dalle.',
+    );
     for (const c of [caseOf('49/64', '0,5'), caseOf('2', '7/5'), caseOf('2', '3/2'), caseOf('121/36', '2')])
       expect(courtFact(c).replace(/\$[^$]*\$/g, '')).not.toMatch(/\d\s*\/\s*\d/);
   });
-  it('every plain sentence holds no « $ », no « wrong », and every rod sits in a left-to-right isolate', () => {
+  it('every plain sentence holds no « $ », no « wrong », no Arabic, no isolate — and names its rod as written', () => {
     const plain = ['ask', 'fact', 'attack', 'refuted'];
     for (const c of POOL)
       for (const k of plain) {
         const t = COURT_TEXT[k]({ ...c, says: !c.held });
         // the fact is drawn by MathText: its only formula is a fraction over a real bar
-        expect(k === 'fact' ? t.replace(/\$\\dfrac\{\d+\}\{\d+\}\$/g, '') : t, k).not.toMatch(/\$|خطأ|خاطئ/);
-        if (k !== 'fact') expect(t).toContain(`⁦${c.s.root != null ? `√${c.s.root}` : c.s.q}⁩`);
+        expect(k === 'fact' ? t.replace(/\$\\dfrac\{\d+\}\{\d+\}\$/g, '') : t, k).not.toMatch(
+          /\$|faux|fausse|erreur|[\u0600-\u06FF\u2066-\u2069]/i,
+        );
+        if (k !== 'fact') expect(t).toContain(`toise de ${c.s.root != null ? `√${c.s.root}` : c.s.q}`);
       }
     for (const k of ['says', 'broken']) for (const v of [true, false]) expect(COURT_TEXT[k](v)).not.toMatch(/\$/);
-    expect(COURT_TEXT.compare([caseOf('30', '5'), caseOf('30', '6')])).toContain('30 بلاطة');
+    expect(COURT_TEXT.compare([caseOf('30', '5'), caseOf('30', '6')])).toContain('30 dalles');
   });
   it('writes the platform’s tiles beside the court’s — none for a wall, a negative rod in brackets, a fraction with its bar', () => {
     expect(COURT_TEXT.eq(caseOf('30', '5'))).toBe('$5 \\times 5 = 25 \\; \\textcolor{#fbbf24}{<} \\; 30$');

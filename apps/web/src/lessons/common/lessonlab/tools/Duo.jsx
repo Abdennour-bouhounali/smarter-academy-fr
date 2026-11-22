@@ -1,7 +1,7 @@
 /**
- * « مِجهر العددين » — two numbers of the student's own, looked at three ways (three faces, one tab each):
+ * « Le microscope à deux nombres » — two numbers of the student's own, looked at three ways (three faces, one tab each):
  *   lists      the divisors of each number in a row, and under them those in BOTH (tap one: the two equalities);
- *   divisions  the divisions one after another, written by the hand (« القسمة التالية »): the greater by the smaller, then
+ *   divisions  the divisions one after another, written by the hand (« Division suivante »): the greater by the smaller, then
  *              the divisor by the remainder … down to the remainder 0 (`logic.js › euclidLines`);
  *   probe      a number d the hand drags along a ruler (or ± / arrows), tried on BOTH numbers: the two divisions drawn as
  *              pieces of d laid along each number, what is left, and every d already tried on these numbers.
@@ -12,12 +12,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { VW, VH, useDrag, useChime, Tool, M } from '../kit';
 import { euclidLines, pairLists, probeOf } from '../logic';
+import { listFr } from '../../gameworld/kit/authoring/numbers';
 
-const SEP = ' ، ';
 const FACES = [
-  { id: 'lists', label: 'القواسم' },
-  { id: 'divisions', label: 'القسمات المتتالية' },
-  { id: 'probe', label: 'اختبر عددًا' },
+  { id: 'lists', label: 'Diviseurs' },
+  { id: 'divisions', label: 'Divisions successives' },
+  { id: 'probe', label: 'Essaie un nombre' },
 ];
 const TAB_W = 230;
 const X0 = 150;
@@ -116,10 +116,9 @@ export default function Duo({ a, b, play, report, start = null }) {
             y={mid + (band.id === 'both' ? 6 : 8)}
             textAnchor="middle"
             fontSize={band.id === 'both' ? 16 : 22}
-            direction={band.id === 'both' ? 'rtl' : undefined}
             style={{ fill: band.id === 'both' ? '#6ee7b7' : '#7dfcff' }}
           >
-            {band.id === 'both' ? 'في القائمتين' : band.n}
+            {band.id === 'both' ? 'Communs' : band.n}
           </text>
           {rows.map((row, r) =>
             row.map((v, i) => {
@@ -166,7 +165,7 @@ export default function Duo({ a, b, play, report, start = null }) {
     <g data-ll-duo-divisions data-written={written} data-lines={lines.length} data-done={done ? 'true' : 'false'}>
       {lines.slice(0, written).map((l, i) => {
         const col = Math.floor(i / 7);
-        const cx = col === 0 ? 690 : 250;
+        const cx = col === 0 ? 250 : 690; // the first column on the LEFT
         const y = 92 + (i % 7) * 40;
         return (
           <text
@@ -186,7 +185,7 @@ export default function Duo({ a, b, play, report, start = null }) {
       })}
       {!done && (
         <text
-          x={written < 7 ? 690 : 250}
+          x={written < 7 ? 250 : 690}
           y={92 + (written % 7) * 40}
           textAnchor="middle"
           fontSize="24"
@@ -291,7 +290,7 @@ export default function Duo({ a, b, play, report, start = null }) {
             return (
               <g key={v}>
                 <rect
-                  x={X1 - 23 - i * 52}
+                  x={X0 - 23 + i * 52}
                   y="326"
                   width="46"
                   height="30"
@@ -302,7 +301,7 @@ export default function Duo({ a, b, play, report, start = null }) {
                   data-ll-tried-d={v}
                   data-verdict={t}
                 />
-                <text x={X1 - i * 52} y="347" textAnchor="middle" fontSize="17">
+                <text x={X0 + i * 52} y="347" textAnchor="middle" fontSize="17">
                   {v}
                 </text>
               </g>
@@ -323,21 +322,27 @@ export default function Duo({ a, b, play, report, start = null }) {
             <M>{eqTex(a, cur.sel, { q: Math.floor(a / cur.sel), r: a % cur.sel })}</M>
             <M>{eqTex(b, cur.sel, { q: Math.floor(b / cur.sel), r: b % cur.sel })}</M>
             <span className={`ll-chip ${inA && inB ? 'll-chip--good' : 'll-chip--warm'}`}>
-              {inA && inB ? `${cur.sel} في القائمتين` : `${cur.sel} في قائمة ${inA ? a : b} وحدها`}
+              {inA && inB
+                ? `${cur.sel} est dans les deux listes`
+                : `${cur.sel} est seulement dans la liste de ${inA ? a : b}`}
             </span>
           </>
         );
       }
-      const shown = L.common.length > 10 ? [...L.common.slice(0, 10), '…'] : L.common;
+      const shown = L.common.length > 10 ? `${L.common.slice(0, 10).join(', ')}, …` : listFr(L.common);
       return (
         <span className="ll-chip ll-chip--good" data-ll-common-read={L.common.join(',')}>
-          في القائمتين: {shown.join(SEP)}
+          Dans les deux listes : {shown}
         </span>
       );
     }
     if (face === 'divisions') {
       if (!written)
-        return <span className="ll-chip ll-chip--dim">كلّ ضغطة تكتب قسمة في سطر: نبدأ بقسمة الأكبر على الأصغر.</span>;
+        return (
+          <span className="ll-chip ll-chip--dim">
+            Chaque appui écrit une division sur une ligne : commence par diviser le plus grand par le plus petit.
+          </span>
+        );
       const l = lines[written - 1];
       return (
         <>
@@ -346,21 +351,21 @@ export default function Duo({ a, b, play, report, start = null }) {
             <>
               <M>{`\\mathrm{PGCD}(${a} ; ${b}) = ${l.b}`}</M>
               <span className="ll-chip ll-chip--good" data-ll-divisions-done={lines.length}>
-                عدد القسمات: {lines.length}
+                Nombre de divisions : {lines.length}
               </span>
             </>
           ) : (
-            <span className="ll-chip ll-chip--warm">الباقي {l.r}</span>
+            <span className="ll-chip ll-chip--warm">Reste {l.r}</span>
           )}
         </>
       );
     }
     const say =
       P.verdict === 'both'
-        ? `${d} يقسم العددين معًا`
+        ? `${d} divise les deux nombres`
         : P.verdict === 'none'
-          ? `${d} لا يقسم أيًّا منهما`
-          : `${d} يقسم ${P.verdict === 'a' ? a : b} وحده`;
+          ? `${d} ne divise aucun des deux`
+          : `${d} divise seulement ${P.verdict === 'a' ? a : b}`;
     return (
       <>
         <M>{eqTex(a, d, P.a)}</M>
@@ -388,7 +393,7 @@ export default function Duo({ a, b, play, report, start = null }) {
           disabled={done}
           data-ll-next
         >
-          {done ? 'الباقي 0' : 'القسمة التالية ◂'}
+          {done ? 'Reste 0' : 'Division suivante ▸'}
         </button>
         <button
           type="button"
@@ -400,7 +405,7 @@ export default function Duo({ a, b, play, report, start = null }) {
           disabled={written === 0}
           data-ll-reset
         >
-          من جديد
+          Recommence
         </button>
       </>
     ) : face === 'probe' ? (
@@ -420,8 +425,8 @@ export default function Duo({ a, b, play, report, start = null }) {
     <Tool id="duo" tone={tone} actions={actions} reading={reading()}>
       <svg ref={svg} viewBox={`0 0 ${VW} ${VH}`} data-ll-duo data-face={face}>
         {FACES.map((f, i) => {
-          // the first face on the right: the page reads right to left
-          const x = VW / 2 + TAB_W * (1 - i);
+          // the first face on the LEFT: the page reads left to right
+          const x = VW / 2 + TAB_W * (i - 1);
           const on = f.id === face;
           return (
             <g
@@ -441,14 +446,7 @@ export default function Duo({ a, b, play, report, start = null }) {
                 stroke="#7dfcff"
                 strokeWidth="1.5"
               />
-              <text
-                x={x}
-                y="29"
-                textAnchor="middle"
-                fontSize="18"
-                direction="rtl"
-                style={{ fill: on ? '#06262c' : '#eafcff' }}
-              >
+              <text x={x} y="29" textAnchor="middle" fontSize="18" style={{ fill: on ? '#06262c' : '#eafcff' }}>
                 {f.label}
               </text>
             </g>

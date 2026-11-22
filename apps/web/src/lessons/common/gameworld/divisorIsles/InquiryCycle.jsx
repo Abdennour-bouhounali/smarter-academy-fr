@@ -9,7 +9,7 @@
  *   probes  a plank he has not laid: he says the most cells it will leave and whether b cells will be left once; then
  *           the world grows the gap alone (a sound per cell, a plank at the fall) and the staircase answers.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `cycle`). Nothing here states a rule:
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `cycle`). Nothing here states a rule:
  * every sentence says what the strip has just done.
  * The screen is a pure VIEW of the reducer's state (`CycleView`), so a stage can be rendered without playing up to it.
  */
@@ -244,7 +244,7 @@ export function CycleView({ spec, state, act, maxIn = '' }) {
               <p className="iq-askline">
                 <MathText>{T.maxAsk({ b })}</MathText>
               </p>
-              <div className="iq-tpl" dir="rtl">
+              <div className="iq-tpl">
                 <label>
                   <Num value={maxIn} onChange={act.max} w={2} data-iq-in="max" onKeyDown={onEnter(act.grow)} />
                   <small>{T.maxUnit}</small>

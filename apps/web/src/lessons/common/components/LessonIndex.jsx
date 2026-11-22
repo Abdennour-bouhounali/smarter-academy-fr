@@ -25,8 +25,8 @@ const LessonToolsBar = lazy(() => import('../../../features/classSession/LessonT
  * THE HOME OF A V2 LESSON (docs/architecture/LESSON_V2.md §2) — rendered by the lesson's `index.jsx`:
  *
  *   - a STUDENT plays the game world his lesson names in its pack (`lesson.pack.js › world`);
- *   - a TEACHER sees one calm page: where he is, the title and his card « للأستاذ » (TeacherLessonPanel), which holds
- *     every tool of the class session and « جرّب كتلميذ » — the student's world in PREVIEW (`?apercu=eleve`, nothing is
+ *   - a TEACHER sees one calm page: where he is, the title and his card « Pour le professeur » (TeacherLessonPanel), which holds
+ *     every tool of the class session and « Essayer comme un élève » — the student's world in PREVIEW (`?apercu=eleve`, nothing is
  *     recorded or sent, CLASS_SESSION.md §2);
  *   - a lesson that is not published, hidden by the teacher or above this account's tier shows why, and nothing of
  *     its content.
@@ -48,7 +48,7 @@ export default function LessonIndex({ config, basePath }) {
   const viewer = useLearningViewer();
 
   // NON PUBLIÉE : la carte la montrait déjà « bientôt », mais l'URL directe
-  // ouvrait le sommaire. Jamais vrai pour un relecteur (admin, سفير) : son
+  // ouvrait le sommaire. Jamais vrai pour un relecteur (admin, ambassadeur) : son
   // inventaire ne ferme rien, il voit la leçon avec sa pastille d'état.
   if (isLessonClosed(config.id)) {
     return (
@@ -186,7 +186,7 @@ export default function LessonIndex({ config, basePath }) {
             <h1 className="font-space font-extrabold text-slate-900 leading-tight text-2xl md:text-4xl">
               <MathLabel>{config.title}</MathLabel>
             </h1>
-            {/* Reviewer only (admin, سفير): the publication state. */}
+            {/* Reviewer only (admin, ambassadeur): the publication state. */}
             <PublicationBadge status={lessonStatus(config.id)} />
             {viewer.isTeacher && (
               <div data-tour="lesson-index.tools">

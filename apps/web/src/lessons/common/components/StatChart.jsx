@@ -2,21 +2,23 @@ import MathText from './MathText';
 import { layoutAxisChart, layoutPie } from './statChart';
 
 /**
- * Un DIAGRAMME STATISTIQUE déclaratif (مخطط بالأعمدة، مدرّج تكراري، مضلّع، مخطط دائري / نصف دائري) — la
- * donnée et ses règles de lecture sont dans statChart.js. Dessiné en SVG, jamais une image. Le corps se lit
- * de gauche à droite (`dir="ltr"`) ; titres d'axes, noms de catégories et légende sont du texte arabe.
+ * Un DIAGRAMME STATISTIQUE déclaratif (diagramme en barres, histogramme, polygone, diagramme circulaire /
+ * semi-circulaire) — la donnée et ses règles de lecture sont dans statChart.js. Dessiné en SVG, jamais une image.
+ * Tout se lit de gauche à droite : l'axe des ordonnées à gauche, son titre en haut à gauche, celui des abscisses
+ * en bas à droite, au bout de la flèche.
  *
- * Utilisé par la pratique (`statement.figure` avec `kind: 'chart'`, via StatementFigure) et par les مسائل
+ * Utilisé par la pratique (`statement.figure` avec `kind: 'chart'`, via StatementFigure) et par les problèmes
  * (ProblemSupport). Les valeurs ne sont pas écrites sur les barres : l'élève les LIT sur l'axe gradué.
  */
 const INK = '#1e293b';
 const AXIS = '#334155';
 const PIE_FILLS = ['#93c5fd', '#fcd34d', '#6ee7b7', '#f9a8d4', '#c4b5fd', '#fdba74', '#a5f3fc', '#d9f99d'];
-const num = { fontFamily: 'ui-monospace, SFMono-Regular, monospace', direction: 'ltr', unicodeBidi: 'isolate' };
+const num = { fontFamily: 'ui-monospace, SFMono-Regular, monospace' };
+/** Un nom de catégorie qui porte un mot (« Football ») s'écrit dans la police du texte, un nombre en chasse fixe. */
+const WORD = /[A-Za-zÀ-ÿ]{2,}/;
 
 function AxisChart(c) {
   const L = layoutAxisChart(c);
-  const arabic = { direction: 'rtl', unicodeBidi: 'isolate' };
   return (
     <svg viewBox={`0 0 ${L.W} ${L.H}`} className="h-auto w-full" role="img" aria-label={c.ariaLabel}>
       {L.grid.map((g) => (
@@ -28,7 +30,7 @@ function AxisChart(c) {
       {L.rects.map((r) => (r.missing ? (
         <g key={r.key} data-chart-missing>
           <rect x={r.x} y={r.y} width={r.w} height={r.h} fill="none" stroke="#94a3b8" strokeDasharray="4 3" />
-          <text x={r.x + r.w / 2} y={L.yb - 8} fontSize="14" fontWeight="700" textAnchor="middle" fill="#64748b">؟</text>
+          <text x={r.x + r.w / 2} y={L.yb - 8} fontSize="14" fontWeight="700" textAnchor="middle" fill="#64748b">?</text>
         </g>
       ) : (
         <rect key={r.key} x={r.x} y={r.y} width={r.w} height={r.h} data-chart-bar
@@ -46,7 +48,7 @@ function AxisChart(c) {
       <path d={`M${L.x1 + 1} ${L.yb - 3.5} L${L.x1 + 8} ${L.yb} L${L.x1 + 1} ${L.yb + 3.5}`} fill="none" stroke={AXIS} strokeWidth="1.5" />
       {L.xLabels.map((t, i) => (
         <text key={i} x={t.x} y={L.yb + 17 + (t.row ? 14 : 0)} fontSize={c.type === 'bar' ? L.labelFont : 12} textAnchor="middle" fill={INK}
-          style={c.type === 'bar' && /[؀-ۿ]/.test(t.text) ? arabic : num}>{t.text}</text>
+          style={c.type === 'bar' && WORD.test(t.text) ? undefined : num}>{t.text}</text>
       ))}
     </svg>
   );
@@ -65,7 +67,7 @@ function PieChart(c) {
           <g key={s.i}>
             {s.nameInside && (
               <text x={s.tx} y={s.text != null ? s.ty - 5 : s.ty + 5} fontSize="13" textAnchor="middle" fill={INK}
-                style={/[؀-ۿ]/.test(s.label) ? { direction: 'rtl', unicodeBidi: 'isolate' } : num}>{s.label}</text>
+                style={WORD.test(s.label) ? undefined : num}>{s.label}</text>
             )}
             {s.text != null && (
               <text x={s.tx} y={s.nameInside ? s.ty + 13 : s.ty + 5} fontSize={s.missing ? 18 : 14} fontWeight="700" textAnchor="middle"
@@ -95,9 +97,9 @@ export default function StatChart(c) {
   const axes = c.type !== 'pie';
   return (
     <Fig className="mx-auto my-2 block w-full" style={{ maxWidth }} data-stat-chart={c.type}>
-      {axes && yTitle && <span dir="ltr" className="block ps-1 text-left"><span dir="rtl" className="text-sm font-semibold text-slate-600">{yTitle}</span></span>}
-      <span dir="ltr" className="block">{axes ? <AxisChart {...c} /> : <PieChart {...c} />}</span>
-      {axes && xTitle && <span dir="ltr" className="block pe-1 text-right"><span dir="rtl" className="text-sm font-semibold text-slate-600">{xTitle}</span></span>}
+      {axes && yTitle && <span className="block ps-1 text-start" data-chart-ytitle><span className="text-sm font-semibold text-slate-600">{yTitle}</span></span>}
+      <span className="block">{axes ? <AxisChart {...c} /> : <PieChart {...c} />}</span>
+      {axes && xTitle && <span className="block pe-1 text-end" data-chart-xtitle><span className="text-sm font-semibold text-slate-600">{xTitle}</span></span>}
       {caption && <Cap className="mt-1 block text-center text-sm text-slate-600">{caption}</Cap>}
     </Fig>
   );

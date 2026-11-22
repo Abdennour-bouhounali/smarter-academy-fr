@@ -1,5 +1,5 @@
 // « No rule is told … only then its name » (CLAUDE.md, GAME_WORLD.md « A key's name comes after him »): the kit's screens
-// that list the lesson's keys — the practice hub « فضاء التدريب » and « تقدّمي » — never print the name (the tablet's
+// that list the lesson's keys — the practice hub « L’espace d’entraînement » and « Ma progression » — never print the name (the tablet's
 // title) of a key the student does not hold yet, nor the names of its levels. Server render: the first screen only.
 import { describe, it, expect, vi } from 'vitest';
 import { renderToString } from 'react-dom/server';
@@ -27,22 +27,22 @@ const lesson = {
   ladder,
   journey,
   rules: {
-    first: { icon: '🔑', title: 'اسم القاعدة الأولى', math: ['1'], notes: ['ملاحظة أولى'] },
-    second: { icon: '🗝️', title: 'اسم القاعدة الثانية', math: ['2'], notes: ['ملاحظة ثانية'] },
+    first: { icon: '🔑', title: 'Nom de la première règle', math: ['1'], notes: ['Première note'] },
+    second: { icon: '🗝️', title: 'Nom de la deuxième règle', math: ['2'], notes: ['Deuxième note'] },
   },
   text: {
-    summary: { icon: '🏆', title: 'تحدّي الامتحان', text: 'مراجعة' },
+    summary: { icon: '🏆', title: 'Défi du brevet', text: 'Révision' },
     levels: {
-      first: ['سباق المستوى الأوّل أ', 'سباق المستوى الأوّل ب'],
-      second: ['سباق سرّيّ أ', 'سباق سرّيّ ب'],
-      [SUMMARY]: ['سباق المراجعة'],
+      first: ['Course de la première manche A', 'Course de la première manche B'],
+      second: ['Course secrète A', 'Course secrète B'],
+      [SUMMARY]: ['Course de révision'],
     },
   },
   practiceMap: {
-    root: 'جذر الخريطة',
+    root: 'Racine de la carte',
     positions: { root: [50, 10], first: [70, 40], second: [30, 40], [SUMMARY]: [50, 80] },
     edges: [
-      ['root', 'first', 'مكان'],
+      ['root', 'first', 'Un lieu'],
       ['first', 'second', null],
       ['second', SUMMARY, null, true],
     ],
@@ -63,39 +63,39 @@ const s = {
   phase: 'title',
 };
 const render = (el) => renderToString(<LessonProvider lesson={lesson}>{el}</LessonProvider>);
-// renderToString escapes nothing in Arabic, but splits adjacent text nodes with comments: compare on the bare text
+// renderToString escapes no accented letter, but splits adjacent text nodes with comments: compare on the bare text
 const textOf = (html) => html.replace(/<!--.*?-->/g, '');
 
 describe('a key not held yet has no name on the kit screens', () => {
   it('the practice hub: the held node shows its name, the locked one shows the neutral label and no level name', () => {
     const html = textOf(render(<PracticeHub s={s} game={game} />));
-    expect(html).toContain('اسم القاعدة الأولى');
-    expect(html).toContain('سباق المستوى الأوّل أ');
-    expect(html).not.toContain('اسم القاعدة الثانية');
+    expect(html).toContain('Nom de la première règle');
+    expect(html).toContain('Course de la première manche A');
+    expect(html).not.toContain('Nom de la deuxième règle');
     expect(html).toContain(KT.hidden);
     // the summary node is not a rule: its name stays
-    expect(html).toContain('تحدّي الامتحان');
+    expect(html).toContain('Défi du brevet');
   });
 
   it('the practice hub: the panel of a locked node does not name its rule nor its levels', () => {
     const html = textOf(render(<PracticeHub s={s} game={game} sel={1} />));
     expect(html).toContain('data-di-panel="second"');
-    expect(html).not.toContain('اسم القاعدة الثانية');
-    expect(html).not.toContain('سباق سرّيّ');
+    expect(html).not.toContain('Nom de la deuxième règle');
+    expect(html).not.toContain('Course secrète');
     expect(html).toContain(KT.map.locked);
   });
 
   it('the practice hub: once the key is held, its name appears as before', () => {
     const html = textOf(render(<PracticeHub s={{ ...s, openKeys: ['first', 'second'] }} game={game} sel={1} />));
-    expect(html).toContain('اسم القاعدة الثانية');
-    expect(html).toContain('سباق سرّيّ أ');
+    expect(html).toContain('Nom de la deuxième règle');
+    expect(html).toContain('Course secrète A');
   });
 
-  it('« تقدّمي »: a key not earned yet is a locked row without its name', () => {
-    const html = textOf(render(<ProgressPage s={s} game={game} lessonId="toy" lessonTitle="درس" />));
+  it('« Ma progression »: a key not earned yet is a locked row without its name', () => {
+    const html = textOf(render(<ProgressPage s={s} game={game} lessonId="toy" lessonTitle="Leçon" />));
     expect(html).toContain('data-di-prow="second"');
-    expect(html).toContain('اسم القاعدة الأولى');
-    expect(html).not.toContain('اسم القاعدة الثانية');
+    expect(html).toContain('Nom de la première règle');
+    expect(html).not.toContain('Nom de la deuxième règle');
     expect(html).toContain(KT.hidden);
   });
 });

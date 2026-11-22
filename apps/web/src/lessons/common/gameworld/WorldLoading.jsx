@@ -22,11 +22,17 @@ import { mathToPlain } from '../../../utils/mathPlain';
 import './worldLoading.css';
 
 const T = {
-  stages: ['نفتح الدرس…', 'نجهّز عالمك…', 'نجهّز عالمك…', 'نجهّز عالمك…', 'نبني العالم…'],
-  slow: 'الاتصال بطيء قليلًا. كلّ شيء يسير جيّدًا، لا تغلق الصفحة.',
-  offline: 'انقطع الاتصال بالأنترنت. سنواصل وحدنا حالما يعود.',
-  failed: 'تعذّر تحميل العالم. تحقّق من الاتصال بالأنترنت ثمّ حاول من جديد.',
-  retry: 'حاول من جديد',
+  stages: [
+    'On ouvre ta leçon…',
+    'On prépare ton monde…',
+    'On prépare ton monde…',
+    'On prépare ton monde…',
+    'On construit le monde…',
+  ],
+  slow: 'La connexion est un peu lente. Tout se passe bien, ne ferme pas la page.',
+  offline: 'La connexion à Internet est coupée. On reprendra tout seuls dès qu’elle revient.',
+  failed: 'Le monde n’a pas pu se charger. Vérifie ta connexion à Internet, puis réessaie.',
+  retry: 'Réessaie',
 };
 
 /** Where the bar stands when stage n has begun; the last entry is the end, reached only by the world itself. */
@@ -63,7 +69,7 @@ const isOffline = () => typeof navigator !== 'undefined' && navigator.onLine ===
  * @param {string} [title]   the lesson's name — unknown until its config has arrived (its line keeps its height)
  * @param {number} [stage]   0 the lesson opens · 1 the world is asked for · 2 its light parts are here, its code (the
  *                           heavy part) still travels · 3 its code is here · 4 the scene is built
- * @param {boolean} [failed] the load gave up: a sentence and « حاول من جديد »
+ * @param {boolean} [failed] the load gave up: a sentence and « Réessaie »
  * @param {boolean} [leaving] the world is ready beneath: the screen fades and lets every click through
  * @param {boolean} [over]   inside the world's own root (above its canvas)
  */
@@ -96,7 +102,6 @@ export default function WorldLoading({ lessonId, title, stage = 0, failed = fals
   const screen = (
     <div
       className={`gw-loading${over ? ' gw-loading--over' : ''}${leaving ? ' gw-loading--leaving' : ''}`}
-      dir="rtl"
       role={leaving ? undefined : 'status'}
       aria-live={leaving ? undefined : 'polite'}
       aria-hidden={leaving || undefined}

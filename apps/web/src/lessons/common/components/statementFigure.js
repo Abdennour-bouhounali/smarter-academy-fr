@@ -4,9 +4,9 @@ import { validateStatChart } from './statChart.js';
 import { validateArcTape } from './arcTape.js';
 
 /**
- * La figure d'un énoncé (`statement.figure` d'un exercice, `figure` d'une مسألة) a quatre formes, choisies par
+ * La figure d'un énoncé (`statement.figure` d'un exercice, `figure` d'un problème) a quatre formes, choisies par
  * `kind` : plane (GeoFigure, par défaut), `'space'` (SpaceFigure, unité 14), `'chart'` (StatChart, unité 8),
- * `'tape'` (ArcTape, « مخطط بأقواس » — 1AM unité 2, 2026-10-14).
+ * `'tape'` (ArcTape, le schéma en barre à arcs, 2026-10-14).
  * Un seul aiguillage pour la validation (validateur des exercices, guidedProblem) — StatementFigure.jsx est
  * l'aiguillage du rendu.
  */

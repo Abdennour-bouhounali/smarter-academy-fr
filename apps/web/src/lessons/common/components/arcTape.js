@@ -1,22 +1,22 @@
 /**
- * « مخطط بأقواس » — the textbook's TAPE DIAGRAM (1AM, unit 2 « الجمع والطرح », pp. 26 and 29, 2026-10-14).
+ * The TAPE DIAGRAM with arcs (« schéma en barre », addition and subtraction, 2026-10-14).
  *
- * One straight line cut into parts (حدود); an arc ABOVE each part carries its value, one arc BELOW the whole line
- * carries the whole (المجموع). It is how the textbook represents « 24,3 + 5,9 = 30,2 » (p. 26) and how its method
- * « حل مشكلة بالاستعانة بتمثيل مناسب » (p. 29) turns « يزيد / ينقص / أكثر / أقل » into a calculation: the unknown is
+ * One straight line cut into parts (the terms); an arc ABOVE each part carries its value, one arc BELOW the whole line
+ * carries the whole (the sum). It represents « 24,3 + 5,9 = 30,2 » and turns « de plus / de moins / plus / moins »
+ * into a calculation (« solve a problem with a fitting representation »): the unknown is
  * either the WHOLE (we add the parts) or a PART (we subtract the other part from the whole).
  *
- * Data (`statement.figure` with `kind: 'tape'`, a مسألة `figure`, or a lesson's own figure):
+ * Data (`statement.figure` with `kind: 'tape'`, a problem's `figure`, or a lesson's own figure):
  *
  *   {
  *     kind: 'tape',
  *     parts: [{ label: '24,3', value?: 24.3 | '24,3', unknown?: true, tone? }, …],   // 2 to 4, drawn left → right
  *     whole: { label: '30,2', value?, unknown?: true },
- *     ariaLabel: '<Arabic>',        // required
+ *     ariaLabel: '<French>',        // required, never Arabic
  *     caption?, maxWidth?, inline?
  *   }
  *
- * A label is short text read LEFT TO RIGHT (« 24,3 », « 124 cm », « □ »); an Arabic label is drawn right to left.
+ * A label is short text read LEFT TO RIGHT (« 24,3 », « 124 cm », « □ »); a label that holds a word is drawn in the text font.
  * Lengths are SCHEMATIC, as in the textbook: proportional to the values when they are known (a missing part is the
  * whole minus the others), never thinner than `MIN_PART` of the width so that every arc and label stays readable.
  * When every value is given and the parts do not add up to the whole, the layout says so (`closed: false`) and draws
@@ -28,7 +28,9 @@ const TAPE_KEYS = Object.freeze(['kind', 'parts', 'whole', 'ariaLabel', 'caption
 const TAPE_TONES = Object.freeze(['amber', 'emerald', 'sky', 'violet', 'indigo', 'rose', 'slate']);
 const PART_TONES = ['amber', 'emerald', 'sky', 'violet'];
 export const MIN_PART = 0.16;
-const ARABIC = /[؀-ۿ]/;
+const ARABIC = /[\u0600-\u06FF]/;
+/** A label holding a word (« ce qu’il a ») is drawn in the text font; a number in a fixed-width one. */
+const WORD = /[A-Za-zÀ-ÿ]{2,}/;
 
 /** A value given as a number or a decimal-comma string ('24,3'), or null when absent / unreadable. */
 function tapeValue(v) {
@@ -103,13 +105,13 @@ export function layoutArcTape(fig, { W = 340, pad = 18, archUp = 26, archDown = 
     x1: xs[i], x2: xs[i + 1], path: arc(xs[i] + 2, xs[i + 1] - 2, archUp / 1.6, true),
     labelX: (xs[i] + xs[i + 1]) / 2, labelY: y - archUp / 1.6 - 6,
     label: p.label, unknown: !!p.unknown, tone: p.tone ?? PART_TONES[i % PART_TONES.length],
-    arabic: ARABIC.test(String(p.label ?? '')),
+    word: WORD.test(String(p.label ?? '')),
   }));
   const whole = {
     x1: pad, x2: wholeEnd, path: arc(pad + 1, wholeEnd - 1, archDown / 1.6, false),
     labelX: (pad + wholeEnd) / 2, labelY: y + archDown / 1.6 + 16,
     label: fig.whole?.label, unknown: !!fig.whole?.unknown, tone: fig.whole?.tone ?? 'indigo',
-    arabic: ARABIC.test(String(fig.whole?.label ?? '')),
+    word: WORD.test(String(fig.whole?.label ?? '')),
   };
   const lineEnd = Math.max(partsEnd, wholeEnd);
   const ticks = [...new Set([...xs, wholeEnd].map((x) => x.toFixed(1)))].map(Number);
@@ -133,7 +135,7 @@ export function validateArcTape(fig) {
     if (it?.value != null && tapeValue(it.value) == null) errors.push(`tape : ${where}.value illisible`);
     if (it?.tone != null && !TAPE_TONES.includes(it.tone)) errors.push(`tape : ${where}.tone inconnu`);
   });
-  if (typeof fig.ariaLabel !== 'string' || !ARABIC.test(fig.ariaLabel)) errors.push('tape : ariaLabel arabe obligatoire');
+  if (typeof fig.ariaLabel !== 'string' || !fig.ariaLabel.trim() || ARABIC.test(fig.ariaLabel)) errors.push('tape : ariaLabel en français obligatoire');
   if (errors.length === 0) {
     const len = tapeLengths(fig);
     if (len.known && !len.closed) errors.push('tape : les parties ne font pas le tout (une figure d’énoncé doit être juste)');

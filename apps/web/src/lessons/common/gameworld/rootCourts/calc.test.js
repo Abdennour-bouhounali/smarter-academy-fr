@@ -198,7 +198,7 @@ describe('calc — the state machine, played through', () => {
     const seen = play([{ type: 'built' }], b);
     for (const a of [{ type: 'zoom' }, { type: 'built' }, { type: 'clamp' }])
       expect(calcReducer(SPEC, seen, a)).toBe(seen);
-    // pressing « كبّر » once the sliver is seen does nothing more
+    // pressing « Agrandis » once the sliver is seen does nothing more
     const z = zoomAll(play([{ type: 'next' }, { type: 'say', v: true }, { type: 'built' }], seen));
     expect(calcReducer(SPEC, z, { type: 'zoom' })).toBe(z);
   });

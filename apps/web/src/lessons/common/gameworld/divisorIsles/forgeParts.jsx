@@ -22,21 +22,18 @@
  * still `held` (what the case asks); `fits` says whether the plank fills both.
  *
  * A case drawn as a bridge that is NOT about a plank (a pair of numbers and their notebooks) carries `head`: its line
- * then names it in those words (« 1003 و 34 ») instead of « a لوح b » (defects.md A10). A PAIR may carry `head` too —
+ * then names it in those words (« 1003 et 34 ») instead of « a planche de b » (defects.md A10). A PAIR may carry `head` too —
  * a fraction drawn as its whole bridge over its lit stretch (`pair` = { a: the whole, b: the lit cells, d: the plank }):
- * its line then reads « 66/78 → 33/39 » (an isolated LTR run), not « 78 و 66 لوح 6 ».
+ * its line then reads « 66/78 → 33/39 » (an isolated LTR run), not « 78 et 66 planche de 6 ».
  */
 import Inquiry from './Inquiry';
 import { dealOf } from './deal';
 import { Glyph, GlyphDefs, LOTS, Lot, LotShape, Pile, grid } from './dealParts';
-import { planks } from './strings';
+import { FORGE_TEXT as L } from './strings';
 import './forgeParts.css';
 
-const WHICH = 'أيّ جسر تعنيه؟ المرآة ستبنيه بعد جوابك.';
 /** Does the BRIDGE of the case hold? (its own `fits`, or the truth of the case when they are the same thing) */
 const fitsOf = (c) => c.fits ?? c.held;
-/** A gap's length with its agreement: « خانة واحدة », « خانتان », « 3 خانات », « 27 خانة », « 0 خانة » (defects.md B11). */
-const cells = (n) => (n === 1 ? 'خانة واحدة' : n === 2 ? 'خانتان' : n >= 3 && n <= 10 ? `${n} خانات` : `${n} خانة`);
 
 /** The bridge in the mirror: `a` cells, planks of `b`, what is left in amber. `stage`: ask (the gap and one plank) | build | done. */
 function Mirror({ c, stage, fast, tight = false }) {
@@ -60,7 +57,7 @@ function Mirror({ c, stage, fast, tight = false }) {
         <p className="rf-sentence rf-sentence--alone" data-rf-sentence>
           « {c.text} »
         </p>
-        <p className="rf-sentence__hint">{WHICH}</p>
+        <p className="rf-sentence__hint">{L.which}</p>
       </>
     );
   return (
@@ -93,7 +90,7 @@ function Mirror({ c, stage, fast, tight = false }) {
           <g>
             <rect x={sampleX} y="30" width={cell * c.b - 2} height="24" rx="6" className="rf-plank rf-plank--sample" />
             <text x={sampleX + (cell * c.b) / 2} y="22" textAnchor="middle" className="rf-cap">
-              لوح {c.b}
+              {L.plank(c.b)}
             </text>
           </g>
         )}
@@ -111,7 +108,7 @@ function Mirror({ c, stage, fast, tight = false }) {
             />
           ))}
         <text x={W / 2} y="142" textAnchor="middle" className="rf-cap rf-cap--a">
-          {cells(c.a)}
+          {L.cells(c.a)}
         </text>
       </svg>
     </>
@@ -158,7 +155,7 @@ const PW = 720;
 const PH = 150;
 const P_X0 = 40; // the left edge of both gaps (after the left bank)
 const P_ROOM = 548; // the longest gap (or the plank) takes this width; its right bank and the labels come after
-const P_LABEL = 662; // the centre of the labels « 16 خانة »
+const P_LABEL = 662; // the centre of the labels « 16 cases »
 const P_ROWS = [58, 110]; // the top of each bridge
 const P_TIGHT = 50; // tight: the band of the plank is left out once the planks are laid
 /** One gap of a pair: n cells, the plank d laid on it, what is left in amber. */
@@ -225,7 +222,7 @@ function PairMirror({ c, stage, fast, tight }) {
                 />
               ))}
             <text x={P_LABEL} y={y + 23} textAnchor="middle" className="rf-cap rf-cap--a">
-              {cells(row.n)}
+              {L.cells(row.n)}
             </text>
           </g>
         );
@@ -276,7 +273,9 @@ const PairMini = ({ pair }) => {
 /** The head of a pair's line: its two gaps, then the plank. */
 const PairHead = ({ pair }) => (
   <span className="rf-pairhead">
-    <strong dir="ltr">{pair.a}</strong> و <strong dir="ltr">{pair.b}</strong>
+    <strong dir="ltr">{pair.a}</strong>
+    {` ${L.and} `}
+    <strong dir="ltr">{pair.b}</strong>
   </span>
 );
 
@@ -387,7 +386,7 @@ function DealMirror({ c, stage, fast, tight }) {
         kind={a.item}
         n0={a.n}
         rem={built ? d.rA : a.n}
-        box={[545, 6, 440, 96]}
+        box={[15, 6, 440, 96]}
         left={done && d.rA > 0}
       />
       <Pile
@@ -396,7 +395,7 @@ function DealMirror({ c, stage, fast, tight }) {
         kind={b.item}
         n0={b.n}
         rem={built ? d.rB : b.n}
-        box={[15, 6, 440, 96]}
+        box={[545, 6, 440, 96]}
         left={done && d.rB > 0}
       />
       <LotShape kind={lot} box={[478, 12, 44, 50]} />
@@ -459,24 +458,6 @@ const DealMini = ({ c }) => {
   );
 };
 
-const L = {
-  mirror: 'بنته المرآة',
-  plank: (b) => `لوح ${b}`,
-  held: 'ثبت',
-  fell: (c) =>
-    c.b > c.a
-      ? 'انهار: اللوح أطول'
-      : c.r === 1
-        ? 'انهار: بقيت خانة'
-        : c.r === 2
-          ? 'انهار: بقيت خانتان'
-          : `انهار: بقيت ${cells(c.r)}`,
-  true: 'صحيحة',
-  false: 'خاطئة',
-  /** a pair with no tag of its own: the planks the two bridges take, or whether the plank builds both */
-  pair: (c) => (c.pair.need != null ? planks(c.pair.need) : fitsOf(c) ? 'يبني الجسرين' : 'لا يبنيهما'),
-};
-
 /** A bridge as one line of the evidence; `children` = what the student's rule says of it, while it is tested. */
 function Line({ c, children }) {
   return (
@@ -499,7 +480,7 @@ function Line({ c, children }) {
             <PairHead pair={c.pair} /> <span>{L.plank(c.pair.d)}</span>
           </>
         ) : c.head ? (
-          // a case that is not a bridge names itself in its own words (defects.md A10): « 1003 و 34 », never « لوح »
+          // a case that is not a bridge names itself in its own words (defects.md A10): « 1003 et 34 », never « planche »
           <span className="rf-line__head">{c.head}</span>
         ) : (
           <>

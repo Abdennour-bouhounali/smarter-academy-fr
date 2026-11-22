@@ -9,7 +9,7 @@
  *            that does is crowned (gold). Then: must the shorter ones still be tried? On yes the world lays them all.
  *   first    (mode) before the descent he types how many planks will be tried; he predicts the first, the world goes on.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `summit`). Nothing here states a rule:
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `summit`). Nothing here states a rule:
  * every sentence says what the strips have just done. The screen is a pure VIEW of the reducer's state (`SummitView`).
  */
 import { useReducer, useState } from 'react';
@@ -90,7 +90,7 @@ function Lengths({ short, long, marks, best, crown, label }) {
   const placed = placeLabels(marks, x, ends);
   return (
     <g data-iq-lengths={marks.map((m) => `${m.d}:${m.kind}`).join(',')}>
-      <text className="iq-sum-linelabel" x={X0 + SPAN} y={YL - 62} direction="rtl">
+      <text className="iq-sum-linelabel" x={X0} y={YL - 62}>
         {label}
       </text>
       <line className="iq-sum-line" x1={x(1)} y1={YL} x2={x(short)} y2={YL} />
@@ -206,9 +206,8 @@ export function SummitView({ spec, state, act, input = { free: '', count: '' } }
       {DESCENT.has(s.stage) && (
         <div className="iq-sum-chips" data-iq-planks={now.all.join(',')}>
           <small>{T.chipsLabel(short)}</small>
-          {/* right to left: read after its label « from the longest to the shortest », the longest first, beside it —
-              and on the same side as on the line of lengths above */}
-          <div className="iq-chips" dir="rtl">
+          {/* left to right: read after its label « from the longest to the shortest », the longest first, on the left */}
+          <div className="iq-chips">
             {now.all.map((c) => {
               const st = chipState(c);
               return (
@@ -232,7 +231,7 @@ export function SummitView({ spec, state, act, input = { free: '', count: '' } }
             <p className="iq-askline">
               <MathText>{T.freeAsk({ a, b, best: s.best, left: now.free - s.tries.length })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num
                   value={input.free}
@@ -273,7 +272,7 @@ export function SummitView({ spec, state, act, input = { free: '', count: '' } }
             <p className="iq-askline">
               <MathText>{T.countAsk({ a, b, short, long })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num
                   value={input.count}

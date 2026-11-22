@@ -25,9 +25,15 @@ describe('a case of a forge that is a SHARING — drawn as the experiment draws 
   it('ask: the two collections on the table, one item each, and the k EMPTY lots — no plank, no cell', () => {
     const out = renderToString(<Mirror c={sharing(36, 60, 12)} stage="ask" fast />);
     expect(out).toContain('data-rf-deal="36:60:12"');
+    // read left to right (the French screen, 2026-11-22): the first collection is the pile on the LEFT
+    const pileX = (tag) =>
+      Number(
+        out.match(new RegExp(`data-iq-pile="${tag}"[^>]*>(?:<rect[^>]*>)?<text class="iqd-count" x="([\\d.]+)"`))[1],
+      );
+    expect(pileX('a')).toBeLessThan(pileX('b'));
     expect(out).toContain('data-rf-stage="ask"');
     expect(out).not.toContain('data-rf-bridge');
-    expect(out).not.toMatch(/لوح|خانة/);
+    expect(out).not.toMatch(/planche|\bcases?\b/);
     expect(count(out, /data-iq-lot="/g)).toBe(12);
     expect(count(out, /data-iq-holds="0,0"/g)).toBe(12);
     expect(out).toContain('data-iq-pile="a" data-iq-count="36"');
@@ -68,7 +74,7 @@ describe('a case of a forge that is a SHARING — drawn as the experiment draws 
     const big = renderToString(<Mirror c={sharing(36, 60, 12, [24, 48])} stage="ask" fast />);
     expect(count(big, /data-iq-holds="0,0"/g)).toBe(12);
     expect(big).toContain('data-rf-claim="24,48"');
-    expect(big).not.toMatch(/[؀-ۿ]/); // the claim is numbers and drawings, no word of any lesson
+    expect(big).not.toMatch(/[\u0600-\u06ff]|planche|\bcases?\b/); // the claim is numbers and drawings, no word of any lesson
 
     // once dealt, the lots hold what the world gave — the claim is the panel's question, not the drawing's
     const done = renderToString(<Mirror c={sharing(36, 60, 12, [24, 48])} stage="done" fast />);
@@ -76,13 +82,13 @@ describe('a case of a forge that is a SHARING — drawn as the experiment draws 
     expect(done).not.toContain('data-rf-claim');
   });
 
-  it('its line of evidence: the two counts with their items, the tag, and a mini of lots — never « لوح »', () => {
+  it('its line of evidence: the two counts with their items, the tag, and a mini of lots — never « planche »', () => {
     const out = renderToString(<Line c={sharing(40, 56, 5)} />);
     expect(out).toContain('rf-dealhead');
     expect(out).toMatch(/<strong>40<\/strong>/);
     expect(out).toMatch(/<strong>56<\/strong>/);
     expect(out).toContain('tag[5]');
-    expect(out).not.toMatch(/لوح|خانة/);
+    expect(out).not.toMatch(/planche|\bcases?\b/);
     expect(out).toContain('rf-mini--deal');
     expect(count(out, /<rect/g)).toBe(5 + 1); // five lots and what is left
     const all = renderToString(<Line c={sharing(40, 56, 8)} />);
@@ -95,17 +101,17 @@ describe('a case of a forge that is a SHARING — drawn as the experiment draws 
     const out = renderToString(<Mirror c={c} stage="ask" fast />);
     expect(out).toContain('data-rf-bridge="56:5"');
     expect(out).not.toContain('data-rf-deal');
-    expect(out).toContain('لوح');
-    expect(renderToString(<Line c={c} />)).toContain('لوح 5');
+    expect(out).toContain('planche');
+    expect(renderToString(<Line c={c} />)).toContain('planche de 5');
     expect(beats(c)).toBe(c.q);
   });
 
-  it('a bridge that is not about a plank names itself by its `head` in its line — never « لوح » (A10)', () => {
-    const c = { ...outcome(1003, 34), head: '1003 و 34', tag: '31 مقابل 2' };
+  it('a bridge that is not about a plank names itself by its `head` in its line — never « planche » (A10)', () => {
+    const c = { ...outcome(1003, 34), head: '1003 et 34', tag: '31 contre 2' };
     const line = renderToString(<Line c={c} />);
-    expect(line).toContain('1003 و 34');
-    expect(line).toContain('31 مقابل 2');
-    expect(line).not.toContain('لوح');
+    expect(line).toContain('1003 et 34');
+    expect(line).toContain('31 contre 2');
+    expect(line).not.toContain('planche');
   });
 });
 
@@ -125,9 +131,9 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
     expect(count(out, /class="rf-cell /g)).toBe(16 + 19);
     expect(count(out, /rf-plank--sample/g)).toBe(1);
     expect(count(out, /class="rf-plank (is-alt)?"/g)).toBe(0);
-    expect(count(out, /لوح 5/g)).toBe(1);
-    expect(out).toContain('16 خانة');
-    expect(out).toContain('19 خانة');
+    expect(count(out, /planche de 5/g)).toBe(1);
+    expect(out).toContain('16\u00a0cases');
+    expect(out).toContain('19\u00a0cases');
     expect(out).not.toMatch(/\$|\\/); // drawn text: no formula
   });
 
@@ -175,15 +181,15 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
   it('its line: both gaps, the plank, the planks the two bridges need (when counted), and a mini of two bars', () => {
     const counted = renderToString(<Line c={pairOf(198, 234, 18, { pair: { a: 198, b: 234, d: 18, need: 24 } })} />);
     expect(counted).toContain('rf-line--pair');
-    expect(counted).toMatch(/<strong dir="ltr">198<\/strong> و <strong dir="ltr">234<\/strong>/);
-    expect(counted).toContain('لوح 18');
-    expect(counted).toContain('24 لوحًا');
+    expect(counted).toMatch(/<strong dir="ltr">198<\/strong> et <strong dir="ltr">234<\/strong>/);
+    expect(counted).toContain('planche de 18');
+    expect(counted).toContain('24\u00a0planches');
     expect(counted).toContain('rf-mini--pair');
     expect(count(counted, /<rect/g)).toBe(11 + 13); // 198 = 18 × 11, 234 = 18 × 13
     expect(count(counted, /class="is-held"/g)).toBe(24);
 
     const refused = renderToString(<Line c={pairOf(198, 234, 11)} />);
-    expect(refused).toContain('لا يبنيهما');
+    expect(refused).toContain('ne les construit pas');
     // 198 = 11 × 18 (green), 234 = 11 × 21 + 3 (blue planks and an amber rest)
     expect(count(refused, /class="is-held"/g)).toBe(18);
     expect(count(refused, /class="is-left"/g)).toBe(1);
@@ -192,13 +198,13 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
     expect(renderToString(<Line c={pairOf(16, 19, 5, { tag: 'tag[p]' })} />)).toContain('tag[p]');
   });
 
-  it('a pair that is a FRACTION (the whole over its lit stretch) names itself by its own head, never « و … لوح »', () => {
+  it('a pair that is a FRACTION (the whole over its lit stretch) names itself by its own head, never « et … planche »', () => {
     const head = '\u206666/78 → 33/39\u2069';
-    const line = renderToString(<Line c={pairOf(78, 66, 2, { head, tag: 'الجزء نفسه' })} />);
+    const line = renderToString(<Line c={pairOf(78, 66, 2, { head, tag: 'la même partie' })} />);
     expect(line).toContain('rf-line--pair');
     expect(line).toContain(`<span class="rf-line__head">${head}</span>`);
-    expect(line).not.toMatch(/لوح|rf-pairhead/);
-    expect(line).toContain('الجزء نفسه');
+    expect(line).not.toMatch(/planche|rf-pairhead/);
+    expect(line).toContain('la même partie');
     // the mini still draws both bars at one scale: 39 planks of 2 on the whole, 33 on the lit stretch
     expect(count(line, /class="is-held"/g)).toBe(39 + 33);
   });
@@ -216,7 +222,7 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
     expect(renderToString(<Mirror c={c} stage="done" fast tight />)).toContain('viewBox="0 48 720 102"');
     const line = renderToString(<Line c={c} />);
     expect(line).not.toMatch(/rf-line--pair|rf-mini--pair/);
-    expect(line).toContain('انهار: بقيت خانة');
+    expect(line).toContain('s’effondre\u00a0: il reste 1\u00a0case');
     expect(count(line, /<rect/g)).toBe(3 + 1);
   });
 });

@@ -11,7 +11,7 @@
   gap: 0.6rem;
   padding: 4.3rem 1rem 0.8rem;
   color: #eef5ff;
-  font-family: Cairo, system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 1.125rem;
   overflow: hidden;
   pointer-events: none;
@@ -345,7 +345,7 @@
   border: 1.5px solid #a5f3fc;
   color: #a5f3fc;
 }
-/* « ورقتي »: a ruled sheet, laid out as an exam copy */
+/* « Ma copie »: a ruled sheet, laid out as an exam copy */
 .ms-book {
   display: flex;
   flex-direction: column;
@@ -413,7 +413,7 @@
   cursor: pointer;
   text-decoration: underline;
 }
-/* « أربط »: the question, the lines of his copy, and the lines he draws between them */
+/* « relie »: the question, the lines of his copy, and the lines he draws between them */
 .ms-connect {
   display: flex;
   flex-direction: column;
@@ -749,7 +749,7 @@
   }
 }
 
-/* « اضغط هنا » (owner, 2026-11-20): what must be TAPPED and does not look like a button — a number or a question in the
+/* « Clique ici » (owner, 2026-11-20): what must be TAPPED and does not look like a button — a number or a question in the
    exam text, a datum to connect, a number to try again — carries a flashing sign, from the first second */
 @keyframes ms-flash {
   0%,
@@ -765,7 +765,7 @@
 .ms-paper .ms-num.ms-target::after,
 .ms-connect__items:not(:has(.is-on)) .ms-chip:first-child::after,
 [data-ms-test]:first-of-type::after {
-  content: '👆 اضغط هنا';
+  content: '👆 Clique ici';
   display: inline-block;
   padding: 0 0.6rem;
   border-radius: 999px;
@@ -804,7 +804,7 @@
 }
 .ms-paper .ms-num.is-goal.ms-target::after {
   position: absolute;
-  left: 0;
+  inset-inline-end: 0;
   bottom: calc(100% - 0.5rem);
   margin: 0;
 }
@@ -828,7 +828,7 @@
   animation: ms-border-flash 0.9s ease-in-out infinite;
 }
 .ms-root.is-reading .ms-paper::before {
-  content: '📖 اقرأ التمرين كلّه';
+  content: '📖 Lis tout l’exercice';
   display: block;
   margin-bottom: 0.3rem;
   padding: 0.1rem 0.6rem;
@@ -868,7 +868,7 @@
 .ms-connect__items--plan {
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2.6rem; /* room for « اضغط هنا » above the first step */
+  margin-top: 2.6rem; /* room for « Clique ici » above the first step */
 }
 
 /* a classmate's copy: its lines are tapped; the faulty one turns red once found */
@@ -902,7 +902,7 @@
   text-decoration-color: #dc2626;
 }
 /* a sentence of his solution (not a formula) wraps inside the notebook */
-.ms-root .ms-book ol li[dir='rtl'] {
+.ms-root .ms-book ol li.is-prose {
   white-space: normal;
   line-height: 1.6;
 }

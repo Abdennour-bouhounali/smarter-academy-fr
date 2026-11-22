@@ -1,5 +1,5 @@
 /**
- * « جزيرة المهمّات » on screen — the world of a unit's last lesson (`Game.js`): its HOME over the island (the missions
+ * « L’île des missions » on screen — the world of a unit's last lesson (`Game.js`): its HOME over the island (the missions
  * of the lesson, the door of the exam sitting, the unit's recap), and the mission he opened (`missions/`).
  * Everything said here comes from the lesson (`lesson.text`, `lesson.missions`, `lesson.bank`, `lesson.recap`).
  */
@@ -23,12 +23,19 @@ import {
 import LessonWorld from '../kit/LessonWorld';
 import { useLesson } from '../kit/LessonContext';
 import { M } from '../kit/parts';
+import { counted } from '../kit/authoring/numbers';
 import { examLevelOpen } from '../kit/journey';
 import { readSave } from '../kit/saveSync';
 import { loadPackPart } from '../../../lessonPack';
 import MissionRunner from '../missions/MissionRunner';
 import { MissionIsleGame } from './Game';
 import './missionIsle.css';
+
+/** The nouns this screen counts, `[singular, plural]` for `counted` (« 1 porte », « 12 portes »). */
+const GATES = ['porte', 'portes'];
+const RIGHT_GATES = ['bonne porte', 'bonnes portes'];
+const HEARTS = ['cœur', 'cœurs'];
+const MINUTES = ['minute', 'minutes'];
 
 const Stars = ({ n }) => (
   <span className="mi-stars" data-mi-stars={n}>
@@ -59,14 +66,14 @@ function Recap({ lessons: list, onClose }) {
     <section className="mi-panel mi-panel--recap" data-mi-recap={lessons?.length ?? 'loading'}>
       <header>
         <h2>
-          <BookOpen size={24} aria-hidden="true" /> ملخّص الوحدة: قواعدك
+          <BookOpen size={24} aria-hidden="true" /> Le résumé du chapitre : tes règles
         </h2>
-        <button type="button" className="mi-x" aria-label="إغلاق" data-mi-recap-close onClick={onClose}>
+        <button type="button" className="mi-x" aria-label="Fermer" data-mi-recap-close onClick={onClose}>
           <X size={22} aria-hidden="true" />
         </button>
       </header>
       {!lessons ? (
-        <p>نجمع قواعدك…</p>
+        <p>On rassemble tes règles…</p>
       ) : (
         <div className="mi-recap">
           {lessons.map((l) => (
@@ -78,7 +85,7 @@ function Recap({ lessons: list, onClose }) {
                   return (
                     <li key={k} className={mine ? 'is-mine' : ''}>
                       <span aria-hidden="true">{mine ? l.rules[k].icon : '🔒'}</span>
-                      {mine ? l.rules[k].title : 'قاعدة لم تصنعها بعد'}
+                      {mine ? l.rules[k].title : 'Une règle que tu n’as pas encore forgée'}
                     </li>
                   );
                 })}
@@ -94,7 +101,7 @@ function Recap({ lessons: list, onClose }) {
 const Option = ({ o }) => (o.tex ? <M>{o.tex}</M> : <span dir="ltr">{o.t}</span>);
 
 /**
- * « سباق الأعداد » on screen: the sign (the order), the three gates' numbers (placed over the 3D gates by the game, every
+ * The endless game on screen: the sign (the order), the three gates' numbers (placed over the 3D gates by the game, every
  * frame), his hearts, his score, the level; the two arrows for a mouse or a finger; the fact of a wrong gate; the end.
  */
 function Run({ s, game }) {
@@ -107,17 +114,20 @@ function Run({ s, game }) {
           <Zap size={56} aria-hidden="true" />
           <h2>{endless.title}</h2>
           <p>{endless.say}</p>
-          <p>يبدأ سهلًا جدًّا، ثمّ يصعد مستوى بعد كلّ {endless.gates} أبواب صحيحة. لك ثلاثة قلوب.</p>
+          <p>
+            Ça commence tout doucement, puis tu montes d’un niveau toutes les {endless.gates} bonnes portes. Tu as trois
+            cœurs.
+          </p>
           {r.best > 0 && (
             <p className="mi-runcard__best">
-              <Trophy size={24} aria-hidden="true" /> أفضل ما بلغتَ: {r.best} بابًا
+              <Trophy size={24} aria-hidden="true" /> Ton record : {counted(r.best, GATES)}
             </p>
           )}
           <button type="button" className="mi-btn" data-mi-run-start onClick={() => game.startRun()}>
-            <Play size={20} aria-hidden="true" /> أبدأ السباق
+            <Play size={20} aria-hidden="true" /> Lance la course
           </button>
           <button type="button" className="mi-door" data-mi-run-leave onClick={() => game.leaveRun()}>
-            الرجوع إلى الجزيرة
+            Retour à l’île
           </button>
         </div>
       </section>
@@ -127,19 +137,19 @@ function Run({ s, game }) {
       <section className="mi-run mi-run--card" data-mi-run="over">
         <div className="mi-runcard">
           <Trophy size={64} aria-hidden="true" />
-          <h2>{r.record ? 'رقم جديد!' : 'انتهى السباق'}</h2>
+          <h2>{r.record ? 'Nouveau record !' : 'La course est finie'}</h2>
           <p className="mi-runcard__score" data-mi-run-score={r.score}>
-            {r.score} بابًا صحيحًا
+            {counted(r.score, RIGHT_GATES)}
           </p>
           <p>
-            بلغتَ المستوى {r.level}: {endless.levels[Math.min(r.level, endless.levels.length) - 1].name}. أفضل ما بلغتَ:{' '}
-            {r.best}.
+            Tu as atteint le niveau {r.level} : {endless.levels[Math.min(r.level, endless.levels.length) - 1].name}. Ton
+            record : {r.best}.
           </p>
           <button type="button" className="mi-btn" data-mi-run-start onClick={() => game.startRun()}>
-            <Play size={20} aria-hidden="true" /> سباق جديد
+            <Play size={20} aria-hidden="true" /> Nouvelle course
           </button>
           <button type="button" className="mi-door" data-mi-run-leave onClick={() => game.leaveRun()}>
-            الرجوع إلى الجزيرة
+            Retour à l’île
           </button>
         </div>
       </section>
@@ -156,7 +166,7 @@ function Run({ s, game }) {
     >
       <div className="di-dash" data-di-dash="endless">
         <div className="di-dash__meta">
-          <span className="di-dash__hearts" data-mi-run-hearts={r.hearts} aria-label={`${r.hearts} قلوب`}>
+          <span className="di-dash__hearts" data-mi-run-hearts={r.hearts} aria-label={counted(r.hearts, HEARTS)}>
             {[0, 1, 2].map((k) => (
               <Heart key={k} size={22} className={k < r.hearts ? 'is-on' : ''} fill="currentColor" aria-hidden="true" />
             ))}
@@ -170,7 +180,7 @@ function Run({ s, game }) {
             </span>
           )}
           <span data-mi-run-level={r.level}>
-            المستوى {r.level} · {r.levelName}
+            Niveau {r.level} · {r.levelName}
           </span>
           <button
             type="button"
@@ -179,15 +189,15 @@ function Run({ s, game }) {
             onClick={() => game.pauseRun(r.stage !== 'paused')}
           >
             {r.stage === 'paused' ? <Play size={18} aria-hidden="true" /> : <Pause size={18} aria-hidden="true" />}
-            {r.stage === 'paused' ? 'متابعة' : 'توقّف'}
+            {r.stage === 'paused' ? 'Reprendre' : 'Pause'}
           </button>
           <button type="button" className="mi-quit" data-mi-run-leave onClick={() => game.leaveRun()}>
-            <X size={18} aria-hidden="true" /> خروج
+            <X size={18} aria-hidden="true" /> Quitter
           </button>
         </div>
         {(r.stage === 'go' || r.stage === 'paused') && (
           <div className="di-dash__say" key={r.n} data-mi-run-ask>
-            <small>مرّ من الباب الصحيح</small>
+            <small>Passe par la bonne porte</small>
             <strong>
               {r.ask} {r.tex && <M>{r.tex}</M>}
             </strong>
@@ -219,26 +229,26 @@ function Run({ s, game }) {
         <div className="mi-paused" data-mi-run-paused>
           <div className="mi-runcard">
             <Pause size={52} aria-hidden="true" />
-            <h2>السباق متوقّف</h2>
-            <p>الأبواب تنتظرك حيث تركتها. اضغط « متابعة » أو مفتاح المسافة.</p>
+            <h2>La course est en pause</h2>
+            <p>Les portes t’attendent là où tu les as laissées. Clique sur « Reprendre » ou appuie sur Espace.</p>
             <button type="button" className="mi-btn" data-mi-run-resume onClick={() => game.pauseRun(false)}>
-              <Play size={20} aria-hidden="true" /> متابعة
+              <Play size={20} aria-hidden="true" /> Reprendre
             </button>
             <button type="button" className="mi-door" data-mi-run-leave onClick={() => game.leaveRun()}>
-              الرجوع إلى الجزيرة
+              Retour à l’île
             </button>
           </div>
         </div>
       )}
       {r.up && r.stage === 'go' && (
         <p className="mi-up" key={r.level} data-mi-run-up>
-          مستوى جديد: {r.levelName}
+          Nouveau niveau : {r.levelName}
         </p>
       )}
       <div className="di-lanes" dir="ltr">
         <button
           type="button"
-          aria-label="يسار"
+          aria-label="À gauche"
           data-mi-run-left
           onPointerDown={(e) => (e.preventDefault(), game.runLane(-1))}
         >
@@ -246,7 +256,7 @@ function Run({ s, game }) {
         </button>
         <button
           type="button"
-          aria-label="يمين"
+          aria-label="À droite"
           data-mi-run-right
           onPointerDown={(e) => (e.preventDefault(), game.runLane(1))}
         >
@@ -283,7 +293,7 @@ function Home({ s, game }) {
           <h2>
             <FileText size={24} aria-hidden="true" /> {text.exam}
           </h2>
-          <button type="button" className="mi-x" aria-label="إغلاق" data-mi-exam-close onClick={() => setPanel(null)}>
+          <button type="button" className="mi-x" aria-label="Fermer" data-mi-exam-close onClick={() => setPanel(null)}>
             <X size={22} aria-hidden="true" />
           </button>
         </header>
@@ -300,9 +310,9 @@ function Home({ s, game }) {
                 data-mi-level={l.n}
                 onClick={() => game.openSitting(l.n)}
               >
-                <b>المستوى {l.n}</b>
+                <b>Niveau {l.n}</b>
                 <span>{l.title}</span>
-                {open ? <Stars n={s.exam.best?.[l.n]?.stars ?? 0} /> : <small>يُفتح بعد المستوى {l.n - 1}</small>}
+                {open ? <Stars n={s.exam.best?.[l.n]?.stars ?? 0} /> : <small>S’ouvre après le niveau {l.n - 1}</small>}
               </button>
             );
           })}
@@ -326,10 +336,10 @@ function Home({ s, game }) {
             <h2>{c.title}</h2>
             <p>{c.sub}</p>
             <p className="mi-card__need">
-              <PenLine size={20} aria-hidden="true" /> ورقة · قلم
+              <PenLine size={20} aria-hidden="true" /> Feuille · stylo
               {c.minutes && (
                 <>
-                  <Clock size={20} aria-hidden="true" /> {c.minutes} دقيقة
+                  <Clock size={20} aria-hidden="true" /> {counted(c.minutes, MINUTES)}
                 </>
               )}
             </p>
@@ -337,12 +347,12 @@ function Home({ s, game }) {
               <Stars n={c.done.stars} />
             ) : (
               <span className="mi-card__new">
-                {s.partial[c.id] ? 'توقّفتَ في منتصفها' : c.id === next ? 'ابدأ من هنا' : 'لم تُلعب بعد'}
+                {s.partial[c.id] ? 'Tu l’as laissée en cours' : c.id === next ? 'Commence ici' : 'Pas encore jouée'}
               </span>
             )}
             <button type="button" className="mi-btn" data-mi-open={c.id} onClick={c.open}>
-              {c.done ? 'ألعبها من جديد' : 'أبدأ المهمّة'}
-              <ArrowLeft size={20} aria-hidden="true" />
+              {c.done ? 'Rejoue-la' : 'Commence la mission'}
+              <ArrowRight size={20} aria-hidden="true" />
             </button>
           </article>
         ))}
@@ -352,7 +362,7 @@ function Home({ s, game }) {
           <Trophy size={24} aria-hidden="true" /> {text.exam}
         </button>
         <button type="button" className="mi-door" data-mi-door="recap" onClick={() => setPanel('recap')}>
-          <BookOpen size={24} aria-hidden="true" /> ملخّص الوحدة
+          <BookOpen size={24} aria-hidden="true" /> Le résumé du chapitre
         </button>
         {lesson.endless && (
           <button type="button" className="mi-door mi-door--game" data-mi-door="run" onClick={() => game.openRun()}>

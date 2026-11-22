@@ -1,6 +1,6 @@
 /**
- * The TITLE SCREEN of a lesson's game world: the lesson's name, the world's own title and story, « ابدأ » / « واصل », and the
- * doors that open without replaying the story — the knowledge map, the practice space, « تقدّمي », « مختبري », « عُدّتي ».
+ * The TITLE SCREEN of a lesson's game world: the lesson's name, the world's own title and story, « Commencer » / « Continuer », and the
+ * doors that open without replaying the story — the knowledge map, the practice space, « Ma progression », « Mon labo », « L’échauffement ».
  * A door whose part the lesson has not got yet (`lesson.notYet`, while a lesson is being built) is not shown: a door never
  * opens on nothing.
  */

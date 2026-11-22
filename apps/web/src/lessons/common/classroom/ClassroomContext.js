@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 /**
- * Le contexte du MODE CLASSE (« وضع القسم »), publié par ClassroomPresentation
+ * Le contexte du MODE CLASSE (« Mode classe »), publié par ClassroomPresentation
  * à tout ce qu'elle enveloppe.
  *
  * Un contenu (manipulation, exercice, module, leçon) n'a JAMAIS à connaître

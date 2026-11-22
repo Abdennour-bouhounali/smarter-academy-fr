@@ -19,7 +19,7 @@ import {
   tick,
   timeUp,
 } from './sitting';
-import { createBankSittings, shareQuarters, cashDj, examPoints, keysOfPoints, DEV_SHEET_KEY } from './bankSitting';
+import { createBankSittings, shareQuarters, examPoints, keysOfPoints, DEV_SHEET_KEY, BANK_LEVELS } from './bankSitting';
 import { createJourney, emptyExam, examLevelOpen } from './journey';
 import { createEvidence, counts, guardEvidence } from './evidence';
 
@@ -61,9 +61,9 @@ const levels = [
   { n: 2, title: 'two', sheets: 2 },
 ];
 // a toy BANK, in the shape of content/practice (EXERCISE_CONTRACT.md « the exam sheet »)
-const sheet = (id, points, questions, statement = { content: 'نعتبر العدد 30.' }) => ({
+const sheet = (id, points, questions, statement = { content: 'On considère le nombre 30.' }) => ({
   id,
-  metadata: { title: id, estimatedMinutes: 4, exam: { kind: 'adapted', badge: null, heading: 'التمرين', points } },
+  metadata: { title: id, estimatedMinutes: 4, exam: { kind: 'adapted', badge: null, heading: 'Exercice', points } },
   statement,
   questions,
 });
@@ -74,25 +74,25 @@ const BANK = {
       {
         id: 'q1',
         step: '01',
-        statement: 'هل 30 مضاعف للعدد 10؟',
+        statement: 'Le nombre 30 est-il un multiple de 10 ?',
         answerType: 'choice',
         learningPoints: lp('g_toy_P1'),
         choices: [
-          { id: 'A', content: 'نعم', isCorrect: true },
-          { id: 'B', content: 'لا', isCorrect: false },
+          { id: 'A', content: 'Oui', isCorrect: true },
+          { id: 'B', content: 'Non', isCorrect: false },
         ],
-        solution: { lines: ['$30 = 10 \\times 3$'], result: 'نعم' },
-        hints: [{ id: 'h1', content: 'اقسم على 10.' }],
+        solution: { lines: ['$30 = 10 \\times 3$'], result: 'Oui' },
+        hints: [{ id: 'h1', content: 'Divise par 10.' }],
       },
       {
         id: 'q2',
         step: '02',
-        statement: 'الثمن:',
+        statement: 'Le prix :',
         answerType: 'rational',
         expectedAnswer: '450',
         learningPoints: lp('g_toy_P2'),
-        answerFormat: 'عدد بالدينار (DA)',
-        solution: { lines: ['$30 \\times 15 = 450$ DA'], result: '450 \\text{ DA}' },
+        answerFormat: 'Un nombre, en euros (€)',
+        solution: { lines: ['$30 \\times 15 = 450$ €'], result: '450 \\text{ €}' },
         hints: [],
       },
     ]),
@@ -100,7 +100,7 @@ const BANK = {
       {
         id: 'q1',
         step: '01',
-        statement: 'قواسم 6:',
+        statement: 'Les diviseurs de 6 :',
         answerType: 'integerSet',
         expectedAnswer: '1;2;3;6',
         learningPoints: lp('g_toy_P1'),
@@ -110,7 +110,7 @@ const BANK = {
       {
         id: 'q2',
         step: '02',
-        statement: 'بيّن أنّ 6 مضاعف للعدد 3.',
+        statement: 'Montrer que 6 est un multiple de 3.',
         answerType: 'selfCheck',
         learningPoints: lp('g_toy_P1'),
         solution: { lines: ['$6 = 3 \\times 2$'] },
@@ -122,7 +122,7 @@ const BANK = {
       {
         id: 'q1',
         step: '01',
-        statement: 'اختر',
+        statement: 'Choisis',
         answerType: 'multiChoice',
         learningPoints: lp('g_toy_P1'),
         choices: [{ id: 'A', content: '1', isCorrect: true }],
@@ -145,7 +145,7 @@ const BANK = {
           solution: { lines: ['3'] },
         },
       ],
-      { content: 'المساواة:', formulas: ['30 = 10 \\times x'] },
+      { content: 'L’égalité :', formulas: ['30 = 10 \\times x'] },
     ),
     sheet('ex-d', '02,5', [
       {
@@ -160,7 +160,7 @@ const BANK = {
       {
         id: 'q2',
         step: '01',
-        sub: 'ب',
+        sub: 'b',
         statement: 'b',
         answerType: 'rational',
         expectedAnswer: '2',
@@ -244,13 +244,14 @@ describe('kit/bankSitting — a toy bank, served as it is', () => {
     expect(sittings.levelMinutes(levels[1])).toBe('8');
   });
 
-  it('serves a sheet whole: its statement, its steps, its points shared in quarters; a « بيّن أن » is for the paper', () => {
+  it('serves a sheet whole: its statement, its steps, its points shared in quarters; a « Montrer que » is for the paper', () => {
     const s = sittings.makeSubject(rng(1), 1, ['ex:ex-b'], keyOf);
     expect(s.exercises.map((e) => e.bankId)).toEqual(['ex-a']); // the sheet already missed is left out
     const [q1, q2] = s.exercises[0].questions;
     expect([q1.points, q2.points]).toEqual([1, 1]);
     expect([q1.key, q2.key]).toEqual(['tens', 'odd']);
-    expect(s.title).toContain('1');
+    expect(s.title).toBe('Brevet blanc — palier 1');
+    expect(s.exercises[0].title).toBe('Exercice 1');
     expect(shareQuarters(2.5, 3)).toEqual([1, 0.75, 0.75]);
     expect(examPoints('02,5')).toBe(2.5);
     const b = sittings.makeSubject(rng(1), 1, ['ex:ex-a'], keyOf).exercises[0];
@@ -270,51 +271,49 @@ describe('kit/bankSitting — a toy bank, served as it is', () => {
     expect(sittings.totalMark(s, {})).toBe(0);
     expect(sittings.totalMark(s, { ...right, e1q1: { choiceId: 'B' } })).toBe(1);
     const b = sittings.makeSubject(rng(1), 1, ['ex:ex-a'], keyOf);
-    expect(sittings.totalMark(b, { e1q1: { value: '1 ؛ 2 ؛ 3 ؛ 6' } })).toBe(2);
+    expect(sittings.totalMark(b, { e1q1: { value: '1 ; 2 ; 3 ; 6' } })).toBe(2);
     expect(sittings.totalMark(b, { e1q1: { value: '1; 2' } })).toBe(1); // a strict subset: half
     expect(answered(b.exercises[0].questions[1], { value: 'x' })).toBe(false); // the paper step has no box
     expect(answered(b.exercises[0].questions[0], { value: ' ' })).toBe(false);
   });
 
-  it('writes money « دج » at display, never « DA », and shows nothing of the source', () => {
+  it('shows the bank’s money as the bank writes it (euros, no rewrite), and nothing of the source', () => {
     const s = sittings.makeSubject(rng(1), 1, ['ex:ex-b'], keyOf);
     const q = s.exercises[0].questions[1];
-    expect(sittings.model(q)).toEqual(['$30 \\times 15 = 450$ دج', '$450$ دج']);
-    // the widgets draw the step through cashDj; the mark reads the bank's own step
-    expect(q.shown.answerFormat).toBe('عدد بالدينار (دج)');
-    expect(q.bank.answerFormat).toBe('عدد بالدينار (DA)');
-    expect(JSON.stringify(s)).not.toMatch(/"source"/);
-    expect(sittings.guide(s.exercises[0].questions[0])).toEqual(['اقسم على 10.']);
+    // a result that is a formula keeps its dollars; the euro sign is the bank's own
+    expect(sittings.model(q)).toEqual(['$30 \\times 15 = 450$\u00a0€', '$450 \\text{ €}$']);
+    expect(q.shown.answerFormat).toBe('Un nombre, en euros (€)');
+    expect(q.shown.answerFormat).toBe(q.bank.answerFormat);
+    expect(JSON.stringify(s)).not.toMatch(/"source"|DA\b|\u062F\u062C/);
+    expect(sittings.guide(s.exercises[0].questions[0])).toEqual(['Divise par 10.']);
+    // a result that is WORDS is a line of words, never a formula
+    expect(sittings.model(s.exercises[0].questions[0])).toEqual(['$30 = 10 \\times 3$', 'Oui']);
   });
 
-  it('cashDj: money only — DA glued to a number, after a formula, in a unit; never a name', () => {
-    const cases = [
-      // in the words
-      ['ثمنه 900DA.', 'ثمنه 900 دج.'],
-      ['ثمنه 900 DA.', 'ثمنه 900 دج.'],
-      ['يبقى للفلاح 211 500DA.', 'يبقى للفلاح 211500 دج.'], // no thousands space
-      ['التكلفة 1 560 000DA', 'التكلفة 1560000 دج'],
-      ['عدد بالدينار (DA)', 'عدد بالدينار (دج)'],
-      ['عدد (بالدينار DA)', 'عدد (بالدينار دج)'],
-      ['ثمن الرزمة (بالـ DA)', 'ثمن الرزمة (بالـ دج)'],
-      ['$5000$DA، و', '$5000$ دج، و'],
-      ['$12 \\times 75 = 900$ DA', '$12 \\times 75 = 900$ دج'],
-      // in a formula
-      ['$1040DA$', '$1040$ دج'],
-      ['$11225\\,DA$', '$11225$ دج'],
-      ['$p \\leq 2500\\,DA$', '$p \\leq 2500$ دج'],
-      ['$2300 \\text{ DA}$', '$2300$ دج'],
-      ['$3 \\times 5\\text{ DA} = 15$', '$3 \\times 5\\text{ دج} = 15$'],
-      // names stay names
-      ['$AB + DA = 7$', '$AB + DA = 7$'],
-      ['المستقيم (AB) و $DA$', 'المستقيم (AB) و $DA$'],
-      ['$x$ DA', '$x$ DA'],
-      ['900DAB', '900DAB'],
-      ['DATA 12', 'DATA 12'],
-      ['1 500 تلميذ و 3 أقسام', '1 500 تلميذ و 3 أقسام'], // a thousands space without money is the bank's: left
-    ];
-    for (const [raw, shown] of cases) expect(cashDj(raw), raw).toBe(shown);
-    expect(cashDj(null)).toBe(null);
+  it('heads a sheet « Exercice n », or « Problème » when the bank heads it so; the levels carry the practice space names', async () => {
+    const pb = createBankSittings({
+      lesson: 'toy',
+      levels: [{ n: 1, title: 'one', sheets: 2 }],
+      load: async () => [
+        {
+          ...BANK[1][0],
+          id: 'p1',
+          metadata: { ...BANK[1][0].metadata, exam: { ...BANK[1][0].metadata.exam, heading: 'Problème' } },
+        },
+        { ...BANK[1][0], id: 'p2' },
+      ],
+    });
+    await pb.prepare();
+    const titles = pb.makeSubject(rng(3), 1, [], keyOf).exercises.map((e) => e.title);
+    expect(titles).toContain('Problème');
+    expect(titles.some((t) => /^Exercice [12]$/.test(t))).toBe(true);
+    expect(BANK_LEVELS.map((L) => L.title)).toEqual([
+      'Je reprends les bases',
+      'J’applique',
+      'Je m’exerce',
+      'J’approfondis',
+      'Défi',
+    ]);
   });
 
   it('an EMPTY level is never sat: no subject, the level unavailable — and a subject with no points is no subject', async () => {
@@ -473,7 +472,7 @@ describe('kit/journey — with a toy lesson', () => {
 });
 
 describe('kit/evidence — with a toy lesson', () => {
-  it('counts a first try without help only, and names the الكفاءة of the key', () => {
+  it('counts a first try without help only, and names the savoir-faire of the key', () => {
     expect(counts({ firstTry: true, helped: false })).toBe(true);
     expect(counts({ firstTry: true, helped: true })).toBe(false);
     expect(counts({ firstTry: false })).toBe(false);

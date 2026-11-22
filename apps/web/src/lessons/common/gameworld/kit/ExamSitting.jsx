@@ -1,16 +1,16 @@
 /**
- * « الامتحان الأبيض » — the exam SITTING (prototype, 2026-11-16; logic: sitting.js). The opposite of the game on purpose:
+ * « brevet blanc » — the exam SITTING (prototype, 2026-11-16; logic: sitting.js). The opposite of the game on purpose:
  * one sheet of paper, three colours (black for the subject, blue for what the student writes, red for the corrector — never
  * before the copy comes back), silence, no stars. Three screens:
  *   read  the whole subject; numbers and words are underlined by a tap; no answer box exists yet;
  *   sit   the subject on one side, the answer sheet on the other; NO verdict; a quiet pace line; one notice at the last minute;
  *         an exercise left completely EMPTY is shown once before the hand-in is accepted (a forgotten page is not a choice);
- *   « خروج » (read and sit): leaves after ONE confirmation — nothing is marked, nothing is sent, the ladder does not move;
+ *   « Quitter » (read and sit): leaves after ONE confirmation — nothing is marked, nothing is sent, the ladder does not move;
  *   back  the copy handed back: red marks, the total, then — question by question — the scheme to tick against the paper and
- *         the two helps: « أرشدني » (the bank's hints — never the answer) or « اشرح لي » (the bank's model solution).
+ *         the two helps: « Guide-moi » (the bank's hints — never the answer) or « Explique-moi » (the bank's model solution).
  * The subject is drawn from the lesson's EXERCISE BANK, as it is (bankSitting.js): each step is answered in the widget the
  * practice space draws for its `answerType` — a choice (ChoiceInput), a number in its own shape (TemplateInput, the
- * « قوالب الإجابة » standard), a set of integers (IntegerSetInput); a « بيّن أن » step is written on the paper only.
+ * answer-template standard), a set of integers (IntegerSetInput); a « Montrer que » step is written on the paper only.
  * The bank loads when the sitting opens (a few small files, once); until then the sheet waits.
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -26,48 +26,8 @@ import Leaves from './ExamSittingLeaves';
 import { useLesson } from './LessonContext';
 import { keysOfPoints } from './bankSitting';
 import { allQuestions, answered, forgotten, pace, appreciation, tick, timeUp } from './sitting';
+import { EXAM as L } from './text';
 
-const L = {
-  seat: 'المقعد',
-  read: 'وقت القراءة',
-  readTip: 'اقرأ الموضوع كلّه أوّلًا. اضغط على عدد أو كلمة لتسطّرها بقلم الرصاص.',
-  ready: 'أنهيتُ القراءة: أبدأ',
-  paper: 'اكتب الحلّ كاملًا على ورقتك. هنا تنقل الأجوبة فقط.',
-  sheet: 'ورقة الإجابة',
-  silent: 'بلا موسيقى',
-  here: 'يُفترض أن تكون هنا',
-  flag: 'أعود إليه',
-  lastMinute: 'بقيت دقيقة واحدة: راجع إجابتين.',
-  hand: 'أسلّم ورقتي',
-  sure: 'متأكّد؟ لن تستطيع التعديل بعد التسليم.',
-  yes: 'نعم، أسلّم',
-  no: 'أواصل',
-  sealed: 'سُلّمت الورقة…',
-  back: 'ورقتك المصحَّحة',
-  pick: 'اضغط على سؤال لترى تصحيحه',
-  mine: 'جوابك',
-  none: 'لم تُجب',
-  scheme: 'قارن مع ورقتك: ماذا كتبتَ؟',
-  guide: 'أرشدني',
-  explain: 'اشرح لي',
-  modelCopy: 'التحرير النموذجي',
-  think: 'فكّر معي',
-  redo: 'أعد حلّ هذا السؤال على ورقتك، ثمّ قارن.',
-  notebook: 'دفتر أخطائي',
-  notebookTip: 'اكتب في كرّاسك، بخطّ يدك:',
-  finish: 'أنهيتُ',
-  perfect: 'ورقة كاملة: لا شيء تكتبه في دفتر الأخطاء!',
-  onPaper: 'تُحرَّر على ورقتك فقط: تقارنها بالتحرير النموذجي بعد التسليم.',
-  loading: 'يُحضَّر الموضوع…',
-  failed: 'تعذّر تحضير الموضوع. تحقّق من الاتصال ثمّ أعد المحاولة.',
-  empty: 'لا يوجد بعدُ موضوع لهذه الدرجة.',
-  quit: 'خروج',
-  quitTitle: 'تخرج من الامتحان؟',
-  quitText: 'ورقتك لن تُصحَّح، وهذه المحاولة لا تُحسب: تجد الدرجة نفسها في السلّم بورقة جديدة.',
-  quitYes: 'نعم، أخرج',
-  forgotOne: (name) => `انتبه: لم تكتب شيئًا في ${name}. ها هو أمامك.`,
-  forgotMany: (names) => `انتبه: لم تكتب شيئًا في ${names.join(' ولا في ')}.`,
-};
 /** No text of the sitting is drawn under 12 px, however far a sheet is zoomed down to fit (Fit.jsx › floor). */
 const FLOOR = 12;
 const FAST = () => import.meta.env.DEV && typeof window !== 'undefined' && window.__paperFast;
@@ -120,7 +80,7 @@ function Statement({ e, marks, toggle }) {
   );
 }
 
-/** The number of a step as the exam paper writes it: « 2) », « 2) ب) ». */
+/** The number of a step as the exam paper writes it: « 2) », « 2) a) ». */
 const Num = ({ q }) => (
   <b className="xs-n">
     <span dir="ltr">{Number(q.step) || q.step})</span>
@@ -144,7 +104,7 @@ const Ask = ({ q, marks, toggle }) => (
 const Paper = ({ e, marks, toggle }) => (
   <section className="xs-ex" data-xs-bank={e.bankId}>
     <h3>
-      {e.title} <i dir="ltr">({fmt(e.points)} ن)</i>
+      {e.title} <i>({L.points(fmt(e.points))})</i>
     </h3>
     <Statement e={e} marks={marks} toggle={toggle} />
     <ol>
@@ -179,7 +139,7 @@ function Field({ q, value, onChange }) {
 }
 
 /**
- * The line a fraction box writes under itself (« كسر لا يقبل الاختزال — اترك المقام فارغًا… ») is the same for every fraction
+ * The line a fraction box writes under itself (the irreducible-fraction note of the template) is the same for every fraction
  * answer of a sheet: it is said once per leaf of the answer sheet (ExamSittingLeaves › quiet), not under each box.
  */
 function quietKey(q) {
@@ -224,7 +184,7 @@ export default function ExamSitting(props) {
 /** The sheet waits (loading), could not be prepared (failed), or the level has nothing to sit (empty). */
 function Wait({ state, onQuit }) {
   return (
-    <div className="xs-root" dir="rtl" data-xs={state}>
+    <div className="xs-root" data-xs={state}>
       <div className="xs-wait">
         <p>{state === 'failed' ? L.failed : state === 'empty' ? L.empty : L.loading}</p>
         {state !== 'loading' && (
@@ -300,7 +260,7 @@ function Sitting({ game, subject, onFinish, onQuit, onHandIn }) {
     // ONE copy per sitting, whatever calls it (the button, the clock, a double render)
     if (handed.current) return;
     handed.current = true;
-    // الكفاءات: every answered step is a first and only try, unassisted — sent to the practice engine, whose SERVER reads the
+    // the learning points: every answered step is a first and only try, unassisted — sent to the practice engine, whose SERVER reads the
     // question in the bank and re-computes the verdict (bankEvidence.js)
     onHandIn?.(subject, answersRef.current);
     setPhase('envelope');
@@ -317,7 +277,7 @@ function Sitting({ game, subject, onFinish, onQuit, onHandIn }) {
     if (timeUp(phase, left, handed.current)) handIn();
   }, [phase, left]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  /** « أسلّم ورقتي »: an exercise left completely empty is put on the answer sheet first — ONCE; the next hand-in is accepted. */
+  /** « Je rends ma copie »: an exercise left completely empty is put on the answer sheet first — ONCE; the next hand-in is accepted. */
   const askHand = () => {
     const miss = reminded.current ? [] : forgotten(subject, answersRef.current, page);
     if (miss.length === 0) {
@@ -353,8 +313,7 @@ function Sitting({ game, subject, onFinish, onQuit, onHandIn }) {
       <div>
         <h2>{subject.title}</h2>
         <p>
-          {subject.lesson} · <span dir="ltr">{subject.total}</span> نقاط · <span dir="ltr">{subject.minutes}</span>{' '}
-          دقيقة
+          {subject.lesson} · {L.points(fmt(subject.total))} · {L.minutes(subject.minutes)}
         </p>
       </div>
       {phase === 'read' && (
@@ -392,7 +351,7 @@ function Sitting({ game, subject, onFinish, onQuit, onHandIn }) {
   );
 
   return (
-    <div className="xs-root" dir="rtl" data-xs={phase}>
+    <div className="xs-root" data-xs={phase}>
       {/* the 12 px floor (GAME_WORLD.md « 12 px floor »): each Fit box sets --di-min-font for its own zoom × this one */}
       <div className="xs-fit" style={{ zoom: z, '--di-min-font': `${Math.ceil((FLOOR * 100) / z) / 100}px` }}>
         {head}
@@ -651,7 +610,7 @@ function Sitting({ game, subject, onFinish, onQuit, onHandIn }) {
                             <ol>
                               {keys.map((k) => (
                                 <li key={k}>
-                                  <b>{rules[k].title}:</b> {rules[k].notes.at(-1)}
+                                  <b>{rules[k].title} :</b> {rules[k].notes.at(-1)}
                                 </li>
                               ))}
                             </ol>

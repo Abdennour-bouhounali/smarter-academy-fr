@@ -18,7 +18,7 @@
  *   { levels: [{ name, from }], gates, round(level, random, n) → { ask, tex?, options: [{ t } | { tex }] × 3, right, why: [3] },
  *     total? }
  *
- * `gates` right answers raise the level. WITHOUT `total` the run has no end but the last heart (« سباق الأعداد »); WITH
+ * `gates` right answers raise the level. WITHOUT `total` the run has no end but the last heart (« the number race »); WITH
  * `total` it is a COURSE of that many gates: it ends when the last one is passed (`won: true`) — or with the last heart.
  * What the screen reads is `state.run` (`kit/GateRunHud.jsx` draws it); the world decides what an end means in
  * `onOver(result) → extra fields of the « over » card`.
@@ -141,7 +141,7 @@ export class GateRun {
   extra() {
     return this.o.extra?.() ?? {};
   }
-  /** The rail appears with the robot on it, and the run's card: its rule first, then « أبدأ ». */
+  /** The rail appears with the robot on it, and the run's card: its rule first, then « Je commence ». */
   open(content) {
     const game = this.game;
     this.content = content;
@@ -223,7 +223,7 @@ export class GateRun {
     this.dress(set);
     this.publish();
   }
-  /** « إيقاف مؤقّت »: the run freezes where it is — the gate, the speed, the hearts — until he comes back to it. */
+  /** « Pause »: the run freezes where it is — the gate, the speed, the hearts — until he comes back to it. */
   pause(on = true) {
     const r = this.runner;
     if (!r || r.pause > 0 || Boolean(r.held) === on) return;

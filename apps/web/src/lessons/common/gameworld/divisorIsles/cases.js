@@ -1,5 +1,6 @@
 /**
- * « تعاونية الواحة » — PURE logic of the real-world practice game of « أرخبيل القواسم » (no three.js, no React).
+ * « La coopérative du verger » — PURE logic of the real-world practice game of « L’archipel des diviseurs » (no three.js,
+ * no React).
  *
  * The student runs the packing depot of a cooperative. A MISSION is a short day of ORDERS; an order is a real case solved in
  * one to four STEPS (choose a crate, type a number); after a step the depot packs for real and shows what the choice does:
@@ -11,7 +12,7 @@
  *   cost     two crate sizes, one fits: crates, then the invoice          (exam case)
  *   profit   two trays fit: which packaging earns more?                    (exam case)
  *   trip     trucks: the remainder MEANS one more truck and empty places   (exam case)
- *   share    another world: sweets shared FAIRLY between friends, then with the neighbours so that nothing is left
+ *   share    another world: crêpes shared FAIRLY between friends, then with the neighbours so that nothing is left
  *   tiling   another world: a tiler who cuts no tile and wastes none — the tile, the whole floor, the boxes to buy
  * A step never asks for a number the packing has just SHOWN (the world counted it in front of the student).
  * `judge` is the one place that says whether a step is right and, when it is not, WHY — with the division the choice produces,
@@ -19,6 +20,7 @@
  */
 import { divide } from './logic';
 import { divisionTip, productTip } from '../kit/tips';
+import { counted } from '../kit/authoring/numbers';
 
 const int = (rand, lo, hi) => lo + Math.floor(rand() * (hi - lo + 1));
 const pick = (rand, list) => list[Math.floor(rand() * list.length)];
@@ -31,20 +33,25 @@ const shuffle = (rand, list) => {
   return a;
 };
 
-/** Arabic agreement of a counted noun: forms = [one, two, plural (3–10), singular accusative (11+)]. */
-export const count = (forms, n) =>
-  n === 1 ? forms[0] : n === 2 ? forms[1] : n >= 3 && n <= 10 ? `${n} ${forms[2]}` : `${n} ${forms[3]}`;
-const BOX = ['صندوق واحد', 'صندوقان', 'صناديق', 'صندوقًا'];
-const TRAY = ['طبق واحد', 'طبقان', 'أطباق', 'طبقًا'];
-const TRUCK = ['شاحنة واحدة', 'شاحنتان', 'شاحنات', 'شاحنة'];
-const PLACE = ['مكان واحد', 'مكانان', 'أماكن', 'مكانًا'];
-const KIDS = ['طفل واحد', 'طفلان', 'أطفال', 'طفلًا'];
-const TILE = ['بلاطة واحدة', 'بلاطتان', 'بلاطات', 'بلاطة'];
-const PACK = ['علبة واحدة', 'علبتان', 'علب', 'علبة'];
+/** French agreement of a counted noun: forms = [singular, plural] — « 1 caisse », « 12 caisses » (`counted` of the kit). */
+export const count = (forms, n) => counted(n, forms);
+/** A sum of money, written the French way: « 320 € », « 4 500 € » (narrow no-break space for thousands). */
+const groups = (n, sep) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+const eur = (n) => `${groups(n, ' ')} €`;
+/** A sum inside LaTeX: thousands with a thin space « 4\,500 ». */
+const texNum = (n) => groups(n, '\\,');
+const BOX = ['caisse', 'caisses'];
+const TRAY = ['plateau', 'plateaux'];
+const TRUCK = ['camion', 'camions'];
+const KIDS = ['enfant', 'enfants'];
+const TILE = ['carreau', 'carreaux'];
+const PACK = ['paquet', 'paquets'];
+/** The tiler of the tiling world. */
+const TILER = 'Mme Moreau';
 /** The legend of the equality a = b × q + r in each kind of packing (what q counts). */
 export const simUnit = (q, mode) =>
   mode === 'share'
-    ? `${q} لكلّ واحد`
+    ? `${q} chacun`
     : mode === 'row'
       ? count(TILE, q)
       : mode === 'boxes'
@@ -53,36 +60,43 @@ export const simUnit = (q, mode) =>
 const GOODS = {
   dates: {
     id: 'dates',
-    name: 'علب التمر',
-    unit: ['علبة تمر واحدة', 'علبتا تمر', 'علب تمر', 'علبة تمر'],
-    left: ['علبة واحدة', 'علبتان', 'علب', 'علبة'],
-    color: 0xb5651d,
+    name: 'les boîtes de pommes',
+    unit: ['boîte de pommes', 'boîtes de pommes'],
+    left: ['boîte', 'boîtes'],
+    color: 0xc0392b,
   },
   oil: {
     id: 'oil',
-    name: 'قوارير زيت الزيتون',
-    unit: ['قارورة زيت واحدة', 'قارورتا زيت', 'قوارير زيت', 'قارورة زيت'],
-    left: ['قارورة واحدة', 'قارورتان', 'قوارير', 'قارورة'],
-    color: 0x9aa33a,
+    name: 'les bouteilles de jus de pomme',
+    unit: ['bouteille de jus de pomme', 'bouteilles de jus de pomme'],
+    left: ['bouteille', 'bouteilles'],
+    color: 0xe0a030,
   },
   eggs: {
     id: 'eggs',
-    name: 'البيض',
-    unit: ['بيضة واحدة', 'بيضتان', 'بيضات', 'بيضة'],
-    left: ['بيضة واحدة', 'بيضتان', 'بيضات', 'بيضة'],
+    name: 'les œufs',
+    unit: ['œuf', 'œufs'],
+    left: ['œuf', 'œufs'],
     color: 0xf1dfb8,
   },
-  crates: { id: 'crates', name: 'الصناديق', unit: BOX, left: BOX, color: 0xc79a5b },
+  crates: { id: 'crates', name: 'les caisses', unit: BOX, left: BOX, color: 0xc79a5b },
   sweets: {
     id: 'sweets',
-    name: 'قطع المقروط',
-    unit: ['قطعة مقروط واحدة', 'قطعتا مقروط', 'قطع مقروط', 'قطعة مقروط'],
-    left: ['قطعة واحدة', 'قطعتان', 'قطع', 'قطعة'],
-    color: 0xc8862b,
+    name: 'les crêpes',
+    unit: ['crêpe', 'crêpes'],
+    left: ['crêpe', 'crêpes'],
+    color: 0xe8b34a,
   },
-  tiles: { id: 'tiles', name: 'البلاط', unit: TILE, left: TILE, color: 0xc96f4a },
+  tiles: { id: 'tiles', name: 'le carrelage', unit: TILE, left: TILE, color: 0xc96f4a },
 };
-const CLIENTS = ['مدرسة الحيّ', 'مطعم الجامعة', 'دكّان عمّي صالح', 'مخبزة الواحة', 'سوق الجملة', 'نادي الحيّ'];
+const CLIENTS = [
+  'École du quartier',
+  'Cantine du collège',
+  'Épicerie du village',
+  'Boulangerie de la place',
+  'Marché de gros',
+  'Club de sport',
+];
 export const ORDER_PAY = 1200;
 export const MISTAKE_COST = 300;
 export const CASE_HEARTS = 3;
@@ -111,13 +125,13 @@ const MAKE = {
       b,
       q,
       client: pick(rand, CLIENTS),
-      brief: `طلبت «${'$C'}» ${count(good.unit, n)}. الشاحنة لا تحمل إلا صناديق مملوءة تمامًا، ولا يبقى شيء على الأرض.`,
+      brief: `« ${'$C'} » commande ${count(good.unit, n)}. Le camion ne prend que des caisses bien pleines, et rien ne doit rester par terre.`,
       steps: [
         {
           id: 'crate',
           type: 'choose',
-          prompt: 'أيّ صندوق تختار؟',
-          options: shuffle(rand, [b, ...wrong]).map((v) => ({ v, label: String(v), sub: `يتّسع لـ ${v}` })),
+          prompt: 'Quelle caisse choisis-tu ?',
+          options: shuffle(rand, [b, ...wrong]).map((v) => ({ v, label: String(v), sub: `contient ${v}` })),
         },
       ],
     };
@@ -135,14 +149,14 @@ const MAKE = {
       b,
       q,
       client: pick(rand, CLIENTS),
-      brief: `«${'$C'}» تريد ${count(good.unit, n)} في ${count(BOX, q)} متساوية ومملوءة تمامًا.`,
+      brief: `« ${'$C'} » veut ${count(good.unit, n)} dans ${count(BOX, q)} identiques, bien pleines.`,
       steps: [
         {
           id: 'capacity',
           type: 'number',
           div: [n, q],
-          prompt: 'كم يتّسع الصندوق الواحد؟',
-          tokens: [String(n), '=', { slot: 'x', label: 'سعة الصندوق', w: 2 }, '×', String(q)],
+          prompt: 'Combien contient une caisse ?',
+          tokens: [String(n), '=', { slot: 'x', label: 'contenance', w: 2 }, '×', String(q)],
         },
       ],
     };
@@ -156,11 +170,12 @@ const MAKE = {
       [n - 4, n - 3, n - 2, n + 2, n + 3, n + 4, n + 5].filter((x) => x % b !== 0),
     ).slice(0, 2);
     const good = pick(rand, [GOODS.dates, GOODS.oil]);
+    const what = `le nombre de ${good.left[1]}`;
     const phrase = [
-      `عدد علبها مضاعف للعدد ${b}`,
-      `عدد علبها يقبل القسمة على ${b}`,
-      `العدد ${b} قاسم لعدد علبها`,
-      `العدد ${b} يقسم عدد علبها`,
+      `${what} est un multiple de ${b}`,
+      `${what} est divisible par ${b}`,
+      `${b} est un diviseur du nombre de ${good.left[1]}`,
+      `${b} divise ${what}`,
     ][i % 4];
     return {
       kind: 'orders',
@@ -169,14 +184,14 @@ const MAKE = {
       n,
       b,
       q,
-      client: 'ثلاثة زبائن',
-      brief: `لم يبقَ في المخزن إلا صناديق تتّسع لـ ${b}. ثلاث طلبيّات تنتظر: نقبل الطلبيّة التي ${phrase}.`,
+      client: 'Trois clients',
+      brief: `Il ne reste en stock que des caisses de ${b}. Trois commandes attendent : on accepte celle pour laquelle ${phrase}.`,
       steps: [
         {
           id: 'order',
           type: 'choose',
-          prompt: 'أيّ طلبيّة نوضّبها كاملة؟',
-          options: shuffle(rand, [n, ...others]).map((v) => ({ v, label: String(v), sub: good.left[3] })),
+          prompt: 'Quelle commande prépares-tu en entier ?',
+          options: shuffle(rand, [n, ...others]).map((v) => ({ v, label: String(v), sub: good.left[1] })),
         },
       ],
     };
@@ -193,17 +208,17 @@ const MAKE = {
       good,
       n,
       client: pick(rand, CLIENTS),
-      brief: `طلبيّة عنيدة من «${'$C'}»: ${count(good.unit, n)}. جرّبنا كلّ الصناديق العاديّة وبقي دائمًا شيء على الأرض!`,
+      brief: `Une commande têtue de « ${'$C'} » : ${count(good.unit, n)}. Avec toutes les caisses habituelles, il reste toujours quelque chose par terre !`,
       steps: [
         {
           id: 'two',
           type: 'choose',
           pick: 2,
-          prompt: 'أيّ توضيبين يصلحان بالتأكيد، دون أيّ حساب؟',
+          prompt: 'Quels deux emballages marchent à coup sûr, sans aucun calcul ?',
           options: [1, ...usual, n].map((v) => ({
             v,
             label: String(v),
-            sub: v === 1 ? 'واحدة في كلّ علبة' : v === n ? 'صندوق واحد كبير' : `يتّسع لـ ${v}`,
+            sub: v === 1 ? 'une seule par caisse' : v === n ? 'une seule grande caisse' : `contient ${v}`,
           })),
         },
       ],
@@ -233,35 +248,35 @@ const MAKE = {
       q2,
       price,
       client: pick(rand, CLIENTS),
-      brief: `«${'$C'}» تطلب ${count(good.unit, n)} في صناديق مملوءة تمامًا. في المخزن نوعان: صناديق تتّسع لـ ${b1} وصناديق تتّسع لـ ${b2}. ثمن الصندوق الواحد ${price} دج مهما كان نوعه.`,
+      brief: `« ${'$C'} » commande ${count(good.unit, n)} en caisses bien pleines. En stock, deux modèles : des caisses de ${b1} et des caisses de ${b2}. Une caisse coûte ${eur(price)}, quel que soit le modèle.`,
       steps: [
         {
           id: 'first',
           type: 'number',
           div: [n, b1],
-          prompt: `جرّب الصناديق التي تتّسع لـ ${b1}: أكمل القسمة الإقليدية.`,
+          prompt: `Essaie les caisses de ${b1} : complète la division euclidienne.`,
           tokens: [
             String(n),
             '=',
             String(b1),
             '×',
-            { slot: 'q', label: 'عدد الصناديق', w: 2 },
+            { slot: 'q', label: 'nombre de caisses', w: 2 },
             '+',
-            { slot: 'r', label: 'الباقي', w: 2 },
+            { slot: 'r', label: 'reste', w: 2 },
           ],
         },
         {
           id: 'second',
           type: 'number',
           div: [n, b2],
-          prompt: `والصناديق التي تتّسع لـ ${b2}؟`,
-          tokens: [String(n), '=', String(b2), '×', { slot: 'q', label: 'عدد الصناديق', w: 2 }],
+          prompt: `Et les caisses de ${b2} ?`,
+          tokens: [String(n), '=', String(b2), '×', { slot: 'q', label: 'nombre de caisses', w: 2 }],
         },
         {
           id: 'invoice',
           type: 'number',
-          prompt: 'كم تدفع المدرسة ثمنًا للصناديق؟',
-          tokens: [{ slot: 'x', label: 'المبلغ', w: 5 }, 'دج'],
+          prompt: 'Combien le client paie-t-il pour les caisses ?',
+          tokens: [{ slot: 'x', label: 'montant', w: 5 }, '€'],
         },
       ],
     };
@@ -298,37 +313,37 @@ const MAKE = {
       p1,
       p2,
       best: q1 * p1 > q2 * p2 ? b1 : b2,
-      client: 'سوق الجملة',
-      brief: `جمعت التعاونية ${count(GOODS.eggs.unit, n)}. نبيعها في أطباق من ${b1} بيضة بـ ${p1} دج للطبق، أو في أطباق من ${b2} بيضة بـ ${p2} دج للطبق. أيّ توضيب يربح أكثر؟`,
+      client: 'Marché de gros',
+      brief: `La coopérative a ramassé ${count(GOODS.eggs.unit, n)}. On les vend en plateaux de ${b1} œufs à ${eur(p1)} le plateau, ou en plateaux de ${b2} œufs à ${eur(p2)} le plateau. Quel emballage rapporte le plus ?`,
       steps: [
         {
           id: 'small',
           type: 'number',
           div: [n, b1],
-          prompt: `كم طبقًا من ${b1} بيضة؟`,
-          tokens: [String(n), '=', String(b1), '×', { slot: 'q', label: 'عدد الأطباق', w: 2 }],
+          prompt: `Combien de plateaux de ${b1} œufs ?`,
+          tokens: [String(n), '=', String(b1), '×', { slot: 'q', label: 'nombre de plateaux', w: 2 }],
         },
         {
           id: 'big',
           type: 'number',
           div: [n, b2],
-          prompt: `وكم طبقًا من ${b2} بيضة؟`,
-          tokens: [String(n), '=', String(b2), '×', { slot: 'q', label: 'عدد الأطباق', w: 2 }],
+          prompt: `Et combien de plateaux de ${b2} œufs ?`,
+          tokens: [String(n), '=', String(b2), '×', { slot: 'q', label: 'nombre de plateaux', w: 2 }],
         },
         {
           id: 'best',
           type: 'choose',
-          prompt: 'أيّ توضيب يُدخل مبلغًا أكبر؟',
+          prompt: 'Quel emballage rapporte le plus d’argent ?',
           options: [
-            { v: b1, label: String(b1), sub: `${count(TRAY, q1)} × ${p1} دج` },
-            { v: b2, label: String(b2), sub: `${count(TRAY, q2)} × ${p2} دج` },
+            { v: b1, label: String(b1), sub: `${count(TRAY, q1)} × ${eur(p1)}` },
+            { v: b2, label: String(b2), sub: `${count(TRAY, q2)} × ${eur(p2)}` },
           ],
         },
         {
           id: 'income',
           type: 'number',
-          prompt: 'وكم يُدخل هذا التوضيب؟',
-          tokens: [{ slot: 'x', label: 'المبلغ', w: 5 }, 'دج'],
+          prompt: 'Et combien rapporte cet emballage ?',
+          tokens: [{ slot: 'x', label: 'montant', w: 5 }, '€'],
         },
       ],
     };
@@ -348,32 +363,32 @@ const MAKE = {
       q,
       r,
       price,
-      client: 'ميناء التصدير',
-      brief: `${count(BOX, n)} جاهزة للتصدير. الشاحنة الواحدة تحمل ${count(BOX, b)}، وكراؤها ${price} دج. كلّ الصناديق يجب أن ترحل.`,
+      client: 'Plateforme d’expédition',
+      brief: `${count(BOX, n)} sont prêtes à partir. Un camion transporte ${count(BOX, b)}, et sa location coûte ${eur(price)}. Toutes les caisses doivent partir.`,
       steps: [
         {
           id: 'trucks',
           type: 'number',
           div: [n, b],
-          prompt: 'كم شاحنة نحتاج؟',
-          tokens: [{ slot: 'x', label: 'عدد الشاحنات', w: 2 }],
+          prompt: 'Combien de camions faut-il ?',
+          tokens: [{ slot: 'x', label: 'nombre de camions', w: 2 }],
         },
         {
           id: 'empty',
           type: 'number',
-          prompt: 'كم مكانًا يبقى فارغًا في الشاحنة الأخيرة؟',
-          tokens: [{ slot: 'x', label: 'الأماكن الفارغة', w: 2 }],
+          prompt: 'Combien de places restent vides dans le dernier camion ?',
+          tokens: [{ slot: 'x', label: 'places vides', w: 2 }],
         },
         {
           id: 'rent',
           type: 'number',
-          prompt: 'كم ندفع كراءً للشاحنات؟',
-          tokens: [{ slot: 'x', label: 'المبلغ', w: 5 }, 'دج'],
+          prompt: 'Combien paie-t-on pour louer les camions ?',
+          tokens: [{ slot: 'x', label: 'montant', w: 5 }, '€'],
         },
       ],
     };
   },
-  /** A WORLD of its own — « قعدة الأصدقاء »: sharing sweets FAIRLY (the divisor is the number of children). */
+  /** A WORLD of its own — « Le goûter entre amis »: sharing crêpes FAIRLY (the divisor is the number of children). */
   share(rand, i) {
     const g = int(rand, 5, 8);
     const gq = int(rand, 4 + i, 7 + i * 2);
@@ -389,7 +404,7 @@ const MAKE = {
     if (!b || others.length < 2) return null;
     const d = divide(n, b);
     const good = GOODS.sweets;
-    const host = pick(rand, ['أمين', 'ياسين', 'أنس', 'إلياس']);
+    const host = pick(rand, ['Lucas', 'Inès', 'Hugo', 'Léa']);
     return {
       kind: 'share',
       key: K.baqi,
@@ -402,35 +417,33 @@ const MAKE = {
       gq,
       host,
       client: host,
-      brief: `خبزت أمّ ${host} ${count(good.unit, n)}. ${host} لا يأخذ لنفسه أكثر من غيره: يقسمها بالعدل بينه وبين أصحابه، وهم ${count(KIDS, b)} في المجموع.`,
+      brief: `La famille de ${host} a préparé ${count(good.unit, n)}. ${host} les partage équitablement avec ses amis, sans se servir plus que les autres : ils sont ${count(KIDS, b)} en tout.`,
       steps: [
         {
           id: 'each',
           type: 'number',
           div: [n, b],
-          prompt: 'كم قطعة ينال كلّ واحد؟ وكم قطعة تبقى على الطبق؟',
+          prompt: 'Combien de crêpes pour chacun ? Combien en reste-t-il dans le plat ?',
           tokens: [
             String(n),
             '=',
             String(b),
             '×',
-            { slot: 'q', label: 'نصيب كلّ واحد', w: 2 },
+            { slot: 'q', label: 'part de chacun', w: 2 },
             '+',
-            { slot: 'r', label: 'القطع الباقية', w: 2 },
+            { slot: 'r', label: 'crêpes restantes', w: 2 },
           ],
         },
         {
           id: 'guests',
           type: 'choose',
-          prompt: `${host} كريم: يدعو أبناء الجيران، حتّى تُقسم القطع كلّها بالعدل ولا يبقى شيء. كم طفلًا يكونون في المجموع؟`,
-          options: [g, ...others]
-            .sort((x, y) => x - y)
-            .map((v) => ({ v, label: String(v), sub: v <= 10 ? 'أطفال' : 'طفلًا' })),
+          prompt: `${host} invite aussi des enfants du voisinage, pour que toutes les crêpes soient partagées équitablement, sans reste. Combien d’enfants seront-ils en tout ?`,
+          options: [g, ...others].sort((x, y) => x - y).map((v) => ({ v, label: String(v), sub: 'enfants' })),
         },
       ],
     };
   },
-  /** A WORLD of its own — « ورشة التبليط »: a tiler who does the work properly: no tile cut, no gap, nothing wasted. */
+  /** A WORLD of its own — « Le chantier du carreleur »: a tiler who works properly: no tile cut, no gap, nothing wasted. */
   tiling(rand, i) {
     const s = pick(rand, [20, 25, 30, 40]);
     const q = int(rand, 9 + i, 13 + i * 2);
@@ -462,27 +475,27 @@ const MAKE = {
       br: d.r,
       boxes: d.q + 1,
       spare: box - d.r,
-      client: 'عمّي الطاهر',
-      brief: `عمّي الطاهر بلّاط يحبّ العمل المتقن: لا يقصّ أيّ بلاطة ولا يترك أيّ فراغ. اليوم يبلّط رواقًا طوله ${L} سم.`,
+      client: TILER,
+      brief: `${TILER} est carreleuse et aime le travail soigné : elle ne coupe aucun carreau et ne laisse aucun vide. Aujourd’hui, elle carrelle un couloir de ${L} cm.`,
       steps: [
         {
           id: 'tile',
           type: 'choose',
-          prompt: 'أيّ بلاطة تغطّي طول الرواق كلّه دون أيّ قصّ؟',
-          options: [s, ...wrong].sort((x, y) => x - y).map((v) => ({ v, label: String(v), sub: 'سم' })),
+          prompt: 'Quel carreau couvre toute la longueur du couloir sans aucune coupe ?',
+          options: [s, ...wrong].sort((x, y) => x - y).map((v) => ({ v, label: String(v), sub: 'cm' })),
         },
         {
           id: 'all',
           type: 'number',
-          prompt: `عرض الرواق يتّسع لـ ${rows} صفوف. كم بلاطة يحتاج في المجموع؟`,
-          tokens: [String(rows), '×', String(q), '=', { slot: 'x', label: 'مجموع البلاطات', w: 3 }],
+          prompt: `Le couloir est assez large pour ${rows} rangées. Combien de carreaux lui faut-il en tout ?`,
+          tokens: [String(rows), '×', String(q), '=', { slot: 'x', label: 'total des carreaux', w: 3 }],
         },
         {
           id: 'boxes',
           type: 'number',
           div: [total, box],
-          prompt: `البلاط يُباع في علب من ${box} بلاطة، وعمّي الطاهر لا يشتري أكثر ممّا يلزم. كم علبة يشتري؟`,
-          tokens: [{ slot: 'x', label: 'عدد العلب', w: 2 }],
+          prompt: `Les carreaux sont vendus par paquets de ${box}, et ${TILER} n’achète pas plus que nécessaire. Combien de paquets achète-t-elle ?`,
+          tokens: [{ slot: 'x', label: 'nombre de paquets', w: 2 }],
         },
       ],
     };
@@ -577,44 +590,48 @@ export function facts(o, i) {
   switch (o.kind) {
     case 'fit':
     case 'special':
-      f.push(`الطلبيّة: ${count(U, o.n)}`);
+      f.push(`Commande : ${count(U, o.n)}`);
       break;
     case 'count':
-      f.push(`الطلبيّة: ${count(U, o.n)}`, `المطلوب: ${count(BOX, o.q)} متساوية ومملوءة`);
+      f.push(`Commande : ${count(U, o.n)}`, `Demandé : ${count(BOX, o.q)} identiques et pleines`);
       break;
     case 'orders':
-      f.push(`سعة الصندوق الوحيد: ${o.b}`);
+      f.push(`Contenance de la seule caisse : ${o.b}`);
       break;
     case 'cost':
-      f.push(`الطلبيّة: ${count(U, o.n)}`, `سعة الصناديق: ${o.b1} أو ${o.b2}`, `ثمن الصندوق: ${o.price} دج`);
-      if (done('first')) f.push(`${eq(o.n, o.b1, o.q1, o.r1)}: سعة ${o.b1} لا تصلح`);
-      if (done('second')) f.push(`${eq(o.n, o.b2, o.q2, 0)}: ${count(BOX, o.q2)} بسعة ${o.b2}`);
+      f.push(`Commande : ${count(U, o.n)}`, `Caisses : ${o.b1} ou ${o.b2}`, `Prix d’une caisse : ${eur(o.price)}`);
+      if (done('first')) f.push(`${eq(o.n, o.b1, o.q1, o.r1)} : les caisses de ${o.b1} ne conviennent pas`);
+      if (done('second')) f.push(`${eq(o.n, o.b2, o.q2, 0)} : ${count(BOX, o.q2)} de ${o.b2}`);
       break;
     case 'profit':
-      f.push(`المحصول: ${count(U, o.n)}`, `طبق من ${o.b1}: ${o.p1} دج`, `طبق من ${o.b2}: ${o.p2} دج`);
-      if (done('small')) f.push(`${eq(o.n, o.b1, o.q1, 0)}: ${count(TRAY, o.q1)} من ${o.b1}`);
-      if (done('big')) f.push(`${eq(o.n, o.b2, o.q2, 0)}: ${count(TRAY, o.q2)} من ${o.b2}`);
-      if (done('best')) f.push(`الأربح: أطباق من ${o.best}`);
+      f.push(`Récolte : ${count(U, o.n)}`, `Plateau de ${o.b1} : ${eur(o.p1)}`, `Plateau de ${o.b2} : ${eur(o.p2)}`);
+      if (done('small')) f.push(`${eq(o.n, o.b1, o.q1, 0)} : ${count(TRAY, o.q1)} de ${o.b1}`);
+      if (done('big')) f.push(`${eq(o.n, o.b2, o.q2, 0)} : ${count(TRAY, o.q2)} de ${o.b2}`);
+      if (done('best')) f.push(`Le plus rentable : les plateaux de ${o.best}`);
       break;
     case 'trip':
-      f.push(`للتصدير: ${count(BOX, o.n)}`, `حمولة الشاحنة: ${count(BOX, o.b)}`, `كراء الشاحنة: ${o.price} دج`);
-      if (done('trucks')) f.push(`${eq(o.n, o.b, o.q, o.r)}: ${count(TRUCK, o.q + 1)}`);
-      if (done('empty')) f.push(`الأماكن الفارغة: ${o.b - o.r}`);
+      f.push(
+        `À expédier : ${count(BOX, o.n)}`,
+        `Charge d’un camion : ${count(BOX, o.b)}`,
+        `Location d’un camion : ${eur(o.price)}`,
+      );
+      if (done('trucks')) f.push(`${eq(o.n, o.b, o.q, o.r)} : ${count(TRUCK, o.q + 1)}`);
+      if (done('empty')) f.push(`Places vides : ${o.b - o.r}`);
       break;
     case 'share':
-      f.push(`على الطبق: ${count(U, o.n)}`, `الأطفال: ${o.b}`);
-      if (done('each')) f.push(`${eq(o.n, o.b, o.q, o.r)}: تبقى ${count(o.good.left, o.r)}`);
+      f.push(`Dans le plat : ${count(U, o.n)}`, `Enfants : ${o.b}`);
+      if (done('each')) f.push(`${eq(o.n, o.b, o.q, o.r)} : il reste ${count(o.good.left, o.r)}`);
       break;
     case 'tiling':
-      f.push(`طول الرواق: ${o.L} سم`);
+      f.push(`Longueur du couloir : ${o.L} cm`);
       if (done('tile'))
         f.push(
-          `طول البلاطة: ${o.s} سم`,
-          `${eq(o.L, o.s, o.q, 0)}: ${count(TILE, o.q)} في الصفّ`,
-          `عدد الصفوف: ${o.rows}`,
+          `Longueur d’un carreau : ${o.s} cm`,
+          `${eq(o.L, o.s, o.q, 0)} : ${count(TILE, o.q)} par rangée`,
+          `Rangées : ${o.rows}`,
         );
       if (done('all'))
-        f.push(`المجموع: $${o.rows} \\times ${o.q} = ${o.total}$ بلاطة`, `العلبة: ${count(TILE, o.box)}`);
+        f.push(`Total : $${o.rows} \\times ${o.q} = ${o.total}$ carreaux`, `Un paquet : ${count(TILE, o.box)}`);
       break;
     default:
       break;
@@ -625,6 +642,7 @@ export function facts(o, i) {
 /**
  * An answer as the student GAVE it, to read again later: parts of text, `mine: true` on what he chose or typed.
  * A choice is its option; a typed answer is its whole template with his numbers in place (« 330 = 30 × 11 »).
+ * `rtl` is kept in the shape of a part and is always false now (the interface reads left to right).
  */
 export function answerParts(step, value) {
   if (step.type === 'choose') {
@@ -632,16 +650,14 @@ export function answerParts(step, value) {
     return picked.flatMap((v, i) => {
       const op = step.options.find((x) => x.v === v);
       return [
-        ...(i ? [{ text: 'و', mine: false, rtl: true }] : []),
+        ...(i ? [{ text: 'et', mine: false, rtl: false }] : []),
         { text: op?.label ?? String(v), mine: true },
-        { text: op?.sub ?? '', mine: false, rtl: true },
+        { text: op?.sub ?? '', mine: false, rtl: false },
       ];
     });
   }
   return step.tokens.map((t) =>
-    typeof t === 'string'
-      ? { text: t, mine: false, rtl: t === 'دج' }
-      : { text: String(value?.[t.slot] ?? ''), mine: true },
+    typeof t === 'string' ? { text: t, mine: false, rtl: false } : { text: String(value?.[t.slot] ?? ''), mine: true },
   );
 }
 
@@ -732,9 +748,10 @@ function judgeRaw(o, stepIndex, value) {
   const num = (k) => Number(value?.[k]);
   const bad = (text, sims = []) => ({ ok: false, sims, text });
   const good = (text, sims = []) => ({ ok: true, sims, text });
+  const money = (a, b) => `$${a} \\times ${b} = ${texNum(a * b)}$ €`;
   const leaves = (n, b) => {
     const { q, r } = divide(n, b);
-    return `${eq(n, b, q, r)}: ${r === 1 ? 'تبقى' : 'تبقى'} ${count(L, r)} على الأرض.`;
+    return `${eq(n, b, q, r)} : il reste ${count(L, r)} par terre.`;
   };
   const valid = (...ks) => ks.every((k) => Number.isInteger(num(k)) && num(k) >= 0);
   switch (`${o.kind}.${id}`) {
@@ -742,16 +759,19 @@ function judgeRaw(o, stepIndex, value) {
       const b = value;
       const { q, r } = divide(o.n, b);
       return r === 0
-        ? good(`${eq(o.n, b, q, 0)}: ${count(BOX, q)} مملوءة تمامًا، ولا شيء يبقى.`, [{ n: o.n, b }])
-        : bad(`${leaves(o.n, b)} الصندوق ${b} لا يصلح.`, [{ n: o.n, b }]);
+        ? good(`${eq(o.n, b, q, 0)} : ${count(BOX, q)} bien pleines, et rien ne reste.`, [{ n: o.n, b }])
+        : bad(`${leaves(o.n, b)} La caisse de ${b} ne convient pas.`, [{ n: o.n, b }]);
     }
     case 'count.capacity': {
-      if (!valid('x') || num('x') < 1) return bad('اكتب سعة الصندوق.');
+      if (!valid('x') || num('x') < 1) return bad('Écris la contenance d’une caisse.');
       const x = num('x');
       const { q, r } = divide(o.n, x);
-      if (x === o.b) return good(`${eq(o.n, x, q, 0)}: ${count(BOX, q)} كما طلب الزبون.`, [{ n: o.n, b: x }]);
+      if (x === o.b)
+        return good(`${eq(o.n, x, q, 0)} : ${count(BOX, q)}, comme le client l’a demandé.`, [{ n: o.n, b: x }]);
       return bad(
-        r === 0 ? `بسعة ${x} نملأ ${count(BOX, q)}، والزبون يريد ${count(BOX, o.q)}.` : `بسعة ${x}: ${leaves(o.n, x)}`,
+        r === 0
+          ? `Avec des caisses de ${x}, tu remplis ${count(BOX, q)}, et le client en veut ${o.q}.`
+          : `Avec des caisses de ${x} : ${leaves(o.n, x)}`,
         x <= o.n && q <= 40 ? [{ n: o.n, b: x }] : [],
       );
     }
@@ -759,94 +779,120 @@ function judgeRaw(o, stepIndex, value) {
       const n = value;
       const { q, r } = divide(n, o.b);
       return r === 0
-        ? good(`${eq(n, o.b, q, 0)}: ${n} مضاعف للعدد ${o.b}، و ${o.b} قاسم له.`, [{ n, b: o.b }])
-        : bad(`${leaves(n, o.b)} ${n} ليس مضاعفًا للعدد ${o.b}.`, [{ n, b: o.b }]);
+        ? good(`${eq(n, o.b, q, 0)} : ${n} est un multiple de ${o.b}, et ${o.b} est un diviseur de ${n}.`, [
+            { n, b: o.b },
+          ])
+        : bad(`${leaves(n, o.b)} ${n} n’est pas un multiple de ${o.b}.`, [{ n, b: o.b }]);
     }
     case 'special.two': {
       const picked = [...value].sort((x, y) => x - y);
       const wrong = picked.find((x) => o.n % x !== 0);
-      if (wrong) return bad(`${leaves(o.n, wrong)} الصندوق ${wrong} لا يصلح.`, [{ n: o.n, b: wrong }]);
-      return good(`${eq(o.n, 1, o.n, 0)} و ${eq(o.n, o.n, 1, 0)}: 1 والعدد نفسه قاسمان دائمًا.`, [
-        { n: o.n, b: 1 },
-        { n: o.n, b: o.n },
-      ]);
+      if (wrong) return bad(`${leaves(o.n, wrong)} La caisse de ${wrong} ne convient pas.`, [{ n: o.n, b: wrong }]);
+      return good(
+        `${eq(o.n, 1, o.n, 0)} et ${eq(o.n, o.n, 1, 0)} : 1 et le nombre lui-même sont toujours des diviseurs.`,
+        [
+          { n: o.n, b: 1 },
+          { n: o.n, b: o.n },
+        ],
+      );
     }
     case 'cost.first': {
-      if (!valid('q', 'r')) return bad('اكتب العددين معًا: عدد الصناديق، والباقي.');
+      if (!valid('q', 'r')) return bad('Écris les deux nombres : le nombre de caisses et le reste.');
       const q = num('q');
       const r = num('r');
-      if (o.b1 * q > o.n) return bad(`${count(BOX, q)} بسعة ${o.b1} تحتاج ${o.b1 * q}، والطلبيّة ${o.n} فقط.`);
-      if (o.b1 * q + r !== o.n) return bad(`تحقّق: $${o.b1} \\times ${q} + ${r} = ${o.b1 * q + r}$، والطلبيّة ${o.n}.`);
-      if (r >= o.b1) return bad(`بقي ${r}: ما زال هناك ما يملأ صندوقًا آخر. الباقي يجب أن يكون أصغر من ${o.b1}.`);
-      return good(`${eq(o.n, o.b1, q, r)}: الباقي ${r} ليس معدومًا، فالصناديق التي تتّسع لـ ${o.b1} لا تصلح.`, [
-        { n: o.n, b: o.b1 },
-      ]);
+      if (o.b1 * q > o.n)
+        return bad(`${count(BOX, q)} de ${o.b1}, cela fait ${o.b1 * q}, et la commande n’est que de ${o.n}.`);
+      if (o.b1 * q + r !== o.n)
+        return bad(`Vérifie : $${o.b1} \\times ${q} + ${r} = ${o.b1 * q + r}$, et la commande est de ${o.n}.`);
+      if (r >= o.b1)
+        return bad(`Il reste ${r} : de quoi remplir une autre caisse. Le reste doit être plus petit que ${o.b1}.`);
+      return good(
+        `${eq(o.n, o.b1, q, r)} : le reste ${r} n’est pas nul, donc les caisses de ${o.b1} ne conviennent pas.`,
+        [{ n: o.n, b: o.b1 }],
+      );
     }
     case 'cost.second':
     case 'profit.small':
     case 'profit.big': {
-      if (!valid('q')) return bad('اكتب العدد.');
+      if (!valid('q')) return bad('Écris le nombre.');
       const b = id === 'second' ? o.b2 : id === 'small' ? o.b1 : o.b2;
       const q = num('q');
-      if (b * q !== o.n) return bad(`تحقّق: $${b} \\times ${q} = ${b * q}$، والطلبيّة ${o.n}.`);
-      return good(`${eq(o.n, b, q, 0)}: الباقي 0، إذن ${b} قاسم للعدد ${o.n}.`, [{ n: o.n, b }]);
+      if (b * q !== o.n) return bad(`Vérifie : $${b} \\times ${q} = ${b * q}$, et la commande est de ${o.n}.`);
+      return good(`${eq(o.n, b, q, 0)} : le reste est 0, donc ${b} est un diviseur de ${o.n}.`, [{ n: o.n, b }]);
     }
     case 'cost.invoice': {
-      if (!valid('x')) return bad('اكتب المبلغ.');
+      if (!valid('x')) return bad('Écris le montant.');
       return num('x') === o.q2 * o.price
-        ? good(`$${o.q2} \\times ${o.price} = ${o.q2 * o.price}$ دج.`)
-        : bad(`ليس هذا المبلغ. الفاتورة: عدد الصناديق × ثمن الصندوق، أي $${o.q2} \\times ${o.price}$.`);
+        ? good(`${money(o.q2, o.price)}.`)
+        : bad(
+            `Ce n’est pas ce montant. La facture : nombre de caisses × prix d’une caisse, soit $${o.q2} \\times ${o.price}$.`,
+          );
     }
     case 'profit.best': {
-      const r1 = o.q1 * o.p1;
-      const r2 = o.q2 * o.p2;
       return value === o.best
-        ? good(`$${o.q1} \\times ${o.p1} = ${r1}$ دج و $${o.q2} \\times ${o.p2} = ${r2}$ دج.`)
+        ? good(`${money(o.q1, o.p1)} et ${money(o.q2, o.p2)}.`)
         : bad(
-            `احسب المبلغين: $${o.q1} \\times ${o.p1}$ دج لأطباق ${o.b1}، و $${o.q2} \\times ${o.p2}$ دج لأطباق ${o.b2}، ثمّ قارن.`,
+            `Calcule les deux montants : $${o.q1} \\times ${o.p1}$ pour les plateaux de ${o.b1}, et $${o.q2} \\times ${o.p2}$ pour les plateaux de ${o.b2}, puis compare.`,
           );
     }
     case 'profit.income': {
-      if (!valid('x')) return bad('اكتب المبلغ.');
+      if (!valid('x')) return bad('Écris le montant.');
       const [q, p] = o.best === o.b1 ? [o.q1, o.p1] : [o.q2, o.p2];
       return num('x') === q * p
-        ? good(`$${q} \\times ${p} = ${q * p}$ دج.`)
-        : bad(`ليس هذا المبلغ: عدد الأطباق × ثمن الطبق، أي $${q} \\times ${p}$.`);
+        ? good(`${money(q, p)}.`)
+        : bad(`Ce n’est pas ce montant : nombre de plateaux × prix d’un plateau, soit $${q} \\times ${p}$.`);
     }
     case 'trip.trucks': {
-      if (!valid('x') || num('x') < 1) return bad('اكتب عدد الشاحنات.');
+      if (!valid('x') || num('x') < 1) return bad('Écris le nombre de camions.');
       const x = num('x');
       const sim = [{ n: o.n, b: o.b, mode: 'trucks' }];
       if (x === o.q + 1)
-        return good(`${eq(o.n, o.b, o.q, o.r)}: ${count(TRUCK, o.q)} مملوءة، وشاحنة أخرى للـ ${o.r} الباقية.`, sim);
+        return good(
+          `${eq(o.n, o.b, o.q, o.r)} : ${count(TRUCK, o.q)} pleins, et un camion de plus pour les ${o.r} caisses restantes.`,
+          sim,
+        );
       if (x <= o.q)
         return bad(
-          `${count(TRUCK, x)} تحمل $${o.b} \\times ${x} = ${o.b * x}$ فقط: تبقى ${count(BOX, o.n - o.b * x)} على الرصيف.`,
+          `Avec ${count(TRUCK, x)}, on ne transporte que $${o.b} \\times ${x} = ${o.b * x}$ caisses : il en reste ${o.n - o.b * x} sur le quai.`,
           x === o.q ? sim : [],
         );
-      return bad(`${count(TRUCK, x)} أكثر ممّا يلزم: احسب القسمة الإقليدية للعدد ${o.n} على ${o.b}، ولا تنسَ ما يبقى.`);
+      return bad(
+        `${count(TRUCK, x)}, c’est plus qu’il n’en faut : calcule la division euclidienne de ${o.n} par ${o.b}, sans oublier le reste.`,
+      );
     }
     case 'trip.empty': {
-      if (!valid('x')) return bad('اكتب العدد.');
+      if (!valid('x')) return bad('Écris le nombre.');
       return num('x') === o.b - o.r
-        ? good(`في الشاحنة الأخيرة ${o.r} من ${o.b}: يبقى $${o.b} - ${o.r} = ${o.b - o.r}$ ${PLACE[3]}.`)
-        : bad(`الشاحنة الأخيرة تحمل الباقي فقط، أي ${count(BOX, o.r)} من ${o.b} مكانًا. كم ينقصها لتمتلئ؟`);
+        ? good(
+            `Dans le dernier camion, ${o.r} places sur ${o.b} sont prises : il reste $${o.b} - ${o.r} = ${o.b - o.r}$ places vides.`,
+          )
+        : bad(
+            `Le dernier camion ne transporte que le reste, soit ${count(BOX, o.r)} pour ${o.b} places. Combien lui en manque-t-il pour être plein ?`,
+          );
     }
     case 'trip.rent': {
-      if (!valid('x')) return bad('اكتب المبلغ.');
+      if (!valid('x')) return bad('Écris le montant.');
       return num('x') === (o.q + 1) * o.price
-        ? good(`$${o.q + 1} \\times ${o.price} = ${(o.q + 1) * o.price}$ دج.`)
-        : bad(`ليس هذا المبلغ: ندفع كراء كلّ الشاحنات، أي $${o.q + 1} \\times ${o.price}$.`);
+        ? good(`${money(o.q + 1, o.price)}.`)
+        : bad(
+            `Ce n’est pas ce montant : on paie la location de tous les camions, soit $${o.q + 1} \\times ${o.price}$.`,
+          );
     }
     case 'share.each': {
-      if (!valid('q', 'r')) return bad('اكتب العددين معًا: نصيب كلّ واحد، والقطع الباقية.');
+      if (!valid('q', 'r')) return bad('Écris les deux nombres : la part de chacun et les crêpes restantes.');
       const q = num('q');
       const r = num('r');
-      if (o.b * q > o.n) return bad(`لا تكفي القطع: $${o.b} \\times ${q} = ${o.b * q}$، وعلى الطبق ${o.n} فقط.`);
-      if (o.b * q + r !== o.n) return bad(`تحقّق: $${o.b} \\times ${q} + ${r} = ${o.b * q + r}$، وعلى الطبق ${o.n}.`);
+      if (o.b * q > o.n)
+        return bad(
+          `Il n’y a pas assez de crêpes : $${o.b} \\times ${q} = ${o.b * q}$, et le plat n’en contient que ${o.n}.`,
+        );
+      if (o.b * q + r !== o.n)
+        return bad(`Vérifie : $${o.b} \\times ${q} + ${r} = ${o.b * q + r}$, et le plat contient ${o.n} crêpes.`);
       if (r >= o.b)
-        return bad(`بقيت ${count(L, r)}: يستطيع كلّ واحد أن ينال قطعة أخرى. الباقي يجب أن يكون أصغر من ${o.b}.`);
-      return good(`${eq(o.n, o.b, q, r)}: كلّ واحد ينال ${q}، وتبقى ${count(L, r)} على الطبق.`, [
+        return bad(
+          `Il reste ${count(L, r)} : chacun peut en avoir une de plus. Le reste doit être plus petit que ${o.b}.`,
+        );
+      return good(`${eq(o.n, o.b, q, r)} : chacun en a ${q}, et il reste ${count(L, r)} dans le plat.`, [
         { n: o.n, b: o.b, mode: 'share' },
       ]);
     }
@@ -855,51 +901,60 @@ function judgeRaw(o, stepIndex, value) {
       const { q, r } = divide(o.n, x);
       const sim = [{ n: o.n, b: x, mode: 'share' }];
       return r === 0
-        ? good(`${eq(o.n, x, q, 0)}: كلّ طفل ينال ${q} ولا يبقى شيء. ${x} قاسم للعدد ${o.n}: قسمة عادلة تمامًا.`, sim)
-        : bad(`${eq(o.n, x, q, r)}: تبقى ${count(L, r)} على الطبق. مع ${count(KIDS, x)} لا تكون القسمة تامّة.`, sim);
+        ? good(
+            `${eq(o.n, x, q, 0)} : chaque enfant en a ${q}, et il ne reste rien. ${x} est un diviseur de ${o.n} : le partage est parfaitement équitable.`,
+            sim,
+          )
+        : bad(
+            `${eq(o.n, x, q, r)} : il reste ${count(L, r)} dans le plat. Avec ${count(KIDS, x)}, le partage ne tombe pas juste.`,
+            sim,
+          );
     }
     case 'share.fair': {
-      if (!valid('q')) return bad('اكتب نصيب كلّ واحد.');
+      if (!valid('q')) return bad('Écris la part de chacun.');
       return num('q') === o.gq
-        ? good(`${eq(o.n, o.g, o.gq, 0)}: الجميع ينالون النصيب نفسه.`)
-        : bad(`تحقّق: $${o.g} \\times ${num('q')} = ${o.g * num('q')}$، وعلى الطبق ${o.n}.`);
+        ? good(`${eq(o.n, o.g, o.gq, 0)} : tout le monde a la même part.`)
+        : bad(`Vérifie : $${o.g} \\times ${num('q')} = ${o.g * num('q')}$, et le plat contient ${o.n} crêpes.`);
     }
     case 'tiling.tile': {
       const x = value;
       const { q, r } = divide(o.L, x);
       const sim = [{ n: o.L, b: x, mode: 'row' }];
       return r === 0
-        ? good(`${eq(o.L, x, q, 0)}: ${count(TILE, q)} كاملة تغطّي الرواق، دون أيّ قصّ.`, sim)
-        : bad(`${eq(o.L, x, q, r)}: تبقى ${r} سم في آخر الرواق. يجب قصّ بلاطة، وهذا ليس عملًا متقنًا.`, sim);
+        ? good(`${eq(o.L, x, q, 0)} : ${count(TILE, q)} entiers couvrent le couloir, sans aucune coupe.`, sim)
+        : bad(
+            `${eq(o.L, x, q, r)} : il reste ${r} cm au bout du couloir. Il faudrait couper un carreau : ce n’est pas du travail soigné.`,
+            sim,
+          );
     }
     case 'tiling.perRow': {
-      if (!valid('q')) return bad('اكتب عدد البلاطات.');
+      if (!valid('q')) return bad('Écris le nombre de carreaux.');
       return num('q') === o.q
-        ? good(`${eq(o.L, o.s, o.q, 0)}: ${count(TILE, o.q)} في الصفّ.`)
-        : bad(`تحقّق: $${o.s} \\times ${num('q')} = ${o.s * num('q')}$ سم، وطول الرواق ${o.L} سم.`);
+        ? good(`${eq(o.L, o.s, o.q, 0)} : ${count(TILE, o.q)} par rangée.`)
+        : bad(`Vérifie : $${o.s} \\times ${num('q')} = ${o.s * num('q')}$ cm, et le couloir mesure ${o.L} cm.`);
     }
     case 'tiling.all': {
-      if (!valid('x')) return bad('اكتب مجموع البلاطات.');
+      if (!valid('x')) return bad('Écris le total des carreaux.');
       return num('x') === o.total
-        ? good(`$${o.rows} \\times ${o.q} = ${o.total}$: يحتاج ${count(TILE, o.total)}.`)
-        : bad(`ليس هذا العدد: عدد الصفوف × بلاطات الصفّ الواحد، أي $${o.rows} \\times ${o.q}$.`);
+        ? good(`$${o.rows} \\times ${o.q} = ${o.total}$ : il lui faut ${count(TILE, o.total)}.`)
+        : bad(`Ce n’est pas ce nombre : nombre de rangées × carreaux d’une rangée, soit $${o.rows} \\times ${o.q}$.`);
     }
     case 'tiling.boxes': {
-      if (!valid('x') || num('x') < 1) return bad('اكتب عدد العلب.');
+      if (!valid('x') || num('x') < 1) return bad('Écris le nombre de paquets.');
       const x = num('x');
       const sim = [{ n: o.total, b: o.box, mode: 'boxes' }];
       if (x === o.boxes)
         return good(
-          `${eq(o.total, o.box, o.bq, o.br)}: ${count(PACK, o.bq)} لا تكفي، فيشتري ${o.boxes}. تبقى ${count(TILE, o.spare)}: يحتفظ بها للتصليح، فلا تبذير.`,
+          `${eq(o.total, o.box, o.bq, o.br)} : ${count(PACK, o.bq)} ne suffisent pas, donc elle en achète ${o.boxes}. Il reste ${count(TILE, o.spare)} : elle les garde pour les réparations, rien n’est gaspillé.`,
           sim,
         );
       if (x <= o.bq)
         return bad(
-          `${count(PACK, x)} فيها $${o.box} \\times ${x} = ${o.box * x}$ بلاطة فقط: تنقصه ${count(TILE, o.total - o.box * x)}.`,
+          `${count(PACK, x)}, cela fait seulement $${o.box} \\times ${x} = ${o.box * x}$ carreaux : il lui manque ${count(TILE, o.total - o.box * x)}.`,
           x === o.bq ? sim : [],
         );
       return bad(
-        `${count(PACK, x)} أكثر ممّا يلزم، وعمّي الطاهر لا يبذّر. احسب القسمة الإقليدية للعدد ${o.total} على ${o.box}، ولا تنسَ ما يبقى.`,
+        `${count(PACK, x)}, c’est plus qu’il n’en faut, et ${TILER} ne gaspille pas. Calcule la division euclidienne de ${o.total} par ${o.box}, sans oublier le reste.`,
       );
     }
     default:

@@ -1,5 +1,5 @@
 /**
- * « عُدّة الانطلاق » — the three GESTURES of an answer. The answer is an action, never a quiz button:
+ * « L’échauffement » — the three GESTURES of an answer. The answer is an action, never a quiz button:
  *   Write  the value in its own shape, typed on the game's keypad (no system keyboard on a tablet);
  *   Sort   each card DRAGGED into one of two boxes (owner, 2026-11-17; a tap on a box does the same, for a keyboard), and taken
  *          back by a tap as long as the answer is not handed in;
@@ -121,7 +121,7 @@ export function Write({ q, value, onChange, locked, play }) {
           className="lk-keys__back"
           onClick={() => press('back')}
           disabled={locked}
-          aria-label="امسح"
+          aria-label="Effacer"
           data-lk-key="back"
         >
           <Delete size={24} />
@@ -132,13 +132,14 @@ export function Write({ q, value, onChange, locked, play }) {
 }
 
 /**
- * A card shows a number or an equality (left-to-right), or a sentence in Arabic (`say`: right-to-left, smaller). A
- * sentence that carries a LIST (`card.list`, « قواسم 54: 1 ، 2 ، … ») is smaller again (`data-lk-list`): two lines at most,
- * broken after a comma, for the longest list a family draws (LAUNCH_KIT.md).
+ * A card shows a number or an equality, or a sentence in French (`say`: smaller). A sentence that carries a LIST
+ * (`card.list`, « Diviseurs de 54 : 1, 2, 3, 6, 9, 18, 27 et 54 », written by `listFr` of the kit's
+ * `authoring/numbers.js`) is smaller again (`data-lk-list`): two lines at most, for the longest list a family draws
+ * (LAUNCH_KIT.md).
  */
 const CardText = ({ card }) =>
   card.say ? (
-    <span dir="rtl" className="lk-say" data-lk-list={Array.isArray(card.list) ? '' : undefined}>
+    <span className="lk-say" data-lk-list={Array.isArray(card.list) ? '' : undefined}>
       {card.text}
     </span>
   ) : card.text.startsWith('$') ? (
@@ -224,7 +225,7 @@ export function Sort({ q, value, onChange, locked, play }) {
               className="lk-chip"
               onClick={() => back(c.id)}
               disabled={locked}
-              title="أعد البطاقة"
+              title="Reprends la carte"
               data-lk-placed={c.id}
             >
               <CardText card={c} />
@@ -260,14 +261,16 @@ export function Sort({ q, value, onChange, locked, play }) {
             <CardText card={next} />
           </div>
         ) : (
-          <div className="lk-card lk-card--none">{locked ? '' : 'كلّ البطاقات في صناديقها. اضغط بطاقة لتعيدها.'}</div>
+          <div className="lk-card lk-card--none">
+            {locked ? '' : 'Toutes les cartes sont dans leurs boîtes. Touche une carte pour la reprendre.'}
+          </div>
         )}
         <div className="lk-pile" aria-hidden="true">
           {Array.from({ length: Math.max(0, left - 1) }, (_, i) => (
             <i key={i} />
           ))}
         </div>
-        {next && !locked && <p className="lk-hand__tip">اسحب البطاقة إلى صندوقها ⇄</p>}
+        {next && !locked && <p className="lk-hand__tip">Glisse la carte dans sa boîte ⇄</p>}
       </div>
       {box(q.bins[1])}
     </div>
@@ -361,7 +364,7 @@ export function Place({ q, value, onChange, locked, play }) {
           style={{ transform: `translateX(${px(x)}px)` }}
           tabIndex={0}
           role="slider"
-          aria-label="موضع الراية"
+          aria-label="Position du drapeau"
           aria-valuenow={x}
           aria-valuemin={0}
           aria-valuemax={q.max}

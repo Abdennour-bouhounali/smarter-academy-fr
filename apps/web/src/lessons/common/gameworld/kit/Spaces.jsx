@@ -1,9 +1,9 @@
 /**
  * The student's road, on screen (logic: journey.js, 2026-11-16). These screens name no lesson: its levels, its road, its
  * rules and the cards that train them come from `useLesson()`.
- *   ExamLadder    « فضاء الامتحان » — the five levels of exam sittings, as rising steps; the next sheet is adapted to him;
+ *   ExamLadder    « Espace brevet » — the five levels of exam sittings, as rising steps; the next sheet is adapted to him;
  *   Promotion     the moment BETWEEN two levels: stars, confetti, sound — the game returns here, never inside the sitting;
- *   ProgressPage  « تقدّمي » — the road of the lesson, the four الكفاءات, an honest exam readiness, and the ONE next thing.
+ *   ProgressPage  « Ma progression » — the road of the lesson, the four learning points, an honest exam readiness, and the ONE next thing.
  */
 import { useEffect, useState } from 'react';
 import {
@@ -18,7 +18,7 @@ import {
   Compass,
   Award,
   Check,
-  ArrowLeft,
+  ArrowRight,
   Gamepad2,
 } from 'lucide-react';
 import Fit, { cardRoom } from './Fit';
@@ -29,7 +29,7 @@ import { KT, TX } from './text';
 
 const fmt = (n) => String(n).replace('.', ',');
 /** A rung whose level has no sheet to sit yet (`sittings.available`): said, never a dead button. */
-const NO_SHEET = 'لا توجد بعدُ ورقة امتحان لهذه الدرجة';
+const NO_SHEET = TX.spaces.noSheet;
 const Stars = ({ n, size = 18 }) => (
   <span className="di-stars3" dir="ltr">
     {[1, 2, 3].map((i) => (
@@ -214,7 +214,7 @@ export function Promotion({ o, game }) {
   );
 }
 
-/** « تقدّمي »: one full page — the road, the readiness, the الكفاءات of the lesson, the next thing. `mastery` = the platform's status per learning point, when known. */
+/** « Ma progression »: one full page — the road, the readiness, the learning points of the lesson, the next thing. `mastery` = the platform's status per learning point, when known. */
 export function ProgressPage({ s, game, mastery = null, lessonId, lessonTitle }) {
   const { journey, rules, cards, evidence } = useLesson();
   const [z, setZ] = useState(1);
@@ -280,11 +280,11 @@ export function ProgressPage({ s, game, mastery = null, lessonId, lessonTitle })
                 transform="rotate(-90 60 60)"
               />
             </svg>
-            <b dir="ltr">{p.readiness}%</b>
+            <b dir="ltr">{p.readiness} %</b>
             <h3>{P.readiness}</h3>
             <p>{P.readinessTip}</p>
             <button type="button" className="di-btn di-btn--primary" onClick={go} data-di-next-step={step.do}>
-              <ArrowLeft size={17} /> {P.next} {label}
+              {P.next} {label} <ArrowRight size={17} />
             </button>
           </section>
           <section className={`di-ptable ${mastery ? 'di-ptable--server' : ''}`}>

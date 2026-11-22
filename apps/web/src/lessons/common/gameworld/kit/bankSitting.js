@@ -1,5 +1,5 @@
 /**
- * « الامتحان الأبيض » served FROM THE LESSON'S EXERCISE BANK, AS IT IS (owner, 2026-11-18: « you will use the exercises
+ * The « brevet blanc » served FROM THE LESSON'S EXERCISE BANK, AS IT IS (owner, 2026-11-18: « you will use the exercises
  * bank as it is »). It names no lesson: a lesson gives its code, and its sheets are the ones its practice space serves —
  * `content/practice/<grade>/<lesson>/level-N/*.json`, read through the practice space's own loader
  * (`features/practice/practiceContent.js`), never copied, never rewritten, never generated.
@@ -7,12 +7,13 @@
  * A level of the sitting is a level of the bank: level N serves `sheets` exam sheets drawn from the bank's level N. What a
  * sheet says is the bank's: its statement (content, formulas, table), its steps in order, its answer types, its points
  * (`metadata.exam.points`), its time (`metadata.estimatedMinutes`), its model solution and its hints. Two things are done
- * AT DISPLAY, never in the bank: « DA » is written « دج » (platform rule), and nothing of `metadata.source` is shown; and a
- * « PGCD(a ; b) » written in the words is drawn as the formula it is (`namesAsMath`).
+ * AT DISPLAY, never in the bank: nothing of `metadata.source` is shown, and a « PGCD(a ; b) » written in the words is drawn
+ * as the formula it is (`namesAsMath`). Money is the bank's own, in euros, written as the bank writes it (the Algerian
+ * rewrite of « DA » was removed with the dinar, 2026-11-22).
  *
  *   mark      the evaluator of the practice space (`@smarter-academy/core/practice › evaluateAnswer`): correct or
  *             equivalent → the points of the step; partially correct → half; anything else → 0. The SERVER judges again.
- *   points    a sheet's points are shared between its typed steps in quarter points; a « بيّن أن » step (`selfCheck`) is
+ *   points    a sheet's points are shared between its typed steps in quarter points; a « Montrer que » step (`selfCheck`) is
  *             written on the paper only: no box, no points, its model copy comes back with the copy.
  *   evidence  `sheetOf` — what goes to the practice engine (POST /practice/sessions…): the exercise and question ids and
  *             the raw answers; the server reads the question in the content and re-computes the verdict (bankEvidence.js).
@@ -21,26 +22,33 @@
  */
 import * as practice from '@smarter-academy/core/practice/index.js';
 import { shuffle } from './random';
+import { BANK } from './text';
 
 const { evaluateAnswer, isSuccessOutcome, OUTCOMES } = practice;
 
-/** The five levels of « فضاء الامتحان » — the bank's five levels, with the names the practice space gives them. */
+/**
+ * The five levels of the « Espace brevet » — the bank's five levels, with the names the practice space gives them
+ * (`text.js › BANK.levels`). How many sheets a level serves is the Algerian ladder's (1, 2, 2, 2, 1): the French bank's
+ * contract (plan §5, 2G) settles it against the brevet's two parts.
+ */
 export const BANK_LEVELS = [
-  { n: 1, title: 'أستعيد الأساسيات', sheets: 1 },
-  { n: 2, title: 'أوظّف', sheets: 2 },
-  { n: 3, title: 'أتدرّب', sheets: 2 },
-  { n: 4, title: 'أتعمّق', sheets: 2 },
-  { n: 5, title: 'الوضعيّة الإدماجيّة', sheets: 1 },
+  { n: 1, title: BANK.levels[0], sheets: 1 },
+  { n: 2, title: BANK.levels[1], sheets: 2 },
+  { n: 3, title: BANK.levels[2], sheets: 2 },
+  { n: 4, title: BANK.levels[3], sheets: 2 },
+  { n: 5, title: BANK.levels[4], sheets: 1 },
 ];
 
-const ORDINAL = ['الأوّل', 'الثاني', 'الثالث', 'الرابع'];
-const ARABIC = /[\u0600-\u06FF]/;
+/** A result of the bank that is WORDS (« oui », « Le pont tient »), not a formula: a word of three letters or more, not a LaTeX command. */
+const WORDS = /(?<![\\A-Za-zÀ-ÿ])[A-Za-zÀ-ÿ]{3,}/;
+/** A sheet the bank heads as the problem of the subject (the brevet's part 2): « Problème ». */
+const PROBLEM = /probl[eè]me/i;
 const EX = 'ex:';
-/** The الكفاءة a step proves: its primary learning point (else its first). */
+/** The savoir-faire a step proves: its primary learning point (else its first). */
 const pointOf = (q) => q.learningPoints?.find((p) => p.role === 'primary')?.code ?? q.learningPoints?.[0]?.code ?? null;
 
 /**
- * The answer types a sitting draws (ChoiceInput, TemplateInput, IntegerSetInput; a « بيّن أن » on paper). A sheet with another
+ * The answer types a sitting draws (ChoiceInput, TemplateInput, IntegerSetInput; a « Montrer que » on paper). A sheet with another
  * (`multiChoice`, `affine`, `interval`, `point`) is not drawn in a sitting — it stays in « /espace/pratique », whose player
  * draws every type. None in the six v2 banks of 2026-11-18 (`docs/reports/BANK_AS_IS_2026-11-18.md`).
  */
@@ -64,64 +72,10 @@ export function shareQuarters(total, n) {
 }
 
 /**
- * Money is « دج », never « DA » (platform rule) — applied at DISPLAY to the bank's text, to MONEY only: « DA » becomes « دج »
- * where it follows an amount, never where it is a name (the segment `$AB + DA = 7$` stays as it is). Money is:
- *   in a formula   `\text{ DA}`, or DA glued to a number (`1040DA`, `11225\,DA`) — at the end of the formula it leaves it
- *                  (`$2300$ دج`), inside it becomes `\text{ دج}`;
- *   in the words   DA after a number (« 900DA », « 900 DA »), DA right after a formula that ends on a number (`$1500$DA`),
- *                  « (DA) », « بالـ DA », « بالدينار DA » — and never when a Latin letter follows (« DAB » is a name).
- * The amount before « DA » in the words loses its thousands spaces (« 211 500DA » → « 211500 دج »: the platform writes no
- * thousands space, which the bidi algorithm reverses) — only groups of exactly three digits after a first group of one to three.
- */
-const SPACE = '[ \\u00a0\\u202f]';
-const LATEX_GAP = String.raw`(?:\s|\\[,;:! ]|~)*`;
-const MATH_END_TEXT = new RegExp(String.raw`${LATEX_GAP}\\(?:text|mathrm)\{\s*DA\s*\}${LATEX_GAP}$`);
-const MATH_END_NUM = new RegExp(String.raw`(\d)${LATEX_GAP}DA${LATEX_GAP}$`);
-const MATH_TEXT = /\\(?:text|mathrm)\{\s*DA\s*\}/g;
-const MATH_NUM = new RegExp(String.raw`(\d)${LATEX_GAP}DA(?![A-Za-z])`, 'g');
-const WORDS_AMOUNT = new RegExp(`(?<![\\d])(\\d{1,3}(?:${SPACE}\\d{3})+|\\d+)${SPACE}*DA(?![A-Za-z])`, 'g');
-const WORDS_LEAD = new RegExp(`^${SPACE}*DA(?![A-Za-z])`);
-const WORDS_PAREN = /\(\s*DA\s*\)/g;
-const WORDS_UNIT = /(بال(?:ـ|دينار)\s*)DA(?![A-Za-z])/g;
-const DJ = 'دج';
-
-export function cashDj(text) {
-  if (typeof text !== 'string' || !/DA/.test(text)) return text;
-  const parts = text.split(/(\$[^$]*\$)/);
-  let afterAmount = false; // the formula just before ended on a number: a « DA » that opens the words is its unit
-  return parts
-    .map((part, i) => {
-      if (i % 2 === 1) {
-        let body = part.slice(1, -1);
-        let unit = '';
-        if (MATH_END_TEXT.test(body)) {
-          body = body.replace(MATH_END_TEXT, '');
-          unit = ` ${DJ}`;
-        } else if (MATH_END_NUM.test(body)) {
-          body = body.replace(MATH_END_NUM, '$1');
-          unit = ` ${DJ}`;
-        }
-        body = body.replace(MATH_TEXT, `\\text{ ${DJ}}`).replace(MATH_NUM, `$1\\text{ ${DJ}}`);
-        afterAmount = !unit && /\d\s*$/.test(body);
-        return `$${body}$${unit}`;
-      }
-      let words = part;
-      if (afterAmount) words = words.replace(WORDS_LEAD, ` ${DJ}`);
-      afterAmount = false;
-      return words
-        .replace(WORDS_AMOUNT, (_, amount) => `${amount.replace(/[   ]/g, '')} ${DJ}`)
-        .replace(WORDS_PAREN, `(${DJ})`)
-        .replace(WORDS_UNIT, `$1${DJ}`);
-    })
-    .join('');
-}
-
-/**
- * « PGCD(a ; b) » (or « PPCM(a ; b) ») written in the WORDS of a bank line — Latin letters, brackets and numbers inside an
- * Arabic sentence, which the bidi algorithm scrambles on screen (« هو PGCD(252 ; 36 = (180. »; 2026-11-19, the bank of
- * the PGCD lesson of 4AM writes it so 108 times) — is drawn AT DISPLAY as the formula it is, with the « = n » that follows
- * it: it reads left to right. Inside a formula the name gets upright letters (`\mathrm`), not KaTeX's italic P·G·C·D.
- * Display only, like `cashDj`: the bank's file is not changed, the mark reads the bank's own step.
+ * « PGCD(a ; b) » (or « PPCM(a ; b) ») written in the WORDS of a bank line (« donc PGCD(252 ; 180) = 36 ») is drawn AT DISPLAY as the
+ * formula it is, with the « = n » that follows it, so it is set as mathematics, never as a word. Inside a formula the name
+ * gets upright letters (`\mathrm`), not KaTeX's italic P·G·C·D. Display only: the bank's file is not changed, the mark
+ * reads the bank's own step.
  */
 const NAMED_IN_WORDS = /(?<![A-Za-z\\])(PGCD|PPCM)\s*\(([^()$]*)\)((?:\s*=\s*\d+)?)/g;
 const NAMED_IN_MATH = /(?<![A-Za-z\\{])(PGCD|PPCM)(?![A-Za-z])/g;
@@ -139,25 +93,25 @@ export function namesAsMath(text) {
     )
     .join('');
 }
-/** A string of the bank as the sitting SHOWS it: its money in « دج », its PGCD drawn. */
-const shown = (text) => namesAsMath(cashDj(text));
+/** A string of the bank as the sitting SHOWS it: its PGCD drawn. */
+const shown = (text) => namesAsMath(text);
 
-/** A formula of the bank's `result` (LaTeX without dollars), as a line of MathText: with dollars unless it is Arabic. */
+/** A formula of the bank's `result` (LaTeX without dollars), as a line of MathText: with dollars unless it is words. */
 function resultLine(result) {
   if (!result) return null;
-  if (ARABIC.test(result) && !/\\text\{/.test(result)) return shown(result);
+  if (WORDS.test(result) && !/\\text\{/.test(result)) return shown(result);
   return shown(`$${result}$`);
 }
 
 /**
  * The step of the bank as the practice WIDGETS draw it (ChoiceInput, TemplateInput, IntegerSetInput): its words through
- * `cashDj`. Display only — the mark and the copy sent to the server read the bank's own step (`q.bank`).
+ * `shown`. Display only — the mark and the copy sent to the server read the bank's own step (`q.bank`).
  */
 const shownOf = (q) => ({
   ...q,
   statement: shown(q.statement),
   lead: shown(q.lead),
-  answerFormat: cashDj(q.answerFormat),
+  answerFormat: q.answerFormat,
   ...(q.choices ? { choices: q.choices.map((c) => ({ ...c, content: shown(c.content) })) } : {}),
 });
 
@@ -173,7 +127,7 @@ function fromBank(ex, i, keyOf = {}) {
   return {
     id,
     bankId: ex.id,
-    title: /الوضعي/.test(heading) ? 'الوضعيّة الإدماجيّة' : `التمرين ${ORDINAL[i] ?? i + 1}`,
+    title: PROBLEM.test(heading) ? BANK.problem : BANK.exercise(i + 1),
     topic: namesAsMath(ex.metadata?.title ?? ''),
     points,
     minutes: ex.metadata?.estimatedMinutes ?? 5,
@@ -238,20 +192,20 @@ function markBank(q, v) {
 const modelOf = (q) =>
   [...(q.bank.solution?.lines ?? []).map(shown), resultLine(q.bank.solution?.result)].filter(Boolean);
 
-/** « أرشدني »: the bank's hints, in their order — they never give the answer. */
+/** « Guide-moi »: the bank's hints, in their order — they never give the answer. */
 const guideOf = (q) => (q.bank.hints ?? []).map((h) => shown(h.content));
 
 /** What the corrector looks for ON THE PAPER, by the shape of the step. */
 function schemeOf(q) {
   switch (q.answerType) {
     case 'selfCheck':
-      return ['حرّرتُ الجواب كاملًا على ورقتي', 'قارنتُه بالتحرير النموذجي سطرًا سطرًا'];
+      return BANK.scheme.selfCheck;
     case 'choice':
-      return ['برّرتُ اختياري على ورقتي', 'كتبتُ جملة الجواب كاملة'];
+      return BANK.scheme.choice;
     case 'integerSet':
-      return ['لم أنسَ أيّ عنصر', 'لم أكتب عنصرًا زائدًا', 'كتبتُ الطريقة على ورقتي'];
+      return BANK.scheme.integerSet;
     default:
-      return ['كتبتُ العمليّة قبل النتيجة', 'كتبتُ النتيجة في الشكل المطلوب'];
+      return BANK.scheme.value;
   }
 }
 
@@ -352,7 +306,7 @@ export function createBankSittings({ lesson, levels = BANK_LEVELS, load = loadFr
    * passes. ADAPTED to the student:
    *   weak  what the last miss of this level left — rule keys, and `ex:<id>` for the sheets that lost points: the sheets
    *         that ask those keys come FIRST, the sheets already missed are left out while the level has others.
-   * `keyOf` maps a الكفاءة code to the rule key of the lesson (its notebook, its « أرشدني », its cards).
+   * `keyOf` maps a savoir-faire code to the rule key of the lesson (its notebook, its « Guide-moi », its cards).
    * DEV only: `localStorage['di.dev.sheet']` naming a sheet of this level puts that sheet first (a walk chooses its sheet).
    */
   function makeSubject(rand, level = levels.length - 1, weak = [], keyOf = {}) {
@@ -372,7 +326,7 @@ export function createBankSittings({ lesson, levels = BANK_LEVELS, load = loadFr
       level: L.n,
       minutes: exercises.reduce((t, e) => t + e.minutes, 0),
       total,
-      title: `امتحان أبيض — الدرجة ${L.n}`,
+      title: BANK.title(L.n),
       lesson: L.title,
       exercises,
     };
@@ -411,7 +365,7 @@ export function createBankSittings({ lesson, levels = BANK_LEVELS, load = loadFr
     return { lesson, level: subject.level, sessionId: id(), items, exercises: subject.exercises.map((e) => e.bankId) };
   }
 
-  /** Per rule key, the steps of this copy that count (right or not) — the tally of « تقدّمي ». */
+  /** Per rule key, the steps of this copy that count (right or not) — the tally of « Ma progression ». */
   const tallyOf = (subject, answers) =>
     questions(subject)
       .filter((q) => q.key && q.counted && answeredBank(q, answers[q.id]))
@@ -440,7 +394,7 @@ export function createBankSittings({ lesson, levels = BANK_LEVELS, load = loadFr
   };
 }
 
-/** The rule key of each الكفاءة code of a lesson, from its pack (`keys` and `evidence.learningPointOf`). */
+/** The rule key of each savoir-faire code of a lesson, from its pack (`keys` and `evidence.learningPointOf`). */
 export const keysOfPoints = (lessonCode, { keys = [], evidence } = {}) =>
   Object.fromEntries(
     keys.map((k) => [evidence?.learningPointOf?.(lessonCode, k), k]).filter(([code]) => Boolean(code)),

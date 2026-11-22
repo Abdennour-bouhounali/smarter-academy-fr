@@ -1,5 +1,5 @@
 /**
- * MODE CLASSE — « وضع القسم ».
+ * MODE CLASSE — « Mode classe ».
  *
  *   <ClassroomPresentation scope="manipulation" title="…" entry="none">
  *     … votre contenu, qui peut poser <ClassroomEntryButton /> où il veut

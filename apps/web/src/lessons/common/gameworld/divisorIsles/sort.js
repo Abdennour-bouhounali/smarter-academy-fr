@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `sort` — PURE logic (screen: `InquirySort.jsx`; contract: GAME_WORLD.md « استكشف », « spec shape of
+ * THE INVESTIGATION `sort` — PURE logic (screen: `InquirySort.jsx`; contract: GAME_WORLD.md « Explore », « spec shape of
  * `sort` »). Its rule is a CLASSIFICATION: a hand of cards — one pair of gaps (a ; b) each, or one fraction a/b read as
  * two gaps, the numerator above the denominator — sorted into two baskets: the pairs whose only common plank is 1
  * (`one`) and the pairs that share a longer plank (`more`).

@@ -38,9 +38,9 @@ function ToolbarButton({ onClick, disabled, children, tone = 'slate', ariaLabel,
  * bandeau flottant : elle réserve sa hauteur, le contenu ne passe jamais
  * dessous.
  *
- *   [🎓 وضع القسم · titre]                        [−  حجم العرض 110٪  +]
+ *   [🎓 Mode classe · titre]                [−  Taille de l’affichage 110 %  +]
  *
- * LA SORTIE N'EST PAS ICI. « خروج » vit au BAS de l'écran, sous « التالي »,
+ * LA SORTIE N'EST PAS ICI. « Quitter » vit au BAS de l'écran, sous « Suivant »,
  * dans la barre de navigation (ClassroomNav) : la main de l'enseignant y est
  * déjà pour avancer, et rien ne l'oblige à remonter en haut de l'écran
  * devant une classe. Échap reste le raccourci clavier.
@@ -53,9 +53,9 @@ const ClassroomToolbar = forwardRef(function ClassroomToolbar({ title, scope, sc
   const { t } = useTranslation('lesson');
   const atMin = scale <= SCALE_STEPS[0];
   const atMax = scale >= SCALE_STEPS[SCALE_STEPS.length - 1];
-  // Le badge dit CE QU'ON PRÉSENTE (« المحور », « التمرين », « المناولة »),
+  // Le badge dit CE QU'ON PRÉSENTE (« Étape », « Exercice », « Manipulation »),
   // pas le geste pour y entrer : depuis que le déclencheur du module dit
-  // « عرض » tout court, réutiliser son libellé aurait donné un badge muet.
+  // « Projeter » tout court, réutiliser son libellé aurait donné un badge muet.
   const badge = scope && scope !== 'lesson' ? t(`classroom.scopeLabel.${scope}`) : t('classroom.title');
 
   return (
@@ -82,18 +82,18 @@ const ClassroomToolbar = forwardRef(function ClassroomToolbar({ title, scope, sc
             <Minus className="h-5 w-5" aria-hidden="true" />
           </ToolbarButton>
           <span className="hidden min-w-[6.5rem] select-none text-center text-xs font-bold text-slate-600 sm:inline" aria-live="polite">
-            {t('classroom.scale')} <span dir="ltr" className="font-mono text-slate-900">{scalePercent(scale)}%</span>
+            {t('classroom.scale')} <span className="font-mono text-slate-900">{scalePercent(scale)} %</span>
           </span>
-          <span className="min-w-[3rem] select-none text-center font-mono text-xs font-bold text-slate-900 sm:hidden" dir="ltr" aria-live="polite">
-            {scalePercent(scale)}%
+          <span className="min-w-[3rem] select-none text-center font-mono text-xs font-bold text-slate-900 sm:hidden" aria-live="polite">
+            {scalePercent(scale)} %
           </span>
           <ToolbarButton onClick={() => onScaleStep(+1)} disabled={atMax} ariaLabel={t('classroom.scaleUp')} title={t('classroom.scaleUp')} className="border-transparent">
             <Plus className="h-5 w-5" aria-hidden="true" />
           </ToolbarButton>
         </div>
 
-        {/* « خروج » — EN HAUT, au bout de la barre d'outils. Il était sous
-            « التالي », au bas de l'écran : la main y était déjà pour
+        {/* « Quitter » — EN HAUT, au bout de la barre d'outils. Il était sous
+            « Suivant », au bas de l'écran : la main y était déjà pour
             naviguer, mais il fallait la descendre pour SORTIR, et sur un
             tableau interactif le bas de l'écran est le plus bas atteignable.
             Ici il est avec les autres commandes de la SÉANCE (l'échelle),
@@ -118,9 +118,9 @@ const ClassroomToolbar = forwardRef(function ClassroomToolbar({ title, scope, sc
 export default ClassroomToolbar;
 
 /**
- * « 🔴 المؤشّر » — le pointeur de classe (ClassroomPointer.jsx). Éteint, un
- * seul bouton ; allumé, il dit « المؤشّر مفعّل » et offre la taille
- * (صغير · متوسط · كبير, grande par défaut) et l'éclairage. P / Maj+P au
+ * « 🔴 Pointeur » — le pointeur de classe (ClassroomPointer.jsx). Éteint, un
+ * seul bouton ; allumé, il dit « Pointeur activé » et offre la taille
+ * (Petit · Moyen · Grand, grande par défaut) et l'éclairage. P / Maj+P au
  * clavier. Absent sous 640 px : un pointeur de projecteur n'a pas de sens
  * sur un téléphone, et la barre y garde toute sa place pour le contenu.
  */
@@ -180,22 +180,22 @@ function PointerControls({ pointer }) {
  * La navigation du bas de présentation (brief §16). Deux ÉCHELLES de pas,
  * côte à côte, parce qu'un enseignant a les deux besoins :
  *
- *   [◀◀ المحور السابق] [◀ السابق]          [التالي ▶] [المحور التالي ▶▶]
- *          saut de محور   pas d'unité        pas d'unité    saut de محور
+ *   [◀◀ Étape précédente] [◀ Précédent]      [Suivant ▶] [Étape suivante ▶▶]
+ *          saut d'étape     pas d'unité          pas d'unité  saut d'étape
  *
  * `onPrevious`/`onNext` avancent d'une UNITÉ (la mission, le laboratoire,
  * une étape…) et franchissent le bord du module quand il n'y a plus d'unité.
  * `onPreviousModule`/`onNextModule` sautent AU MODULE voisin sans traverser
- * ses unités — « on a assez travaillé le نشاط, passons aux معارف ».
+ * ses unités — « on a assez travaillé l’activité, passons aux connaissances ».
  *
  * Chaque geste absent ne rend AUCUN bouton (jamais de bouton mort) ; les
  * doubles chevrons distinguent d'un coup d'œil le saut du pas. Les sauts de
- * module portent en plus le numéro du محور visé (« المحور 3 ») : on sait où
+ * module portent en plus le numéro de l'étape visée (« Étape 3 ») : on sait où
  * l'on va avant de cliquer.
  *
- * « خروج » n'est PLUS ici : il est remonté dans la BARRE D'OUTILS DU HAUT,
+ * « Quitter » n'est PLUS ici : il est remonté dans la BARRE D'OUTILS DU HAUT,
  * avec les commandes de la séance (l'échelle). Cette barre-ci ne porte donc
- * que les pas du CONTENU — on ne ferme plus la séance en visant « التالي ».
+ * que les pas du CONTENU — on ne ferme plus la séance en visant « Suivant ».
  *
  * Conséquence : la barre du bas peut maintenant être VIDE (une unité seule,
  * sans voisin). Elle ne porte plus la sortie, donc plus rien n'oblige à la

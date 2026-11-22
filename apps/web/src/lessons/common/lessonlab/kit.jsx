@@ -1,5 +1,5 @@
 /**
- * « مختبري » — what every instrument shares: the size of the drawing, the pointer → drawing coordinates (true under the
+ * « Mon labo » — what every instrument shares: the size of the drawing, the pointer → drawing coordinates (true under the
  * page zoom and the letter-boxing of the svg), a drag hook with pointer capture, the reading line and the maths text.
  */
 import { useEffect, useRef } from 'react';

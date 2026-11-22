@@ -1,5 +1,5 @@
 /**
- * « تدرّب » — the trainer that opens ON a card of « خريطة المعارف », without leaving the page (frame: trainer.js).
+ * « Entraîne-toi » — the trainer that opens ON a card of the « fiche de connaissances », without leaving the page (frame: trainer.js).
  * Six questions in two looks that alternate: the GAME look (dark, gates to tap) and the EXAM look (a white sheet, the exam's
  * verbs, the answer typed in its own shape) — so the student gets used to the sheet of the real exam while still playing.
  * A wrong answer gets a hint first (what the answer gives), then the written correction.
@@ -11,15 +11,16 @@
  *                                                       its tokens, a fraction template among them: `FormLines` below.
  */
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
-import { Star, RotateCcw, Gamepad2, FileText, ArrowLeft } from 'lucide-react';
+import { Star, RotateCcw, Gamepad2, FileText, ArrowRight } from 'lucide-react';
 import MathText from '../../components/MathText';
 import { useLesson } from './LessonContext';
 import { sessionStars, SESSION } from './trainer';
 import { PaperGate, PaperModel, PaperChip, PT } from './Paper';
 import { twin } from './longDivision';
 import { guardEvidence } from './evidence';
+import { TRAINER as L, TX } from './text';
 
-/** The statement of an exam question with its data underlined — the first gesture of the method: « أقرأ وأسطّر المعطيات ». */
+/** The statement of an exam question with its data underlined — the first gesture of the method: « Je lis et je souligne les données ». */
 const Marked = ({ text }) =>
   text.includes('$') ? (
     <MathText>{text}</MathText>
@@ -35,29 +36,6 @@ const Marked = ({ text }) =>
     )
   );
 
-const L = {
-  game: 'بصيغة اللعب',
-  exam: 'بصيغة الامتحان',
-  question: (i) => `السؤال ${i}`,
-  check: 'تحقّق',
-  next: 'التالي',
-  finish: 'أنهِ التدريب',
-  again: 'أعيد التدريب',
-  review: 'مراجعة',
-  mine: 'جوابك',
-  backNow: 'أعود إلى سؤالي',
-  seeOld: 'اضغط على سؤال سابق لترى جوابك',
-  hint: 'ليس بعد',
-  fix: 'التصحيح',
-  right: 'أحسنت!',
-  true: 'صحيح',
-  false: 'خطأ',
-  why: 'التعليل:',
-  pick: '— اختر —',
-  done: ['واصل التدريب!', 'بداية جيّدة!', 'أحسنت!', 'تدريب مثاليّ!'],
-  first: 'صحيحة من المحاولة الأولى',
-  best: 'أفضل نتيجة',
-};
 /** The value an option is known by in the page: its `id`, or its value written out. */
 const idOf = (option) => option.id ?? String(option.value);
 const Num = ({ value, onChange, w = 3, ...rest }) => (
@@ -110,13 +88,13 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
   const submit = (value) => {
     if (fb?.final) return;
     const res = check(q, value);
-    // الكفاءات: only the FIRST try of an exam-format question, with no help opened before (evidence.js) — right or wrong
+    // the learning points: only the FIRST try of an exam-format question, with no help opened before (evidence.js) — right or wrong
     // …and never a TRUE claim for an answer the lesson's check says is wrong (the kit's safety net, evidence.js)
     onEvidence?.(guardEvidence(evidenceOf(q, value, { firstTry: tries === 0, helped: helped.current }), res.ok));
     const rec = log.current[i] ?? (log.current[i] = { attempts: [], fix: res.fix, tip: null });
     rec.attempts.push({ label: answerLabel(q, value), ok: res.ok });
     rec.tip = res.tip ?? null;
-    // the shortcut « حيلة » comes only with the FINAL feedback: before it, it would give the result away
+    // the shortcut « Astuce » comes only with the FINAL feedback: before it, it would give the result away
     if (res.ok) {
       if (tries === 0) first.current += 1;
       marks.current[i] = tries === 0 ? 'ok' : 'late';
@@ -201,7 +179,7 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
             <span>{L[qs[rev].format]}</span>
           </p>
           <p className="di-review__q">
-            <MathText>{qs[rev].kind === 'tf' ? `«${qs[rev].statement}»` : qs[rev].prompt}</MathText>
+            <MathText>{qs[rev].kind === 'tf' ? `« ${qs[rev].statement} »` : qs[rev].prompt}</MathText>
             {qs[rev].kind === 'tap' && <span dir="ltr"> — {qs[rev].options.join(' · ')}</span>}
             {qs[rev].form?.review && <span dir="ltr"> {qs[rev].form.review}</span>}
           </p>
@@ -215,7 +193,7 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
           </p>
           {log.current[rev].tip && (
             <p className="di-tip">
-              <b>💡 حيلة</b> <MathText>{log.current[rev].tip}</MathText>
+              <b>💡 {TX.tip}</b> <MathText>{log.current[rev].tip}</MathText>
             </p>
           )}
           <button type="button" className="di-btn di-btn--primary" onClick={() => setRev(null)} data-di-tr-back>
@@ -229,7 +207,7 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
         {fb?.final && q.format === 'exam' ? (
           <div className="di-sheet di-sheet--done" data-di-tr-recap>
             <p className="di-sheet__q">
-              <b>{L.question(i + 1)}</b> <MathText>{q.kind === 'tf' ? `«${q.statement}»` : q.prompt}</MathText>
+              <b>{L.question(i + 1)}</b> <MathText>{q.kind === 'tf' ? `« ${q.statement} »` : q.prompt}</MathText>
             </p>
             <p className="di-sheet__mine">
               <small>{L.mine}</small> <MathText>{log.current[i]?.attempts.at(-1)?.label ?? ''}</MathText>
@@ -258,7 +236,7 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
         )}
         {fb?.final && fb.tip && (
           <p className="di-tip" data-di-tip>
-            <b>💡 حيلة</b> <MathText>{fb.tip}</MathText>
+            <b>💡 {TX.tip}</b> <MathText>{fb.tip}</MathText>
           </p>
         )}
         {model && <PaperModel a={model.a} b={model.b} own={model.own} onClose={() => setModel(null)} />}
@@ -271,7 +249,7 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
               data-di-tr-next
               autoFocus
             >
-              {i + 1 >= qs.length ? L.finish : L.next} <ArrowLeft size={16} />
+              {i + 1 >= qs.length ? L.finish : L.next} <ArrowRight size={16} />
             </button>
             {!fb.ok && q.form?.model && (
               <button
@@ -300,7 +278,7 @@ const boxesOf = (t) => (isFrac(t) ? [t.frac.n, t.frac.d].filter(isBox) : isBox(t
 /**
  * The lines of an exam FORM, in their own shape (the lesson describes them — kit/trainer.js › « a form »). A token is:
  *   'text'                       a sign or words (on an `ltr` line: a sign of the formula);
- *   { strong } · { text, rtl? }  a printed number · a printed piece;
+ *   { strong } · { text }        a printed number · a printed piece (a legacy `rtl` flag is ignored);
  *   { num, label }               a box to type a whole number in (`data-di-tr=<num>`);
  *   { choice, options }          a list to choose from (`data-di-tr=<choice>`);
  *   { frac: { n, d } }           a FRACTION in its own shape: n stacked over a real bar over d, each a box `{ num, label }`
@@ -339,12 +317,7 @@ export function FormLines({ lines, v, set, locked }) {
           {t.strong}
         </b>
       );
-    if (t.text != null)
-      return (
-        <span key={i} dir={t.rtl ? 'rtl' : undefined}>
-          {t.text}
-        </span>
-      );
+    if (t.text != null) return <span key={i}>{t.text}</span>;
     if (t.num) return box(t, i);
     const chosen = t.options.find((o) => o.value === v[t.choice]);
     return (
@@ -422,7 +395,7 @@ function Question({ q, index, locked, onSubmit, onModel }) {
   }
   if (q.kind === 'tf') {
     const tf = (
-      <div className="di-tf" dir="rtl">
+      <div className="di-tf">
         {[true, false].map((t) => (
           <button
             key={String(t)}
@@ -441,7 +414,7 @@ function Question({ q, index, locked, onSubmit, onModel }) {
       return (
         <div className="di-tap">
           <p className="di-tap__say di-tap__say--quote">
-            <MathText>{`«${q.statement}»`}</MathText>
+            <MathText>{`« ${q.statement} »`}</MathText>
           </p>
           {tf}
         </div>
@@ -449,10 +422,10 @@ function Question({ q, index, locked, onSubmit, onModel }) {
     return (
       <form className="di-sheet" onSubmit={send}>
         <p className="di-sheet__q">
-          <b>{L.question(index + 1)}</b> صحيح أم خطأ؟ علّل.
+          <b>{L.question(index + 1)}</b> {L.tfAsk}
         </p>
         <p className="di-sheet__statement">
-          <MathText>{`«${q.statement}»`}</MathText>
+          <MathText>{`« ${q.statement} »`}</MathText>
         </p>
         <PaperGate tip={PT.tipWrite}>
           {tf}

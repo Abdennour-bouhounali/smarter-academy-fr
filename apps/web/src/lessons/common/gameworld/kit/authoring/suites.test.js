@@ -17,6 +17,7 @@ import {
   fractionOf,
   holdsOn,
   looseComma,
+  typographyErrors,
   plain,
   said,
   storeHolders,
@@ -44,7 +45,7 @@ describe('the shared suites’ helpers', () => {
   });
 
   it('catches a marked road that cannot be built, and a store with two options that hold within the purse', () => {
-    const island = (n) => ({ name: `جزيرة ${'ابتث'[n]}` });
+    const island = (n) => ({ name: `Île ${'ABCD'[n]}` });
     const road = (segments, convoys) => ({ segments, convoys, islands: [0, 1, 2].map(island) });
     // a workshop bridge of 99 cells, 65 marked, a purse of 3: 33 fills it but misses the post — nothing builds it
     const broken = road(
@@ -99,7 +100,7 @@ describe('the shared suites’ helpers', () => {
     expect(equalitiesHold('\\frac{12}{4} = 3')).toBe(1);
     expect(() => equalitiesHold('\\frac{66}{78} = \\frac{11}{12}')).toThrow();
     expect(() => equalitiesHold('\\frac{5}{39} + \\frac{8}{39} = \\frac{13}{78}')).toThrow();
-    expect(() => trueEqualities('مثل $\\frac{35}{48} = \\frac{7}{8}$')).toThrow();
+    expect(() => trueEqualities('comme $\\frac{35}{48} = \\frac{7}{8}$')).toThrow();
   });
 
   it('a line of a trainer sheet: a typed fraction is ONE answer, a printed one none', () => {
@@ -121,32 +122,54 @@ describe('the shared suites’ helpers', () => {
     expect(valueOf('\\square')).toBe(null);
   });
 
-  it('an equality must be TRUE; a sentence’s formulas and isolated equalities are read', () => {
+  it('an equality must be TRUE; a sentence’s formulas are read', () => {
     expect(equalitiesHold('962 = 296 \\times 3 + 74 \\qquad 296 = 74 \\times 4 + 0')).toBe(2);
     expect(equalitiesHold('\\mathrm{PGCD}(152 ; 95) = \\mathrm{PGCD}(95 ; 57)')).toBe(1);
     expect(equalitiesHold('a = b \\times q + r')).toBe(0);
     expect(() => equalitiesHold('\\mathrm{PGCD}(152 ; 95) = 57')).toThrow();
-    expect(trueEqualities('لدينا $259 - 185 = 74$ و ⁦7 + 5 = 12⁩')).toBe(2);
-    expect(() => trueEqualities('لدينا ⁦7 + 5 = 13⁩')).toThrow();
+    expect(trueEqualities('On a $259 - 185 = 74$ et $7 + 5 = 12$')).toBe(2);
+    expect(() => trueEqualities('On a $7 + 5 = 13$')).toThrow();
+    // an equality in plain words is not read (French needs no bidi isolation: it is written in `$…$`)
+    expect(trueEqualities('On a 7 + 5 = 13')).toBe(0);
   });
 
-  it('finds a number glued to the wrong form of its noun — and accepts the right ones', () => {
-    expect(agreementErrors('في الكيس 12 قطعة، و 5 قطع، وهوّة 152 خانة، و 7 خانات، و 0 خانة')).toEqual([]);
-    expect(agreementErrors('بقيت 6 خانة')).toEqual(['6 خانة']);
-    expect(agreementErrors('في الكيس 12 قطع')).toEqual(['12 قطع']);
-    expect(agreementErrors('2 قسمات')).toEqual(['2 قسمات']);
-    expect(agreementErrors('31 عملية طرح مقابل 3 عمليات طرح')).toEqual([]);
-    expect(agreementErrors('هوّة 1003 خانة')).toEqual(['1003 خانة']);
-    expect(agreementErrors('هوّة 1003 خانة', NOUNS, { past100: false })).toEqual([]);
+  it('finds a number glued to the wrong number of its noun — and accepts the right ones', () => {
+    expect(
+      agreementErrors('Dans la bourse, 12 pièces, 1 pièce, 0 pièce ; un fossé de 152 cases, 1 case et 2 planches'),
+    ).toEqual([]);
+    expect(agreementErrors('il reste 1 cases')).toEqual(['1 cases']);
+    expect(agreementErrors('il reste 0 planches')).toEqual(['0 planches']);
+    expect(agreementErrors('une salle de 3 dalle')).toEqual(['3 dalle']);
+    expect(agreementErrors('1 dalles')).toEqual(['1 dalles']);
+    expect(agreementErrors('un fossé de 1003 case')).toEqual(['1003 case']);
+    // a decimal, a word that only starts with the noun, a noun with no plural form: never read as wrong
+    expect(agreementErrors('0,25 dalle et 2,5 dalles, 3 dallages, 3 fois', [...NOUNS, ['fois', 'fois']])).toEqual([]);
+    // a lesson's own table
+    expect(agreementErrors('4 toise', [['toise', 'toises']])).toEqual(['4 toise']);
   });
 
-  it('a list with a plain space before its comma; strings found anywhere in a value', () => {
-    expect(looseComma('1 ، 2')).toBe(true);
-    expect(looseComma('1 ، 2')).toBe(false);
+  it('the French typography mistakes an author can make; strings found anywhere in a value', () => {
+    const kinds = (t) => typographyErrors(t).map((e) => e.kind);
+    // clean: no-break spaces before the high signs and inside the quotes, a typographic apostrophe, « 3e »
+    expect(typographyErrors('L’île est loin : tu y vas ? Oui ! « 3e » et 1, 2 et 4 ;')).toEqual([]);
+    expect(kinds('Le reste: 0')).toEqual(['space']);
+    expect(kinds('Le reste : 0')).toEqual(['space']);
+    expect(kinds('Tu y vas ?')).toEqual(['space']);
+    expect(kinds('Bravo!')).toEqual(['space']);
+    expect(kinds('«Le pont»')).toEqual(['quote', 'quote']);
+    expect(kinds("l'île")).toEqual(['apos']);
+    expect(kinds('en 3ème')).toEqual(['ordinal']);
+    expect(kinds('la 1ère fois')).toEqual(['ordinal']);
+    expect(kinds('1 \u060c 2')).toEqual(['arabic']);
+    expect(kinds('\u20667 + 5 = 12\u2069')).toEqual(['bidi']);
+    // a formula writes its own punctuation; an address keeps its colon
+    expect(typographyErrors('$f\\colon x \\mapsto 2x$ et $(2;3)$, https://exemple.fr')).toEqual([]);
+    expect(looseComma('Le reste: 0')).toBe(true);
+    expect(looseComma('Le reste : 0')).toBe(false);
     expect(stringsIn({ a: 'x', b: ['y', { c: 'z' }], f: () => 'no', n: 3 })).toEqual(['x', 'y', 'z']);
-    said('جملة كاملة');
-    plain('جملة بلا معادلة');
-    expect(() => said('اللوح undefined')).toThrow();
+    said('Une phrase complète');
+    plain('Une phrase sans égalité');
+    expect(() => said('La planche undefined')).toThrow();
     expect(() => plain('$1 + 1$')).toThrow();
   });
 
@@ -169,8 +192,8 @@ describe('the Node reader of a bank and of the stories', () => {
   const fake = {
     id: 'x',
     sheets: [
-      { file: 'level-1/a.json', text: '"$\\\\text{PGCD}(21 ; 14)$"\n"للعددين 30 و 45"\n"$161 - 115 = 46$"' },
-      { file: 'level-2/b.json', text: '"قواسم العدد 360 هي: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 36 ، 90"' },
+      { file: 'level-1/a.json', text: '"$\\\\text{PGCD}(21 ; 14)$"\n"des nombres 30 et 45"\n"$161 - 115 = 46$"' },
+      { file: 'level-2/b.json', text: '"Les diviseurs de 360 sont : 1, 2, 3, 4, 5, 6, 36 et 90"' },
     ],
   };
   it('the pairs a bank names, however « PGCD » is written', () => {
@@ -188,6 +211,6 @@ describe('the Node reader of a bank and of the stories', () => {
   it('finds a real bank and its grade; an island’s name in a story', () => {
     expect(gradeOf('no-such-lesson')).toBe(null);
     expect(() => readBank('no-such-lesson')).toThrow(/no exercise bank/);
-    expect(islandNamesIn("{ id: 'A', name: 'مرسى الخشّابين', R: 9 }")).toEqual(['مرسى الخشّابين']);
+    expect(islandNamesIn("{ id: 'A', name: 'Le port des charpentiers', R: 9 }")).toEqual(['Le port des charpentiers']);
   });
 });

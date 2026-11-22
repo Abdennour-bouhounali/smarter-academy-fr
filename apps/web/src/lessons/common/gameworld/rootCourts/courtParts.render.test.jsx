@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import { Court, CourtMini, COURT_VIEW } from './courtParts';
+import { Court, CourtMini, COURT_VIEW, COURT_LAYOUT } from './courtParts';
 
 const draw = (area, rod, stage = 'done', more = {}) =>
   renderToString(<Court area={area} rod={rod} stage={stage} {...more} />);
@@ -13,7 +13,9 @@ const texts = (out) =>
     t: inner.replace(/<[^>]+>/g, '').replace(/<!-- -->/g, ''),
     size: Number(a.match(/font-size="([\d.]+)"/)?.[1]),
   }));
-const ARABIC = /[؀-ۿ]/;
+const ARABIC = /[\u0600-\u06FF]/;
+const WORD = /\p{L}/u;
+const xOf = (a) => Number(a.match(/ x="([\d.]+)"/)[1]);
 
 const CASES = [
   ['36', { q: '6' }],
@@ -64,7 +66,8 @@ describe('a court, stage by stage — the platform hovers, lowers, then the worl
     const out = draw('36', { q: '6' });
     expect(attr(out, 'data-court-kind')).toBe('ride');
     expect(out).toContain('crt-plat is-done is-ride');
-    expect(out).toContain('تركب المصعد');
+    expect(out).toContain('Elle monte');
+    expect(out).toContain('Tout est couvert');
     expect(out).not.toMatch(/crt-band|crt-over/);
     expect(count(out, /is-lit/g)).toBe(36);
   });
@@ -73,8 +76,8 @@ describe('a court, stage by stage — the platform hovers, lowers, then the worl
     expect(attr(out, 'data-court-kind')).toBe('band');
     expect(attr(out, 'data-court-band')).toBe('5');
     expect(attr(out, 'data-court-diff')).toBe('5');
-    expect(out).toContain('يبقى شريط مساحته');
-    expect(out).toContain('5 بلاطات');
+    expect(out).toContain('Bande restante :');
+    expect(out).toContain('5 dalles');
     expect(attr(out, 'data-court-zoom')).toBe('1'); // a band of 5 tiles is seen: no lens
     expect(out).not.toContain('data-court-lens');
   });
@@ -83,8 +86,8 @@ describe('a court, stage by stage — the platform hovers, lowers, then the worl
     expect(attr(out, 'data-court-kind')).toBe('jam');
     expect(attr(out, 'data-court-over')).toBe('6');
     expect(out).toContain('crt-plat is-done is-jam');
-    expect(out).toContain('تعلق: ما يبرز منها');
-    expect(out).toContain('6 بلاطات');
+    expect(out).toContain('Elle dépasse de');
+    expect(out).toContain('6 dalles');
   });
   it('a court with no rod yet: the court and its gate, no platform', () => {
     const out = draw('30', null, 'ask');
@@ -94,12 +97,12 @@ describe('a court, stage by stage — the platform hovers, lowers, then the worl
 });
 
 describe('the MAGNIFIER: a band or an overhang too thin to see is enlarged by a power of ten, and its area is WRITTEN', () => {
-  it('5,47 on the court of 30: ×100, and « 0,0791 بلاطة »', () => {
+  it('5,47 on the court of 30: ×100, and « 0,0791 dalle »', () => {
     const out = draw('30', { q: '5,47' });
     expect(attr(out, 'data-court-zoom')).toBe('100');
     expect(out).toContain('data-court-lens="100"');
     expect(texts(out).map((x) => x.t)).toContain('×100');
-    expect(out).toContain('0,0791 بلاطة');
+    expect(out).toContain('0,0791 dalle');
     expect(attr(out, 'data-court-kind')).toBe('band');
   });
   it('5,48 jams by 0,0304 — ×100 again, on the other side of the wall', () => {
@@ -107,7 +110,7 @@ describe('the MAGNIFIER: a band or an overhang too thin to see is enlarged by a 
     expect(attr(out, 'data-court-kind')).toBe('jam');
     expect(attr(out, 'data-court-zoom')).toBe('100');
     expect(out).toContain('crt-lens is-jam');
-    expect(out).toContain('0,0304 بلاطة');
+    expect(out).toContain('0,0304 dalle');
   });
   it('the calculator’s ten digits: a gap of a hundred-millionth — the factor written as a power, the 20 digits written', () => {
     const out = draw('30', { q: '5,477225575' });
@@ -155,7 +158,8 @@ describe('the floor stays honest at every size', () => {
     expect(attr(quarter, 'data-court-sub')).toBe('4');
     expect(count(quarter, /class="crt-tile/g)).toBe(4); // 0,5 a side = 2 sub-cells of 1/4
     expect(count(quarter, /crt-onetile__line/g)).toBe(2 * 3);
-    expect(quarter).toContain('data-court-key="tile"'); // the key: the dashed square beside « بلاطة » is one tile
+    expect(quarter).toContain('data-court-key="tile"'); // the key: the dashed square beside « 1 dalle » is one tile
+    expect(texts(quarter).map((x) => x.t)).toContain('1 dalle');
     const f = draw('49/64', { q: '0,875' });
     expect(attr(f, 'data-court-sub')).toBe('8');
     expect(count(f, /class="crt-tile/g)).toBe(49);
@@ -164,17 +168,29 @@ describe('the floor stays honest at every size', () => {
     // a court given as a fraction has its band written as a fraction too, never a decimal beside « 49/64 »
     const band = draw('49/64', { q: '0,5' });
     expect(band).toContain('data-court-frac="33/64"'); // stacked over its bar (see « a fraction is drawn over a bar »)
-    expect(band).not.toContain('0,515625 بلاطة');
+    expect(band).not.toContain('0,515625 dalle');
     expect(texts(band).map((x) => x.t)).not.toContain('0,515625');
   });
 });
 
 describe('words and numbers drawn in the court', () => {
-  it('no text without an Arabic letter is laid right to left, in any drawing', () => {
+  it('every text is laid left to right and none is Arabic, in any drawing', () => {
     for (const [a, r] of CASES)
-      for (const stage of ['ask', 'build', 'done'])
-        for (const t of texts(draw(a, r, stage)))
-          expect(t.a.includes(ARABIC.test(t.t) ? 'direction="rtl"' : 'direction="ltr"'), `${a} ${t.t}`).toBe(true);
+      for (const stage of ['ask', 'build', 'done']) {
+        const out = draw(a, r, stage);
+        expect(out).not.toContain('direction="rtl"');
+        for (const t of texts(out)) {
+          expect(t.a, `${a} ${t.t}`).toContain('direction="ltr"');
+          expect(t.t, `${a} ${t.t}`).not.toMatch(ARABIC);
+        }
+      }
+  });
+  it('every line of words of the fact holds in the zone right of the court (288 units at 27 a glyph)', () => {
+    for (const [a, r] of CASES)
+      for (const t of texts(draw(a, r, 'done')).filter(
+        (x) => WORD.test(x.t) && /crt-t--(ride|band|jam|soft)/.test(x.a),
+      ))
+        expect([...t.t].length * 0.55 * 27, `${a} ${t.t}`).toBeLessThanOrEqual(288);
   });
   it('every glyph is at least 27 units: 27 × 152 / 240 × 1.067 = 18.2 px at the tight height in the forge', () => {
     expect(COURT_VIEW).toEqual({ w: 640, h: 240, font: 27 });
@@ -188,13 +204,16 @@ describe('words and numbers drawn in the court', () => {
       expect(Number(m[1])).toBeGreaterThanOrEqual(27);
   });
   it('the gate’s noun agrees with its number: 1, 2, 3–10, 11+, past 100, a decimal', () => {
-    const word = (a) => texts(draw(a, null, 'ask')).find((x) => ARABIC.test(x.t))?.t;
-    expect(word('1')).toBe('بلاطة واحدة');
-    expect(word('2')).toBe('بلاطتان');
-    expect(word('5')).toBe('بلاطات');
-    expect(word('30')).toBe('بلاطة');
-    expect(word('103')).toBe('بلاطات');
-    expect(word('0,25')).toBe('بلاطة');
+    const word = (a) => texts(draw(a, null, 'ask')).find((x) => WORD.test(x.t))?.t;
+    expect(word('0')).toBe('dalle');
+    expect(word('1')).toBe('dalle');
+    expect(word('2')).toBe('dalles');
+    expect(word('5')).toBe('dalles');
+    expect(word('30')).toBe('dalles');
+    expect(word('103')).toBe('dalles');
+    expect(word('0,25')).toBe('dalle');
+    expect(word('2,25')).toBe('dalles');
+    expect(word('49/64')).toBe('de dalle');
   });
   it('a rod that is a WALL is written with a drawn radical over its number; a negative rod keeps its sign', () => {
     const out = draw('30', { root: '30' });
@@ -242,7 +261,7 @@ describe('a fraction is drawn over a real bar, never written « p/q » — the r
       expect(num.size).toBeGreaterThanOrEqual(27);
       expect(num.a).toContain('direction="ltr"');
     }
-    expect(attr(draw('529/49', { q: '23/7' }), 'aria-label')).toBe('ساحة 529 على 49 · مقياس 23 على 7');
+    expect(attr(draw('529/49', { q: '23/7' }), 'aria-label')).toBe('salle 529 sur 49 · toise 23 sur 7');
     // label={false}: no text, no slide
     const bare = draw('529/49', { q: '23/7' }, 'done', { label: false });
     expect(attr(bare, 'viewBox')).toBe('0 0 640 240');
@@ -255,9 +274,9 @@ describe('a fraction is drawn over a real bar, never written « p/q » — the r
     expect(gate.bar).toBe(1);
     expect(slashFree(out)).toBe(true);
     expect(attr(out, 'viewBox')).toBe('0 0 640 240'); // a whole rod: the view does not move
-    expect(attr(out, 'aria-label')).toBe('ساحة 529 على 49 · مقياس 3');
+    expect(attr(out, 'aria-label')).toBe('salle 529 sur 49 · toise 3');
   });
-  it('a FRACTION DIFFERENCE: « 88/49 بلاطة » drawn as the stacked fraction with « بلاطة » to its LEFT, one unit', () => {
+  it('a FRACTION DIFFERENCE: « 88/49 de dalle » drawn as the stacked fraction with « de dalle » to its RIGHT, one unit', () => {
     const out = draw('529/49', { q: '3' });
     expect(attr(out, 'data-court-diff')).toBe('88/49');
     const fact = out.match(/<g class="crt-fact__frac" data-court-fact-frac="88\/49">(.*?)<\/g><\/g>/)?.[1] ?? '';
@@ -265,13 +284,13 @@ describe('a fraction is drawn over a real bar, never written « p/q » — the r
     expect(diff.parts).toEqual(['88', '49']);
     expect(diff.bar).toBe(1);
     expect(slashFree(out)).toBe(true);
-    // the noun: right to left from its own right edge, which stands left of the bar (an Arabic reader meets 88/49 first)
-    const word = texts(fact).find((x) => ARABIC.test(x.t));
-    expect(word.t).toBe('بلاطة');
-    expect(word.a).toContain('direction="rtl"');
+    // the noun: left to right from its own left edge, which stands right of the bar (the reader meets 88/49 first)
+    const word = texts(fact).find((x) => WORD.test(x.t));
+    expect(word.t).toBe('de dalle');
+    expect(word.a).toContain('direction="ltr"');
     expect(word.a).toContain('text-anchor="start"');
-    const x1 = Number(bars(fact)[0].match(/x1="([\d.]+)"/)[1]);
-    expect(Number(word.a.match(/ x="([\d.]+)"/)[1])).toBeLessThan(x1);
+    const x2 = Number(bars(fact)[0].match(/x2="([\d.]+)"/)[1]);
+    expect(xOf(word.a)).toBeGreaterThan(x2);
     // a fraction rod's difference too (30 against 23/7 leaves 941/49), and a jam
     const band = draw('30', { q: '23/7' });
     expect(fracAt(band, '941/49').bar).toBe(1);
@@ -313,5 +332,48 @@ describe('the thumbnail of a line', () => {
     expect(mini('30', { q: '5,48' })).toContain('crt-mini__over');
     expect(mini('36', { q: '6' })).toContain('crt-mini is-ride');
     expect(mini('30', { q: '5,47' })).not.toMatch(/<text/);
+  });
+});
+
+describe('the drawing reads LEFT to right: the plaque, the court from its post, then what the world did', () => {
+  const rect = (out, cls) => out.match(new RegExp(`<rect[^>]*class="${cls}"[^>]*>`))?.[0] ?? '';
+  const num = (tag, name) => Number(tag.match(new RegExp(` ${name}="([\\d.-]+)"`))?.[1]);
+  it('the zones stand in that order', () => {
+    const { post, plaque, factMid, lens, factor } = COURT_LAYOUT;
+    expect(plaque.x1).toBeLessThan(post.x);
+    expect(post.x + COURT_LAYOUT.room).toBeLessThan(factMid - 144);
+    expect(lens.cx).toBeGreaterThan(post.x + COURT_LAYOUT.room);
+    expect(factor).toBeGreaterThan(lens.cx + lens.r);
+  });
+  it('the post is the court’s bottom LEFT corner: the court, the platform and the rod start there and go right', () => {
+    for (const [a, r] of [
+      ['30', { q: '5' }],
+      ['30', { q: '6' }],
+      ['0,25', { q: '0,5' }],
+    ]) {
+      const out = draw(a, r);
+      const post = COURT_LAYOUT.post.x;
+      expect(num(rect(out, 'crt-wall'), 'x'), a).toBe(post);
+      expect(num(rect(out, 'crt-plat__slab'), 'x'), a).toBe(post);
+      expect(num(rect(out, 'crt-rod__bar'), 'x'), a).toBe(post);
+      // the tiles: the first ones at the post, the others to its right
+      const xs = [...out.matchAll(/<rect[^>]*class="crt-tile[^"]*"[^>]*>/g)].map(([t]) => num(t, 'x'));
+      expect(Math.min(...xs), a).toBeCloseTo(post, 6);
+      // the plaque's number left of the court, the fact right of it
+      const plaque = texts(out).find((x) => x.a.includes('crt-t--area'));
+      expect(xOf(plaque.a), a).toBeLessThan(post);
+      const fact = texts(out).find((x) => /crt-t--(ride|band|jam)/.test(x.a));
+      expect(xOf(fact.a), a).toBeGreaterThan(post + COURT_LAYOUT.room);
+    }
+  });
+  it('a band is the L along the TOP and the RIGHT wall; the lens looks at the top RIGHT corner', () => {
+    const out = draw('30', { q: '5,47' });
+    // M (far right, top) H post V … H … V bottom H (far right) Z: it starts right of the post and comes back to it
+    const d = out.match(/<path d="([^"]*)" class="crt-band"/)[1];
+    const [, x0, , hPost] = d.match(/^M([\d.]+) ([\d.]+) H([\d.]+)/);
+    expect(Number(hPost)).toBe(COURT_LAYOUT.post.x);
+    expect(Number(x0)).toBeGreaterThan(COURT_LAYOUT.post.x);
+    const spot = out.match(/<circle cx="([\d.]+)"[^>]*class="crt-lens__spot"/);
+    expect(Number(spot[1])).toBeGreaterThan(COURT_LAYOUT.post.x);
   });
 });

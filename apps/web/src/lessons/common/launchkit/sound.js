@@ -1,5 +1,5 @@
 /**
- * The sounds of « عُدّة الانطلاق » — its own palette on the small synthesiser of the lab (`lessonlab/sound.js › LabSound`:
+ * The sounds of « L’échauffement » — its own palette on the small synthesiser of the lab (`lessonlab/sound.js › LabSound`:
  * WebAudio, no asset). ON by default; the switch of the launch turns everything off.
  *
  * Two rules. (1) A sound never tells right from wrong BEFORE the student hands in: the two boxes of a sort have each their

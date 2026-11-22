@@ -1,8 +1,8 @@
 /**
- * « قصر الساحات » — THE WORLD OF A UNIT ABOUT SQUARE ROOTS, played with a lesson's story (it names no lesson).
+ * « Le palais des dalles » — THE WORLD OF A UNIT ABOUT SQUARE ROOTS, played with a lesson's story (it names no lesson).
  *
  * The mechanic (`./logic.js` is its law, `docs/reports/ROOTS_WORLD_PLAN.md` its design):
- *   a TERRACE of the ksar holds square COURTS; a court's area is written on its gate, in tiles;
+ *   a TERRACE of the palace holds square COURTS; a court's area is written on its gate, in tiles;
  *   at a court's corner post the student takes the ROD and walks along the wall: HIS WALK IS THE LENGTH. The world
  *   builds a square PLATFORM on the rod; he lowers it into the court;
  *   it RIDES the court's lift (and flies him to the terrace the court leads to) when it covers the court exactly;
@@ -65,7 +65,7 @@ export class RootCourtsGame extends WorldRuntime {
     this.ridden = { ...(sv?.ridden ?? {}) }; // court id → the rod that rides it
     this.tries = { ...(sv?.tries ?? {}) };
     this.sealed = { ...(sv?.sealed ?? {}) }; // court id → true: closed as « no mark of this terrace rides it »
-    this.guess = { ...(sv?.guess ?? {}) }; // court id → what he said before trying: true « تُركب », false « لا تُركب »
+    this.guess = { ...(sv?.guess ?? {}) }; // court id → what he said before trying: true « elle monte », false « elle ne monte pas »
     this.hold = null; // the rod in his hand: { court, marks, step, held }
     this.cine = null;
     this.layout();
@@ -359,9 +359,9 @@ export class RootCourtsGame extends WorldRuntime {
     this.scene.add(this.rodLabel, this.areaLabel);
   }
   buildCourt(c) {
-    // a court whose area nobody wrote yet (`hide: true`): its gate shows « ؟ » until a platform that rides has been counted
+    // a court whose area nobody wrote yet (`hide: true`): its gate shows « ? » until a platform that rides has been counted
     c.shown = !c.hide || Boolean(this.ridden[c.id]);
-    const parts = makeCourt(c.side, c.unit, c.shown ? tiles(c.a) : '؟');
+    const parts = makeCourt(c.side, c.unit, c.shown ? tiles(c.a) : '?');
     parts.group.position.set(c.post.x, 0, c.post.z);
     this.scene.add(parts.group);
     c.parts = parts;
@@ -659,7 +659,7 @@ export class RootCourtsGame extends WorldRuntime {
     this.numCanvas.height = n * px;
     const g = this.numCanvas.getContext('2d');
     g.clearRect(0, 0, n * px, n * px);
-    g.font = `900 ${Math.round(px * (total > 99 ? 0.4 : 0.52))}px Cairo, Tajawal, system-ui, sans-serif`;
+    g.font = `900 ${Math.round(px * (total > 99 ? 0.4 : 0.52))}px Inter, system-ui, sans-serif`;
     g.textAlign = 'center';
     g.textBaseline = 'middle';
     g.fillStyle = '#0f2147';
@@ -733,7 +733,7 @@ export class RootCourtsGame extends WorldRuntime {
       this.refreshObjective();
       return;
     }
-    if (!spoke) this.say(this.T.say.ride, 3); // what he had said before trying is answered first: never covered by « انطلقنا »
+    if (!spoke) this.say(this.T.say.ride, 3); // what he had said before trying is answered first: never covered by « C’est parti ! »
     await this.fly(c, 'away');
   }
   /** He takes the rod of a court. A court that asks « will it ride? » (`ask: 'rides'`) asks it once, BEFORE any try. */
@@ -907,7 +907,7 @@ export class RootCourtsGame extends WorldRuntime {
     // area comes from the side)
     const whole = !isWall(r) && /^\d+$/.test(r.q) && Number(r.q) >= 1 && Number(r.q) <= CELLS_SIDE ? Number(r.q) : 0;
     // a rod taken from the wall has no product to show: « its length × itself = the area » is not the world's to say
-    // an unwritten court stays « ؟ » until the count of a platform that rides has ENDED
+    // an unwritten court stays « ? » until the count of a platform that rides has ENDED
     const hidden = c.shown === false && out.kind !== 'ride';
     const eq = {
       s: rodTex(r),
@@ -1073,7 +1073,7 @@ export class RootCourtsGame extends WorldRuntime {
     return undefined;
   }
 
-  // ───────────────────────────── « حلبة التدريب »: a level of the practice ladder, on the same rail ─────────────────────────────
+  // ───────────────────────────── « l’espace d’entraînement »: a level of the practice ladder, on the same rail ─────────────────────────────
   /**
    * A level of the lesson's ladder (`lesson.ladder`, the kit's) is a run of gates: here it is played by the kit's rail.
    * A wave of the lesson carries what the rail shows — `say` (the order), `tex?`, `gates` (three numbers or short
@@ -1163,7 +1163,7 @@ export class RootCourtsGame extends WorldRuntime {
     this.set({ run: null, phase: this.mapFrom === 'title' ? 'title' : 'dialog' });
     this.openMap(d.node);
   }
-  /** « ذكّرني بالقاعدة » from the hub or a result: the tablet of a rule; closing it comes back where he was. */
+  /** « Rappelle-moi la règle » from the hub or a result: the tablet of a rule; closing it comes back where he was. */
   showRule(key, from) {
     if (!key) return;
     this.audio.play('ui');

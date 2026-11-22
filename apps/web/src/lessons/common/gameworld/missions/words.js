@@ -1,20 +1,19 @@
 /**
- * The words a mission's data file shares (pure): an Arabic count with its noun, what is left of two stocks, and an
- * equality kept left to right and unbreakable inside an Arabic sentence.
+ * The words a mission's data file shares (pure): a count with its noun — the French agreement of the kit
+ * (`kit/authoring/numbers.js › counted`: « 1 caisse », « 3 caisses », the number and the noun joined by a no-break
+ * space) — and what is left of two stocks.
  */
-const NB = ' ';
-/** `forms` = [one, two, 3–10, 11+]: « تشكيلة واحدة », « تشكيلتان », « 4 تشكيلات », « 132 تشكيلة ». */
-export const counted = (n, forms) => {
-  const last = n % 100;
-  if (n === 1) return forms[0];
-  if (n === 2) return forms[1];
-  return last >= 3 && last <= 10 ? `${n}${NB}${forms[2]}` : `${n}${NB}${forms[3]}`;
-};
-export const CRATES = ['صندوق واحد', 'صندوقان', 'صناديق', 'صندوقًا'];
-/** « 3 صناديق من البطاطا و6 صناديق من الجزر » — only the stocks of which something is left. */
+import { counted, listFr } from '../kit/authoring/numbers';
+
+export { counted };
+/** The crates of the depot (« l’entrepôt » of « La coopérative du verger »): « 1 caisse », « 6 caisses ». */
+export const CRATES = ['caisse', 'caisses'];
+/** « 3 caisses de pommes et 6 caisses d’œufs » — only the stocks of which something is left (`kinds[k].name`, as « pommes »). */
 export const leftOf = (left, kinds) =>
-  ['a', 'b']
-    .filter((k) => left[k] > 0)
-    .map((k) => `${counted(left[k], CRATES)} من ${kinds[k].name}`)
-    .join(' و');
-export const ltr = (s) => `⁦${s.replace(/ /g, NB)}⁩`;
+  listFr(
+    ['a', 'b']
+      .filter((k) => left[k] > 0)
+      .map(
+        (k) => `${counted(left[k], CRATES)} ${/^[aeiouyhéèêœ]/i.test(kinds[k].name) ? 'd’' : 'de '}${kinds[k].name}`,
+      ),
+  );

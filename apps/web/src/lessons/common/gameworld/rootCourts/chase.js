@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `chase` — PURE logic (screen: `InquiryChase.jsx`; contract: GAME_WORLD.md « استكشف », spec shape of
+ * THE INVESTIGATION `chase` — PURE logic (screen: `InquiryChase.jsx`; contract: GAME_WORLD.md « Explore », spec shape of
  * `chase`). Its rule is of the nature of a PURSUIT THAT NEVER CLOSES: the court of area `a` (a whole number) is in front
  * of him, and a list of fractions p/q, better and better, is tried on it one after the other. For each rod p/q he says
  * BEFORE what its platform will do — a band, a jam, or it rides; the world lowers it and answers with FACTS written on
@@ -20,8 +20,8 @@ import { compare, read, write } from './logic';
 /**
  * THE LAYOUT of the screen at 1366 × 768 (the ONE size), in rem of the forge's frame (`.rf-fit`, designed 1280 × 720 and
  * zoomed 1.067: 1rem ≈ 17 px). Inside the experiment's panel: 1205 × 587 px of the frame (measured for `calc`, the same
- * panel). Columns, right to left: the main column (the court and the card of numbers, then the question, its buttons and
- * the fact) and the table. `inquiryChase.render.test.jsx` adds the widths and the heights and checks that every text he
+ * panel). Columns, left to right (`columns`): the main column (the court and the card of numbers, then the question, its
+ * buttons and the fact), then the table. `inquiryChase.render.test.jsx` adds the widths and the heights and checks that every text he
  * reads is ≥ 18 px on screen; the CSS reads the sizes from the custom properties the screen sets.
  */
 export const CHASE_LAYOUT = {
@@ -33,6 +33,8 @@ export const CHASE_LAYOUT = {
   maxDigits: 8,
   /** the largest court the drawing lays tile by tile (blocks of 10 × 10 past 20 tiles a side) */
   maxArea: 400,
+  /** the columns, left to right: the first one is on the LEFT (the screen's DOM order, pinned by the render test) */
+  columns: ['main', 'table'],
   gap: 1, // rem between two columns
   rowGap: 0.55, // rem between two rows (`.rq-iq` gap)
   head: 3.52, // rem: the lead (1.2rem × 1.5) and the goal (1.08rem × 1.45), one line each
@@ -42,9 +44,9 @@ export const CHASE_LAYOUT = {
    * the card of numbers beside the court, at `font` rem: the rod's fraction (`rod` rem), the key of a small tile, the two
    * lines « name  formula  unit » (`line` em each), the relation (`rel` rem). `em` = the widest formula, in em of
    * KaTeX's own size (× 1.21): a digit 0.5, « × » 1.22, « = » 1.33 with their spaces (`lineEm`). `name` and `unit` = the
-   * longest label and unit word the lesson may give, in characters.
+   * longest label and unit word the lesson may give, in characters (French: « Plateforme » 10, « carreaux » 8).
    */
-  card: { font: 1.08, rod: 1.7, line: 1.6, rel: 1.3, em: 10.8, name: 8, unit: 12 },
+  card: { font: 1.08, rod: 1.7, line: 1.6, rel: 1.3, em: 10.8, name: 10, unit: 10 },
   /** the column of the question, its buttons and the fact (rem of its font) */
   talk: { ask: 1.12, buttons: 3.3, fact: 1.12 },
   /**

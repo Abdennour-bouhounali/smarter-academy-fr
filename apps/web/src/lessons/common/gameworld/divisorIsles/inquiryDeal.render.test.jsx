@@ -61,6 +61,12 @@ describe('the investigation screen `deal`', () => {
     expect(out).toContain('goal[rose:lily]');
     expect(out).toContain('data-iq-pile="a" data-iq-count="40"');
     expect(out).toContain('data-iq-pile="b" data-iq-count="56"');
+    // read left to right (the French screen, 2026-11-22): the first collection is the pile on the LEFT
+    const pileX = (tag) =>
+      Number(
+        out.match(new RegExp(`data-iq-pile="${tag}"[^>]*>(?:<rect[^>]*>)?<text class="iqd-count" x="([\\d.]+)"`))[1],
+      );
+    expect(pileX('a')).toBeLessThan(pileX('b'));
     // every item is a drawn symbol, used once per item (no raster image, no emoji as the drawing)
     expect(count(out, /href="#iqd-rose"/g)).toBe(40);
     expect(count(out, /href="#iqd-lily"/g)).toBe(56);

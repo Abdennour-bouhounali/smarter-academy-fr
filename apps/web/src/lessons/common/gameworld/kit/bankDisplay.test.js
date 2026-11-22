@@ -1,16 +1,20 @@
-// « الامتحان الأبيض » on the REAL banks of every v2 lesson (content/practice/<grade>/<id>/, served as they are): EVERY sheet
+// The « brevet blanc » on the REAL banks of every v2 lesson (content/practice/<grade>/<id>/, served as they are): EVERY sheet
 // of every level is drawn (the DEV hook names it) and every string the sitting shows is read — the statement, its formulas
 // and table, each step, the widgets' words (choices, answer format), the model copy, the hints, the answer written back.
-// Money reads « دج »: no « DA » after an amount survives. A segment named DA stays a segment.
+// Money is in euros, written the French way (« 450 € », a no-break space before the sign): no dinar of the Algerian banks
+// (« DA », its Arabic sign) may reach the screen, and no Arabic letter at all. A segment named DA stays a segment.
 import { describe, it, expect, afterAll } from 'vitest';
 import { rng } from './random';
-import { DEV_SHEET_KEY, cashDj, createBankSittings, namesAsMath } from './bankSitting';
+import { DEV_SHEET_KEY, createBankSittings, namesAsMath } from './bankSitting';
 
 /** Every v2 lesson's sitting (a lesson is v2 when its world serves its bank: `world/sitting.js`). */
 const LESSONS = import.meta.glob('../../../college/**/world/sitting.js', { eager: true });
 
-/** « DA » that is still MONEY: after a number (glued or not, or the formula that holds it), in a unit « (DA) », « بالـ DA ». */
-const MONEY_DA = /(?:\d\$?|\\,|\\text\{|\\mathrm\{)\s*DA(?![A-Za-z])|\(\s*DA\s*\)|بال(?:ـ|دينار)\s*DA(?![A-Za-z])/;
+/** A dinar: « DA » after a number (glued or not, or the formula that holds it) or in a unit « (DA) »; or its Arabic sign. */
+const DINAR = /(?:\d\$?|\\,|\\text\{|\\mathrm\{)\s*DA(?![A-Za-z])|\(\s*DA\s*\)|\u062F\u062C/;
+const ARABIC = /[\u0600-\u06FF]/;
+/** A euro sign glued to its number, or after a plain space (French: « 450 € », a no-break space before the sign). */
+const LOOSE_EURO = /\d ?€|\d\$ ?€/;
 
 const right = (q) =>
   q.answerType === 'choice'
@@ -41,7 +45,7 @@ afterAll(() => {
   delete globalThis.localStorage;
 });
 
-describe('the sittings of every v2 lesson, on their real banks — money is « دج »', () => {
+describe('the sittings of every v2 lesson, on their real banks — money is in euros', () => {
   const entries = Object.entries(LESSONS);
 
   // no v2 lesson before the first French lesson: the loop below checks every sitting the tree holds
@@ -49,7 +53,7 @@ describe('the sittings of every v2 lesson, on their real banks — money is « �
     // a world not wired to its bank yet (`sittings = []`): its bank is read through the same adapter all the same
     const id = file.split('/').at(-3);
     const sittings = typeof mod.sittings?.prepare === 'function' ? mod.sittings : createBankSittings({ lesson: id });
-    it(`${id}: every sheet of every level shows no « DA » of money`, async () => {
+    it(`${id}: every sheet of every level shows euros, French, and no dinar`, async () => {
       await sittings.prepare();
       let sheets = 0;
       for (const L of sittings.levels) {
@@ -60,9 +64,9 @@ describe('the sittings of every v2 lesson, on their real banks — money is « �
           expect(s.exercises[0].bankId, file).toBe(id);
           sheets += 1;
           for (const line of shownStrings(sittings, s)) {
-            expect(line, `${id}: ${line}`).not.toMatch(MONEY_DA);
-            // these banks are arithmetic: no segment is named DA, so not one « DA » is left at all
-            expect(line, `${id}: ${line}`).not.toMatch(/(?<![A-Za-z])DA(?![A-Za-z])/);
+            expect(line, `${id}: ${line}`).not.toMatch(DINAR);
+            expect(line, `${id}: ${line}`).not.toMatch(ARABIC);
+            expect(line, `${id}: ${line}`).not.toMatch(LOOSE_EURO);
           }
         }
       }
@@ -71,21 +75,22 @@ describe('the sittings of every v2 lesson, on their real banks — money is « �
     });
   }
 
-  it('leaves a name alone: a segment DA is not money', () => {
-    expect(cashDj('$AB + DA = 7$')).toBe('$AB + DA = 7$');
-    expect(cashDj('القطعة $[DA]$ طولها $5$ cm')).toBe('القطعة $[DA]$ طولها $5$ cm');
+  it('leaves a name alone: a segment DA is not money, and the sitting rewrites no word of the bank', () => {
+    expect(namesAsMath('$AB + DA = 7$')).toBe('$AB + DA = 7$');
+    expect(namesAsMath('Le segment $[DA]$ mesure $5$\u00a0cm.')).toBe('Le segment $[DA]$ mesure $5$\u00a0cm.');
+    expect(namesAsMath('Il paie 450\u00a0€.')).toBe('Il paie 450\u00a0€.');
   });
 });
 
 describe('a PGCD written in the words of a bank line is drawn as a formula', () => {
   it('the run and its « = n » become ONE formula, upright; inside a formula the name gets upright letters', () => {
-    expect(namesAsMath('أكبرها هو 36، إذن أكبر عدد هو PGCD(252 ; 180) = 36.')).toBe(
-      'أكبرها هو 36، إذن أكبر عدد هو $\\mathrm{PGCD}(252 ; 180) = 36$.',
+    expect(namesAsMath('Le plus grand est 36, donc PGCD(252 ; 180) = 36.')).toBe(
+      'Le plus grand est 36, donc $\\mathrm{PGCD}(252 ; 180) = 36$.',
     );
-    expect(namesAsMath('نحسب PGCD(a ; b) أوّلًا')).toBe('نحسب $\\mathrm{PGCD}(a ; b)$ أوّلًا');
+    expect(namesAsMath('On calcule PGCD(a ; b) d’abord')).toBe('On calcule $\\mathrm{PGCD}(a ; b)$ d’abord');
     expect(namesAsMath('$PGCD(252 ; 180) = 36$')).toBe('$\\mathrm{PGCD}(252 ; 180) = 36$');
     // already upright, or a word of the text without brackets: left as it is
     expect(namesAsMath('$\\mathrm{PGCD}(8 ; 12) = 4$')).toBe('$\\mathrm{PGCD}(8 ; 12) = 4$');
-    expect(namesAsMath('نحسب PGCD للعددين')).toBe('نحسب PGCD للعددين');
+    expect(namesAsMath('On cherche le PGCD des deux nombres')).toBe('On cherche le PGCD des deux nombres');
   });
 });

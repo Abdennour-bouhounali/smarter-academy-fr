@@ -8,12 +8,12 @@ const draw = (a, b, start) =>
     <Lists a={a} b={b} start={start} play={noop} report={noop} range={{ a: [1, 120], b: [1, 120] }} />,
   ).replaceAll('<!-- -->', '');
 
-describe('مختبري — « مِنضدة القائمتين » draws what it reads', () => {
+describe('Mon labo — « L’établi des deux listes » draws what it reads', () => {
   it('opens on two empty lists, the first number to try calling the hand, and nothing read yet', () => {
     const html = draw(40, 56);
     expect(html).toContain('data-tried="0"');
     expect(html).toContain('data-ll-try="1"');
-    expect(html).toContain('جرّب 1');
+    expect(html).toContain('Essaie 1');
     expect(html).toContain('ll-btn--call');
     expect(html.match(/data-ll-open/g)).toHaveLength(2); // both lists still open
     expect(html).not.toContain('data-ll-d=');
@@ -40,8 +40,8 @@ describe('مختبري — « مِنضدة القائمتين » draws what it r
     expect(html).not.toContain('data-ll-link="5"');
     expect(html.match(/data-ll-crown/g)).toHaveLength(1);
     expect(html).toContain('data-ll-g="8"');
-    expect(html).toContain('في القائمتين: 1، 2، 4، 8 — أكبرها 8');
-    expect(html).toContain('اكتملت القائمتان');
+    expect(html).toContain('Dans les deux listes\u00a0: 1, 2, 4 et 8 — le plus grand est 8');
+    expect(html).toContain('Les deux listes sont complètes');
     expect(html).not.toContain('data-ll-open');
     // the drawing holds numbers only: no raw formula, no LaTeX
     const svg = html.slice(html.indexOf('<svg'), html.indexOf('</svg>'));

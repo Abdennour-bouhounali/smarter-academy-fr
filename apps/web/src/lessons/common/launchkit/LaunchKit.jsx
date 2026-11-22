@@ -1,11 +1,11 @@
 /**
- * « عُدّة الانطلاق » — the launch of a lesson (phase 1, 2026-11-17; NOT validated; contract `docs/architecture/LAUNCH_KIT.md`).
+ * « L’échauffement » — the launch of a lesson (phase 1, 2026-11-17; NOT validated; contract `docs/architecture/LAUNCH_KIT.md`).
  *
- * Before a lesson, the robot charges the TOOLS it needs: each tool is one earlier الكفاءة the lesson stands on (the learning
+ * Before a lesson, the robot charges the TOOLS it needs: each tool is one earlier savoir-faire the lesson stands on (the learning
  * net). A short game — five minutes at most, often two — measures them: a station per tool, a quick workshop that repairs
  * the weakest one on the spot, then the kit laid out with ONE lesson to revise first, and the take-off.
  *   - the answer is a gesture (write / sort / place, `gestures.jsx`); nothing is timed; no life, no losing, no ranking;
- *   - ✓ or « سنعود إليه » after an answer, NEVER the right answer (it would spoil the next question of the same tool);
+ *   - ✓ or « On y reviendra » after an answer, NEVER the right answer (it would spoil the next question of the same tool);
  *   - logic `engine.js` + `families.js` (pure, tested); the toolbox `store.js` (browser only in phase 1: not evidence).
  * One component for every lesson: it needs only the lesson's code. Nothing scrolls (designed 1280 × 720 / 1000 × 740, zoomed).
  */
@@ -57,68 +57,69 @@ import './launchKit.css';
 const LessonLab = lazy(() => import('../lessonlab/LessonLab'));
 
 const L = {
-  title: 'عُدّة الانطلاق',
-  bag: 'عُدّتي',
-  from: (g) => `من السنة ${GRADE_NAMES[g]}`,
-  close: 'إغلاق',
-  sound: 'الصوت',
-  fuel: 'الوقت المتبقّي',
-  introTitle: (t) => `قبل أن تنطلق إلى «${t}»: اشحن عُدّتك.`,
-  introOne: 'أداة واحدة من دروسك السابقة.',
-  introTwo: 'أداتان من دروسك السابقة.',
-  introMany: (n) => `${n} أدوات من دروسك السابقة.`,
-  introRule: 'كلّ إجابة صحيحة تشحن الأداة. لا خسارة هنا: إن لم تكن متأكّدًا، قل ذلك.',
-  start: 'هيّا نشحن!',
-  ready: 'عُدّتك مشحونة من قبل: لا شيء تعيده اليوم.',
-  show: 'أرِني عُدّتي',
-  unsure: 'غير متأكّد',
-  done: 'تمّ',
-  good: 'أحسنت!',
-  goodUnsure: 'صحيح!',
-  later: 'سنعود إليه',
-  station: 'محطّة',
-  workshop: 'ورشة سريعة',
-  exampleLead: 'هذه الأداة تحتاج إصلاحًا سريعًا. اتبع المثال خطوة خطوة.',
-  nextStep: 'الخطوة التالية',
-  tryNow: 'فهمت: أجرّب بسؤالين',
-  band: { solid: 'ثابتة', consolidate: 'تحتاج تثبيتًا', start: 'نبدأ منها', unseen: 'لم نفحصها بعد' },
-  known: 'مشحونة من قبل',
-  repaired: 'أُصلحت الآن',
-  charging: 'تُشحن الآن…',
-  full: 'عُدّتك كاملة!',
-  partial: 'عُدّتك جاهزة — وأداة تنتظر عنايتك.',
-  weak: 'عُدّتك تحتاج شحنًا قبل الانطلاق.',
-  score: 'الشحن',
-  star: 'نجمة الصدق: عرفتَ ما تعرفه وما لا تعرفه.',
-  reviseFirst: 'راجع أوّلًا',
-  also: 'وأيضًا',
-  memo: 'بطاقة المراجعة',
-  lab: 'جرّب الأداة في مختبري',
-  recheck: 'أعد فحص الأداة',
-  lesson: 'الدرس كاملًا',
-  soon: 'الدرس قريبًا',
+  title: 'L’échauffement',
+  bag: 'Ma trousse',
+  from: (g) => `vu en ${GRADE_NAMES[g]}`,
+  close: 'Fermer',
+  sound: 'Son',
+  fuel: 'Temps restant',
+  introTitle: (t) => `Avant de partir vers « ${t} » : charge tes outils.`,
+  introOne: '1 outil vu dans tes leçons précédentes.',
+  introTwo: '2 outils vus dans tes leçons précédentes.',
+  introMany: (n) => `${n} outils vus dans tes leçons précédentes.`,
+  introRule: 'Chaque bonne réponse charge l’outil. Ici, tu ne perds rien : si tu n’es pas sûr, dis-le.',
+  start: 'On charge !',
+  ready: 'Tes outils sont déjà chargés : rien à refaire aujourd’hui.',
+  show: 'Montre-moi ma trousse',
+  unsure: 'Pas sûr',
+  done: 'Valider',
+  good: 'Bravo !',
+  goodUnsure: 'C’est juste !',
+  later: 'On y reviendra',
+  station: 'Station',
+  workshop: 'Réparation rapide',
+  exampleLead: 'Cet outil a besoin d’une réparation rapide. Suis l’exemple pas à pas.',
+  nextStep: 'Suite',
+  tryNow: 'Compris : j’essaie 2 questions',
+  band: { solid: 'Solide', consolidate: 'À consolider', start: 'À reprendre', unseen: 'Pas encore testé' },
+  known: 'Déjà chargé',
+  repaired: 'Réparé à l’instant',
+  charging: 'En charge…',
+  full: 'Ta trousse est chargée à fond !',
+  partial: 'Ta trousse est prête — et un outil attend ton attention.',
+  weak: 'Ta trousse a besoin d’être chargée avant le départ.',
+  score: 'Charge',
+  star: 'Étoile de franchise : tu savais ce que tu savais, et ce que tu ne savais pas.',
+  reviseFirst: 'Revois d’abord',
+  also: 'Et aussi',
+  memo: 'Fiche de révision',
+  lab: 'Essaie l’outil dans Mon labo',
+  recheck: 'Reteste l’outil',
+  lesson: 'Toute la leçon',
+  soon: 'Leçon bientôt disponible',
   // a phone opens only the lessons designed for it: the earlier lesson is named, and where to read it whole
-  onComputer: 'الدرس كاملًا: على الحاسوب',
-  go: 'انطلق إلى الدرس',
-  capsule: 'كبسولة',
-  gateTitle: 'قبل الانطلاق: كبسولة قصيرة.',
-  gateLead: (name) => `«${name}» أداة أساسية لهذا الدرس، وما زالت فارغة. اشحنها بكبسولة من 3 دقائق، ثمّ تنطلق.`,
-  capsuleStart: 'ابدأ الكبسولة · 3 دقائق',
-  capStep: { card: 'البطاقة', example: 'المثال', lab: 'جرّب بيدك', questions: 'سؤالان' },
-  capCardLead: 'اقرأ البطاقة: هذا ما تحتاجه من هذه الأداة في الدرس.',
-  capLabLead: 'جرّب الأداة بأعدادك أنت في مختبرك، ثمّ عُد إلى هنا.',
-  capLabOpen: 'افتح الأداة في مختبري',
-  next: 'التالي',
-  toQuestions: 'إلى السؤالين',
-  capRepaired: 'أحسنت: شحنتَ الأداة بالكبسولة. الباب مفتوح!',
-  capDone: 'بطاقة هذه الأداة تبقى في عُدّتك: عُد إليها متى احتجت.',
-  capDoneTitle: 'أنهيتَ الكبسولة: الباب مفتوح.',
-  capsuleMark: 'كبسولة منجزة',
-  quitTitle: 'تخرج من الشحن؟',
-  quitText: 'ما شحنتَه الآن لن يُحفظ: تبدأ من جديد في المرّة القادمة.',
-  quitYes: 'نعم، أخرج',
-  stay: 'أواصل',
-  gotIt: 'فهمت',
+  onComputer: 'Toute la leçon : sur ordinateur',
+  go: 'En route vers la leçon',
+  capsule: 'Capsule',
+  gateTitle: 'Avant le départ : une courte capsule.',
+  gateLead: (name) =>
+    `« ${name} » est un outil essentiel pour cette leçon, et il est encore vide. Charge-le avec une capsule de 3 minutes, puis pars.`,
+  capsuleStart: 'Lance la capsule · 3 min',
+  capStep: { card: 'La fiche', example: 'L’exemple', lab: 'À toi d’essayer', questions: '2 questions' },
+  capCardLead: 'Lis la fiche : voici ce qu’il te faut de cet outil dans la leçon.',
+  capLabLead: 'Essaie l’outil avec tes propres nombres dans Mon labo, puis reviens ici.',
+  capLabOpen: 'Ouvre l’outil dans Mon labo',
+  next: 'Suivant',
+  toQuestions: 'Aux questions',
+  capRepaired: 'Bravo : la capsule a chargé l’outil. La porte est ouverte !',
+  capDone: 'La fiche de cet outil reste dans ta trousse : reviens-y quand tu en as besoin.',
+  capDoneTitle: 'Capsule terminée : la porte est ouverte.',
+  capsuleMark: 'capsule faite',
+  quitTitle: 'Tu arrêtes l’échauffement ?',
+  quitText: 'Ce que tu viens de charger ne sera pas gardé : tu repartiras de zéro la prochaine fois.',
+  quitYes: 'Oui, j’arrête',
+  stay: 'Je continue',
+  gotIt: 'Compris',
 };
 const FAST = () => import.meta.env.DEV && typeof window !== 'undefined' && window.__launchFast;
 const GESTURE = { write: Write, sort: Sort, place: Place };
@@ -534,7 +535,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
             ) : (
               L.station
             )}
-            : {FAMILIES[cur.q.item].icon} {FAMILIES[cur.q.item].name}
+             : {FAMILIES[cur.q.item].icon} {FAMILIES[cur.q.item].name}
           </span>
           <span className="lk-dots" aria-hidden="true">
             {Array.from({ length: asked + 1 }, (_, i) => (
@@ -588,7 +589,6 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
   const page = (
     <div
       className={`lk-root ${inline ? 'lk-root--inline' : ''} ${narrow ? 'lk-root--narrow' : ''}`}
-      dir="rtl"
       data-launch-kit={lessonCode}
       data-lk-phase={phase}
     >
@@ -657,7 +657,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
             <div className="lk-example" data-lk-example={cur.item}>
               <div className="lk-qhead">
                 <span className="lk-chipline is-shop">
-                  <Wrench size={16} /> {L.workshop}: {FAMILIES[cur.item].icon} {FAMILIES[cur.item].name}
+                  <Wrench size={16} /> {L.workshop} : {FAMILIES[cur.item].icon} {FAMILIES[cur.item].name}
                 </span>
               </div>
               <p className="lk-example__lead">{cur.mistake ? MISTAKES[cur.mistake] : L.exampleLead}</p>
@@ -681,7 +681,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
                     autoFocus
                     data-lk-step-next
                   >
-                    {L.nextStep} ◂
+                    {L.nextStep} ▸
                   </button>
                 ) : (
                   <button
@@ -706,7 +706,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
             <div className="lk-capsule" data-lk-capsule={cap.item} data-lk-capsule-step={CAPSULE_STEPS[cap.step]}>
               <div className="lk-qhead">
                 <span className="lk-chipline is-cap">
-                  <BatteryCharging size={17} /> {L.capsule}: {FAMILIES[cap.item].icon} {FAMILIES[cap.item].name}
+                  <BatteryCharging size={17} /> {L.capsule} : {FAMILIES[cap.item].icon} {FAMILIES[cap.item].name}
                 </span>
                 <ol className="lk-capsteps">
                   {CAPSULE_STEPS.filter((st) => st !== 'lab' || FAMILIES[cap.item].labTool).map((st, n) => {
@@ -773,10 +773,10 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
                     data-lk-capsule-next
                   >
                     {cap.step === 1 && cap.shown < cap.ex.steps.length
-                      ? `${L.nextStep} ◂`
+                      ? `${L.nextStep} ▸`
                       : cap.step === 2 || (cap.step === 1 && !FAMILIES[cap.item].labTool)
-                        ? `${L.toQuestions} ◂`
-                        : `${L.next} ◂`}
+                        ? `${L.toQuestions} ▸`
+                        : `${L.next} ▸`}
                   </button>
                 </footer>
               )}
@@ -850,8 +850,8 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
               {shown && (
                 <div className="lk-revise" data-lk-revise={shown.item}>
                   <p>
-                    <b>{shown.item === pr.first?.item ? L.reviseFirst : L.also}:</b> {shown.lesson?.title ?? shown.text}{' '}
-                    <span>({L.from(shown.grade).replace('من ', '')})</span>
+                    <b>{shown.item === pr.first?.item ? L.reviseFirst : L.also} :</b>{' '}
+                    {shown.lesson?.title ?? shown.text} <span>({L.from(shown.grade)})</span>
                   </p>
                   <div>
                     <button

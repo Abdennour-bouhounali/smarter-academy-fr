@@ -60,7 +60,7 @@ export function stepScale(current, direction) {
   return SCALE_STEPS[next];
 }
 
-/** Pourcentage affiché sur la barre (« 110٪ » se lit en chiffres LTR). */
+/** Pourcentage affiché sur la barre — le nombre seul ; la barre écrit « 110 % » (espace insécable avant le signe). */
 export function scalePercent(scale) {
   return Math.round(clampScale(scale) * 100);
 }

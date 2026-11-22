@@ -1,6 +1,6 @@
 /**
- * THE INVESTIGATIONS of « قصر الساحات » — the first phase « استكشف » of `kit/RuleForge.jsx` when a forge declares
- * `inquiry` (contract: GAME_WORLD.md « استكشف »). The student ACTS on courts and rods until he has seen what the rule will
+ * THE INVESTIGATIONS of « Le palais des dalles » — the first phase « Explore » of `kit/RuleForge.jsx` when a forge declares
+ * `inquiry` (contract: GAME_WORLD.md « Explore »). The student ACTS on courts and rods until he has seen what the rule will
  * name; no rule is written here and none is told: what answers him is what the platform or the station does.
  *
  *   <Inquiry spec={forge.inquiry} game={game} onDone={(result) => …} />
@@ -24,7 +24,7 @@ export default function Inquiry({ spec, game, onDone }) {
   if (!Kind) throw new Error(`rootCourts: no investigation of kind « ${spec.kind} »`);
   const play = (name, p) => game?.audio?.play(name, p);
   return (
-    <div className="rq-iq-frame" dir="rtl">
+    <div className="rq-iq-frame">
       <Kind spec={spec} play={play} onDone={onDone} />
     </div>
   );

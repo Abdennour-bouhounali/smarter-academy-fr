@@ -1,5 +1,5 @@
 /**
- * « كاشف قابلية القسمة » — the number is a PADLOCK of digits the student rolls; six lamps (2, 3, 4, 5, 9, 10) light when the
+ * « Le détecteur de divisibilité » — the number is a PADLOCK of digits the student rolls; six lamps (2, 3, 4, 5, 9, 10) light when the
  * number is divisible. Tap a lamp: the digits ITS rule reads rise on the padlock, with what the rule reads in them.
  */
 import { useEffect, useState } from 'react';
@@ -40,11 +40,13 @@ export default function Rules({ a, setA, play }) {
               data-ll-rule={cur.by}
               data-ll-rule-ok={cur.ok ? '1' : '0'}
             >
-              {a} {cur.ok ? 'يقبل' : 'لا يقبل'} القسمة على {cur.by}
+              {a} {cur.ok ? 'est divisible' : 'n’est pas divisible'} par {cur.by}
             </span>
           </>
         ) : (
-          <span className="ll-chip ll-chip--dim">أدِر الأرقام، ثمّ اضغط مصباحًا لترى ماذا تقرأ قاعدته في العدد.</span>
+          <span className="ll-chip ll-chip--dim">
+            Tourne les chiffres, puis appuie sur une lampe pour voir ce qu’elle regarde dans le nombre.
+          </span>
         )
       }
     >
@@ -61,7 +63,7 @@ export default function Rules({ a, setA, play }) {
               }}
               data-ll-wider
             >
-              + رقم
+              + chiffre
             </button>
             <button
               type="button"
@@ -74,7 +76,7 @@ export default function Rules({ a, setA, play }) {
               }}
               data-ll-narrower
             >
-              − رقم
+              − chiffre
             </button>
           </div>
           {str.split('').map((ch, i) => (
@@ -89,7 +91,7 @@ export default function Rules({ a, setA, play }) {
             </div>
           ))}
         </div>
-        <p className="ll-lamps__cap">هل يقبل {a} القسمة…</p>
+        <p className="ll-lamps__cap">{a} est-il divisible…</p>
         <div className="ll-lamps">
           {R.map((r) => (
             <button
@@ -104,7 +106,7 @@ export default function Rules({ a, setA, play }) {
               data-ll-lit={r.ok ? '1' : '0'}
             >
               <i>💡</i>
-              <strong>على {r.by}</strong>
+              <strong>par {r.by}</strong>
             </button>
           ))}
         </div>

@@ -357,9 +357,7 @@ export function Cut({ spec, play, onDone }) {
           <button type="button" className="iq-chip" onClick={() => move(b + 1)} aria-label={T.longer} data-iq-step="1">
             +
           </button>
-          <strong dir="rtl" data-iq-b={b}>
-            {T.lengthIs(b)}
-          </strong>
+          <strong data-iq-b={b}>{T.lengthIs(b)}</strong>
         </div>
       )}
 
@@ -375,7 +373,7 @@ export function Cut({ spec, play, onDone }) {
 
       {free && (
         <div className="iq-table" dir="ltr" data-iq-table>
-          <div className="iq-table__head" dir="rtl">
+          <div className="iq-table__head">
             <span>{T.cols.plank}</span>
             <span>{T.cols.count}</span>
           </div>

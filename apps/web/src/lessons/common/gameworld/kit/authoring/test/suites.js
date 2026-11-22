@@ -1,7 +1,7 @@
 /**
  * THE AUTHORING KIT, vitest side — the checks every lesson of a game world hand-wrote, as SHARED SUITES a lesson's test
  * calls in three lines (it names no lesson: the lesson is the argument). Each suite is what the three lessons built on
- * « أرخبيل القواسم » checked by hand, generalised; a lesson keeps in its own test file only what is ITS OWN (the numbers
+ * « L’archipel des diviseurs » checked by hand, generalised; a lesson keeps in its own test file only what is ITS OWN (the numbers
  * of its road, the false rules its students hold, the mistakes of its trainer).
  *
  *   describeStory      the road is solvable, `onArrive` bears being run twice, the numbers are the platform's own, the
@@ -13,7 +13,7 @@
  *   describeTrainer    every question accepts its solution and refuses a wrong answer; ≤ 3 answers a line; true hints
  *   describeKnowledge  the map: every card placed, reachable, laid out; every memo sheet complete and computed
  *   describeLimits     the data stays inside the limits the walks proved (`trusted.md`)
- *   describeSitting    « الامتحان الأبيض » serves the bank as it is
+ *   describeSitting    the « brevet blanc » serves the bank as it is
  * Usage and a skeleton of every test file: `authoring/README.md`. Proved on two real lessons: `authoring/proof.*.test.js`.
  */
 import { describe, it, expect } from 'vitest';
@@ -24,7 +24,7 @@ import { rng } from '../../random';
 import { keysOfPoints } from '../../bankSitting';
 import { allQuestions, forgotten } from '../../sitting';
 import { boxesOf, pairKey } from '../forgeBlocks';
-import { COINS, DIVISIONS, PLANKS, ROWS, SUBTRACTIONS, gcd, range } from '../numbers';
+import { CELLS, COINS, DIVISIONS, PLANKS, ROWS, SUBTRACTIONS, gcd, range } from '../numbers';
 import { alone, bankPairs, islandNamesIn, linesWithBoth, pairLines, readBank, storiesOf } from './bank.js';
 // the one rule of a bridge with a marked stretch (pure, no three.js): the islands' stories are what this suite reads
 import { markVerdict } from '../../../divisorIsles/mark.js';
@@ -155,40 +155,73 @@ export function equalitiesHold(formula) {
   return checked;
 }
 
-/** Every `$…$` of a sentence, and every equality isolated left to right (`\u2066…\u2069`), is true. Returns how many. */
+/** Every `$…$` of a sentence is true. Returns how many. */
 export const trueEqualities = (text) =>
-  [...String(text).matchAll(/\$([^$]+)\$|\u2066([^\u2069]+)\u2069/g)].reduce(
-    (n, m) => n + equalitiesHold(m[1] ?? m[2]),
-    0,
-  );
+  [...String(text).matchAll(/\$([^$]+)\$/g)].reduce((n, m) => n + equalitiesHold(m[1]), 0);
 
-/** The tables of the world's counted nouns that every sentence is read against (numbers.js). */
-const CELLS = ['خانة واحدة', 'خانتان', 'خانات', 'خانة'];
-export const NOUNS = [COINS, PLANKS, DIVISIONS, SUBTRACTIONS, ROWS, CELLS];
+/** The bidi controls the Arabic product wrapped its equalities in (LRI, PDI, LRM, RLM…): a French sentence holds none. */
+export const BIDI = /[\u200e\u200f\u202a-\u202e\u2066-\u2069]/;
+
+/** The tables of the world's counted nouns that every sentence is read against (numbers.js; the tiles of the palace). */
+export const NOUNS = [COINS, PLANKS, DIVISIONS, SUBTRACTIONS, ROWS, CELLS, ['dalle', 'dalles'], ['caisse', 'caisses']];
+
+const escape = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
- * The places where a number is glued to a noun with the wrong agreement: « 6 خانة », « 12 قطع », « 2 قسمات » (forms
- * [one, two, three to ten, eleven and more]; past 100 the last two digits decide: « 1003 خانات », « 1833 خانة » —
- * `past100: false` skips numbers from 100 on, for a lesson written before the kit). [] when the sentence agrees.
+ * The places where a number is glued to a noun with the wrong agreement: « 1 dalles », « 0 planches », « 3 dalle » — French
+ * takes the singular for 0 and 1, the plural from 2 on (`counted`). Forms [singular, plural]; a noun whose two forms are
+ * the same (« fois ») is never wrong. The number is a whole number (« 0,25 dalle » is not read: its « 25 » follows a
+ * comma). A plain or a no-break space may join them. [] when the sentence agrees. (`past100`, an option of the Arabic
+ * agreement, is accepted and ignored.)
  */
-export function agreementErrors(text, tables = NOUNS, { past100 = true } = {}) {
+export function agreementErrors(text, tables = NOUNS) {
   const errors = [];
-  for (const [, , few, many] of tables)
-    for (const [form, ok] of [
-      [few, (r) => r >= 3 && r <= 10],
-      [many, (r) => r === 0 || r >= 11 || r <= 2],
-    ]) {
-      const re = new RegExp(`(?<![\\d.,])(\\d+) ${form}(?![\\u0600-\\u06FF])`, 'g');
-      for (const m of String(text).matchAll(re)) {
-        const n = Number(m[1]);
-        const r = n >= 100 ? n % 100 : n;
-        if (n === 0 || (n >= 100 && !past100)) continue;
-        if (n === 1 || n === 2 || !ok(r)) errors.push(m[0]);
-      }
+  for (const [one, many] of tables) {
+    if (!one || !many || one === many) continue;
+    const re = new RegExp(
+      `(?<![\\d.,\\u202f])(\\d+)[ \\u00a0](${escape(many)}|${escape(one)})(?![\\p{L}\\p{M}])`,
+      'gu',
+    );
+    for (const m of String(text).matchAll(re)) {
+      const n = Number(m[1]);
+      if ((n < 2 && m[2] === many) || (n >= 2 && m[2] === one)) errors.push(m[0]);
     }
+  }
   return errors;
 }
-/** A list joined with a plain space before its comma (it may start a line with « ، »: defects.md B6). */
-export const looseComma = (text) => /\d ،/.test(String(text));
+
+/** The words of a sentence, its formulas (`$…$`) left out: LaTeX writes its own punctuation. */
+const wordsOf = (text) => String(text).replace(/\$[^$]*\$/g, ' ');
+/**
+ * The French typography mistakes a lesson author can make (`FRENCH_LANGUAGE_CONTRACT.md` §4), outside the formulas:
+ *   space   no space, or a plain one, before « : », « ; », « ! », « ? » (U+00A0 before « : », U+202F before the others —
+ *           either no-break space is accepted)
+ *   quote   « … » without a no-break space inside
+ *   apos    a straight apostrophe between two letters (« l'île »: « l’île »)
+ *   ordinal « 3ème », « 2eme », « 1ère » (« 3e », « 1re »)
+ *   arabic  an Arabic comma, semicolon or question mark (U+060C, U+061B, U+061F)
+ *   bidi    a bidi control (BIDI)
+ * → [{ kind, at }] — [] when the sentence is clean.
+ */
+export function typographyErrors(text) {
+  const w = wordsOf(text);
+  const errors = [];
+  const find = (kind, re) => {
+    for (const m of w.matchAll(re)) errors.push({ kind, at: m[0] });
+  };
+  find('space', /(?<=[^\s\u00a0\u202f(«])[:;!?](?!\/\/)/gu);
+  find('space', / [:;!?]/g);
+  find('quote', /«(?![\u00a0\u202f])|(?<![\u00a0\u202f])»/g);
+  find('apos', /\p{L}'\p{L}/gu);
+  find('ordinal', /\d+\s?(?:ème|eme|ième|ère)(?!\p{L})/gu);
+  find('arabic', /[\u060c\u061b\u061f]/g);
+  if (BIDI.test(String(text))) errors.push({ kind: 'bidi', at: String(text).match(BIDI)[0] });
+  return errors;
+}
+/**
+ * Kept name (lessons call it): true when the sentence breaks French typography (`typographyErrors`) — the Arabic check
+ * it replaced read only a list that could start a line with its comma, which French lists (« 1, 2 et 4 ») cannot.
+ */
+export const looseComma = (text) => typographyErrors(text).length > 0;
 
 /** Every string inside a value (objects and arrays walked; functions skipped). */
 export const stringsIn = (x, out = []) => {
@@ -264,7 +297,7 @@ export function storeHolders(story) {
  * THE STORY — `world/story.js` (and its tablets).
  *
  *   describeStory({ id: '<lesson id>', story: STORY, tablets: TABLETS, keys: KEYS,
- *     before: { '<key>': { words: /يحفظ|مشترك/, lines: [STORY.text.say.hello, …] } } });
+ *     before: { '<key>': { words: /garde|commun/, lines: [STORY.text.say.hello, …] } } });
  *
  * opts:
  *   id, story, tablets, keys     the lesson
@@ -275,7 +308,7 @@ export function storeHolders(story) {
  *   before       per key, the sentences played BEFORE its forge and the words they must not hold (its name, its rule)
  *   sentences    sentences built by the story's functions, read for agreement and commas with its fixed strings
  *   dashMax      the largest number of the gate dash (mental arithmetic, default 100)
- *   agreement    options of `agreementErrors` ({ past100: false } for a lesson written before the kit)
+ *   agreement    (ignored: the option of the Arabic agreement; French agreement has none)
  *   tablet       { lines: 2, math: 2, notes: 1 } — what the board's naming card holds (defects.md B17)
  */
 export function describeStory(opts) {
@@ -418,7 +451,7 @@ export function describeStory(opts) {
       }
     });
 
-    it('the tablets: true equalities, a method of two lines, two formulas, one plain note — isolated equalities', () => {
+    it('the tablets: true equalities, a method of two lines, two formulas, one plain note — no bidi control', () => {
       for (const key of keys) {
         const t = tablets[key];
         expect(t.title && t.lines.length && t.math.length, key).toBeTruthy();
@@ -429,21 +462,20 @@ export function describeStory(opts) {
         for (const n of t.notes ?? []) {
           plain(n);
           trueEqualities(n);
-          // an equality inside a plain sentence is isolated left to right, never reversed by the bidi algorithm
-          for (const m of n.matchAll(/[\d ×+−-]+=[\d ×+−-]+/g))
-            expect(n.slice(m.index - 1, m.index), `« ${m[0]} » isolated`).toMatch(/\u2066|\d/);
+          // French reads left to right: an equality in a plain sentence needs no isolation, and carries none
+          expect(n, `${key}: a bidi control`).not.toMatch(BIDI);
         }
         for (const l of [...t.lines, ...t.math]) said(l);
       }
     });
 
-    it('its sentences agree with their numbers, and every list puts a no-break space before its comma', () => {
+    it('its sentences agree with their numbers, and their typography is French', () => {
       const all = [...stringsIn(story.text), ...stringsIn(tablets), ...sentences];
       expect(all.length).toBeGreaterThan(10);
       for (const s of all) {
         said(s);
-        expect(agreementErrors(s, NOUNS, opts.agreement), s).toEqual([]);
-        expect(looseComma(s), s).toBe(false);
+        expect(agreementErrors(s, NOUNS), s).toEqual([]);
+        expect(typographyErrors(s), s).toEqual([]);
       }
     });
 
@@ -738,10 +770,10 @@ export function describeForges(opts) {
 // ───────────────────────── the experiments ─────────────────────────
 
 /**
- * THE EXPERIMENTS — `world/inquiries.js` (the « استكشف » screens, the benches of the workshops).
+ * THE EXPERIMENTS — `world/inquiries.js` (the « Explore » screens, the benches of the workshops).
  *
  *   describeExperiments({ ofKey: { '<key>': TARH_BENCH, … }, linesOf: (key, spec) => [...every sentence it can say],
- *     never: /PGCD|قاسم|خوارزمي/, own: { '<key>': /الأقصر والفرق|حتّى يصير/ } });
+ *     never: /PGCD|diviseur|algorithme/, own: { '<key>': /le plus court et la différence|jusqu’à obtenir/ } });
  */
 export function describeExperiments({ ofKey, linesOf, never, own = {} }) {
   describe('the experiments — the shared checks (authoring/test/suites.js › describeExperiments)', () => {
@@ -798,7 +830,7 @@ export function describeEvidence(opts) {
   const { id, keys, evidence, trainerEvidence, trainer, check, solution, cards, boxes, config } = opts;
   const FIRST = { firstTry: true, helped: false };
   describe(`the evidence of « ${id} » — the shared checks (authoring/test/suites.js › describeEvidence)`, () => {
-    it('each key proves one الكفاءة of the lesson, by its catalogue id, and a module of the lesson teaches it', () => {
+    it('each key proves one savoir-faire of the lesson, by its catalogue id, and a module of the lesson teaches it', () => {
       const points = keys.map((key) => evidence.learningPointOf(id, key));
       expect(new Set(points).size).toBe(keys.length);
       for (const p of points) expect(p).toMatch(new RegExp(`^[0-9a-z]+_${id}_P\\d+$`));
@@ -863,7 +895,7 @@ export const answersOnLine = (line) =>
     .length;
 
 /**
- * THE TRAINER « تدرّب » — `world/trainer.js`.
+ * THE TRAINER « Entraîne-toi » — `world/trainer.js`.
  *
  *   describeTrainer({ trainer, check, solution, answerLabel, evidenceOf: trainerEvidence, planOf: PLAN_OF,
  *     cards: KNOWLEDGE.graph.nodes.map((n) => n.id), kinds: ['farq', 'furuq', 'tap', 'tf'] });
@@ -880,7 +912,7 @@ export function describeTrainer(opts) {
       for (let seed = 1; seed <= (opts.seeds ?? 25); seed += 1)
         for (const q of trainer.makeSession(rng(seed * 104729), card)) yield q;
   };
-  describe('« تدرّب » — the shared checks (authoring/test/suites.js › describeTrainer)', () => {
+  describe('« Entraîne-toi » — the shared checks (authoring/test/suites.js › describeTrainer)', () => {
     it('every card of the mind map has a plan', () => {
       expect(Object.keys(planOf).sort()).toEqual([...cards].sort());
     });
@@ -895,7 +927,7 @@ export function describeTrainer(opts) {
         expect(res.fix, q.kind).toBeTruthy();
         said(`${q.prompt} ${res.fix} ${answerLabel(q, right)}`);
         trueEqualities(res.fix);
-        expect(looseComma(`${q.prompt} ${res.fix}`), res.fix).toBe(false);
+        expect(typographyErrors(`${q.prompt} ${res.fix}`), res.fix).toEqual([]);
         expect(agreementErrors(`${q.prompt} ${res.fix}`), q.prompt).toEqual([]);
         const bad =
           q.kind === 'tap'
@@ -931,7 +963,7 @@ export function describeTrainer(opts) {
 // ───────────────────────── the knowledge map ─────────────────────────
 
 /**
- * THE KNOWLEDGE MAP « خريطة المعارف » — `world/knowledge.js`.
+ * THE KNOWLEDGE MAP « fiche de connaissances » — `world/knowledge.js`.
  *
  *   describeKnowledge({ knowledge: KNOWLEDGE, keys: KEYS, cards: lesson.cards });
  *
@@ -992,7 +1024,7 @@ export function describeKnowledge(opts) {
       }
     });
 
-    it('every memo sheet is complete; its quiz has ONE right option; no Arabic inside a formula, no bare PGCD(…)', () => {
+    it('every memo sheet is complete; its quiz has ONE right option; no Arabic anywhere, no bare PGCD(…)', () => {
       const items = Object.values(knowledge.modules).flat();
       expect(items.map((x) => x.id)).toEqual(keys);
       for (const x of items) {
@@ -1001,15 +1033,18 @@ export function describeKnowledge(opts) {
           expect(q.options[q.correct], q.q).toBeTruthy();
           expect(new Set(q.options).size, q.q).toBe(q.options.length);
           for (const m of `${q.q} ${q.options.join(' ')}`.matchAll(/\$([^$]*)\$/g))
-            expect(m[1], q.q).not.toMatch(/[؀-ۿ]/);
+            expect(m[1], q.q).not.toMatch(/[\u0600-\u06ff]/);
         }
         said(JSON.stringify(x));
         for (const f of ['rule', 'example', 'chip'].filter((k) => memoFields.includes(k)))
-          expect(x.memo[f], `${x.id} ${f}`).not.toMatch(/[؀-ۿ]/);
+          expect(x.memo[f], `${x.id} ${f}`).not.toMatch(/[\u0600-\u06ff]/);
         for (const f of ['trap', 'exam', 'hook'].filter((k) => memoFields.includes(k)))
           expect(x.memo[f], `${x.id} ${f}`).not.toMatch(/(?<!\{)PGCD\(/);
       }
-      for (const s of stringsIn(knowledge)) expect(looseComma(s), s).toBe(false);
+      for (const s of stringsIn(knowledge)) {
+        expect(s, 'an Arabic letter').not.toMatch(/[\u0600-\u06ff]/);
+        expect(typographyErrors(s), s).toEqual([]);
+      }
       // what a card or a sheet STATES is true (not a quiz's options nor a mistake's « wrong » part: false on purpose)
       const statedOf = (node) => ({
         ...node,
@@ -1053,7 +1088,7 @@ export const PROVEN_LIMITS = {
   boardOptions: 6, // cards on an « ask »
   boardCue: 70,
 };
-const len = (s) => [...String(s).replace(/[\u2066\u2069]/g, '')].length;
+const len = (s) => [...String(s)].length;
 
 /**
  * THE LIMITS — a lesson's data against what the walks proved (`trusted.md`, SKILL.md §6).
@@ -1125,12 +1160,14 @@ const bankAnswer = (q) =>
     : q.paper
       ? undefined
       : { value: String(q.bank.expectedAnswer) };
-/** « DA » left as MONEY: glued to a number or after one (« 900DA », `$1500$ DA`, `11225\,DA`), `\text{ DA}`, « (DA) ». */
-const MONEY_DA = /(?:\d\$?|\\,|\\text\{)\s*DA(?![A-Za-z])|\(\s*DA\s*\)|بال(?:ـ|دينار)\s*DA(?![A-Za-z])/;
+/** A dinar of the Algerian banks (« 900DA », `$1500$ DA`, `11225\,DA`, `\text{ DA}`, « (DA) », its Arabic sign): never in France. */
+const MONEY_DA = /(?:\d\$?|\\,|\\text\{)\s*DA(?![A-Za-z])|\(\s*DA\s*\)|\u062f\u062c/;
+/** A euro sign glued to its number or after a plain space: French writes « 450 € » (a no-break space before the sign). */
+const LOOSE_EURO = /\d ?€|\d\$ ?€/;
 
 /**
- * « الامتحان الأبيض » — `world/sitting.js` (one call to `createBankSittings`): the REAL bank, every sheet whole, every
- * step markable to full points by its own key, « دج » only, adapting to what he missed.
+ * The « brevet blanc » — `world/sitting.js` (one call to `createBankSittings`): the REAL bank, every sheet whole, every
+ * step markable to full points by its own key, money in euros written the French way, adapting to what he missed.
  *
  *   describeSitting({ id: '<lesson id>', lesson, sittings, levels: LEVELS });
  */
@@ -1179,6 +1216,8 @@ export function describeSitting({ id, lesson, sittings, levels }) {
             if (q.key) expect(lesson.keys).toContain(q.key);
             for (const l of shown(q).filter(Boolean)) {
               expect(l).not.toMatch(MONEY_DA);
+              expect(l).not.toMatch(LOOSE_EURO);
+              expect(l).not.toMatch(/[\u0600-\u06ff]/);
               expect(l).not.toMatch(/undefined|NaN/);
             }
           }

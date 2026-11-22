@@ -5,7 +5,7 @@
  *                 instruction always opens (the world gives it a `key`: its text). `compact`: one line, while the world
  *                 shows something under it that must stay clear (a bridge being built and its equation).
  *   Recall        what matters from the island before (the gap he crossed, the planks that filled it, what he found), on
- *                 the right of the game, so that he connects one island to the next. Four lines at most. `title`:
+ *                 the left of the game (where the reading starts), so that he connects one island to the next. Four lines at most. `title`:
  *                 the world's own words for it (default: the islands').
  *
  * Both name no world and no lesson: the world's `Hud` passes them its words. Lines may hold `$…$` (they go through `MathText`).

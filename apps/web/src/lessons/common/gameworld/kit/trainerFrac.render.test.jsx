@@ -1,4 +1,4 @@
-// « تدرّب » — the lines of an exam FORM (`Trainer.jsx › FormLines`), the fraction template `{ frac: { n, d } }` above
+// « Entraîne-toi » — the lines of an exam FORM (`Trainer.jsx › FormLines`), the fraction template `{ frac: { n, d } }` above
 // all: a typed fraction is two boxes stacked over a real bar, numerator first, with the hooks every box has; a GIVEN
 // fraction is printed in the same shape; a line without a fraction draws as it always did. Server render.
 import { describe, it, expect } from 'vitest';
@@ -11,7 +11,7 @@ globalThis.window = globalThis.window ?? {};
 const draw = (lines, v = {}) =>
   renderToString(<FormLines lines={lines} v={v} set={() => () => {}} locked={false} />).replaceAll('<!-- -->', '');
 const box = (num, label) => ({ num, label });
-const typed = (n, d) => ({ frac: { n: box(n, `البسط ${n}`), d: box(d, `المقام ${d}`) } });
+const typed = (n, d) => ({ frac: { n: box(n, `numérateur ${n}`), d: box(d, `dénominateur ${d}`) } });
 
 describe('the fraction template of the trainer’s sheet', () => {
   it('a typed fraction: ONE stacked block — the numerator box, a real bar, the denominator box, in that order', () => {
@@ -32,8 +32,8 @@ describe('the fraction template of the trainer’s sheet', () => {
     expect(p).toBeGreaterThan(-1);
     expect(p).toBeLessThan(bar);
     expect(bar).toBeLessThan(q);
-    expect(html).toContain('aria-label="البسط p"');
-    expect(html).toContain('aria-label="المقام q"');
+    expect(html).toContain('aria-label="numérateur p"');
+    expect(html).toContain('aria-label="dénominateur q"');
     expect(html).toContain('value="11"');
     // a box holds three digits (Num w = 3: 4.4ch wide, four characters typed at most)
     expect(html).toMatch(/data-di-tr="q"/);
@@ -43,30 +43,32 @@ describe('the fraction template of the trainer’s sheet', () => {
     expect(html).not.toContain('66/78');
   });
 
-  it('inside an RTL sentence: the fraction is an isolated LTR block between the words, and a choice follows', () => {
+  it('inside a sentence: the fraction is an isolated block between the words, and a choice follows', () => {
     const html = draw([
       {
         tokens: [
-          'الكسر',
+          'La fraction',
           { frac: { n: 35, d: 48 } },
-          { choice: 'verdict', options: [{ value: 'irr', text: 'غير قابل للاختزال' }] },
+          { choice: 'verdict', options: [{ value: 'irr', text: 'est irréductible' }] },
         ],
       },
     ]);
-    expect(html).toMatch(/^<div class="di-sheet__line">الكسر <span class="di-frac"/);
+    expect(html).toMatch(/^<div class="di-sheet__line">La fraction <span class="di-frac"/);
     expect(html.indexOf('di-frac')).toBeLessThan(html.indexOf('<select'));
     expect(html).toContain('data-di-tr="verdict"');
   });
 
   it('a line WITHOUT a fraction draws exactly as before the template', () => {
     const html = draw([
-      { ltr: true, tokens: ['PGCD(66 ; 78)', '=', box('g', 'القاسم')] },
-      { tokens: ['النتيجة', { strong: 12 }, { text: 'لوحًا', rtl: true }] },
+      { ltr: true, tokens: ['PGCD(66 ; 78)', '=', box('g', 'le diviseur')] },
+      { tokens: ['Résultat', { strong: 12 }, { text: 'planches', rtl: true }] },
     ]);
     expect(html).not.toContain('di-frac');
     expect(html).toContain('<div class="di-sheet__line" dir="ltr"><span>PGCD(66 ; 78)</span><span>=</span><input');
     expect(html).toContain('data-di-tr="g"');
-    expect(html).toContain('<div class="di-sheet__line">النتيجة <b dir="ltr">12</b><span dir="rtl">لوحًا</span></div>');
+    // a piece of words is a plain span: a legacy `rtl` flag no longer turns it right to left
+    expect(html).toContain('<div class="di-sheet__line">Résultat <b dir="ltr">12</b><span>planches</span></div>');
+    expect(html).not.toContain('dir="rtl"');
   });
 });
 

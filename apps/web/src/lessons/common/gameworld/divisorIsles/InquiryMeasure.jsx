@@ -10,7 +10,7 @@
  *   direct  one stage only: which plank? A plank that leaves a fraction still to count is laid honestly, the world shows
  *           a plank that still fills both, and he starts again from the fraction given.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `measure`). Nothing here states a rule:
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `measure`). Nothing here states a rule:
  * every sentence says what the strips have just done. The screen is a pure VIEW of the reducer's state (`MeasureView`).
  * `FracTpl` (a typed fraction in its own shape: two boxes over a bar) and `chainTex` are shared with `InquiryPart.jsx`.
  */
@@ -186,7 +186,7 @@ export function MeasureView({ spec, state, act, input = { plank: '', num: '', de
                 ))}
               </div>
             )}
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num
                   value={input.plank}

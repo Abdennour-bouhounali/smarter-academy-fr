@@ -32,14 +32,14 @@ import {
   luckyPair,
 } from './logic';
 
-describe('مختبري — the order of the lessons', () => {
+describe('Mon labo — the order of the lessons', () => {
   it('is the catalogue order of the four grades (run `npm run generate:lab-order` when this fails)', () => {
     expect(ORDER).toEqual(buildOrder());
     expect(Object.keys(ORDER).filter((k) => !k.startsWith('$'))).toEqual(GRADES);
   });
 });
 
-describe('مختبري — the instruments a lesson may show', () => {
+describe('Mon labo — the instruments a lesson may show', () => {
   it('tags every instrument with the lesson that introduces it (none before the French lessons), a module and quests', () => {
     for (const t of TOOLS) {
       // re-keyed on the French catalogue in a later stage: until then an instrument is listed nowhere
@@ -52,7 +52,7 @@ describe('مختبري — the instruments a lesson may show', () => {
     expect(toolsFor('lecon-inconnue')).toEqual({ mine: [], cabinet: [], all: [] });
   });
 
-  it('opened BEFORE the lesson (« عُدّة الانطلاق », `earlierOnly`): only the instruments of the lessons before it', () => {
+  it('opened BEFORE the lesson (« L’échauffement », `earlierOnly`): only the instruments of the lessons before it', () => {
     for (const g of GRADES)
       for (const code of ORDER[g])
         for (const t of toolsFor(code, { earlierOnly: true }).all)
@@ -84,7 +84,7 @@ describe('مختبري — the instruments a lesson may show', () => {
   });
 });
 
-describe('مختبري — the mathematics the instruments draw', () => {
+describe('Mon labo — the mathematics the instruments draw', () => {
   it('lays a counters in rows of b: q full rows, r counters left', () => {
     for (let a = 1; a <= 144; a += 5)
       for (let b = 1; b <= 24; b += 1) {
@@ -112,7 +112,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
   it('reads the rules of divisibility on the digits, never against the truth', () => {
     for (let n = 0; n <= 9999; n += 7)
       for (const r of digitRules(n)) expect(r.ok, `${n} by ${r.by}`).toBe(n % r.by === 0);
-    expect(digitRules(756).find((r) => r.by === 9).reads).toBe('مجموع الأرقام 18: مضاعف للعدد 9');
+    expect(digitRules(756).find((r) => r.by === 9).reads).toBe('Somme des chiffres 18\u00a0: un multiple de 9');
     expect(digitRules(756).find((r) => r.by === 4).digits).toEqual([1, 2]);
     expect(rollDigit(756, 0, 1, 3)).toBe(856);
     expect(rollDigit(756, 2, -1, 3)).toBe(755);
@@ -225,7 +225,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
       }
   });
 
-  it('« مِجهر العددين »: the lists, what is in both, one number tried on both — for every pair it can show, and 14 divisions at most', () => {
+  it('« Le microscope à deux nombres »: the lists, what is in both, one number tried on both — for every pair it can show, and 14 divisions at most', () => {
     let most = 0;
     for (let a = 1; a <= 999; a += 13)
       for (let b = 1; b <= 999; b += 17) {
@@ -249,7 +249,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
     expect(divisorsOf(840)).toHaveLength(32);
   });
 
-  it('« شريط الكسر »: the two divisions, where the light ends, what is left, and the fraction in pieces only when k divides both', () => {
+  it('« La bande de la fraction »: the two divisions, where the light ends, what is left, and the fraction in pieces only when k divides both', () => {
     for (let a = 1; a <= 999; a += 11)
       for (let b = 1; b <= 999; b += 13)
         for (const k of [2, 3, 4, 5, 7, 12, 25]) {
@@ -277,7 +277,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
     expect(stripOf(60, 96, 7)).toMatchObject({ verdict: 'none', left: 5 });
   });
 
-  it('« ساحة العدد »: the greatest whole square, what is left and the side to 0,01, in integers — for every court it can show', () => {
+  it('« La salle du nombre »: the greatest whole square, what is left and the side to 0,01, in integers — for every court it can show', () => {
     for (let a = 1; a <= 400; a += 1) {
       // the greatest whole side, found apart by trying every side
       let k = 0;
@@ -309,17 +309,19 @@ describe('مختبري — the mathematics the instruments draw', () => {
     expect(courtOf(30, 5)).toMatchObject({ k: 5, left: 5, lo: 547, hi: 548, out: 5 });
   });
 
-  it('« ساحة العدد » is drawn in code and keeps the measuring word of the world', () => {
+  it('« La salle du nombre » is drawn in code and keeps the measuring word of the world', () => {
     const tile = TOOLS.find((t) => t.id === 'court');
     expect(tile.needs).toBe('a');
     expect(tile.range.a).toEqual([1, 400]); // every whole square up to 20 × 20
-    // drawn in code, its Arabic in DOM text, the measuring word of the world kept (« المقياس », never « القضيب »)
+    // drawn in code, its words in DOM text, the measuring word of the world kept (« la toise », never « la règle » nor
+    // « la baguette »), never a verdict of error
     const src = readFileSync(new URL('./tools/NumberCourt.jsx', import.meta.url), 'utf8');
-    expect(src).not.toMatch(/قضيب|<img|\.png|\.jpg|خطأ|خاطئ|غلط/);
-    for (const q of QUESTS.court) expect(q.text).not.toMatch(/قضيب|خطأ|خاطئ|غلط/);
+    expect(src).not.toMatch(/règle|baguette|<img|\.png|\.jpg|\bfaux\b|fausse|erreur/i);
+    for (const q of QUESTS.court) expect(q.text).not.toMatch(/règle|baguette|\bfaux\b|fausse|erreur/i);
+    expect(src).not.toMatch(/[\u0600-\u06FF]/);
   });
 
-  it('« منصّة الكسر »: the pieces of the platform and of the court counted in integers, and the nearest rod kept', () => {
+  it('« La plateforme de la fraction »: the pieces of the platform and of the court counted in integers, and the nearest rod kept', () => {
     for (let a = 1; a <= 50; a += 1)
       for (let q = 1; q <= 12; q += 1) {
         const { pMax } = pieceOf(a, q, 1);
@@ -353,7 +355,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
     expect(closerPiece({ q: 3, far: 1 }, { q: 3, far: 1 })).toBe(false); // the same distance keeps the first
   });
 
-  it('« منصّة الكسر » names no key of the lesson it serves', () => {
+  it('« La plateforme de la fraction » names no key of the lesson it serves', () => {
     const tile = TOOLS.find((t) => t.id === 'piece');
     expect(tile.needs).toBe('ab');
     expect(tile.range).toEqual({ a: [1, 50], b: [1, 12] });
@@ -361,7 +363,10 @@ describe('مختبري — the mathematics the instruments draw', () => {
     // root, nor the refused name of the rod, nor a verdict of error
     const src = readFileSync(new URL('./tools/FractionPlatform.jsx', import.meta.url), 'utf8');
     const said = [tile.name, tile.hint, ...QUESTS.piece.map((q) => q.text), src].join(' ');
-    expect(said).not.toMatch(/ناطق|مدو|مقرّب|مقرب|جذر|√|\\sqrt|قضيب|خطأ|خاطئ|غلط/); // Math.sqrt draws, never writes
+    expect(said).not.toMatch(
+      /rationnel|décimal|valeur approchée|approximation|arrondi|racine|√|\\sqrt|règle|baguette|\bfaux\b|fausse|erreur/i,
+    ); // Math.sqrt draws, never writes
+    expect(said).not.toMatch(/[\u0600-\u06FF]/);
     expect(src).not.toMatch(/<img|\.png|\.jpg/);
   });
 
@@ -377,7 +382,7 @@ describe('مختبري — the mathematics the instruments draw', () => {
   });
 });
 
-describe('مختبري — « جرّب »', () => {
+describe('Mon labo — « Essaie »', () => {
   it('ticks a quest only when the student has MADE the thing', () => {
     const seen = new Set();
     expect(observe('rows', { a: 42, b: 5 }, seen)).toEqual([]);
@@ -411,7 +416,7 @@ describe('مختبري — « جرّب »', () => {
     expect(observe('duo', { a: 84, b: 126, face: 'probe', d: 14, moved: true }, new Set())).toEqual(['probe']);
     expect(observe('duo', { a: 84, b: 126, face: 'probe', d: 14, moved: false }, new Set())).toEqual([]);
     expect(observe('duo', { a: 84, b: 126, face: 'probe', d: 7, moved: true }, new Set())).toEqual([]); // not above 10
-    // « شريط الكسر »: nothing before the hand moved the piece; a piece above 10 in both; a strip above 500 written under 50;
+    // « La bande de la fraction »: nothing before the hand moved the piece; a piece above 10 in both; a strip above 500 written under 50;
     // a piece of the denominator only, above 100
     expect(observe('strip', { a: 84, b: 126, k: 14 }, new Set())).toEqual([]);
     expect(observe('strip', { a: 84, b: 126, k: 14, moved: true }, new Set())).toEqual(['both']);
@@ -420,7 +425,7 @@ describe('مختبري — « جرّب »', () => {
     expect(observe('strip', { a: 300, b: 720, k: 12, moved: true }, new Set())).toEqual(['both']); // 60 is not under 50
     expect(observe('strip', { a: 35, b: 120, k: 4, moved: true }, new Set())).toEqual(['split']);
     expect(observe('strip', { a: 35, b: 90, k: 3, moved: true }, new Set())).toEqual([]); // the denominator under 100
-    // « ساحة العدد »: nothing before the hand moved the side; a perfect square above 100 filled; a court above 150
+    // « La salle du nombre »: nothing before the hand moved the side; a perfect square above 100 filled; a court above 150
     // settled between two sides tried; 20 tiles or more left beside the greatest whole square, once its side was tried
     expect(observe('court', { a: 144, b: 1, s: 12 }, new Set())).toEqual([]);
     expect(observe('court', { a: 144, b: 1, s: 12, moved: true, tried: [12] }, new Set())).toEqual(['exact']);
@@ -429,7 +434,7 @@ describe('مختبري — « جرّب »', () => {
     expect(observe('court', { a: 160, b: 1, s: 12, moved: true, tried: [12] }, new Set())).toEqual([]); // 13 not tried
     expect(observe('court', { a: 120, b: 1, s: 10, moved: true, tried: [10] }, new Set())).toEqual(['most']); // 120 − 100
     expect(observe('court', { a: 119, b: 1, s: 10, moved: true, tried: [10, 11] }, new Set())).toEqual([]); // 19 left
-    // « منصّة الكسر »: nothing before the hand moved the rod; a court above 10 covered exactly by a rod of denominator
+    // « La plateforme de la fraction »: nothing before the hand moved the rod; a court above 10 covered exactly by a rod of denominator
     // above 1; one piece apart with a denominator above 4; a difference under a hundredth of a tile, not zero
     expect(observe('piece', { a: 16, b: 2, p: 8 }, new Set())).toEqual([]);
     expect(observe('piece', { a: 16, b: 2, p: 8, moved: true }, new Set())).toEqual(['exact']);
@@ -474,7 +479,7 @@ describe('مختبري — « جرّب »', () => {
   });
 });
 
-describe('مختبري — the sounds', () => {
+describe('Mon labo — the sounds', () => {
   const read = (f) => readFileSync(new URL(f, import.meta.url), 'utf8');
   const FILES = [
     './LessonLab.jsx',

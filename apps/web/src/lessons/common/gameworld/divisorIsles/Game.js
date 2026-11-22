@@ -1,5 +1,5 @@
 /**
- * « أرخبيل القواسم » — a game world (student only), played with the content of the lesson that names it in its pack.
+ * « L’archipel des diviseurs » — a game world (student only), played with the content of the lesson that names it in its pack.
  *
  * A chain of floating islands. Between two islands a gap of `a` cells; the student carries a mould of length `b` and fires
  * planks of that length: the scene lays q planks and shows the r cells left (a = b × q + r). The bridge HOLDS only when r = 0,
@@ -35,6 +35,7 @@ import {
 } from '../engine/builders';
 import { divide, predictOptions, bridgeStars, buildLayout, DASH, checkDivision } from './logic';
 import { T as WORLD_TEXT, waveSay, waveHint } from './strings';
+import { counted, CELLS } from '../kit/authoring/numbers';
 import { gatePoints, PRACTICE_HEARTS, MAX_WAVES } from '../kit/ladder';
 import { makeMission, judge, facts, answerParts, WORLD_OF, ORDER_PAY, MISTAKE_COST, CASE_HEARTS } from './cases';
 import { Depot } from './Depot';
@@ -644,7 +645,7 @@ export class DivisorIslesGame extends WorldRuntime {
       g.add(tick);
     }
     if (seg.mark) this.buildMark(seg, g, q);
-    const label = textSprite(seg.mark ? this.T.mark.label(seg.mark, seg.a) : `${seg.a} خانة`, {
+    const label = textSprite(seg.mark ? this.T.mark.label(seg.mark, seg.a) : counted(seg.a, CELLS), {
       h: 1.25,
       bg: 'rgba(10,26,60,0.86)',
       stroke: null,
@@ -1348,7 +1349,7 @@ export class DivisorIslesGame extends WorldRuntime {
     }
   }
 
-  /** Island « المرايا »: the bridge of 48 held with 6 (8 planks); a gust takes it away and leaves moulds 5, 7, 8, 9. */
+  /** Island « des miroirs »: the bridge of 48 held with 6 (8 planks); a gust takes it away and leaves moulds 5, 7, 8, 9. */
   async storm(seg) {
     await this.wait(2.0);
     this.say(this.T.say.storm, 8);
@@ -1865,7 +1866,7 @@ export class DivisorIslesGame extends WorldRuntime {
     this.arrive(next);
   }
 
-  // ───────────────────────────── « خريطة المعرفة » and the practice game ─────────────────────────────
+  // ───────────────────────────── « la carte des connaissances » and the practice game ─────────────────────────────
 
   /** A help was opened during the current step of a case (the rule, a model sheet): its answer is no longer evidence. */
   markHelped() {
@@ -1987,7 +1988,7 @@ export class DivisorIslesGame extends WorldRuntime {
     this.showWave();
   }
 
-  /** « ذكّرني بالقاعدة »: the tablet of the rule the current question uses — from the HUD of a run, or from the guidance. */
+  /** « Rappelle-moi la règle »: the tablet of the rule the current question uses — from the HUD of a run, or from the guidance. */
   /** `from` — the hub's own place ({ sel, space }): closing the tablet comes back to the same node. */
   showRule(key, from) {
     const d = this.dash;
@@ -2019,7 +2020,7 @@ export class DivisorIslesGame extends WorldRuntime {
     else this.set({ overlay: o?.back ?? null });
   }
 
-  // ───────────────────────────── « تعاونية الواحة »: the real-world practice game ─────────────────────────────
+  // ───────────────────────────── « La coopérative du verger »: the real-world practice game ─────────────────────────────
   /** A day at the depot: the orders of the level's mission, solved step by step; the depot packs what the student decides. */
   startCase(node, level) {
     const { mission } = this.lesson.ladder.nodes[node].levels[level];
@@ -2221,7 +2222,7 @@ export class DivisorIslesGame extends WorldRuntime {
     else {
       this.depot.clearPlot();
       this.depot.setStock({ a: null, b: null }, sit.kinds);
-      this.depot.stockLabel(null, null, sit.stock); // not counted yet (« ؟ »), but each pile already has its size
+      this.depot.stockLabel(null, null, sit.stock); // not counted yet (« ? »), but each pile already has its size
     }
     this.skyNow = SKIES[1].slice();
     this.input.clear();

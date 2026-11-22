@@ -48,8 +48,8 @@ describe('pointerShortcut', () => {
     expect(pointerShortcut(key({ shiftKey: true }))).toBe('spotlight');
   });
 
-  it('lit la POSITION de la touche : clavier arabe (ح) ou AZERTY, même touche', () => {
-    expect(pointerShortcut(key({ key: 'ح' }))).toBe('pointer');
+  it('lit la POSITION de la touche : clavier bépo ou AZERTY, même touche', () => {
+    expect(pointerShortcut(key({ key: 'j' }))).toBe('pointer');
     expect(pointerShortcut(key({ code: 'KeyO', key: 'p' }))).toBeNull();
   });
 
@@ -61,7 +61,7 @@ describe('pointerShortcut', () => {
     expect(pointerShortcut(key({ defaultPrevented: true }))).toBeNull();
   });
 
-  it('jamais pendant une saisie ni dans un instrument du مختبر', () => {
+  it('jamais pendant une saisie ni dans un instrument de l’atelier', () => {
     expect(pointerShortcut(key({ target: el(true) }))).toBeNull();
     expect(pointerShortcut(key({ target: el(false, { isContentEditable: true }) }))).toBeNull();
     expect(pointerShortcut(key({ target: el(false) }))).toBe('pointer');

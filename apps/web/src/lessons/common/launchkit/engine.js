@@ -1,21 +1,21 @@
 /**
- * « عُدّة الانطلاق » — the PURE engine of a launch: (tools, answers, time) → what comes next, the state of each tool, the score.
+ * « L’échauffement » — the PURE engine of a launch: (tools, answers, time) → what comes next, the state of each tool, the score.
  *
- * A tool is one earlier الكفاءة the lesson stands on. Its station follows the band machine of « بوصلتي »
+ * A tool is one earlier savoir-faire the lesson stands on. Its station follows the band machine of « Ma boussole »
  * (`core/compass/engine.js › itemProgress`, the same one the server holds in PHP): an easy question, then a harder one; a
  * miss gets a second easy one — a tool is never judged on one answer; the game STOPS asking as soon as it knows (2 or 3
- * answers). « غير متأكّد » counts as not succeeded for the band, never as a fault.
+ * answers). « Pas sûr » counts as not succeeded for the band, never as a fault.
  *
- *   solid        « ثابتة »          two segments lit
- *   consolidate  « تحتاج تثبيتًا »   one segment
- *   start        « نبدأ منها »       none
- *   unseen       « لم نفحصها بعد »   (time ran out)
+ *   solid        « Solide »            two segments lit
+ *   consolidate  « À consolider »      one segment
+ *   start        « À reprendre »       none
+ *   unseen       « Pas encore testé »  (time ran out)
  *
  * The gate (`gateOf`) is the capsule of a core tool left empty — see there.
  *
  * After the stations, ONE quick workshop repairs the weakest tool on the spot (a worked example, then two similar
- * questions). Repaired, a tool at « نبدأ منها » rises to « تحتاج تثبيتًا » and a tool at « تحتاج تثبيتًا » keeps its band:
- * what was just shown is not yet « ثابتة » — the next launch asks it again.
+ * questions). Repaired, a tool at « À reprendre » rises to « À consolider » and a tool at « À consolider » keeps its band:
+ * what was just shown is not yet « Solide » — the next launch asks it again.
  */
 import { itemProgress, BANDS } from '@smarter-academy/core/compass/engine.js';
 
@@ -27,7 +27,7 @@ const DAY = 86400000;
 /**
  * The tools of a lesson: `toolsForLesson(code)` of the learning net — its direct prerequisites, the CORE ones first (a
  * student cannot pass the lesson without them), then the supports, the nearest year first — kept when they have a question
- * family, at most four. A tool measured « ثابتة » in the last three weeks arrives charged and is not asked again.
+ * family, at most four. A tool measured « Solide » in the last three weeks arrives charged and is not asked again.
  */
 export function planTools(netTools, hasFamily, kit = {}, now = Date.now()) {
   const tools = [];
@@ -50,7 +50,7 @@ export function planTools(netTools, hasFamily, kit = {}, now = Date.now()) {
 const of = (answers, item, phase) => answers.filter((a) => a.item === item && a.phase === phase);
 const ok = (a) => a.correct === true && !a.unsure;
 
-/** The workshop of a launch, once the stations are over: the weakest tool (« نبدأ منها » before « تحتاج تثبيتًا »), or none. */
+/** The workshop of a launch, once the stations are over: the weakest tool (« À reprendre » before « À consolider »), or none. */
 export function workshopTool(tools, answers) {
   const bands = tools
     .filter((t) => !t.known)
@@ -112,7 +112,7 @@ export function kitOf(tools, answers) {
 
 /**
  * THE GATE (owner, 2026-11-17: « the door opens by doing, not by scoring »). A CORE tool — one the lesson cannot be passed
- * without (`weight` of the learning net; a tool not classified yet counts as core) — left at « نبدأ منها » replaces the
+ * without (`weight` of the learning net; a tool not classified yet counts as core) — left at « À reprendre » replaces the
  * take-off by ONE required short capsule of that tool: its card, a worked example, its instrument, two easy questions.
  * After the capsule the student goes in WHATEVER the two answers say: the tool stays as it is, flagged. Never a second
  * capsule in the same launch, never a dead end; a support tool never closes the door.
@@ -133,8 +133,8 @@ export function scoreOf(kit) {
 }
 
 /**
- * « نجمة الصدق »: the student knew what he knew — sure and right, or unsure and wrong — on at least four answers out of five
- * (three answers at least). It rewards an honest « غير متأكّد », which is also what makes the doubt worth reading.
+ * « Étoile de franchise »: the student knew what he knew — sure and right, or unsure and wrong — on at least four answers out of five
+ * (three answers at least). It rewards an honest « Pas sûr », which is also what makes the doubt worth reading.
  */
 export function honesty(answers) {
   const n = answers.length;
@@ -142,7 +142,7 @@ export function honesty(answers) {
   return { n, matched, star: n >= 3 && matched / n >= 0.8 };
 }
 
-/** What to revise: the weakest tool first (« نبدأ منها », then « تحتاج تثبيتًا » not repaired, then repaired), the others after. */
+/** What to revise: the weakest tool first (« À reprendre », then « À consolider » not repaired, then repaired), the others after. */
 export function priorities(kit) {
   const rank = (t) => (t.band === BANDS.START ? 0 : t.band === BANDS.CONSOLIDATE ? (t.repaired ? 2 : 1) : 9);
   const weak = kit.filter((t) => rank(t) < 9).sort((a, b) => rank(a) - rank(b));

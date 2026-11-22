@@ -1,8 +1,8 @@
 /**
  * Two more 3D worlds of the real cases (three.js, drawn in code), beside the cooperative's depot (Depot.js):
- *   ShareScene  « قعدة الأصدقاء » — a courtyard, a low table, a tray of sweets: the pieces are dealt round after round to the
+ *   ShareScene  « Le goûter entre amis » — a courtyard, a low table, a dish of crêpes: the pieces are dealt round after round to the
  *               plates of the friends; what cannot be shared fairly stays on the tray.
- *   TileScene   « ورشة التبليط » — a corridor to tile: the tiles are laid end to end; a tile that does not fit leaves a gap
+ *   TileScene   « Le chantier du carreleur » — a corridor to tile: the tiles are laid end to end; a tile that does not fit leaves a gap
  *               (it would have to be cut). Then the boxes to buy: the last one is opened but not emptied.
  * Same contract as Depot: robotSpot, camPos, camLook, setOrder(order), runSim(sim, good, onStep), clearSim(), ship(), update(time).
  * No person is drawn: the friends are their plates and their names, the tiler is his tools.
@@ -12,7 +12,8 @@ import { makeIsland, makeTree, makeRock, std, textSprite, seeded } from '../engi
 import { divide } from './logic';
 
 const easeOut = (t) => 1 - (1 - t) ** 3;
-const NAMES = ['أمين', 'سليم', 'ياسين', 'أنس', 'إلياس', 'آدم', 'يونس', 'ريّان', 'مهدي', 'زكريّا', 'أيّوب', 'إسحاق'];
+/** The friends round the table: first names of today's France, girls and boys in turn. */
+const NAMES = ['Lucas', 'Inès', 'Hugo', 'Léa', 'Nathan', 'Chloé', 'Adam', 'Manon', 'Louis', 'Jade', 'Théo', 'Emma'];
 const wipe = (group, list) => {
   for (const m of list) {
     group.remove(m);
@@ -209,7 +210,7 @@ export class ShareScene {
         this.group.add(m);
         this.items.push(m);
       }
-      this.leftLabel.userData.setText(`بقي ${r}`);
+      this.leftLabel.userData.setText(`reste ${r}`);
       this.leftLabel.position.set(0, 2.0, 0.3);
       this.leftLabel.visible = true;
       this.label.visible = false;
@@ -333,7 +334,12 @@ export class TileScene {
       r.position.z = Math.sin(a) * 16;
       g.add(r);
     }
-    const sign = textSprite('ورشة عمّي الطاهر', { h: 1.1, bg: 'rgba(180,83,9,0.96)', stroke: null, color: '#fff7d6' });
+    const sign = textSprite('Le chantier de Mme Moreau', {
+      h: 1.1,
+      bg: 'rgba(180,83,9,0.96)',
+      stroke: null,
+      color: '#fff7d6',
+    });
     sign.position.set(-6.5, 4.4, -4.2);
     g.add(sign);
     this.gap = new THREE.Mesh(
@@ -355,7 +361,7 @@ export class TileScene {
 
   setOrder(order) {
     this.clearSim();
-    this.label.userData.setText(`${order.L} سم`);
+    this.label.userData.setText(`${order.L} cm`);
   }
   clearSim() {
     wipe(this.group, this.tiles);
@@ -412,7 +418,7 @@ export class TileScene {
         this.gap.scale.x = gw;
         this.gap.position.set(LEN / 2 - gw / 2, 0.2, 0.2);
         this.gap.visible = true;
-        this.note.userData.setText(`يبقى ${r} سم`);
+        this.note.userData.setText(`reste ${r} cm`);
         this.note.position.set(LEN / 2 - gw / 2, 1.9, 0.2);
         this.note.visible = true;
         game.audio.play('fail');
@@ -465,7 +471,7 @@ export class TileScene {
           this.counter.position.set(home.x, 1.5, home.z);
           onStep({ a: n, b, q: k + 1, r: n - b * (k + 1), live: true });
         } else {
-          this.note.userData.setText(`تبقى ${b - r}`);
+          this.note.userData.setText(`reste ${b - r}`);
           this.note.position.set(home.x, 1.7, home.z);
           this.note.visible = true;
         }

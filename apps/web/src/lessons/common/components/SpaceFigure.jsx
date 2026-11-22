@@ -2,10 +2,10 @@ import { useId } from 'react';
 import { layoutSpaceFigure } from './spaceFigure';
 
 /**
- * Une figure de l'ESPACE déclarative (unité 14 « الهندسة في الفضاء ») — la sœur 3D de GeoFigure : sphères, pavés, pyramides,
+ * Une figure de l'ESPACE déclarative (la géométrie dans l'espace) — la sœur 3D de GeoFigure : sphères, pavés, pyramides,
  * cylindres, cônes, troncs de cône, cercles (grands / petits), plans, sections, segments, angles droits. La donnée est décrite
  * dans spaceFigure.js ; le dessin suit la convention du manuel : ce qui est VU en trait plein, ce qui est CACHÉ en pointillés.
- * SVG, jamais une image ; les noms de points sont du texte LTR, l'élément porte un `aria-label` arabe.
+ * SVG, jamais une image ; les noms de points sont du texte LTR, l'élément porte un `aria-label` en français.
  *
  * Utilisée par les leçons de l'unité 14 et par la pratique (`statement.figure` avec `kind: 'space'`,
  * features/practice/ExerciseStatement.jsx).

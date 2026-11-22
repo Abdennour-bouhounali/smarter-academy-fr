@@ -1,12 +1,17 @@
 import { describe, it, expect } from 'vitest';
 import { toEntries, fromEntries, serverWins } from './saveSync';
 
-/** A save as the world writes it, with Arabic words in it (the rule a student said in his own words). */
+/** A save as the world writes it, with French words in it — accents, apostrophes, no-break spaces (the rule a student said in his own words). */
 const save = (extra = {}) => ({
   v: 1,
   stage: 7,
   keys: ['a', 'b'],
-  rules: { a: { text: 'يثبت الجسر عندما: باقي قسمة طول الهوّة على طول اللوح يساوي 0.', words: 'إذا لم يبقَ شيء' } },
+  rules: {
+    a: {
+      text: 'Le pont tient quand : le reste de la division du fossé par la planche est égal à 0.',
+      words: 'quand il ne reste rien, « zéro »',
+    },
+  },
   log: Array.from({ length: 16 }, (_, i) => ({ a: 20 + i, b: 3 })),
   at: 1763380000000,
   ...extra,
@@ -14,7 +19,7 @@ const save = (extra = {}) => ({
 
 describe('the world save follows the student from one device to the next', () => {
   it('cuts the save into pieces the answers store accepts, and puts it together again unchanged', () => {
-    const big = save({ know: { read: Array.from({ length: 400 }, (_, i) => `card-${i}-قاعدة`) } });
+    const big = save({ know: { read: Array.from({ length: 400 }, (_, i) => `card-${i}-règle`) } });
     const entries = toEntries(big);
     const count = entries['world:n'].v;
     expect(count).toBeGreaterThan(1);

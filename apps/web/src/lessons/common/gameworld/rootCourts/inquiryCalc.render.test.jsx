@@ -12,7 +12,7 @@ import { tiles } from './strings';
 globalThis.window = globalThis.window ?? {};
 
 /**
- * A COMPLETE example of the spec of `calc`, in Arabic — every key the screen reads (GAME_WORLD.md « spec shape of
+ * A COMPLETE example of the spec of `calc`, in French — every key the screen reads (GAME_WORLD.md « spec shape of
  * `calc` »). Facts only: no sentence names the rule, says « exact », « approximate », « root », or shows the sign.
  * A number inside a sentence goes through MathText as `$…$` (its comma written `{,}`).
  */
@@ -23,38 +23,43 @@ const CALC_SPEC = {
   rods: [{ q: '5' }, { q: '5,5' }, { calc: '5,477225575' }],
   wall: true,
   text: {
-    lead: ({ a }) => `الساحة التي مساحتها ${tiles(a)} لم يركبها أيّ مقياس بعد. بجانب جدارها مقاييس جاهزة.`,
-    goal: ({ a }) => `جرّب المقاييس واحدًا واحدًا على الساحة التي مساحتها ${tiles(a)}.`,
-    wallName: 'جدار الساحة',
-    unknown: '؟',
+    lead: ({ a }) =>
+      `La salle de ${tiles(a)} : aucune toise ne l’a encore fait monter. Des toises sont prêtes le long de son mur.`,
+    goal: ({ a }) => `Essaie les toises une par une sur la salle de ${tiles(a)}.`,
+    wallName: 'Le mur',
+    unknown: '?',
     ask: ({ q, calc, wall }) =>
       wall
-        ? 'المقياس مشدود على الجدار من الركن إلى الركن. هل تركب منصّته المصعد؟'
+        ? 'La toise est tendue sur le mur, d’un coin à l’autre. Sa plateforme monte-t-elle ?'
         : calc
-          ? `هذا ما كتبته الحاسبة: ${m(q)}. هل تركب المنصّة المبنيّة عليه المصعد؟`
-          : `المقياس ${m(q)}: هل تركب المنصّة المبنيّة عليه المصعد؟`,
-    yes: 'تركب',
-    no: 'لا تركب',
-    zoomIn: 'كبّر',
-    thin: ({ covers }) => `المنصّة تغطّي ${m(covers)} بلاطة. العين لا ترى فرقًا: كبّر ركن الساحة.`,
+          ? `Voici ce qu’affiche la calculatrice : ${m(q)}. La plateforme construite dessus monte-t-elle ?`
+          : `La toise de ${m(q)} : la plateforme construite dessus monte-t-elle ?`,
+    yes: 'Elle monte',
+    no: 'Elle ne monte pas',
+    zoomIn: 'Agrandis',
+    thin: ({ covers }) =>
+      `La plateforme couvre ${m(covers)} dalles. L’œil ne voit aucune différence : agrandis le coin de la salle.`,
     fact: ({ kind, covers, diff, wall, k, zoom }) =>
       wall || kind === 'ride'
-        ? 'المنصّة تلمس الجدران الأربعة: المصعد يحملها.'
-        : `المنصّة تغطّي ${m(covers)} بلاطة: ${
-            kind === 'band' ? `يبقى شريط مساحته ${m(diff)} بلاطة` : `تبرز عن الساحة بـ ${m(diff)} بلاطة فتعلق`
-          }${k ? ` (رأيتَه عند التكبير $${zoom}$)` : ''}.`,
-    colRod: 'المقياس',
-    colCovers: 'ما تغطّيه المنصّة (بلاطة)',
-    colDiff: 'ما يبقى أو ما يبرز (بلاطة)',
-    band: 'يبقى',
-    jam: 'يبرز',
-    rides: 'تركب المصعد',
-    wallAsk: () => 'لم يركب أيّ مقياس من هذه. الجدار نفسه من الركن إلى الركن: شُدّ المقياس عليه.',
-    clamp: 'شُدّ المقياس على الجدار',
+        ? 'La plateforme touche les quatre murs : l’ascenseur l’emporte.'
+        : `La plateforme couvre ${m(covers)} dalles : ${
+            kind === 'band'
+              ? `il reste une bande de ${m(diff)} dalle`
+              : `elle dépasse la salle de ${m(diff)} dalle et coince`
+          }${k ? ` (tu l’as vu en agrandissant $${zoom}$ fois)` : ''}.`,
+    colRod: 'La toise',
+    colCovers: 'Couvert par la plateforme (dalles)',
+    colDiff: 'Ce qui reste ou dépasse (dalles)',
+    band: 'Reste',
+    jam: 'Dépasse',
+    rides: 'Elle monte',
+    wallAsk: () =>
+      'Aucune de ces toises n’a fait monter la plateforme. Le mur lui-même va d’un coin à l’autre : tends la toise dessus.',
+    clamp: 'Tends la toise sur le mur',
     wallNote: ({ a }) =>
-      `؟ — مقياس طوله طول جدار الساحة التي مساحتها ${tiles(a)}، من الركن إلى الركن. لم يُكتب له عدد.`,
-    next: 'المقياس التالي',
-    done: 'انتهيت',
+      `? — une toise aussi longue que le mur de la salle de ${tiles(a)}, d’un coin à l’autre. Aucun nombre n’est écrit pour elle.`,
+    next: 'Toise suivante',
+    done: 'J’ai fini',
   },
 };
 
@@ -73,7 +78,7 @@ const seen = (out) =>
     .replace(/<[^>]+>/g, ' ')
     .replace(/&[a-z]+;|&#\d+;/g, ' ');
 /** Never on the screen of this experiment: the rule's words, and its sign. */
-const TOLD = /جذر|بالضبط|مضبوط|تقريب|مقرّب|مقرب|√/;
+const TOLD = /racine|exact|approch|arrondi|√|[\u0600-\u06FF]/i;
 
 describe('the investigation screen `calc`', () => {
   it('is mounted by Inquiry and opens on the court, the rods ready by its wall, the calculator and the question', () => {
@@ -108,7 +113,7 @@ describe('the investigation screen `calc`', () => {
     expect(seen(out)).not.toMatch(TOLD);
   });
 
-  it('a thin overhang waits for « كبّر »; each press is a power of ten on the court, kept on the row', () => {
+  it('a thin overhang waits for « Agrandis »; each press is a power of ten on the court, kept on the row', () => {
     let s = play([
       { type: 'say', v: false },
       { type: 'built' },
@@ -181,7 +186,7 @@ describe('the investigation screen `calc`', () => {
     expect(out).toContain('data-iq-row="3" data-iq-row-kind="ride"');
     expect(out).toContain('data-iq-wallcell');
     expect(out).toContain('data-iq-wallnote');
-    expect(out).toContain('انتهيت');
+    expect(out).toContain('J’ai fini');
     // the court's own labels would write the wall's rod with its sign: they are off for that rod
     expect(out).not.toContain('data-court-radical');
     expect(seen(out)).not.toMatch(TOLD);
@@ -190,8 +195,8 @@ describe('the investigation screen `calc`', () => {
 });
 
 /**
- * Screenshot review of 2026-11-21 at 1366 × 768: the wall's name was drawn ON the wall's bar (an Arabic text anchored at
- * its start runs LEFT, over the wall and its post); a third of the panel was empty while the court was ≈ 150 px wide; the
+ * Screenshot review of 2026-11-21 at 1366 × 768: the wall's name was drawn ON the wall's bar (a right-to-left text
+ * anchored at its start ran LEFT, over the wall and its post); a third of the panel was empty while the court was ≈ 150 px wide; the
  * calculator's row ran past its column. The rack is checked on its drawing; the layout on its budget (calc.js ›
  * CALC_LAYOUT) — what a browser would measure, computed (the walk and the eyes check it again).
  */
@@ -209,14 +214,14 @@ describe('the calc screen at 1366 × 768: the rack readable, the court large, no
   };
   const STATES = Array.from({ length: 40 }, (_, n) => through(n));
 
-  it('the wall’s name is written ONCE, beside the far post — never on the bar — and the « ؟ » of the clamp stays clear of it', () => {
+  it('the wall’s name is written ONCE, beside the far post — never on the bar — and the « ? » of the clamp stays clear of it', () => {
     for (const st of STATES) {
       const out = html(st);
       const rack = out.slice(
         out.indexOf('<svg class="rq-rack"'),
         out.indexOf('</svg>', out.indexOf('<svg class="rq-rack"')),
       );
-      expect(seen(rack).split('جدار الساحة').length - 1).toBe(1);
+      expect(seen(rack).split('Le mur').length - 1).toBe(1);
       const label = rack.match(/<text[^>]*data-iq-wallname[^>]*>/)[0];
       const wall = rack.match(/<line class="rq-rack__wall"[^>]*>/)[0];
       const far = rack.match(/<rect class="rq-rack__post rq-rack__post--far"[^>]*>/)[0];
@@ -230,7 +235,7 @@ describe('the calc screen at 1366 × 768: the rack readable, the court large, no
         const r = rod.match(/<rect [^>]*>/)[0];
         expect(attr(r, 'x') + attr(r, 'width') + 7).toBeLessThan(attr(label, 'x'));
       }
-      // the clamp's « ؟ »: centred over the bar, its glyph (26 units) far from the label's start
+      // the clamp's « ? »: centred over the bar, its glyph (26 units) far from the label's start
       const q = rack.match(/<text class="rq-rack__unknown"[^>]*>/)?.[0];
       if (q) expect(attr(q, 'x') + 26).toBeLessThan(attr(label, 'x'));
     }
@@ -245,7 +250,8 @@ describe('the calc screen at 1366 × 768: the rack readable, the court large, no
   const rackW = L.rack.w * L.rack.scale;
   const calcW = px(L.calculator);
   const T = L.table;
-  /** Cairo's digits ≈ 0.54 em (measured: « 29,99999999434080625 » took 204 px at 18.8 px on the walk's screenshot). */
+  /** A digit ≈ 0.54 em (measured in Cairo, the Arabic font: « 29,99999999434080625 » took 204 px at 18.8 px on the walk's
+   *  screenshot — NOT yet re-measured in the French font). */
   const DIGIT = 0.55;
 
   it('row 2 — the court, the rack, the calculator — fits the panel’s width, the court as wide as the room leaves', () => {
@@ -262,8 +268,8 @@ describe('the calc screen at 1366 × 768: the rack readable, the court large, no
     const digits = (n) => n * DIGIT * f;
     expect(digits(11) + 0.9 * f + 0.35 * f + pad).toBeLessThanOrEqual(px(T.rod)); // a calculator's rod, its icon
     expect(digits(MAX_CELL) + pad).toBeLessThanOrEqual(px(T.covers));
-    // « يبقى », the number, the zoom's tag (🔍 and « ×10¹⁰ »), the chip's padding and border, the cell's padding
-    const chip = 2.2 * f + digits(MAX_CELL) + 4.4 * f + 2 * 0.35 * f + pad + 3;
+    // the chip's word (five letters: « Reste »), the number, the zoom's tag (🔍 and « ×10¹⁰ »), its padding and border, the cell's padding
+    const chip = 5 * DIGIT * f + digits(MAX_CELL) + 4.4 * f + 2 * 0.35 * f + pad + 3;
     expect(chip + pad).toBeLessThanOrEqual(px(T.diff));
   });
 
@@ -280,6 +286,19 @@ describe('the calc screen at 1366 × 768: the rack readable, the court large, no
     expect(onScreen(L.rack.font * L.rack.scale)).toBeGreaterThanOrEqual(18);
     expect(onScreen(px(T.font))).toBeGreaterThanOrEqual(18);
     expect(onScreen((26 * calcW) / 200)).toBeGreaterThanOrEqual(18);
+  });
+
+  it('reads LEFT to right: the court, then the rack and the calculator; the question, then the table — no rtl left', () => {
+    const out = renderToString(<Inquiry spec={CALC_SPEC} onDone={() => {}} />);
+    const at = (cls) => out.indexOf(`class="${cls}`);
+    // a grid / flex row lays its children in their DOM order, from the left: the first one is on the LEFT
+    expect(at('rq-calc__court')).toBeGreaterThan(-1);
+    expect(at('rq-calc__court')).toBeLessThan(at('rq-calc__bench'));
+    expect(at('rq-rack')).toBeLessThan(at('rq-calc '));
+    expect(at('rq-calc__talk')).toBeLessThan(at('rq-table'));
+    expect(out).not.toMatch(/dir="rtl"|direction="rtl"/);
+    for (const f of ['./inquiry.css', './court.css'])
+      expect(readFileSync(new URL(f, import.meta.url), 'utf8')).not.toMatch(/direction: rtl|row-reverse|Cairo|Tajawal/);
   });
 
   it('the screen sets the sizes the CSS reads, and the CSS reads them', () => {

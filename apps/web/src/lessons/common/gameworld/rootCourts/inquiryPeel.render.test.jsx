@@ -3,41 +3,47 @@ import { readFileSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { Peel, PeelView, EMPTY_INPUT } from './InquiryPeel';
 import { initPeel, peelReducer, PEEL_LAYOUT } from './peel';
-import { tiles } from './strings';
+import { tileWord } from './strings';
 
 // the screens expose their state to the walks on `window` (dev only): give the server render one
 globalThis.window = globalThis.window ?? {};
 
-/** « بلاطة » agreed with its number, the number in $…$ (a fraction over its bar): « $75$ بلاطة », « بلاطتان ». */
-const tl = (text, tex) => {
-  if (text === '1') return 'بلاطة واحدة';
-  if (text === '2') return 'بلاطتان';
-  const word = /^\d+$/.test(text) ? tiles(text).replace(/^\d+ /, '') : 'بلاطة';
-  return `$${tex}$ ${word}`;
-};
-/** The courts of a plaque, in words: « ساحة واحدة », « ساحتان متساويتان », « $3$ ساحات متساوية », « $\\dfrac{2}{3}$ ساحة ». */
+/** « dalle » agreed with its number, the number in $…$ (a fraction over its bar): « $75$ dalles », « $1$ dalle ». */
+const tl = (text, tex) => `$${tex}$ ${tileWord(text)}`;
+const cap = (t) => t[0].toUpperCase() + t.slice(1);
+/** The courts of a plaque, in words: « une salle », « $2$ salles égales », « $\\dfrac{2}{3}$ de salle ». */
 const courtsWords = ({ whole, num, courtsTex }) => {
-  if (!whole) return `جزء $${courtsTex}$ من ساحة`;
-  if (num === '1') return 'ساحة واحدة';
-  if (num === '2') return 'ساحتان متساويتان';
-  return `$${num}$ ساحات متساوية`;
+  if (!whole) return `$${courtsTex}$ de salle`;
+  if (num === '1') return 'une salle';
+  return `$${num}$ salles égales`;
 };
 const pileWords = ({ pileSign, pileAbs, pileAbsTex }) =>
-  pileSign > 0 ? ` ومعها ${tl(pileAbs, pileAbsTex)} زائدة` : pileSign < 0 ? ` تنقصها ${tl(pileAbs, pileAbsTex)}` : '';
+  pileSign > 0
+    ? ` avec ${tl(pileAbs, pileAbsTex)} en plus`
+    : pileSign < 0
+      ? ` à laquelle il manque ${tl(pileAbs, pileAbsTex)}`
+      : '';
 const OP = {
-  share: ({ nTex }) => `قسمت اللوحة بين الساحات على $${nTex}$`,
-  grow: ({ nTex }) => `ضاعفت الساحات $${nTex}$ مرّات`,
-  add: ({ n, nTex }) => `أرجعت ${tl(n, nTex)}`,
-  take: ({ n, nTex }) => `نزعت ${tl(n, nTex)}`,
-  restart: () => 'أعدت اللوحة كما كانت',
+  share: ({ nTex }) => `Tu as partagé la plaque entre les salles par $${nTex}$`,
+  grow: ({ nTex }) => `Tu as multiplié les salles par $${nTex}$`,
+  add: ({ n, nTex }) => `Tu as ajouté ${tl(n, nTex)}`,
+  take: ({ n, nTex }) => `Tu as retiré ${tl(n, nTex)}`,
+  restart: () => 'Tu as remis la plaque comme au début',
 };
-const END = { two: 'مقياسان يركبان', one: 'مقياس واحد يركب', none: 'لا تُبنى أيّ ساحة' };
+const END = {
+  two: 'deux toises font monter la plateforme',
+  one: 'une seule toise fait monter la plateforme',
+  none: 'aucune salle ne peut être construite',
+};
+/** A sentence after his answer: as it is when he saw right, after the fact of a miss when he did not. */
+const MISS = 'Ta prédiction ne s’est pas vérifiée cette fois';
+const after = (right, t) => (right ? cap(t) : `${MISS} : ${t}`);
 
 /**
- * A COMPLETE example of the spec of `peel`, in Arabic — every key the screen reads (GAME_WORLD.md « spec shape of `peel`
- * of « قصر الساحات » »). Facts only: no sentence names the rule (« اعزل », « معادلة », « حلّ »), writes x, or says
- * « wrong ». A number inside a sentence goes through MathText as `$…$`; a fraction is `\\dfrac` (a real bar). The four
- * rounds are the lesson's design (ROOTS_WORLD_PLAN.md §13): 3x² = 75, x² − 6 = 0, x² + 4 = 0, (2/3)x² = 1350.
+ * A COMPLETE example of the spec of `peel`, in French — every key the screen reads (GAME_WORLD.md « spec shape of `peel`
+ * of « Le palais des dalles » »). Facts only: no sentence names the rule (« isole », « équation », « résous »), writes x,
+ * or says « wrong ». A number inside a sentence goes through MathText as `$…$`; a fraction is `\\dfrac` (a real bar).
+ * The four rounds are the lesson's design (ROOTS_WORLD_PLAN.md §13): 3x² = 75, x² − 6 = 0, x² + 4 = 0, (2/3)x² = 1350.
  */
 const PEEL_SPEC = {
   kind: 'peel',
@@ -48,55 +54,56 @@ const PEEL_SPEC = {
     { courts: '2/3', plaque: '1350', tex: '\\dfrac{2}{3}x^2 = 1350' },
   ],
   text: {
-    lead: () => 'لوحة صانع المقاييس كُتبت لأكثر من ساحة واحدة.',
-    goal: () => 'قشّر اللوحة عملية بعد عملية حتّى تبقى ساحة واحدة وحدها، ثمّ قل أيّ مقياس يركبها.',
+    lead: () => 'La plaque du fabricant de toises a été écrite pour plus d’une salle.',
+    goal: () =>
+      'Épluche la plaque, une opération après l’autre, jusqu’à ce qu’il reste une salle seule, puis dis quelle toise la fait monter.',
     plaque: (a) =>
       a.alone
-        ? `ساحة واحدة وحدها: مساحتها ${tl(a.plaque, a.plaqueTex)}.`
-        : `${courtsWords(a)}${pileWords(a)}: معًا ${tl(a.plaque, a.plaqueTex)}.`,
-    askPeel: () => 'اختر عملية واكتب عددها: العالم يفعلها بالساحات وباللوحة معًا.',
-    share: 'اقسم بين الساحات على',
+        ? `Une salle seule : son aire est de ${tl(a.plaque, a.plaqueTex)}.`
+        : `${cap(courtsWords(a))}${pileWords(a)} : ensemble, ${tl(a.plaque, a.plaqueTex)}.`,
+    askPeel: () =>
+      'Choisis une opération et écris son nombre : le monde la fait sur les salles et sur la plaque à la fois.',
+    share: 'Partage par',
     shareAfter: '',
-    grow: 'ضاعف الساحات',
-    growAfter: 'مرّات',
-    add: 'أرجع',
-    addAfter: 'بلاطة',
-    take: 'انزع',
-    takeAfter: 'بلاطة',
-    doIt: 'افعل',
-    restart: 'أعد اللوحة',
+    grow: 'Multiplie par',
+    growAfter: '',
+    add: 'Ajoute',
+    addAfter: 'dalles',
+    take: 'Retire',
+    takeAfter: 'dalles',
+    doIt: 'Fais',
+    restart: 'Remets la plaque',
     peeled: (a) =>
-      `${OP[a.op](a)}: ${a.alone ? 'بقيت ساحة واحدة وحدها، مساحتها' : 'اللوحة الآن'} ${tl(a.after.plaque, a.after.plaqueTex)}.`,
+      `${OP[a.op](a)} : ${a.alone ? 'il reste une salle seule, d’aire' : 'la plaque dit maintenant'} ${tl(a.after.plaque, a.after.plaqueTex)}.`,
     refused: (a) =>
       a.reason === 'split'
-        ? `على اللوحة $${a.pieces}$ من القطع المتساوية: لا تنقسم إلى $${a.nTex}$ مجموعات متساوية.`
+        ? `Sur la plaque, $${a.pieces}$ morceaux égaux : ils ne se partagent pas en $${a.nTex}$ groupes égaux.`
         : a.reason === 'room'
-          ? `لا يتّسع المقعد لأكثر من $${PEEL_LAYOUT.maxCourts}$ ساحات.`
-          : 'الأعداد أطول من أن تُكتب على اللوحة.',
-    unread: 'اكتب عددًا في المربّع أوّلًا.',
-    askRods: (a) => `ساحة مساحتها ${tl(a.lone, a.loneTex)}: كم مقياسًا يركبها، وما هو؟`,
-    countTwo: 'مقياسان',
-    countOne: 'مقياس واحد',
-    countNone: 'لا مقياس',
-    rightRod: 'إلى اليمين',
-    leftRod: 'إلى اليسار',
-    oneRod: 'المقياس',
-    formNumber: 'عدد',
-    formWall: 'جدار ساحة',
-    wallBox: 'ضلع الساحة التي مساحتها',
-    tiles: 'بلاطة',
-    build: 'ابنِ',
-    wallLabel: ({ area, areaTex }) => `ضلع الساحة التي مساحتها ${tl(area, areaTex)}`,
-    noRod: 'لا ساحة',
-    fact: (a) =>
-      `${a.right ? '' : 'توقّعك لم يصب هذه المرّة: '}${END[a.end]} على الساحة التي مساحتها ${tl(a.lone, a.loneTex)}.`,
-    colPlaque: 'اللوحة',
-    colPeels: 'ما فعلته',
-    colLone: 'الساحة وحدها',
-    colRods: 'المقاييس',
-    next: 'اللوحة التالية',
-    done: 'انتهيت',
-    unknown: '؟',
+          ? `Le banc ne tient pas plus de $${PEEL_LAYOUT.maxCourts}$ salles.`
+          : 'Les nombres sont trop longs pour la plaque.',
+    unread: 'Écris d’abord un nombre dans la case.',
+    askRods: (a) => `Une salle de ${tl(a.lone, a.loneTex)} : combien de toises la font monter, et lesquelles ?`,
+    countTwo: 'Deux toises',
+    countOne: 'Une toise',
+    countNone: 'Aucune toise',
+    rightRod: 'À droite',
+    leftRod: 'À gauche',
+    oneRod: 'La toise',
+    formNumber: 'Nombre',
+    formWall: 'Côté',
+    wallBox: 'côté de la salle de',
+    tiles: 'dalles',
+    build: 'Construis',
+    wallLabel: ({ area, areaTex }) => `côté de la salle de ${tl(area, areaTex)}`,
+    noRod: 'Aucune salle',
+    fact: (a) => after(a.right, `sur la salle de ${tl(a.lone, a.loneTex)}, ${END[a.end]}.`),
+    colPlaque: 'Plaque',
+    colPeels: 'Tes opérations',
+    colLone: 'Salle seule',
+    colRods: 'Toises',
+    next: 'Plaque suivante',
+    done: 'J’ai fini',
+    unknown: '?',
   },
 };
 
@@ -114,11 +121,11 @@ const seen = (out) =>
     .replace(/<[^>]+>/g, ' ')
     .replace(/&[a-z]+;|&#\d+;/g, ' ');
 /** Never on this screen: the rule's words, a root sign, a verdict of « wrong ». */
-const TOLD = /اعزل|معادلة|حلّ|حلول|جذر|√|sqrt|خطأ|خاطئ|غلط/;
+const TOLD = /isole|équation|résou|solution|racine|√|sqrt|faux|fausse|erreur|[\u0600-\u06FF]/i;
 /** A fraction is never written « p/q » as text. */
 const SLASH = /\d\s*\/\s*\d/;
-/** The letter of the lesson's writing: only on the round's tex, once solved. */
-const LETTER = /x/;
+/** The letter of the lesson's writing (the letter x alone, not inside « deux »): only on the round's tex, once solved. */
+const LETTER = /\bx\b/;
 const withInput = (o) => ({ ...EMPTY_INPUT, ...o });
 
 /** Every state of a full play of the four rounds: a share refused, a wrong peel, a restart, wrong rods. */
@@ -163,23 +170,23 @@ describe('the investigation screen `peel`', () => {
     }
     expect(out).not.toContain('data-iq-restart');
     expect(out).toContain('data-iq-table="0"');
-    expect(out).toContain('data-iq-row="0"'); // the round under way, its lone court « ؟ »
+    expect(out).toContain('data-iq-row="0"'); // the round under way, its lone court « ? »
     expect(out).toContain('data-iq-cell-lone=""');
     expect(out).not.toContain('data-iq-next');
     expect(out).not.toMatch(/undefined|NaN|\[object/);
-    expect(seen(out)).toContain('ساحات متساوية');
+    expect(seen(out)).toContain('salles égales');
     expect(seen(out)).not.toMatch(TOLD);
     expect(seen(out)).not.toMatch(LETTER);
     expect(out).not.toContain('data-iq-tex');
   });
 
-  it('a share that cannot split the courts is answered by the fact: nothing changes, nothing « wrong »', () => {
+  it('a share that cannot split the courts is answered by the fact: nothing changes, nothing « wrong »', () => {
     const s = play([{ type: 'peel', op: 'share', n: '4' }]);
     const out = html(s);
     expect(out).toContain('data-iq-stage="peel"');
     expect(out).toContain('data-iq-courts="3"');
     expect(out).toContain('rq-pl__fact is-refused');
-    expect(seen(out)).toContain('لا تنقسم');
+    expect(seen(out)).toContain('ne se partagent pas');
     expect(seen(out)).not.toMatch(TOLD);
     // the table keeps no tag for a peel not done
     expect(out).not.toContain('data-iq-tag=');
@@ -203,8 +210,8 @@ describe('the investigation screen `peel`', () => {
     for (const v of [2, 1, 0]) expect(out).toContain(`data-iq-count="${v}"`);
     expect(out).not.toContain('data-iq-rods=');
     expect(out).not.toContain('data-iq-op=');
-    expect(seen(out)).toContain('بقيت ساحة واحدة وحدها');
-    expect(seen(out)).toContain('كم مقياسًا يركبها');
+    expect(seen(out)).toContain('il reste une salle seule');
+    expect(seen(out)).toContain('combien de toises la font monter');
     expect(out).toContain('data-iq-tag="share:3"');
     expect(out).toContain('data-iq-cell-lone="25"');
     out = html(s, withInput({ n: 2 }));
@@ -249,7 +256,7 @@ describe('the investigation screen `peel`', () => {
     expect(out).toContain('data-iq-cell-rods="two"');
     expect(out).toContain('data-iq-rodchip="left"');
     expect(out).toContain('data-iq-next');
-    expect(seen(out)).not.toContain('توقّعك لم يصب');
+    expect(seen(out)).not.toContain(MISS);
     expect(seen(out)).not.toMatch(TOLD);
   });
 
@@ -258,23 +265,23 @@ describe('the investigation screen `peel`', () => {
     const s = states.find((x) => x.stage === 'seen' && x.ri === 1);
     const out = html(s);
     expect(out).toContain('data-iq-end="two"');
-    expect(seen(out)).toContain('ضلع الساحة التي مساحتها');
-    expect(seen(out)).toContain('توقّعك لم يصب هذه المرّة');
+    expect(seen(out).replace(/\s+/g, ' ')).toContain('côté de la salle de'); // MathText binds « de » to its number
+    expect(seen(out)).toContain(MISS);
     expect(out).toContain('data-iq-tag="take:6"');
     expect(out).toContain('data-iq-tag="restart"');
     expect(out).toContain('data-iq-tag="add:6"');
   });
 
-  it('no court: −4 tiles — the plate keeps its number, « no court », his two rods answered by the fact', () => {
+  it('no court: −4 tiles — the plate keeps its number, « no court », his two rods answered by the fact', () => {
     const s = allStates().find((x) => x.stage === 'seen' && x.ri === 2);
     const out = html(s);
     expect(out).toContain('data-iq-end="none"');
     expect(out).toContain('data-iq-world-rod="none"');
     expect(out).toContain('data-iq-num="-4"');
     expect(out).toContain('data-iq-cell-rods="none"');
-    expect(seen(out)).toContain('لا ساحة');
+    expect(seen(out)).toContain('Aucune salle');
     expect(seen(out)).toContain('−'); // a true minus, never a hyphen
-    expect(seen(out)).toContain('توقّعك لم يصب');
+    expect(seen(out)).toContain(MISS);
   });
 
   it('two thirds of a court: a court cut in strips, the fraction over its bar, then 2 courts, 2025, rods 45', () => {
@@ -292,7 +299,7 @@ describe('the investigation screen `peel`', () => {
     out = html(last);
     expect(out).toContain('data-iq-table="4"');
     expect(out).toContain('data-iq-row="3"');
-    expect(seen(out)).toContain('انتهيت');
+    expect(seen(out)).toContain('J’ai fini');
   });
 
   it('a pile that is a fraction after a share: the add box is two boxes over a bar', () => {
@@ -317,7 +324,7 @@ describe('the investigation screen `peel`', () => {
     expect(out).toContain('data-iq-in="left-den"');
   });
 
-  it('every state: no fraction as « p/q » text, nothing undefined, never the rule, x only on a solved round', () => {
+  it('every state: no fraction as « p/q » text, nothing undefined, never the rule, x only on a solved round', () => {
     const states = allStates();
     expect(new Set(states.map((s) => s.stage))).toEqual(new Set(['peel', 'run', 'alone', 'build', 'seen']));
     for (const s of states)
@@ -332,7 +339,7 @@ describe('the investigation screen `peel`', () => {
   });
 });
 
-/** The kind writes no word of its own: every text is the lesson's (here Latin tags — not one Arabic letter may appear). */
+/** The kind writes no word of its own: every text is the lesson's (here Latin tags — not one word of its own may appear). */
 describe('the kind `peel` writes no word of its own', () => {
   const tag =
     (name) =>
@@ -345,7 +352,7 @@ describe('the kind `peel` writes no word of its own', () => {
       Object.entries(PEEL_SPEC.text).map(([k, v]) => [k, typeof v === 'function' ? tag(k) : `#${k}#`]),
     ),
   };
-  const ARABIC = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/;
+  const ARABIC = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
   const inputs = [EMPTY_INPUT, withInput({ n: 2 }), withInput({ n: 2, right: { form: 'wall', text: '' } })];
 
   it('every stage, every row', () => {
@@ -410,7 +417,8 @@ describe('the peel screen at 1366 × 768: one screen, nothing past its place, ev
   const onScreen = (designPx) => designPx * L.zoom;
   const panelRem = L.panel.w / REM;
   const mainRem = panelRem - L.table.w - L.gap - 2.2; // the panel's padding (1.1rem a side)
-  /** Cairo: a digit ≈ 0.55 em, an Arabic letter ≈ 0.55 em at most (measured on the walk's screenshots for `calc`). */
+  /** A digit ≈ 0.55 em, a letter ≈ 0.55 em at most (measured in Cairo on the walk's screenshots for `calc` — NOT yet
+   *  re-measured in the French font). */
   const CH = 0.55;
   /** The longest label a lesson may give an operation card (before and after its box together), and the button's. */
   const OP_LABEL = 20;
@@ -448,11 +456,12 @@ describe('the peel screen at 1366 × 768: one screen, nothing past its place, ev
     // a rod's block: its label and its two form buttons on one line, then its box (a fraction: two boxes over a bar)
     expect(2.2 + 0.25 + 2 * 1.9 + 0.3).toBeLessThanOrEqual(L.rods.block);
     // a block is half the column: its first line (the label ≤ 10 characters, the two form words ≤ 12 together, their
-    // buttons) and its box in the wall's form (the printed sign, « wallBox » ≤ 18 characters, a box, « tiles » ≤ 6)
+    // buttons) and its box in the wall's form (the printed sign, « wallBox » ≤ 19 characters — « côté de la salle de »,
+    // a box, « tiles » ≤ 6)
     const f = px(1.08);
     const f2 = px(1.12);
     expect(10 * CH * f + 12 * CH * f + 2 * px(1.8) + px(0.8)).toBeLessThanOrEqual(px(L.rods.w));
-    expect(px(1.2) + 18 * CH * f2 + px(3.6) + 6 * CH * f2 + px(2.4)).toBeLessThanOrEqual(px(L.rods.w));
+    expect(px(1.2) + 19 * CH * f2 + px(3.6) + 6 * CH * f2 + px(2.4)).toBeLessThanOrEqual(px(L.rods.w));
     expect(2 * L.rods.w + 0.8).toBeLessThanOrEqual(mainRem + 0.01);
     // the table: four rounds of two lines of stacked fractions, and its header
     expect(px(L.head + L.rowGap + L.table.header + L.maxRounds * L.table.row)).toBeLessThanOrEqual(L.panel.h);
@@ -482,5 +491,29 @@ describe('the peel screen at 1366 × 768: one screen, nothing past its place, ev
     // every selector is prefixed by the frame and names this kind's classes only (or the shared ones it reuses)
     for (const sel of css.replace(/\/\*[\s\S]*?\*\//g, '').match(/^[^@\s{}][^{]*\{/gm) ?? [])
       if (!/^(from|to|\d+%)/.test(sel.trim())) expect(sel, sel).toMatch(/^\.rq-iq-frame /);
+  });
+});
+
+describe('the peel screen reads LEFT to right', () => {
+  const num = (tag, name) => Number(tag.match(new RegExp(` ${name}="([\\d.-]+)"`))?.[1]);
+  it('the columns: the main column on the LEFT, then the table; no rtl left', () => {
+    expect(PEEL_LAYOUT.columns).toEqual(['main', 'table']);
+    const out = html(initPeel(PEEL_SPEC));
+    expect(out.indexOf('class="rq-pl__main"')).toBeGreaterThan(-1);
+    expect(out.indexOf('class="rq-pl__main"')).toBeLessThan(out.indexOf('class="rq-table rq-pl__table"'));
+    expect(out).not.toMatch(/dir="rtl"|direction="rtl"/);
+    const css = readFileSync(new URL('./peel.css', import.meta.url), 'utf8');
+    expect(css).not.toMatch(/direction: rtl|row-reverse|Cairo|Tajawal/);
+  });
+  it('the rods stand as they are pulled: the left one on the LEFT, the right one on the RIGHT — drawing, names, boxes', () => {
+    const s = play(peel('share', '3'));
+    // his two boxes: the block of the rod pulled to the left comes first (a flex row: the first one is on the left)
+    const boxes = html(s, withInput({ n: 2 }));
+    expect(boxes.indexOf('data-iq-rodblock="left"')).toBeLessThan(boxes.indexOf('data-iq-rodblock="right"'));
+    const built = html(play([...answer({ n: 2, right: { q: '5' }, left: { q: '5' } })], PEEL_SPEC, s));
+    const slab = (side) =>
+      built.match(new RegExp(`<rect class="rq-pl__slab"[^>]*data-iq-world-rod="${side}"[^>]*>`))[0];
+    expect(num(slab('left'), 'x')).toBeLessThan(num(slab('right'), 'x'));
+    expect(built.indexOf('data-iq-name="left"')).toBeLessThan(built.indexOf('data-iq-name="right"'));
   });
 });

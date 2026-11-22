@@ -8,7 +8,7 @@ import { M, Stars } from './parts';
 import { ExamLadder } from './Spaces';
 
 /**
- * « فضاء التدريب » — the lesson's mind map as the level select of the practice game (`useLesson().practiceMap`: where each
+ * « L’espace d’entraînement » — the lesson's mind map as the level select of the practice game (`useLesson().practiceMap`: where each
  * node sits and how they are linked): one node per key and the summary node. A node lights up with its key; its pips are
  * its levels. The panel beside it reminds the rule and lists the levels, easiest first.
  */
@@ -120,7 +120,6 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
                     <span
                       key={`${a}-${b}`}
                       className="di-map__edge"
-                      dir="rtl"
                       style={{
                         left: `${(practiceMap.positions[a][0] + practiceMap.positions[b][0]) / 2}%`,
                         top: `${(practiceMap.positions[a][1] + practiceMap.positions[b][1]) / 2}%`,
@@ -131,7 +130,6 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
                   ))}
                 <span
                   className="di-map__root"
-                  dir="rtl"
                   style={{ left: `${practiceMap.positions.root[0]}%`, top: `${practiceMap.positions.root[1]}%` }}
                 >
                   {practiceMap.root}
@@ -143,7 +141,6 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
                     <button
                       key={n.id}
                       type="button"
-                      dir="rtl"
                       className={`di-node ${isOpen ? 'is-open' : 'is-locked'} ${i === sel ? 'is-sel' : ''} ${n.id === SUMMARY ? 'di-node--exam' : ''}`}
                       style={{ left: `${practiceMap.positions[n.id][0]}%`, top: `${practiceMap.positions[n.id][1]}%` }}
                       onClick={() => setSel(i)}

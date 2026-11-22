@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `cycle` — PURE logic (screen: `InquiryCycle.jsx`; contract: GAME_WORLD.md « استكشف », « spec shape
+ * THE INVESTIGATION `cycle` — PURE logic (screen: `InquiryCycle.jsx`; contract: GAME_WORLD.md « Explore », « spec shape
  * of `cycle` »). Its rule is a PATTERN: with a plank of b cells, what is left on a gap is one of 0, 1, …, b − 1 — never
  * b cells or more — and the longest piece left is b − 1.
  *

@@ -2,12 +2,12 @@ import { useId } from 'react';
 import { layoutArcTape } from './arcTape';
 
 /**
- * « مخطط بأقواس » — the textbook's tape diagram (data and rules in arcTape.js). Drawn in SVG, never an image; the
- * body reads left to right like the textbook's figure (`direction: ltr`), numbers are isolated LTR text and an Arabic
- * label is drawn right to left. The element carries an Arabic `aria-label`.
+ * The tape diagram with arcs (« schéma en barre », data and rules in arcTape.js). Drawn in SVG, never an image; it
+ * reads left to right, the first part on the left; numbers are drawn in a fixed-width font, a label holding a word in
+ * the text font. The element carries a French `aria-label`.
  *
- * Used by the 1AM lessons of unit 2 « الجمع والطرح » (figures of معارف and طرائق), by the `story-bars` lab (live tape),
- * by the practice bank (`statement.figure` with `kind: 'tape'`, through StatementFigure) and by the مسائل.
+ * Used by lessons on addition and subtraction, by the `story-bars` lab (live tape), by the practice bank
+ * (`statement.figure` with `kind: 'tape'`, through StatementFigure) and by the problems.
  */
 const STROKE = {
   amber: '#d97706', emerald: '#059669', sky: '#0284c7', violet: '#7c3aed', indigo: '#4f46e5', rose: '#e11d48', slate: '#334155',
@@ -20,17 +20,16 @@ export default function ArcTape(fig) {
   const L = layoutArcTape(fig);
   // One pattern id PER INSTANCE (useId): a constant id is shared by every tape of the page (unit 11's twin-sky bug).
   const hatch = `arc-tape-${useId().replace(/:/g, '')}`;
-  const ltr = { direction: 'ltr', unicodeBidi: 'isolate', fontFamily: 'ui-monospace, SFMono-Regular, monospace' };
-  const rtl = { direction: 'rtl', unicodeBidi: 'isolate' };
+  const mono = { fontFamily: 'ui-monospace, SFMono-Regular, monospace' };
   const textOf = (it, x, y) => (
     <text x={x} y={y} fontSize={it.unknown ? 16 : 14} fontWeight={700} textAnchor="middle"
-      fill={it.unknown ? STROKE.rose : STROKE[it.tone] ?? STROKE.slate} style={it.arabic ? rtl : ltr}
+      fill={it.unknown ? STROKE.rose : STROKE[it.tone] ?? STROKE.slate} style={it.word ? undefined : mono}
       data-tape-label={it.unknown ? 'unknown' : 'known'}>{it.label}</text>
   );
 
   return (
     <Fig className="mx-auto my-2 block w-full" style={{ maxWidth }} data-arc-tape data-tape-closed={L.closed ? 'true' : 'false'}>
-      <svg viewBox={`0 0 ${L.W} ${L.H.toFixed(1)}`} className="h-auto w-full" role="img" aria-label={ariaLabel} style={{ direction: 'ltr' }}>
+      <svg viewBox={`0 0 ${L.W} ${L.H.toFixed(1)}`} className="h-auto w-full" role="img" aria-label={ariaLabel}>
         <defs>
           <pattern id={hatch} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="6" stroke={STROKE.rose} strokeWidth="2" />

@@ -1,104 +1,150 @@
 /**
- * « قصر الساحات » — the WORLD's own sentences (it names no lesson: a lesson's story overrides or adds through
+ * « Le palais des dalles » — the WORLD's own sentences (it names no lesson: a lesson's story overrides or adds through
  * `story.text`). Every sentence about what a platform did is a FACT: a band and a jam are never « wrong ».
+ * The words of the world: a court is « une salle », a tile « une dalle », the measuring rod « la toise » (never
+ * « règle »: that word is the forge's rule), the platform « la plateforme », the lift « l’ascenseur », the crate
+ * « la caisse », the side « le côté ».
  */
+import { counted } from '../kit/authoring/numbers';
 
-/** « بلاطة » agreed with its number (given as text: « 30 », « 0,25 », « 49/64 »). A number that is not whole takes the singular. */
+/** The tiles, [singular, plural] — `counted` agrees them: « 0 dalle », « 1 dalle », « 2 dalles ». */
+export const TILES = ['dalle', 'dalles'];
+
+/**
+ * « dalle » agreed with its number, the number written as it was given (text: « 30 », « 0,25 », « 49/64 ») and joined
+ * to its noun by a no-break space. A whole number or a decimal takes the singular below 2 and the plural from 2
+ * (« 0 dalle », « 1 dalle », « 0,25 dalle », « 2,5 dalles », « 49 dalles »); a fraction is a part OF a tile
+ * (« 49/64 de dalle », « 88/49 de dalle »).
+ */
 export function tiles(text) {
-  const t = String(text);
-  if (!/^\d+$/.test(t)) return `${t} بلاطة`;
-  const n = Number(t);
-  if (n === 0) return '0 بلاطة';
-  if (n === 1) return 'بلاطة واحدة';
-  if (n === 2) return 'بلاطتان';
-  const last = n % 100;
-  return last >= 3 && last <= 10 ? `${n} بلاطات` : `${n} بلاطة`;
+  const t = String(text).trim();
+  if (/^\d+$/.test(t)) return counted(Number(t), TILES);
+  if (/^-?\d+\/\d+$/.test(t)) return `${t} de dalle`;
+  const v = Number(t.replace(',', '.').replace('−', '-'));
+  return `${t} ${Number.isFinite(v) && Math.abs(v) < 2 ? TILES[0] : TILES[1]}`;
+}
+
+/** The noun alone, for a number already written above or before it: « dalle », « dalles », « de dalle ». */
+export function tileWord(text) {
+  return tiles(text).slice(String(text).trim().length + 1);
 }
 
 export const WORLD_TEXT = {
-  title: 'قصر الساحات',
-  subtitle: 'في كلّ سطح ساحة مربّعة مساحتها مكتوبة على بابها. اسحب المقياس، ابنِ المنصّة، واركب المصعد.',
-  turn: { body: 'أدِر هاتفك لتلعب.' },
+  title: 'Le palais des dalles',
+  subtitle:
+    'Sur chaque terrasse, une salle carrée a son aire écrite sur sa porte. Tire la toise, construis la plateforme et prends l’ascenseur.',
+  turn: { body: 'Tourne ton téléphone pour jouer.' },
   end: {
-    title: 'وصلتَ إلى أعلى القصر',
-    text: 'كلّ مفتاح هنا صنعتَه أنت.',
-    stay: 'أتجوّل في القصر',
+    title: 'Tu es en haut du palais',
+    text: 'Chaque clé d’ici, c’est toi qui l’as forgée.',
+    stay: 'Je me promène dans le palais',
   },
   hud: {
-    rod: 'المقياس',
-    court: 'الساحة',
-    step: 'علامات المقياس',
-    wall: 'ضلع الساحة',
-    crate: 'الصندوق',
-    sealed: 'لا علامة تركبها',
-    side: 'ضلع المربّع',
-    left: (n) => `بقي في الصندوق: ${n}`,
-    missing: (n) => `ينقص: ${n}`,
-    empty: 'الصندوق فارغ، ولا خانة مفتوحة',
+    rod: 'La toise',
+    court: 'La salle',
+    step: 'Graduations de la toise',
+    wall: 'Côté de la salle',
+    crate: 'La caisse',
+    sealed: 'Aucune graduation ne monte',
+    side: 'Côté du carré',
+    left: (n) => `Reste dans la caisse : ${n}`,
+    missing: (n) => `Il manque : ${n}`,
+    empty: 'La caisse est vide, aucune case ouverte',
   },
-  held: (s) => `المقياس ${s}`,
+  held: (s) => `La toise ${s}`,
   prompt: {
-    grab: 'أمسك المقياس',
-    drop: 'ضع المقياس',
-    lower: (s) => `أنزل المنصّة — المقياس ${s}`,
-    clamp: 'ثبّت المقياس على الركن',
-    key: 'خذ مفتاح الساحة',
-    fix: (s) => `ثبّت المربّع — ضلعه ${s}`,
-    ride: (name) => `اركب المنصّة إلى ${name}`,
+    grab: 'Prends la toise',
+    drop: 'Pose la toise',
+    lower: (s) => `Abaisse la plateforme — toise ${s}`,
+    clamp: 'Fixe la toise dans le coin',
+    key: 'Prends la clé de la salle',
+    fix: (s) => `Fixe le carré — côté ${s}`,
+    ride: (name) => `Monte sur la plateforme vers ${name}`,
   },
   verdict: {
-    ride: 'المنصّة تلمس الجدران الأربعة: المصعد يحملها.',
-    band: (d) => `يبقى شريط مساحته ${tiles(d)}: المصعد لا يتحرّك.`,
-    jam: (d) => `المنصّة أكبر من الساحة بـ ${tiles(d)}: تعلق على الحافّة.`,
-    wall: 'هذا المقياس أُخذ من الجدار نفسه، من الركن إلى الركن.',
-    bandHidden: 'المنصّة لا تبلغ الجدران كلّها: يبقى شريط، والمصعد لا يتحرّك.',
-    jamHidden: 'المنصّة أكبر من الساحة: تعلق على الحافّة.',
-    yardRide: (a, s) => `الصندوق فرغ تمامًا: ${tiles(a)} صارت ساحة مربّعة ضلعها ${s}.`,
-    yardBand: (d) => `المربّع تامّ، لكن بقيت ${tiles(d)} في الصندوق.`,
-    yardJam: (d) => `الصندوق فرغ قبل أن يتمّ المربّع: تنقص ${tiles(d)}.`,
+    ride: 'La plateforme touche les quatre murs : l’ascenseur l’emporte.',
+    band: (d) => `Il reste une bande de ${tiles(d)} : l’ascenseur ne bouge pas.`,
+    jam: (d) => `La plateforme dépasse la salle de ${tiles(d)} : elle coince sur le rebord.`,
+    wall: 'Cette toise a été prise sur le mur lui-même, d’un coin à l’autre.',
+    bandHidden: 'La plateforme n’atteint pas tous les murs : il reste une bande, l’ascenseur ne bouge pas.',
+    jamHidden: 'La plateforme est plus grande que la salle : elle coince sur le rebord.',
+    yardRide: (a, s) => `La caisse est vide : ses ${tiles(a)} forment un carré de côté ${s}.`,
+    yardBand: (d) => `Le carré est complet, mais il reste ${tiles(d)} dans la caisse.`,
+    yardJam: (d) => `La caisse s’est vidée avant la fin du carré : il manque ${tiles(d)}.`,
   },
   say: {
-    hello: 'هذه ساحة مربّعة، ومساحتها على بابها. أمسك المقياس عند الركن وامشِ: المنصّة تكبر معك.',
-    fall: ['انتبه لحافّة السطح!', 'لا بأس. نعود ونكمل.', 'السطح أعرض ممّا تظنّ: ابقَ عليه.'],
-    grab: 'امشِ بمحاذاة الجدار: طول المقياس هو طول مشيك.',
-    ride: 'انطلقنا!',
-    key: 'المنصّة تغطّي الساحة كلّها: هذا مفتاحها. خذه!',
-    sealed: 'بين علامتين متجاورتين: واحدة تترك شريطًا، والتي بعدها تعلق. لا علامة من علامات هذا السطح تركب هذه الساحة.',
-    guessRight: 'كما توقّعتَ.',
-    guessRode: 'قلتَ إنّها لا تُركب، وقد ركبها مقياسك.',
-    guessSealed: 'قلتَ إنّها تُركب، ولا علامة من علامات هذا السطح تركبها.',
-    landed: (name) => `وصلنا: ${name}.`,
-    end: 'من هنا يُرى القصر كلّه.',
+    hello:
+      'Voici une salle carrée : son aire est écrite sur sa porte. Prends la toise dans le coin et marche : la plateforme grandit avec toi.',
+    fall: [
+      'Attention au bord de la terrasse !',
+      'Ce n’est rien. On revient et on continue.',
+      'La terrasse est moins large que tu ne crois : reste dessus.',
+    ],
+    grab: 'Marche le long du mur : la longueur de la toise, c’est la longueur de ta marche.',
+    ride: 'C’est parti !',
+    key: 'La plateforme couvre toute la salle : voici sa clé. Prends-la !',
+    sealed:
+      'Entre deux graduations voisines, l’une laisse une bande et la suivante coince. Aucune graduation de cette terrasse ne fait monter la plateforme de cette salle.',
+    guessRight: 'Comme tu l’avais prédit.',
+    guessRode: 'Tu avais dit qu’elle ne monterait pas, et ta toise l’a fait monter.',
+    guessSealed: 'Tu avais dit qu’elle monterait, et aucune graduation de cette terrasse ne la fait monter.',
+    landed: (name) => `Nous y sommes : ${name}.`,
+    end: 'D’ici, on voit tout le palais.',
   },
   objective: {
-    grab: (a) => `اذهب إلى ركن الساحة التي مساحتها ${tiles(a)}، وأمسك المقياس.`,
-    grabHidden: 'اذهب إلى ركن الساحة المضيئة، وأمسك المقياس: لا أحد كتب مساحتها بعد.',
-    walkHidden: 'امشِ بمحاذاة الجدار حتّى تلمس المنصّة الجدران الأربعة، ثمّ أنزلها: سنعدّ بلاطاتها.',
+    grab: (a) => `Va au coin de la salle de ${tiles(a)} et prends la toise.`,
+    grabHidden: 'Va au coin de la salle éclairée et prends la toise : personne n’a encore écrit son aire.',
+    walkHidden:
+      'Marche le long du mur jusqu’à ce que la plateforme touche les quatre murs, puis abaisse-la : on comptera ses dalles.',
     yard: (a) =>
-      `امشِ بمحاذاة المسطرة: البلاطات تُفرش مربّعًا. أفرغ الصندوق كلّه (${tiles(a)}) في مربّع تامّ، ثمّ ثبّته.`,
-    walk: (a) => `امشِ بمحاذاة الجدار حتّى تغطّي المنصّة الساحة كلّها (${tiles(a)})، ثمّ أنزلها.`,
-    ride: (name) => `اركب المنصّة لتصل إلى ${name}.`,
-    key: 'خذ مفتاح الساحة الذهبيّ: المنصّة تحملك بعده.',
-    keyStay: 'خذ مفتاح الساحة الذهبيّ.',
-    end: 'تجوّل في القصر كما تشاء.',
+      `Marche le long du mur gradué : les dalles se posent en carré. Vide toute la caisse (${tiles(a)}) en un carré complet, puis fixe-le.`,
+    walk: (a) =>
+      `Marche le long du mur jusqu’à ce que la plateforme couvre toute la salle (${tiles(a)}), puis abaisse-la.`,
+    ride: (name) => `Monte sur la plateforme pour aller à ${name}.`,
+    key: 'Prends la clé dorée de la salle : ensuite, la plateforme t’emporte.',
+    keyStay: 'Prends la clé dorée de la salle.',
+    end: 'Promène-toi dans le palais comme tu veux.',
   },
-  mission: { check: 'تحقّق', later: 'ليس الآن' },
+  mission: { check: 'Vérifie', later: 'Pas maintenant' },
   guess: {
-    ask: 'قبل أن تجرّب: هل تجد لهذه الساحة مقياسًا من علامات هذا السطح يركبها؟',
-    yes: 'تُركب',
-    no: 'لا تُركب',
+    ask: 'Avant d’essayer : une graduation de cette terrasse fera-t-elle monter la plateforme de cette salle ?',
+    yes: 'Elle monte',
+    no: 'Elle ne monte pas',
   },
   // a level of the practice ladder on the rail: the words that differ from the story's course
   practice: {
-    leave: 'الرجوع إلى الخريطة',
-    quit: 'خروج',
+    leave: 'Retour à la carte',
+    quit: 'Quitter',
   },
   recall: {
-    title: 'من الساحة السابقة',
-    rode: (a, s) => `ساحة ${a}: ركبتها بالمقياس ${s}`,
-    band: (a, s, d) => `ساحة ${a}، المقياس ${s}: بقي شريط ${d}`,
-    jam: (a, s, d) => `ساحة ${a}، المقياس ${s}: زادت بـ ${d}`,
+    title: 'De la salle précédente',
+    rode: (a, s) => `Salle ${a} : montée avec la toise ${s}`,
+    band: (a, s, d) => `Salle ${a}, toise ${s} : il restait une bande de ${d}`,
+    jam: (a, s, d) => `Salle ${a}, toise ${s} : elle dépassait de ${d}`,
   },
+};
+
+/**
+ * The words the DRAWINGS of a case write (courtParts.jsx › Court, forgeParts.jsx › Line): what the world did, the
+ * names of a line of evidence, how a fraction is read aloud. A drawing writes no other word.
+ */
+export const DRAWING_TEXT = {
+  /** the chip of a line of evidence: what the world did */
+  kind: { ride: 'Elle monte', band: 'Une bande', jam: 'Elle coince' },
+  /** the title of the mirror's mark on a line it built */
+  mirrored: 'Construite par le miroir',
+  /** the head of a line and the court's `aria-label`: « salle 36 · toise 6 » */
+  court: 'salle',
+  rod: 'toise',
+  /** a fraction read aloud: « 23 sur 7 » */
+  over: 'sur',
+  /**
+   * the fact written beside a court, line by line (the difference and its noun follow a band and a jam) — each line
+   * at most 19 characters: the zone beside the court holds 288 units at 27 units a glyph
+   */
+  fact: { ride: ['Elle monte', 'Tout est couvert'], band: 'Bande restante :', jam: 'Elle dépasse de' },
+  /** under the plaque, beside the dashed square of ONE tile */
+  tile: '1 dalle',
 };
 
 /** The world's sentences with the story's own on top, group by group. */

@@ -6,10 +6,10 @@ import {
  * Une figure de géométrie DÉCLARATIVE (vecteurs fléchés et quadrillage depuis les unités 11–12, points nommés, segments, droites, demi-droites, polygones,
  * angles droits, angles, traits d'égalité, chevrons de parallélisme) — la donnée est décrite dans
  * geoFigure.js. Dessinée en SVG, jamais une image ; les noms de points et les longueurs sont du
- * texte LTR (`direction="ltr"`), l'élément porte un `aria-label` arabe.
+ * texte isolé (`unicode-bidi: isolate`), l'élément porte un `aria-label` en français.
  *
- * Utilisée par les leçons de l'unité 9 « خاصية طالس » et par la pratique (`statement.figure`,
- * features/practice/ExerciseStatement.jsx) : un exercice qui dit « في الشكل المقابل » montre le shape.
+ * Utilisée par les leçons de géométrie (Thalès…) et par la pratique (`statement.figure`,
+ * features/practice/ExerciseStatement.jsx) : un exercice qui dit « sur la figure ci-contre » montre la figure.
  */
 const STROKE = {
   slate: '#334155', indigo: '#4f46e5', rose: '#e11d48', emerald: '#059669', amber: '#d97706', sky: '#0284c7', violet: '#7c3aed',

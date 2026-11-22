@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `summit` — PURE logic (screen: `InquirySummit.jsx`; contract: GAME_WORLD.md « استكشف », « spec shape
+ * THE INVESTIGATION `summit` — PURE logic (screen: `InquirySummit.jsx`; contract: GAME_WORLD.md « Explore », « spec shape
  * of `summit` »). Its rule is a search for a MAXIMUM with the reason to stop: the longest plank that fills two gaps is
  * among the planks of the SHORTER gap; tried from the longest down, the first one that fills the other gap is it, and
  * the shorter ones need not be tried.

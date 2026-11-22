@@ -1,5 +1,5 @@
 /**
- * « ساحة العدد » — a court of the student's own: `a` whole tiles, laid from the corner into a square whose side `s` the
+ * « La salle du nombre » — a court of the student's own: `a` whole tiles, laid from the corner into a square whose side `s` the
  * hand chooses on a ruler (or « − / + », the arrows). The tiles fill the square row by row (`logic.js › courtOf`): when
  * the square is too small the tiles that do not fit wait in amber along its next row and column (« +n » when they are
  * more than that border holds); when it is too big its empty places are drawn dashed. The reading writes s × s and what
@@ -106,10 +106,10 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
             data-ll-court-verdict={C.verdict}
           >
             {fits
-              ? `المربّع ممتلئ، ولا بلاطة خارجه`
+              ? `Le carré est plein, aucune dalle dehors`
               : C.verdict === 'out'
-                ? `خارج المربّع: ${tiles(String(C.out))}`
-                : `خانات فارغة في المربّع: ${C.holes}`}
+                ? `Hors du carré : ${tiles(String(C.out))}`
+                : `Cases vides dans le carré : ${C.holes}`}
           </span>
         </>
       }
@@ -157,7 +157,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
             {...drag}
             tabIndex={0}
             role="slider"
-            aria-label="ضلع المربّع"
+            aria-label="Côté du carré"
             aria-valuenow={s}
             aria-valuemin={1}
             aria-valuemax={SMAX}
@@ -239,13 +239,13 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
 
         {/* what the court is: written only once the hand has settled it */}
         <div className="ll-court__facts" data-ll-court-facts={settled ? 'settled' : 'open'}>
-          <p className="ll-court__title">{`ساحة مساحتها ${tiles(String(a))}`}</p>
+          <p className="ll-court__title">{`Une salle de ${tiles(String(a))}`}</p>
           {settled ? (
             <>
               <p data-ll-court-whole={`${C.k}:${C.left}`}>
-                أكبر مربّع كامل فيها: <M>{`${C.k} \\times ${C.k} = ${C.k * C.k}`}</M>
+                Le plus grand carré entier qu’elle contient : <M>{`${C.k} \\times ${C.k} = ${C.k * C.k}`}</M>
               </p>
-              <p>{C.left ? `يبقى منها: ${tiles(String(C.left))}` : 'لا يبقى منها شيء.'}</p>
+              <p>{C.left ? `Il en reste : ${tiles(String(C.left))}` : 'Il n’en reste rien.'}</p>
               {C.perfect ? (
                 <p data-ll-court-root={C.k}>
                   <M>{`\\sqrt{${a}} = ${C.k}`}</M>
@@ -256,7 +256,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
                     <M>{`${C.k} < \\sqrt{${a}} < ${C.k + 1}`}</M>
                   </p>
                   <p data-ll-court-near={`${hundredths(C.lo)}:${hundredths(C.hi)}`}>
-                    إلى <M>{'0{,}01'}</M>:{' '}
+                    À <M>{'0{,}01'}</M> près :{' '}
                     <M>{`${texDec(hundredths(C.lo))} < \\sqrt{${a}} < ${texDec(hundredths(C.hi))}`}</M>
                   </p>
                   <p className="ll-court__proof">
@@ -269,7 +269,9 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
               )}
             </>
           ) : (
-            <p className="ll-court__wait">حرّك الضلع: جرّب أكبر مربّع كامل يتّسع للبلاطات، ثمّ المربّع الذي بعده.</p>
+            <p className="ll-court__wait">
+              Fais bouger le côté : essaie le plus grand carré entier qui contient les dalles, puis le carré suivant.
+            </p>
           )}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { longDivision, twin, paperRows, quotientSoFar, thinking, conclusion, METHOD } from './longDivision';
 
-describe('وضع الورقة — the division as it is written on paper', () => {
+describe('mode papier — the division as it is written on paper', () => {
   it('poses 756 ÷ 36 in two steps: 75 then 36', () => {
     const d = longDivision(756, 36);
     expect(d.steps).toEqual([
@@ -37,19 +37,19 @@ describe('وضع الورقة — the division as it is written on paper', () =>
       }
     const z = longDivision(612, 6); // 6 → 1, then 1 < 6: a 0 in the quotient, then 12 → 2
     expect(z.steps.map((s) => s.digit)).toEqual([1, 0, 2]);
-    expect(thinking(z, 1).join(' ')).toContain('أكتب 0');
+    expect(thinking(z, 1).join(' ')).toContain('J’écris 0 au quotient');
     expect(longDivision(5, 9).steps).toEqual([{ part: 5, digit: 0, product: 0, rest: 5, col: 0, next: null }]);
   });
 
   it('says each step aloud and ends on the check and the sentence', () => {
     const d = longDivision(756, 36);
-    expect(thinking(d, 0)[0]).toContain('7 أصغر من 36');
+    expect(thinking(d, 0)[0]).toContain('7 est plus petit que 36');
     expect(thinking(d, 0).join(' ')).toContain('36 \\times 2 = 72');
-    expect(thinking(d, 0).at(-1)).toContain('أُنزل الرقم 6');
-    expect(thinking(d, 1).at(-1)).toContain('حاصل القسمة 21 والباقي 0');
+    expect(thinking(d, 0).at(-1)).toContain('J’abaisse le chiffre 6');
+    expect(thinking(d, 1).at(-1)).toContain('le quotient est 21 et le reste est 0');
     expect(conclusion(d).check).toContain('36 \\times 21 + 0 = 756');
-    expect(conclusion(d).sentence).toBe('الباقي 0، إذن 36 قاسم للعدد 756.');
-    expect(conclusion(longDivision(756, 32)).sentence).toContain('ليس قاسمًا');
+    expect(conclusion(d).sentence).toBe('Le reste est 0, donc 36 est un diviseur de 756.');
+    expect(conclusion(longDivision(756, 32)).sentence).toContain('n’est pas un diviseur');
     expect(METHOD.map((m) => m.id)).toEqual(['read', 'ask', 'tool', 'compute', 'verify', 'write']);
   });
 

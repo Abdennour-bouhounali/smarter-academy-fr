@@ -1,6 +1,6 @@
 /**
- * « تعاونية الواحة » — the 3D depot of the real-world practice game (three.js, drawn in code).
- * An oasis island far from the archipelago: a warehouse, a pallet of goods, a packing floor and a truck. `runSim` PACKS FOR
+ * « La coopérative du verger » — the 3D depot of the real-world practice game (three.js, drawn in code).
+ * An orchard island far from the archipelago: a warehouse, a pallet of goods, a packing floor and a truck. `runSim` PACKS FOR
  * REAL what the student decided: q containers appear one by one (the HUD's equality follows), and what does not fit stays
  * visible — items left on a red mat (crates), or a last truck half empty (trucks). Nothing here decides: all maths is cases.js.
  */
@@ -8,11 +8,11 @@ import * as THREE from 'three';
 import { THEMES, makeIsland, makeRock, std, glow, textSprite, seeded } from '../engine/builders';
 import { divide } from './logic';
 
-THEMES.oasis = {
-  grass: 0xe4c98a,
-  lip: 0xf1dcaa,
-  rock: 0xb38a5c,
-  rockDark: 0x8a6843,
+THEMES.orchard = {
+  grass: 0x9fcf6a,
+  lip: 0xc9e39a,
+  rock: 0xa39a8a,
+  rockDark: 0x7d7466,
   leaf: [0x3f9a4a, 0x57b25a, 0x2f8748],
   trunk: 0x8a6239,
   flower: [0xffffff, 0xffd27a],
@@ -53,34 +53,35 @@ const DEPOT_AT = { x: -340, z: 280 };
 const PAD = { w: 14.5, d: 8.2, z: 0.4 };
 const easeOut = (t) => 1 - (1 - t) ** 3;
 
-function makePalm(rand, s = 1) {
+/** An apple tree of the orchard: a short trunk, a round crown of three leafy balls, a few red apples. */
+function makeAppleTree(rand, s = 1) {
   const g = new THREE.Group();
-  const h = (3.6 + rand() * 1.4) * s;
-  for (let i = 0; i < 5; i += 1) {
-    const seg = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.16 * s, 0.2 * s, h / 5 + 0.05, 6),
-      std(i % 2 ? 0x8a6239 : 0x9b7244),
-    );
-    seg.position.set(Math.sin(i * 0.35) * 0.18 * s, (i + 0.5) * (h / 5), 0);
-    seg.castShadow = true;
-    g.add(seg);
+  const h = (2.0 + rand() * 0.8) * s;
+  const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.18 * s, 0.26 * s, h, 7), std(0x8a6239));
+  trunk.position.y = h / 2;
+  trunk.castShadow = true;
+  g.add(trunk);
+  const crown = [
+    [0, h + 0.7 * s, 0, 1.25],
+    [0.75 * s, h + 0.35 * s, 0.2 * s, 0.9],
+    [-0.7 * s, h + 0.4 * s, -0.25 * s, 0.95],
+  ];
+  crown.forEach(([x, y, z, r], i) => {
+    const ball = new THREE.Mesh(new THREE.IcosahedronGeometry(r * s, 1), std([0x3f9a4a, 0x57b25a, 0x2f8748][i % 3]));
+    ball.position.set(x, y, z);
+    ball.castShadow = true;
+    g.add(ball);
+  });
+  for (const [x, y, z] of [
+    [0.9, 0.1, 0.8],
+    [-0.8, 0.2, 0.7],
+    [0.2, 0.6, 1.1],
+    [-0.3, -0.1, -1.0],
+  ]) {
+    const apple = new THREE.Mesh(new THREE.IcosahedronGeometry(0.16 * s, 0), std(0xc0392b));
+    apple.position.set(x * s, h + y * s, z * s);
+    g.add(apple);
   }
-  for (let i = 0; i < 7; i += 1) {
-    const leaf = new THREE.Mesh(
-      new THREE.ConeGeometry(0.34 * s, 2.5 * s, 4),
-      std([0x3f9a4a, 0x57b25a, 0x2f8748][i % 3]),
-    );
-    const a = (i / 7) * Math.PI * 2;
-    leaf.position.set(Math.cos(a) * 1.0 * s + 0.2 * s, h + 0.05, Math.sin(a) * 1.0 * s);
-    leaf.rotation.set(0, -a, -Math.PI / 2 - 0.45);
-    leaf.rotation.order = 'YXZ';
-    leaf.scale.z = 0.35;
-    leaf.castShadow = true;
-    g.add(leaf);
-  }
-  const dates = new THREE.Mesh(new THREE.IcosahedronGeometry(0.26 * s, 0), std(0xb5651d));
-  dates.position.set(0.2 * s, h - 0.25, 0.25 * s);
-  g.add(dates);
   return g;
 }
 
@@ -136,7 +137,7 @@ export class Depot {
     game.scene.add(g);
     this.group = g;
     const rand = seeded(4242);
-    g.add(makeIsland(21, 'oasis', 91));
+    g.add(makeIsland(21, 'orchard', 91));
     // the warehouse
     const house = new THREE.Group();
     house.position.set(0, 0, -11.5);
@@ -170,10 +171,15 @@ export class Depot {
       post.castShadow = true;
       board.add(post);
     }
-    const sign = textSprite('تعاونية الواحة', { h: 1.2, bg: 'rgba(22,101,52,0.96)', stroke: null, color: '#fff7d6' });
+    const sign = textSprite('La coopérative du verger', {
+      h: 1.2,
+      bg: 'rgba(22,101,52,0.96)',
+      stroke: null,
+      color: '#fff7d6',
+    });
     sign.position.set(0, 2.9, 0);
     board.add(sign);
-    // palms and rocks
+    // apple trees and rocks
     for (const [x, z, s] of [
       [-15, -9, 1.1],
       [15, -10, 1.2],
@@ -184,13 +190,13 @@ export class Depot {
       [-13, 12, 0.9],
       [14, 12, 1],
     ]) {
-      const p = makePalm(rand, s);
+      const p = makeAppleTree(rand, s);
       p.position.set(x, 0, z);
       p.rotation.y = rand() * 6;
       g.add(p);
     }
     for (let i = 0; i < 6; i += 1) {
-      const r = makeRock('oasis', rand, 0.4 + rand() * 0.5);
+      const r = makeRock('orchard', rand, 0.4 + rand() * 0.5);
       const a = rand() * 6.28;
       r.position.x = Math.cos(a) * 17.5;
       r.position.z = Math.sin(a) * 17.5;
@@ -364,7 +370,7 @@ export class Depot {
       c.position.copy(slot(q));
       this.group.add(c);
       this.items.push(c);
-      this.leftLabel.userData.setText(`${b - r} فارغة`);
+      this.leftLabel.userData.setText(`${b - r} places vides`);
       this.leftLabel.position.set(c.position.x, size + 1.2, c.position.z);
       this.leftLabel.visible = true;
       game.audio.play('plank', q);
@@ -383,7 +389,7 @@ export class Depot {
         this.group.add(cube);
         this.left.push(cube);
       }
-      this.leftLabel.userData.setText(`بقي ${r}`);
+      this.leftLabel.userData.setText(`reste ${r}`);
       this.leftLabel.position.set(this.mat.position.x, 2.1, this.mat.position.z);
       this.leftLabel.visible = true;
       game.audio.play('fail');
@@ -544,7 +550,7 @@ export class Depot {
         this.group.add(cube);
         this.left.push(cube);
       }
-      this.leftLabel.userData.setText(`بقي ${left.a} و ${left.b}`);
+      this.leftLabel.userData.setText(`reste ${left.a} et ${left.b}`);
       this.leftLabel.position.set(this.mat.position.x, 2.1, this.mat.position.z);
       this.leftLabel.visible = true;
       game.audio.play('fail');
@@ -642,8 +648,8 @@ export class Depot {
       tag.position.set(x, 1.5, z);
       g.add(tag);
     };
-    side(`${L} م`, 0, (W * s) / 2 + 0.75);
-    side(`${W} م`, (L * s) / 2 + 1.1, 0);
+    side(`${L} m`, 0, (W * s) / 2 + 0.75);
+    side(`${W} m`, (L * s) / 2 + 1.1, 0);
     this.group.add(g);
     this.plot = { g, L, W, s, trees: [] };
   }
@@ -728,16 +734,23 @@ export class Depot {
       const [x, z] = at(m);
       const post = put(new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 1.5, 8), glow(0xe5484d, 0.6)));
       post.position.set(x, 0.75, z);
-      red('ركن بلا شجرة', x, z);
+      red('coin sans arbre', x, z);
     });
     const gap = P - (n - 1) * d;
     const uneven = Math.abs(gap - d) > 1e-9;
     if (uneven) {
       const [x, z] = at(P - gap / 2);
-      red(`${Number(gap.toFixed(2))} م فقط`, x, z - 0.9, 0.8);
+      red(`seulement ${String(Number(gap.toFixed(2))).replace('.', ',')} m`, x, z - 0.9, 0.8);
     }
     const [x1, z1] = at(d / 2);
-    const first = put(textSprite(`${d} م`, { h: 0.8, bg: 'rgba(255,244,214,0.96)', stroke: null, color: '#3b2a06' }));
+    const first = put(
+      textSprite(`${String(d).replace('.', ',')} m`, {
+        h: 0.8,
+        bg: 'rgba(255,244,214,0.96)',
+        stroke: null,
+        color: '#3b2a06',
+      }),
+    );
     first.position.set(x1, 1.3, z1 + 0.7);
     game.audio.play(corners.length || uneven ? 'key' : 'success');
     await game.wait(game.instantSim ? 0.001 : 0.4);
@@ -789,7 +802,7 @@ export class Depot {
   }
 
   /**
-   * What stands on the quay NOW: each pile's count (« ؟ » while the robot has not counted that stock — `null`), and
+   * What stands on the quay NOW: each pile's count (« ? » while the robot has not counted that stock — `null`), and
    * each pile as tall as what is left of it. `full` (the stocks whole) is given when a dealing starts.
    */
   stockLabel(a, b, full = null, stays = false) {
@@ -811,10 +824,10 @@ export class Depot {
       pile.count = crates(n, whole);
       const red = stays && n > 0;
       label.visible = !red;
-      label.userData.setText(`${n ?? '؟'}`);
+      label.userData.setText(`${n ?? '?'}`);
       if (this.restTags) {
         this.restTags[i].visible = red;
-        if (red) this.restTags[i].userData.setText(`بقي ${n}`);
+        if (red) this.restTags[i].userData.setText(`reste ${n}`);
       }
     });
   }

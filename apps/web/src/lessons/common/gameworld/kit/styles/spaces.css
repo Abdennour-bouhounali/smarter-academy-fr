@@ -1,4 +1,4 @@
-/* ───────── the two practice spaces, the ladder of the exam, the promotion, « تقدّمي » ───────── */
+/* ───────── the two practice spaces, the ladder of the exam, the promotion, « Ma progression » ───────── */
 .di-spaces {
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   background: none;
   color: #fff;
   font:
-    800 1rem 'Cairo',
+    800 1rem 'Inter',
     sans-serif;
   cursor: pointer;
 }
@@ -50,7 +50,6 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 0.7rem;
   align-items: end;
-  direction: rtl;
 }
 .di-rungs li {
   padding-bottom: calc(var(--rise) * 1.5rem);
@@ -386,7 +385,7 @@
   background: #fde68a;
   color: #422006;
   font:
-    800 0.95rem 'Cairo',
+    800 0.95rem 'Inter',
     sans-serif;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   white-space: nowrap;

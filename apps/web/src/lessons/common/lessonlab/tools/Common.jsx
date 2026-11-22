@@ -1,10 +1,11 @@
 /**
- * « القواسم المشتركة » — the divisors of two numbers sorted in three trays: those of the first only, those of both, those of
+ * « Les diviseurs communs » — the divisors of two numbers sorted in three trays: those of the first only, those of both, those of
  * the second only. The greatest of the middle tray wears the crown. Tap a divisor: the two equalities that prove it appear.
  */
 import { useEffect, useState } from 'react';
 import { Tool, M } from '../kit';
 import { divisorsOf, divide } from '../logic';
+import { listFr } from '../../gameworld/kit/authoring/numbers';
 
 const proof = (n, d) => {
   const { q, r } = divide(n, d);
@@ -52,9 +53,9 @@ export default function Common({ a, b, play }) {
       reading={
         sel === null ? (
           <>
-            <M>{`\\mathrm{PGCD}(${a}\\,;${b}) = ${g}`}</M>
+            <M>{`\\mathrm{PGCD}(${a}\\,;\\,${b}) = ${g}`}</M>
             <span className="ll-chip ll-chip--good" data-ll-pgcd={g}>
-              القواسم المشتركة: {both.join('، ')} — أكبرها {g}
+              Diviseurs communs : {listFr(both)} — le plus grand est {g}
             </span>
           </>
         ) : (
@@ -62,7 +63,7 @@ export default function Common({ a, b, play }) {
             <M>{proof(a, sel)}</M>
             <M>{proof(b, sel)}</M>
             <span className={`ll-chip ${both.includes(sel) ? 'll-chip--good' : 'll-chip--warm'}`}>
-              {both.includes(sel) ? `${sel} يقسم العددين معًا` : `${sel} يقسم عددًا واحدًا فقط`}
+              {both.includes(sel) ? `${sel} divise les deux nombres` : `${sel} ne divise qu’un des deux nombres`}
             </span>
           </>
         )
@@ -70,14 +71,14 @@ export default function Common({ a, b, play }) {
     >
       <div className="ll-common">
         {zone(
-          `قواسم ${a} فقط`,
+          `Diviseurs de ${a} seulement`,
           A.filter((d) => !both.includes(d)),
           '',
           'a',
         )}
-        {zone('القواسم المشتركة', both, 'll-zone--both', 'both')}
+        {zone('Diviseurs communs', both, 'll-zone--both', 'both')}
         {zone(
-          `قواسم ${b} فقط`,
+          `Diviseurs de ${b} seulement`,
           B.filter((d) => !both.includes(d)),
           '',
           'b',

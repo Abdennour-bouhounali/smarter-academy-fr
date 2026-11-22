@@ -1,5 +1,5 @@
 /**
- * « قصر الساحات » — what is DRAWN in the 3D world: a terrace of the ksar, a tiled court, the platform, the palms, the
+ * « Le palais des dalles » — what is DRAWN in the 3D world: a terrace of the palace, a tiled court, the platform, the palms, the
  * towers, the things a terrace may hold (the mirror of the forge, a calculator on its stand, the two stations).
  * Pure builders: each returns a THREE.Group (and the parts the game moves). They name no lesson; every word on a sign
  * comes from the caller. Drawn to scale: a court of L tiles a side is L × `unit` wide, its tiles are counted, and the
@@ -11,10 +11,10 @@ import { std, glow } from '../engine/builders';
 const SAND = 0xe9d2a0;
 const SAND_DARK = 0xcfa96c;
 const ROCK = 0xb5854f;
-const LIME = 0xfbf3df; // the whitewashed walls of a ksar
+const LIME = 0xfbf3df; // the whitewashed walls of the palace
 const BLUE = 0x1d4ed8;
 const BRASS = 0xd9aa4a;
-const FONT = '"Cairo", "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif';
+const FONT = '"Inter", "Segoe UI", system-ui, sans-serif';
 
 const mesh = (geo, mat, x = 0, y = 0, z = 0, shadow = true) => {
   const m = new THREE.Mesh(geo, mat);
@@ -26,8 +26,8 @@ const mesh = (geo, mat, x = 0, y = 0, z = 0, shadow = true) => {
 const box = (w, h, d, mat, x, y, z) => mesh(new THREE.BoxGeometry(w, h, d), mat, x, y, z);
 
 /**
- * A sign that always faces the camera. A text with no Arabic letter (a number, a product) is laid out left to right:
- * a formula is never read backwards. `set(text)` redraws it.
+ * A sign that always faces the camera, its text laid out left to right (a formula is never read backwards). `set(text)`
+ * redraws it.
  */
 export function makeLabel(text, { h = 0.9, bg = '#0f2147', color = '#ffffff', on = true } = {}) {
   const canvas = document.createElement('canvas');
@@ -42,14 +42,14 @@ export function makeLabel(text, { h = 0.9, bg = '#0f2147', color = '#ffffff', on
     const s = String(t ?? '');
     if (s === shown) return;
     shown = s;
-    sprite.userData.text = s; // what it says, for a walk that reads the 3D labels (the gate's « ؟ », the side's length)
+    sprite.userData.text = s; // what it says, for a walk that reads the 3D labels (the gate's « ? », the side's length)
     g.font = font;
     const w = Math.ceil(g.measureText(s).width + 96);
     // a WebGL texture cannot change size once uploaded: a text of another width gets a fresh one
     canvas.width = w;
     canvas.height = 132;
     g.font = font;
-    g.direction = /[؀-ۿ]/.test(s) ? 'rtl' : 'ltr';
+    g.direction = 'ltr';
     g.fillStyle = bg;
     g.beginPath();
     g.roundRect(0, 0, w, 132, 46);
@@ -110,7 +110,7 @@ function makePalm(rand, s = 1) {
   return g;
 }
 
-/** A round tower of the ksar with its dome and a lit window. */
+/** A round tower of the palace with its dome and a lit window. */
 function makeTower(h = 5.2) {
   const g = new THREE.Group();
   const lime = std(LIME, { flatShading: false });
@@ -399,7 +399,7 @@ export function makePad() {
   return g;
 }
 
-/** The mirror of the forge: a horseshoe arch of the ksar holding a sheet of light. */
+/** The mirror of the forge: a horseshoe arch of the palace holding a sheet of light. */
 function makeMirror() {
   const g = new THREE.Group();
   const lime = std(LIME);

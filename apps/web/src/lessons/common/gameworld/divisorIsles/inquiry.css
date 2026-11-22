@@ -303,8 +303,8 @@
 .rf-root .iq-div.is-zero .iq-div__rest {
   color: #8dffb0;
 }
-/* HIS CLAIM, laid as an Arabic sentence, right to left (owner, 2026-11-17): the three lenses in a column on the RIGHT, the
-   link (« يساوي », « يقبل القسمة على »), then the numbers on the LEFT, in columns read downwards (five; three on a phone) */
+/* HIS CLAIM, laid as a French sentence, left to right (owner, 2026-11-17): the three lenses in a column on the LEFT, the
+   link (« est égal à », « est divisible par »), then the numbers on the RIGHT, in columns read downwards (five; three on a phone) */
 .iq-claim {
   display: flex;
   align-items: center;
@@ -514,7 +514,7 @@
   .iq-lenses {
     gap: 0.3rem;
   }
-  /* a long lens (« العدد المكوّن من الآحاد والعشرات ») takes two lines on a phone rather than push the numbers out */
+  /* a long lens (« le nombre formé par les dizaines et les unités ») takes two lines on a phone rather than push the numbers out */
   .iq--chart .iq-lens {
     max-width: 11.5rem;
     padding-block: 0.15rem;
@@ -800,7 +800,7 @@
   color: #ffe2a8;
 }
 
-/* peel: the table of every round, a column per plank (the labels on the right) */
+/* peel: the table of every round, a column per plank (the labels on the left) */
 .iq-ptable {
   display: flex;
   justify-content: center;
@@ -873,7 +873,7 @@
   outline-offset: 1px;
   animation: iq-shake 0.4s;
 }
-/* his claim, an Arabic sentence read right to left: « if the plank » [a] [and | or] [b] « then it fills the piece » */
+/* his claim, a French sentence read left to right: « if the plank » [a] [and | or] [b] « then it fills the piece » */
 .iq-psay {
   display: flex;
   flex-wrap: wrap;
@@ -1230,7 +1230,7 @@
 .rf-root .iq-side {
   color: #9fd8ff;
 }
-/* common: the tray of candidate planks (right) and the shelves they go to */
+/* common: the tray of candidate planks (left) and the shelves they go to */
 .iq-shelves {
   display: flex;
   justify-content: center;

@@ -58,8 +58,8 @@ export function reasonLabel(row, t = defaultT) {
 }
 
 /**
- * Le marqueur de fraîcheur d'une ligne : « حديث », « منذ فترة », « يحتاج
- * تذكيرًا » — vide quand le serveur n'en donne pas (point jamais évalué).
+ * Le marqueur de fraîcheur d'une ligne : « récent », « il y a un moment »,
+ * « à rafraîchir » — vide quand le serveur n'en donne pas (point jamais évalué).
  *
  * @param {{freshness?: string|null}|null|undefined} row
  * @param {(key: string, options?: object) => string} [t]

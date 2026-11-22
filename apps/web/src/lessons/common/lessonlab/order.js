@@ -1,5 +1,5 @@
 /**
- * « مختبري » — WHERE a lesson sits in the four years (PURE). The lab shows the instruments of the lesson and of every lesson
+ * « Mon labo » — WHERE a lesson sits in the four years (PURE). The lab shows the instruments of the lesson and of every lesson
  * BEFORE it (any grade), never of a lesson after it: a student never meets a tool of something he has not studied yet.
  * The order is the catalogue's: grade (6e → 3e), then the lesson's position (`lessonOrder.generated.json`).
  */

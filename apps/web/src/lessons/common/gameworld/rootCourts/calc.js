@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `calc` — PURE logic (screen: `InquiryCalc.jsx`; contract: GAME_WORLD.md « استكشف », spec shape of
+ * THE INVESTIGATION `calc` — PURE logic (screen: `InquiryCalc.jsx`; contract: GAME_WORLD.md « Explore », spec shape of
  * `calc`). Its rule is a COMPARISON of several candidates for ONE length, none of which is that length: the court of
  * area `a` is in front of him and rods lie ready — a whole number, a decimal, the number a drawn calculator shows. For
  * each rod he says BEFORE whether its platform will ride; the world lowers it (exact: `logic.js › outcome`) and writes
@@ -36,8 +36,8 @@ export const MAX_CELL = 21;
  * zoomed 1.067: 1rem ≈ 17 px). Inside the experiment's panel there are 1205 × 587 px of the frame (measured on the walk's
  * screenshots, 2026-11-21: the panel 1327 × 657 px on screen, less its padding and border).
  *   row 1  the lead and the goal (two lines)
- *   row 2  the court (the subject: as high as the rows below leave), the rack of rods, the calculator
- *   row 3  the question, its buttons and the fact (right, under the court), the table (left)
+ *   row 2  the court (the subject: as high as the rows below leave), then the rack of rods and the calculator — left to right
+ *   row 3  the question, its buttons and the fact (left, under the court), then the table (right)
  * `inquiryCalc.render.test.jsx` adds the widths and the heights and checks every text he reads is ≥ 18 px on screen.
  * The CSS (`inquiry.css`) reads the court's height and the talk's width from the custom properties the screen sets.
  */
@@ -52,11 +52,11 @@ export const CALC_LAYOUT = {
   calculator: 9, // rem: the drawn calculator (200 × 250)
   talk: 26, // rem: the column of the question, its buttons and the fact
   /** the table: its three cells at most this wide (rem) at its font (1.08rem); a row ≈ 1.95rem, the header 2.2, the note 3.2 */
-  table: { font: 1.08, rod: 9.2, covers: 14.2, diff: 22.6, row: 1.95, header: 2.2, note: 3.2 },
+  table: { font: 1.08, rod: 9.2, covers: 14.2, diff: 23.2, row: 1.95, header: 2.2, note: 3.2 },
 };
 
 /**
- * How many presses of « كبّر » (each × 10) the gap left by a rod needs before it is seen — 0 when it is seen at once, or
+ * How many presses of « Agrandis » (each × 10) the gap left by a rod needs before it is seen — 0 when it is seen at once, or
  * when the platform rides. Drawing only: what the world DOES is `outcome`, exact. The thickness of the band is
  * |S − s| = |S² − s²| / (S + s), with S² − s² the exact difference — no cancellation of two close floats.
  */
@@ -108,7 +108,7 @@ export const rowNow = (s) => (['zoom', 'seen'].includes(s.stage) ? s.rows.at(-1)
  * One move of the experiment.
  *   { type: 'say', v }   say: his prediction — will the platform ride? (true / false)
  *   { type: 'built' }    build: the world has lowered the platform
- *   { type: 'zoom' }     zoom: he presses « كبّر » (× 10)
+ *   { type: 'zoom' }     zoom: he presses « Agrandis » (× 10)
  *   { type: 'next' }     seen: the next rod, the wall, or the end
  *   { type: 'clamp' }    wall: he clamps the rod on the wall
  *   { type: 'clamped' }  clamping: the rod reaches the far corner

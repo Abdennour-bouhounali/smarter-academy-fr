@@ -1,16 +1,16 @@
 /**
- * THE AUTHORING KIT — the arithmetic and the Arabic counting a lesson's `world/math.js` re-derived each time (PURE; it
- * names no lesson). A lesson's `math.js` keeps ITS numbers (`NUMBERS`) and imports or re-exports what it needs from here:
+ * THE AUTHORING KIT — the arithmetic and the French counting a lesson's `world/math.js` would re-derive each time (PURE;
+ * it names no lesson). A lesson's `math.js` keeps ITS numbers (`NUMBERS`) and imports or re-exports what it needs:
  *
- *   import { gcd, euclid, differences, listAr, counted, COINS } from '<kit>/authoring/numbers';
- *   export { gcd, euclid, differences, listAr, counted, COINS };
+ *   import { gcd, euclid, differences, listFr, counted, COINS } from '<kit>/authoring/numbers';
+ *   export { gcd, euclid, differences, listFr, counted, COINS };
  *   export const NUMBERS = { tarh: { gaps: [259, 185], purse: 12, plank: 37 }, … };
  *
  * Four parts: the numbers (divisors, the PGCD, the two algorithms), the formulas (LaTeX inside `$…$`), the sentence (a
- * list, an equality isolated from the bidi algorithm), and the Arabic agreement of a number and its noun. The words of
- * the world « أرخبيل القواسم » (coins, planks, cells, rows) are at the end: a lesson on another world adds its own tables
- * in the same shape `[one, two, three to ten, eleven and more]` and passes them to `counted`.
- * Tested: `authoring/numbers.test.js`; the proofs compare it with the three lessons' own `math.js`.
+ * list « a, b et c »), and the French agreement of a number and its noun. The words of the world « L’archipel des
+ * diviseurs » (coins, planks, cells, rows) are at the end: a lesson on another world adds its own tables in the same
+ * shape `[singular, plural]` and passes them to `counted`.
+ * Tested: `authoring/numbers.test.js`.
  */
 
 // ───────────────────────── the numbers ─────────────────────────
@@ -91,76 +91,51 @@ export const subTex = (s) => `${s.x} - ${s.y} = ${s.d}`;
 // ───────────────────────── the sentence ─────────────────────────
 
 /**
- * « 1 ، 2 ، 4 » — a list as an Arabic sentence writes it. A no-break space BEFORE each comma: a list that wraps breaks
- * only after a comma, never starts a line with « ، » (defects.md B6).
+ * « 1, 2, 4 et 8 » — a list as a French sentence writes it: commas, and « et » before the last item. A list of one item
+ * is that item; an empty list is the empty string. A line may break after a comma (French puts no space before it).
  */
-export const listAr = (xs) => xs.join('\u00a0، ');
-
-/**
- * An equality inside a plain Arabic sentence, isolated left to right (LRI … PDI): without it the bidi algorithm draws
- * « 7 + 5 = 12 » as « 12 = 5 + 7 » (defects.md B7, B16). A formula drawn by `MathText` (`$…$`) needs none.
- */
-export const ltr = (s) => `\u2066${s}\u2069`;
-
-// ───────────────────────── the Arabic agreement of a number and its noun ─────────────────────────
-
-/**
- * n and its noun, agreed: forms = [one, two, three to ten, eleven and more]. « قطعة واحدة », « قطعتان », « 5 قطع »,
- * « 38 قطعة ». Past 100 the last two digits decide (« 103 ألواح », « 144 لوحًا »); a round hundred, 101 or 102 takes the
- * optional fifth form (the genitive singular, « 100 سطر »), else the fourth.
- */
-export function counted(n, [one, two, few, many, hundred = many]) {
-  if (n === 1) return one;
-  if (n === 2) return two;
-  const r = n >= 100 ? n % 100 : n;
-  if (r >= 3 && r <= 10) return `${n} ${few}`;
-  if (n >= 100 && r <= 2) return `${n} ${hundred}`;
-  return `${n} ${many}`;
+export function listFr(xs) {
+  const items = [...xs].map(String);
+  if (items.length < 2) return items.join('');
+  return `${items.slice(0, -1).join(', ')} et ${items.at(-1)}`;
 }
 
-// ───────────────────────── the words of the world « أرخبيل القواسم » ─────────────────────────
+// ───────────────────────── the French agreement of a number and its noun ─────────────────────────
+
+/**
+ * n and its noun, agreed: forms = [singular, plural]. French takes the singular for 0 and 1 (« 0 dalle », « 1 dalle »)
+ * and the plural from 2 on (« 2 dalles », « 1003 dalles »). The number and the noun are joined by a no-break space, so a
+ * count never splits across two lines (`FRENCH_LANGUAGE_CONTRACT.md` §4). A noun that never changes (« 3 fois »)
+ * gives the same word twice.
+ */
+export function counted(n, [one, many]) {
+  return `${n}\u00a0${Math.abs(n) < 2 ? one : many}`;
+}
+
+// ───────────────────────── the words of the world « L’archipel des diviseurs » ─────────────────────────
 
 /** The coins of a purse (one per plank laid, whatever its length). */
-export const COINS = ['قطعة واحدة', 'قطعتان', 'قطع', 'قطعة'];
-/** Planks, as a subject: « لوح واحد », « لوحان », « 5 ألواح », « 21 لوحًا ». */
-export const PLANKS = ['لوح واحد', 'لوحان', 'ألواح', 'لوحًا', 'لوح'];
-/** Planks, as the object of a verb: « يحتاج لوحين », « 10 ألواح », « 38 لوحًا ». */
-export const PLANKS_ACC = ['لوحًا واحدًا', 'لوحين', 'ألواح', 'لوحًا', 'لوح'];
-/** Euclid's divisions: « قسمة واحدة », « قسمتان », « 4 قسمات », « 12 قسمة ». */
-export const DIVISIONS = ['قسمة واحدة', 'قسمتان', 'قسمات', 'قسمة'];
-/** …after a preposition or « مقابل » (genitive): « بعد قسمتين ». */
-export const DIVISIONS_GEN = ['قسمة واحدة', 'قسمتين', 'قسمات', 'قسمة'];
-/** The subtractions: « عملية طرح واحدة », « عمليتا طرح », « 5 عمليات طرح », « 31 عملية طرح ». */
-export const SUBTRACTIONS = ['عملية طرح واحدة', 'عمليتا طرح', 'عمليات طرح', 'عملية طرح'];
-/** …after a preposition (genitive): « بعد عمليتي طرح ». */
-export const SUBTRACTIONS_GEN = ['عملية طرح واحدة', 'عمليتي طرح', 'عمليات طرح', 'عملية طرح'];
-/** The rows of a notebook, as a subject: « سطر واحد », « سطران », « 5 أسطر », « 31 سطرًا ». */
-export const ROWS = ['سطر واحد', 'سطران', 'أسطر', 'سطرًا', 'سطر'];
-/** …as an object: « كتب سطرًا واحدًا », « كتب سطرين », « كتب 5 أسطر », « كتب 31 سطرًا ». */
-export const ROWS_ACC = ['سطرًا واحدًا', 'سطرين', 'أسطر', 'سطرًا', 'سطر'];
+export const COINS = ['pièce', 'pièces'];
+/** The planks of a bridge: « 1 planche », « 21 planches ». */
+export const PLANKS = ['planche', 'planches'];
+/** Euclid's divisions: « 1 division », « 4 divisions ». */
+export const DIVISIONS = ['division', 'divisions'];
+/** The subtractions: « 1 soustraction », « 31 soustractions ». */
+export const SUBTRACTIONS = ['soustraction', 'soustractions'];
+/** The rows of a notebook: « 1 ligne », « 31 lignes ». */
+export const ROWS = ['ligne', 'lignes'];
+/** The cells of a gap: « 1 case », « 28 cases ». */
+export const CELLS = ['case', 'cases'];
 
-/** « 12 لوحًا » — the planks two bridges take (the tag of a case in the mirror's log). */
+/** « 12 planches » — the planks two bridges take (the tag of a case in the mirror's log). */
 export const planks = (q) => counted(q, PLANKS);
-/** What is left in the purse: « وبقيت في الكيس 11 قطعة », « ولم يبقَ في الكيس شيء ». */
-export const coinsLeft = (n) => (n > 0 ? `وبقيت في الكيس ${counted(n, COINS)}` : 'ولم يبقَ في الكيس شيء');
+/** What is left in the purse: « et il reste 11 pièces dans la bourse », « et la bourse est vide ». */
+export const coinsLeft = (n) => (n > 0 ? `et il reste ${counted(n, COINS)} dans la bourse` : 'et la bourse est vide');
 
-/** The empty cells a plank leaves, with the agreement of the verb and the adjective: « بقيت خانتان فارغتان ». */
-export const emptyCells = (r) =>
-  r === 1
-    ? 'بقيت خانة واحدة فارغة'
-    : r === 2
-      ? 'بقيت خانتان فارغتان'
-      : `بقيت ${counted(r, ['', '', 'خانات فارغة', 'خانة فارغة'])}`;
+/** The empty cells a plank leaves, with the agreement of the adjective: « il reste 1 case vide », « il reste 2 cases vides ». */
+export const emptyCells = (r) => `il reste ${counted(r, ['case vide', 'cases vides'])}`;
 
-/** q planks of length b, with the verb that agrees: « لوح واحد طوله 27 يملأ », « 4 ألواح طولها 19 تملأ ». */
-export function planksFill(q, b) {
-  if (q === 1) return `لوح واحد طوله ${b} يملأ`;
-  if (q === 2) return `لوحان طولهما ${b} يملآن`;
-  return `${planks(q)} طولها ${b} تملأ`;
-}
-/** q planks of length b, without a verb: « لوح واحد طوله 14 », « لوحان طولهما 14 », « 73 لوحًا طولها 28 ». */
-export function planksOf(q, b) {
-  if (q === 1) return `لوح واحد طوله ${b}`;
-  if (q === 2) return `لوحان طولهما ${b}`;
-  return `${planks(q)} طولها ${b}`;
-}
+/** q planks of length b, with the verb that agrees: « 1 planche de 27 remplit », « 4 planches de 19 remplissent ». */
+export const planksFill = (q, b) => `${planksOf(q, b)} ${q < 2 ? 'remplit' : 'remplissent'}`;
+/** q planks of length b, without a verb: « 1 planche de 14 », « 73 planches de 28 ». */
+export const planksOf = (q, b) => `${planks(q)} de ${b}`;

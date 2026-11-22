@@ -1,11 +1,11 @@
-/* « عُدّة الانطلاق » — the launch pad at night. Designed at 1280 × 720 (1000 × 740 on a 4:3 screen), zoomed to the window: nothing scrolls. Prefix lk-. */
+/* « L’échauffement » — the launch pad at night. Designed at 1280 × 720 (1000 × 740 on a 4:3 screen), zoomed to the window: nothing scrolls. Prefix lk-. */
 .lk-root {
   position: fixed;
   inset: 0;
   z-index: 1250;
   overflow: hidden;
   color: #eef2ff;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
@@ -87,7 +87,7 @@
   color: #a5b4fc;
   font-weight: 700;
   /* the lesson's title is WHOLE, on two lines when the head is narrow — never cut by an ellipsis (defects.md B5: lesson
-     6's « البحث عن القاسم المشترك الأكبر لعددين طبيعيين » lost its last word at 1024 × 768) */
+     6's long Arabic title lost its last word at 1024 × 768) */
   line-height: 1.35;
   text-wrap: balance;
   max-width: 26rem;
@@ -733,10 +733,10 @@
 .lk-chip:has(.lk-say) {
   padding: 0.3rem 0.6rem;
 }
-/* a sentence that is a LIST (« قواسم 88: 1 ، 2 ، 4 ، 8 ، 11 ، 22 ، 43 ، 44 ، 88 », the longest `4am.m1.r02` draws): its commas
-   are glued to the number before them (families.js › LIST_SEP), so a line breaks only after one. Sized so the longest list
-   takes two lines at most — measured in Cairo Black: 1.5rem needs 231 px of card, 1.3rem 200, 1.1rem 169; the
-   card holds 246 px (17rem column) and 198 px on a 4:3 screen (14rem column) */
+/* a sentence that is a LIST (« Diviseurs de 88 : 1, 2, 4, 8, 11, 22, 44 et 88 », written by `listFr`): a French comma
+   is glued to the number before it, so a line breaks only after one. Sized so the longest list takes two lines at most —
+   measured in the former Arabic font on the Algerian lists: 1.5rem needed 231 px of card, 1.3rem 200, 1.1rem 169;
+   the card holds 246 px (17rem column) and 198 px on a 4:3 screen (14rem column). NOT re-measured in Inter. */
 .lk-card .lk-say[data-lk-list] {
   font-size: 1.3rem;
 }
@@ -779,7 +779,7 @@
   touch-action: none;
   cursor: pointer;
   direction: ltr;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 .lk-place svg.is-locked {
   cursor: default;
@@ -1356,7 +1356,7 @@
     width: 4.4rem;
   }
   /* A CAPSULE: its card or its worked example slides INSIDE its own box. Taller than the stage, its last lines lay over
-     « التالي » and took the taps meant for it — the student could not go on. */
+     « Suivant » and took the taps meant for it — the student could not go on. */
   .lk-capbody {
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -1364,7 +1364,7 @@
   .lk-capbody.lk-example ol {
     flex: none;
   }
-  /* SORTING FITS above « تمّ »: the card, its boxes and what they hold are shorter and the boxes wider. The card kept its
+  /* SORTING FITS above « Valider »: the card, its boxes and what they hold are shorter and the boxes wider. The card kept its
      laptop height and, with its boxes, lay under the two buttons of the question. */
   .lk-question {
     gap: 0.4rem;

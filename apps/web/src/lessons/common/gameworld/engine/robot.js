@@ -1,5 +1,5 @@
 /**
- * « زيرو » — the hero: a small hovering robot (no person is drawn). Its chest screen shows the REMAINDER of the last forge:
+ * « Zéro » — the hero: a small hovering robot (no person is drawn). Its chest screen shows the REMAINDER of the last forge:
  * the variable of the lesson lives on the character. `update(dt, { speed, vy, mood })` animates hover, tilt, blink and thruster.
  */
 import * as THREE from 'three';

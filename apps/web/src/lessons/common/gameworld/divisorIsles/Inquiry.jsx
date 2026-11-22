@@ -10,7 +10,7 @@
  *        | common, ladder, nest (`InquiryGcd.jsx` — the greatest common divisor) | cycle (`InquiryCycle.jsx`)
  *        | summit (`InquirySummit.jsx`) | deal (`InquiryDeal.jsx`) | lists (`InquiryLists.jsx`)
  *        | sort (`InquirySort.jsx`) | measure (`InquiryMeasure.jsx`) | part (`InquiryPart.jsx`)
- *   — every spec shape is in docs/architecture/GAME_WORLD.md « استكشف ».
+ *   — every spec shape is in docs/architecture/GAME_WORLD.md « Explore ».
  * `text` is the LESSON's wording (this file names no lesson and writes none of its numbers).
  */
 import { useEffect, useRef, useState } from 'react';
@@ -201,7 +201,7 @@ function Pairs({ spec, play, onDone }) {
       </svg>
 
       <div className="iq-table" dir="ltr" data-iq-table>
-        <div className="iq-table__head" dir="rtl">
+        <div className="iq-table__head">
           <span>{T.cols.plank}</span>
           <span>{T.cols.partner}</span>
           {squares && <span>{T.cols.square}</span>}
@@ -213,7 +213,7 @@ function Pairs({ spec, play, onDone }) {
             data-iq-tried={t.d}
           >
             <b>{t.d}</b>
-            <span dir="rtl">{stage === 'guess' ? '؟' : partnerText(t)}</span>
+            <span>{stage === 'guess' ? '?' : partnerText(t)}</span>
             {squares && <em>{t.square}</em>}
           </div>
         ))}
@@ -325,7 +325,7 @@ function Chart({ spec, play, onDone }) {
   const first = from === 0 ? p.b : from;
   const full = upto >= from + 100;
   const tested = (n) => n < upto;
-  // how this plank's claim is said: « lens · يساوي · values » or « lens · يقبل القسمة على · a number »
+  // how this plank's claim is said: « lens · est égal à · values » or « lens · est divisible par · a number »
   const link = p.link ?? 'equals';
   const taken = lens ? claimValues(link, lens, values, from) : [];
   const judge = lens ? judgeClaim(p.b, lens, taken, from) : null;
@@ -469,7 +469,7 @@ function Chart({ spec, play, onDone }) {
 
         {stage === 'lens' && (
           <>
-            {/* his claim, laid as it is read: the lenses in a column, « يساوي », the values in columns (owner, 2026-11-17) */}
+            {/* his claim, laid as it is read: the lenses in a column, « est égal à », the values in columns (owner, 2026-11-17) */}
             <div className="iq-claim" data-iq-claim>
               <div className="iq-lenses" data-iq-lenses>
                 {p.lenses.map((id) => (

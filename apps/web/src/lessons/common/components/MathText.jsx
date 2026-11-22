@@ -24,15 +24,13 @@ import { isolateMathRuns } from '../../../utils/bidi';
  * Usage — with className:
  *   <MathText className="font-mono text-blue-700">$f(x)=2x$</MathText>
  */
-// Math LTR isolation (ALGERIA_PLATFORM_MASTER_SPEC.md §14): the UI is RTL
-// (ar-DZ — src/locale.js) but notation reads left-to-right regardless of the
-// surrounding text direction. Every expression is wrapped in a `dir="ltr"`
+// Math isolation: notation reads left to right, and each expression is kept
+// whole (never broken, never reordered by the surrounding text). Every expression is wrapped in a `dir="ltr"`
 // container carrying .sa-math-inline / .sa-math-block (index.css). Block math
 // gets a <div>: react-katex's BlockMath renders a <div>, which is invalid
 // inside a <span> and triggers a React DOM-nesting warning. Single chokepoint
 // — 360+ call sites inherit this without individual changes. A Latin word
-// attached to a formula (`PGCD$(a ; b)$`) joins its LTR island
-// (`mathSegments`, ARABIC_RTL_CONTRACT.md).
+// attached to a formula (`PGCD$(a ; b)$`) joins its island (`mathSegments`).
 
 /**
  * Les SEGMENTS d'un texte : du texte, une formule en bloc, ou une ÎLE LTR.
@@ -40,11 +38,10 @@ import { isolateMathRuns } from '../../../utils/bidi';
  * Une île regroupe une formule en ligne et ce qui lui est ATTACHÉ en écriture
  * latine : un mot latin collé devant (`PGCD$(a ; b)$`, `PGCD $(a ; b)$`), et
  * les formules suivantes quand seuls des espaces ou un tel mot les séparent
- * (`PGCD$(a ; b) = $ PGCD$(b ; r)$`). Sans ce regroupement, le paragraphe RTL
- * range le mot latin et chaque île dans l'ordre de droite à gauche : le
- * manuel écrit « PGCD(a ; b) = PGCD(b ; r) » et l'élève lisait
- * « (b ; r)PGCD(a ; b) = PGCD ». Ce qui est arabe (« $a$ و $b$ ») ou ponctué
- * (« $a$ ، $b$ ») sépare toujours deux îles : rien ne change pour eux.
+ * (`PGCD$(a ; b) = $ PGCD$(b ; r)$`) : une égalité « PGCD(a ; b) = PGCD(b ; r) »
+ * reste d'un seul tenant (une formule ne se coupe jamais sur deux lignes). Un
+ * chiffre, un mot accentué (« où ») ou une ponctuation (« $a$, $b$ ») sépare
+ * toujours deux îles.
  *
  *   { type: 'text', text } · { type: 'block', math } ·
  *   { type: 'inline', pieces: [{ text } | { math }] }
@@ -59,9 +56,10 @@ export function mathSegments(source) {
     if (isBlock(part)) { out.push({ type: 'block', math: part.slice(2, -2) }); continue; }
     if (!isInline(part)) { if (part) out.push({ type: 'text', text: part }); continue; }
     const pieces = [];
-    // Un mot latin collé devant la formule (au plus une espace) la rejoint.
+    // Un mot latin collé devant la formule (au plus une espace) la rejoint — un mot ENTIER en lettres
+    // non accentuées : « écrit $x$ » ne se coupe jamais en « é » + « crit ».
     const prev = out[out.length - 1];
-    const lead = prev?.type === 'text' ? prev.text.match(/(^|[^A-Za-z])([A-Za-z]+ ?)$/) : null;
+    const lead = prev?.type === 'text' ? prev.text.match(/(^|[^\p{L}\p{M}])([A-Za-z]+ ?)$/u) : null;
     if (lead) {
       prev.text = prev.text.slice(0, prev.text.length - lead[2].length);
       if (!prev.text) out.pop();
@@ -109,7 +107,7 @@ export default function MathText({ children, className }) {
       );
     }
     // Le texte BRUT entre les îles : « √a », « x² = a » écrits sans `$` dans une
-    // phrase arabe s'afficheraient « a√ » — isolés ici (utils/bidi.js).
+    // phrase restent d'un seul tenant — isolés ici (utils/bidi.js).
     return <span key={index}>{isolateMathRuns(seg.text)}</span>;
   });
 

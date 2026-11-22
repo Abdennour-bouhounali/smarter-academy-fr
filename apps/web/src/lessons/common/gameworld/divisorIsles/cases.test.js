@@ -2,17 +2,42 @@ import { describe, it, expect } from 'vitest';
 import { rng } from '../kit/random';
 import { MISSIONS, WORLD_OF, makeMission, makeOrder, judge, answerOf, answerParts, count, facts } from './cases';
 
-describe('تعاونية الواحة — the real-world cases', () => {
-  it('agrees Arabic counted nouns', () => {
-    const F = ['صندوق واحد', 'صندوقان', 'صناديق', 'صندوقًا'];
-    expect([1, 2, 5, 10, 11, 120].map((n) => count(F, n))).toEqual([
-      'صندوق واحد',
-      'صندوقان',
-      '5 صناديق',
-      '10 صناديق',
-      '11 صندوقًا',
-      '120 صندوقًا',
+describe('La coopérative du verger — the real-world cases', () => {
+  it('agrees French counted nouns: the digit, a no-break space, the singular for 0 and 1', () => {
+    const F = ['caisse', 'caisses'];
+    expect([0, 1, 2, 5, 11, 120].map((n) => count(F, n))).toEqual([
+      '0\u00a0caisse',
+      '1\u00a0caisse',
+      '2\u00a0caisses',
+      '5\u00a0caisses',
+      '11\u00a0caisses',
+      '120\u00a0caisses',
     ]);
+  });
+
+  it('speaks French and counts in euros: no Arabic letter, no dinar, « 4\u202f500\u00a0€ »', () => {
+    const arabic = /[\u0600-\u06FF]/;
+    for (const mission of Object.keys(MISSIONS))
+      for (let seed = 1; seed <= 30; seed += 1)
+        for (const o of makeMission(rng(seed * 13 + 2), mission)) {
+          expect(o.brief).not.toMatch(arabic);
+          expect(`${o.client} ${o.good.name}`).not.toMatch(arabic);
+          o.steps.forEach((step, i) => {
+            const words = [
+              step.prompt,
+              ...(step.tokens ?? []).map((t) => (typeof t === 'string' ? t : t.label)),
+              ...(step.options ?? []).map((x) => x.sub),
+              ...facts(o, i),
+              judge(o, i, answerOf(o, i)).text,
+            ].join(' ');
+            expect(words).not.toMatch(arabic);
+            expect(words).not.toMatch(/DA|DZD/);
+          });
+        }
+    const trip = makeOrder(rng(9), 'trip', 0);
+    const price = String(trip.price).replace(/(\d)(\d{3})$/, '$1\u202f$2');
+    expect(trip.brief).toContain(`${price}\u00a0€`);
+    expect(trip.steps[2].tokens).toContain('€');
   });
 
   it('every order of every mission is solvable: the right answer of each step is accepted, with text', () => {
@@ -60,14 +85,14 @@ describe('تعاونية الواحة — the real-world cases', () => {
     const [o] = makeMission(rng(4), 'count');
     const wrong = judge(o, 0, { x: o.b + 1 });
     expect(wrong.ok).toBe(false);
-    expect(wrong.text).not.toContain(`سعة ${o.b} `);
+    expect(wrong.text).not.toContain(`caisses de ${o.b} `);
     const trip = makeOrder(rng(9), 'trip', 0);
     const short = judge(trip, 0, { x: trip.q }); // the classic mistake: forgetting the truck of the remainder
     expect(short.ok).toBe(false);
-    expect(short.text).toContain('على الرصيف');
+    expect(short.text).toContain('sur le quai');
     expect(judge(trip, 1, { x: trip.r }).ok).toBe(false); // the remainder is not the number of empty places
     const cost = makeOrder(rng(3), 'cost', 0);
-    expect(judge(cost, 0, { q: cost.q1 - 1, r: cost.r1 + cost.b1 }).text).toContain('أصغر من');
+    expect(judge(cost, 0, { q: cost.q1 - 1, r: cost.r1 + cost.b1 }).text).toContain('plus petit que');
     expect(judge(cost, 0, { q: cost.q1 + 5, r: 0 }).ok).toBe(false);
   });
 
@@ -94,7 +119,8 @@ describe('تعاونية الواحة — the real-world cases', () => {
       'tiling.all': (o) => [o.rows, o.q],
       'tiling.boxes': (o) => [o.total, o.box],
     };
-    const numbers = (text) => new Set((text.match(/\d+/g) ?? []).map(Number));
+    // a French number groups its thousands with a narrow no-break space (« 4\u202f500 »): read it as one number
+    const numbers = (text) => new Set((text.replace(/(\d)\u202f(?=\d{3})/g, '$1').match(/\d+/g) ?? []).map(Number));
     for (const mission of Object.keys(MISSIONS))
       for (let seed = 1; seed <= 50; seed += 1)
         for (const o of makeMission(rng(seed * 29 + 1), mission)) {
@@ -113,7 +139,7 @@ describe('تعاونية الواحة — the real-world cases', () => {
             expect(numbers(facts(o, 0).join(' ')).has(o.total)).toBe(false);
             expect(facts(o, 2).join(' ')).toContain(String(o.total));
           }
-          if (o.kind === 'cost') expect(facts(o, 0).join(' ')).not.toContain('لا تصلح');
+          if (o.kind === 'cost') expect(facts(o, 0).join(' ')).not.toContain('ne conviennent pas');
         }
   });
 
@@ -152,7 +178,7 @@ describe('تعاونية الواحة — the real-world cases', () => {
       expect(sh.r).toBeGreaterThan(0);
       expect(sh.n % sh.g).toBe(0);
       expect(sh.g).not.toBe(sh.b); // unfair at first, fair with the neighbours
-      expect(sh.brief).toContain('بالعدل');
+      expect(sh.brief).toContain('équitablement');
       expect(sh.steps[1].options.filter((x) => sh.n % x.v === 0).map((x) => x.v)).toEqual([sh.g]);
       const ti = makeOrder(rng(seed), 'tiling', seed % 2);
       expect(ti.L % ti.s).toBe(0);
@@ -161,12 +187,12 @@ describe('تعاونية الواحة — the real-world cases', () => {
       expect(ti.boxes * ti.box - ti.total).toBe(ti.spare);
       expect(ti.spare).toBeGreaterThan(0);
       expect(ti.spare).toBeLessThan(ti.box);
-      expect(ti.brief).toContain('المتقن');
+      expect(ti.brief).toContain('travail soigné');
       expect(ti.steps.map((x) => x.id)).toEqual(['tile', 'all', 'boxes']);
       expect(sh.steps.map((x) => x.id)).toEqual(['each', 'guests']);
-      expect(judge(ti, 2, { x: ti.boxes - 1 }).text).toContain('تنقصه'); // one box short
-      expect(judge(ti, 2, { x: ti.boxes + 1 }).text).toContain('لا يبذّر'); // one box too many: waste
-      expect(judge(ti, 2, { x: ti.boxes }).text).toContain('للتصليح');
+      expect(judge(ti, 2, { x: ti.boxes - 1 }).text).toContain('il lui manque'); // one box short
+      expect(judge(ti, 2, { x: ti.boxes + 1 }).text).toContain('ne gaspille pas'); // one box too many: waste
+      expect(judge(ti, 2, { x: ti.boxes }).text).toContain('pour les réparations');
     }
   });
 

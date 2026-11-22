@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Lock } from 'lucide-react';
 
 /**
- * Le panneau « ce درس يتطلّب وصولاً كاملاً » — UN seul rendu, posé à la fois
+ * Le panneau « cette leçon demande un accès complet » — UN seul rendu, posé à la fois
  * par le sommaire de la leçon (LessonIndex) et par chaque module
  * (ModuleLayout), pour qu'une URL de module tapée directement ne contourne
  * pas le verrou affiché sur le sommaire.

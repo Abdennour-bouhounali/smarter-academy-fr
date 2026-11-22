@@ -2,9 +2,9 @@
  * THE CLAIMS a game answer can make — PURE, and THE SAME on the server (`apps/api/app/Domain/GameWorld/ClaimVerifier.php`).
  *
  * A game question is arithmetic generated in the browser: there is no stored key to compare. So an answer that counts
- * toward a الكفاءة is sent as a CLAIM — the numbers of the question and what the student wrote — and the server re-computes
+ * toward a savoir-faire is sent as a CLAIM — the numbers of the question and what the student wrote — and the server re-computes
  * the verdict from the numbers alone; it never trusts the browser's. `verifyClaim` is the browser's copy of that rule: the
- * game uses it to show « تقدّمي » at once.
+ * game uses it to show « Ma progression » at once.
  *
  * A claim kind belongs to no lesson: it is a statement about natural numbers that any lesson may use.
  * TO ADD A KIND (a lesson needs a statement none of these makes): write it HERE and in `ClaimVerifier.php` (`KINDS` and
@@ -47,7 +47,7 @@ const KINDS = {
     c.other > 0 &&
     c.a % c.other === 0 &&
     (c.other !== c.b || c.b === c.q),
-  /** In the phrasing `phrase`, the number written first is the divisor (قاسم، يقسم) or the multiple (مضاعف، يقبل القسمة). */
+  /** In the phrasing `phrase`, the number written first is the divisor (« est un diviseur de », « divise ») or the multiple (« est un multiple de », « est divisible par »). */
   phrase: (c) => {
     const divisorFirst = c.first === Math.min(c.a, c.b);
     if (['qasim', 'yaqsim'].includes(c.phrase)) return divisorFirst;

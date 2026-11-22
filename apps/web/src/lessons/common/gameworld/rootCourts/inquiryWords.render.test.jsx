@@ -123,7 +123,7 @@ const rtMoves = [
   { type: 'ran' },
 ];
 
-const ARABIC = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/;
+const ARABIC = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
 const TOLD = /√|\\sqrt|exact|approx/i;
 const visible = (out) => out.replace(/<annotation[^>]*>.*?<\/annotation>/g, '');
 

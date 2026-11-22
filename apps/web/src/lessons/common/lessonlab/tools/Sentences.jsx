@@ -1,6 +1,6 @@
 /**
- * « آلة الجمل الأربع » — two numbers go in, four sentences come out: true TOGETHER or false TOGETHER, with the equality that
- * proves it. The lever swaps the two numbers: the classic trap (« 6 قاسم للعدد 42 » against « 42 قاسم للعدد 6 ») is one pull away.
+ * « La machine aux quatre phrases » — two numbers go in, four sentences come out: true TOGETHER or false TOGETHER, with the equality that
+ * proves it. The lever swaps the two numbers: the classic trap (« 6 est un diviseur de 42 » against « 42 est un diviseur de 6 ») is one pull away.
  */
 import { Tool, Txt, useChime } from '../kit';
 import { sentences } from '../logic';
@@ -25,7 +25,7 @@ export default function Sentences({ a, b, setA, setB, play, report }) {
             className={`ll-chip ${S.ok ? 'll-chip--good' : 'll-chip--warm'}`}
             data-ll-verdict={S.ok ? 'true' : 'false'}
           >
-            {S.ok ? 'الجمل الأربع صحيحة معًا' : 'الجمل الأربع خاطئة معًا'}
+            {S.ok ? 'Les quatre phrases sont vraies ensemble' : 'Les quatre phrases sont fausses ensemble'}
           </span>
         </>
       }
@@ -35,17 +35,17 @@ export default function Sentences({ a, b, setA, setB, play, report }) {
           <div className="ll-sent__nums">
             <div>
               <b data-ll-sa>{a}</b>
-              <span>العدد الأوّل</span>
+              <span>Premier nombre</span>
             </div>
             <div>
               <b data-ll-sb className="is-second">
                 {b}
               </b>
-              <span>العدد الثاني</span>
+              <span>Deuxième nombre</span>
             </div>
           </div>
           <button type="button" className="ll-btn" onClick={swap} data-ll-swap>
-            ⇄ اقلب العددين
+            ⇄ Échange les deux nombres
           </button>
         </div>
         <div className="ll-sent__cards">

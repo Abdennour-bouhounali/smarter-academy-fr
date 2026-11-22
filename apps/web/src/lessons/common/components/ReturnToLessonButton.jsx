@@ -8,7 +8,7 @@ import { readReturnTo, clearReturnTo, isAwayFrom } from './returnToLesson';
 const session = () => (typeof window !== 'undefined' ? window.sessionStorage : null);
 
 /**
- * Pendant la RÉVISION d'un prérequis (ouvert depuis « راجع قبل أن تنطلق »), chaque page de la leçon révisée montre ce
+ * Pendant la RÉVISION d'un prérequis (ouvert depuis « Avant de commencer : revoir »), chaque page de la leçon révisée montre ce
  * bouton : UN clic ramène à la leçon de départ (propriétaire, 2026-11-07). Monté une fois pour toutes les leçons
  * (LessonPageFrame) ; il ne s'affiche que si un retour est retenu et qu'on est AILLEURS que dans la leçon de départ.
  * Revenir à la leçon de départ, par lui ou autrement, efface le retour.

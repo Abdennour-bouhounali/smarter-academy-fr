@@ -72,7 +72,7 @@ export function resolveMasteryState(row) {
  * @param {{statusReason?: string|null, freshness?: string|null, distinctItemsSuccess?: number}} [props.row]
  *        the profile row (Mastery V2) : its `statusReason` explains a
  *        `reinforce` under the pill, its `freshness` marks an ageing `mastered`
- * @param {() => void} [props.onExplain] - opens « لماذا؟ » (the explanation drawer)
+ * @param {() => void} [props.onExplain] - opens « Pourquoi ? » (the explanation drawer)
  */
 export function LearningPointCard({ title, state, confidence, message, action, row, onExplain }) {
   const { t } = useTranslation('student');

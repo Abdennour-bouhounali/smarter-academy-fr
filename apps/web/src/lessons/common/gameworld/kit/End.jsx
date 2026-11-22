@@ -33,7 +33,7 @@ export default function End({ s, o, stars, game, world, basePath, config, onRest
           <span>{KT.end.falls}</span>
         </div>
         <div>
-          <b>{min} د</b>
+          <b>{KT.end.min(min)}</b>
           <span>{KT.end.time}</span>
         </div>
       </div>

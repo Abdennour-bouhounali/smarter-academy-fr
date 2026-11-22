@@ -1,45 +1,26 @@
 /**
- * « وضع الورقة » — the paper mode of the practice games and of the last bridge (logic: paper.js).
+ * « Mode papier » — the paper mode of the practice games and of the last bridge (logic: paper.js).
  * An exam has no music and no gates: it has a sheet, a pen and a method. Four pieces, shared by every screen that asks for
  * written work (the trainer's exam questions, the depot's calculation steps, the store of the last bridge):
- *   PaperChip   the sign of the mode — « بلا موسيقى » and a quiet clock (time awareness, never a countdown);
- *   PaperGate   « خذ قلمك وورقتك »: the answer boxes stay closed until the student says he wrote on his paper;
+ *   PaperChip   the sign of the mode — « Sans musique » and a quiet clock (time awareness, never a countdown);
+ *   PaperGate   « Prends ton stylo et ta feuille »: the answer boxes stay closed until the student says he wrote on his paper;
  *   MethodStrip the six gestures of an exam answer;
  *   PaperModel  a model sheet: a division POSED as on paper, one step per tap, each step said aloud, then the check and the
  *               sentence to write. Before answering it shows a TWIN example; after the correction, the student's own question.
  */
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { PenLine, VolumeX, Timer, ArrowLeft, RotateCcw } from 'lucide-react';
+import { PenLine, VolumeX, Timer, ArrowRight, RotateCcw } from 'lucide-react';
 import MathText from '../../components/MathText';
 import { longDivision, paperRows, quotientSoFar, thinking, conclusion, METHOD } from './longDivision';
 import Fit, { cardRoom } from './Fit';
+import { PT } from './text';
 
-export const PT = {
-  mode: 'وضع الورقة',
-  silent: 'بلا موسيقى',
-  take: 'خذ قلمك وورقتك',
-  wait: (n) => `اكتب أوّلًا… ${n}`,
-  go: 'كتبتُ على ورقتي — أنقل جوابي',
-  how: 'كيف أكتبها على الورقة؟',
-  tipDivision: 'في الامتحان لا موسيقى ولا بوّابات: ضع القسمة على ورقتك، ثمّ انقل حاصل القسمة والباقي.',
-  tipWrite: 'في الامتحان لا موسيقى ولا بوّابات: اكتب جوابك وتعليلك على ورقتك، ثمّ انقله.',
-  tipCompute: 'احسب على ورقتك كما في الامتحان، ثمّ انقل النتيجة.',
-  twin: 'مثال مشابه — هكذا تُكتب على الورقة',
-  own: 'التحرير النموذجي لسؤالك',
-  think: 'أفكّر',
-  sheet: 'ورقتي',
-  verify: 'أتحقّق',
-  write: 'أكتب على ورقة الامتحان',
-  next: 'الخطوة التالية',
-  replay: 'من البداية',
-  back: 'فهمتُ، أعود إلى سؤالي',
-  readFix: 'اقرأ التحرير النموذجي',
-};
+export { PT };
 
 function MethodStrip({ now }) {
   return (
-    <ol className="di-method" aria-label="منهجيّة الجواب">
+    <ol className="di-method" aria-label={PT.method}>
       {METHOD.map((m, i) => (
         <li key={m.id} className={m.id === now ? 'is-now' : ''}>
           <b>{i + 1}</b>
@@ -68,8 +49,8 @@ export function PaperChip({ className = '' }) {
 }
 
 /**
- * The answer boxes (`children`) open only after « كتبتُ على ورقتي ». A few seconds must pass first — the time to pick up the
- * pen — so a reflex tap is not possible. `onModel` adds « كيف أكتبها على الورقة؟ ».
+ * The answer boxes (`children`) open only after « J’ai écrit sur ma feuille ». A few seconds must pass first — the time to pick up the
+ * pen — so a reflex tap is not possible. `onModel` adds « Comment l’écrire sur la feuille ? ».
  */
 export function PaperGate({ tip, onModel, children, delay = 5 }) {
   const fast = import.meta.env.DEV && typeof window !== 'undefined' && window.__paperFast;
@@ -122,7 +103,6 @@ export function PaperModel({ a, b, own = false, onClose }) {
   return createPortal(
     <div
       className="di-veil di-veil--paper"
-      dir="rtl"
       data-di-model={own ? 'own' : 'twin'}
       data-di-model-a={a}
       data-di-model-b={b}
@@ -195,7 +175,7 @@ export function PaperModel({ a, b, own = false, onClose }) {
                 data-di-model-next
                 autoFocus
               >
-                {PT.next} <ArrowLeft size={16} />
+                {PT.next} <ArrowRight size={16} />
               </button>
             )}
             {stage === 'write' && (

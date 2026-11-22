@@ -41,7 +41,7 @@ const LOG = [
   { a: 42, b: 6 },
 ];
 
-describe('مصهر القاعدة — the rule forge', () => {
+describe('La forge de la règle — the rule forge', () => {
   it('sixteen rules can be written and exactly ONE is the rule: it agrees with every bridge', () => {
     expect(RULES).toHaveLength(16);
     const always = RULES.filter((rule) => {
@@ -52,7 +52,9 @@ describe('مصهر القاعدة — the rule forge', () => {
     expect(always).toEqual([THE]);
     expect(isTheRule(THE)).toBe(true);
     expect(RULES.filter(isTheRule)).toHaveLength(1);
-    expect(ruleText(THE)).toBe('يثبت الجسر عندما: باقي قسمة طول الهوّة على طول اللوح يساوي 0.');
+    expect(ruleText(THE)).toBe(
+      'Le pont tient quand\u00a0: le reste de la division de la longueur du fossé par la longueur de la planche est égal à 0.',
+    );
     expect(complete(FORGE, { q: 'r' })).toBe(false);
     expect(complete(FORGE, null)).toBe(false);
     expect(complete(FORGE, THE)).toBe(true);
@@ -119,8 +121,12 @@ describe('مصهر القاعدة — the rule forge', () => {
   });
 
   it('explains what HIS rule says of a bridge, in words', () => {
-    expect(explain(THE, 18, 4)).toBe('باقي قسمة 18 على 4 هو 2، و 2 لا يساوي 0: قاعدتك تقول إنّ الجسر ينهار.');
-    expect(explain({ q: 'b', c: 'even' }, 18, 4)).toBe('طول اللوح هو 4، و 4 عدد زوجي: قاعدتك تقول إنّ الجسر يثبت.');
+    expect(explain(THE, 18, 4)).toBe(
+      'Le reste de la division de 18 par 4 est 2, et 2 n’est pas égal à 0\u00a0: ta règle dit que le pont s’effondre.',
+    );
+    expect(explain({ q: 'b', c: 'even' }, 18, 4)).toBe(
+      'La longueur de la planche est 4, et 4 est un nombre pair\u00a0: ta règle dit que le pont tient.',
+    );
     for (const rule of RULES) expect(explain(rule, 21, 7)).not.toMatch(/undefined|NaN/);
   });
 

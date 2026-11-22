@@ -14,7 +14,7 @@
  *             multiples of b; he types the two numbers around it, then says whether the flag stands between two marks
  *             or ON one.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shapes). Nothing here states a rule: every sentence
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shapes). Nothing here states a rule: every sentence
  * says what the strip, the cloth, the ruler or the line has just done.
  */
 import { useState } from 'react';
@@ -255,7 +255,7 @@ export function Groups({ spec, play, onDone }) {
             <p className="iq-askline">
               <MathText>{T.sayLead({ a, b })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num value={qIn} onChange={setQIn} w={3} data-iq-in="q" onKeyDown={onEnter(check)} />
                 <small>{T.sayPlanks}</small>

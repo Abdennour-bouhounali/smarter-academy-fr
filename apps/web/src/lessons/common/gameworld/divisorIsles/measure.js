@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `measure` — PURE logic (screen: `InquiryMeasure.jsx`; contract: GAME_WORLD.md « استكشف », « spec
+ * THE INVESTIGATION `measure` — PURE logic (screen: `InquiryMeasure.jsx`; contract: GAME_WORLD.md « Explore », « spec
  * shapes of `measure` and `part` »). Its rule is a CHANGE OF UNIT: two gaps one above the other are ONE fraction (the
  * upper strip the numerator, the lower the denominator); a plank that fills both is a unit in which both are counted
  * again, and the fraction written in that unit is the same fraction.

@@ -6,12 +6,12 @@
  * The contract of every mission (INTEGRATION_LESSON_PLAN.md §8, §9): the paper first, the world checks. A mission card, the message
  * that the clock starts (5 s, nothing closes it), READ THE WHOLE TEXT, then the steps:
  *   { kind: 'data' }   he taps in the text every datum and every condition carried by words (`paper[].mark`); each
- *                      becomes a line of « المعطيات » (the robot does the first one)
+ *                      becomes a line of « Les données » (the robot does the first one)
  *   { kind: 'goal' }   he taps the question(s) (`paper[].goal`)
  *   { kind: 'tries' }  FREE TRIES: he types a number, the world carries it out (`try(n, ctx) → { ok, scene, lines,
  *                      fact, owe }`); a condition the world has just shown (`owe`, a datum marked `late`) is added to
- *                      « المعطيات » on his sheet; `ready(ctx)` opens the way on
- *   { kind: 'connect' } « أربط »: he ties to a question (`goal`) the data it needs (`must`); one left out is answered
+ *                      « Les données » on his sheet; `ready(ctx)` opens the way on
+ *   { kind: 'connect' } « relie »: he ties to a question (`goal`) the data it needs (`must`); one left out is answered
  *                      by what cannot be done without it (`without`); `ans(ctx)` adds the answer of the question before
  *   { kind: 'plan' }   the question hides steps: he orders them (`items`, `order`); a step taken too early is answered
  *                      by what it needs (`item.needs`)
@@ -20,20 +20,21 @@
  *                      (`why`) while the world carries out what that copy wrote (`scene`); then he corrects it (`fix`)
  *   { kind: 'work' }   one operation: what to write on the sheet (`sheet`), then its boxes (`shape`), then `check`:
  *                      `check(values, ctx) → { ok, fact, line, scene }`. The WORLD carries out `scene` whatever he
- *                      typed (a misreading is built, never « wrong »); `fact` may be a function of what the world
+ *                      typed (a misreading is built, never « faux »); `fact` may be a function of what the world
  *                      built. A wrong answer ALWAYS gets a guidance (`fact`), never the next question.
- * then the model copy and the marker's list. `stage` groups steps under one number of « الخطوة n من N ».
+ * then the model copy and the marker's list. `stage` groups steps under one number of « Étape n sur N ».
  * A mission left half-way is KEPT: `world.keep(snapshot)` at each step forward, `resume` given back next time.
- * Each right answer is celebrated, the end of the mission more; what must be tapped carries « اضغط هنا ».
+ * Each right answer is celebrated, the end of the mission more; what must be tapped carries « Clique ici ».
+ * Every sentence of these screens is in `text.js` (words only).
  */
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, Check, Clock, Coins, PenLine, Play, Star, Trophy, X } from 'lucide-react';
+import { ArrowRight, Check, Clock, Coins, PenLine, Play, Star, Trophy, X } from 'lucide-react';
 import { M } from '../kit/parts';
 import Ink from './Ink';
 import { Box, Connect, Sheet } from './parts';
+import { T } from './text';
 import './mission.css';
 
-const BRAVO = ['أحسنت!', 'ممتاز!', 'رائع!', 'صحيح!', 'هكذا!'];
 const WARN = 5;
 const READ = 10;
 const num = (v) => (/^\d+$/.test(String(v ?? '').trim()) ? Number(v) : null);
@@ -87,7 +88,7 @@ function Paper({ sit, mode, data, goals, next, late, onMark, onGoal }) {
   );
 }
 
-/** « ورقتي »: the typed twin of his sheet. The section he is working on is open; the others fold to their title. */
+/** « Ma copie »: the typed twin of his sheet. The section he is working on is open; the others fold to their title. */
 function Copy({ sit, data, goals, plan, lines, open, onOpen }) {
   const head = (id, title, n) => (
     <h4>
@@ -106,9 +107,9 @@ function Copy({ sit, data, goals, plan, lines, open, onOpen }) {
   return (
     <aside className="ms-book" data-ms-book={lines.length}>
       <h3>
-        <PenLine size={18} aria-hidden="true" /> ورقتي
+        <PenLine size={18} aria-hidden="true" /> {T.copy}
       </h3>
-      {head('data', 'المعطيات', data.length)}
+      {head('data', T.data, data.length)}
       {open === 'data' && (
         <ul data-ms-data={data.join(',')}>
           {sit.data
@@ -118,7 +119,7 @@ function Copy({ sit, data, goals, plan, lines, open, onOpen }) {
             ))}
         </ul>
       )}
-      {head('goal', 'المطلوب', goals.length + plan.length)}
+      {head('goal', T.goal, goals.length + plan.length)}
       {open === 'goal' && (
         <ul data-ms-goals={goals.join(',')} data-ms-plan={plan.join(',')}>
           {sit.goals
@@ -135,11 +136,11 @@ function Copy({ sit, data, goals, plan, lines, open, onOpen }) {
           ))}
         </ul>
       )}
-      {head('work', 'الحلّ', lines.length)}
+      {head('work', T.work, lines.length)}
       {open === 'work' && (
         <ol>
           {lines.map((l) => (
-            <li key={l.id} className={`is-${l.tone ?? 'key'}`} data-ms-line={l.id} dir={l.tex ? 'ltr' : 'rtl'}>
+            <li key={l.id} className={`is-${l.tone ?? 'key'}${l.tex ? '' : ' is-prose'}`} data-ms-line={l.id}>
               {l.tex ? <M>{l.tex}</M> : l.text}
             </li>
           ))}
@@ -177,8 +178,8 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
   const [idle, setIdle] = useState(false);
   const [open, setOpen] = useState('data');
   const [found, setFound] = useState(null);
-  const [picked, setPicked] = useState([]); // « أربط »: the data tied to the question
-  const [owed, setOwed] = useState(null); // a condition the world has just shown: to add to « المعطيات » // the faulty line he found in a classmate's copy (a `review` step)
+  const [picked, setPicked] = useState([]); // « relie »: the data tied to the question
+  const [owed, setOwed] = useState(null); // a condition the world has just shown: to add to « Les données »
   const acts = useRef(0);
   const act = () => {
     acts.current += 1;
@@ -221,7 +222,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
     const t = setTimeout(() => acts.current === seen && setIdle(true), 8000);
     return () => clearTimeout(t);
   }, [playing, i, data.length, goals.length, plan.length, written, fact]);
-  // the robot does the FIRST gesture itself: it underlines the first datum and writes it in « المعطيات »
+  // the robot does the FIRST gesture itself: it underlines the first datum and writes it in « Les données »
   useEffect(() => {
     if (!playing || step?.kind !== 'data' || data.length) return undefined;
     const t = setTimeout(() => mark(first[0].id, true), 1600);
@@ -234,7 +235,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
     if (shown) world.stock?.(...shown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.length]);
-  // « ورقتي » opens on the section he is working on
+  // « Ma copie » opens on the section he is working on
   useEffect(() => {
     if (step)
       setOpen(
@@ -248,7 +249,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
 
   const stars = slips <= 2 ? 3 : slips <= 5 ? 2 : 1;
   // A MISSION LEFT HALF-WAY IS KEPT (his world save, private): at each step forward what his copy holds is handed to the
-  // world; the card offers « أكمل من حيث توقّفت » next time. The clock goes on from where it was.
+  // world; the card offers « Reprends où tu en étais » next time. The clock goes on from where it was.
   const snapshot = { i, data, goals, plan, vals, lines, written, coins, slips, left, found, owed };
   const keep = useRef(snapshot);
   keep.current = snapshot;
@@ -275,7 +276,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
   };
   const bravo = (pay) => {
     setCoins((c) => c + pay);
-    setWin({ id: Date.now(), pay, word: BRAVO[Math.floor(Math.random() * BRAVO.length)] });
+    setWin({ id: Date.now(), pay, word: T.bravo[Math.floor(Math.random() * T.bravo.length)] });
     world.cheer?.(false);
   };
   const advance = (pay = 10) => {
@@ -308,7 +309,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
     act();
     setData((d) => (d.includes(id) ? d : [...d, id]));
     const d = sit.data.find((x) => x.id === id);
-    setFact(demo ? `الروبوت سطّر « ${d.text} » وكتبه في المعطيات. دورك: سطّر كلّ ما يلزمك من النصّ.` : d.say);
+    setFact(demo ? T.demo(d.text) : d.say);
   };
   const goal = (id) => {
     act();
@@ -396,45 +397,45 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
   const stage = phase === 'play' ? step.stage : STAGES;
   const nextMark = first.find((d) => !data.includes(d.id))?.id;
   const ASK = !read
-    ? 'اقرأ التمرين كلّه أوّلًا، حتّى آخر سؤال.'
+    ? T.readFirst
     : phase === 'model'
-      ? 'قارن ورقتك بهذا الحلّ، وصحّحها بقلمك.'
+      ? T.compare
       : phase === 'marker'
-        ? 'ماذا في ورقتك؟ ضع علامة على ما كتبتَه.'
+        ? T.marker
         : step.kind === 'data'
           ? data.length < first.length
-            ? `ما المعطيات؟ سطّر في النصّ ${late.length ? 'كلّ عدد' : 'كلّ عدد وكلّ شرط'} (${data.length} من ${first.length}).`
-            : 'هذه معطياتك. اكتبها على ورقتك.'
+            ? T.dataAsk(!late.length, data.length, first.length)
+            : T.dataDone
           : step.kind === 'goal'
-            ? 'ما المطلوب؟ اضغط على السؤال في النصّ.'
+            ? T.goalAsk
             : step.kind === 'plan'
               ? plan.length < step.order.length
-                ? `السؤال يخفي خطوات. ما الذي تبحث عنه ${plan.length ? 'بعد ذلك' : 'أوّلًا'}؟`
-                : 'هذه خطّتك. اكتبها على ورقتك.'
+                ? T.planAsk(plan.length > 0)
+                : T.planDone
               : step.kind === 'connect'
                 ? step.ask
                 : step.kind === 'review'
                   ? found
-                    ? 'هذا هو السطر. صحّحه على ورقة زميلك.'
+                    ? T.reviewFound
                     : step.ask
                   : val(step.ask, ctx);
 
   if (phase === 'card')
     return (
-      <div className="ms-root ms-root--card" dir="rtl" data-ms-step={0} data-ms-warn={warn ?? 'off'}>
+      <div className="ms-root ms-root--card" data-ms-step={0} data-ms-warn={warn ?? 'off'}>
         {warn == null ? (
           <div className="ms-card" data-ms-card>
             <h2>{sit.title}</h2>
             <p className="ms-card__session">{sit.session}</p>
             <p>{sit.intro}</p>
             <p className="ms-card__need">
-              <PenLine size={24} aria-hidden="true" /> ورقة · قلم
-              <Clock size={24} aria-hidden="true" /> {sit.minutes} دقيقة
+              <PenLine size={24} aria-hidden="true" /> {T.need}
+              <Clock size={24} aria-hidden="true" /> {T.minutes(sit.minutes)}
             </p>
             {resume && (
               <button type="button" className="ms-btn ms-btn--go ms-target" data-ms-resume onClick={takeBack}>
-                أكمل من حيث توقّفت (الخطوة {steps[Math.min(resume.i ?? 0, steps.length - 1)].stage} من {STAGES})
-                <ArrowLeft size={20} aria-hidden="true" />
+                {T.resume(steps[Math.min(resume.i ?? 0, steps.length - 1)].stage, STAGES)}
+                <ArrowRight size={20} aria-hidden="true" />
               </button>
             )}
             <button
@@ -443,18 +444,18 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
               data-ms-start
               onClick={() => setWarn(WARN)}
             >
-              {resume ? 'أبدأ من جديد' : 'ورقتي وقلمي أمامي — أبدأ'}
-              <ArrowLeft size={20} aria-hidden="true" />
+              {resume ? T.again : T.start}
+              <ArrowRight size={20} aria-hidden="true" />
             </button>
             <button type="button" className="ms-btn ms-btn--ghost" data-ms-close onClick={onClose}>
-              ليس الآن
+              {T.notNow}
             </button>
           </div>
         ) : (
           <div className="ms-card ms-card--warn" data-ms-clock-warn={warn} role="status">
             <Clock size={54} aria-hidden="true" />
-            <h2>الساعة ستبدأ الآن</h2>
-            <p>أمامك {sit.minutes} دقيقة. جهّز ورقتك وقلمك.</p>
+            <h2>{T.clockStarts}</h2>
+            <p>{T.clockSay(sit.minutes)}</p>
             <b className="ms-card__count">{warn}</b>
           </div>
         )}
@@ -467,7 +468,6 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
   return (
     <div
       className={`ms-root ${long ? 'ms-root--long' : ''} ${idle ? 'is-idle' : ''} ${!read ? 'is-reading' : ''}`}
-      dir="rtl"
       data-ms-step={stage}
       data-ms-at={step?.id ?? phase}
       data-ms-busy={busy}
@@ -475,7 +475,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
     >
       <header className="ms-head">
         <b className="ms-count" data-ms-progress={`${stage}/${STAGES}`}>
-          الخطوة {stage} من {STAGES}
+          {T.stage(stage, STAGES)}
         </b>
         <h2 data-ms-ask>{ASK}</h2>
         <span className={`ms-clock ${left === 0 ? 'is-over' : ''}`} dir="ltr" data-ms-clock={left}>
@@ -490,13 +490,13 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
           onClick={() => setPen((x) => !x)}
         >
           <PenLine size={20} aria-hidden="true" />
-          قلم
+          {T.pen}
         </button>
         <span className="ms-coins" data-ms-coins={coins}>
           <Coins size={20} aria-hidden="true" />
           {coins}
         </span>
-        <button type="button" className="ms-x" aria-label="خروج" data-ms-close onClick={onClose}>
+        <button type="button" className="ms-x" aria-label={T.quit} data-ms-close onClick={onClose}>
           <X size={20} aria-hidden="true" />
         </button>
       </header>
@@ -569,7 +569,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
           )}
           {phase === 'model' && (
             <div className="ms-model" data-ms-copy>
-              <h3>{sit.session} — الحلّ</h3>
+              <h3>{T.model(sit.session)}</h3>
               {sit.model.map((l, k) =>
                 l.tex ? (
                   <p key={k} dir="ltr">
@@ -589,7 +589,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
           <div className="ms-act" data-ms-act>
             {!read && (
               <>
-                {reading > 0 && <span className="ms-hint">خذ وقتك في القراءة…</span>}
+                {reading > 0 && <span className="ms-hint">{T.reading}</span>}
                 {reading <= 0 && (
                   <button
                     type="button"
@@ -601,38 +601,28 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                     }}
                   >
                     <Check size={18} aria-hidden="true" />
-                    قرأتُ التمرين كلّه
+                    {T.readDone}
                   </button>
                 )}
               </>
             )}
             {playing && step.kind === 'data' && data.length < first.length && (
-              <span className="ms-hint">الأعداد والشروط في نصّ الامتحان، على اليمين.</span>
+              <span className="ms-hint">{T.dataHint}</span>
             )}
             {playing && step.kind === 'data' && data.length >= first.length && (
-              <Sheet
-                id="data"
-                written={false}
-                onWritten={() => advance()}
-                text="اكتب « المعطيات » كما في ورقتك على الشاشة."
-              />
+              <Sheet id="data" written={false} onWritten={() => advance()} text={T.dataSheet} />
             )}
             {playing && step.kind === 'goal' && goals.length < sit.goals.length && (
-              <span className="ms-hint">السؤال في آخر النصّ، على اليمين.</span>
+              <span className="ms-hint">{T.goalHint}</span>
             )}
             {playing && step.kind === 'goal' && goals.length === sit.goals.length && (
-              <Sheet id="goal" written={false} onWritten={() => advance()} text="اكتب « المطلوب » على ورقتك." />
+              <Sheet id="goal" written={false} onWritten={() => advance()} text={T.goalSheet} />
             )}
             {playing && step.kind === 'plan' && plan.length < step.order.length && (
-              <span className="ms-hint">اضغط على ما تبحث عنه {plan.length ? 'بعد ذلك' : 'أوّلًا'}.</span>
+              <span className="ms-hint">{T.planHint(plan.length > 0)}</span>
             )}
             {playing && step.kind === 'plan' && plan.length === step.order.length && (
-              <Sheet
-                id="plan"
-                written={false}
-                onWritten={() => advance()}
-                text="اكتب خطّتك تحت « المطلوب »: الخطوات بترتيبها."
-              />
+              <Sheet id="plan" written={false} onWritten={() => advance()} text={T.planSheet} />
             )}
             {playing && step.kind === 'tries' && owed && (
               <Sheet
@@ -644,7 +634,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                   setData((d) => [...d, owed]);
                   setOwed(null);
                 }}
-                text={`أضف إلى معطياتك: « ${sit.data.find((d) => d.id === owed).text} ».`}
+                text={T.owed(sit.data.find((d) => d.id === owed).text)}
               />
             )}
             {playing && step.kind === 'tries' && !owed && (
@@ -676,23 +666,21 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                     onClick={() => advance()}
                   >
                     {step.go}
-                    <ArrowLeft size={18} aria-hidden="true" />
+                    <ArrowRight size={18} aria-hidden="true" />
                   </button>
                 )}
               </>
             )}
             {playing && step.kind === 'connect' && (
               <Sheet id={step.id} written={written[step.id]} onWritten={() => wrote(step.id)} text={step.sheet}>
-                <span className="ms-hint">اضغط على ما يحتاجه السؤال.</span>
+                <span className="ms-hint">{T.connectHint}</span>
                 <button type="button" className="ms-btn" data-ms-tie disabled={!picked.length} onClick={tie}>
-                  ربطتُ
-                  <ArrowLeft size={18} aria-hidden="true" />
+                  {T.tied}
+                  <ArrowRight size={18} aria-hidden="true" />
                 </button>
               </Sheet>
             )}
-            {playing && step.kind === 'review' && !found && (
-              <span className="ms-hint">اضغط على السطر الذي فيه الخطأ.</span>
-            )}
+            {playing && step.kind === 'review' && !found && <span className="ms-hint">{T.reviewHint}</span>}
             {playing && step.kind === 'review' && found && (
               <Sheet
                 id="review"
@@ -713,7 +701,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                 onWritten={() => wrote(step.id)}
                 text={val(step.sheet, ctx)}
               >
-                <span className="ms-shape" dir={step.rtl ? 'rtl' : 'ltr'}>
+                <span className="ms-shape">
                   {shape.map((p, k) =>
                     p.box ? (
                       <Box
@@ -754,7 +742,7 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                     onClick={() => submit()}
                   >
                     {step.world ? <Play size={18} aria-hidden="true" /> : <Check size={18} aria-hidden="true" />}
-                    {step.world ?? 'أكتبه في ورقتي'}
+                    {step.world ?? T.write}
                   </button>
                 )}
               </Sheet>
@@ -767,12 +755,12 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                 onClick={() => setPhase('marker')}
               >
                 <Check size={18} aria-hidden="true" />
-                صحّحتُ ورقتي
+                {T.corrected}
               </button>
             )}
             {phase === 'marker' && (
               <div className="ms-marker" data-ms-marker={ticks.length}>
-                <b>ماذا في ورقتك؟</b>
+                <b>{T.markerTitle}</b>
                 {sit.marker.map((m, k) => (
                   <label key={k}>
                     <input
@@ -785,8 +773,8 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
                   </label>
                 ))}
                 <button type="button" className="ms-btn ms-btn--go" data-ms-done onClick={onClose}>
-                  أنهيتُ
-                  <ArrowLeft size={18} aria-hidden="true" />
+                  {T.done}
+                  <ArrowRight size={18} aria-hidden="true" />
                 </button>
               </div>
             )}
@@ -820,16 +808,16 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
           </div>
           <div className="ms-finale__card">
             <Trophy size={76} aria-hidden="true" />
-            <h2>أنهيتَ المهمّة!</h2>
+            <h2>{T.finale}</h2>
             <p className="ms-finale__stars" data-ms-stars={stars}>
               {[0, 1, 2].map((k) => (
                 <Star key={k} size={46} className={k < stars ? 'is-on' : ''} aria-hidden="true" />
               ))}
             </p>
-            <p>حللتَ وضعية إدماجية من {sit.session}، بورقتك وقلمك.</p>
+            <p>{T.finaleSay(sit.session)}</p>
             <p className="ms-finale__coins">
-              <Coins size={30} aria-hidden="true" /> {coins} قطعة
-              <Clock size={30} aria-hidden="true" /> بقي {clock(left)}
+              <Coins size={30} aria-hidden="true" /> {T.coins(coins)}
+              <Clock size={30} aria-hidden="true" /> {T.timeLeft(clock(left))}
             </p>
             <button
               type="button"
@@ -837,8 +825,8 @@ export default function MissionRunner({ situation: sit, world, onClose, resume =
               data-ms-finale-next
               onClick={() => setFinale(false)}
             >
-              أقارن ورقتي بالحلّ
-              <ArrowLeft size={20} aria-hidden="true" />
+              {T.toModel}
+              <ArrowRight size={20} aria-hidden="true" />
             </button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 /**
- * « اللوح المشترك » — one plank of length d, laid end to end along six lengths: the two numbers, their sum, their
+ * « La planche commune » — one plank of length d, laid end to end along six lengths: the two numbers, their sum, their
  * difference, the remainder of the greater by the smaller, three times the first. The student's hand holds the END OF THE
  * PLANK (its length). A length the planks fill exactly turns green; what is left over is amber. Nothing here states a
  * property: the student sees which lengths a plank fills when it fills the two first ones — and when it does not.
@@ -7,6 +7,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { VW, VH, useDrag, useChime, Tool } from '../kit';
 import { plankRows } from '../logic';
+import { counted } from '../../gameworld/kit/authoring/numbers';
 
 const X0 = 236;
 const X1 = 908;
@@ -65,16 +66,16 @@ export default function Planks({ a, b, play, report }) {
       tone={both && shown > 1 ? 'good' : 'plain'}
       reading={
         <>
-          <span className="ll-chip">اللوح {shown}</span>
+          <span className="ll-chip">La planche {shown}</span>
           <span
             className={`ll-chip ${filled === rows.length ? 'll-chip--good' : 'll-chip--dim'}`}
             data-ll-filled={filled}
           >
-            يملأ {filled} من {rows.length} أطوال
+            Remplit {counted(filled, ['longueur', 'longueurs'])} sur {rows.length}
           </span>
           {both && shown > 1 && (
             <span className="ll-chip ll-chip--good" data-ll-both>
-              {shown} قاسم للعددين {a} و {b}
+              {shown} est un diviseur de {a} et de {b}
             </span>
           )}
         </>
@@ -88,15 +89,8 @@ export default function Planks({ a, b, play, report }) {
         data-fits={rows.map((r) => (r.fits ? 1 : 0)).join('')}
       >
         {/* the plank the hand holds */}
-        <text
-          x={(X0 - 14) / 2 + 30}
-          y={Y0 + 7}
-          textAnchor="middle"
-          fontSize="18"
-          direction="rtl"
-          style={{ fill: '#fde68a' }}
-        >
-          اللوح {shown}
+        <text x={(X0 - 14) / 2 + 30} y={Y0 + 7} textAnchor="middle" fontSize="18" style={{ fill: '#fde68a' }}>
+          La planche {shown}
         </text>
         <rect
           x={X0}
@@ -123,10 +117,9 @@ export default function Planks({ a, b, play, report }) {
                 y={y(i) + 7}
                 textAnchor="middle"
                 fontSize="16"
-                direction="rtl"
                 style={{ fill: r.fits ? '#6ee7b7' : '#fbbf24' }}
               >
-                {r.fits ? '✓' : `يبقى ${r.left}`}
+                {r.fits ? '✓' : `reste ${r.left}`}
               </text>
               <text x={X0 - 14} y={y(i) + 7} textAnchor="end" fontSize="17" style={{ fill: '#e0f2fe' }}>
                 {r.label}

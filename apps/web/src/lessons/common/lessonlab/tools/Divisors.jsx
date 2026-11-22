@@ -1,10 +1,11 @@
 /**
- * « قوس القواسم » — every number from 1 to a on a line. The student's hand holds the LENS: each number it passes over is
+ * « L’arc des diviseurs » — every number from 1 to a on a line. The student's hand holds the LENS: each number it passes over is
  * tested; a divisor rises with its partner and an arc joins them. Sweep the whole line and the rainbow of divisors is complete.
  */
 import { useEffect, useRef, useState } from 'react';
 import { VW, VH, useDrag, useChime, Tool, M } from '../kit';
 import { divisorsOf, divisorPairs, divide } from '../logic';
+import { counted } from '../../gameworld/kit/authoring/numbers';
 
 const X0 = 44;
 const X1 = 896;
@@ -47,26 +48,28 @@ export default function Divisors({ a, b, play, report }) {
       tone={complete ? 'good' : res && res.r === 0 ? 'good' : 'plain'}
       reading={
         probe === null ? (
-          <span className="ll-chip ll-chip--dim">اسحب العدسة على المستقيم: كلّ عدد تمرّ عليه يُختبَر.</span>
+          <span className="ll-chip ll-chip--dim">
+            Fais glisser la loupe le long de la ligne : chaque nombre qu’elle touche est essayé.
+          </span>
         ) : (
           <>
             <M>{`${a} = ${probe} \\times ${res.q}${res.r ? ` + ${res.r}` : ''}`}</M>
             {res.r === 0 ? (
               <span className="ll-chip ll-chip--good">
-                {probe} قاسم{probe * probe === a ? '، وهو رفيق نفسه' : `، ورفيقه ${a / probe}`}
+                {probe} est un diviseur
+                {probe * probe === a ? ', son propre partenaire' : `, son partenaire est ${a / probe}`}
               </span>
             ) : (
               <span className="ll-chip ll-chip--warm">
-                الباقي {res.r}: {probe} ليس قاسمًا
+                Reste {res.r} : {probe} n’est pas un diviseur
               </span>
             )}
             {complete ? (
               <span className="ll-chip ll-chip--good" data-ll-complete>
-                اكتملت: {all.length}{' '}
-                {all.length > 10 ? 'قاسمًا' : all.length > 2 ? 'قواسم' : all.length === 2 ? 'قاسمان' : 'قاسم'} للعدد {a}
+                Complet : {counted(all.length, ['diviseur', 'diviseurs'])} de {a}
               </span>
             ) : (
-              <span className="ll-chip ll-chip--dim">المكتشفة: {found.length}</span>
+              <span className="ll-chip ll-chip--dim">Trouvés : {found.length}</span>
             )}
           </>
         )

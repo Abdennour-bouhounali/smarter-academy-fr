@@ -165,7 +165,7 @@ describe('common · witness — played stage by stage', () => {
     s = play(witnessReducer, WITNESS, [...lay(3, false, false), ...lay(2, false, false)], s);
     const html = view(s);
     expect(html).toContain('data-iq-stage="seen"');
-    expect(html).toContain('لا لوح من هذه الكومة يملأ الهوّتين معًا.');
+    expect(html).toContain('Aucune planche de ce tas ne remplit les deux fossés à la fois.');
     expect(html).not.toContain('data-iq-witness');
     expect(html).not.toContain('enoughAsk');
     // the hidden common plank 17 is never revealed: no chip, no word of the fact names it

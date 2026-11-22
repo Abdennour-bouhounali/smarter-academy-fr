@@ -1,4 +1,4 @@
-/* ───────── « خريطة المعارف »: the full page ───────── */
+/* ───────── « fiche de connaissances »: the full page ───────── */
 .di-page {
   position: absolute;
   inset: 0;
@@ -194,7 +194,7 @@
   color: #3b2a06;
 }
 /* the legend stands in the one corner no card uses (top, left), one family per line: at the bottom it ran over the
-   last cards as soon as the map got narrower (the panel widens for « تدرّب ») */
+   last cards as soon as the map got narrower (the panel widens for « Entraîne-toi ») */
 .di-kmap__legend {
   position: absolute;
   top: 0.6rem;
@@ -291,7 +291,7 @@
   background: none;
   color: #cbd5e1;
   font:
-    800 0.88rem 'Cairo',
+    800 0.88rem 'Inter',
     sans-serif;
   cursor: pointer;
 }
@@ -414,7 +414,7 @@
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
   font:
-    600 0.95rem/1.6 'Cairo',
+    600 0.95rem/1.6 'Inter',
     sans-serif;
   text-align: start;
   cursor: pointer;
@@ -475,7 +475,7 @@
 
 /* ───────── THE 12 PX FLOOR on the map (GAME_WORLD.md « 12 px floor »; 2026-11-19 — the map is no longer exempt) ─────────
    Every text the map draws is `max(var(--di-min-font, 12px), its size)`. `KnowledgePage` sets `--di-page-floor` on the
-   page's zoomed box (12 px ÷ its zoom: the page zooms itself to ×1…×1.8); while « تدرّب » is open the map is zoomed again
+   page's zoomed box (12 px ÷ its zoom: the page zooms itself to ×1…×1.8); while « Entraîne-toi » is open the map is zoomed again
    (×0.84 above 1100 px, `trainer.css`), so its floor is divided by that too. The rules below carry `.di-kmap` in front:
    they win over the unfloored sizes of `knowledgeJourney.css` and `trainer.css`, loaded after this file. Below 1101 px
    the cards were drawn at 10–11.5 px: they are now 12 px, and the card keeps its footprint by a smaller icon and padding. */

@@ -1,5 +1,5 @@
 /**
- * « القسمة على الورقة » — the Euclidean division as it is WRITTEN on a sheet, one step at a time, with the student's own
+ * « La division posée » — the Euclidean division as it is WRITTEN on a sheet, one step at a time, with the student's own
  * numbers; beside it, what one says to oneself at that step. (The steps and the sentences: gameworld/kit/longDivision.js.)
  */
 import React, { useEffect, useMemo, useState } from 'react';
@@ -55,18 +55,7 @@ export default function PaperDivision({ a, b, play, report }) {
       tone={done ? (d.r === 0 ? 'good' : 'warm') : 'plain'}
       actions={
         <>
-          <button
-            type="button"
-            className="ll-btn"
-            onClick={() => {
-              setShown(shown + 1);
-              play('pencil');
-            }}
-            disabled={done}
-            data-ll-step
-          >
-            الخطوة التالية ◂
-          </button>
+          {/* back on the left, forward on the right: the row reads left to right */}
           <button
             type="button"
             className="ll-btn ll-btn--ghost"
@@ -77,7 +66,19 @@ export default function PaperDivision({ a, b, play, report }) {
             disabled={shown === 0}
             data-ll-back
           >
-            تراجع
+            Retour
+          </button>
+          <button
+            type="button"
+            className="ll-btn"
+            onClick={() => {
+              setShown(shown + 1);
+              play('pencil');
+            }}
+            disabled={done}
+            data-ll-step
+          >
+            Étape suivante ▸
           </button>
         </>
       }
@@ -90,7 +91,7 @@ export default function PaperDivision({ a, b, play, report }) {
           </>
         ) : (
           <span className="ll-chip ll-chip--dim">
-            الخطوة {shown} من {d.steps.length}
+            Étape {shown} sur {d.steps.length}
           </span>
         )
       }
@@ -112,10 +113,10 @@ export default function PaperDivision({ a, b, play, report }) {
           </div>
         </div>
         <div className="ll-think" data-ll-think>
-          <h5>{done ? 'أتحقّق وأكتب الجواب' : shown === 0 ? 'قبل أن أبدأ' : 'أقول في نفسي'}</h5>
+          <h5>{done ? 'Je vérifie et j’écris la réponse' : shown === 0 ? 'Avant de commencer' : 'Je me dis'}</h5>
           {shown === 0 && (
             <p>
-              أكتب المقسوم {a} على اليسار، والمقسوم عليه {b} على اليمين. أبدأ من يسار المقسوم.
+              J’écris le dividende {a} à gauche et le diviseur {b} à droite. Je commence par la gauche du dividende.
             </p>
           )}
           {shown > 0 &&

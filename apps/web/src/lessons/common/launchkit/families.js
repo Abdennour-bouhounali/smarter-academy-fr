@@ -1,5 +1,5 @@
 /**
- * « عُدّة الانطلاق » — the question FAMILIES, one per earlier الكفاءة (programme item of the learning net), PURE.
+ * « L’échauffement » — the question FAMILIES, one per earlier savoir-faire (programme item of the learning net), PURE.
  *
  * A family GENERATES its questions (a retake never shows the same numbers) on two levels — 1 very easy, 2 harder — and in
  * several FORMS, each answered by one of the three gestures of the game:
@@ -16,39 +16,53 @@
  */
 /** The named mistakes: what the workshop says first when an answer showed one. Never shown during a station. */
 export const MISTAKES = {
-  'rest-too-big': 'انتبه: الباقي دائمًا أصغر من المقسوم عليه.',
-  'rest-negative': 'انتبه: في القسمة الإقليدية نضيف الباقي، ولا نطرح.',
-  'equality-false': 'انتبه: تحقّق من المساواة — احسب الجداء ثمّ أضف الباقي.',
-  swapped: 'انتبه: لا تخلط بين حاصل القسمة والباقي.',
-  overshoot: 'انتبه: المضاعف الذي نبحث عنه لا يتجاوز العدد.',
-  'not-greatest': 'انتبه: نبحث عن أكبر مضاعف لا يتجاوز العدد.',
-  'not-multiple': 'انتبه: الراية تقف على مضاعف — عدد من جدول الضرب.',
-  'digit-anywhere': 'انتبه: القاعدة تنظر إلى آخر رقم فقط.',
-  'last-digit': 'انتبه: في قاعدتي 3 و 9 نجمع الأرقام، ولا ننظر إلى آخر رقم.',
-  'three-for-nine': 'انتبه: مجموع الأرقام يجب أن يكون في جدول 9، لا في جدول 3 فقط.',
-  'even-for-four': 'انتبه: العدد الزوجي لا يقبل دائمًا القسمة على 4 — انظر إلى العدد المكوَّن من آخر رقمين.',
-  'product-false': 'انتبه: تحقّق من المساواة — احسب الجداء.',
-  'rest-not-zero': 'انتبه: العدد قاسم عندما يكون باقي القسمة 0 — تحقّق بالقسمة.',
-  'multiple-for-divisor': 'انتبه: لا تخلط بين القاسم والمضاعف — قاسم العدد لا يتجاوزه.',
-  'sentence-reversed': 'انتبه: ترتيب العددين مهمّ — نقول « 6 قاسم للعدد 42 » و « 42 مضاعف للعدد 6 ».',
-  'one-and-itself': 'انتبه: العدد 1 والعدد نفسه قاسمان دائمًا.',
-  'partner-forgot': 'انتبه: كلّ قسمة تامّة تعطي قاسمين معًا — العدد المجرَّب وشريكه.',
-  'stop-early': 'انتبه: نجرّب كلّ عدد مربّعه لا يتجاوز العدد، ولا نتوقّف قبله.',
-  'quotient-zero': 'انتبه: إذا كان العدد أصغر من المقسوم عليه، فالحاصل 0 والباقي هو العدد نفسه.',
-  'table-slip': 'انتبه: راجع جدول الضرب — جوابك جداء عدد مجاور.',
-  'borrow-forgot': 'انتبه: إذا كان رقم الآحاد أصغر، نستلف عشرة — لا نطرح الرقم الصغير من الكبير.',
-  'order-ops': 'انتبه: نحسب الجداء أوّلًا، ثمّ نضيف.',
-  'add-for-sub': 'انتبه: الطرح يُنقص العدد — الراية ترجع نحو 0.',
-  'common-not-greatest': 'انتبه: نبحث عن أكبر القواسم المشتركة، لا عن أيّ قاسم مشترك.',
-  'divisor-of-one': 'انتبه: القاسم المشترك يقسم العددين معًا — تحقّق بالقسمة على كلّ واحد منهما.',
-  'smaller-not-divisor': 'انتبه: العدد الأصغر ليس قاسمًا مشتركًا إذا ترك باقيًا في قسمة الأكبر عليه.',
-  'subtract-not-divide': 'انتبه: نقسم البسط والمقام على العدد نفسه — لا نطرح منهما العدد نفسه.',
-  'one-term-only': 'انتبه: نقسم البسط والمقام معًا على العدد نفسه، لا أحدهما فقط.',
-  'power-times': 'انتبه: الأُسّ يقول كم مرّة نضرب العدد في نفسه — لا نضرب العدد في الأُسّ.',
-  'square-sign': 'انتبه: جداء عددين سالبين موجب، فمربّع عدد سالب موجب.',
-  'odd-sign': 'انتبه: جداء ثلاثة أعداد سالبة سالب — الأُسّ الفردي يُبقي الإشارة.',
-  'decimal-places': 'انتبه: في جداء عددين عشريين، عدد الأرقام بعد الفاصلة هو مجموع أرقامهما بعد الفاصلة.',
-  'fraction-one-term': 'انتبه: في مربّع كسر نضرب البسط في نفسه والمقام في نفسه — كليهما.',
+  'rest-too-big': 'Attention : le reste est toujours plus petit que le diviseur.',
+  'rest-negative': 'Attention : dans la division euclidienne, on ajoute le reste, on ne le soustrait pas.',
+  'equality-false': 'Attention : vérifie l’égalité — calcule le produit, puis ajoute le reste.',
+  swapped: 'Attention : ne confonds pas le quotient et le reste.',
+  overshoot: 'Attention : le multiple cherché ne dépasse pas le nombre.',
+  'not-greatest': 'Attention : on cherche le plus grand multiple qui ne dépasse pas le nombre.',
+  'not-multiple': 'Attention : le drapeau s’arrête sur un multiple — un nombre de sa table de multiplication.',
+  'digit-anywhere': 'Attention : la règle ne regarde que le dernier chiffre.',
+  'last-digit': 'Attention : pour 3 et 9, on additionne les chiffres, on ne regarde pas le dernier chiffre.',
+  'three-for-nine': 'Attention : la somme des chiffres doit être dans la table de 9, pas seulement dans celle de 3.',
+  'even-for-four':
+    'Attention : un nombre pair n’est pas toujours divisible par 4 — regarde le nombre formé par ses deux derniers chiffres.',
+  'product-false': 'Attention : vérifie l’égalité — calcule le produit.',
+  'rest-not-zero':
+    'Attention : un nombre est un diviseur quand le reste de la division est 0 — vérifie par la division.',
+  'multiple-for-divisor':
+    'Attention : ne confonds pas diviseur et multiple — un diviseur d’un nombre ne le dépasse pas.',
+  'sentence-reversed':
+    'Attention : l’ordre des deux nombres compte — on dit « 6 est un diviseur de 42 » et « 42 est un multiple de 6 ».',
+  'one-and-itself': 'Attention : 1 et le nombre lui-même sont toujours des diviseurs.',
+  'partner-forgot':
+    'Attention : chaque division exacte donne deux diviseurs à la fois — le nombre essayé et son partenaire.',
+  'stop-early': 'Attention : essaie chaque nombre dont le carré ne dépasse pas le nombre, ne t’arrête pas avant.',
+  'quotient-zero':
+    'Attention : si le nombre est plus petit que le diviseur, le quotient est 0 et le reste est le nombre lui-même.',
+  'table-slip': 'Attention : revois la table de multiplication — ta réponse est le produit d’un nombre voisin.',
+  'borrow-forgot':
+    'Attention : si le chiffre des unités est plus petit, on emprunte une dizaine — on ne soustrait pas le petit chiffre du grand.',
+  'order-ops': 'Attention : on calcule d’abord le produit, puis on ajoute.',
+  'add-for-sub': 'Attention : une soustraction fait diminuer le nombre — le drapeau recule vers 0.',
+  'common-not-greatest':
+    'Attention : on cherche le plus grand des diviseurs communs, pas n’importe quel diviseur commun.',
+  'divisor-of-one': 'Attention : un diviseur commun divise les deux nombres — vérifie en divisant chacun des deux.',
+  'smaller-not-divisor':
+    'Attention : le plus petit nombre n’est pas un diviseur commun s’il laisse un reste quand on divise le plus grand par lui.',
+  'subtract-not-divide':
+    'Attention : on divise le numérateur et le dénominateur par le même nombre — on ne leur soustrait pas un même nombre.',
+  'one-term-only': 'Attention : on divise le numérateur ET le dénominateur par le même nombre, pas un seul des deux.',
+  'power-times':
+    'Attention : l’exposant dit combien de fois on multiplie le nombre par lui-même — on ne multiplie pas le nombre par l’exposant.',
+  'square-sign':
+    'Attention : le produit de deux nombres négatifs est positif, donc le carré d’un nombre négatif est positif.',
+  'odd-sign': 'Attention : le produit de trois nombres négatifs est négatif — un exposant impair garde le signe.',
+  'decimal-places':
+    'Attention : dans le produit de deux nombres décimaux, le nombre de chiffres après la virgule est la somme de ceux des deux facteurs.',
+  'fraction-one-term':
+    'Attention : pour élever une fraction au carré, on élève au carré le numérateur ET le dénominateur.',
 };
 
 const gcdOf = (x, y) => (y === 0 ? x : gcdOf(y, x % y));

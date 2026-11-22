@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { DivisorIslesGame } from './Game';
 import { T } from './strings';
 
-// The purse chip names the bridges it pays: « قطع الجسرين » for a convoy of two, « قطع الجسر » for a convoy of ONE (lesson
-// 8's workshop bridges and its store — the story walk saw « قطع الجسرين » over a single bridge, 2026-11-20).
+// The purse chip names the bridges it pays: « Pièces des deux ponts » for a convoy of two, « Pièces du pont » for a convoy of ONE (lesson
+// 8's workshop bridges and its store — the story walk saw « Pièces des deux ponts » over a single bridge, 2026-11-20).
 const P = DivisorIslesGame.prototype;
 const game = (segs, purse) => ({ segs, convoys: { c: { purse } }, convoyOf: P.convoyOf });
 
@@ -18,7 +18,7 @@ describe('the purse of a convoy', () => {
     expect(P.purseOf.call(game(two, 12), two[1])).toEqual({ of: 12, left: 8, n: 2 });
   });
   it('has a word for one bridge and for two', () => {
-    expect(T.purse.one).toBe('قطع الجسر');
-    expect(T.purse.label).toBe('قطع الجسرين');
+    expect(T.purse.one).toBe('Pièces du pont');
+    expect(T.purse.label).toBe('Pièces des deux ponts');
   });
 });

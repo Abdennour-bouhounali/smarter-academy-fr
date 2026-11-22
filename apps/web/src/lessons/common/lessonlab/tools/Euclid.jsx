@@ -1,5 +1,5 @@
 /**
- * « مربّعات إقليدس » — a rectangle a × b. The student cuts the biggest square that fits, again and again; each family of
+ * « Les carrés d’Euclide » — a rectangle a × b. The student cuts the biggest square that fits, again and again; each family of
  * squares is one Euclidean division, written as it is cut. The side of the LAST square measures both sides: the PGCD.
  * The student's hand holds the CORNER of the rectangle.
  */
@@ -11,7 +11,7 @@ const OX = 48;
 const OY = 14;
 const W = 640;
 const H = 318;
-const LX = 925; // the divisions are written in a column on the right
+const LX = 925; // the divisions are written in a column on the right, after the rectangle (read left to right)
 const COLORS = ['#2dd4bf', '#fbbf24', '#a78bfa', '#f472b6', '#60a5fa', '#fb923c', '#a3e635'];
 
 export default function Euclid({ a, b, setA, setB, play, report, range }) {
@@ -67,7 +67,7 @@ export default function Euclid({ a, b, setA, setB, play, report, range }) {
       actions={
         <>
           <button type="button" className="ll-btn" onClick={snip} disabled={done} data-ll-cut>
-            ✂️ اقطع أكبر مربّع
+            ✂️ Coupe le plus grand carré
           </button>
           <button
             type="button"
@@ -87,17 +87,19 @@ export default function Euclid({ a, b, setA, setB, play, report, range }) {
         <>
           {cut === 0 && (
             <span className="ll-chip ll-chip--dim">
-              مستطيل {a} × {b}: اقطع منه أكبر مربّع ممكن، ثمّ أعد.
+              Rectangle {a} × {b} : coupes-y le plus grand carré possible, puis recommence.
             </span>
           )}
           {cut > 0 && !done && (
-            <span className="ll-chip ll-chip--dim">كلّ مجموعة مربّعات قسمةٌ إقليدية: تُكتب على اليمين.</span>
+            <span className="ll-chip ll-chip--dim">
+              Chaque groupe de carrés est une division euclidienne : elle s’écrit à droite.
+            </span>
           )}
           {done && (
             <>
-              <M>{`\\mathrm{PGCD}(${a}\\,;${b}) = ${E.pgcd}`}</M>
+              <M>{`\\mathrm{PGCD}(${a}\\,;\\,${b}) = ${E.pgcd}`}</M>
               <span className="ll-chip ll-chip--good" data-ll-pgcd={E.pgcd}>
-                ضلع آخر مربّع {E.pgcd}: يقيس الضلعين معًا
+                Le dernier carré a pour côté {E.pgcd} : il mesure les deux côtés à la fois
               </span>
             </>
           )}

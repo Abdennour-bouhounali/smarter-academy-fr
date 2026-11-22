@@ -1,16 +1,17 @@
 /**
- * « مِنضدة القائمتين » — the divisors of two numbers WRITTEN, side by side, the way one writes them on a sheet: the hand
+ * « L’établi des deux listes » — the divisors of two numbers WRITTEN, side by side, the way one writes them on a sheet: the hand
  * tries 1, then 2, then 3 … on BOTH numbers at once; each number that divides one of them is written in its list with its
  * partner (the small ones from the left, the partners from the right, an arc joining a pair). A list closes by itself
  * when the next number to try has a square past it. Once both are closed, a line joins every number that is in both, and
  * the greatest wears the crown. Tap a number: the two equalities that place it appear.
- * What it adds to « القواسم المشتركة » (lesson 4, `Common.jsx`, which shows the lists already made and sorted): the
+ * What it adds to « Les diviseurs communs » (lesson 4, `Common.jsx`, which shows the lists already made and sorted): the
  * lists are BUILT, by pairs, and stop where they must — the procedure of lesson 5, never a rule written.
  * `start` (default 0) is how many numbers were already tried on opening — the render test draws the closed lists with it.
  */
 import { useEffect, useState } from 'react';
 import { VW, useChime, Tool, M } from '../kit';
 import { divide, twoLists } from '../logic';
+import { listFr } from '../../gameworld/kit/authoring/numbers';
 
 const X0 = 150;
 const X1 = 905;
@@ -172,7 +173,9 @@ export default function Lists({ a, b, play, report, start = 0 }) {
           <M>{proof(a, cur.sel)}</M>
           <M>{proof(b, cur.sel)}</M>
           <span className={`ll-chip ${inA && inB ? 'll-chip--good' : 'll-chip--warm'}`}>
-            {inA && inB ? `${cur.sel} في القائمتين` : `${cur.sel} في قائمة ${inA ? a : b} وحدها`}
+            {inA && inB
+              ? `${cur.sel} est dans les deux listes`
+              : `${cur.sel} est seulement dans la liste de ${inA ? a : b}`}
           </span>
         </>
       );
@@ -180,15 +183,17 @@ export default function Lists({ a, b, play, report, start = 0 }) {
     if (done)
       return (
         <>
-          <M>{`\\mathrm{PGCD}(${a}\\,;${b}) = ${g}`}</M>
+          <M>{`\\mathrm{PGCD}(${a}\\,;\\,${b}) = ${g}`}</M>
           <span className="ll-chip ll-chip--good" data-ll-common={common.join(',')} data-ll-g={g}>
-            في القائمتين: {common.join('، ')} — أكبرها {g}
+            Dans les deux listes : {listFr(common)} — le plus grand est {g}
           </span>
         </>
       );
     if (!L.step)
       return (
-        <span className="ll-chip ll-chip--dim">نجرّب 1 ثمّ 2 ثمّ 3… على العددين معًا: كلّ قاسم يُكتب مع شريكه.</span>
+        <span className="ll-chip ll-chip--dim">
+          Essaie 1, puis 2, puis 3… sur les deux nombres à la fois : chaque diviseur s’écrit avec son partenaire.
+        </span>
       );
     const s = L.step;
     const rows = [
@@ -203,16 +208,18 @@ export default function Lists({ a, b, play, report, start = 0 }) {
         ))}
         <span className={`ll-chip ${hits.length ? 'll-chip--good' : 'll-chip--dim'}`} data-ll-tried={s.d}>
           {hits.length === 2
-            ? `${s.d} يقسم العددين`
+            ? `${s.d} divise les deux nombres`
             : hits.length === 1
-              ? `${s.d} يقسم ${hits[0]}`
-              : `${s.d} لا يقسم ${rows.length === 2 ? 'أيًّا منهما' : rows[0][0]}`}
+              ? `${s.d} divise ${hits[0]}`
+              : rows.length === 2
+                ? `${s.d} ne divise aucun des deux`
+                : `${s.d} ne divise pas ${rows[0][0]}`}
         </span>
         {[A, B]
           .filter((x) => x.done && x.last === s.d)
           .map((x) => (
             <span key={x.n} className="ll-chip ll-chip--dim" data-ll-closed={x.n}>
-              قائمة {x.n} كاملة: {s.d + 1} × {s.d + 1} أكبر من {x.n}
+              Liste de {x.n} complète : {s.d + 1} × {s.d + 1} est plus grand que {x.n}
             </span>
           ))}
       </>
@@ -232,7 +239,7 @@ export default function Lists({ a, b, play, report, start = 0 }) {
             disabled={done}
             data-ll-try={done ? '' : next}
           >
-            {done ? 'اكتملت القائمتان' : `جرّب ${next} ◂`}
+            {done ? 'Les deux listes sont complètes' : `Essaie ${next} ▸`}
           </button>
           <button
             type="button"
@@ -244,7 +251,7 @@ export default function Lists({ a, b, play, report, start = 0 }) {
             disabled={cur.tried === 0}
             data-ll-reset
           >
-            من جديد
+            Recommence
           </button>
         </>
       }

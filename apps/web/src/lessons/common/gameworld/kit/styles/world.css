@@ -1,4 +1,4 @@
-/* « أرخبيل القواسم » — HUD and overlays of the game world. Prefix di-. Tablet and laptop (≥ 768 px). */
+/* « L’archipel des diviseurs » — HUD and overlays of the game world. Prefix di-. Tablet and laptop (≥ 768 px). */
 /* THE 12 PX FLOOR at every size (GAME_WORLD.md « 12 px floor »): a small label is written
    `max(var(--di-min-font, 12px), <its size>)`. A frame that zooms itself below 1 (the rule forge) sets --di-min-font to
    12 px in its own units (15 px at 0.8), so the text it draws is 12 px on the screen. A <small> that has no size of its
@@ -12,7 +12,7 @@
   z-index: 1200;
   background: #0b1730;
   color: #f4f8ff;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
@@ -56,7 +56,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom-width: 3px;
   font:
-    700 max(12px, 0.78em) / 1 'Cairo',
+    700 max(12px, 0.78em) / 1 'Inter',
     sans-serif;
   color: #fff;
 }
@@ -109,7 +109,6 @@
   display: inline-flex;
   gap: 3px;
   margin-inline-start: 0.5rem;
-  direction: rtl;
 }
 .di-steps i {
   width: 7px;
@@ -146,7 +145,7 @@
   opacity: 1;
   transform: scale(1.12);
 }
-/* « قواعدي »: the corner where his rules live — it beats when a tablet has just flown into it */
+/* « Mes règles »: the corner where his rules live — it beats when a tablet has just flown into it */
 .di-rules {
   cursor: pointer;
   gap: 0.35rem;
@@ -238,7 +237,7 @@
   z-index: 4;
   width: min(92vw, 44rem);
 }
-/* …and when the recall card stands on the right, the middle column leaves it its room (and the same on the left) */
+/* …and when the recall card stands on the left, the middle column leaves it its room (and the same on the left) */
 .di-center:has(~ .di-recall) {
   width: min(92vw, 44rem, calc(100vw - 2 * (min(17rem, 24vw) + 2rem)));
 }
@@ -298,11 +297,12 @@
   text-align: center;
   text-wrap: balance;
 }
-/* what matters from the island before, on the RIGHT of the game (kit/Instruction.jsx › Recall) */
+/* what matters from the island before, at the START of the game (its LEFT, under the start of the top bar, where the
+   reading begins — it stood on the right while the interface read right to left) (kit/Instruction.jsx › Recall) */
 .di-recall {
   position: absolute;
   top: 4.4rem;
-  right: 1rem;
+  inset-inline-start: 1rem;
   z-index: 4;
   width: min(17rem, 24vw);
   padding: 0.6rem 0.85rem 0.7rem;
@@ -549,7 +549,6 @@
   align-items: center;
   gap: 0.7rem;
   pointer-events: auto;
-  direction: rtl;
 }
 .di-held {
   padding: 0.35rem 0.9rem;
@@ -568,7 +567,7 @@
   border: 0;
   border-radius: 1.2rem;
   font:
-    800 1.1rem 'Cairo',
+    800 1.1rem 'Inter',
     sans-serif;
   cursor: pointer;
   color: #3b2a06;
@@ -829,7 +828,7 @@
   background: rgba(255, 255, 255, 0.1);
   color: inherit;
   font:
-    800 1.05rem 'Cairo',
+    800 1.05rem 'Inter',
     sans-serif;
   cursor: pointer;
   text-decoration: none;
@@ -876,7 +875,7 @@
   color: inherit;
   opacity: 0.85;
   font:
-    700 0.95rem 'Cairo',
+    700 0.95rem 'Inter',
     sans-serif;
   cursor: pointer;
   text-decoration: underline;
@@ -903,7 +902,7 @@
   background: rgba(125, 252, 255, 0.1);
   color: #fff;
   font:
-    800 1.5rem 'Cairo',
+    800 1.5rem 'Inter',
     sans-serif;
   cursor: pointer;
   transition:
@@ -931,7 +930,7 @@
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
   font:
-    700 1.08rem/1.7 'Cairo',
+    700 1.08rem/1.7 'Inter',
     sans-serif;
   cursor: pointer;
   text-align: start;
@@ -1020,7 +1019,7 @@
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
   font:
-    700 1.15rem 'Cairo',
+    700 1.15rem 'Inter',
     sans-serif;
   cursor: pointer;
   transition: all 0.15s;
@@ -1064,7 +1063,7 @@
   background: rgba(125, 252, 255, 0.1);
   color: #fff;
   font:
-    800 1.8rem 'Cairo',
+    800 1.8rem 'Inter',
     sans-serif;
   cursor: pointer;
 }
@@ -1108,7 +1107,7 @@
   background: rgba(125, 252, 255, 0.1);
   color: #fff;
   font:
-    800 2rem 'Cairo',
+    800 2rem 'Inter',
     sans-serif;
   text-align: center;
   outline: none;

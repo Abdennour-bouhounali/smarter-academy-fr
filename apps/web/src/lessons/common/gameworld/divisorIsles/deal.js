@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `deal` — PURE logic (screen: `InquiryDeal.jsx`; contract: GAME_WORLD.md « استكشف », « spec shape of
+ * THE INVESTIGATION `deal` — PURE logic (screen: `InquiryDeal.jsx`; contract: GAME_WORLD.md « Explore », « spec shape of
  * `deal` »). Two collections (nA items of one kind, nB of another) are shared into k IDENTICAL lots: the world deals both
  * round by round, one item of each kind per lot and per round, and what cannot be dealt stays on the table. Everything
  * is shared exactly when k fills both numbers; the most lots is the longest plank of both gaps of the archipelago.

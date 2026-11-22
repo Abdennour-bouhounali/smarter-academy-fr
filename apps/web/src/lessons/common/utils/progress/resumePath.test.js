@@ -104,8 +104,8 @@ describe('a v2 lesson (a world in its pack) is resumed on its home, never on a m
 });
 
 describe('les appelants n’assemblent plus l’URL à la main', () => {
-  // L'accueil de l'espace (mené par بوصلتي depuis le 2026-11-09) passe la forme de getResumeLesson
-  // telle quelle à CompassHomeSections (`resume`) : c'est là que « واصل » lit son chemin.
+  // L'accueil de l'espace (mené par « Ma boussole » depuis le 2026-11-09) passe la forme de getResumeLesson
+  // telle quelle à CompassHomeSections (`resume`) : c'est là que « Continue » lit son chemin.
   const CALLERS = [
     ['pages/Courses.jsx', /continueCourse\.resumePath/],
     ['features/home/compass/CompassHomeSections.jsx', /resume\.resumePath/],

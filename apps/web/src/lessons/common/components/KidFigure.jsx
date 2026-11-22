@@ -4,19 +4,21 @@ import { kidGeometry, SKINS, HAIRS, OUTFITS, SCARVES } from './kidFigure.js';
  * UN ENFANT DESSINÉ (11–13 ans) — un `<g>` SVG posé dans la scène par `cx`, `top` (sommet du crâne) et `foot` (le sol).
  *
  * Dessiné en code, jamais généré (root CLAUDE.md) : l'enfant RÉAGIT — il grandit sous le doigt, change d'humeur quand
- * la phrase devient vraie, porte « ؟ » tant que sa taille est inconnue — et sa hauteur EST la mesure (la géométrie est
+ * la phrase devient vraie, porte « ? » tant que sa taille est inconnue — et sa hauteur EST la mesure (la géométrie est
  * dans ./kidFigure.js, testée : le sommet du crâne est `top`, les semelles touchent `foot`). Sweat à capuche, cheveux
- * (courts ou bouclés) ou, pour les filles, un hijab avec la tenue islamique (demande du propriétaire, 2026-10-14) (foulard drapé sur les épaules, bandeau au front,
- * épingle, tunique longue sur un pantalon large — `scarf`, `tunic`), visage avec des yeux à reflet, joues, sourire ; une ombre au
- * sol. Les couleurs viennent d'ensembles inventés (`OUTFITS`).
+ * (courts ou bouclés) ou un foulard (`hairStyle: 'hijab'` — foulard drapé sur les épaules, bandeau au front, épingle ;
+ * dessiné pour la plateforme algérienne, 2026-10-14), et sur demande une tunique longue sur un pantalon large (`tunic`) ;
+ * visage avec des yeux à reflet, joues, sourire ; une ombre au sol. Aucune coiffure n'est imposée par défaut : le foulard
+ * et la tunique ne viennent que si on les demande (le dessin des personnages pour la France est une décision ouverte du
+ * propriétaire, plan §7, 7). Les couleurs viennent d'ensembles inventés (`OUTFITS`).
  *
  * Props : `cx`, `top`, `foot` ; `skin`, `hair`, `outfit` (clés de SKINS / HAIRS / OUTFITS), `hairStyle`, `mood`
- * ('happy' | 'neutral' | 'wonder' | 'proud'), `scarf` (clé de SCARVES) et `tunic` (tunique longue ; par défaut avec le hijab), `unknown` + `mark` (le badge sur la poitrine), `dim` (atténué),
+ * ('happy' | 'neutral' | 'wonder' | 'proud'), `scarf` (clé de SCARVES, la couleur du foulard) et `tunic` (tunique longue ; jamais par défaut), `unknown` + `mark` (le badge sur la poitrine), `dim` (atténué),
  * `shadow`, et les attributs `data-*` passés au groupe.
  */
 export default function KidFigure({
   cx, top, foot, skin = 'light', hair = 'brown', outfit = 'blue', hairStyle = 'short', mood = 'happy',
-  scarf = 'rose', tunic, unknown = false, mark = '؟', dim = false, shadow = true, ...rest
+  scarf = 'rose', tunic = false, unknown = false, mark = '?', dim = false, shadow = true, ...rest
 }) {
   const g = kidGeometry({ cx, top, foot });
   const { u, head, hs, drop } = g;
@@ -30,8 +32,8 @@ export default function KidFigure({
   const sw = (w) => Math.max(0.6, w * u);
   const hijab = hairStyle === 'hijab';
   const SC = SCARVES[scarf] ?? SCARVES.rose;
-  // la tenue islamique : une tunique longue (jusqu'à mi-cuisse) sur un pantalon large ; par défaut avec le hijab
-  const long = tunic ?? hijab;
+  // une tunique longue (jusqu'à mi-cuisse) sur un pantalon large : seulement sur demande, jamais déduite de la coiffure
+  const long = Boolean(tunic);
   const hemTop = long ? 61.2 : 46.8;
   const hemBot = long ? 64.6 : 50.2;
   const flare = long ? 12.2 : 10.5;
@@ -76,7 +78,7 @@ export default function KidFigure({
 
       {!long && arms}
 
-      {/* le haut : sweat à capuche, ou tunique longue (tenue islamique) — corps, bande du bas, poche ou broderie */}
+      {/* le haut : sweat à capuche, ou tunique longue — corps, bande du bas, poche ou broderie */}
       <path
         d={`M${X(-4.4)} ${T(16.4)} Q${X(-10.2)} ${T(16.6)} ${X(-11.1)} ${T(21)} L${X(-flare)} ${T(hemTop + 0.2)} Q${X(-flare)} ${T(hemBot)} ${X(-flare + 3.1)} ${T(hemBot)} L${X(flare - 3.1)} ${T(hemBot)} Q${X(flare)} ${T(hemBot)} ${X(flare)} ${T(hemTop + 0.2)} L${X(11.1)} ${T(21)} Q${X(10.2)} ${T(16.6)} ${X(4.4)} ${T(16.4)} Q${X(0)} ${T(19.6)} ${X(-4.4)} ${T(16.4)} Z`}
         fill={O.top}
@@ -111,7 +113,7 @@ export default function KidFigure({
         </>
       )}
 
-      {/* le hijab : il couvre la tête, les oreilles, le cou et les épaules, et tombe en pointe arrondie sur la poitrine ;
+      {/* le foulard : il couvre la tête, les oreilles, le cou et les épaules, et tombe en pointe arrondie sur la poitrine ;
           son sommet EST le sommet du crâne (la taille ne triche pas) */}
       {hijab && (
         <g data-kid-hijab>
@@ -154,12 +156,11 @@ export default function KidFigure({
 
       <Face g={g} S={S} hc={hijab ? '#3B2A20' : hc} mood={mood} />
 
-      {/* l'inconnue : un badge « ؟ » sur la poitrine */}
+      {/* l'inconnue : un badge « ? » sur la poitrine */}
       {unknown && mark && (
         <g data-kid-unknown>
           <circle cx={cx} cy={T(31)} r={4.5 * u} fill="#FFFFFF" opacity={0.95} />
-          <text x={cx} y={T(31) + 2.5 * u} textAnchor="middle" fontSize={Math.max(10, 7.2 * u)} fontWeight={900} fill={O.topDark}
-            style={{ direction: 'rtl', unicodeBidi: 'isolate' }}>{mark}</text>
+          <text x={cx} y={T(31) + 2.5 * u} textAnchor="middle" fontSize={Math.max(10, 7.2 * u)} fontWeight={900} fill={O.topDark}>{mark}</text>
         </g>
       )}
     </g>

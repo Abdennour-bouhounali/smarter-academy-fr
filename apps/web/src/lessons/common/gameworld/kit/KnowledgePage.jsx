@@ -1,14 +1,14 @@
 /**
- * « خريطة المعارف » — the FULL-PAGE knowledge map of the lesson inside the game world.
+ * « fiche de connaissances » — the FULL-PAGE knowledge map of the lesson inside the game world.
  * It is the lesson's own mind map (its `knowledgeGraph.js`: the nodes and their labelled links) with the memo sheet of its
  * rules (its `knowledge.jsx`: rule, hook, example, trap, exam tip, memory test), read through `useLesson().knowledge`.
  * NOTHING is retyped here, and this page names no lesson: a change in the lesson changes this page.
  *
  * TWO VIEWS of the same cards:
- *   the JOURNEY (« رحلة الاكتشاف », the way the page opens until everything is found — owner, 2026-11-15): ONE card at a time,
+ *   the JOURNEY (« Le voyage de découverte », the way the page opens until everything is found — owner, 2026-11-15): ONE card at a time,
  *     large and comfortable to read, in the middle of the screen; beside it the MYSTERY cards of what follows (the lesson's
  *     own `reveals`), each turned over by a tap and then becoming the card being read; above, the trail of what was found.
- *   the MAP (« الخريطة كاملة »): all the cards and their links at once, a card's content in the side panel.
+ *   the MAP (« La carte des connaissances »): all the cards and their links at once, a card's content in the side panel.
  * The whole page is scaled to the screen (`useFit`): a big screen gets big text, never a small page lost in the middle.
  * Gamified: a card is locked until its key is owned, ticked once read, and a rule is sealed in gold by its memory test.
  */
@@ -24,7 +24,7 @@ import {
   RotateCcw,
   Sparkles,
   HelpCircle,
-  ArrowLeft,
+  ArrowRight,
 } from 'lucide-react';
 import MathText from '../../components/MathText';
 import Trainer from './Trainer';
@@ -89,7 +89,7 @@ export default function KnowledgePage({ s, game, sel }) {
   const node = byId(id);
   const open = isOpen(node);
   const item = node.notebook ? ITEMS[node.requires] : null;
-  // the tab belongs to the card it was chosen on: another card opens on « البطاقة » in the SAME render (an effect reset it
+  // the tab belongs to the card it was chosen on: another card opens on « La carte » in the SAME render (an effect reset it
   // one frame late — the new card was first drawn on the previous card's tab, and a walk read it then)
   const [tabOf, setTabOf] = useState({ id, tab: 'card' });
   const tab = tabOf.id === id ? tabOf.tab : 'card';
@@ -201,7 +201,6 @@ export default function KnowledgePage({ s, game, sel }) {
                   <span
                     key={`${e.from}-${e.to}`}
                     className="di-kmap__edge"
-                    dir="rtl"
                     style={{
                       left: `${(POS[e.from][0] + POS[e.to][0]) / 2}%`,
                       top: `${(POS[e.from][1] + POS[e.to][1]) / 2}%`,
@@ -218,7 +217,6 @@ export default function KnowledgePage({ s, game, sel }) {
                     <button
                       key={n.id}
                       type="button"
-                      dir="rtl"
                       onClick={() => setId(n.id)}
                       data-di-knode={n.id}
                       data-open={o}
@@ -242,7 +240,7 @@ export default function KnowledgePage({ s, game, sel }) {
                     </button>
                   );
                 })}
-                <div className="di-kmap__legend" dir="rtl">
+                <div className="di-kmap__legend">
                   {Object.entries(TX.know.legend).map(([k, v]) => (
                     <span key={k} className={`is-${k}`}>
                       <i />
@@ -355,7 +353,7 @@ function Journey({ node, found, isOpen, setId, onFull, game, ...body }) {
                   </small>
                   <strong>{isOpen(n) ? n.title : KT.hidden}</strong>
                 </span>
-                <ArrowLeft size={20} />
+                <ArrowRight size={20} />
               </button>
             ) : (
               <button

@@ -1,5 +1,5 @@
 /**
- * THE INVESTIGATION `roundtrip` — PURE logic (screen: `InquiryRoundtrip.jsx`; contract: GAME_WORLD.md « استكشف », spec
+ * THE INVESTIGATION `roundtrip` — PURE logic (screen: `InquiryRoundtrip.jsx`; contract: GAME_WORLD.md « Explore », spec
  * shape of `roundtrip`). Its rule is TWO OPERATIONS THAT UNDO EACH OTHER. Two stations stand side by side:
  *   « build »  a rod goes in, a court comes out with its plaque (the platform built on the rod: `logic.js › platform`);
  *   « take »   a court goes in, a rod comes out along its wall (its number when it has one, `rootOf`; else the wall itself).

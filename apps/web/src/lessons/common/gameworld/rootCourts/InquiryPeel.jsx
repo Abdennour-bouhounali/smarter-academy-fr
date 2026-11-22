@@ -9,7 +9,7 @@
  * sign printed) — and the world builds them round one post: two twin courts, one rod of length 0, or no court at all.
  * Every round stays in the table: the plaque as given → each peel → the lone court → its rods.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `peel` of « قصر الساحات »): this file writes
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `peel` of « Le palais des dalles »): this file writes
  * no word, no letter x and no equation; a round's `tex` (the lesson's algebraic writing) is shown only once the round is
  * solved. The screen is a pure VIEW of the reducer's state (`PeelView`); `Peel` holds the boxes and the timers.
  */
@@ -231,11 +231,9 @@ function EndScene({ T, lone, stage, texShown }) {
         <rect className="rq-pl__twinpost" x="293" y="138" width="14" height="30" rx="3" />
       </svg>
       <div className="rq-pl__names" data-iq-names>
+        {/* left to right as the drawing above: the rod pulled to the left under the left court, then the right one */}
         {world.n === 2 && (
           <>
-            <span className="rq-pl__name is-right" data-iq-name="right">
-              {built && <RodName T={T} rod={world.right} />}
-            </span>
             <span className="rq-pl__name is-left" data-iq-name="left">
               {built && (
                 <>
@@ -245,6 +243,9 @@ function EndScene({ T, lone, stage, texShown }) {
                   <RodName T={T} rod={world.right} />
                 </>
               )}
+            </span>
+            <span className="rq-pl__name is-right" data-iq-name="right">
+              {built && <RodName T={T} rod={world.right} />}
             </span>
           </>
         )}
@@ -688,6 +689,10 @@ export function PeelView({ spec, state, act, input = EMPTY_INPUT }) {
                   </div>
                   {input.n != null && (
                     <div className="rq-pl__rods" data-iq-rods={input.n}>
+                      {/* side by side as the rods are pulled: the left one on the left, the right one on the right */}
+                      {input.n === 2 && (
+                        <RodBlock T={T} side="left" label={T.leftRod} input={input} act={act} shape={shape} />
+                      )}
                       {input.n >= 1 && (
                         <RodBlock
                           T={T}
@@ -697,9 +702,6 @@ export function PeelView({ spec, state, act, input = EMPTY_INPUT }) {
                           act={act}
                           shape={shape}
                         />
-                      )}
-                      {input.n === 2 && (
-                        <RodBlock T={T} side="left" label={T.leftRod} input={input} act={act} shape={shape} />
                       )}
                     </div>
                   )}

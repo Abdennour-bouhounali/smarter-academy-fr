@@ -4,7 +4,7 @@ import { calculateCompletionPercentage, isValidModuleNumber } from '@smarter-aca
 /**
  * LE MODULE 0 EST UN MODULE.
  *
- * Deux leçons de l'unité 1 ouvrent sur « أستعدّ », numéroté 0. Pendant des
+ * Deux leçons de l'unité 1 ouvrent sur « Je me prépare », numéroté 0. Pendant des
  * semaines leur progression n'a jamais été écrite : `ModuleLayout` gardait ses
  * quatre écritures derrière `if (lessonId && moduleNumber && …)`, et `0` est
  * falsy. La leçon plafonnait à 80 %, ne pouvait pas se terminer, et rien ne

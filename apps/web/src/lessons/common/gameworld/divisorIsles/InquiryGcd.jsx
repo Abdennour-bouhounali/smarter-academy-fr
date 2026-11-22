@@ -18,7 +18,7 @@
  * Modes (`InquiryGcdModes.jsx`, logic `gcdModes.js`): common `witness`, nest `pair`, ladder `fold` and `both` — the
  * exported `Common`, `Ladder`, `Nest` mount them when `spec.mode` names them; any other spec plays the screens below.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shapes). Nothing here states a rule: every sentence
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shapes). Nothing here states a rule: every sentence
  * says what the strips, the shelves or the ladder have just done.
  */
 import { useEffect, useState } from 'react';
@@ -124,7 +124,7 @@ function CommonShelves({ spec, play, onDone }) {
   const [countIn, setCountIn] = useState('');
   const [said, setSaid] = useState(null);
   const [miss, setMiss] = useState(null);
-  const [wait, setWait] = useState(null); // what is still missing before « تحقّق » can be answered
+  const [wait, setWait] = useState(null); // what is still missing before « Vérifier » can be answered
   const [found, setFound] = useState([]);
   const later = useLater();
   expose({ kind: 'common', ri, a, b, crown, stage, hand, placed: placed.length, long, said, found });
@@ -280,7 +280,7 @@ function CommonShelves({ spec, play, onDone }) {
             <p className="iq-askline">
               <MathText>{T.sayLead({ a, b, crown })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <small>{T.sayCount}</small>
                 <Num value={countIn} onChange={setCountIn} w={2} data-iq-in="count" onKeyDown={onEnter(check)} />
@@ -452,13 +452,13 @@ function LadderRows({ spec, play, onDone }) {
           <span />
           <span />
           <span />
-          {!plain && <small dir="rtl">{T.planks}</small>}
+          {!plain && <small>{T.planks}</small>}
         </div>
         {view.map((v) =>
           v == null ? (
             <div key="fold" className="iq-rung iq-rung--fold" data-iq-fold={all.length - MAXR + 1}>
               <span />
-              <small dir="rtl">{T.folded(all.length - MAXR + 1)}</small>
+              <small>{T.folded(all.length - MAXR + 1)}</small>
             </div>
           ) : (
             <div
@@ -515,7 +515,7 @@ function LadderRows({ spec, play, onDone }) {
             <p className="iq-askline">
               <MathText>{T.countAsk({ a, b, mode, written })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <small>{T.countLabel}</small>
                 <Num value={countIn} onChange={setCountIn} w={2} data-iq-in="count" onKeyDown={onEnter(count)} />

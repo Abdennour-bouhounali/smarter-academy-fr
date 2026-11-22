@@ -44,7 +44,7 @@ describe('the investigation of the greatest common divisor — gcd and the commo
   });
 });
 
-describe('common — what « تحقّق » judges, with and without the longest (`crown`)', () => {
+describe('common — what « Vérifier » judges, with and without the longest (`crown`)', () => {
   const c = commonOf(12, 18, [1, 2, 3, 4, 5, 6, 9, 12]); // both: 1, 2, 3, 6
   it('by default the longest is marked AND the count typed; both must be right', () => {
     expect(commonSays(c, { longest: null, count: null })).toEqual({ needLong: true, needCount: true, ok: false });

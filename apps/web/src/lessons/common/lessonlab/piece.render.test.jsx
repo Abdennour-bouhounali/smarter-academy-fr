@@ -15,7 +15,7 @@ const factsOf = (html) => html.slice(html.indexOf('data-ll-piece-facts'));
 const nums = (html, attr) =>
   [...svgOf(html).matchAll(new RegExp(` ${attr}="([-\\d.]+)"`, 'g'))].map((m) => Number(m[1]));
 
-describe('مختبري — « منصّة الكسر » draws what it counts', () => {
+describe('Mon labo — « La plateforme de la fraction » draws what it counts', () => {
   it('opens on a rod of one tile (q/q), the handle calling the hand, nothing kept yet — no raw formula in the drawing', () => {
     const html = draw(2, 5);
     // a court of 2 tiles cut in 5 × 5: 50 pieces; the rod 5/5 holds 25 — a band of 25 pieces
@@ -24,7 +24,7 @@ describe('مختبري — « منصّة الكسر » draws what it counts', ()
     );
     expect(html).toContain('ll-pulse');
     expect(html).toContain('data-ll-piece-band="25"');
-    expect(html).toContain('يبقى شريط: 25 قطعة');
+    expect(html).toContain('Il reste une bande\u00a0: 25\u00a0morceaux');
     expect(html).toContain('data-ll-piece-rod="5/5"'); // the fraction drawn with its bar, never « 5/5 » as text
     expect(svgOf(html)).not.toMatch(/\\|\$|>5\/5</);
     expect(factsOf(html)).toContain('ll-court__wait'); // no nearest rod before the hand moved
@@ -34,14 +34,14 @@ describe('مختبري — « منصّة الكسر » draws what it counts', ()
   it('a rod of 7/5 on 2: one piece short — and the nearest rod kept with its difference in tiles, a fraction with its bar', () => {
     const html = draw(2, 5, { p: 7, best: { p: 7, q: 5, far: 1 } });
     expect(html).toContain('data-court="50" data-plat="49" data-verdict="band" data-far="1"');
-    expect(html).toContain('يبقى شريط: قطعة واحدة');
+    expect(html).toContain('Il reste une bande\u00a0: 1\u00a0morceau<');
     expect(html).toContain('data-ll-piece-best="7:5:1"');
     expect(factsOf(html)).toContain('7 \\times 7 = 49');
     expect(factsOf(html)).toContain('2 \\times 25 = 50');
     // the difference: 1 piece of the 25 of a tile
     expect(factsOf(html)).toContain('\\dfrac{1}{25}');
     // the difference stands on its own line (on the rod's line it ran out of the card at 1366×768)
-    expect(html).toMatch(/<p data-ll-piece-far="[^"]*">الفرق /);
+    expect(html).toMatch(/<p data-ll-piece-far="[^"]*">Écart\u00a0: /);
     expect(html).not.toContain('ll-pulse'); // the hand has moved
   });
 
@@ -49,26 +49,26 @@ describe('مختبري — « منصّة الكسر » draws what it counts', ()
     const html = draw(2, 5, { p: 8, best: { p: 7, q: 5, far: 1 } });
     expect(html).toContain('data-plat="64" data-verdict="jam" data-far="14"');
     expect(html).toContain('data-ll-piece-over="14"');
-    expect(html).toContain('تزيد المنصّة: 14 قطعة');
+    expect(html).toContain('La plateforme dépasse de 14\u00a0morceaux');
     expect(html).toContain('ll-chip--jam');
-    expect(html).not.toMatch(/خطأ|خاطئ|غلط|#f87171|#ef4444/);
+    expect(html).not.toMatch(/\bfaux\b|fausse|erreur|#f87171|#ef4444/i);
     expect(html).toContain('data-ll-piece-best="7:5:1"'); // the record stays the nearest
   });
 
   it('a perfect square: 12/4 covers a court of 9 exactly; its pieces are drawn', () => {
     const html = draw(9, 4, { p: 12, best: { p: 12, q: 4, far: 0 } });
     expect(html).toContain('data-court="144" data-plat="144" data-verdict="fits" data-far="0"');
-    expect(html).toContain('المنصّة تغطّي الساحة بالضبط');
+    expect(html).toContain('La plateforme couvre exactement la salle');
     expect(html).toContain('data-ll-piece-grid="4"');
     expect(html).toContain('data-ll-piece-best="12:4:0"');
-    expect(html).toContain('ساحة مساحتها 9 بلاطات');
+    expect(html).toContain('Une salle de 9\u00a0dalles');
   });
 
   it('a denominator of 1 writes whole numbers; the largest court and denominator stay inside the drawing', () => {
     const one = draw(10, 1, { p: 3, best: { p: 3, q: 1, far: 1 } });
     expect(one).toContain('data-court="10" data-plat="9" data-verdict="band" data-far="1"');
     expect(one).not.toContain('data-ll-piece-rod='); // 3/1 is written 3
-    expect(factsOf(one)).toContain('الفرق بلاطة واحدة');
+    expect(factsOf(one)).toContain('Écart\u00a0: 1\u00a0dalle');
     for (const [a, b, p] of [
       [50, 12, 97],
       [50, 12, 1],

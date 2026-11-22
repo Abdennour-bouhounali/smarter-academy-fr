@@ -1,5 +1,5 @@
 /*
- * « قصر الساحات » — the world's own HUD. Every selector is prefixed by the shell's root: a colour set on a class alone
+ * « Le palais des dalles » — the world's own HUD. Every selector is prefixed by the shell's root: a colour set on a class alone
  * is beaten by `.di-root p { color: inherit }` (defects.md D13). What he must read is 18 px or more at 1366×768.
  */
 .di-root .rc-rod {
@@ -182,16 +182,12 @@
   align-items: stretch;
   gap: 0.35rem;
 }
-/* each line stands against the right edge, its words beside its boxes (never spread over the card: « 3      ,      6 »
-   read as three things — the walk of lesson 2, 2026-11-21); a left-to-right line ends on the right, a right-to-left one
-   starts there */
+/* each line stands against the left edge, its words beside its boxes (never spread over the card: « 3      ,      6 »
+   read as three things — the walk of lesson 2, 2026-11-21) */
 .di-root .rc-mission__lines .rf-use {
   flex-wrap: nowrap;
-  justify-content: flex-end;
-  white-space: nowrap;
-}
-.di-root .rc-mission__lines .rf-use[dir='rtl'] {
   justify-content: flex-start;
+  white-space: nowrap;
 }
 /* the count of a platform's tiles, running at the top of the screen while they light one by one */
 .di-root .rc-count {

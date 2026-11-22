@@ -37,18 +37,18 @@ import { allRules } from './test/suites.js';
  * builds [which gaps] » — the shape of every forge met on a convoy.
  */
 const LOOK = [
-  { id: 'pair', label: 'الأقصر وهوّة الفرق', of: (c) => [c.B, c.A - c.B] },
-  { id: 'diff', label: 'هوّة الفرق وحدها', of: (c) => [c.A - c.B] },
-  { id: 'short', label: 'الأقصر وحدها', of: (c) => [c.B] },
+  { id: 'pair', label: 'le plus court et le fossé de la différence', of: (c) => [c.B, c.A - c.B] },
+  { id: 'diff', label: 'le fossé de la différence seul', of: (c) => [c.A - c.B] },
+  { id: 'short', label: 'le plus court seul', of: (c) => [c.B] },
 ];
 const HOW = [
-  { id: 'all', label: 'كلّ هوّة من', test: (gaps, built) => gaps.every(built) },
-  { id: 'one', label: 'هوّة واحدة على الأقلّ من', test: (gaps, built) => gaps.some(built) },
+  { id: 'all', label: 'chaque fossé parmi', test: (gaps, built) => gaps.every(built) },
+  { id: 'one', label: 'au moins un fossé parmi', test: (gaps, built) => gaps.some(built) },
 ];
 const J = judge({
   slots: [
-    { id: 'how', label: 'كم هوّة؟', options: HOW },
-    { id: 'look', label: 'أيّ هوّات؟', options: LOOK },
+    { id: 'how', label: 'Combien de fossés ?', options: HOW },
+    { id: 'look', label: 'Quels fossés ?', options: LOOK },
   ],
   right: { how: 'all', look: 'pair' },
   says: (rule, c, tile) => tile.how[rule.how].test(tile.look[rule.look].of(c), (n) => fills(n, c.d)),
@@ -75,7 +75,7 @@ describe('authoring/forgeBlocks.js — the tiles and the judge', () => {
   it('the screen gets ids and labels; the rule is the product of the slots; exactly one is the rule', () => {
     expect(J.slots[1].options).toEqual(options(LOOK));
     expect(Object.keys(J.slots[1].options[0])).toEqual(['id', 'label']);
-    expect(byId(LOOK).diff.label).toBe('هوّة الفرق وحدها');
+    expect(byId(LOOK).diff.label).toBe('le fossé de la différence seul');
     const rules = allRules(forge);
     expect(rules).toHaveLength(6);
     expect(rules.filter(forge.isTheRule)).toEqual([{ how: 'all', look: 'pair' }]);
@@ -161,9 +161,15 @@ describe('authoring/forgeBlocks.js — the cases', () => {
   it('a plank asked of a pair of gaps; with a purse only the longest common plank is paid', () => {
     expect(caseOf(152, 95, 19)).toMatchObject({ fa: true, fb: true, fits: true, held: true, laid: 8 });
     expect(caseOf(152, 95, 19).pair).toEqual({ a: 152, b: 95, d: 19 });
-    expect(plankCase('tarh', 259, 185, 37)).toMatchObject({ held: true, need: 12, purse: 12, tag: '12 لوحًا', g: 37 });
-    expect(plankCase('tarh', 259, 185, 1)).toMatchObject({ fits: true, held: false, need: 444, tag: '444 لوحًا' });
-    expect(plankCase('tarh', 259, 185, 74)).toMatchObject({ fits: false, need: null, tag: 'لا يملؤهما' });
+    expect(plankCase('tarh', 259, 185, 37)).toMatchObject({
+      held: true,
+      need: 12,
+      purse: 12,
+      tag: '12 planches',
+      g: 37,
+    });
+    expect(plankCase('tarh', 259, 185, 1)).toMatchObject({ fits: true, held: false, need: 444, tag: '444 planches' });
+    expect(plankCase('tarh', 259, 185, 74)).toMatchObject({ fits: false, need: null, tag: 'ne remplit pas les deux' });
     expect(plankCase('tarh', 259, 185, 74).pair).toEqual({ a: 259, b: 185, d: 74 });
     expect(fills(0, 27)).toBe(true);
   });
@@ -177,8 +183,8 @@ describe('authoring/forgeBlocks.js — the last step', () => {
     expect(differenceBox(92, 69).tokens.map((t) => t.slot ?? t)).toEqual(['92 − 69', '=', 'd']);
     expect(pgcdBox(92, 69).tokens.map((t) => t.slot ?? t)).toEqual(['PGCD(92 ; 69)', '=', 'g']);
     expect(pgcdPairBox(92, 69).tokens.map((t) => t.slot ?? t)).toEqual(['PGCD(92 ; 69)', '=', 'PGCD(69 ;', 'p', ')']);
-    expect(line(['دفتر الطرح:'], 'rtl')).toEqual({ dir: 'rtl', tokens: ['دفتر الطرح:'] });
-    expect(divisionRow(2, { w: 4 }).tokens[0]).toEqual({ slot: 'a2', label: 'المقسوم', w: 4 });
+    expect(line(['Carnet des soustractions :'])).toEqual({ dir: 'ltr', tokens: ['Carnet des soustractions :'] });
+    expect(divisionRow(2, { w: 4 }).tokens[0]).toEqual({ slot: 'a2', label: 'le dividende', w: 4 });
   });
 
   it('a pool of pairs without the bank’s; a draw replayed by its seed; the first wrong step', () => {

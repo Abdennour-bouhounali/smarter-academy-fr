@@ -1,5 +1,5 @@
 /**
- * « منصّة الكسر » — a court of the student's own: `a` whole tiles (the shared number a), each tile cut into q × q small
+ * « La plateforme de la fraction » — a court of the student's own: `a` whole tiles (the shared number a), each tile cut into q × q small
  * pieces (q = the shared number b, the denominator), and a rod of p/q laid from the court's corner — p is the HAND's: a
  * handle on a ruler marked in steps of 1/q (or « − / + », the arrows). The square platform built on the rod is drawn to
  * scale over the court: the band it leaves in amber, what it holds more in violet, green when it covers the court; its
@@ -14,6 +14,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useDrag, useChime, svgPoint, Tool, M } from '../kit';
 import { closerPiece, pieceOf } from '../logic';
 import { tiles } from '../../gameworld/rootCourts/strings';
+import { counted } from '../../gameworld/kit/authoring/numbers';
 
 /** The drawing's own frame (it shares the stage with the panel of counts). */
 const VW = 560;
@@ -33,13 +34,8 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
  * the default a drag lands on the wrong mark).
  */
 export const piecePoint = (svg, e) => svgPoint(svg, e, VW, VH);
-/** « قطعة واحدة », « قطعتان », « 5 قطع », « 11 قطعة », « 103 قطع » — the counter's no-break space. */
-const pieces = (n) => {
-  if (n === 1) return 'قطعة واحدة';
-  if (n === 2) return 'قطعتان';
-  const r = n >= 100 ? n % 100 : n;
-  return `${n} ${r >= 3 && r <= 10 ? 'قطع' : 'قطعة'}`;
-};
+/** « 1 morceau », « 25 morceaux » — the counter's no-break space. */
+const pieces = (n) => counted(n, ['morceau', 'morceaux']);
 /** p/q in LaTeX: a fraction with its bar, or the whole number alone when q is 1. */
 const fracTex = (p, q) => (q === 1 ? String(p) : `\\dfrac{${p}}{${q}}`);
 
@@ -147,10 +143,10 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
             data-ll-piece-verdict={P.verdict}
           >
             {P.verdict === 'fits'
-              ? 'المنصّة تغطّي الساحة بالضبط'
+              ? 'La plateforme couvre exactement la salle'
               : P.verdict === 'band'
-                ? `يبقى شريط: ${pieces(P.far)}`
-                : `تزيد المنصّة: ${pieces(P.far)}`}
+                ? `Il reste une bande : ${pieces(P.far)}`
+                : `La plateforme dépasse de ${pieces(P.far)}`}
           </span>
         </>
       }
@@ -213,7 +209,7 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
             {...drag}
             tabIndex={0}
             role="slider"
-            aria-label="بسط المقياس"
+            aria-label="Numérateur de la toise"
             aria-valuenow={p}
             aria-valuemin={1}
             aria-valuemax={pMax}
@@ -290,40 +286,42 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
 
         {/* what the court and the platform hold, counted in small pieces */}
         <div className="ll-court__facts" data-ll-piece-facts>
-          <p className="ll-court__title">{`ساحة مساحتها ${tiles(String(a))}`}</p>
+          <p className="ll-court__title">{`Une salle de ${tiles(String(a))}`}</p>
           <p data-ll-piece-cut={q * q}>
-            في البلاطة: <M>{`${q} \\times ${q} = ${q * q}`}</M>
+            Dans une dalle : <M>{`${q} \\times ${q} = ${q * q}`}</M>
           </p>
           <p data-ll-piece-courtcount={P.court}>
-            في الساحة: <M>{`${a} \\times ${q * q} = ${P.court}`}</M>
+            Dans la salle : <M>{`${a} \\times ${q * q} = ${P.court}`}</M>
           </p>
           <p data-ll-piece-platcount={P.plat}>
-            في المنصّة: <M>{`${p} \\times ${p} = ${P.plat}`}</M>
+            Sur la plateforme : <M>{`${p} \\times ${p} = ${P.plat}`}</M>
           </p>
           {shown ? (
             <>
               <p data-ll-piece-best={`${shown.p}:${shown.q}:${shown.far}`}>
-                {shown.far === 0 ? 'غطّاها بالضبط: ' : 'أقرب ما وصلتَ إليه: '}
+                {shown.far === 0 ? 'Couverte exactement : ' : 'Ta toise la plus proche : '}
                 <M>{fracTex(shown.p, shown.q)}</M>
               </p>
               {/* the difference on a line of its own: on one line with the rod it ran out of the card (the lab's walk of
-                  2026-11-21, « بلاطة » cut at the card's edge) */}
+                  2026-11-21, the word « tile » cut at the card's edge) */}
               {shown.far > 0 && (
                 <p data-ll-piece-far>
                   {shown.q === 1 ? (
-                    `الفرق ${tiles(String(shown.far))}`
+                    `Écart : ${tiles(String(shown.far))}`
                   ) : (
                     <>
-                      {'الفرق '}
+                      {'Écart : '}
                       <M>{fracTex(shown.far, shown.q * shown.q)}</M>
-                      {' بلاطة'}
+                      {' de dalle'}
                     </>
                   )}
                 </p>
               )}
             </>
           ) : (
-            <p className="ll-court__wait">حرّك المقياس: كم قطعة صغيرة تحمل المنصّة، وكم قطعة تحمل الساحة؟</p>
+            <p className="ll-court__wait">
+              Fais bouger la toise : combien de petits morceaux porte la plateforme, et combien en porte la salle ?
+            </p>
           )}
         </div>
       </div>

@@ -3,8 +3,8 @@
  * — at the 12 px floor, down to Fit's smallest scale — it is ONE leaf, exactly as before: no control. When it does not, the
  * box tells it (Fit › onShort): each item is measured, and the items are split into LEAVES at a boundary between two items
  * (as few as the room allows, as even as possible). Every item stays MOUNTED, the others hidden: a box keeps what the
- * student typed when he turns the leaf. Under the box, always on screen, the pager: « السابق », the count « 1 / 2 »,
- * « التالي » (data-xs-leaves = how many, data-xs-leaf-on = the one on screen, each item data-xs-leaf = its leaf).
+ * student typed when he turns the leaf. Under the box, always on screen, the pager: « Précédente », the count « 1 / 2 »,
+ * « Suivante » (data-xs-leaves = how many, data-xs-leaf-on = the one on screen, each item data-xs-leaf = its leaf).
  *   head     what every leaf shows above its items (the sheet's title, its tip)
  *   items    [{ id, node, className, quiet }] — `quiet`: a key whose line is said once per leaf (sheetLeaves › quietOnLeaves)
  *   tail     what every leaf shows under its items
@@ -13,15 +13,14 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Fit from './Fit';
 import { splitLeaves, leafIndex, quietOnLeaves, keepLeaf } from './sheetLeaves';
-
-const LEAF = { prev: 'السابق', next: 'التالي', page: 'الصفحة', more: 'تتمّة الأجوبة في الصفحة التالية' };
+import { LEAF } from './text';
 
 /** The pager: always visible under a sheet of two leaves or more. */
 function LeafPager({ n, on, go }) {
   return (
     <nav className="xs-leafnav" aria-label={LEAF.page} data-xs-leaf-nav>
       <button type="button" className="xs-btn" disabled={on === 0} onClick={() => go(on - 1)} data-xs-leaf-prev>
-        <ChevronRight size={17} /> {LEAF.prev}
+        <ChevronLeft size={17} /> {LEAF.prev}
       </button>
       <span className="xs-leafnav__count">
         {on < n - 1 && <small>{LEAF.more}</small>}
@@ -38,7 +37,7 @@ function LeafPager({ n, on, go }) {
         onClick={() => go(on + 1)}
         data-xs-leaf-next
       >
-        {LEAF.next} <ChevronLeft size={17} />
+        {LEAF.next} <ChevronRight size={17} />
       </button>
     </nav>
   );

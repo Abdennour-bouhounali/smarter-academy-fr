@@ -1,5 +1,5 @@
 /**
- * « أرخبيل القواسم » on screen — what THIS world adds to the kit's shell (`kit/LessonWorld.jsx`): the equation and the verdict
+ * « L’archipel des diviseurs » on screen — what THIS world adds to the kit's shell (`kit/LessonWorld.jsx`): the equation and the verdict
  * of a forge, the HUD of a run and of a real-world case, and its own overlays (the prediction, the stone's question, the rule
  * forge, the statues, the workshop, the store of the last bridge, the guidance after a mistake).
  * The title screen, the top bar, the hub, the tablets, the result and the end are the kit's.
@@ -44,7 +44,7 @@ function Equation({ eq, unit = planks }) {
       <div className="di-eq__legend">
         <span>{unit(q)}</span>
         {/* `unpaid`: the purse ran out — what is still open is not a remainder (it is not smaller than the plank) */}
-        <span style={{ color: col }}>{`${unpaid ? T.hud.unpaid : T.hud.remainder}: ${r}`}</span>
+        <span style={{ color: col }}>{`${unpaid ? T.hud.unpaid : T.hud.remainder} : ${r}`}</span>
       </div>
     </div>
   );
@@ -124,7 +124,7 @@ function DashHud({ dash, game, paused }) {
         <div className="di-lanes" dir="ltr">
           <button
             type="button"
-            aria-label="يسار"
+            aria-label={T.a11y.left}
             onPointerDown={(e) => {
               e.preventDefault();
               game.input.press('left');
@@ -134,7 +134,7 @@ function DashHud({ dash, game, paused }) {
           </button>
           <button
             type="button"
-            aria-label="يمين"
+            aria-label={T.a11y.right}
             onPointerDown={(e) => {
               e.preventDefault();
               game.input.press('right');
@@ -184,7 +184,7 @@ function Quiz({ o, game }) {
   return (
     <Card wide>
       <h2>{spec.prompt}</h2>
-      <div className={spec.multi ? 'di-chips' : 'di-options'} dir={spec.multi ? 'ltr' : 'rtl'}>
+      <div className={spec.multi ? 'di-chips' : 'di-options'}>
         {spec.options.map((op) => {
           const m = markOf(op.v);
           return (
@@ -314,7 +314,7 @@ function Guide({ o, game }) {
 }
 
 /**
- * « تعاونية الواحة » — the screen of a real-world case: the order at the top (what the client wants), the equality the depot
+ * « La coopérative du verger » — the screen of a real-world case: the order at the top (what the client wants), the equality the depot
  * is packing, and at the bottom the ONE step to decide now (choose a crate, or write numbers in the shape of the answer).
  */
 function DepotHud({ d, eq, game, paused }) {
@@ -370,7 +370,7 @@ function DepotHud({ d, eq, game, paused }) {
           <MathText>{R ? R.brief : d.brief}</MathText>
         </p>
         {(R ? R.facts : d.facts)?.length > 0 && (
-          <ul className="di-facts" data-di-facts aria-label="ما نعرفه">
+          <ul className="di-facts" data-di-facts aria-label={T.a11y.facts}>
             {(R ? R.facts : d.facts).map((f) => (
               <li key={f}>
                 <MathText>{f}</MathText>
@@ -398,7 +398,7 @@ function DepotHud({ d, eq, game, paused }) {
         <form className={`di-step ${d.busy ? 'is-busy' : ''}`} onSubmit={submit} data-di-step={step?.id ?? 'shipping'}>
           <Fit avail={stepRoom} innerClass="di-step__in">
             {H.length > 0 && (
-              <div className="di-hist" dir="rtl" data-di-hist>
+              <div className="di-hist" data-di-hist>
                 <small>{TX.depot.history}</small>
                 {H.map((x, k) => (
                   <button
@@ -430,7 +430,7 @@ function DepotHud({ d, eq, game, paused }) {
                     <b>{at.ok ? '✓' : '✗'}</b> <small>{TX.depot.mine}</small>
                     <span className="di-review__ans" dir="ltr">
                       {at.parts.map((pt, j) => (
-                        <span key={j} dir={pt.rtl ? 'rtl' : 'ltr'} className={pt.mine ? 'is-mine' : ''}>
+                        <span key={j} className={pt.mine ? 'is-mine' : ''}>
                           {pt.text}
                         </span>
                       ))}
@@ -475,7 +475,7 @@ function DepotHud({ d, eq, game, paused }) {
                           data-di-opt={op.v}
                         >
                           <strong>{op.label}</strong>
-                          <small dir="rtl">{op.sub}</small>
+                          <small>{op.sub}</small>
                         </button>
                       ))}
                     </div>
@@ -496,9 +496,7 @@ function DepotHud({ d, eq, game, paused }) {
                       <div className="di-template di-template--case" dir="ltr">
                         {step.tokens.map((t, i) =>
                           typeof t === 'string' ? (
-                            <span key={`${t}-${i}`} dir={t === 'دج' ? 'rtl' : 'ltr'}>
-                              {t}
-                            </span>
+                            <span key={`${t}-${i}`}>{t}</span>
                           ) : (
                             <label key={t.slot}>
                               <Num
@@ -509,7 +507,7 @@ function DepotHud({ d, eq, game, paused }) {
                                 autoFocus={t === slots[0]}
                                 data-di-slot={t.slot}
                               />
-                              <small dir="rtl">{t.label}</small>
+                              <small>{t.label}</small>
                             </label>
                           ),
                         )}
@@ -701,8 +699,8 @@ function Boss({ o, game }) {
                   data-di-mould={b}
                 >
                   <strong>{b}</strong>
-                  <span dir="rtl">{T.boss.mould(b)}</span>
-                  <em dir="rtl">
+                  <span>{T.boss.mould(b)}</span>
+                  <em>
                     {left == null
                       ? T.boss.untried
                       : `✗ ${typeof left === 'object' ? (left.purse ? T.boss.triedPurse(left.laid, left.need) : T.boss.triedMark(left.mark)) : T.boss.tried(left)}`}
@@ -743,7 +741,7 @@ function Boss({ o, game }) {
                       aria-label={T.boss.qLabel}
                       data-di-q
                     />
-                    <small dir="rtl">{T.boss.qLabel}</small>
+                    <small>{T.boss.qLabel}</small>
                   </label>
                   <span>+</span>
                   <label>
@@ -757,7 +755,7 @@ function Boss({ o, game }) {
                       aria-label={T.boss.rLabel}
                       data-di-r
                     />
-                    <small dir="rtl">{T.boss.rLabel}</small>
+                    <small>{T.boss.rLabel}</small>
                   </label>
                 </div>
               </PaperGate>
@@ -779,10 +777,10 @@ function Boss({ o, game }) {
                     }}
                     w={5}
                     autoFocus
-                    aria-label="المبلغ"
+                    aria-label={T.a11y.amount}
                     data-di-cost
                   />
-                  {T.boss.unit && <span dir="rtl">{T.boss.unit}</span>}
+                  {T.boss.unit && <span>{T.boss.unit}</span>}
                 </div>
               </PaperGate>
             </>
@@ -859,7 +857,7 @@ const WORLD = {
   paperOn: (s) =>
     (s.overlay?.type === 'boss' && s.overlay.view !== 'choose') ||
     Boolean(s.depot && s.phase === 'depot' && !s.depot.busy && s.depot.step?.type === 'number'),
-  held: (s) => (s.held != null ? `القالب ${s.held}` : null),
+  held: (s) => (s.held != null ? T.hud.held(s.held) : null),
   Hud,
   Under: ({ s, game }) =>
     s.dash ? (

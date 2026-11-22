@@ -1,6 +1,6 @@
 /**
  * Low-poly builders of the game worlds (three.js): islands, trees, rocks, crystals, clouds, text sprites, sky, particles.
- * Everything is drawn in code — no model, no texture file. Arabic and numbers are canvas text (shaped by the browser).
+ * Everything is drawn in code — no model, no texture file. Words and numbers are canvas text (drawn by the browser, left to right).
  */
 import * as THREE from 'three';
 
@@ -12,7 +12,7 @@ export const seeded = (seed) => {
   };
 };
 
-const FONT = "'Cairo', 'Tajawal', 'Noto Sans Arabic', system-ui, sans-serif";
+const FONT = "'Inter', system-ui, sans-serif";
 
 export const std = (color, extra = {}) =>
   new THREE.MeshStandardMaterial({ color, roughness: 0.85, metalness: 0, flatShading: true, ...extra });
@@ -49,7 +49,7 @@ export function textSprite(
     ctx.font = `${weight} ${px}px ${FONT}`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.direction = 'rtl';
+    ctx.direction = 'ltr';
     ctx.clearRect(0, 0, canvas.width, hh);
     if (bg) {
       ctx.fillStyle = bg;
@@ -493,7 +493,12 @@ export function makeAnvil() {
   const spark = new THREE.Mesh(new THREE.OctahedronGeometry(0.3, 0), glow(0xff8a1f, 0.7));
   spark.position.y = 1.6;
   g.add(spark);
-  const label = textSprite('ورشة القوالب', { h: 0.6, bg: 'rgba(12,28,60,0.82)', stroke: null, color: '#ffd9a0' });
+  const label = textSprite('L’atelier des moules', {
+    h: 0.6,
+    bg: 'rgba(12,28,60,0.82)',
+    stroke: null,
+    color: '#ffd9a0',
+  });
   label.position.y = 2.5;
   g.add(label);
   g.userData.spark = spark;

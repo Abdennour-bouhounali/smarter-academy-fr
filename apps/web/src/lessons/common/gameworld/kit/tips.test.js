@@ -15,21 +15,21 @@ function verify(tip) {
   }
 }
 
-describe('حيلة — the calculation shortcuts', () => {
+describe('Astuce — the calculation shortcuts', () => {
   it("gives the owner's example: 180 ÷ 19 through 19 × 10", () => {
     const t = divisionTip(180, 19);
     expect(t).toContain('19 \\times 10 = 190');
     expect(t).toContain('190 - 19 = 171');
-    expect(t).toContain('من 171 إلى 180 يبقى 9: الباقي 9.');
+    expect(t).toContain('De 171 à 180, il reste 9\u00a0: le reste est 9.');
   });
 
   it('leans on a round product: up, down, or a round part then the rest', () => {
     expect(divisionTip(756, 36)).toContain('36 \\times 20 = 720');
     expect(divisionTip(756, 36)).toContain('720 + 36 = 756');
-    expect(divisionTip(756, 36)).toContain('الباقي 0');
+    expect(divisionTip(756, 36)).toContain('le reste est 0');
     expect(divisionTip(360, 24)).toContain('24 \\times 10 = 240');
     expect(divisionTip(360, 24)).toContain('24 \\times 5 = 120');
-    expect(divisionTip(756, 32)).toContain('الباقي');
+    expect(divisionTip(756, 32)).toContain('le reste est');
     expect(divisionTip(152, 19)).toContain('190 - 19 = 171'); // 8 = 10 − 2: two steps down
     expect(divisionTip(152, 19)).toContain('171 - 19 = 152');
   });
@@ -43,8 +43,8 @@ describe('حيلة — the calculation shortcuts', () => {
         given += 1;
         verify(t);
         expect(t).not.toMatch(/undefined|NaN/);
-        if (t.includes('الباقي'))
-          expect(t.endsWith(`الباقي ${a % b}.`) || t.endsWith(`= ${a % b}$.`), `${a} ÷ ${b}: ${t}`).toBe(true);
+        if (t.includes('le reste'))
+          expect(t.endsWith(`le reste est ${a % b}.`) || t.endsWith(`= ${a % b}$.`), `${a} ÷ ${b}: ${t}`).toBe(true);
       }
     expect(given).toBeGreaterThan(1000);
     for (let x = 11; x <= 99; x += 1)
@@ -67,16 +67,16 @@ describe('حيلة — the calculation shortcuts', () => {
 
   it('recalls a rule of divisibility when the divisor has one', () => {
     expect(ruleTip(756, 9)).toContain('7 + 5 + 6 = 18');
-    expect(ruleTip(756, 9)).toContain('يقبل القسمة على 9');
-    expect(ruleTip(143, 3)).toContain('لا يقبل القسمة على 3');
-    expect(ruleTip(135, 5)).toContain('فيقبل 135 القسمة على 5');
+    expect(ruleTip(756, 9)).toContain('donc 756 est divisible par 9');
+    expect(ruleTip(143, 3)).toContain('donc 143 n’est pas divisible par 3');
+    expect(ruleTip(135, 5)).toContain('c’est 0 ou 5, donc 135 est divisible par 5');
     expect(ruleTip(48, 7)).toBe(null);
     expect(divisionTip(48, 9)).toContain('4 + 8 = 12'); // a small quotient, but a rule exists for 9
   });
 
   it('writes the product of an invoice the way it is done in the head', () => {
     expect(productTip(21, 1850)).toBe(
-      'أفكّك 21 إلى 20 + 1: $20 \\times 1850 + 1 \\times 1850 = 37000 + 1850 = 38850$.',
+      'Je décompose 21 en 20 + 1\u00a0: $20 \\times 1850 + 1 \\times 1850 = 37000 + 1850 = 38850$.',
     );
     expect(productTip(19, 150)).toBe('$19 \\times 150 = 20 \\times 150 - 1 \\times 150 = 3000 - 150 = 2850$.');
   });

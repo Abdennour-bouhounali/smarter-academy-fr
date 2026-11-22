@@ -16,7 +16,7 @@ const count = (html, hook) => (svgOf(html).match(new RegExp(`${hook}(?:="[^"]*")
 const nums = (html, attr) =>
   [...svgOf(html).matchAll(new RegExp(` ${attr}="([-\\d.]+)"`, 'g'))].map((m) => Number(m[1]));
 
-describe('مختبري — « ساحة العدد » draws what it reads', () => {
+describe('Mon labo — « La salle du nombre » draws what it reads', () => {
   it('opens on a square of side 2, the handle calling the hand, nothing said about the court yet — no raw formula', () => {
     const html = draw(30);
     expect(html).toContain(
@@ -26,12 +26,12 @@ describe('مختبري — « ساحة العدد » draws what it reads', () =>
     expect(html).toContain('data-ll-court-facts="open"');
     expect(factsOf(html)).not.toContain('√');
     expect(html).not.toContain('data-ll-court-bracket');
-    expect(html).toContain('ساحة مساحتها 30\u00a0بلاطة');
+    expect(html).toContain('Une salle de 30\u00a0dalles');
     expect(svgOf(html)).not.toMatch(/\\|\$/);
     // 26 tiles do not fit: the border of a square of 2 holds 5 of them, the 21 others are counted
     expect(html).toContain('data-out-drawn="5"');
     expect(html).toContain('data-ll-court-more="21"');
-    expect(html).toContain('خارج المربّع: 26\u00a0بلاطة');
+    expect(html).toContain('Hors du carré\u00a0: 26\u00a0dalles');
   });
 
   it('a square too big: its empty places are drawn, and the tiles fill it row by row', () => {
@@ -39,7 +39,7 @@ describe('مختبري — « ساحة العدد » draws what it reads', () =>
     expect(html).toContain('data-verdict="holes" data-inside="30" data-out="0" data-holes="6"');
     expect(count(html, 'data-ll-court-hole')).toBe(6);
     expect(count(html, 'data-ll-court-out')).toBe(0);
-    expect(html).toContain('خانات فارغة في المربّع: 6');
+    expect(html).toContain('Cases vides dans le carré\u00a0: 6');
     expect(html).toContain('data-ll-court-facts="open"'); // 6 tried, but not 5: the court is not settled
   });
 
@@ -49,7 +49,7 @@ describe('مختبري — « ساحة العدد » draws what it reads', () =>
     expect(count(html, 'data-ll-court-out')).toBe(5);
     expect(html).toContain('data-ll-court-facts="settled"');
     expect(html).toContain('data-ll-court-whole="5:5"');
-    expect(html).toContain('يبقى منها: 5\u00a0بلاطات');
+    expect(html).toContain('Il en reste\u00a0: 5\u00a0dalles');
     expect(html).toContain('data-ll-court-bracket="5:6"');
     expect(html).toContain('data-ll-court-near="5,47:5,48"');
     // 5,47 × 5,47 = 29,9209 < 30 < 30,0304 = 5,48 × 5,48
@@ -60,20 +60,22 @@ describe('مختبري — « ساحة العدد » draws what it reads', () =>
   it('a perfect square: the square fills it, √a = k, nothing between two numbers', () => {
     const html = draw(144, { s: 12, tried: [12] });
     expect(html).toContain('data-verdict="fits" data-inside="144" data-out="0" data-holes="0"');
-    expect(html).toContain('المربّع ممتلئ، ولا بلاطة خارجه');
+    expect(html).toContain('Le carré est plein, aucune dalle dehors');
     expect(html).toContain('data-ll-court-root="12"');
     expect(html).toContain('\\sqrt{144} = 12');
-    expect(html).toContain('لا يبقى منها شيء.');
+    expect(html).toContain('Il n’en reste rien.');
     expect(html).not.toContain('data-ll-court-bracket');
     expect(html).not.toContain('data-ll-court-near');
   });
 
-  it('the agreement of « بلاطة » with 1, 2, 3–10 and 11+', () => {
-    expect(draw(1)).toContain('ساحة مساحتها بلاطة واحدة');
-    expect(draw(2)).toContain('ساحة مساحتها بلاطتان');
-    expect(draw(6, { s: 2, tried: [2] })).toContain('خارج المربّع: بلاطتان');
-    expect(draw(7, { s: 2, tried: [2, 3] })).toContain('يبقى منها: 3\u00a0بلاطات');
-    expect(draw(140, { s: 11, tried: [11, 12] })).toContain('يبقى منها: 19\u00a0بلاطة');
+  it('the agreement of « dalle » with 1 (singular) and 2 and more (plural), the number always written', () => {
+    expect(draw(1)).toContain('Une salle de 1\u00a0dalle<');
+    expect(draw(2)).toContain('Une salle de 2\u00a0dalles');
+    expect(draw(6, { s: 2, tried: [2] })).toContain('Hors du carré\u00a0: 2\u00a0dalles');
+    expect(draw(5, { s: 2, tried: [2, 3] })).toContain('Il en reste\u00a0: 1\u00a0dalle<');
+    expect(draw(7, { s: 2, tried: [2, 3] })).toContain('Il en reste\u00a0: 3\u00a0dalles');
+    expect(draw(140, { s: 11, tried: [11, 12] })).toContain('Il en reste\u00a0: 19\u00a0dalles');
+    expect(draw(140, { s: 11, tried: [11, 12] })).not.toMatch(/[\u0600-\u06FF]/);
   });
 
   it('the biggest court (400) and the longest side (21) stay inside the drawing', () => {
@@ -100,7 +102,7 @@ describe('مختبري — « ساحة العدد » draws what it reads', () =>
   });
 });
 
-describe('مختبري — « ساحة العدد » reads the hand in ITS drawing', () => {
+describe('Mon labo — « La salle du nombre » reads the hand in ITS drawing', () => {
   it('a pointer on the ruler mark 12 is read at that mark (viewBox 560 × 370, not the kit default 940)', () => {
     // a drawing laid at 640 × 370 px from (100, 50): k = min(640/560, 370/370) = 1, centred 40 px from the left
     const svg = { getBoundingClientRect: () => ({ left: 100, top: 50, width: 640, height: 370 }) };

@@ -5,10 +5,10 @@ import ArcTape from './ArcTape';
 import { layoutArcTape, tapeLengths, validateArcTape, MIN_PART } from './arcTape';
 import { validateStatementFigure } from './statementFigure';
 
-const fig = (parts, whole, extra = {}) => ({ kind: 'tape', parts, whole, ariaLabel: 'مخطط بأقواس', ...extra });
+const fig = (parts, whole, extra = {}) => ({ kind: 'tape', parts, whole, ariaLabel: 'Schéma en barre', ...extra });
 
-describe('arcTape — « مخطط بأقواس »', () => {
-  it('draws the textbook example 24,3 + 5,9 = 30,2 closed, the first part proportional', () => {
+describe('arcTape — « schéma en barre »', () => {
+  it('draws the example 24,3 + 5,9 = 30,2 closed, the first part proportional', () => {
     const f = fig([{ label: '24,3', value: '24,3' }, { label: '5,9', value: 5.9 }], { label: '30,2', value: '30,2' });
     expect(validateArcTape(f)).toEqual([]);
     const L = layoutArcTape(f);
@@ -20,7 +20,7 @@ describe('arcTape — « مخطط بأقواس »', () => {
   });
 
   it('computes a missing part from the whole (? = 15,1 − 9,7)', () => {
-    const len = tapeLengths(fig([{ label: '؟', unknown: true }, { label: '9,7', value: '9,7' }], { label: '15,1', value: '15,1' }));
+    const len = tapeLengths(fig([{ label: '?', unknown: true }, { label: '9,7', value: '9,7' }], { label: '15,1', value: '15,1' }));
     expect(len.parts[0]).toBeCloseTo(5.4, 9);
     expect(len.closed).toBe(true);
   });
@@ -41,11 +41,12 @@ describe('arcTape — « مخطط بأقواس »', () => {
     expect(long.whole.x2).toBeLessThan(long.parts[1].x2);
   });
 
-  it('refuses a statement figure that is false, unlabelled, unknown-keyed or without an Arabic aria-label', () => {
+  it('refuses a statement figure that is false, unlabelled, unknown-keyed or without a French aria-label', () => {
     expect(validateArcTape(fig([{ label: '2', value: 2 }, { label: '3', value: 3 }], { label: '6', value: 6 }))).toHaveLength(1);
     expect(validateArcTape(fig([{ label: '' }, { label: '3' }], { label: '□' })).join()).toMatch(/label/);
     expect(validateArcTape({ ...fig([{ label: 'a' }, { label: 'b' }], { label: 'c' }), color: 'red' }).join()).toMatch(/clé inconnue/);
-    expect(validateArcTape(fig([{ label: 'a' }, { label: 'b' }], { label: 'c' }, { ariaLabel: 'tape' })).join()).toMatch(/ariaLabel/);
+    expect(validateArcTape(fig([{ label: 'a' }, { label: 'b' }], { label: 'c' }, { ariaLabel: '\u0645\u062b\u0644\u062b' })).join()).toMatch(/ariaLabel en français/);
+    expect(validateArcTape(fig([{ label: 'a' }, { label: 'b' }], { label: 'c' }, { ariaLabel: ' ' })).join()).toMatch(/ariaLabel en français/);
     expect(validateArcTape(fig([{ label: 'a' }], { label: 'c' })).join()).toMatch(/2 à 4/);
   });
 
@@ -53,12 +54,18 @@ describe('arcTape — « مخطط بأقواس »', () => {
     expect(validateStatementFigure(fig([{ label: '2,7', value: '2,7' }, { label: '□', unknown: true }], { label: '7,03', value: '7,03' }))).toEqual([]);
   });
 
-  it('renders LTR numbers, an RTL Arabic label, the unknown in rose and a unique hatch per tape', () => {
-    const f = fig([{ label: 'ما يملكه', value: 24.5 }, { label: '□', unknown: true }], { label: '36', value: 36 });
+  it('renders numbers in a fixed-width font, a word label in the text font, left to right, the unknown in rose and a unique hatch per tape', () => {
+    const f = fig([{ label: 'ce qu’il a', value: 24.5 }, { label: '□', unknown: true }], { label: '36', value: 36 });
     const html = renderToString(React.createElement('div', null, React.createElement(ArcTape, f), React.createElement(ArcTape, { ...f, parts: [{ label: '1', value: 1 }, { label: '2', value: 3 }] })));
-    expect(html).toContain('aria-label="مخطط بأقواس"');
+    expect(html).toContain('aria-label="Schéma en barre"');
     expect(html).toContain('data-tape-label="unknown"');
-    expect(html).toMatch(/direction:rtl/);
+    expect(html).not.toMatch(/direction:\s*rtl/);
+    // The word label is in the text font, the number in the fixed-width one, the first part on the LEFT.
+    expect(html).toMatch(/<text[^>]*data-tape-label="known">ce qu’il a<\/text>/);
+    expect(html).not.toMatch(/monospace[^>]*>ce qu’il a</);
+    expect(html).toMatch(/monospace[^>]*>36</);
+    const L = layoutArcTape(f);
+    expect(L.parts[0].labelX).toBeLessThan(L.parts[1].labelX);
     const ids = [...html.matchAll(/<pattern id="([^"]+)"/g)].map((m) => m[1]);
     expect(new Set(ids).size).toBe(ids.length);
   });

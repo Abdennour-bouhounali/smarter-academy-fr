@@ -19,7 +19,7 @@ export function useScrollLock(active) {
     html.style.overflow = 'hidden';
     body.style.overflow = 'hidden';
     // Un MARQUEUR pour la page : une séance est en cours. Il sert à retirer
-    // le chrome flottant de la page (« كرّاسي », « بطاقتي »), qui n'a pas sa
+    // le chrome flottant de la page (« Mon cahier », « Ma carte »), qui n'a pas sa
     // place sur un projecteur et recouvrirait la sortie. La classe vit sur
     // <body>, hors de la racine de présentation, donc le CSS de la page peut
     // la lire — ce qu'un état React interne ne permettrait pas.

@@ -1,14 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import {
+  CELLS,
   COINS,
   DIVISIONS,
-  DIVISIONS_GEN,
   PLANKS,
-  PLANKS_ACC,
   ROWS,
-  ROWS_ACC,
   SUBTRACTIONS,
-  SUBTRACTIONS_GEN,
   coinsLeft,
   commonDivisors,
   counted,
@@ -19,8 +16,7 @@ import {
   emptyCells,
   euclid,
   gcd,
-  listAr,
-  ltr,
+  listFr,
   pgcdTex,
   planks,
   planksFill,
@@ -76,69 +72,66 @@ describe('authoring/numbers.js — the arithmetic', () => {
 });
 
 describe('authoring/numbers.js — the formulas and the sentence', () => {
-  it('LaTeX with two backslashes; a list with a no-break space before its comma; an isolated equality', () => {
+  it('LaTeX with two backslashes; a French list « a, b et c »', () => {
     expect(pgcdTex(152, 95)).toBe('\\mathrm{PGCD}(152 ; 95)');
     expect(divTex({ a: 962, b: 296, q: 3, r: 74 })).toBe('962 = 296 \\times 3 + 74');
     expect(divisionTex(962, 296)).toBe('962 = 296 \\times 3 + 74');
     expect(subTex({ x: 259, y: 185, d: 74 })).toBe('259 - 185 = 74');
-    expect(listAr([1, 2, 4])).toBe('1\u00a0، 2\u00a0، 4');
-    expect(ltr('7 + 5 = 12')).toBe('\u20667 + 5 = 12\u2069');
+    expect(listFr([1, 2, 4, 8])).toBe('1, 2, 4 et 8');
+    expect(listFr([3, 9])).toBe('3 et 9');
+    expect(listFr([7])).toBe('7');
+    expect(listFr([])).toBe('');
   });
 });
 
-describe('authoring/numbers.js — the Arabic agreement', () => {
-  it('one, two, three to ten, eleven and more; past 100 the last two digits decide', () => {
-    expect([1, 2, 3, 10, 11, 99].map((n) => counted(n, COINS))).toEqual([
-      'قطعة واحدة',
-      'قطعتان',
-      '3 قطع',
-      '10 قطع',
-      '11 قطعة',
-      '99 قطعة',
-    ]);
-    expect([100, 101, 103, 110, 111, 1003, 1833].map((n) => counted(n, ROWS))).toEqual([
-      '100 سطر',
-      '101 سطر',
-      '103 أسطر',
-      '110 أسطر',
-      '111 سطرًا',
-      '1003 أسطر',
-      '1833 سطرًا',
-    ]);
-    // a table without a fifth form keeps its fourth for a round hundred
-    expect(counted(200, COINS)).toBe('200 قطعة');
+const NB = ' ';
+
+describe('authoring/numbers.js — the French agreement', () => {
+  it('0 and 1 take the singular, 2 and more the plural; a no-break space joins the number and its noun', () => {
+    expect([0, 1, 2, 3, 10, 11, 100, 101, 1833].map((n) => counted(n, COINS))).toEqual(
+      [
+        '0 pièce',
+        '1 pièce',
+        '2 pièces',
+        '3 pièces',
+        '10 pièces',
+        '11 pièces',
+        '100 pièces',
+        '101 pièces',
+        '1833 pièces',
+      ].map((s) => s.replace(' ', NB)),
+    );
+    expect(counted(3, ['fois', 'fois'])).toBe(`3${NB}fois`);
   });
 
-  it('every table of the world agrees with 1, 2, 3–10 and 11+', () => {
-    const forms = (t) => [1, 2, 5, 31].map((n) => counted(n, t));
-    expect(forms(PLANKS)).toEqual(['لوح واحد', 'لوحان', '5 ألواح', '31 لوحًا']);
-    expect(forms(PLANKS_ACC)).toEqual(['لوحًا واحدًا', 'لوحين', '5 ألواح', '31 لوحًا']);
-    expect(forms(DIVISIONS)).toEqual(['قسمة واحدة', 'قسمتان', '5 قسمات', '31 قسمة']);
-    expect(forms(DIVISIONS_GEN)).toEqual(['قسمة واحدة', 'قسمتين', '5 قسمات', '31 قسمة']);
-    expect(forms(SUBTRACTIONS)).toEqual(['عملية طرح واحدة', 'عمليتا طرح', '5 عمليات طرح', '31 عملية طرح']);
-    expect(forms(SUBTRACTIONS_GEN)).toEqual(['عملية طرح واحدة', 'عمليتي طرح', '5 عمليات طرح', '31 عملية طرح']);
-    expect(forms(ROWS_ACC)).toEqual(['سطرًا واحدًا', 'سطرين', '5 أسطر', '31 سطرًا']);
+  it('every table of the world agrees with 1 and with 2 and more', () => {
+    const forms = (t) => [1, 2, 31].map((n) => counted(n, t).replace(NB, ' '));
+    expect(forms(PLANKS)).toEqual(['1 planche', '2 planches', '31 planches']);
+    expect(forms(DIVISIONS)).toEqual(['1 division', '2 divisions', '31 divisions']);
+    expect(forms(SUBTRACTIONS)).toEqual(['1 soustraction', '2 soustractions', '31 soustractions']);
+    expect(forms(ROWS)).toEqual(['1 ligne', '2 lignes', '31 lignes']);
+    expect(forms(CELLS)).toEqual(['1 case', '2 cases', '31 cases']);
   });
 
   it('the sentences of the world: planks, coins left, empty cells, planks that fill', () => {
-    expect([planks(1), planks(2), planks(12), planks(444)]).toEqual(['لوح واحد', 'لوحان', '12 لوحًا', '444 لوحًا']);
-    expect([coinsLeft(0), coinsLeft(2), coinsLeft(14)]).toEqual([
-      'ولم يبقَ في الكيس شيء',
-      'وبقيت في الكيس قطعتان',
-      'وبقيت في الكيس 14 قطعة',
+    const plain = (s) => s.replaceAll(NB, ' ');
+    expect([planks(1), planks(2), planks(444)].map(plain)).toEqual(['1 planche', '2 planches', '444 planches']);
+    expect([coinsLeft(0), coinsLeft(1), coinsLeft(14)].map(plain)).toEqual([
+      'et la bourse est vide',
+      'et il reste 1 pièce dans la bourse',
+      'et il reste 14 pièces dans la bourse',
     ]);
-    expect([1, 2, 6, 28].map(emptyCells)).toEqual([
-      'بقيت خانة واحدة فارغة',
-      'بقيت خانتان فارغتان',
-      'بقيت 6 خانات فارغة',
-      'بقيت 28 خانة فارغة',
+    expect([0, 1, 2, 28].map(emptyCells).map(plain)).toEqual([
+      'il reste 0 case vide',
+      'il reste 1 case vide',
+      'il reste 2 cases vides',
+      'il reste 28 cases vides',
     ]);
-    expect([1, 2, 4, 47].map((q) => planksFill(q, 39))).toEqual([
-      'لوح واحد طوله 39 يملأ',
-      'لوحان طولهما 39 يملآن',
-      '4 ألواح طولها 39 تملأ',
-      '47 لوحًا طولها 39 تملأ',
+    expect([1, 2, 47].map((q) => planksFill(q, 39)).map(plain)).toEqual([
+      '1 planche de 39 remplit',
+      '2 planches de 39 remplissent',
+      '47 planches de 39 remplissent',
     ]);
-    expect(planksOf(73, 28)).toBe('73 لوحًا طولها 28');
+    expect(plain(planksOf(73, 28))).toBe('73 planches de 28');
   });
 });

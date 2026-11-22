@@ -8,7 +8,7 @@ import { useLearningViewer } from '../features/learning/learningViewer';
 import { lessonPackFlags } from './registry';
 import WorldLoading from './common/gameworld/WorldLoading';
 
-/** « جرّب كتلميذ »: a teacher's preview of the student's world (CLASS_SESSION.md §2). */
+/** « Essayer comme un élève »: a teacher's preview of the student's world (CLASS_SESSION.md §2). */
 const isPreview = () =>
   typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('apercu') === 'eleve';
 

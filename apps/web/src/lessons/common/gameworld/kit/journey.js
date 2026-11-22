@@ -1,9 +1,9 @@
 /**
  * THE STUDENT'S ROAD through a lesson — PURE, and it names no lesson: the two practice spaces and the progress page.
- *   « فضاء اللعب »     the gaming space first (the gate dash and the real-world cases — ladder.js);
- *   « فضاء الامتحان »  then the real one: a ladder of exam sittings (sitting.js). The game lives BETWEEN its levels
+ *   « Espace jeu »     the gaming space first (the gate dash and the real-world cases — ladder.js);
+ *   « Espace brevet »  then the real one: a ladder of exam sittings (sitting.js). The game lives BETWEEN its levels
  *                      (stars, a promotion), never inside a sitting.
- * `lessonProgress` is what the page « تقدّمي » shows, and `nextStep` the ONE thing to do now.
+ * `lessonProgress` is what the page « Ma progression » shows, and `nextStep` the ONE thing to do now.
  *
  * The lesson gives (`createJourney`):
  *   keys    the ids of its rules, in the order of the story — each is also a node of its practice ladder
@@ -65,7 +65,7 @@ export function createJourney({ keys, ladder, levels, stages, cards }) {
     };
   }
 
-  /** What « تقدّمي » shows: the road (five stations) and, per key, everything the student did with it. */
+  /** What « Ma progression » shows: the road (five stations) and, per key, everything the student did with it. */
   function lessonProgress({
     stage = 0,
     finished = false,
@@ -109,7 +109,7 @@ export function createJourney({ keys, ladder, levels, stages, cards }) {
       { id: 'exam', done: passed / levels.length, label: `${passed}\u00a0/\u00a0${levels.length}` },
       { id: 'know', done: read / cards, label: `${read}\u00a0/\u00a0${cards}` },
     ];
-    // « جاهزيّتي للامتحان »: only what was done as in an exam counts — first tries on paper, and the ladder. Never the game's stars.
+    // « Prêt pour le brevet »: only what was done as in an exam counts — first tries on paper, and the ladder. Never the game's stars.
     const tries = rows.reduce((t, r) => ({ ok: t.ok + r.exam.ok, n: t.n + r.exam.n }), { ok: 0, n: 0 });
     const readiness = Math.round(
       100 * (0.5 * (passed / levels.length) + 0.5 * (tries.n >= 4 ? tries.ok / tries.n : 0)),

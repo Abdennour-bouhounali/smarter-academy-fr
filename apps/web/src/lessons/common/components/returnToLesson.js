@@ -1,5 +1,5 @@
 /**
- * « العودة إلى الدرس » — l'élève quitte une leçon pour RÉVISER un prérequis (propriétaire, 2026-11-07) : on retient d'où il
+ * « Retour à la leçon » — l'élève quitte une leçon pour RÉVISER un prérequis (propriétaire, 2026-11-07) : on retient d'où il
  * vient, et chaque page de la leçon révisée lui montre UN bouton pour revenir. Pur (le stockage est passé en argument), testé.
  * sessionStorage : un retour vit le temps de l'onglet, jamais d'un appareil à l'autre.
  */

@@ -3,11 +3,11 @@ import { validateStatChart, layoutAxisChart, layoutPie, pieText, fmtNum } from '
 import { validateStatementFigure } from './statementFigure';
 
 const BAR = {
-  kind: 'chart', type: 'bar', ariaLabel: 'مخطط بالأعمدة لأعمار التلاميذ', xTitle: 'العمر', yTitle: 'عدد التلاميذ',
+  kind: 'chart', type: 'bar', ariaLabel: 'Diagramme en barres des âges des élèves', xTitle: 'Âge', yTitle: 'Nombre d’élèves',
   y: { max: 12, step: 2, minor: 2 }, bars: [{ label: '13', value: 5 }, { label: '14', value: 9 }, { label: '15', value: 4 }],
 };
-const HISTO = { kind: 'chart', type: 'histogram', ariaLabel: 'مدرج تكراري', edges: [20, 30, 40, 50], values: [4, 10, 6], y: { max: 10, step: 2 } };
-const PIE = { kind: 'chart', type: 'pie', ariaLabel: 'مخطط دائري', show: 'angle', parts: [{ label: 'كرة القدم', value: 12 }, { label: 'السباحة', value: 6 }, { label: 'الجري', value: 12 }] };
+const HISTO = { kind: 'chart', type: 'histogram', ariaLabel: 'Histogramme', edges: [20, 30, 40, 50], values: [4, 10, 6], y: { max: 10, step: 2 } };
+const PIE = { kind: 'chart', type: 'pie', ariaLabel: 'Diagramme circulaire', show: 'angle', parts: [{ label: 'Football', value: 12 }, { label: 'Natation', value: 6 }, { label: 'Course', value: 12 }] };
 
 describe('statChart — un diagramme d’énoncé qui se LIT', () => {
   it('des diagrammes corrects ne produisent aucune erreur', () => {
@@ -15,7 +15,7 @@ describe('statChart — un diagramme d’énoncé qui se LIT', () => {
     expect(validateStatChart(HISTO)).toEqual([]);
     expect(validateStatChart({ ...HISTO, polygon: true })).toEqual([]);
     expect(validateStatChart(PIE)).toEqual([]);
-    expect(validateStatChart({ kind: 'chart', type: 'line', ariaLabel: 'مضلع التكرارات المجمعة', x: { min: 20, max: 50, step: 10 }, points: [[20, 0], [30, 4], [40, 14], [50, 20]], y: { max: 20, step: 4, minor: 2 } })).toEqual([]);
+    expect(validateStatChart({ kind: 'chart', type: 'line', ariaLabel: 'Polygone des effectifs cumulés', x: { min: 20, max: 50, step: 10 }, points: [[20, 0], [30, 4], [40, 14], [50, 20]], y: { max: 20, step: 4, minor: 2 } })).toEqual([]);
   });
   it('refuse une hauteur qui ne tombe sur aucune ligne du quadrillage (illisible)', () => {
     const errs = validateStatChart({ ...BAR, bars: [{ label: '13', value: 5 }, { label: '14', value: 9.5 }] });
@@ -23,21 +23,23 @@ describe('statChart — un diagramme d’énoncé qui se LIT', () => {
     // …sauf si la valeur est écrite sur la barre.
     expect(validateStatChart({ ...BAR, values: true, bars: [{ label: '13', value: 5 }, { label: '14', value: 9.5 }] })).toEqual([]);
   });
-  it('refuse un plafond trop bas, une clé inconnue, un type inconnu, un ariaLabel non arabe', () => {
+  it('refuse un plafond trop bas, une clé inconnue, un type inconnu, un ariaLabel absent ou arabe', () => {
     expect(validateStatChart({ ...BAR, y: { max: 8, step: 2, minor: 2 } }).join('|')).toMatch(/dépasse y.max/);
     expect(validateStatChart({ ...BAR, colour: 'red' }).join('|')).toMatch(/clé inconnue « colour »/);
     expect(validateStatChart({ ...BAR, type: 'radar' }).join('|')).toMatch(/type inconnu/);
-    expect(validateStatChart({ ...BAR, ariaLabel: 'bars' }).join('|')).toMatch(/ariaLabel arabe/);
+    expect(validateStatChart({ ...BAR, ariaLabel: '\u0645\u062e\u0637\u0637' }).join('|')).toMatch(/ariaLabel en français/);
+    expect(validateStatChart({ ...BAR, ariaLabel: '  ' }).join('|')).toMatch(/ariaLabel en français/);
+    expect(validateStatChart({ ...BAR, ariaLabel: undefined }).join('|')).toMatch(/ariaLabel en français/);
     expect(validateStatChart({ ...BAR, y: { max: 11, step: 2 } }).join('|')).toMatch(/multiple de y.step/);
   });
-  it('une barre « missing » n’a pas de valeur ; un مضلّع ne peut pas dévoiler une classe manquante', () => {
+  it('une barre « missing » n’a pas de valeur ; un polygone ne peut pas dévoiler une classe manquante', () => {
     expect(validateStatChart({ ...BAR, bars: [...BAR.bars, { label: '16', missing: true }] })).toEqual([]);
     expect(validateStatChart({ ...BAR, bars: [...BAR.bars, { label: '16', missing: true, value: 3 }] }).join('|')).toMatch(/missing sans value/);
     expect(validateStatChart({ ...HISTO, values: [4, null, 6], missing: [1] })).toEqual([]);
     expect(validateStatChart({ ...HISTO, values: [4, null, 6], missing: [1], polygon: true }).join('|')).toMatch(/dévoilerait/);
   });
-  it('les abscisses d’un مضلّع sont croissantes et sur l’axe', () => {
-    const errs = validateStatChart({ kind: 'chart', type: 'line', ariaLabel: 'مضلع', x: { min: 0, max: 40, step: 10 }, points: [[0, 0], [50, 2], [30, 4]], y: { max: 10, step: 2 } });
+  it('les abscisses d’un polygone sont croissantes et sur l’axe', () => {
+    const errs = validateStatChart({ kind: 'chart', type: 'line', ariaLabel: 'Polygone', x: { min: 0, max: 40, step: 10 }, points: [[0, 0], [50, 2], [30, 4]], y: { max: 10, step: 2 } });
     expect(errs.join('|')).toMatch(/hors de l'axe/);
     expect(errs.join('|')).toMatch(/strictement croissantes/);
   });
@@ -57,7 +59,7 @@ describe('statChart — un diagramme d’énoncé qui se LIT', () => {
     expect(wide.xLabels.map((t) => t.row)).toEqual([0, 1, 0, 1, 0, 1, 0]);
     expect(layoutAxisChart(BAR).stagger).toBe(false);
   });
-  it('le مدرّج : rectangles CONTIGUS, bornes sous l’axe, مضلّع par les milieux et fermé sur l’axe', () => {
+  it('l’histogramme : rectangles CONTIGUS, bornes sous l’axe, polygone par les milieux et fermé sur l’axe', () => {
     const L = layoutAxisChart({ ...HISTO, polygon: true });
     expect(L.rects[0].x + L.rects[0].w).toBeCloseTo(L.rects[1].x, 6);
     expect(L.xLabels.map((t) => t.text)).toEqual(['20', '30', '40', '50']);
@@ -65,18 +67,18 @@ describe('statChart — un diagramme d’énoncé qui se LIT', () => {
     expect(L.points[0][1]).toBe(L.yb);
     expect(L.points[2][0]).toBeCloseTo(L.rects[1].x + L.rects[1].w / 2, 6);
   });
-  it('le مخطط دائري : angles proportionnels, nombres écrits selon show, petits secteurs hors du disque', () => {
+  it('le diagramme circulaire : angles proportionnels, nombres écrits selon show, petits secteurs hors du disque', () => {
     expect(pieText({ value: 6 }, 30, { show: 'angle' })).toBe('72°');
-    expect(pieText({ value: 6 }, 30, { show: 'percent' })).toBe('20%');
+    expect(pieText({ value: 6 }, 30, { show: 'percent' })).toBe('20\u00a0%');
     expect(pieText({ value: 6 }, 30, { show: 'angle', half: true })).toBe('36°');
-    expect(pieText({ value: 6, missing: true }, 30, { show: 'angle' })).toBe('؟');
+    expect(pieText({ value: 6, missing: true }, 30, { show: 'angle' })).toBe('?');
     const L = layoutPie(PIE);
     expect(L.sectors.map((s) => s.text)).toEqual(['144°', '72°', '144°']);
-    const tiny = layoutPie({ ...PIE, parts: [{ label: 'أ', value: 1 }, { label: 'ب', value: 29 }] });
+    const tiny = layoutPie({ ...PIE, parts: [{ label: 'A', value: 1 }, { label: 'B', value: 29 }] });
     expect(tiny.sectors[0].outside).toBe(true);
     // Noms dans les secteurs : tous ou aucun (le plus petit secteur ne peut pas tenir le sien → la légende seule).
     expect(tiny.sectors.every((sec) => !sec.nameInside)).toBe(true);
-    expect(layoutPie({ ...PIE, show: 'value', parts: [{ label: 'أ', value: 1 }, { label: 'ب', value: 1 }] }).sectors.every((sec) => sec.nameInside)).toBe(true);
+    expect(layoutPie({ ...PIE, show: 'value', parts: [{ label: 'A', value: 1 }, { label: 'B', value: 1 }] }).sectors.every((sec) => sec.nameInside)).toBe(true);
   });
   it('virgule décimale de la maison', () => {
     expect(fmtNum(2.5)).toBe('2,5');
@@ -85,6 +87,6 @@ describe('statChart — un diagramme d’énoncé qui se LIT', () => {
   it('l’aiguillage des figures d’énoncé : chart, space, plane', () => {
     expect(validateStatementFigure(BAR)).toEqual([]);
     expect(validateStatementFigure({ ...BAR, type: 'radar' }).join('|')).toMatch(/type inconnu/);
-    expect(validateStatementFigure({ points: { A: [0, 0], B: [1, 0] }, ariaLabel: 'قطعة' })).toEqual([]);
+    expect(validateStatementFigure({ points: { A: [0, 0], B: [1, 0] }, ariaLabel: 'Segment [AB]' })).toEqual([]);
   });
 });

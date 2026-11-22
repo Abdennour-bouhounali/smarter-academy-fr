@@ -5,8 +5,8 @@
  * they ask the pack. The parts:
  *   world      the content its game world is played with (`kit/LessonWorld › lesson`)
  *   knowledge  its knowledge sheets (`LESSON_KNOWLEDGE`)
- *   coach      { <الكفاءة>: <knowledge item id> } — the sheet the exam coach reminds
- *   script     « الدرس على السبّورة »: the steps of the class session
+ *   coach      { <learning point (savoir-faire)>: <knowledge item id> } — the sheet the exam coach reminds
+ *   script     « la leçon au tableau »: the steps of the class session
  *   memo       its written memo
  * Never in the entry bundle: the flags (`registry › lessonPackFlags`) answer « has it one? » without loading anything.
  */

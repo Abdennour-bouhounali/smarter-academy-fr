@@ -71,7 +71,7 @@ function Plaque({ T, area, cx, y, stamp = false, delay = 0 }) {
       data-rt-plaque={area}
     >
       <rect x={cx - w / 2} y={y} width={w} height="34" rx="8" />
-      <text x={cx} y={y + 24} textAnchor="middle" direction="rtl">
+      <text x={cx} y={y + 24} textAnchor="middle" direction="ltr">
         {label}
       </text>
     </g>
@@ -98,7 +98,7 @@ function RodPiece({ T, rod, x, y, grow = false, delay = 0 }) {
         x={x + D / 2}
         y={y + 36}
         textAnchor="middle"
-        direction={rod.root != null ? 'rtl' : 'ltr'}
+        direction="ltr"
       >
         {label}
       </text>
@@ -161,16 +161,21 @@ function Thing({ T, t, x, top }) {
 // ───────────────────────── the two stations ─────────────────────────
 const SW = 1000;
 const SH = 330;
-/** The two machines: « build » on the right (it comes first in Arabic reading), « take » on the left. */
-const MACHINE = { build: 520, take: 20 };
+/**
+ * The two machines, left to right: « build » on the left (it comes first in the reading), « take » on the right. Inside
+ * a station (470 units), things go in on its LEFT (the slot, `inn`), the machine stands in the middle, and what comes
+ * out lies on its RIGHT (the tray, `out`), under an arrow pointing right. Exported for the test that pins this order.
+ */
+export const ROUNDTRIP_LAYOUT = { machine: { build: 20, take: 520 }, inn: 0, body: 180, out: 300, zone: ZW };
+const MACHINE = ROUNDTRIP_LAYOUT.machine;
 const TOP = 104; // the top of what sits in a zone
 /** The scene is drawn at about 0.87 of its viewBox (18 rem high): 22 units ≈ 20 px at 1366 × 768. */
 const SCENE_REM = 18;
 
 function Station({ T, op, x, active, stage, now, ko }) {
   const title = op === 'build' ? T.buildName : T.takeName;
-  const out = { x: x, w: ZW }; // the output tray, on the left: things come out leftward
-  const inn = { x: x + 300 }; // the slot, on the right: things go in from the right
+  const out = { x: x + ROUNDTRIP_LAYOUT.out, w: ZW }; // the output tray, on the right: things come out rightward
+  const inn = { x: x + ROUNDTRIP_LAYOUT.inn }; // the slot, on the left: things go in from the left
   const running = active && stage === 'run';
   const shown = active && (stage === 'run' || stage === 'seen');
   return (
@@ -179,7 +184,7 @@ function Station({ T, op, x, active, stage, now, ko }) {
       data-rt-station={op}
       data-rt-station-state={active ? stage : 'idle'}
     >
-      <text className="rq-st__title" x={x + 230} y="34" textAnchor="middle" direction="rtl">
+      <text className="rq-st__title" x={x + 240} y="34" textAnchor="middle" direction="ltr">
         {title}
       </text>
       {/* the machine: a housing, a window that lights while it runs, its slot and its chute */}
@@ -201,7 +206,7 @@ function Station({ T, op, x, active, stage, now, ko }) {
       )}
       <rect className="rq-st__slot" x={x + 286} y="196" width="12" height="54" rx="4" />
       <rect className="rq-st__slot" x={x + 172} y="196" width="12" height="54" rx="4" />
-      <path className="rq-st__arrow" d={`M ${x + 168} 300 h -120 m 0 0 l 12 -8 m -12 8 l 12 8`} />
+      <path className="rq-st__arrow" d={`M ${x + 302} 300 h 120 m 0 0 l -12 -8 m 12 8 l -12 8`} />
 
       {active && (
         <g key={`in-${ko}`} className={`rq-st__in ${shown ? 'is-going' : ''}`} data-rt-in>

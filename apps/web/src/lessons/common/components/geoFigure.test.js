@@ -4,19 +4,20 @@ import { validateGeoFigure, layoutGeoFigure, rightAngleSquare, vectorArrow, figu
 const TRIANGLE = {
   points: { A: [0, 4], B: [-2, 0], C: [3, 0], M: [-1, 2], N: [1.5, 2] },
   segments: [['A', 'B'], ['A', 'C'], { from: 'B', to: 'C', label: '10' }, { from: 'M', to: 'N', label: 'x', arrows: 1 }],
-  ariaLabel: 'مثلث ABC و (MN) يوازي (BC)',
+  ariaLabel: 'Triangle ABC, (MN) parallèle à (BC)',
 };
 
 describe('geoFigure — la figure déclarative', () => {
   it('une figure correcte ne produit aucune erreur', () => {
     expect(validateGeoFigure(TRIANGLE)).toEqual([]);
   });
-  it('refuse une clé inconnue, un point inconnu, un ton inconnu et un ariaLabel non arabe', () => {
-    const errs = validateGeoFigure({ ...TRIANGLE, colour: 'red', segments: [['A', 'Z']], polygons: [{ points: ['A', 'B', 'C'], tone: 'pink' }], ariaLabel: 'triangle' });
+  it('refuse une clé inconnue, un point inconnu, un ton inconnu et un ariaLabel arabe ou vide', () => {
+    const errs = validateGeoFigure({ ...TRIANGLE, colour: 'red', segments: [['A', 'Z']], polygons: [{ points: ['A', 'B', 'C'], tone: 'pink' }], ariaLabel: '\u0645\u062b\u0644\u062b' });
     expect(errs.join('|')).toMatch(/clé inconnue « colour »/);
     expect(errs.join('|')).toMatch(/point inconnu « Z »/);
     expect(errs.join('|')).toMatch(/ton inconnu « pink »/);
-    expect(errs.join('|')).toMatch(/ariaLabel arabe/);
+    expect(errs.join('|')).toMatch(/ariaLabel en français/);
+    expect(validateGeoFigure({ ...TRIANGLE, ariaLabel: '' }).join('|')).toMatch(/ariaLabel en français/);
   });
   it('met la figure à l’échelle, y vers le bas, et sort les étiquettes du triangle', () => {
     const L = layoutGeoFigure(TRIANGLE, { size: 300, pad: 30 });
@@ -25,7 +26,7 @@ describe('geoFigure — la figure déclarative', () => {
     expect(L.width).toBeCloseTo(300 + 60, 5);
   });
   it('les droites prolongées entrent dans le cadre', () => {
-    const L = layoutGeoFigure({ points: { A: [0, 0], B: [1, 0] }, lines: [{ through: ['A', 'B'], extend: 1 }], ariaLabel: 'مستقيم' }, { size: 300, pad: 0 });
+    const L = layoutGeoFigure({ points: { A: [0, 0], B: [1, 0] }, lines: [{ through: ['A', 'B'], extend: 1 }], ariaLabel: 'Droite (AB)' }, { size: 300, pad: 0 });
     expect(L.width).toBeCloseTo(300, 5);
     expect(L.lineEnds({ through: ['A', 'B'], extend: 1 })[0][0]).toBeCloseTo(0, 5);
   });
@@ -34,7 +35,7 @@ describe('geoFigure — la figure déclarative', () => {
     expect(sq).toEqual([[4, 0], [4, 4], [0, 4]]);
   });
   it('vecteurs et quadrillage (unités 11–12)', () => {
-    const fig = { points: { A: [0, 0], B: [3, 1] }, vectors: [{ from: 'A', to: 'B', label: 'u' }], grid: true, ariaLabel: 'شعاع' };
+    const fig = { points: { A: [0, 0], B: [3, 1] }, vectors: [{ from: 'A', to: 'B', label: 'u' }], grid: true, ariaLabel: 'Vecteur' };
     expect(validateGeoFigure(fig)).toEqual([]);
     expect(validateGeoFigure({ ...fig, vectors: [{ from: 'A', to: 'Z' }] }).join('|')).toMatch(/point inconnu « Z »/);
     expect(validateGeoFigure({ ...fig, grid: { step: 0 } }).join('|')).toMatch(/grid/);
@@ -46,16 +47,16 @@ describe('geoFigure — la figure déclarative', () => {
     expect(Math.hypot(ar.shaft[1][0] - L.P.B[0], ar.shaft[1][1] - L.P.B[1])).toBeCloseTo(10, 5);
   });
   it('figureQuality : bande étroite et étiquettes qui se chevauchent (règle du 2026-10-04)', () => {
-    const strip = { points: { A: [0, 0], B: [0, 1], C: [0, 2], D: [0, 9], E: [0.2, 9.1] }, segments: [['A', 'D']], ariaLabel: 'شريط' };
+    const strip = { points: { A: [0, 0], B: [0, 1], C: [0, 2], D: [0, 9], E: [0.2, 9.1] }, segments: [['A', 'D']], ariaLabel: 'Bande' };
     const issues = figureQuality(strip);
     expect(issues.some((i) => i.startsWith('aspect'))).toBe(true);
     expect(issues.some((i) => i.includes('D / E'))).toBe(true);
-    const ok = { points: { A: [0, 0], B: [4, 0], C: [4, 3], D: [0, 3] }, polygons: [{ points: ['A', 'B', 'C', 'D'] }], grid: true, ariaLabel: 'مستطيل' };
+    const ok = { points: { A: [0, 0], B: [4, 0], C: [4, 3], D: [0, 3] }, polygons: [{ points: ['A', 'B', 'C', 'D'] }], grid: true, ariaLabel: 'Rectangle' };
     expect(figureQuality(ok)).toEqual([]);
   });
-  it('demi-cercles et cercles (unité 12, أدمج تعلّماتي) : le sens, le cadre, la validation', async () => {
+  it('demi-cercles et cercles (unité 12, synthèse) : le sens, le cadre, la validation', async () => {
     const { semicirclePoints, semicirclePath } = await import('./geoFigure');
-    const fig = { points: { A: [-2, 0], O: [0, 0], E: [2, 0], I: [-1, 0] }, arcs: [{ from: 'A', to: 'O', sweep: 'cw' }, { from: 'O', to: 'E', sweep: 'ccw', dashed: true }], circles: [{ center: 'I', through: 'A', dashed: true }], grid: true, axes: true, ariaLabel: 'نصفا دائرتين' };
+    const fig = { points: { A: [-2, 0], O: [0, 0], E: [2, 0], I: [-1, 0] }, arcs: [{ from: 'A', to: 'O', sweep: 'cw' }, { from: 'O', to: 'E', sweep: 'ccw', dashed: true }], circles: [{ center: 'I', through: 'A', dashed: true }], grid: true, axes: true, ariaLabel: 'Deux demi-cercles' };
     expect(validateGeoFigure(fig)).toEqual([]);
     expect(validateGeoFigure({ ...fig, arcs: [{ from: 'A', to: 'Z' }] }).join('|')).toMatch(/point inconnu « Z »/);
     expect(validateGeoFigure({ ...fig, arcs: [{ from: 'A', to: 'O', sweep: 'up' }] }).join('|')).toMatch(/sweep/);
@@ -70,7 +71,7 @@ describe('geoFigure — la figure déclarative', () => {
     expect(figureQuality(fig)).toEqual([]);
   });
   it('axes (unité 12) : le cadre contient l’origine, graduations entières sauf 0, aucune sous un nom de point', () => {
-    const fig = { points: { A: [2, 3], B: [5, 1], I: [1, 0] }, grid: true, axes: true, vectors: [{ from: 'A', to: 'B' }], ariaLabel: 'معلم' };
+    const fig = { points: { A: [2, 3], B: [5, 1], I: [1, 0] }, grid: true, axes: true, vectors: [{ from: 'A', to: 'B' }], ariaLabel: 'Repère' };
     expect(validateGeoFigure(fig)).toEqual([]);
     expect(validateGeoFigure({ ...fig, axes: { every: 0 } }).join('|')).toMatch(/axes/);
     const L = layoutGeoFigure(fig);
@@ -86,14 +87,14 @@ describe('geoFigure — la figure déclarative', () => {
     expect(layoutGeoFigure({ ...fig, axes: { every: 2 } }).axes.ticks.filter((t) => t.label && t.axis === 'x').map((t) => t.text)).toEqual(['2', '4']);
     expect(figureQuality(fig)).toEqual([]);
   });
-  it('arcs centrés, flèche d’angle, cercle de rayon donné (unité 13 « الدوران »)', async () => {
+  it('arcs centrés, flèche d’angle, cercle de rayon donné (unité 13 « la rotation »)', async () => {
     const { centeredArcPoints, centeredArc, angleArc, circleRadius } = await import('./geoFigure');
     const fig = {
       points: { O: [0, 0], M: [3, 0], N: [0, 3] },
       arcs: [{ center: 'O', from: 'M', to: 'N', sweep: 'ccw', arrow: true, label: '90°' }],
       angles: [{ at: 'O', from: 'M', to: 'N', arrow: true }],
       circles: [{ center: 'O', radius: 3, dashed: true }],
-      ariaLabel: 'دوران النقطة M حول O',
+      ariaLabel: 'Rotation du point M autour de O',
     };
     expect(validateGeoFigure(fig)).toEqual([]);
     expect(validateGeoFigure({ ...fig, arcs: [{ center: 'Z', from: 'M', to: 'N' }] }).join('|')).toMatch(/point inconnu « Z »/);
@@ -115,7 +116,7 @@ describe('geoFigure — la figure déclarative', () => {
     expect(figureQuality(fig)).toEqual([]);
   });
   it('une étiquette de longueur large s’écarte d’un segment vertical de sa demi-largeur (jamais sur le trait)', () => {
-    const fig = { points: { H: [0, 0], A: [0, 3], B: [-5, 0] }, segments: [{ from: 'H', to: 'A', label: '3,06 m' }, { from: 'B', to: 'H', label: '5' }], ariaLabel: 'مثلث قائم' };
+    const fig = { points: { H: [0, 0], A: [0, 3], B: [-5, 0] }, segments: [{ from: 'H', to: 'A', label: '3,06 m' }, { from: 'B', to: 'H', label: '5' }], ariaLabel: 'Triangle rectangle' };
     const L = layoutGeoFigure(fig);
     const [x] = L.segmentLabel('H', 'A', null, '3,06 m');
     const halfW = (6 * 7.4) / 2;
@@ -123,7 +124,7 @@ describe('geoFigure — la figure déclarative', () => {
     expect(Math.abs(L.segmentLabel('H', 'A', null, 'x')[0] - L.P.H[0])).toBeCloseTo(13, 6); // une étiquette courte ne bouge pas
   });
   it('le cadre (viewBox) couvre chaque étiquette de longueur, même écartée au-delà du bord', () => {
-    const fig = { points: { H: [0, 0], A: [0, 3], B: [-5, 0] }, segments: [{ from: 'H', to: 'A', label: '3,06 m' }], ariaLabel: 'مثلث قائم' };
+    const fig = { points: { H: [0, 0], A: [0, 3], B: [-5, 0] }, segments: [{ from: 'H', to: 'A', label: '3,06 m' }], ariaLabel: 'Triangle rectangle' };
     const L = layoutGeoFigure(fig);
     const [x] = L.segmentLabel('H', 'A', null, '3,06 m');
     const [vx, , vw] = L.viewBox;

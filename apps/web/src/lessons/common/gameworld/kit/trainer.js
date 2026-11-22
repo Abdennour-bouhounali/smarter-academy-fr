@@ -1,5 +1,5 @@
 /**
- * « تدرّب » inside « خريطة المعارف » — the FRAME of the trainer that opens ON a card (PURE; it names no lesson).
+ * « Entraîne-toi » inside the « fiche de connaissances » — the FRAME of the trainer that opens ON a card (PURE; it names no lesson).
  *
  * A session is six questions on the point of the card, in TWO FORMATS that alternate and drift toward the exam:
  *   game — the quick formats of the games: tap the right gate, true / false in one tap (small numbers, mental arithmetic);
@@ -19,7 +19,7 @@
  *   tf    { kind: 'tf', statement, truth, reasons? }   the answer is { truth, reason? }
  *   a form — every other kind: { form: { tip, model?, single?, review?, lines } }
  *     lines   [{ ltr?, tokens }] — a token is a sign or a word (string), { strong: n } a number of the statement,
- *             { text, rtl? } a word inside a line of numbers, { num: slot, label } a box to fill,
+ *             { text } a word inside a line of numbers (a legacy `rtl` flag is ignored), { num: slot, label } a box to fill,
  *             { choice: slot, options: [{ value, text, id? }] } a word to choose
  *     the answer is { [slot]: value }, or the value of ONE slot when `single` names it
  *     tip     which advice the paper gate gives (`tipDivision`, `tipWrite` of Paper.jsx › PT)

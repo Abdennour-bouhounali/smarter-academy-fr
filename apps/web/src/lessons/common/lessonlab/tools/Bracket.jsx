@@ -1,5 +1,5 @@
 /**
- * « مسطرة الحصر » — planks of length b laid end to end from 0 along a length a. The student's hand holds the END OF THE LAST
+ * « L’encadrement par planches » — planks of length b laid end to end from 0 along a length a. The student's hand holds the END OF THE LAST
  * PLANK (how many planks are laid); two buttons add or take one plank when there are too many to drag one by one. Planks
  * inside the length are blue, a plank that passes its end is rose, what is left is a dashed amber gap. Under the drawing, the
  * product the planks make, compared with a. Once the hand has laid BOTH the most planks that stay inside and the one more
@@ -10,6 +10,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { VW, VH, useDrag, useChime, Tool } from '../kit';
 import { bracketOf } from '../logic';
+import { counted, PLANKS } from '../../gameworld/kit/authoring/numbers';
 
 const X0 = 190;
 const X1 = 900;
@@ -72,9 +73,7 @@ export default function Bracket({ a, b, play, report, start = 1 }) {
       tone={found ? 'good' : tone}
       actions={
         <>
-          <button type="button" className="ll-btn" onClick={() => lay(x.n + 1)} disabled={x.n >= x.top} data-ll-more>
-            لوح آخر +
-          </button>
+          {/* one plank less on the left, one more on the right: the planks are laid left to right */}
           <button
             type="button"
             className="ll-btn ll-btn--ghost"
@@ -82,29 +81,34 @@ export default function Bracket({ a, b, play, report, start = 1 }) {
             disabled={x.n <= 0}
             data-ll-less
           >
-            − لوح
+            − une planche
+          </button>
+          <button type="button" className="ll-btn" onClick={() => lay(x.n + 1)} disabled={x.n >= x.top} data-ll-more>
+            une planche de plus +
           </button>
         </>
       }
       reading={
         <>
-          <span className="ll-chip">الألواح {x.n}</span>
+          <span className="ll-chip">{counted(x.n, PLANKS)}</span>
           {x.exact ? (
             <span className="ll-chip ll-chip--good" data-ll-left="0">
-              تملأ الطول تمامًا
+              La longueur est remplie exactement
             </span>
           ) : x.over ? (
             <span className="ll-chip ll-chip--warm" data-ll-over={x.over}>
-              تتجاوز الطول بـ {x.over}
+              La longueur est dépassée de {x.over}
             </span>
           ) : (
             <span className="ll-chip ll-chip--dim" data-ll-left={x.left}>
-              يبقى {x.left}
+              Il reste {x.left}
             </span>
           )}
           {found && (
             <span className="ll-chip ll-chip--good" data-ll-found>
-              {x.r === 0 ? `الألواح الكاملة ${x.q} هي اللازمة` : `الكاملة ${x.q} · اللازمة ${x.need}`}
+              {x.r === 0
+                ? `Planches entières : ${x.q}, juste ce qu’il faut`
+                : `Planches entières : ${x.q} · nécessaires : ${x.need}`}
             </span>
           )}
         </>
@@ -112,8 +116,8 @@ export default function Bracket({ a, b, play, report, start = 1 }) {
     >
       <svg ref={svg} viewBox={`0 0 ${VW} ${VH}`} data-ll-bracket-tool data-n={x.n} data-q={x.q} data-over={x.over}>
         {/* the length a */}
-        <text x={X0 - 14} y={Y_GAP + 7} textAnchor="end" fontSize="18" direction="rtl" style={{ fill: '#e0f2fe' }}>
-          الطول {a}
+        <text x={X0 - 14} y={Y_GAP + 7} textAnchor="end" fontSize="18" style={{ fill: '#e0f2fe' }}>
+          Longueur {a}
         </text>
         <rect
           x={X0}
@@ -138,8 +142,8 @@ export default function Bracket({ a, b, play, report, start = 1 }) {
           {a}
         </text>
         {/* the planks the hand lays */}
-        <text x={X0 - 14} y={Y_PLANK + 7} textAnchor="end" fontSize="18" direction="rtl" style={{ fill: '#e0f2fe' }}>
-          طول اللوح {b}
+        <text x={X0 - 14} y={Y_PLANK + 7} textAnchor="end" fontSize="18" style={{ fill: '#e0f2fe' }}>
+          Planche de {b}
         </text>
         <g data-ll-planks-laid={x.n}>
           {x.n <= EACH ? (

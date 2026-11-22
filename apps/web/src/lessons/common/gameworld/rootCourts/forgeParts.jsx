@@ -3,7 +3,7 @@
  *   Mirror({ c, stage, fast, tight })  the case in the mirror, drawn by THE court (courtParts.jsx › Court): `ask` the
  *                                      platform hovering, `build` it lowers, `done` what the world did — the band, the
  *                                      overhang or the ride, the exact difference written, the lens when it is thin
- *   Line({ c, children })              one line of evidence: a thumbnail of the court, « ساحة 36 · مقياس 6 » (or the
+ *   Line({ c, children })              one line of evidence: a thumbnail of the court, « salle 36 · toise 6 » (or the
  *                                      case's own `head`), what the world did, the case's `tag`; `children` = what the
  *                                      student's rule says of it while the mirror tests it
  *   beats(c)                           four strokes: the mirror waits 4 × 110 + 520 = 960 ms, the lowering takes 900
@@ -15,10 +15,11 @@ import { Court, CourtMini } from './courtParts';
 import { caseId, runCase } from './ruleForge';
 import { isWall, rodTex, rodText } from './logic';
 import MathText from '../../components/MathText';
+import { DRAWING_TEXT } from './strings';
 import './court.css';
 
-const WORD = { ride: 'تركب', band: 'يبقى شريط', jam: 'تعلق' };
-const MIRRORED = 'بنته المرآة';
+const WORD = DRAWING_TEXT.kind;
+const MIRRORED = DRAWING_TEXT.mirrored;
 
 /** The case in the mirror: the court of `c.a` and the platform on the rod `c.s`. A case may force the lens (`c.zoom`). */
 export function Mirror({ c, stage, fast = false, tight = false }) {
@@ -65,12 +66,12 @@ export function Line({ c, children }) {
             <span className="crt-line__name">{c.head}</span>
           ) : (
             <>
-              <span>ساحة</span>
+              <span>{DRAWING_TEXT.court}</span>
               <strong dir="ltr">
                 <LineNum text={c.a} />
               </strong>
               <span className="crt-line__dot">·</span>
-              <span>مقياس</span>
+              <span>{DRAWING_TEXT.rod}</span>
               {/* a wall is written with a real radical (its bar over the number), any other rod as its number */}
               <strong dir="ltr">
                 {isWall(c.s) ? <MathText>{`$${rodTex(c.s)}$`}</MathText> : <LineNum text={rodText(c.s)} />}

@@ -55,6 +55,8 @@ describe('the investigation screen `lists`', () => {
     expect(out).toContain('data-iq="lists"');
     expect(out).toContain('data-iq-stage="build"');
     expect(out).toContain('data-iq-side="a"');
+    // the labels of the two lists start on the LEFT, where the lists start (the French screen, 2026-11-22)
+    expect(out.match(/class="iq-li-label[^"]*" x="40"/g)).toHaveLength(2);
     expect(out).toContain('lead(32,44)');
     expect(out).toContain('goal(32,44)');
     expect(out).toContain('data-iq-strip="a"');

@@ -8,6 +8,7 @@
  */
 import { EVIDENCE_MAX, slot } from '../kit/forge';
 import { divide } from './logic';
+import { counted, CELLS } from '../kit/authoring/numbers';
 
 // ───────────────────────────── a bridge as a case ─────────────────────────────
 
@@ -46,40 +47,43 @@ export const SMALL = (() => {
 const fresh = (rows) => (c) => !rows.some((row) => sameCase(row, c));
 export const pickWith = (rand) => (list) => list[Math.floor(rand() * list.length)];
 
-/** A length in cells, after « من »: « 7 خانات », « 15 خانة ». */
-export const cellsOf = (n) => (n <= 10 ? `${n} خانات` : `${n} خانة`);
-const left = (r) => (r === 1 ? 'بقيت خانة واحدة' : r === 2 ? 'بقيت خانتان' : `بقيت ${r} خانات`);
+/** A length in cells, after « de »: « 7 cases », « 15 cases » (« un fossé de 15 cases »). */
+export const cellsOf = (n) => counted(n, CELLS);
+const left = (r) => `Il reste ${counted(r, CELLS)}`;
 /** The wording of a bridge as a case — shared by the forges of this world; a forge overrides what its rule changes. */
 export const BRIDGE_TEXT = {
-  title: 'مرآة الجزيرة',
-  sub: 'اصنع مفتاحك: قاعدة تصمد أمام المرآة.',
-  log: 'سجلّ عبورك',
-  ask: (c) => `هوّة من ${cellsOf(c.a)}، ولوح طوله ${c.b}. هل يثبت الجسر؟`,
-  yes: 'يثبت',
-  no: 'ينهار',
+  title: 'Le miroir de l’île',
+  sub: 'Forge ta clé : une règle qui résiste au miroir.',
+  log: 'Ton carnet de traversée',
+  ask: (c) => `Un fossé de ${cellsOf(c.a)} et une planche de ${c.b}. Le pont tient-il ?`,
+  yes: 'Il tient',
+  no: 'Il s’effondre',
   fact: (c) =>
     c.held
-      ? 'لم تبقَ أيّ خانة: الجسر ثبت.'
+      ? 'Aucune case ne reste : le pont a tenu.'
       : c.b > c.a
-        ? 'اللوح أطول من الهوّة: الجسر انهار.'
-        : `${left(c.r)}: الجسر انهار.`,
+        ? 'La planche est plus longue que le fossé : le pont s’est effondré.'
+        : `${left(c.r)} : le pont s’est effondré.`,
   eq: (c) => `$${c.a} = ${c.b} \\times ${c.q} + \\textcolor{${c.held ? '#34d399' : '#fbbf24'}}{${c.r}}$`,
-  next: 'جسر آخر',
-  frame: 'يثبت الجسر عندما:',
-  buildLead: 'اختر بطاقتين. المرآة لا تصدّق أحدًا: ستجرّب قاعدتك على جسورك.',
-  testing: 'المرآة تمرّ على جسورك واحدًا واحدًا…',
-  says: (yes) => `قاعدتك: ${yes ? 'يثبت' : 'ينهار'}`,
+  next: 'Un autre pont',
+  frame: 'Le pont tient quand :',
+  buildLead: 'Choisis deux cartes. Le miroir ne croit personne : il va essayer ta règle sur tes ponts.',
+  testing: 'Le miroir passe sur tes ponts, un par un…',
+  says: (yes) => `Ta règle : ${yes ? 'il tient' : 'il s’effondre'}`,
   refuted: (m) =>
-    `قاعدتك تقول إنّ جسر ${m.a} باللوح ${m.b} ${m.says ? 'يثبت' : 'ينهار'} — لكنّك رأيته ${m.held ? 'يثبت' : 'ينهار'}.`,
-  agreed: 'قاعدتك توافق كلّ الجسور التي رأيتَها. الآن المرآة تتحدّاها بجسر جديد.',
-  attack: (c) => `المرآة تتحدّى قاعدتك: هوّة من ${cellsOf(c.a)}، ولوح طوله ${c.b}. ماذا تقول قاعدتك؟`,
-  fire: 'ابنِ الجسر',
-  survived: 'صمدت قاعدتك: الجسر فعل ما قالته.',
-  broken: (yes) => `قاعدتك انكسرت هنا: قالت « ${yes ? 'يثبت' : 'ينهار'} »، والجسر ${yes ? 'انهار' : 'ثبت'}.`,
-  wordsHint: 'مثال: الجسر يثبت إذا…',
-  compare: (cases) => `قارن هذين الجسرين: الهوّة نفسها (${cases[0].a}). ماذا بقي في كلّ مرّة؟`,
-  experiment: 'انظر جيّدًا: اللوح نفسه، هوّة ثمّ التي بعدها. ماذا بقي في كلّ مرّة؟',
-  useOk: 'مفتاحك يعمل حتّى حيث لا تعدّ!',
+    `Ta règle dit que le pont de ${cellsOf(m.a)} avec la planche de ${m.b} ${m.says ? 'tient' : 's’effondre'}, mais tu l’as vu ${m.held ? 'tenir' : 's’effondrer'}.`,
+  agreed:
+    'Ta règle est d’accord avec tous les ponts que tu as vus. Maintenant, le miroir la met au défi avec un nouveau pont.',
+  attack: (c) =>
+    `Le miroir met ta règle au défi : un fossé de ${cellsOf(c.a)} et une planche de ${c.b}. Que dit ta règle ?`,
+  fire: 'Construis le pont',
+  survived: 'Ta règle a tenu : le pont a fait ce qu’elle disait.',
+  broken: (yes) =>
+    `Ta règle a cédé ici : elle disait « ${yes ? 'il tient' : 'il s’effondre'} », et le pont ${yes ? 's’est effondré' : 'a tenu'}.`,
+  wordsHint: 'Exemple : le pont tient si…',
+  compare: (cases) => `Compare ces deux ponts : le même fossé (${cases[0].a}). Que reste-t-il chaque fois ?`,
+  experiment: 'Regarde bien : la même planche, un fossé puis le suivant. Que reste-t-il chaque fois ?',
+  useOk: 'Ta clé marche même là où tu ne comptes pas !',
 };
 
 // ───────────────────── the law of the world: the remainder ─────────────────────
@@ -89,30 +93,42 @@ export const BRIDGE_TEXT = {
 export const QUANTITIES = [
   {
     id: 'r',
-    label: 'باقي قسمة طول الهوّة على طول اللوح',
-    short: (a, b) => `باقي قسمة ${a} على ${b}`,
+    label: 'le reste de la division de la longueur du fossé par la longueur de la planche',
+    short: (a, b) => `Le reste de la division de ${a} par ${b}`,
     of: (a, b) => a % b,
   },
   {
     id: 'q',
-    label: 'حاصل قسمة طول الهوّة على طول اللوح',
-    short: (a, b) => `حاصل قسمة ${a} على ${b}`,
+    label: 'le quotient de la division de la longueur du fossé par la longueur de la planche',
+    short: (a, b) => `Le quotient de la division de ${a} par ${b}`,
     of: (a, b) => Math.floor(a / b),
   },
-  { id: 'b', label: 'طول اللوح', short: () => 'طول اللوح', of: (a, b) => b },
-  { id: 'a', label: 'طول الهوّة', short: () => 'طول الهوّة', of: (a) => a },
+  { id: 'b', label: 'la longueur de la planche', short: () => 'La longueur de la planche', of: (a, b) => b },
+  { id: 'a', label: 'la longueur du fossé', short: () => 'La longueur du fossé', of: (a) => a },
 ];
 export const CONDITIONS = [
-  { id: 'zero', label: 'يساوي 0', yes: 'يساوي 0', no: 'لا يساوي 0', test: (v) => v === 0 },
-  { id: 'even', label: 'عدد زوجي', yes: 'عدد زوجي', no: 'عدد فردي', test: (v) => v % 2 === 0 },
+  { id: 'zero', label: 'est égal à 0', yes: 'est égal à 0', no: 'n’est pas égal à 0', test: (v) => v === 0 },
+  {
+    id: 'even',
+    label: 'est un nombre pair',
+    yes: 'est un nombre pair',
+    no: 'est un nombre impair',
+    test: (v) => v % 2 === 0,
+  },
   {
     id: 'lessB',
-    label: 'أصغر من طول اللوح',
-    yes: 'أصغر من طول اللوح',
-    no: 'ليس أصغر من طول اللوح',
+    label: 'est plus petit que la longueur de la planche',
+    yes: 'est plus petit que la longueur de la planche',
+    no: 'n’est pas plus petit que la longueur de la planche',
     test: (v, a, b) => v < b,
   },
-  { id: 'gt1', label: 'أكبر من 1', yes: 'أكبر من 1', no: 'ليس أكبر من 1', test: (v) => v > 1 },
+  {
+    id: 'gt1',
+    label: 'est plus grand que 1',
+    yes: 'est plus grand que 1',
+    no: 'n’est pas plus grand que 1',
+    test: (v) => v > 1,
+  },
 ];
 const Q = Object.fromEntries(QUANTITIES.map((x) => [x.id, x]));
 const C = Object.fromEntries(CONDITIONS.map((x) => [x.id, x]));
@@ -120,12 +136,12 @@ const C = Object.fromEntries(CONDITIONS.map((x) => [x.id, x]));
 /** What the student's rule says of a bridge: « it holds » (true) or « it crumbles » (false). */
 export const ruleSays = (rule, a, b) => C[rule.c].test(Q[rule.q].of(a, b), a, b);
 export const isTheRule = (rule) => rule?.q === 'r' && rule?.c === 'zero';
-export const ruleText = (rule) => `يثبت الجسر عندما: ${Q[rule.q].label} ${C[rule.c].label}.`;
-/** His rule applied to one bridge, in words: « باقي قسمة 18 على 4 هو 2، و 2 لا يساوي 0: قاعدتك تقول إنّ الجسر ينهار ». */
+export const ruleText = (rule) => `Le pont tient quand : ${Q[rule.q].label} ${C[rule.c].label}.`;
+/** His rule applied to one bridge, in words: « Le reste de la division de 18 par 4 est 2, et 2 n'est pas égal à 0 : ta règle dit que le pont s'effondre. » */
 export function explain(rule, a, b) {
   const v = Q[rule.q].of(a, b);
   const yes = ruleSays(rule, a, b);
-  return `${Q[rule.q].short(a, b)} هو ${v}، و ${v} ${yes ? C[rule.c].yes : C[rule.c].no}: قاعدتك تقول إنّ الجسر ${yes ? 'يثبت' : 'ينهار'}.`;
+  return `${Q[rule.q].short(a, b)} est ${v}, et ${v} ${yes ? C[rule.c].yes : C[rule.c].no} : ta règle dit que le pont ${yes ? 'tient' : 's’effondre'}.`;
 }
 
 /** The rule run on the evidence, in order: each row agrees or not; `bad` = the first row that contradicts it (or −1). */
@@ -248,8 +264,8 @@ export const remainderForge = (key, text = {}) => ({
   key,
   logs: true,
   slots: [
-    { id: 'q', label: 'ماذا أقرأ؟', options: QUANTITIES.map(({ id, label }) => ({ id, label })) },
-    { id: 'c', label: 'كيف يجب أن يكون؟', options: CONDITIONS.map(({ id, label }) => ({ id, label })) },
+    { id: 'q', label: 'Qu’est-ce que je lis ?', options: QUANTITIES.map(({ id, label }) => ({ id, label })) },
+    { id: 'c', label: 'Comment doit-il être ?', options: CONDITIONS.map(({ id, label }) => ({ id, label })) },
   ],
   says: (rule, c) => ruleSays(rule, c.a, c.b),
   isTheRule,
@@ -266,7 +282,7 @@ export const remainderForge = (key, text = {}) => ({
     lines: (c) => [
       {
         dir: 'ltr',
-        tokens: [String(c.a), '=', String(c.b), '×', slot('q', 'حاصل القسمة', 3), '+', slot('r', 'الباقي', 2)],
+        tokens: [String(c.a), '=', String(c.b), '×', slot('q', 'quotient', 3), '+', slot('r', 'reste', 2)],
       },
     ],
     check: checkDivision,
@@ -274,11 +290,11 @@ export const remainderForge = (key, text = {}) => ({
   text: {
     ...BRIDGE_TEXT,
     tryKey: (c) =>
-      `جرّب مفتاحك حيث لا تستطيع العدّ: هوّة من ${cellsOf(c.a)}، ولوح طوله ${c.b}. المرآة لا تبني هذه المرّة.`,
+      `Essaie ta clé là où tu ne peux pas compter : un fossé de ${cellsOf(c.a)} et une planche de ${c.b}. Cette fois, le miroir ne construit pas.`,
     use: {
-      sum: 'المساواة غير صحيحة: احسب الجداء ثمّ أضف الباقي.',
-      big: 'الباقي يجب أن يكون أصغر من طول اللوح.',
-      verdict: 'القسمة صحيحة. انظر إلى الباقي: ماذا تقول قاعدتك؟',
+      sum: 'L’égalité ne tombe pas juste : calcule le produit, puis ajoute le reste.',
+      big: 'Le reste doit être plus petit que la longueur de la planche.',
+      verdict: 'La division est juste. Regarde le reste : que dit ta règle ?',
     },
     ...text,
   },

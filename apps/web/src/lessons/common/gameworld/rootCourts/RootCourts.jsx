@@ -1,5 +1,5 @@
 /**
- * « قصر الساحات » on screen — what this world gives the kit's shell (`kit/LessonWorld.jsx` lists every field): its HUD
+ * « Le palais des dalles » on screen — what this world gives the kit's shell (`kit/LessonWorld.jsx` lists every field): its HUD
  * (the instruction that stays, the rod in his hand, what the platform did), the card that asks a prediction before a
  * platform is lowered, and the rule forge with this world's mirror and experiments. It names no lesson.
  */
@@ -31,7 +31,7 @@ function RodChip({ rod, game }) {
       </span>
       <span className="rc-rod__cell">
         <small>{yard ? T.hud.crate : T.hud.court}</small>
-        <b>{rod.a == null ? '؟' : tiles(rod.a)}</b>
+        <b>{rod.a == null ? '?' : tiles(rod.a)}</b>
       </span>
       {rod.covers != null && (
         <span className="rc-rod__cell rc-rod__cell--math" data-rc-covers={rod.covers}>
@@ -84,7 +84,7 @@ function Lowered({ eq, verdict, game }) {
         )}
         <div className="di-eq__legend">
           <span>
-            {eq.yard ? game.T.hud.crate : game.T.hud.court}: {eq.a == null ? '؟' : tiles(eq.a)}
+            {eq.yard ? game.T.hud.crate : game.T.hud.court} : {eq.a == null ? '?' : tiles(eq.a)}
           </span>
         </div>
       </div>
@@ -153,7 +153,7 @@ function Hud({ s, game }) {
 
 /**
  * THE FINAL MISSION of a lesson (`story.mission`): one written problem on the last terrace. Each box is named by the
- * words beside it; « تحقّق » answers with a FACT of the world about the first line that does not hold yet.
+ * words beside it; « Vérifie » answers with a FACT of the world about the first line that does not hold yet.
  */
 function Mission({ game }) {
   const m = game.story.mission;
@@ -229,7 +229,7 @@ const WORLD = {
       return (
         <Card>
           <p className="di-card__eyebrow">
-            {game.T.hud.court}: {tiles(o.a)}
+            {game.T.hud.court} : {tiles(o.a)}
           </p>
           <h2>{game.T.guess.ask}</h2>
           <div className="rc-mission__go">

@@ -1,11 +1,11 @@
 /**
- * « مختبري » — THE LAB OF A LESSON (2026-11-16). One lab for every lesson of the cycle.
+ * « Mon labo » — THE LAB OF A LESSON (2026-11-16). One lab for every lesson of the cycle.
  *
  * The student TOUCHES the mathematics of the lesson: each instrument is a drawing whose handle is a mathematical variable
  * (a wall that sets the divisor, a flag that sets the number, a padlock of digits …). The bench shows the instruments of
- * THIS lesson; « خزانتي » holds the instruments of every lesson BEFORE it, of every grade — never one of a later lesson
- * (`registry.js › toolsFor`). The two numbers « أعدادي » are SHARED: the student takes his numbers from one instrument to
- * the next and sees the same fact in another form. Every instrument has « جرّب »: things to MAKE, ticked when made.
+ * THIS lesson; « Mon armoire » holds the instruments of every lesson BEFORE it, of every grade — never one of a later lesson
+ * (`registry.js › toolsFor`). The two numbers « Mes nombres » are SHARED: the student takes his numbers from one instrument to
+ * the next and sees the same fact in another form. Every instrument has « Essaie »: things to MAKE, ticked when made.
  *
  * Nothing scrolls: the page is designed at 1280 × 720 and zoomed to the window. Used by the game world of a lesson
  * (`inline`: it is already inside a full-screen root) and by any lesson page (`?lab=1`, portal to the body).
@@ -35,22 +35,22 @@ const load = () => {
   }
 };
 const L = {
-  title: 'مختبري',
-  mine: 'أدوات هذا الدرس',
-  picked: 'من خزانتي',
-  cabinet: 'خزانتي',
-  cabinetSub: (n) => `أدوات الدروس السابقة (${n})`,
-  cabinetTitle: 'خزانتي: أدوات كلّ ما درستُه',
-  cabinetHint: 'اختر أداة: توضع على طاولتك بأعدادك نفسها.',
-  fromLesson: 'من درس:',
-  numbers: 'أعدادي',
-  dice: 'أعداد أخرى',
-  quests: 'جرّب',
-  close: 'إغلاق',
-  sound: 'الصوت',
-  noMine: 'لهذا الدرس أدوات الدروس السابقة: افتح خزانتك.',
-  loading: 'تُجهَّز الأداة…',
-  stars: 'مهمّات المختبر',
+  title: 'Mon labo',
+  mine: 'Les outils de cette leçon',
+  picked: 'Pris dans mon armoire',
+  cabinet: 'Mon armoire',
+  cabinetSub: (n) => `Les outils des leçons d’avant (${n})`,
+  cabinetTitle: 'Mon armoire : les outils de tout ce que j’ai étudié',
+  cabinetHint: 'Choisis un outil : il se pose sur ta table, avec tes nombres.',
+  fromLesson: 'De la leçon :',
+  numbers: 'Mes nombres',
+  dice: 'D’autres nombres',
+  quests: 'Essaie',
+  close: 'Fermer',
+  sound: 'Le son',
+  noMine: 'Cette leçon se sert des outils des leçons d’avant : ouvre ton armoire.',
+  loading: 'L’outil se prépare…',
+  stars: 'Les défis du labo',
 };
 
 function NumberBox({ label, value, range, onChange, id }) {
@@ -66,7 +66,7 @@ function NumberBox({ label, value, range, onChange, id }) {
   return (
     <label className="ll-num" data-ll-num={id}>
       <span>{label}</span>
-      <span className="ll-num__box" dir="ltr">
+      <span className="ll-num__box">
         <button
           type="button"
           onClick={() => onChange(Math.max(range[0], value - 1))}
@@ -189,9 +189,9 @@ function Cabinet({ cabinet, onPick, onClose, play }) {
               play('ui');
             }}
           >
-            <ChevronRight size={20} />
+            <ChevronLeft size={20} />
           </button>
-          <span dir="ltr">
+          <span>
             {page + 1}
             {'\u00a0/\u00a0'}
             {pages}
@@ -205,7 +205,7 @@ function Cabinet({ cabinet, onPick, onClose, play }) {
               play('ui');
             }}
           >
-            <ChevronLeft size={20} />
+            <ChevronRight size={20} />
           </button>
         </footer>
       )}
@@ -214,8 +214,8 @@ function Cabinet({ cabinet, onPick, onClose, play }) {
 }
 
 /**
- * `earlierOnly`: the lab is opened BEFORE the lesson (« عُدّة الانطلاق »): only the instruments of the lessons before it.
- * The lesson's own instruments (« أدوات هذا الدرس ») are not listed and not reachable — they would name what the student
+ * `earlierOnly`: the lab is opened BEFORE the lesson (« L’échauffement »): only the instruments of the lessons before it.
+ * The lesson's own instruments (« Les outils de cette leçon ») are not listed and not reachable — they would name what the student
  * has not discovered yet — and an `initialTool` that is one of them is ignored.
  */
 export default function LessonLab({
@@ -229,7 +229,7 @@ export default function LessonLab({
   const lab = useMemo(() => toolsFor(lessonCode, { earlierOnly }), [lessonCode, earlierOnly]);
   const saved = useRef(load()).current;
   const [nums, setNums] = useState({ a: saved.a ?? 42, b: saved.b ?? 5 });
-  // `initialTool`: another page (« عُدّة الانطلاق ») opens the lab ON one instrument the lesson has reached — put on the bench like a pick from the cabinet
+  // `initialTool`: another page (« L’échauffement ») opens the lab ON one instrument the lesson has reached — put on the bench like a pick from the cabinet
   const first = initialTool && lab.all.some((t) => t.id === initialTool) ? initialTool : null;
   const [picked, setPicked] = useState(() => {
     const p = (saved.picked ?? []).filter((id) => lab.all.some((t) => t.id === id && t.lesson !== lessonCode));
@@ -333,7 +333,7 @@ export default function LessonLab({
     setExtra(x);
   }, []);
 
-  // « جرّب »: what the student has MADE with this instrument (never ticked before he touches it)
+  // « Essaie »: what the student has MADE with this instrument (never ticked before he touches it)
   useEffect(() => {
     if (!tool || !touched.current) return;
     seen.current[tool.id] ??= new Set(done[tool.id] ?? []);
@@ -378,7 +378,6 @@ export default function LessonLab({
   const page = (
     <div
       className={`ll-root ${inline ? 'll-root--inline' : ''} ${narrow ? 'll-root--narrow' : ''}`}
-      dir="rtl"
       data-lesson-lab={lessonCode}
       data-ll-tool-on={tool.id}
     >
@@ -422,7 +421,7 @@ export default function LessonLab({
           <div className="ll-head__end">
             <span className="ll-stars" title={L.stars} data-ll-stars={got}>
               ⭐{' '}
-              <b dir="ltr">
+              <b>
                 {got}
                 {'\u00a0/\u00a0'}
                 {total}

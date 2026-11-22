@@ -49,9 +49,10 @@ export function readBank(id, grade = gradeOf(id)) {
 
 /**
  * The pairs the bank NAMES: « PGCD(a ; b) » however it is written (`\\text{PGCD}(…)`, `\\mathrm{PGCD}(…)`, plain), and
- * « (لل|ال)عددين (الطبيعيين) a و b ». A Set of keys « a;b » (smaller first).
+ * « les (deux) nombres (entiers) a et b » (« des », « aux »). A Set of keys « a;b » (smaller first).
  */
-const PAIR_RE = /PGCD\}?\s*\(\s*(\d+)\s*;\s*(\d+)\s*\)|(?:لل|ال)عددين(?:\s+الطبيعيين)?\s+(\d+)\s+و\s+(\d+)/g;
+const PAIR_RE =
+  /PGCD\}?\s*\(\s*(\d+)\s*;\s*(\d+)\s*\)|\b(?:les|des|aux)\s+(?:deux\s+)?nombres(?:\s+entiers(?:\s+naturels)?)?\s+(\d+)\s+et\s+(\d+)/g;
 export function bankPairs(bank) {
   return new Set(
     bank.sheets.flatMap((s) =>

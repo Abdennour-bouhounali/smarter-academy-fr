@@ -34,9 +34,11 @@ describe('the loading screen of a game world — one clock per lesson', () => {
 
 describe('what the student reads while the world arrives', () => {
   it('the lesson’s name without raw LaTeX, a bar, a sentence — and the place of a note already there', () => {
-    const html = renderToString(<WorldLoading lessonId="render-a" title="الجذر $\\sqrt{a}$" stage={1} />);
+    const html = renderToString(<WorldLoading lessonId="render-a" title="La racine $\\sqrt{a}$" stage={1} />);
     expect(html).toContain('role="status"');
-    expect(html).toContain('نجهّز عالمك');
+    expect(html).toContain('On prépare ton monde');
+    expect(html).not.toMatch(/[\u0600-\u06ff]/);
+    expect(html).not.toContain('dir="rtl"');
     expect(html).toContain('gw-loading__bar');
     expect(html).toContain('gw-loading__note');
     expect(html).not.toContain('\\sqrt');
@@ -44,13 +46,14 @@ describe('what the student reads while the world arrives', () => {
   });
 
   it('a load that gave up says so and offers to try again', () => {
-    const html = renderToString(<WorldLoading lessonId="render-b" title="درس" failed />);
+    const html = renderToString(<WorldLoading lessonId="render-b" title="Leçon" failed />);
     expect(html).toContain('data-gw-loading="failed"');
     expect(html).toContain('data-gw-retry');
+    expect(html).toContain('Réessaie');
   });
 
   it('the world is ready beneath: the screen is no longer a status and no longer marked as loading', () => {
-    const html = renderToString(<WorldLoading lessonId="render-c" title="درس" stage={4} leaving over />);
+    const html = renderToString(<WorldLoading lessonId="render-c" title="Leçon" stage={4} leaving over />);
     expect(html).not.toContain('data-gw-loading');
     expect(html).not.toContain('role="status"');
     expect(html).toContain('gw-loading--leaving');

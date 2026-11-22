@@ -1,5 +1,6 @@
-// « الامتحان الأبيض » on screen, served from a toy BANK (bankSitting.js): the subject is the bank's sheet as it is — its
-// statement, its formulas, its numbered steps and its points — and money reads « دج ». Server render: the first screen only.
+// « brevet blanc » on screen, served from a toy BANK (bankSitting.js): the subject is the bank's sheet as it is — its
+// statement, its formulas, its numbered steps and its points, in French, left to right, money in euros. Server render: the
+// first screen only. (How a bank's « DA » is displayed is bankSitting's `cashDj`, tested in kit.test.js.)
 import { describe, it, expect, beforeAll } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import ExamSitting from './ExamSitting';
@@ -11,24 +12,24 @@ globalThis.window = globalThis.window ?? {};
 const BANK = [
   {
     id: 'ex-toy-l1-001',
-    metadata: { title: 'ثمن الصناديق', estimatedMinutes: 6, exam: { heading: 'التمرين', points: '02,5' } },
-    statement: { content: 'ثمن الصندوق 150 DA.', formulas: ['450 = 150 \\times 3'] },
+    metadata: { title: 'Le prix des caisses', estimatedMinutes: 6, exam: { heading: 'Exercice', points: '02,5' } },
+    statement: { content: 'Une caisse coûte 150 €.', formulas: ['450 = 150 \\times 3'] },
     questions: [
       {
         id: 'q1',
         step: '01',
-        lead: 'نشتري 3 صناديق.',
-        statement: 'ما المبلغ المدفوع؟',
+        lead: 'On achète 3 caisses.',
+        statement: 'Quelle somme paie-t-on ?',
         answerType: 'rational',
-        answerFormat: 'عدد بالدينار (DA)',
+        answerFormat: 'un nombre d’euros',
         expectedAnswer: '450',
         learningPoints: [{ code: 'g_toy_P1', role: 'primary' }],
-        solution: { lines: ['$150 \\times 3 = 450$'], result: '450 \\text{ DA}' },
+        solution: { lines: ['$150 \\times 3 = 450$'], result: '450 \\text{ €}' },
       },
       {
         id: 'q2',
         step: '02',
-        statement: 'بيّن أنّ 150 مضاعف للعدد 3.',
+        statement: 'Montre que 150 est un multiple de 3.',
         answerType: 'selfCheck',
         learningPoints: [{ code: 'g_toy_P1', role: 'primary' }],
         solution: { lines: ['$150 = 3 \\times 50$'] },
@@ -43,7 +44,7 @@ const game = { paperMode: () => {} };
 describe('the exam sitting — a bank sheet on its first screen', () => {
   beforeAll(() => sittings.prepare());
 
-  it('prints the sheet as it is, with « دج », its points, and no answer box yet', () => {
+  it('prints the sheet as it is, in euros, with its points and minutes in French, and no answer box yet', () => {
     const html = renderToString(
       <LessonProvider lesson={lesson}>
         <ExamSitting game={game} level={1} />
@@ -51,10 +52,23 @@ describe('the exam sitting — a bank sheet on its first screen', () => {
     );
     expect(html).toContain('data-xs="read"');
     expect(html).toContain('data-xs-bank="ex-toy-l1-001"');
-    expect(html).toContain('دج');
+    // a word of the subject is its own span (a tap underlines it): the amount and its sign are two neighbours
+    expect(html).toMatch(/>150<\/span> <span[^>]*>€\.</);
     expect(html).not.toMatch(/(?:\d\$?|\\,|\\text\{)\s*DA(?![A-Za-z])|\(\s*DA\s*\)/);
-    expect(html).toContain('نشتري');
-    expect(html).toContain('2,5');
+    expect(html).toContain('>achète<');
+    // the sheet's heading « (2,5 points) » and the subject's line « … · 2,5 points · 6 minutes »
+    const text = html.replaceAll('<!-- -->', ''); // React separates two text nodes with a comment
+    expect(text).toContain('(2,5 points)');
+    expect(text).toContain('6 minutes');
+    expect(html).toContain('Temps de lecture');
+    expect(html).not.toContain('dir="rtl"');
+    // the sitting's own words are French; the subject's title, the level's name and the sheet's heading are written by
+    // bankSitting.js (not this screen): they are left out of this check
+    const chrome = html
+      .replace(/<h2>.*?<\/h2>/, '')
+      .replace(/<p>[^<]*<!-- --> · /, '<p>')
+      .replace(/<h3>.*?<i>/g, '<h3><i>');
+    expect(chrome).not.toMatch(/\p{Script=Arabic}/u);
     expect(html).not.toContain('data-xs-field'); // reading time: nothing can be answered yet
   });
 

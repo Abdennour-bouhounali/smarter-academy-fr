@@ -6,7 +6,7 @@ import { getLoadedLessonConfig, isLessonBuilt, loadLessonConfig } from './regist
  *
  * Synchrone quand il est déjà chargé — toujours le cas sur une page de la leçon,
  * dont le routes.jsx l'a importé : pas un rendu de retard. Ailleurs (page d'unité,
- * مذكرة الدرس), `null` le temps du chargement, puis la config.
+ * la fiche du professeur), `null` le temps du chargement, puis la config.
  *
  * @param {string|null|undefined} lessonId
  * @returns {object|null}

@@ -13,7 +13,7 @@ const SPHERE = {
   circles: [{ center: 'A', radius: 2, on: 0 }],
   segments: [{ from: 'O', to: 'M', label: '2,5', dashed: true }, { from: 'N', to: 'S', dashed: true }],
   rightAngles: [['O', 'A', 'M']],
-  ariaLabel: 'كرة مركزها O يقطعها مستو',
+  ariaLabel: 'Boule de centre O coupée par un plan',
 };
 const BOX = {
   kind: 'space',
@@ -22,21 +22,21 @@ const BOX = {
     E: [0, 0, 0], F: [5, 0, 0], G: [5, 4, 0], H: [0, 4, 0],
   },
   solids: [{ type: 'polyhedron', faces: [['A', 'B', 'C', 'D'], ['E', 'F', 'G', 'H'], ['A', 'B', 'F', 'E'], ['B', 'C', 'G', 'F'], ['C', 'D', 'H', 'G'], ['D', 'A', 'E', 'H']] }],
-  ariaLabel: 'متوازي مستطيلات ABCDEFGH',
+  ariaLabel: 'Pavé droit ABCDEFGH',
 };
 
 describe('spaceFigure — validation', () => {
   it('accepte une figure correcte et nomme les fautes', () => {
     expect(validateSpaceFigure(SPHERE)).toEqual([]);
     expect(validateSpaceFigure(BOX)).toEqual([]);
-    const errs = validateSpaceFigure({ ...SPHERE, kind: 'geo', colour: 'red', segments: [{ from: 'O', to: 'Z' }], ariaLabel: 'sphere' });
+    const errs = validateSpaceFigure({ ...SPHERE, kind: 'geo', colour: 'red', segments: [{ from: 'O', to: 'Z' }], ariaLabel: '\u0645\u062b\u0644\u062b' });
     expect(errs.join('|')).toMatch(/kind/);
     expect(errs.join('|')).toMatch(/clé inconnue « colour »/);
     expect(errs.join('|')).toMatch(/point inconnu « Z »/);
-    expect(errs.join('|')).toMatch(/ariaLabel/);
+    expect(errs.join('|')).toMatch(/ariaLabel en français/);
     expect(validateSpaceFigure({ ...BOX, points: { ...BOX.points, A: [0, 0] } }).join('|')).toMatch(/\[x, y, z\]/);
     expect(validateSpaceFigure({
-      kind: 'space', points: { O: [0, 0, 0], T: [1, 0, 3] }, solids: [{ type: 'cylinder', base: 'O', top: 'T', radius: 1 }], ariaLabel: 'أسطوانة',
+      kind: 'space', points: { O: [0, 0, 0], T: [1, 0, 3] }, solids: [{ type: 'cylinder', base: 'O', top: 'T', radius: 1 }], ariaLabel: 'Cylindre',
     }).join('|')).toMatch(/axe vertical/);
   });
 });
@@ -65,7 +65,7 @@ describe('spaceFigure — ce qui est vu, ce qui est caché', () => {
   });
   it('cylindre : deux génératrices de contour, le bas à moitié caché', () => {
     const L = layoutSpaceFigure({
-      kind: 'space', points: { O2: [0, 0, 0], O1: [0, 0, 6] }, solids: [{ type: 'cylinder', base: 'O2', top: 'O1', radius: 1.7 }], ariaLabel: 'أسطوانة',
+      kind: 'space', points: { O2: [0, 0, 0], O1: [0, 0, 6] }, solids: [{ type: 'cylinder', base: 'O2', top: 'O1', radius: 1.7 }], ariaLabel: 'Cylindre',
     });
     expect(L.lines.filter((l) => l.kind === 's0-side')).toHaveLength(2);
     const bottom = L.lines.filter((l) => l.kind === 's0-bottom');
@@ -73,7 +73,7 @@ describe('spaceFigure — ce qui est vu, ce qui est caché', () => {
   });
   it('cône et tronc : deux génératrices de contour', () => {
     for (const s of [{ type: 'cone', base: 'O', apex: 'S', radius: 3 }, { type: 'frustum', base: 'O', top: 'S', radius: 15, topRadius: 20 }]) {
-      const L = layoutSpaceFigure({ kind: 'space', points: { O: [0, 0, 0], S: [0, 0, s.type === 'cone' ? 5 : 28] }, solids: [s], ariaLabel: 'مخروط' });
+      const L = layoutSpaceFigure({ kind: 'space', points: { O: [0, 0, 0], S: [0, 0, s.type === 'cone' ? 5 : 28] }, solids: [s], ariaLabel: 'Cône' });
       expect(L.lines.filter((l) => l.kind === 's0-side')).toHaveLength(2);
     }
   });
@@ -87,7 +87,7 @@ describe('spaceFigure — la cote éloignée de son trait (labelOffset)', () => 
     kind: 'space', view: { azimuth: -90, elevation: 14 },
     points: { O: [0, 0, 0], T: [0, 0, 1], V0: [-3, 0, 1], V1: [-3, 0, 0] },
     solids: [{ type: 'cylinder', base: 'O', top: 'T', radius: 1 }],
-    segments: [{ from: 'V0', to: 'V1', label: '28 cm', ...extra }], hidden: ['O', 'T', 'V0', 'V1'], ariaLabel: 'أسطوانة',
+    segments: [{ from: 'V0', to: 'V1', label: '28 cm', ...extra }], hidden: ['O', 'T', 'V0', 'V1'], ariaLabel: 'Cylindre',
   });
   it('sans la clé, la cote est à 12 px du milieu (comportement inchangé) ; avec, à la distance demandée, du côté extérieur', () => {
     const base = layoutSpaceFigure(fig({}));
@@ -105,7 +105,7 @@ describe('spaceFigure — rendu', () => {
     expect(html).toContain('data-space-figure');
     expect(html).toContain('data-space-line="hidden"');
     expect(html).toContain('data-space-line="seen"');
-    expect(html).toContain('aria-label="كرة مركزها O يقطعها مستو"');
+    expect(html).toContain('aria-label="Boule de centre O coupée par un plan"');
     expect(html).toContain('direction:ltr');
   });
 });

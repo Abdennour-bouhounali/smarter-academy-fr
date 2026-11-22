@@ -1,5 +1,5 @@
 /**
- * « شريط الكسر » — a fraction of the student's own: a strip of b cells (the denominator) with its first a cells lit (the
+ * « La bande de la fraction » — a fraction of the student's own: a strip of b cells (the denominator) with its first a cells lit (the
  * numerator), and a piece of length k the hand drags along a ruler (or ± / arrows). The pieces are laid from 0 along the
  * whole strip (`logic.js › stripOf`): their joints, the piece INSIDE which the light ends when k does not divide a, what
  * is left at the end of the strip when k does not divide b. Only when k divides both does the strip regroup — the lit
@@ -105,10 +105,10 @@ export default function Strip({ a, b, play, report, start = null }) {
             data-ll-strip-verdict={S.verdict}
           >
             {both
-              ? `${k} يقسم البسط والمقام معًا`
+              ? `${k} divise le numérateur et le dénominateur`
               : S.verdict === 'none'
-                ? `${k} لا يقسم البسط ولا المقام`
-                : `${k} يقسم ${S.verdict === 'a' ? 'البسط' : 'المقام'} وحده`}
+                ? `${k} ne divise ni le numérateur ni le dénominateur`
+                : `${k} divise seulement le ${S.verdict === 'a' ? 'numérateur' : 'dénominateur'}`}
           </span>
         </>
       }
@@ -259,32 +259,25 @@ export default function Strip({ a, b, play, report, start = null }) {
               =
             </text>
             <Frac x={X0 + 170} y={278} n={S.rewrite[0]} d={S.rewrite[1]} tone="#6ee7b7" id="pieces" />
-            <text x={X0 + 400} y={286} textAnchor="middle" fontSize="17" direction="rtl" style={{ fill: '#6ee7b7' }}>
-              {`قطع ${k}: ${S.rewrite[0]} مضاءة من ${S.rewrite[1]}`}
+            <text x={X0 + 400} y={286} textAnchor="middle" fontSize="17" style={{ fill: '#6ee7b7' }}>
+              {`Morceaux de ${k} : ${S.rewrite[0]} allumés sur ${S.rewrite[1]}`}
             </text>
           </g>
         )}
         {many && (
-          <text
-            x={(X0 + X1) / 2}
-            y={RULER_Y + 30}
-            textAnchor="middle"
-            fontSize="16"
-            direction="rtl"
-            style={{ fill: '#a5b4fc' }}
-          >
-            {`${S.pieces} قطعة`}
+          <text x={(X0 + X1) / 2} y={RULER_Y + 30} textAnchor="middle" fontSize="16" style={{ fill: '#a5b4fc' }}>
+            {`${S.pieces} morceaux`}
           </text>
         )}
 
-        {/* the lengths already tried on this fraction */}
+        {/* the lengths already tried on this fraction, the first on the LEFT */}
         <g data-ll-strip-tried={cur.tried.join(',')}>
           {cur.tried.map((v, i) => {
             const t = stripOf(a, b, v).verdict;
             return (
               <g key={v}>
                 <rect
-                  x={X1 - 23 - i * 52}
+                  x={X0 - 23 + i * 52}
                   y="326"
                   width="46"
                   height="30"
@@ -295,7 +288,7 @@ export default function Strip({ a, b, play, report, start = null }) {
                   data-ll-strip-tried-k={v}
                   data-verdict={t}
                 />
-                <text x={X1 - i * 52} y="347" textAnchor="middle" fontSize="17">
+                <text x={X0 + i * 52} y="347" textAnchor="middle" fontSize="17">
                   {v}
                 </text>
               </g>

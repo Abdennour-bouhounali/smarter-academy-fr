@@ -45,7 +45,7 @@ beforeEach(() => {
   vi.spyOn(console, 'warn').mockImplementation(() => {});
 });
 
-describe('kit/bankEvidence — a copy of « الامتحان الأبيض » to the practice engine', () => {
+describe('kit/bankEvidence — a copy of « brevet blanc » to the practice engine', () => {
   it('sends a copy: one session, each step opened then answered, the exercise and the session completed', async () => {
     expect(await sendSitting('tok', sheet('s1'))).toBe('sent');
     expect(api.startPracticeSession).toHaveBeenCalledWith('tok', 'toy', 's1', 1);

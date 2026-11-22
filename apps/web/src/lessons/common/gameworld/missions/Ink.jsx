@@ -1,10 +1,11 @@
 /**
  * THE STUDENT'S PEN over a mission — he writes on the screen as the teacher does on the board (owner, 2026-11-20): he
  * underlines the exam text, circles a number, poses a division. While the pen is open it takes every touch; closed, what
- * he drew STAYS on the screen (his marks on the text) and the mission is played through it. Three colours, undo, « امسح ».
+ * he drew STAYS on the screen (his marks on the text) and the mission is played through it. Three colours, undo, « Effacer ».
  */
 import { useRef, useState } from 'react';
 import { Eraser, Undo2, X } from 'lucide-react';
+import { T } from './text';
 
 const PENS = ['#dc2626', '#1d4ed8', '#0f172a'];
 
@@ -56,7 +57,7 @@ export default function Ink({ open, onClose }) {
         )}
       </svg>
       {open && (
-        <div className="ms-inkbar" dir="rtl">
+        <div className="ms-inkbar">
           {PENS.map((c) => (
             <button
               key={c}
@@ -64,7 +65,7 @@ export default function Ink({ open, onClose }) {
               className={`ms-pen ${color === c ? 'is-on' : ''}`}
               style={{ '--pen': c }}
               onClick={() => setColor(c)}
-              aria-label="لون القلم"
+              aria-label={T.inkColour}
               data-ms-pen={c}
             />
           ))}
@@ -75,7 +76,7 @@ export default function Ink({ open, onClose }) {
             data-ms-ink-undo
             onClick={() => setStrokes((s) => s.slice(0, -1))}
           >
-            <Undo2 size={18} aria-hidden="true" /> تراجع
+            <Undo2 size={18} aria-hidden="true" /> {T.inkUndo}
           </button>
           <button
             type="button"
@@ -84,10 +85,10 @@ export default function Ink({ open, onClose }) {
             data-ms-ink-clear
             onClick={() => setStrokes([])}
           >
-            <Eraser size={18} aria-hidden="true" /> امسح
+            <Eraser size={18} aria-hidden="true" /> {T.inkClear}
           </button>
           <button type="button" className="ms-btn" data-ms-ink-close onClick={onClose}>
-            <X size={18} aria-hidden="true" /> أغلق القلم
+            <X size={18} aria-hidden="true" /> {T.inkClose}
           </button>
         </div>
       )}

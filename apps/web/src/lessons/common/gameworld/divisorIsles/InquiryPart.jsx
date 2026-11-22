@@ -6,7 +6,7 @@
  * by side with « = ». A plank that does not fill both is laid and what is left shows; he may also claim that no plank but
  * 1 fills both, and the world tries the planks of the painted part on the whole.
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `part`). Nothing here states a rule: every
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `part`). Nothing here states a rule: every
  * sentence says what the strip has just done. The screen is a pure VIEW of the reducer's state (`PartView`).
  */
 import { useEffect, useReducer, useState } from 'react';
@@ -242,7 +242,7 @@ export function PartView({ spec, state, act, input = { num: '', den: '', plank: 
                 ))}
               </div>
             )}
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num
                   value={input.plank}

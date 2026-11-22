@@ -1,4 +1,4 @@
-/* THE INVESTIGATIONS of « قصر الساحات » (Inquiry.jsx: calc, roundtrip) — inside the forge's frame (.rf-fit, designed
+/* THE INVESTIGATIONS of « Le palais des dalles » (Inquiry.jsx: calc, roundtrip) — inside the forge's frame (.rf-fit, designed
    1280 × 720 and zoomed to the window: 1.067 at 1366 × 768, so 1rem ≈ 17 px). Prefix rq-. Every text selector starts at
    the frame (.rq-iq-frame …) so that the forge's `.rf-root p { color: inherit }` never beats it.
    Sizes: what he reads is ≥ 1.08rem (≈ 18.4 px); nothing is under the 12 px floor (--di-min-font). Shapes are the brand
@@ -460,7 +460,7 @@
 }
 .rq-rodp__bar.is-growing {
   transform-box: fill-box;
-  transform-origin: right center;
+  transform-origin: left center;
   animation: rq-stretch 0.8s ease-out backwards;
 }
 .rq-rodp__label {
@@ -547,7 +547,7 @@
   background: rgba(125, 252, 255, 0.1);
   color: #fff;
   font:
-    800 1.5rem 'Cairo',
+    800 1.5rem 'Inter',
     sans-serif;
   text-align: center;
   outline: none;
@@ -663,7 +663,7 @@
   align-items: center;
   gap: 0.25rem;
 }
-/* an arrow toward the left (things flow right to left, as the stations stand), with its station's mark */
+/* an arrow toward the right (things flow left to right, as the stations stand), with its station's mark */
 .rq-iq-frame .rq-strip__op {
   position: relative;
   display: inline-block;
@@ -683,12 +683,12 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 0;
+  right: 0;
   width: 0.45rem;
   height: 0.45rem;
   margin-top: -0.24rem;
-  border-left: 2px solid #9fd8ff;
-  border-bottom: 2px solid #9fd8ff;
+  border-right: 2px solid #9fd8ff;
+  border-top: 2px solid #9fd8ff;
   transform: rotate(45deg);
 }
 .rq-iq-frame .rq-strip__op--build::before {
@@ -770,7 +770,7 @@
 }
 @keyframes rq-into {
   to {
-    transform: translateX(-130px);
+    transform: translateX(130px);
     opacity: 0;
   }
 }
@@ -814,9 +814,9 @@
 
 /* ───────────────────────── chase ───────────────────────── */
 /* THE LAYOUT at 1366 × 768 (chase.js › CHASE_LAYOUT, checked in inquiryChase.render.test.jsx), in the panel's 1205 × 587
-   px: row 1 the lead and the goal; row 2, right to left, the main column — the court (14 rem high, 18.7 rem wide, its one
+   px: row 1 the lead and the goal; row 2, left to right, the main column — the court (14 rem high, 18.7 rem wide, its one
    text 26 units ≈ 26 px) and the card of numbers beside it, then the question, its buttons and the fact — and the table
-   (27.2 rem, six rows at most, each fraction over its bar). A fraction is ALWAYS over a real bar (.rq-fr), never « p/q ». */
+   (27.2 rem on the right, six rows at most, each fraction over its bar). A fraction is ALWAYS over a real bar (.rq-fr), never « p/q ». */
 .rq-iq-frame .rq-iq--chase {
   grid-template-rows: auto minmax(0, 1fr);
 }
@@ -848,7 +848,7 @@
   width: auto;
   overflow: visible;
   direction: ltr;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 .rq-ch__tile {
   fill: rgba(92, 124, 250, 0.3);
@@ -885,7 +885,7 @@
 }
 .rq-ch__slab.is-lowering {
   transform-box: fill-box;
-  transform-origin: right bottom;
+  transform-origin: left bottom;
   animation: rq-ch-lower 0.9s cubic-bezier(0.3, 0.7, 0.4, 1) both;
 }
 .rq-ch__court.is-ride .rq-ch__slab {
@@ -1129,7 +1129,7 @@
 
 @keyframes rq-ch-lower {
   from {
-    transform: scale(1.08) translate(-4px, -6px);
+    transform: scale(1.08) translate(4px, -6px);
     opacity: 0.3;
   }
 }

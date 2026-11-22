@@ -35,7 +35,7 @@ export function pointerDiameter(size, viewportWidth, viewportHeight) {
   return Math.round(Math.min(rule.max, Math.max(rule.min, vmin * rule.vmin)));
 }
 
-/** Le rayon de la zone éclairée en mode « تسليط الضوء » : un peu plus de deux pointeurs. */
+/** Le rayon de la zone éclairée en mode « Projecteur » : un peu plus de deux pointeurs. */
 export function spotlightRadius(diameter) {
   return Math.round(diameter * 2.2);
 }
@@ -48,11 +48,11 @@ export function normalizePointerSize(value) {
  * Le raccourci clavier : **P** bascule le pointeur, **Maj+P** l'éclairage.
  *
  * Lu sur `event.code` (la POSITION de la touche) et non `event.key` : sur un
- * clavier arabe la même touche produit « ح », sur AZERTY « p » — la main de
+ * clavier bépo la même touche produit « j », sur AZERTY « p » — la main de
  * l'enseignant trouve la même touche partout.
  *
  * Jamais pendant une saisie (champ, zone de texte, éditeur, math-field) ni
- * dans un instrument du مختبر ouvert par-dessus la séance (Excalidraw fait de
+ * dans un instrument de l’atelier ouvert par-dessus la séance (Excalidraw fait de
  * « P » son crayon), ni avec Ctrl / Cmd / Alt, ni en répétition.
  *
  * @returns {'pointer'|'spotlight'|null}

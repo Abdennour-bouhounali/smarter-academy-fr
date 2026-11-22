@@ -3,7 +3,7 @@
 > **Statut (2026-09-29).** Ce document décrit `MathText` (vivant, 360+ appels)
 > et fait l'inventaire du dossier. `MathInput` a été **supprimé** le 2026-09-29
 > avec le reste du code mort de l'ère française (voir §0). Le seul consommateur
-> de la dépendance `mathlive` est le grapheur du مختبر
+> de la dépendance `mathlive` est le grapheur de l’atelier
 > (`features/mathlab/tools/functionGrapher/ExpressionField.jsx`, chargé
 > paresseusement, configuré dans `mathliveSetup.js`). Aucune leçon arabe ne
 > saisit d'expression algébrique libre — les réponses sont des choix, des
@@ -49,7 +49,7 @@ c'est le **point de passage unique** de la notation mathématique.
 import MathText from 'path/to/common/components/MathText';
 
 // En ligne :
-<p>على العموم <MathText>{'$a = b \\times q + r$'}</MathText>.</p>
+<p>En général, <MathText>{'$a = b \\times q + r$'}</MathText>.</p>
 
 // En bloc centré :
 <MathText>{'$$\\mathrm{PGCD}(420\\ ;\\ 28) = 28$$'}</MathText>

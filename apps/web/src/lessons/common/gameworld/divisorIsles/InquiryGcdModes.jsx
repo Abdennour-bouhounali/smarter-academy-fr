@@ -13,7 +13,7 @@
  *                     ONE screen however many rows; he predicts which is shorter and by how many rows before they run.
  *                     On a workshop's bench it starts where he left it (`spec.from` / `spec.onState`).
  *
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shapes of `common`, `ladder`, `nest`). Nothing
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shapes of `common`, `ladder`, `nest`). Nothing
  * here states a rule: every sentence says what the strips, the shelves or the ladders have just done.
  */
 import { useEffect, useReducer, useState } from 'react';
@@ -411,7 +411,7 @@ export function FoldView({ spec, state: s, act, input = { q: '', r: '' } }) {
           <span />
           <span />
           <span />
-          <small dir="rtl">{T.planks}</small>
+          <small>{T.planks}</small>
         </div>
         {lines.map((l, k) => {
           const end = seen && k === now.runs.length - 1;
@@ -438,7 +438,7 @@ export function FoldView({ spec, state: s, act, input = { q: '', r: '' } }) {
           v == null ? (
             <div key="fold" className="iq-rung iq-rung--fold" data-iq-fold={hidden}>
               <span />
-              <small dir="rtl">{T.folded(hidden)}</small>
+              <small>{T.folded(hidden)}</small>
             </div>
           ) : (
             <div
@@ -690,7 +690,7 @@ export function BothView({ spec, state: s, act, input = { shorter: null, by: '' 
               </button>
             ))}
             {input.shorter && input.shorter !== 'same' && (
-              <div className="iq-tpl" dir="rtl">
+              <div className="iq-tpl">
                 <label>
                   <small>{T.byLabel}</small>
                   <Num

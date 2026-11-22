@@ -8,7 +8,7 @@
  *
  * Every item and every lot is DRAWN in SVG (`dealParts.jsx`, shared with the mirror of a forge whose case is a sharing):
  * no raster image, no emoji as the drawing.
- * `spec.text` is the lesson's wording (GAME_WORLD.md « استكشف », spec shape of `deal`). Nothing here states a rule.
+ * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `deal`). Nothing here states a rule.
  * The screen is a pure VIEW of the reducer's state (`DealView`).
  */
 import { useReducer, useState } from 'react';
@@ -82,7 +82,7 @@ export function DealView({ spec, state, act, input = { k: '', x: '', y: '' } }) 
           kind={itemA}
           n0={nA}
           rem={nA - (s.k ?? 0) * cA}
-          box={[520, 8, 460, 116]}
+          box={[20, 8, 460, 116]}
           left={complete && d.rA > 0}
         />
         <Pile
@@ -90,7 +90,7 @@ export function DealView({ spec, state, act, input = { k: '', x: '', y: '' } }) 
           kind={itemB}
           n0={nB}
           rem={nB - (s.k ?? 0) * cB}
-          box={[20, 8, 460, 116]}
+          box={[520, 8, 460, 116]}
           left={complete && d.rB > 0}
         />
         {d &&
@@ -115,7 +115,7 @@ export function DealView({ spec, state, act, input = { k: '', x: '', y: '' } }) 
       </p>
 
       {s.tries.length > 0 && (
-        <table className="iqd-tab" dir="rtl" data-iq-table data-iq-found>
+        <table className="iqd-tab" data-iq-table data-iq-found>
           <tbody>
             <tr>
               <th scope="row">{T.cols.lots}</th>
@@ -207,7 +207,7 @@ export function DealView({ spec, state, act, input = { k: '', x: '', y: '' } }) 
             <p className="iq-askline">
               <MathText>{T.answerLead({ a: spec.a, b: spec.b })}</MathText>
             </p>
-            <div className="iq-tpl" dir="rtl">
+            <div className="iq-tpl">
               <label>
                 <Num
                   value={input.k}

@@ -1,9 +1,8 @@
 /**
- * La géométrie d'une FIGURE DE L'ESPACE DÉCLARATIVE — la sœur 3D de geoFigure.js (unité 14 « الهندسة في الفضاء », 2026-10-05) —
+ * La géométrie d'une FIGURE DE L'ESPACE DÉCLARATIVE — la sœur 3D de geoFigure.js (la géométrie dans l'espace, 2026-10-05) —
  * dessinée par SpaceFigure.jsx dans une leçon ET dans un énoncé de pratique (`statement.figure` avec `kind: 'space'`).
  *
- * Le manuel dessine ses solides « en perspective », parties cachées en POINTILLÉS (طرائق ص 167 : « الجزء الأمامي … بخط مستمر
- * والجزء الخلفي يكون بخط متقطّع »). Ce module projette des points 3D (repère orthonormé, z vers le HAUT) par une projection
+ * Un solide se dessine « en perspective cavalière », la partie avant en trait plein, la partie cachée en POINTILLÉS. Ce module projette des points 3D (repère orthonormé, z vers le HAUT) par une projection
  * ORTHOGRAPHIQUE de direction (azimut, élévation) et décide, pour chaque solide, quelles lignes sont vues et lesquelles sont
  * cachées — sans DOM, donc testable et réutilisé par le validateur des exercices (`validateSpaceFigure`).
  *
@@ -22,7 +21,7 @@
  *     planes: [{ points: ['P1','P2','P3','P4'], tone: 'sky', label: '(P)' }],            // un plan (parallélogramme translucide)
  *     sections: [{ points: ['I','J','K','L'], tone: 'emerald' }],                        // une section (polygone plein)
  *     segments: [{ from: 'O', to: 'M', label: 'R', dashed: true }], rightAngles: [['O','A','M']],
- *     labels: { A: 'ne' }, hidden: ['P1','P2','P3','P4'], ariaLabel: 'كرة مركزها O …', caption, maxWidth,
+ *     labels: { A: 'ne' }, hidden: ['P1','P2','P3','P4'], ariaLabel: 'Boule de centre O …', caption, maxWidth,
  *   }
  *
  * Les cercles des solides de révolution sont horizontaux (axe vertical) ; un `circles[]` peut avoir `normal: 'x' | 'y' | 'z'`
@@ -139,7 +138,7 @@ export function validateSpaceFigure(fig) {
   (fig.rightAngles ?? []).forEach((a, i) => { if (!Array.isArray(a) || a.length !== 3) errors.push(`rightAngles[${i}] : trois points`); else a.forEach((n) => need(n, `rightAngles[${i}]`)); });
   for (const n of Object.keys(fig.labels ?? {})) { need(n, 'labels'); if (!DIRS[fig.labels[n]]) errors.push(`labels.${n} : direction inconnue`); }
   (fig.hidden ?? []).forEach((n) => need(n, 'hidden'));
-  if (typeof fig.ariaLabel !== 'string' || !/[؀-ۿ]/.test(fig.ariaLabel)) errors.push('ariaLabel arabe obligatoire');
+  if (typeof fig.ariaLabel !== 'string' || !fig.ariaLabel.trim() || /[\u0600-\u06FF]/.test(fig.ariaLabel)) errors.push('ariaLabel en français obligatoire');
   return errors;
 }
 

@@ -1,11 +1,11 @@
-/* « الامتحان الأبيض » — the exam sitting. Paper, three colours: black (subject), blue (the student), red (the corrector). Prefix xs-. */
+/* « brevet blanc » — the exam sitting. Paper, three colours: black (subject), blue (the student), red (the corrector). Prefix xs-. */
 .xs-root {
   position: absolute;
   inset: 0;
   z-index: 14;
   background: #d9d2c3;
   color: #111827;
-  font-family: 'Amiri', 'Scheherazade New', 'Cairo', serif;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
   overflow: hidden;
   user-select: text;
   animation: di-fade 0.3s;
@@ -72,7 +72,7 @@
   align-items: center;
   gap: 0.3rem;
   font:
-    700 max(var(--di-min-font, 12px), 0.85rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 0.85rem) 'Inter',
     sans-serif;
   color: #4b5563;
 }
@@ -91,13 +91,13 @@
 }
 .xs-total b {
   font:
-    900 max(var(--di-min-font, 12px), 1.9rem) 'Cairo',
+    900 max(var(--di-min-font, 12px), 1.9rem) 'Inter',
     sans-serif;
   line-height: 1;
 }
 .xs-total i {
   font:
-    700 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 0.95rem) 'Inter',
     sans-serif;
   font-style: normal;
   margin-top: -0.9rem;
@@ -109,7 +109,7 @@
   gap: 0.5rem;
   margin: 0;
   font:
-    700 max(var(--di-min-font, 12px), 1rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 1rem) 'Inter',
     sans-serif;
   color: #374151;
 }
@@ -163,7 +163,7 @@
   font-style: normal;
   /* the sheet is zoomed to fit (×0.7 at 1024×768): 1.2rem still reads 12 px there */
   font:
-    700 max(var(--di-min-font, 12px), 1.2rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 1.2rem) 'Inter',
     sans-serif;
   color: #4b5563;
 }
@@ -234,7 +234,7 @@
 }
 .xs-n {
   font:
-    800 max(var(--di-min-font, 12px), 1.2rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 1.2rem) 'Inter',
     sans-serif;
 }
 .xs-step {
@@ -242,7 +242,7 @@
   min-width: 0;
   display: grid;
   gap: 0.35rem;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 .xs-step__ask {
   font-size: max(var(--di-min-font, 12px), 1.05rem);
@@ -272,7 +272,7 @@
 .xs-field .text-2xl {
   font-size: max(var(--di-min-font, 12px), 1.5rem);
 }
-/* a choice takes the width of its words, side by side: « نعم » and « لا » stand on one line, seven weekdays on two — not one
+/* a choice takes the width of its words, side by side: « Oui » and « Non » stand on one line, seven weekdays on two — not one
    per half-row 48 px high (ChoiceInput's own grid), which made the sheet zoom down to ~0.6 */
 .xs-field[data-xs-type='choice'] .grid {
   display: flex;
@@ -297,7 +297,7 @@
   gap: 0.4rem;
   color: #6b7280;
   font:
-    700 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 0.95rem) 'Inter',
     sans-serif;
 }
 .xs-formulas {
@@ -320,7 +320,7 @@
   justify-items: center;
   gap: 1rem;
   font:
-    700 max(var(--di-min-font, 12px), 1.2rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 1.2rem) 'Inter',
     sans-serif;
   color: #374151;
 }
@@ -363,7 +363,7 @@
   background: #fffdf6;
   color: #111827;
   font:
-    800 max(var(--di-min-font, 12px), 1rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 1rem) 'Inter',
     sans-serif;
   cursor: pointer;
   border-radius: 0.3rem;
@@ -386,7 +386,7 @@
   border: 1.5px solid #111827;
   background: #fffdf6;
   font:
-    800 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 0.95rem) 'Inter',
     sans-serif;
   cursor: pointer;
   border-radius: 0.3rem;
@@ -426,7 +426,7 @@
   align-items: center;
   gap: 0.5rem;
   font:
-    700 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 0.95rem) 'Inter',
     sans-serif;
 }
 .xs-confirm--forgot {
@@ -471,14 +471,14 @@
 .xs-quitbox h3 {
   margin: 0 0 0.5rem;
   font:
-    900 max(var(--di-min-font, 12px), 1.45rem) 'Cairo',
+    900 max(var(--di-min-font, 12px), 1.45rem) 'Inter',
     sans-serif;
   color: #111827;
 }
 .xs-quitbox p {
   margin: 0 0 1.1rem;
   font:
-    700 max(var(--di-min-font, 12px), 1.08rem) / 1.8 'Cairo',
+    700 max(var(--di-min-font, 12px), 1.08rem) / 1.8 'Inter',
     sans-serif;
   color: #374151;
 }
@@ -490,7 +490,7 @@
   margin: 0;
   text-align: center;
   font:
-    800 max(var(--di-min-font, 12px), 1.05rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 1.05rem) 'Inter',
     sans-serif;
   color: #111827;
   background: #fde68a;
@@ -505,7 +505,7 @@
   align-content: center;
   gap: 1rem;
   font:
-    800 max(var(--di-min-font, 12px), 1.3rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 1.3rem) 'Inter',
     sans-serif;
   color: #374151;
 }
@@ -548,7 +548,7 @@
 .xs-ink {
   color: #1d3fae;
   font:
-    800 max(var(--di-min-font, 12px), 1.1rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 1.1rem) 'Inter',
     sans-serif;
   white-space: nowrap;
 }
@@ -560,7 +560,7 @@
 .xs-none {
   color: #9ca3af;
   font:
-    700 max(var(--di-min-font, 12px), 1rem) 'Cairo',
+    700 max(var(--di-min-font, 12px), 1rem) 'Inter',
     sans-serif;
 }
 .xs-paper--back .xs-ex {
@@ -599,7 +599,7 @@
 .xs-pen {
   color: #c81e1e;
   font:
-    900 max(var(--di-min-font, 12px), 1.25rem) 'Cairo',
+    900 max(var(--di-min-font, 12px), 1.25rem) 'Inter',
     sans-serif;
   white-space: nowrap;
 }
@@ -615,7 +615,7 @@
 }
 .xs-sheet--back {
   background-image: none;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 .xs-pick,
 .xs-notebook {
@@ -791,7 +791,7 @@
   align-items: center;
   gap: 0.6rem;
   font:
-    800 max(var(--di-min-font, 12px), 1.05rem) 'Cairo',
+    800 max(var(--di-min-font, 12px), 1.05rem) 'Inter',
     sans-serif;
 }
 .xs-leafnav__count small {

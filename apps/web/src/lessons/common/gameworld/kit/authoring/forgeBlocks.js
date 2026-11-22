@@ -1,7 +1,7 @@
 /**
  * THE AUTHORING KIT — the building blocks a lesson's `world/forges.js` is assembled from (PURE; it names no lesson).
  * The frame of a forge is `kit/forge.js` (read its header first: what a forge IS); this file gives what every forge of
- * the three lessons on « أرخبيل القواسم » re-derived: the tiles and the judge, the evidence read from the world's log,
+ * the three lessons on « L’archipel des diviseurs » re-derived: the tiles and the judge, the evidence read from the world's log,
  * the attacks, the cases (a plank on a pair of gaps), the pools the mirror draws from, and the last step.
  * The lesson keeps what is ITS OWN: the procedure or the rule a case is judged by, the wording (`text`, `ruleText`,
  * `explain`), the hard cases and the nudges, the numbers of the last step.
@@ -41,10 +41,10 @@ export const options = (list) => list.map(({ id, label }) => ({ id, label }));
  * `tile[slotId][optionId]` the whole tile. → { slots, says, isTheRule, tile }: spread it into the forge.
  * That ONE rule holds is not declared but PROVED by `describeForges`: every other rule is refuted by a computed case.
  *
- *   const F_LOOK = [{ id: 'pair', label: 'الأقصر وهوّة الفرق', of: (c) => [c.B, c.D] }, …];
- *   const F_HOW = [{ id: 'all', label: 'كلّ هوّة من', test: (gaps, built) => gaps.every(built) }, …];
+ *   const F_LOOK = [{ id: 'pair', label: 'le plus court et le fossé de la différence', of: (c) => [c.B, c.D] }, …];
+ *   const F_HOW = [{ id: 'all', label: 'chaque fossé parmi', test: (gaps, built) => gaps.every(built) }, …];
  *   const J = judge({
- *     slots: [{ id: 'how', label: 'كم هوّة؟', options: F_HOW }, { id: 'look', label: 'أيّ هوّات؟', options: F_LOOK }],
+ *     slots: [{ id: 'how', label: 'Combien de fossés ?', options: F_HOW }, { id: 'look', label: 'Quels fossés ?', options: F_LOOK }],
  *     right: { how: 'all', look: 'pair' },
  *     says: (rule, c, tile) => tile.how[rule.how].test(tile.look[rule.look].of(c), (n) => n % c.d === 0),
  *   });
@@ -92,7 +92,7 @@ export const fills = (n, d) => n % d === 0;
  *
  *   const farqCase = (A, B, d) => {
  *     const c = pairCase('farq', A, B, d);
- *     return { ...c, D: A - B, fd: fills(A - B, d), tag: c.held ? 'يبنيهما معًا' : 'لا يبنيهما' };
+ *     return { ...c, D: A - B, fd: fills(A - B, d), tag: c.held ? 'construit les deux' : 'ne construit pas les deux' };
  *   };
  */
 export function pairCase(of, A, B, d) {
@@ -115,11 +115,11 @@ export function pairCase(of, A, B, d) {
 /**
  * The plank d on the gaps A and B with the coins of a PURSE that holds exactly the planks of the longest plank of both
  * (`purse` = A ÷ g + B ÷ g): so `held` is d = g. `need` = the planks the two bridges take when d fills both; the tag
- * says it (« 12 لوحًا ») or « لا يملؤهما ».
+ * says it (« 12 planches ») or « ne remplit pas les deux ».
  *
  *   const tarhCase = (A, B, d) => plankCase('tarh', A, B, d);
- *   tarhCase(259, 185, 37);   // { held: true, need: 12, purse: 12, tag: '12 لوحًا', pair: { a: 259, b: 185, d: 37, need: 12 } }
- *   tarhCase(259, 185, 1);    // { fits: true, held: false, need: 444, tag: '444 لوحًا' }
+ *   tarhCase(259, 185, 37);   // { held: true, need: 12, purse: 12, tag: '12 planches', pair: { a: 259, b: 185, d: 37, need: 12 } }
+ *   tarhCase(259, 185, 1);    // { fits: true, held: false, need: 444, tag: '444 planches' }
  */
 export function plankCase(of, A, B, d) {
   const c = pairCase(of, A, B, d);
@@ -132,7 +132,7 @@ export function plankCase(of, A, B, d) {
     purse: A / g + B / g,
     held: d === g,
     pair: { a: A, b: B, d, ...(need != null ? { need } : {}) },
-    tag: c.fits ? planks(need) : 'لا يملؤهما',
+    tag: c.fits ? planks(need) : 'ne remplit pas les deux',
   };
 }
 
@@ -240,28 +240,35 @@ export const attacksOf =
 export const line = (tokens, dir = 'ltr') => ({ dir, tokens });
 /** « □ − □ = □ » — row i of the subtraction algorithm, typed whole. */
 export const subtractionRow = (i, w = 3) =>
-  line([slot(`x${i}`, 'العدد الأكبر', w), '−', slot(`y${i}`, 'العدد الأصغر', w), '=', slot(`d${i}`, 'الفرق', w)]);
+  line([
+    slot(`x${i}`, 'le plus grand nombre', w),
+    '−',
+    slot(`y${i}`, 'le plus petit nombre', w),
+    '=',
+    slot(`d${i}`, 'la différence', w),
+  ]);
 /** « □ = □ × □ + □ » — row i of Euclid's algorithm, typed whole. */
 export const divisionRow = (i, { w = 3, qw = 2 } = {}) =>
   line([
-    slot(`a${i}`, 'المقسوم', w),
+    slot(`a${i}`, 'le dividende', w),
     '=',
-    slot(`b${i}`, 'العدد الأصغر', w),
+    slot(`b${i}`, 'le plus petit nombre', w),
     '×',
-    slot(`q${i}`, 'الحاصل', qw),
+    slot(`q${i}`, 'le quotient', qw),
     '+',
-    slot(`r${i}`, 'الباقي', w),
+    slot(`r${i}`, 'le reste', w),
   ]);
 /** « A = B × □ + □ » — the division of A by B, its quotient and remainder typed. */
 export const givenDivision = (A, B, { q = 'q', r = 'r', qw = 2, rw = 2 } = {}) =>
-  line([String(A), '=', String(B), '×', slot(q, 'الحاصل', qw), '+', slot(r, 'الباقي', rw)]);
+  line([String(A), '=', String(B), '×', slot(q, 'le quotient', qw), '+', slot(r, 'le reste', rw)]);
 /** « A − B = □ ». */
-export const differenceBox = (A, B, { name = 'd', w = 2 } = {}) => line([`${A} − ${B}`, '=', slot(name, 'الفرق', w)]);
+export const differenceBox = (A, B, { name = 'd', w = 2 } = {}) =>
+  line([`${A} − ${B}`, '=', slot(name, 'la différence', w)]);
 /** « PGCD(A ; B) = □ ». */
 export const pgcdBox = (A, B, { name = 'g', w = 2 } = {}) => line([`PGCD(${A} ; ${B})`, '=', slot(name, 'PGCD', w)]);
 /** « PGCD(A ; B) = PGCD(B ; □) ». */
 export const pgcdPairBox = (A, B, { name = 'p', w = 2 } = {}) =>
-  line([`PGCD(${A} ; ${B})`, '=', `PGCD(${B} ;`, slot(name, 'العدد', w), ')']);
+  line([`PGCD(${A} ; ${B})`, '=', `PGCD(${B} ;`, slot(name, 'le nombre', w), ')']);
 
 /**
  * A FRACTION in its own shape (root CLAUDE.md: a typed answer is entered in its own shape): the token
@@ -270,7 +277,7 @@ export const pgcdPairBox = (A, B, { name = 'p', w = 2 } = {}) =>
  *   line([givenFraction(66, 78), '=', fractionBox('n', 'd')])   // 66/78 = □/□, typed over a bar
  */
 export const fractionBox = (n = 'n', d = 'd', { w = 3, nw = w, dw = w } = {}) => ({
-  frac: { n: slot(n, 'البسط', nw), d: slot(d, 'المقام', dw) },
+  frac: { n: slot(n, 'le numérateur', nw), d: slot(d, 'le dénominateur', dw) },
 });
 /** A fraction printed in the same shape, nothing to type: `givenFraction(66, 78)`. */
 export const givenFraction = (n, d) => ({ frac: { n: String(n), d: String(d) } });

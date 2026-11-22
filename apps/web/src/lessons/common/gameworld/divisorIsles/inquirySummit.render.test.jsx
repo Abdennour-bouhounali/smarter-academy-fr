@@ -137,8 +137,10 @@ describe('the investigation screen `summit`', () => {
     expect(lengths).not.toMatch(/<text[^>]*><\/text>/);
     expect(lengths.match(/>266</g)).toHaveLength(1);
     expect(lengths.match(/>1</g)).toHaveLength(1);
-    // the chips are read after their label « from the longest to the shortest »: right to left
-    expect(out).toMatch(/data-iq-planks="[^"]*"><small>chips266<\/small><div class="iq-chips" dir="rtl">/);
+    // the chips are read after their label « from the longest to the shortest »: left to right (no rtl island)
+    expect(out).toMatch(/data-iq-planks="[^"]*"><small>chips266<\/small><div class="iq-chips">/);
+    // the label of the line of lengths starts on the LEFT (the French screen, 2026-11-22)
+    expect(out).toMatch(/<text class="iq-sum-linelabel" x="40"/);
   });
 
   it('mode first: the count box before the descent, then the count shown against what he typed', () => {

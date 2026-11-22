@@ -351,7 +351,7 @@ describe('the investigation screens, played past their first screen', () => {
     sayCount: 'count',
     check: 'check',
   };
-  it('common: each plank goes to its shelf; « تحقّق » with nothing marked is answered, then his longest and count', () => {
+  it('common: each plank goes to its shelf; « Vérifier » with nothing marked is answered, then his longest and count', () => {
     const cands = [1, 2, 3, 4, 5, 6, 9, 12];
     const s = mount({ kind: 'common', rounds: [{ a: 12, b: 18, candidates: cands }], text: COMMON_TEXT });
     for (const d of cands) {

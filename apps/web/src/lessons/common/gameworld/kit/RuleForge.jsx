@@ -1,5 +1,5 @@
 /**
- * « مصهر القاعدة » — the SCREEN of a rule forge (frame: forge.js; contract GAME_WORLD.md §2sexies). It names no lesson and
+ * « Forge ta règle » — the SCREEN of a rule forge (frame: forge.js; contract GAME_WORLD.md §2sexies). It names no lesson and
  * no world: the lesson gives the `forge` (its tiles, what a rule says of a case, the evidence, the attacks, the wording)
  * and the world gives the `parts` — how one of ITS cases is drawn:
  *   Mirror({ c, stage, fast, tight })   the case in the mirror; `stage`: ask | build | done; `tight`: the mirror shares
@@ -30,30 +30,8 @@ import {
 } from './forge';
 import { boxesOf } from './authoring/forgeBlocks';
 import './ruleForge.css';
+import { FORGE as L } from './text';
 
-/** The words of the forge itself — the same in every lesson. What speaks of a case is the forge's own `text`. */
-const L = {
-  steps: { inquiry: 'استكشف', predict: 'تنبّأ', build: 'اكتب قاعدتك', test: 'المرآة تختبرها', seal: 'اختم مفتاحك' },
-  right: 'توقّعك صحيح!',
-  miss: 'توقّعك لم يصب هذه المرّة.',
-  toBuild: 'أكتب قاعدتي',
-  inHead: 'ثلاثة توقّعات صحيحة متتالية: القاعدة في رأسك. اكتبها الآن.',
-  timeToWrite: 'حان وقت كتابة قاعدتك: المرآة ستختبرها.',
-  test: 'اختبر قاعدتي',
-  fix: 'أصلح قاعدتي',
-  dare: 'ليكن!',
-  notThat: 'قاعدتك تقول غير ذلك.',
-  another: 'تحدٍّ آخر',
-  toSeal: 'قاعدتي صمدت!',
-  sealed: 'قاعدتك صمدت أمام المرآة: صارت مفتاحك.',
-  words: 'قلها بكلماتك (اختياري)',
-  sealIt: 'أختم مفتاحي',
-  check: 'تحقّق',
-  help: 'ساعدني يا زيرو',
-  choice: 'إحدى هاتين القاعدتين تصمد أمام المرآة. اختبرهما:',
-  ruleA: 'القاعدة الأولى',
-  ruleB: 'القاعدة الثانية',
-};
 const FAST = () => import.meta.env.DEV && typeof window !== 'undefined' && window.__forgeFast;
 const PHASES = ['predict', 'build', 'test', 'seal'];
 const stepOf = (phase) => (phase === 'attack' ? 'test' : phase === 'use' ? 'seal' : phase);
@@ -70,7 +48,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
   // …and the investigation takes the place of the predictions; when it also WRITES the rule (`inquiry.writes`: what the
   // student claimed and the world accepted is his rule), no tile is offered either: the mirror attacks that rule at once
   // …and a forge with no investigation and no case to predict (its evidence is what he did in the WORLD, which held the
-  // predictions) opens directly on its tiles: no « تنبّأ » step is shown, since none is played
+  // predictions) opens directly on its tiles: no « Prédis » step is shown, since none is played
   const phases = inquiry
     ? ['inquiry', ...(inquiry.writes ? [] : ['build']), 'test', 'seal']
     : cases.length
@@ -300,14 +278,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
   });
 
   return (
-    <div
-      className="rf-root"
-      dir="rtl"
-      data-rf={phase}
-      data-rf-key={forge.key}
-      data-rf-tries={tries}
-      data-rf-nudges={nudges}
-    >
+    <div className="rf-root" data-rf={phase} data-rf-key={forge.key} data-rf-tries={tries} data-rf-nudges={nudges}>
       {/* --di-min-font: the 12 px floor in the units of this zoom (GAME_WORLD.md « 12 px floor »): 15 px drawn at 0.8 */}
       <div className="rf-fit" style={{ zoom: z, '--di-min-font': `${Math.ceil(1200 / z) / 100}px` }}>
         <header className="rf-head">
@@ -395,7 +366,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
                 {forge.slots.map((s) => {
                   const o = optionOf(forge, s.id, rule[s.id]);
                   return (
-                    <b key={s.id} className={o ? '' : 'is-empty'}>
+                    <b key={s.id} className={o ? '' : 'is-empty'} data-rf-slot={s.id}>
                       {o ? (forge.chip?.(s, o) ?? o.label) : '……'}
                     </b>
                   );
@@ -496,7 +467,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
                 )}
                 <div className="rf-tiles" data-rf-slots={forge.slots.length}>
                   {forge.slots.map((s) => (
-                    <div key={s.id}>
+                    <div key={s.id} data-rf-slot-tiles={s.id}>
                       <h4>{s.label}</h4>
                       {s.options.map((o) => (
                         <button

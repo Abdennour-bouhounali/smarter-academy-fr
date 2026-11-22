@@ -23,7 +23,7 @@ const SCALE_KEY = 'smarter_classroom_scale';
 const ORIENTATION_LOCK_MAX_WIDTH = 1024;
 
 /**
- * ClassroomPresentation — le MODE CLASSE (« وضع القسم ») de la plateforme.
+ * ClassroomPresentation — le MODE CLASSE (« Mode classe ») de la plateforme.
  *
  * UNE coquille de présentation pour tout contenu de leçon : on l'enveloppe,
  * et il gagne un plein écran propre — sans barre latérale, sans navigation de
@@ -45,7 +45,7 @@ const ORIENTATION_LOCK_MAX_WIDTH = 1024;
  *   • l'ajustement au viewport (usePresentationFit) : zone offerte et échelle
  *     effective publiées en variables CSS et par le contexte ;
  *   • la barre d'outils (portée, titre, échelle, sortie) et la navigation
- *     السابق / التالي — fournies par les props ;
+ *     Précédent / Suivant — fournies par les props ;
  *   • la sortie propre au démontage et au changement de route ; en session
  *     LEÇON, `routeScope` garde la présentation tant qu'on reste dans la leçon ;
  *   • le verrou d'orientation paysage sur petit écran, tenté et jamais exigé.
@@ -115,8 +115,8 @@ function ClassroomSession({
 }) {
   const { t } = useTranslation('lesson');
   const auth = useContext(AuthContext);
-  // `retired`: a lesson whose class has its own board (« حصّة القسم », features/classSession/boardLessons.js) has no
-  // « وضع القسم » any more — nobody presents here, and the labs and tests nested in its pages inherit it.
+  // `retired`: a lesson whose class has its own board (« séance en classe », features/classSession/boardLessons.js) has no
+  // « Mode classe » any more — nobody presents here, and the labs and tests nested in its pages inherit it.
   const canPresent = retired ? false : typeof presenter === 'boolean' ? presenter : canPresentClassroom(auth?.user);
 
   const rootRef = useRef(null);
@@ -133,7 +133,7 @@ function ClassroomSession({
   // une même coquille sert le sommaire de leçon ET ses modules.
   const [session, setSession] = useState(null);
   const [userScale, setUserScale] = useState(() => clampScale(parseFloat(storage.getItem(SCALE_KEY)) || DEFAULT_SCALE));
-  // Le pointeur de classe (« المؤشّر ») : éteint à chaque séance, taille
+  // Le pointeur de classe (« Pointeur ») : éteint à chaque séance, taille
   // gardée par appareil (comme l'échelle). Voir ClassroomPointer.jsx.
   const [pointerOn, setPointerOn] = useState(false);
   const [spotlight, setSpotlight] = useState(false);
@@ -313,7 +313,7 @@ function ClassroomSession({
     if (!session || session.scope !== 'lesson' || !lessonNavigation) return null;
     const { previous, next, position, total, previousLabel: pLabel, nextLabel: nLabel } = lessonNavigation;
     return {
-      // Un saut de محور entre TOUJOURS par le bon bout : en arrière, à la
+      // Un saut d'étape entre TOUJOURS par le bon bout : en arrière, à la
       // dernière unité du module précédent ; en avant, à la première.
       previous: previous ? () => { arrival.current = 'last'; previous(); } : null,
       next: next ? () => { arrival.current = 'first'; next(); } : null,
@@ -325,7 +325,7 @@ function ClassroomSession({
   // ── Contexte publié au contenu ───────────────────────────────────────────
   const scope = session?.scope ?? scopeProp;
   const title = session?.title ?? titleProp;
-  // 🧪 المختبر DANS la barre d'outils de la présentation : au tableau,
+  // 🧪 L’atelier DANS la barre d'outils de la présentation : au tableau,
   // devant la classe, c'est là que la main de l'enseignant se trouve, et un
   // instrument doit être atteignable sans sortir de la séance. Le calque
   // (z-index 80) couvre la racine de présentation (70) et se portalise
@@ -336,7 +336,7 @@ function ClassroomSession({
       <MathLabEntryButton />
     </>
   );
-  // Les SAUTS de محور. Ils n'appartiennent à aucune page : c'est la session
+  // Les SAUTS d'étape. Ils n'appartiennent à aucune page : c'est la session
   // leçon qui connaît ses voisins, et elle seule les offre. En portée module,
   // exercice ou manipulation, `lessonNav` est nul et aucun bouton n'apparaît.
   const effPreviousModule = lessonNav?.previous ?? undefined;

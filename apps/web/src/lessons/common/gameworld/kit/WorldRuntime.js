@@ -3,7 +3,7 @@
  *
  * It owns the three.js scene, the loop, the robot the student steers, the camera, the sky, the things he can use (`addInteract`),
  * the gems, the game state React reads (`subscribe` / `getState`) and the flows every lesson has around its story: the hub,
- * « خريطة المعارف », « الامتحان الأبيض », the paper mode, the evidence, the save.
+ * « fiche de connaissances », « brevet blanc », the paper mode, the evidence, the save.
  *
  * A WORLD extends it and gives the mechanic through these hooks (the ONLY way the runtime reaches a world):
  *   initWorld(save)        its own fields, before the state exists (layout, what is built)
@@ -84,12 +84,12 @@ export class WorldRuntime {
     // the practice game: what is passed, and every key ever earned (on this device, or known from the lesson's progress)
     this.practice = { ...(sv?.practice ?? {}) };
     this.keysEver = new Set([...(sv?.keysEver ?? []), ...(sv?.keys ?? []), ...unlockedKeys]);
-    // « فضاء الامتحان »: the ladder of sittings; and, per key, the first tries done as in an exam (right / all)
+    // « Espace brevet »: the ladder of sittings; and, per key, the first tries done as in an exam (right / all)
     this.exam = { ...emptyExam(), ...(sv?.exam ?? {}) };
     this.tally = { ...(sv?.tally ?? {}) };
     // the rules the student forged himself
     this.rules = { ...(sv?.rules ?? {}) };
-    // « خريطة المعارف »: the cards read and the rules sealed by their memory test
+    // « fiche de connaissances »: the cards read and the rules sealed by their memory test
     this.know = {
       read: [...(sv?.know?.read ?? [])],
       sealed: [...(sv?.know?.sealed ?? [])],
@@ -332,19 +332,19 @@ export class WorldRuntime {
     this.input.clear();
   }
 
-  // ───────────────────────────── the hub: the map, « تقدّمي », « مختبري », the launch ─────────────────────────────
+  // ───────────────────────────── the hub: the map, « Ma progression », « Mon labo », the launch ─────────────────────────────
   /** The map opens from the title screen or from the world; it remembers where to return. */
   openMap(sel = null, space = null) {
     this.openHub({ type: 'map', sel, space });
   }
-  /** « تقدّمي »: the student's progress in this lesson. « مختبري »: the lab of the lesson. */
+  /** « Ma progression »: the student's progress in this lesson. « Mon labo »: the lab of the lesson. */
   openProgress() {
     this.openHub({ type: 'progress' });
   }
   openLab() {
     this.openHub({ type: 'lab' });
   }
-  /** « عُدّة الانطلاق »: the launch of the lesson (`lessons/common/launchkit`). `then: 'start'` enters the world when it ends. */
+  /** « L’échauffement »: the launch of the lesson (`lessons/common/launchkit`). `then: 'start'` enters the world when it ends. */
   openLaunch(thenStart = false) {
     this.openHub({ type: 'launch', then: thenStart ? 'start' : null });
   }
@@ -353,17 +353,17 @@ export class WorldRuntime {
     if (then === 'start') this.start();
   }
 
-  /** « خريطة المعارف »: the full page of every rule, example and common mistake of the lesson. */
+  /** « fiche de connaissances »: the full page of every rule, example and common mistake of the lesson. */
   openKnow(sel = null) {
     this.openHub({ type: 'know', sel });
   }
-  /** « الامتحان الأبيض »: the exam sitting (ExamSitting.jsx) — open once the four keys are owned. */
+  /** « brevet blanc »: the exam sitting (ExamSitting.jsx) — open once the four keys are owned. */
   openSitting(level = 1) {
     if (!this.lesson.journey.examOpen([...this.keysEver], this.practice) || !examLevelOpen(this.exam, level)) return;
     this.openHub({ type: 'sitting', level, weak: this.exam.weak?.[level] ?? [], n: (this.exam.sittings ?? 0) + 1 });
   }
 
-  /** « خروج » from a sitting, confirmed: nothing was marked or sent, the ladder has not moved — back to it. */
+  /** « Quitter » from a sitting, confirmed: nothing was marked or sent, the ladder has not moved — back to it. */
   quitSitting() {
     if (this.state.overlay?.type === 'sitting') this.openMap(null, 'exam');
   }
@@ -380,7 +380,7 @@ export class WorldRuntime {
     this.set({ exam, overlay: { type: 'promotion', result } });
   }
 
-  /** « قواعدي »: the rules he owns, readable from anywhere he plays (the button of the top bar). */
+  /** « Mes règles »: the rules he owns, readable from anywhere he plays (the button of the top bar). */
   openRules(key = null) {
     if (!this.state.keys.length) return;
     this.openHub({ type: 'rules', key });
@@ -400,7 +400,7 @@ export class WorldRuntime {
   }
 
   /**
-   * « وضع الورقة »: a screen that asks for written work (`source`) turns it on — the music stops, as in an exam — and off when
+   * « mode papier »: a screen that asks for written work (`source`) turns it on — the music stops, as in an exam — and off when
    * it leaves. Several screens may ask at once; the music comes back when none does.
    */
   paperMode(source, on) {
@@ -415,7 +415,7 @@ export class WorldRuntime {
     this.set({ paper: now });
   }
 
-  /** An answer that counts toward الكفاءات (evidence.js decides which): handed to the shell, which sends it to the server. */
+  /** An answer that counts toward savoir-faire (evidence.js decides which): handed to the shell, which sends it to the server. */
   evidence(context, ev) {
     if (!ev) return;
     const t = this.tally[ev.key] ?? { ok: 0, n: 0 };
@@ -429,7 +429,7 @@ export class WorldRuntime {
   }
 
   /**
-   * A copy of « الامتحان الأبيض » was handed in: each answered step that counts adds to the tally of its key (« تقدّمي »), and the
+   * A copy of « brevet blanc » was handed in: each answered step that counts adds to the tally of its key (« Ma progression »), and the
    * copy goes to the shell, which sends it to the practice engine — the SERVER re-computes every verdict (kit/bankEvidence.js).
    */
   handInSitting(subject, answers) {
@@ -744,7 +744,7 @@ export class WorldRuntime {
     this.raf = requestAnimationFrame(this.loop);
     const raw = Math.max(0, (now - this.last) / 1000);
     this.last = now;
-    // a full-screen page hides the world (« مختبري », the exam sheet, « خريطة المعارف », « تقدّمي »): nothing is simulated or
+    // a full-screen page hides the world (« Mon labo », the exam sheet, « fiche de connaissances », « Ma progression »): nothing is simulated or
     // drawn behind it — the frames belong to the page (a tablet draws the lab's drags and fits a card's text, not an island
     // nobody sees)
     if (this.pausesWorld(this.state.overlay?.type)) return;
@@ -774,7 +774,7 @@ export class WorldRuntime {
     // behind it — a tall instruction at 1024×768 — the bubble drops just under it
     // — and never what the world has just answered either: the purse, the sign of a bridge, the equation and its verdict
     // (2026-11-20: after a refusal, at the light platform, the bubble sat on « 85 = 3 × 28 + 1 »)
-    // — a world marks anything else it shows in the middle `data-di-clear` (the rod in his hand, in « قصر الساحات »)
+    // — a world marks anything else it shows in the middle `data-di-clear` (the rod in his hand, in « Le palais des dalles »)
     const base = this.canvas.getBoundingClientRect();
     const half = el.offsetWidth / 2;
     for (const box of el.ownerDocument.querySelectorAll(

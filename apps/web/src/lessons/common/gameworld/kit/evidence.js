@@ -1,11 +1,11 @@
 /**
- * WHICH GAME ANSWERS COUNT TOWARD « الكفاءات » (owner decision, 2026-11-15) — PURE, and it names no lesson.
+ * WHICH GAME ANSWERS COUNT TOWARD « savoir-faire » (owner decision, 2026-11-15) — PURE, and it names no lesson.
  * Only an answer that looks like an exam answer is evidence: written format, FIRST try, in paper mode, with no help opened
  * before it (no rule reminder, no model sheet). Right or wrong, the first try is what is reported — later tries, the gate
  * dash, the story and every game-format question count for nothing. The SERVER re-computes the result from the numbers
  * (`claim`): the browser's own verdict is never trusted.
  *
- * The lesson gives (`createEvidence`): its grade and, per key (rule), the code of the الكفاءة it proves. It keeps for
+ * The lesson gives (`createEvidence`): its grade and, per key (rule), the code of the savoir-faire it proves. It keeps for
  * itself WHICH claim each of its answers makes; how a claim is verified is the kit's (`claims.js`), the same rule as the
  * server's.
  */
@@ -26,7 +26,7 @@ export function guardEvidence(ev, ok) {
 }
 
 export function createEvidence({ grade, points }) {
-  /** The id of the الكفاءة a key proves, as the catalogue writes it — or null for a key that proves none. */
+  /** The id of the savoir-faire a key proves, as the catalogue writes it — or null for a key that proves none. */
   const learningPointOf = (lessonId, key) => (points[key] ? `${grade}_${lessonId}_${points[key]}` : null);
 
   /** What is sent to the server for one answer that counts: POST /lessons/{lesson}/game-evidence (GameEvidenceController). */

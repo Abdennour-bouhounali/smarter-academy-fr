@@ -1,8 +1,8 @@
 /**
  * La géométrie d'une FIGURE DÉCLARATIVE — points nommés, segments, droites, demi-droites, angles —
  * dessinée par GeoFigure.jsx dans une leçon ET dans un énoncé de pratique (`statement.figure`).
- * Née avec l'unité 9 « خاصية طالس » (2026-10-02) : un exercice de géométrie qui dit « في الشكل
- * المقابل » doit MONTRER le shape, et la pratique n'avait que CoordPlane (un repère, des axes).
+ * Née avec la propriété de Thalès (2026-10-02) : un exercice de géométrie qui dit « sur la figure
+ * ci-contre » doit MONTRER la figure, et la pratique n'avait que CoordPlane (un repère, des axes).
  *
  * La donnée est en unités libres, y vers le HAUT ; ce module calcule l'échelle, la viewBox, la place
  * des étiquettes (hors du polygone, loin du centre de gravité) — sans DOM, donc testable et réutilisé
@@ -14,18 +14,18 @@
  *     lines: [{ through: ['A', 'B'], name: '(d)' }],      rays: [{ from: 'A', through: 'x' }],
  *     polygons: [{ points: ['A', 'M', 'N'], tone: 'indigo' }],
  *     rightAngles: [['B', 'H', 'A']],                    angles: [{ at: 'P', from: 'N', to: 'O', label: '40°' }],
- *     labels: { A: 'n' },  hidden: ['x'],  ariaLabel: 'مثلث ABC و (MN) يوازي (BC)'
+ *     labels: { A: 'n' },  hidden: ['x'],  ariaLabel: 'Triangle ABC, (MN) parallèle à (BC)'
  *   }
  *
- * Unités 11–12 « الأشعة » (2026-10-04) : `vectors: [{ from: 'A', to: 'B', label: 'u', tone: 'rose' }]` — une flèche
+ * Les vecteurs (2026-10-04) : `vectors: [{ from: 'A', to: 'B', label: 'u', tone: 'rose' }]` — une flèche
  * (pointe en `to`), son nom surmonté d'une petite flèche (le \vec du manuel) ; `grid: true` (ou `{ step: 0.5 }`) — le
  * papier quadrillé du manuel, aligné sur les coordonnées entières (multiples de `step`) sous toute la figure.
- * Unité 12 « الأشعة في معلم » : `axes: true` (ou `{ every: 2 }`) — les deux axes du معلم passant par l'origine (le cadre
+ * Les vecteurs dans un repère : `axes: true` (ou `{ every: 2 }`) — les deux axes du repère passant par l'origine (le cadre
  * la contient), flèche au bout positif, graduations entières (sauf 0 ; omises sous un nom de point). Nommer O, I, J reste
  * l'affaire de la figure (des points ordinaires).
- * Unité 13 « الدوران - الزوايا - المضلّعات المنتظمة » : un arc CENTRÉ `arcs: [{ center: 'O', from: 'M', to: 'M2', sweep: 'ccw',
+ * Rotation, angles et polygones réguliers : un arc CENTRÉ `arcs: [{ center: 'O', from: 'M', to: 'M2', sweep: 'ccw',
  * arrow: true, label: '70°' }]` (le chemin de M vers M′ autour de O, l'arc intercepté d'un angle inscrit) ; `angles[].arrow`
- * (une pointe au bout `to` : le sens du دوران) ; `circles: [{ center: 'O', radius: 3 }]` (un rayon en unités de la figure).
+ * (une pointe au bout `to` : le sens de la rotation) ; `circles: [{ center: 'O', radius: 3 }]` (un rayon en unités de la figure).
  */
 export const GEO_FIGURE_KEYS = Object.freeze([
   'points', 'segments', 'lines', 'rays', 'polygons', 'rightAngles', 'angles', 'labels', 'hidden',
@@ -68,7 +68,7 @@ export function validateGeoFigure(fig) {
     if (c.radius != null) { if (!(Number(c.radius) > 0)) errors.push(`circles[${i}] : radius > 0`); } else { need(c.through, `circles[${i}]`); if (c.center === c.through) errors.push(`circles[${i}] : center = through`); }
   });
   (fig.hidden ?? []).forEach((n) => need(n, 'hidden'));
-  if (typeof fig.ariaLabel !== 'string' || !/[؀-ۿ]/.test(fig.ariaLabel)) errors.push('ariaLabel arabe obligatoire');
+  if (typeof fig.ariaLabel !== 'string' || !fig.ariaLabel.trim() || /[\u0600-\u06FF]/.test(fig.ariaLabel)) errors.push('ariaLabel en français obligatoire');
   return errors;
 }
 
@@ -94,9 +94,9 @@ export function layoutGeoFigure(fig, { size = 300, pad = 34 } = {}) {
     extra.push([q[0] + e * d[0], q[1] + e * d[1]]);
   }
   const step = fig.grid && fig.grid !== true ? Number(fig.grid.step) : 1;
-  // Les axes (unité 12 « الأشعة في معلم ») passent par l'origine : le cadre la contient toujours.
+  // Les axes (les vecteurs dans un repère) passent par l'origine : le cadre la contient toujours.
   if (fig.axes) extra.push([0, 0]);
-  // Les demi-cercles et cercles (unité 12, أدمج تعلّماتي) dépassent leurs points : leur tracé entre dans le cadre.
+  // Les demi-cercles et cercles (unité 12, synthèse) dépassent leurs points : leur tracé entre dans le cadre.
   for (const a of fig.arcs ?? []) {
     extra.push(...(a.center != null ? centeredArcPoints(pts[a.center], pts[a.from], pts[a.to], a.sweep ?? 'ccw', 12) : semicirclePoints(pts[a.from], pts[a.to], a.sweep ?? 'cw', 8)));
   }
@@ -200,7 +200,7 @@ export function layoutGeoFigure(fig, { size = 300, pad = 34 } = {}) {
 }
 
 /**
- * Les DEMI-CERCLES et CERCLES (unité 12, « أدمج تعلّماتي » : la وضعية des deux coureurs, 2026-10-04) —
+ * Les DEMI-CERCLES et CERCLES (unité 12, synthèse : la situation des deux coureurs, 2026-10-04) —
  *   `arcs: [{ from: 'A', to: 'O', sweep: 'cw', tone, dashed, bold }]` : le demi-cercle de DIAMÈTRE [from, to] (son centre est le
  *   milieu), parcouru de `from` vers `to` dans le sens des aiguilles d'une montre (`cw`) ou dans l'autre (`ccw`), tel qu'on le
  *   VOIT sur la figure (y vers le haut) : de (−2 ; 0) à (0 ; 0), `cw` passe par le haut (−1 ; 1) ;

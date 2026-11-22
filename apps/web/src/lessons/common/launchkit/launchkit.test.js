@@ -16,7 +16,7 @@ import {
   BANDS,
 } from './engine';
 
-describe('عُدّة الانطلاق — the families and how an answer is graded', () => {
+describe('L’échauffement — the families and how an answer is graded', () => {
   it('has no family until the French learning net exists', () => {
     expect(FAMILIES).toEqual({});
     expect(familyFor('6e.t1.r01')).toBeNull();
@@ -48,7 +48,7 @@ describe('عُدّة الانطلاق — the families and how an answer is grad
   });
 });
 
-describe('عُدّة الانطلاق — the engine of a launch', () => {
+describe('L’échauffement — the engine of a launch', () => {
   // A neutral fixture in the shape of `toolsForLesson(code)`: two earlier tools, the core one first.
   const links = [
     { id: '6e.t1.r01', grade: '6e', text: 'Outil A', weight: 'core', lesson: { code: 'lecon-a', grade: '6e' } },
@@ -95,7 +95,7 @@ describe('عُدّة الانطلاق — the engine of a launch', () => {
     expect(scoreOf(kit)).toEqual({ lit: 1, total: 4, percent: 25 });
   });
 
-  it('repairs the weakest tool on the spot: an example, two questions — and a repaired tool is not « ثابتة » yet', () => {
+  it('repairs the weakest tool on the spot: an example, two questions — and a repaired tool is not « Solide » yet', () => {
     const base = [ans(A, 1, false, { mistake: 'rest-too-big' }), ans(A, 1, false), ans(B, 1, true), ans(B, 2, false)];
     expect(workshopTool(tools, base)).toEqual({ item: A, level: 1 });
     expect(play(base)).toEqual({ type: 'example', item: A, level: 1 });
@@ -114,7 +114,7 @@ describe('عُدّة الانطلاق — the engine of a launch', () => {
     expect(play(base, { skipWorkshop: true })).toEqual({ type: 'result' });
   });
 
-  it('respects the five minutes and the twelve questions: what was not asked stays « لم نفحصها بعد » and does not cost points', () => {
+  it('respects the five minutes and the twelve questions: what was not asked stays « Pas encore testé » and does not cost points', () => {
     expect(nextStep({ tools, answers: [ans(A, 1, true), ans(A, 2, true)], elapsed: CAP.seconds })).toEqual({
       type: 'result',
     });
@@ -131,7 +131,7 @@ describe('عُدّة الانطلاق — the engine of a launch', () => {
     expect(scoreOf(kitOf(tools, [])).percent).toBe(null);
   });
 
-  it('a tool measured « ثابتة » in the last three weeks arrives charged and is not asked again', () => {
+  it('a tool measured « Solide » in the last three weeks arrives charged and is not asked again', () => {
     const now = 1e12;
     const store = mergeKit(
       {},
@@ -165,8 +165,8 @@ describe('عُدّة الانطلاق — the engine of a launch', () => {
     expect(gateOf(kitOf(tools, [...solid(A), ...solid(B)]))).toBe(null);
     expect(gateOf(kitOf(tools, [...miss(A), ...solid(B)])).item).toBe(A); // the division is core: the lesson cannot be passed without it
     expect(gateOf(kitOf(tools, [...solid(A), ...miss(B)]))).toBe(null); // the rules are a support: they never close the door
-    expect(gateOf(kitOf(tools, [ans(A, 1, true), ans(A, 2, false), ...miss(B)]))).toBe(null); // « تحتاج تثبيتًا » is enough to go
-    expect(gateOf(kitOf(tools, [ans(A, 1, false)]))).toBe(null); // a tool the clock did not let finish is not « نبدأ منها »
+    expect(gateOf(kitOf(tools, [ans(A, 1, true), ans(A, 2, false), ...miss(B)]))).toBe(null); // « À consolider » is enough to go
+    expect(gateOf(kitOf(tools, [ans(A, 1, false)]))).toBe(null); // a tool the clock did not let finish is not « À reprendre »
     const failed = kitOf(tools, [...miss(A), ...solid(B), ...cap(A, false, true)]);
     expect(failed[0]).toMatchObject({ band: BANDS.START, capsule: true, repaired: false });
     expect(gateOf(failed)).toBe(null); // done, not passed: he goes in, the tool stays flagged
@@ -201,7 +201,7 @@ describe('عُدّة الانطلاق — the engine of a launch', () => {
   });
 });
 
-describe('عُدّة الانطلاق — the sounds', () => {
+describe('L’échauffement — the sounds', () => {
   const read = (f) => readFileSync(new URL(f, import.meta.url), 'utf8');
   const namesIn = (src) =>
     [...src.matchAll(/(?:play|playRef\.current)\(([^)]*?)[,)]/g)].flatMap((m) =>
