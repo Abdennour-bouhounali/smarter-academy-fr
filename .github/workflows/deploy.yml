@@ -460,6 +460,29 @@ jobs:
 
           # storage/ is excluded from the rsync and sits behind the api/.htaccess,
           # so a dump here is never served over HTTP.
+          # A FRESH database (plan §6: France starts from an empty one) has
+          # nothing to back up, and its dump would be under the 1 KB guard
+          # below. Only a database with ZERO tables of its own skips the backup:
+          # an unreachable database or unreadable answer fails this step.
+          # db:show lists every schema the MySQL user can see, so the count is
+          # kept to the configured database.
+          info="$(mktemp -p storage/app)"; trap 'rm -f "$info"' EXIT
+          php artisan db:show --json > "$info"
+          tables="$(php -r '
+            $j = json_decode(file_get_contents($argv[1]), true);
+            if (! is_array($j) || ! isset($j["tables"]) || ! is_array($j["tables"])) { fwrite(STDERR, "db:show gave no table list\n"); exit(1); }
+            $cfg = $j["platform"]["config"] ?? [];
+            $own = in_array($cfg["driver"] ?? "", ["mysql", "mariadb"], true)
+                ? array_filter($j["tables"], fn ($t) => ($t["schema"] ?? null) === ($cfg["database"] ?? null))
+                : $j["tables"];
+            echo count($own);
+          ' "$info")"
+          if [ "$tables" = "0" ]; then
+            echo "The database is empty (first deployment): nothing to back up."
+            exit 0
+          fi
+          echo "The database holds $tables tables: backing it up."
+
           dest="storage/app/backups/pre-deploy-$(date +%Y-%m-%d_%H%M%S)-${SHA:0:8}.sql"
           mkdir -p storage/app/backups
 
@@ -731,22 +754,9 @@ jobs:
           [ "$code" = "200" ] \
             || { echo "::error::SPA fallback broken: /progression returned $code"; exit 1; }
           echo "SPA deep-link routing works."
-
-          # The book purchase page answers DIRECTLY (no 301 to « …/ », which cost a
-          # round trip before anything showed) with its own share page — and, when
-          # the API answered during the build, the pre-rendered first screen
-          # (BOOKS_STORE.md §6bis). The query string bypasses a CDN copy of the old 301.
-          book="$(curl --silent --max-time 30 -w '\n%{http_code}' "$base/books/smart-protocol?deploy=${GITHUB_SHA::8}")"
-          code="$(tail -n1 <<<"$book")"
-          [ "$code" = "200" ] \
-            || { echo "::error::/books/smart-protocol returned $code (expected 200, no redirect)."; exit 1; }
-          grep -q 'og:image" content="[^"]*/og/smart-protocol.png' <<<"$book" \
-            || { echo "::error::/books/smart-protocol is not its share page (og:image)."; exit 1; }
-          if grep -q 'id="sa-static-shell"' <<<"$book"; then
-            echo "Book page: 200, share page, pre-rendered first screen."
-          else
-            echo "::warning::Book page has no pre-rendered first screen (API unreachable during the build?)."
-          fi
+          # No book-page check: the books store is OFF in France (BOOKS_ENABLED,
+          # config/features.js). The Algerian check of /books/smart-protocol
+          # was removed for the first French deployment (plan §8bis).
 
       # Proves Laravel is executing, not merely that a file was uploaded.
       # /api/v1/legal/versions is public, read-only, touches no database and
@@ -798,7 +808,7 @@ jobs:
               401|403|200)
                 echo "  ok    $endpoint -> $code" ;;
               5*)
-                echo "::error::$endpoint returned $code. This is what a missing table or column looks like; check the migration step above and docs/deployment/HOSTINGER_CATCHUP_ALL.sql."
+                echo "::error::$endpoint returned $code. This is what a missing table or column looks like; check the migration step above."
                 failed=1 ;;
               *)
                 echo "::warning::$endpoint returned an unexpected $code."  ;;
