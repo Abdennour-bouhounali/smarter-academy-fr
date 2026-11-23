@@ -1,3 +1,4 @@
+import { formatFr } from '@smarter-academy/core';
 
 /**
  * Une tuile d'indicateur : une icône, un nombre, une étiquette.
@@ -8,6 +9,7 @@
  *
  * `tabular-nums` est délibéré : sans lui, les chiffres changent de largeur et
  * une rangée de compteurs tressaute à chaque rafraîchissement.
+ * Un ENTIER est groupé par milliers (« 1 229 », formatFr) : l'administrateur lisait « 1229 » (2026-11-23).
  */
 export default function StatTile({ icon: Icon, value, label, accent = 'bg-slate-100 text-slate-600', hint }) {
   return (
@@ -16,7 +18,7 @@ export default function StatTile({ icon: Icon, value, label, accent = 'bg-slate-
         <Icon size={18} />
       </div>
       <div className="min-w-0">
-        <p className="font-space font-black text-xl text-slate-900 leading-none tabular-nums">{value}</p>
+        <p className="font-space font-black text-xl text-slate-900 leading-none tabular-nums">{Number.isInteger(value) ? formatFr(value) : value}</p>
         <p className="font-inter text-slate-500 text-xs mt-1 leading-tight">{label}</p>
         {hint && <p className="font-inter text-slate-400 text-xs mt-0.5 leading-tight">{hint}</p>}
       </div>

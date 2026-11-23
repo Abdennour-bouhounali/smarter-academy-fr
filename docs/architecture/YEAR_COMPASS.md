@@ -190,11 +190,18 @@ teacher layer is P3; until then a class student uses the student tap.)*
 `features/home/compass/CompassHomeSections.jsx` holds the top of the page; everything else (the stats, the curriculum position,
 recent lessons, the spaces, premium, other grades) sits under ONE folded « Plus » — folded, never deleted. The section reads the
 SERVER state only (`GET /compass`; a network error renders `off`, never an empty page). **While the compass feature is off (today), the home
-never calls `GET /compass` and always renders `off`** (`StudentHome.jsx › isFeatureOn('compass')`):
+renders NOTHING of the compass** — no `GET /compass`, no lazy compass chunk, no calendar: `features/home/components/TodayLesson.jsx`
+(the class chip, « Reprends ta leçon » — or the first lesson of his grade when nothing is started —, the daily challenge when it is
+on) takes the place of the section (`StudentHome.jsx › isFeatureOn('compass')`; 2026-11-23: rendering `off` drew the year strip,
+which crashed on the empty French calendar and blanked the whole page). The states below are those of the feature ON. On a
+calendar whose dates are not written (`start`/`end` null, no week), `yearStrip` returns `[]` and `teachingWeekNumber` `null`: no
+strip, no crash (`CompassHomeSections.emptyYear.render.test.jsx`). The section sits inside a `SectionErrorBoundary`
+(`components/student/`), and every page of the student's space inside another (`StudentLayout`): a crash shows a calm sentence
+and « Réessayer », never a blank page:
 
 | State | What shows |
 |---|---|
-| `off` (check not open for the grade, or the feature off: every grade today) | the chips, « Reprends ta leçon : … » beside the daily challenge card (itself off today), the year strip — the same page without the check. |
+| `off` (check not open for the grade) | the chips, « Reprends ta leçon : … » beside the daily challenge card (itself off today), the year strip — the same page without the check. |
 | `new` (never checked) | ONE card « Sache d’où tu pars » with « Commencer le tour », and a quiet link « Ou reprends ta leçon : … ». No other card. |
 | `active` | « Continue ton tour de départ » (round, answered count, the round's dots), then « Reprends ta leçon » beside the daily challenge. |
 | `done` | « Mission du jour » = the first unticked task of the week; « Mon plan de la semaine » (≤ 3 tasks, ticked) beside « La carte de mes savoir-faire » (the server's counts + « Commence ici »); the lesson and the daily challenge; the YEAR strip (« L’année : semaine N sur M », taught / now / coming / « Devoir » / « Évaluations » / « Vacances » / « Préparation du brevet » from the real calendar); when the next full check opens. |

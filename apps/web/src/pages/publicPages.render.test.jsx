@@ -39,9 +39,13 @@ describe('the public pages', () => {
     });
   }
 
-  it('Home says that no lesson is open yet, never « 0 leçon »', () => {
+  it('Home says that the first 3e lesson is open and the others come soon, never « 0 leçon »', () => {
+    // since 2026-11-23 one lesson is published (« Décomposer un nombre en facteurs premiers »): « en préparation »
+    // for all of them is false
     const html = render(Home);
-    expect(html).toContain('Les leçons de 3e sont en préparation');
+    expect(html).toContain('La première leçon de 3e est ouverte');
+    expect(html).toContain('les autres arrivent bientôt');
+    expect(html).not.toContain('Les leçons de 3e sont en préparation');
     expect(html).not.toMatch(/\b0\s+leçon/);
   });
 

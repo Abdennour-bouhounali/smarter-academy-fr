@@ -132,7 +132,7 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
             {kind === 'done'
               ? t('unit.done')
               : progressPercent > 0
-                ? `${t('unit.continue')} · ${progressPercent}%`
+                ? `${t('unit.continue')} · ${progressPercent}\u00a0%`
                 : t('unit.start')}
             <ArrowForward className="h-4 w-4" aria-hidden="true" />
           </Link>
@@ -358,7 +358,7 @@ export default function UnitPage() {
             <details className={`group ${FOLD}`} data-tour="unit.objectives">
               <summary className={FOLD_HEAD}>
                 <ListChecks className="h-4 w-4 text-nav-muted" aria-hidden="true" />
-                {t('unit.objectives')}
+                {t(isTeacher ? 'unit.objectivesTeacher' : 'unit.objectives')}
                 <ChevronDown
                   className="ms-auto h-4 w-4 text-nav-muted transition-transform group-open:rotate-180"
                   aria-hidden="true"

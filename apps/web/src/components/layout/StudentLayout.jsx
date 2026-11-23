@@ -9,6 +9,7 @@ import { useWorkspaceLayout } from '../../context/WorkspaceLayoutContext';
 import { getAllGradesSummary } from '../../utils/gradeSummary';
 import { needsName } from '../../utils/personName';
 import PageTourProvider from '../../features/tours/PageTourProvider';
+import SectionErrorBoundary from '../student/SectionErrorBoundary';
 
 /**
  * The authenticated student area's shell — a workspace (sidebar + content),
@@ -76,7 +77,10 @@ export default function StudentLayout() {
             qu'une page arrive, au lieu du repli plein écran du routeur. */}
         <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
           <DoorTabs account="student" doors={studentDoors} />
-          <Outlet />
+          {/* A page that crashes leaves the bar and the doors standing; another address renders again. */}
+          <SectionErrorBoundary scope="page" resetKey={location.pathname}>
+            <Outlet />
+          </SectionErrorBoundary>
         </Suspense>
       </main>
     </div>

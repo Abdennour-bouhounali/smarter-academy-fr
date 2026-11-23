@@ -1,13 +1,14 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Compass, CalendarDays, RotateCcw, Target, Check, BookOpen, Users } from 'lucide-react';
+import { Compass, CalendarDays, RotateCcw, Target, Check, Users } from 'lucide-react';
 import { getLessonPath } from '@smarter-academy/core';
 import { getLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import MathLabel from '../../../lessons/common/components/MathLabel';
 import MathText from '../../../lessons/common/components/MathText';
 import { LOCALE } from '../../../locale.js';
+import { ResumeLessonCard } from '../components/TodayLesson';
 import {
   yearFor, reportOf, weekV0, milestone, yearStrip, teachingWeekNumber, tickTasks,
 } from '../../compass/compassModel';
@@ -53,7 +54,7 @@ export default function CompassHomeSections({ compass, gradeId, today, resume, v
 
       {stateKey !== 'new' && (
         <div className={`grid gap-4 ${challenge ? 'lg:grid-cols-2' : ''}`} data-compass-row-habits>
-          <LessonCard resume={resume} />
+          <ResumeLessonCard resume={resume} data-compass-lesson />
           {challenge && <div className="min-w-0 [&>a]:mt-0 [&>a]:h-full">{challenge}</div>}
         </div>
       )}
@@ -261,25 +262,6 @@ function Band({ tone, label, n }) {
     <div className={`flex items-center justify-between rounded-2xl px-4 py-2 font-black ${tone}`}>
       <span>{label}</span><span className="text-2xl tabular-nums">{n}</span>
     </div>
-  );
-}
-
-function LessonCard({ resume }) {
-  const { t } = useTranslation('student');
-  if (!resume) return <div />;
-  const percent = Math.round(resume.progress ?? 0);
-  return (
-    <Link to={resume.resumePath} className="flex h-full min-w-0 items-center gap-4 rounded-3xl bg-white p-4 ring-1 ring-slate-200 transition hover:-translate-y-0.5 sm:p-5" data-compass-lesson>
-      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-nav-accent-soft text-nav-accent"><BookOpen size={24} aria-hidden="true" /></span>
-      <span className="min-w-0 flex-1">
-        <span className="block font-black text-slate-900">
-          <MathLabel>{percent > 0 ? t('compassHome.lesson.continue', { title: resume.course.title }) : t('compassHome.lesson.next', { title: resume.course.title })}</MathLabel>
-        </span>
-        <span className="block text-sm text-slate-600">{t('compassHome.lesson.progress', { percent })}</span>
-        <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-slate-100"><span className="block h-full bg-nav-accent" style={{ width: `${percent}%` }} /></span>
-      </span>
-      <span className="shrink-0 rounded-xl border border-slate-200 px-4 py-2 text-sm font-black text-nav-accent">{t('compassHome.lesson.cta')}</span>
-    </Link>
   );
 }
 

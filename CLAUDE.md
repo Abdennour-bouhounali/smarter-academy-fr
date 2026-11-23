@@ -37,11 +37,12 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 - **Accounts created by a school or a teacher are CLOSED** behind an admin switch (`ManagedAccountsGate`; the admin's
   card « Comptes créés… » on the dashboard; `hooks/useManagedAccounts.js` hides the roster import and the credential
   buttons of the teacher's and the school's spaces while closed, and fails closed).
-- **NOT done yet — do not be surprised**: only the FIRST lesson's screens have been seen in a browser (its world, its
-  forges, its board, the teacher's memo, the brevet sitting — walked at 1366×768, `apps/web/e2e/lessons/`); the rest of
-  the shell (the student's and the teacher's spaces, the admin, the math lab, the public pages) has NOT been seen and
-  its walks have not run since the translation; the API has never run on MySQL and no local database exists (the
-  lesson walks need none: they double the server in the browser); the math lab's walks still open the hidden lycée
+- **NOT done yet — do not be surprised**: the FIRST lesson's screens were walked at 1366×768 (`apps/web/e2e/lessons/`);
+  on 2026-11-23 the pages around it were looked at ONCE on a real local API (port 8010, SQLite, demo seed — plan §9):
+  the public pages, the student's home / lessons / chapter / practice / « Moi », the teacher's home / classes / lesson
+  tools, the admin dashboard. The rest of the shell (the math lab, the games, the parent's and the school's spaces, most
+  admin pages) has NOT been seen, and the shell's walks have not run since the translation; the API has never run on MySQL; a local SQLite database exists for manual looks (`apps/api/database/database.sqlite`,
+  demo seed) — the lesson walks need none: they double the server in the browser; the math lab's walks still open the hidden lycée
   side; a few comments in `apps/api` and `packages/core` still cite Arabic.
 - **The two products are 100% separated** (owner): two repositories, two databases, two deployments, no shared runtime,
   no shared package, no country switch, no locale parameter. This repository holds ONE language.

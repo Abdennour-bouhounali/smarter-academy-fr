@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, MotionConfig } from 'framer-motion';
 import { Compass } from 'lucide-react';
-import { courseLevels, getAllGrades } from '@smarter-academy/core';
+import { courseLevels, getAllGrades, getFlatAvailableLessons } from '@smarter-academy/core';
 import { ArrowForward } from '../../components/common/DirectionalIcons';
 import { AuthContext } from '../../context/AuthContext';
 import { useStudyContext } from '../../context/StudyContextContext';
@@ -27,6 +27,8 @@ import DailyChallengeCard from '../../features/home/components/DailyChallengeCar
 import { fetchCompass } from '../../services/compassService';
 import { usePrefetchLessonRuntime } from '../../lessons/common/lessonRuntimeLoader';
 import NoLessonYet from '../../components/student/NoLessonYet';
+import SectionErrorBoundary from '../../components/student/SectionErrorBoundary';
+import TodaySection from '../../features/home/components/TodayLesson';
 import { isFeatureOn } from '../../config/features';
 
 // « Ma boussole » sur l'accueil (YEAR_COMPASS.md §6bis) : un lot PARESSEUX — réseau + calendrier n'entrent
@@ -103,6 +105,11 @@ export default function StudentHome() {
   // Toutes classes confondues, comme getResumeLesson le documente (ARCHITECTURE.md §10).
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const continueCourse = useMemo(() => getResumeLesson(courseLevels), [tick]);
+  // Nothing started yet: the first built lesson of his grade, so « Aujourd'hui » always opens on a lesson.
+  const firstLesson = useMemo(() => {
+    const item = getFlatAvailableLessons(courseLevels).find((entry) => entry.grade.id === gradeId);
+    return item ? { course: item.lesson, progress: 0, resumePath: item.lesson.path } : null;
+  }, [gradeId]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const allActivity = useMemo(() => getStudentActivity(courseLevels), [tick]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -147,20 +154,31 @@ export default function StudentHome() {
           </motion.div>
         )}
 
+        {/* « Ce que je fais là ». The compass switched off (config/features.js) renders NOTHING of it — no calendar, no
+            year strip, no lazy bundle: his lesson, his class, the challenge when it is on. A crash of this section
+            leaves the rest of the home standing (SectionErrorBoundary). */}
         <motion.div {...enter(0.05)}>
-          {compassLoaded ? (
-            <Suspense fallback={skeleton}>
-              <CompassHomeSections
-                compass={compass ?? { enabled: false }}
-                gradeId={gradeId}
-                today={today}
-                resume={continueCourse}
-                visits={visits}
+          <SectionErrorBoundary>
+            {!compassOn ? (
+              <TodaySection
+                resume={continueCourse ?? firstLesson}
                 classroom={classroom}
                 challenge={isFeatureOn('dailyChallenge') ? <DailyChallengeCard /> : null}
               />
-            </Suspense>
-          ) : skeleton}
+            ) : compassLoaded ? (
+              <Suspense fallback={skeleton}>
+                <CompassHomeSections
+                  compass={compass ?? { enabled: false }}
+                  gradeId={gradeId}
+                  today={today}
+                  resume={continueCourse}
+                  visits={visits}
+                  classroom={classroom}
+                  challenge={isFeatureOn('dailyChallenge') ? <DailyChallengeCard /> : null}
+                />
+              </Suspense>
+            ) : skeleton}
+          </SectionErrorBoundary>
         </motion.div>
 
         {/* ── Tout le reste : replié, jamais supprimé (règle « plier, ne jamais supprimer »). ── */}

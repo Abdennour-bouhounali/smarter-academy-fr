@@ -92,8 +92,10 @@ export default function MesCours() {
         <GradeLessonSearch value={searchQuery} onChange={setSearchQuery} gradeName={grade.name} className="w-full md:w-96" />
       </div>
 
-      {/* Chapter filter */}
-      <div data-tour="catalogue.chapters" className="flex overflow-x-auto gap-2 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 mb-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      {/* Chapter filter — a hidden-scrollbar strip on a phone; from `lg` the chips WRAP: at 1366 px the French theme
+          names (« Organisation et gestion de données, fonctions ») pushed the last two off the edge, unreachable with a
+          mouse (2026-11-23). */}
+      <div data-tour="catalogue.chapters" className="flex overflow-x-auto gap-2 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 mb-6 lg:flex-wrap lg:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         <button
           onClick={() => setActiveChapter('all')}
           className={`flex-shrink-0 px-4 py-2 rounded-lg font-inter text-sm font-medium transition-all ${

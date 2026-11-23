@@ -69,6 +69,15 @@ describe('3e — a catalogue of coming-soon lessons and its first published one'
     }
   });
 
+  it('unit page: the chapter’s goals speak to the student (« je ») and, to a teacher, about his students (« vos élèves »)', () => {
+    const unit = units[0];
+    const asStudent = render(<UnitPage />, unit.path, { role: 'student', grade: '3e' });
+    expect(asStudent).toContain('Ce que je vais apprendre dans ce chapitre');
+    const asTeacher = render(<UnitPage />, unit.path, { role: 'teacher' });
+    expect(asTeacher).toContain('Ce que vos élèves apprennent dans ce chapitre');
+    expect(asTeacher).not.toContain('Ce que je vais apprendre');
+  });
+
   it('lessons page of a 3e student: the units, not « no lesson yet »', () => {
     const html = render(<MesCours />, '/espace/cours', { role: 'student', grade: '3e' });
     expect(html).not.toContain('data-no-lesson-yet');

@@ -119,7 +119,8 @@ export function weekV0(report, year, pointer) {
  * sinon son statut de classe par rapport à aujourd'hui.
  */
 export function yearStrip(year, grade, today) {
-  if (!year) return [];
+  // A year whose dates are not written yet (the French calendar until stage 2D: `start`/`end` null) has no strip.
+  if (!year?.calendar.start || !year.calendar.end) return [];
   const { calendar } = year;
   const events = eventsFor(calendar, grade);
   const PRIORITY = ['exam', 'devoir', 'break', 'bem_sprint', 'evaluation'];
@@ -144,7 +145,8 @@ export function yearStrip(year, grade, today) {
 
 /** « Semaine N sur 25 » : le rang de la semaine de classe en cours (ou de la dernière commencée). */
 export function teachingWeekNumber(year, today) {
-  if (!year) return null;
+  // No teaching week written (the empty French calendar): there is no « semaine N sur 0 ».
+  if (!year?.calendar.weeks.length) return null;
   const weeks = year.calendar.weeks;
   const started = weeks.filter((w) => w.from <= today).length;
   return { n: Math.max(0, started), total: weeks.length };

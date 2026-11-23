@@ -33,6 +33,13 @@ describe('the public copy', () => {
     }
     // No lesson is open: the home page has a sentence for that case, never « 0 leçon ».
     expect(marketing.trust.lessonsNone).toMatch(/aucune/);
+    // The first lesson is open (2026-11-23): outside the « no lesson » case of the home's counter, no sentence says that
+    // none is, or that the 3e lessons are all still in preparation.
+    const said = [...values(marketing), ...values(auth)].filter((s) => s !== marketing.trust.lessonsNone);
+    for (const s of said) {
+      expect(s, s).not.toMatch(/aucune n’est encore ouverte|leçons de 3e sont en préparation|les premières, en 3e, sont en préparation/);
+    }
+    expect(marketing.faq.items.levels.a).toContain('« Décomposer un nombre en facteurs premiers »');
     // A phone opens no lesson (RequireLargeScreen): the FAQ says so.
     expect(marketing.faq.items.device.a).toMatch(/ne s’ouvrent pas/);
   });

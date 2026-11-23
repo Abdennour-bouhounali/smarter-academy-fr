@@ -117,6 +117,12 @@ describe('an off feature calls nothing on page load', () => {
     // Not « busy »: the home does not wait for an answer that will never be asked.
     expect(html).toContain('aria-busy="false"');
     expect(html).not.toContain('data-daily-challenge-card');
+    // Nothing of the compass is rendered — not its « off » state, which reads the school calendar and drew the year
+    // strip (the real home went blank on the empty French calendar, 2026-11-23): his lesson, the first of his grade.
+    expect(home).toContain('{!compassOn ? (');
+    expect(html).not.toContain('data-compass-home');
+    expect(html).toContain('data-home-today');
+    expect(html).toContain('href="/courses/college/3e/nombres_calculs/decomposer-en-facteurs-premiers"');
   });
 
   it('a class page has no daily-challenge tab (whose tab fetches the class’s challenge)', () => {

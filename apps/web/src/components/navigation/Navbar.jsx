@@ -164,7 +164,9 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* `xl:max-w-none`: at 1366 px (the product's one screen size) the French labels need the whole width — the logo,
+            five links and « Commencer gratuitement » overflowed the 1 280 px column by 117 px (2026-11-23). */}
+        <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
           {/* `h-16` FIXE, `flex-nowrap` : la hauteur de cette barre est mesurée
               par useLessonViewport pour poser le tiroir « Ma carte ». Un
               retour à la ligne d'un lien la ferait grandir, et le tiroir
@@ -199,7 +201,7 @@ export default function Navbar() {
                   to={link.path}
                   end={link.path === '/'}
                   className={({ isActive }) =>
-                    `px-3 py-1.5 rounded-lg font-inter text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                    `px-2 2xl:px-3 py-1.5 rounded-lg font-inter text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-200 ${
                       isActive
                         ? 'text-blue-600 bg-blue-50 font-semibold'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
