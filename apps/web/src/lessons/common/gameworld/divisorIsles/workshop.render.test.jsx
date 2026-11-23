@@ -1,8 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import Workshop, { plankRefusal } from './Workshop';
+import Workshop, { benchKeptLines, plankRefusal } from './Workshop';
 import { T } from './strings';
 import { listsReducer, initLists } from './lists';
+import { initSheet, sheetReducer } from './sheet';
 
 // the bench draws the world's sound button and ✕ (its own header covers the top bar): the sound button reads the game's
 // store, which a server render has not — it is drawn as a mark here, and the ✕ needs the shell's exit (null without it)
@@ -206,5 +207,116 @@ describe('the bench', () => {
     const out = html(o, fakeGame(mid));
     expect(out).toContain('data-iq-stage="build"');
     expect(out).toContain('data-iq-items="4,8"');
+  });
+});
+
+/** A toy `sheet` bench (two decompositions to find) whose lesson writes what it kept: one line per round found. */
+const SHEET_TEXT = {
+  lead: (n) => `lead(${n})`,
+  goal: (n) => `goal(${n})`,
+  primeHead: 'head',
+  ask: () => 'ask',
+  prime: 'prime',
+  held: () => 'held',
+  miss: () => 'miss',
+  notPrime: () => 'notPrime',
+  end: () => 'end',
+  foundLine: (r) => `line[${r.n}]`,
+  next: 'next',
+  done: 'done',
+};
+const KEPT_LINE = (r) => `$${r.n} = ${r.factors.join(' \\times ')}$`;
+const SHEET = {
+  kind: 'sheet',
+  rounds: [{ n: 2431 }, { n: 4641 }],
+  text: { ...SHEET_TEXT, kept: (s) => s.rounds.map(KEPT_LINE) },
+};
+const run = (spec, moves, from = initSheet(spec)) => moves.reduce((s, a) => sheetReducer(spec, s, a), from);
+const filled = (spec, s) => (s.stage === 'fill' ? filled(spec, sheetReducer(spec, s, { type: 'tick' })) : s);
+/** Both rounds played to their end: 2 431 = 11 × 13 × 17, 4 641 = 3 × 7 × 13 × 17. */
+function bothDone(spec = SHEET) {
+  let s = filled(spec, initSheet(spec));
+  for (const p of [11, 13]) s = filled(spec, run(spec, [{ type: 'line', p }], s));
+  s = filled(spec, run(spec, [{ type: 'prime' }, { type: 'next' }], s));
+  for (const p of [3, 7, 13]) s = filled(spec, run(spec, [{ type: 'line', p }], s));
+  return run(spec, [{ type: 'prime' }], s);
+}
+
+describe('the « kept » card of the typed workshop', () => {
+  const o = { type: 'workshop', a: 32, seg: 3, gaps: [32, 44], typed: true, bench: SHEET };
+
+  it('the bench kept a state and the lesson writes `bench.text.kept`: its lines in a card under the length box', () => {
+    const kept = bothDone();
+    expect(kept.rounds.map((r) => r.factors)).toEqual([
+      [11, 13, 17],
+      [3, 7, 13, 17],
+    ]);
+    const out = html(o, fakeGame(kept));
+    expect(out).toContain('data-di-bench-kept="2"');
+    expect(out).toContain(`data-di-bench-open="kept"`);
+    // under the length box, before the buttons
+    const at = (hook) => out.indexOf(hook);
+    expect(at('data-di-in="plank"')).toBeLessThan(at('data-di-bench-kept'));
+    expect(at('data-di-bench-kept')).toBeLessThan(at('data-di-craft'));
+    // the lesson's lines, through MathText (no raw `$` on screen)
+    expect(out).toContain('2431 = 11 \\times 13 \\times 17');
+    expect(out).toContain('4641 = 3 \\times 7 \\times 13 \\times 17');
+    expect(out).not.toMatch(/undefined|NaN|\[object/);
+    const card = out.slice(at('data-di-bench-kept'), at('data-di-craft'));
+    expect(card).not.toContain('$');
+    // at least 18 px for what he reads (1.15 rem)
+    expect(card).toContain('font-size:1.15rem');
+    expect(benchKeptLines(o, fakeGame(kept))).toEqual(kept.rounds.map(KEPT_LINE));
+  });
+
+  it('half a bench is shown as the lesson words it (one round found); a card holds four lines at most', () => {
+    let s = filled(SHEET, initSheet(SHEET));
+    for (const p of [11, 13]) s = filled(SHEET, run(SHEET, [{ type: 'line', p }], s));
+    s = run(SHEET, [{ type: 'prime' }], s);
+    expect(html(o, fakeGame(s))).toContain('data-di-bench-kept="1"');
+    const six = { ...SHEET, text: { ...SHEET.text, kept: () => ['a', 'b', 'c', 'd', 'e', 'f'] } };
+    const out = html({ ...o, bench: six }, fakeGame(bothDone()));
+    expect(out).toContain('data-di-bench-kept="4"');
+    expect(out).not.toContain('>e<');
+    // nothing to say (the lesson returns no line): no card
+    expect(html(o, fakeGame(initSheet(SHEET)))).not.toContain('data-di-bench-kept');
+  });
+
+  it('nothing changes when the bench kept nothing, or the lesson writes no `kept`, or on the stepper', () => {
+    expect(html(o)).not.toContain('data-di-bench-kept');
+    const silent = { ...SHEET, text: SHEET_TEXT };
+    const out = html({ ...o, bench: silent }, fakeGame(bothDone(silent)));
+    expect(out).not.toContain('data-di-bench-kept');
+    expect(out).toContain(`data-di-bench-open="kept"`);
+    expect(html({ ...o, typed: false, min: 1, max: 44 }, fakeGame(bothDone()))).not.toContain('data-di-bench-kept');
+  });
+
+  it('a kept state that is not one of this bench’s (other numbers, another kind) or a `kept` that throws: no card, no crash', () => {
+    const other = { ...SHEET, rounds: [{ n: 3127 }, { n: 4641 }] };
+    for (const kept of [bothDone(), initLists(BENCH), { ri: 9 }, 'x']) {
+      const out = html({ ...o, bench: other }, fakeGame(kept));
+      expect(out).toContain('data-di-workshop="typed"');
+      expect(out).not.toContain('data-di-bench-kept');
+    }
+    const throws = () => {
+      throw new Error('lesson');
+    };
+    const broken = { ...SHEET, text: { ...SHEET.text, kept: throws } };
+    expect(html({ ...o, bench: broken }, fakeGame(bothDone()))).not.toContain('data-di-bench-kept');
+    const notLines = { ...SHEET, text: { ...SHEET.text, kept: () => 'one string' } };
+    expect(html({ ...o, bench: notLines }, fakeGame(bothDone()))).not.toContain('data-di-bench-kept');
+  });
+
+  it('the sheet as a bench reopens where he left it — and a state of other numbers opens a fresh sheet', () => {
+    const open = { ...o, benchOpen: true };
+    const half = filled(SHEET, run(SHEET, [{ type: 'line', p: 11 }], filled(SHEET, initSheet(SHEET))));
+    const out = html(open, fakeGame(half));
+    expect(out).toContain('data-di-bench="sheet"');
+    expect(out).toContain('data-iq-n="221"');
+    expect(out).toContain('data-iq-note="2431:11:221"');
+    const fresh = html({ ...open, bench: { ...SHEET, rounds: [{ n: 3127 }] } }, fakeGame(half));
+    expect(fresh).toContain('data-iq-n="3127"');
+    expect(fresh).toContain('data-iq-stage="fill"');
+    expect(fresh).not.toMatch(/undefined|NaN/);
   });
 });

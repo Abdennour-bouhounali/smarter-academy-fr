@@ -323,6 +323,12 @@ allowed keys; `ExerciseRepository.php` decodes the whole file;
 `additionalProperties: false`) lists them since 2026-11-23. A
 filter by part or by calculator in the practice space or the sittings is `Planned`.
 
+## An exercise ported from the Algerian platform — its `source` (2026-11-23)
+
+`source` is `{ type: "platform_addition", reason: "dz_port", learningPoint, adaptedFrom: "<Algerian exercise id>" }`: the
+exercise was converted from the Algerian bank (skill `lesson-v2` §1bis), not written new; `adaptedFrom` is its origin.
+Nothing reads it but humans and the numbers tool.
+
 ## French typography of the bank (2026-11-23)
 
 `validate-exercises.mjs` refuses an exercise whose VISIBLE text breaks French writing (`FRENCH_LANGUAGE_CONTRACT.md`

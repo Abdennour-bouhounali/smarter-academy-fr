@@ -783,8 +783,15 @@ attacks, the seal, the last step and the tablet. Two mechanics of the world « L
   bench as it stands (`closeBench` first; 2026-11-19, lesson 5's walk). What
   he did STAYS: the experiment's state per segment id in `flags.benches` (saved with the world; `Game.benchKept(i)`),
   given back to the screen as `spec.from` — reopened, it shows his lists, not an empty bench (`lists`, `ladder` in the
-  modes `subtract`, `divide` and `both` read `spec.from` / `spec.onState`; a `ladder` bench is `plain`: its rows only). The bench gives facts; it never says which plank to make. Test:
-  `divisorIsles/workshop.render.test.jsx`.
+  modes `subtract`, `divide` and `both`, and `sheet` read `spec.from` / `spec.onState`; a `ladder` bench is `plain`: its rows only;
+  a `sheet` reads it back through `sheet.js › sheetFrom` — a state of other numbers or another kind is ignored and the
+  sheet starts fresh, a sheet the world was still filling is filled, a finished game shows its last round with every
+  round found). **What it kept, where he types** (2026-11-23): when the bench kept a state and the lesson declares
+  `bench.text.kept(state)` — a function in the bench spec's own `text` (the lesson's `world/inquiries.js` or wherever its
+  bench spec is written), returning lines (strings, `$…$` allowed) — the TYPED form draws those lines in a card under
+  the length box (`data-di-bench-kept=<lines>`, at most 4 lines, 1.15 rem; the kit writes no word of it); no `kept`, no
+  state, a state the kind refuses, a `kept` that throws or returns no line: no card. The bench gives facts; it never says which plank to make. Test:
+  `divisorIsles/workshop.render.test.jsx`, `divisorIsles/inquirySheet.render.test.jsx`.
 
 First used by lesson 4 `qasim-mushtarak-akbar` (keys 1 and 2: one choice of planks for two gaps; then planks that all
 fill both, and a purse that only the longest pays). NOT yet unit-tested: the mechanic lives in the 3D runtime

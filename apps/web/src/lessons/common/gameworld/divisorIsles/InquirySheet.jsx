@@ -12,11 +12,15 @@
  * More than ten lines stand in two blocks side by side, the rows numbered on (3 127 needs the primes up to 53: 16 lines);
  * nothing scrolls. `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `sheet`). Nothing here
  * states a rule: every sentence says what the sheet has just shown. The screen is a pure VIEW of the reducer (`SheetView`).
+ *
+ * On the workshop's bench (`Workshop.jsx › Bench`) it starts from the state it kept (`spec.from`, ignored when it is not
+ * one of this spec's — `sheet.js › sheetFrom`) and reports every change (`spec.onState`); the found lines under the sheet
+ * keep every finished round. Without them (an experiment of a forge) it plays exactly as before.
  */
 import { useEffect, useReducer } from 'react';
 import MathText from '../../components/MathText';
 import { texFr } from '@smarter-academy/core';
-import { initSheet, sheetNow, sheetReducer, sheetResult } from './sheet';
+import { sheetNow, sheetReducer, sheetResult, startSheet } from './sheet';
 import { Head, Found } from './InquiryDivision';
 import { expose, FAST } from './inquiryParts';
 import './inquirySheet.css';
@@ -174,7 +178,12 @@ export function SheetView({ spec, state: s, act }) {
 }
 
 export function Sheet({ spec, play, onDone }) {
-  const [state, dispatch] = useReducer((s, a) => sheetReducer(spec, s, a), spec, initSheet);
+  // on the workshop's bench it starts where he left it (`spec.from`, read back by `sheetFrom`)
+  const [state, dispatch] = useReducer((s, a) => sheetReducer(spec, s, a), spec, startSheet);
+  // the bench hears every move, to keep it (`spec.onState`)
+  useEffect(() => {
+    spec.onState?.(state);
+  }, [spec, state]);
   const now = sheetNow(spec, state);
   expose({
     kind: 'sheet',

@@ -11,9 +11,10 @@ learned exists only if it is written HERE (or is a test in the code). It was bor
 pipeline, the briefs and the whole ledger are kept; the language, the paths, the curriculum and the content rules are
 France's; a stage was added in front — **port before you build** (§1bis).
 
-- **Before and during a lesson**: port (§1bis), then follow the pipeline (§2); build every agent brief from `briefs.md`;
-  give every agent the ledger `defects.md`; review the screenshots with `review.md`; play the world with `play.md`; walk
-  only what `trusted.md` does not already cover (§6).
+- **Before and during a lesson**: port (§1bis), then follow the pipeline (§2); brief every agent with its card
+  (`cards/`) and the lesson's facts (§3) — `briefs.md` and the ledger `defects.md` are the sources the cards are
+  condensed from; the two gates review with `review.md`; play the world with `play.md`; walk only what `trusted.md`
+  does not already cover (§6).
 - **After a lesson** (part of « done »): write back — §5.
 
 The binding rules are the repository's: root `CLAUDE.md`, `docs/FRANCE_REBUILD_PLAN.md` (§7bis the council's verdicts,
@@ -74,8 +75,9 @@ textbook is used to know what the student must learn in math, but we build for t
 
 ## 1. Who does what
 
-- **The main session designs, briefs, reviews, runs the walks and reports. Agents on `opus` write the code** (the 3D and a
-  task judged complicated are coded by the main session). Agents that write at the same time touch files that do not
+- **The main session designs, briefs, runs the checks and the walks and reports. Agents write the code**, each on the
+  model §2 names for its step; the strongest model reads at the two gates only (§2) (the 3D and a task judged
+  complicated are coded by the main session). Agents that write at the same time touch files that do not
   overlap — say in each brief which files belong to whom.
 - **One heavy check at a time** (a walk, the whole suite, a build, `check:lessons`, lint on the tree) — the machine has
   13 GB. An agent runs only the unit tests of what it touched (`npx vitest run <files> --maxWorkers=2`), `eslint` and
@@ -146,7 +148,9 @@ for that lesson (say so, and look one grade around: a DZ 1AM–3AM lesson may ho
   bank become brevet exercises with the French provenance (`EXERCISE_CONTRACT.md` « The exam sheet »: « Sur le modèle du
   brevet <année> », `brevet: 1 | 2 | null`, `calculator`), the brevet's part 1 being automatisms WITHOUT calculator.
 - **Ids**: the lesson's id is the French `lessonCode`; learning-point ids are rewritten through the table's `points`
-  (`4am_tayin-pgcd_P1` → `3e_trouver-le-pgcd_P1`); exercise ids `ex-3e-<lesson>-l<n>-<nnn>`; a DZ number that collides
+  (`4am_tayin-pgcd_P1` → `3e_trouver-le-pgcd_P1`); exercise ids `ex-3e-<lesson>-l<n>-<nnn>`; a ported exercise's
+  `source` is `{ type: "platform_addition", reason: "dz_port", learningPoint, adaptedFrom: "<DZ id>" }` (lesson 1, nine
+  exercises — the validator accepts it, `EXERCISE_CONTRACT.md` does not document it yet); a DZ number that collides
   with another French lesson's numbers is changed (`scripts/lesson-bank-numbers.mjs`, D7, D10, D12).
 
 **Step P5 — write the port map** in the design section before any brief: each DZ piece → port / cut / new, its target
@@ -154,38 +158,64 @@ path here, and what conversion it needs. The briefs (`briefs.md` §W, §B, §F, 
 starting point. Until the transfer tool exists (plan §8 step 2), a port is a careful agent's work, file by file, never a
 copy with a search-and-replace.
 
-## 2. The pipeline of one lesson
+## 2. The pipeline of one lesson (the lean pipeline, `docs/TWO_PLATFORMS_PLAN.md` §6)
 
-| # | Step | Who | Output |
+The session runs on **`opus`** (« main » below): it designs, briefs, runs every command and check, and reports. Its
+workers are `opus` for the forges and any new mechanic, `sonnet` for the world's written content and the board,
+`sonnet` or `haiku` for the bank, the class test and translations, in a loop with the validator. **The strongest model
+(`fable`) is called at the two gates only**, each in a fresh short context. **One session per lesson**, started from the
+plan and the design page; **one chapter's keys and numbers are designed at once** (the first lesson of a chapter
+designs them all, the next ones take their section). Every agent and gate report is **≤ 300 words** in the main
+context, its details in a file of the session's scratch folder (`reports/<code>-<step>.md`).
+
+| # | Step | Who (model) | Output |
 |---|---|---|---|
-| P | **Port before you build** (§1bis): the table, the inventory, the cut, the conversion plan, the port map | main | the port map |
-| 0 | `npm run -s lesson:brief -- <code>`, `npm run status:lesson-v2 -- --lesson <code>`; the official text behind each point (`docs/curriculum/officiel/`); the exercise bank `content/practice/<grade>/<code>/` — the brevet bank FIRST (plan §8): ported from DZ where the port map says so, written new otherwise, validated by `npm run validate:exercises -- --strict` | main | what the lesson must teach, its learning points and their weights in the bank |
-| 1 | **Design** (`review.md` §A is the checklist; §0ter first: what is NEW for him, never the list item by item): one key per rule; for each key its NATURE and the experiment of that nature — a (kind, mode) no other key of the lesson uses; the numbers; what the student holds when each forge opens; the final mission, which must NEED the lesson. Written in the unit's design page (`docs/reports/`, one page per unit; the Algerian model is `docs/reports/BATCH_2_DESIGN.md` of `../smarter-academy-dz`). A new kind or a new world mechanic is the owner's « go » | main | the design section |
-| 2 | Kit work, only if a kind, a mode or a claim kind is missing — brief `briefs.md` §K | agent(s) | new files in the world's folder, registered LAST |
-| 3 | **Wave 1, in parallel**: the written world (§W) ∥ the board, the class test, the warm-up family (§B) | 2 agents | `world/` without forges, `board/`, `content/class-tests/…`, the family |
-| 4 | **Wave 2, in parallel**: the forges and their experiments (§F) ∥ the pack and the satellites (§P) | 2 agents | `world/forges.js`, `inquiries.js`, `lesson.pack.js`, the generated index |
-| 5 | **The walks**, written and run at 1366×768 (the ONE size) by ONE agent that is alone in the tree (§X) | 1 agent | the walks, the defects they find fixed |
-| 6 | **Review**: a frozen copy; the walks at 1366×768 only; EVERY new screen looked at with the eyes (`review.md` §B); the world played as a student (`play.md` §5) | main | a list of defects |
-| 7 | **Fix batches** by agents that do not run walks (§R), then step 6 again on a new frozen copy, until nothing is left | agents, main | — |
+| P | **Port before you build** (§1bis): the table, the inventory, the cut, the conversion plan, the port map | main (`opus`) | the port map |
+| 0 | `npm run -s lesson:brief -- <code>`, `npm run status:lesson-v2 -- --lesson <code>`; the official text behind each point (`docs/curriculum/officiel/`); the exercise bank `content/practice/<grade>/<code>/` — the brevet bank FIRST (plan §8): ported from DZ where the port map says so, written new otherwise, looped until `npm run validate:exercises -- --strict` is clean (`cards/bank.md`) | main; the bank: an agent on `sonnet` or `haiku` | what the lesson must teach, its learning points and their weights in the bank |
+| 1 | **Design** (`review.md` §A is the checklist; §0ter first: what is NEW for him, never the list item by item): one key per rule; for each key its NATURE and the experiment of that nature — a (kind, mode) no other key of the lesson uses; the numbers (the whole chapter's, reserved once); what the student holds when each forge opens; the final mission, which must NEED the lesson; and **the walk's outline** — per key the French words of its name, the true/false of a case, the last step's boxes, the story's wrong first try and reload, the launch's tool — from which the walk's descriptor is written. Written in the unit's design page (`docs/reports/`, one page per unit; the Algerian model is `docs/reports/BATCH_2_DESIGN.md` of `../smarter-academy-dz`). A new kind or a new world mechanic is the owner's « go » | main | the design section |
+| A | **Gate A — the design, before any code**: the design section against `review.md` §A (each wrong rule has a computed refuting case; no rule told before its seal; the final mission needs the lesson; the numbers are free). Returns a defect list and a verdict (go / back to step 1); report in `reports/<code>-gate-A.md`, its count in `defects.md` « Cost » and plan §9 (§8 of the plan). No brief leaves before « go » | `fable` | defects + verdict |
+| 2 | Kit work, only if a kind, a mode or a claim kind is missing — `briefs.md` §K, `cards/forges.md` | agent (`opus`) | new files in the world's folder, registered LAST |
+| 3 | **The scaffold, then wave 1 in parallel.** `npm run lesson:new -- <code> --world <world>` writes the folder, the glue, the pack, the routes, the test files calling their suites and a stub for every content file (`.draft` names: invisible to the tree until assembled). Then the written world (`cards/world.md`) ∥ the board, the class test, the warm-up family (`cards/board.md`) | main runs the command; 2 agents (`sonnet`) | `world/` without forges, `board/`, `content/class-tests/…`, the family |
+| 4 | **Wave 2, then the assembly.** The forges and their experiments (`cards/forges.md`); meanwhile main writes the walk's descriptor `apps/web/e2e/lessons/<code>.walk.mjs` from the design's walk's outline and the agents' reported hooks, and fills the pack's markers (the `coach` sentences). Then `npm run lesson:assemble -- <code>` (it refuses while a « SCAFFOLD: not written yet » remains): drafts in place, catalogue status, Prettier lists, generators, KEPT lines, check-routes, the status line, and a to-do of what it does not do (the lab tag, the KEPT comments, new dead files, docs) — main does that to-do | agent (`opus`); main | `world/forges.js`, `inquiries.js`, the descriptor, the assembled lesson |
+| 4bis | **Every machine check before any review**: the lesson's suites (`npx vitest run <L> --maxWorkers=2`), `validate:exercises -- --strict`, `status:lesson-v2 -- --lesson <code>`, the ledger's tests — plain commands, one heavy at a time. Nothing goes to a walk, to the eyes or to a gate while one is red | main | all green |
+| 5 | **The walks — a command main runs**: `E2E_SIZE=1366x768 node apps/web/e2e/lesson.mjs <code> all <out>`, then `sitting` alone, on a frozen copy (§4). An agent is called ONLY on a failing walk, with the failing lines (`cards/walk-fix.md`) | main; on failure an agent (`opus`) | walks green |
+| 6 | **Review**: the world played as a student (`play.md` §5); the TEN chosen screens picked (§0bis: the ones this lesson is the first to show) for gate B | main | a list of defects, the ten screens |
+| 7 | **Fix batches** by agents that do not run walks (`cards/walk-fix.md`, `briefs.md` §R), then steps 4bis–6 again on a new frozen copy, until nothing is left | agents, main | — |
 | 8 | Repo checks, one at a time: `npm run lint`, `check:format`, `check:unused`, `check:unreached`, `check:lessons`, the web unit suite; published locally (lesson `available`, modules and exercises `published`) | main | — |
-| 9 | Docs (`GAME_WORLD.md`, the design page, `FRANCE_REBUILD_PLAN.md` §9), then the commit `feat(lessons): <code> — v2` on `rebuild/dz-core`, **naming its paths** (`git commit … -- <paths>`: other agents share the folder). **Never push to `main`, never merge, never set `FR_REBUILD_CUTOVER_APPROVED`, without the owner's word** — `main` deploys to French production | main | the commit |
-| 10 | **Write back into this skill** — §5 | main | `defects.md`, `briefs.md`, `review.md`, `play.md`, `trusted.md` updated in the same commit |
+| B | **Gate B — the result, before « done »**: the ten screenshots against `review.md` §B, and the forges' tiles. Returns a defect list and a verdict; report in `reports/<code>-gate-B.md`, counted like gate A. A defect goes back to step 7 | `fable` | defects + verdict |
+| 9 | Docs (`GAME_WORLD.md`, the design page, `FRANCE_REBUILD_PLAN.md` §9, `TWO_PLATFORMS_PLAN.md` §9), then the commit `feat(lessons): <code> — v2` on `rebuild/dz-core`, **naming its paths** (`git commit … -- <paths>`: other agents share the folder). **Never push to `main`, never merge, never set `FR_REBUILD_CUTOVER_APPROVED`, without the owner's word** — `main` deploys to French production | main | the commit |
+| 10 | **Write back into this skill** — §5 (and into the card of the role that made the defect) | main | `defects.md`, `briefs.md`, `review.md`, `play.md`, `trusted.md`, `cards/` updated in the same commit |
 
-A lesson is done when its status line prints ✅, its tests pass, its walks pass at 1366×768 (the one size) and its
-screenshots were looked at — and step 10 is made.
+If the gates find design-level defects (a rule told, a wrong rule with no refutation, a mission winnable without the
+lesson) on two lessons in a row, the design goes back to the strongest model and only the building stays on `opus`
+(plan §6). A lesson records, per step, the model, the tokens, the wall time and the defects by who found them (a
+machine check, gate A, gate B, the walk, the owner) — `defects.md` « Cost », plan §9.
+
+A lesson is done when its status line prints ✅, its tests pass, its walks pass at 1366×768 (the one size), gate B
+says « go » — and step 10 is made.
 
 ## 3. Briefing an agent
 
-**Role cards (2026-11-23, `docs/TWO_PLATFORMS_PLAN.md` §6):** an agent of the roles world, forges, board, bank or walk-fix reads its card in `cards/` (`world.md`, `forges.md`, `board.md`, `bank.md`, `walk-fix.md`) and the files it touches — not the six long documents. The brief below still carries the lesson's own facts. Cards are untested until the first lesson uses them; the 16 contradictions found while writing them are in the plan §9 to-do. The scaffold and the assembly are the commands `npm run lesson:new` and `npm run lesson:assemble` (§2 steps 3 and 8 name agents for them: that is out of date).
+An agent of the roles world, forges, board, bank or walk-fix reads **its card** in `cards/` (`world.md`, `forges.md`,
+`board.md`, `bank.md`, `walk-fix.md`) and the files it touches — not the six long documents. The card holds the limits,
+the hooks, the checks to run and the ten ledger lines that role breaks most. A role with no card (§K kit work, a gate)
+takes its section of `briefs.md`. Cards are untested until the first lesson uses them: what a card lacked is written
+into it at step 10.
 
-- Start from the template of `briefs.md`; fill its `<…>`; never write a brief from memory.
-- Paste into EVERY brief the block « Limits » of `briefs.md` §0 and tell the agent to read `defects.md` and
-  `FRENCH_LANGUAGE_CONTRACT.md` — the ledger is the part of the brief that grows.
-- Say what the agent holds that it cannot see: the port map (§1bis) and the DZ files it starts from; what the agents
-  before it reported (hooks, numbers, what a walk must do).
-- Ask for a report in the fixed shape of §0: what changed, what was run with numbers, what was NOT verified, what it is
-  unsure of. An agent's report is not a fact: check the diff of anything shared (the kit, the walk library).
+- **A brief = the card's name + the lesson's facts + the report cap.** The facts: `<code>`, `<grade>`, the title, the
+  folder `<L>`, the world; the design section to read (page and heading); the port map's lines for this agent (the DZ
+  files it starts from, port / cut / new); the files it owns and the files the other agents own at the same time; what
+  the agents before it reported (hooks, numbers, what the student holds); the model. Fill the « fill these » list of
+  `briefs.md` §0 for the role; never write a brief from memory.
+- **Do NOT paste the long limits** (`briefs.md` §0 « Limits »): the card holds them, condensed from that block. Paste
+  only a limit the lesson adds.
+- **The report cap**: ≤ 300 words in the final message — what changed, what was run with numbers, what was NOT verified,
+  what it is unsure of, every open choice — the details in the file the brief names. An agent's report is not a fact:
+  check the diff of anything shared (the kit, the walk library) and re-run its numbers.
 - An agent that hands back an open design choice gets an answer or the choice goes to the owner — never silence.
+- **A gate's brief** (`fable`): the design section (gate A) or the ten screenshots and the forges' tiles (gate B), the
+  matching part of `review.md`, and the answer's shape: a numbered defect list (each with its `defects.md` line if one
+  exists, and whether it is of pedagogy) and a verdict. Nothing else from the session's history.
 
 ## 4. Walking while agents write: the frozen copy
 
@@ -239,8 +269,9 @@ future when you generate a lesson you do not check what 100 % works ». A walk i
 | **Changed kit** | a proven screen whose code changed since its last walk (`git log` on its files against the commit in `trusted.md`) | walked once, on ONE reference lesson, at 1366×768 — not once per lesson |
 | **New** | the lesson's own story, its forges' content, a world piece or an experiment kind used for the first time | walked at 1366×768 and looked at with the eyes |
 
-**Today (2026-11-23) the French table of `trusted.md` is EMPTY**: every screen was proven in Arabic, right to left, and
-the kit's words and direction changed since. The first French lesson walks everything; what it proves goes into
+**The French table of `trusted.md` was EMPTY until lesson 1** (2026-11-23): every screen had been proven in Arabic,
+right to left, and the kit's words and direction changed since. Lesson 1 walked everything and filled its first lines;
+a screen not in it is still walked. What a lesson proves goes into
 `trusted.md`.
 
 **After every lesson, the closing step (§5) also feeds this:**

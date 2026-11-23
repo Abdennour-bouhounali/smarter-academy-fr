@@ -25,6 +25,12 @@ sign, the knowledge map, two trainer sheets, one sitting sheet, two board statio
 the warm-up's screens, the class test, the practice map, the end of the world. Everything that is not in the table is
 walked by the next lesson.
 
+**Where `PROVEN_LIMITS` comes from** (`kit/authoring/test/suites.js`, enforced by each lesson's `limits.test.js ›
+describeLimits`): its numbers were measured by the ALGERIAN walks of 2026-11-19 (the PGCD-search lesson, three sizes —
+the code's own comment). Lesson 1 kept the defaults and its French walk passed inside them, so for the screens of the
+French table above the limits now hold as French proofs; for any other screen they are a ceiling to stay under, NOT a
+proof — that screen is still walked. A limit is never raised without a French walk of the screen first.
+
 The lines below were proven on the Algerian platform, in Arabic, right to left: they are kept as LIMITS to aim for
 and as the data tests that already exist — never as a proof here.
 

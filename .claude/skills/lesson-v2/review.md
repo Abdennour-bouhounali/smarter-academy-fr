@@ -1,7 +1,9 @@
 # The review — what a machine cannot judge
 
-Two reviews are made by the main session and by nobody else: the DESIGN before any code (§A) and the SCREENSHOTS before
-any commit (§B). Each question below was learned from a defect that passed every automatic check; its number in
+Two reviews are the pipeline's two quality gates (`SKILL.md` §2, `docs/TWO_PLATFORMS_PLAN.md` §6), read by the
+strongest model (`fable`) in a fresh short context, after every machine check is green: gate A, the DESIGN before any
+code (§A); gate B, the ten chosen SCREENSHOTS and the forges' tiles before « done » (§B). Each returns a numbered
+defect list and a verdict, counted in `defects.md` « Cost ». Each question below was learned from a defect that passed every automatic check; its number in
 `defects.md` is in brackets. Add a question whenever the eyes find something this list did not name.
 
 ## A. The design, before the first brief

@@ -16,13 +16,15 @@ Read this card, the brief and the files you touch — nothing else unless « Not
 
 ## 2. The limits you can break
 
-- ONE screen, 1366×768. `PROVEN_LIMITS` (`KIT/authoring/test/suites.js`) bounds your data: an instruction
+- ONE screen, 1366×768. `PROVEN_LIMITS` (`KIT/authoring/test/suites.js`; measured in DZ, a French proof only for the
+  screens of `trusted.md`'s French table) bounds your data: an instruction
   (`objective`) ≤ 212 characters; a tablet ≤ 2 lines, 2 equalities, 1 note; practice map ≤ 7 nodes; knowledge map
   ≤ 15 cards; a trainer line ≤ 3 answers (a typed power or fraction is ONE). Past a limit, report — never raise it.
 - Student « tu », short imperatives, never « faux »; teacher (a sheet's `memo`) « vous ».
 - U+00A0 before « : » and inside « … »; U+202F before « ; ! ? »; « ’ » (U+2019); « 3e »; decimal comma (`{,}` in LaTeX);
   every number through `nb` / `tx` (`formatFr` / `texFr`, thousands U+202F); `\\times` (two backslashes), never `·`;
-  « PGCD(12 ; 18) »; « 12,50 € ». A plain string holds no `$`. Wrap text objects in `frAll` (`L1/world/math.js`).
+  « PGCD(12 ; 18) »; « 12,50 € ». A plain string holds no `$`. Wrap text objects in `frAll` — today in `L1/world/math.js`, NOT the kit: never copy it
+  (D8); import it from `KIT/authoring/numbers.js` once the session has moved it there, else report it missing.
 - Agreement: `counted(n, ['planche', 'planches'])`, `listFr` (re-exported from `KIT/authoring/numbers.js`).
 - Vocabulary: clé, forge, palier (never « niveau » for a step), savoir-faire, leçon, chapitre, Zéro, « Entraîne-toi ».
 - Own numbers and contexts; French first names, girls and boys equally; no religion, brand, alcohol, betting.

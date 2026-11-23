@@ -1,5 +1,5 @@
 // THE LIMITS of decomposer-en-facteurs-premiers: its data against what the walks proved (`trusted.md`; the defaults of
-// `PROVEN_LIMITS` — no limit is raised here: no walk of this lesson has run yet). Past a limit, the screen is walked first.
+// `PROVEN_LIMITS` — no limit is raised here; the lesson's walks passed green twice at 1366×768, commit bcca5dbb). Past a limit, the screen is walked first.
 import { describeLimits } from '../../../../../../common/gameworld/kit/authoring/test/suites.js';
 import { SCRIPT } from '../board/script';
 import { FORGES } from './forges';

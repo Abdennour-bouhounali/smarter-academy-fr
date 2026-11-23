@@ -114,3 +114,43 @@ export function sheetReducer(spec, s, action) {
   }
 }
 export const sheetResult = (s) => ({ rounds: s.rounds });
+
+const isInt = (x) => Number.isInteger(x);
+const productOf = (xs) => xs.reduce((p, x) => p * x, 1);
+const isFactors = (xs) => Array.isArray(xs) && xs.every((x) => isInt(x) && x >= 2);
+
+/**
+ * A kept state (the workshop's bench, `spec.from`) read back for THIS spec: the state to start from, or null when it is
+ * not one of this spec's states (other numbers, another kind, a broken save) — it is then ignored, never trusted.
+ * Its finished rounds are this spec's rounds with their factors; the number on the sheet is what is left of the round's
+ * number; a sheet the world was still filling when he left is filled now; a finished game shows its last round again.
+ */
+export function sheetFrom(spec, from) {
+  const s = from;
+  const rounds = spec?.rounds;
+  if (!s || typeof s !== 'object' || !Array.isArray(rounds)) return null;
+  if (!isInt(s.ri) || s.ri < 0 || s.ri >= rounds.length) return null;
+  if (!['fill', 'pick', 'seen'].includes(s.stage)) return null;
+  if (!Array.isArray(s.attempts) || !isFactors(s.factors) || !Array.isArray(s.rounds)) return null;
+  const seen = s.stage === 'seen';
+  if (s.rounds.length !== s.ri + (seen ? 1 : 0)) return null;
+  const roundsOk = s.rounds.every(
+    (r, i) => r && r.n === rounds[i].n && isFactors(r.factors) && productOf(r.factors) === r.n,
+  );
+  if (!roundsOk) return null;
+  const n0 = rounds[s.ri].n;
+  if (!isInt(s.n) || s.n < 1 || n0 % s.n !== 0) return null;
+  if (productOf(s.factors) * (seen ? 1 : s.n) !== n0) return null;
+  if (!seen && s.n === 1) return null;
+  const back = { ...s, done: false, filled: isInt(s.filled) && s.filled >= 0 ? s.filled : 0 };
+  let now;
+  try {
+    now = sheetNow(spec, back);
+  } catch {
+    return null; // a sheet this spec cannot draw (its stop, its size)
+  }
+  return back.stage === 'fill' ? { ...back, stage: 'pick', filled: now.lines.length } : back;
+}
+
+/** Where the sheet starts: the bench's kept state when it is one of this spec's (`sheetFrom`), else a fresh sheet. */
+export const startSheet = (spec) => sheetFrom(spec, spec.from) ?? initSheet(spec);

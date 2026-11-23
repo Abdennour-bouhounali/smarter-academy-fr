@@ -1,15 +1,43 @@
-# The briefs — one template per agent
+# The briefs — the source the role cards are condensed from
 
-Fill the `<…>`; keep everything else. Every brief = §0 header + its own section + §0 limits + §0 report. `<L>` is the
+**Since the lean pipeline (`SKILL.md` §2–§3, `docs/TWO_PLATFORMS_PLAN.md` §6) an agent reads its CARD (`cards/`), not
+this file.** The three blocks of §0 and the sections §W, §B, §F, §P, §X stay here as the SOURCE the cards were
+condensed from: a rule changes HERE first, then in the card that repeats it, in the same task. A brief is now the short
+« fill these » list of §0 for its role. §K (a new kind or mode) and §R (a fix batch) are still pasted as written: the
+forges' and walk-fix cards point to them. Below, `<…>` are the facts a brief fills. `<L>` is the
 lesson's folder (`apps/web/src/lessons/college/<grade>/<theme>/<unit>/<code>/`), `<code>` its id (the French
 `lessonCode`), `<REF>` the reference lesson — the most recent FRENCH lesson of the same world that is « done »; while
 none is done, the Algerian lesson the port map names (`../smarter-academy-dz/apps/web/src/lessons/moyen/…`, READ only;
 for `divisor-isles` the most complete are `bahth-pgcd`, `awwaliyan-fima-baynahuma`, `ikhtizal-kasr`). `<DZ>` is the
 Algerian lesson(s) the port map (`SKILL.md` §1bis) converts, with the list of its files that come over. Launch agents
-with the Agent tool, `model: "opus"`, in the main tree (a worktree misses untracked folders). When a lesson teaches
-something a template did not foresee, correct the template (`SKILL.md` §5).
+with the Agent tool, on the model `SKILL.md` §2 names for the step, in the main tree (a worktree misses untracked
+folders). When a lesson teaches something a template did not foresee, correct the template and the card (`SKILL.md` §5).
 
-## §0. The three blocks every brief carries
+## §0. A brief per role — fill these
+
+Every brief, whatever the role:
+1. « Read `.claude/skills/lesson-v2/cards/<role>.md` — it binds you, with the root `CLAUDE.md` — and the files you touch.
+   Nothing else unless the card's « Not enough? » sends you there. »
+2. The lesson: `<grade>` `<code>` « `<French title>` », folder `<L>`, world `<world>`; the design section to read
+   (`docs/reports/<page>` › `<heading>`); `<REF>` if not lesson 1.
+3. The port map's lines for this role: `<DZ files, each port / cut / new>` (`SKILL.md` §1bis).
+4. You write ONLY `<files>`; at the same time `<other agent>` writes `<their files>` — never edit those.
+5. What the agents before reported that you need: `<hooks, numbers, what the student holds>`.
+6. Only a limit this lesson ADDS to the card's (never the card's limits pasted again).
+7. « Final message ≤ 300 words; the details in `<scratch>/reports/<code>-<role>.md`. »
+
+Per role, the facts that role also needs:
+
+| Role (card, model) | Also fill |
+|---|---|
+| bank (`bank.md`, `sonnet`/`haiku`) | the learning points and their weights (`lesson:brief`); the DZ bank ids to port and the count per level; the numbers reserved for the story (never in the bank) |
+| world (`world.md`, `sonnet`) | the design's islands, gaps, keys with their ids, convoys, the final mission with its right plank and its distractor; the numbers already cleared by `lesson-bank-numbers.mjs` |
+| board (`board.md`, `sonnet`) | the keys in order and their tablets; the net item of the warm-up family; the class test's learning points |
+| forges (`forges.md`, `opus`) | per key: its experiment (kind, mode, numbers), the wrong rules students really hold, its `use`; what the student HOLDS when each forge opens (the world agent's report); a §K task: paste §K |
+| walk-fix (`walk-fix.md`, `opus`) | the failing lines of the walk (or the numbered defects of a review: paste §R); the frozen copy's path; who owns which files |
+| gate A / gate B (`fable`, no card) | `SKILL.md` §3 « A gate's brief » |
+
+## §0 (source). The three blocks every brief carried — condensed into the cards
 
 **Header**
 
@@ -65,8 +93,11 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 > **Build on the authoring kit: `apps/web/src/lessons/common/gameworld/kit/authoring/README.md` — read it first.**
 > Before any number is used: `node scripts/lesson-bank-numbers.mjs <code> --check a,b c,d …` must print CLEAR for every
 > pair of the road, and `buildersOf(gaps, purse)` (`authoring/test/suites.js`) must give exactly the convoy's plank.
-> `math.js` re-exports what it needs from `authoring/numbers.js` (never a copy) and holds only `NUMBERS` and the words of
-> its own world. Each test file calls its shared suite in three lines (`describeStory`, `describeEvidence`,
+> `math.js` re-exports what it needs from `authoring/numbers.js` (never a copy) and holds `NUMBERS`, the words of its
+> own world and the number helpers of its own maths (lesson 1: `powersOf`, `powTex`…). The French typography layer
+> `fr` / `frAll` lives TODAY in lesson 1's `world/math.js`, not in the kit: a second lesson never copies it (D8) — the
+> session moves it into `authoring/numbers.js` first (a kit edit) and every lesson imports it from there.
+> Each test file calls its shared suite in three lines (`describeStory`, `describeEvidence`,
 > `describeTrainer`, `describeKnowledge`, `describeLimits`, `describeSitting`, from `authoring/test/suites.js` — the
 > story suite also runs `typographyErrors` on every sentence), then adds ONLY the lesson's own checks. Never re-write a
 > helper or a check the kit has. If a suite fails on a limit, that screen is walked; the limit is never raised to make the
@@ -74,7 +105,10 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 
 > Task: write `<L>/world/` — every file EXCEPT `forges.js` and `inquiries.js` (another agent writes those next):
 > `story.js`, `math.js`, `text.js`, `practice.js`, `trainer.js`, `journey.js`, `knowledge.js`, `evidence.js`,
-> `sitting.js`, `index.js`, each with its test.
+> `sitting.js`, `index.js`, and `limits.test.js`. Tests: the status script requires one for `forges`, `practice`,
+> `trainer`, `sitting`, `journey`, `evidence` (`lesson-v2-status.mjs › WORLD_TESTED`); lesson 1 also has `story`,
+> `math`, `limits`; `knowledge.js` is tested by `journey.test.js` (`describeKnowledge`); `text.js` and `index.js` have
+> none. `limits.test.js` imports `board/script.js` and `forges.js` — it fails until wave 2 and the board exist.
 > Start from: `<DZ>/world/` — the files the port map keeps, converted (`SKILL.md` §1bis P4); the keys it cuts are
 > removed with their numbers, sentences, knowledge cards and evidence points.
 > Read first: `npm run -s lesson:brief -- <code>`; `docs/architecture/LESSON_V2.md` (the folder, evidence §1bis);
@@ -114,17 +148,23 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 >   « la planche … tient / s’effondre » for a sharing, a fraction, a classification.
 > - No key's name on screen or in an oral cue before its naming station. « PGCD(20 ; 30) = 10 » inside a cue is a formula.
 > - Every number of the script and the memo is computed by `board.test.js`. The class test's questions are the
->   platform's own, cover every learning point, each answer key re-computed; a class test never changes progress.
+>   platform's own, cover every learning point, each answer key re-computed from its `check`; a class test never
+>   changes progress. No test of the repository re-reads a class test's `check` yet (`CLASS_SESSION.md` §4, the file's
+>   own `_comment`): its key is proved by YOUR arithmetic and the session's eyes — say so in the report.
 > - A warm-up family never shows the lesson's own instrument or names one of its keys (`labTool` is an instrument of an
->   EARLIER lesson, or null). Its lists are built with the family's `listText`.
+>   EARLIER lesson, or null). Its lists are joined « 1, 2 et 4 » with `families.js › andList` (a local helper of that
+>   file; no family exports a `listText`).
 > Report also what a walk of the board must click, and what differs from `<REF>`'s board walk.
 
 ## §F. The forges and their experiments (wave 2)
 
 > **Assemble each forge from `authoring/forgeBlocks.js`** (the README's skeleton): `judge({ slots, right, says })` for
-> the tiles; `fromLog` / `gather` / `fromRounds` for the evidence; `attacksOf({ pool: pairPool({… exclude: BANK_PAIRS }),
-> hard })`; `plankCase` / `pairCase`; `makerOf`, the template lines and `firstWrong` for the last step. `BANK_PAIRS` is
-> pasted from `node scripts/lesson-bank-numbers.mjs <code> --js`. The lesson writes only what the tiles mean, the words,
+> the tiles; `fromLog` / `gather` / `fromRounds` for the evidence; `hard` and `firstBreak` for the attacks and the
+> refutations; `line` and the boxes (`powerBox`, `pgcdBox`, `fractionBox`…), `makerOf`, `firstWrong` for the last step.
+> A lesson whose cases are PAIRS of gaps (the Algerian PGCD lessons) also takes `attacksOf({ pool: pairPool({… exclude:
+> BANK_PAIRS }), hard })` and `plankCase` / `pairCase`, `BANK_PAIRS` pasted from `node scripts/lesson-bank-numbers.mjs
+> <code> --js`; lesson 1 (one number at a time) uses none of those three — it imports `judge`, `gather`, `hard`,
+> `firstBreak`, `lazy`, `line`, `noPredictions`, `powerBox`. The lesson writes only what the tiles mean, the words,
 > the hard cases and the last step's numbers. `forges.test.js` calls `describeForges(...)`, `inquiries.test.js` calls
 > `describeExperiments(...)`; then only the « false rules students really hold » tests.
 
@@ -158,7 +198,13 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 > Report also, for the walks' agent: per forge, the hooks a walk clicks, in order, with the right tiles and one false
 > rule that shows a refutation.
 
-## §P. The pack and the satellites (wave 2)
+## §P. The pack and the satellites (wave 2) — now two commands, no agent
+
+`npm run lesson:new -- <code> --world <world>` writes the pack, the config, the routes, `index.jsx` (as `.draft` files);
+`npm run lesson:assemble -- <code>` does the catalogue status, the Prettier lists, the generators, the KEPT lines,
+check-routes and the status line, then prints what it does NOT do (the bank and class test, the walk descriptor, the
+lab tag and launch-kit families, the comments above the KEPT lists, new dead files, the docs, the heavy checks) — the
+session does that to-do (`SKILL.md` §2 step 4). The block below is the rule set those commands follow.
 
 > Task: `<L>/lesson.pack.js`; `<L>/lesson.config.js` (modules as DATA, learning points); `routes.jsx`, `index.jsx`; the
 > generated index; the tests that enumerate.
@@ -170,8 +216,9 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 >   other lessons' knowledge.
 > - The pack like `<REF>`'s: `phone: false`, the world, `knowledge`, `coach` (each learning point → a knowledge sheet),
 >   `board`. `lesson.pack.js` exporting `LESSON_PACK` is what makes the lesson v2 for `validate-lessons.mjs`
->   (`scripts/validate-lib.mjs › isV2Lesson`); `audit-knowledge-dependencies.mjs` and `lesson-v2-status.mjs` still look
->   for `retiredModules: true` in `routes.jsx` (plan §8bis) — write that text in `routes.jsx` until they are changed.
+>   (`scripts/validate-lib.mjs › isV2Lesson`) — and for `audit-knowledge-dependencies.mjs` and
+>   `apps/web/scripts/lesson-v2-status.mjs` too, which read the pack through the same `isV2Lesson`. No marker
+>   `retiredModules: true` is written in `routes.jsx` (`buildLessonRoutes` does not take it).
 > - Neutral module titles in French (they are read by the parent, the teacher's tracking, the reports).
 > - `npm run generate:lesson-index`; the lesson's folder in the two Prettier lists of `package.json`; the lines of
 >   `check:unreached`'s `KEPT` list that this lesson now reaches leave it.
@@ -182,12 +229,16 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 ## §X. The walks (alone in the tree) — through the shared library
 
 > Task: write `apps/web/e2e/lessons/<code>.walk.mjs`, a DESCRIPTOR for `apps/web/e2e/lib/lessonWalk/` (its `README.md` is
-> the contract; the Algerian `bahth-pgcd.walk.mjs`, 78 lines, is the model: `git show 049380e:apps/web/e2e/lessons/bahth-pgcd.walk.mjs`
-> or `../smarter-academy-dz/apps/web/e2e/lessons/`), and RUN it. Write no other walk file.
-> The descriptor says only what the lesson's files cannot: `forbidden` (per key, the French words of its name),
-> `benchForbidden`, `story` (`{ wrongFirst, purseOut, reloadOn }`), `truth` (per forge, what the world does with a case —
-> your own arithmetic), `use` (per forge, every box of the last step computed from the case shown), `dash`, `gate`,
-> `solve` (per trainer form), optionally `statement`, `train`, `launch`.
+> the contract; the model is lesson 1's `apps/web/e2e/lessons/decomposer-en-facteurs-premiers.walk.mjs` — the
+> Algerian `bahth-pgcd.walk.mjs` the README names is NOT in this tree: `../smarter-academy-dz/apps/web/e2e/lessons/`),
+> and RUN it. Write no other walk file. (Under the lean pipeline the descriptor is written WITH the lesson from the
+> design's « walk's outline », and this brief is used only on a failing walk — `cards/walk-fix.md`.)
+> The descriptor says only what the lesson's files cannot: `uid`, `forbidden` (per key, the French words of its name),
+> `benchForbidden`, `story` (`{ wrongFirst, purseOut, markMiss, fallFirst, reloadOn }` — lesson 1 uses
+> `{ fallFirst, reloadOn }`), `truth` (per forge, what the world does with a case — your own arithmetic), `use` (per
+> forge, every box of the last step computed from the case shown), `falseTiles` / `useWrong` when the defaults do not
+> fit, `dash`, `gate`, `solve` (per trainer form), `launch` (REQUIRED: `{ scenario, tool, tools }`), optionally
+> `statement`, `train` — the README's descriptor table is the contract.
 > The library DERIVES the rest — do not write it: the tiles of the rule that holds, the false rule, each convoy's right,
 > wrong and purse-out planks, the bench's answers, the board's right picks, the foreign words and numbers, the map's
 > cards, each trainer session's kinds.
@@ -210,7 +261,9 @@ something a template did not foresee, correct the template (`SKILL.md` §5).
 ## §K. A new experiment kind, a new mode of one, or a new claim kind
 
 > Task: add the kind `<name>` to the world `<world>` — new files beside the newest kind (`<its files>`): pure logic and
-> reducer, a pure view, its CSS, a logic test, a render test; ONE registration edit in `Inquiry.jsx`, made LAST.
+> reducer, a pure view, its CSS, a logic test, a render test; ONE registration edit, made LAST: a new KIND in the
+> `[spec.kind]` table of `divisorIsles/Inquiry.jsx`; a new MODE of `ladder` in `divisorIsles/InquiryGcd.jsx › Ladder`
+> (`if (mode === '…')`, as `fold`, `both`, `factor`) — other kinds dispatch their modes in their own view.
 > (A CLAIM kind instead: `kit/claims.js` AND `apps/api/app/Domain/GameWorld/ClaimVerifier.php` (`KINDS`, `verify`) AND
 > true and false rows in `apps/api/tests/Fixtures/game-claims.json` — `LESSON_V2.md` §1bis.)
 > Start from: the Algerian kind closest to it, if the port map names one (its spec block in `GAME_WORLD.md`).

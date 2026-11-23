@@ -25,7 +25,7 @@ Read this card, the brief and the files you touch — nothing else unless « Not
   (`@smarter-academy/core`); `\\times`, `{,}`; « PGCD(20 ; 30) = 10 » in a cue is a formula; every memo field through
   `MathText`.
 - Agreement through `counted`, `listFr` (`kit/authoring/numbers.js`); a family joins its lists with its own joiner
-  (`families.js › andList` — the briefs' `listText` does not exist).
+  (`families.js › andList`, local to that file — there is no `listText`).
 - Vocabulary: « la leçon au tableau », « la fiche du professeur », « séance en classe », savoir-faire, clé,
   « L’échauffement ». Own numbers (`BOARD`) — not the student's story, not the bank; French names; no betting, no brand.
 

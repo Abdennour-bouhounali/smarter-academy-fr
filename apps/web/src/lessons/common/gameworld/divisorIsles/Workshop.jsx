@@ -9,6 +9,8 @@
  *   the bench (`bench`)        an inquiry spec played by the world's `Inquiry` in a frame of its own (the forge's), with a
  *                              way back to the workshop; what he did there is kept on the game (`Game.benchKept`) and
  *                              shown again when he reopens it. It gives facts; it never says which plank to make.
+ *                              When it kept a state and the lesson writes `bench.text.kept(state)` (lines, at most 4),
+ *                              the typed form shows those lines in a card under the length box (`data-di-bench-kept`).
  *
  * Words: `T.workshop` (`strings.js`, a story may override them). Hooks: `data-di-workshop`, `data-di-minus`,
  * `data-di-plus`, `data-di-in="plank"`, `data-di-craft`, `data-di-gaps`, `data-di-workshop-error`, `data-di-bench-open`,
@@ -18,7 +20,9 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, NotebookPen } from 'lucide-react';
 import { Card, ExitLink, Num, SoundToggle } from '../kit/parts';
 import { isShortScreen } from '../engine/phoneScreen';
+import MathText from '../../components/MathText';
 import Inquiry from './Inquiry';
+import { sheetFrom } from './sheet';
 import '../kit/ruleForge.css';
 
 /** The gaps the plank must build: the overlay's `gaps` (the whole convoy), or its one gap. */
@@ -93,6 +97,45 @@ function Stepper({ o, game }) {
   );
 }
 
+/** A kept bench state read back for its spec, per kind (a kind not listed is taken as kept, as before). */
+const KEPT_OF = { sheet: sheetFrom };
+/** The most lines the « kept » card holds (a card is four lines at most). */
+const KEPT_LINES = 4;
+
+/**
+ * What the bench kept, in the lesson's words: the lines of `bench.text.kept(state)` — none when the bench kept nothing,
+ * when its state is not one of this bench's (other numbers), when the lesson supplies no `kept`, or when it throws.
+ */
+export function benchKeptLines(o, game) {
+  const kept = o.bench && typeof o.bench.text?.kept === 'function' ? game.benchKept?.(o.seg) : null;
+  if (!kept) return [];
+  const check = KEPT_OF[o.bench.kind];
+  const state = check ? check(o.bench, kept) : kept;
+  if (!state) return [];
+  try {
+    const lines = o.bench.text.kept(state);
+    if (!Array.isArray(lines)) return [];
+    return lines.filter((l) => typeof l === 'string' && l.trim() !== '').slice(0, KEPT_LINES);
+  } catch {
+    return [];
+  }
+}
+
+/** The « kept » card under the length box: what the bench showed him, where he types (at least 18 px, no scroll). */
+function BenchKept({ o, game }) {
+  const lines = benchKeptLines(o, game);
+  if (!lines.length) return null;
+  return (
+    <div className="di-fact" data-di-bench-kept={lines.length} style={{ margin: '0.5rem 0', padding: '0.4rem 1rem' }}>
+      {lines.map((l, i) => (
+        <p key={i} style={{ fontSize: '1.15rem', lineHeight: 1.5, margin: '0.1rem 0' }}>
+          <MathText>{l}</MathText>
+        </p>
+      ))}
+    </div>
+  );
+}
+
 /** He types the length: one box with its printed unit; Enter or the button makes the plank. */
 function Typed({ o, game }) {
   const W = game.T.workshop;
@@ -127,6 +170,7 @@ function Typed({ o, game }) {
           />
           <span>{W.unit}</span>
         </div>
+        <BenchKept o={o} game={game} />
         {err && (
           <p className="di-feedback" data-di-workshop-error>
             {err}

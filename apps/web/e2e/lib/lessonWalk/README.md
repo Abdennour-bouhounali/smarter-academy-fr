@@ -88,8 +88,8 @@ step alone with `E2E_LAB_ONLY=2quater`.
 ## The descriptor
 
 Only what the lesson's files cannot say: the walk's OWN arithmetic of every verdict (a state hook gives the question,
-never the answer — defects.md C1), and the words no screen may show before their tablet. `e2e/lessons/bahth-pgcd.walk.mjs`
-is the model.
+never the answer — defects.md C1), and the words no screen may show before their tablet. `e2e/lessons/decomposer-en-facteurs-premiers.walk.mjs`
+is the model (the first French walk).
 
 | Key                                                         | Shape                                                                                                                                                                                                                                                                                                                                                          | Used by                                                                                                                 |
 | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------ |
@@ -130,7 +130,7 @@ A segment, a station or an experiment the library does not know STOPS the walk w
 
 1. `e2e/lessons/<id>.walk.mjs` — the descriptor (lessons 5 and 6: about 60 lines each).
 2. A hook for each screen that is new to the world, then — once it passed — its handler moved into the library.
-3. Run `story`, then `hub`, `trainer`, `board`, `launch` at 1366×768, then once at 1024×768; `sitting` alone.
+3. Run `story`, then `hub`, `trainer`, `board`, `launch` at 1366×768 — the one size; `sitting` alone.
 
 ## Adding to the library
 

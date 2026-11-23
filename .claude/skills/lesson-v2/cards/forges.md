@@ -22,7 +22,8 @@ Read this card, the brief and the files you touch — nothing else unless « Not
   ≤ 32 characters, heading ≤ 35, chip ≤ 54; `buildLead` ≤ 135; his rule ≤ 145; an attack ≤ 155; `tryKey` ≤ 146;
   last step ≤ 4 lines, ≤ 4 boxes a line.
 - Every sentence of an experiment is a FACT; a verdict is what the world does, never « faux ». « tu ».
-- U+00A0 before « : » and inside « … », U+202F before « ; ! ? », « ’ »; wrap texts in `frAll` (`L1/world/math.js`);
+- U+00A0 before « : » and inside « … », U+202F before « ; ! ? », « ’ »; wrap texts in `frAll` (today in `L1/world/math.js`; never copied — from
+  `KIT/authoring/numbers.js` once moved there, through your `math.js`);
   `\\times`, `{,}`; `$…$` only where `MathText` renders; a fraction over a real bar, a real exponent (never « 2^3 »).
 - A tile needs no agreement with another (« est un nombre pair »). Read every `use` template at 0, 1, 2, 11+, for each
   gender and elision (« de 8 », never « d’8 »; « l’île », « le 11 »).

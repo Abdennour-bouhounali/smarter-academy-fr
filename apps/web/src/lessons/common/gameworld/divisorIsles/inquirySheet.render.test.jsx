@@ -1,10 +1,25 @@
 // The investigation `sheet` (InquirySheet.jsx): mounted by `Inquiry` on its kind, played stage by stage through its
 // reducer (sheet.js) and drawn by its pure view. Server render.
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import Inquiry from './Inquiry';
 import { SheetView } from './InquirySheet';
-import { initSheet, sheetReducer } from './sheet';
+import { initSheet, sheetFrom, sheetReducer, startSheet } from './sheet';
+
+// a server render runs no effect: to hear what the sheet reports (`spec.onState`), one test runs its effects at once
+const fx = vi.hoisted(() => ({ now: false }));
+vi.mock('react', async (importOriginal) => {
+  const React = await importOriginal();
+  const useEffect = (fn, deps) => {
+    React.useEffect(fn, deps); // a no-op on the server, called in every render as the rules of hooks want
+    if (fx.now) fn();
+  };
+  return { ...React, default: { ...React, useEffect }, useEffect };
+});
+afterEach(() => {
+  fx.now = false;
+  vi.useRealTimers();
+});
 
 globalThis.window = globalThis.window ?? {};
 
@@ -142,5 +157,98 @@ describe('sheet — the screen', () => {
           w,
         );
     }
+  });
+
+  // the bench (Workshop.jsx › Bench) gives back what he did (`spec.from`) and hears every change (`spec.onState`)
+  describe('on the workshop’s bench', () => {
+    // the first round finished (2 431 = 11 × 13 × 17), the second one half done (4 641 ÷ 3 = 1 547)
+    const firstDone = () => {
+      let s = fill(initSheet(SPEC));
+      for (const p of [11, 13]) s = fill(play([{ type: 'line', p }], s));
+      return play([{ type: 'prime' }], s);
+    };
+    const secondHalf = () => fill(play([{ type: 'line', p: 3 }], fill(play([{ type: 'next' }], firstDone()))));
+    const mount = (spec) => renderToString(<Inquiry spec={spec} onDone={noop} />).replaceAll('<!-- -->', '');
+
+    it('reopened, it starts where he left it: the round, the number on the sheet, the notebook, the rounds found', () => {
+      const kept = secondHalf();
+      expect(kept.ri).toBe(1);
+      expect(kept.n).toBe(1547);
+      const html = mount({ ...SPEC, from: kept });
+      clean(html);
+      expect(html).toContain('data-iq-stage="pick"');
+      expect(html).toContain('data-iq-n="1547"');
+      expect(html).toContain('data-iq-note="4641:3:1547"');
+      expect(html).toContain('line[2431]'); // the first round's found line stays
+      expect(html).not.toContain('line[4641]');
+      expect(html).toContain('lead(4641)');
+      expect(html).toMatch(/data-iq-line="7"[^>]*data-iq-rest="0"/); // 1 547 = 7 × 221
+    });
+
+    it('a sheet the world was still filling when he left is filled when he comes back; a finished game shows its last round', () => {
+      const mid = sheetReducer(SPEC, initSheet(SPEC), { type: 'tick' });
+      expect(mid).toMatchObject({ stage: 'fill', filled: 1 });
+      const back = mount({ ...SPEC, from: mid });
+      expect(back).toContain('data-iq-stage="pick"');
+      expect(back.match(/data-iq-rest=/g)).toHaveLength(15);
+      // the end of the last round: every round's found line, the « done » button
+      let s = firstDone();
+      s = play([{ type: 'next' }], s);
+      for (const p of [3, 7, 13]) s = fill(play([{ type: 'line', p }], fill(s)));
+      s = play([{ type: 'prime' }], fill(s));
+      s = play([{ type: 'next' }], s);
+      for (const p of [53]) s = fill(play([{ type: 'line', p }], fill(s)));
+      s = play([{ type: 'prime' }], fill(s));
+      expect(s).toMatchObject({ ri: 2, stage: 'seen' });
+      const end = mount({ ...SPEC, from: { ...s, done: true } });
+      clean(end);
+      expect(end).toContain('data-iq-stage="seen"');
+      for (const n of [2431, 4641, 3127]) expect(end).toContain(`line[${n}]`);
+      expect(end).toContain('>done<');
+    });
+
+    it('a kept state that is not one of this spec’s (other numbers, another kind, a broken save) is ignored: a fresh sheet', () => {
+      const kept = secondHalf();
+      const other = { ...SPEC, rounds: [{ n: 2431 }, { n: 1001 }] };
+      const wrong = [
+        null,
+        42,
+        { stage: 'build', ri: 0, lists: [] }, // a `lists` state
+        { ...kept, ri: 5 },
+        { ...kept, n: 1546 }, // not what is left of 4 641
+        { ...kept, factors: [5] },
+        { ...kept, rounds: [{ n: 2431, factors: [11, 13, 19] }] },
+        { ...kept, rounds: [] },
+        { ...kept, attempts: undefined },
+        { ...kept, stage: 'pick', n: 1 },
+      ];
+      for (const from of wrong) {
+        expect(sheetFrom(SPEC, from)).toBeNull();
+        const html = mount({ ...SPEC, from });
+        clean(html);
+        expect(html).toContain('data-iq-stage="fill"');
+        expect(html).toContain('data-iq-n="2431"');
+      }
+      // the same state on a spec with other numbers: ignored too
+      expect(sheetFrom(other, kept)).toBeNull();
+      expect(startSheet({ ...other, from: kept })).toEqual(initSheet(other));
+      // without `from` (an experiment of a forge): exactly the fresh sheet, as before
+      expect(startSheet(SPEC)).toEqual(initSheet(SPEC));
+      expect(sheetFrom(SPEC, kept)).toEqual(kept);
+    });
+
+    it('it reports the state it draws through `spec.onState` — a fresh sheet, a kept one; without `onState` nothing is called', () => {
+      vi.useFakeTimers(); // the world's filling timer must not run after the render
+      fx.now = true;
+      const heard = [];
+      const onState = (s) => heard.push(s);
+      mount({ ...SPEC, onState });
+      expect(heard).toEqual([initSheet(SPEC)]);
+      const kept = secondHalf();
+      mount({ ...SPEC, from: kept, onState });
+      expect(heard.at(-1)).toEqual(kept);
+      expect(() => mount(SPEC)).not.toThrow();
+      expect(heard).toHaveLength(2);
+    });
   });
 });
