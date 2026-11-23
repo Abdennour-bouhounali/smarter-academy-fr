@@ -151,10 +151,16 @@ must now save more than they cost: the judgment is test 1's cost.
 **Counted against Opus as designer (§8): gate A found 2 design-level pedagogy defects on the first lesson.** If gate A
 finds design-level defects on the NEXT lesson too, the design goes back to the strongest model.
 
-**To do before the PGCD lesson is briefed:** the sheet bench must keep its state (design § « Kit work », the one item);
-correct the 16 contradictions in the skill; rewrite the skill's §2 around §6 (the cards are linked from SKILL.md, the
-rest of §2 still describes lesson 1's pipeline); the K3 tile wording « qu'on voit » is to be read aloud to the owner.
+**Done before the PGCD lesson is briefed (2026-11-23, commit `d4cfd67c`, ~290 k more tokens, so step 0 + preparation ≈ 0.9 M):**
+the sheet bench keeps its state and shows it in the typed workshop (436 tests green in `divisorIsles` + the lesson folders;
+lesson 1 re-walked once at 1366×768 as the reference: 0 FAIL — story 1 390 ok, hub 412, trainer 791, board 286, launch);
+the 16 contradictions of the skill corrected (13 in the skill, `lessonWalk/README.md`, `EXERCISE_CONTRACT.md`, a stale
+comment; the 16th, an Arabic comment in `packages/core/practice/answerEvaluator.js`, is shared-engine data and stays);
+SKILL §2/§3 and `briefs.md` rewritten around the cards, the two commands and the two gates.
 
+**Still to do, in the PGCD session:** read aloud to the owner the K3 tile wording « qu'on voit »; the cards have never
+been used by an agent — the first brief that uses one tells what was missing; `fr`/`frAll` should move to
+`kit/authoring/numbers.js` (the cards' writer's recommendation) before lesson 2 copies them.
 
 ## 10. Open, for the owner at the start of the session
 
