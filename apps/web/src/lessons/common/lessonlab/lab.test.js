@@ -40,16 +40,33 @@ describe('Mon labo — the order of the lessons', () => {
 });
 
 describe('Mon labo — the instruments a lesson may show', () => {
-  it('tags every instrument with the lesson that introduces it (none before the French lessons), a module and quests', () => {
+  it('tags an instrument with the lesson that introduces it, gives each a module and quests', () => {
+    // the French lessons tag their own; the Algerian instruments stay listed nowhere until a French lesson takes one
+    expect(TOOLS.filter((t) => t.lesson !== null).map((t) => [t.id, t.lesson])).toEqual([
+      ['factor', 'decomposer-en-facteurs-premiers'],
+    ]);
     for (const t of TOOLS) {
-      // re-keyed on the French catalogue in a later stage: until then an instrument is listed nowhere
-      expect(t.lesson, t.id).toBeNull();
+      if (t.lesson !== null) expect(placeOf(t.lesson), `${t.id}: ${t.lesson} in the catalogue`).toBeTruthy();
       expect(typeof t.load).toBe('function');
       expect(QUESTS[t.id].length).toBeGreaterThanOrEqual(2);
       expect(t.range.a[0]).toBeLessThan(t.range.a[1]);
     }
     expect(new Set(TOOLS.map((t) => t.id)).size).toBe(TOOLS.length);
     expect(toolsFor('lecon-inconnue')).toEqual({ mine: [], cabinet: [], all: [] });
+  });
+
+  it('« Décomposer en facteurs premiers » has its own instrument; the lessons after it find it in the cabinet', () => {
+    const lab = toolsFor('decomposer-en-facteurs-premiers');
+    expect(lab.mine.map((t) => t.id)).toEqual(['factor']);
+    expect(lab.cabinet).toEqual([]);
+    expect(toolsFor('decomposer-en-facteurs-premiers', { earlierOnly: true })).toMatchObject({ mine: [], all: [] });
+    const next = toolsFor('trouver-le-pgcd');
+    expect(next.mine).toEqual([]);
+    expect(next.cabinet.map((g) => [g.grade, g.lessons.map((l) => l.code)])).toEqual([
+      ['3e', ['decomposer-en-facteurs-premiers']],
+    ]);
+    expect(next.cabinet[0].lessons[0].title).toBe('Décomposer un nombre en facteurs premiers');
+    expect(hasLab('decomposer-en-facteurs-premiers')).toBe(true);
   });
 
   it('opened BEFORE the lesson (« L’échauffement », `earlierOnly`): only the instruments of the lessons before it', () => {
@@ -464,6 +481,13 @@ describe('Mon labo — « Essaie »', () => {
     expect(observe('bracket', { a: 2615, b: 42, n: 63, lo: true, hi: true }, new Set())).toEqual(['over', 'big']);
     expect(observe('bracket', { a: 2615, b: 42, n: 62, lo: true, hi: false }, new Set())).toEqual([]);
     expect(observe('bracket', { a: 2615, b: 7, n: 373, lo: true, hi: true }, new Set())).toEqual([]); // a one-digit plank
+    // « L’échelle des facteurs »: ticked only by a ladder laid to the end, the planks it reported
+    expect(observe('factor', { a: 120, b: 1 }, new Set())).toEqual([]); // nothing laid: nothing reported
+    expect(observe('factor', { a: 120, b: 1, planks: [2, 2], left: 30 }, new Set())).toEqual([]); // not finished
+    expect(observe('factor', { a: 120, b: 1, planks: [4, 30], left: 1 }, new Set())).toEqual(['end']);
+    expect(observe('factor', { a: 96, b: 1, planks: [2, 2, 2, 2, 2, 3], left: 1 }, new Set())).toEqual(['long']);
+    expect(observe('factor', { a: 2387, b: 1, planks: [2387], left: 1 }, new Set())).toEqual(['end', 'big']);
+    expect(observe('factor', { a: 2387, b: 1, planks: [7, 11], left: 1 }, new Set())).toEqual([]); // a report of other numbers
   });
   it('the dice always gives numbers the instrument can show', () => {
     let s = 7;
@@ -500,6 +524,7 @@ describe('Mon labo — the sounds', () => {
       'Strip',
       'NumberCourt',
       'FractionPlatform',
+      'FactorLadder',
     ].map((n) => `./tools/${n}.jsx`),
   ];
   /** Every sound name written in the lab's code: play('x'…), useChime(play, 'x'…), and the two names of a « a ? 'x' : 'y' ». */

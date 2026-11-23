@@ -119,6 +119,7 @@ describe('Mon labo — the drawings read left to right', () => {
         'Strip',
         'NumberCourt',
         'FractionPlatform',
+        'FactorLadder',
       ].map((t) => `tools/${t}.jsx`),
     ];
     for (const f of files) {

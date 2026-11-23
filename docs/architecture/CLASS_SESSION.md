@@ -5,8 +5,10 @@
 > the knowledge card, the tracking, the lesson file, the memo. Imported from the Algerian platform (DZ dev `7f4cef1c`)
 > on 2026-11-22. True here: the code (`apps/web/src/features/classSession/`, `pages/teacher/ClassSessionPage.jsx`,
 > `LessonMemoPage.jsx`, `LessonFilePage.jsx`, `LessonToolPages.jsx`, `pages/teacher/practice/`,
-> `apps/api/app/Domain/ClassSession/`), its API and its tables. Not true here: no lesson has a board, a memo or a class
-> test (`content/class-tests/` does not exist), so none of these screens has anything to show; no class-session walk
+> `apps/api/app/Domain/ClassSession/`), its API and its tables. Not true here (2026-11-23): no lesson's PACK names a
+> board yet, so none of these screens has anything to show — the first board (`board/script.js`, `board/memo.js` of
+> 3e `decomposer-en-facteurs-premiers`, with the new station `ladder`) and the first class test
+> (`content/class-tests/3e/decomposer-en-facteurs-premiers.json`) are written, not yet reached; no class-session walk
 > exists. Since 2026-11-22 these screens are French and read left to right (the sentences of `session.js`,
 > `lessonScripts.js` and the teacher's namespaces of `apps/web/src/i18n/locales/fr/`). No real class has used it.
 
@@ -36,7 +38,7 @@ the teacher's ONE place on the page, in the order of his work:
 | **prepare** | try the lesson as a student · the full memo · the lesson file (§2ter) |
 | **my tools** | the lesson's lab (`LessonLab`) · the exercise bank (§5quater) · the knowledge card (full screen) |
 | **follow** | the class tracking (§2bis) |
-| **before you start** | what the students will learn · what the lesson stands on (`toolsForLesson`: core / support, with the year) · the mistakes students really make (`launchkit/families.js` — empty today) |
+| **before you start** | what the students will learn · what the lesson stands on (`toolsForLesson`: core / support, with the year) · the mistakes students really make (`launchkit/families.js` — one family today, `4e.m1.r06`) |
 
 **The header common to the lesson's tools** (`LessonToolsBar.jsx`): the lesson's title, then one tab per tool — the
 lesson · the class session · the memo · the lesson file · the exercise bank · the tracking · the knowledge card. It is
@@ -153,8 +155,8 @@ and **the end test** (the lesson, with those two asked again under other numbers
 
 - **The default test is a file of the repository**, `content/class-tests/<grade>/<lesson>.json` (`start`, `end`, and a
   `pool` of more prepared questions), never overwritten. The API finds it in any grade folder
-  (`ClassSessionService::defaultTest` globs `*/<lesson>.json`; path `config/class_session.php`). The folder does not
-  exist yet. The Algerian files carried a `check` per question from which a test re-computed every answer; that test
+  (`ClassSessionService::defaultTest` globs `*/<lesson>.json`; path `config/class_session.php`). One file exists:
+  `content/class-tests/3e/decomposer-en-facteurs-premiers.json`. The Algerian files carried a `check` per question from which a test re-computed every answer; that test
   (`defaultTests.test.js`) was deleted with them, so **no check guards a default test here until it is rewritten** — a
   default test must never ship a wrong answer.
 - **The teacher's copy** lives beside it (`class_tests`, one per teacher and lesson): remove, reorder, add from the pool,
@@ -189,9 +191,11 @@ the last rule to ③, the last station of ③ to ④.
 
 - **What is revised**: the rules the new lesson will USE — those of its earlier learning points, taken from the learning
   net (`toolsForLesson(lesson)`), core links before support. The wording is the `rules` of the launch-kit family of each
-  learning point (`launchkit/families.js`: `{ id, title, text, example, check }`; every example is re-computed by
-  `lessonScripts.test.js`). **A new rule card = an entry there**, never a sentence typed in a screen. With `FAMILIES`
-  empty, no lesson has moment ② today.
+  learning point (`launchkit/families.js`: `{ id, title, text, example, check }`; every example is re-computed by the
+  family's tests in `launchkit/launchkit.test.js`). **A new rule card = an entry there**, never a sentence typed in a
+  screen. One family exists, `4e.m1.r06` (four cards: a prime number, divisible by 2, 3, 5, a product of primes, what
+  2³ is worth): the first 3e lesson « Décomposer un nombre en facteurs premiers » gets moment ② once its pack names its
+  board.
 - **Order**: when the start test was taken, the learning point the class missed most comes first, with its count
   (`lessonScripts.js › reviewCards`).
 - **One rule per screen**, very large.
@@ -221,6 +225,7 @@ component of `LessonBoard.jsx`:
 | `ask` | one question whose choices are planks (`a` = the gap, `options`, `answer` = the planks that fill it — **a test must compute it**); every choice can be built in one line (bar + equality). Up to SIX choices on ONE row. A step whose choices are NOT planks gives its own `words: { card, held, fell }` (`lessonScripts.js › askWords`) |
 | `statements` | sentences judged true / false one after the other; each verdict comes with its reason (`proofOf`) |
 | `court` | **a court of the `rootCourts` world** (`LessonBoard › CourtStation`, logic `lessonScripts.js › courtCards / courtShown / courtWords`): ONE square court drawn by the world's own `Court` (`rootCourts/courtParts.jsx`), and at most six cards beside it — rods over a given court (`area`, `rods`) or courts under a given rod (`rod`, `areas`). A tap holds a platform over the court (the class predicts); lowering it, the world answers — it rides, leaves a band, jams, the exact difference written. `answer` = the cards that ride (**a test computes it** from `courtCards`); the proof `after` replaces the question once they were lowered. A rod card may be a fraction, drawn with a real bar |
+| `ladder` | **a factor ladder of the `divisorIsles` world** (`LadderStation.jsx`; logic `lessonScripts.js › ladder*`, on the world's own law `divisorIsles/factorLadder.js › layPlank`): ONE gap of `n` cases broken plank by plank. The class proposes the next plank, a tap lays it — it holds: the gap becomes the number of planks laid and a rung « 168 = 2 × 84 » is written on the ladder at the left, as a copybook writes it; it falls: the gap stays, its division and what is left are written. `rack` = the planks on offer (at most eight), `whole` adds a plank as long as the whole gap, `group` counts the equal planks of the finished row (« 4 planches de 2 »), `sheet` replaces the rack by a SHEET of remainders (`divisorIsles/sheet.js`: column A the primes up to the stop, column B the remainders, `=MOD(n;A2)`) — the class taps the line it reads as 0, or says that no remainder is 0 (refused when one is: the zeros are shown, never « faux »). Once the gap is 1 case the row is written as one product and the proof `after` comes; « Une autre échelle » starts again and keeps two finished ladders beside it. **A test lays every ladder of the script** (to 1 case with what it offers, at most nine rungs, a sheet of at most sixteen lines) |
 | `trace` | what goes in the copybook: the keys of the lesson, in the wording just read; long tablets split into SEVERAL `trace` steps of two keys. A long chain of `=` takes its own row (`data-long`); a dense tablet shrinks its card (`data-dense`) — never cut, never broken |
 
 Rules of this screen:
@@ -231,8 +236,8 @@ Rules of this screen:
   plank — green when it fills, amber and falling when it does not. A question whose right answer is a plank that LEAVES
   cells would show the right answer as a fallen bridge: ask it the other way round, and test every `ask` against the
   world's `ruleForge.js › outcome(a, plank).held`.
-- **A name never comes before the action**: every `name` step follows a `forge`, an `ask`, a `court` or a `statements`
-  step (tested).
+- **A name never comes before the action**: every `name` step follows a `forge`, an `ask`, a `court`, a `ladder` or a
+  `statements` step (tested by the lesson's `board/board.test.js`).
 - **An adult's board**: the rail (one group per key, then ONE group for the copybook — `lessonScripts.js › groupsOf`)
   jumps to any station; ← / → and PageDown / PageUp work for a presenter remote; « next » is never disabled.
 - **The board remembers the hour** (station, the class's bridges, its rule, who spoke) in the browser tab
@@ -319,7 +324,8 @@ API (`/api/v1/teacher`, the locks of every teacher route): `GET|PUT /classrooms/
 - API: `cd apps/api && php8.4 artisan test --filter='ClassSessionTest|LessonTrackingTest'`.
 - Unit: `npx vitest run src/features/classSession` in `apps/web` (the turn, the teams, the three ways to choose a student,
   the sentences, the result and the podium, the map's edits, the script helpers, the tracking order, the bank helpers,
-  `boardLessons.test.js` on the fixture `test/lessonIndexFixture.js`, `courtStation.render.test.jsx`).
+  `boardLessons.test.js` on the fixture `test/lessonIndexFixture.js`, `courtStation.render.test.jsx`,
+  `ladderStation.render.test.jsx`). A lesson's own board: `npx vitest run <its folder>/board`.
 - Walk: none. The Algerian walks (`class-session.mjs`, `class-lesson.mjs`, `class-lesson-qawasim.mjs`) were deleted with
   their lessons; the checks they made (nothing scrolls, no clipped card, a class of 35 on the map, the header boxes equal
   on the five tool pages, the memo printed on two pages) are owed again by the first French lesson's walk.

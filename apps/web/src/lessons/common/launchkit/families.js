@@ -63,6 +63,12 @@ export const MISTAKES = {
     'Attention : dans le produit de deux nombres décimaux, le nombre de chiffres après la virgule est la somme de ceux des deux facteurs.',
   'fraction-one-term':
     'Attention : pour élever une fraction au carré, on élève au carré le numérateur ET le dénominateur.',
+  'one-not-prime':
+    'Attention : 1 n’est pas un nombre premier — un nombre premier a exactement deux diviseurs, 1 et lui-même.',
+  'odd-not-prime':
+    'Attention : un nombre impair n’est pas forcément premier — cherche un diviseur autre que 1 et lui-même.',
+  'two-is-prime': 'Attention : 2 est un nombre premier — ses seuls diviseurs sont 1 et 2.',
+  'not-all-prime': 'Attention : chaque nombre du produit doit être premier — un 6 s’écrit encore 2 × 3.',
 };
 
 const gcdOf = (x, y) => (y === 0 ? x : gcdOf(y, x % y));
@@ -76,6 +82,8 @@ const CALC = {
   frac: (c) => (c.side === 'bottom' ? (c.d * c.m) / c.n : (c.n * c.m) / c.d),
   // xᵉ = ▢ for a whole base (a fraction base is judged by `gradePower`, term by term)
   pow: (c) => c.x ** c.e,
+  // n = (the known primes) × ▢ — the missing number of a product (`4e.m1.r06`)
+  factor: (c) => c.n / c.known.reduce((p, x) => p * x, 1),
 };
 
 const calcValue = (c) => CALC[c.op](c);
@@ -100,6 +108,7 @@ function gradeCalc(q, answer) {
   if (!Number.isFinite(v)) return { correct: false, mistake: null };
   if (c.op === 'pgcd') return { correct: false, mistake: pgcdSlip(c.x, c.y, v) };
   if (c.op === 'frac') return { correct: false, mistake: fracSlip(c, v) };
+  if (c.op === 'factor') return { correct: false, mistake: 'product-false' };
   const p = c.x * c.y;
   const slip = (w) => [c.x * (c.y - 1), c.x * (c.y + 1), (c.x - 1) * c.y, (c.x + 1) * c.y].includes(w) && w !== p;
   if (c.op === 'times') return { correct: false, mistake: slip(v) ? 'table-slip' : null };
@@ -148,9 +157,373 @@ function gradePower(c, answer) {
   return { correct: false, mistake: v === Math.abs(c.x) * c.e ? 'power-times' : null };
 }
 
-// Keyed by the item id of the learning net. EMPTY until the French net exists (2026-11-22): the Algerian families (their
-// question generators, rules and memos) are in git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`.
-export const FAMILIES = {};
+// ───────────────────────── 4e.m1.r06 — décomposer un petit nombre (4e) ─────────────────────────
+// What a 3e student brings from 4e to « décomposer en facteurs premiers » (the net gives this lesson ONE tool, this item):
+// recognising a prime under 30, the divisibility by 2, 3 and 5, a small product of primes (12, 18, 30…), the value of
+// 2³. It MEASURES them; it never teaches the 3e procedure (which number to try first, how often, when to stop): a worked
+// example splits from the LARGEST prime, never the smallest; it never writes a product with exponents; no word of the
+// lesson's keys (« puissance », « s’arrêter », « tableur », « plus petit nombre premier »).
+
+const int = (rand, lo, hi) => lo + Math.floor(rand() * (hi - lo + 1));
+const pick = (rand, list) => list[Math.floor(rand() * list.length)];
+const shuffle = (rand, list) => {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+const S = (slot, label, w) => ({ slot, label, w });
+/** A small exponent written in a plain title: « 2³ ». */
+const SUP = { 2: '²', 3: '³', 4: '⁴', 5: '⁵' };
+const isPrime = (n) => {
+  if (n < 2) return false;
+  for (let d = 2; d * d <= n; d += 1) if (n % d === 0) return false;
+  return true;
+};
+/** The prime factors of n, increasing, each as often as it divides (12 → [2, 2, 3]). */
+const primesOf = (n) => {
+  const out = [];
+  let m = n;
+  for (let d = 2; m > 1; d += 1)
+    while (m % d === 0) {
+      out.push(d);
+      m /= d;
+    }
+  return out;
+};
+const productOf = (xs) => xs.reduce((p, x) => p * x, 1);
+const timesTex = (xs) => xs.join(' \\times ');
+/** « 2, 3 et 5 » (a list said in French). */
+const andList = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} et ${xs.at(-1)}`);
+
+/** The small numbers of the family: three primes (level 1), four primes (level 2). None is a number of the lesson. */
+const DECOMP = { first: [12], 1: [12, 18, 20, 28, 30, 42, 45, 50], 2: [84, 88, 90, 100, 132, 150, 154, 198] };
+const PRIMES_30 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+const ODD_COMPOSITES = [9, 15, 21, 25, 27];
+const EVEN_COMPOSITES = [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28];
+/** « 2³ = ▢ »: never a power where the slip (2 × 3) and the value agree — 2² = 2 × 2 is left out (defects.md C17). */
+const POWERS = [
+  [2, 3],
+  [3, 2],
+  [2, 4],
+  [5, 2],
+  [3, 3],
+  [2, 5],
+];
+
+/** « 30 = 2 × ▢ × 5 »: one prime of the product to write, the others given in increasing order. */
+function decompWrite(rand, level, first) {
+  const n = pick(rand, first ? DECOMP.first : DECOMP[level]);
+  const factors = primesOf(n);
+  const at = first ? factors.length - 1 : int(rand, 0, factors.length - 1);
+  const known = factors.filter((_, i) => i !== at);
+  const tokens = [String(n), '='];
+  factors.forEach((f, i) => {
+    if (i > 0) tokens.push('×');
+    tokens.push(i === at ? S('v', 'nombre premier', 2) : String(f));
+  });
+  return {
+    gesture: 'write',
+    calc: { op: 'factor', n, known },
+    prompt: 'Complète ce produit de nombres premiers :',
+    tokens,
+  };
+}
+
+/** Three numbers under 30, each to send to « premier » or « pas premier »: 1 and an odd number that is not prime are the traps. */
+function primesSort(rand) {
+  const shape = pick(rand, [
+    ['prime', 'odd', 'even'],
+    ['prime', 'one', 'odd'],
+    ['prime', 'prime', 'odd'],
+    ['two', 'odd', 'one'],
+    ['prime', 'odd', 'odd'],
+  ]);
+  const used = new Set();
+  const draw = (kind) => {
+    const from = { prime: PRIMES_30.slice(1), two: [2], one: [1], odd: ODD_COMPOSITES, even: EVEN_COMPOSITES }[kind];
+    let n = pick(rand, from);
+    for (let i = 0; i < 30 && used.has(n); i += 1) n = pick(rand, from);
+    used.add(n);
+    return n;
+  };
+  const cards = shuffle(rand, shape).map((kind, i) => {
+    const n = draw(kind);
+    const trap = n === 1 ? 'one-not-prime' : n % 2 === 1 && !isPrime(n) ? 'odd-not-prime' : null;
+    return {
+      id: `c${i + 1}`,
+      text: String(n),
+      n,
+      bin: isPrime(n) ? 'yes' : 'no',
+      trap,
+      miss: n === 2 ? 'two-is-prime' : null,
+    };
+  });
+  return {
+    gesture: 'sort',
+    prompt: 'Ce nombre est-il premier ? Envoie chaque carte dans sa boîte.',
+    bins: [
+      { id: 'yes', label: 'Premier' },
+      { id: 'no', label: 'Pas premier' },
+    ],
+    cards,
+  };
+}
+
+/** « 2³ = ▢ » — the value of a small power, typed. */
+function powerWrite(rand, level, first) {
+  const [x, e] = first ? POWERS[1] : pick(rand, level === 1 ? POWERS.slice(0, 4) : POWERS);
+  return {
+    gesture: 'write',
+    calc: { op: 'pow', x, e },
+    prompt: 'Calcule :',
+    tokens: [{ pow: [String(x), String(e)] }, '=', S('v', 'valeur', String(x ** e).length)],
+  };
+}
+
+/**
+ * Three equalities « n = a × b × … »: one writes n as a product of primes; a trap keeps a number that is not prime
+ * (« 12 = 2 × 6 », `not-all-prime`), another is a product that is not n (« 30 = 2 × 3 × 7 », `product-false`).
+ */
+function decompCard(rand, kind, id, avoid) {
+  let n = pick(rand, [...DECOMP[1], ...DECOMP[2]]);
+  for (let i = 0; i < 40 && avoid.has(n); i += 1) n = pick(rand, [...DECOMP[1], ...DECOMP[2]]);
+  avoid.add(n);
+  const f = primesOf(n);
+  let factors = f;
+  let trap = null;
+  if (kind === 'composite') {
+    // two primes of the product merged into one number that is not prime: the product is still n
+    const i = int(rand, 0, f.length - 2);
+    factors = [...f.slice(0, i), f[i] * f[i + 1], ...f.slice(i + 2)];
+    trap = 'not-all-prime';
+  } else if (kind === 'wrong') {
+    // one prime replaced by the next prime: the product is no longer n
+    const i = int(rand, 0, f.length - 1);
+    const next = PRIMES_30.find((p) => p > f[i]);
+    factors = [...f.slice(0, i), next, ...f.slice(i + 1)].sort((a, b) => a - b);
+    trap = 'product-false';
+  }
+  const ok = productOf(factors) === n && factors.every(isPrime);
+  return { id, text: `$${n} = ${timesTex(factors)}$`, n, factors, bin: ok ? 'yes' : 'no', trap: ok ? null : trap };
+}
+function decompSort(rand) {
+  const shape = pick(rand, [
+    ['right', 'composite', 'wrong'],
+    ['right', 'right', 'composite'],
+    ['right', 'composite', 'composite'],
+    ['right', 'wrong', 'right'],
+  ]);
+  const avoid = new Set();
+  return {
+    gesture: 'sort',
+    prompt: 'Chaque égalité écrit-elle le nombre comme un produit de nombres premiers ?',
+    bins: [
+      { id: 'yes', label: 'Oui' },
+      { id: 'no', label: 'Non' },
+    ],
+    cards: shuffle(rand, shape).map((kind, i) => decompCard(rand, kind, `c${i + 1}`, avoid)),
+  };
+}
+
+/** The divisibility by 2, 3 or 5 read on the digits: the traps are a digit read in the wrong place, or the last digit for 3. */
+const RULE_TRAPS = {
+  2: (n) => (n % 2 !== 0 && /[02468]/.test(String(n).slice(0, -1)) ? 'digit-anywhere' : null),
+  5: (n) => (n % 5 !== 0 && /[05]/.test(String(n).slice(0, -1)) ? 'digit-anywhere' : null),
+  3: (n) => (n % 3 !== 0 && [3, 6, 9].includes(n % 10) ? 'last-digit' : null),
+};
+/** What a « yes » number must look like so that the WRONG rule would refuse it (a rule is tested on both sides). */
+const HARD_YES = { 2: () => true, 5: () => true, 3: (n) => ![3, 6, 9].includes(n % 10) };
+function divisibleSort(rand) {
+  const k = pick(rand, [2, 3, 5]);
+  const find = (test) => {
+    for (let i = 0; i < 400; i += 1) {
+      const n = int(rand, 100, 999);
+      if (test(n)) return n;
+    }
+    return null;
+  };
+  const yes = () => find((n) => n % k === 0 && HARD_YES[k](n)) ?? k * int(rand, 34, 99);
+  const trap = () => find((n) => RULE_TRAPS[k](n) !== null);
+  const no = () => find((n) => n % k !== 0 && RULE_TRAPS[k](n) === null) ?? k * int(rand, 34, 99) + 1;
+  const shape = pick(rand, [
+    ['yes', 'trap', 'no'],
+    ['yes', 'trap', 'yes'],
+    ['yes', 'trap', 'trap'],
+  ]);
+  const used = new Set();
+  const cards = [];
+  for (const kind of shuffle(rand, shape)) {
+    let n = null;
+    for (let i = 0; i < 30 && (n === null || used.has(n)); i += 1)
+      n = kind === 'yes' ? yes() : kind === 'trap' ? (trap() ?? no()) : no();
+    used.add(n);
+    cards.push({
+      id: `c${cards.length + 1}`,
+      text: String(n),
+      n,
+      bin: n % k === 0 ? 'yes' : 'no',
+      trap: RULE_TRAPS[k](n),
+    });
+  }
+  return {
+    gesture: 'sort',
+    k,
+    prompt: `Chaque nombre est-il divisible par ${k} ? Envoie-le dans sa boîte.`,
+    bins: [
+      { id: 'yes', label: `Divisible par ${k}` },
+      { id: 'no', label: `Pas divisible par ${k}` },
+    ],
+    cards,
+  };
+}
+
+/** The worked example: it answers the mistake shown — a prime, a value of 2³, a rule of divisibility, or a small product. */
+function decompExample(rand, level, { k, mistake = null } = {}) {
+  if (['one-not-prime', 'odd-not-prime', 'two-is-prime'].includes(mistake)) {
+    const c = pick(rand, ODD_COMPOSITES);
+    const p = primesOf(c)[0];
+    return {
+      title: `Le nombre ${c} est-il premier ?`,
+      steps: [
+        'Un nombre premier a exactement deux diviseurs : 1 et lui-même.',
+        `$${c} = ${p} \\times ${c / p}$ : ${p} divise ${c}, et ${p} n’est ni 1 ni ${c}.`,
+        `Donc ${c} n’est pas premier, même s’il est impair.`,
+        '1 n’a qu’un seul diviseur : il n’est pas premier. 2 a deux diviseurs, 1 et 2 : il est premier.',
+      ],
+    };
+  }
+  if (mistake === 'power-times') {
+    const [x, e] = pick(rand, POWERS.slice(0, 4));
+    const parts = Array(e).fill(x);
+    return {
+      title: `Combien vaut ${x}${SUP[e]} ?`,
+      steps: [
+        `$${x}^${e} = ${timesTex(parts)}$ : ${e} fois le nombre ${x}, multipliés entre eux.`,
+        `$${timesTex(parts)} = ${x ** e}$.`,
+        `Donc $${x}^${e} = ${x ** e}$, et non $${x} \\times ${e} = ${x * e}$.`,
+      ],
+    };
+  }
+  if (mistake === 'digit-anywhere' || mistake === 'last-digit' || (k && [2, 3, 5].includes(k))) {
+    const d = k ?? (mistake === 'last-digit' ? 3 : pick(rand, [2, 5]));
+    let n = int(rand, 100, 999);
+    for (let i = 0; i < 400 && RULE_TRAPS[d](n) === null; i += 1) n = int(rand, 100, 999);
+    const ok = n % d === 0;
+    const verdict = `Donc ${n} ${ok ? 'est' : 'n’est pas'} divisible par ${d}.`;
+    if (d === 3) {
+      const digits = String(n).split('').map(Number);
+      const s = digits.reduce((a, b) => a + b, 0);
+      return {
+        title: `${n} est-il divisible par 3 ?`,
+        steps: [
+          `On additionne les chiffres : $${digits.join(' + ')} = ${s}$.`,
+          `${s} ${s % 3 === 0 ? 'est' : 'n’est pas'} un multiple de 3 — le dernier chiffre seul ne dit rien.`,
+          verdict,
+        ],
+      };
+    }
+    return {
+      title: `${n} est-il divisible par ${d} ?`,
+      steps: [
+        `On regarde le chiffre des unités, et lui seul : c’est ${n % 10}.`,
+        d === 2
+          ? 'Divisible par 2 : le chiffre des unités est 0, 2, 4, 6 ou 8.'
+          : 'Divisible par 5 : le chiffre des unités est 0 ou 5.',
+        verdict,
+      ],
+    };
+  }
+  // a small product, split from its LARGEST prime (never the order of the 3e procedure)
+  const n = pick(rand, DECOMP[level === 2 ? 2 : 1]);
+  const f = primesOf(n);
+  const p = f.at(-1);
+  const m = n / p;
+  return {
+    title: `Écrire ${n} comme un produit de nombres premiers`,
+    steps: [
+      `$${n} = ${m} \\times ${p}$, et ${p} est premier.`,
+      `${m} n’est pas premier : $${m} = ${timesTex(primesOf(m))}$.`,
+      `Donc $${n} = ${timesTex(f)}$ : ${andList([...new Set(f)])} sont premiers.`,
+    ],
+  };
+}
+
+const DECOMPOSITION = {
+  item: '4e.m1.r06',
+  // the name of the gesture, never the title of a lesson (the lesson is read from the net: it has none in 4e yet)
+  name: 'Nombres premiers et produits',
+  icon: '🧩',
+  // NO instrument: the lab opened before this 3e lesson (`earlierOnly`) holds the instruments of EARLIER lessons, and no
+  // French lesson before it has one yet — the capsule skips its lab step (launchkit.test.js)
+  labTool: null,
+  mistakes: [
+    'one-not-prime',
+    'odd-not-prime',
+    'not-all-prime',
+    'product-false',
+    'power-times',
+    'digit-anywhere',
+    'last-digit',
+  ],
+  forms: { 1: ['write', 'primes', 'power'], 2: ['sort', 'divisible', 'write'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'primes'
+      ? primesSort(rand)
+      : form === 'power'
+        ? powerWrite(rand, level, first)
+        : form === 'sort'
+          ? decompSort(rand)
+          : form === 'divisible'
+            ? divisibleSort(rand)
+            : decompWrite(rand, level, first),
+  example: decompExample,
+  // the rules a teacher revises with his class before the lesson, one per screen (CLASS_SESSION.md §5bis)
+  rules: [
+    {
+      id: 'prime',
+      title: 'Un nombre premier',
+      text: 'Un nombre premier a exactement deux diviseurs : 1 et lui-même. 1 n’est pas premier ; 2 est le seul nombre premier pair.',
+      example: `Les nombres premiers inférieurs à 30 : ${andList(PRIMES_30)}.`,
+      check: { below: 30, primes: PRIMES_30 },
+    },
+    {
+      id: 'divisible',
+      title: 'Divisible par 2, par 3, par 5',
+      text: 'Par 2 : le chiffre des unités est 0, 2, 4, 6 ou 8. Par 5 : il est 0 ou 5. Par 3 : la somme des chiffres est un multiple de 3.',
+      example: '$1 + 3 + 5 = 9$ : 135 est divisible par 3 et par 5, mais pas par 2.',
+      check: { n: 135, yes: [3, 5], no: [2], sum: 9 },
+    },
+    {
+      id: 'product',
+      title: 'Un produit de nombres premiers',
+      text: 'Dans un produit de nombres premiers, chaque nombre du produit est premier : un 6 s’écrit encore $2 \\times 3$.',
+      example: '$30 = 5 \\times 6 = 2 \\times 3 \\times 5$.',
+      check: { n: 30, factors: [2, 3, 5] },
+    },
+    {
+      id: 'value',
+      title: 'Ce que vaut 2³',
+      text: '$2^3$ est le produit de trois nombres égaux à 2 : $2^3 = 2 \\times 2 \\times 2$.',
+      example: '$2^3 = 8$ et $3^2 = 9$ ; $2^3$ ne vaut pas $2 \\times 3 = 6$.',
+      check: { x: 2, e: 3, v: 8 },
+    },
+  ],
+  memo: [
+    'Un nombre premier a exactement deux diviseurs, 1 et lui-même : 2, 3, 5, 7, 11, 13… (1 n’est pas premier).',
+    'Par 2 : unités 0, 2, 4, 6 ou 8. Par 5 : unités 0 ou 5. Par 3 : somme des chiffres multiple de 3.',
+    'Un produit de nombres premiers : $30 = 2 \\times 3 \\times 5$, et non $5 \\times 6$ (6 n’est pas premier).',
+    '$2^3 = 2 \\times 2 \\times 2 = 8$, et non $2 \\times 3 = 6$.',
+  ],
+};
+
+// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). One
+// family today: `4e.m1.r06`, the one tool the net gives the first 3e lesson. The Algerian families (their question
+// generators, rules and memos) are in git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French
+// family PORTS what fits and is keyed by a French item.
+export const FAMILIES = { '4e.m1.r06': DECOMPOSITION };
 
 export const familyFor = (item) => FAMILIES[item] ?? null;
 

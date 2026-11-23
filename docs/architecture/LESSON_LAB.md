@@ -3,9 +3,11 @@
 > **Status (2026-11-22).** Covers the lab a student opens from a lesson (`apps/web/src/lessons/common/lessonlab/`) — not
 > the Math Lab (`/espace/atelier`, `MATH_LAB.md`). Imported from the Algerian platform (DZ dev `7f4cef1c`) on
 > 2026-11-22. True here: the shell, the « previous lessons only » rule, the shared numbers, the quests, the sounds, the
-> fifteen instruments' code. Not true here: every instrument has `lesson: null` (the Algerian tags are in
-> `git show 049380e:apps/web/src/lessons/common/lessonlab/registry.js`), `lessonOrder.generated.json` lists no lesson,
-> so the lab lists nothing; no lab walk exists. Since 2026-11-22 the lab is French and left to right: its screen
+> fifteen instruments' code. Since 2026-11-23 ONE instrument is tagged: `factor` « L’échelle des facteurs », the
+> instrument of 3e `decomposer-en-facteurs-premiers`; the fifteen Algerian ones keep `lesson: null` (their tags are in
+> `git show 049380e:apps/web/src/lessons/common/lessonlab/registry.js`) and are listed nowhere.
+> `lessonOrder.generated.json` holds the French catalogue's order. Not true here: no lab walk exists, and no lesson
+> mounts its lab yet. Since 2026-11-22 the lab is French and left to right: its screen
 > (« Mon labo », « Les outils de cette leçon », « Mon armoire », « Mes nombres », « Essaie »), the instruments' names,
 > hints and labels are French, and the drawings that the Arabic lab laid « from the right » now read from the left
 > (`layout.render.test.jsx`). It was never used by a real student.
@@ -106,7 +108,7 @@ How to use it in an instrument:
 **Quests** (`logic.js › QUESTS`, `observe`): a quest names something to make, never a rule; `observe(tool, state, seen)`
 returns the quests the state has just proved. Nothing is ticked before the student touches the instrument.
 
-### The instruments (code kept, no lesson tag)
+### The instruments (the fifteen Algerian ones untagged; `factor` tagged)
 
 | id | The hand holds | What is read |
 |---|---|---|
@@ -125,10 +127,11 @@ returns the quests the state has just proved. Nothing is ticked before the stude
 | `paper` | the step button | the division as written on a sheet, with what one says at each step (`gameworld/kit/longDivision.js`) |
 | `rules` | the digits of a padlock; a tap on a lamp | six lamps (2, 3, 4, 5, 9, 10) and the digits each rule reads |
 | `bracket` | the end of the last plank | planks of b along a: « n × b <, =, > a »; once both counts were laid, the bracket of a ÷ b |
+| `factor` — **`decomposer-en-facteurs-premiers`** | the plank: 2 to 13 on the rack, any length typed, or the whole gap | the number (2 … 9 999) as a gap; a plank that fills it shortens it to the number of planks laid (a rung « 72 = 2 × 36 » on the ladder at the left, the world's `divisorIsles/factorLadder.js`); one that does not leaves its rest in amber; once the gap is 1 case, the row of planks as one product. Free play: no order imposed, no word of the lesson's tablets (safe before its keys, §2). Quests: a number above 100 to 1 case, a ladder of 6 planks, a four-digit number |
 
 Files: `tools/Rows.jsx`, `Jumps.jsx`, `Sentences.jsx`, `Divisors.jsx`, `Planks.jsx`, `Common.jsx`, `Lists.jsx`,
 `Euclid.jsx`, `Duo.jsx`, `Strip.jsx`, `NumberCourt.jsx`, `FractionPlatform.jsx`, `PaperDivision.jsx`, `Rules.jsx`,
-`Bracket.jsx`. The labels are French and the numbers take the decimal comma (`logic.js`: « 29,9209 », « 5,47 »).
+`Bracket.jsx`, `FactorLadder.jsx`. The labels are French and the numbers take the decimal comma (`logic.js`: « 29,9209 », « 5,47 »).
 Whether the layout of `paper` (« La division posée », `gameworld/kit/longDivision.js`) is the French division posée
 of the official texts: `[NOT CHECKED 2026-11-22]`.
 
@@ -165,7 +168,7 @@ the entry bundle (`BUNDLE_BOUNDARIES.md`).
 ## 8. Check
 
 - Unit: `npx vitest run src/lessons/common/lessonlab` in `apps/web` — `lab.test.js`, `order.test.js` and the render
-  tests of `bracket`, `court`, `duo`, `lists`, `piece`, `planks`, `strip` and `layout.render.test.jsx` (left to right): the order is the catalogue's, no future
+  tests of `bracket`, `court`, `duo`, `factor`, `lists`, `piece`, `planks`, `strip` and `layout.render.test.jsx` (left to right): the order is the catalogue's, no future
   instrument for any lesson, every equality the instruments draw (each `logic.js` function checked on a grid against an
   independent computation), quests ticked only by what was made, the sounds. Which of their lesson-bound assertions still
   run on an empty catalogue: `[NOT CHECKED 2026-11-22]`.
@@ -173,8 +176,9 @@ the entry bundle (`BUNDLE_BOUNDARIES.md`).
 
 ## 9. Known limits
 
-- No instrument is tagged with a lesson; the fifteen were made for Algerian lessons on division, divisors, fractions and
-  square roots, and were turned French on 2026-11-22.
+- One instrument is tagged (`factor`); the fifteen others were made for Algerian lessons on division, divisors,
+  fractions and square roots, were turned French on 2026-11-22, and wait for a French lesson to take them. `factor` has
+  never been seen in a browser.
 - Not validated by the owner; no real student has used it. The lab's state is not synced between devices.
 - The sounds were checked by a walk that read what was played, not by a human ear.
 - Phones are paused; the phone rules are in `GAME_WORLD.md` « On a phone ».

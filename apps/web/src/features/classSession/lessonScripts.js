@@ -25,6 +25,10 @@ import {
   rodTex,
   tex as numberTex,
 } from '../../lessons/common/gameworld/rootCourts/logic';
+import { layPlank } from '../../lessons/common/gameworld/divisorIsles/factorLadder';
+import { sheetOf, zerosOf } from '../../lessons/common/gameworld/divisorIsles/sheet';
+import { formatFr, texFr } from '@smarter-academy/core';
+import { counted, PLANKS } from '../../lessons/common/gameworld/kit/authoring/numbers';
 
 /**
  * The cards of the revision: the rules of the earlier savoir-faire the lesson stands on (`family.rules`), core tools first;
@@ -91,6 +95,14 @@ export function missingEvidence(log) {
  *               or a given rod over candidate courts (`rod`, `areas`) — and shows what the world does: it rides, it
  *               leaves a band, it jams. `answer` = the cards that ride (a test computes it); `after` (the proof) comes
  *               once they were lowered, or once every card was when none rides. Its own `words`: `courtWords`.
+ *   ladder      a FACTOR LADDER of the `divisorIsles` world (`divisorIsles/factorLadder.js`, the pure logic of the student's
+ *               ladder): ONE gap of `n` cells; the class proposes the next plank, the board lays it — it holds (the gap
+ *               becomes the number of planks laid, a rung « 168 = 2 × 84 » is written) or it falls (the gap stays, the
+ *               division and what is left are written) — until the gap is 1 case. `rack` = the planks on offer, `whole`
+ *               adds a plank as long as the whole gap, `group` counts the equal planks of the finished row, `sheet` replaces
+ *               the rack by a SHEET of remainders (`divisorIsles/sheet.js`: column A the primes up to the stop, column B
+ *               the remainders) — the class reads a 0 and taps its line, or says that no remainder is 0. The proof
+ *               (`after`) comes once a ladder reached 1 case; « another ladder » keeps the finished ones beside it.
  */
 
 /** The truth of a sentence about a (the bigger) and b: the same forms as the default tests. */
@@ -269,3 +281,81 @@ export function blanks(text, words = []) {
   });
   return out;
 }
+
+// ───────────────────────── the station `ladder`: a factor ladder on the board ─────────────────────────
+
+/** A ladder before its first plank: the whole gap of n cells. */
+export const ladderStart = (n) => ({ n, gap: n, rungs: [], fell: [], last: null, zeros: null });
+/** Has the ladder reached a gap of 1 case? */
+export const ladderDone = (st) => st.gap === 1;
+/** The planks that held, in the order the class laid them. */
+export const ladderRow = (st) => st.rungs.map((r) => r.plank);
+
+/**
+ * The class lays the plank d on the gap now on the board (`factorLadder.js › layPlank`): it holds → a rung, the gap
+ * becomes the number of planks laid; it falls → the gap stays, the plank is kept with its quotient and remainder (one
+ * line per plank on that gap). A plank longer than the gap, a gap already at 1, or anything but a plank of 2 or more:
+ * nothing changes.
+ */
+export function ladderLay(st, d) {
+  if (st.gap <= 1 || !Number.isInteger(d) || d < 2 || d > st.gap) return st;
+  const a = layPlank(st.gap, d);
+  if (a.held) {
+    const rung = { plank: d, before: a.before, after: a.after };
+    return { ...st, gap: a.after, rungs: [...st.rungs, rung], fell: [], last: { ...rung, held: true }, zeros: null };
+  }
+  const f = { plank: d, q: Math.floor(st.gap / d), r: st.gap % d };
+  return {
+    ...st,
+    fell: [...st.fell.filter((x) => x.plank !== d), f],
+    last: { ...f, before: st.gap, held: false },
+    zeros: null,
+  };
+}
+/** The last plank that held is taken back: the gap is what it was before it. */
+export function ladderUndo(st) {
+  if (!st.rungs.length) return st;
+  const top = st.rungs.at(-1);
+  return { ...st, gap: top.before, rungs: st.rungs.slice(0, -1), fell: [], last: null, zeros: null };
+}
+
+/** The planks a `ladder` step offers on the gap now: its rack (increasing, once each), and — `whole` — the whole gap. */
+export function ladderRack(step, st) {
+  const rack = [...new Set(step.rack ?? [])].sort((x, y) => x - y).map((d) => ({ d, whole: false }));
+  if (step.whole && st.gap > 1 && !rack.some((x) => x.d === st.gap)) rack.push({ d: st.gap, whole: true });
+  return rack;
+}
+/** The sheet of a `ladder` step in sheet mode, for the gap now (`sheet.js › sheetOf`, the step's `sheet.stop`): [{ p, r }]. */
+export const ladderSheet = (step, st) => (st.gap > 1 ? sheetOf(st.gap, step.sheet?.stop ?? 'square') : []);
+/**
+ * The class says that no remainder of the sheet is 0. True → the whole gap is laid as one plank (its only plank); false
+ * → nothing is laid and the lines whose remainder IS 0 are marked (`zeros`) — the fact, never « faux ».
+ */
+export function ladderNoZero(step, st) {
+  if (st.gap <= 1) return st;
+  const zeros = zerosOf(ladderSheet(step, st));
+  return zeros.length ? { ...st, zeros } : ladderLay(st, st.gap);
+}
+
+/** A product written in LaTeX: « 2 \\times 2 \\times 3 » (a thousand written « 2\\,387 »). */
+export const productTex = (xs) => xs.map(texFr).join(' \\times ');
+/** The rung of a plank that held: « 168 = 2 \\times 84 ». */
+export const rungTex = (r) => `${texFr(r.before)} = ${r.plank} \\times ${texFr(r.after)}`;
+/** The division of a plank that fell on a gap: « 21 = 2 \\times 10 + 1 ». */
+export const fellTex = (gap, f) => `${texFr(gap)} = ${texFr(f.plank)} \\times ${texFr(f.q)} + ${texFr(f.r)}`;
+/** The finished ladder as one equality: « 168 = 2 \\times 2 \\times 2 \\times 3 \\times 7 ». */
+export const ladderTex = (st) => `${texFr(st.n)} = ${productTex(ladderRow(st))}`;
+/** The equal planks of a row, counted, the shortest first: [{ p: 2, k: 4 }, { p: 3, k: 2 }, { p: 5, k: 1 }]. */
+export function rowGroups(row) {
+  const out = [];
+  for (const p of [...row].sort((x, y) => x - y)) {
+    const g = out.at(-1);
+    if (g && g.p === p) g.k += 1;
+    else out.push({ p, k: 1 });
+  }
+  return out;
+}
+/** « 4 planches de 2 » (the count bound to its noun; 1 takes the singular). */
+export const groupText = (g) => `${counted(g.k, PLANKS)} de ${formatFr(g.p)}`;
+/** A number of cells for a ladder, a thousand grouped: « 2 387 cases », « 1 case ». */
+export const ladderCells = (n) => `${formatFr(n)}\u00a0${n < 2 ? 'case' : 'cases'}`;

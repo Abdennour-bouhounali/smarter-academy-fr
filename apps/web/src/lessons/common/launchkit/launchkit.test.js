@@ -1,6 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { FAMILIES, familyFor, complete, grade, slotsOf } from './families';
+import { FAMILIES, MISTAKES, familyFor, complete, grade, slotsOf, makeQuestion, pickForm } from './families';
+import { toolsForLesson, getItem } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
+import { toolById, toolsFor } from '../lessonlab/registry';
+import { GRADES } from '../lessonlab/order';
+import ORDER from '../lessonlab/lessonOrder.generated.json';
+import { typographyErrors, stringsIn } from '../gameworld/kit/authoring/test/suites';
 import {
   planTools,
   nextStep,
@@ -17,8 +22,8 @@ import {
 } from './engine';
 
 describe('L’échauffement — the families and how an answer is graded', () => {
-  it('has no family until the French learning net exists', () => {
-    expect(FAMILIES).toEqual({});
+  it('has the families of the French net: one today, `4e.m1.r06`, the one tool of the first 3e lesson', () => {
+    expect(Object.keys(FAMILIES)).toEqual(['4e.m1.r06']);
     expect(familyFor('6e.t1.r01')).toBeNull();
   });
 
@@ -263,5 +268,205 @@ describe('L’échauffement — the sounds', () => {
     expect(count(3)).toBeGreaterThan(count(2));
     for (let beat = 0; beat < 64; beat += 1)
       for (const o of LaunchSound.layers(3, beat)) expect(o.g).toBeLessThanOrEqual(0.06);
+  });
+});
+
+describe('L’échauffement — « Nombres premiers et produits » (4e.m1.r06), the tool of « Décomposer en facteurs premiers »', () => {
+  const ITEM = '4e.m1.r06';
+  const F = FAMILIES[ITEM];
+  const rng = (seed) => {
+    let s = seed;
+    return () => {
+      s = (s * 16807) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  };
+  /** Everything computed HERE, never read from the family: primes by trying every divisor, products, values. */
+  const primeApart = (n) => n > 1 && Array.from({ length: n - 2 }, (_, i) => i + 2).every((d) => n % d !== 0);
+  const powApart = (x, e) => Array.from({ length: e }).reduce((p) => p * x, 1);
+  /** « $30 = 2 \\times 3 \\times 5$ » → is it n written as a product of primes? */
+  const decompTrue = (text) => {
+    const m = text.match(/^\$(\d+) = (\d+(?: \\times \d+)+)\$$/);
+    if (!m) return null;
+    const fs = m[2].split(' \\times ').map(Number);
+    return fs.reduce((p, x) => p * x, 1) === Number(m[1]) && fs.every(primeApart);
+  };
+  const accepts = (q, c) => decompTrue(c.text) ?? (q.k ? c.n % q.k === 0 : primeApart(c.n));
+  const right = (q) => {
+    if (q.gesture === 'sort') return Object.fromEntries(q.cards.map((c) => [c.id, accepts(q, c) ? 'yes' : 'no']));
+    if (q.calc.op === 'pow') return { v: String(powApart(q.calc.x, q.calc.e)) };
+    // « n = a × ▢ × b »: the missing number, found by trying every number
+    const known = q.tokens.filter((t) => typeof t === 'string' && /^\d+$/.test(t)).map(Number);
+    const [n, ...given] = known;
+    const v = Array.from({ length: n }, (_, i) => i + 1).find((x) => given.reduce((p, y) => p * y, x) === n);
+    return { v: String(v) };
+  };
+  const each = (fn) => {
+    for (const level of [1, 2])
+      for (const form of F.forms[level])
+        for (let seed = 1; seed <= 200; seed += 1)
+          fn(level, form, makeQuestion(rng(seed * 7 + level), ITEM, level, form, { first: seed % 5 === 0 }), seed);
+  };
+
+  it('is the tool the learning net gives the lesson, an item of the net, with its rules, its memo and no instrument', () => {
+    const tools = toolsForLesson('decomposer-en-facteurs-premiers');
+    expect(tools.map((t) => t.id)).toContain(ITEM);
+    expect(planTools(tools, (id) => Boolean(familyFor(id))).map((t) => t.item)).toEqual([ITEM]);
+    expect(getItem(ITEM)).toBeTruthy();
+    expect(F.item).toBe(ITEM);
+    expect(F.memo.length).toBeGreaterThanOrEqual(3);
+    expect(F.memo.length).toBeLessThanOrEqual(4);
+    expect(F.forms[1].length).toBeGreaterThanOrEqual(1);
+    expect(F.forms[2].length).toBeGreaterThanOrEqual(2);
+    expect(F.forms[2][0]).toBe('sort'); // the level-2 question a launch asks once is the sort of products
+    for (const m of F.mistakes) expect(MISTAKES[m], m).toBeTruthy();
+    // no French lesson before the first 3e lesson has an instrument: the capsule's lab would be empty
+    expect(F.labTool).toBeNull();
+  });
+
+  it('the capsule’s lab never opens on an instrument of the lesson being prepared — for every lesson of the cycle', () => {
+    for (const g of GRADES)
+      for (const code of ORDER[g])
+        for (const t of planTools(toolsForLesson(code), (id) => Boolean(familyFor(id)))) {
+          const tool = familyFor(t.item).labTool;
+          if (tool === null) continue;
+          expect(toolById(tool).lesson, `${code}: ${t.item} → ${tool}`).not.toBe(code);
+          expect(toolsFor(code, { earlierOnly: true }).all.map((x) => x.id)).toContain(tool);
+        }
+  });
+
+  it('every generated question is true: the answer computed apart is graded right, and it can be handed in', () => {
+    let n = 0;
+    each((level, form, q) => {
+      n += 1;
+      const a = right(q);
+      expect(complete(q, a), `${form}`).toBe(true);
+      expect(grade(q, a), `L${level} ${form}: ${JSON.stringify(q).slice(0, 200)}`).toEqual({
+        correct: true,
+        mistake: null,
+      });
+      expect(q.prompt).not.toMatch(/undefined|NaN/);
+    });
+    expect(n).toBe(1200);
+  });
+
+  it('keeps each form in its numbers: small products, primes under 30, three different cards with both boxes used', () => {
+    each((level, form, q, seed) => {
+      if (q.gesture === 'sort') {
+        expect(q.cards).toHaveLength(3);
+        expect(new Set(q.cards.map((c) => c.text)).size).toBe(3);
+        expect(
+          q.cards.some((c) => c.bin === 'yes'),
+          form,
+        ).toBe(true);
+        expect(
+          q.cards.some((c) => c.bin === 'no'),
+          form,
+        ).toBe(true);
+        for (const c of q.cards) expect(c.bin, `${form} ${c.text}`).toBe(accepts(q, c) ? 'yes' : 'no');
+        if (form === 'primes') for (const c of q.cards) expect(c.n).toBeLessThan(30);
+        if (form === 'divisible') expect([2, 3, 5]).toContain(q.k);
+        // a product is written factor after factor: never with an exponent (that is the lesson's own writing)
+        if (form === 'sort') for (const c of q.cards) expect(c.text, c.text).not.toContain('^');
+      }
+      if (q.calc?.op === 'factor') {
+        expect(q.calc.n).toBeLessThanOrEqual(level === 1 ? 50 : 200);
+        expect(primeApart(Number(right(q).v))).toBe(true);
+        if (seed % 5 === 0 && level === 1) expect(q.tokens.join(' ')).toMatch(/^12 = 2 × 2 × /); // the first question: a win
+      }
+      if (q.calc?.op === 'pow') {
+        expect(q.calc.x * q.calc.e, 'the slip never equals the value (defects.md C17)').not.toBe(
+          powApart(q.calc.x, q.calc.e),
+        );
+        expect(powApart(q.calc.x, q.calc.e)).toBeLessThanOrEqual(32);
+      }
+    });
+  });
+
+  it('a wrong answer names its mistake: 1 or 9 taken for primes, a 6 kept in a product, 2 × 3 for 2³', () => {
+    each((level, form, q) => {
+      if (q.gesture !== 'sort') return;
+      for (const c of q.cards) {
+        if (c.trap) {
+          expect(MISTAKES[c.trap], c.trap).toBeTruthy();
+          expect(c.bin).toBe('no');
+          expect(grade(q, { ...right(q), [c.id]: 'yes' }).mistake, c.text).toBeTruthy();
+        }
+        if (c.miss) expect(grade(q, { ...right(q), [c.id]: 'no' }).mistake).toBe(c.miss);
+      }
+    });
+    const one = { gesture: 'sort', cards: [{ id: 'c1', text: '1', n: 1, bin: 'no', trap: 'one-not-prime' }] };
+    expect(grade(one, { c1: 'yes' })).toEqual({ correct: false, mistake: 'one-not-prime' });
+    const pow = makeQuestion(rng(3), ITEM, 1, 'power');
+    expect(grade(pow, { v: String(pow.calc.x * pow.calc.e) })).toEqual({ correct: false, mistake: 'power-times' });
+    const w = makeQuestion(rng(4), ITEM, 1, 'write');
+    expect(grade(w, { v: '1' })).toEqual({ correct: false, mistake: 'product-false' });
+    expect(pickForm(ITEM, 2)).toBe('sort');
+  });
+
+  it('the worked example is true and answers the mistake shown', () => {
+    for (let seed = 1; seed <= 80; seed += 1) {
+      for (const level of [1, 2]) {
+        const d = F.example(rng(seed), level);
+        const m = d.steps.at(-1).match(/\$(\d+) = (\d+(?: \\times \d+)+)\$/);
+        expect(decompTrue(m[0]), d.steps.at(-1)).toBe(true);
+        // split from its LARGEST prime: never the order of the 3e procedure (the smallest first)
+        const first = d.steps[0].match(/^\$(\d+) = (\d+) \\times (\d+)\$/);
+        expect(Number(first[2]) * Number(first[3])).toBe(Number(first[1]));
+        expect(Math.max(...m[2].split(' \\times ').map(Number))).toBe(Number(first[3]));
+      }
+      const p = F.example(rng(seed), 1, { mistake: 'power-times' });
+      const v = p.steps.at(-1).match(/\$(\d+)\^(\d+) = (\d+)\$, et non \$\d+ \\times \d+ = (\d+)\$/);
+      expect(powApart(Number(v[1]), Number(v[2]))).toBe(Number(v[3]));
+      expect(Number(v[1]) * Number(v[2])).toBe(Number(v[4]));
+      const q = F.example(rng(seed), 1, { mistake: 'odd-not-prime' });
+      const c = Number(q.title.match(/\d+/)[0]);
+      expect(primeApart(c)).toBe(false);
+      expect(c % 2).toBe(1);
+      for (const k of [2, 3, 5]) {
+        const e = F.example(rng(seed), 2, { k });
+        const n = Number(e.title.match(/\d+/)[0]);
+        expect(e.steps.at(-1)).toBe(`Donc ${n} ${n % k === 0 ? 'est' : 'n’est pas'} divisible par ${k}.`);
+      }
+    }
+  });
+
+  it('its revision cards say the truth', () => {
+    const [prime, divisible, product, value] = F.rules;
+    expect(prime.check.primes).toEqual(Array.from({ length: 29 }, (_, i) => i + 1).filter(primeApart));
+    expect(prime.example).toContain('2, 3, 5, 7, 11, 13, 17, 19, 23 et 29');
+    const { n, yes, no, sum } = divisible.check;
+    expect(yes.every((k) => n % k === 0) && no.every((k) => n % k !== 0)).toBe(true);
+    expect(
+      String(n)
+        .split('')
+        .reduce((s, d) => s + Number(d), 0),
+    ).toBe(sum);
+    expect(product.check.factors.reduce((p, x) => p * x, 1)).toBe(product.check.n);
+    expect(product.check.factors.every(primeApart)).toBe(true);
+    expect(5 * 6).toBe(30);
+    expect(powApart(value.check.x, value.check.e)).toBe(value.check.v);
+    expect(powApart(3, 2)).toBe(9);
+  });
+
+  it('writes French, and no word of the lesson’s keys (it is played BEFORE the lesson)', () => {
+    const texts = [...stringsIn({ rules: F.rules, memo: F.memo, name: F.name }), ...F.mistakes.map((m) => MISTAKES[m])];
+    for (let seed = 1; seed <= 60; seed += 1)
+      for (const level of [1, 2]) {
+        for (const form of F.forms[level]) {
+          const q = makeQuestion(rng(seed), ITEM, level, form);
+          texts.push(q.prompt, ...(q.bins ?? []).map((b) => b.label), ...(q.cards ?? []).map((c) => c.text));
+        }
+        for (const mistake of [null, ...F.mistakes]) {
+          const e = F.example(rng(seed), level, { mistake });
+          texts.push(e.title, ...e.steps);
+        }
+      }
+    for (const t of texts) {
+      expect(typographyErrors(t), t).toEqual([]);
+      expect(t.toLowerCase(), t).not.toMatch(
+        /puissance|tableur|s’arrêt|plus petit nombre premier|facteur premier|décompos/,
+      );
+    }
   });
 });

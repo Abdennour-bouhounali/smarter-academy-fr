@@ -458,6 +458,11 @@ export const QUESTS = {
       text: 'Approche une plateforme de sa salle jusqu’à un écart plus petit qu’un centième de dalle, sans l’égaler.',
     },
   ],
+  factor: [
+    { id: 'end', text: 'Mène un nombre plus grand que 100 jusqu’à un fossé de 1 case.' },
+    { id: 'long', text: 'Construis une échelle d’au moins 6 planches qui finit sur un fossé de 1 case.' },
+    { id: 'big', text: 'Mène un nombre à quatre chiffres jusqu’à un fossé de 1 case.' },
+  ],
   rules: [
     { id: 'three', text: 'Allume trois lampes à la fois.' },
     { id: 'nine', text: 'Allume la lampe du 9 avec un nombre à trois chiffres.' },
@@ -581,6 +586,14 @@ export function observe(tool, st, seen) {
       // the difference in tiles, far ÷ (b × b), under one hundredth — and not zero
       if (P.far > 0 && P.far * 100 < b * b) put('close');
     }
+  } else if (tool === 'factor') {
+    // reported by the instrument after each plank that filled (`planks`, in order) with the gap left (`left`)
+    const planks = st.planks ?? [];
+    if (planks.length && st.left === 1 && planks.reduce((p, d) => p * d, 1) === a) {
+      if (a > 100) put('end');
+      if (planks.length >= 6) put('long');
+      if (a >= 1000) put('big');
+    }
   } else if (tool === 'rules') {
     const lit = digitRules(a).filter((x) => x.ok).length;
     if (a > 0 && lit >= 3) put('three');
@@ -598,6 +611,12 @@ export function luckyPair(tool, rand = Math.random) {
   if (tool.id === 'paper') return { a: int(120, 999), b: int(6, 39) };
   if (tool.id === 'bracket') return { a: int(150, 2999), b: int(11, 60) };
   if (tool.id === 'rules') return { a: int(10, 999) * (rand() < 0.5 ? 3 : 1), b: 1 };
+  if (tool.id === 'factor') {
+    // a product of small primes, from 60 to 9 999: a ladder of several planks
+    let a = 1;
+    while (a < 60) a *= [2, 3, 5, 7, 11, 13][int(0, 5)];
+    return { a: a > ah ? 2 * 3 * 5 * 7 : a, b: 1 };
+  }
   if (tool.id === 'euclid') return { a: int(12, 48), b: int(5, 30) };
   if (tool.id === 'planks') {
     // two lengths that share a plank longer than 1: something happens as soon as the plank is moved

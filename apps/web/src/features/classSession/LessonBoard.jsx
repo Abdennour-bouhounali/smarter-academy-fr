@@ -42,6 +42,7 @@ import {
 } from '../../lessons/common/gameworld/divisorIsles/ruleForge';
 import { Court, CourtMini } from '../../lessons/common/gameworld/rootCourts/courtParts';
 import BoardBridge, { BridgeBar, buildMs } from './BoardBridge';
+import LadderStation from './LadderStation';
 import { ClassWindow, Speaker, BoardTools, BoardLayers, useBoardTools, BL } from './board';
 import { callName, teamsOf, teamOfStudent } from './session';
 import WorldLoading from '../../lessons/common/gameworld/WorldLoading';
@@ -1212,6 +1213,7 @@ export default function LessonBoard({ script, rules, students, seating, memo, se
         {step.kind === 'ask' && <Ask step={step} />}
         {step.kind === 'statements' && <Statements step={step} />}
         {step.kind === 'court' && <CourtStation step={step} />}
+        {step.kind === 'ladder' && <LadderStation step={step} />}
         {step.kind === 'trace' && <Trace step={step} rules={rules} />}
       </main>
 

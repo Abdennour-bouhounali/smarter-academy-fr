@@ -4044,3 +4044,289 @@
   flex: 1;
   min-width: 0;
 }
+
+/* ── a factor ladder of the `divisorIsles` world on the board (LadderStation.jsx): the ladder as a copybook writes it on
+   the left (the numbers, a brand-blue bar, the planks that held), the gap now and its planks — or its sheet of
+   remainders — in the middle, the class's finished ladders on the right. Green = a plank that held, amber = what a plank
+   that fell left; never black, never the red of an error. Sized like the court's station, read from the back row. ── */
+.cs-ladderstep {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 0;
+}
+.cs-ladder__main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 0.9rem;
+  min-height: 0;
+}
+.cs-ladder__main[data-earlier] {
+  grid-template-columns: 15rem minmax(0, 1fr) 17rem;
+}
+.cs-ladder__rungs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1rem;
+  min-height: 0;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  border-radius: 1.1rem;
+  background: #f5f7ff;
+  border: 1.5px solid #dbe4ff;
+  list-style: none;
+  overflow: hidden;
+}
+.cs-ladder__rungs li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4px 4.5rem;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.35;
+  color: #1e1b4b;
+  animation: cs-pop 0.3s;
+}
+.cs-ladder__rungs[data-rows='many'] li {
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+.cs-ladder__rungs li b {
+  text-align: end;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.cs-ladder__rungs li i {
+  align-self: stretch;
+  background: #3b5bdb;
+  border-radius: 2px;
+}
+.cs-ladder__rungs li span {
+  color: #047857;
+  white-space: nowrap;
+}
+.cs-ladder__rungs li.is-now b {
+  color: #3b5bdb;
+}
+.cs-ladder__mid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+  min-height: 0;
+}
+.cs-ladder__gap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.35rem 1rem;
+  border-radius: 1rem;
+  background: #eef2ff;
+  border: 1.5px solid #c7d2fe;
+}
+.cs-ladder__gap small {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #475569;
+}
+.cs-ladder__gap b {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #3b5bdb;
+  white-space: nowrap;
+}
+.cs-ladder__gap.is-done {
+  background: #d1fae5;
+  border-color: #059669;
+}
+.cs-ladder__gap span {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #064e3b;
+  white-space: nowrap;
+}
+.cs-lesson .cs-ladder__fact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 2.6rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  animation: cs-pop 0.3s;
+}
+.cs-ladder__fact span {
+  white-space: nowrap;
+}
+.cs-ladder__fact.is-held {
+  color: #047857;
+}
+.cs-ladder__fact.is-fell {
+  color: #b45309;
+}
+.cs-ladder__fact em {
+  font-style: normal;
+  font-weight: 900;
+}
+.cs-ladder__rack {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 0.6rem;
+  min-height: 0;
+}
+.cs-root .cs-ladder__plank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  min-height: 0;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  border: 3px solid #c7d0e2;
+  background: #f8fafc;
+}
+.cs-ladder__plank small {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #5b6478;
+}
+.cs-ladder__plank b {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #1e1b4b;
+}
+.cs-ladder__plank em {
+  font-style: normal;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #b45309;
+}
+.cs-root .cs-ladder__plank.is-fell {
+  background: #fffbeb;
+  border-color: #fbbf24;
+}
+.cs-root .cs-ladder__plank.is-whole {
+  border-style: dashed;
+  border-color: #3b5bdb;
+}
+.cs-root .cs-ladder__plank:disabled {
+  opacity: 0.45;
+}
+.cs-ladder__groups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cs-ladder__groups li {
+  padding: 0.3rem 1rem;
+  border-radius: 99px;
+  background: #eef2ff;
+  border: 2px solid #3b5bdb;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #1e1b4b;
+  white-space: nowrap;
+  animation: cs-pop 0.3s;
+}
+.cs-ladder__sheet {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 0;
+}
+.cs-ladder__formula {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #475569;
+}
+.cs-ladder__formula code {
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #f1f5f9;
+  font-size: 1.15rem;
+  color: #1e1b4b;
+}
+/* the sheet in columns of eight lines: 15 lines (2 387) stand in two columns, none is cut */
+.cs-ladder__lines {
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--cols, 1), 11rem);
+  grid-auto-flow: column;
+  gap: 0.2rem 1.2rem;
+  min-height: 0;
+}
+.cs-root .cs-ladder__line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 0;
+  padding: 0 0.6rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #dbe1ee;
+  background: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1e1b4b;
+  animation: cs-pop 0.3s both;
+  animation-delay: var(--d, 0ms);
+}
+.cs-ladder__line span {
+  color: #3b5bdb;
+}
+.cs-ladder__line b {
+  text-align: end;
+  font-weight: 900;
+}
+.cs-root .cs-ladder__line.is-fell {
+  background: #fffbeb;
+  border-color: #fbbf24;
+}
+.cs-root .cs-ladder__line.is-zero {
+  background: #d1fae5;
+  border-color: #059669;
+}
+.cs-ladder__earlier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 1.1rem;
+  background: #f8fafc;
+  border: 1.5px solid #dbe1ee;
+}
+.cs-ladder__earlier small {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #5b6478;
+}
+.cs-ladder__earlier span {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  white-space: nowrap;
+}
+.cs-ladderstep .cs-actrow .cs-after {
+  flex: 1;
+  min-width: 0;
+}

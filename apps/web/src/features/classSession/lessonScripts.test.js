@@ -19,6 +19,21 @@ import {
   cellsOf,
   denseTablet,
   DENSE_WORDS,
+  ladderStart,
+  ladderLay,
+  ladderUndo,
+  ladderDone,
+  ladderRow,
+  ladderRack,
+  ladderSheet,
+  ladderNoZero,
+  ladderTex,
+  rungTex,
+  fellTex,
+  rowGroups,
+  groupText,
+  productTex,
+  ladderCells,
 } from './lessonScripts';
 import { QUANTITIES, CONDITIONS } from '../../lessons/common/gameworld/divisorIsles/ruleForge';
 
@@ -183,5 +198,79 @@ describe('séance en classe — a long tablet is drawn dense on its naming card'
     const tall = `${'k'.repeat(DENSE_WORDS - 30)} $\\dfrac{144}{25}$ $\\dfrac{12}{5}$`;
     expect(denseTablet(t(tall))).toBe(true);
     expect(denseTablet(t(tall.replace(/\\dfrac\{(\d+)\}\{(\d+)\}/g, '$1')))).toBe(false);
+  });
+});
+
+describe('séance en classe — a factor ladder on the board (`ladder`)', () => {
+  // a neutral gap of 60 cases (no lesson's): the world's own law, `divisorIsles/factorLadder.js`
+  const step = { id: 'l', kind: 'ladder', n: 60, rack: [5, 2, 3, 4, 2], whole: true };
+
+  it('lays a plank: it holds (a rung, the gap becomes the number of planks) or it falls (the gap stays, what it left)', () => {
+    let st = ladderStart(60);
+    expect(ladderDone(st)).toBe(false);
+    st = ladderLay(st, 4);
+    expect(st).toMatchObject({ gap: 15, rungs: [{ plank: 4, before: 60, after: 15 }], fell: [] });
+    expect(rungTex(st.last)).toBe('60 = 4 \\times 15');
+    st = ladderLay(st, 2);
+    expect(st).toMatchObject({ gap: 15, fell: [{ plank: 2, q: 7, r: 1 }], last: { held: false, before: 15 } });
+    expect(fellTex(15, st.fell[0])).toBe('15 = 2 \\times 7 + 1');
+    expect(ladderLay(st, 2).fell).toHaveLength(1); // the same plank tried again on the same gap: one line
+    for (const bad of [1, 0, 16, 2.5, NaN]) expect(ladderLay(st, bad), String(bad)).toBe(st); // nothing changes
+    st = ladderLay(ladderLay(st, 3), 5);
+    expect(ladderDone(st)).toBe(true);
+    expect(ladderRow(st)).toEqual([4, 3, 5]);
+    expect(ladderTex(st)).toBe('60 = 4 \\times 3 \\times 5');
+    expect(ladderLay(st, 2)).toBe(st); // a gap of 1 case takes no plank
+    // a plank taken back: the gap is what it was before it
+    const back = ladderUndo(st);
+    expect(back).toMatchObject({ gap: 5, rungs: [{ plank: 4 }, { plank: 3 }], fell: [], last: null });
+    expect(ladderUndo(ladderStart(60))).toEqual(ladderStart(60));
+  });
+
+  it('offers its rack once each, the shortest first, and — `whole` — the whole gap', () => {
+    expect(ladderRack(step, ladderStart(60))).toEqual([
+      { d: 2, whole: false },
+      { d: 3, whole: false },
+      { d: 4, whole: false },
+      { d: 5, whole: false },
+      { d: 60, whole: true },
+    ]);
+    const at5 = ladderLay(ladderLay(ladderStart(60), 4), 3);
+    expect(ladderRack(step, at5).at(-1)).toEqual({ d: 5, whole: false }); // the gap IS a plank of the rack: not twice
+    expect(ladderRack({ ...step, whole: false }, ladderStart(60)).some((x) => x.whole)).toBe(false);
+  });
+
+  it('in sheet mode: the remainders of the gap by the primes up to the stop; « no remainder is 0 » is judged', () => {
+    const sheet = { id: 's', kind: 'ladder', n: 1001, sheet: {} };
+    let st = ladderStart(1001);
+    const lines = ladderSheet(sheet, st);
+    expect(lines.map((l) => l.p)).toEqual([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]); // 31² ⩽ 1001 < 37²
+    for (const l of lines) expect(l.r).toBe(1001 % l.p);
+    expect(ladderNoZero(sheet, st)).toMatchObject({ gap: 1001, rungs: [], zeros: [7, 11, 13] });
+    st = ladderLay(ladderLay(st, 7), 11);
+    expect(ladderSheet(sheet, st)).toEqual([
+      { p: 2, r: 1 },
+      { p: 3, r: 1 },
+    ]);
+    st = ladderNoZero(sheet, st);
+    expect(ladderDone(st)).toBe(true);
+    expect(ladderRow(st)).toEqual([7, 11, 13]);
+    expect(ladderSheet(sheet, st)).toEqual([]);
+    expect(ladderSheet({ ...sheet, sheet: { stop: 10 } }, ladderStart(1001)).map((l) => l.p)).toEqual([2, 3, 5, 7]);
+  });
+
+  it('writes a row counted and a thousand grouped, every count agreed', () => {
+    expect(rowGroups([3, 2, 2, 5, 2, 3, 2])).toEqual([
+      { p: 2, k: 4 },
+      { p: 3, k: 2 },
+      { p: 5, k: 1 },
+    ]);
+    expect(rowGroups([3, 2, 2, 5, 2, 3, 2]).map(groupText)).toEqual([
+      '4 planches de 2',
+      '2 planches de 3',
+      '1 planche de 5',
+    ]);
+    expect(productTex([7, 11, 2387])).toBe('7 \\times 11 \\times 2\\,387');
+    expect([1, 2, 2387].map(ladderCells)).toEqual(['1 case', '2 cases', '2 387 cases']);
   });
 });

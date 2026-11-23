@@ -8,8 +8,8 @@
  * of the lesson that introduces it (`lesson`; its title is the catalogue's), its number ranges, and 2–3 « Essaie » quests in
  * `logic.js › QUESTS`.
  *
- * The French catalogue has no lesson yet (2026-11-22): every instrument is kept with `lesson: null` — listed nowhere
- * until a French lesson introduces it. The Algerian tags are in git (`git show 049380e:<this file>`).
+ * The Algerian instruments are kept with `lesson: null` — listed nowhere until a French lesson introduces one (their
+ * Algerian tags are in git, `git show 049380e:<this file>`). Tagged today: `factor`, the instrument of the first 3e lesson.
  */
 import { getLessonById } from '@smarter-academy/core';
 import { GRADES, GRADE_NAMES, compareLessons, isReached, placeOf } from './order';
@@ -190,6 +190,20 @@ export const TOOLS = [
     labels: { a: 'L’aire', b: 'Le dénominateur' },
     range: { a: [1, 50], b: [1, 12] },
     load: () => import('./tools/FractionPlatform'),
+  },
+  {
+    // a number of the student's own as a gap; his hand chooses planks (2 to 13, any length typed, the whole gap) and the
+    // world lays them (`divisorIsles/factorLadder.js`): the ladder, the row of planks laid, the product once the gap is
+    // 1 case — facts only, no order imposed, no word of its lesson's tablets (safe before the keys, §2)
+    id: 'factor',
+    lesson: 'decomposer-en-facteurs-premiers',
+    icon: '🪜',
+    name: 'L’échelle des facteurs',
+    hint: 'Ton nombre est un fossé : pose des planches une à une. Le fossé raccourcit à chaque planche qui le remplit — jusqu’où peux-tu aller ?',
+    needs: 'a',
+    labels: { a: 'Le nombre' },
+    range: { a: [2, 9999], b: [1, 99] },
+    load: () => import('./tools/FactorLadder'),
   },
 ];
 
