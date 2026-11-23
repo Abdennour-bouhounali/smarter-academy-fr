@@ -5,7 +5,7 @@ import { apiMessage } from './apiMessage';
  * L'adresse de l'API, telle que le navigateur doit l'employer pour QUITTER
  * l'application — la connexion Google est une navigation, pas un appel fetch.
  */
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
 
 /**
  * Registers a new account from « prénom et nom » + email + password and

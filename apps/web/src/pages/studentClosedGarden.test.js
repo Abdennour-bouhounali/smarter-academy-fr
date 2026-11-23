@@ -39,7 +39,7 @@ const STUDENT_DIRS = [
 // Adresses permises : des RESSOURCES, jamais un lien que l'élève suit.
 const ALLOWED = [
   /^https?:\/\/www\.w3\.org\//, // espaces de noms SVG / XML
-  /^http:\/\/localhost:3000\/api\/v1/, // repli de VITE_API_URL (services)
+  /^http:\/\/localhost:8000\/api\/v1/, // repli de VITE_API_URL (services)
 ];
 
 function walk(path) {

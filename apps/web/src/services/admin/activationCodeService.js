@@ -74,7 +74,7 @@ export async function downloadActivationCodesCsv(token, filters = {}) {
   // Même résolution que apiClient.js — une seule définition de l'URL
   // de base serait mieux, mais apiClient n'expose pas la sienne et cette
   // requête ne peut pas passer par lui (elle rend un flux, pas du JSON).
-  const base = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+  const base = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
   const response = await fetch(`${base}/admin/activation-codes/export${query(filters)}`, {
     headers: { Authorization: `Bearer ${token}` },
   });

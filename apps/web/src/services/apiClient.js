@@ -5,7 +5,7 @@ import { ApiError, classifyStatus } from '@smarter-academy/core';
 // (zero fetch/import.meta coupling, directly reusable by a future non-web client).
 export { ApiError, classifyStatus };
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
 
 /**
  * Thin fetch wrapper shared by every service. Resolves the API base URL,
