@@ -4,7 +4,7 @@
 > Contrat et règles : [`docs/architecture/LEARNING_NET.md`](../architecture/LEARNING_NET.md).
 > Données : `packages/core/curriculum/fr/net/`.
 
-**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **0** leçons publiées · **60** leçons prévues (13 unités).
+**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **1** leçons publiées · **59** leçons prévues (13 unités).
 
 Légende des liens : `requires` (requiert) — prérequis, lien de révision ; `extends` (prolonge) — même notion plus loin dans la spirale, la leçon n’enseigne QUE la valeur ajoutée ; `consolidates` (consolide) — le programme répète l’item, la leçon le rappelle sans le reconstruire.
 
@@ -574,7 +574,7 @@ Prérequis venus d’autres fils : `3e.m2.r06`.
 | `3e.m1.r02` | Les puissances de base quelconque d’exposants négatifs sont introduites et utilisées pour simplifier des quotients. | `puissances-d-exposant-negatif` _(prévue)_ | prolonge `4e.m1.r04`, `4e.m1.r02` |
 | `3e.m1.r03` | Il résout des problèmes avec des puissances, notamment en utilisant la notation scientifique. | `notation-scientifique-en-probleme` _(prévue)_ | consolide `4e.m1.r03`, `3e.m1.r02` |
 | `3e.m1.r04` | Il résout des problèmes mettant en jeu des racines carrées. | `racine-carree-en-probleme` _(prévue)_ | prolonge `4e.m1.r05`, `4e.m4.r05` |
-| `3e.m1.r05` | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). | `decomposer-en-facteurs-premiers` _(prévue)_ | prolonge `4e.m1.r06` |
+| `3e.m1.r05` | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). | `decomposer-en-facteurs-premiers` | prolonge `4e.m1.r06` |
 | `3e.m1.r06` | Il simplifie une fraction pour la rendre irréductible. | `fraction-irreductible` _(prévue)_ | `3e.m1.r05`, prolonge `4e.m1.r07`, `3e.m1.r07` |
 | `3e.m1.r07` | Il modélise et résout des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes…). | `trouver-le-pgcd` _(prévue)_ | `3e.m1.r05`, prolonge `4e.m1.r08` |
 | `3e.m1.r08` | Le travail sur les expressions littérales est consolidé avec des transformations d’expressions, des programmes de calcul, des mises en équations, des fonctions… | `prouver-avec-le-calcul-litteral` _(prévue)_ | consolide `4e.m1.r11`, `3e.m1.r10` |
@@ -664,7 +664,7 @@ _Aucune leçon._
 
 | # | leçon | statut | items |
 |---:|---|---|---|
-| 1 | `decomposer-en-facteurs-premiers` — Décomposer un nombre en facteurs premiers | prévue | `3e.m1.r05` |
+| 1 | `decomposer-en-facteurs-premiers` — Décomposer un nombre en facteurs premiers | publiée | `3e.m1.r05` |
 | 2 | `trouver-le-pgcd` — Trouver le PGCD de deux nombres | prévue | `3e.m1.r07` |
 | 3 | `fraction-irreductible` — Rendre une fraction irréductible | prévue | `3e.m1.r06` |
 | 4 | `multiples-et-diviseurs-communs` — Engrenages et rendez-vous : quand deux rythmes se retrouvent | prévue | `3e.m1.r07` |

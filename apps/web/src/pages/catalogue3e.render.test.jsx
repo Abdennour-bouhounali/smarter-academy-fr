@@ -15,7 +15,9 @@ import { earlierLessons } from '../features/classSession/knowledgeCards';
 import { buildProgressionTree } from '../features/progression/buildProgressionTree';
 import { applyProgressionView, DEFAULT_VIEW } from '../features/progression/progressionView';
 
-// The 3e catalogue: 13 units of lessons that are ANNOUNCED (`coming_soon`) and not built. 6e–4e: no lesson at all.
+// The 3e catalogue: 13 units; ONE lesson published (`available`, 2026-11-23: `decomposer-en-facteurs-premiers`), the 59
+// others ANNOUNCED (`coming_soon`) and not built. 6e–4e: no lesson at all.
+const PUBLISHED = ['decomposer-en-facteurs-premiers'];
 const grades = allCourseLevels.flatMap((l) => l.grades);
 const g3 = grades.find((g) => g.id === '3e');
 const units = g3.chapters.flatMap((c) => c.units);
@@ -34,13 +36,15 @@ function render(ui, url, user) {
   );
 }
 
-describe('3e — a catalogue of coming-soon lessons', () => {
-  it('has 13 units, every lesson coming soon, and no lesson path', () => {
+describe('3e — a catalogue of coming-soon lessons and its first published one', () => {
+  it('has 13 units, every lesson coming soon but the published one, and a lesson path for that one only', () => {
     expect(units).toHaveLength(13);
     expect(lessons).toHaveLength(60);
+    expect(lessons.filter((l) => l.status === 'available').map((l) => l.id)).toEqual(PUBLISHED);
     for (const l of lessons) {
-      expect(l.status).toBe('coming_soon');
-      expect(getLessonPath(l.id), l.id).toBeNull();
+      const published = PUBLISHED.includes(l.id);
+      expect(l.status, l.id).toBe(published ? 'available' : 'coming_soon');
+      expect(getLessonPath(l.id), l.id).toBe(published ? l.path : null);
     }
     for (const id of ['6e', '5e', '4e']) expect(grades.find((g) => g.id === id).chapters).toEqual([]);
   });
@@ -48,14 +52,19 @@ describe('3e — a catalogue of coming-soon lessons', () => {
   it.each([
     ['student', { role: 'student', grade: '3e' }],
     ['teacher', { role: 'teacher' }],
-  ])('unit page (%s): every lesson a non-clickable « coming soon » line with its learning points, no link to it', (_, user) => {
+  ])('unit page (%s): every lesson a non-clickable « coming soon » line with its learning points — the published one a link', (_, user) => {
     for (const unit of units) {
       // MathLabel may wrap formulas in bidi isolates: read the text without them.
       const html = render(<UnitPage />, unit.path, user).replace(/[\u2066-\u2069]/g, '');
       expect(html, unit.id).toContain(`data-unit="${unit.id}"`);
       for (const l of [...unit.lessons, unit.synthesis]) {
-        expect(html, l.id).toContain(`data-lesson-draft="${l.id}"`);
-        expect(html, l.id).not.toContain(`href="${l.path}"`);
+        if (PUBLISHED.includes(l.id)) {
+          expect(html, l.id).not.toContain(`data-lesson-draft="${l.id}"`);
+          expect(html, l.id).toContain(`href="${l.path}"`);
+        } else {
+          expect(html, l.id).toContain(`data-lesson-draft="${l.id}"`);
+          expect(html, l.id).not.toContain(`href="${l.path}"`);
+        }
         for (const lp of l.learningPoints) expect(html, lp.id).toContain(lp.title.replace(/'/g, '&#x27;').replace(/\s+/g, ' '));
       }
     }
@@ -90,30 +99,32 @@ describe('3e — a catalogue of coming-soon lessons', () => {
     for (const g of groups) expect(g.comingSoon, g.id).toBe(g.lessonCount + (g.hasSynthesis ? 1 : 0));
   });
 
-  it('class session cards: a stub prerequisite is the competence itself, with no lesson and no link', () => {
+  it('class session cards: a stub prerequisite is the competence itself, with no lesson and no link; a published one links', () => {
     for (const l of lessons) {
       for (const card of earlierLessons(l.id)) {
         expect(card.title, l.id).toBeTruthy();
-        expect(card.path, l.id).toBeNull();
+        expect(card.path, `${l.id} ← ${card.code}`).toBe(PUBLISHED.includes(card.code) ? getLessonPath(card.code) : null);
       }
     }
+    // the PGCD lesson's first card is the published decomposition lesson, with its link
+    expect(earlierLessons('trouver-le-pgcd').find((c) => c.code === PUBLISHED[0])?.path).toBe(getLessonPath(PUBLISHED[0]));
     const cards = earlierLessons('racine-carree-en-probleme');
     expect(cards.length).toBeGreaterThan(0);
     expect(cards.every((c) => c.code === null)).toBe(true);
   });
 
-  it('progress page of a 3e student: « lessons announced » with its units; of a 6e student: « no lesson yet »', () => {
+  it('progress page of a 3e student: neither « lessons announced » nor « no lesson yet » (one is published); of a 6e student: « no lesson yet »', () => {
     const html3 = render(<Progression />, '/espace/progression', { role: 'student', grade: '3e' });
-    expect(html3).toContain('data-lessons-announced');
+    expect(html3).not.toContain('data-lessons-announced');
     expect(html3).not.toContain('data-no-lesson-yet');
     const html6 = render(<Progression />, '/espace/progression', { role: 'student', grade: '6e' });
     expect(html6).toContain('data-no-lesson-yet');
     expect(html6).not.toContain('data-lessons-announced');
   });
 
-  it('home of a 3e student: « lessons announced »; of a 4e student: « no lesson yet »', () => {
+  it('home of a 3e student: no « lessons announced » notice any more (one is published); of a 4e student: « no lesson yet »', () => {
     const html3 = render(<StudentHome />, '/espace', { role: 'student', grade: '3e' });
-    expect(html3).toContain('data-lessons-announced');
+    expect(html3).not.toContain('data-lessons-announced');
     expect(html3).not.toContain('data-no-lesson-yet');
     expect(render(<StudentHome />, '/espace', { role: 'student', grade: '4e' })).toContain('data-no-lesson-yet');
   });

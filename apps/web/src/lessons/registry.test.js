@@ -85,8 +85,8 @@ const KNOWN_UNMOUNTED_MODULES = {};
 describe('registry — every indexed lesson loads with its own routes', () => {
   const lessons = getBuiltLessons();
 
-  it('indexes the built lessons — none before the first French lesson', () => {
-    expect(lessons).toEqual([]);
+  it('indexes the built lessons — the first French lesson (2026-11-23) and nothing else', () => {
+    expect(lessons.map((l) => l.id)).toEqual(['decomposer-en-facteurs-premiers']);
   });
 
   it.each(lessons.map((l) => [l.id, l]))('%s : config + routes resolve, and mount its index and every module', async (id, { basePath }) => {

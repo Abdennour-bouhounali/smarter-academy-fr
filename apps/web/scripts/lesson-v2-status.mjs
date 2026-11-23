@@ -115,12 +115,26 @@ async function statusOf(entry) {
       untested.length === 0,
       untested.length ? `no test for ${untested.join(', ')}` : '',
     );
-  // every rule is forged, never told
-  const keys = [
-    ...(/KEYS\s*=\s*\[([^\]]*)\]/.exec(read(path.join(world, 'journey.js')) ?? '')?.[1] ?? '').matchAll(/'([^']+)'/g),
-  ].map((m) => m[1]);
+  // every rule is forged, never told. The keys are written as literals (`KEYS = ['a', 'b']`) or through the story's
+  // name table (`KEYS = [K.ladder, …]` with `export const K = { ladder: 'a', … }` in story.js — the first French
+  // lesson); a forge is keyed by the literal or by the same `[K.name]`.
+  const names = Object.fromEntries(
+    [
+      ...(/\bK\s*=\s*\{([^}]*)\}/.exec(read(path.join(world, 'story.js')) ?? '')?.[1] ?? '').matchAll(
+        /(\w+)\s*:\s*'([^']+)'/g,
+      ),
+    ].map((m) => [m[1], m[2]]),
+  );
+  const keyItems = [
+    ...(/KEYS\s*=\s*\[([^\]]*)\]/.exec(read(path.join(world, 'journey.js')) ?? '')?.[1] ?? '').matchAll(
+      /'([^']+)'|\bK\.(\w+)/g,
+    ),
+  ].map((m) => ({ id: m[1] ?? names[m[2]], name: m[2] ?? null }));
+  const keys = keyItems.map((k) => k.id).filter(Boolean);
   const forges = read(path.join(world, 'forges.js')) ?? '';
-  const told = keys.filter((k) => !forges.includes(`'${k}'`));
+  const told = keyItems
+    .filter(({ id, name }) => id && !forges.includes(`'${id}'`) && !(name && forges.includes(`[K.${name}]`)))
+    .map((k) => k.id);
   if (missions) notHere('S2 every rule is forged, never told');
   else
     add(

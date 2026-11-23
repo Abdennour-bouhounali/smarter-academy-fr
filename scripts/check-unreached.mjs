@@ -26,14 +26,10 @@ const KEPT = {
   'features/madar/odd/bound.js': 'test helper',
   'features/madar/sniper/bound.js': 'test helper',
   'features/madar/explorer/solver.js': 'test helper',
-  // The v2 lesson path while the French catalogue holds NO lesson (2026-11-22, FRANCE_REBUILD_PLAN.md §4bis):
-  // these are reached only THROUGH a lesson's own files. The check below fails on a kept file that becomes
-  // reached, so each line must be removed when the first French lesson mounts it.
-  'lessons/common/lessonRoutes.jsx': 'the route builder of a v2 lesson — no lesson yet',
-  'lessons/common/components/LessonIndex.jsx': 'the home of a v2 lesson — no lesson yet',
-  'lessons/common/hooks/useProgress.js': 'reached through LessonIndex — no lesson yet',
-  'lessons/common/utils/masteryStatus.js': 'reached through LessonIndex — no lesson yet',
-  'features/classSession/TeacherLessonPanel.jsx': 'the teacher card of a lesson — no lesson yet',
+  // The v2 lesson path that no French lesson mounts yet (FRANCE_REBUILD_PLAN.md §4bis): these are reached only THROUGH
+  // a lesson's own files. The check below fails on a kept file that becomes reached, so each line must be removed when
+  // the first lesson mounts it. The first lesson (`decomposer-en-facteurs-premiers`, 2026-11-23) reached the route
+  // builder, the home, its progress hooks and the teacher's card; the mission helpers wait for a unit's last lesson.
   'lessons/common/gameworld/missions/lots.js': 'mission data helpers of a synthesis lesson — no lesson yet',
   'lessons/common/gameworld/missions/words.js': 'mission data helpers of a synthesis lesson — no lesson yet',
   // Read by a script, not by the app.

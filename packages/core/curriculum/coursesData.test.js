@@ -11,8 +11,9 @@ import programme3e from './fr/programme_3e_2026_2027.json';
 import lessons3e from './fr/lessons_3e_2026_2027.json';
 import units3e from './fr/units_3e_2026_2027.json';
 
-// The builder's rules are checked on this small neutral trio of its own; the delivered catalogue (3e: 60 lessons, all
-// `coming_soon`; 6e–4e empty) is checked below on its own facts.
+// The builder's rules are checked on this small neutral trio of its own; the delivered catalogue (3e: 60 lessons, one
+// `available` — PUBLISHED — and 59 `coming_soon`; 6e–4e empty) is checked below on its own facts.
+const PUBLISHED = ['decomposer-en-facteurs-premiers'];
 const lesson = (code, extra) => ({
   code, order: 0, kind: 'lesson', titleSource: 'editorial', title: `Leçon ${code}`, description: `Description ${code}`,
   prerequisites: [], prerequisiteLessonCodes: [], pointsToLearn: [`Point 1 de ${code}`], durationMinutes: 45, difficulty: 1,
@@ -83,10 +84,9 @@ describe('getAllGrades', () => {
   });
 
   it('counts only PUBLISHED lessons, and says where each grade stands (I2)', () => {
-    for (const g of grades) {
-      expect(g.lessonCount, g.id).toBe(0);
-      expect(g.curriculumStatus, g.id).toBe('lessons_planned');
-    }
+    // one lesson is published (2026-11-23): the first lesson of 3e, `decomposer-en-facteurs-premiers`
+    expect(grades.map((g) => [g.id, g.lessonCount])).toEqual([['6e', 0], ['5e', 0], ['4e', 0], ['3e', 1]]);
+    for (const g of grades) expect(g.curriculumStatus, g.id).toBe('lessons_planned');
   });
 
   it('counts the announced lessons apart: 3e has its year announced, 6e–4e nothing', () => {
@@ -161,16 +161,16 @@ describe('the delivered catalogue', () => {
     for (const l of built) for (const p of l.learningPoints) for (const q of p.prerequisites) expect(lpIds, `${p.id} ← ${q.id}`).toContain(q.id);
   });
 
-  it('shows each 3e lesson under its OWN title, keeps the official topic title beside it, and links none (coming soon)', () => {
+  it('shows each 3e lesson under its OWN title, keeps the official topic title beside it, and links only the published one', () => {
     const byCode = new Map(lessons3e.lessons.map((l) => [l.code, l]));
     const topicTitle = new Map(programme3e.domains.flatMap((d) => d.topics.map((t) => [t.id, t.title])));
     for (const { lesson: l } of lessonsOf(allCourseLevels)) {
       expect(l.title, l.id).toBe(byCode.get(l.id).title);
       expect(l.titleSource, l.id).toBe('editorial');
       expect(l.officialTopicTitle, l.id).toBe(topicTitle.get(byCode.get(l.id).sourceTopicId) ?? null);
-      expect(l.status, l.id).toBe('coming_soon');
+      expect(l.status, l.id).toBe(PUBLISHED.includes(l.id) ? 'available' : 'coming_soon');
       expect(getLessonById(l.id)).toMatchObject({ id: l.id, gradeId: '3e' });
-      expect(getLessonPath(l.id), l.id).toBeNull();
+      expect(getLessonPath(l.id), l.id).toBe(PUBLISHED.includes(l.id) ? l.path : null);
       expect(getUnitOfLesson(l.id)?.id, l.id).toBe(byCode.get(l.id).unitId);
     }
   });

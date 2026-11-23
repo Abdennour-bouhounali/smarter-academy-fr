@@ -9,12 +9,18 @@ import { getResumeModulePath } from './getResumeLesson';
 // répond depuis l'index généré — ce test vérifie que les deux disent la même chose.
 const CONFIGS = Object.values(import.meta.glob('../../../*/*/**/lesson.config.js', { eager: true, import: 'LESSON_CONFIG' }));
 
-// The generated index is EMPTY until the first French lesson: a neutral index of two lessons of three modules each —
-// one v2 (a world in its pack), one still on its module pages.
-vi.mock('../../../lessonIndex.generated.json', () => {
+// The generated index holds only v2 lessons (the first French one since 2026-11-23): a neutral index of two lessons of
+// three modules each — one v2 (a world in its pack), one still on its module pages — is put IN FRONT of the real index,
+// so the fixture is the registered lesson these tests take, and every real config still agrees with its line.
+vi.mock('../../../lessonIndex.generated.json', async (importOriginal) => {
+  const real = await importOriginal();
   const modules = [[1, 'premier'], [2, 'deuxieme'], [3, 'troisieme']];
   const line = (id, pack) => ({ id, level: 'college', grade: '3e', chapter: 'nombres_calculs', modules, ...(pack ? { pack } : {}) });
-  return { default: { lessons: [line('lecon-pages'), line('lecon-monde', { world: 'divisor-isles' })] } };
+  return {
+    default: {
+      lessons: [line('lecon-pages'), line('lecon-monde', { world: 'divisor-isles' }), ...real.default.lessons],
+    },
+  };
 });
 const BASE = '/courses/college/3e/nombres_calculs';
 
@@ -64,7 +70,7 @@ describe.skipIf(!fixtureLessonId)('getModulePath — le pont entre numéro et ro
   });
 
   it('rend, pour CHAQUE module de CHAQUE leçon, exactement le chemin que la route déclare', () => {
-    // every config of the tree (none before the first French lesson) agrees with the index
+    // every config of the tree agrees with the index
     for (const c of CONFIGS) {
       for (const m of c.modules) expect(getModulePath(c.id, m.number), `${c.id} › ${m.number}`).toBe(m.path);
       expect(getTotalModules(c.id), c.id).toBe(c.modules.length);
@@ -78,7 +84,7 @@ describe('a v2 lesson (a world in its pack) is resumed on its home, never on a m
   const paged = getBuiltLessons().map((l) => l.id).find((id) => !lessonPackFlags(id).world && getTotalModules(id) > 1);
 
   it('there are v2 lessons to check', () => {
-    expect(worlds).toEqual(['lecon-monde']);
+    expect(worlds).toEqual(['lecon-monde', 'decomposer-en-facteurs-premiers']);
     expect(paged).toBe('lecon-pages');
   });
 

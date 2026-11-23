@@ -3,8 +3,9 @@
 > **Status (2026-11-22).** Covers the contract of a v2 lesson: its pack, its folder, what the server checks, the
 > definition of done. Imported from the Algerian platform (DZ dev `7f4cef1c`) on 2026-11-22. True here: the whole
 > plumbing exists (`lesson.pack.js` loaders, the generated index, `buildLessonRoutes`, the kit's evidence, save sync and
-> story end, the status script). Not true here: **no lesson exists** (`lessonIndex.generated.json` lists none); every
-> example below names an Algerian lesson, not in this repository (see the Algerian platform, or `git show 049380e`);
+> story end, the status script). Since 2026-11-23 ONE lesson exists: 3e `decomposer-en-facteurs-premiers` (world
+> `divisor-isles`, `available` in the catalogue, the one line of `lessonIndex.generated.json`) — not yet walked; every
+> other example below names an Algerian lesson, not in this repository (see the Algerian platform, or `git show 049380e`);
 > the kit still speaks Arabic (plan §4, steps 1C–1D). A lesson will live in
 > `apps/web/src/lessons/college/<grade>/<theme>/<unit>/<lesson>/`.
 

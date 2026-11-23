@@ -59,21 +59,19 @@ const isStringTable = (file) => /(^|\/)(strings|text)\.js$/.test(file);
  * Kept on purpose. `'<file>'` keeps every export of the file, `'<file>#<name>'` one export, `'i18n:<path>'` a key
  * (a path ending with `.` keeps everything under it), `'table:<file>#<path>'` an entry. Each line says why.
  */
-// The lesson engine is kept whole while no French lesson exists yet (FRANCE_REBUILD_PLAN.md §4bis): what only a
-// deleted Algerian lesson used stays until the first French lesson decides.
+// The lesson engine is kept whole while few French lessons exist (FRANCE_REBUILD_PLAN.md §4bis): what only a deleted
+// Algerian lesson used stays until a French lesson decides. The first one (`decomposer-en-facteurs-premiers`,
+// 2026-11-23) took its lines out of this list; each line below is what no French lesson uses yet.
 const LESSON_ENGINE = 'lesson engine — no French lesson yet';
 const KEPT = {
   'apps/web/src/lessons/common/components/kidFigure.js#HAIR_STYLES': LESSON_ENGINE,
-  'apps/web/src/lessons/common/components/LessonIndex.jsx#default': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/logic.js#DASH_WAVES': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/logic.js#STATUES': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#attackOn': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#bridgeId': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#BRIDGE_TEXT': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#casesOfKinds': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#cellsOf': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#nudgeWith': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#pickWith': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#remainderForge': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#SMALL': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#attacksOf': LESSON_ENGINE,
@@ -86,15 +84,12 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#givenDivision': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#givenFraction': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#givenPower': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#judge': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#makerOf': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#noPredictions': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#pairPool': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#pairsOutside': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#pgcdBox': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#pgcdPairBox': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#plankCase': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#powerBox': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#subtractionRow': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#coinsLeft': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#commonDivisors': LESSON_ENGINE,
@@ -109,14 +104,6 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#ROWS': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#subTex': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/numbers.js#SUBTRACTIONS': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/bankSitting.js#createBankSittings': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/evidence.js#counts': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/evidence.js#createEvidence': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/journey.js#createJourney': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/ladder.js#buildWave': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/ladder.js#createLadder': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/random.js#int': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/trainer.js#createTrainer': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/missions/lots.js#advice': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/missions/lots.js#deal': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/missions/lots.js#euclid': LESSON_ENGINE,
@@ -127,7 +114,6 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/rootCourts/ruleForge.js#courtPool': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/rootCourts/ruleForge.js#COURT_TEXT': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/rootCourts/ruleForge.js#evidenceOf': LESSON_ENGINE,
-  'apps/web/src/lessons/common/lessonRoutes.jsx#buildLessonRoutes': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/random.js#rng':
     'the seeded generator: every lesson\'s tests replay its generated content with it (the app itself draws with Math.random)',
   'apps/web/src/lessons/common/gameworld/kit/claims.js#CLAIM_KINDS':

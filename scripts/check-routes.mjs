@@ -94,13 +94,13 @@ for (const file of walk(LESSONS)) {
   const isActive = ACTIVE_GRADE_IDS.includes(gradeId);
   const id = basename(dirname(file));
   const entry = indexed.get(id);
-  const globbed = LOADERS.includes(`'./*/${gradeId}/**/routes.jsx'`);
+  const globbed = LOADERS.includes(`'./college/${gradeId}/**/routes.jsx'`);
 
   if (isActive) {
     if (!/return\s+buildLessonRoutes\(/.test(src)) problems.push({ rel, why: `${fn} n'appelle pas buildLessonRoutes(…) — la frontière ne sait monter que cette fabrique` });
     if (!entry) problems.push({ rel, why: `« ${id} » n'est pas dans lessonIndex.generated.json — la leçon est inatteignable (node scripts/generate-lesson-index.mjs)` });
     else if (entry.grade !== gradeId) problems.push({ rel, why: `l'index range « ${id} » en '${entry.grade}', le dossier en '${gradeId}'` });
-    if (!globbed) problems.push({ rel, why: `lessonLoaders.js ne glob pas './*/${gradeId}/**/routes.jsx' — ses routes ne se chargeront jamais` });
+    if (!globbed) problems.push({ rel, why: `lessonLoaders.js ne glob pas './college/${gradeId}/**/routes.jsx' — ses routes ne se chargeront jamais` });
   } else if (entry || globbed) {
     problems.push({ rel, why: `« ${id} » est montable (index ${entry ? '✓' : '✗'}, glob ${globbed ? '✓' : '✗'}) mais sa classe ('${gradeId}') n'est pas active — fuite de contenu dormant (activeGrades.js)` });
   }

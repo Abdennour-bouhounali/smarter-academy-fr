@@ -23,14 +23,14 @@ Classified links: **113** (74 core, 39 support). Classified grades: 3e.
 
 | # | Weight | Earlier competence | Its lesson | Why (support only) |
 |---|---|---|---|---|
-| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
+| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième |  |
 | 2 | **core** | Il modélise et résout des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier. (`4e.m1.r08`) | _no lesson yet in 4e_ |  |
 
 ### Rendre une fraction irréductible — `fraction-irreductible`
 
 | # | Weight | Earlier competence | Its lesson | Why (support only) |
 |---|---|---|---|---|
-| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
+| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième |  |
 | 2 | **core** | Il utilise les nombres premiers inférieurs à 100 pour : reconnaître et produire des fractions égales ; simplifier des fractions. (`4e.m1.r07`) | _no lesson yet in 4e_ |  |
 | 3 | support | Il modélise et résout des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes…). (`3e.m1.r07`) | Trouver le PGCD de deux nombres — Troisième _(not published)_ | Dividing once by the PGCD (taught with 3e.m1.r07 by the owner’s decision) is one of the two methods; simplifying the common prime factors makes a fraction irreducible without it. |
 
@@ -38,7 +38,7 @@ Classified links: **113** (74 core, 39 support). Classified grades: 3e.
 
 | # | Weight | Earlier competence | Its lesson | Why (support only) |
 |---|---|---|---|---|
-| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième _(not published)_ |  |
+| 1 | **core** | Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation). (`3e.m1.r05`) | Décomposer un nombre en facteurs premiers — Troisième |  |
 | 2 | **core** | Il modélise et résout des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier. (`4e.m1.r08`) | _no lesson yet in 4e_ |  |
 
 ## Développer et factoriser
