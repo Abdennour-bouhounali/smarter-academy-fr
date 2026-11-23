@@ -546,10 +546,16 @@ const formsOf = (item, level) => {
   return level === 2 && forms.includes('sort') ? ['sort', ...forms.filter((f) => f !== 'sort')] : forms;
 };
 
-/** The form of the next question of a level: one not used yet in this launch when the family has another. */
+/**
+ * The form of the next question of a level: one not used yet in this launch when the family has another; when every form
+ * was used, the one used LEAST (the first of them in the family's order). 2026-11-23: a launch that misses everything asks
+ * the easy forms write, primes (the station), primes twice (the workshop), then the capsule's two — power, then write:
+ * the old fallback (`used.length % n`) asked power twice and a form could be met by nobody.
+ */
 export function pickForm(item, level, used = []) {
   const forms = formsOf(item, level);
-  return forms.find((f) => !used.includes(`${level}:${f}`)) ?? forms[used.length % forms.length];
+  const times = (f) => used.filter((u) => u === `${level}:${f}`).length;
+  return forms.reduce((best, f) => (times(f) < times(best) ? f : best), forms[0]);
 }
 
 /**

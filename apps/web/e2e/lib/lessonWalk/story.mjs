@@ -12,7 +12,7 @@
 // Every world screen: the instruction there, uncovered, naming no rule not forged yet (checks.mjs › worldShot).
 // Hooks: `descriptor.steps['island:<id>:before' | 'convoy:<name>:before' | 'forge:<key>:before' | 'forge:<key>:after' |
 // 'dash:before' | 'boss:before']` = async (ctx) => {} — run at that moment, ctx holds the page and the gestures.
-import { createWalk } from '../walk.mjs';
+import { createWalk, SIZE } from '../walk.mjs';
 import { worldShot, wordsRe } from './checks.mjs';
 import { playExperiment } from './experiments.mjs';
 import { playForge } from './forge.mjs';
@@ -909,11 +909,65 @@ export async function storyWalk(L, D, opts) {
         `the last bridge's label « ${label.text} » is ${A} cells — computed here from its powers (the world's gap ${seg.a})`,
       );
       await shotWorld(`island-${islands[k].id}`);
+      // the gap ahead, its sign written with the label (a sprite of the 3D scene: seen on the screenshot, not in the DOM).
+      // At the altar the camera looks over the hero and the instruction covers the sky: he stands at the bridge's head,
+      // facing the gap, the instruction folded — the sign must stand on screen, uncovered, its letters 12 px or more
+      // (2026-11-23: no screenshot had ever shown the sign of the first French lesson's last bridge)
+      await page.evaluate((i) => {
+        const g = window.__world;
+        const isl = g.isl[i];
+        const s = g.segs[i];
+        const n = Math.hypot(s.dx, s.dz);
+        g.facing = 1;
+        g.hero.pos.set(isl.x + (s.dx / n) * (isl.R - 2.2), 0, isl.z + (s.dz / n) * (isl.R - 2.2));
+        g.hero.vel.set(0, 0, 0);
+        g.hero.grounded = true;
+      }, k);
+      await W.ff(2.5);
+      const unfold = (await page.getAttribute('[data-di-instruction]', 'data-di-instruction')) !== 'folded';
+      if (unfold && (await page.locator('[data-di-instruction-fold]').count())) await page.click('[data-di-instruction-fold]');
+      await page.waitForTimeout(700);
+      const sign = await page.evaluate((i) => {
+        const g = window.__world;
+        const label = g.segs[i].label;
+        const cam = g.camera;
+        label.updateMatrixWorld(true);
+        const at = (dy) => {
+          const v = label.position.clone().setFromMatrixPosition(label.matrixWorld);
+          v.y += dy;
+          v.project(cam);
+          return { x: ((v.x + 1) / 2) * window.innerWidth, y: ((1 - v.y) / 2) * window.innerHeight, z: v.z };
+        };
+        const c = at(0);
+        const h = Math.abs(at(-label.scale.y / 2).y - at(label.scale.y / 2).y);
+        const w = h * (label.scale.x / label.scale.y);
+        const top = document.elementFromPoint(c.x, c.y);
+        return {
+          x: Math.round(c.x),
+          y: Math.round(c.y),
+          h: Math.round(h),
+          w: Math.round(w),
+          inFront: c.z < 1,
+          canvas: top?.tagName === 'CANVAS',
+          over: top && top.tagName !== 'CANVAS' ? (top.textContent || top.className || top.tagName).slice(0, 40) : null,
+        };
+      }, k);
+      check(
+        sign.inFront &&
+          sign.x - sign.w / 2 >= 0 &&
+          sign.x + sign.w / 2 <= SIZE[0] &&
+          sign.y - sign.h / 2 >= 0 &&
+          sign.y + sign.h / 2 <= SIZE[1] &&
+          sign.canvas,
+        `the last bridge's sign « ${label.text} » stands on screen and nothing covers it, seen from the bridge's head (${JSON.stringify(sign)})`,
+      );
+      // its pill is 1.5 × the text's line: the letters are about half of its height
+      check(sign.h * 0.5 >= 12, `the sign's letters are 12 px or more on screen (the pill ${sign.h} px high)`);
+      await shotWorld(`boss-sign-${islands[k].id}`);
+      if (unfold) await page.click('[data-di-instruction-fold]');
       await W.toAltar(k);
       await W.ff(1.2);
       await page.waitForTimeout(600);
-      // the gap ahead, its sign written with the label (a sprite of the 3D scene: seen on the screenshot, not in the DOM)
-      await shotWorld(`boss-sign-${islands[k].id}`);
       await W.act();
       await page.waitForTimeout(400);
       const mission =((await page.textContent('[data-di-boss-mission]').catch(() => '')) ?? '').replace(/\s/g, '');
@@ -979,6 +1033,12 @@ export async function storyWalk(L, D, opts) {
         check(
           say.includes(String(A % b)) && !new RegExp(`(^|[^0-9])${A}([^0-9]|$)`).test(say),
           `the world says what is left, never the gap's count (« ${say.slice(0, 120)} »)`,
+        );
+        // the robot's bubble is under the store's veil: the store itself writes what the world said (the fact and the nudge)
+        const written = ((await page.textContent('[data-di-boss-said]').catch(() => '')) ?? '').replace(/\s/g, '');
+        check(
+          written.includes(String(A % b)) && written.includes(String(b)),
+          `the reopened store WRITES what the world said: ${A % b} cells left with the planks of ${b} (« ${written.slice(0, 100)} »)`,
         );
         await w.shot(page, `boss-tried-${b}`, OUT);
       }

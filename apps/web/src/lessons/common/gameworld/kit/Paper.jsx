@@ -8,7 +8,7 @@
  *   PaperModel  a model sheet: a division POSED as on paper, one step per tap, each step said aloud, then the check and the
  *               sentence to write. Before answering it shows a TWIN example; after the correction, the student's own question.
  */
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { PenLine, VolumeX, Timer, ArrowRight, RotateCcw } from 'lucide-react';
 import MathText from '../../components/MathText';
@@ -31,15 +31,55 @@ function MethodStrip({ now }) {
   );
 }
 
+/**
+ * Where the floating chip stands over a world: in the middle of the room the top bar's two sides leave (`.di-top__side`),
+ * or under the bar when that room is narrower than the chip — never on the stars, the gems, the keys (the first French
+ * lesson's store, 2026-11-23: centred on the screen, it covered the ★ and the gems). Re-measured when a side grows.
+ */
+function useBetweenSides(ref, on) {
+  const [style, setStyle] = useState(null);
+  useLayoutEffect(() => {
+    if (!on || typeof document === 'undefined') return undefined;
+    const place = () => {
+      const chip = ref.current;
+      const [start, end] = document.querySelectorAll('.di-top > .di-top__side');
+      if (!chip || !start || !end) return;
+      const a = start.getBoundingClientRect();
+      const b = end.getBoundingClientRect();
+      const w = chip.getBoundingClientRect().width;
+      const GAP = 12;
+      const room = b.left - a.right - 2 * GAP;
+      setStyle(
+        room >= w
+          ? { left: `${(a.right + b.left) / 2}px`, top: `${a.top + (a.height - chip.offsetHeight) / 2}px` }
+          : { top: `${Math.max(a.bottom, b.bottom) + 8}px` },
+      );
+    };
+    place();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(place) : null;
+    for (const el of document.querySelectorAll('.di-top > .di-top__side')) ro?.observe(el);
+    if (ref.current) ro?.observe(ref.current);
+    window.addEventListener('resize', place);
+    return () => {
+      ro?.disconnect();
+      window.removeEventListener('resize', place);
+    };
+  }, [ref, on]);
+  return style;
+}
+
 /** The sign of the paper mode, with the time spent on the sheet (it counts UP: an exam is long, the student learns to feel it). */
 export function PaperChip({ className = '' }) {
   const [sec, setSec] = useState(0);
+  const ref = useRef(null);
+  const floating = className.includes('di-pchip--float');
+  const placed = useBetweenSides(ref, floating);
   useEffect(() => {
     const t = setInterval(() => setSec((n) => n + 1), 1000);
     return () => clearInterval(t);
   }, []);
   return (
-    <span className={`di-pchip ${className}`} data-di-paper>
+    <span ref={ref} className={`di-pchip ${className}`} style={placed ?? undefined} data-di-paper>
       <PenLine size={15} /> {PT.mode} · <VolumeX size={14} /> {PT.silent}
       <span className="di-pchip__time" dir="ltr">
         <Timer size={13} /> {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}

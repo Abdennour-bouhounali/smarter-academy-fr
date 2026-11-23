@@ -217,7 +217,9 @@ body:has([data-teacher-lesson-panel][data-teacher-board='true']) [data-nb-trigge
   padding: 1rem 1.25rem;
   background: #f8fafc;
 }
-/* the lesson's name is read whole: two short lines when the tabs leave little room (its label stays for screen readers) */
+/* the lesson's name on ONE line: beside the tabs when they leave it room, else on its own line under them (2026-11-23: at
+   1366 px the French title stood on four lines in a column of 130 px beside the tabs); an ellipsis only if even the whole
+   width cannot hold it (its label stays for screen readers) */
 .ltb .ltb__title small {
   position: absolute;
   width: 1px;
@@ -225,8 +227,15 @@ body:has([data-teacher-lesson-panel][data-teacher-board='true']) [data-nb-trigge
   overflow: hidden;
   clip-path: inset(50%);
 }
+.ltb .ltb__title {
+  flex: 1 1 24rem;
+  min-width: min(24rem, 100%);
+  text-align: start;
+}
 .ltb .ltb__title strong {
-  white-space: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 1.3;
   font-size: 0.98rem;
 }

@@ -871,7 +871,7 @@ Routes under `/enseignant` (`ProtectedRoute allowedRoles={['teacher']}`,
 `TeacherLayout` + `TeacherNavbar`, pattern of the student shell, no grade
 gate; `data/teacherNavigation.js`). Since 2026-09-29 it is the SAME workspace
 shell as the student's: `<main class="sa-workspace-main">` with the sidebar /
-gutter variables and a fixed 80 px rail (`components/common/WorkspaceNav.jsx`, `RAIL_WIDTH` —
+gutter variables and a fixed rail (96 px since 2026-11-23: the French door names ran out of 80 px) (`components/common/WorkspaceNav.jsx`, `RAIL_WIDTH` —
 `docs/reports/NAVIGATION_REBUILD_PLAN.md` §0):
 
 ```text

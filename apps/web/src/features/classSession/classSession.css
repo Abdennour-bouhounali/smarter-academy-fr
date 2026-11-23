@@ -4166,6 +4166,13 @@
 .cs-ladder__fact.is-held {
   color: #047857;
 }
+/* under a finished ladder: ONE sentence, its formulas inside it (not a row of flex items) */
+.cs-lesson .cs-ladder__fact.is-breaks {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
 .cs-ladder__fact.is-fell {
   color: #b45309;
 }

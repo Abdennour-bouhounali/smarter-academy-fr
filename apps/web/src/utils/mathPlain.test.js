@@ -10,9 +10,10 @@ describe('mathToPlain — catalogue text readable without KaTeX', () => {
     expect(strip(mathToPlain('de $t\\%$ en multipliant par $1 + \\dfrac{t}{100}$'))).toBe('de t% en multipliant par 1 + t/100');
     expect(strip(mathToPlain('$x \\longmapsto 0{,}5x$'))).toBe('x ⟼ 0,5x');
   });
-  it('isolates each formula LTR and leaves no dollar or backslash', () => {
+  it('writes each formula as it reads, with no invisible mark, and leaves no dollar or backslash', () => {
     const out = mathToPlain('$y = a \\times x$ et $\\sqrt{a^2} = a$');
-    expect(out).toContain('⁦y = a × x⁩');
+    expect(out).toBe('y = a × x et √(a²) = a');
+    expect(out).not.toMatch(/[\u2066-\u2069]/);
     expect(out).not.toMatch(/[$\\]/);
     expect(latexToPlain('10\\,^{\\circ}\\mathrm{C}')).toBe('10 °C');
   });

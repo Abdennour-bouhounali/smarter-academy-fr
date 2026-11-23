@@ -53,6 +53,9 @@ describe('Mon labo — « L’échelle des facteurs »', () => {
     expect([...out.matchAll(/data-ll-factor-rung="(\d+)"/g)].map((m) => m[1])).toEqual(['2387', '341', '31', '1']);
     expect(out).toContain('data-left="1"');
     expect(out).toContain('2 387 = 7 × 11 × 31');
+    // the product once, in the row's place: never the same row printed twice
+    expect(out).not.toContain('data-ll-factor-row');
+    expect(out.match(/7 × 11 × 31/g)).toHaveLength(1);
     expect(out).toContain('data-ll-factor-done');
     expect(out).toContain('Le fossé est franchi avec 3 planches');
     expect(out).toMatch(/opacity="0.35" data-ll-factor-whole/);

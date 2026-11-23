@@ -197,7 +197,8 @@ export default function KnowledgePage({ s, game, sel }) {
                     />
                   ))}
                 </svg>
-                {EDGES.map((e) => (
+                {/* a link with no label draws no pill (an empty one was a stray dash on the line) */}
+                {EDGES.filter((e) => e.label).map((e) => (
                   <span
                     key={`${e.from}-${e.to}`}
                     className="di-kmap__edge"

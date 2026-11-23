@@ -7,6 +7,7 @@
 import { createElement, useEffect, useMemo, useState } from 'react';
 import { X, ArrowLeft, ArrowRight, Star, Heart, Lightbulb, Flame, Truck, Coins } from 'lucide-react';
 import MathText from '../../components/MathText';
+import { formatFr } from '@smarter-academy/core';
 import { DivisorIslesGame } from './Game';
 import { T, planks, waveSay, explain } from './strings';
 
@@ -69,10 +70,10 @@ function Verdict({ v }) {
         {v.purse
           ? T.verdict.purse(v.q, v.need)
           : v.holds
-            ? T.verdict.holds(v.b, v.aText ?? v.a)
+            ? T.verdict.holds(v.b, v.aText ?? formatFr(v.a))
             : v.mark && v.r === 0
               ? T.verdict.markMiss(v.b, v.mark.m)
-              : T.verdict.open(v.b, v.aText ?? v.a)}
+              : T.verdict.open(v.b, v.aText ?? formatFr(v.a))}
       </p>
     </div>
   );
@@ -645,7 +646,8 @@ function Statues({ game }) {
 
 /**
  * The store of the last bridge. The mission is written at the top and never leaves; three steps: choose a mould and compute,
- * watch the world build it, pay. A mould already tried shows what it left.
+ * watch the world build it, pay. A mould already tried shows what it left, and the store writes what the world said after
+ * the last one that left cells (`o.said`, the story's `say.bossFail`): its bubble is under the store's veil.
  * The compute step: the Euclidean division of the gap « a = b × [ ] + [ ] » — or, when the story announces the gap by a
  * LABEL (`boss.label: { text, tex, sign? }`, « 2³ × 3² × 7 »), the label in place of a and ONE box, the number of planks
  * « 2³ × 3² × 7 = 36 × [ ] » (`game.bossCount`): a is never printed, and no long division of a is offered as a model.
@@ -724,6 +726,12 @@ export function Boss({ o, game }) {
               );
             })}
           </div>
+          {o.said && (
+            // what the world said when his last plank left cells — the fact and the nudge, in the story's own words
+            <p className="di-fact di-boss-said" data-di-boss-said>
+              <MathText>{o.said}</MathText>
+            </p>
+          )}
           <p className="di-dim">{T.boss.price}</p>
           <div className="di-row">
             <button type="button" className="di-link" onClick={() => game.closeOverlay()}>
@@ -768,7 +776,7 @@ export function Boss({ o, game }) {
               <h2>{T.boss.divide(o.b)}</h2>
               <PaperGate tip={PT.tipDivision} onModel={() => setModel(twin(a, o.b))}>
                 <div className="di-template" dir="ltr">
-                  <span data-di-boss-a>{a}</span>
+                  <span data-di-boss-a>{formatFr(a)}</span>
                   <span>=</span>
                   <span>{o.b}</span>
                   <span>×</span>

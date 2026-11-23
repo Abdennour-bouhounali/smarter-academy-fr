@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import { MotionConfig, motion } from 'framer-motion';
-import { isolateMathRuns } from '../../../utils/bidi';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowBack, ArrowForward } from '../../../components/common/DirectionalIcons';
@@ -304,8 +303,8 @@ export default function PracticeSession() {
     // Le numéro s'affiche MÊME pour un exercice à une seule question : c'est
     // un repère de position, pas un compteur — l'élève doit lire la même
     // forme partout, sans avoir à se demander pourquoi elle disparaît ici.
-    // Un titre peut contenir une égalité ou une fraction (« 120 = 6 × 20 », « 28/42 ») : isolateMathRuns la garde d'un bloc.
-    const title = isolateMathRuns(exercise?.metadata?.title ?? '');
+    // one direction (FRENCH_LANGUAGE_CONTRACT.md §8): an equality of the title reads as it is written, nothing wraps it
+    const title = exercise?.metadata?.title ?? '';
     if (!title) return title;
     const label = t('practice.questionNumber', { n: questionIndex + 1 });
     const dash = title.indexOf('—');
@@ -686,7 +685,7 @@ export default function PracticeSession() {
   const isChoice = question.answerType === 'choice' || question.answerType === 'multiChoice';
   // Le titre seul, pour le h1 ; `exerciseHeading` (titre + « Question n »)
   // reste le titre de la présentation en classe, où le chrome est retiré.
-  const exerciseTitle = isolateMathRuns(exercise.metadata?.title ?? '');
+  const exerciseTitle = exercise.metadata?.title ?? '';
 
   const nextLabel = !isLastQuestion
     ? t('practice.nextQuestion')

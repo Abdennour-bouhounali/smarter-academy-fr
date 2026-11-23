@@ -50,6 +50,27 @@ const SX0 = 44;
 const SX1 = 956;
 
 /**
+ * Where a number stands on the strip of a gap of `a` cells whose planks are tried up to `end`. A SHORT gap is drawn at one
+ * scale. A LONG gap (a plank would keep less than 22 px of the strip: 221 cases, 16 planks tried — 4 units a
+ * plank, the first French lesson drew a lone « 6 » between 1 and 13 and its two labels on one marker) is drawn in two
+ * parts: 0 … `zoom` (every plank tried and the place where plank and partner cross) on ZOOM_SHARE of the width, then a
+ * visible BREAK (`breakAt`), then `zoom` … a squeezed on the rest — the partners of the first planks still walk in from
+ * the far end, and the crossing is read at full size. → { x(n), zoom: null | number, breakAt: null | px }.
+ */
+const ZOOM_SHARE = 0.7;
+const BREAK_PX = 26;
+export function stripScale(a, end) {
+  const W = SX1 - SX0;
+  const zoom = Math.ceil(end * 1.5);
+  // one scale while a plank keeps 22 px of the strip (a two-digit number of 16 px and its margin)
+  if (W / a >= 22 || zoom >= a) return { x: (n) => SX0 + (n / a) * W, zoom: null, breakAt: null };
+  const left = W * ZOOM_SHARE;
+  const x = (n) =>
+    n <= zoom ? SX0 + (n / zoom) * left : SX0 + left + BREAK_PX + ((n - zoom) / (a - zoom)) * (W - left - BREAK_PX);
+  return { x, zoom, breakAt: SX0 + left + BREAK_PX / 2 };
+}
+
+/**
  * The numbers written under the strip that can stand there without touching (all on ONE row of the scene): a long gap
  * puts its planks a few units apart (221 cases: 4 units a plank — the first French lesson drew « 1 2 3 … 16 » on one
  * another). They are taken in order of what they say — the planks that hold and their partners first, then the planks
@@ -81,7 +102,8 @@ function Pairs({ spec, play, onDone }) {
   useEffect(() => () => clearInterval(timer.current), []);
   expose({ kind: 'pairs', gi, a, m, stage, tries: tries.length, guess, found });
 
-  const x = (n) => SX0 + (n / a) * (SX1 - SX0);
+  const scale = stripScale(a, end);
+  const { x } = scale;
   const last = tries.at(-1) ?? null;
   const d = tries.length + 1;
   const squares = gi >= 1; // the squares join the table from the second gap: first the crossing is SEEN, then measured
@@ -139,11 +161,16 @@ function Pairs({ spec, play, onDone }) {
   const picking = stage === 'guess' || stage === 'pick';
   const chips = Array.from({ length: Math.min(a, end + 3) }, (_, i) => i + 1);
   const held = tries.filter((t) => t.whole && !t.crossed);
-  const shownLabels = spacedLabels([
+  const fallen = tries.filter((t) => !t.whole).map((t) => ({ key: `f${t.d}`, x: x(t.d), text: t.d, size: 16 }));
+  const spaced = spacedLabels([
     ...held.map((t) => ({ key: `d${t.d}`, x: x(t.d), text: t.d, size: 19 })),
     ...held.filter((t) => t.q !== t.d).map((t) => ({ key: `q${t.d}`, x: x(t.q), text: t.q, size: 19 })),
-    ...tries.filter((t) => !t.whole).map((t) => ({ key: `f${t.d}`, x: x(t.d), text: t.d, size: 16 })),
+    ...fallen,
   ]);
+  // the planks that fell are named all together or not at all: one lone number among them says nothing
+  const shownLabels = fallen.every((f) => spaced.has(f.key))
+    ? spaced
+    : new Set([...spaced].filter((k) => !k.startsWith('f')));
   const partnerText = (t) => (t.whole ? String(t.q) : T.between(Math.floor(t.partner), Math.floor(t.partner) + 1));
 
   return (
@@ -170,10 +197,24 @@ function Pairs({ spec, play, onDone }) {
       <svg className="iq-strip" viewBox={`0 0 ${SW} 204`} role="img" aria-label={T.stripLabel(a)}>
         {/* what was tried so far: every plank up to the last one */}
         {last && <rect className="iq-zone" x={x(0.5)} y="96" width={x(last.d + 0.5) - x(0.5)} height="34" rx="8" />}
-        <line className="iq-axis" x1={x(1)} y1="113" x2={x(a)} y2="113" />
-        {Array.from({ length: a }, (_, i) => i + 1).map((n) => (
-          <line key={n} className="iq-tick" x1={x(n)} y1="107" x2={x(n)} y2="119" />
-        ))}
+        {scale.zoom ? (
+          // a long gap: its first part at full size, a break, the rest squeezed (`stripScale`)
+          <g data-iq-strip-break={scale.zoom}>
+            <line className="iq-axis" x1={x(1)} y1="113" x2={scale.breakAt - 8} y2="113" />
+            <line className="iq-axis" x1={scale.breakAt + 8} y1="113" x2={x(a)} y2="113" />
+            <path className="iq-break" d={`M ${scale.breakAt - 11} 124 l 8 -22 M ${scale.breakAt + 3} 124 l 8 -22`} />
+            {Array.from({ length: scale.zoom }, (_, i) => i + 1).map((n) => (
+              <line key={n} className="iq-tick" x1={x(n)} y1="107" x2={x(n)} y2="119" />
+            ))}
+          </g>
+        ) : (
+          <>
+            <line className="iq-axis" x1={x(1)} y1="113" x2={x(a)} y2="113" />
+            {Array.from({ length: a }, (_, i) => i + 1).map((n) => (
+              <line key={n} className="iq-tick" x1={x(n)} y1="107" x2={x(n)} y2="119" />
+            ))}
+          </>
+        )}
         {/* a bridge that holds joins the plank and its partner */}
         {tries
           .filter((t) => t.whole && !t.crossed)

@@ -26,8 +26,9 @@ const Marked = ({ text }) =>
   text.includes('$') ? (
     <MathText>{text}</MathText>
   ) : (
-    text.split(/(\d+)/).map((part, i) =>
-      /^\d+$/.test(part) ? (
+    // a number is ONE datum, its thousands included (« 2 431 »: digits joined by the narrow no-break space)
+    text.split(/(\d+(?:\u202f\d{3})*)/).map((part, i) =>
+      /^\d/.test(part) ? (
         <u key={i} dir="ltr">
           {part}
         </u>
@@ -317,7 +318,11 @@ export function FormLines({ lines, v, set, locked }) {
   );
   const part = (x, key) => (isBox(x) ? box(x, key) : <b key={key}>{x}</b>);
   const token = (t, i, ltr) => {
-    if (typeof t === 'string') return ltr ? <span key={i}>{t}</span> : <Fragment key={i}>{t} </Fragment>;
+    if (typeof t === 'string') {
+      // a variable of the sheet is written `$N$` — one way, italic, as in the question (FRENCH_LANGUAGE_CONTRACT.md §7)
+      const x = t.includes('$') ? <MathText>{t}</MathText> : t;
+      return ltr ? <span key={i}>{x}</span> : <Fragment key={i}>{x} </Fragment>;
+    }
     if (isFrac(t)) {
       const typed = isBox(t.frac.n) || isBox(t.frac.d);
       const el = (

@@ -174,6 +174,16 @@ async function boardLadder({ page, check, expect, shot, clean, attr, step: s, fi
     expect((await attr('[data-cs-ladder]', 'data-cs-ladder-done')) === 'true', `${s.id}: the gap is down to 1 case`);
     const product = planks.reduce((p, x) => p * x, 1);
     check(product === s.n, `${s.id}: ${s.n} = ${planks.join(' × ')} — computed here`);
+    // under a finished ladder of the rack (not grouped): the planks of its row still laid in shorter planks, computed
+    // here — never its last rung « 4 = 4 × 1 » (2026-11-23)
+    if (!s.group && !s.sheet) {
+      const composite = [...new Set(planks)].filter((p) => !isPrimeN(p)).sort((x, y) => x - y);
+      const shown = await attr('[data-cs-ladder-breaks]', 'data-cs-ladder-breaks');
+      check(
+        shown === composite.join(','),
+        `${s.id}: under the finished ladder, the planks laid in shorter planks: ${composite.join(', ') || 'none'} (« ${shown} »)`,
+      );
+    }
     return planks;
   };
   const planks = await run({ wrong: first || Boolean(s.sheet), undo: first && !s.sheet });
@@ -698,6 +708,38 @@ export async function boardWalk(L, D, opts) {
       await page.waitForTimeout(800);
       const parts = await page.$$eval('[data-memo-go]', (els) => els.map((e) => e.dataset.memoGo));
       expect(parts.length >= 2, `the teacher's memo opens with its parts (${parts.join(', ')})`);
+      // the teacher's shell (every page of his space): each door's name inside its door, on two lines at most; the
+      // lesson's title on ONE line, inside the window (2026-11-23: French names ran out of an 80 px rail, the title
+      // stood on four lines beside the tabs)
+      const shell = await page.evaluate(() => {
+        const bad = [];
+        for (const d of document.querySelectorAll('[data-workspace-rail] [data-door]')) {
+          const r = d.getBoundingClientRect();
+          const range = document.createRange();
+          range.selectNodeContents(d);
+          const g = range.getBoundingClientRect();
+          const label = d.querySelector('span:last-child') ?? d;
+          const lines = Math.round(
+            label.getBoundingClientRect().height / (parseFloat(getComputedStyle(label).lineHeight) || 16),
+          );
+          if (g.left < r.left - 0.5 || g.right > r.right + 0.5)
+            bad.push(`door « ${d.textContent.trim()} » runs out of its door`);
+          if (lines > 2) bad.push(`door « ${d.textContent.trim()} » on ${lines} lines`);
+        }
+        const t = document.querySelector('.ltb__title strong');
+        if (t) {
+          const r = t.getBoundingClientRect();
+          const lh = parseFloat(getComputedStyle(t).lineHeight) || 20;
+          if (r.height > lh * 1.5) bad.push(`the lesson's title on ${Math.round(r.height / lh)} lines`);
+          if (r.right > window.innerWidth + 1 || r.width < 120)
+            bad.push(`the lesson's title squeezed (${Math.round(r.width)} px)`);
+        }
+        return bad;
+      });
+      check(
+        shell.length === 0,
+        `the teacher's shell: each door's name inside its door, the lesson's title on one line${shell.length ? ' — ' + shell.join(' | ') : ''}`,
+      );
       for (const part of parts) {
         await page.click(`[data-memo-go="${part}"]`);
         await page.waitForTimeout(400);
@@ -717,7 +759,7 @@ export async function boardWalk(L, D, opts) {
           }
           return {
             raw: (text.match(/\$|\\[a-zA-Z]{2,}/) ?? [null])[0],
-            arabic: /[؀-ۿ]/.test(text),
+            arabic: /[\u0600-\u06ff]/.test(text),
             wide: document.documentElement.scrollWidth > window.innerWidth + 1,
             tiny: [...new Set(tiny)].slice(0, 4),
           };

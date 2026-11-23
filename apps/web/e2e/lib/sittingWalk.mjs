@@ -163,9 +163,9 @@ const readBox = (page, sel) =>
       if (!p.closest('.katex')) plain += `${t.nodeValue} `;
     }
     const tb = box.querySelector('[data-problem-table] table');
-    // the bidi isolates MathText puts around an equality written in the words (utils/bidi.js › isolateMathRuns: « largeur ×
-    // 14 = 56 ») are invisible: they are not part of what the student reads, and a bank sentence is compared without them
-    const bare = (x) => x.replace(/[\u2066-\u2069\u200e\u200f]/g, '').replace(/\s+/g, ' ');
+    // white space read as one space (C11); no bidi isolate exists any more (utils/bidi.js left on 2026-11-23): one is a
+    // defect, said at every screenshot by `walk.mjs › shot` (« no bidi control »), never stripped
+    const bare = (x) => x.replace(/\s+/g, ' ');
     return {
       text: bare(text),
       plain: bare(plain),
@@ -226,9 +226,8 @@ export async function checkFields(w, page, steps, where) {
         factorization: Boolean(el.querySelector('[data-factorization-answer] math-field')),
         buttons: el.querySelectorAll('button').length,
         area: Boolean(el.querySelector('textarea')),
-        // read as SEEN (C11): white space as one space, and no bidi isolate (U+2066–U+2069) — `utils/bidi.js` still
-        // wraps « N / d » in invisible LTR marks inside a French sentence (an Algerian leftover, reported)
-        text: text.replace(/[\u2066-\u2069]/g, '').replace(/\s+/g, ' '),
+        // read as SEEN (C11): white space as one space; a bidi isolate (U+2066–U+2069) is a defect, never stripped
+        text: text.replace(/\s+/g, ' '),
       };
     }, q.id);
     const shape = !f

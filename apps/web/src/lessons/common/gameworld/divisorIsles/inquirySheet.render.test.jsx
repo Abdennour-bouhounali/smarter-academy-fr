@@ -59,7 +59,7 @@ describe('sheet — the screen', () => {
   it('a spreadsheet: letters A and B, row numbers, A1 the lesson’s word, B1 the formula « =MOD(2431;A2) », plain numbers under it', () => {
     const html = view(fill(initSheet(SPEC)));
     clean(html);
-    expect(html).toContain('data-iq-formula="true">=MOD(2431;A2)<');
+    expect(html).toContain('data-iq-formula="true" data-machine-text="true">=MOD(2431;A2)<');
     expect(html).toContain('>head<');
     expect(html).toMatch(/<span>A<\/span><span>B<\/span>/);
     // 15 lines: two blocks (8 + 7), rows numbered on from 2 to 16 across them
@@ -83,9 +83,10 @@ describe('sheet — the screen', () => {
     expect(html).toContain('data-iq-lines="6"');
     expect(html).toContain('data-iq-blocks="1"');
     expect(html).toContain('data-iq-note="2431:11:221"');
-    expect(html).toContain('2431 \\div 11 = 221');
+    // the notebook writes its thousands grouped, as French does (2026-11-23)
+    expect(html).toContain('2\\,431 \\div 11 = 221');
     expect(html).toContain('held[2431:11:221]');
-    expect(html).toContain('data-iq-formula="true">=MOD(221;A2)<');
+    expect(html).toContain('data-iq-formula="true" data-machine-text="true">=MOD(221;A2)<');
     expect(html).not.toContain('data-iq-rest='); // the world fills it again
   });
 

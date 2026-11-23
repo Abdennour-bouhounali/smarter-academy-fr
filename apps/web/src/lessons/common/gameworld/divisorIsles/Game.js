@@ -1335,7 +1335,10 @@ export class DivisorIslesGame extends WorldRuntime {
   afterFail(seg, b, q, r, right = null) {
     if (seg.boss) {
       this.flags.bossTried = { ...(this.flags.bossTried ?? {}), [b]: r };
-      this.say(this.T.say.bossFail(b, r), 8);
+      // the world's fact and its nudge are said by the robot AND written in the store that reopens over him: under the
+      // store's veil the robot's bubble cannot be read (the first French lesson's last bridge, 2026-11-23)
+      this.flags.bossSaid = this.T.say.bossFail(b, r);
+      this.say(this.flags.bossSaid, 8);
       this.set({ phase: 'dialog', overlay: this.bossOverlay('choose') });
       this.save();
       return;
@@ -1610,7 +1613,14 @@ export class DivisorIslesGame extends WorldRuntime {
    * (`bossCount`) — and the world shows what it builds.
    */
   bossOverlay(view, extra = {}) {
-    return { type: 'boss', view, tried: { ...(this.flags.bossTried ?? {}) }, ...extra };
+    return {
+      type: 'boss',
+      view,
+      tried: { ...(this.flags.bossTried ?? {}) },
+      // what the world said after the last plank that left cells (its story's `say.bossFail`), shown in the store
+      ...(this.flags.bossSaid ? { said: this.flags.bossSaid } : {}),
+      ...extra,
+    };
   }
 
   openBoss() {

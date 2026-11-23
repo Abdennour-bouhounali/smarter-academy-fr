@@ -154,7 +154,8 @@ is only one, the document's default). Icons whose meaning is a reading direction
 `components/common/DirectionalIcons.jsx` (forward points right).
 What the Arabic product needed and this one does not: `dir="rtl"` on any element, `direction: rtl` in CSS, a mirrored
 icon, a layout placed « from the right », the Arabic font stacks (Cairo, Tajawal, Amiri). The `dir="ltr"` islands
-around a formula are harmless and may leave with the file they are in. Logical CSS properties (`margin-inline-start`,
+around a formula are harmless and may leave with the file they are in. The invisible isolates (U+2066–U+2069) the Arabic product put
+around an equality in plain text (`utils/bidi.js`) are GONE (2026-11-23): a sentence is written as it reads. Logical CSS properties (`margin-inline-start`,
 Tailwind `ms-` / `me-` / `start-` / `end-`) stay: they are correct in both directions.
 
 ## 9. Content rules for France ❓ (plan §7, decision 7 — the owner confirms)
@@ -176,7 +177,16 @@ Tailwind `ms-` / `me-` / `start-` / `end-`) stay: they are correct in both direc
 - `apps/web/src/i18n/plurals.test.js` — the i18next language is `fr` (0 and 1 read the singular) and no Arabic plural
   form (`_zero`, `_two`, `_few`, `_many`) is left in the bundled namespaces.
 - The engine's `typographyErrors` (`lessons/common/gameworld/kit/authoring/test/suites.js`) — a lesson's sentences: the
-  straight apostrophe, the missing no-break space before `:` `;` `!` `?`, « 3ème », English quotes.
+  straight apostrophe, the missing no-break space before `:` `;` `!` `?`, « 3ème », English quotes; since 2026-11-23 also
+  a number of four digits or more not grouped (« 1400 », or « 1 400 » with a plain space: kind `milliers`,
+  `thousandsErrors` — a year after its word and a machine's text in `\texttt{…}` excepted) and a variable written two
+  ways in one sentence (« si d divise $N$ »: kind `variable`, `variableErrors`). The suites' `said` reads both on every
+  sentence of a forge, a trainer, a story.
+- The walks (`apps/web/e2e/lib/walk.mjs › shot`, every screenshot of every lesson): no visible number of four digits
+  or more without its thousands grouped (`code`, `pre`, `\texttt`, `[data-machine-text]` excepted), no bidi control.
+- `apps/web/src/test/narrowSpace.test.js` — the narrow no-break space is SEEN: Inter and Space Grotesk draw U+202F
+  0.14 em (« 1 400 » read « 1400 » after a « 1 »); `scripts/brand/build-narrow-space.py` writes into `index.html` one
+  @font-face per family and weight that draws it 0.22 em.
 - `lessons/common/unbreakableCounters.test.js` — a « n / m » counter never breaks (no-break spaces around the slash).
 - The contract tests of the admin and teacher pages (`pages/adminContract.test.js`, `pages/teacherContract.test.js`)
   assert French and refuse Arabic.

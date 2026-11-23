@@ -1,5 +1,3 @@
-import { isolateOutsideMath, isolateMathRuns } from './bidi';
-
 /**
  * `mathToPlain(text)` — a content string with `$…$` islands made readable WITHOUT KaTeX.
  *
@@ -7,7 +5,7 @@ import { isolateOutsideMath, isolateMathRuns } from './bidi';
  * concatenated into a template, the `MathLabel` fallback while KaTeX loads. The catalogue's points to
  * learn, descriptions and module blurbs are written like lesson content (« la notation $x \longmapsto ax + b$ »);
  * printed raw, the student read the dollars and the backslashes. Here each island becomes Unicode
- * (« x ⟼ ax + b »), isolated left to right like any formula (utils/bidi.js).
+ * (« x ⟼ ax + b »). One direction: nothing invisible is put around it.
  *
  * Dependency-free on purpose (no KaTeX): it may run in the entry bundle.
  */
@@ -36,16 +34,16 @@ export function latexToPlain(tex) {
   return s.replace(/[{}]/g, '').replace(/\\([A-Za-z]+)/g, '$1').replace(/\s+/g, ' ').trim();
 }
 
-/** A content string with `$…$` / `$$…$$` islands → readable plain text (bidi-isolated). */
+/** A content string with `$…$` / `$$…$$` islands → readable plain text. */
 export function mathToPlain(value) {
   if (typeof value !== 'string') return value;
-  if (!value.includes('$')) return isolateOutsideMath(value);
+  if (!value.includes('$')) return value;
   return value
     .split(/(\$\$[\s\S]+?\$\$|\$[^$]+\$)/g)
     .map((seg, i) => {
-      if (i % 2 === 0) return isolateMathRuns(seg);
+      if (i % 2 === 0) return seg;
       const inner = seg.startsWith('$$') ? seg.slice(2, -2) : seg.slice(1, -1);
-      return `⁦${latexToPlain(inner)}⁩`; // LRI … PDI : la formule se lit de gauche à droite
+      return latexToPlain(inner);
     })
     .join('');
 }

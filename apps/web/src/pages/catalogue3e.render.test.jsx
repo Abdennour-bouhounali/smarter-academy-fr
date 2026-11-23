@@ -54,8 +54,7 @@ describe('3e — a catalogue of coming-soon lessons and its first published one'
     ['teacher', { role: 'teacher' }],
   ])('unit page (%s): every lesson a non-clickable « coming soon » line with its learning points — the published one a link', (_, user) => {
     for (const unit of units) {
-      // MathLabel may wrap formulas in bidi isolates: read the text without them.
-      const html = render(<UnitPage />, unit.path, user).replace(/[\u2066-\u2069]/g, '');
+      const html = render(<UnitPage />, unit.path, user);
       expect(html, unit.id).toContain(`data-unit="${unit.id}"`);
       for (const l of [...unit.lessons, unit.synthesis]) {
         if (PUBLISHED.includes(l.id)) {

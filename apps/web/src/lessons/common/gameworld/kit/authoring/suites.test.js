@@ -23,6 +23,8 @@ import {
   said,
   storeHolders,
   stringsIn,
+  thousandsErrors,
+  variableErrors,
   trueEqualities,
   valueOf,
 } from './test/suites.js';
@@ -201,6 +203,41 @@ describe('the shared suites’ helpers', () => {
     expect(() => trueEqualities('On a $7 + 5 = 13$')).toThrow();
     // an equality in plain words is not read (French needs no bidi isolation: it is written in `$…$`)
     expect(trueEqualities('On a 7 + 5 = 13')).toBe(0);
+  });
+
+  it('finds a number of four digits or more whose thousands are not grouped — in words and in a formula', () => {
+    const T = '\u202f';
+    expect(thousandsErrors(`56 divise-t-il 1${T}400 ? $1\\,400 = 2^{3} \\times 5^{2} \\times 7$`)).toEqual([]);
+    expect(thousandsErrors('56 divise-t-il 1400 ?')).toEqual(['1400']);
+    expect(thousandsErrors('Quand N devient 1547, le programme')).toEqual(['1547']);
+    expect(thousandsErrors('$1400 = 2^{3} \\times 5^{2} \\times 7$')).toEqual(['1400']);
+    // grouped by hand with a plain or a no-break space: the line may break inside it
+    expect(thousandsErrors('l’échelle de 1 400 : regarde')).toEqual(['1 400']);
+    expect(thousandsErrors('l’échelle de 1\u00a0400')).toEqual(['1\u00a0400']);
+    expect(thousandsErrors(`2${T}387${T}000 et 12${T}345`)).toEqual([]);
+    // a decimal's digits, a small number, a year after its word: not a thousand
+    expect(thousandsErrors('π vaut environ 3,1416 ; 999 cases')).toEqual([]);
+    expect(thousandsErrors('Sur le modèle du brevet 2024, en 2026, le 12 juin 2027')).toEqual([]);
+    expect(thousandsErrors('il en reste 2024')).toEqual(['2024']);
+    // what is typed into a machine (a spreadsheet's cell) takes no space
+    expect(thousandsErrors('La cellule $\\texttt{=MOD(2431;11)}$ affiche :')).toEqual([]);
+    expect(() => said('56 divise-t-il 1400 ?')).toThrow();
+    expect(typographyErrors('il reste 2431 cases')).toEqual([{ kind: 'milliers', at: '2431' }]);
+  });
+
+  it('finds a variable written two ways in one sentence — italic in its formula, plain in its words', () => {
+    expect(
+      variableErrors('Un programme essaie $d = 2, 3$ sur $N = 91$ : si d divise N, N devient $N \\div d$.'),
+    ).toEqual(['d', 'N']);
+    expect(
+      variableErrors('Un programme essaie $d = 2, 3$ sur $N = 91$ : si $d$ divise $N$, $N$ devient $N \\div d$.'),
+    ).toEqual([]);
+    // « a », « y », an elided letter, a command's letters, a sentence with no formula: never a variable
+    expect(variableErrors('Il y a $a = 3$ ; l’élève d’abord : $x \\times 2$ et $\\text{reste}$')).toEqual([]);
+    expect(variableErrors('si d divise N, N devient N ÷ d')).toEqual([]);
+    expect(() => said('si d divise $N$')).not.toThrow();
+    expect(() => said('si $d$ divise N, $N \\div d$')).toThrow();
+    expect(typographyErrors('Sans calculer A, écris $A \\div d$.')).toEqual([{ kind: 'variable', at: 'A' }]);
   });
 
   it('finds a number glued to the wrong number of its noun — and accepts the right ones', () => {

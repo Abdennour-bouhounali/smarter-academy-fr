@@ -264,10 +264,9 @@ function solutionStep(step, t) {
 }
 
 /**
- * Les paramètres de l'énoncé sont de la NOTATION posée dans une phrase :
- * chacun est enfermé dans un isolat bidi (LRI … PDI), qui le garde d'un seul
- * tenant (« (−2 ; 3) », « y = x ») quelle que soit la phrase autour.
+ * Les paramètres de l'énoncé sont de la NOTATION posée dans une phrase (« (−2 ; 3) », « y = x ») : une seule direction,
+ * ils s'écrivent tels quels (l'isolat bidi LRI … PDI de la plateforme arabe est parti le 2026-11-23).
  */
 function isolateParams(params) {
-  return Object.fromEntries(Object.entries(params ?? {}).map(([key, value]) => [key, `\u2066${value}\u2069`]));
+  return { ...(params ?? {}) };
 }

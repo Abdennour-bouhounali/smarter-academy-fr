@@ -15,7 +15,7 @@
 import { int, pick, shuffle } from '../../../../../../common/gameworld/kit/random';
 import { buildWave as wave, createLadder, SUMMARY } from '../../../../../../common/gameworld/kit/ladder';
 import { K } from './story';
-import { BOSS_A, frAll, isPrime, powTex, powersOf, productTex, smallestPrime, stopOf, valueOfPowers } from './math';
+import { BOSS_A, frAll, isPrime, powTex, powersOf, productTex, smallestPrime, stopOf, tx, valueOfPowers } from './math';
 
 /** The largest prime p with p × p ⩽ n — the last division to try before saying n is prime. */
 export const lastPrimeOf = (n) => {
@@ -257,13 +257,13 @@ const G = {
         a,
         say: `Le dernier nombre premier à essayer pour savoir si ${a} est premier`,
         why: {
-          right: `$${last} \\times ${last} = ${last * last}$ ne dépasse pas ${a}, et $${next} \\times ${next} = ${next * next}$ le dépasse : on s’arrête à ${last}.`,
+          right: `$${last} \\times ${last} = ${tx(last * last)}$ ne dépasse pas ${a}, et $${next} \\times ${next} = ${tx(next * next)}$ le dépasse : on s’arrête à ${last}.`,
           wrong: linesFor(pool, (n) =>
             !isPrime(n)
               ? `${n} n’est pas un nombre premier : on n’essaie que 2, 3, 5, 7…`
               : n * n > a
-                ? `$${n} \\times ${n} = ${n * n}$ dépasse ${a} : inutile d’essayer ${n}.`
-                : `Après ${n}, il reste ${last} : $${last} \\times ${last} = ${last * last}$ ne dépasse pas ${a}.`,
+                ? `$${n} \\times ${n} = ${tx(n * n)}$ dépasse ${a} : inutile d’essayer ${n}.`
+                : `Après ${n}, il reste ${last} : $${last} \\times ${last} = ${tx(last * last)}$ ne dépasse pas ${a}.`,
           ),
         },
       },
@@ -337,11 +337,11 @@ const G = {
         a,
         say: `Un programme essaie $d = 2, 3, 4\\ldots$ tant que $d \\times d \\leqslant ${a}$ : le dernier $d$ essayé`,
         why: {
-          right: `$${d} \\times ${d} = ${d * d}$ ne dépasse pas ${a}, et $${d + 1} \\times ${d + 1} = ${(d + 1) * (d + 1)}$ le dépasse.`,
+          right: `$${d} \\times ${d} = ${tx(d * d)}$ ne dépasse pas ${a}, et $${d + 1} \\times ${d + 1} = ${tx((d + 1) * (d + 1))}$ le dépasse.`,
           wrong: linesFor(pool, (n) =>
             n * n > a
-              ? `$${n} \\times ${n} = ${n * n}$ dépasse ${a} : le programme s’est arrêté avant.`
-              : `$${n + 1} \\times ${n + 1} = ${(n + 1) * (n + 1)}$ ne dépasse pas ${a} : le programme essaie encore ${n + 1}.`,
+              ? `$${n} \\times ${n} = ${tx(n * n)}$ dépasse ${a} : le programme s’est arrêté avant.`
+              : `$${n + 1} \\times ${n + 1} = ${tx((n + 1) * (n + 1))}$ ne dépasse pas ${a} : le programme essaie encore ${n + 1}.`,
           ),
         },
       },

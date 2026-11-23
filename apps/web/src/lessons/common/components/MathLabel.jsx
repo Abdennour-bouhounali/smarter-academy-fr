@@ -1,5 +1,4 @@
 import { Suspense, lazy } from 'react';
-import { bidi } from '../../../utils/bidi';
 import { hasMath, mathToPlain } from '../../../utils/mathPlain';
 
 // KaTeX n'est chargé QUE si le texte porte une formule : ce composant sert aussi des pages
@@ -12,15 +11,14 @@ const MathText = lazy(() => import('./MathText'));
  * d'apprentissage, prérequis, objectif, consigne d'un module ou d'une ressource.
  *
  * Ces textes viennent du catalogue et des LESSON_CONFIG, écrits comme le contenu des leçons
- * (« la notation $x \longmapsto ax + b$ »). Imprimés par `bidi()` seul, l'élève lisait les dollars
- * et les antislashs. Sans formule, MathLabel rend exactement `bidi(text)` ; avec formule,
- * MathText (KaTeX, île isolée, isolement des égalités en clair).
+ * (« la notation $x \longmapsto ax + b$ »). Imprimés tels quels, l'élève lisait les dollars
+ * et les antislashs. Sans formule, MathLabel rend le texte tel quel ; avec formule, MathText (KaTeX).
  *
  * Pour un contexte qui n'accepte qu'une chaîne (`<option>`, `title`, `aria-label`, un
  * gabarit), utiliser `mathToPlain` (utils/mathPlain.js).
  */
 export default function MathLabel({ children }) {
-  if (!hasMath(children)) return <>{bidi(children)}</>;
+  if (!hasMath(children)) return <>{children}</>;
   return (
     <Suspense fallback={<>{mathToPlain(children)}</>}>
       <MathText>{children}</MathText>

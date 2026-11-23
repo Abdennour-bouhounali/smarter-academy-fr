@@ -18,7 +18,10 @@
 //               else is exempt (the knowledge map included, since 2026-11-19);
 //   wayOut      a way out (the selectors given) is on screen and nothing covers it; `sound: true` asks the sound button too;
 //   foreign     no word of ANOTHER lesson (`FOREIGN`), no « point d’apprentissage » (the word is « savoir-faire »), money
-//               only in euros (no « DA », no dinar, no « USD »), and no Arabic letter: the interface is French.
+//               only in euros (no « DA », no dinar, no « USD »), and no Arabic letter: the interface is French;
+//   chip        the paper mode's floating chip covers no control or counter of the world's top bar (2026-11-23);
+//   thousands   no visible number of four digits or more without its thousands grouped (« 1400 » for « 1 400 ») — a year
+//               after its word and a machine's text (`code`, `pre`, `\texttt`, `[data-machine-text]`) excepted (2026-11-23).
 //
 // createWalk(name, { foreign, foreignNumbers, fontFloor }) — per walk: more words and numbers of other lessons than the
 // pilot's (a later lesson adds the lessons before it). The 12 px floor is ON by default (GAME_WORLD.md « 12 px floor »);
@@ -269,6 +272,8 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
         const tiny = [];
         const words = [];
         const cut = [];
+        const ungrouped = [];
+        let prevText = '';
         let text = '';
         const zoomOf = (el) => {
           let z = 1;
@@ -297,6 +302,18 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
           if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) continue;
           text += ` ${v}`;
           if (!p.closest('.katex') && /\$|\\[a-zA-Z]{2,}/.test(v)) raw.push(v.trim().slice(0, 70));
+          // a whole number of four digits or more is grouped by thousands (« 1 400 », KaTeX « 1\,400 »): a run of four
+          // digits is a number written without its space — except a year after its word (« brevet 2024 », « en 2026 »)
+          // and what is typed into a machine (`code`, `pre`, KaTeX's `\texttt`: a spreadsheet's cell, a program's line);
+          // a decimal's digits after a comma drawn in its own node (KaTeX's `{,}`) are not a thousand
+          if (!p.closest('code, pre, .texttt, [data-machine-text]')) {
+            for (const m of v.matchAll(/(?<![\d.,])\d{4,}(?!\d)/g)) {
+              const before = (v.slice(0, m.index) || prevText).trimEnd();
+              const year = m[0].length === 4 && +m[0] >= 1900 && +m[0] <= 2099 && /(brevet|en|année|session|depuis|janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)$/i.test(before);
+              if (!year && !(m.index === 0 && /[.,]$/.test(prevText))) ungrouped.push(`« ${v.trim().slice(0, 40)} »`);
+            }
+          }
+          prevText = v;
           {
             // a formula is read at its own size (its exponents and indices are smaller by KaTeX's design)
             const el = p.closest('.katex') ?? p;
@@ -345,7 +362,7 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
         const money = /(?<![A-Za-z])DA(?![A-Za-z])|\bUSD\b|\u062F\.?\u062C/.test(text) || /\bdinars?\b/i.test(text);
         // the interface is French: no Arabic letter anywhere on screen (the code points, never the letters themselves)
         const arabic = (text.match(/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFC]+/) ?? [null])[0];
-        return { raw: [...new Set(raw)], tiny: [...new Set(tiny)], words, learningPoint, money, arabic, mirrored: [...new Set(mirrored)], cut: [...new Set(cut)], text };
+        return { raw: [...new Set(raw)], tiny: [...new Set(tiny)], words, learningPoint, money, arabic, mirrored: [...new Set(mirrored)], cut: [...new Set(cut)], ungrouped: [...new Set(ungrouped)], bidi: /[\u200e\u200f\u202a-\u202e\u2066-\u2069]/.test(text), text };
       },
       [[...baseWords, ...foreign], [...baseNumbers, ...foreignNumbers], numbers, FLOOR_PX],
     );
@@ -387,6 +404,9 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
     check(words.length === 0, `${where}: nothing of another lesson on screen${words.length ? ' — ' + words.join(', ') : ''}${allowed.size && t.words.length > words.length ? ` (the bank's own text here: ${t.words.filter((x) => allowed.has(x)).join(', ')})` : ''}`);
     check(!t.learningPoint && !t.money, `${where}: « savoir-faire », never « point d’apprentissage »; money in euros only`);
     check(!t.arabic, `${where}: the screen is French, no Arabic letter${t.arabic ? ` — « ${t.arabic.slice(0, 30)} »` : ''}`);
+    // ONE direction: no invisible bidi control in the text (utils/bidi.js, an Algerian leftover, left on 2026-11-23)
+    check(!t.bidi, `${where}: no bidi control (U+2066–U+2069, LRM, RLM) in the text — one direction`);
+    check(t.ungrouped.length === 0, `${where}: every number of four digits or more is grouped by thousands (« 1 400 »)${t.ungrouped.length ? ' — ' + t.ungrouped.slice(0, 4).join(' | ') : ''}`);
     // the words a WORLD forbids on every one of its screens (`textRules`: [{ re, what }], given by a world's walk — e.g. the
     // nouns of another world; none for the islands' walks)
     // (a rule may read the page itself: `on(page)` → what breaks it, or null — e.g. a text node « p/q »)
@@ -394,6 +414,19 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
       const m = rule.on ? await rule.on(page) : t.text.match(rule.re);
       check(!m, `${where}: ${rule.what}${m ? ` — « ${m[0].trim()} »` : ''}`);
     }
+    // a sign floating over the world (the paper mode's chip) never covers a control or a counter of the top bar
+    const covered = await page.evaluate(() => {
+      const chip = document.querySelector('[data-di-paper].di-pchip--float');
+      if (!chip) return [];
+      const c = chip.getBoundingClientRect();
+      return [...document.querySelectorAll('.di-top > .di-top__side > *')]
+        .filter((el) => {
+          const r = el.getBoundingClientRect();
+          return r.width > 1 && c.left < r.right && r.left < c.right && c.top < r.bottom && r.top < c.bottom;
+        })
+        .map((el) => (el.textContent.trim() || el.getAttribute('aria-label') || el.className).slice(0, 20));
+    });
+    check(covered.length === 0, `${where}: the paper mode's chip covers nothing of the top bar${covered.length ? ' — ' + covered.join(' | ') : ''}`);
     const tiny = t.tiny;
     if (PHONE || fontFloor !== false) check(tiny.length === 0, `${where}: ${PHONE ? 'on the phone ' : ''}no visible text under 12 px${tiny.length ? ' — ' + tiny.slice(0, 8).join(' | ') + (tiny.length > 8 ? ` (+${tiny.length - 8})` : '') : ''}`);
     if (exit) {

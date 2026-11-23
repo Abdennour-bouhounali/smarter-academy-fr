@@ -20,4 +20,32 @@ describe('ProblemTable — tableau de données ou grille de tableur', () => {
     expect(html.indexOf('>A<')).toBeLessThan(html.indexOf('>B<'));
     expect(html.indexOf('Élève')).toBeLessThan(html.indexOf('Taille'));
   });
+  it('une ligne de programme part de la gauche et garde son indentation ; un nombre reste centré', () => {
+    const NB = '\u00a0';
+    const html = renderToString(
+      <ProblemTable
+        head={['Ligne', 'Instruction']}
+        rows={[
+          ['1', 'répéter jusqu’à ce que d > N'],
+          ['2', `${NB.repeat(4)}si N modulo d = 0 alors`],
+          ['3', `${NB.repeat(8)}ajouter d à la liste`],
+        ]}
+      />,
+    );
+    const cells = [...html.matchAll(/<td([^>]*)>([\s\S]*?)<\/td>/g)];
+    expect(cells).toHaveLength(3);
+    for (const [, attrs] of cells) {
+      expect(attrs).toContain('text-left');
+      expect(attrs).toContain('whitespace-pre-wrap');
+    }
+    // the indentation reaches the page: four, then eight no-break spaces before the words
+    expect(cells[1][2].replace(/<[^>]+>/g, '')).toMatch(new RegExp(`^(${NB}|&nbsp;|&#160;){4}si N`));
+    expect(cells[2][2].replace(/<[^>]+>/g, '')).toMatch(new RegExp(`^(${NB}|&nbsp;|&#160;){8}ajouter`));
+    const nums = renderToString(<ProblemTable head={['Note', '8']} rows={[['Effectif', '3']]} />);
+    expect(nums).not.toContain('text-left');
+    // a listing (rows numbered 1, 2, 3…): its lines are what a machine reads — marked, no thousands space asked
+    for (const [, attrs] of cells) expect(attrs).toContain('data-machine-text');
+    const names = renderToString(<ProblemTable head={['Élève', 'Ville']} rows={[['Léa', 'Lyon'], ['Hugo', 'Metz']]} />);
+    expect(names).not.toContain('data-machine-text');
+  });
 });

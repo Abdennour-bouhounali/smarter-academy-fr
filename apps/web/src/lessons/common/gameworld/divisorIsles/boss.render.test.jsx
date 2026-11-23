@@ -64,6 +64,29 @@ describe('the store of the last bridge', () => {
       expect(draw(LABELLED, o, STORE)).not.toMatch(/(?<!\d)504(?!\d)/);
   });
 
+  it('after a plank that left cells, the store that reopens writes what the world said — its bubble is under the veil', () => {
+    const said =
+      'Il reste 24 cases : les planches de 48 ne remplissent pas le pont. $48 = 2^{4} \\times 3$ : compare ses exposants.';
+    const game = {
+      T: { ...STORE, say: { ...T.say, bossFail: () => said } },
+      flags: {},
+      say: () => {},
+      set(x) {
+        this.last = x;
+      },
+      save: () => {},
+      bossOverlay: P.bossOverlay,
+    };
+    P.afterFail.call(game, { boss: LABELLED.boss }, 48, 10, 24);
+    expect(game.last.overlay).toMatchObject({ type: 'boss', view: 'choose', tried: { 48: 24 }, said });
+    const html = draw(LABELLED, game.last.overlay, STORE);
+    expect(html).toContain('data-di-boss-said');
+    expect(html).toContain('Il reste 24 cases');
+    expect(html).toContain('katex'); // its formula drawn, not raw
+    // before any try, nothing is written there
+    expect(draw(LABELLED, { type: 'boss', view: 'choose', tried: {} }, STORE)).not.toContain('data-di-boss-said');
+  });
+
   it('the count is judged without the gap: 14 builds, 15 and 13 are refused, 48 is built whatever is typed', () => {
     const calls = [];
     const game = {

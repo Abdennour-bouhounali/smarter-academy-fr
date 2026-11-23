@@ -1,5 +1,4 @@
 import katex from 'katex';
-import { isolateMathRuns } from '../../../utils/bidi';
 import { factorizationToPlain } from '@smarter-academy/core/practice/factorization.js';
 
 /**
@@ -168,7 +167,7 @@ export function buildDefaultContent({
   exercise, question, answer = null, evaluation = null, feedbackMessage = '', verdict = '', labels,
 }) {
   const parts = [];
-  const title = exercise?.metadata?.title ? ` — ${inlineMarkupToHtml(isolateMathRuns(exercise.metadata.title))}` : '';
+  const title = exercise?.metadata?.title ? ` — ${inlineMarkupToHtml(exercise.metadata.title)}` : '';
 
   const exerciseBody = [
     `<p data-nb="label">${escapeHtml(labels.exercise)}${title}</p>`,

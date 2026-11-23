@@ -9,12 +9,12 @@ import {
   MIN_CONTENT_WIDTH,
 } from './WorkspaceLayoutContext';
 
-// The column mode of « Ma carte »: a FIXED width, the best for the screen, beside the 80 px rail (which does not fold).
+// The column mode of « Ma carte »: a FIXED width, the best for the screen, beside the 96 px rail (which does not fold).
 describe('column width (fixed, best for the screen)', () => {
   it('matches the documented table', () => {
-    expect(RAIL_WIDTH).toBe(80);
-    expect(columnWidthFor(1024)).toBe(378);
-    expect(columnWidthFor(1280)).toBe(480);
+    expect(RAIL_WIDTH).toBe(96);
+    expect(columnWidthFor(1024)).toBe(368);
+    expect(columnWidthFor(1280)).toBe(474);
     expect(columnWidthFor(1440)).toBe(480);
     expect(columnWidthFor(1920)).toBe(560);
   });

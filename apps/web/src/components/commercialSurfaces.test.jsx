@@ -58,7 +58,7 @@ function render(ui, { paymentsOpen, user = STUDENT, access = null, url = '/' }) 
         </PaymentsProvider>
       </AuthContext.Provider>
     </MemoryRouter>,
-  ).replace(/[⁦-⁩]/g, '');
+  );
 }
 
 function PremiumProbe() {

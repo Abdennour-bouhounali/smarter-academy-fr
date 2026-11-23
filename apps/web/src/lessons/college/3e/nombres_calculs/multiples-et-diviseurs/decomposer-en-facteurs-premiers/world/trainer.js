@@ -125,7 +125,7 @@ const same = (xs, ys) =>
 
 /** The program of key 4, as one sentence of French blocks. */
 const PROGRAM =
-  'Le programme : d prend la valeur 2 ; tant que $d \\times d \\leqslant N$, si d divise N, il note d et N prend la valeur $N \\div d$, sinon d augmente de 1 ; à la fin, si $N > 1$, il note N.';
+  'Le programme : $d$ prend la valeur 2 ; tant que $d \\times d \\leqslant N$, si $d$ divise $N$, il note $d$ et $N$ prend la valeur $N \\div d$, sinon $d$ augmente de 1 ; à la fin, si $N > 1$, il note $N$.';
 /** What the program does on N: the first number noted, the value of N right after, the value of d when the loop stops. */
 export function traceOf(N) {
   let n = N;
@@ -215,7 +215,7 @@ const TF = {
         return [
           `Pour savoir si ${n} est premier, il suffit d’essayer les divisions par ${listFr(primes)}`,
           true,
-          `$${primes.at(-1)} \\times ${primes.at(-1)} = ${primes.at(-1) ** 2}$ ne dépasse pas ${n} ; le nombre premier suivant a un carré qui le dépasse.`,
+          `$${primes.at(-1)} \\times ${primes.at(-1)} = ${tx(primes.at(-1) ** 2)}$ ne dépasse pas ${n} ; le nombre premier suivant a un carré qui le dépasse.`,
           lies(n, 2 * n),
           K.stop,
         ];
@@ -224,7 +224,7 @@ const TF = {
         return [
           `${n} est un nombre premier`,
           false,
-          `$${n} = ${f[0]} \\times ${f[1]}$ : ${f[0]} divise ${n}, et $${f[0]} \\times ${f[0]} = ${f[0] ** 2}$ ne dépasse pas ${n}.`,
+          `$${n} = ${f[0]} \\times ${f[1]}$ : ${f[0]} divise ${n}, et $${f[0]} \\times ${f[0]} = ${tx(f[0] ** 2)}$ ne dépasse pas ${n}.`,
           lies(n, n),
           K.stop,
         ];
@@ -338,7 +338,7 @@ const Q = {
         qs,
         primes: qs.map((f) => f.p),
         prompt: fr(
-          `On donne $A = ${powTex(fs)}$ et $d = ${powTex(ds)}$. Sans calculer A, écris le quotient $A \\div d$ en produit de facteurs premiers, avec des puissances.`,
+          `On donne $A = ${powTex(fs)}$ et $d = ${powTex(ds)}$. Sans calculer $A$, écris le quotient $A \\div d$ en produit de facteurs premiers, avec des puissances.`,
         ),
         form: {
           tip: 'tipWrite',
@@ -408,13 +408,13 @@ const Q = {
       key: K.tool,
       a: n,
       trace: tr,
-      prompt: fr(`${PROGRAM} On le lance avec $N = ${n}$.`),
+      prompt: fr(`${PROGRAM} On le lance avec $N = ${tx(n)}$.`),
       form: {
         tip: 'tipWrite',
         lines: [
           { tokens: ['Le premier nombre noté :', num('first', 'le premier nombre noté')] },
-          { tokens: ['La valeur de N juste après :', num('after', 'la valeur de N')] },
-          { tokens: ['La valeur de d quand la boucle s’arrête :', num('stop', 'la valeur de d')] },
+          { tokens: ['La valeur de $N$ juste après :', num('after', 'la valeur de N')] },
+          { tokens: ['La valeur de $d$ quand la boucle s’arrête :', num('stop', 'la valeur de d')] },
         ].map((l) => ({ tokens: l.tokens.map((x) => (typeof x === 'string' ? fr(x) : x)) })),
       },
     };
@@ -554,7 +554,7 @@ export function check(q, v) {
       const shown = q.kind === 'quotient' ? '$A \\div d$' : nb(n);
       const fix = fr(
         q.kind === 'quotient'
-          ? `On retire de A les facteurs de d : $A \\div d = ${powTex(right)} = ${tx(q.a)}$.`
+          ? `On retire de $A$ les facteurs de $d$ : $A \\div d = ${powTex(right)} = ${tx(q.a)}$.`
           : `$${tx(n)} = ${productTex(right.flatMap((f) => Array(f.e).fill(f.p)))}$, donc $${tx(n)} = ${powTex(right)}$.`,
       );
       const es = right.map((f) => box(v, `e${f.p}`));
@@ -578,8 +578,8 @@ export function check(q, v) {
       const p = prime ? null : smallestPrime(n);
       const fix = fr(
         prime
-          ? `$${s} \\times ${s} = ${s * s}$ ne dépasse pas ${n}, $${s + 1} \\times ${s + 1} = ${(s + 1) ** 2}$ le dépasse : on essaie ${listFr(triedPrimes(n))}, aucun ne divise ${n}, donc ${n} est premier.`
-          : `$${s} \\times ${s} = ${s * s}$ ne dépasse pas ${n}, $${s + 1} \\times ${s + 1} = ${(s + 1) ** 2}$ le dépasse, et $${n} = ${p} \\times ${n / p}$ : ${n} n’est pas premier.`,
+          ? `$${s} \\times ${s} = ${tx(s * s)}$ ne dépasse pas ${nb(n)}, $${s + 1} \\times ${s + 1} = ${tx((s + 1) ** 2)}$ le dépasse : on essaie ${listFr(triedPrimes(n))}, aucun ne divise ${nb(n)}, donc ${nb(n)} est premier.`
+          : `$${s} \\times ${s} = ${tx(s * s)}$ ne dépasse pas ${nb(n)}, $${s + 1} \\times ${s + 1} = ${tx((s + 1) ** 2)}$ le dépasse, et $${tx(n)} = ${p} \\times ${tx(n / p)}$ : ${nb(n)} n’est pas premier.`,
       );
       const d = box(v, 'd');
       if (!Number.isInteger(d) || d < 0 || (v?.says !== 'oui' && v?.says !== 'non'))
@@ -589,8 +589,8 @@ export function check(q, v) {
           ok: false,
           hint: fr(
             d * d > n
-              ? `$${d} \\times ${d} = ${d * d}$ dépasse ${n} : on peut s’arrêter avant.`
-              : `$${d + 1} \\times ${d + 1} = ${(d + 1) ** 2}$ ne dépasse pas encore ${n} : il faut aller plus loin.`,
+              ? `$${d} \\times ${d} = ${tx(d * d)}$ dépasse ${nb(n)} : on peut s’arrêter avant.`
+              : `$${d + 1} \\times ${d + 1} = ${tx((d + 1) ** 2)}$ ne dépasse pas encore ${nb(n)} : il faut aller plus loin.`,
           ),
           fix,
         };
@@ -605,7 +605,7 @@ export function check(q, v) {
     case 'trace': {
       const tr = q.trace;
       const fix = fr(
-        `d = 2, 3… : le premier diviseur trouvé est ${tr.first}, alors $N = ${n} \\div ${tr.first} = ${tr.after}$. Le programme note ${listFr(tr.noted)}, et la boucle s’arrête quand $${tr.stop} \\times ${tr.stop} = ${tr.stop ** 2}$ dépasse N.`,
+        `Avec $d = 2, 3\\ldots$, le premier diviseur trouvé est ${tr.first}, alors $N = ${tx(n)} \\div ${tr.first} = ${tx(tr.after)}$. Le programme note ${listFr(tr.noted.map(nb))}, et la boucle s’arrête quand $${tr.stop} \\times ${tr.stop} = ${tx(tr.stop ** 2)}$ dépasse $N$.`,
       );
       const xs = ['first', 'after', 'stop'].map((k) => box(v, k));
       if (xs.some((x) => !Number.isInteger(x) || x < 0))
@@ -613,15 +613,19 @@ export function check(q, v) {
       if (xs[0] !== tr.first)
         return {
           ok: false,
-          hint: fr(`Le programme commence à d = 2 et augmente d de 1 tant que d ne divise pas ${n}.`),
+          hint: fr(`Le programme commence à $d = 2$ et augmente $d$ de 1 tant que $d$ ne divise pas ${nb(n)}.`),
           fix,
         };
       if (xs[1] !== tr.after)
-        return { ok: false, hint: fr(`Après la première division, N prend la valeur $${n} \\div ${tr.first}$.`), fix };
+        return {
+          ok: false,
+          hint: fr(`Après la première division, $N$ prend la valeur $${tx(n)} \\div ${tr.first}$.`),
+          fix,
+        };
       if (xs[2] !== tr.stop)
         return {
           ok: false,
-          hint: fr('La boucle continue tant que d × d ne dépasse pas la valeur de N du moment.'),
+          hint: fr('La boucle continue tant que $d \\times d$ ne dépasse pas la valeur de $N$ du moment.'),
           fix,
         };
       return { ok: true, fix };
@@ -650,7 +654,7 @@ export function answerLabel(q, v) {
     case 'prime':
       return fr(`jusqu’à ${x('d')} — ${q.a} est premier : ${x('says')}`);
     case 'trace':
-      return fr(`noté d’abord : ${x('first')} — N ensuite : ${x('after')} — d à la fin : ${x('stop')}`);
+      return fr(`noté d’abord : ${x('first')} — $N$ ensuite : ${x('after')} — $d$ à la fin : ${x('stop')}`);
     default:
       return '';
   }

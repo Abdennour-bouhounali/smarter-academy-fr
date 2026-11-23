@@ -504,9 +504,9 @@ const powersForge = {
     tryKey: (c) =>
       `$${tx(c.n)} = ${productTex(primeFactors(c.n))}$. Écris-le en peu de signes, puis lis ton écriture : ${c.d} divise-t-il ${nb(c.n)} ?`,
     use: {
-      e2: 'Compte encore les 2 de l’échelle de 1 400 : ce n’est pas ce nombre-là en haut du 2.',
-      e5: 'Compte encore les 5 de l’échelle de 1 400 : ce n’est pas ce nombre-là en haut du 5.',
-      reading: 'Écris aussi le nombre essayé avec des exposants, et compare-le exposant par exposant à 1 400.',
+      e2: `Compte encore les 2 de l’échelle de ${nb(P_USE)} : ce n’est pas ce nombre-là en haut du 2.`,
+      e5: `Compte encore les 5 de l’échelle de ${nb(P_USE)} : ce n’est pas ce nombre-là en haut du 5.`,
+      reading: `Écris aussi le nombre essayé avec des exposants, et compare-le exposant par exposant à ${nb(P_USE)}.`,
     },
     useOk: 'Tu écris un nombre en peu de signes, et tu lis ce qu’il contient.',
   }),
@@ -789,7 +789,10 @@ const toolForge = {
   use: {
     make: () => ({ n: T_USE, planks: primeFactors(T_USE), held: true }),
     lines: () => [
-      line([`Quand N devient ${nb(T_USE / T_FIRST)}, le programme essaie d =`, slot('d', 'le d essayé ensuite', 2)]),
+      line([
+        `Quand $N$ devient ${nb(T_USE / T_FIRST)}, le programme essaie $d =$`,
+        slot('d', 'le d essayé ensuite', 2),
+      ]),
       line([
         nb(T_USE),
         '=',
@@ -846,9 +849,10 @@ const toolForge = {
     compare: (cases) => `Compare ces deux réponses pour ${nb(cases[0].n)} : laquelle n’a que des nombres premiers ?`,
     experiment: 'Regarde ces deux réponses : laquelle n’a que des nombres premiers ?',
     tryKey: () =>
-      `Un programme essaie $d = 2, 3, 4\\ldots$ sur $N = ${tx(T_USE)}$ : si d divise N, N devient $N \\div d$, et d ne change pas. Puis décompose ${nb(T_USE)}.`,
+      `Un programme essaie $d = 2, 3, 4\\ldots$ sur $N = ${tx(T_USE)}$ : si $d$ divise $N$, $N$ devient $N \\div d$, et $d$ ne change pas. Puis décompose ${nb(T_USE)}.`,
     use: {
-      trace: 'Après une division, le programme garde le même d : il ne passe au suivant que si d ne divise pas N.',
+      trace:
+        'Après une division, le programme garde le même diviseur : il ne passe au suivant que si ce diviseur ne divise plus le nombre.',
       product: `Le produit de tes quatre nombres ne fait pas ${nb(T_USE)} : refais tes divisions.`,
       prime: 'Un de tes nombres n’est pas premier : sa feuille montrerait encore un reste 0.',
     },

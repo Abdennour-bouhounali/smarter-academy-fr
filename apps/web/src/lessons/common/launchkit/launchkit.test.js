@@ -404,6 +404,21 @@ describe('L’échauffement — « Nombres premiers et produits » (4e.m1.r06), 
     expect(pickForm(ITEM, 2)).toBe('sort');
   });
 
+  it('every EASY form the family declares is asked by a launch: a launch that misses everything meets write, primes and power', () => {
+    // the order LaunchKit.jsx asks them: the station's first easy question, its second after a miss, the workshop's two
+    // (LIKE the missed one: nextForm repeats it), then the capsule's two (level 1, `pickForm`)
+    const used = [];
+    const ask = (form) => used.push(`1:${form}`) && form;
+    ask(pickForm(ITEM, 1, used)); // station 1
+    const second = ask(pickForm(ITEM, 1, used)); // station 2, after a miss
+    ask(second); // workshop, LIKE the miss
+    ask(second);
+    const capsule = [ask(pickForm(ITEM, 1, used)), ask(pickForm(ITEM, 1, used))];
+    expect(used).toEqual(['1:write', '1:primes', '1:primes', '1:primes', '1:power', '1:write']);
+    expect(new Set(used.map((u) => u.slice(2)))).toEqual(new Set(F.forms[1]));
+    expect(capsule[0]).not.toBe(capsule[1]);
+  });
+
   it('the worked example is true and answers the mistake shown', () => {
     for (let seed = 1; seed <= 80; seed += 1) {
       for (const level of [1, 2]) {

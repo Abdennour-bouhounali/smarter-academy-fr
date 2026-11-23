@@ -7,7 +7,7 @@ import { initMeasure, measureReducer } from './measure';
 // the screens expose their state to the walks on `window` (dev only): give the server render one
 globalThis.window = globalThis.window ?? {};
 
-const frac = (f) => (f ? f.join('_') : '-'); // a « / » in a sentence is isolated by MathText's bidi pass
+const frac = (f) => (f ? f.join('_') : '-'); // a fraction written « a_b » in the fixture's words, never « a/b »
 /** A toy lesson: every sentence the screen asks for (GAME_WORLD.md « spec shape of `measure` »), as plain tags. */
 const SPEC = {
   kind: 'measure',

@@ -1059,6 +1059,7 @@ export async function walkLaunchOne({
   for (let i = 0; i < 2; i += 1) {
     q = (await cur()).q;
     expect(q.item === I && q.level === 1, `capsule question ${i + 1}: an easy one of the tool (${q.gesture})`);
+    forms.add(`1:${q.form}`);
     await fill(false);
     if (i === 0) await shot(`capsule-${q.gesture}`);
     await hand();
@@ -1118,6 +1119,7 @@ export async function walkLaunchOne({
   for (let i = 0; i < 2; i += 1) {
     q = (await cur()).q;
     expect(q.item === I && q.level === 1, `capsule question ${i + 1}: an easy one of the tool (${q.gesture})`);
+    forms.add(`1:${q.form}`);
     await fill(true);
     await shot(`capsule-right-${i + 1}-${q.gesture}`);
     expect((await H.handAndHear()).kind === 'good', `capsule question ${i + 1} answered right: ✓`);
@@ -1144,19 +1146,15 @@ export async function walkLaunchOne({
   await shot('capsule-repaired');
   await H.takeOff('take-off after the capsule: the world of the lesson plays');
 
-  // the tool's own forms (families.js › forms): the easy forms a station asks — its first two, the first question and
-  // the second gesture (lesson 7: write, common) — and the harder sort. A family with MORE easy forms (4e.m1.r06: write,
-  // primes, power) has forms a one-tool launch never asks: said with a NOTE, they are the family's to answer for
-  // (first French lesson, 2026-11-23 — reported, not hidden)
+  // the tool's own forms (families.js › forms): EVERY easy form the family declares — the station's two, and the others
+  // through the capsule (`pickForm` takes the form used least: 4e.m1.r06's « power » is the capsule's first question) —
+  // and the harder sort. STRICT again since 2026-11-23 (the capsule's forms were not counted: the NOTE said « never asked »)
   const easy = FAMILIES[I]?.forms?.[1] ?? ['write', 'place'];
-  const want = [...easy.slice(0, 2).map((f) => `1:${f}`), '2:sort'];
+  const want = [...easy.map((f) => `1:${f}`), '2:sort'];
   expect(
     want.every((f) => forms.has(f)),
-    `the launch asked the tool's gestures: ${want.join(', ')} (${[...forms].join(' ')})`,
+    `the launch asked every easy form of the tool and its harder sort: ${want.join(', ')} (${[...forms].join(' ')})`,
   );
-  const never = easy.slice(2).filter((f) => !forms.has(`1:${f}`));
-  if (never.length)
-    console.log(`NOTE  the family ${I} has easy forms no question of this launch asked: ${never.join(', ')} (a station asks two)`);
   await H.done();
 }
 

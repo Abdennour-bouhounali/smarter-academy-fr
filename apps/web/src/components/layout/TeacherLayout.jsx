@@ -24,7 +24,7 @@ import PageTourProvider from '../../features/tours/PageTourProvider';
  * /enseignant/bienvenue, puis revient à la page qu'il visait.
  *
  * SAME WORKSPACE as the student's: <main> carries `.sa-workspace-main`, `data-rail` and the variables
- * `--sa-sidebar-w` (the fixed 80 px rail) / `--sa-gutter-w`, so a teacher reading a lesson gets the same « Ma carte »
+ * `--sa-sidebar-w` (the fixed rail, `RAIL_WIDTH`) / `--sa-gutter-w`, so a teacher reading a lesson gets the same « Ma carte »
  * column — the lesson makes room instead of being covered.
  */
 export default function TeacherLayout() {

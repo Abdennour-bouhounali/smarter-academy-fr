@@ -682,7 +682,8 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
 }
 
 /**
- * The lines of the last step: tokens read left to right — a printed string, a box `slot(name, label, w)` (its label under
+ * The lines of the last step: tokens read left to right — a printed string (its `$…$` drawn by MathText: a variable is
+ * written one way, italic, as in the question), a box `slot(name, label, w)` (its label under
  * it when the step is one line), or a FRACTION `{ frac: { n, d } }` drawn in its own shape: numerator, a real bar,
  * denominator, each printed or typed (forgeBlocks.js › fractionBox / givenFraction; the look `di-frac`,
  * styles/trainer.css), or a POWER `{ pow: { base, exp } }`: the base, then the exponent raised after it (a `sup`), each
@@ -709,7 +710,8 @@ export function UseLines({ lines, vals, onType, column = false }) {
         {label && <small>{t.label}</small>}
       </label>
     ) : (
-      <b key={key}>{t}</b>
+      // a printed word or number; a variable of the sentence is written `$N$` (one way, as in the question above it)
+      <b key={key}>{String(t).includes('$') ? <MathText>{t}</MathText> : t}</b>
     );
   return (
     <div className="rf-uselines" data-rf-lines={lines.length} {...(column ? { 'data-rf-column': '' } : {})}>

@@ -17,12 +17,11 @@ describe('ChoiceInput — les choix sont étiquetés A, B, C, D', () => {
   const html = renderToStaticMarkup(<ChoiceInput question={question} value={null} onChange={() => {}} />);
   const buttons = [...html.matchAll(/<button[^>]*>([\s\S]*?)<\/button>/g)].map((m) => m[1]);
   const letters = buttons.map((b) => /data-choice-letter="[^"]*">([^<]*)</.exec(b)?.[1]);
-  const contents = buttons.map((b) => b.replace(/<span[^>]*data-choice-letter[^>]*>[^<]*<\/span>/, '').replace(/<[^>]+>/g, '').replace(/[\u2066-\u2069]/g, '').trim());
+  const contents = buttons.map((b) => b.replace(/<span[^>]*data-choice-letter[^>]*>[^<]*<\/span>/, '').replace(/<[^>]+>/g, '').trim());
 
   it('chaque bouton porte sa lettre latine, dans l’ordre, dans sa propre case', () => {
     expect(letters).toEqual(['A', 'B', 'C', 'D']);
   });
-  // RichText pose des marques d'isolement invisibles (U+2066–U+2069) autour des suites « nombre + mot » : ignorées ici.
   it('puis le contenu du choix, intact', () => {
     expect(contents).toEqual(['6 est un multiple de 120', '6 divise 120', '120 divise 6', 'Aucune de ces réponses']);
   });

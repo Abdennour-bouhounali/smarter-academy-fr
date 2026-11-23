@@ -1,6 +1,5 @@
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
-import { isolateMathRuns } from '../../../utils/bidi';
 
 /**
  * MathText — LaTeX renderer for Smarter Academy.
@@ -106,9 +105,8 @@ export default function MathText({ children, className }) {
         </span>
       );
     }
-    // Le texte BRUT entre les îles : « √a », « x² = a » écrits sans `$` dans une
-    // phrase restent d'un seul tenant — isolés ici (utils/bidi.js).
-    return <span key={index}>{isolateMathRuns(seg.text)}</span>;
+    // the PLAIN text between the islands, as it is written: one direction, no invisible mark around an equality
+    return <span key={index}>{seg.text}</span>;
   });
 
   if (className) {

@@ -48,6 +48,22 @@ raw LaTeX, formulas left to right on one line, no word or number of another less
   tool with no home lesson yet expects « Leçon bientôt disponible »; its `home` is then the net item's own text.
 - **Console errors** fail a walk (`walk.mjs › finish`, `board.mjs`): a React warning is a defect.
 
+## What the first French lesson's fix batch added (2026-11-23, after the screenshot review)
+
+- `walk.mjs › shot`, at EVERY screenshot: no visible number of four digits or more without its thousands grouped (a year
+  after its word and a machine's text — `code`, `pre`, KaTeX's `\texttt`, `[data-machine-text]` — excepted); no bidi
+  control in the text (the walk no longer strips U+2066–U+2069: `utils/bidi.js` is gone); the paper mode's floating chip
+  covers nothing of the world's top bar.
+- `story.mjs › labelStore`: the last bridge's 3D sign is shot from the bridge's HEAD, facing the gap, the instruction
+  folded — projected through the world's camera, it must stand on screen, uncovered, its letters 12 px or more; the
+  reopened store WRITES what the world said after a plank that left cells (`[data-di-boss-said]`).
+- `checks.mjs › mapLaidOut`: two link labels of the knowledge map never touch (4 px).
+- `board.mjs`: the teacher's shell at the memo (each door's name inside its door, two lines at most; the lesson's title
+  on one line); under a finished ladder of the rack, the planks still laid in shorter planks (`data-cs-ladder-breaks`),
+  computed here.
+- `launchKitTwoTools.mjs`: the capsule's questions count in the forms met; EVERY easy form of the tool is expected
+  (strict again).
+
 ## Another world: « Le palais des dalles » (`root-courts`, 2026-11-21 — `jidhr-tarbii`)
 
 A lesson whose pack names a world of `worlds/index.mjs` is walked by that world's files; the islands' path

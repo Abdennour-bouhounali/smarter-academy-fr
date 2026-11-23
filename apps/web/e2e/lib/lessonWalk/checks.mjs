@@ -374,6 +374,15 @@ export async function mapLaidOut(w, page, where) {
       for (let j = i + 1; j < nodes.length; j += 1)
         if (meet(nodes[i].r, nodes[j].r)) out.push(`cards ${nodes[i].id} / ${nodes[j].id} overlap`);
     for (const l of labels) for (const n of nodes) if (meet(l.r, n.r)) out.push(`label « ${l.t} » under card ${n.id}`);
+    // a label pill always says something (an empty one is a stray dash on its line)
+    for (const l of labels) if (!l.t) out.push('an empty label pill on a link');
+    // two link labels never touch: 4 px of the map between them at least (2026-11-23: « Les grands nombres » against
+    // « Erreur fréquente », each at the middle of its link)
+    const grow = (r, d) => ({ left: r.left - d, right: r.right + d, top: r.top - d, bottom: r.bottom + d });
+    for (let i = 0; i < labels.length; i += 1)
+      for (let j = i + 1; j < labels.length; j += 1)
+        if (meet(grow(labels[i].r, 3), grow(labels[j].r, 3)))
+          out.push(`labels « ${labels[i].t} » and « ${labels[j].t} » touch`);
     const sub = document.querySelector('.di-page__head p');
     if (sub && sub.getClientRects().length) {
       const r = sub.getBoundingClientRect();
@@ -390,7 +399,7 @@ export async function mapLaidOut(w, page, where) {
   });
   w.check(
     bad.length === 0,
-    `${where}: the map's cards inside it and apart, no label under a card, the subtitle whole${bad.length ? ' — ' + bad.join(' | ') : ''}`,
+    `${where}: the map's cards inside it and apart, no label under a card nor against another, the subtitle whole${bad.length ? ' — ' + bad.join(' | ') : ''}`,
   );
 }
 

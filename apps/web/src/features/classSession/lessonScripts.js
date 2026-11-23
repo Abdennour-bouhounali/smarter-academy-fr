@@ -343,6 +343,27 @@ export const productTex = (xs) => xs.map(texFr).join(' \\times ');
 export const rungTex = (r) => `${texFr(r.before)} = ${r.plank} \\times ${texFr(r.after)}`;
 /** The division of a plank that fell on a gap: « 21 = 2 \\times 10 + 1 ». */
 export const fellTex = (gap, f) => `${texFr(gap)} = ${texFr(f.plank)} \\times ${texFr(f.q)} + ${texFr(f.r)}`;
+/**
+ * What a FINISHED ladder still hides: each plank of its row that is itself laid in shorter planks, once, the shortest
+ * first — « 6 = 2 × 3 », « 4 = 2 × 2 » for the ladder 7, 6, 4 of 168; [] when no plank of the row breaks. The board
+ * writes this under a finished ladder instead of its last rung (« 4 = 4 × 1 » told the teacher nothing, 2026-11-23).
+ * → [{ p, tex }]
+ */
+export function ladderBreaks(row) {
+  const out = [];
+  for (const p of [...new Set(row)].sort((x, y) => x - y)) {
+    const parts = [];
+    let m = p;
+    for (let d = 2; d * d <= m; d += 1)
+      while (m % d === 0) {
+        parts.push(d);
+        m /= d;
+      }
+    if (m > 1 && m !== p) parts.push(m);
+    if (parts.length > 1) out.push({ p, tex: `${texFr(p)} = ${parts.map((x) => texFr(x)).join(' \\times ')}` });
+  }
+  return out;
+}
 /** The finished ladder as one equality: « 168 = 2 \\times 2 \\times 2 \\times 3 \\times 7 ». */
 export const ladderTex = (st) => `${texFr(st.n)} = ${productTex(ladderRow(st))}`;
 /** The equal planks of a row, counted, the shortest first: [{ p: 2, k: 4 }, { p: 3, k: 2 }, { p: 5, k: 1 }]. */

@@ -138,7 +138,7 @@ export const SHEET_INQUIRY = {
       n === T2431
         ? `${nb(n)} cases : trop long pour la main. Voici une feuille de calcul : en A, des nombres premiers ; en B, le reste de la division de ${nb(n)} par chacun. Clique la ligne que tu lis.`
         : `${nb(n)} : la même feuille. Clique une ligne, ou dis que le nombre est premier.`,
-    goal: (n) => `Trouver les nombres premiers qui remplissent ${nb(n)}, avec la feuille.`,
+    goal: (n) => `Avec la feuille, trouver les nombres premiers dont le produit fait ${nb(n)}.`,
     primeHead: 'Premier',
     ask: ({ n, lines }) => `${nb(n)} sur la feuille, ${counted(lines, ['ligne', 'lignes'])}. Quelle ligne lis-tu ?`,
     prime: 'Il est premier',
@@ -146,7 +146,7 @@ export const SHEET_INQUIRY = {
       a.after === 1
         ? `Ligne ${a.p} : reste 0. $${tx(a.before)} \\div ${a.p} = 1$ : il ne reste rien.`
         : `Ligne ${a.p} : reste 0. $${tx(a.before)} \\div ${a.p} = ${tx(a.after)}$, et la feuille se remplit de nouveau pour ${nb(a.after)}.`,
-    miss: (a) => `Ligne ${a.p} : le reste est ${a.r}, et non 0. ${a.p} ne remplit pas ${nb(a.before)}.`,
+    miss: (a) => `Ligne ${a.p} : le reste est ${a.r}, et non 0. ${a.p} ne divise pas ${nb(a.before)}.`,
     notPrime: ({ n, zeros }) => `Pas encore : sur la feuille de ${nb(n)}, ${lineList(zeros)} le reste 0.`,
     notebook: 'Le cahier',
     end: ({ n, factors }) => `La feuille de ${nb(n)} est finie : les nombres trouvés sont ${listFr(factors.map(nb))}.`,

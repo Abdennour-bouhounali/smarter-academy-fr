@@ -24,7 +24,7 @@ import PageTourProvider from '../../features/tours/PageTourProvider';
  * nobody can make would trap every student in a redirect loop.
  *
  * COLUMN MODE (« prior ») — the shell RESERVES the place of « Ma carte » instead of letting it float over the lesson: the
- * rail keeps its 80 px (`RAIL_WIDTH`, it does not fold) and <main> gains a gutter on the end side. The content really
+ * rail keeps its width (`RAIL_WIDTH`, 96 px, it does not fold) and <main> gains a gutter on the end side. The content really
  * shrinks, and `useLessonViewport`, which reads the padding box of this <main>, places the map exactly in that gutter
  * (see WorkspaceLayoutContext).
  */

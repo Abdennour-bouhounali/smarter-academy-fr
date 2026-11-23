@@ -65,6 +65,17 @@ describe('séance en classe — a factor ladder on the board', () => {
     expect(html).not.toContain('preuve');
   });
 
+  it('a FINISHED ladder: under it, the planks of its row still laid in shorter planks — never its last rung « 5 = 5 × 1 »', () => {
+    const composite = view(step, lay(60, [4, 3, 5]));
+    expect(composite).toContain('data-cs-ladder-breaks="4"');
+    expect(composite).toContain(LADDER_WORDS.breaks);
+    expect(composite).not.toContain('data-cs-ladder-last');
+    expect(composite).not.toMatch(/5 = 5/);
+    const short = view(step, lay(60, [2, 2, 3, 5]));
+    expect(short).toContain('data-cs-ladder-breaks=""');
+    expect(short).toContain(LADDER_WORDS.unbroken);
+  });
+
   it('a plank that holds writes its rung; a plank that falls shows what it left, on its card and in the fact', () => {
     const held = view(step, lay(60, [4]));
     expect(held).toContain('data-cs-ladder-last="held"');

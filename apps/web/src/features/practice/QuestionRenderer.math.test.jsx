@@ -26,7 +26,6 @@ describe('QuestionRenderer — never a raw « $ » on screen', () => {
 
   it('keeps the readable hint (the formula as plain text) in the placeholder', () => {
     const html = renderToStaticMarkup(<QuestionRenderer question={QUESTIONS[0]} value={null} onChange={() => {}} />);
-    // mathToPlain isole la formule (marques bidi invisibles) : on les ignore.
-    expect(html.replace(/[\u2066-\u2069\u200e\u200f]/g, '')).toContain('placeholder="Écris seulement la valeur de K (nombre entier)"');
+    expect(html).toContain('placeholder="Écris seulement la valeur de K (nombre entier)"');
   });
 });

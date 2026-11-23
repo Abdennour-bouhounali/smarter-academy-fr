@@ -4,6 +4,7 @@
  * The French agreement of a number and its noun is the kit's (`kit/authoring/numbers.js › counted`).
  */
 import { counted, listFr, PLANKS, CELLS } from '../kit/authoring/numbers';
+import { formatFr } from '@smarter-academy/core';
 
 /** « 1 planche », « 21 planches » — the number is always written. */
 export const planks = (q) => counted(q, PLANKS);
@@ -339,7 +340,9 @@ export const T = {
     lengthLabel: 'Longueur du moule',
     // the gaps the plank must build (the whole convoy): « Le moule pour les fossés 32 et 44 »
     forGaps: (gaps) =>
-      gaps.length === 1 ? `Le moule pour le fossé ${gaps[0]}` : `Le moule pour les fossés ${listFr(gaps)}`,
+      gaps.length === 1
+        ? `Le moule pour le fossé ${formatFr(gaps[0])}`
+        : `Le moule pour les fossés ${listFr(gaps.map(formatFr))}`,
     empty: 'Écris d’abord la longueur du moule.',
     tooShort: 'Le moule le plus court fait 1 case.',
     // the longest the plank may be: the longest gap — or the workshop's own `max` when it is shorter (`made`)

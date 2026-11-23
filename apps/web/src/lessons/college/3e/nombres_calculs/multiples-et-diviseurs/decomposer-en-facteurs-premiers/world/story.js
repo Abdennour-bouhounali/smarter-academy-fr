@@ -235,6 +235,14 @@ const orList = (xs) => (xs.length < 2 ? String(xs[0] ?? '') : `${xs.slice(0, -1)
 /** The story's own words, laid over the world's (`divisorIsles/strings.js`); every sentence takes French typography. */
 const TEXT = frAll({
   title: 'L’archipel des diviseurs : le cap du phare',
+  // he carries PLANKS (« Tu portes des planches de 9 ») and the store sells planks (« Planches de 36 »): the world's
+  // pilot words « le moule 48 », « la réserve des moules » are not this story's
+  prompt: { boss: 'Ouvre la réserve du dernier pont' },
+  predict: { cancel: 'Je change de planches' },
+  verdict: {
+    holds: (b, a) => `Les planches de ${b} remplissent exactement ${a} : le pont tient`,
+    open: (b, a) => `Les planches de ${b} ne remplissent pas ${a} : le pont ne tient pas`,
+  },
   subtitle:
     'La tempête a cassé les ponts jusqu’au phare du cap. Avec le robot Zéro, remplis chaque fossé de planches : certains nombres se cassent en morceaux plus petits, d’autres ne se cassent pas.',
   objective: {

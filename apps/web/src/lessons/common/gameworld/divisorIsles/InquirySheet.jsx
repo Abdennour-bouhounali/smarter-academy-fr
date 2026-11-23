@@ -15,6 +15,7 @@
  */
 import { useEffect, useReducer } from 'react';
 import MathText from '../../components/MathText';
+import { texFr } from '@smarter-academy/core';
 import { initSheet, sheetNow, sheetReducer, sheetResult } from './sheet';
 import { Head, Found } from './InquiryDivision';
 import { expose, FAST } from './inquiryParts';
@@ -47,7 +48,8 @@ function Block({ T, n, lines, rows, filled, s, onLine, first }) {
         <div className="iq-sheet__row iq-sheet__row--head">
           <span className="iq-sheet__n">1</span>
           <span>{T.primeHead}</span>
-          <span className="iq-sheet__formula" data-iq-formula>
+          {/* a spreadsheet's formula is what a machine reads: no thousands space inside it (`data-machine-text`) */}
+          <span className="iq-sheet__formula" data-iq-formula data-machine-text>
             {(T.formula ?? modFormula)(n, 'A2')}
           </span>
         </div>
@@ -56,7 +58,9 @@ function Block({ T, n, lines, rows, filled, s, onLine, first }) {
         <div className="iq-sheet__row iq-sheet__row--head is-echo" aria-hidden="true">
           <span className="iq-sheet__n">1</span>
           <span>{T.primeHead}</span>
-          <span className="iq-sheet__formula">{(T.formula ?? modFormula)(n, 'A2')}</span>
+          <span className="iq-sheet__formula" data-machine-text>
+            {(T.formula ?? modFormula)(n, 'A2')}
+          </span>
         </div>
       )}
       {lines.map((l) => {
@@ -133,7 +137,7 @@ export function SheetView({ spec, state: s, act }) {
           <ol>
             {notes.map((a) => (
               <li key={`${a.before}-${a.p}`} data-iq-note={`${a.before}:${a.p}:${a.after}`}>
-                <MathText>{`$${a.before} \\div ${a.p} = ${a.after}$`}</MathText>
+                <MathText>{`$${texFr(a.before)} \\div ${a.p} = ${texFr(a.after)}$`}</MathText>
               </li>
             ))}
           </ol>

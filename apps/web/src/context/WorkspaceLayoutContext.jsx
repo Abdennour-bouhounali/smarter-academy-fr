@@ -7,7 +7,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
  * sa propre colonne ? ». Les trois régions de l'application en dérivent leur
  * géométrie, et AUCUNE ne la recalcule pour son compte :
  *
- *   rail (WorkspaceNav)             → 80 px, fixed       (it no longer folds)
+ *   rail (WorkspaceNav)             → 96 px, fixed       (it no longer folds)
  *   contenu (MainLayout/StudentLayout) → padding-right   (il rétrécit vraiment)
  *   carte (KnowledgeMap)            → la gouttière ainsi libérée
  *
@@ -42,8 +42,12 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
  * les suites e2e `*-carte.mjs` et `km-layout.mjs` : elles ne bougent pas.
  */
 
-/** The rail of the student's and the teacher's space (`WorkspaceNav`): 80 px, and it does not fold (2026-11-16). */
-export const RAIL_WIDTH = 80;
+/**
+ * The rail of the student's and the teacher's space (`WorkspaceNav`): 96 px, and it does not fold (2026-11-16). It was
+ * 80 px, sized for the Arabic door names: the French ones are longer (« Aujourd’hui » ran out of its door, « Mes leçons »
+ * broke on two lines — the first French lesson's teacher screens, 2026-11-23).
+ */
+export const RAIL_WIDTH = 96;
 
 /**
  * LA COLONNE « MA CARTE » A UNE LARGEUR FIXE — la meilleure pour l'écran, pas
@@ -58,10 +62,10 @@ export const RAIL_WIDTH = 80;
  *             et JAMAIS au point de laisser moins de MIN_CONTENT_WIDTH à la
  *             leçon.
  *
- *   1024 px, barre comprimée → 378 px de carte, 566 px de leçon
- *   1280 px                  → 480 / 720
- *   1440 px                  → 480 / 880
- *   1920 px                  → 560 / 1280
+ *   1024 px, barre comprimée → 368 px de carte, 560 px de leçon
+ *   1280 px                  → 474 / 710
+ *   1440 px                  → 480 / 864
+ *   1920 px                  → 560 / 1264
  */
 export const MA_CARTE_MIN_WIDTH = 360;
 export const MA_CARTE_MAX_WIDTH = 480;
@@ -149,7 +153,7 @@ export function WorkspaceLayoutProvider({ children }) {
     // étroit : revenir au large la restaure sans que l'élève la redemande.
     const prior = mapOpen && priorPreferred && fits;
 
-    // FIXED width of the column, computed for this screen beside the 80 px rail.
+    // FIXED width of the column, computed for this screen beside the rail (RAIL_WIDTH).
     const maCarteWidth = columnWidthFor(viewportWidth);
 
     // Le plein écran suspend la colonne : pas de gouttière, donc `vpWidth`

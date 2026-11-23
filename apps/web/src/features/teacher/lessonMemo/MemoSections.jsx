@@ -7,7 +7,6 @@ import {
 import MathText from '../../../lessons/common/components/MathText';
 import { ArrowForward } from '../../../components/common/DirectionalIcons';
 import { CLASSROOM_START_STATE, canPresentPath } from './memoRoutes';
-import { bidi } from '../../../utils/bidi';
 import MathLabel from '../../../lessons/common/components/MathLabel';
 import { mathToPlain } from '../../../utils/mathPlain';
 
@@ -82,7 +81,7 @@ export function MemoOverview({ header }) {
         <div className="min-w-0 flex-1">
           <p className="text-xs font-extrabold uppercase tracking-widest text-nav-accent">{t('title')}{header.kind === 'synthesis' ? ` · ${t('overview.synthesis')}` : ''}</p>
           <h1 className="mt-1 font-space text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl" data-memo-title><MathLabel>{header.title}</MathLabel></h1>
-          {header.description && <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600"><M>{bidi(header.description)}</M></p>}
+          {header.description && <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600"><M>{header.description}</M></p>}
         </div>
       </div>
       <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
@@ -118,7 +117,7 @@ export function MemoObjectives({ objectives, prerequisites }) {
                 {knowledge.map((b) => (
                   <li key={b.id} className="text-sm text-slate-800">
                     {b.type && <Pill className="me-1.5 bg-violet-100 text-violet-800">{t(`objectives.brickType.${b.type}`, { defaultValue: b.type })}</Pill>}
-                    <M>{bidi(b.title)}</M>
+                    <M>{b.title}</M>
                   </li>
                 ))}
               </ul>
@@ -188,7 +187,7 @@ export function MemoStart({ start }) {
             <p className="mt-1 text-sm text-indigo-900/80">{t('start.manipulationLead')}</p>
             <ul className="mt-2 flex flex-wrap gap-1.5">
               {manipulations.map((m) => (
-                <li key={bidi(m.title)}><Pill className="bg-white text-nav-accent">🧪 {m.level ? `${t(`timeline.level.${m.level}`)} · ` : ''}<M>{bidi(m.title)}</M></Pill></li>
+                <li key={m.title}><Pill className="bg-white text-nav-accent">🧪 {m.level ? `${t(`timeline.level.${m.level}`)} · ` : ''}<M>{m.title}</M></Pill></li>
               ))}
             </ul>
           </div>
@@ -278,8 +277,8 @@ export function MemoTimeline({ phases }) {
                       <span className="text-slate-400">·</span>
                       <span>{t('timeline.module', { n: p.number })}</span>
                     </p>
-                    <h3 className="mt-1 font-space text-lg font-bold text-slate-900"><M>{bidi(p.title)}</M></h3>
-                    {p.desc && <p className="mt-0.5 text-sm text-slate-600"><M>{bidi(p.desc)}</M></p>}
+                    <h3 className="mt-1 font-space text-lg font-bold text-slate-900"><M>{p.title}</M></h3>
+                    {p.desc && <p className="mt-0.5 text-sm text-slate-600"><M>{p.desc}</M></p>}
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-2">
                     {p.minutes != null && (
@@ -302,8 +301,8 @@ export function MemoTimeline({ phases }) {
                   <RoleBlock icon={Wrench} label={t('timeline.support')} className="bg-nav-accent-soft text-indigo-900">
                     {p.manipulations.length > 0 || p.otherResources.length > 0 ? (
                       <ul className="space-y-1">
-                        {p.manipulations.map((m) => <li key={bidi(m.title)}>🧪 {m.level ? <b>{t(`timeline.level.${m.level}`)} : </b> : null}<M>{bidi(m.title)}</M></li>)}
-                        {p.otherResources.map((r) => <li key={bidi(r.title)}>📄 <M>{bidi(r.title)}</M></li>)}
+                        {p.manipulations.map((m) => <li key={m.title}>🧪 {m.level ? <b>{t(`timeline.level.${m.level}`)} : </b> : null}<M>{m.title}</M></li>)}
+                        {p.otherResources.map((r) => <li key={r.title}>📄 <M>{r.title}</M></li>)}
                       </ul>
                     ) : (stageKey && t(`${stageKey}.support`))}
                   </RoleBlock>
@@ -315,7 +314,7 @@ export function MemoTimeline({ phases }) {
                     <h4 className="mb-1 text-xs font-extrabold text-emerald-800">🎯 {t('timeline.outcome')}</h4>
                     <ul className="space-y-1 text-sm text-slate-800">
                       {p.learningPoints.map((lp) => <li key={lp}>• <M>{lp}</M></li>)}
-                      {p.bricks.map((b) => <li key={b.id} className="text-slate-600">⭐ <b><M>{bidi(b.title)}</M></b>{b.summary ? <> — <M>{bidi(b.summary)}</M></> : null}</li>)}
+                      {p.bricks.map((b) => <li key={b.id} className="text-slate-600">⭐ <b><M>{b.title}</M></b>{b.summary ? <> — <M>{b.summary}</M></> : null}</li>)}
                     </ul>
                   </div>
                 )}
@@ -435,7 +434,7 @@ export function MemoDifferentiation({ differentiation }) {
               <p className="mb-2 text-xs text-slate-500">{t(`differentiation.${key}Lead`)}</p>
               {empty ? <p className="text-xs text-slate-400">{t('differentiation.empty')}</p> : (
                 <ul className="space-y-1.5 text-sm text-slate-800">
-                  {tier.manipulations.map((m) => <li key={bidi(m.title)}>🧪 <M>{bidi(m.title)}</M></li>)}
+                  {tier.manipulations.map((m) => <li key={m.title}>🧪 <M>{m.title}</M></li>)}
                   {tier.exercises.map((ex) => <li key={ex.id} className="leading-6">✏️ <M>{ex.statement}</M> <SourcePage source={ex.source} /></li>)}
                 </ul>
               )}
@@ -460,7 +459,7 @@ export function MemoTrace({ trace }) {
         {trace.bricks.length > 0 && (
           <li className="rounded-2xl border-2 border-emerald-200 bg-emerald-50/60 p-3">
             <h3 className="text-xs font-extrabold text-emerald-800">2 · {t('trace.formulation')}</h3>
-            <ul className="mt-1 space-y-1.5">{trace.bricks.map((b) => <li key={b.id} className="text-sm text-slate-900">⭐ <b><M>{bidi(b.title)}</M></b>{b.summary ? <> — <M>{bidi(b.summary)}</M></> : null}</li>)}</ul>
+            <ul className="mt-1 space-y-1.5">{trace.bricks.map((b) => <li key={b.id} className="text-sm text-slate-900">⭐ <b><M>{b.title}</M></b>{b.summary ? <> — <M>{b.summary}</M></> : null}</li>)}</ul>
           </li>
         )}
         {trace.warnings.length > 0 && (
@@ -483,7 +482,7 @@ export function MemoEvaluation({ evaluation }) {
           <div>
             <h3 className="mb-2 text-sm font-extrabold text-slate-800">🗣️ {t('evaluation.oral')}</h3>
             <ul className="space-y-2">{oral.map((q) => (
-              <li key={bidi(q.title)} className="rounded-xl border border-slate-200 p-2.5 text-sm">
+              <li key={q.title} className="rounded-xl border border-slate-200 p-2.5 text-sm">
                 <p className="font-bold text-slate-900">{t('evaluation.oralPrompt', { title: q.title })}</p>
                 <p className="mt-0.5 text-slate-600"><span className="font-bold text-emerald-700">{t('evaluation.oralAnswer')}:</span> <M>{q.answer}</M></p>
               </li>

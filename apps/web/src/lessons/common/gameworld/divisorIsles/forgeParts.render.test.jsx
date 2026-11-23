@@ -199,7 +199,7 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
   });
 
   it('a pair that is a FRACTION (the whole over its lit stretch) names itself by its own head, never « et … planche »', () => {
-    const head = '\u206666/78 → 33/39\u2069';
+    const head = '66/78 → 33/39';
     const line = renderToString(<Line c={pairOf(78, 66, 2, { head, tag: 'la même partie' })} />);
     expect(line).toContain('rf-line--pair');
     expect(line).toContain(`<span class="rf-line__head">${head}</span>`);

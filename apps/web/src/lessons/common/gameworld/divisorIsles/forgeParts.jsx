@@ -288,9 +288,9 @@ const PairMini = ({ pair }) => {
 /** The head of a pair's line: its two gaps, then the plank. */
 const PairHead = ({ pair }) => (
   <span className="rf-pairhead">
-    <strong dir="ltr">{pair.a}</strong>
+    <strong dir="ltr">{formatFr(pair.a)}</strong>
     {` ${L.and} `}
-    <strong dir="ltr">{pair.b}</strong>
+    <strong dir="ltr">{formatFr(pair.b)}</strong>
   </span>
 );
 
@@ -588,9 +588,9 @@ function DealMirror({ c, stage, fast, tight }) {
 /** The head of a sharing's line: the two counts with their items (the number of lots is in its tag). */
 const DealHead = ({ deal }) => (
   <span className="rf-dealhead" dir="ltr">
-    <strong>{deal.a.n}</strong>
+    <strong>{formatFr(deal.a.n)}</strong>
     <Glyph kind={deal.a.item} />
-    <strong>{deal.b.n}</strong>
+    <strong>{formatFr(deal.b.n)}</strong>
     <Glyph kind={deal.b.item} />
   </span>
 );
@@ -649,7 +649,7 @@ function Line({ c, children }) {
           <span className="rf-line__head">{c.head}</span>
         ) : (
           <>
-            <strong dir="ltr">{c.a}</strong> <span>{L.plank(c.b)}</span>
+            <strong dir="ltr">{formatFr(c.a)}</strong> <span>{L.plank(c.b)}</span>
           </>
         )}
         <em>

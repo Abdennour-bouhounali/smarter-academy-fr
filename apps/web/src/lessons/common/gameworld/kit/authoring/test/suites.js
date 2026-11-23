@@ -58,8 +58,63 @@ export function buildersOf(gaps, purse = Infinity, candidates = range(1, Math.ma
 
 // ───────────────────────── what every sentence must be ─────────────────────────
 
-/** Nothing undefined, NaN, null or an object printed into a sentence. */
-export const said = (x) => expect(String(x), String(x)).not.toMatch(/undefined|NaN|null|\[object/);
+/**
+ * A whole number of four digits or more written WITHOUT its thousands grouped (`FRENCH_LANGUAGE_CONTRACT.md` §5): « 1400 »
+ * where French writes « 1 400 » (U+202F, `nb` / `formatFr`), and « 1\\,400 » inside a formula (`tx` / `texFr`); a group
+ * joined by a PLAIN or a no-break space (« 1 400 » typed by hand) is the same mistake: the line may break inside the
+ * number, and the screen does not show the narrow space. Decimals are read whole (« 3,1416 » is not a thousand).
+ * The exceptions, written honestly: a YEAR (1900–2099) after « brevet », « en », « année », « session » or a month — a
+ * year takes no space; and what is TYPED into a machine, written in `\\texttt{…}` (a spreadsheet's cell
+ * `=MOD(2431;11)`, a program's line): a machine reads no space inside a number. → [the runs] — [] when every number is
+ * grouped.
+ */
+export function thousandsErrors(text) {
+  const s = String(text).replace(/\\texttt\{[^}]*\}/g, ' ');
+  const out = [];
+  const YEAR_BEFORE =
+    /(?:brevet|en|année|session|depuis|janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)[\s\u00a0]+$/i;
+  for (const m of s.matchAll(/(?<![\d.,{}]|\d[\u202f ]|\\,)\d{4,}(?![\d])/g)) {
+    const n = Number(m[0]);
+    if (m[0].length === 4 && n >= 1900 && n <= 2099 && YEAR_BEFORE.test(s.slice(0, m.index))) continue;
+    // « 3,1416 » — the decimals of a number are not a thousand
+    if (/\d[.,]$/.test(s.slice(0, m.index)) || /\{,\}$/.test(s.slice(0, m.index))) continue;
+    out.push(m[0]);
+  }
+  for (const m of s.matchAll(/(?<![\d.,])\d{1,3}(?:[ \u00a0]\d{3})+(?![\d]|[.,]\d)/g)) out.push(m[0]);
+  return out;
+}
+
+/**
+ * A VARIABLE written two ways in one sentence (`FRENCH_LANGUAGE_CONTRACT.md` §7: a variable is a Latin letter in
+ * italics): the letter is a variable of one of its formulas (`$N \\div d$`) and stands ALONE in its words too
+ * (« si d divise N »). Every variable is mathematics — written `$d$`, `$N$`. The French one-letter words « a » and « y »
+ * are never read as variables, nor a letter glued to an apostrophe (« l’ », « d’ »), nor a letter inside a command
+ * (`\\times`, `\\text{…}`). → [the letters] — [] when each variable is written one way.
+ */
+export function variableErrors(text) {
+  const s = String(text);
+  const inMath = new Set();
+  for (const m of s.matchAll(/\$([^$]+)\$/g)) {
+    const bare = m[1]
+      .replace(/\\(?:text|mathrm|texttt|textcolor|operatorname)\{[^}]*\}/g, ' ')
+      .replace(/\\[a-zA-Z]+/g, ' ');
+    for (const v of bare.matchAll(/(?<![A-Za-z])[A-Za-z](?![A-Za-z])/g)) inMath.add(v[0]);
+  }
+  const words = s.replace(/\$[^$]*\$/g, ' ');
+  const out = [];
+  for (const v of inMath) {
+    if (v === 'a' || v === 'y') continue;
+    if (new RegExp(`(?<![\\p{L}’'])${v}(?![\\p{L}’'])`, 'u').test(words)) out.push(v);
+  }
+  return out;
+}
+
+/** Nothing undefined, NaN, null or an object printed into a sentence; every number of four digits or more grouped; every variable written one way. */
+export const said = (x) => {
+  expect(String(x), String(x)).not.toMatch(/undefined|NaN|null|\[object/);
+  expect(thousandsErrors(x), String(x)).toEqual([]);
+  expect(variableErrors(x), String(x)).toEqual([]);
+};
 /** A string the screen writes as PLAIN text (not through MathText) carries no formula: no `$`, no backslash. */
 export const plain = (x) => {
   said(x);
@@ -235,6 +290,8 @@ const wordsOf = (text) => String(text).replace(/\$[^$]*\$/g, ' ');
  *   ordinal « 3ème », « 2eme », « 1ère » (« 3e », « 1re »)
  *   arabic  an Arabic comma, semicolon or question mark (U+060C, U+061B, U+061F)
  *   bidi    a bidi control (BIDI)
+ *   milliers a number of four digits or more not grouped by thousands (`thousandsErrors`)
+ *   variable a letter that is a variable of a formula of the sentence and stands alone in its words (`variableErrors`)
  * → [{ kind, at }] — [] when the sentence is clean.
  */
 export function typographyErrors(text) {
@@ -249,6 +306,8 @@ export function typographyErrors(text) {
   find('apos', /\p{L}'\p{L}/gu);
   find('ordinal', /\d+\s?(?:ème|eme|ième|ère)(?!\p{L})/gu);
   find('arabic', /[\u060c\u061b\u061f]/g);
+  for (const at of thousandsErrors(text)) errors.push({ kind: 'milliers', at });
+  for (const at of variableErrors(text)) errors.push({ kind: 'variable', at });
   if (BIDI.test(String(text))) errors.push({ kind: 'bidi', at: String(text).match(BIDI)[0] });
   return errors;
 }
@@ -781,10 +840,12 @@ export function describeForges(opts) {
             const boxes = lines.flatMap((l) => boxesOf(l.tokens));
             expect(boxes.map((t) => t.slot).sort()).toEqual(Object.keys(vals).sort());
             for (const t of boxes) expect(String(vals[t.slot]).length, t.slot).toBeLessThanOrEqual(t.w);
+            // a printed string may write a variable `$N$` (drawn by MathText: one way, as in the question)
             for (const l of lines)
               for (const t of l.tokens)
                 if (partsOf(t)) for (const x of partsOf(t)) plain(typeof x === 'string' ? x : x.label);
-                else plain(typeof t === 'string' ? t : t.label);
+                else if (typeof t === 'string') said(t);
+                else plain(t.label);
             const asText = Object.fromEntries(Object.entries(vals).map(([k, v]) => [k, String(v)]));
             expect(F.use.check(c, asText, verdict)).toBe('ok');
             said(F.text.tryKey(c));
@@ -1060,11 +1121,26 @@ export function describeTrainer(opts) {
  * opts.layout: { perRow: 3, colGap: 33, rowGap: 8.5, labelGap: 19 } — in % of the map: cards a row at most, the
  * horizontal distance of two cards of a row, how far a link label (at the middle of its link) stays from a row unless
  * it is `labelGap` away from every card of that row (2026-11-19: at 7.75 % labels touched a two-line card).
+ * Two link LABELS stay apart too (2026-11-23: « Les grands nombres » and « Erreur fréquente » touched, both at the middle
+ * height of their links): each is measured as the map draws it at 1366×768 with the card panel open — `map` 830 × 644 px,
+ * a label `charPx` 7.3 px a character plus `padPx` 18 px wide, `labelPx` 22 px high (the walk's screenshot) — and two
+ * labels whose heights meet stand `apartPx` (6 px) apart. The walk measures the same on screen (`checks.mjs › mapLaidOut`).
  * opts.memo: the fields every memo sheet fills (default rule, hook, example, trap, exam, chip).
  */
 export function describeKnowledge(opts) {
   const { knowledge, keys, cards } = opts;
-  const L = { perRow: 3, colGap: 33, rowGap: 8.5, labelGap: 19, ...opts.layout };
+  const L = {
+    perRow: 3,
+    colGap: 33,
+    rowGap: 8.5,
+    labelGap: 19,
+    map: [830, 644],
+    charPx: 7.3,
+    padPx: 18,
+    labelPx: 22,
+    apartPx: 6,
+    ...opts.layout,
+  };
   const memoFields = opts.memo ?? ['rule', 'hook', 'example', 'trap', 'exam', 'chip'];
   const nodes = knowledge.graph.nodes;
   const card = (cid) => nodes.find((n) => n.id === cid);
@@ -1112,6 +1188,22 @@ export function describeKnowledge(opts) {
           if (Math.abs(y - my) < L.rowGap)
             expect(Math.abs(x - mx), `« ${e.label} » under ${cid}`).toBeGreaterThanOrEqual(L.labelGap);
       }
+      // label against label: their boxes at the map's real size, never touching
+      const boxes = knowledge.graph.edges
+        .filter((e) => e.label)
+        .map((e) => {
+          const [x1, y1] = P[e.from];
+          const [x2, y2] = P[e.to];
+          const w = [...e.label].length * L.charPx + L.padPx;
+          return { t: e.label, x: (((x1 + x2) / 2) * L.map[0]) / 100, y: (((y1 + y2) / 2) * L.map[1]) / 100, w };
+        });
+      for (let i = 0; i < boxes.length; i += 1)
+        for (let j = i + 1; j < boxes.length; j += 1) {
+          const [a, b] = [boxes[i], boxes[j]];
+          if (Math.abs(a.y - b.y) >= L.labelPx + L.apartPx) continue;
+          const gap = Math.abs(a.x - b.x) - (a.w + b.w) / 2;
+          expect(gap, `link labels « ${a.t} » and « ${b.t} » touch`).toBeGreaterThanOrEqual(L.apartPx);
+        }
     });
 
     it('every memo sheet is complete; its quiz has ONE right option; no Arabic anywhere, no bare PGCD(…)', () => {

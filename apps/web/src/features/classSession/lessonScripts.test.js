@@ -34,6 +34,7 @@ import {
   groupText,
   productTex,
   ladderCells,
+  ladderBreaks,
 } from './lessonScripts';
 import { QUANTITIES, CONDITIONS } from '../../lessons/common/gameworld/divisorIsles/ruleForge';
 
@@ -257,6 +258,16 @@ describe('séance en classe — a factor ladder on the board (`ladder`)', () => 
     expect(ladderRow(st)).toEqual([7, 11, 13]);
     expect(ladderSheet(sheet, st)).toEqual([]);
     expect(ladderSheet({ ...sheet, sheet: { stop: 10 } }, ladderStart(1001)).map((l) => l.p)).toEqual([2, 3, 5, 7]);
+  });
+
+  it('under a finished ladder: the planks of its row still laid in shorter planks, never its last rung', () => {
+    expect(ladderBreaks([7, 6, 4])).toEqual([
+      { p: 4, tex: '4 = 2 \\times 2' },
+      { p: 6, tex: '6 = 2 \\times 3' },
+    ]);
+    expect(ladderBreaks([2, 2, 2, 3, 7])).toEqual([]);
+    expect(ladderBreaks([9, 2, 2])).toEqual([{ p: 9, tex: '9 = 3 \\times 3' }]);
+    expect(ladderBreaks([1001])).toEqual([{ p: 1001, tex: '1\\,001 = 7 \\times 11 \\times 13' }]);
   });
 
   it('writes a row counted and a thousand grouped, every count agreed', () => {

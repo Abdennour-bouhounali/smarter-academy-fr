@@ -8,7 +8,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { spacedLabels } from './Inquiry';
+import { spacedLabels, stripScale } from './Inquiry';
 
 const css = (f) => readFileSync(fileURLToPath(new URL(f, import.meta.url)), 'utf8');
 /** The block of the rule whose selector is exactly `sel` — alone, not the last of a list « a,\n b { ». */
@@ -80,6 +80,30 @@ describe('pairs — the numbers under the strip never touch', () => {
       [5],
     );
     expect(spacedLabels(items).size).toBe(items.length);
+  });
+});
+
+describe('pairs — a long gap is drawn in two parts, a short one at one scale', () => {
+  const lastNeeded = (a) => Math.floor(Math.sqrt(a));
+  it('221 cases (16 planks tried): the tried planks and the crossing at full size, a break, the rest squeezed', () => {
+    const end = lastNeeded(221) + 2;
+    const { x, zoom, breakAt } = stripScale(221, end);
+    expect(zoom).toBeGreaterThan(end);
+    expect(breakAt).toBeGreaterThan(x(zoom));
+    expect(breakAt).toBeLessThan(x(zoom + 1));
+    // in order, left to right, from the first plank to the far end
+    for (let n = 1; n < 221; n += 1) expect(x(n + 1)).toBeGreaterThan(x(n));
+    expect(x(221)).toBeCloseTo(956);
+    // every tried plank has room for its number (16 px labels): no lone survivor, the planks all named
+    const fell = Array.from({ length: end }, (_, i) => i + 1).filter((d) => 221 % d !== 0);
+    const items = fell.map((d) => ({ key: `f${d}`, x: x(d), text: d, size: 16 }));
+    expect(spacedLabels(items).size).toBe(items.length);
+    // the place where plank and partner cross (√221 ≈ 14.9) stands in the full-size part
+    expect(Math.sqrt(221)).toBeLessThan(zoom);
+  });
+  it('91 and 97 cases are long too (10 px a plank); 36 cases keep one scale (25 px a plank)', () => {
+    for (const a of [91, 97]) expect(stripScale(a, lastNeeded(a) + 2).zoom).toBeGreaterThan(lastNeeded(a) + 2);
+    expect(stripScale(36, lastNeeded(36) + 2).zoom).toBe(null);
   });
 });
 

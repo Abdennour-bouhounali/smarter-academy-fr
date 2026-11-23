@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import MathText from '../../lessons/common/components/MathText';
-import { isolateMathRuns } from '../../utils/bidi';
 
 /**
  * Le rendu d'un texte de contenu d'exercice : gras Markdown + mathématiques.
@@ -15,21 +14,8 @@ import { isolateMathRuns } from '../../utils/bidi';
  * MathText n'est pas modifié : 132 leçons en dépendent, et leur besoin est
  * exactement celui qu'il sert.
  */
-/**
- * Le texte HORS `$…$` peut contenir des égalités écrites en clair (« 15 = 3 × 5 »,
- * 212 textes du banc 4AM) : sans isolement, le RTL les affiche à l'envers
- * (« 5 × 3 = 15 »). Les segments `$…$` sont laissés à MathText, qui les isole.
- */
-function isolatePlainMath(text) {
-  return text
-    .split(/(\$\$[\s\S]+?\$\$|\$[^$]+\$)/g)
-    .map((seg, i) => (i % 2 === 1 ? seg : isolateMathRuns(seg)))
-    .join('');
-}
-
 export default function RichText({ children, className }) {
   if (typeof children !== 'string') return null;
-  children = isolatePlainMath(children);
 
   // Découpe sur **gras** en laissant les segments mathématiques intacts :
   // MathText reçoit chaque morceau et s'occupe des $…$ qu'il contient.

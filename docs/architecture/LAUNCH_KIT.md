@@ -101,7 +101,11 @@ One entry in `FAMILIES`, keyed by the item id of the net:
   except that **at level 2 a form named `sort` comes FIRST**. A station asks level 2 only ONCE per tool, the workshop
   repeats the form of the last station miss (two questions LIKE the one missed), a re-check starts the tool afresh and
   the capsule asks level 1 only: a level-2 form listed second would otherwise never be asked. The sort is where a family
-  keeps its traps and the cards to ACCEPT.
+  keeps its traps and the cards to ACCEPT. When every form of a level was used, `pickForm` takes the one used LEAST
+  (2026-11-23): a launch that misses everything asks write, primes (station), primes twice (workshop), then power and
+  write (capsule) — every easy form of `4e.m1.r06` is met, and the walk expects it strictly
+  (`e2e/lib/launchKitTwoTools.mjs`). **Known gap**: a level-2 form other than `sort` (`4e.m1.r06`'s `divisible` and
+  `write`) is asked by NO launch today — a station asks level 2 once and the workshop repeats the missed form.
 - **A question is plain data**; `grade(q, answer)` says right or not and NAMES the mistake when the answer shows one
   (`MISTAKES`). A question that carries its operation (`calc: { op, … }`) is graded by re-computing its value — never a
   stored answer. A sort card that is a trap carries the mistake it catches (`trap`); a card the student must ACCEPT may

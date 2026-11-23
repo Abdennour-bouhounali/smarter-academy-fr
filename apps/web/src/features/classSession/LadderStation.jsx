@@ -16,6 +16,7 @@ import { playSfx } from '../../lessons/common/utils/playEffect';
 import {
   fellTex,
   groupText,
+  ladderBreaks,
   ladderCells,
   ladderDone,
   ladderLay,
@@ -31,6 +32,7 @@ import {
   ladderRow,
 } from './lessonScripts';
 import { formatFr, texFr } from '@smarter-academy/core';
+import { listFr } from '../../lessons/common/gameworld/kit/authoring/numbers';
 
 export const LADDER_WORDS = {
   gap: 'Fossé à franchir',
@@ -49,6 +51,9 @@ export const LADDER_WORDS = {
   another: 'Une autre échelle',
   earlier: 'Nos échelles',
   row: 'La rangée de planches',
+  // under a FINISHED ladder: which of its planks are still laid in shorter planks — a fact of the row, no rule
+  breaks: 'Ces planches se posent encore en planches plus courtes :',
+  unbroken: 'Aucune planche de cette rangée ne se pose en planches plus courtes.',
 };
 /** The most finished ladders kept beside the one being built. */
 const LADDER_KEEP = 2;
@@ -146,10 +151,27 @@ function Sheet({ step, st, onLay, onNoZero }) {
   );
 }
 
-/** The fact of the last plank laid: its rung, or its division and what is left. */
+/**
+ * The fact of the last plank laid: its rung, or its division and what is left. Once the ladder is FINISHED its last rung
+ * (« 4 = 4 × 1 ») says nothing: the fact is then what its row still hides — each plank laid in shorter planks.
+ */
 function Last({ st }) {
   if (st.zeros) return <p className="cs-ladder__fact is-fell">{LADDER_WORDS.zeros}</p>;
   if (!st.last) return null;
+  if (ladderDone(st)) {
+    const breaks = ladderBreaks(ladderRow(st));
+    return (
+      <p className="cs-ladder__fact is-held is-breaks" data-cs-ladder-breaks={breaks.map((b) => b.p).join(',')}>
+        {breaks.length ? (
+          <>
+            {LADDER_WORDS.breaks} <MathText>{listFr(breaks.map((b) => `$${b.tex}$`))}</MathText>
+          </>
+        ) : (
+          LADDER_WORDS.unbroken
+        )}
+      </p>
+    );
+  }
   const l = st.last;
   return (
     <p className={`cs-ladder__fact ${l.held ? 'is-held' : 'is-fell'}`} data-cs-ladder-last={l.held ? 'held' : 'fell'}>

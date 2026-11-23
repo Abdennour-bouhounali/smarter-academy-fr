@@ -301,27 +301,29 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
             </g>
           );
         })()}
-        {/* the row of planks laid, and the product once the gap is 1 case */}
-        <text
-          x={X_GAP}
-          y="288"
-          fontSize={planks.length > 8 ? 17 : 21}
-          fontWeight="700"
-          style={{ ...LTR, fill: '#e0f2fe' }}
-          data-ll-factor-row
-        >
-          {planks.length ? `Rangée : ${row}` : 'Rangée : aucune planche'}
-        </text>
-        {done && (
+        {/* the row of planks laid — then, once the gap is 1 case, the SAME row as the product of the number, in its place
+            (2026-11-23: both lines at once printed the same product twice, « Rangée : 2 × 2 … » over « 8 192 = 2 × 2 … ») */}
+        {done ? (
           <text
             x={X_GAP}
-            y="330"
+            y="300"
             fontSize={planks.length > 8 ? 17 : 24}
             fontWeight="800"
             style={{ ...LTR, fill: '#6ee7b7' }}
             data-ll-factor-product
           >
             {`${f(a)} = ${row}`}
+          </text>
+        ) : (
+          <text
+            x={X_GAP}
+            y="288"
+            fontSize={planks.length > 8 ? 17 : 21}
+            fontWeight="700"
+            style={{ ...LTR, fill: '#e0f2fe' }}
+            data-ll-factor-row
+          >
+            {planks.length ? `Rangée : ${row}` : 'Rangée : aucune planche'}
           </text>
         )}
       </svg>

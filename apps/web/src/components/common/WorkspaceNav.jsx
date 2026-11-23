@@ -9,7 +9,7 @@ import { usePayments } from '../../context/PaymentsContext';
 /**
  * THE MENU OF A WORKSPACE — one component for the student and the teacher (NAVIGATION_REBUILD_PLAN.md).
  *
- *   tablet and laptop (≥ 768 px): a thin rail of 80 px on the start edge — the doors with their names, then the account;
+ *   tablet and laptop (≥ 768 px): a thin rail of 96 px (`RAIL_WIDTH`) on the start edge — the doors with their names, then the account;
  *   phone (< 768 px): a top bar (mark, account) and a bottom bar of the same doors.
  *
  * Same skeleton, two voices: ONE blue for both (owner, 2026-11-16: « the black is everywhere »): the student's lit door is soft blue, the teacher's is filled blue; dark navy is for text only. Only the nine `nav-*`
@@ -60,7 +60,8 @@ function Door({ door, lit, voice, count, countLabel, layout }) {
         <door.icon size={layout === 'rail' ? 24 : 22} aria-hidden="true" />
         {door.badge && <Badge count={count} label={countLabel} className="absolute -end-3 -top-1.5" />}
       </span>
-      {t(door.labelKey)}
+      {/* a French door name fits its door: one line, or two centred lines (« Je m’entraîne ») — never past its edges */}
+      <span className="max-w-full text-center leading-tight [overflow-wrap:anywhere]">{t(door.labelKey)}</span>
     </Link>
   );
 }
@@ -192,7 +193,7 @@ export default function WorkspaceNav({
   return (
     <>
       <aside
-        className="sa-workspace-sidebar fixed bottom-0 start-0 top-0 z-40 hidden w-20 flex-col border-e border-nav-line bg-white md:flex"
+        className="sa-workspace-sidebar fixed bottom-0 start-0 top-0 z-40 hidden w-24 flex-col border-e border-nav-line bg-white md:flex"
         data-workspace-rail={account}
       >
         <div className="flex h-16 flex-shrink-0 items-center justify-center">
