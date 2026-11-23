@@ -1,0 +1,23 @@
+# Engine files that cross from France to Algeria (scripts/engine-patch.mjs). One path per line, relative to the root.
+# A path is listed ONLY if the whole French file is right in the Algerian repository as it is: no sentence a student,
+# teacher or parent reads, no France-only setting, no dependency on a file Algeria lacks unless it is listed too.
+# First list (2026-11-23, French HEAD 0b6af285): the « factorization » answer type, JS and PHP twins — pure logic,
+# the verdict is a feedbackKey (the sentences stay in each platform's banks). Its developer messages are French, like
+# the Algerian engine's.
+
+# new: reads a typed prime factorization (any order, ^, superscripts, Arabic-Indic digits via toLatinDigits)
+packages/core/practice/factorization.js
+# new: its unit tests (imports factorization.js and answerEvaluator.js only)
+packages/core/practice/factorization.test.js
+# patchable: answerType 'factorization' wired into the shared evaluator (verdicts by feedbackKey, no sentence)
+packages/core/practice/answerEvaluator.js
+# patchable: the practice barrel exports the factorization readers
+packages/core/practice/index.js
+# patchable: the shared JS↔PHP fixture gains 49 `factorization-*` cases (only additions). REQUIRED: Algeria's
+# AnswerEvaluatorFixtureTest.php demands a case for every SUPPORTED_ANSWER_TYPES entry. Its feedback strings are
+# fixture data in French, like the Algerian fixture's own (« Oui. »); no screen shows them.
+packages/core/practice/fixtures/answers.json
+# new: the PHP twin of factorization.js (uses Rational::latinDigits / JS_WS / jsString, present in Algeria)
+apps/api/app/Domain/Practice/Support/Factorization.php
+# patchable: the server re-computes a 'factorization' answer exactly as the JS evaluator does
+apps/api/app/Domain/Practice/Support/AnswerEvaluator.php

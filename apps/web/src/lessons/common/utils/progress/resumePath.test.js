@@ -4,6 +4,15 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 import { getModulePath, getTotalModules, getFirstModuleNumber, getAnyRegisteredLessonId, lessonsWithPack, lessonPackFlags, getBuiltLessons } from '../../../registry';
 import { getResumeModulePath } from './getResumeLesson';
+import lessons6e from '@smarter-academy/core/curriculum/fr/lessons_6e_2026_2027.json';
+import lessons5e from '@smarter-academy/core/curriculum/fr/lessons_5e_2026_2027.json';
+import lessons4e from '@smarter-academy/core/curriculum/fr/lessons_4e_2026_2027.json';
+import lessons3e from '@smarter-academy/core/curriculum/fr/lessons_3e_2026_2027.json';
+
+// Every lesson the catalogue publishes (`available`) is a v2 lesson: the French platform builds no other kind.
+const PUBLISHED = [lessons6e, lessons5e, lessons4e, lessons3e].flatMap((c) =>
+  c.lessons.filter((l) => l.status === 'available').map((l) => l.code),
+);
 
 // Les configs COMPLÈTES, lues ici directement (un test peut les lire toutes) : le registre, lui,
 // répond depuis l'index généré — ce test vérifie que les deux disent la même chose.
@@ -84,7 +93,9 @@ describe('a v2 lesson (a world in its pack) is resumed on its home, never on a m
   const paged = getBuiltLessons().map((l) => l.id).find((id) => !lessonPackFlags(id).world && getTotalModules(id) > 1);
 
   it('there are v2 lessons to check', () => {
-    expect(worlds).toEqual(['lecon-monde', 'decomposer-en-facteurs-premiers']);
+    // the fixture's v2 lesson first (it is put in front of the real index), then exactly the published lessons
+    expect(worlds[0]).toBe('lecon-monde');
+    expect(worlds.slice(1).sort()).toEqual([...PUBLISHED].sort());
     expect(paged).toBe('lecon-pages');
   });
 

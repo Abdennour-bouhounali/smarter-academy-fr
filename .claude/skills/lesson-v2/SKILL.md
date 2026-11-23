@@ -176,6 +176,8 @@ screenshots were looked at — and step 10 is made.
 
 ## 3. Briefing an agent
 
+**Role cards (2026-11-23, `docs/TWO_PLATFORMS_PLAN.md` §6):** an agent of the roles world, forges, board, bank or walk-fix reads its card in `cards/` (`world.md`, `forges.md`, `board.md`, `bank.md`, `walk-fix.md`) and the files it touches — not the six long documents. The brief below still carries the lesson's own facts. Cards are untested until the first lesson uses them; the 16 contradictions found while writing them are in the plan §9 to-do. The scaffold and the assembly are the commands `npm run lesson:new` and `npm run lesson:assemble` (§2 steps 3 and 8 name agents for them: that is out of date).
+
 - Start from the template of `briefs.md`; fill its `<…>`; never write a brief from memory.
 - Paste into EVERY brief the block « Limits » of `briefs.md` §0 and tell the agent to read `defects.md` and
   `FRENCH_LANGUAGE_CONTRACT.md` — the ledger is the part of the brief that grows.

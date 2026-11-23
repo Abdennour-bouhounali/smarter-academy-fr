@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { allCourseLevels, getLessonPath } from '@smarter-academy/core';
+import lessons3e from '@smarter-academy/core/curriculum/fr/lessons_3e_2026_2027.json';
 import '../i18n';
 import { AuthContext } from '../context/AuthContext';
 import UnitPage from './UnitPage';
@@ -15,9 +16,11 @@ import { earlierLessons } from '../features/classSession/knowledgeCards';
 import { buildProgressionTree } from '../features/progression/buildProgressionTree';
 import { applyProgressionView, DEFAULT_VIEW } from '../features/progression/progressionView';
 
-// The 3e catalogue: 13 units; ONE lesson published (`available`, 2026-11-23: `decomposer-en-facteurs-premiers`), the 59
-// others ANNOUNCED (`coming_soon`) and not built. 6e–4e: no lesson at all.
-const PUBLISHED = ['decomposer-en-facteurs-premiers'];
+// The 3e catalogue: 13 units; the lessons its file marks `available` are PUBLISHED (the first, 2026-11-23:
+// `decomposer-en-facteurs-premiers`), every other one ANNOUNCED (`coming_soon`) and not built. 6e–4e: no lesson at all.
+// PUBLISHED is read from the catalogue's own file, so the screens below are checked against it as lessons are published.
+const PUBLISHED = lessons3e.lessons.filter((l) => l.status === 'available').map((l) => l.code);
+const FIRST = 'decomposer-en-facteurs-premiers';
 const grades = allCourseLevels.flatMap((l) => l.grades);
 const g3 = grades.find((g) => g.id === '3e');
 const units = g3.chapters.flatMap((c) => c.units);
@@ -40,7 +43,8 @@ describe('3e — a catalogue of coming-soon lessons and its first published one'
   it('has 13 units, every lesson coming soon but the published one, and a lesson path for that one only', () => {
     expect(units).toHaveLength(13);
     expect(lessons).toHaveLength(60);
-    expect(lessons.filter((l) => l.status === 'available').map((l) => l.id)).toEqual(PUBLISHED);
+    expect(PUBLISHED).toContain(FIRST);
+    expect(lessons.filter((l) => l.status === 'available').map((l) => l.id).sort()).toEqual([...PUBLISHED].sort());
     for (const l of lessons) {
       const published = PUBLISHED.includes(l.id);
       expect(l.status, l.id).toBe(published ? 'available' : 'coming_soon');
@@ -115,7 +119,7 @@ describe('3e — a catalogue of coming-soon lessons and its first published one'
       }
     }
     // the PGCD lesson's first card is the published decomposition lesson, with its link
-    expect(earlierLessons('trouver-le-pgcd').find((c) => c.code === PUBLISHED[0])?.path).toBe(getLessonPath(PUBLISHED[0]));
+    expect(earlierLessons('trouver-le-pgcd').find((c) => c.code === FIRST)?.path).toBe(getLessonPath(FIRST));
     const cards = earlierLessons('racine-carree-en-probleme');
     expect(cards.length).toBeGreaterThan(0);
     expect(cards.every((c) => c.code === null)).toBe(true);

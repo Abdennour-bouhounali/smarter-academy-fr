@@ -5,6 +5,15 @@ import {
   loadLessonConfig, loadLessonRoutesFactory, getLoadedLessonConfig, lessonPackFlags,
 } from './registry';
 import { ACTIVE_GRADE_IDS } from '@smarter-academy/core';
+import lessons6e from '@smarter-academy/core/curriculum/fr/lessons_6e_2026_2027.json';
+import lessons5e from '@smarter-academy/core/curriculum/fr/lessons_5e_2026_2027.json';
+import lessons4e from '@smarter-academy/core/curriculum/fr/lessons_4e_2026_2027.json';
+import lessons3e from '@smarter-academy/core/curriculum/fr/lessons_3e_2026_2027.json';
+
+/** The lessons the catalogue PUBLISHES (`available`) in an active grade — exactly the ones a lesson folder must index. */
+const PUBLISHED = [lessons6e, lessons5e, lessons4e, lessons3e]
+  .filter((c) => ACTIVE_GRADE_IDS.includes(c.grade))
+  .flatMap((c) => c.lessons.filter((l) => l.status === 'available').map((l) => l.code));
 
 /**
  * Dormant-grade isolation, registry half (docs/ALGERIA_MIGRATION_AUDIT.md
@@ -85,8 +94,9 @@ const KNOWN_UNMOUNTED_MODULES = {};
 describe('registry — every indexed lesson loads with its own routes', () => {
   const lessons = getBuiltLessons();
 
-  it('indexes the built lessons — the first French lesson (2026-11-23) and nothing else', () => {
-    expect(lessons.map((l) => l.id)).toEqual(['decomposer-en-facteurs-premiers']);
+  it('indexes the built lessons — exactly the ones the catalogue publishes, and nothing else', () => {
+    expect(PUBLISHED.length).toBeGreaterThan(0);
+    expect(lessons.map((l) => l.id).sort()).toEqual([...PUBLISHED].sort());
   });
 
   it.each(lessons.map((l) => [l.id, l]))('%s : config + routes resolve, and mount its index and every module', async (id, { basePath }) => {

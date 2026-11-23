@@ -132,7 +132,29 @@ owner playing. Also what crossed to the other platform (files, tokens).
 
 ## 9. Results
 
-Nothing yet.
+**2026-11-23 — step 0 (the tools) and the design of test 1. The lesson itself is NOT built.** Measured from the agents'
+task notices (the main session's own tokens are not counted). Models: main session Fable then Sonnet; every worker
+`opus`; gate A `fable`.
+
+| Piece | Tokens | Result |
+|---|---|---|
+| `scripts/engine-patch.mjs` + list + test | 139 k | 8 tests green; first patch (+2431 −4, 7 paths) passes `git apply --check` on DZ. The list holds a FEATURE (the `factorization` answer type, JS + PHP), not a fix: every real engine fix made in France sits in a file that also holds French sentences — those are carried by hand |
+| the five role cards `.claude/skills/lesson-v2/cards/` | 251 k | written; 5 × 910–960 words (a little over the 900 target); NOT yet used by an agent. The writer found 16 places where the skill's documents contradict the code (`scratchpad` report) — not yet corrected in `briefs.md` / `defects.md` |
+| `lesson:new`, `lesson:assemble` + 21 tests | 237 k | built; `lesson:assemble` never ran for real on a new lesson (only `--check` on lesson 1 and on fixtures); 7 « one lesson » test assertions made catalogue-driven. Not automated: bank, class test, walk, lab instrument, warm-up families, docs |
+| design of lesson 2 (`trouver-le-pgcd`) | 325 k + 401 k (the correction) | in `docs/reports/UNIT_3E_MULTIPLES_ET_DIVISEURS_DESIGN.md`; four keys; the numbers are recomputed by a script that prints « every line ok » |
+| gate A (`fable`) | 175 k | PASS WITH CORRECTIONS: 16 defects — **12 pedagogy (2 blocking)**, 2 feasibility, 2 other. Blocking: the final mission was won by one division (2 408 ÷ 86); K4 and K5 forged the same rule. All fixed and re-checked by the main session |
+| the Thalès world, three propositions (DZ, `docs/reports/mockups/thales-world.html`) | 215 k | built, looked at; waits for the owner's choice (his rule: new worlds are built together) |
+
+**Step 0 total: about 627 k against a budget of 300 k — OVER; the owner was told and said to continue.** The tools
+must now save more than they cost: the judgment is test 1's cost.
+
+**Counted against Opus as designer (§8): gate A found 2 design-level pedagogy defects on the first lesson.** If gate A
+finds design-level defects on the NEXT lesson too, the design goes back to the strongest model.
+
+**To do before the PGCD lesson is briefed:** the sheet bench must keep its state (design § « Kit work », the one item);
+correct the 16 contradictions in the skill; rewrite the skill's §2 around §6 (the cards are linked from SKILL.md, the
+rest of §2 still describes lesson 1's pipeline); the K3 tile wording « qu'on voit » is to be read aloud to the owner.
+
 
 ## 10. Open, for the owner at the start of the session
 

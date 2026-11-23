@@ -23,7 +23,7 @@ import { createLearningNet, WEIGHTS, weightOf } from './learningNet.js';
  *  - la règle anti-doublon est lisible : un item qui prolonge ou répète un
  *    item antérieur le DIT, avec sa valeur ajoutée.
  *
- * The delivered net is the 3e net (55 items taught in 3e, 53 stubs of 4e / 5e / 6e, one lesson `available`): every
+ * The delivered net is the 3e net (55 items taught in 3e, 53 stubs of 4e / 5e / 6e, the lessons the catalogue publishes `available`): every
  * invariant runs on it AND on the small neutral net below, so that each rule is seen to hold — and to bite.
  *
  * STUBS: an item `stub: true` is a real prerequisite whose grade has no lesson yet. It has no home lesson; its grade
@@ -348,7 +348,7 @@ describe.each([
 });
 
 describe('the delivered net (3e)', () => {
-  it('holds the 3e net: 55 items taught in 3e, 53 stubs of the earlier grades, 60 lessons in 13 units (1 published)', () => {
+  it('holds the 3e net: 55 items taught in 3e, 53 stubs of the earlier grades, 60 lessons in 13 units (those of the catalogue published)', () => {
     expect(net).toMatchObject({ version: 1 });
     expect(typeof net.builtOn).toBe('string');
     expect(Object.keys(net.linkTypes)).toEqual(['requires', 'extends', 'consolidates']);
@@ -363,11 +363,14 @@ describe('the delivered net (3e)', () => {
     expect(delivered.UNITS).toHaveLength(13);
     expect(delivered.LESSONS).toHaveLength(60);
     expect(delivered.LESSONS.every((l) => l.grade === '3e')).toBe(true);
-    // the first lesson is published (2026-11-23); the 59 others are planned
-    expect(delivered.LESSONS.filter((l) => l.status === 'available').map((l) => l.code)).toEqual([
-      'decomposer-en-facteurs-premiers',
-    ]);
-    expect(delivered.LESSONS.filter((l) => l.status === 'planned')).toHaveLength(59);
+    // the net publishes exactly the lessons the catalogue marks `available` (the first, 2026-11-23:
+    // `decomposer-en-facteurs-premiers`); every other one is planned
+    const published = lessons3e.lessons.filter((l) => l.status === 'available').map((l) => l.code);
+    expect(published).toContain('decomposer-en-facteurs-premiers');
+    expect(delivered.LESSONS.filter((l) => l.status === 'available').map((l) => l.code).sort()).toEqual(
+      [...published].sort(),
+    );
+    expect(delivered.LESSONS.filter((l) => l.status === 'planned')).toHaveLength(60 - published.length);
     expect(delivered.WEIGHTED_GRADES).toEqual(['3e']);
   });
 
