@@ -1,0 +1,183 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-009",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des paniers de confitures et de jus",
+    "estimatedMinutes": 7,
+    "tags": [
+      "partage",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une ferme produit $336$ pots de confiture et $224$ bouteilles de jus. Elle veut tout répartir dans des paniers identiques, le plus de paniers possible. Un pot revient à $3$ €, une bouteille à $2$ € et l’emballage d’un panier à $1$ €. Un panier est vendu $20$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de paniers la ferme peut-elle composer, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "112",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de paniers divise $336$ et $224$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(336 ; 224) = 112$ paniers.",
+        "incorrect": "Le nombre de paniers est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$336 = 224 \\times 1 + 112$ et $224 = 112 \\times 2 + 0$.",
+          "$\\text{PGCD}(336 ; 224) = 112$."
+        ],
+        "result": "112"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "56"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de pots de confiture y a-t-il dans chaque panier ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les pots entre les paniers."
+        }
+      ],
+      "feedback": {
+        "correct": "$336 \\div 112 = 3$ pots.",
+        "incorrect": "Divise le nombre de pots par le nombre de paniers."
+      },
+      "solution": {
+        "lines": [
+          "$336 \\div 112 = 3$ pots, et $224 \\div 112 = 2$ bouteilles."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien d’euros revient un panier ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "14",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un panier contient des pots, des bouteilles et un emballage."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 3 + 2 \\times 2 + 1 = 14$ €.",
+        "incorrect": "Additionne le prix des pots, des bouteilles et de l’emballage d’un panier."
+      },
+      "solution": {
+        "lines": [
+          "Un panier : $3$ pots et $2$ bouteilles.",
+          "$3 \\times 3 + 2 \\times 2 + 1 = 9 + 4 + 1 = 14$ €."
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "La ferme vend tous les paniers. Quel bénéfice fait-elle, en euros ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "672",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quel bénéfice fait-elle sur un panier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$112 \\times (20 - 14) = 672$ €.",
+        "incorrect": "Multiplie le bénéfice sur un panier par le nombre de paniers."
+      },
+      "solution": {
+        "lines": [
+          "Sur un panier : $20 - 14 = 6$ €.",
+          "Sur $112$ paniers : $112 \\times 6 = 672$ €."
+        ],
+        "result": "672"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

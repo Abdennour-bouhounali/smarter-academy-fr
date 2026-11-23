@@ -5,13 +5,21 @@
  * whole number is the core's (`formatFr` « 2 431 », `texFr` « 2\,431 »). All are RE-EXPORTED here, never copied.
  *
  * What is this lesson's own: its NUMBERS (ONE place — the story, the tablets, the knowledge page, the trainer and the
- * tests read them), the writing of a decomposition (with its powers, as LaTeX or as plain text with superscripts), and
- * `fr` — French typography laid on a sentence written with plain spaces.
+ * tests read them) and the writing of a decomposition (with its powers, as LaTeX or as plain text with superscripts).
+ * `fr` / `frAll` — French typography laid on a sentence — are the authoring kit's (`numbers.js`), re-exported.
  */
 import { formatFr, texFr } from '@smarter-academy/core';
 import { isPrime, primeFactors } from '../../../../../../common/gameworld/divisorIsles/factorLadder';
 
-export { CELLS, PLANKS, counted, listFr, planksOf } from '../../../../../../common/gameworld/kit/authoring/numbers';
+export {
+  CELLS,
+  PLANKS,
+  counted,
+  fr,
+  frAll,
+  listFr,
+  planksOf,
+} from '../../../../../../common/gameworld/kit/authoring/numbers';
 export { isPrime, primeFactors };
 
 /**
@@ -96,34 +104,3 @@ export const triedPrimes = (n) => {
 };
 /** The smallest prime that divides n ≥ 2. */
 export const smallestPrime = (n) => primeFactors(n)[0];
-
-// ───────────────────────── French typography ─────────────────────────
-
-/**
- * French typography laid on a sentence written with plain spaces (`FRENCH_LANGUAGE_CONTRACT.md` §4): « : » takes a
- * no-break space (U+00A0), « ; ! ? » a narrow one (U+202F), the quotation marks « … » no-break spaces inside, an
- * apostrophe between two letters becomes « ’ ». A formula (`$…$`) is left as it is: LaTeX writes its own punctuation.
- */
-export function fr(s) {
-  return String(s)
-    .split(/(\$[^$]*\$)/)
-    .map((part, i) =>
-      i % 2
-        ? part
-        : part
-            .replace(/ :/g, ' :')
-            .replace(/ ([;!?])/g, ' $1')
-            .replace(/« /g, '« ')
-            .replace(/ »/g, ' »')
-            .replace(/(\p{L})'(\p{L})/gu, '$1’$2'),
-    )
-    .join('');
-}
-/** `fr` over every sentence of a text object: strings, arrays, objects, and the sentences its functions return. */
-export function frAll(x) {
-  if (typeof x === 'string') return fr(x);
-  if (typeof x === 'function') return (...args) => frAll(x(...args));
-  if (Array.isArray(x)) return x.map(frAll);
-  if (x && typeof x === 'object') return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, frAll(v)]));
-  return x;
-}

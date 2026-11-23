@@ -24,6 +24,7 @@
  * says what the strips, the shelves or the ladder have just done.
  */
 import { useEffect, useState } from 'react';
+import { formatFr, texFr } from '@smarter-academy/core';
 import MathText from '../../components/MathText';
 import { Num } from '../kit/parts';
 import { commonOf, commonSays, ladderOf, ladderAsk, ladderStart, commonPlanks, nestOf } from './inquiry';
@@ -44,7 +45,7 @@ export function Strip({ n, d, u, y, tag, gold = false }) {
       {n === 0 && <rect className="iq-gapzero" x={X0 - 7} y={y} width="14" height="30" rx="4" data-iq-zero />}
       <Span n={n} d={d} u={u} y={y} laid={Boolean(d)} />
       <text className={`iq-scene__num ${gold ? 'is-gold' : ''}`} x={X0 + n * u} y={y - 12} direction="ltr">
-        {n}
+        {formatFr(n)}
       </text>
     </g>
   );
@@ -309,7 +310,9 @@ function CommonShelves({ spec, play, onDone }) {
 // ───────────────────────── ladder: a pair replaced by a simpler pair ─────────────────────────
 const MAXR = 6; // rows on screen; more are folded behind one line (never deleted)
 const rowTex = (r, mode) =>
-  mode === 'divide' ? `${r.a} = ${r.b} \\times ${r.q} + ${r.value}` : `${r.a} - ${r.b} = ${r.value}`;
+  mode === 'divide'
+    ? `${texFr(r.a)} = ${texFr(r.b)} \\times ${texFr(r.q)} + ${texFr(r.value)}`
+    : `${texFr(r.a)} - ${texFr(r.b)} = ${texFr(r.value)}`;
 const same = (x, y) => x.length === y.length && x.every((v, i) => v === y[i]);
 const samePair = (x, y) => x && y && ((x[0] === y[0] && x[1] === y[1]) || (x[0] === y[1] && x[1] === y[0]));
 
@@ -473,7 +476,7 @@ function LadderRows({ spec, play, onDone }) {
               <RungBar r={v.r} written={v.i < written} scale={scale} end={lit && v.i === L.steps - 1} />
               <span className="iq-rung__tex">
                 <MathText>
-                  {`$(${v.r.a}\\,;\\,${lit && v.i === L.steps - 1 ? `\\textcolor{#fbbf24}{${v.r.b}}` : v.r.b})$`}
+                  {`$(${texFr(v.r.a)}\\,;\\,${lit && v.i === L.steps - 1 ? `\\textcolor{#fbbf24}{${texFr(v.r.b)}}` : texFr(v.r.b)})$`}
                 </MathText>
                 {v.i < written && <MathText>{`$${rowTex(v.r, mode)}$`}</MathText>}
               </span>

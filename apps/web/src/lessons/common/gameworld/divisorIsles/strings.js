@@ -21,7 +21,7 @@ export const FORGE_TEXT = {
   cells: (n) => counted(n, CELLS),
   and: 'et',
   mirror: 'Construit par le miroir',
-  plank: (b) => `planche de ${b}`,
+  plank: (b) => `planche de ${formatFr(b)}`,
   held: 'tient',
   fell: (c) => (c.b > c.a ? 's’effondre : planche trop longue' : `s’effondre : il reste ${counted(c.r, CELLS)}`),
   true: 'vraie',
@@ -213,7 +213,7 @@ export const T = {
     remainder: 'Reste',
     unpaid: 'Cases sans planche',
     /** the mould he carries, in the top bar */
-    held: (b) => `Moule ${b}`,
+    held: (b) => `Moule ${formatFr(b)}`,
   },
   /** The names the screen reads aloud (aria-label): the two lanes of the run, the facts of a case, the amount typed. */
   a11y: {

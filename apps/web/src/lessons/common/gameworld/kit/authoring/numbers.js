@@ -101,6 +101,38 @@ export function listFr(xs) {
   return `${items.slice(0, -1).join(', ')} et ${items.at(-1)}`;
 }
 
+// ───────────────────────── French typography laid on a sentence ─────────────────────────
+
+/**
+ * French typography laid on a sentence written with plain spaces (`FRENCH_LANGUAGE_CONTRACT.md` §4): « : » takes a
+ * no-break space (U+00A0), « ; ! ? » a narrow one (U+202F), the quotation marks « … » no-break spaces inside, an
+ * apostrophe between two letters becomes « ’ ». A formula (`$…$`) is left as it is: LaTeX writes its own punctuation.
+ * (Moved here from lesson 1's `world/math.js` on 2026-11-23: every French lesson lays it on its sentences.)
+ */
+export function fr(s) {
+  return String(s)
+    .split(/(\$[^$]*\$)/)
+    .map((part, i) =>
+      i % 2
+        ? part
+        : part
+            .replace(/ :/g, ' :')
+            .replace(/ ([;!?])/g, ' $1')
+            .replace(/« /g, '« ')
+            .replace(/ »/g, ' »')
+            .replace(/(\p{L})'(\p{L})/gu, '$1’$2'),
+    )
+    .join('');
+}
+/** `fr` over every sentence of a text object: strings, arrays, objects, and the sentences its functions return. */
+export function frAll(x) {
+  if (typeof x === 'string') return fr(x);
+  if (typeof x === 'function') return (...args) => frAll(x(...args));
+  if (Array.isArray(x)) return x.map(frAll);
+  if (x && typeof x === 'object') return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, frAll(v)]));
+  return x;
+}
+
 // ───────────────────────── the French agreement of a number and its noun ─────────────────────────
 
 /**

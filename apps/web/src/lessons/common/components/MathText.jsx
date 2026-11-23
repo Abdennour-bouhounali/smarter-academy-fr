@@ -45,6 +45,13 @@ import { InlineMath, BlockMath } from 'react-katex';
  *   { type: 'text', text } · { type: 'block', math } ·
  *   { type: 'inline', pieces: [{ text } | { math }] }
  */
+/**
+ * La paire à la française dans une formule : « PGCD(12 ; 18) », « (2 ; −3) ». KaTeX colle « ; » à ce qui
+ * le précède ; écrit « a ; b » (une espace de chaque côté), il reçoit une fine espace de part et d'autre.
+ * Une commande « \; » n'est jamais touchée (son « ; » suit une barre oblique, pas une espace).
+ */
+export const frenchMath = (math) => math.replace(/ ; /g, '\\,;\\,');
+
 export function mathSegments(source) {
   const parts = source.split(/(\$\$[\s\S]+?\$\$|\$[\s\S]+?\$)/g);
   const isBlock = (p) => p.startsWith('$$') && p.endsWith('$$') && p.length > 4;
@@ -52,7 +59,7 @@ export function mathSegments(source) {
   const out = [];
   for (let i = 0; i < parts.length; i += 1) {
     const part = parts[i];
-    if (isBlock(part)) { out.push({ type: 'block', math: part.slice(2, -2) }); continue; }
+    if (isBlock(part)) { out.push({ type: 'block', math: frenchMath(part.slice(2, -2)) }); continue; }
     if (!isInline(part)) { if (part) out.push({ type: 'text', text: part }); continue; }
     const pieces = [];
     // Un mot latin collé devant la formule (au plus une espace) la rejoint — un mot ENTIER en lettres
@@ -64,12 +71,12 @@ export function mathSegments(source) {
       if (!prev.text) out.pop();
       pieces.push({ text: lead[2] });
     }
-    pieces.push({ math: part.slice(1, -1) });
+    pieces.push({ math: frenchMath(part.slice(1, -1)) });
     // Tant que seuls des espaces ou un mot latin mènent à la formule suivante,
     // l'île continue.
     while (i + 2 < parts.length && /^\s*(?:[A-Za-z]+\s*)?$/.test(parts[i + 1]) && isInline(parts[i + 2])) {
       if (parts[i + 1]) pieces.push({ text: parts[i + 1] });
-      pieces.push({ math: parts[i + 2].slice(1, -1) });
+      pieces.push({ math: frenchMath(parts[i + 2].slice(1, -1)) });
       i += 2;
     }
     out.push({ type: 'inline', pieces });

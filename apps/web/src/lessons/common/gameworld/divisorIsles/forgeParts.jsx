@@ -178,13 +178,31 @@ const pairRow = (n, d) => {
   const q = d <= n ? Math.floor(n / d) : 0;
   return { n, q, r: n - q * d, fills: n % d === 0 };
 };
+/**
+ * Past a few hundred cells a pair is drawn at scale as BARS, never one rect per cell or per plank (a pair of 52 015 and
+ * 31 209 cells with a plank of 2 would be 130 000 rects and 26 000 strokes): the cells are drawn one by one while a cell
+ * is 2 units wide or more, the planks one by one while a plank is 3 units wide or more; else the cells are one bar (the
+ * filled part, then what is left in amber) and the planks laid are ONE strip (`data-rf-strip`) of their whole length.
+ */
+const P_CELL_MIN = 2;
+const P_PLANK_MIN = 3;
+const pairScale = (a, b, d) => {
+  const cell = Math.min(34, P_ROOM / Math.max(a, b, d));
+  return { cell, cells: cell >= P_CELL_MIN, planks: cell * d >= P_PLANK_MIN };
+};
+
+/** The strokes of a pair's build: one per plank laid on the longer row, ONE when the planks are drawn as a strip. */
+const pairBeats = ({ a, b, d }) => {
+  const q = Math.max(pairRow(a, d).q, pairRow(b, d).q);
+  return pairScale(a, b, d).planks ? q : Math.min(q, 1);
+};
 
 function PairMirror({ c, stage, fast, tight }) {
   const { a, b, d } = c.pair;
   const built = stage !== 'ask';
   const done = stage === 'done';
   const rows = [pairRow(a, d), pairRow(b, d)];
-  const cell = Math.min(34, P_ROOM / Math.max(a, b, d));
+  const { cell, cells, planks } = pairScale(a, b, d);
   // the plank and its name stay above the bridges until it is laid — or when it is longer than one of the gaps
   const sample = !built || d > Math.min(a, b);
   const top = tight && !sample ? P_TIGHT : 0;
@@ -212,18 +230,48 @@ function PairMirror({ c, stage, fast, tight }) {
           <g key={j} className={`rf-pairrow ${look}`} data-rf-pair-row={row.n} data-rf-fills={row.fills ? '1' : '0'}>
             <rect x={P_X0 - 26} y={y} width="26" height="32" rx="6" className="rf-bank" />
             <rect x={P_X0 + cell * row.n} y={y} width="26" height="32" rx="6" className="rf-bank" />
-            {Array.from({ length: row.n }, (_, i) => (
+            {cells
+              ? Array.from({ length: row.n }, (_, i) => (
+                  <rect
+                    key={i}
+                    x={P_X0 + i * cell + 1}
+                    y={y + 6}
+                    width={Math.max(1, cell - 2)}
+                    height="20"
+                    rx="3"
+                    className={`rf-cell ${built && i >= row.q * d ? 'is-left' : ''}`}
+                  />
+                ))
+              : [
+                  [0, built ? row.q * d : row.n, ''],
+                  [row.q * d, built ? row.r : 0, 'is-left'],
+                ]
+                  .filter(([, n]) => n > 0)
+                  .map(([from, n, look]) => (
+                    <rect
+                      key={look || 'cells'}
+                      x={P_X0 + from * cell + 1}
+                      y={y + 6}
+                      width={Math.max(1, n * cell - 2)}
+                      height="20"
+                      rx="3"
+                      className={`rf-cell ${look}`}
+                      data-rf-cells={n}
+                    />
+                  ))}
+            {built && !planks && row.q > 0 && (
               <rect
-                key={i}
-                x={P_X0 + i * cell + 1}
-                y={y + 6}
-                width={Math.max(1, cell - 2)}
-                height="20"
-                rx="3"
-                className={`rf-cell ${built && i >= row.q * d ? 'is-left' : ''}`}
+                x={P_X0 + 1.5}
+                y={y + 4}
+                width={Math.max(1, cell * d * row.q - 3)}
+                height="24"
+                rx="6"
+                className="rf-plank rf-plank--strip"
+                data-rf-strip={row.q}
               />
-            ))}
+            )}
             {built &&
+              planks &&
               Array.from({ length: row.q }, (_, k) => (
                 <rect
                   key={k}
@@ -257,12 +305,12 @@ const PairMini = ({ pair }) => {
         const y = j ? 7.5 : 0.5;
         return (
           <g key={j}>
-            {Array.from({ length: row.q }, (_, k) => (
+            {(cell * pair.d >= 1.5 ? Array.from({ length: row.q }, (_, k) => k) : row.q ? ['strip'] : []).map((k) => (
               <rect
                 key={k}
-                x={k * pair.d * cell + 0.25}
+                x={k === 'strip' ? 0.25 : k * pair.d * cell + 0.25}
                 y={y}
-                width={Math.max(0.6, cell * pair.d - 0.5)}
+                width={Math.max(0.6, cell * pair.d * (k === 'strip' ? row.q : 1) - 0.5)}
                 height="6"
                 rx="1.5"
                 className={row.fills ? 'is-held' : ''}
@@ -686,6 +734,6 @@ export const FORGE_PARTS = {
       : c.factor
         ? c.factor.planks.length + (c.factor.fell != null ? 1 : 0)
         : c.pair
-          ? Math.max(pairRow(c.pair.a, c.pair.d).q, pairRow(c.pair.b, c.pair.d).q)
+          ? pairBeats(c.pair)
           : c.q,
 };

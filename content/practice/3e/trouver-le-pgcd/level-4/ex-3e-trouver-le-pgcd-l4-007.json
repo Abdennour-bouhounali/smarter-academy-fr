@@ -1,0 +1,172 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-007",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Quand le tableur ne suffit plus",
+    "estimatedMinutes": 6,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD",
+      "tableur"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Malik cherche le PGCD de $19\\,982$ et $29\\,973$. Son tableur teste les divisions par les nombres premiers jusqu’à $89$. Il trouve $19\\,982 = 2 \\times 9\\,991$, puis aucun nombre premier jusqu’à $89$ ne divise $9\\,991$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Malik peut-il conclure que $9\\,991$ est premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Jusqu’où faut-il tester les nombres premiers pour $9\\,991$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compare $97 \\times 97$ et $9\\,991$."
+        }
+      ],
+      "feedback": {
+        "correct": "$97 \\times 97 = 9\\,409$ ne dépasse pas $9\\,991$ : il faut encore tester $97$, et en effet $9\\,991 = 97 \\times 103$.",
+        "incorrect": "On teste les nombres premiers $p$ tant que $p \\times p$ ne dépasse pas le nombre."
+      },
+      "solution": {
+        "lines": [
+          "$97 \\times 97 = 9\\,409 \\leqslant 9\\,991$ : les essais jusqu’à $89$ ne suffisent pas.",
+          "En fait, $9\\,991 = 97 \\times 103$ n’est pas premier.",
+          "L’algorithme d’Euclide évite ces essais."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de divisions l’algorithme d’Euclide écrit-il pour $29\\,973$ et $19\\,982$, la division au reste nul comprise ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les divisions l’une sous l’autre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nouvelle division divise le diviseur précédent par le reste précédent ; arrête-toi au reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "2 divisions : $29\\,973 = 19\\,982 \\times 1 + 9\\,991$, puis $19\\,982 = 9\\,991 \\times 2 + 0$.",
+        "incorrect": "Compte toutes les lignes, jusqu’à celle dont le reste est nul."
+      },
+      "solution": {
+        "lines": [
+          "$29\\,973 = 19\\,982 \\times 1 + 9\\,991$",
+          "$19\\,982 = 9\\,991 \\times 2 + 0$",
+          "L’algorithme écrit 2 divisions."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $\\text{PGCD}(19\\,982 ; 29\\,973)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9991",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $9\\,991$ : $\\text{PGCD}(19\\,982 ; 29\\,973) = 9\\,991$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$29\\,973 = 19\\,982 \\times 1 + 9\\,991$",
+          "$19\\,982 = 9\\,991 \\times 2 + 0$",
+          "Le dernier reste non nul est $9\\,991$, donc $\\text{PGCD}(19\\,982 ; 29\\,973) = 9\\,991$."
+        ],
+        "result": "9\\,991"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "2"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-009",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les services d’un potier",
+    "estimatedMinutes": 8,
+    "tags": [
+      "partage",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un potier a fabriqué $216$ bols et $162$ assiettes. Il veut tout vendre en services identiques, le plus de services possible. Un bol lui coûte $7$ €, une assiette $4$ €, et l’emballage de tous les services $30$ €. Il veut gagner au moins $564$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de services peut-il composer, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "54",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de services divise $216$ et $162$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(216 ; 162) = 54$ services.",
+        "incorrect": "Le nombre de services est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$216 = 162 \\times 1 + 54$ et $162 = 54 \\times 3 + 0$.",
+          "$\\text{PGCD}(216 ; 162) = 54$."
+        ],
+        "result": "54"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "27"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "18"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de bols chaque service contient-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les bols entre les services."
+        }
+      ],
+      "feedback": {
+        "correct": "$216 \\div 54 = 4$ bols.",
+        "incorrect": "Divise le nombre de bols par le nombre de services."
+      },
+      "solution": {
+        "lines": [
+          "$216 \\div 54 = 4$ bols (et $162 \\div 54 = 3$ assiettes)."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quel est le plus petit prix entier, en euros, auquel il peut vendre un service ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "51",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule ce que lui coûte la fabrication de tout, emballage compris."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ajoute le gain voulu, puis partage entre les services."
+        }
+      ],
+      "feedback": {
+        "correct": "$(1\\,512 + 648 + 30 + 564) \\div 54 = 51$ €.",
+        "incorrect": "Additionne tous les coûts et le gain voulu, puis partage entre les services."
+      },
+      "solution": {
+        "lines": [
+          "Coûts : $216 \\times 7 + 162 \\times 4 + 30 = 1\\,512 + 648 + 30 = 2\\,190$ €.",
+          "Avec le gain : $2\\,190 + 564 = 2\\,754$ €.",
+          "$2\\,754 \\div 54 = 51$ € par service au moins."
+        ],
+        "result": "51"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

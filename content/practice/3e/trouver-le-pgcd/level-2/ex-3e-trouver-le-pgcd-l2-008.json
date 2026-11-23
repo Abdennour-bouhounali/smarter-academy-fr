@@ -1,0 +1,128 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-008",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "L’algorithme d’Euclide pour 935 et 714",
+    "estimatedMinutes": 4,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l2-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On applique l’algorithme d’Euclide à $935$ et $714$. La première division est $935 = 714 \\times 1 + 221$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le reste de la deuxième division ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "51",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "La deuxième division divise $714$ par $221$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de fois $221$ tient-il dans $714$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$714 = 221 \\times 3 + 51$.",
+        "incorrect": "Divise le diviseur de la première division par son reste."
+      },
+      "solution": {
+        "lines": [
+          "La deuxième division est celle de $714$ par $221$.",
+          "$714 = 221 \\times 3 + 51$ : le reste est $51$."
+        ],
+        "result": "51"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(935 ; 714)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "17",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $17$ : $\\text{PGCD}(935 ; 714) = 17$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$935 = 714 \\times 1 + 221$",
+          "$714 = 221 \\times 3 + 51$",
+          "$221 = 51 \\times 4 + 17$",
+          "$51 = 17 \\times 3 + 0$",
+          "Le dernier reste non nul est $17$, donc $\\text{PGCD}(935 ; 714) = 17$."
+        ],
+        "result": "17"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "3"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "51"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "221"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

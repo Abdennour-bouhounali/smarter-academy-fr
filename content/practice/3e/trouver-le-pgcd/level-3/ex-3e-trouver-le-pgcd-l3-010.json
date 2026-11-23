@@ -1,0 +1,207 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-010",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des tenues pour les clubs de football",
+    "estimatedMinutes": 6,
+    "tags": [
+      "partage",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un comité départemental de football a reçu $276$ maillots et $207$ shorts. Il veut les distribuer tous à des clubs en lots identiques : chaque club reçoit le même nombre de maillots et le même nombre de shorts, et rien ne reste."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le plus grand nombre de clubs qui peuvent recevoir un lot ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "69",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de clubs doit diviser $276$ et $207$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand de ces diviseurs communs."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(276 ; 207) = 69$ : $69$ clubs au plus.",
+        "incorrect": "Le nombre de clubs est un diviseur commun des deux nombres, le plus grand."
+      },
+      "solution": {
+        "lines": [
+          "$276 = 2^{2} \\times 3 \\times 23$ et $207 = 3^{2} \\times 23$.",
+          "$\\text{PGCD}(276 ; 207) = 3 \\times 23 = 69$.",
+          "Au plus $69$ clubs reçoivent un lot."
+        ],
+        "result": "69"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "23"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "Avec ce nombre de clubs :",
+      "statement": "combien de maillots chaque club reçoit-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les maillots entre les clubs."
+        }
+      ],
+      "feedback": {
+        "correct": "$276 \\div 69 = 4$ maillots.",
+        "incorrect": "Divise le nombre de maillots par le nombre de clubs."
+      },
+      "solution": {
+        "lines": [
+          "$276 \\div 69 = 4$ : chaque club reçoit $4$ maillots."
+        ],
+        "result": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "69"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "combien de shorts chaque club reçoit-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les shorts entre les clubs."
+        }
+      ],
+      "feedback": {
+        "correct": "$207 \\div 69 = 3$ shorts.",
+        "incorrect": "Divise le nombre de shorts par le nombre de clubs."
+      },
+      "solution": {
+        "lines": [
+          "$207 \\div 69 = 3$ : chaque club reçoit $3$ shorts."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Peut-on faire la même distribution entre $24$ clubs ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$24$ doit diviser $276$ et $207$."
+        }
+      ],
+      "feedback": {
+        "correct": "$207$ est impair : $24$ ne le divise pas.",
+        "incorrect": "Vérifie que $24$ divise les deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$207 = 24 \\times 8 + 15$ : il resterait $15$ shorts.",
+          "La distribution entre $24$ clubs est impossible."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

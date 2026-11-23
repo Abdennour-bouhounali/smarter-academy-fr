@@ -1,0 +1,139 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-006",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Choisir le bon PGCD",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On donne $C = 3 \\times 5^{2} \\times 7$ et $D = 3^{2} \\times 5 \\times 13$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel produit est égal au PGCD de $C$ et $D$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 \\times 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3^{2} \\times 5^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PLUS-GRAND-EXPOSANT"
+        },
+        {
+          "id": "C",
+          "content": "$3^{2} \\times 5^{2} \\times 7 \\times 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-TOUS-LES-FACTEURS"
+        },
+        {
+          "id": "D",
+          "content": "$5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PAS-LE-PLUS-GRAND"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quels nombres premiers apparaissent dans les deux décompositions ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, quel est le plus petit des deux exposants ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ et $5$ sont communs, chacun avec le plus petit exposant : $3^{1}$ et $5^{1}$.",
+        "incorrect": "Garde les facteurs premiers communs avec leur plus petit exposant."
+      },
+      "solution": {
+        "lines": [
+          "Facteurs premiers communs : $3$ et $5$.",
+          "Plus petits exposants : $3^{1}$ (dans $C$) et $5^{1}$ (dans $D$).",
+          "Le PGCD de $C$ et $D$ est $3 \\times 5$."
+        ],
+        "result": "3 \\times 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue le produit choisi."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 5 = 15$.",
+        "incorrect": "Effectue le produit des facteurs communs."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 5 = 15$."
+        ],
+        "result": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "225"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

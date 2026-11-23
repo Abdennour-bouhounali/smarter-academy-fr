@@ -9,7 +9,8 @@
  * `logic.js › QUESTS`.
  *
  * The Algerian instruments are kept with `lesson: null` — listed nowhere until a French lesson introduces one (their
- * Algerian tags are in git, `git show 049380e:<this file>`). Tagged today: `factor`, the instrument of the first 3e lesson.
+ * Algerian tags are in git, `git show 049380e:<this file>`). Tagged today: `factor`, the instrument of the first 3e lesson;
+ * `common` and `lists`, the instruments of the second (`trouver-le-pgcd`).
  */
 import { getLessonById } from '@smarter-academy/core';
 import { GRADES, GRADE_NAMES, compareLessons, isReached, placeOf } from './order';
@@ -71,8 +72,10 @@ export const TOOLS = [
     load: () => import('./tools/Planks'),
   },
   {
+    // the instrument of 3e `trouver-le-pgcd` (its design's port map: from the Algerian `qasim-mushtarak-akbar`). It
+    // writes « Diviseurs communs » and PGCD(a ; b): NOT safe before the lesson's first key (LESSON_LAB.md §2, known debt)
     id: 'common',
-    lesson: null,
+    lesson: 'trouver-le-pgcd',
     icon: '🤝',
     name: 'Les diviseurs communs',
     hint: 'Les diviseurs de deux nombres côte à côte : lesquels sont communs, et lequel est le plus grand ?',
@@ -82,8 +85,10 @@ export const TOOLS = [
     load: () => import('./tools/Common'),
   },
   {
+    // the instrument of 3e `trouver-le-pgcd` (from the Algerian `tayin-pgcd`); it writes PGCD(a ; b) once both lists
+    // are complete: NOT safe before the lesson's first key (LESSON_LAB.md §2, known debt)
     id: 'lists',
-    lesson: null,
+    lesson: 'trouver-le-pgcd',
     icon: '📋',
     name: 'L’établi des deux listes',
     hint: 'Écris les diviseurs de deux nombres par paires, côte à côte : où les deux listes se rejoignent-elles ?',

@@ -3,8 +3,9 @@
 > **Status (2026-11-22).** Covers the lab a student opens from a lesson (`apps/web/src/lessons/common/lessonlab/`) — not
 > the Math Lab (`/espace/atelier`, `MATH_LAB.md`). Imported from the Algerian platform (DZ dev `7f4cef1c`) on
 > 2026-11-22. True here: the shell, the « previous lessons only » rule, the shared numbers, the quests, the sounds, the
-> fifteen instruments' code. Since 2026-11-23 ONE instrument is tagged: `factor` « L’échelle des facteurs », the
-> instrument of 3e `decomposer-en-facteurs-premiers`; the fifteen Algerian ones keep `lesson: null` (their tags are in
+> fifteen instruments' code. Since 2026-11-23 `factor` « L’échelle des facteurs » is tagged (3e
+> `decomposer-en-facteurs-premiers`); since 2026-11-24 `common` and `lists` too (3e `trouver-le-pgcd`, its design's port
+> map; `euclid` stays untagged: its name says « Euclide »); the thirteen other Algerian ones keep `lesson: null` (their tags are in
 > `git show 049380e:apps/web/src/lessons/common/lessonlab/registry.js`) and are listed nowhere.
 > `lessonOrder.generated.json` holds the French catalogue's order. Not true here: no lab walk exists, and no lesson
 > mounts its lab yet. Since 2026-11-22 the lab is French and left to right: its screen
@@ -117,8 +118,8 @@ returns the quests the state has just proved. Nothing is ticked before the stude
 | `sentences` | the swap lever | four sentences true together or false together, with the equality that proves it |
 | `divisors` | the lens | each divisor rises with its partner; an arc joins them |
 | `planks` | the end of the plank (its length d) | one plank laid along six lengths (a, b, a + b, the difference, the remainder, 3 × a): each filled or with what is left |
-| `common` | the two numbers; a tap on a divisor | three trays; the greatest common one wears the crown |
-| `lists` | the two numbers; « try d » on both at once | the two lists built by pairs, each closing when the next square passes it; then what is in both and the greatest |
+| `common` — **`trouver-le-pgcd`** | the two numbers; a tap on a divisor | three trays; the greatest common one wears the crown |
+| `lists` — **`trouver-le-pgcd`** | the two numbers; « try d » on both at once | the two lists built by pairs, each closing when the next square passes it; then what is in both and the greatest |
 | `euclid` | the corner of the rectangle; the scissors | each family of squares writes its division; the last side is the PGCD |
 | `duo` | the two numbers (up to 999); three faces | the divisors of each and those in both; the successive divisions to the remainder 0; one number tried on both |
 | `strip` | the length k of a piece | a fraction a/b as a strip of b cells, a lit; pieces of k; the fraction rewritten in pieces only when k divides both |
@@ -176,7 +177,10 @@ the entry bundle (`BUNDLE_BOUNDARIES.md`).
 
 ## 9. Known limits
 
-- One instrument is tagged (`factor`); the fifteen others were made for Algerian lessons on division, divisors,
+- **`common` and `lists` are NOT safe before their lesson's first key**: they write « Diviseurs communs » and
+  PGCD(a ; b), and the world's title-screen door mounts the lab without `earlierOnly` (§2, known debt) — until that door
+  passes `earlierOnly` before the first seal, a student can read K1's name there.
+- Three instruments are tagged (`factor`, `common`, `lists`); the thirteen others were made for Algerian lessons on division, divisors,
   fractions and square roots, were turned French on 2026-11-22, and wait for a French lesson to take them. `factor` has
   never been seen in a browser.
 - Not validated by the owner; no real student has used it. The lab's state is not synced between devices.

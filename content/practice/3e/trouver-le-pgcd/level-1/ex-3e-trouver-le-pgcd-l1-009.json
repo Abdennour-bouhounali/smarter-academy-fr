@@ -1,0 +1,129 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-009",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les étapes de l’algorithme d’Euclide",
+    "estimatedMinutes": 3,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $247$ et $190$ avec l’algorithme d’Euclide."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de divisions l’algorithme d’Euclide écrit-il pour $247$ et $190$, la division au reste nul comprise ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les divisions l’une sous l’autre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nouvelle division divise le diviseur précédent par le reste précédent ; arrête-toi au reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "3 divisions : $247 = 190 \\times 1 + 57$, puis $190 = 57 \\times 3 + 19$, puis $57 = 19 \\times 3 + 0$.",
+        "incorrect": "Compte toutes les lignes, jusqu’à celle dont le reste est nul."
+      },
+      "solution": {
+        "lines": [
+          "$247 = 190 \\times 1 + 57$",
+          "$190 = 57 \\times 3 + 19$",
+          "$57 = 19 \\times 3 + 0$",
+          "L’algorithme écrit 3 divisions."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(247 ; 190)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "19",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $19$ : $\\text{PGCD}(247 ; 190) = 19$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$247 = 190 \\times 1 + 57$",
+          "$190 = 57 \\times 3 + 19$",
+          "$57 = 19 \\times 3 + 0$",
+          "Le dernier reste non nul est $19$, donc $\\text{PGCD}(247 ; 190) = 19$."
+        ],
+        "result": "19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "3"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "57"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "57"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

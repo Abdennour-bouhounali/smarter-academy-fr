@@ -1,0 +1,133 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-006",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "L’algorithme d’Euclide pour 1 005 et 315",
+    "estimatedMinutes": 4,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l2-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $1\\,005$ et $315$ avec l’algorithme d’Euclide."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le reste de la division euclidienne de $1\\,005$ par $315$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "60",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de fois $315$ tient-il dans $1\\,005$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retire ce multiple du grand nombre : ce qui reste est plus petit que le diviseur."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,005 = 315 \\times 3 + 60$.",
+        "incorrect": "Le reste est ce qui reste après avoir retiré le plus grand multiple possible du diviseur."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,005 = 315 \\times 3 + 60$",
+          "Le reste est $60$, plus petit que $315$."
+        ],
+        "result": "60"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "690"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(1\\,005 ; 315)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $15$ : $\\text{PGCD}(1\\,005 ; 315) = 15$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,005 = 315 \\times 3 + 60$",
+          "$315 = 60 \\times 5 + 15$",
+          "$60 = 15 \\times 4 + 0$",
+          "Le dernier reste non nul est $15$, donc $\\text{PGCD}(1\\,005 ; 315) = 15$."
+        ],
+        "result": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "4"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "60"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "690"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

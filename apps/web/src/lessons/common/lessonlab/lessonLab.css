@@ -330,9 +330,8 @@
   font-size: 1.02rem;
   font-weight: 600;
   opacity: 0.85;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* the hint is the tool's question: never cut by an ellipsis — a long one takes a second line (the stage gives room) */
+  line-height: 1.3;
   min-width: 0;
 }
 .ll-toolhead em {

@@ -1,0 +1,184 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-010",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un panneau de liège en carrés",
+    "estimatedMinutes": 5,
+    "tags": [
+      "partage",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l3-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Pour l’exposition du collège, on découpe un panneau de liège rectangulaire de $132$ cm sur $156$ cm en carrés identiques, sans perte. Le côté d’un carré est un nombre entier de centimètres."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Pour chaque longueur, dis si elle convient pour le côté d’un carré.",
+      "statement": "Le côté peut-il mesurer $6$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6$ doit diviser $132$ et $156$."
+        }
+      ],
+      "feedback": {
+        "correct": "$132 = 6 \\times 22$ et $156 = 6 \\times 26$.",
+        "incorrect": "Divise chaque dimension par $6$."
+      },
+      "solution": {
+        "lines": [
+          "$132 = 6 \\times 22$ et $156 = 6 \\times 26$ : le côté peut mesurer $6$ cm."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Le côté peut-il mesurer $8$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$8$ divise-t-il $132$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$132 = 8 \\times 16 + 4$ : $8$ ne divise pas $132$.",
+        "incorrect": "Une longueur qui convient divise les DEUX dimensions."
+      },
+      "solution": {
+        "lines": [
+          "$132 = 8 \\times 16 + 4$ : il resterait une bande de $4$ cm.",
+          "Le côté ne peut pas mesurer $8$ cm."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Le côté des carrés est le plus grand possible. Combien de carrés obtient-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "143",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le plus grand côté possible est le PGCD des deux dimensions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte les carrés sur chaque côté, puis multiplie."
+        }
+      ],
+      "feedback": {
+        "correct": "Le côté mesure $12$ cm : $11 \\times 13 = 143$ carrés.",
+        "incorrect": "Trouve d’abord le plus grand côté possible, puis le nombre de carrés sur chaque côté."
+      },
+      "solution": {
+        "lines": [
+          "$132 = 2^{2} \\times 3 \\times 11$ et $156 = 2^{2} \\times 3 \\times 13$, donc $\\text{PGCD}(132 ; 156) = 12$.",
+          "$132 \\div 12 = 11$ et $156 \\div 12 = 13$.",
+          "On obtient $11 \\times 13 = 143$ carrés."
+        ],
+        "result": "143"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "12"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

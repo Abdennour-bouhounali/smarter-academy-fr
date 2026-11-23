@@ -169,6 +169,32 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
     expect(count(out, /class="rf-plank (is-alt)?"/g)).toBe(2);
   });
 
+  it('a pair of thousands of cells is drawn at scale as BARS — a few rects and one stroke, never one per cell or plank', () => {
+    const rects = (out) => count(out, /<rect/g);
+    // 52 015 and 31 209 with a plank of 2: 26 007 + 15 604 planks — one strip per row, the cells one bar (+ the rest)
+    const two = pairOf(52015, 31209, 2);
+    const done = renderToString(<Mirror c={two} stage="done" fast />);
+    expect(rects(done)).toBeLessThan(20);
+    expect(done).toContain('data-rf-strip="26007"');
+    expect(done).toContain('data-rf-strip="15604"');
+    expect(done).toMatch(/class="rf-cell is-left" data-rf-cells="1"/); // 52 015 = 2 × 26 007 + 1
+    expect(done).toMatch(/class="rf-pairrow is-fell" data-rf-pair-row="52015"/);
+    expect(beats(two)).toBe(1);
+    expect(rects(renderToString(<Line c={two} />))).toBeLessThan(12);
+    // 52 015 and 31 209 with 10 403: 5 and 3 planks, wide enough to be drawn one by one; the cells one bar each
+    const g = pairOf(52015, 31209, 10403);
+    const built = renderToString(<Mirror c={g} stage="done" fast />);
+    expect(count(built, /class="rf-plank (is-alt)?"/g)).toBe(5 + 3);
+    expect(built).not.toContain('data-rf-strip');
+    expect(count(built, /class="rf-cell "/g)).toBe(2);
+    expect(beats(g)).toBe(5);
+    // asked, before the build: each gap is one bar, nothing laid
+    const ask = renderToString(<Mirror c={pairOf(1736, 980, 28)} stage="ask" fast />);
+    expect(count(ask, /class="rf-cell "/g)).toBe(2);
+    expect(ask).toContain('data-rf-cells="1736"');
+    expect(ask).not.toMatch(/data-rf-strip|class="rf-plank (is-alt)?"/);
+  });
+
   it('tight (beside the tiles): once laid, the band of the plank is left out — same width, less height', () => {
     const tight = renderToString(<Mirror c={pairOf(12, 18, 6)} stage="done" fast tight />);
     expect(tight).toContain('viewBox="0 50 720 100"');

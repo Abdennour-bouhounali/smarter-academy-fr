@@ -1,0 +1,125 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-002",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les grands diviseurs communs de 330 et 462",
+    "estimatedMinutes": 5,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On s’intéresse aux nombres $330$ et $462$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $\\text{PGCD}(330 ; 462)$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "66",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(330 ; 462) = 66$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "$330 = 2 \\times 3 \\times 5 \\times 11$ et $462 = 2 \\times 3 \\times 7 \\times 11$.",
+          "Un diviseur commun ne peut utiliser que $2$, $3$ et $11$ : le plus grand est $2 \\times 3 \\times 11 = 66$.",
+          "Donc $\\text{PGCD}(330 ; 462) = 66$."
+        ],
+        "result": "66"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "132"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "33"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris tous les diviseurs communs de $330$ et $462$ qui sont plus grands que $20$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        22,
+        33,
+        66
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un diviseur commun divise aussi le PGCD."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris les diviseurs du PGCD et garde ceux qui dépassent $20$."
+        }
+      ],
+      "feedback": {
+        "correct": "Ce sont $22$, $33$ et $66$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "Les diviseurs communs de $330$ et $462$ sont les diviseurs de $66$ : $1$, $2$, $3$, $6$, $11$, $22$, $33$ et $66$.",
+          "Plus grands que $20$ : $22$, $33$ et $66$."
+        ],
+        "result": "22 ; 33 ; 66"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

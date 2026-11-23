@@ -1,0 +1,241 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-002",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des sachets de bonbons pour la kermesse",
+    "estimatedMinutes": 8,
+    "tags": [
+      "facteurs premiers",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour la kermesse du collège, des élèves préparent des sachets identiques avec $1\\,080$ caramels et $840$ guimauves, le plus de sachets possible, sans rien laisser. Chaque sachet sera vendu $3{,}50$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $1\\,080$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^3*3^3*5",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par 2 tant que c’est possible, puis essaie 3, 5, 7…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand le quotient vaut 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,080 = 2^{3} \\times 3^{3} \\times 5$.",
+        "incorrect": "Divise par chaque nombre premier, dans l’ordre, autant de fois que possible.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "On divise par 2, 3, 5, 7… autant de fois que possible.",
+          "$1\\,080 = 2^{3} \\times 3^{3} \\times 5$."
+        ],
+        "result": "1\\,080 = 2^{3} \\times 3^{3} \\times 5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $840$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^3*3*5*7",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par 2 tant que c’est possible, puis essaie 3, 5, 7…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand le quotient vaut 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$840 = 2^{3} \\times 3 \\times 5 \\times 7$.",
+        "incorrect": "Divise par chaque nombre premier, dans l’ordre, autant de fois que possible.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "On divise par 2, 3, 5, 7… autant de fois que possible.",
+          "$840 = 2^{3} \\times 3 \\times 5 \\times 7$."
+        ],
+        "result": "840 = 2^{3} \\times 3 \\times 5 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Combien de sachets peuvent-ils préparer, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "120",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Garde les facteurs premiers communs aux deux décompositions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chacun avec son plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3} \\times 3 \\times 5 = 120$ sachets.",
+        "incorrect": "Le nombre de sachets est le PGCD des deux nombres : lis-le sur les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,080 = 2^{3} \\times 3^{3} \\times 5$ et $840 = 2^{3} \\times 3 \\times 5 \\times 7$.",
+          "$\\text{PGCD}(1\\,080 ; 840) = 2^{3} \\times 3 \\times 5 = 120$."
+        ],
+        "result": "120"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "1080"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "240"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Combien de caramels chaque sachet contient-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les caramels entre les sachets."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,080 \\div 120 = 9$ caramels.",
+        "incorrect": "Divise le nombre de caramels par le nombre de sachets."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,080 \\div 120 = 9$ caramels (et $840 \\div 120 = 7$ guimauves)."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "Tous les sachets sont vendus. Quelle somme les élèves récoltent-ils, en euros ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "420",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Multiplie le nombre de sachets par le prix d’un sachet."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\times 3{,}50 = 420$ €.",
+        "incorrect": "Multiplie le nombre de sachets par $3{,}50$ €."
+      },
+      "solution": {
+        "lines": [
+          "$120 \\times 3{,}50 = 420$ €."
+        ],
+        "result": "420"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

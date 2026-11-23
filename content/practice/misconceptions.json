@@ -83,5 +83,58 @@
     "relatedLearningPoints": [
       "3e_decomposer-en-facteurs-premiers_P1"
     ]
+  },
+  "MISC-PGCD-PAS-LE-PLUS-GRAND": {
+    "label": "Donner un diviseur commun qui n’est pas le plus grand (le plus petit autre que $1$, ou un facteur commun oublié)",
+    "explanation": "Le PGCD est le PLUS GRAND des diviseurs communs : tout autre diviseur commun le divise et lui est inférieur.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P1",
+      "3e_trouver-le-pgcd_P2",
+      "3e_trouver-le-pgcd_P4"
+    ]
+  },
+  "MISC-PGCD-DIVISEUR-D-UN-SEUL": {
+    "label": "Compter comme commun un nombre qui ne divise qu’un des deux nombres",
+    "explanation": "Un diviseur commun doit diviser les DEUX nombres : on vérifie chacun des deux.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P1",
+      "3e_trouver-le-pgcd_P4"
+    ]
+  },
+  "MISC-PGCD-DIFFERENCE": {
+    "label": "Prendre la différence des deux nombres (ou le premier reste) pour leur PGCD",
+    "explanation": "La différence a les mêmes diviseurs communs avec le plus petit nombre, mais elle n’est pas en général le PGCD : $75 - 45 = 30$, alors que $\\text{PGCD}(75 ; 45) = 15$.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P1",
+      "3e_trouver-le-pgcd_P3"
+    ]
+  },
+  "MISC-PGCD-PLUS-GRAND-EXPOSANT": {
+    "label": "Garder chaque facteur premier commun avec son PLUS GRAND exposant",
+    "explanation": "Le PGCD doit diviser les deux nombres : chaque facteur premier commun y figure avec le plus petit des deux exposants.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P2"
+    ]
+  },
+  "MISC-PGCD-TOUS-LES-FACTEURS": {
+    "label": "Multiplier tous les facteurs premiers, même ceux qui n’apparaissent que dans un des deux nombres",
+    "explanation": "Un facteur premier présent dans un seul des deux nombres ne divise pas l’autre : il ne fait pas partie du PGCD.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P2"
+    ]
+  },
+  "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET": {
+    "label": "Lire au mauvais endroit dans l’algorithme d’Euclide : le dernier quotient, un reste trop tôt, ou la mauvaise division suivante",
+    "explanation": "On divise le diviseur par le reste jusqu’à un reste nul ; le PGCD est le dernier reste NON NUL.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P3"
+    ]
+  },
+  "MISC-PGCD-LOTS-CONTENU": {
+    "label": "Confondre le nombre de lots et ce que contient un lot",
+    "explanation": "Le PGCD donne le plus grand NOMBRE de lots ; le contenu d’un lot s’obtient en divisant chaque quantité par ce nombre.",
+    "relatedLearningPoints": [
+      "3e_trouver-le-pgcd_P4"
+    ]
   }
 }

@@ -1,0 +1,127 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-005",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "L’algorithme d’Euclide pour 1 215 et 945",
+    "estimatedMinutes": 4,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $945$ et $1\\,215$ avec l’algorithme d’Euclide."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le reste de la division euclidienne de $1\\,215$ par $945$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "270",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de fois $945$ tient-il dans $1\\,215$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retire ce multiple du grand nombre : ce qui reste est plus petit que le diviseur."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,215 = 945 \\times 1 + 270$.",
+        "incorrect": "Le reste est ce qui reste après avoir retiré le plus grand multiple possible du diviseur."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,215 = 945 \\times 1 + 270$",
+          "Le reste est $270$, plus petit que $945$."
+        ],
+        "result": "270"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(945 ; 1\\,215)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "135",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $135$ : $\\text{PGCD}(945 ; 1\\,215) = 135$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,215 = 945 \\times 1 + 270$",
+          "$945 = 270 \\times 3 + 135$",
+          "$270 = 135 \\times 2 + 0$",
+          "Le dernier reste non nul est $135$, donc $\\text{PGCD}(945 ; 1\\,215) = 135$."
+        ],
+        "result": "135"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "2"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "270"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "270"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

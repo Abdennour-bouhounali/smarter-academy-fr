@@ -43,6 +43,8 @@ describe('Mon labo — the instruments a lesson may show', () => {
   it('tags an instrument with the lesson that introduces it, gives each a module and quests', () => {
     // the French lessons tag their own; the Algerian instruments stay listed nowhere until a French lesson takes one
     expect(TOOLS.filter((t) => t.lesson !== null).map((t) => [t.id, t.lesson])).toEqual([
+      ['common', 'trouver-le-pgcd'],
+      ['lists', 'trouver-le-pgcd'],
       ['factor', 'decomposer-en-facteurs-premiers'],
     ]);
     for (const t of TOOLS) {
@@ -61,7 +63,9 @@ describe('Mon labo — the instruments a lesson may show', () => {
     expect(lab.cabinet).toEqual([]);
     expect(toolsFor('decomposer-en-facteurs-premiers', { earlierOnly: true })).toMatchObject({ mine: [], all: [] });
     const next = toolsFor('trouver-le-pgcd');
-    expect(next.mine).toEqual([]);
+    // the second 3e lesson brings its own two (its design's port map: `common`, `lists`; `euclid` stays untagged)
+    expect(next.mine.map((t) => t.id)).toEqual(['common', 'lists']);
+    expect(toolsFor('trouver-le-pgcd', { earlierOnly: true }).all.map((t) => t.id)).toEqual(['factor']);
     expect(next.cabinet.map((g) => [g.grade, g.lessons.map((l) => l.code)])).toEqual([
       ['3e', ['decomposer-en-facteurs-premiers']],
     ]);

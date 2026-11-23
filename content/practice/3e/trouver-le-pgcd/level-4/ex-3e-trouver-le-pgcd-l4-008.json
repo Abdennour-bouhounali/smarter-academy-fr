@@ -1,0 +1,245 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-008",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des trousses pour la rentrée",
+    "estimatedMinutes": 7,
+    "tags": [
+      "partage",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Pour la rentrée, une association de parents a $252$ cahiers et $180$ stylos. Elle veut les répartir tous dans des trousses identiques, le plus de trousses possible. Un cahier coûte $2$ €, un stylo $1$ € et une trousse vide $6$ €. L’association dispose de $950$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de trousses peut-elle préparer, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "36",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de trousses divise $252$ et $180$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(252 ; 180) = 36$ trousses.",
+        "incorrect": "Le nombre de trousses est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 2^{2} \\times 3^{2} \\times 7$ et $180 = 2^{2} \\times 3^{2} \\times 5$.",
+          "$\\text{PGCD}(252 ; 180) = 2^{2} \\times 3^{2} = 36$."
+        ],
+        "result": "36"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "72"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "18"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "Dans chaque trousse :",
+      "statement": "combien y a-t-il de cahiers ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les cahiers entre les trousses."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 \\div 36 = 7$ cahiers.",
+        "incorrect": "Divise le nombre de cahiers par le nombre de trousses."
+      },
+      "solution": {
+        "lines": [
+          "$252 \\div 36 = 7$."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "combien y a-t-il de stylos ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les stylos entre les trousses."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 \\div 36 = 5$ stylos.",
+        "incorrect": "Divise le nombre de stylos par le nombre de trousses."
+      },
+      "solution": {
+        "lines": [
+          "$180 \\div 36 = 5$."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Peut-on répartir tout le matériel, de la même façon, dans $12$ trousses seulement ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PAS-LE-PLUS-GRAND"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$12$ divise-t-il $252$ et $180$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 12 \\times 21$ et $180 = 12 \\times 15$ : $12$ trousses de $21$ cahiers et $15$ stylos.",
+        "incorrect": "Vérifie que $12$ divise les deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 12 \\times 21$ et $180 = 12 \\times 15$.",
+          "Oui : chaque trousse contient alors $21$ cahiers et $15$ stylos."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "L’association prépare le plus de trousses possible. Combien d’euros lui reste-t-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "50",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule le prix des cahiers, des stylos et des trousses."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retire le total de la somme disponible."
+        }
+      ],
+      "feedback": {
+        "correct": "La dépense est $504 + 180 + 216 = 900$ € : il reste $50$ €.",
+        "incorrect": "Additionne le prix de tous les cahiers, de tous les stylos et des trousses vides."
+      },
+      "solution": {
+        "lines": [
+          "Cahiers : $252 \\times 2 = 504$ €. Stylos : $180 \\times 1 = 180$ €. Trousses : $36 \\times 6 = 216$ €.",
+          "Total : $504 + 180 + 216 = 900$ €.",
+          "Il reste $950 - 900 = 50$ €."
+        ],
+        "result": "50"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 > Ensuite : les chaînes complètes des leçons, de la classe d’ancrage à la première ; les leçons isolées en dernier ; chaque
 > synthèse juste après la dernière leçon de son unité. Contrat : `docs/architecture/LEARNING_NET.md` §4.
 
-**59** leçons à générer (13 synthèses).
+**58** leçons à générer (13 synthèses).
 
 ## Phase A — ce dont la classe d’ancrage a besoin maintenant, unité par unité (0)
 
@@ -36,69 +36,68 @@
 
 ### Unité 13 — Représenter l’espace (0) — rien à générer : ses prérequis directs des classes antérieures n’ont pas encore de leçon (items « stub » de Quatrième) : ils seront générés avec leur classe.
 
-## Phase B — depuis les leçons de Troisième (59)
+## Phase B — depuis les leçons de Troisième (58)
 
 | # | leçon | classe | unité | déclenchée par |
 |---:|---|---|---|---|
-| 1 | `trouver-le-pgcd` — Trouver le PGCD de deux nombres | Troisième | `multiples-et-diviseurs` | `trouver-le-pgcd` |
-| 2 | `fraction-irreductible` — Rendre une fraction irréductible | Troisième | `multiples-et-diviseurs` | `fraction-irreductible` |
-| 3 | `multiples-et-diviseurs-communs` — Engrenages et rendez-vous : quand deux rythmes se retrouvent | Troisième | `multiples-et-diviseurs` | `multiples-et-diviseurs-communs` |
-| 4 | `vers-le-brevet-multiples-et-diviseurs` — Vers le brevet — Multiples et diviseurs _(synthèse)_ | Troisième | `multiples-et-diviseurs` | unité multiples-et-diviseurs complète |
-| 5 | `oppose-d-une-expression` — L’opposé d’une expression et les parenthèses | Troisième | `developper-et-factoriser` | `oppose-d-une-expression` |
-| 6 | `double-distributivite` — Développer un produit de deux sommes | Troisième | `developper-et-factoriser` | `double-distributivite` |
-| 7 | `difference-de-deux-carres` — Factoriser une différence de deux carrés | Troisième | `developper-et-factoriser` | `difference-de-deux-carres` |
-| 8 | `prouver-avec-le-calcul-litteral` — Prouver avec des lettres : programmes de calcul | Troisième | `developper-et-factoriser` | `prouver-avec-le-calcul-litteral` |
-| 9 | `vers-le-brevet-developper-et-factoriser` — Vers le brevet — Développer et factoriser _(synthèse)_ | Troisième | `developper-et-factoriser` | unité developper-et-factoriser complète |
-| 10 | `triangles-semblables` — Reconnaître des triangles semblables | Troisième | `thales-et-triangles-semblables` | `triangles-semblables` |
-| 11 | `thales-configuration-papillon` — Thalès dans le papillon | Troisième | `thales-et-triangles-semblables` | `thales-configuration-papillon` |
-| 12 | `reciproque-de-thales` — Prouver que deux droites sont parallèles | Troisième | `thales-et-triangles-semblables` | `reciproque-de-thales` |
-| 13 | `vers-le-brevet-thales-et-triangles-semblables` — Vers le brevet — Thalès et triangles semblables _(synthèse)_ | Troisième | `thales-et-triangles-semblables` | unité thales-et-triangles-semblables complète |
-| 14 | `calculer-avec-des-fractions` — Résoudre des problèmes avec des fractions | Troisième | `resoudre-des-equations` | `calculer-avec-des-fractions` |
-| 15 | `mettre-un-probleme-en-equation` — Mettre un problème en équation | Troisième | `resoudre-des-equations` | `mettre-un-probleme-en-equation` |
-| 16 | `equation-produit-nul` — Résoudre une équation produit nul | Troisième | `resoudre-des-equations` | `equation-produit-nul` |
-| 17 | `equation-x-carre-egal-a` — Résoudre l’équation x² = a | Troisième | `resoudre-des-equations` | `equation-x-carre-egal-a` |
-| 18 | `vers-le-brevet-resoudre-des-equations` — Vers le brevet — Résoudre des équations _(synthèse)_ | Troisième | `resoudre-des-equations` | unité resoudre-des-equations complète |
-| 19 | `notion-de-fonction` — Qu’est-ce qu’une fonction ? Image et antécédent | Troisième | `la-notion-de-fonction` | `notion-de-fonction` |
-| 20 | `lire-une-fonction` — Lire une fonction dans un tableau ou sur une courbe | Troisième | `la-notion-de-fonction` | `lire-une-fonction` |
-| 21 | `antecedent-par-le-calcul` — Trouver un antécédent par le calcul | Troisième | `la-notion-de-fonction` | `antecedent-par-le-calcul` |
-| 22 | `vers-le-brevet-la-notion-de-fonction` — Vers le brevet — La notion de fonction _(synthèse)_ | Troisième | `la-notion-de-fonction` | unité la-notion-de-fonction complète |
-| 23 | `puissances-d-exposant-negatif` — Les puissances d’exposant négatif | Troisième | `puissances-et-racines` | `puissances-d-exposant-negatif` |
-| 24 | `notation-scientifique-en-probleme` — Très grand, très petit : la notation scientifique | Troisième | `puissances-et-racines` | `notation-scientifique-en-probleme` |
-| 25 | `racine-carree-en-probleme` — Utiliser la racine carrée pour calculer une longueur | Troisième | `puissances-et-racines` | `racine-carree-en-probleme` |
-| 26 | `vers-le-brevet-puissances-et-racines` — Vers le brevet — Puissances et racine carrée _(synthèse)_ | Troisième | `puissances-et-racines` | unité puissances-et-racines complète |
-| 27 | `cosinus-sinus-tangente` — Cosinus, sinus et tangente d’un angle | Troisième | `trigonometrie` | `cosinus-sinus-tangente` |
-| 28 | `calculer-un-angle` — Calculer un angle dans un triangle rectangle | Troisième | `trigonometrie` | `calculer-un-angle` |
-| 29 | `resoudre-un-triangle-rectangle` — Résoudre un triangle rectangle | Troisième | `trigonometrie` | `resoudre-un-triangle-rectangle` |
-| 30 | `vers-le-brevet-trigonometrie` — Vers le brevet — Trigonométrie _(synthèse)_ | Troisième | `trigonometrie` | unité trigonometrie complète |
-| 31 | `fonction-lineaire` — Fonction linéaire et proportionnalité | Troisième | `fonctions-lineaires-et-affines` | `fonction-lineaire` |
-| 32 | `fonction-affine` — Fonction affine et sa droite | Troisième | `fonctions-lineaires-et-affines` | `fonction-affine` |
-| 33 | `pourcentage-d-evolution` — Augmenter ou baisser d’un pourcentage | Troisième | `fonctions-lineaires-et-affines` | `pourcentage-d-evolution` |
-| 34 | `modeliser-avec-une-fonction` — Choisir une fonction pour résoudre un problème | Troisième | `fonctions-lineaires-et-affines` | `modeliser-avec-une-fonction` |
-| 35 | `vers-le-brevet-fonctions-lineaires-et-affines` — Vers le brevet — Fonctions linéaires et affines _(synthèse)_ | Troisième | `fonctions-lineaires-et-affines` | unité fonctions-lineaires-et-affines complète |
-| 36 | `etendue-d-une-serie` — Comparer des séries : moyenne, médiane, étendue | Troisième | `statistiques-et-probabilites` | `etendue-d-une-serie` |
-| 37 | `histogramme` — Lire et tracer un histogramme | Troisième | `statistiques-et-probabilites` | `histogramme` |
-| 38 | `probabilite-une-epreuve` — Calculer une probabilité en comptant les issues | Troisième | `statistiques-et-probabilites` | `probabilite-une-epreuve` |
-| 39 | `probabilite-deux-epreuves` — Deux tirages : le tableau à double entrée | Troisième | `statistiques-et-probabilites` | `probabilite-deux-epreuves` |
-| 40 | `frequence-et-probabilite` — Simuler le hasard : fréquences et probabilité | Troisième | `statistiques-et-probabilites` | `frequence-et-probabilite` |
-| 41 | `vers-le-brevet-statistiques-et-probabilites` — Vers le brevet — Statistiques et probabilités _(synthèse)_ | Troisième | `statistiques-et-probabilites` | unité statistiques-et-probabilites complète |
-| 42 | `programmer-des-blocs-personnalises` — Découper un programme en blocs | Troisième | `programmer-avec-des-blocs` | `programmer-des-blocs-personnalises` |
-| 43 | `boucles-et-conditions` — Boucles « jusqu’à » et conditions | Troisième | `programmer-avec-des-blocs` | `boucles-et-conditions` |
-| 44 | `scripts-en-parallele` — Faire interagir des lutins | Troisième | `programmer-avec-des-blocs` | `scripts-en-parallele` |
-| 45 | `vers-le-brevet-programmer-avec-des-blocs` — Vers le brevet — Programmer : blocs, boucles et scripts _(synthèse)_ | Troisième | `programmer-avec-des-blocs` | unité programmer-avec-des-blocs complète |
-| 46 | `rotation` — Faire tourner une figure : la rotation | Troisième | `rotations-et-homotheties` | `rotation` |
-| 47 | `homothetie` — Agrandir depuis un point : l’homothétie | Troisième | `rotations-et-homotheties` | `homothetie` |
-| 48 | `effet-d-une-homothetie` — Longueurs, aires et volumes après une homothétie | Troisième | `rotations-et-homotheties` | `effet-d-une-homothetie` |
-| 49 | `frises-pavages-rosaces` — Frises, pavages et rosaces | Troisième | `rotations-et-homotheties` | `frises-pavages-rosaces` |
-| 50 | `demontrer-en-geometrie` — Rédiger une démonstration en géométrie | Troisième | `rotations-et-homotheties` | `demontrer-en-geometrie` |
-| 51 | `vers-le-brevet-rotations-et-homotheties` — Vers le brevet — Rotations et homothéties _(synthèse)_ | Troisième | `rotations-et-homotheties` | unité rotations-et-homotheties complète |
-| 52 | `volume-boule-et-assemblages` — Volume d’une boule et de solides assemblés | Troisième | `grandeurs-et-volumes` | `volume-boule-et-assemblages` |
-| 53 | `grandeurs-composees` — Vitesse, débit, masse volumique | Troisième | `grandeurs-et-volumes` | `grandeurs-composees` |
-| 54 | `conversions-grandeurs-composees` — Convertir des vitesses, des débits et des volumes | Troisième | `grandeurs-et-volumes` | `conversions-grandeurs-composees` |
-| 55 | `vers-le-brevet-grandeurs-et-volumes` — Vers le brevet — Vitesses, débits et volumes _(synthèse)_ | Troisième | `grandeurs-et-volumes` | unité grandeurs-et-volumes complète |
-| 56 | `se-reperer-sur-une-sphere` — Se repérer sur une sphère : latitude et longitude | Troisième | `representer-l-espace` | `se-reperer-sur-une-sphere` |
-| 57 | `representations-des-solides` — Patrons, perspective et vues d’un solide | Troisième | `representer-l-espace` | `representations-des-solides` |
-| 58 | `sections-planes` — Couper un solide : les sections planes | Troisième | `representer-l-espace` | `sections-planes` |
-| 59 | `vers-le-brevet-representer-l-espace` — Vers le brevet — Représenter l’espace _(synthèse)_ | Troisième | `representer-l-espace` | unité representer-l-espace complète |
+| 1 | `fraction-irreductible` — Rendre une fraction irréductible | Troisième | `multiples-et-diviseurs` | `fraction-irreductible` |
+| 2 | `multiples-et-diviseurs-communs` — Engrenages et rendez-vous : quand deux rythmes se retrouvent | Troisième | `multiples-et-diviseurs` | `multiples-et-diviseurs-communs` |
+| 3 | `vers-le-brevet-multiples-et-diviseurs` — Vers le brevet — Multiples et diviseurs _(synthèse)_ | Troisième | `multiples-et-diviseurs` | unité multiples-et-diviseurs complète |
+| 4 | `oppose-d-une-expression` — L’opposé d’une expression et les parenthèses | Troisième | `developper-et-factoriser` | `oppose-d-une-expression` |
+| 5 | `double-distributivite` — Développer un produit de deux sommes | Troisième | `developper-et-factoriser` | `double-distributivite` |
+| 6 | `difference-de-deux-carres` — Factoriser une différence de deux carrés | Troisième | `developper-et-factoriser` | `difference-de-deux-carres` |
+| 7 | `prouver-avec-le-calcul-litteral` — Prouver avec des lettres : programmes de calcul | Troisième | `developper-et-factoriser` | `prouver-avec-le-calcul-litteral` |
+| 8 | `vers-le-brevet-developper-et-factoriser` — Vers le brevet — Développer et factoriser _(synthèse)_ | Troisième | `developper-et-factoriser` | unité developper-et-factoriser complète |
+| 9 | `triangles-semblables` — Reconnaître des triangles semblables | Troisième | `thales-et-triangles-semblables` | `triangles-semblables` |
+| 10 | `thales-configuration-papillon` — Thalès dans le papillon | Troisième | `thales-et-triangles-semblables` | `thales-configuration-papillon` |
+| 11 | `reciproque-de-thales` — Prouver que deux droites sont parallèles | Troisième | `thales-et-triangles-semblables` | `reciproque-de-thales` |
+| 12 | `vers-le-brevet-thales-et-triangles-semblables` — Vers le brevet — Thalès et triangles semblables _(synthèse)_ | Troisième | `thales-et-triangles-semblables` | unité thales-et-triangles-semblables complète |
+| 13 | `calculer-avec-des-fractions` — Résoudre des problèmes avec des fractions | Troisième | `resoudre-des-equations` | `calculer-avec-des-fractions` |
+| 14 | `mettre-un-probleme-en-equation` — Mettre un problème en équation | Troisième | `resoudre-des-equations` | `mettre-un-probleme-en-equation` |
+| 15 | `equation-produit-nul` — Résoudre une équation produit nul | Troisième | `resoudre-des-equations` | `equation-produit-nul` |
+| 16 | `equation-x-carre-egal-a` — Résoudre l’équation x² = a | Troisième | `resoudre-des-equations` | `equation-x-carre-egal-a` |
+| 17 | `vers-le-brevet-resoudre-des-equations` — Vers le brevet — Résoudre des équations _(synthèse)_ | Troisième | `resoudre-des-equations` | unité resoudre-des-equations complète |
+| 18 | `notion-de-fonction` — Qu’est-ce qu’une fonction ? Image et antécédent | Troisième | `la-notion-de-fonction` | `notion-de-fonction` |
+| 19 | `lire-une-fonction` — Lire une fonction dans un tableau ou sur une courbe | Troisième | `la-notion-de-fonction` | `lire-une-fonction` |
+| 20 | `antecedent-par-le-calcul` — Trouver un antécédent par le calcul | Troisième | `la-notion-de-fonction` | `antecedent-par-le-calcul` |
+| 21 | `vers-le-brevet-la-notion-de-fonction` — Vers le brevet — La notion de fonction _(synthèse)_ | Troisième | `la-notion-de-fonction` | unité la-notion-de-fonction complète |
+| 22 | `puissances-d-exposant-negatif` — Les puissances d’exposant négatif | Troisième | `puissances-et-racines` | `puissances-d-exposant-negatif` |
+| 23 | `notation-scientifique-en-probleme` — Très grand, très petit : la notation scientifique | Troisième | `puissances-et-racines` | `notation-scientifique-en-probleme` |
+| 24 | `racine-carree-en-probleme` — Utiliser la racine carrée pour calculer une longueur | Troisième | `puissances-et-racines` | `racine-carree-en-probleme` |
+| 25 | `vers-le-brevet-puissances-et-racines` — Vers le brevet — Puissances et racine carrée _(synthèse)_ | Troisième | `puissances-et-racines` | unité puissances-et-racines complète |
+| 26 | `cosinus-sinus-tangente` — Cosinus, sinus et tangente d’un angle | Troisième | `trigonometrie` | `cosinus-sinus-tangente` |
+| 27 | `calculer-un-angle` — Calculer un angle dans un triangle rectangle | Troisième | `trigonometrie` | `calculer-un-angle` |
+| 28 | `resoudre-un-triangle-rectangle` — Résoudre un triangle rectangle | Troisième | `trigonometrie` | `resoudre-un-triangle-rectangle` |
+| 29 | `vers-le-brevet-trigonometrie` — Vers le brevet — Trigonométrie _(synthèse)_ | Troisième | `trigonometrie` | unité trigonometrie complète |
+| 30 | `fonction-lineaire` — Fonction linéaire et proportionnalité | Troisième | `fonctions-lineaires-et-affines` | `fonction-lineaire` |
+| 31 | `fonction-affine` — Fonction affine et sa droite | Troisième | `fonctions-lineaires-et-affines` | `fonction-affine` |
+| 32 | `pourcentage-d-evolution` — Augmenter ou baisser d’un pourcentage | Troisième | `fonctions-lineaires-et-affines` | `pourcentage-d-evolution` |
+| 33 | `modeliser-avec-une-fonction` — Choisir une fonction pour résoudre un problème | Troisième | `fonctions-lineaires-et-affines` | `modeliser-avec-une-fonction` |
+| 34 | `vers-le-brevet-fonctions-lineaires-et-affines` — Vers le brevet — Fonctions linéaires et affines _(synthèse)_ | Troisième | `fonctions-lineaires-et-affines` | unité fonctions-lineaires-et-affines complète |
+| 35 | `etendue-d-une-serie` — Comparer des séries : moyenne, médiane, étendue | Troisième | `statistiques-et-probabilites` | `etendue-d-une-serie` |
+| 36 | `histogramme` — Lire et tracer un histogramme | Troisième | `statistiques-et-probabilites` | `histogramme` |
+| 37 | `probabilite-une-epreuve` — Calculer une probabilité en comptant les issues | Troisième | `statistiques-et-probabilites` | `probabilite-une-epreuve` |
+| 38 | `probabilite-deux-epreuves` — Deux tirages : le tableau à double entrée | Troisième | `statistiques-et-probabilites` | `probabilite-deux-epreuves` |
+| 39 | `frequence-et-probabilite` — Simuler le hasard : fréquences et probabilité | Troisième | `statistiques-et-probabilites` | `frequence-et-probabilite` |
+| 40 | `vers-le-brevet-statistiques-et-probabilites` — Vers le brevet — Statistiques et probabilités _(synthèse)_ | Troisième | `statistiques-et-probabilites` | unité statistiques-et-probabilites complète |
+| 41 | `programmer-des-blocs-personnalises` — Découper un programme en blocs | Troisième | `programmer-avec-des-blocs` | `programmer-des-blocs-personnalises` |
+| 42 | `boucles-et-conditions` — Boucles « jusqu’à » et conditions | Troisième | `programmer-avec-des-blocs` | `boucles-et-conditions` |
+| 43 | `scripts-en-parallele` — Faire interagir des lutins | Troisième | `programmer-avec-des-blocs` | `scripts-en-parallele` |
+| 44 | `vers-le-brevet-programmer-avec-des-blocs` — Vers le brevet — Programmer : blocs, boucles et scripts _(synthèse)_ | Troisième | `programmer-avec-des-blocs` | unité programmer-avec-des-blocs complète |
+| 45 | `rotation` — Faire tourner une figure : la rotation | Troisième | `rotations-et-homotheties` | `rotation` |
+| 46 | `homothetie` — Agrandir depuis un point : l’homothétie | Troisième | `rotations-et-homotheties` | `homothetie` |
+| 47 | `effet-d-une-homothetie` — Longueurs, aires et volumes après une homothétie | Troisième | `rotations-et-homotheties` | `effet-d-une-homothetie` |
+| 48 | `frises-pavages-rosaces` — Frises, pavages et rosaces | Troisième | `rotations-et-homotheties` | `frises-pavages-rosaces` |
+| 49 | `demontrer-en-geometrie` — Rédiger une démonstration en géométrie | Troisième | `rotations-et-homotheties` | `demontrer-en-geometrie` |
+| 50 | `vers-le-brevet-rotations-et-homotheties` — Vers le brevet — Rotations et homothéties _(synthèse)_ | Troisième | `rotations-et-homotheties` | unité rotations-et-homotheties complète |
+| 51 | `volume-boule-et-assemblages` — Volume d’une boule et de solides assemblés | Troisième | `grandeurs-et-volumes` | `volume-boule-et-assemblages` |
+| 52 | `grandeurs-composees` — Vitesse, débit, masse volumique | Troisième | `grandeurs-et-volumes` | `grandeurs-composees` |
+| 53 | `conversions-grandeurs-composees` — Convertir des vitesses, des débits et des volumes | Troisième | `grandeurs-et-volumes` | `conversions-grandeurs-composees` |
+| 54 | `vers-le-brevet-grandeurs-et-volumes` — Vers le brevet — Vitesses, débits et volumes _(synthèse)_ | Troisième | `grandeurs-et-volumes` | unité grandeurs-et-volumes complète |
+| 55 | `se-reperer-sur-une-sphere` — Se repérer sur une sphère : latitude et longitude | Troisième | `representer-l-espace` | `se-reperer-sur-une-sphere` |
+| 56 | `representations-des-solides` — Patrons, perspective et vues d’un solide | Troisième | `representer-l-espace` | `representations-des-solides` |
+| 57 | `sections-planes` — Couper un solide : les sections planes | Troisième | `representer-l-espace` | `sections-planes` |
+| 58 | `vers-le-brevet-representer-l-espace` — Vers le brevet — Représenter l’espace _(synthèse)_ | Troisième | `representer-l-espace` | unité representer-l-espace complète |
 
 ## Renvois en avant dans une même classe (0)
 

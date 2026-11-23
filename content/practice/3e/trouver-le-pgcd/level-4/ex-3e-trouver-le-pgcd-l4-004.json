@@ -1,0 +1,175 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-004",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux rouleaux de ruban",
+    "estimatedMinutes": 6,
+    "tags": [
+      "facteurs premiers",
+      "PGCD",
+      "partage"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une décoratrice coupe deux rouleaux de ruban, l’un de $1\\,650$ cm et l’autre de $2\\,475$ cm, en morceaux tous de la même longueur, la plus grande possible, sans perte. La longueur d’un morceau est un nombre entier de centimètres. On donne $1\\,650 = 2 \\times 3 \\times 5^{2} \\times 11$ et $2\\,475 = 3^{2} \\times 5^{2} \\times 11$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel produit est égal à $\\text{PGCD}(1\\,650 ; 2\\,475)$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 \\times 5^{2} \\times 11$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3^{2} \\times 5^{2} \\times 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PLUS-GRAND-EXPOSANT"
+        },
+        {
+          "id": "C",
+          "content": "$2 \\times 3^{2} \\times 5^{2} \\times 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-TOUS-LES-FACTEURS"
+        },
+        {
+          "id": "D",
+          "content": "$5^{2} \\times 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PAS-LE-PLUS-GRAND"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quels facteurs premiers sont communs aux deux décompositions ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, prends le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$, $5$ et $11$ sont communs ; plus petits exposants : $3^{1}$, $5^{2}$ et $11^{1}$.",
+        "incorrect": "Garde chaque facteur premier commun avec son plus petit exposant."
+      },
+      "solution": {
+        "lines": [
+          "Facteurs communs : $3$, $5$ et $11$.",
+          "Plus petits exposants : $3^{1}$, $5^{2}$, $11^{1}$.",
+          "$\\text{PGCD}(1\\,650 ; 2\\,475) = 3 \\times 5^{2} \\times 11$."
+        ],
+        "result": "3 \\times 5^{2} \\times 11"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle est la longueur, en centimètres, d’un morceau ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "825",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule le produit choisi."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 25 \\times 11 = 825$ cm.",
+        "incorrect": "La longueur d’un morceau est le plus grand diviseur commun des deux longueurs."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 5^{2} \\times 11 = 3 \\times 25 \\times 11 = 825$.",
+          "Un morceau mesure $825$ cm."
+        ],
+        "result": "825"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "275"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de morceaux obtient-on en tout ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte les morceaux de chaque rouleau."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ morceaux du premier rouleau et $3$ du second : $5$ morceaux.",
+        "incorrect": "Divise chaque longueur par celle d’un morceau, puis ajoute."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,650 \\div 825 = 2$ et $2\\,475 \\div 825 = 3$.",
+          "On obtient $2 + 3 = 5$ morceaux."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-010",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des boîtes de gâteaux pour une fête",
+    "estimatedMinutes": 8,
+    "tags": [
+      "partage",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour une fête de quartier, un pâtissier range $432$ madeleines et $288$ macarons dans des boîtes identiques, le plus de boîtes possible. Un imprimeur propose trois offres pour les boîtes : offre 1, $0{,}45$ € la boîte ; offre 2, $0{,}30$ € la boîte et $20$ € de frais fixes ; offre 3, $80$ € quel que soit le nombre de boîtes."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de boîtes le pâtissier peut-il préparer, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "144",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de boîtes divise $432$ et $288$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(432 ; 288) = 144$ boîtes.",
+        "incorrect": "Le nombre de boîtes est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$432 = 288 \\times 1 + 144$ et $288 = 144 \\times 2 + 0$.",
+          "$\\text{PGCD}(432 ; 288) = 144$."
+        ],
+        "result": "144"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "72"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "48"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de madeleines chaque boîte contient-elle ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les madeleines entre les boîtes."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 \\div 144 = 3$ madeleines.",
+        "incorrect": "Divise le nombre de madeleines par le nombre de boîtes."
+      },
+      "solution": {
+        "lines": [
+          "$432 \\div 144 = 3$ madeleines (et $288 \\div 144 = 2$ macarons)."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle offre est la moins chère pour ces boîtes ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "L’offre 1",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "L’offre 2",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "L’offre 3",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule le prix de chaque offre pour le nombre de boîtes trouvé."
+        }
+      ],
+      "feedback": {
+        "correct": "Offre 1 : $64{,}80$ €, offre 2 : $63{,}20$ €, offre 3 : $80$ €.",
+        "incorrect": "Calcule chaque offre pour $144$ boîtes, puis compare."
+      },
+      "solution": {
+        "lines": [
+          "Offre 1 : $144 \\times 0{,}45 = 64{,}80$ €.",
+          "Offre 2 : $144 \\times 0{,}30 + 20 = 43{,}20 + 20 = 63{,}20$ €.",
+          "Offre 3 : $80$ €.",
+          "L’offre 2 est la moins chère."
+        ],
+        "result": "L’offre 2"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

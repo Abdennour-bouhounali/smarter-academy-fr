@@ -1,0 +1,122 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-001",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le PGCD de 39 et 65",
+    "estimatedMinutes": 3,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $39$ et $65$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris tous les diviseurs de $39$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        3,
+        13,
+        39
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "La somme des chiffres de $39$ est divisible par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Après $3$, cherche le nombre qui, multiplié par $3$, donne $39$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les diviseurs de $39$ sont $1$, $3$, $13$ et $39$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas $39$."
+      },
+      "solution": {
+        "lines": [
+          "$39 = 1 \\times 39 = 3 \\times 13$.",
+          "Les diviseurs de $39$ sont $1$, $3$, $13$ et $39$."
+        ],
+        "result": "1 ; 3 ; 13 ; 39"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le plus grand diviseur commun de $39$ et $65$, c’est-à-dire $\\text{PGCD}(39 ; 65)$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "13",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(39 ; 65) = 13$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $39$ : $1$, $3$, $13$ et $39$.",
+          "Diviseurs de $65$ : $1$, $5$, $13$ et $65$.",
+          "Le plus grand nombre commun aux deux listes est $13$, donc $\\text{PGCD}(39 ; 65) = 13$."
+        ],
+        "result": "13"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "26"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

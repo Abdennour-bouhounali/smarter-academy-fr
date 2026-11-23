@@ -1,0 +1,210 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-006",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un tournoi et ses restes",
+    "estimatedMinutes": 8,
+    "tags": [
+      "partage",
+      "PGCD",
+      "diviseurs communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Les organisateurs d’un tournoi répartissent équitablement $402$ bouteilles d’eau et $488$ compotes entre $x$ équipes : chaque équipe reçoit le même nombre de bouteilles et le même nombre de compotes. Il reste $12$ bouteilles et $8$ compotes. On sait que $x$ est plus grand que $12$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Montre que $x$ est un diviseur commun de $390$ et $480$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta justification, puis compare-la au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de bouteilles ont été distribuées ? Et de compotes ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Bonne justification.",
+        "incorrect": "Compare ta justification au corrigé."
+      },
+      "solution": {
+        "lines": [
+          "$402 - 12 = 390$ bouteilles ont été partagées équitablement entre les $x$ équipes : $x$ divise $390$.",
+          "$488 - 8 = 480$ compotes aussi : $x$ divise $480$.",
+          "Donc $x$ est un diviseur commun de $390$ et $480$."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(390 ; 480)$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(390 ; 480) = 30$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "$390 = 2 \\times 3 \\times 5 \\times 13$ et $480 = 2^{5} \\times 3 \\times 5$.",
+          "$\\text{PGCD}(390 ; 480) = 2 \\times 3 \\times 5 = 30$."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "90"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "15"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Déduis-en toutes les valeurs possibles de $x$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        15,
+        30
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les diviseurs communs de $390$ et $480$ sont les diviseurs de leur PGCD."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "N’oublie pas que $x$ est plus grand que $12$."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 15$ ou $x = 30$.",
+        "incorrect": "Écris les diviseurs du PGCD, puis garde ceux qui dépassent $12$."
+      },
+      "solution": {
+        "lines": [
+          "Les diviseurs de $30$ : $1$, $2$, $3$, $5$, $6$, $10$, $15$ et $30$.",
+          "Plus grands que $12$ : $15$ et $30$."
+        ],
+        "result": "15 ; 30"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Il y a plus de $20$ équipes. Combien de bouteilles chaque équipe a-t-elle reçues ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "13",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quelle valeur de $x$ dépasse $20$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partage les bouteilles distribuées entre les équipes."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 30$ et $390 \\div 30 = 13$ bouteilles.",
+        "incorrect": "Partage les $390$ bouteilles distribuées, pas les $402$."
+      },
+      "solution": {
+        "lines": [
+          "Seule la valeur $x = 30$ dépasse $20$.",
+          "$390 \\div 30 = 13$ bouteilles par équipe."
+        ],
+        "result": "13"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "30"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

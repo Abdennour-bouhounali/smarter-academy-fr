@@ -1,0 +1,174 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-005",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des carnets de tickets",
+    "estimatedMinutes": 8,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD",
+      "partage"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour une fête de quartier, une association a $3\\,131$ tickets rouges et $2\\,323$ tickets bleus. Elle les répartit tous dans des carnets identiques, le plus de carnets possible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le reste de la division euclidienne de $3\\,131$ par $2\\,323$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "808",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de fois $2\\,323$ tient-il dans $3\\,131$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retire ce multiple du grand nombre : ce qui reste est plus petit que le diviseur."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,131 = 2\\,323 \\times 1 + 808$.",
+        "incorrect": "Le reste est ce qui reste après avoir retiré le plus grand multiple possible du diviseur."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,131 = 2\\,323 \\times 1 + 808$",
+          "Le reste est $808$, plus petit que $2\\,323$."
+        ],
+        "result": "808"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(3\\,131 ; 2\\,323)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "101",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $101$ : $\\text{PGCD}(3\\,131 ; 2\\,323) = 101$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,131 = 2\\,323 \\times 1 + 808$",
+          "$2\\,323 = 808 \\times 2 + 707$",
+          "$808 = 707 \\times 1 + 101$",
+          "$707 = 101 \\times 7 + 0$",
+          "Le dernier reste non nul est $101$, donc $\\text{PGCD}(3\\,131 ; 2\\,323) = 101$."
+        ],
+        "result": "101"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "7"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "707"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "808"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tickets rouges chaque carnet contient-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "31",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de carnets est le PGCD trouvé."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partage les tickets rouges entre les carnets."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,131 \\div 101 = 31$ tickets rouges.",
+        "incorrect": "Divise le nombre de tickets rouges par le nombre de carnets."
+      },
+      "solution": {
+        "lines": [
+          "Il y a $101$ carnets.",
+          "$3\\,131 \\div 101 = 31$ tickets rouges (et $2\\,323 \\div 101 = 23$ bleus)."
+        ],
+        "result": "31"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "101"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

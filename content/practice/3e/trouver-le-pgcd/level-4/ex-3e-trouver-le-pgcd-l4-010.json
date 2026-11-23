@@ -1,0 +1,199 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-010",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une collecte solidaire",
+    "estimatedMinutes": 7,
+    "tags": [
+      "partage",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une association a collecté $420$ bouteilles d’eau et $294$ briques de lait. Elle veut tout distribuer à des familles en colis identiques : chaque famille reçoit le même nombre de bouteilles et le même nombre de briques, et rien ne reste."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de familles peuvent recevoir un colis, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "42",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de familles divise $420$ et $294$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(420 ; 294) = 42$ familles.",
+        "incorrect": "Le nombre de familles est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$420 = 294 \\times 1 + 126$, $294 = 126 \\times 2 + 42$, $126 = 42 \\times 3 + 0$.",
+          "$\\text{PGCD}(420 ; 294) = 42$."
+        ],
+        "result": "42"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "126"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "21"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de bouteilles chaque famille reçoit-elle alors ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les bouteilles entre les familles."
+        }
+      ],
+      "feedback": {
+        "correct": "$420 \\div 42 = 10$ bouteilles.",
+        "incorrect": "Divise le nombre de bouteilles par le nombre de familles."
+      },
+      "solution": {
+        "lines": [
+          "$420 \\div 42 = 10$ bouteilles (et $294 \\div 42 = 7$ briques)."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Le nombre de familles est en fait compris entre $5$ et $25$. Écris tous les nombres de familles possibles.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        6,
+        7,
+        14,
+        21
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de familles est un diviseur commun de $420$ et $294$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ce sont les diviseurs du PGCD : garde ceux entre $5$ et $25$."
+        }
+      ],
+      "feedback": {
+        "correct": "Ce sont $6$, $7$, $14$ et $21$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux quantités."
+      },
+      "solution": {
+        "lines": [
+          "Les diviseurs communs de $420$ et $294$ sont les diviseurs de $42$ : $1$, $2$, $3$, $6$, $7$, $14$, $21$ et $42$.",
+          "Entre $5$ et $25$ : $6$, $7$, $14$ et $21$."
+        ],
+        "result": "6 ; 7 ; 14 ; 21"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Si $14$ familles seulement reçoivent un colis, combien de bouteilles chacune reçoit-elle ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les $420$ bouteilles entre $14$ familles."
+        }
+      ],
+      "feedback": {
+        "correct": "$420 \\div 14 = 30$ bouteilles.",
+        "incorrect": "Divise le nombre de bouteilles par $14$."
+      },
+      "solution": {
+        "lines": [
+          "$420 \\div 14 = 30$ bouteilles."
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

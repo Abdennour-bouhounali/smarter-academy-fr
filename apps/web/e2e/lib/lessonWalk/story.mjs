@@ -326,7 +326,9 @@ export async function storyWalk(L, D, opts) {
     const convoy = async (h) => {
       const head = segs[h];
       const single = !head.convoy;
-      const group = single ? [{ s: head, i: h }] : segs.map((s, i) => ({ s, i })).filter((x) => x.s.convoy === head.convoy);
+      const group = single
+        ? [{ s: head, i: h }]
+        : segs.map((s, i) => ({ s, i })).filter((x) => x.s.convoy === head.convoy);
       const gaps = group.filter((x) => !x.s.standing).map((x) => x.s.a);
       const purse = single ? Infinity : (convoys[head.convoy]?.purse ?? Infinity);
       const ws = head.workshop;
@@ -562,7 +564,10 @@ export async function storyWalk(L, D, opts) {
           );
           await W.toAltar(i);
           await W.ff(0.3);
-          check(!(await W.promptShown()), `at the altar of the gap of ${s.a}: no « Appuie sur E » prompt — nothing to build`);
+          check(
+            !(await W.promptShown()),
+            `at the altar of the gap of ${s.a}: no « Appuie sur E » prompt — nothing to build`,
+          );
           await shotWorld(`gap-${s.a}`);
           await W.cross(i);
           await page.waitForTimeout(300);
@@ -925,7 +930,8 @@ export async function storyWalk(L, D, opts) {
       }, k);
       await W.ff(2.5);
       const unfold = (await page.getAttribute('[data-di-instruction]', 'data-di-instruction')) !== 'folded';
-      if (unfold && (await page.locator('[data-di-instruction-fold]').count())) await page.click('[data-di-instruction-fold]');
+      if (unfold && (await page.locator('[data-di-instruction-fold]').count()))
+        await page.click('[data-di-instruction-fold]');
       await page.waitForTimeout(700);
       const sign = await page.evaluate((i) => {
         const g = window.__world;
@@ -970,7 +976,7 @@ export async function storyWalk(L, D, opts) {
       await page.waitForTimeout(600);
       await W.act();
       await page.waitForTimeout(400);
-      const mission =((await page.textContent('[data-di-boss-mission]').catch(() => '')) ?? '').replace(/\s/g, '');
+      const mission = ((await page.textContent('[data-di-boss-mission]').catch(() => '')) ?? '').replace(/\s/g, '');
       expect(
         (await W.st()).overlay === 'boss' && mission.includes(label.text.replace(/\s/g, '')),
         `the store opens on the lesson's problem: the bridge of « ${label.text} » cells`,
@@ -1063,7 +1069,10 @@ export async function storyWalk(L, D, opts) {
         s += 0.5;
       }
       waits.push(`the last bridge, ${Q} planks of ${b}: ${s.toFixed(1)} s`);
-      expect((await W.st()).o?.view === 'cost', `the bridge of ${label.text} holds with ${Q} planks of ${b}: the store asks their price`);
+      expect(
+        (await W.st()).o?.view === 'cost',
+        `the bridge of ${label.text} holds with ${Q} planks of ${b}: the store asks their price`,
+      );
       await storePay(k, Q);
     };
 
@@ -1186,6 +1195,22 @@ export async function storyWalk(L, D, opts) {
       await page.screenshot({ path: `${w.out}/99-STOPPED.png` }).catch(() => {});
       console.log(`NOTE  stopped near island ${k}; screen kept: ${w.out}/99-STOPPED.png`);
       throw e;
+    }
+    // a story with NO store (no `boss` segment — trouver-le-pgcd, 2026-11-23): its last convoy lands on the last island,
+    // which plays the finale by itself (`Game.js › arrive` → `finale`): the clock runs until the end screen
+    if (!segs.some((s) => s.boss) && (await W.st()).overlay !== 'end') {
+      let shotFinale = false;
+      for (let n = 0; n < 60 && (await W.st()).overlay !== 'end'; n += 1) {
+        await W.ff(0.5);
+        if (!shotFinale && (await W.st()).phase === 'end') {
+          await page.waitForTimeout(300);
+          await w.shot(page, 'finale', OUT);
+          shotFinale = true;
+        }
+      }
+      check(shotFinale, 'the last convoy lands on the last island: the finale plays (the lighthouse)');
+      await page.waitForTimeout(600);
+      await w.shot(page, 'end', OUT);
     }
     expect((await W.st()).overlay === 'end', 'the story is played to its end');
     for (const x of waits) console.log(`WAIT  ${x}`);

@@ -1,0 +1,158 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-008",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des livres pour les écoles",
+    "estimatedMinutes": 8,
+    "tags": [
+      "partage",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Une maison d’édition offre $315$ romans et $189$ bandes dessinées aux écoles d’une commune, en lots identiques, au plus grand nombre d’écoles possible. La commune veut aussi offrir une étagère du même modèle à chaque école. Le transport des étagères coûte $120$ € en tout, et la commune dispose de $3\\,270$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien d’écoles peuvent recevoir un lot, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "63",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre d’écoles divise $315$ et $189$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(315 ; 189) = 63$ écoles.",
+        "incorrect": "Le nombre d’écoles est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$315 = 189 \\times 1 + 126$, $189 = 126 \\times 1 + 63$, $126 = 63 \\times 2 + 0$.",
+          "$\\text{PGCD}(315 ; 189) = 63$."
+        ],
+        "result": "63"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "126"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "21"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de romans chaque école reçoit-elle ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les romans entre les écoles."
+        }
+      ],
+      "feedback": {
+        "correct": "$315 \\div 63 = 5$ romans.",
+        "incorrect": "Divise le nombre de romans par le nombre d’écoles."
+      },
+      "solution": {
+        "lines": [
+          "$315 \\div 63 = 5$ romans (et $189 \\div 63 = 3$ bandes dessinées)."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quel prix, en euros, une étagère ne doit-elle pas dépasser ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "50",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Retire d’abord le transport du budget."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partage ce qui reste entre les écoles."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3\\,270 - 120) \\div 63 = 50$ € au plus.",
+        "incorrect": "Le transport est payé une seule fois : retire-le avant de partager."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,270 - 120 = 3\\,150$ €.",
+          "$3\\,150 \\div 63 = 50$ € : une étagère ne doit pas dépasser $50$ €."
+        ],
+        "result": "50"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-004",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le PGCD trouvé par Inès",
+    "estimatedMinutes": 5,
+    "tags": [
+      "facteurs premiers",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On donne $A = 2^{4} \\times 3 \\times 5^{2}$ et $B = 2^{3} \\times 3^{2} \\times 5 \\times 7$. Inès annonce que le PGCD de $A$ et $B$ est $2^{4} \\times 3^{2} \\times 5^{2}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Le nombre annoncé par Inès peut-il diviser $A$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PLUS-GRAND-EXPOSANT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare l’exposant de $3$ dans le nombre d’Inès et dans $A$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ ne contient qu’un facteur $3$ : $3^{2}$ ne le divise pas. Le nombre d’Inès vaut $3\\,600$, plus que $A = 1\\,200$.",
+        "incorrect": "Un diviseur de $A$ ne peut pas avoir plus de facteurs $3$ que $A$."
+      },
+      "solution": {
+        "lines": [
+          "$2^{4} \\times 3^{2} \\times 5^{2} = 3\\,600$ et $A = 1\\,200$.",
+          "Un nombre plus grand que $A$ ne divise pas $A$ : Inès s’est trompée."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris le PGCD de $A$ et $B$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^3*3*5",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde quels nombres premiers apparaissent dans les deux décompositions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, compare les deux exposants."
+        }
+      ],
+      "feedback": {
+        "correct": "On garde les facteurs premiers communs, chacun avec le plus petit exposant : $2^{3} \\times 3 \\times 5$.",
+        "incorrect": "Garde seulement les facteurs premiers présents dans les deux décompositions, avec le plus petit des deux exposants.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2^{4} \\times 3 \\times 5^{2}$ et $B = 2^{3} \\times 3^{2} \\times 5 \\times 7$.",
+          "Les facteurs premiers communs : $2$, $3$ et $5$.",
+          "Avec le plus petit exposant de chacun : $\\text{PGCD}(A ; B) = 2^{3} \\times 3 \\times 5$."
+        ],
+        "result": "2^{3} \\times 3 \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "2^4*3^2*5^2"
+        },
+        {
+          "id": "MISC-PGCD-TOUS-LES-FACTEURS",
+          "value": "2^4*3^2*5^2*7"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "120",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue le produit que tu viens d’écrire."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3} \\times 3 \\times 5 = 8 \\times 15 = 120$.",
+        "incorrect": "Calcule les puissances, puis le produit."
+      },
+      "solution": {
+        "lines": [
+          "$2^{3} \\times 3 \\times 5 = 8 \\times 3 \\times 5 = 120$."
+        ],
+        "result": "120"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "3600"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

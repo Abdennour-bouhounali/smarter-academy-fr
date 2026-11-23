@@ -7,7 +7,7 @@
 import { createElement, useEffect, useMemo, useState } from 'react';
 import { X, ArrowLeft, ArrowRight, Star, Heart, Lightbulb, Flame, Truck, Coins } from 'lucide-react';
 import MathText from '../../components/MathText';
-import { formatFr } from '@smarter-academy/core';
+import { formatFr, texFr } from '@smarter-academy/core';
 import { DivisorIslesGame } from './Game';
 import { T, planks, waveSay, explain } from './strings';
 
@@ -35,21 +35,23 @@ export function Equation({ eq, unit = planks }) {
   // the last bridge announced by a LABEL (`aTex`, the story's `boss.label`): the label stands for a, and what is left is
   // not written while the planks are laid — it would give a away; the final remainder is a fact again
   const hidden = Boolean(aTex) && live;
-  const rest = hidden ? '\\ldots' : `\\textcolor{${col}}{${r}}`;
+  // a whole number of four digits or more is grouped by thousands (« 1 736 », FRENCH_LANGUAGE_CONTRACT.md §4)
+  const n = (x) => (Number.isInteger(x) && x >= 0 ? texFr(x) : x);
+  const rest = hidden ? '\\ldots' : `\\textcolor{${col}}{${n(r)}}`;
   return (
     <div className={`di-eq ${live ? '' : r === 0 ? 'is-ok' : 'is-open'}`} {...(aTex ? { 'data-di-eq-label': '' } : {})}>
-      <M>{`${aTex ?? a} = ${b} \\times ${q} + ${rest}`}</M>
+      <M>{`${aTex ?? n(a)} = ${n(b)} \\times ${n(q)} + ${rest}`}</M>
       {/* a marked stretch: its own division, once the planks have passed the mark — a joint falls on it only if 0 is left */}
       {mark?.shown && (
         <div className="di-eq__mark" data-di-eq-mark={mark.r}>
           <span>{T.mark.stretch}</span>
-          <M>{`${mark.m} = ${b} \\times ${mark.q} + \\textcolor{${mark.r === 0 ? '#34d399' : '#fb923c'}}{${mark.r}}`}</M>
+          <M>{`${n(mark.m)} = ${n(b)} \\times ${n(mark.q)} + \\textcolor{${mark.r === 0 ? '#34d399' : '#fb923c'}}{${n(mark.r)}}`}</M>
         </div>
       )}
       <div className="di-eq__legend">
         <span>{unit(q)}</span>
         {/* `unpaid`: the purse ran out — what is still open is not a remainder (it is not smaller than the plank) */}
-        {!hidden && <span style={{ color: col }}>{`${unpaid ? T.hud.unpaid : T.hud.remainder} : ${r}`}</span>}
+        {!hidden && <span style={{ color: col }}>{`${unpaid ? T.hud.unpaid : T.hud.remainder} : ${formatFr(r)}`}</span>}
       </div>
     </div>
   );

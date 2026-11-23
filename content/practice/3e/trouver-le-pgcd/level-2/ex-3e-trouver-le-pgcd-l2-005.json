@@ -1,0 +1,175 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-005",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer 528 et 594",
+    "estimatedMinutes": 5,
+    "tags": [
+      "facteurs premiers",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $528$ et $594$ à l’aide de leurs décompositions en facteurs premiers."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $528$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^4*3*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par 2 tant que c’est possible, puis essaie 3, 5, 7…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand le quotient vaut 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$528 = 2^{4} \\times 3 \\times 11$.",
+        "incorrect": "Divise par chaque nombre premier, dans l’ordre, autant de fois que possible.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "On divise par 2, 3, 5, 7… autant de fois que possible.",
+          "$528 = 2^{4} \\times 3 \\times 11$."
+        ],
+        "result": "528 = 2^{4} \\times 3 \\times 11"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $594$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2*3^3*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par 2 tant que c’est possible, puis essaie 3, 5, 7…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand le quotient vaut 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$594 = 2 \\times 3^{3} \\times 11$.",
+        "incorrect": "Divise par chaque nombre premier, dans l’ordre, autant de fois que possible.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "On divise par 2, 3, 5, 7… autant de fois que possible.",
+          "$594 = 2 \\times 3^{3} \\times 11$."
+        ],
+        "result": "594 = 2 \\times 3^{3} \\times 11"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Écris $\\text{PGCD}(528 ; 594)$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2*3*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde quels nombres premiers apparaissent dans les deux décompositions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, compare les deux exposants."
+        }
+      ],
+      "feedback": {
+        "correct": "On garde les facteurs premiers communs, chacun avec le plus petit exposant : $2 \\times 3 \\times 11$.",
+        "incorrect": "Garde seulement les facteurs premiers présents dans les deux décompositions, avec le plus petit des deux exposants.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "$528 = 2^{4} \\times 3 \\times 11$ et $594 = 2 \\times 3^{3} \\times 11$.",
+          "Les facteurs premiers communs : $2$, $3$ et $11$.",
+          "Avec le plus petit exposant de chacun : $\\text{PGCD}(528 ; 594) = 2 \\times 3 \\times 11$."
+        ],
+        "result": "2 \\times 3 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "2^4*3^3*11"
+        },
+        {
+          "id": "MISC-PGCD-TOUS-LES-FACTEURS",
+          "value": "2^4*3^3*11"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

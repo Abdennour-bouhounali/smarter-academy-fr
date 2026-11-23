@@ -1,0 +1,129 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-004",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le PGCD de 77 et 121",
+    "estimatedMinutes": 2,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On cherche les diviseurs communs de $77$ et $121$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le plus grand diviseur commun de $77$ et $121$, c’est-à-dire $\\text{PGCD}(77 ; 121)$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "11",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(77 ; 121) = 11$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $77$ : $1$, $7$, $11$ et $77$.",
+          "Diviseurs de $121$ : $1$, $11$ et $121$.",
+          "Le plus grand nombre commun aux deux listes est $11$, donc $\\text{PGCD}(77 ; 121) = 11$."
+        ],
+        "result": "11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "44"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$77$ et $121$ ont-ils un diviseur commun autre que $1$ et $11$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les diviseurs de $121$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Parmi eux, lesquels divisent aussi $77$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$121 = 11 \\times 11$ a pour diviseurs $1$, $11$ et $121$, et $121$ ne divise pas $77$.",
+        "incorrect": "Écris la liste complète des diviseurs de $121$ et teste chacun sur $77$."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $121$ : $1$, $11$ et $121$.",
+          "$121$ est plus grand que $77$ : il ne le divise pas. Les seuls diviseurs communs sont $1$ et $11$."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

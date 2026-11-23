@@ -14,15 +14,15 @@ describe('mathSegments — a Latin word attached to a formula shares its LTR isl
   });
 
   it('joins « PGCD$(a ; b)$ » and « PGCD $(a ; b)$ » into one island', () => {
-    expect(mathSegments('PGCD$(a ; a) = a$')).toEqual([inline({ text: 'PGCD' }, { math: '(a ; a) = a' })]);
+    expect(mathSegments('PGCD$(a ; a) = a$')).toEqual([inline({ text: 'PGCD' }, { math: '(a\\,;\\,a) = a' })]);
     expect(mathSegments('On le note PGCD $(a ; b)$.')).toEqual([
-      { type: 'text', text: 'On le note ' }, inline({ text: 'PGCD ' }, { math: '(a ; b)' }), { type: 'text', text: '.' },
+      { type: 'text', text: 'On le note ' }, inline({ text: 'PGCD ' }, { math: '(a\\,;\\,b)' }), { type: 'text', text: '.' },
     ]);
   });
 
   it('keeps a whole equality chain in ONE island — it never breaks across two islands', () => {
     expect(mathSegments('PGCD$(a ; b) = $ PGCD$(b ; a - b)$ où $a \\geq b$')).toEqual([
-      inline({ text: 'PGCD' }, { math: '(a ; b) = ' }, { text: ' PGCD' }, { math: '(b ; a - b)' }),
+      inline({ text: 'PGCD' }, { math: '(a\\,;\\,b) = ' }, { text: ' PGCD' }, { math: '(b\\,;\\,a - b)' }),
       { type: 'text', text: ' où ' },
       inline({ math: 'a \\geq b' }),
     ]);
@@ -34,5 +34,12 @@ describe('mathSegments — a Latin word attached to a formula shares its LTR isl
     // an accented word is never cut in two: « écrit » stays whole, outside the island
     expect(mathSegments('tu as écrit $x$')).toEqual([{ type: 'text', text: 'tu as écrit ' }, inline({ math: 'x' })]);
     expect(mathSegments('la clé $k$')).toEqual([{ type: 'text', text: 'la clé ' }, inline({ math: 'k' })]);
+  });
+});
+
+describe('mathSegments — the French pair inside a formula', () => {
+  it('« PGCD(a ; b) » gets a thin space on each side of « ; »; a \\; command is left alone', () => {
+    expect(mathSegments('$\\mathrm{PGCD}(12 ; 18)$')).toEqual([inline({ math: '\\mathrm{PGCD}(12\\,;\\,18)' })]);
+    expect(mathSegments('$$x \\; y$$')).toEqual([{ type: 'block', math: 'x \\; y' }]);
   });
 });

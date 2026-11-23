@@ -519,11 +519,335 @@ const DECOMPOSITION = {
   ],
 };
 
-// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). One
-// family today: `4e.m1.r06`, the one tool the net gives the first 3e lesson. The Algerian families (their question
-// generators, rules and memos) are in git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French
-// family PORTS what fits and is keyed by a French item.
-export const FAMILIES = { '4e.m1.r06': DECOMPOSITION };
+// ───────────────────────── 3e.m1.r05 — décomposer un nombre entier (3e, lesson 1) ─────────────────────────
+// What « Trouver le PGCD » stands on from the first 3e lesson: writing a whole number (up to a few hundred) as a product
+// of primes, and checking that a written product IS one. It MEASURES that; it never writes two numbers side by side, a
+// factor « in both », an exponent compared with another, a remainder chained to a division — no word of the PGCD
+// lesson's keys (« commun », « PGCD », « exposant », « lots », « Euclide »: tested). Its products are written factor after
+// factor, as the cards of `4e.m1.r06` (the launch reads them so); the lesson itself writes the powers.
+
+/** Numbers of the 3e decomposition: four or five primes, none a number of the PGCD lesson (its road, forges, dash). */
+const BIG = {
+  first: [24],
+  1: [24, 40, 63, 66, 98, 99, 70],
+  2: [132, 154, 165, 168, 220, 231, 252, 264, 300],
+};
+
+/** « 252 = 2 × 2 × 3 × 3 × ▢ »: the largest prime of the product to write (the first question: the last factor of 24). */
+function bigWrite(rand, level, first) {
+  const n = pick(rand, first ? BIG.first : BIG[level]);
+  const factors = primesOf(n);
+  const at = first || level === 1 ? factors.length - 1 : int(rand, 0, factors.length - 1);
+  const known = factors.filter((_, i) => i !== at);
+  const tokens = [String(n), '='];
+  factors.forEach((f, i) => {
+    if (i > 0) tokens.push('×');
+    tokens.push(i === at ? S('v', 'nombre premier', 2) : String(f));
+  });
+  return {
+    gesture: 'write',
+    calc: { op: 'factor', n, known },
+    prompt: 'Complète ce produit de nombres premiers :',
+    tokens,
+  };
+}
+
+/** Three equalities « n = a × b × … » of the 3e numbers: a product of primes, or a trap (`decompCard`'s kinds). */
+function bigCard(rand, kind, id, avoid, level) {
+  const from = BIG[level];
+  let n = pick(rand, from);
+  for (let i = 0; i < 40 && avoid.has(n); i += 1) n = pick(rand, from);
+  avoid.add(n);
+  const f = primesOf(n);
+  let factors = f;
+  let trap = null;
+  if (kind === 'composite') {
+    const i = int(rand, 0, f.length - 2);
+    factors = [...f.slice(0, i), f[i] * f[i + 1], ...f.slice(i + 2)];
+    trap = 'not-all-prime';
+  } else if (kind === 'wrong') {
+    const i = int(rand, 0, f.length - 1);
+    const next = PRIMES_30.find((p) => p > f[i]);
+    factors = [...f.slice(0, i), next, ...f.slice(i + 1)].sort((a, b) => a - b);
+    trap = 'product-false';
+  }
+  const ok = productOf(factors) === n && factors.every(isPrime);
+  return { id, text: `$${n} = ${timesTex(factors)}$`, n, factors, bin: ok ? 'yes' : 'no', trap: ok ? null : trap };
+}
+function bigSort(rand, level) {
+  const shape = pick(rand, [
+    ['right', 'composite', 'wrong'],
+    ['right', 'right', 'composite'],
+    ['right', 'wrong', 'wrong'],
+    ['composite', 'right', 'wrong'],
+  ]);
+  const avoid = new Set();
+  return {
+    gesture: 'sort',
+    prompt: 'Chaque égalité écrit-elle le nombre comme un produit de nombres premiers ?',
+    bins: [
+      { id: 'yes', label: 'Oui' },
+      { id: 'no', label: 'Non' },
+    ],
+    cards: shuffle(rand, shape).map((kind, i) => bigCard(rand, kind, `c${i + 1}`, avoid, level)),
+  };
+}
+
+/** The worked example: a number written as a product of primes, ONE prime at a time, checked at the end. */
+function bigExample(rand, level, { mistake = null } = {}) {
+  const n = pick(rand, BIG[level === 2 ? 2 : 1]);
+  const f = primesOf(n);
+  const steps = [];
+  let m = n;
+  for (const p of f.slice(0, -1)) {
+    steps.push(`$${m} = ${p} \\times ${m / p}$, et ${p} est premier.`);
+    m /= p;
+  }
+  const head =
+    mistake === 'not-all-prime'
+      ? 'Chaque nombre du produit doit être premier : on continue tant qu’un nombre se divise encore.'
+      : 'On vérifie à la fin : le produit redonne le nombre, et chaque nombre du produit est premier.';
+  return {
+    title: `Écrire ${n} comme un produit de nombres premiers`,
+    steps: [head, ...steps.slice(0, 3), `Donc $${n} = ${timesTex(f)}$.`],
+  };
+}
+
+const BIG_DECOMPOSITION = {
+  item: '3e.m1.r05',
+  // the name of the gesture, never the title of its home lesson (that title is read from the net)
+  name: 'Produits de nombres premiers',
+  icon: '🪜',
+  // the instrument of its home lesson (« L’échelle des facteurs »), in the lab opened BEFORE « Trouver le PGCD »
+  labTool: 'factor',
+  mistakes: ['not-all-prime', 'product-false', 'one-not-prime'],
+  forms: { 1: ['write', 'sort'], 2: ['sort', 'write'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'sort' ? bigSort(rand, level) : bigWrite(rand, level, first),
+  example: bigExample,
+  rules: [
+    {
+      id: 'product',
+      title: 'Un produit de nombres premiers',
+      text: 'Écrire un nombre comme un produit de nombres premiers : chaque nombre du produit est premier, et le produit redonne le nombre.',
+      example: '$154 = 2 \\times 7 \\times 11$ : 2, 7 et 11 sont premiers.',
+      check: { n: 154, factors: [2, 7, 11] },
+    },
+    {
+      id: 'again',
+      title: 'Un nombre qui se divise encore',
+      text: 'Tant qu’un nombre du produit n’est pas premier, il s’écrit encore comme un produit.',
+      example: '$60 = 6 \\times 10 = 2 \\times 3 \\times 2 \\times 5$.',
+      check: { n: 60, factors: [2, 3, 2, 5] },
+    },
+  ],
+  memo: [
+    'Chaque nombre du produit est premier : 2, 3, 5, 7, 11, 13…',
+    'Le produit redonne le nombre : on le vérifie en multipliant.',
+    'Un 6 ou un 10 dans le produit s’écrit encore : $6 = 2 \\times 3$, $10 = 2 \\times 5$.',
+    'Exemple : $252 = 2 \\times 2 \\times 3 \\times 3 \\times 7$.',
+  ],
+};
+
+// ───────────────────────── 4e.m1.r08 — divisibilité (4e) : les diviseurs d’un nombre ─────────────────────────
+// What the PGCD lesson stands on from 4e (ported from the Algerian family `4am.m1.r02`, the listing of divisors, which the
+// Algerian PGCD lessons used): the WHOLE list of a number's divisors, found by pairs (« a = d × k » gives d and its
+// partner k), trying d while d × d does not pass a. Its mistakes are those of an incomplete list: a partner forgotten,
+// the search stopped too early, 1 or the number itself left out, a number that leaves a remainder let in. It writes ONE
+// number at a time: never two lists side by side, never « commun », « PGCD », « le plus grand » (tested).
+
+const divisorList = (n) => {
+  const out = [];
+  for (let d = 1; d <= n; d += 1) if (n % d === 0) out.push(d);
+  return out;
+};
+/**
+ * The numbers whose list stands on a card: six to eight divisors, never a square (every divisor has a partner of its
+ * own), none a number of the PGCD lesson's road, forges or dash (18, 22, 28, 30, 33, 35, 42, 45, 54, 56, 75, 88, 90…),
+ * nor of the first 3e lesson's (60, 72, 36, 48), and none whose list holds one of them.
+ */
+const LISTS_FROM = {
+  1: [12, 20, 32, 50, 52, 68],
+  2: [40, 63, 76, 78, 92, 98],
+};
+/** Products a × b of the « write » form that never land on a number of the PGCD lesson. */
+const LIST_AVOID = new Set([18, 21, 22, 27, 28, 30, 33, 35, 42, 45, 54, 56, 57, 60, 72, 75, 88, 90]);
+/** The divisors d of n with d × d ≤ n: the numbers tried, one per pair. */
+const tried = (n) => divisorList(n).filter((d) => d * d <= n);
+
+/** « a = b × ▢ »: b is a divisor of a, the student writes its PARTNER — the other half of the pair. */
+function listWrite(rand, level, first) {
+  let b;
+  let q;
+  for (let i = 0; i < 60; i += 1) {
+    [b, q] =
+      level === 1
+        ? first
+          ? [int(rand, 2, 4), int(rand, 5, 7)]
+          : [int(rand, 2, 6), int(rand, 6, 9)]
+        : [int(rand, 11, 19), int(rand, 3, 9)];
+    if (!LIST_AVOID.has(b * q)) break;
+  }
+  const a = b * q;
+  return {
+    gesture: 'write',
+    a,
+    b,
+    prompt:
+      level === 1
+        ? `On écrit les diviseurs de ${a} par paires. Complète la paire qui commence par ${b}.`
+        : `${b} est un diviseur de ${a}. Complète l’égalité : son partenaire est un diviseur aussi.`,
+    tokens: [String(a), '=', String(b), '×', S('q', 'partenaire', String(q).length)],
+  };
+}
+
+/** One card: the list of n — whole, or with the slip `kind` makes (its trap). */
+function listCard(rand, kind, n, id) {
+  const all = divisorList(n);
+  const pairs = tried(n).filter((d) => d > 1);
+  let list = all;
+  let trap = null;
+  if (kind === 'partner') {
+    const d = pick(rand, pairs);
+    list = all.filter((x) => x !== n / d);
+    trap = 'partner-forgot';
+  } else if (kind === 'edge') {
+    const gone = pick(rand, [1, n]);
+    list = all.filter((x) => x !== gone);
+    trap = 'one-and-itself';
+  } else if (kind === 'early') {
+    // stopped one number too early: the last pair tried is missing, both halves
+    const d = pairs.at(-1);
+    list = all.filter((x) => x !== d && x !== n / d);
+    trap = 'stop-early';
+  } else if (kind === 'intruder') {
+    const outs = [];
+    for (let k = 2; k < n / 2; k += 1) if (n % k !== 0) outs.push(k);
+    list = [...all, pick(rand, outs)].sort((x, y) => x - y);
+    trap = 'rest-not-zero';
+  }
+  return {
+    id,
+    text: `Diviseurs de ${n} : ${andList(list)}`,
+    say: true,
+    n,
+    list,
+    bin: kind === 'full' ? 'yes' : 'no',
+    trap,
+  };
+}
+
+/** Three lists, each of its own number: whole, or with a partner missing, 1 or the number left out, an intruder, the search stopped early. */
+function listSort(rand, level) {
+  const kinds = shuffle(
+    rand,
+    pick(
+      rand,
+      level === 1
+        ? [
+            ['full', 'partner', 'edge'],
+            ['full', 'partner', 'intruder'],
+            ['full', 'full', 'partner'],
+            ['partner', 'edge', 'full'],
+          ]
+        : [
+            ['full', 'early', 'partner'],
+            ['early', 'edge', 'full'],
+            ['full', 'early', 'intruder'],
+            ['early', 'partner', 'full'],
+          ],
+    ),
+  );
+  const ns = shuffle(rand, LISTS_FROM[level]).slice(0, 3);
+  return {
+    gesture: 'sort',
+    prompt: 'Chaque liste donne-t-elle TOUS les diviseurs du nombre, sans oubli ni intrus ? Envoie-la dans sa boîte.',
+    bins: [
+      { id: 'yes', label: 'Liste complète' },
+      { id: 'no', label: 'Un oubli ou un intrus' },
+    ],
+    cards: kinds.map((k, i) => listCard(rand, k, ns[i], `c${i + 1}`)),
+  };
+}
+
+/**
+ * The worked example: the divisors of a number found by pairs. Its first step answers the mistake shown — 1 and the
+ * number itself, a number that leaves a remainder, or where the search stops (and why each division gives TWO divisors).
+ */
+function listExample(rand, level, { mistake = null } = {}) {
+  const n = pick(rand, LISTS_FROM[level === 2 ? 2 : 1]);
+  const s = Math.floor(Math.sqrt(n));
+  let first;
+  if (mistake === 'one-and-itself')
+    first = `On commence toujours par la paire $${n} = 1 \\times ${n}$ : 1 et ${n} sont des diviseurs.`;
+  else if (mistake === 'rest-not-zero') {
+    const outs = [];
+    for (let k = 2; k < n / 2; k += 1) if (n % k !== 0) outs.push(k);
+    const k = pick(rand, outs);
+    first = `${k} n’est pas un diviseur : $${n} = ${k} \\times ${Math.floor(n / k)} + ${n % k}$, le reste n’est pas 0.`;
+  } else if (mistake === 'partner-forgot')
+    first = `Chaque division exacte donne deux diviseurs : le nombre essayé et son partenaire. On essaie de 1 à ${s}, car $${s} \\times ${s} = ${s * s}$ ne dépasse pas ${n}.`;
+  else
+    first = `On essaie de 1 à ${s} : $${s} \\times ${s} = ${s * s}$ ne dépasse pas ${n}, et $${s + 1} \\times ${s + 1} = ${(s + 1) * (s + 1)}$ le dépasse.`;
+  return {
+    title: `Les diviseurs de ${n}`,
+    steps: [
+      first,
+      `Les paires : ${andList(tried(n).map((d) => `$${n} = ${d} \\times ${n / d}$`))}.`,
+      `Diviseurs de ${n} : ${andList(divisorList(n))}.`,
+    ],
+  };
+}
+
+const DIVISOR_LISTS = {
+  item: '4e.m1.r08',
+  // the name of the gesture (the item has no French lesson yet: « Revois d’abord » names the item itself)
+  name: 'Les diviseurs d’un nombre',
+  icon: '📋',
+  // no French lesson of 4e is written: no instrument belongs to this item yet (the capsule skips its lab step)
+  labTool: null,
+  mistakes: ['partner-forgot', 'stop-early', 'one-and-itself', 'rest-not-zero'],
+  forms: { 1: ['write', 'sort'], 2: ['sort', 'write'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'sort' ? listSort(rand, level) : listWrite(rand, level, first),
+  example: listExample,
+  rules: [
+    {
+      id: 'pairs',
+      title: 'Les diviseurs vont par paires',
+      text: 'Chaque égalité $a = b \\times k$ donne deux diviseurs de $a$ : $b$ et son partenaire $k$.',
+      example: '$65 = 5 \\times 13$ : 5 et 13 sont des diviseurs de 65.',
+      check: { a: 65, b: 5, q: 13, r: 0 },
+    },
+    {
+      id: 'square',
+      title: 'Jusqu’où essayer',
+      text: 'Pour trouver les diviseurs de $a$, on essaie les nombres dont le carré ne dépasse pas $a$, et on écrit avec chacun son partenaire.',
+      example: '$7 \\times 7 = 49$ ne dépasse pas 50, et $8 \\times 8 = 64$ le dépasse : pour 50, on essaie de 1 à 7.',
+      check: { a: 50, b: 5, q: 10, r: 0 },
+    },
+    {
+      id: 'whole',
+      title: 'La liste complète',
+      text: 'La liste des diviseurs de $a$ commence par 1 et finit par $a$ ; un nombre qui laisse un reste n’y entre pas.',
+      example: `Diviseurs de 20 : ${andList([1, 2, 4, 5, 10, 20])} ; $20 = 3 \\times 6 + 2$ : 3 n’en fait pas partie.`,
+      check: { a: 20, b: 3, q: 6, r: 2 },
+    },
+  ],
+  memo: [
+    'Chaque égalité $a = b \\times k$ donne deux diviseurs : $b$ et son partenaire $k$.',
+    'On essaie les nombres à partir de 1, tant que leur carré ne dépasse pas $a$.',
+    '1 et $a$ lui-même sont toujours dans la liste.',
+    `Exemple : $76 = 1 \\times 76 = 2 \\times 38 = 4 \\times 19$, donc les diviseurs de 76 sont ${andList([1, 2, 4, 19, 38, 76])}.`,
+  ],
+};
+
+// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Three
+// families today: `4e.m1.r06`, the one tool the net gives the first 3e lesson; `3e.m1.r05` and `4e.m1.r08`, the two
+// tools of the second (the PGCD lesson). The Algerian families (their question generators, rules and memos) are in
+// git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French family PORTS what fits and is keyed
+// by a French item.
+export const FAMILIES = { '4e.m1.r06': DECOMPOSITION, '3e.m1.r05': BIG_DECOMPOSITION, '4e.m1.r08': DIVISOR_LISTS };
 
 export const familyFor = (item) => FAMILIES[item] ?? null;
 

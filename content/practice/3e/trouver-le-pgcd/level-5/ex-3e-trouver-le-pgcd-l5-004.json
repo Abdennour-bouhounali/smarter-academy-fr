@@ -1,0 +1,129 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-004",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le PGCD de 1 352 et 507",
+    "estimatedMinutes": 5,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $1\\,352$ et $507$ avec l’algorithme d’Euclide."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de divisions l’algorithme d’Euclide écrit-il pour $1\\,352$ et $507$, la division au reste nul comprise ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les divisions l’une sous l’autre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nouvelle division divise le diviseur précédent par le reste précédent ; arrête-toi au reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "3 divisions : $1\\,352 = 507 \\times 2 + 338$, puis $507 = 338 \\times 1 + 169$, puis $338 = 169 \\times 2 + 0$.",
+        "incorrect": "Compte toutes les lignes, jusqu’à celle dont le reste est nul."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,352 = 507 \\times 2 + 338$",
+          "$507 = 338 \\times 1 + 169$",
+          "$338 = 169 \\times 2 + 0$",
+          "L’algorithme écrit 3 divisions."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(1\\,352 ; 507)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "169",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $169$ : $\\text{PGCD}(1\\,352 ; 507) = 169$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,352 = 507 \\times 2 + 338$",
+          "$507 = 338 \\times 1 + 169$",
+          "$338 = 169 \\times 2 + 0$",
+          "Le dernier reste non nul est $169$, donc $\\text{PGCD}(1\\,352 ; 507) = 169$."
+        ],
+        "result": "169"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "2"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "338"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "845"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

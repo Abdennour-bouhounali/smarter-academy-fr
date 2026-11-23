@@ -1,0 +1,133 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-002",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les diviseurs communs de 275 et 165",
+    "estimatedMinutes": 5,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l4-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Nora veut écrire tous les diviseurs communs de $275$ et $165$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $\\text{PGCD}(275 ; 165)$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "55",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(275 ; 165) = 55$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "$275 = 5^{2} \\times 11$ et $165 = 3 \\times 5 \\times 11$.",
+          "Les diviseurs communs n’utilisent que $5$ (une fois) et $11$ : le plus grand est $5 \\times 11 = 55$.",
+          "Donc $\\text{PGCD}(275 ; 165) = 55$."
+        ],
+        "result": "55"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "110"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "11"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris tous les diviseurs communs de $275$ et $165$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        5,
+        11,
+        55
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris d’abord la liste des diviseurs du plus petit nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde seulement ceux qui divisent aussi l’autre nombre."
+        }
+      ],
+      "feedback": {
+        "correct": "Les diviseurs communs de $275$ et $165$ sont $1$, $5$, $11$ et $55$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux : vérifie chacun."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $275$ : $1$, $5$, $11$, $25$, $55$ et $275$.",
+          "Diviseurs de $165$ : $1$, $3$, $5$, $11$, $15$, $33$, $55$ et $165$.",
+          "Les diviseurs communs : $1$, $5$, $11$ et $55$."
+        ],
+        "result": "1 ; 5 ; 11 ; 55"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIVISEUR-D-UN-SEUL",
+          "value": "1, 3, 5, 11, 15, 33, 55, 165"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

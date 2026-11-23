@@ -1,0 +1,167 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-004",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer 350 et 560",
+    "estimatedMinutes": 5,
+    "tags": [
+      "facteurs premiers",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $350$ et $560$ à l’aide de leurs décompositions en facteurs premiers."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $350$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2*5^2*7",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par 2 tant que c’est possible, puis essaie 3, 5, 7…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand le quotient vaut 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$350 = 2 \\times 5^{2} \\times 7$.",
+        "incorrect": "Divise par chaque nombre premier, dans l’ordre, autant de fois que possible.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "On divise par 2, 3, 5, 7… autant de fois que possible.",
+          "$350 = 2 \\times 5^{2} \\times 7$."
+        ],
+        "result": "350 = 2 \\times 5^{2} \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $560$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^4*5*7",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par 2 tant que c’est possible, puis essaie 3, 5, 7…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand le quotient vaut 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$560 = 2^{4} \\times 5 \\times 7$.",
+        "incorrect": "Divise par chaque nombre premier, dans l’ordre, autant de fois que possible.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "On divise par 2, 3, 5, 7… autant de fois que possible.",
+          "$560 = 2^{4} \\times 5 \\times 7$."
+        ],
+        "result": "560 = 2^{4} \\times 5 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Déduis-en $\\text{PGCD}(350 ; 560)$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "70",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Garde les facteurs premiers communs aux deux décompositions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compare les exposants de $2$ et de $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 5 \\times 7 = 70$.",
+        "incorrect": "Multiplie les facteurs premiers communs, chacun avec son plus petit exposant."
+      },
+      "solution": {
+        "lines": [
+          "$350 = 2 \\times 5^{2} \\times 7$ et $560 = 2^{4} \\times 5 \\times 7$.",
+          "Facteurs communs : $2$, $5$ et $7$ ; plus petits exposants : $2^{1}$, $5^{1}$, $7^{1}$.",
+          "$\\text{PGCD}(350 ; 560) = 2 \\times 5 \\times 7 = 70$."
+        ],
+        "result": "70"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "2800"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

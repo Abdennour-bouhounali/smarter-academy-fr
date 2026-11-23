@@ -1,0 +1,185 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-010",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Des cartes carrées dans un carton",
+    "estimatedMinutes": 4,
+    "tags": [
+      "partage",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Le club photo découpe un carton rectangulaire de $78$ cm sur $117$ cm en cartes carrées identiques, sans perte. Le côté d’une carte est un nombre entier de centimètres."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Pour chaque longueur, dis si elle convient pour le côté d’une carte.",
+      "statement": "Le côté peut-il mesurer $13$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$13$ doit tenir un nombre entier de fois dans chaque côté du carton."
+        }
+      ],
+      "feedback": {
+        "correct": "$78 = 13 \\times 6$ et $117 = 13 \\times 9$ : $13$ divise les deux longueurs.",
+        "incorrect": "Divise chaque longueur du carton par $13$."
+      },
+      "solution": {
+        "lines": [
+          "$78 = 13 \\times 6$ et $117 = 13 \\times 9$.",
+          "$13$ divise $78$ et $117$ : le côté peut mesurer $13$ cm."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Le côté peut-il mesurer $6$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6$ divise $78$. Divise-t-il aussi $117$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$117 = 6 \\times 19 + 3$ : $6$ ne divise pas $117$.",
+        "incorrect": "Une longueur qui convient divise les DEUX côtés du carton."
+      },
+      "solution": {
+        "lines": [
+          "$78 = 6 \\times 13$, mais $117 = 6 \\times 19 + 3$.",
+          "$6$ ne divise pas $117$ : il resterait une bande de $3$ cm."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Le côté des cartes est le plus grand possible. Combien de cartes obtient-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le plus grand côté possible est le PGCD des deux longueurs."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte combien de cartes tiennent dans la largeur, puis dans la longueur."
+        }
+      ],
+      "feedback": {
+        "correct": "Le côté mesure $39$ cm : $2$ cartes sur la largeur et $3$ sur la longueur, soit $6$ cartes.",
+        "incorrect": "Trouve d’abord le plus grand côté possible, puis le nombre de cartes sur chaque côté."
+      },
+      "solution": {
+        "lines": [
+          "$\\text{PGCD}(78 ; 117) = 39$ : $78 = 39 \\times 2$ et $117 = 39 \\times 3$.",
+          "Le côté mesure $39$ cm.",
+          "On obtient $2 \\times 3 = 6$ cartes."
+        ],
+        "result": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "39"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

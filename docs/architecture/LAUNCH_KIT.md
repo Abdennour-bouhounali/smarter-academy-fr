@@ -5,8 +5,10 @@
 > bands, the gate and the capsule, the store, the walk library `e2e/lib/launchKitTwoTools.mjs`. Since 2026-11-22 the
 > launch is French and left to right: its screen sentences (`LaunchKit.jsx`, the table at the top — the title
 > « L’échauffement », the bag « Ma trousse »), the gestures and the named mistakes (`families.js › MISTAKES`, each
-> « Attention : … ») are French, guarded by `ltr.render.test.jsx`. `families.js › FAMILIES` holds ONE family (2026-11-23):
-> `4e.m1.r06` « Nombres premiers et produits », the one tool the net gives the first 3e lesson (§4bis); the nine
+> « Attention : … ») are French, guarded by `ltr.render.test.jsx`. `families.js › FAMILIES` holds THREE families (§4bis):
+> `4e.m1.r06` « Nombres premiers et produits », the one tool the net gives the first 3e lesson (2026-11-23), and
+> `3e.m1.r05` « Produits de nombres premiers » and `4e.m1.r08` « Les diviseurs d’un nombre », the two core tools of the
+> second, `trouver-le-pgcd` (2026-11-24 — no launch walk has run them yet); the nine
 > Algerian families are in `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`. Not true here: no
 > launch walk has been run (no lesson is mounted yet). It was never played by a real student. Its
 > phases 2–4: `docs/reports/LAUNCH_KIT_PLAN_2026-11-17.md`.
@@ -128,13 +130,17 @@ One entry in `FAMILIES`, keyed by the item id of the net:
   the numbers of each level stay in their range, every trap names a known mistake, the worked example is true.
 
 **A lesson with no family for its tools opens an EMPTY kit** (0 / 0): a family per core tool is part of a lesson's
-definition of done (`status:lesson-v2`, part S1). Today only the lessons whose tools include `4e.m1.r06` have one.
+definition of done (`status:lesson-v2`, part S1). Today the two 3e lessons of « Multiples et diviseurs » have theirs
+(`4e.m1.r06`; `3e.m1.r05` and `4e.m1.r08`).
 
 ## 4bis. The families that exist
 
 | Item | Name | Its forms (level 1 · level 2) | What it measures — and what it must not do | `labTool` |
 |---|---|---|---|---|
 | `4e.m1.r06` (4e: « décompose un nombre entier en produit de facteurs premiers ») — the one tool `toolsForLesson` gives the 3e lesson `decomposer-en-facteurs-premiers` | « Nombres premiers et produits » | `write` « 30 = 2 × ▢ × 5 » (12 … 50; the first question 12 = 2 × 2 × ▢), `primes` (a sort: prime or not, under 30; traps 1 and an odd non-prime), `power` « 2³ = ▢ » (never 2²: the slip 2 × 2 and the value agree) · `sort` (« n = a × b × … »: a product of primes or not; traps a factor that is not prime, a product that is not n), `divisible` (by 2, 3 or 5, ported from the Algerian `rules` family), `write` (84 … 198) | what 4e brings: a prime under 30, the rules for 2, 3, 5, a small product of primes, the value of 2³. It never teaches the 3e procedure: no order of the divisors, no « as long as it divides », no stop; its worked example splits from the LARGEST prime; no product written with exponents; no word of the lesson's keys (tested) | `null` — no French lesson before it has an instrument (the capsule skips its lab step) |
+
+| `3e.m1.r05` (3e: « décompose un nombre entier en produit de facteurs premiers ») — the first core tool of `trouver-le-pgcd` (home lesson `decomposer-en-facteurs-premiers`) | « Produits de nombres premiers » | `write` « 252 = 2 × 2 × 3 × 3 × ▢ » (24 … 99; the first question 24 = 2 × 2 × 2 × ▢), `sort` (a product of primes or not: a factor that is not prime, a product that is not n) · `sort`, `write` (132 … 300) | lesson 1's skill on numbers up to 300, products written factor after factor (the launch walk reads no power card); never two numbers side by side, « commun », « PGCD », « exposant » (tested) | `factor` — the instrument of its home lesson, in the lab opened before `trouver-le-pgcd` |
+| `4e.m1.r08` (4e: « problèmes simples de divisibilité ») — the second core tool of `trouver-le-pgcd` (no French 4e lesson) | « Les diviseurs d’un nombre » | `write` « 20 = 4 × ▢ » (the partner of a divisor), `sort` (« Diviseurs de 52 : 1, 2, 4, 13, 26 et 52 »: whole, or a partner forgotten, 1 or n left out, an intruder) · `sort` (the search stopped too early too), `write` (11 … 19 × 3 … 9) — ported from the Algerian `4am.m1.r02` | the WHOLE list of ONE number's divisors, by pairs, up to the square; never two lists side by side, « commun », « le plus grand » (tested) | `null` — no French lesson owns the item |
 
 Its named mistakes (`MISTAKES`): `one-not-prime`, `odd-not-prime`, `two-is-prime`, `not-all-prime` (new), and
 `product-false`, `power-times`, `digit-anywhere`, `last-digit`. Its four rule cards are the board's moment ② (`CLASS_SESSION.md`
@@ -159,7 +165,7 @@ at }`, `lessons[<code>] = { first, last, tries }`, the sound switch.
 - the gate (§3bis) lives in the browser like the rest: a teacher does not see who needed a capsule;
 - no picture of a learning point with its sources (measured / deduced), no automatic update from a later success, no
   « prerequisite or new idea? » diagnosis, no class grid;
-- one family only (§4bis): every other French item has none.
+- three families only (§4bis): every other French item has none.
 
 ## 7. Check
 

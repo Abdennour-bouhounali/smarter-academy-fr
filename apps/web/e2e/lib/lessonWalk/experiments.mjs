@@ -185,7 +185,10 @@ async function bothMode(ctx, spec) {
     steps.subtract === S && steps.divide === D,
     `${name}: ${S} subtractions against ${D} divisions — computed here (${JSON.stringify(steps)})`,
   );
-  w.check((spec.saidBack ?? SAID_BACK).test(await fact(page)), `${name}: his prediction is said back « comme tu l’as dit »`);
+  w.check(
+    (spec.saidBack ?? SAID_BACK).test(await fact(page)),
+    `${name}: his prediction is said back « comme tu l’as dit »`,
+  );
   await tellsNothing(w, page, `${name}, the end`, ctx.forbid());
   await inquiryFits(w, page, `${name}-seen`);
 }
@@ -388,7 +391,10 @@ async function factorMode(ctx, spec) {
       await waitIq(page, (r) => window.__inquiry?.ri === r && window.__inquiry?.stage === 'pick', ri);
     }
     const q = await iq(page);
-    w.expect(q.kind === 'ladder' && q.mode === 'factor' && q.n === n && q.gap === n, `${name}: round ${ri + 1} opens on the gap of ${n}`);
+    w.expect(
+      q.kind === 'ladder' && q.mode === 'factor' && q.n === n && q.gap === n,
+      `${name}: round ${ri + 1} opens on the gap of ${n}`,
+    );
     await tellsNothing(w, page, `${name} ${n}, start`, ctx.forbid());
     if (ri === 0) await inquiryFits(w, page, `${name}-${n}-start`, exit);
     const primes = primeFactorsOf(n);
@@ -408,7 +414,9 @@ async function factorMode(ctx, spec) {
           const after = await iq(page);
           const f = await fact(page);
           w.check(
-            after.gap === gap && (await page.locator(`[data-iq-plank="${fell}"][data-iq-fell]`).count()) === 1 && f.includes(String(gap % fell)),
+            after.gap === gap &&
+              (await page.locator(`[data-iq-plank="${fell}"][data-iq-fell]`).count()) === 1 &&
+              f.includes(String(gap % fell)),
             `${name}: ${gap} = ${fell} × ${Math.floor(gap / fell)} + ${gap % fell} — the plank of ${fell} falls, the gap stays ${gap} (« ${f.trim().slice(0, 90)} »)`,
           );
           await tellsNothing(w, page, `${name} ${n}, a fall`, ctx.forbid());
@@ -419,11 +427,17 @@ async function factorMode(ctx, spec) {
       await waitIq(page, () => ['pick', 'seen'].includes(window.__inquiry?.stage));
       gap /= p;
       const now = await iq(page);
-      w.check(now.stage === 'seen' ? gap === 1 : now.gap === gap, `${name}: ${gap * p} ÷ ${p} = ${gap} — the gap is ${gap} (the world: ${now.gap})`);
+      w.check(
+        now.stage === 'seen' ? gap === 1 : now.gap === gap,
+        `${name}: ${gap * p} ÷ ${p} = ${gap} — the gap is ${gap} (the world: ${now.gap})`,
+      );
     }
     w.expect((await stageOf(page)) === 'seen', `${name}: the gap of ${n} is down to 1 case`);
     const laid = ((await page.getAttribute('[data-iq-laid]', 'data-iq-laid')) ?? '').split(',').map(Number);
-    w.check(laid.join() === primes.join(), `${name}: the planks that held on ${n} are ${primes.join(', ')} — computed here (${laid.join(', ')})`);
+    w.check(
+      laid.join() === primes.join(),
+      `${name}: the planks that held on ${n} are ${primes.join(', ')} — computed here (${laid.join(', ')})`,
+    );
     await tellsNothing(w, page, `${name} ${n}, the end`, ctx.forbid());
     await inquiryFits(w, page, `${name}-${n}-end`, exit);
   }
@@ -468,7 +482,10 @@ async function pairsMode(ctx, spec) {
       await page.waitForTimeout(40);
       if (d === m + 1) {
         const crossed = await page.getAttribute('[data-iq-crossed]', 'data-iq-crossed');
-        w.check(crossed === '1', `${name}: ${d} × ${d} = ${d * d} > ${a} — the strip shows the partner BEHIND the plank of ${d}`);
+        w.check(
+          crossed === '1',
+          `${name}: ${d} × ${d} = ${d * d} > ${a} — the strip shows the partner BEHIND the plank of ${d}`,
+        );
         if (gi === 0) await inquiryFits(w, page, `${name}-${a}-crossed`, exit);
       }
     }
@@ -483,11 +500,17 @@ async function pairsMode(ctx, spec) {
       await page.click(`[data-iq-pick="${early}"]`);
       await page.waitForTimeout(80);
       const fe = await fact(page);
-      w.check((await stage()) === 'pick' && fe.includes(String(early)), `${name}: ${early} is too early — said as a fact (« ${fe.trim().slice(0, 90)} »)`);
+      w.check(
+        (await stage()) === 'pick' && fe.includes(String(early)),
+        `${name}: ${early} is too early — said as a fact (« ${fe.trim().slice(0, 90)} »)`,
+      );
       await page.click(`[data-iq-pick="${m + 1}"]`);
       await page.waitForTimeout(80);
       const fl = await fact(page);
-      w.check((await stage()) === 'pick' && fl.includes(String(m + 1)), `${name}: ${m + 1} is past the last — said as a fact (« ${fl.trim().slice(0, 90)} »)`);
+      w.check(
+        (await stage()) === 'pick' && fl.includes(String(m + 1)),
+        `${name}: ${m + 1} is past the last — said as a fact (« ${fl.trim().slice(0, 90)} »)`,
+      );
       await inquiryFits(w, page, `${name}-${a}-pick`, exit);
     } else {
       w.expect((await stage()) === 'pick', `${name}: the trials of ${a} done, he picks the last plank`);
@@ -495,7 +518,10 @@ async function pairsMode(ctx, spec) {
     }
     await page.click(`[data-iq-pick="${m}"]`);
     await waitIq(page, () => window.__inquiry?.stage === 'found');
-    w.check(true, `${name}: the last plank to try for ${a} is ${m} — computed here (${m} × ${m} = ${m * m} ⩽ ${a} < ${(m + 1) ** 2})`);
+    w.check(
+      true,
+      `${name}: the last plank to try for ${a} is ${m} — computed here (${m} × ${m} = ${m * m} ⩽ ${a} < ${(m + 1) ** 2})`,
+    );
     await tellsNothing(w, page, `${name} ${a}, found`, ctx.forbid());
     await inquiryFits(w, page, `${name}-${a}-found`, exit);
   }
@@ -512,7 +538,8 @@ async function sheetMode(ctx, spec) {
     for (let p = 2; p * p <= x; p += 1) if (isPrime(p)) out.push(p);
     return out;
   };
-  const filled = () => waitIq(page, () => window.__inquiry?.stage === 'pick' || window.__inquiry?.stage === 'seen', null, 30000);
+  const filled = () =>
+    waitIq(page, () => window.__inquiry?.stage === 'pick' || window.__inquiry?.stage === 'seen', null, 30000);
   for (const [ri, round] of spec.rounds.entries()) {
     if (ri > 0) {
       await page.click(ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]');
@@ -525,11 +552,19 @@ async function sheetMode(ctx, spec) {
       await filled();
       const q = await iq(page);
       const lines = linesOf(x);
-      w.check(q.n === x && q.lines.join() === lines.join(), `${name}: the sheet of ${x} holds the primes ${lines[0] ?? '—'} … ${lines.at(-1) ?? '—'} (${lines.length} lines) — computed here`);
-      const rests = await page.evaluate(() =>
-        Object.fromEntries([...document.querySelectorAll('[data-iq-line]')].map((b) => [b.dataset.iqLine, b.dataset.iqRest])),
+      w.check(
+        q.n === x && q.lines.join() === lines.join(),
+        `${name}: the sheet of ${x} holds the primes ${lines[0] ?? '—'} … ${lines.at(-1) ?? '—'} (${lines.length} lines) — computed here`,
       );
-      w.check(lines.every((p) => Number(rests[p]) === x % p), `${name}: column B of ${x} is every remainder — computed here`);
+      const rests = await page.evaluate(() =>
+        Object.fromEntries(
+          [...document.querySelectorAll('[data-iq-line]')].map((b) => [b.dataset.iqLine, b.dataset.iqRest]),
+        ),
+      );
+      w.check(
+        lines.every((p) => Number(rests[p]) === x % p),
+        `${name}: column B of ${x} is every remainder — computed here`,
+      );
       if (shots === 0 || lines.length >= 16) {
         await tellsNothing(w, page, `${name} ${x}, the sheet`, ctx.forbid());
         await inquiryFits(w, page, `${name}-${x}-sheet`, exit);
@@ -541,11 +576,17 @@ async function sheetMode(ctx, spec) {
         await page.click(`[data-iq-line="${miss}"]`);
         await page.waitForTimeout(80);
         const f1 = await fact(page);
-        w.check((await iq(page)).n === x && f1.includes(String(x % miss)), `${name}: line ${miss} shows ${x % miss}: ${x} unchanged (« ${f1.trim().slice(0, 80)} »)`);
+        w.check(
+          (await iq(page)).n === x && f1.includes(String(x % miss)),
+          `${name}: line ${miss} shows ${x % miss}: ${x} unchanged (« ${f1.trim().slice(0, 80)} »)`,
+        );
         await page.click('[data-iq-prime]');
         await page.waitForTimeout(80);
         const f2 = await fact(page);
-        w.check((await iq(page)).n === x && f2.includes(String(zero)), `${name}: « prime » said of ${x}: the sheet answers that line ${zero} shows 0 (« ${f2.trim().slice(0, 80)} »)`);
+        w.check(
+          (await iq(page)).n === x && f2.includes(String(zero)),
+          `${name}: « prime » said of ${x}: the sheet answers that line ${zero} shows 0 (« ${f2.trim().slice(0, 80)} »)`,
+        );
         await inquiryFits(w, page, `${name}-${x}-not-prime`, exit);
       }
       if (zero == null) {
@@ -559,9 +600,203 @@ async function sheetMode(ctx, spec) {
     }
     await waitIq(page, () => window.__inquiry?.stage === 'seen');
     const got = (await iq(page)).rounds.at(-1)?.factors ?? [];
-    w.check([...got].sort((p, q) => p - q).join() === want.join(), `${name}: ${round.n} = ${want.join(' × ')} — computed here (the notebook: ${got.join(', ')})`);
+    w.check(
+      [...got].sort((p, q) => p - q).join() === want.join(),
+      `${name}: ${round.n} = ${want.join(' × ')} — computed here (the notebook: ${got.join(', ')})`,
+    );
     await tellsNothing(w, page, `${name} ${round.n}, the end`, ctx.forbid());
     await inquiryFits(w, page, `${name}-${round.n}-end`, exit);
+  }
+}
+
+// ───────────────────────────── the second French lesson's two kinds (trouver-le-pgcd) ─────────────────────────────
+/** A text as seen: every white space (the no-break ones included) dropped, so « 10 403 » reads 10403. */
+const bare = (t) => String(t ?? '').replace(/[\s  ]/g, '');
+
+// ── `deal`: two collections dealt into k identical lots. He tries numbers of lots (a prediction before each deal — one
+// said wrong on purpose —, the largest choice for the heaviest scene, a number tried again), then answers: empty boxes
+// (the bound), a k that leaves fruit (the world deals it), a k that shares but is not the most, and the most — all
+// computed here from the spec's two numbers.
+async function dealMode(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const nA = spec.a.n;
+  const nB = spec.b.n;
+  const choices = spec.choices ?? [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const minTries = spec.minTries ?? 4;
+  const g = gcd(nA, nB);
+  const shares = (k) => nA % k === 0 && nB % k === 0;
+  const q0 = await iq(page);
+  w.expect(
+    q0.kind === 'deal' && q0.stage === 'pick',
+    `${name}: the stall opens on ${nA} and ${nB}, he chooses a number of lots`,
+  );
+  await tellsNothing(w, page, `${name}, start`, ctx.forbid());
+  await inquiryFits(w, page, `${name}-start`, exit);
+  const fails = choices.filter((k) => !shares(k));
+  const oks = choices.filter((k) => shares(k) && k !== g);
+  const plan = [];
+  const add = (k, guess) => k != null && !plan.some((x) => x.k === k) && plan.push({ k, guess });
+  add(fails[0], false);
+  add(oks[0], true);
+  add(
+    fails.find((k) => !plan.some((x) => x.k === k)),
+    true,
+  ); // said wrong on purpose
+  add(Math.max(...choices.filter((k) => k !== g)), !shares(Math.max(...choices.filter((k) => k !== g))) ? false : true);
+  for (const k of choices) if (plan.length < minTries && k !== g) add(k, shares(k));
+  const tries = async () => (await iq(page)).tries.length;
+  for (const [i, { k, guess }] of plan.entries()) {
+    const before = await tries();
+    await page.click(`[data-iq-choice="${k}"]`);
+    await waitIq(page, () => window.__inquiry?.stage === 'guess');
+    if (i === 0) await inquiryFits(w, page, `${name}-ask-${k}`, exit);
+    await page.click(`[data-iq-say="${guess ? 'yes' : 'no'}"]`);
+    await waitIq(
+      page,
+      (n) => window.__inquiry?.stage === 'pick' && window.__inquiry.tries.length === n + 1,
+      before,
+      60000,
+    );
+    const row = (await iq(page)).tries.at(-1);
+    const [rA, rB] = [nA % k, nB % k];
+    w.check(
+      row.k === k && row.restA === rA && row.restB === rB && row.ok === shares(k),
+      `${name}: ${k} lots — ${nA} = ${k} × ${Math.floor(nA / k)} + ${rA}, ${nB} = ${k} × ${Math.floor(nB / k)} + ${rB}: ${shares(k) ? 'all shared' : 'fruit left'} — computed here (the world: ${row.restA}, ${row.restB})`,
+    );
+    const ok = await page.getAttribute(`[data-iq-try="${k}"]`, 'data-iq-ok');
+    w.check(ok === (shares(k) ? '1' : '0'), `${name}: the table's column ${k} says ${shares(k) ? 'shared' : 'left'}`);
+    const f = bare(await fact(page));
+    w.check(f.includes(String(k)), `${name}: the fact after ${k} lots names them (« ${f.slice(0, 80)} »)`);
+    await tellsNothing(w, page, `${name}, ${k} lots`, ctx.forbid());
+    if (i === 0 || guess !== shares(k) || k === Math.max(...plan.map((x) => x.k)))
+      await inquiryFits(w, page, `${name}-dealt-${k}${guess !== shares(k) ? '-wrong-guess' : ''}`, exit);
+  }
+  // a number tried again: its row shown again, nothing dealt twice
+  const again = plan[0].k;
+  const n0 = await tries();
+  await page.click(`[data-iq-choice="${again}"]`);
+  await page.waitForTimeout(150);
+  w.check(
+    (await iq(page)).stage === 'pick' && (await tries()) === n0,
+    `${name}: ${again} tried again — its row shown again, nothing dealt twice`,
+  );
+  const toAnswer = async () => {
+    await page.click('[data-iq-to-answer]');
+    await waitIq(page, () => window.__inquiry?.stage === 'answer');
+  };
+  const answer = async (k, x, y) => {
+    for (const [box, v] of [
+      ['k', k],
+      ['x', x],
+      ['y', y],
+    ])
+      await page.fill(`[data-iq-in="${box}"]`, v === '' ? '' : String(v));
+    await page.click('[data-iq-check]');
+    await page.waitForTimeout(150);
+  };
+  await toAnswer();
+  await inquiryFits(w, page, `${name}-answer`, exit);
+  await answer('', '', '');
+  w.check((await iq(page)).stage === 'answer', `${name}: empty boxes — the bound is said, the boxes stay`);
+  // a k never tried that leaves fruit: the world deals it, it joins his table
+  const untried = fails.find((k) => !plan.some((x) => x.k === k));
+  if (untried != null) {
+    const before = await tries();
+    await answer(untried, Math.floor(nA / untried), Math.floor(nB / untried));
+    await waitIq(
+      page,
+      (n) => window.__inquiry?.stage === 'pick' && window.__inquiry.tries.length === n + 1,
+      before,
+      60000,
+    );
+    w.check(
+      (await iq(page)).tries.at(-1).k === untried,
+      `${name}: ${untried} lots answered — it leaves fruit (${nA % untried}, ${nB % untried}): the world deals it, it joins the table`,
+    );
+    await tellsNothing(w, page, `${name}, an answer dealt`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-answer-dealt-${untried}`, exit);
+    await toAnswer();
+  }
+  // a k that shares everything but is not the most
+  const less = common(nA, nB)
+    .filter((d) => d < g && d <= Math.max(...choices))
+    .at(-1);
+  if (less != null) {
+    await answer(less, nA / less, nB / less);
+    w.check(
+      (await iq(page)).stage === 'pick',
+      `${name}: ${less} lots share everything but ${g} is the most — computed here: the world sends him back to try`,
+    );
+    await tellsNothing(w, page, `${name}, not the most`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-not-most-${less}`, exit);
+    await toAnswer();
+  }
+  await answer(g, nA / g, nB / g);
+  await waitIq(page, () => window.__inquiry?.stage === 'seen');
+  w.check(true, `${name}: the most lots is ${g}, each holding ${nA / g} and ${nB / g} — computed here`);
+  await tellsNothing(w, page, `${name}, the end`, ctx.forbid());
+  await inquiryFits(w, page, `${name}-seen`, exit);
+}
+
+// ── `nest`, `pair`: two pairs of gaps; for each probe he says whether it fills both gaps of each pair (the first probe of
+// the first round said wrong on purpose), the world lays it on the four strips; at the end the two lists stand side by
+// side — every list computed here. Every round is played; a round that is not the last ends on its « next ».
+async function pairMode(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const next = ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]';
+  for (const [ri, round] of spec.rounds.entries()) {
+    const { a, b, probes } = round;
+    const [x, y] = round.pair;
+    if (ri > 0) {
+      await page.click(next);
+      await waitIq(page, (r) => window.__inquiry?.ri === r && window.__inquiry?.stage === 'guess', ri);
+    }
+    const q = await iq(page);
+    w.expect(
+      q.kind === 'nest' && q.mode === 'pair' && q.a === a && q.b === b && q.pair.join() === [x, y].join(),
+      `${name}: round ${ri + 1} opens on (${a} ; ${b}) and (${x} ; ${y})`,
+    );
+    await tellsNothing(w, page, `${name} r${ri + 1}, start`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-r${ri + 1}-start`, exit);
+    for (const [pi, p] of probes.entries()) {
+      const first = a % p === 0 && b % p === 0;
+      const second = x % p === 0 && y % p === 0;
+      const wrong = ri === 0 && pi === 0;
+      await page.click(`[data-iq-say-first="${(wrong ? !first : first) ? 'yes' : 'no'}"]`);
+      await page.click(`[data-iq-say-second="${second ? 'yes' : 'no'}"]`);
+      if (pi === 0) await inquiryFits(w, page, `${name}-r${ri + 1}-said`, exit);
+      const t0 = Date.now();
+      await page.click('[data-iq-lay]');
+      await waitIq(
+        page,
+        (n) => window.__inquiry?.rows === n && ['guess', 'compare'].includes(window.__inquiry?.stage),
+        pi + 1,
+        30000,
+      );
+      const ms = Date.now() - t0;
+      w.check(ms < 6000, `${name}: the plank of ${p} laid on the four strips in ${(ms / 1000).toFixed(1)} s`);
+      const f = bare(await fact(page));
+      w.check(
+        [p, a, b, x, y].every((v) => f.includes(String(v))) || (await iq(page)).stage === 'compare',
+        `${name}: the fact names the plank ${p} and the four gaps (« ${f.slice(0, 90)} »)`,
+      );
+      await tellsNothing(w, page, `${name} r${ri + 1}, ${p}`, ctx.forbid());
+      if (wrong || pi === probes.length - 1) await inquiryFits(w, page, `${name}-r${ri + 1}-laid-${p}`, exit);
+    }
+    w.expect((await stageOf(page)) === 'compare', `${name}: every probe laid, the two lists side by side`);
+    const lists = await page.evaluate(() =>
+      Object.fromEntries(
+        [...document.querySelectorAll('[data-iq-list]')].map((l) => [l.dataset.iqList, l.dataset.iqPlanks]),
+      ),
+    );
+    w.check(
+      lists.first === common(a, b).join() && lists.second === common(x, y).join(),
+      `${name}: the planks of (${a} ; ${b}) are ${common(a, b).join(', ')}, of (${x} ; ${y}) ${common(x, y).join(', ')} — computed here (${JSON.stringify(lists)})`,
+    );
+    await tellsNothing(w, page, `${name} r${ri + 1}, compare`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-r${ri + 1}-compare`, exit);
   }
 }
 
@@ -578,6 +813,9 @@ export const EXPERIMENTS = {
   calc: calcExperiment,
   roundtrip: roundtripExperiment,
   chase: chaseExperiment,
+  // trouver-le-pgcd (2026-11-23)
+  deal: dealMode,
+  'nest:pair': pairMode,
 };
 
 /** Plays the experiment `spec` on the screen now open; ends on its « next » (a bench: back to its workshop). */

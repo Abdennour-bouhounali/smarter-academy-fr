@@ -17,6 +17,7 @@
  * here states a rule: every sentence says what the strips, the shelves or the ladders have just done.
  */
 import { useEffect, useReducer, useState } from 'react';
+import { formatFr, texFr } from '@smarter-academy/core';
 import MathText from '../../components/MathText';
 import { Num } from '../kit/parts';
 import { commonPlanks } from './inquiry';
@@ -291,7 +292,7 @@ export function PairView({ spec, state: s, act }) {
                   <span className="iq-chips">
                     {list.map((n) => (
                       <span key={n} className="iq-chip iq-chip--s is-on">
-                        {n}
+                        {formatFr(n)}
                       </span>
                     ))}
                   </span>
@@ -363,8 +364,8 @@ export function Pair({ spec, play, onDone }) {
 
 // ───────────────────────── ladder · fold ─────────────────────────
 const MAXF = 6; // lines on screen under the head; past it, the rows of the run are folded behind one line
-const pairTex = (a, b, gold) => `$(${a}\\,;\\,${gold ? `\\textcolor{#fbbf24}{${b}}` : b})$`;
-const lineTex = (run) => `${run.a} = ${run.b} \\times ${run.q} + ${run.r}`;
+const pairTex = (a, b, gold) => `$(${texFr(a)}\\,;\\,${gold ? `\\textcolor{#fbbf24}{${texFr(b)}}` : texFr(b)})$`;
+const lineTex = (run) => `${texFr(run.a)} = ${texFr(run.b)} \\times ${texFr(run.q)} + ${texFr(run.r)}`;
 
 function Ticks({ a, b, first }) {
   const list = commonPlanks(a, b);

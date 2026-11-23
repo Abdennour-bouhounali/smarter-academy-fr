@@ -162,6 +162,24 @@ SKILL §2/§3 and `briefs.md` rewritten around the cards, the two commands and t
 been used by an agent — the first brief that uses one tells what was missing; `fr`/`frAll` should move to
 `kit/authoring/numbers.js` (the cards' writer's recommendation) before lesson 2 copies them.
 
+**Test 1 — `trouver-le-pgcd`, built 2026-11-23, one session to « visible on the platform » (the owner's definition of
+done for a session).** Done: `lesson:new` → wave 1 (world ∥ board, bank of 50, class test) → wave 2 (forges ∥ pack, two
+warm-up families, lab tags, walk descriptor) → `lesson:assemble` → one walk agent (walk 0 FAIL at 1366×768 in every
+part; lesson 1 re-walked green after the kit changes) → gate B by the main session on 7 screens (fixed: K4 tablet said
+« 3 divisions » and showed 2; « PGCD(a;b) » without spaces in every formula — fixed once in `MathText` › `frenchMath`;
+the forge log cut long pair lines — they now wrap) → lint, format, unused, unreached, web suite (5 929 tests) green →
+imported and published in the local MySQL (lesson, 7 modules, 50 exercises). The K3 wording was read to the owner: he
+asked « human and clear » → « chacun avec » [son plus petit exposant · son plus grand exposant · l’exposant 1].
+Also done: `fr`/`frAll` moved to `kit/authoring/numbers.js`; the walk library gained `deal` and `nest:pair` players;
+`PairMirror` draws big pairs as scaled bars (125 000 rects before).
+**Cost:** 5 Opus agents ≈ 1.88 M tokens (world 0.51, board/bank 0.40, forges 0.38, pack 0.32, walk 0.27) + the main
+session — **over the 1.2 M target**. The cards worked: no agent asked for a missing file; what they missed is the walk
+library's players (now added) and a knowledge-quiz pair changed in one place only (16/24 vs 12/18, caught by the pack
+agent). Gate A defects against Opus: 2 (design level, before the build); gate B: 3 layout/typography, 0 pedagogy.
+**Open:** `check:lessons` fails only on the LOCAL database's drift (lycée grades still in MySQL — `smarter:scope-curriculum`
+awaits the owner's yes); the warning on `ex-3e-trouver-le-pgcd-l5-010` q3 (two distractors without a misconception);
+the walk README does not list the two new players.
+
 ## 10. Open, for the owner at the start of the session
 
 - May the session write in DZ for test 2, and how (branch or patches)? May engine patches be prepared for DZ?

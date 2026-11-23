@@ -1,0 +1,137 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-003",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Léo a-t-il raison ?",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Léo affirme : « le PGCD de $2^{3} \\times 3 \\times 5^{2}$ et de $2^{2} \\times 3^{3} \\times 7$ est $2^{3} \\times 3^{3}$ »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Léo a-t-il raison ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-PLUS-GRAND-EXPOSANT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^{3}$ divise-t-il le deuxième nombre ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le PGCD garde chaque facteur commun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "Le deuxième nombre ne contient que $2^{2}$ : $2^{3}$ ne le divise pas.",
+        "incorrect": "Regarde l’exposant de $2$ dans le deuxième nombre."
+      },
+      "solution": {
+        "lines": [
+          "$2^{3} \\times 3^{3}$ ne divise pas $2^{2} \\times 3^{3} \\times 7$, qui ne contient que deux facteurs $2$.",
+          "Léo a gardé les plus grands exposants : il n’a pas raison."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris le PGCD de ces deux nombres sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^2*3",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde quels nombres premiers apparaissent dans les deux décompositions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, compare les deux exposants."
+        }
+      ],
+      "feedback": {
+        "correct": "On garde les facteurs premiers communs, chacun avec le plus petit exposant : $2^{2} \\times 3$.",
+        "incorrect": "Garde seulement les facteurs premiers présents dans les deux décompositions, avec le plus petit des deux exposants.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Facteurs premiers communs : $2$ et $3$.",
+          "Plus petits exposants : $2^{2}$ et $3^{1}$.",
+          "Le PGCD est $2^{2} \\times 3$."
+        ],
+        "result": "2^{2} \\times 3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "2^3*3^3"
+        },
+        {
+          "id": "MISC-PGCD-TOUS-LES-FACTEURS",
+          "value": "2^3*3^3*5^2*7"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

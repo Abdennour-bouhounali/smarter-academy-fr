@@ -1,0 +1,121 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-003",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le PGCD de 63 et 49",
+    "estimatedMinutes": 2,
+    "tags": [
+      "diviseurs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l1-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On compare les diviseurs de $63$ et ceux de $49$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris tous les diviseurs de $49$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        7,
+        49
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$49$ est dans une seule table de multiplication, en dehors de $1$ et $49$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pense à la table de $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les diviseurs de $49$ sont $1$, $7$ et $49$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas $49$."
+      },
+      "solution": {
+        "lines": [
+          "$49 = 1 \\times 49 = 7 \\times 7$.",
+          "Les diviseurs de $49$ sont $1$, $7$ et $49$."
+        ],
+        "result": "1 ; 7 ; 49"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le plus grand diviseur commun de $63$ et $49$, c’est-à-dire $\\text{PGCD}(63 ; 49)$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(63 ; 49) = 7$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $63$ : $1$, $3$, $7$, $9$, $21$ et $63$.",
+          "Diviseurs de $49$ : $1$, $7$ et $49$.",
+          "Le plus grand nombre commun aux deux listes est $7$, donc $\\text{PGCD}(63 ; 49) = 7$."
+        ],
+        "result": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "14"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

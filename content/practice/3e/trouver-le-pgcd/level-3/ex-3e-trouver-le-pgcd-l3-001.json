@@ -1,0 +1,131 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-001",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les diviseurs communs de 104 et 156",
+    "estimatedMinutes": 4,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On s’intéresse aux diviseurs communs de $104$ et $156$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris tous les diviseurs communs de $104$ et $156$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        13,
+        26,
+        52
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris d’abord la liste des diviseurs du plus petit nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde seulement ceux qui divisent aussi l’autre nombre."
+        }
+      ],
+      "feedback": {
+        "correct": "Les diviseurs communs de $104$ et $156$ sont $1$, $2$, $4$, $13$, $26$ et $52$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux : vérifie chacun."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $104$ : $1$, $2$, $4$, $8$, $13$, $26$, $52$ et $104$.",
+          "Diviseurs de $156$ : $1$, $2$, $3$, $4$, $6$, $12$, $13$, $26$, $39$, $52$, $78$ et $156$.",
+          "Les diviseurs communs : $1$, $2$, $4$, $13$, $26$ et $52$."
+        ],
+        "result": "1 ; 2 ; 4 ; 13 ; 26 ; 52"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIVISEUR-D-UN-SEUL",
+          "value": "1, 2, 4, 8, 13, 26, 52, 104"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Déduis-en $\\text{PGCD}(104 ; 156)$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "52",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(104 ; 156) = 52$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $104$ : $1$, $2$, $4$, $8$, $13$, $26$, $52$ et $104$.",
+          "Diviseurs de $156$ : $1$, $2$, $3$, $4$, $6$, $12$, $13$, $26$, $39$, $52$, $78$ et $156$.",
+          "Le plus grand nombre commun aux deux listes est $52$, donc $\\text{PGCD}(104 ; 156) = 52$."
+        ],
+        "result": "52"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "26"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-001",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les grands diviseurs communs de 234 et 156",
+    "estimatedMinutes": 5,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On s’intéresse aux nombres $234$ et $156$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $\\text{PGCD}(234 ; 156)$ en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "78",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(234 ; 156) = 78$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "$234 = 78 \\times 3$ et $156 = 78 \\times 2$.",
+          "$3$ et $2$ n’ont pas de diviseur commun autre que $1$ : aucun diviseur commun ne dépasse $78$.",
+          "Donc $\\text{PGCD}(234 ; 156) = 78$."
+        ],
+        "result": "78"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "39"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris tous les diviseurs communs de $234$ et $156$ qui sont plus grands que $10$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        13,
+        26,
+        39,
+        78
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un diviseur commun divise aussi le PGCD."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris les diviseurs du PGCD et garde ceux qui dépassent $10$."
+        }
+      ],
+      "feedback": {
+        "correct": "Ce sont $13$, $26$, $39$ et $78$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "Les diviseurs communs sont les diviseurs de $78$ : $1$, $2$, $3$, $6$, $13$, $26$, $39$ et $78$.",
+          "Plus grands que $10$ : $13$, $26$, $39$ et $78$."
+        ],
+        "result": "13 ; 26 ; 39 ; 78"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l2-009",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Une planche découpée en carrés",
+    "estimatedMinutes": 5,
+    "tags": [
+      "partage",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Un menuisier découpe une planche rectangulaire de $1{,}50$ m sur $1{,}20$ m en carrés identiques, les plus grands possibles, sans perte. Le côté d’un carré est un nombre entier de centimètres."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $\\text{PGCD}(150 ; 120)$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(150 ; 120) = 30$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "$150 = 30 \\times 5$ et $120 = 30 \\times 4$, et $5$ et $4$ n’ont pas de diviseur commun autre que $1$.",
+          "Donc $\\text{PGCD}(150 ; 120) = 30$."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "15"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle est la longueur, en centimètres, du côté d’un carré ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Convertis les dimensions en centimètres."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le côté doit diviser les deux dimensions et être le plus grand possible."
+        }
+      ],
+      "feedback": {
+        "correct": "Le côté mesure $30$ cm, le PGCD de $150$ et $120$.",
+        "incorrect": "Le côté est un diviseur commun des deux dimensions, le plus grand."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}50$ m $= 150$ cm et $1{,}20$ m $= 120$ cm.",
+          "Le plus grand côté qui divise les deux est $\\text{PGCD}(150 ; 120) = 30$ cm."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "15"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de carrés obtient-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "20",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de carrés tiennent sur la longueur ? Et sur la largeur ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$5$ carrés sur la longueur et $4$ sur la largeur : $20$ carrés.",
+        "incorrect": "Divise chaque dimension par le côté d’un carré, puis multiplie."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\div 30 = 5$ et $120 \\div 30 = 4$.",
+          "On obtient $5 \\times 4 = 20$ carrés."
+        ],
+        "result": "20"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l4-005",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "L’algorithme d’Euclide pour 6 767 et 5 858",
+    "estimatedMinutes": 5,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l4-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $5\\,858$ et $6\\,767$ avec l’algorithme d’Euclide."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de divisions l’algorithme d’Euclide écrit-il pour $6\\,767$ et $5\\,858$, la division au reste nul comprise ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les divisions l’une sous l’autre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nouvelle division divise le diviseur précédent par le reste précédent ; arrête-toi au reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "4 divisions : $6\\,767 = 5\\,858 \\times 1 + 909$, puis $5\\,858 = 909 \\times 6 + 404$, puis $909 = 404 \\times 2 + 101$, puis $404 = 101 \\times 4 + 0$.",
+        "incorrect": "Compte toutes les lignes, jusqu’à celle dont le reste est nul."
+      },
+      "solution": {
+        "lines": [
+          "$6\\,767 = 5\\,858 \\times 1 + 909$",
+          "$5\\,858 = 909 \\times 6 + 404$",
+          "$909 = 404 \\times 2 + 101$",
+          "$404 = 101 \\times 4 + 0$",
+          "L’algorithme écrit 4 divisions."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(5\\,858 ; 6\\,767)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "101",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $101$ : $\\text{PGCD}(5\\,858 ; 6\\,767) = 101$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$6\\,767 = 5\\,858 \\times 1 + 909$",
+          "$5\\,858 = 909 \\times 6 + 404$",
+          "$909 = 404 \\times 2 + 101$",
+          "$404 = 101 \\times 4 + 0$",
+          "Le dernier reste non nul est $101$, donc $\\text{PGCD}(5\\,858 ; 6\\,767) = 101$."
+        ],
+        "result": "101"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "4"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "404"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "909"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

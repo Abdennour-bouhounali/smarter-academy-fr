@@ -9,9 +9,14 @@
   opacity: 1;
 }
 
-/* its line of evidence: « 198 et 234 · planche de 9 · 24 planches » on ONE line — the two gaps, the plank, the tag never wrap */
+/* its line of evidence: « 198 et 234 · planche de 9 · 24 planches » — each group (the two gaps, the plank, the tag) never
+   breaks inside itself; when the numbers are long (« 52 015 et 31 209 · planche de 10 403 »), the next group goes to the
+   next line instead of being cut by the column's edge (seen on trouver-le-pgcd, 2026-11-23) */
 .rf-log li > .rf-line--pair {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  row-gap: 0;
+}
+.rf-log li > .rf-line--pair > * {
   white-space: nowrap;
 }
 .rf-pairhead {

@@ -1,0 +1,234 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-009",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un coupon de tissu en carrés",
+    "estimatedMinutes": 6,
+    "tags": [
+      "partage",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une couturière découpe un coupon de tissu rectangulaire de $156$ cm sur $180$ cm en carrés identiques, sans perte. Le côté d’un carré est un nombre entier de centimètres."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Pour chaque longueur, dis si elle convient pour le côté d’un carré.",
+      "statement": "Le côté peut-il mesurer $6$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6$ doit diviser $156$ et $180$."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 6 \\times 26$ et $180 = 6 \\times 30$.",
+        "incorrect": "Divise chaque dimension par $6$."
+      },
+      "solution": {
+        "lines": [
+          "$156 = 6 \\times 26$ et $180 = 6 \\times 30$ : le côté peut mesurer $6$ cm."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Le côté peut-il mesurer $9$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-DIVISEUR-D-UN-SEUL"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$9$ divise $180$. Divise-t-il aussi $156$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 9 \\times 17 + 3$ : $9$ ne divise pas $156$.",
+        "incorrect": "Une longueur qui convient divise les DEUX dimensions."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 9 \\times 20$, mais $156 = 9 \\times 17 + 3$.",
+          "Le côté ne peut pas mesurer $9$ cm."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Le côté des carrés est le plus grand possible. Combien de carrés obtient-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "195",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le plus grand côté possible est le PGCD des deux dimensions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte les carrés sur chaque côté, puis multiplie."
+        }
+      ],
+      "feedback": {
+        "correct": "Le côté mesure $12$ cm : $13 \\times 15 = 195$ carrés.",
+        "incorrect": "Trouve d’abord le plus grand côté possible, puis le nombre de carrés sur chaque côté."
+      },
+      "solution": {
+        "lines": [
+          "$\\text{PGCD}(156 ; 180) = 12$.",
+          "$156 \\div 12 = 13$ et $180 \\div 12 = 15$.",
+          "On obtient $13 \\times 15 = 195$ carrés."
+        ],
+        "result": "195"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-LOTS-CONTENU",
+          "value": "12"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Écris toutes les longueurs possibles, en centimètres, pour le côté d’un carré.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une longueur possible divise les deux dimensions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ce sont les diviseurs communs de $156$ et $180$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les longueurs possibles sont $1$, $2$, $3$, $4$, $6$ et $12$ cm.",
+        "incorrect": "Il en manque, ou une longueur de ta liste ne divise pas les deux dimensions."
+      },
+      "solution": {
+        "lines": [
+          "Les longueurs possibles sont les diviseurs communs de $156$ et $180$, c’est-à-dire les diviseurs de $12$.",
+          "Ce sont $1$, $2$, $3$, $4$, $6$ et $12$ cm."
+        ],
+        "result": "1 ; 2 ; 3 ; 4 ; 6 ; 12"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

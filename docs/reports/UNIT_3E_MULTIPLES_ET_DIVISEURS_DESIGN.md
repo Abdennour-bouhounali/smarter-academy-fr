@@ -202,11 +202,11 @@ plank's need, which makes each window as wide as the numbers allow.
   longest. **Both decompositions stay in front of him where he types the plank** (kit work 1).
 - **He holds** the two decompositions, the planks he made and what they did.
 - **Tiles** — frame « Pour écrire le PGCD de deux nombres décomposés, je multiplie » · slot 1 [les facteurs premiers
-  communs aux deux · tous les facteurs premiers qu'on voit dans l'un ou l'autre] · slot 2 « chacun avec » [le plus
-  petit exposant qu'on voit · le plus grand exposant qu'on voit · l'exposant 1]. 6 rules. « qu'on voit » replaces
-  version 1's « écrits » (gate A note 15) and does the same job: a prime seen in one number only (5, 31) keeps the
-  exponent it shows, so « tous + le plus petit » is a different, wrong rule (it is not « exponent 0 »). To read aloud to
-  the owner before it spreads.
+  communs aux deux · tous les facteurs premiers qu'on voit dans l'un ou l'autre] · slot 2 « chacun avec » [son plus
+  petit exposant · son plus grand exposant · l'exposant 1]. 6 rules. **The owner chose this wording on 2026-11-23**
+  (« human and clear »: « qu'on voit » is dropped everywhere — tiles, the rule's sentence in the story, the knowledge
+  card and the trainer). « son » does the job « qu'on voit » did: a prime seen in one number only (5, 31) keeps the
+  exponent it has, so « tous + son plus petit exposant » is a different, wrong rule (it is not « exponent 0 »).
 - **Refutations (computed — K3)**: common + largest → 2³ × 7² = 392 (1 736 = 392 × 4 + 168); common + exponent 1 → 14
   (124 + 70 planks, 193 coins); all + smallest seen → 2² × 5 × 7 × 31 = 4 340; all + largest → 60 760; all +
   exponent 1 → 2 170 (all longer than 1 736). The slip « copy one decomposition » (2³ × 7 = 56: 980 = 56 × 17 + 28;
@@ -271,7 +271,7 @@ plank's need, which makes each window as wide as the numbers allow.
 | the instruction and the robot's lines on islands A–G | « prends la plus longue planche commune », « le plus petit exposant », « le dernier reste » | they state the CONSTRAINT (one kind of plank for both bridges, a coin per plank) and FACTS after a bridge (« 90 = 18 × 5 »). Forbidden per stretch: A–C « commun(e) », « diviseur commun », « PGCD », « plus grand »; C–E « exposant », « plus petit », « commun »; E–G « dernier reste », « reste qui n'est pas 0 », « algorithme », « Euclide » |
 | the recall card « De l'île précédente » | a line that reads the rule | facts only (« 980 = 28 × 35 »); never « 28 = 2² × 7, the smaller exponents » |
 | the workshop's bench texts (`sheet`, `ladder`) and the card of E's workshop | naming which plank to make | the sheet's words are lesson 1's; the notebook is `plain` (no column of common planks, no gold); E's card states the sheet's limit, nothing of the plank. K1 has NO bench (the `lists` link step was the « common » half of K1, gate A defect 3) |
-| the tiles | a right tile worded more precisely than the wrong ones; two tiles meaning the same | same grammar for every option of a slot; K3's « qu'on voit »; K1's five rules are five different planks |
+| the tiles | a right tile worded more precisely than the wrong ones; two tiles meaning the same | same grammar for every option of a slot; K3's « son plus petit exposant » (owner, 2026-11-23); K1's five rules are five different planks |
 | hints and nudges of the forges | a nudge that states the rule | a nudge is a CASE laid in the mirror (`kind: 'experiment'`), never a sentence |
 | tablets of earlier keys | K1's or K3's tablet telling a faster way (K4) | each tablet holds its rule and one example, nothing of a later key; no line on the divisors of the PGCD |
 | the hub, the warm-up and its lab, the board, the trainer | a key's name (« Euclide », « lots identiques ») before its forge (A2) | `lockedNames.render.test.jsx`; the lab instrument `euclid` stays untagged; board stations follow the keys; trainer questions of a key unlock after its seal |
@@ -421,3 +421,29 @@ Reserved: 21, 26, 546, 1 092, 360, 156, 4 680, 16, 20, 80, 32, 160 — checked C
 1's planks 18 and 33 (lesson 2's K1 plank and K4 gap) and 588 (on lesson 2's sheet in version 1) are dropped; rejected
 too: planks 10 and 14 (a line of lesson 1's bank holds both), 15 and 25 (150 in lesson 1's bank), 12 and 35 (35 is
 lesson 2's).
+
+### Lesson 4 — the owner's direction (2026-11-23), to redesign from before any code
+
+A council (5 advisors, peer review, chairman) and the owner agreed: **keep the archipelago** (no new world; the
+three-proposition page is for new worlds). The keys above are to be redone around what the student DOES:
+
+- **21 and 26 are dropped as the opening pair**: coprime, so 546 = 21 × 26 teaches « the PPCM is the product ». Open on
+  16 and 20 (80, not 320); a coprime pair last, as a special case; 546 cells cannot be drawn at 1366×768 (a scale rule
+  for 80 and 160 too, decided before code).
+- **The core situation**: two crews build ONE walkway from the same shore, planks of 16 and of 20; the pillar holds only
+  where both finish a whole plank; the student places the pillar BEFORE the crews lay; the purse pays the wood, so
+  320 holds but ruins him; the world says facts (« l’équipe B s’arrête 4 cases avant le pilier »).
+- **Then**: big numbers make the decompositions necessary (larger exponent; lesson 2's rule gives 12 and fails, the
+  product is too far); a story translated BY HIM into crews (nothing drawn as a gear; the 32-tooth gear makes 5 turns,
+  not 8); a « PGCD ou PPCM ? » step on the same pair, the wrong choice shown by a fact; PGCD × PPCM = a × b kept for
+  lesson 5.
+- **The workshop (owner's exercise, his choice of rhythm)**: five teams start together on day 1; team x works 1 day
+  then sleeps x days (cycles 2, 3, 4, 5, 6). The student runs it day by day, team by team, sees teams working and
+  sleeping, the five tables of multiples lit at once (0 at the top of each). Question: the next day all the teams work
+  together → **day 61** (PPCM(2, 3, 4, 5, 6) = 2² × 3 × 5 = 60). Computed: teams 1–2 meet on day 7, 1–3 on day 13, 1–4
+  on day 61, and team 5 changes nothing (6 = 2 × 3 — the moment the decompositions matter); four of five work on days
+  13, 25, 31, 37, 49 (the world names the one asleep); the product 720 is far too far; day 1 is « 0 days since the
+  start », a multiple of everything, hence « the smallest NON-ZERO common multiple ». Caught by nothing here:
+  PPCM(1, …, 5) is also 60, so a student who takes the sleep days for the cycle is right by luck — a later mission must
+  catch it with other numbers. Rejected by the owner: « x days on, x days off » (all work together on day 25 by chance;
+  the true realignment is day 121) and « x days on, 1 day off » (the first empty day is 60).

@@ -11,6 +11,7 @@
  * `spec.text` is the lesson's wording. Nothing here states a rule: every sentence says what the strips just did.
  */
 import { useState } from 'react';
+import { texFr } from '@smarter-academy/core';
 import MathText from '../../components/MathText';
 import { joinOf, stackOf } from './inquiry';
 import { FAST, expose, X0, SPAN, useLater, YesNo } from './inquiryParts';
@@ -18,7 +19,7 @@ import { FAST, expose, X0, SPAN, useLater, YesNo } from './inquiryParts';
 /** The division of a gap by the plank as it is written: n = q × d + r — the rest green when it is 0, amber otherwise. */
 export const restTex = (n, d) => {
   const r = n % d;
-  return `${n} = ${d} \\times ${Math.floor(n / d)} + \\textcolor{${r ? '#fbbf24' : '#8dffb0'}}{${r}}`;
+  return `${texFr(n)} = ${texFr(d)} \\times ${texFr(Math.floor(n / d))} + \\textcolor{${r ? '#fbbf24' : '#8dffb0'}}{${texFr(r)}}`;
 };
 
 /**

@@ -1,0 +1,191 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-001",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des couvertures pour une colonie",
+    "estimatedMinutes": 7,
+    "tags": [
+      "diviseurs communs",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l5-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une colonie de vacances a reçu $156$ couvertures et $104$ oreillers. On les regroupe tous en paquets identiques, le plus de paquets possible. Une camionnette transporte $20$ paquets au plus par trajet, et un trajet coûte $45$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de paquets peut-on faire, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "52",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(156 ; 104) = 52$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre de paquets divise $156$ et $104$.",
+          "$156 = 52 \\times 3$ et $104 = 52 \\times 2$, et $3$ et $2$ n’ont pas de diviseur commun autre que $1$.",
+          "Donc $\\text{PGCD}(156 ; 104) = 52$ : $52$ paquets au plus."
+        ],
+        "result": "52"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "26"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "Dans chaque paquet :",
+      "statement": "combien y a-t-il de couvertures ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les couvertures entre les paquets."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 \\div 52 = 3$ couvertures.",
+        "incorrect": "Divise le nombre de couvertures par le nombre de paquets."
+      },
+      "solution": {
+        "lines": [
+          "$156 \\div 52 = 3$."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "combien y a-t-il d’oreillers ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les oreillers entre les paquets."
+        }
+      ],
+      "feedback": {
+        "correct": "$104 \\div 52 = 2$ oreillers.",
+        "incorrect": "Divise le nombre d’oreillers par le nombre de paquets."
+      },
+      "solution": {
+        "lines": [
+          "$104 \\div 52 = 2$."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Combien coûte le transport de tous les paquets, en euros ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "135",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de trajets faut-il pour $52$ paquets ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un trajet incomplet compte quand même."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ trajets : $3 \\times 45 = 135$ €.",
+        "incorrect": "Compte les trajets nécessaires, puis multiplie par le prix d’un trajet."
+      },
+      "solution": {
+        "lines": [
+          "$52 = 20 \\times 2 + 12$ : il faut $3$ trajets.",
+          "$3 \\times 45 = 135$ €."
+        ],
+        "result": "135"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

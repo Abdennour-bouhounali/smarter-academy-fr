@@ -1,0 +1,131 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l3-007",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "L’algorithme d’Euclide pour 1 001 et 637",
+    "estimatedMinutes": 5,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche le PGCD de $1\\,001$ et $637$ avec l’algorithme d’Euclide."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de divisions l’algorithme d’Euclide écrit-il pour $1\\,001$ et $637$, la division au reste nul comprise ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les divisions l’une sous l’autre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nouvelle division divise le diviseur précédent par le reste précédent ; arrête-toi au reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "4 divisions : $1\\,001 = 637 \\times 1 + 364$, puis $637 = 364 \\times 1 + 273$, puis $364 = 273 \\times 1 + 91$, puis $273 = 91 \\times 3 + 0$.",
+        "incorrect": "Compte toutes les lignes, jusqu’à celle dont le reste est nul."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,001 = 637 \\times 1 + 364$",
+          "$637 = 364 \\times 1 + 273$",
+          "$364 = 273 \\times 1 + 91$",
+          "$273 = 91 \\times 3 + 0$",
+          "L’algorithme écrit 4 divisions."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(1\\,001 ; 637)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "91",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $91$ : $\\text{PGCD}(1\\,001 ; 637) = 91$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,001 = 637 \\times 1 + 364$",
+          "$637 = 364 \\times 1 + 273$",
+          "$364 = 273 \\times 1 + 91$",
+          "$273 = 91 \\times 3 + 0$",
+          "Le dernier reste non nul est $91$, donc $\\text{PGCD}(1\\,001 ; 637) = 91$."
+        ],
+        "result": "91"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "3"
+        },
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "273"
+        },
+        {
+          "id": "MISC-PGCD-DIFFERENCE",
+          "value": "364"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

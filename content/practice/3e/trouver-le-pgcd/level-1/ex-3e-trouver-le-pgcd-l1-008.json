@@ -1,0 +1,135 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-008",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le PGCD de 203 et 87",
+    "estimatedMinutes": 3,
+    "tags": [
+      "algorithme d’Euclide",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P3",
+      "adaptedFrom": "ex-4am-bahth-pgcd-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On applique l’algorithme d’Euclide aux nombres $203$ et $87$. La première division est $203 = 87 \\times 2 + 29$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle division écrit-on ensuite ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "La division de $87$ par $29$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "La division de $203$ par $29$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET"
+        },
+        {
+          "id": "C",
+          "content": "La division de $29$ par $2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Dans l’algorithme d’Euclide, le diviseur devient le nouveau dividende."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Et le reste devient le nouveau diviseur."
+        }
+      ],
+      "feedback": {
+        "correct": "On divise le diviseur $87$ par le reste $29$.",
+        "incorrect": "L’étape suivante utilise le diviseur et le reste de la division précédente."
+      },
+      "solution": {
+        "lines": [
+          "Après $203 = 87 \\times 2 + 29$, on divise $87$ par $29$."
+        ],
+        "result": "La division de 87 par 29"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $\\text{PGCD}(203 ; 87)$ avec l’algorithme d’Euclide, en écrivant les étapes.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "29",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le plus grand nombre par le plus petit et note le reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Recommence avec le diviseur et le reste, jusqu’à obtenir un reste nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Le dernier reste non nul est $29$ : $\\text{PGCD}(203 ; 87) = 29$.",
+        "incorrect": "Le PGCD est le dernier reste non nul : vérifie chaque division et l’endroit où tu t’arrêtes."
+      },
+      "solution": {
+        "lines": [
+          "$203 = 87 \\times 2 + 29$",
+          "$87 = 29 \\times 3 + 0$",
+          "Le dernier reste non nul est $29$, donc $\\text{PGCD}(203 ; 87) = 29$."
+        ],
+        "result": "29"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-EUCLIDE-MAUVAIS-ARRET",
+          "value": "3"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

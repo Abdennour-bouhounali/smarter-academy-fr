@@ -1,0 +1,128 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-001",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les diviseurs communs de 12 et 18",
+    "estimatedMinutes": 3,
+    "tags": [
+      "diviseurs communs",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P1",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l1-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On s’intéresse aux diviseurs des nombres $12$ et $18$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris tous les diviseurs communs de $12$ et $18$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris d’abord la liste des diviseurs du plus petit nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde seulement ceux qui divisent aussi l’autre nombre."
+        }
+      ],
+      "feedback": {
+        "correct": "Les diviseurs communs de $12$ et $18$ sont $1$, $2$, $3$ et $6$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux : vérifie chacun."
+      },
+      "solution": {
+        "lines": [
+          "Diviseurs de $12$ : $1$, $2$, $3$, $4$, $6$ et $12$.",
+          "Diviseurs de $18$ : $1$, $2$, $3$, $6$, $9$ et $18$.",
+          "Les diviseurs communs : $1$, $2$, $3$ et $6$."
+        ],
+        "result": "1 ; 2 ; 3 ; 6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-DIVISEUR-D-UN-SEUL",
+          "value": "1, 2, 3, 4, 6, 12"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Déduis-en le plus grand diviseur commun de $12$ et $18$.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris la liste des diviseurs de chaque nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Entoure les nombres présents dans les deux listes, puis prends le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(12 ; 18) = 6$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : relis tes deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Les diviseurs communs de $12$ et $18$ sont $1$, $2$, $3$ et $6$.",
+          "Le plus grand est $6$ : $\\text{PGCD}(12 ; 18) = 6$."
+        ],
+        "result": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "3"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

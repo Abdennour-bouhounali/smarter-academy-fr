@@ -22,8 +22,8 @@ import {
 } from './engine';
 
 describe('L’échauffement — the families and how an answer is graded', () => {
-  it('has the families of the French net: one today, `4e.m1.r06`, the one tool of the first 3e lesson', () => {
-    expect(Object.keys(FAMILIES)).toEqual(['4e.m1.r06']);
+  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second)', () => {
+    expect(Object.keys(FAMILIES)).toEqual(['4e.m1.r06', '3e.m1.r05', '4e.m1.r08']);
     expect(familyFor('6e.t1.r01')).toBeNull();
   });
 
@@ -482,6 +482,166 @@ describe('L’échauffement — « Nombres premiers et produits » (4e.m1.r06), 
       expect(t.toLowerCase(), t).not.toMatch(
         /puissance|tableur|s’arrêt|plus petit nombre premier|facteur premier|décompos/,
       );
+    }
+  });
+});
+
+// ───────────────────────── the two tools of « Trouver le PGCD » (3e.m1.r05, 4e.m1.r08) ─────────────────────────
+describe('L’échauffement — the two tools of « Trouver le PGCD de deux nombres »', () => {
+  const rng = (seed) => {
+    let s = seed;
+    return () => {
+      s = (s * 16807) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  };
+  /** Everything computed HERE, never read from the family. */
+  const primeApart = (n) => n > 1 && Array.from({ length: n - 2 }, (_, i) => i + 2).every((d) => n % d !== 0);
+  const divisorsApart = (n) => Array.from({ length: n }, (_, i) => i + 1).filter((d) => n % d === 0);
+  const decompTrue = (text) => {
+    const m = text.match(/^\$(\d+) = (\d+(?: \\times \d+)+)\$$/);
+    if (!m) return null;
+    const fs = m[2].split(' \\times ').map(Number);
+    return fs.reduce((p, x) => p * x, 1) === Number(m[1]) && fs.every(primeApart);
+  };
+  /** « Diviseurs de n : 1, 2 et 4 » → is it the WHOLE list of n's divisors? */
+  const listTrue = (text) => {
+    const m = text.match(/^Diviseurs de (\d+) : (.+)$/);
+    if (!m) return null;
+    const list = m[2].split(/, | et /).map(Number);
+    return JSON.stringify(list) === JSON.stringify(divisorsApart(Number(m[1])));
+  };
+  const right = (q) => {
+    if (q.gesture === 'sort')
+      return Object.fromEntries(q.cards.map((c) => [c.id, (decompTrue(c.text) ?? listTrue(c.text)) ? 'yes' : 'no']));
+    const nums = q.tokens.filter((t) => typeof t === 'string' && /^\d+$/.test(t)).map(Number);
+    const [n, ...given] = nums;
+    const v = Array.from({ length: n }, (_, i) => i + 1).find((x) => given.reduce((p, y) => p * y, x) === n);
+    return q.calc ? { v: String(v) } : { q: String(v) };
+  };
+  const each = (item, fn) => {
+    const F = FAMILIES[item];
+    for (const level of [1, 2])
+      for (const form of F.forms[level])
+        for (let seed = 1; seed <= 150; seed += 1)
+          fn(level, form, makeQuestion(rng(seed * 7 + level), item, level, form, { first: seed % 5 === 0 }), seed);
+  };
+  // the words of the PGCD lesson's keys: a warm-up is played BEFORE the lesson
+  const KEY_WORDS = /commun|pgcd|plus grand|exposant|puissance|lots? identiques|euclide|algorithme|dernier reste/;
+
+  it('are the two core tools the learning net gives the lesson, in its order, each with its rules and memo', () => {
+    const tools = planTools(toolsForLesson('trouver-le-pgcd'), (id) => Boolean(familyFor(id)));
+    expect(tools.map((t) => [t.item, t.weight])).toEqual([
+      ['3e.m1.r05', 'core'],
+      ['4e.m1.r08', 'core'],
+    ]);
+    for (const item of ['3e.m1.r05', '4e.m1.r08']) {
+      const F = FAMILIES[item];
+      expect(getItem(item)).toBeTruthy();
+      expect(F.item).toBe(item);
+      expect(F.memo.length).toBeGreaterThanOrEqual(3);
+      expect(F.memo.length).toBeLessThanOrEqual(4);
+      expect(F.forms[1][0]).toBe('write'); // the first question of a launch is an easy one to write
+      expect(F.forms[2][0]).toBe('sort');
+      for (const m of F.mistakes) expect(MISTAKES[m], m).toBeTruthy();
+    }
+    // the instrument of the decomposition's home lesson; the 4e item has no French lesson, so no instrument
+    expect(FAMILIES['3e.m1.r05'].labTool).toBe('factor');
+    expect(toolById('factor').lesson).toBe('decomposer-en-facteurs-premiers');
+    expect(FAMILIES['4e.m1.r08'].labTool).toBeNull();
+  });
+
+  it('every generated question is true: the answer computed apart is graded right, and it can be handed in', () => {
+    for (const item of ['3e.m1.r05', '4e.m1.r08'])
+      each(item, (level, form, q) => {
+        const a = right(q);
+        expect(complete(q, a), `${item} ${form}`).toBe(true);
+        expect(grade(q, a), `${item} L${level} ${form}: ${JSON.stringify(q).slice(0, 200)}`).toEqual({
+          correct: true,
+          mistake: null,
+        });
+        expect(q.prompt).not.toMatch(/undefined|NaN/);
+        if (q.gesture === 'sort') {
+          expect(q.cards).toHaveLength(3);
+          expect(new Set(q.cards.map((c) => c.text)).size).toBe(3);
+          expect(q.cards.some((c) => c.bin === 'yes') && q.cards.some((c) => c.bin === 'no')).toBe(true);
+          for (const c of q.cards) {
+            // products factor after factor, never with an exponent (the launch walk reads them so)
+            expect(c.text).not.toContain('^');
+            if (c.trap) {
+              expect(MISTAKES[c.trap], c.trap).toBeTruthy();
+              expect(grade(q, { ...a, [c.id]: 'yes' }).mistake, c.text).toBeTruthy();
+            }
+          }
+        }
+        if (q.calc?.op === 'factor') {
+          expect(primeApart(Number(a.v))).toBe(true);
+          expect(q.calc.n).toBeLessThanOrEqual(level === 1 ? 100 : 300);
+        }
+      });
+  });
+
+  it('the very first question is a near-certain win: 24 = 2 × 2 × 2 × ▢; a wrong partner is named', () => {
+    const q = makeQuestion(rng(5), '3e.m1.r05', 1, 'write', { first: true });
+    expect(q.tokens.join(' ')).toMatch(/^24 = 2 × 2 × 2 × /);
+    const w = makeQuestion(rng(9), '4e.m1.r08', 1, 'write');
+    expect(grade(w, { q: String(w.a / w.b + 1) })).toEqual({ correct: false, mistake: 'product-false' });
+  });
+
+  it('the worked examples are true', () => {
+    for (let seed = 1; seed <= 60; seed += 1)
+      for (const level of [1, 2]) {
+        const d = FAMILIES['3e.m1.r05'].example(rng(seed), level, { mistake: 'not-all-prime' });
+        expect(
+          decompTrue(
+            d.steps
+              .at(-1)
+              .replace(/^Donc /, '')
+              .replace(/\.$/, ''),
+          ),
+        ).toBe(true);
+        for (const step of d.steps.slice(1, -1)) {
+          const m = step.match(/^\$(\d+) = (\d+) \\times (\d+)\$, et (\d+) est premier\.$/);
+          expect(Number(m[2]) * Number(m[3])).toBe(Number(m[1]));
+          expect(primeApart(Number(m[4]))).toBe(true);
+        }
+        for (const mistake of [null, ...FAMILIES['4e.m1.r08'].mistakes]) {
+          const e = FAMILIES['4e.m1.r08'].example(rng(seed), level, { mistake });
+          expect(listTrue(e.steps.at(-1).replace(/\.$/, ''))).toBe(true);
+          for (const m of e.steps.join(' ').matchAll(/\$(\d+) = (\d+) \\times (\d+)(?: \+ (\d+))?\$/g))
+            expect(Number(m[2]) * Number(m[3]) + Number(m[4] ?? 0)).toBe(Number(m[1]));
+        }
+      }
+    const [pairs, , whole] = FAMILIES['4e.m1.r08'].rules;
+    expect(pairs.check.b * pairs.check.q).toBe(pairs.check.a);
+    expect(whole.check.b * whole.check.q + whole.check.r).toBe(whole.check.a);
+    for (const r of FAMILIES['3e.m1.r05'].rules) {
+      expect(r.check.factors.reduce((p, x) => p * x, 1)).toBe(r.check.n);
+    }
+  });
+
+  it('writes French, and no word of the PGCD lesson’s keys (it is played BEFORE the lesson)', () => {
+    for (const item of ['3e.m1.r05', '4e.m1.r08']) {
+      const F = FAMILIES[item];
+      const texts = [
+        ...stringsIn({ rules: F.rules, memo: F.memo, name: F.name }),
+        ...F.mistakes.map((m) => MISTAKES[m]),
+      ];
+      for (let seed = 1; seed <= 40; seed += 1)
+        for (const level of [1, 2]) {
+          for (const form of F.forms[level]) {
+            const q = makeQuestion(rng(seed), item, level, form);
+            texts.push(q.prompt, ...(q.bins ?? []).map((b) => b.label), ...(q.cards ?? []).map((c) => c.text));
+          }
+          for (const mistake of [null, ...F.mistakes]) {
+            const e = F.example(rng(seed), level, { mistake });
+            texts.push(e.title, ...e.steps);
+          }
+        }
+      for (const t of texts) {
+        expect(typographyErrors(t), t).toEqual([]);
+        expect(t.toLowerCase(), t).not.toMatch(KEY_WORDS);
+      }
     }
   });
 });

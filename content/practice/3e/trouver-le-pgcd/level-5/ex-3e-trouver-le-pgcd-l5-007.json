@@ -1,0 +1,195 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l5-007",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des sacs pour un camp d’été",
+    "estimatedMinutes": 8,
+    "tags": [
+      "partage",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_trouver-le-pgcd_P4",
+      "adaptedFrom": "ex-4am-qasim-mushtarak-akbar-l5-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour un camp d’été, un club de randonnée range $360$ compotes et $270$ barres de céréales dans des sacs identiques, le plus de sacs possible, sans rien laisser. Le club paie $2$ € de garniture par sac, et $30$ € de transport quel que soit le nombre de sacs. Il dispose de $570$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de sacs le club peut-il préparer, au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_trouver-le-pgcd_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de sacs divise $360$ et $270$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(360 ; 270) = 90$ sacs.",
+        "incorrect": "Le nombre de sacs est le plus grand diviseur commun des deux nombres."
+      },
+      "solution": {
+        "lines": [
+          "$360 = 270 \\times 1 + 90$ et $270 = 90 \\times 3 + 0$.",
+          "$\\text{PGCD}(360 ; 270) = 90$."
+        ],
+        "result": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "45"
+        },
+        {
+          "id": "MISC-PGCD-PAS-LE-PLUS-GRAND",
+          "value": "30"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "Dans chaque sac :",
+      "statement": "combien y a-t-il de compotes ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les compotes entre les sacs."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 \\div 90 = 4$ compotes.",
+        "incorrect": "Divise le nombre de compotes par le nombre de sacs."
+      },
+      "solution": {
+        "lines": [
+          "$360 \\div 90 = 4$."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "combien y a-t-il de barres ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Partage les barres entre les sacs."
+        }
+      ],
+      "feedback": {
+        "correct": "$270 \\div 90 = 3$ barres.",
+        "incorrect": "Divise le nombre de barres par le nombre de sacs."
+      },
+      "solution": {
+        "lines": [
+          "$270 \\div 90 = 3$."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "Quel prix, en euros, un sac vide ne doit-il pas dépasser pour que le club reste dans son budget ?",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Retire d’abord le transport du budget."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partage ce qui reste entre les sacs, puis retire la garniture."
+        }
+      ],
+      "feedback": {
+        "correct": "$(570 - 30) \\div 90 = 6$ € par sac, garniture comprise : un sac vide coûte au plus $4$ €.",
+        "incorrect": "Pense au transport, payé une seule fois, et à la garniture de chaque sac."
+      },
+      "solution": {
+        "lines": [
+          "Sans le transport : $570 - 30 = 540$ €.",
+          "Par sac : $540 \\div 90 = 6$ €.",
+          "Sans la garniture : $6 - 2 = 4$ €. Un sac vide ne doit pas dépasser $4$ €."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "ex-3e-trouver-le-pgcd-l1-007",
+  "lessonCode": "trouver-le-pgcd",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux décompositions avec 5 et 13",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_trouver-le-pgcd_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On donne $E = 5 \\times 13^{2}$ et $F = 5^{2} \\times 13$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le PGCD de $E$ et $F$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "5*13",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde quels nombres premiers apparaissent dans les deux décompositions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, compare les deux exposants."
+        }
+      ],
+      "feedback": {
+        "correct": "On garde les facteurs premiers communs, chacun avec le plus petit exposant : $5 \\times 13$.",
+        "incorrect": "Garde seulement les facteurs premiers présents dans les deux décompositions, avec le plus petit des deux exposants.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compte combien de fois chacun apparaît.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "$E = 5 \\times 13^{2}$ et $F = 5^{2} \\times 13$.",
+          "Les facteurs premiers communs : $5$ et $13$.",
+          "Avec le plus petit exposant de chacun : $\\text{PGCD}(E ; F) = 5 \\times 13$."
+        ],
+        "result": "5 \\times 13"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PGCD-PLUS-GRAND-EXPOSANT",
+          "value": "5^2*13^2"
+        },
+        {
+          "id": "MISC-PGCD-TOUS-LES-FACTEURS",
+          "value": "5^2*13^2"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_trouver-le-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "65",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue le produit que tu viens d’écrire."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 13 = 65$.",
+        "incorrect": "Effectue le produit des facteurs communs."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 13 = 65$."
+        ],
+        "result": "65"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}
