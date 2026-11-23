@@ -11,6 +11,7 @@ const FORMAT = 'Écris seulement la valeur de $K$ (nombre entier)';
 const QUESTIONS = [
   { id: 'q1', answerType: 'rational', answerFormat: FORMAT },
   { id: 'q2', answerType: 'integerSet', answerFormat: FORMAT },
+  { id: 'q5', answerType: 'factorization', answerFormat: 'Écris $360$ comme un produit de puissances de nombres premiers' },
   { id: 'q3', answerType: 'choice', choices: [{ id: 'A', content: '$K = 12$' }, { id: 'B', content: '$\\frac{3}{4}$' }] },
   { id: 'q4', answerType: 'multiChoice', choices: [{ id: 'A', content: '$a < b$' }, { id: 'B', content: 'Le nombre $7$' }] },
 ];

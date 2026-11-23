@@ -1,0 +1,215 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-008",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 2,
+  "calculator": false,
+  "metadata": {
+    "title": "Diviseurs lus sur une décomposition",
+    "estimatedMinutes": 5,
+    "tags": [
+      "facteurs premiers",
+      "divisibilité"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "adaptedFrom": "ex-4am-qasim-adad-tabii-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Soit le nombre entier $a$ :",
+    "formulas": [
+      "a = 2^4 \\times 3^2 \\times 7"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $a$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "1008",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^4 = 16$ et $3^2 = 9$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 16 \\times 9 \\times 7 = 144 \\times 7 = 1\\,008$.",
+        "incorrect": "Calcule chaque puissance avant de multiplier."
+      },
+      "solution": {
+        "lines": [
+          "$a = 16 \\times 9 \\times 7$",
+          "$a = 144 \\times 7 = 1\\,008$"
+        ],
+        "result": "a = 1\\,008"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "336"
+        }
+      ],
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Montre que $63$ divise $a$ en écrivant $a = 63 \\times q$. Que vaut le nombre entier $q$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose $63$ en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$63 = 3^2 \\times 7$ : quels facteurs de $a$ restent-ils ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = (3^2 \\times 7) \\times 2^4 = 63 \\times 16$.",
+        "incorrect": "Retrouve les facteurs de $63$ dans l’écriture de $a$ et regarde ce qui reste."
+      },
+      "solution": {
+        "lines": [
+          "$63 = 3^2 \\times 7$",
+          "$a = (3^2 \\times 7) \\times 2^4 = 63 \\times 16$ : $q = 16$."
+        ],
+        "result": "q = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "a",
+      "lead": "Justifie chaque réponse à l’aide de la décomposition de $a$.",
+      "statement": "Le nombre $32$ est-il un diviseur de $a$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris $32$ comme une puissance de $2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compare l’exposant de $2$ dans $32$ et dans $a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 = 2^5$ mais $a$ ne contient que $2^4$ : $32$ ne divise pas $a$.",
+        "incorrect": "$32$ est une puissance de $2$ : laquelle ? Compare avec $a$."
+      },
+      "solution": {
+        "lines": [
+          "$32 = 2^5$.",
+          "Dans $a$, le facteur $2$ n’apparaît que quatre fois : $32$ ne divise pas $a$."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "b",
+      "statement": "Le nombre $a$ est-il un multiple de $42$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose $42$ en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "$42 = 2 \\times 3 \\times 7$ et ces trois facteurs sont dans $a$ : $a = 42 \\times 24$.",
+        "incorrect": "Décompose $42$ et cherche chacun de ses facteurs dans $a$."
+      },
+      "solution": {
+        "lines": [
+          "$42 = 2 \\times 3 \\times 7$",
+          "$a = (2 \\times 3 \\times 7) \\times (2^3 \\times 3) = 42 \\times 24$ : $a$ est un multiple de $42$."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

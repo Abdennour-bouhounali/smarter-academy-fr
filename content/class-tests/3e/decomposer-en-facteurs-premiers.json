@@ -1,0 +1,389 @@
+{
+  "_comment": "La séance en classe — les tests PAR DÉFAUT de la leçon « Décomposer un nombre en facteurs premiers » (docs/architecture/CLASS_SESSION.md §4). `start` ouvre l’heure : les savoir-faire de 4e sur lesquels la leçon s’appuie (nombres premiers, puissances, décomposition à la main), puis deux questions de la NOUVELLE leçon (`teaser` : la plupart de la classe les manquera — elles reviennent à la fin avec d’autres nombres, `pairOf`). `end` ferme l’heure. `pool` : d’autres questions préparées que le professeur peut ajouter à sa copie. Chaque question porte un `check` d’où sa réponse a été RECALCULÉE (aucun test du dépôt ne le relit encore : CLASS_SESSION.md §4). Un test de classe ne change jamais la progression d’un élève.",
+  "lesson": "decomposer-en-facteurs-premiers",
+  "grade": "3e",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "4e.m1.r08",
+      "kind": "truefalse",
+      "text": "29 est un nombre premier.",
+      "answer": true,
+      "check": {
+        "type": "isPrime",
+        "a": 29
+      }
+    },
+    {
+      "id": "s2",
+      "item": "4e.m1.r08",
+      "kind": "choice",
+      "text": "Lequel de ces nombres est premier ?",
+      "options": [
+        "39",
+        "41",
+        "49"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "pickPrime",
+        "among": [
+          39,
+          41,
+          49
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "item": "4e.m1.r08",
+      "kind": "truefalse",
+      "text": "1 est un nombre premier.",
+      "answer": false,
+      "check": {
+        "type": "isPrime",
+        "a": 1
+      }
+    },
+    {
+      "id": "s4",
+      "item": "4e.m1.r04",
+      "kind": "number",
+      "text": "Combien vaut $2^3$ ?",
+      "answer": 8,
+      "check": {
+        "type": "power",
+        "a": 2,
+        "k": 3
+      }
+    },
+    {
+      "id": "s5",
+      "item": "4e.m1.r04",
+      "kind": "truefalse",
+      "text": "$3 \\times 3 \\times 3 \\times 3 = 3^4$",
+      "answer": true,
+      "check": {
+        "type": "powerEquals",
+        "a": 3,
+        "k": 4,
+        "times": 4
+      }
+    },
+    {
+      "id": "s6",
+      "item": "4e.m1.r06",
+      "kind": "number",
+      "text": "Quel est le plus petit nombre premier qui divise 35 ?",
+      "answer": 5,
+      "check": {
+        "type": "smallestPrimeDivisor",
+        "a": 35
+      }
+    },
+    {
+      "id": "s7",
+      "item": "4e.m1.r06",
+      "kind": "choice",
+      "text": "Combien vaut $2 \\times 3 \\times 5 \\times 5$ ?",
+      "options": [
+        "30",
+        "150",
+        "300"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "product",
+        "factors": [
+          2,
+          3,
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "id": "s8",
+      "item": "4e.m1.r06",
+      "kind": "truefalse",
+      "text": "$42 = 2 \\times 3 \\times 7$ est une décomposition en facteurs premiers.",
+      "answer": true,
+      "check": {
+        "type": "isDecomposition",
+        "a": 42,
+        "factors": [
+          2,
+          3,
+          7
+        ]
+      }
+    },
+    {
+      "id": "s9",
+      "item": "3e.m1.r05",
+      "teaser": true,
+      "kind": "number",
+      "text": "Pour savoir si 113 est premier, quel est le plus grand nombre premier qu’il faut essayer ?",
+      "answer": 7,
+      "check": {
+        "type": "maxTrial",
+        "a": 113
+      }
+    },
+    {
+      "id": "s10",
+      "item": "3e.m1.r05",
+      "teaser": true,
+      "kind": "choice",
+      "text": "Quelle est la décomposition de 198 en facteurs premiers ?",
+      "options": [
+        "$2 \\times 9 \\times 11$",
+        "$2 \\times 3^2 \\times 11$",
+        "$6 \\times 33$"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "decomposition",
+        "a": 198,
+        "forms": [
+          "composite",
+          "right",
+          "composite"
+        ]
+      }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "3e.m1.r05",
+      "pairOf": "s9",
+      "kind": "number",
+      "text": "Pour savoir si 131 est premier, quel est le plus grand nombre premier qu’il faut essayer ?",
+      "answer": 11,
+      "check": {
+        "type": "maxTrial",
+        "a": 131
+      }
+    },
+    {
+      "id": "e2",
+      "item": "3e.m1.r05",
+      "pairOf": "s10",
+      "kind": "choice",
+      "text": "Quelle est la décomposition de 252 en facteurs premiers ?",
+      "options": [
+        "$2 \\times 2 \\times 63$",
+        "$4 \\times 9 \\times 7$",
+        "$2^2 \\times 3^2 \\times 7$"
+      ],
+      "answer": 2,
+      "check": {
+        "type": "decomposition",
+        "a": 252,
+        "forms": [
+          "composite",
+          "composite",
+          "right"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "item": "3e.m1.r05",
+      "kind": "truefalse",
+      "text": "203 est un nombre premier.",
+      "answer": false,
+      "check": {
+        "type": "isPrime",
+        "a": 203
+      }
+    },
+    {
+      "id": "e4",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "Quel est l’exposant de 2 dans la décomposition de 96 en facteurs premiers ?",
+      "answer": 5,
+      "check": {
+        "type": "exponent",
+        "a": 96,
+        "p": 2
+      }
+    },
+    {
+      "id": "e5",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "Un tableur affiche les restes de la division de 391 par 2, 3, 5, 7, 11, 13, 17 : le premier reste nul est celui de 17. Combien vaut $391 \\div 17$ ?",
+      "answer": 23,
+      "check": {
+        "type": "quotient",
+        "a": 391,
+        "b": 17,
+        "firstZero": true
+      }
+    },
+    {
+      "id": "e6",
+      "item": "3e.m1.r05",
+      "kind": "truefalse",
+      "text": "$2^3 \\times 5 = 30$",
+      "answer": false,
+      "check": {
+        "type": "valueEquals",
+        "factors": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "value": 30
+      }
+    },
+    {
+      "id": "e7",
+      "item": "3e.m1.r05",
+      "kind": "choice",
+      "text": "On sait que $N = 2^2 \\times 3 \\times 7$. Par lequel de ces nombres $N$ est-il divisible ?",
+      "options": [
+        "8",
+        "9",
+        "12"
+      ],
+      "answer": 2,
+      "check": {
+        "type": "pickDivisor",
+        "a": 84,
+        "among": [
+          8,
+          9,
+          12
+        ]
+      }
+    },
+    {
+      "id": "e8",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "Un programme essaie de diviser 899 par 2, puis 3, puis 4… et s’arrête au premier reste nul : il affiche 29. Quel est l’autre facteur ?",
+      "answer": 31,
+      "check": {
+        "type": "quotient",
+        "a": 899,
+        "b": 29,
+        "firstZero": true
+      }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "3e.m1.r05",
+      "kind": "truefalse",
+      "text": "247 est un nombre premier.",
+      "answer": false,
+      "check": {
+        "type": "isPrime",
+        "a": 247
+      }
+    },
+    {
+      "id": "p2",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "Quel est le plus petit nombre premier qui divise 289 ?",
+      "answer": 17,
+      "check": {
+        "type": "smallestPrimeDivisor",
+        "a": 289
+      }
+    },
+    {
+      "id": "p3",
+      "item": "3e.m1.r05",
+      "kind": "choice",
+      "text": "Quelle est la décomposition de 300 en facteurs premiers ?",
+      "options": [
+        "$2^2 \\times 3 \\times 5^2$",
+        "$3 \\times 100$",
+        "$2 \\times 3 \\times 50$"
+      ],
+      "answer": 0,
+      "check": {
+        "type": "decomposition",
+        "a": 300,
+        "forms": [
+          "right",
+          "composite",
+          "composite"
+        ]
+      }
+    },
+    {
+      "id": "p4",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "On a $1\\,024 = 2^n$. Combien vaut $n$ ?",
+      "answer": 10,
+      "check": {
+        "type": "exponent",
+        "a": 1024,
+        "p": 2
+      }
+    },
+    {
+      "id": "p5",
+      "item": "3e.m1.r05",
+      "kind": "truefalse",
+      "text": "Pour savoir si 149 est premier, il suffit d’essayer les divisions par 2, 3, 5, 7 et 11.",
+      "answer": true,
+      "check": {
+        "type": "trialsEnough",
+        "a": 149,
+        "upTo": 11
+      }
+    },
+    {
+      "id": "p6",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "Un tableur affiche les restes de la division de 1 517 par les nombres premiers : le premier reste nul est celui de 37. Combien vaut $1\\,517 \\div 37$ ?",
+      "answer": 41,
+      "check": {
+        "type": "quotient",
+        "a": 1517,
+        "b": 37,
+        "firstZero": true
+      }
+    },
+    {
+      "id": "p7",
+      "item": "3e.m1.r05",
+      "kind": "truefalse",
+      "text": "$2 \\times 3^2 \\times 5^2$ est le carré d’un nombre entier.",
+      "answer": false,
+      "check": {
+        "type": "isSquare",
+        "a": 450
+      }
+    },
+    {
+      "id": "p8",
+      "item": "3e.m1.r05",
+      "kind": "number",
+      "text": "Quel est l’exposant de 3 dans la décomposition de 405 en facteurs premiers ?",
+      "answer": 4,
+      "check": {
+        "type": "exponent",
+        "a": 405,
+        "p": 3
+      }
+    }
+  ]
+}

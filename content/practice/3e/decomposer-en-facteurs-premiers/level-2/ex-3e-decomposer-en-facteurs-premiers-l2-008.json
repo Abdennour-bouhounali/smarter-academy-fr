@@ -1,0 +1,172 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-008",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le nombre 225",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "carrés"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "adaptedFrom": "ex-4am-mada-wasit-mutawassit-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Un jardinier dispose de $225$ bulbes de tulipes."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Décompose $225$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "3^2*5^2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$225$ est impair ; additionne ses chiffres."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise par $3$ autant de fois que possible, puis par $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$225 = 3^2 \\times 5^2$.",
+        "incorrect": "$225$ n’est pas pair : commence par $3$, puis passe à $5$.",
+        "notPrime": "Ton produit vaut bien $225$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $225$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $225$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$225 \\div 3 = 75$",
+          "$75 \\div 3 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $225 = 3 \\times 3 \\times 5 \\times 5 = 3^2 \\times 5^2$."
+        ],
+        "result": "225 = 3^2 \\times 5^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "9*25"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "15*15"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "3*5"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Peut-il planter tous ses bulbes en un carré, avec autant de rangées que de bulbes par rangée ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-CARRE-EXPOSANTS"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regroupe les facteurs de $225$ en deux paquets identiques."
+        }
+      ],
+      "feedback": {
+        "correct": "$225 = (3 \\times 5) \\times (3 \\times 5) = 15 \\times 15$.",
+        "incorrect": "Les facteurs de $225$ se partagent-ils en deux groupes identiques ?"
+      },
+      "solution": {
+        "lines": [
+          "$225 = 3^2 \\times 5^2 = (3 \\times 5) \\times (3 \\times 5)$.",
+          "$225 = 15 \\times 15$ : un carré est possible."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de bulbes y a-t-il alors dans chaque rangée ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise les deux paquets identiques de la question précédente."
+        }
+      ],
+      "feedback": {
+        "correct": "$225 = 15 \\times 15$ : $15$ rangées de $15$ bulbes.",
+        "incorrect": "Multiplie les facteurs d’un seul des deux paquets."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 5 = 15$.",
+          "Il y a $15$ bulbes par rangée."
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 40
+    }
+  ]
+}

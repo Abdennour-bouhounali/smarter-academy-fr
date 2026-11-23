@@ -56,6 +56,13 @@ describe('la réponse de l’élève, telle que saisie', () => {
     expect(formatAnswer({ answerType: 'rational' }, { value: '' })).toBeNull();
   });
 
+  it('décomposition : le LaTeX du champ relu avec de vrais exposants', () => {
+    const q = { answerType: 'factorization' };
+    expect(formatAnswer(q, { value: '2^{3}\\times3^{2}\\times5' })).toEqual({ text: '2³ × 3² × 5', ltr: true, markup: false });
+    expect(formatAnswer(q, { value: '2 3' }).text).toBe('2 3');
+    expect(formatAnswer(q, { value: ' ' })).toBeNull();
+  });
+
   it('affine, intervalle, point : une notation lisible', () => {
     expect(formatAnswer({ answerType: 'affine' }, { a: '2', b: '-1' }).text).toBe('a = 2 ; b = -1');
     expect(formatAnswer({ answerType: 'affine' }, { a: '2' }).text).toBe('a = 2 ; b = ?');

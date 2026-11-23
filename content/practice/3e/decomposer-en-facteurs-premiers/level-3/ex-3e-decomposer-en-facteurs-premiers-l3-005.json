@@ -1,0 +1,168 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-005",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer avec des puissances",
+    "estimatedMinutes": 3,
+    "tags": [
+      "puissances",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers, en utilisant des puissances.",
+      "statement": "Décompose $1\\,000$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^3*5^3",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1\\,000 = 10 \\times 10 \\times 10$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Décompose $10$, puis regroupe les facteurs identiques."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,000 = 2^3 \\times 5^3$.",
+        "incorrect": "Écris $1\\,000$ comme un produit de facteurs $2$ et $5$, puis compte chacun.",
+        "notPrime": "Ton produit vaut bien $1\\,000$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,000$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,000$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000 \\div 2 = 500$",
+          "$500 \\div 2 = 250$",
+          "$250 \\div 2 = 125$",
+          "$125 \\div 5 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $1\\,000 = 2 \\times 2 \\times 2 \\times 5 \\times 5 \\times 5 = 2^3 \\times 5^3$."
+        ],
+        "result": "1\\,000 = 2^3 \\times 5^3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "10^3"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2^3*125"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $432$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^4*3^3",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible et compte les divisions."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le dernier quotient se divise par $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 = 2^4 \\times 3^3$.",
+        "incorrect": "Compte combien de fois tu as divisé par $2$, puis par $3$.",
+        "notPrime": "Ton produit vaut bien $432$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $432$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $432$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$432 \\div 2 = 216$",
+          "$216 \\div 2 = 108$",
+          "$108 \\div 2 = 54$",
+          "$54 \\div 2 = 27$",
+          "$27 \\div 3 = 9$",
+          "$9 \\div 3 = 3$",
+          "$3 \\div 3 = 1$",
+          "Donc $432 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 = 2^4 \\times 3^3$."
+        ],
+        "result": "432 = 2^4 \\times 3^3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2^4*27"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

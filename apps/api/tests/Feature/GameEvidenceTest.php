@@ -100,6 +100,21 @@ class GameEvidenceTest extends TestCase
         $this->assertDatabaseCount('learning_evidence', 0);
     }
 
+    public function test_a_claim_about_one_number_needs_no_b_and_every_other_still_does(): void
+    {
+        [$user, $token] = $this->student();
+
+        $factorization = ['kind' => 'factorization', 'a' => 360, 'factors' => [['p' => 2, 'e' => 3], ['p' => 3, 'e' => 2], ['p' => 5, 'e' => 1]]];
+        $this->send($token, ['claim' => $factorization])->assertStatus(201)->assertJsonPath('outcome', 'correct');
+        $this->send($token, ['attemptId' => 'gw-0002', 'claim' => ['kind' => 'prime', 'a' => 91, 'says' => true]])
+            ->assertStatus(201)->assertJsonPath('outcome', 'incorrect');
+        $this->send($token, ['attemptId' => 'gw-0003', 'claim' => ['kind' => 'division', 'a' => 756, 'q' => 21, 'r' => 0, 'fits' => true]])
+            ->assertStatus(422);
+
+        $this->assertDatabaseHas('learning_evidence', ['user_id' => $user->id, 'question_code' => 'gameworld:factorization-360x-', 'is_correct' => true]);
+        $this->assertDatabaseHas('learning_evidence', ['user_id' => $user->id, 'question_code' => 'gameworld:prime-91x-', 'is_correct' => false]);
+    }
+
     public function test_a_teacher_writes_no_evidence(): void
     {
         [, $teacher] = $this->student('teacher');

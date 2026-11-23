@@ -1,0 +1,117 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-010",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Une puissance n’est pas un produit de deux nombres",
+    "estimatedMinutes": 1,
+    "tags": [
+      "puissances",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $2 \\times 2 \\times 2 \\times 3$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule de gauche à droite."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 2 \\times 2 = 8$ et $8 \\times 3 = 24$.",
+        "incorrect": "Calcule d’abord $2 \\times 2 \\times 2$."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 2 \\times 2 = 8$",
+          "$8 \\times 3 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 40
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "L’égalité $2^3 \\times 3 = 2 \\times 3 \\times 3$ est vraie.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que signifie l’exposant $3$ dans $2^3$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule chaque membre de l’égalité."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^3 = 2 \\times 2 \\times 2 = 8$, donc $2^3 \\times 3 = 24$, alors que $2 \\times 3 \\times 3 = 18$.",
+        "incorrect": "L’exposant dit combien de fois on écrit le facteur $2$."
+      },
+      "solution": {
+        "lines": [
+          "$2^3 = 2 \\times 2 \\times 2 = 8$, donc $2^3 \\times 3 = 24$.",
+          "$2 \\times 3 \\times 3 = 18$, et $24 \\neq 18$ : l’égalité est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

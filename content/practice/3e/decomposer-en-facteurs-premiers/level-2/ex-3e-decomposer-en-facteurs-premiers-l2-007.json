@@ -1,0 +1,134 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-007",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Calculer à partir d’une décomposition",
+    "estimatedMinutes": 1,
+    "tags": [
+      "puissances"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que vaut $2^3 \\times 7$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$42$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        },
+        {
+          "id": "B",
+          "content": "$56$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$21$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        },
+        {
+          "id": "D",
+          "content": "$196$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        }
+      ],
+      "answerFormat": "Choisis un nombre",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^3$ n’est pas $2 \\times 3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris $2^3$ comme un produit de facteurs $2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^3 = 2 \\times 2 \\times 2 = 8$, et $8 \\times 7 = 56$.",
+        "incorrect": "L’exposant $3$ dit combien de fois on multiplie $2$ par lui-même."
+      },
+      "solution": {
+        "lines": [
+          "$2^3 = 2 \\times 2 \\times 2 = 8$",
+          "$2^3 \\times 7 = 8 \\times 7 = 56$"
+        ],
+        "result": "56"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $3^2 \\times 11$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "99",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$3^2 = 3 \\times 3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3^2 = 9$ et $9 \\times 11 = 99$.",
+        "incorrect": "Calcule d’abord $3^2$, puis multiplie par $11$."
+      },
+      "solution": {
+        "lines": [
+          "$3^2 = 9$",
+          "$9 \\times 11 = 99$"
+        ],
+        "result": "99"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "66"
+        }
+      ],
+      "timeSeconds": 40
+    }
+  ]
+}

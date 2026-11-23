@@ -50,7 +50,7 @@ final class AnswerEvaluator
 
     /** Types de réponse gérés. Le validateur de contenu compare cette liste au schéma. */
     public const SUPPORTED_ANSWER_TYPES = [
-        'choice', 'multiChoice', 'rational', 'affine', 'interval', 'point', 'integerSet', 'selfCheck',
+        'choice', 'multiChoice', 'rational', 'affine', 'interval', 'point', 'integerSet', 'selfCheck', 'factorization',
     ];
 
     /**
@@ -102,6 +102,7 @@ final class AnswerEvaluator
             'point' => 'evaluatePoint',
             'integerSet' => 'evaluateIntegerSet',
             'selfCheck' => 'evaluateSelfCheck',
+            'factorization' => 'evaluateFactorization',
             default => null,
         } : null;
         if ($method === null) {
@@ -589,6 +590,76 @@ final class AnswerEvaluator
         }
 
         return self::result(self::INCORRECT, $misconceptionId, $normalized);
+    }
+
+    /**
+     * Décomposition en produit de facteurs premiers — miroir de `evaluateFactorization` (JS) : la clé est canonique,
+     * l'élève écrit un produit dans n'importe quel ordre. Sans `requiredForm`, tout produit de PREMIERS égal au nombre
+     * est juste (un premier répété : `equivalent_correct`) ; avec `requiredForm: 'powers'`, un premier répété est
+     * `partially_correct` / `powersExpected`. Les erreurs, `incorrect`, ont leur `feedbackKey` : `zeroExponent`,
+     * `notPrime`, `wrongExponents`, `wrongProduct`.
+     */
+    private static function evaluateFactorization(mixed $answer, array $question): array
+    {
+        $raw = self::prop($answer, 'value');
+        $given = Factorization::parse($raw);
+        if ($given === null) {
+            return self::syntaxError(is_array($raw) ? '' : Rational::jsString($raw));
+        }
+
+        $expected = Factorization::parse($question['expectedAnswer'] ?? null);
+        $n = $expected === null ? null : Factorization::productOf($expected);
+        $valid = $expected !== null && $n !== null && $n >= 2 && $n <= Factorization::MAX_FACTORIZED;
+        foreach ($valid ? $expected : [] as $f) {
+            if ($f['e'] < 1 || ! Factorization::isPrime($f['p'])) {
+                $valid = false;
+                break;
+            }
+        }
+        if (! $valid) {
+            throw new DomainException('expectedAnswer illisible pour '.Rational::jsString($question['id'] ?? null));
+        }
+
+        $normalized = Factorization::canonical($given);
+        $signature = static fn () => self::matchSignature($question, static function ($v) use ($normalized) {
+            $sig = Factorization::parse($v);
+
+            return $sig !== null && Factorization::canonical($sig) === $normalized;
+        });
+        $bases = array_unique(array_column($given, 'p'));
+
+        if (Factorization::productOf($given) === $n) {
+            foreach ($given as $f) {
+                if ($f['e'] === 0) {
+                    return self::result(self::INCORRECT, $signature(), $normalized, 'zeroExponent');
+                }
+            }
+            foreach ($given as $f) {
+                if (! Factorization::isPrime($f['p'])) {
+                    return self::result(self::INCORRECT, $signature(), $normalized, 'notPrime');
+                }
+            }
+            if (count($bases) === count($given)) {
+                return self::result(self::CORRECT, null, $normalized);
+            }
+            $policy = $question['evaluationPolicy'] ?? null;
+            if (is_array($policy) && ($policy['requiredForm'] ?? null) === 'powers') {
+                return self::result(self::PARTIALLY_CORRECT, $signature(), $normalized, 'powersExpected');
+            }
+
+            return self::result(self::EQUIVALENT_CORRECT, null, $normalized);
+        }
+
+        $primes = array_unique(array_column($expected, 'p'));
+        $samePrimes = count($bases) === count($primes);
+        foreach ($given as $f) {
+            if ($f['e'] < 1 || ! in_array($f['p'], $primes, true)) {
+                $samePrimes = false;
+                break;
+            }
+        }
+
+        return self::result(self::INCORRECT, $signature(), $normalized, $samePrimes ? 'wrongExponents' : 'wrongProduct');
     }
 
     /* ── Sémantique JavaScript des valeurs JSON ────────────────────────── */

@@ -84,6 +84,7 @@ export function expectedAnswerText(question) {
     return correct.length ? correct.join(' ; ') : null;
   }
   if (expectedAnswer == null) return null;
+  if (answerType === 'factorization') return practice.factorizationToPlain(expectedAnswer) ?? String(expectedAnswer);
   if (answerType === 'point' && typeof expectedAnswer === 'object') {
     return `(${expectedAnswer.x} ; ${expectedAnswer.y})`;
   }

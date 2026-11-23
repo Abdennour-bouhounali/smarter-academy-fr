@@ -1,3 +1,87 @@
 {
-  "_comment": "Registre partagé des erreurs de raisonnement : un identifiant partagé permet de COMPTER les rechutes d'un élève sur la même erreur. `relatedLearningPoints` cite des codes de LP canoniques, vérifiés par scripts/validate-exercises.mjs. Vide : aucune leçon n'existe encore (plan de reconstruction §4bis)."
+  "_comment": "Registre partagé des erreurs de raisonnement : un identifiant partagé permet de COMPTER les rechutes d'un élève sur la même erreur. `relatedLearningPoints` cite des codes de LP canoniques, vérifiés par scripts/validate-exercises.mjs.",
+  "MISC-FACT-FACTEUR-COMPOSE": {
+    "label": "Laisser un facteur qui n’est pas premier dans une décomposition (s’arrêter à $2 \\times 2 \\times 45$, écrire $4$ ou $9$ comme facteur)",
+    "explanation": "Une décomposition en facteurs premiers n’est terminée que lorsque chaque facteur est premier : on continue les divisions jusqu’à obtenir le quotient $1$.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1",
+      "3e_decomposer-en-facteurs-premiers_P2",
+      "3e_decomposer-en-facteurs-premiers_P3"
+    ]
+  },
+  "MISC-FACT-UNE-DIVISION-PAR-PREMIER": {
+    "label": "Ne diviser qu’une seule fois par chaque nombre premier, puis passer au suivant",
+    "explanation": "Un même nombre premier peut diviser plusieurs fois : on divise par $2$ tant que c’est possible avant d’essayer $3$. Sinon le produit écrit ne vaut plus le nombre de départ.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1",
+      "3e_decomposer-en-facteurs-premiers_P3"
+    ]
+  },
+  "MISC-FACT-PUISSANCE-LUE-PRODUIT": {
+    "label": "Lire une puissance comme un produit de la base et de l’exposant ($2^3$ lu $2 \\times 3$)",
+    "explanation": "L’exposant dit combien de fois le facteur est écrit : $2^3 = 2 \\times 2 \\times 2 = 8$.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P2"
+    ]
+  },
+  "MISC-FACT-SEMBLE-PREMIER": {
+    "label": "Croire premier un nombre qui n’est divisible ni par $2$, ni par $3$, ni par $5$ (119, 133, 209…)",
+    "explanation": "Il faut continuer les essais avec $7$, $11$, $13$… tant que le carré du nombre premier essayé ne dépasse pas le nombre.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1",
+      "3e_decomposer-en-facteurs-premiers_P3"
+    ]
+  },
+  "MISC-FACT-ARRET-MAL-PLACE": {
+    "label": "Arrêter les essais au mauvais endroit : trop tôt (avant le plus grand nombre premier $p$ tel que $p \\times p$ ne dépasse pas $n$) ou trop tard (jusqu’à $n$ ou $n \\div 2$)",
+    "explanation": "Si $n = a \\times b$ avec $a \\leqslant b$, alors $a \\times a \\leqslant n$ : on essaie les nombres premiers $p$ tels que $p \\times p \\leqslant n$, et seulement eux.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1",
+      "3e_decomposer-en-facteurs-premiers_P3"
+    ]
+  },
+  "MISC-FACT-UN-EST-PREMIER": {
+    "label": "Considérer $1$ comme un nombre premier, ou l’écrire comme facteur",
+    "explanation": "Un nombre premier a exactement deux diviseurs ; $1$ n’en a qu’un : il n’est pas premier et n’apparaît pas dans une décomposition.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1",
+      "3e_decomposer-en-facteurs-premiers_P3"
+    ]
+  },
+  "MISC-FACT-MEMES-PREMIERS-SUFFISENT": {
+    "label": "Conclure qu’un nombre en divise un autre parce que les mêmes nombres premiers apparaissent, sans comparer les exposants",
+    "explanation": "Pour que $d$ divise $N$, chaque facteur premier de $d$ doit apparaître dans $N$ avec un exposant au moins aussi grand ($27 = 3^3$ ne divise pas $2^3 \\times 3^2$).",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P2",
+      "3e_decomposer-en-facteurs-premiers_P1"
+    ]
+  },
+  "MISC-FACT-LECTURE-RESTE": {
+    "label": "Mal lire la sortie d’un tableur ou d’un programme : prendre un reste pour un quotient, un reste non nul pour un diviseur, ou la valeur affichée pour autre chose que ce que l’instruction calcule",
+    "explanation": "Un nombre $d$ divise $n$ quand le reste de la division de $n$ par $d$ est nul ; le quotient se calcule ensuite.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P3"
+    ]
+  },
+  "MISC-FACT-ORDRE-DES-ESSAIS": {
+    "label": "Ne pas essayer les nombres premiers dans l’ordre croissant (commencer par un grand diviseur, en sauter un)",
+    "explanation": "On essaie $2$, puis $3$, puis $5$, $7$… : le premier qui convient est le plus petit diviseur premier, et rien n’est oublié.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1"
+    ]
+  },
+  "MISC-FACT-CARRE-EXPOSANTS": {
+    "label": "Croire qu’un nombre est un carré (ou ne l’est pas) sans regarder la parité des exposants de sa décomposition",
+    "explanation": "Un nombre entier est le carré d’un entier exactement quand tous les exposants de sa décomposition en facteurs premiers sont pairs.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P2"
+    ]
+  },
+  "MISC-FACT-PREMIER-IMPAIR": {
+    "label": "Croire que tout nombre premier est impair (oublier $2$)",
+    "explanation": "$2$ est premier — c’est le seul nombre premier pair.",
+    "relatedLearningPoints": [
+      "3e_decomposer-en-facteurs-premiers_P1"
+    ]
+  }
 }

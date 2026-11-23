@@ -1,0 +1,131 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-002",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "133 a l’air premier",
+    "estimatedMinutes": 2,
+    "tags": [
+      "nombres premiers",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le plus petit nombre premier qui divise $133$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Essaie $2$, $3$, $5$ : aucun ne convient."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Passe au nombre premier suivant."
+        }
+      ],
+      "feedback": {
+        "correct": "$133 = 7 \\times 19$, et $133$ n’est divisible ni par $2$, ni par $3$, ni par $5$.",
+        "incorrect": "Essaie les nombres premiers dans l’ordre sans t’arrêter au premier échec."
+      },
+      "solution": {
+        "lines": [
+          "$133$ est impair, $1 + 3 + 3 = 7$ n’est pas dans la table de $3$, il ne se termine ni par $0$ ni par $5$.",
+          "$133 = 7 \\times 19$."
+        ],
+        "result": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "133"
+        },
+        {
+          "id": "MISC-FACT-ORDRE-DES-ESSAIS",
+          "value": "19"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Décompose $133$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "7*19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise la division par $7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $19$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$133 = 7 \\times 19$.",
+        "incorrect": "Divise $133$ par son plus petit diviseur premier, puis regarde le quotient.",
+        "notPrime": "Ton produit vaut bien $133$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $133$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $133$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$133 \\div 7 = 19$",
+          "$19 \\div 19 = 1$",
+          "Donc $133 = 7 \\times 19$."
+        ],
+        "result": "133 = 7 \\times 19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "133"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 45
+    }
+  ]
+}

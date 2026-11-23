@@ -5,6 +5,7 @@ import IntervalInput from './inputs/IntervalInput';
 import PointInput from './inputs/PointInput';
 import IntegerSetInput from './inputs/IntegerSetInput';
 import SelfCheckInput from './inputs/SelfCheckInput';
+import FactorizationInput from './inputs/FactorizationInput';
 
 /**
  * Une entrée par `answerType` que le contenu peut déclarer.
@@ -26,6 +27,7 @@ const REGISTRY = {
   point: PointInput,
   integerSet: IntegerSetInput,
   selfCheck: SelfCheckInput,
+  factorization: FactorizationInput,
 };
 
 export default function QuestionRenderer({ question, value, onChange, disabled, ...extra }) {

@@ -46,6 +46,7 @@ export default function MathPad({ keys, getField, disabled = false }) {
       case 'comma': return ',';
       case 'sqrt': return '√□';
       case 'power': return <span>a<sup>n</sup></span>;
+      case 'times': return '×';
       default: return key.id;
     }
   };

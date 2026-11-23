@@ -1,0 +1,153 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-001",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer 100 et 98",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $100$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*5^2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$100$ est pair, et sa moitié aussi."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Quand $2$ ne convient plus, passe à $3$, puis à $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 = 2^2 \\times 5^2$.",
+        "incorrect": "Divise par $2$ tant que c’est possible, puis par $5$ tant que c’est possible.",
+        "notPrime": "Ton produit vaut bien $100$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $100$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $100$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\div 2 = 50$",
+          "$50 \\div 2 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $100 = 2 \\times 2 \\times 5 \\times 5 = 2^2 \\times 5^2$."
+        ],
+        "result": "100 = 2^2 \\times 5^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "4*25"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*2*25"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*5"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "10*10"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $98$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*7^2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$98$ est pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $49$ n’est divisible ni par $3$ ni par $5$ : essaie $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$98 = 2 \\times 7^2$.",
+        "incorrect": "Après la division par $2$, essaie $3$, $5$, $7$ sur le quotient.",
+        "notPrime": "Ton produit vaut bien $98$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $98$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $98$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$98 \\div 2 = 49$",
+          "$49 \\div 7 = 7$",
+          "$7 \\div 7 = 1$",
+          "Donc $98 = 2 \\times 7 \\times 7 = 2 \\times 7^2$."
+        ],
+        "result": "98 = 2 \\times 7^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*49"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*7"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

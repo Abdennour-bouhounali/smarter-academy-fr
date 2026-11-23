@@ -46,3 +46,22 @@ export function padKeys(question) {
   if (POWER.test(format)) keys.push({ id: 'power', kind: 'symbol', latex: '#@^{#?}' });
   return keys;
 }
+
+/**
+ * Les touches d'une DÉCOMPOSITION en facteurs premiers (`answerType: 'factorization'`) : les chiffres, le signe ×
+ * en tête et la puissance (l'exposant se tape en haut, à sa vraie place), ⌫, ← →. Ni fraction, ni virgule, ni moins :
+ * une décomposition n'en a pas.
+ */
+export function factorizationPadKeys() {
+  return [
+    { id: 'times', kind: 'symbol', latex: '\\times' },
+    { id: 'power', kind: 'symbol', latex: '#@^{#?}' },
+    { id: 'left', kind: 'action', command: 'moveToPreviousChar' },
+    { id: 'right', kind: 'action', command: 'moveToNextChar' },
+    { id: '7', kind: 'digit', latex: '7' }, { id: '8', kind: 'digit', latex: '8' }, { id: '9', kind: 'digit', latex: '9' },
+    { id: 'back', kind: 'action', command: 'deleteBackward' },
+    { id: '4', kind: 'digit', latex: '4' }, { id: '5', kind: 'digit', latex: '5' }, { id: '6', kind: 'digit', latex: '6' },
+    { id: '0', kind: 'digit', latex: '0' },
+    { id: '1', kind: 'digit', latex: '1' }, { id: '2', kind: 'digit', latex: '2' }, { id: '3', kind: 'digit', latex: '3' },
+  ];
+}

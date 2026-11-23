@@ -1,0 +1,227 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-009",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux colonnes de restes",
+    "estimatedMinutes": 4,
+    "tags": [
+      "tableur",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Dans un tableur, la colonne A contient des nombres premiers. La colonne B affiche le reste de la division de $12\\,597$ par le nombre de la colonne A, et la colonne C le reste de la division de $4\\,199$ par ce nombre.",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C"
+      ],
+      "rows": [
+        [
+          "1",
+          "Nombre premier d",
+          "Reste pour 12 597",
+          "Reste pour 4 199"
+        ],
+        [
+          "2",
+          "2",
+          "1",
+          "1"
+        ],
+        [
+          "3",
+          "3",
+          "0",
+          "2"
+        ],
+        [
+          "4",
+          "5",
+          "2",
+          "4"
+        ],
+        [
+          "5",
+          "7",
+          "4",
+          "6"
+        ],
+        [
+          "6",
+          "11",
+          "2",
+          "8"
+        ],
+        [
+          "7",
+          "13",
+          "0",
+          "0"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule le quotient de $12\\,597$ par le plus petit nombre premier qui le divise.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "4199",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche le premier $0$ de la colonne B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $12\\,597$ par le nombre de la colonne A sur cette ligne."
+        }
+      ],
+      "feedback": {
+        "correct": "Le reste par $3$ est nul : $12\\,597 \\div 3 = 4\\,199$.",
+        "incorrect": "Lis la colonne B de haut en bas, puis fais la division."
+      },
+      "solution": {
+        "lines": [
+          "Le premier reste nul de la colonne B est sur la ligne de $3$.",
+          "$12\\,597 \\div 3 = 4\\,199$"
+        ],
+        "result": "12\\,597 = 3 \\times 4\\,199"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Utilise la colonne C pour écrire $4\\,199 = p \\times q$, avec $p$ premier le plus petit possible. Que vaut $q$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "323",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche le premier $0$ de la colonne C."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $4\\,199$ par le nombre de la colonne A sur cette ligne."
+        }
+      ],
+      "feedback": {
+        "correct": "Le reste de $4\\,199$ par $13$ est nul : $4\\,199 = 13 \\times 323$.",
+        "incorrect": "Lis la colonne C de haut en bas jusqu’au premier reste nul."
+      },
+      "solution": {
+        "lines": [
+          "Le premier reste nul de la colonne C est sur la ligne de $13$.",
+          "$4\\,199 \\div 13 = 323$"
+        ],
+        "result": "4\\,199 = 13 \\times 323"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-LECTURE-RESTE",
+          "value": "4199"
+        }
+      ],
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "On sait que $323 = 17 \\times 19$. Décompose $12\\,597$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "3*13*17*19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Rassemble les facteurs trouvés aux questions précédentes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Vérifie que chaque facteur est premier."
+        }
+      ],
+      "feedback": {
+        "correct": "$12\\,597 = 3 \\times 13 \\times 17 \\times 19$.",
+        "incorrect": "Remplace chaque quotient par sa décomposition, jusqu’à n’avoir que des nombres premiers.",
+        "notPrime": "Ton produit vaut bien $12\\,597$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $12\\,597$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $12\\,597$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$12\\,597 = 3 \\times 4\\,199$",
+          "$4\\,199 = 13 \\times 323$ et $323 = 17 \\times 19$.",
+          "Donc $12\\,597 = 3 \\times 13 \\times 17 \\times 19$."
+        ],
+        "result": "12\\,597 = 3 \\times 13 \\times 17 \\times 19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "3*13*323"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "3*4199"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

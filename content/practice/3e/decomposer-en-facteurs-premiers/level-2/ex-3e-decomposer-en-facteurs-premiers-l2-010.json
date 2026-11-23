@@ -1,0 +1,181 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-010",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Des puissances de 5",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "puissances"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "adaptedFrom": "ex-3am-adad-natiq-l5-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Lucas range ses fractions : il a besoin de la décomposition en facteurs premiers des dénominateurs de $\\dfrac{3}{625}$ et de $\\dfrac{7}{250}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque dénominateur en produit de facteurs premiers.",
+      "statement": "Décompose $625$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "5^4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$625$ se termine par $5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise par $5$ tant que c’est possible."
+        }
+      ],
+      "feedback": {
+        "correct": "$625 = 5^4$.",
+        "incorrect": "$625$ n’est divisible ni par $2$ ni par $3$ : divise par $5$ autant de fois que possible.",
+        "notPrime": "Ton produit vaut bien $625$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $625$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $625$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$625 \\div 5 = 125$",
+          "$125 \\div 5 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $625 = 5 \\times 5 \\times 5 \\times 5 = 5^4$."
+        ],
+        "result": "625 = 5^4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "25*25"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "5*125"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $250$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*5^3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$250$ est pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $125$ se divise plusieurs fois par $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 = 2 \\times 5^3$.",
+        "incorrect": "Divise par $2$, puis par $5$ autant de fois que possible.",
+        "notPrime": "Ton produit vaut bien $250$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $250$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $250$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$250 \\div 2 = 125$",
+          "$125 \\div 5 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $250 = 2 \\times 5 \\times 5 \\times 5 = 2 \\times 5^3$."
+        ],
+        "result": "250 = 2 \\times 5^3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*125"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*5"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Écris $625$ sous la forme d’une puissance d’un nombre premier. Quel est l’exposant ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte les facteurs $5$ de la décomposition de $625$."
+        }
+      ],
+      "feedback": {
+        "correct": "$625 = 5 \\times 5 \\times 5 \\times 5 = 5^4$.",
+        "incorrect": "L’exposant est le nombre de facteurs $5$."
+      },
+      "solution": {
+        "lines": [
+          "$625 = 5 \\times 5 \\times 5 \\times 5$",
+          "$625 = 5^4$ : l’exposant est $4$."
+        ],
+        "result": "625 = 5^4"
+      },
+      "timeSeconds": 40
+    }
+  ]
+}

@@ -18,8 +18,12 @@
  *
  *   node scripts/validate-exercises.mjs [--strict] [--json]
  *
- * --strict : exige 3 exercices × 5 niveaux pour chaque leçon activée, et
- *            refuse un index généré périmé. Utilisé par check:lessons.
+ * --strict : exige, pour chaque leçon activée, `defaultMinPerLevel` exercices
+ *            par niveau (content/practice/policy.json, 3 aujourd'hui, ou le
+ *            minimum dérogatoire de la leçon) sur les 5 niveaux — et 10
+ *            feuilles par niveau (EXAM_PER_LEVEL) pour une leçon au format
+ *            examen (exam-style.json) ; refuse un index généré périmé.
+ *            Utilisé par check:lessons.
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, basename } from 'node:path';
@@ -28,6 +32,7 @@ import { Rational } from '../packages/core/practice/rational.js';
 import { parseAffineAnswer } from '../packages/core/practice/affineCanonical.js';
 import { parseInterval } from '../packages/core/practice/intervalCompare.js';
 import { SUPPORTED_ANSWER_TYPES, parseIntegerSet, evaluateAnswer, isSuccessOutcome } from '../packages/core/practice/answerEvaluator.js';
+import { parseFactorization, factorizationKeyProblem, factorizationToLatex, factorizationToPlain } from '../packages/core/practice/factorization.js';
 import { validateStatementFigure } from '../apps/web/src/lessons/common/components/statementFigure.js';
 import { figureQuality } from '../apps/web/src/lessons/common/components/geoFigure.js';
 import { EXAM_SUBS, brevetTagErrors, examProvenanceErrors, exerciseTypographyErrors } from './validate-lib.mjs';
@@ -180,6 +185,7 @@ function answerFromKey(q) {
     case 'choice': return { choiceId: (q.choices ?? []).find((c) => c.isCorrect)?.id };
     case 'multiChoice': return { choiceIds: (q.choices ?? []).filter((c) => c.isCorrect).map((c) => c.id) };
     case 'rational':
+    case 'factorization':
     case 'integerSet': return { value: Array.isArray(q.expectedAnswer) ? q.expectedAnswer.join(', ') : q.expectedAnswer };
     case 'selfCheck': return { selfMark: 'correct' };
     default: return q.expectedAnswer; // affine {a,b}, interval {lo,…}, point {x,y}
@@ -208,7 +214,7 @@ function checkAnswerKeyRoundTrip(q, qw) {
   // Une signature d'erreur égale à la bonne réponse ne se déclencherait
   // jamais — ou pire, étiquetterait une réponse juste comme une misconception.
   for (const sig of q.misconceptionSignatures ?? []) {
-    const probe = q.answerType === 'rational' || q.answerType === 'integerSet'
+    const probe = q.answerType === 'rational' || q.answerType === 'integerSet' || q.answerType === 'factorization'
       ? { value: Array.isArray(sig.value) ? sig.value.join(', ') : sig.value }
       : sig.value;
     try {
@@ -268,6 +274,10 @@ function answerFingerprints(question) {
   if (ea === null || ea === undefined) return out;
 
   if (typeof ea === 'string' || typeof ea === 'number') push(ea);
+  // Une décomposition se trahit aussi écrite en LaTeX (« 2^{3} \\times 5 ») ou avec ses exposants (« 2³ × 5 »).
+  if (question.answerType === 'factorization') {
+    for (const w of [factorizationToLatex(ea), factorizationToPlain(ea)]) if (w) push(w);
+  }
   else if (typeof ea === 'object') {
     if ('a' in ea && 'b' in ea) {
       const a = Rational.parse(ea.a);
@@ -301,6 +311,8 @@ function expectedAnswerParses(question) {
       return !!(ea && Rational.parse(ea.x) && Rational.parse(ea.y));
     case 'integerSet':
       return parseIntegerSet(ea) !== null;
+    case 'factorization':
+      return factorizationKeyProblem(ea) === null;
     case 'selfCheck':
       return true; // pas de clé : l'élève se note après le corrigé type
     default:
@@ -317,6 +329,7 @@ function signatureParses(answerType, value) {
     case 'interval': return parseInterval(value) !== null;
     case 'point': return !!(value && Rational.parse(value.x) && Rational.parse(value.y));
     case 'integerSet': return parseIntegerSet(value) !== null;
+    case 'factorization': return parseFactorization(value) !== null;
     default: return false;
   }
 }
@@ -500,8 +513,17 @@ function validateExercise(file, data, ctx) {
       /* Réponse construite */
       if (q.expectedAnswer === undefined || q.expectedAnswer === null) {
         err(qw, 'expectedAnswer est obligatoire pour une réponse construite');
+      } else if (q.answerType === 'factorization' && factorizationKeyProblem(q.expectedAnswer)) {
+        // La clé d'une décomposition est CANONIQUE (bases premières croissantes, exposant 1 omis : « 2^3*3^2*5 »).
+        err(qw, `expectedAnswer ${JSON.stringify(q.expectedAnswer)} n'est pas une décomposition canonique : ${factorizationKeyProblem(q.expectedAnswer)}`);
       } else if (!expectedAnswerParses(q)) {
         err(qw, `expectedAnswer ${JSON.stringify(q.expectedAnswer)} est ILLISIBLE par l'évaluateur — la question serait insoluble en production`);
+      }
+      // `requiredForm: 'powers'` : chaque premier une fois avec son exposant — un mode de la décomposition seulement,
+      // et sa réponse partielle (`powersExpected`) a besoin de SON message, sinon l'élève lirait celui d'une erreur.
+      if (q.evaluationPolicy?.requiredForm === 'powers') {
+        if (q.answerType !== 'factorization') err(qw, 'requiredForm « powers » ne vaut que pour answerType « factorization »');
+        else if (!q.feedback?.powersExpected) err(qw, 'requiredForm « powers » exige feedback.powersExpected (la réponse juste mais sans puissances)');
       }
       if (!q.answerFormat || !String(q.answerFormat).trim()) {
         err(qw, 'answerFormat est obligatoire : l\'élève doit savoir COMMENT saisir (invariant 7)');

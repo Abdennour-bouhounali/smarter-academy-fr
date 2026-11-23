@@ -1,0 +1,112 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-007",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le code du cadenas",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "problème"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Le code d’un cadenas est un nombre de quatre chiffres compris entre $3\\,000$ et $3\\,500$. Sa décomposition en facteurs premiers est $3 \\times 7 \\times 11 \\times p$, où $p$ est un nombre premier."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que vaut $p$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule $3 \\times 7 \\times 11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche par quel nombre premier multiplier ce produit pour arriver entre $3\\,000$ et $3\\,500$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 7 \\times 11 = 231$ ; $231 \\times 11 = 2\\,541$ est trop petit, $231 \\times 13 = 3\\,003$ convient, $231 \\times 17 = 3\\,927$ est trop grand.",
+        "incorrect": "Calcule $231 \\times p$ pour les nombres premiers $p$ successifs."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 7 \\times 11 = 231$",
+          "$231 \\times 11 = 2\\,541$ ; $231 \\times 13 = 3\\,003$ ; $231 \\times 17 = 3\\,927$.",
+          "Seul $p = 13$ donne un code entre $3\\,000$ et $3\\,500$."
+        ],
+        "result": "p = 13"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "14"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le code du cadenas ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "3003",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Multiplie $3 \\times 7 \\times 11$ par la valeur de $p$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 7 \\times 11 \\times 13 = 3\\,003$.",
+        "incorrect": "Calcule le produit des quatre facteurs premiers."
+      },
+      "solution": {
+        "lines": [
+          "$231 \\times 13 = 3\\,003$"
+        ],
+        "result": "3\\,003"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

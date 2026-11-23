@@ -1,0 +1,238 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-003",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Suivre un programme de décomposition",
+    "estimatedMinutes": 6,
+    "tags": [
+      "programmation",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Ce programme ajoute des nombres à une liste appelée Facteurs, au départ vide. « $N$ modulo $d$ » est le reste de la division de $N$ par $d$.",
+    "table": {
+      "head": [
+        "Ligne",
+        "Instruction"
+      ],
+      "rows": [
+        [
+          "1",
+          "quand le drapeau vert est cliqué"
+        ],
+        [
+          "2",
+          "demander « Donne un nombre entier supérieur à 1 » et attendre"
+        ],
+        [
+          "3",
+          "mettre N à réponse"
+        ],
+        [
+          "4",
+          "mettre d à 2"
+        ],
+        [
+          "5",
+          "répéter jusqu’à ce que N = 1"
+        ],
+        [
+          "6",
+          "    si N modulo d = 0 alors"
+        ],
+        [
+          "7",
+          "        ajouter d à la liste Facteurs"
+        ],
+        [
+          "8",
+          "        mettre N à N / d"
+        ],
+        [
+          "9",
+          "    sinon"
+        ],
+        [
+          "10",
+          "        ajouter 1 à d"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "On donne $1\\,386$. Quelle est la valeur de $N$ après le premier passage par la ligne $8$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "693",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Au début, $d = 2$ : $1\\,386$ est-il divisible par $2$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Le reste de $1\\,386$ par $2$ est nul : le programme ajoute $2$ à la liste et $N$ devient $1\\,386 \\div 2 = 693$.",
+        "incorrect": "Au premier tour $d = 2$ et le reste est nul : la ligne $8$ divise $N$ par $d$."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,386$ est pair : le reste par $2$ est nul.",
+          "$N$ devient $1\\,386 \\div 2 = 693$."
+        ],
+        "result": "N = 693"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "À la fin, la liste Facteurs contient la décomposition de $1\\,386$. Écris cette décomposition.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3^2*7*11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Continue à suivre le programme avec $N = 693$ et $d = 2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$693$ est impair : $d$ passe à $3$. Combien de fois $3$ divise-t-il $693$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,386 = 2 \\times 3^2 \\times 7 \\times 11$.",
+        "incorrect": "Suis chaque tour : quand le reste est nul, $d$ va dans la liste et $N$ est divisé ; sinon $d$ augmente de $1$.",
+        "notPrime": "Ton produit vaut bien $1\\,386$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,386$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,386$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,386 \\div 2 = 693$",
+          "$693 \\div 3 = 231$",
+          "$231 \\div 3 = 77$",
+          "$77 \\div 7 = 11$",
+          "$11 \\div 11 = 1$",
+          "Donc $1\\,386 = 2 \\times 3 \\times 3 \\times 7 \\times 11 = 2 \\times 3^2 \\times 7 \\times 11$."
+        ],
+        "result": "1\\,386 = 2 \\times 3^2 \\times 7 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3*7*11"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*3*231"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Pourquoi le nombre $6$ n’est-il jamais ajouté à la liste, alors que $6$ divise $1\\,386$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Quand $d$ vaut $6$, tous les facteurs $2$ et $3$ ont déjà été retirés de $N$.",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Parce que $6$ ne divise pas $1\\,386$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        },
+        {
+          "id": "C",
+          "content": "Parce que le programme saute les nombres pairs.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        },
+        {
+          "id": "D",
+          "content": "Parce que la boucle s’arrête avant que $d$ atteigne $6$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis une raison",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quelle est la valeur de $N$ quand $d$ arrive à $6$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ce $N$ est-il encore divisible par $2$ ou par $3$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Quand $d$ arrive à $6$, $N = 77$ : il n’est plus divisible ni par $2$ ni par $3$, donc pas par $6$.",
+        "incorrect": "Regarde ce que vaut $N$ au moment où $d$ vaut $6$."
+      },
+      "solution": {
+        "lines": [
+          "Quand $d = 6$, les facteurs $2$, $3$ et $3$ ont été retirés : $N = 1\\,386 \\div 18 = 77$.",
+          "$77$ n’est pas divisible par $6$ : un diviseur qui n’est pas premier n’est jamais ajouté."
+        ],
+        "result": "\\text{Les facteurs 2 et 3 sont déjà retirés}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import '../../../i18n';
-import { needsMathPad, padKeys } from './mathPad';
+import { needsMathPad, padKeys, factorizationPadKeys } from './mathPad';
 import RationalInput from './RationalInput';
+import FactorizationInput from './FactorizationInput';
 
 const q = (answerFormat, extra = {}) => ({ id: 'q1', answerType: 'rational', answerFormat, ...extra });
 const PAD = 'data-math-pad="true"';
@@ -43,5 +44,26 @@ describe('RationalInput — la lettre fixe à côté du champ', () => {
   });
   it('cachée quand la question est close', () => {
     expect(html(q('Une fraction'), true)).not.toContain(PAD);
+  });
+});
+
+describe('FactorizationInput — a decomposition typed in its own shape', () => {
+  const fq = { id: 'q1', answerType: 'factorization', answerFormat: 'Un produit de facteurs premiers' };
+  const html = (disabled = false) =>
+    renderToStaticMarkup(<FactorizationInput question={fq} value={null} onChange={() => {}} disabled={disabled} />);
+  it('the pad has × and the power first, the digits, and no fraction, comma or minus', () => {
+    const ids = factorizationPadKeys().map((k) => k.id);
+    expect(ids.slice(0, 2)).toEqual(['times', 'power']);
+    for (const d of '0123456789') expect(ids).toContain(d);
+    for (const id of ['frac', 'comma', 'minus', 'sqrt']) expect(ids).not.toContain(id);
+  });
+  it('the pad beside the field while open, gone once the question is closed', () => {
+    expect(html()).toContain(PAD);
+    expect(html()).toContain('data-pad-key="times"');
+    expect(html()).toContain('data-pad-key="power"');
+    expect(html(true)).not.toContain(PAD);
+  });
+  it('is not the rational pad: needsMathPad stays about rationals', () => {
+    expect(needsMathPad(fq)).toBe(false);
   });
 });

@@ -134,6 +134,10 @@ describe('expectedAnswerText — lisible par l’enseignant', () => {
     expect(expectedAnswerText({ answerType: 'rational', expectedAnswer: '3/4' })).toBe('3/4');
   });
 
+  it('décomposition : la clé canonique lue avec ses exposants', () => {
+    expect(expectedAnswerText({ answerType: 'factorization', expectedAnswer: '2^3*3^2*5' })).toBe('2³ × 3² × 5');
+  });
+
   it('rien à montrer : null', () => {
     expect(expectedAnswerText(null)).toBeNull();
     expect(expectedAnswerText({ answerType: 'rational' })).toBeNull();

@@ -17,6 +17,28 @@ const natural = (x) => Number.isInteger(x) && x >= 0;
 const MAX = 1000000;
 const n = (x) => natural(x) && x <= MAX;
 const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+/** a is prime: exactly two divisors (0 and 1 are not). */
+function isPrime(a) {
+  if (a < 2) return false;
+  for (let d = 2; d * d <= a; d += 1) if (a % d === 0) return false;
+  return true;
+}
+/** a = p1^e1 × p2^e2 × …: every p prime, the p distinct and INCREASING, every e ≥ 1 (≤ 20: 2^20 > 10^6), product a. */
+function isFactorization(c) {
+  if (!n(c.a) || c.a < 2 || !Array.isArray(c.factors) || c.factors.length === 0 || c.factors.length > 20) return false;
+  let prod = 1;
+  let last = 1;
+  for (const f of c.factors) {
+    if (!f || typeof f !== 'object' || !Number.isInteger(f.p) || !Number.isInteger(f.e)) return false;
+    if (f.p <= last || f.e < 1 || f.e > 20 || !isPrime(f.p)) return false;
+    for (let i = 0; i < f.e; i += 1) {
+      prod *= f.p;
+      if (prod > c.a) return false;
+    }
+    last = f.p;
+  }
+  return prod === c.a;
+}
 /** The operations a `fraction` claim may carry: x/y op z/w = A/B, unreduced (numbers ≤ 2 × 10^12: exact in a double). */
 const OPS = {
   '+': (x, y, z, w) => [x * w + z * y, y * w],
@@ -47,11 +69,12 @@ const KINDS = {
     c.other > 0 &&
     c.a % c.other === 0 &&
     (c.other !== c.b || c.b === c.q),
-  /** In the phrasing `phrase`, the number written first is the divisor (« est un diviseur de », « divise ») or the multiple (« est un multiple de », « est divisible par »). */
+  /** In the phrasing `phrase`, the number written first is the divisor (`diviseur` « est un diviseur de », `divise`
+   * « divise ») or the multiple (`multiple` « est un multiple de », `divisible` « est divisible par »). */
   phrase: (c) => {
     const divisorFirst = c.first === Math.min(c.a, c.b);
-    if (['qasim', 'yaqsim'].includes(c.phrase)) return divisorFirst;
-    return ['mudaaf', 'yaqbal'].includes(c.phrase) ? !divisorFirst : false;
+    if (['diviseur', 'divise'].includes(c.phrase)) return divisorFirst;
+    return ['multiple', 'divisible'].includes(c.phrase) ? !divisorFirst : false;
   },
   /** The two divisors every a has: 1 and a itself. */
   sure: (c) => new Set([c.x, c.y]).size === 2 && [c.x, c.y].includes(1) && [c.x, c.y].includes(c.a),
@@ -114,6 +137,10 @@ const KINDS = {
     c.a * c.q === c.p * c.b &&
     (c.reduced === false || gcd(c.p, c.q) === 1) &&
     (c.op === undefined || isResult(c)),
+  /** The prime factorization of a: `factors` = [{p, e}, …], primes increasing, each once with its exponent. */
+  factorization: isFactorization,
+  /** « a is prime » (`says: true`) or « a is not prime » (`says: false`) said rightly. */
+  prime: (c) => n(c.a) && typeof c.says === 'boolean' && c.says === isPrime(c.a),
 };
 
 export const CLAIM_KINDS = Object.keys(KINDS);

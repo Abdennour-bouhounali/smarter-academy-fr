@@ -1,0 +1,186 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-003",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des boîtes d’œufs",
+    "estimatedMinutes": 5,
+    "tags": [
+      "facteurs premiers",
+      "problème"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un producteur a ramassé $2\\,310$ œufs cette semaine. Il veut les ranger dans des boîtes toutes identiques, pleines, sans qu’il reste d’œuf. Il dispose de boîtes de $6$, de $10$, de $12$ ou de $14$ œufs."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Décompose $2\\,310$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3*5*7*11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2\\,310$ est pair et se termine par $0$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Essaie $2$, $3$, $5$, $7$, $11$ dans l’ordre."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,310 = 2 \\times 3 \\times 5 \\times 7 \\times 11$.",
+        "incorrect": "Divise par chaque nombre premier dans l’ordre, en recommençant sur le quotient.",
+        "notPrime": "Ton produit vaut bien $2\\,310$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $2\\,310$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $2\\,310$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,310 \\div 2 = 1\\,155$",
+          "$1\\,155 \\div 3 = 385$",
+          "$385 \\div 5 = 77$",
+          "$77 \\div 7 = 11$",
+          "$11 \\div 11 = 1$",
+          "Donc $2\\,310 = 2 \\times 3 \\times 5 \\times 7 \\times 11$."
+        ],
+        "result": "2\\,310 = 2 \\times 3 \\times 5 \\times 7 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*3*5*77"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "10*231"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle taille de boîte ne convient pas ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        },
+        {
+          "id": "B",
+          "content": "$10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        },
+        {
+          "id": "C",
+          "content": "$12$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        }
+      ],
+      "answerFormat": "Choisis une taille",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose $6$, $10$, $12$ et $14$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque facteur d’une boîte doit se trouver dans la décomposition de $2\\,310$, autant de fois."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 = 2^2 \\times 3$, mais $2\\,310$ ne contient qu’un seul facteur $2$ : $12$ ne divise pas $2\\,310$.",
+        "incorrect": "Compare la décomposition de chaque taille de boîte avec celle de $2\\,310$."
+      },
+      "solution": {
+        "lines": [
+          "$6 = 2 \\times 3$, $10 = 2 \\times 5$ et $14 = 2 \\times 7$ divisent $2\\,310 = 2 \\times 3 \\times 5 \\times 7 \\times 11$.",
+          "$12 = 2^2 \\times 3$ ne le divise pas : il n’y a qu’un facteur $2$."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Il choisit des boîtes de $14$ œufs. Combien de boîtes remplit-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre de boîtes",
+      "expectedAnswer": "165",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Retire les facteurs de $14$ de la décomposition de $2\\,310$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,310 = (2 \\times 7) \\times (3 \\times 5 \\times 11) = 14 \\times 165$.",
+        "incorrect": "Le nombre de boîtes est le produit des facteurs qui restent quand on enlève ceux de $14$."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,310 = (2 \\times 7) \\times (3 \\times 5 \\times 11)$",
+          "$2\\,310 = 14 \\times 165$ : il remplit $165$ boîtes."
+        ],
+        "result": "165"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

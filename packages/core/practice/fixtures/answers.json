@@ -6135,5 +6135,1850 @@
       "isCorrect": false,
       "feedbackKey": "incorrect"
     }
+  },
+  {
+    "name": "factorization-canonical",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*3^2*5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-superscripts-and-times-sign",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2³ × 3² × 5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-any-order-letter-x",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "5 x 3^2 x 2^3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-mathlive-latex",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^{3}\\times3^{2}\\times5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-mathlive-latex-cdot-spaces",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^{ 3 } \\cdot 3^2\\, \\cdot 5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-middle-dot-and-spaces",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2 ^ 3 · 3 ^ 2 · 5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-arabic-indic-digits",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "٢^٣×٣^٢×٥"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-leading-zero-exponent",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^03*3^2*5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-exponent-one-written",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*3^2*5^1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-repeated-primes-equivalent",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2×2×2×3×3×5"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-repeated-prime-mixed-equivalent",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^2×2×3^2×5"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-composite-factor-not-prime",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "4×90"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "4*90",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-composite-with-power-not-prime",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3×45"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^3*45",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-composite-signature",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "10×6²"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-FACT-FACTEURS-COMPOSES",
+      "normalized": "6^2*10",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-factor-one-not-prime",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1×2^3×3^2×5"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "1*2^3*3^2*5",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-the-number-itself-not-prime",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "360"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "360",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-zero-exponent",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*3^2*5*7^0"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5*7^0",
+      "isCorrect": false,
+      "feedbackKey": "zeroExponent"
+    }
+  },
+  {
+    "name": "factorization-wrong-exponents",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^2*3^2*5"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^2*3^2*5",
+      "isCorrect": false,
+      "feedbackKey": "wrongExponents"
+    }
+  },
+  {
+    "name": "factorization-wrong-exponents-signature",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "5 × 3 × 2"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+      "normalized": "2*3*5",
+      "isCorrect": false,
+      "feedbackKey": "wrongExponents"
+    }
+  },
+  {
+    "name": "factorization-wrong-exponents-overflow",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^50*3^2*5"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^50*3^2*5",
+      "isCorrect": false,
+      "feedbackKey": "wrongExponents"
+    }
+  },
+  {
+    "name": "factorization-wrong-product-other-prime",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*3^2*7"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*7",
+      "isCorrect": false,
+      "feedbackKey": "wrongProduct"
+    }
+  },
+  {
+    "name": "factorization-wrong-product-missing-prime",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*3^2"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2",
+      "isCorrect": false,
+      "feedbackKey": "wrongProduct"
+    }
+  },
+  {
+    "name": "factorization-wrong-product-overflow",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^60*3"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "2^60*3",
+      "isCorrect": false,
+      "feedbackKey": "wrongProduct"
+    }
+  },
+  {
+    "name": "factorization-wrong-product-zero-factor",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "0×2"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "0*2",
+      "isCorrect": false,
+      "feedbackKey": "wrongProduct"
+    }
+  },
+  {
+    "name": "factorization-syntax-digits-without-sign",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2 3 5"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2 3 5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-double-exponent",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3^2*5"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2^3^2*5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-double-star",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2**3*5"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2**3*5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-empty",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": ""
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-group-hides-a-product",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^{3\\times3}*5"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2^{3\\times3}*5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-sum",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2+3"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2+3",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-trailing-sign",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2^3*",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-trailing-dot",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^3*3^2*5."
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5.",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-exponent-too-big",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2^1000"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2^1000",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-letters",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "a×b"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "a×b",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-syntax-sixteen-digits",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "9007199254740993"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "9007199254740993",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-powers-canonical",
+    "question": {
+      "id": "q-fact-powers",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*2*2*3*3*5",
+          "id": "MISC-FACT-PUISSANCES-NON-ECRITES"
+        }
+      ],
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      }
+    },
+    "answer": {
+      "value": "5×2³×3²"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2^3*3^2*5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-powers-repeated-is-partial",
+    "question": {
+      "id": "q-fact-powers",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*2*2*3*3*5",
+          "id": "MISC-FACT-PUISSANCES-NON-ECRITES"
+        }
+      ],
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      }
+    },
+    "answer": {
+      "value": "2×2×2×3×3×5"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": "MISC-FACT-PUISSANCES-NON-ECRITES",
+      "normalized": "2^3*3^2*5",
+      "isCorrect": false,
+      "feedbackKey": "powersExpected"
+    }
+  },
+  {
+    "name": "factorization-powers-repeated-mixed-is-partial",
+    "question": {
+      "id": "q-fact-powers",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*2*2*3*3*5",
+          "id": "MISC-FACT-PUISSANCES-NON-ECRITES"
+        }
+      ],
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      }
+    },
+    "answer": {
+      "value": "2^2*2*3^2*5"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": "MISC-FACT-PUISSANCES-NON-ECRITES",
+      "normalized": "2^3*3^2*5",
+      "isCorrect": false,
+      "feedbackKey": "powersExpected"
+    }
+  },
+  {
+    "name": "factorization-powers-not-prime",
+    "question": {
+      "id": "q-fact-powers",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*2*2*3*3*5",
+          "id": "MISC-FACT-PUISSANCES-NON-ECRITES"
+        }
+      ],
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      }
+    },
+    "answer": {
+      "value": "8×45"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "8*45",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-prime-alone",
+    "question": {
+      "id": "q-fact-prime",
+      "answerType": "factorization",
+      "expectedAnswer": "97",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      }
+    },
+    "answer": {
+      "value": "97"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "97",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-prime-exponent-one",
+    "question": {
+      "id": "q-fact-prime",
+      "answerType": "factorization",
+      "expectedAnswer": "97",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      }
+    },
+    "answer": {
+      "value": "97^1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "97",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-prime-times-one",
+    "question": {
+      "id": "q-fact-prime",
+      "answerType": "factorization",
+      "expectedAnswer": "97",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      }
+    },
+    "answer": {
+      "value": "1*97"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "1*97",
+      "isCorrect": false,
+      "feedbackKey": "notPrime"
+    }
+  },
+  {
+    "name": "factorization-number-value",
+    "question": {
+      "id": "q-fact-prime",
+      "answerType": "factorization",
+      "expectedAnswer": "97",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      }
+    },
+    "answer": {
+      "value": 97
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "97",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "factorization-no-value-syntax",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {},
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-latex-only-is-not-read",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^3*3^2*5",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "latex": "2^3"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "factorization-key-composite-throws",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "4*15",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "factorization-key-illegible-throws",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "abc",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "factorization-key-zero-exponent-throws",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "2^0*3",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "factorization-key-one-throws",
+    "question": {
+      "id": "q-fact",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de facteurs premiers",
+      "expectedAnswer": "1",
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Pas encore.",
+        "partial": "Presque.",
+        "notPrime": "Un facteur n’est pas premier.",
+        "zeroExponent": "Un exposant 0 ne sert à rien.",
+        "wrongExponents": "Les bons premiers, pas les bons exposants.",
+        "wrongProduct": "Ce produit ne vaut pas le nombre.",
+        "powersExpected": "Écris chaque premier une seule fois, avec son exposant."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2*3*5",
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "value": "6^2*10",
+          "id": "MISC-FACT-FACTEURS-COMPOSES"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
   }
 ]

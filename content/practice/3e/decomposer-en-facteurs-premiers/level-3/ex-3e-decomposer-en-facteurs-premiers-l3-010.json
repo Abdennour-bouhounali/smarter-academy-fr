@@ -1,0 +1,168 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-010",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 2,
+  "calculator": false,
+  "metadata": {
+    "title": "Diviser sans poser la division",
+    "estimatedMinutes": 6,
+    "tags": [
+      "facteurs premiers",
+      "divisibilité"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "adaptedFrom": "ex-4am-qasim-adad-tabii-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère les nombres $A = \\dfrac{2\\,964}{57}$ et $B = \\dfrac{2\\,964}{52}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Décompose $2\\,964$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3*13*19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Puis essaie $3$, et regarde si le quotient $247$ se divise par $13$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,964 = 2^2 \\times 3 \\times 13 \\times 19$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis continue les essais sur le quotient sans t’arrêter au premier échec.",
+        "notPrime": "Ton produit vaut bien $2\\,964$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $2\\,964$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $2\\,964$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,964 \\div 2 = 1\\,482$",
+          "$1\\,482 \\div 2 = 741$",
+          "$741 \\div 3 = 247$",
+          "$247 \\div 13 = 19$",
+          "$19 \\div 19 = 1$",
+          "Donc $2\\,964 = 2 \\times 2 \\times 3 \\times 13 \\times 19 = 2^2 \\times 3 \\times 13 \\times 19$."
+        ],
+        "result": "2\\,964 = 2^2 \\times 3 \\times 13 \\times 19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "2^2*3*247"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3*13*19"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Décompose $57$ et déduis-en, sans poser la division, la valeur de $A$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$57 = 3 \\times 19$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retire les facteurs $3$ et $19$ de la décomposition de $2\\,964$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,964 = (3 \\times 19) \\times (2^2 \\times 13) = 57 \\times 52$, donc $A = 52$.",
+        "incorrect": "Retrouve les facteurs de $57$ dans la décomposition de $2\\,964$ ; les autres facteurs donnent $A$."
+      },
+      "solution": {
+        "lines": [
+          "$57 = 3 \\times 19$",
+          "$2\\,964 = 2^2 \\times 3 \\times 13 \\times 19 = (3 \\times 19) \\times (2^2 \\times 13)$",
+          "$2\\,964 = 57 \\times 52$, donc $A = 52$."
+        ],
+        "result": "A = 52"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Déduis-en, sans poser la division, la valeur de $B$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "57",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis l’égalité obtenue à la question précédente."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,964 = 57 \\times 52$, donc $B = \\dfrac{2\\,964}{52} = 57$.",
+        "incorrect": "L’égalité de la question précédente donne aussi le quotient par $52$."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,964 = 57 \\times 52$",
+          "donc $2\\,964 \\div 52 = 57$ : $B = 57$."
+        ],
+        "result": "B = 57"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

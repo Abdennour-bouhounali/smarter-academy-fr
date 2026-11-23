@@ -13,3 +13,6 @@ export { parseInterval, intervalEquals, intervalToString, isEmptyInterval } from
 export {
   evaluateAnswer, feedbackFor, OUTCOMES, isSuccessOutcome, isInertOutcome, SUPPORTED_ANSWER_TYPES, countsForMastery,
 } from './answerEvaluator.js';
+export {
+  parseFactorization, canonicalFactorization, factorizationToLatex, factorizationToPlain, isPrime,
+} from './factorization.js';

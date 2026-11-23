@@ -1,0 +1,188 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-003",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Lire une décomposition pour répondre",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "divisibilité"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "adaptedFrom": "ex-4am-qasim-adad-tabii-l4-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On considère le nombre $N$ :",
+    "formulas": [
+      "N = 2 \\times 3^4 \\times 5 \\times 7"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Réponds sans calculer $N$, en justifiant.",
+      "statement": "Le nombre $9$ divise-t-il $N$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris $9$ comme un produit de facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Trouve-t-on deux facteurs $3$ dans l’écriture de $N$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$9 = 3 \\times 3$ et $3^4$ contient quatre facteurs $3$ : $N = 9 \\times (2 \\times 3^2 \\times 5 \\times 7)$.",
+        "incorrect": "$9 = 3^2$ : regarde l’exposant de $3$ dans l’écriture de $N$."
+      },
+      "solution": {
+        "lines": [
+          "$9 = 3^2$, et $3^4 = 3^2 \\times 3^2$.",
+          "$N = 3^2 \\times (2 \\times 3^2 \\times 5 \\times 7)$ : $9$ divise $N$."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Le nombre $N$ est-il divisible par $10$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris $10$ comme un produit de facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 = 2 \\times 5$, et $2$ et $5$ figurent dans l’écriture de $N$.",
+        "incorrect": "$10 = 2 \\times 5$ : ces deux facteurs sont-ils dans l’écriture de $N$ ?"
+      },
+      "solution": {
+        "lines": [
+          "$10 = 2 \\times 5$.",
+          "$N = (2 \\times 5) \\times 3^4 \\times 7$ : $N$ est divisible par $10$."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "statement": "Le nombre $4$ divise-t-il $N$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$4 = 2 \\times 2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de facteurs $2$ y a-t-il dans l’écriture de $N$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$4 = 2^2$, mais l’écriture de $N$ ne contient qu’un seul facteur $2$ : $4$ ne divise pas $N$.",
+        "incorrect": "Compte les facteurs $2$ dans l’écriture de $N$ et compare avec $4 = 2^2$."
+      },
+      "solution": {
+        "lines": [
+          "$4 = 2^2$.",
+          "L’écriture de $N$ ne contient qu’un facteur $2$ : $N \\div 2 = 3^4 \\times 5 \\times 7$ est impair.",
+          "Donc $4$ ne divise pas $N$."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

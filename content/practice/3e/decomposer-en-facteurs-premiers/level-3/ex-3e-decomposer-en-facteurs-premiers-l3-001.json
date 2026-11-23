@@ -1,0 +1,192 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-001",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer 68 et 119",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "adaptedFrom": "ex-4am-tayin-pgcd-l2-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $68$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$68$ est pair, et sa moitié aussi."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $17$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$68 = 2^2 \\times 17$.",
+        "incorrect": "Divise par $2$ tant que c’est possible, puis regarde le quotient.",
+        "notPrime": "Ton produit vaut bien $68$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $68$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $68$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$68 \\div 2 = 34$",
+          "$34 \\div 2 = 17$",
+          "$17 \\div 17 = 1$",
+          "Donc $68 = 2 \\times 2 \\times 17 = 2^2 \\times 17$."
+        ],
+        "result": "68 = 2^2 \\times 17"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "4*17"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*17"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Le nombre $119$ est-il premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$119$ n’est divisible ni par $2$, ni par $3$, ni par $5$ : ne t’arrête pas là."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Essaie $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$119 = 7 \\times 17$ : il n’est pas premier.",
+        "incorrect": "Ne t’arrête pas au premier essai qui échoue : continue avec les nombres premiers suivants."
+      },
+      "solution": {
+        "lines": [
+          "$119$ n’est divisible ni par $2$, ni par $3$ ($1 + 1 + 9 = 11$), ni par $5$.",
+          "$119 = 7 \\times 17$ : $119$ n’est pas premier."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "statement": "Décompose $119$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "7*17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise la division qui a marché à la question précédente."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $17$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$119 = 7 \\times 17$.",
+        "incorrect": "Trouve le plus petit nombre premier qui divise $119$, puis regarde le quotient.",
+        "notPrime": "Ton produit vaut bien $119$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $119$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $119$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$119 \\div 7 = 17$",
+          "$17 \\div 17 = 1$",
+          "Donc $119 = 7 \\times 17$."
+        ],
+        "result": "119 = 7 \\times 17"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "119"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

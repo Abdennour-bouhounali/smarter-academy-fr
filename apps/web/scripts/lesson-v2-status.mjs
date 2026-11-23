@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { isV2Lesson } from '../../../scripts/validate-lib.mjs';
 
 const WEB = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ROOT = path.resolve(WEB, '../..');
@@ -196,11 +197,13 @@ async function statusOf(entry) {
     cat ? cat.status : 'not in the catalogue',
   );
   // what it replaced is deleted (owner, 2026-11-18: « for each lesson that is updated to the gaming version, delete the old
-  // version »): no module page, the module addresses redirect home, no mission player in its config (LESSON_V2.md §2)
+  // version »): no module page, no mission player in its config (LESSON_V2.md §2). A v2 lesson is what its pack makes it
+  // (`scripts/validate-lib.mjs › isV2Lesson`), never a marker in its routes.jsx: `buildLessonRoutes` redirects the
+  // module addresses of every lesson that has a pack.
   const config = read(path.join(dir, 'lesson.config.js')) ?? '';
   const left = [
     has('modules') && 'modules/',
-    !/retiredModules:\s*true/.test(read(path.join(dir, 'routes.jsx')) ?? '') && 'routes.jsx without retiredModules',
+    !isV2Lesson(dir) && 'no lesson.pack.js exporting LESSON_PACK',
     /^\s*studentView:\s*'mission'|^\s*mission:\s*\{/m.test(config) && 'the mission player in lesson.config.js',
   ].filter(Boolean);
   add('the old version is deleted: module pages, mission player', left.length === 0, left.join(', '));
@@ -239,8 +242,10 @@ for (const [id, dir] of folders) {
   const entry = index.find((l) => l.id === id);
   if (!entry) continue;
   const text = read(path.join(dir, 'lesson.config.js')) ?? '';
-  const retired = /retiredModules:\s*true/.test(read(path.join(dir, 'routes.jsx')) ?? '');
-  configs.push({ entry, retired, mission: /studentView:\s*'mission'/.test(text) });
+  const mission = /studentView:\s*'mission'/.test(text);
+  // its old version is deleted: a v2 lesson by its pack, with no module page and no mission player left
+  const retired = isV2Lesson(dir) && !fs.existsSync(path.join(dir, 'modules')) && !mission;
+  configs.push({ entry, retired, mission });
 }
 const count = (fn) => configs.filter(fn).length;
 const ledger = [

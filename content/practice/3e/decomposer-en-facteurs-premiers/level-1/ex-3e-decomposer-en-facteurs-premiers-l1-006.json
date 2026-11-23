@@ -1,0 +1,136 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-006",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Produit de facteurs premiers ou non",
+    "estimatedMinutes": 1,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Vrai ou faux ? Justifie.",
+      "statement": "$2 \\times 3 \\times 4$ est un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde chaque facteur un par un."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le nombre $4$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$4 = 2 \\times 2$ n’est pas premier.",
+        "incorrect": "Un des facteurs n’est pas premier : cherche-le."
+      },
+      "solution": {
+        "lines": [
+          "$4 = 2 \\times 2$ : le facteur $4$ n’est pas premier.",
+          "L’affirmation est fausse ; on écrirait $2 \\times 3 \\times 2 \\times 2$."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 40
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "$2 \\times 5 \\times 7$ est un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PREMIER-IMPAIR"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde chaque facteur un par un."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le nombre $2$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$2$, $5$ et $7$ sont premiers : c’est un produit de facteurs premiers.",
+        "incorrect": "Pour chaque facteur, compte ses diviseurs."
+      },
+      "solution": {
+        "lines": [
+          "$2$, $5$ et $7$ n’ont chacun que deux diviseurs : $1$ et eux-mêmes.",
+          "Ce sont des nombres premiers : l’affirmation est vraie."
+        ],
+        "result": "Vrai"
+      },
+      "timeSeconds": 40
+    }
+  ]
+}

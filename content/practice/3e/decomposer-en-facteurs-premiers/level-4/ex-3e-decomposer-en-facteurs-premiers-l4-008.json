@@ -1,0 +1,189 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-008",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un algorithme en langage naturel",
+    "estimatedMinutes": 3,
+    "tags": [
+      "algorithme",
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Voici un algorithme appliqué au nombre $5\\,311$.",
+    "table": {
+      "head": [
+        "Ligne",
+        "Instruction"
+      ],
+      "rows": [
+        [
+          "1",
+          "d prend la valeur 2."
+        ],
+        [
+          "2",
+          "Tant que le reste de la division de 5 311 par d n’est pas nul, d augmente de 1."
+        ],
+        [
+          "3",
+          "Afficher d, puis le quotient de 5 311 par d."
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "L’algorithme affiche $47$, puis un autre nombre. Lequel ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "113",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule le quotient avec ta calculatrice."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\,311 \\div 47 = 113$.",
+        "incorrect": "La ligne $3$ affiche le quotient de $5\\,311$ par $d$."
+      },
+      "solution": {
+        "lines": [
+          "$5\\,311 \\div 47 = 113$"
+        ],
+        "result": "113"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le nombre $113$ est-il premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare $11 \\times 11$ à $113$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Essaie $2$, $3$, $5$ et $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$113$ n’est divisible ni par $2$, ni par $3$, ni par $5$, ni par $7$, et $11 \\times 11 = 121 > 113$ : il est premier.",
+        "incorrect": "Fais les divisions utiles jusqu’au nombre premier $p$ tel que $p \\times p$ dépasse $113$."
+      },
+      "solution": {
+        "lines": [
+          "$113 = 7 \\times 16 + 1$ ; ni $2$, ni $3$, ni $5$ ne conviennent.",
+          "$11 \\times 11 = 121 > 113$ : $113$ est premier."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Décompose $5\\,311$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "47*113",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise ce qu’affiche l’algorithme."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$47$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\,311 = 47 \\times 113$.",
+        "incorrect": "L’algorithme donne deux facteurs : vérifie qu’ils sont premiers.",
+        "notPrime": "Ton produit vaut bien $5\\,311$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $5\\,311$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $5\\,311$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$5\\,311 = 47 \\times 113$.",
+          "$47$ est premier (c’est le premier diviseur trouvé), et $113$ est premier.",
+          "Donc $5\\,311 = 47 \\times 113$."
+        ],
+        "result": "5\\,311 = 47 \\times 113"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "5311"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

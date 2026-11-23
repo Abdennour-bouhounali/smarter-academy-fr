@@ -1,0 +1,257 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-002",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un programme qui cherche un diviseur",
+    "estimatedMinutes": 5,
+    "tags": [
+      "programmation",
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Voici un programme écrit avec des blocs, comme dans un logiciel de programmation. « $N$ modulo $d$ » est le reste de la division de $N$ par $d$.",
+    "table": {
+      "head": [
+        "Ligne",
+        "Instruction"
+      ],
+      "rows": [
+        [
+          "1",
+          "quand le drapeau vert est cliqué"
+        ],
+        [
+          "2",
+          "demander « Donne un nombre entier supérieur à 1 » et attendre"
+        ],
+        [
+          "3",
+          "mettre N à réponse"
+        ],
+        [
+          "4",
+          "mettre d à 2"
+        ],
+        [
+          "5",
+          "répéter jusqu’à ce que N modulo d = 0"
+        ],
+        [
+          "6",
+          "    ajouter 1 à d"
+        ],
+        [
+          "7",
+          "dire d"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Léo donne le nombre $35$. Quel nombre le programme dit-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Suis le programme : $d$ vaut $2$, puis $3$, puis…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "La boucle s’arrête dès que le reste est nul."
+        }
+      ],
+      "feedback": {
+        "correct": "Les restes de $35$ par $2$, par $3$ et par $4$ ne sont pas nuls ; le reste de $35$ par $5$ est nul : il dit $5$.",
+        "incorrect": "Fais tourner la boucle pas à pas : à chaque tour, calcule le reste de $35$ par $d$."
+      },
+      "solution": {
+        "lines": [
+          "$d = 2$ : reste $1$ ; $d = 3$ : reste $2$ ; $d = 4$ : reste $3$ ; $d = 5$ : reste $0$.",
+          "Le programme dit $5$."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-LECTURE-RESTE",
+          "value": "7"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Que dit toujours ce programme ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Le plus petit diviseur de $N$ supérieur à $1$, qui est un nombre premier",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Le plus grand diviseur de $N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        },
+        {
+          "id": "C",
+          "content": "Le nombre de diviseurs de $N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        },
+        {
+          "id": "D",
+          "content": "Le dernier reste non nul",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d$ part de $2$ et augmente de $1$ : quel est le premier $d$ qui arrête la boucle ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ce premier diviseur peut-il avoir lui-même un diviseur plus petit ?"
+        }
+      ],
+      "feedback": {
+        "correct": "La boucle s’arrête au premier $d$ qui divise $N$ : c’est le plus petit diviseur supérieur à $1$, et il est forcément premier.",
+        "incorrect": "Regarde pour quelle valeur de $d$ la boucle s’arrête pour la première fois."
+      },
+      "solution": {
+        "lines": [
+          "Le programme essaie $d = 2$, $3$, $4$… et s’arrête au premier diviseur de $N$.",
+          "Ce diviseur est premier : un de ses propres diviseurs aurait divisé $N$ plus tôt."
+        ],
+        "result": "\\text{le plus petit diviseur premier de } N"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Léo donne $3\\,599$ et le programme dit $59$. Calcule $3\\,599 \\div 59$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "61",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise ta calculatrice."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,599 = 59 \\times 61$.",
+        "incorrect": "Divise $3\\,599$ par le nombre que le programme a dit."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,599 \\div 59 = 61$"
+        ],
+        "result": "3\\,599 = 59 \\times 61"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Décompose $3\\,599$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "59*61",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le programme a trouvé le plus petit diviseur premier."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $61$ est-il premier ? Compare $7 \\times 7$ et $8 \\times 8$ à $61$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,599 = 59 \\times 61$.",
+        "incorrect": "Le programme donne un facteur ; vérifie si le quotient est premier.",
+        "notPrime": "Ton produit vaut bien $3\\,599$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $3\\,599$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $3\\,599$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,599 = 59 \\times 61$",
+          "$61$ n’est divisible ni par $2$, ni par $3$, ni par $5$, ni par $7$, et $11 \\times 11 > 61$ : $61$ est premier.",
+          "Donc $3\\,599 = 59 \\times 61$."
+        ],
+        "result": "3\\,599 = 59 \\times 61"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

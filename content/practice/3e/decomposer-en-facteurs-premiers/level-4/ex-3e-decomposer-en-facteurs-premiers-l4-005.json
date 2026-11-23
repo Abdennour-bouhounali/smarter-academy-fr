@@ -1,0 +1,212 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-005",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux nombres et un même facteur",
+    "estimatedMinutes": 4,
+    "tags": [
+      "calculatrice",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "adaptedFrom": "ex-4am-khawass-qawasim-l2-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère les nombres $1\\,394$ et $323$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Avec la calculatrice, vérifie que $17$ divise chacun de ces nombres.",
+      "statement": "Écris $1\\,394$ sous la forme $17 \\times k$. Que vaut le nombre entier $k$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "82",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule $1\\,394 \\div 17$ avec ta calculatrice."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,394 = 17 \\times 82$.",
+        "incorrect": "Divise $1\\,394$ par $17$ : le quotient est un nombre entier."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,394 \\div 17 = 82$",
+          "$1\\,394 = 17 \\times 82$"
+        ],
+        "result": "k = 82"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Écris $323$ sous la forme $17 \\times k$. Que vaut le nombre entier $k$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule $323 \\div 17$."
+        }
+      ],
+      "feedback": {
+        "correct": "$323 = 17 \\times 19$.",
+        "incorrect": "Divise $323$ par $17$."
+      },
+      "solution": {
+        "lines": [
+          "$323 \\div 17 = 19$",
+          "$323 = 17 \\times 19$"
+        ],
+        "result": "k = 19"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $1\\,394$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*17*41",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Pars de $1\\,394 = 17 \\times 82$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Décompose $82$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,394 = 2 \\times 17 \\times 41$.",
+        "incorrect": "Le facteur $82$ n’est pas premier : décompose-le.",
+        "notPrime": "Ton produit vaut bien $1\\,394$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,394$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,394$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,394 = 17 \\times 82$ et $82 = 2 \\times 41$.",
+          "$41$ est premier ($7 \\times 7 > 41$).",
+          "Donc $1\\,394 = 2 \\times 17 \\times 41$."
+        ],
+        "result": "1\\,394 = 2 \\times 17 \\times 41"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "17*82"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "b",
+      "statement": "Décompose $323$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "17*19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise l’égalité trouvée à la question 1 b)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Les deux facteurs de cette égalité sont-ils premiers ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$323 = 17 \\times 19$.",
+        "incorrect": "Utilise l’égalité trouvée plus haut et vérifie que ses facteurs sont premiers.",
+        "notPrime": "Ton produit vaut bien $323$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $323$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $323$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$323 = 17 \\times 19$, et $17$ et $19$ sont premiers."
+        ],
+        "result": "323 = 17 \\times 19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "323"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 45
+    }
+  ]
+}

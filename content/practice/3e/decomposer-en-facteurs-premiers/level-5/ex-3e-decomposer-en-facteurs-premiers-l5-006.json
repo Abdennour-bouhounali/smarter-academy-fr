@@ -1,0 +1,184 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-006",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le produit des premiers entiers",
+    "estimatedMinutes": 6,
+    "tags": [
+      "facteurs premiers",
+      "puissances"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "On note $P = 1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 \\times 7$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Décompose $P$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^4*3^2*5*7",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose chaque facteur : $4 = 2^2$, $6 = 2 \\times 3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte tous les facteurs $2$, puis tous les facteurs $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\,040 = 2^4 \\times 3^2 \\times 5 \\times 7$.",
+        "incorrect": "Remplace $4$ et $6$ par leurs décompositions, puis regroupe les facteurs identiques.",
+        "notPrime": "Ton produit vaut bien $5\\,040$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $5\\,040$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $5\\,040$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2 \\times 3 \\times 2^2 \\times 5 \\times (2 \\times 3) \\times 7$",
+          "Facteurs $2$ : $1 + 2 + 1 = 4$ ; facteurs $3$ : $1 + 1 = 2$.",
+          "$P = 2^4 \\times 3^2 \\times 5 \\times 7 = 5\\,040$."
+        ],
+        "result": "5\\,040 = 2^4 \\times 3^2 \\times 5 \\times 7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*3*4*5*6*7"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2^3*3^2*5*7"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "On note $Q = 1 \\times 2 \\times 3 \\times \\ldots \\times 10$. Quel est l’exposant de $2$ dans la décomposition de $Q$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$Q = P \\times 8 \\times 9 \\times 10$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de facteurs $2$ apportent $8$, $9$ et $10$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$P$ apporte $2^4$, $8 = 2^3$ et $10 = 2 \\times 5$ : l’exposant de $2$ est $4 + 3 + 1 = 8$.",
+        "incorrect": "Ajoute aux facteurs $2$ de $P$ ceux de $8$, $9$ et $10$."
+      },
+      "solution": {
+        "lines": [
+          "$Q = P \\times 8 \\times 9 \\times 10 = 2^4 \\times 3^2 \\times 5 \\times 7 \\times 2^3 \\times 3^2 \\times 2 \\times 5$",
+          "$Q = 2^8 \\times 3^4 \\times 5^2 \\times 7$ : l’exposant de $2$ est $8$."
+        ],
+        "result": "8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Par combien de zéros se termine l’écriture de $Q$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un zéro à la fin vient d’un facteur $10 = 2 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de paires « $2$ et $5$ » peut-on former ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$Q = 2^8 \\times 3^4 \\times 5^2 \\times 7 = 10^2 \\times (2^6 \\times 3^4 \\times 7)$ et $2^6 \\times 3^4 \\times 7$ ne se termine pas par $0$ : deux zéros ($Q = 3\\,628\\,800$).",
+        "incorrect": "Compte les facteurs $5$ : chacun forme un $10$ avec un facteur $2$."
+      },
+      "solution": {
+        "lines": [
+          "$Q = (2 \\times 5)^2 \\times 2^6 \\times 3^4 \\times 7 = 100 \\times 36\\,288$",
+          "$36\\,288$ ne se termine pas par $0$ : $Q = 3\\,628\\,800$ se termine par deux zéros."
+        ],
+        "result": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-MEMES-PREMIERS-SUFFISENT",
+          "value": "8"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

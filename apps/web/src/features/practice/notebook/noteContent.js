@@ -1,5 +1,6 @@
 import katex from 'katex';
 import { isolateMathRuns } from '../../../utils/bidi';
+import { factorizationToPlain } from '@smarter-academy/core/practice/factorization.js';
 
 /**
  * Le CONTENU d'une note de carnet : sa forme, sa fabrication, sa désinfection.
@@ -94,6 +95,11 @@ export function formatAnswer(question, answer) {
         .filter(Boolean)
         .map((c) => c.content ?? String(c.id));
       return picked.length ? { text: picked.join(' ; '), ltr: false, markup: true } : null;
+    }
+    case 'factorization': {
+      // Le LaTeX du champ (« 2^{3}\\times3 ») se relit « 2³ × 3 » ; une saisie illisible, telle quelle.
+      const value = String(answer.value ?? '').trim();
+      return value ? { text: factorizationToPlain(value) ?? value, ltr: true, markup: false } : null;
     }
     case 'rational':
     case 'integerSet': {

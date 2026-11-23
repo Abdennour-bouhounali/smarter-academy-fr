@@ -346,7 +346,7 @@ What is left of this track:
 
 | Debt | Found | Settle before |
 |---|---|---|
-| `audit-knowledge-dependencies.mjs` and `apps/web/scripts/lesson-v2-status.mjs` still recognise a v2 lesson by the text `retiredModules: true`; `validate-lessons.mjs` was moved to the pack on 2026-11-23 (`scripts/validate-lib.mjs › isV2Lesson`) — the two others import it | docs pass, 2026-11-22 | the first French lesson (§8), with its pack |
+| ~~`audit-knowledge-dependencies.mjs` and `apps/web/scripts/lesson-v2-status.mjs` still recognise a v2 lesson by the text `retiredModules: true`~~ SETTLED 2026-11-23: both import `scripts/validate-lib.mjs › isV2Lesson` (the pack) | docs pass, 2026-11-22 | — |
 | `check:non-blocking` and `audit:knowledge:gate` look for patterns only a module lesson had: they pass on any tree. Delete them or re-aim them at the v2 lesson | docs pass | the first French lesson |
 | The teacher's lesson memo page (`/enseignant/cours/:lessonId/memoire`) reads module-lesson files a v2 lesson does not have; `teacher_lab_settings` (API) has no web caller; nothing calls `POST /lessons/{code}/evidence` | docs pass | step 1H (dead code of the shell) |
 | The API still reads `content/class-tests/`; the web guard that checked a default class test's answers was deleted with the Algerian tests | docs pass | the first French class test |

@@ -1,0 +1,229 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-002",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": false,
+  "metadata": {
+    "title": "Vrai ou faux sur une décomposition",
+    "estimatedMinutes": 4,
+    "tags": [
+      "facteurs premiers",
+      "divisibilité"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "On considère le nombre $N$ :",
+    "formulas": [
+      "N = 2^3 \\times 3^2 \\times 5 \\times 7"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Pour chaque affirmation, dis si elle est vraie ou fausse, sans calculer $N$, et justifie.",
+      "statement": "« $N$ est divisible par $12$. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose $12$."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 = 2^2 \\times 3$, et $N$ contient $2^3$ et $3^2$ : $N = 12 \\times (2 \\times 3 \\times 5 \\times 7)$.",
+        "incorrect": "Décompose $12$ et compare ses exposants à ceux de $N$."
+      },
+      "solution": {
+        "lines": [
+          "$12 = 2^2 \\times 3$",
+          "$N = (2^2 \\times 3) \\times (2 \\times 3 \\times 5 \\times 7)$ : l’affirmation est vraie."
+        ],
+        "result": "Vrai"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "« $N$ est divisible par $27$. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris $27$ comme une puissance de $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de facteurs $3$ contient $N$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$27 = 3^3$, mais $N$ ne contient que $3^2$ : $27$ ne divise pas $N$.",
+        "incorrect": "Le facteur $3$ figure dans $N$ : mais combien de fois ? Compare avec $27$."
+      },
+      "solution": {
+        "lines": [
+          "$27 = 3^3$",
+          "Le facteur $3$ n’apparaît que deux fois dans $N$ : l’affirmation est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "statement": "« $N$ est divisible par $35$. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose $35$."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 = 5 \\times 7$ et ces deux facteurs sont dans $N$.",
+        "incorrect": "Décompose $35$ et cherche ses facteurs dans $N$."
+      },
+      "solution": {
+        "lines": [
+          "$35 = 5 \\times 7$",
+          "$N = 35 \\times (2^3 \\times 3^2)$ : l’affirmation est vraie."
+        ],
+        "result": "Vrai"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "d",
+      "statement": "« $N$ est divisible par $16$. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-MEMES-PREMIERS-SUFFISENT"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris $16$ comme une puissance de $2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 = 2^4$, mais $N$ ne contient que $2^3$.",
+        "incorrect": "Compare l’exposant de $2$ dans $16$ et dans $N$."
+      },
+      "solution": {
+        "lines": [
+          "$16 = 2^4$",
+          "Le facteur $2$ n’apparaît que trois fois dans $N$ : l’affirmation est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

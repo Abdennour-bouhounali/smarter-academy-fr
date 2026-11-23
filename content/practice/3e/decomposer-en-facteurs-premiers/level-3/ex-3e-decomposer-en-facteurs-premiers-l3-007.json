@@ -1,0 +1,161 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-007",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Lire une décomposition avec des puissances",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "divisibilité"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "adaptedFrom": "ex-4am-qasim-adad-tabii-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Soit le nombre entier $N$ :",
+    "formulas": [
+      "N = 2^3 \\times 3 \\times 5^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $N$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^3 = 8$ et $5^2 = 25$."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 8 \\times 3 \\times 25 = 600$.",
+        "incorrect": "Calcule d’abord les puissances, puis le produit."
+      },
+      "solution": {
+        "lines": [
+          "$N = 8 \\times 3 \\times 25$",
+          "$N = 24 \\times 25 = 600$"
+        ],
+        "result": "N = 600"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "180"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Montre que $15$ divise $N$ en écrivant $N = 15 \\times q$. Que vaut le nombre entier $q$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$15 = 3 \\times 5$ : retrouve ces deux facteurs dans l’écriture de $N$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Regroupe : $N = (3 \\times 5) \\times (\\ldots)$."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = (3 \\times 5) \\times (2^3 \\times 5) = 15 \\times 40$.",
+        "incorrect": "Mets de côté un facteur $3$ et un facteur $5$ ; les facteurs qui restent forment $q$."
+      },
+      "solution": {
+        "lines": [
+          "$N = 2^3 \\times 3 \\times 5 \\times 5 = (3 \\times 5) \\times (2^3 \\times 5)$",
+          "$N = 15 \\times 40$ : $15$ divise $N$ et $q = 40$."
+        ],
+        "result": "q = 40"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Le nombre $N$ est-il divisible par $7$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le facteur $7$ apparaît-il dans la décomposition de $N$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "La décomposition de $N$ ne contient que $2$, $3$ et $5$ : $7$ ne divise pas $N$.",
+        "incorrect": "Cherche le facteur $7$ dans l’écriture de $N$."
+      },
+      "solution": {
+        "lines": [
+          "$7$ est premier et n’apparaît pas dans $N = 2^3 \\times 3 \\times 5^2$.",
+          "Donc $N$ n’est pas divisible par $7$ ($600 = 7 \\times 85 + 5$)."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

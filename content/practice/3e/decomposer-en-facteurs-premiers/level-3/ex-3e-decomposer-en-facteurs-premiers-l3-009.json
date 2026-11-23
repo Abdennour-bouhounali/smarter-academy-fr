@@ -1,0 +1,180 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-009",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux nombres voisins",
+    "estimatedMinutes": 3,
+    "tags": [
+      "nombres premiers",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On s’intéresse aux nombres $161$ et $163$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "statement": "Le nombre $161$ est-il premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$161$ n’est divisible ni par $2$, ni par $3$, ni par $5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Essaie $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$161 = 7 \\times 23$ : il n’est pas premier.",
+        "incorrect": "Continue les essais après $5$."
+      },
+      "solution": {
+        "lines": [
+          "$161$ est impair, $1 + 6 + 1 = 8$, il ne se termine ni par $0$ ni par $5$.",
+          "$161 = 7 \\times 23$."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $161$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "7*23",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise la division par $7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $23$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$161 = 7 \\times 23$.",
+        "incorrect": "Divise par le plus petit nombre premier qui convient, puis regarde le quotient.",
+        "notPrime": "Ton produit vaut bien $161$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $161$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $161$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$161 \\div 7 = 23$",
+          "$23 \\div 23 = 1$",
+          "Donc $161 = 7 \\times 23$."
+        ],
+        "result": "161 = 7 \\times 23"
+      },
+      "work": "optional",
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Le nombre $163$ est-il premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Jusqu’à quel nombre premier faut-il essayer ? Compare $13 \\times 13$ à $163$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Essaie $2$, $3$, $5$, $7$ et $11$."
+        }
+      ],
+      "feedback": {
+        "correct": "$163$ n’est divisible par aucun des nombres $2$, $3$, $5$, $7$, $11$, et $13 \\times 13 = 169 > 163$ : il est premier.",
+        "incorrect": "Fais toutes les divisions utiles avant de conclure."
+      },
+      "solution": {
+        "lines": [
+          "$163 = 7 \\times 23 + 2$ et $163 = 11 \\times 14 + 9$ ; ni $2$, ni $3$, ni $5$ ne conviennent.",
+          "$13 \\times 13 = 169 > 163$ : on peut s’arrêter, $163$ est premier."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

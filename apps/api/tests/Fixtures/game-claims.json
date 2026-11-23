@@ -187,7 +187,7 @@
     "a": 120,
     "b": 6,
     "first": 6,
-    "phrase": "qasim"
+    "phrase": "diviseur"
    },
    "ok": true
   },
@@ -197,7 +197,7 @@
     "a": 120,
     "b": 6,
     "first": 6,
-    "phrase": "yaqsim"
+    "phrase": "divise"
    },
    "ok": true
   },
@@ -207,7 +207,7 @@
     "a": 120,
     "b": 6,
     "first": 6,
-    "phrase": "mudaaf"
+    "phrase": "multiple"
    },
    "ok": false
   },
@@ -217,7 +217,7 @@
     "a": 120,
     "b": 6,
     "first": 120,
-    "phrase": "mudaaf"
+    "phrase": "multiple"
    },
    "ok": true
   },
@@ -227,7 +227,7 @@
     "a": 120,
     "b": 6,
     "first": 120,
-    "phrase": "yaqbal"
+    "phrase": "divisible"
    },
    "ok": true
   },
@@ -237,7 +237,7 @@
     "a": 120,
     "b": 6,
     "first": 120,
-    "phrase": "qasim"
+    "phrase": "diviseur"
    },
    "ok": false
   },
@@ -1599,6 +1599,451 @@
    "claim": {
     "kind": "unknown",
     "a": 1
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 2,
+      "e": 3
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": 1
+     }
+    ]
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 97,
+    "factors": [
+     {
+      "p": 97,
+      "e": 1
+     }
+    ]
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 1400,
+    "factors": [
+     {
+      "p": 2,
+      "e": 3
+     },
+     {
+      "p": 5,
+      "e": 2
+     },
+     {
+      "p": 7,
+      "e": 1
+     }
+    ]
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 999983,
+    "factors": [
+     {
+      "p": 999983,
+      "e": 1
+     }
+    ]
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 524288,
+    "factors": [
+     {
+      "p": 2,
+      "e": 19
+     }
+    ]
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 2,
+      "e": 2
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 2,
+      "e": 3
+     },
+     {
+      "p": 5,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 2,
+      "e": 1
+     },
+     {
+      "p": 2,
+      "e": 2
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 4,
+      "e": 1
+     },
+     {
+      "p": 2,
+      "e": 1
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 1,
+      "e": 1
+     },
+     {
+      "p": 2,
+      "e": 3
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 2,
+      "e": 3
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": 1
+     },
+     {
+      "p": 7,
+      "e": 0
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 8,
+      "e": 1
+     },
+     {
+      "p": 45,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 360,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 1,
+    "factors": []
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 0,
+    "factors": [
+     {
+      "p": 2,
+      "e": 1
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 2000000,
+    "factors": [
+     {
+      "p": 2,
+      "e": 7
+     },
+     {
+      "p": 5,
+      "e": 6
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      5,
+      1
+     ]
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360,
+    "factors": [
+     {
+      "p": 2,
+      "e": 3
+     },
+     {
+      "p": 3,
+      "e": 2
+     },
+     {
+      "p": 5,
+      "e": "1"
+     }
+    ]
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "factorization",
+    "a": 360
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 97,
+    "says": true
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 91,
+    "says": false
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 1,
+    "says": false
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 2,
+    "says": true
+   },
+   "ok": true
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 91,
+    "says": true
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 143,
+    "says": true
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 97,
+    "says": false
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 1,
+    "says": true
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 0,
+    "says": true
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 97,
+    "says": 1
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 97
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "prime",
+    "a": 1000003,
+    "says": true
+   },
+   "ok": false
+  },
+  {
+   "claim": {
+    "kind": "phrase",
+    "a": 120,
+    "b": 6,
+    "first": 6,
+    "phrase": "qasim"
    },
    "ok": false
   }

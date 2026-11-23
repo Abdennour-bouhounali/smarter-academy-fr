@@ -58,7 +58,8 @@ export function validateBank(exercises) {
   roots.push(root);
   mkdirSync(join(root, '_schema'), { recursive: true });
   copyFileSync(join(repo, 'content/practice/_schema/exercise.schema.json'), join(root, '_schema/exercise.schema.json'));
-  copyFileSync(join(repo, 'content/practice/misconceptions.json'), join(root, 'misconceptions.json'));
+  // an EMPTY registry: the real one cites the real lessons' points, which the one-lesson fixture catalogue does not have
+  writeFileSync(join(root, 'misconceptions.json'), JSON.stringify({ _comment: 'synthetic bank: no misconception' }));
   writeFileSync(join(root, 'active.json'), JSON.stringify([LESSON]));
   writeFileSync(join(root, 'policy.json'), JSON.stringify({ defaultMinPerLevel: 1, lessons: {} }));
   for (const ex of exercises) {

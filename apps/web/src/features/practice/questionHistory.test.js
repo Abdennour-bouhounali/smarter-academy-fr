@@ -34,6 +34,11 @@ describe('formatAnswer — relire SA réponse, telle qu’il l’a écrite', () 
     expect(formatAnswer(q1, { value: '17/13' })).toEqual({ kind: 'math', text: '17/13' });
   });
 
+  it('une décomposition se relit comme écrite dans le champ, exposants en haut', () => {
+    const q = { id: 'qf', answerType: 'factorization' };
+    expect(formatAnswer(q, { value: '2^{3}\\times5', latex: '2^{3}\\times5' })).toEqual({ kind: 'rich', text: '$2^{3}\\times5$' });
+  });
+
   it('un QCM relit le CONTENU du choix, jamais sa lettre', () => {
     expect(formatAnswer(qcm, { choiceId: 'A' })).toEqual({ kind: 'rich', text: 'Non, car PGCD(2175 ; 1044) = 87' });
     expect(formatAnswer(qcm, { choiceId: 'Z' })).toBeNull();

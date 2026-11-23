@@ -1,0 +1,129 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-009",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les âges de trois enfants",
+    "estimatedMinutes": 4,
+    "tags": [
+      "facteurs premiers",
+      "problème"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Le produit des âges de trois enfants est égal à $595$. Aucun d’eux n’a $1$ an, et chacun a moins de $18$ ans."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Décompose $595$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "5*7*17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$595$ se termine par $5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $119$ n’est divisible ni par $2$, ni par $3$, ni par $5$ : continue les essais."
+        }
+      ],
+      "feedback": {
+        "correct": "$595 = 5 \\times 7 \\times 17$.",
+        "incorrect": "Commence par $5$, puis continue les essais sur le quotient sans t’arrêter au premier échec.",
+        "notPrime": "Ton produit vaut bien $595$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $595$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $595$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$595 \\div 5 = 119$",
+          "$119 \\div 7 = 17$",
+          "$17 \\div 17 = 1$",
+          "Donc $595 = 5 \\times 7 \\times 17$."
+        ],
+        "result": "595 = 5 \\times 7 \\times 17"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "5*119"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est l’âge de l’aîné ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "Un âge en années",
+      "expectedAnswer": "17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Chaque âge est supérieur à $1$ : chaque enfant reçoit au moins un facteur premier."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Il y a trois enfants et trois facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "$595 = 5 \\times 7 \\times 17$ a exactement trois facteurs premiers : les âges sont $5$, $7$ et $17$ ans.",
+        "incorrect": "Répartis les facteurs premiers de $595$ entre les trois enfants, sans donner l’âge $1$."
+      },
+      "solution": {
+        "lines": [
+          "$595 = 5 \\times 7 \\times 17$ : trois facteurs premiers.",
+          "Aucun âge n’est $1$ : chaque enfant reçoit un facteur, les âges sont $5$, $7$ et $17$ ans.",
+          "L’aîné a $17$ ans."
+        ],
+        "result": "17"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "35"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

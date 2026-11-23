@@ -1,0 +1,213 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-001",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Lire les restes dans un tableur",
+    "estimatedMinutes": 4,
+    "tags": [
+      "tableur",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Nadia cherche les diviseurs premiers de $2\\,717$. Dans un tableur, elle écrit des nombres premiers dans la colonne A ; la colonne B affiche le reste de la division de $2\\,717$ par le nombre de la même ligne.",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B"
+      ],
+      "rows": [
+        [
+          "1",
+          "Nombre premier d",
+          "Reste de la division de 2 717 par d"
+        ],
+        [
+          "2",
+          "2",
+          "1"
+        ],
+        [
+          "3",
+          "3",
+          "2"
+        ],
+        [
+          "4",
+          "5",
+          "2"
+        ],
+        [
+          "5",
+          "7",
+          "1"
+        ],
+        [
+          "6",
+          "11",
+          "0"
+        ],
+        [
+          "7",
+          "13",
+          "0"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le plus petit nombre premier qui divise $2\\,717$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un nombre premier divise $2\\,717$ quand le reste est nul."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier $0$ de la colonne B, en partant du haut."
+        }
+      ],
+      "feedback": {
+        "correct": "Le premier reste nul est sur la ligne $6$ : $2\\,717$ est divisible par $11$.",
+        "incorrect": "Lis la colonne B de haut en bas et arrête-toi au premier reste égal à $0$."
+      },
+      "solution": {
+        "lines": [
+          "Les restes par $2$, $3$, $5$ et $7$ ne sont pas nuls.",
+          "Le reste de la division par $11$ est $0$ : $11$ est le plus petit diviseur premier."
+        ],
+        "result": "11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-LECTURE-RESTE",
+          "value": "1"
+        },
+        {
+          "id": "MISC-FACT-LECTURE-RESTE",
+          "value": "13"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $2\\,717 \\div 11$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "247",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise ta calculatrice."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,717 = 11 \\times 247$.",
+        "incorrect": "Le quotient d’une division qui tombe juste est un nombre entier."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,717 \\div 11 = 247$"
+        ],
+        "result": "2\\,717 = 11 \\times 247"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Le tableur montre aussi que $13$ divise $2\\,717$. Décompose $2\\,717$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "11*13*19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le quotient $247$ : le tableur te dit par quoi commencer."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule $247 \\div 13$ et regarde si le quotient est premier."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,717 = 11 \\times 13 \\times 19$.",
+        "incorrect": "Continue la décomposition sur le quotient $247$.",
+        "notPrime": "Ton produit vaut bien $2\\,717$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $2\\,717$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $2\\,717$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,717 = 11 \\times 247$",
+          "$247 \\div 13 = 19$, et $19$ est premier.",
+          "Donc $2\\,717 = 11 \\times 13 \\times 19$."
+        ],
+        "result": "2\\,717 = 11 \\times 13 \\times 19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "11*247"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

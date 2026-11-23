@@ -1,0 +1,183 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-001",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Reconnaître une décomposition en facteurs premiers",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Trois élèves ont écrit le nombre $45$ comme un produit."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Pour chaque égalité, dis si c’est une décomposition de $45$ en produit de facteurs premiers.",
+      "statement": "L’égalité $45 = 5 \\times 9$ est-elle une décomposition en facteurs premiers ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde chaque facteur : est-il premier ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le nombre $9$ a-t-il un diviseur autre que $1$ et lui-même ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$9 = 3 \\times 3$ : le facteur $9$ n’est pas premier, la décomposition n’est pas terminée.",
+        "incorrect": "Un des deux facteurs se divise encore : cherche lequel."
+      },
+      "solution": {
+        "lines": [
+          "$5$ est premier, mais $9 = 3 \\times 3$ n’est pas premier.",
+          "Ce produit n’est pas une décomposition en facteurs premiers."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "L’égalité $45 = 3 \\times 3 \\times 5$ est-elle une décomposition en facteurs premiers ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Vérifie deux choses : le produit vaut-il $45$, et chaque facteur est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 3 \\times 5 = 45$ et $3$, $3$, $5$ sont premiers.",
+        "incorrect": "Calcule le produit, puis regarde chaque facteur."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 3 \\times 5 = 9 \\times 5 = 45$.",
+          "$3$ et $5$ sont des nombres premiers : c’est une décomposition en facteurs premiers."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "statement": "L’égalité $45 = 3 \\times 15$ est-elle une décomposition en facteurs premiers ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le facteur $15$ est-il premier ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Dans quelle table de multiplication trouve-t-on $15$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$15 = 3 \\times 5$ : le facteur $15$ n’est pas premier.",
+        "incorrect": "Un facteur se divise encore : lequel ?"
+      },
+      "solution": {
+        "lines": [
+          "$15 = 3 \\times 5$ n’est pas premier.",
+          "Ce produit n’est pas une décomposition en facteurs premiers."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

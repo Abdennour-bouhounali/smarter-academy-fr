@@ -1,0 +1,127 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-006",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Regrouper les facteurs identiques",
+    "estimatedMinutes": 2,
+    "tags": [
+      "puissances"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On considère le nombre $N = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 11$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris la décomposition de $N$ avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^4*3^2*11",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte combien de fois chaque nombre premier est écrit."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 2^4 \\times 3^2 \\times 11$.",
+        "incorrect": "L’exposant de chaque facteur est le nombre de fois où il apparaît.",
+        "notPrime": "Ton produit vaut bien $1\\,584$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,584$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,584$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "Le facteur $2$ est écrit quatre fois, le facteur $3$ deux fois, le facteur $11$ une fois.",
+          "$N = 2^4 \\times 3^2 \\times 11$"
+        ],
+        "result": "1\\,584 = 2^4 \\times 3^2 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "2^3*3^2*11"
+        }
+      ],
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $N$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "1584",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^4 = 16$ et $3^2 = 9$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule $16 \\times 9$, puis multiplie par $11$."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 16 \\times 9 \\times 11 = 144 \\times 11 = 1\\,584$.",
+        "incorrect": "Ne confonds pas $2^4$ avec $2 \\times 4$ : calcule chaque puissance."
+      },
+      "solution": {
+        "lines": [
+          "$2^4 = 16$ et $3^2 = 9$",
+          "$N = 16 \\times 9 \\times 11 = 144 \\times 11 = 1\\,584$"
+        ],
+        "result": "N = 1\\,584"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "528"
+        },
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "792"
+        }
+      ],
+      "timeSeconds": 75
+    }
+  ]
+}

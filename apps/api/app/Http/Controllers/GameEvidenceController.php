@@ -50,7 +50,8 @@ class GameEvidenceController extends Controller
             'claim' => ['required', 'array'],
             'claim.kind' => ['required', Rule::in(ClaimVerifier::KINDS)],
             'claim.a' => ['required', 'integer', 'min:0', 'max:'.ClaimVerifier::MAX],
-            'claim.b' => ['required', 'integer', 'min:0', 'max:'.ClaimVerifier::MAX],
+            // `b` : le second nombre de la question — les genres d'UN seul nombre (ClaimVerifier::SINGLE) n'en ont pas
+            'claim.b' => [Rule::requiredIf(fn () => ! in_array($request->input('claim.kind'), ClaimVerifier::SINGLE, true)), 'integer', 'min:0', 'max:'.ClaimVerifier::MAX],
         ]);
 
         $claim = $request->input('claim');

@@ -1,0 +1,158 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-008",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les zéros d’un grand nombre",
+    "estimatedMinutes": 4,
+    "tags": [
+      "puissances",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère les nombres $A$ et $B$ :",
+    "formulas": [
+      "A = 2^{10} \\times 5^3",
+      "B = 2^4 \\times 3 \\times 5^6"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Par combien de zéros se termine l’écriture de $A$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2 \\times 5 = 10$ : combien de paires « $2$ et $5$ » peut-on former dans $A$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 2^7 \\times (2 \\times 5)^3 = 128 \\times 1\\,000 = 128\\,000$ : trois zéros.",
+        "incorrect": "Associe chaque facteur $5$ à un facteur $2$ pour former un $10$."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2^7 \\times 2^3 \\times 5^3 = 2^7 \\times 10^3$",
+          "$A = 128 \\times 1\\,000 = 128\\,000$ : trois zéros."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-MEMES-PREMIERS-SUFFISENT",
+          "value": "10"
+        },
+        {
+          "id": "MISC-FACT-MEMES-PREMIERS-SUFFISENT",
+          "value": "13"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $A$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "128000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A = 2^7 \\times 10^3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 128 \\times 1\\,000 = 128\\,000$.",
+        "incorrect": "Écris $A$ comme une puissance de $2$ multipliée par une puissance de $10$."
+      },
+      "solution": {
+        "lines": [
+          "$2^7 = 128$",
+          "$A = 128 \\times 1\\,000 = 128\\,000$"
+        ],
+        "result": "A = 128\\,000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Par combien de zéros se termine l’écriture de $B$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cette fois, il y a moins de facteurs $2$ que de facteurs $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (2 \\times 5)^4 \\times 3 \\times 5^2 = 10\\,000 \\times 75 = 750\\,000$ : quatre zéros.",
+        "incorrect": "Le nombre de $10$ que l’on forme est limité par le facteur le moins nombreux."
+      },
+      "solution": {
+        "lines": [
+          "$B = 2^4 \\times 5^4 \\times 3 \\times 5^2 = 10^4 \\times 75$",
+          "$B = 750\\,000$ : quatre zéros, car $75$ ne se termine pas par $0$."
+        ],
+        "result": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-MEMES-PREMIERS-SUFFISENT",
+          "value": "6"
+        },
+        {
+          "id": "MISC-FACT-MEMES-PREMIERS-SUFFISENT",
+          "value": "10"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

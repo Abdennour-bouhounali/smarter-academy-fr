@@ -1,0 +1,184 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-001",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une fanfare en carré",
+    "estimatedMinutes": 4,
+    "tags": [
+      "facteurs premiers",
+      "carrés",
+      "problème"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Pour un défilé, les $1\\,764$ musiciens d’une fanfare régionale veulent se ranger en carré : autant de rangées que de musiciens par rangée."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Décompose $1\\,764$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3^2*7^2",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Puis par $3$, puis essaie $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,764 = 2^2 \\times 3^2 \\times 7^2$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $7$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $1\\,764$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,764$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,764$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,764 \\div 2 = 882$",
+          "$882 \\div 2 = 441$",
+          "$441 \\div 3 = 147$",
+          "$147 \\div 3 = 49$",
+          "$49 \\div 7 = 7$",
+          "$7 \\div 7 = 1$",
+          "Donc $1\\,764 = 2 \\times 2 \\times 3 \\times 3 \\times 7 \\times 7 = 2^2 \\times 3^2 \\times 7^2$."
+        ],
+        "result": "1\\,764 = 2^2 \\times 3^2 \\times 7^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2^2*441"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2^2*3^2*49"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Les musiciens peuvent-ils se ranger en carré ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-CARRE-EXPOSANTS"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde les exposants de la décomposition."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Peut-on partager les facteurs en deux paquets identiques ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Tous les exposants sont pairs : $1\\,764 = (2 \\times 3 \\times 7) \\times (2 \\times 3 \\times 7)$.",
+        "incorrect": "Essaie de partager les facteurs de $1\\,764$ en deux paquets identiques."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,764 = 2^2 \\times 3^2 \\times 7^2 = (2 \\times 3 \\times 7)^2$",
+          "Tous les exposants sont pairs : le carré est possible."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de musiciens y a-t-il alors dans chaque rangée ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Multiplie les facteurs d’un seul des deux paquets."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 \\times 7 = 42$ : $42$ rangées de $42$ musiciens.",
+        "incorrect": "Un paquet contient un facteur $2$, un facteur $3$ et un facteur $7$."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3 \\times 7 = 42$",
+          "et $42 \\times 42 = 1\\,764$."
+        ],
+        "result": "42"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

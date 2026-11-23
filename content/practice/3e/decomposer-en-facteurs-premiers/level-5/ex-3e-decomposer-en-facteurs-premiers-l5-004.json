@@ -1,0 +1,215 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-004",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": false,
+  "metadata": {
+    "title": "Vrai ou faux sur les nombres premiers",
+    "estimatedMinutes": 4,
+    "tags": [
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Pour chaque affirmation, dis si elle est vraie ou fausse. Justifie : un contre-exemple suffit pour montrer qu’une affirmation est fausse."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "« Le produit de deux nombres premiers est toujours impair. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PREMIER-IMPAIR"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre $2$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 = 6$ est pair : l’affirmation est fausse.",
+        "incorrect": "Pense au plus petit nombre premier."
+      },
+      "solution": {
+        "lines": [
+          "$2$ et $3$ sont premiers et $2 \\times 3 = 6$ est pair.",
+          "Contre-exemple : l’affirmation est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "« Un nombre supérieur à $1$ qui n’est divisible ni par $2$, ni par $3$, ni par $5$ est premier. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Pense aux multiples de $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$49 = 7 \\times 7$ n’est divisible ni par $2$, ni par $3$, ni par $5$, et il n’est pas premier.",
+        "incorrect": "Cherche un nombre impair, qui ne se termine pas par $5$, et qui est dans la table de $7$."
+      },
+      "solution": {
+        "lines": [
+          "$49$ n’est divisible ni par $2$, ni par $3$, ni par $5$.",
+          "Mais $49 = 7 \\times 7$ : contre-exemple, l’affirmation est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "« $2^3 \\times 5 = 2 \\times 3 \\times 5$. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule chaque membre."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^3 \\times 5 = 8 \\times 5 = 40$, alors que $2 \\times 3 \\times 5 = 30$.",
+        "incorrect": "$2^3$ n’est pas $2 \\times 3$."
+      },
+      "solution": {
+        "lines": [
+          "$2^3 \\times 5 = 40$ et $2 \\times 3 \\times 5 = 30$.",
+          "$40 \\neq 30$ : l’affirmation est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "« Pour savoir si $167$ est premier, il suffit d’essayer les divisions par $2$, $3$, $5$, $7$ et $11$. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare $13 \\times 13$ à $167$."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 13 = 169 > 167$ : si $167 = a \\times b$ avec $a \\leqslant b$, alors $a \\leqslant 11$.",
+        "incorrect": "Cherche le plus petit nombre premier $p$ tel que $p \\times p$ dépasse $167$."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 11 = 121 \\leqslant 167$ et $13 \\times 13 = 169 > 167$.",
+          "Un diviseur $a \\leqslant b$ vérifierait $a \\times a \\leqslant 167$, donc $a \\leqslant 11$ : l’affirmation est vraie."
+        ],
+        "result": "Vrai"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

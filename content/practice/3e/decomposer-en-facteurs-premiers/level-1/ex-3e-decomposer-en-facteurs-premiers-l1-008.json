@@ -1,0 +1,202 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-008",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer des dénominateurs",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "adaptedFrom": "ex-3am-adad-natiq-l3-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Mila veut savoir quels facteurs premiers apparaissent dans les dénominateurs des fractions $\\dfrac{7}{40}$ et $\\dfrac{5}{18}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque dénominateur en produit de facteurs premiers.",
+      "statement": "Décompose $40$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2^3*5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$40$ est pair, et sa moitié aussi."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise par $2$ tant que c’est possible, puis passe à $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 = 2^3 \\times 5$.",
+        "incorrect": "Divise par $2$ autant de fois que possible avant de passer au nombre premier suivant.",
+        "notPrime": "Ton produit vaut bien $40$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $40$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $40$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\div 2 = 20$",
+          "$20 \\div 2 = 10$",
+          "$10 \\div 2 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $40 = 2 \\times 2 \\times 2 \\times 5 = 2^3 \\times 5$."
+        ],
+        "result": "40 = 2^3 \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*4*5"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "8*5"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*5"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $18$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3^2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$18$ est pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Après la division par $2$, essaie $3$, deux fois si c’est possible."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 = 2 \\times 3^2$.",
+        "incorrect": "Divise par $2$, puis par $3$ autant de fois que possible.",
+        "notPrime": "Ton produit vaut bien $18$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $18$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $18$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\div 2 = 9$",
+          "$9 \\div 3 = 3$",
+          "$3 \\div 3 = 1$",
+          "Donc $18 = 2 \\times 3 \\times 3 = 2 \\times 3^2$."
+        ],
+        "result": "18 = 2 \\times 3^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*9"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "Lequel des deux dénominateurs a un facteur premier autre que $2$ et $5$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        },
+        {
+          "id": "B",
+          "content": "$18$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Aucun des deux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis les deux décompositions que tu as écrites."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 = 2 \\times 3 \\times 3$ contient le facteur $3$, alors que $40 = 2 \\times 2 \\times 2 \\times 5$ ne contient que $2$ et $5$.",
+        "incorrect": "Regarde quels nombres premiers figurent dans chaque décomposition."
+      },
+      "solution": {
+        "lines": [
+          "$40 = 2^3 \\times 5$ : seulement les facteurs $2$ et $5$.",
+          "$18 = 2 \\times 3^2$ : le facteur $3$ apparaît."
+        ],
+        "result": "18"
+      },
+      "timeSeconds": 40
+    }
+  ]
+}

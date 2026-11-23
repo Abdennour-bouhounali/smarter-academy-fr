@@ -1,0 +1,199 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-007",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une décomposition dans un tableur",
+    "estimatedMinutes": 2,
+    "tags": [
+      "tableur",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Samuel organise la décomposition de $7\\,429$ dans un tableur. Sur chaque ligne, la colonne B contient le plus petit diviseur premier du nombre de la colonne A, et la colonne C le quotient. Le nombre de la colonne A d’une ligne est le quotient de la ligne précédente.",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C"
+      ],
+      "sheet": true,
+      "rows": [
+        [
+          "1",
+          "Nombre",
+          "Plus petit diviseur premier",
+          "Quotient"
+        ],
+        [
+          "2",
+          "7 429",
+          "17",
+          "…"
+        ],
+        [
+          "3",
+          "…",
+          "19",
+          "23"
+        ],
+        [
+          "4",
+          "23",
+          "23",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel nombre doit s’afficher dans la cellule C2 ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "437",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "C2 est le quotient de A2 par B2."
+        }
+      ],
+      "feedback": {
+        "correct": "$7\\,429 \\div 17 = 437$.",
+        "incorrect": "Divise le nombre de la cellule A2 par celui de la cellule B2."
+      },
+      "solution": {
+        "lines": [
+          "$7\\,429 \\div 17 = 437$"
+        ],
+        "result": "437"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Que signifie le nombre $17$ écrit dans la cellule B2 ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7\\,429$ n’est divisible par aucun nombre premier plus petit que $17$.",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$17$ est le plus grand diviseur de $7\\,429$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        },
+        {
+          "id": "C",
+          "content": "$7\\,429$ a exactement $17$ diviseurs.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis ce que contient la colonne B."
+        }
+      ],
+      "feedback": {
+        "correct": "$17$ est le plus petit diviseur premier : $2$, $3$, $5$, $7$, $11$ et $13$ ne divisent pas $7\\,429$.",
+        "incorrect": "La colonne B contient le plus petit diviseur premier : qu’en déduis-tu pour les nombres premiers avant lui ?"
+      },
+      "solution": {
+        "lines": [
+          "La colonne B donne le plus petit diviseur premier.",
+          "Aucun des nombres $2$, $3$, $5$, $7$, $11$, $13$ ne divise donc $7\\,429$."
+        ],
+        "result": "\\text{aucun diviseur premier avant 17}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Écris la décomposition de $7\\,429$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "17*19*23",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les facteurs sont dans la colonne B."
+        }
+      ],
+      "feedback": {
+        "correct": "$7\\,429 = 17 \\times 19 \\times 23$.",
+        "incorrect": "Recopie les nombres de la colonne B.",
+        "notPrime": "Ton produit vaut bien $7\\,429$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $7\\,429$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $7\\,429$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$7\\,429 = 17 \\times 437$ et $437 = 19 \\times 23$.",
+          "Donc $7\\,429 = 17 \\times 19 \\times 23$."
+        ],
+        "result": "7\\,429 = 17 \\times 19 \\times 23"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "17*437"
+        }
+      ],
+      "timeSeconds": 45
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-009",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les nombres premiers entre 20 et 40",
+    "estimatedMinutes": 2,
+    "tags": [
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris tous les nombres premiers compris entre $20$ et $40$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "expectedAnswer": [
+        23,
+        29,
+        31,
+        37
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Élimine d’abord les nombres pairs et ceux qui se terminent par $5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Parmi ceux qui restent, élimine ceux de la table de $3$ et de la table de $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les nombres premiers entre $20$ et $40$ sont $23$, $29$, $31$ et $37$.",
+        "incorrect": "Il en manque, ou un nombre de ta liste a un diviseur autre que $1$ et lui-même : vérifie chacun."
+      },
+      "solution": {
+        "lines": [
+          "Les nombres impairs qui ne se terminent pas par $5$ : $21$, $23$, $27$, $29$, $31$, $33$, $37$, $39$.",
+          "On élimine $21 = 3 \\times 7$, $27 = 3 \\times 9$, $33 = 3 \\times 11$, $39 = 3 \\times 13$.",
+          "Il reste $23$, $29$, $31$ et $37$."
+        ],
+        "result": "23 ; 29 ; 31 ; 37"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": [
+            21,
+            23,
+            29,
+            31,
+            37
+          ]
+        },
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": [
+            23,
+            29,
+            31,
+            37,
+            39
+          ]
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

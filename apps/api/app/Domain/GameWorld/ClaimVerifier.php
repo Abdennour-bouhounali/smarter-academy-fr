@@ -23,8 +23,11 @@ final class ClaimVerifier
 {
     public const KINDS = [
         'division', 'product', 'phrase', 'sure', 'containers', 'pair', 'divisors', 'stop', 'divisible',
-        'bracket', 'fullNeeded', 'pgcd', 'coprime', 'commonDivisor', 'fraction',
+        'bracket', 'fullNeeded', 'pgcd', 'coprime', 'commonDivisor', 'fraction', 'factorization', 'prime',
     ];
+
+    /** Les genres qui portent sur UN nombre `a`, sans `b` (GameEvidenceController ne l'exige pas pour eux). */
+    public const SINGLE = ['factorization', 'prime'];
 
     /** Les nombres admis : des entiers naturels de taille scolaire. */
     public const MAX = 1000000;
@@ -56,9 +59,10 @@ final class ClaimVerifier
                 }
                 $divisorFirst = $first === min($a, $b);
 
+                // les ids des quatre tournures : « est un diviseur de », « divise », « est un multiple de », « est divisible par »
                 return match ($c['phrase'] ?? null) {
-                    'qasim', 'yaqsim' => $divisorFirst,
-                    'mudaaf', 'yaqbal' => ! $divisorFirst,
+                    'diviseur', 'divise' => $divisorFirst,
+                    'multiple', 'divisible' => ! $divisorFirst,
                     default => false,
                 };
             case 'sure':
@@ -178,9 +182,57 @@ final class ClaimVerifier
 
                 return $a * $q === $p * $b && (($c['reduced'] ?? null) === false || self::gcd($p, $q) === 1)
                     && (! array_key_exists('op', $c) || self::isResult($c, $a, $b, $n));
+            case 'factorization':
+                // a = p1^e1 × p2^e2 × … : chaque p premier, les p distincts et CROISSANTS, chaque e ≥ 1, le produit vaut a
+                $a = $n('a');
+                $factors = $c['factors'] ?? null;
+                if ($a === null || $a < 2 || ! is_array($factors) || ! array_is_list($factors) || $factors === [] || count($factors) > 20) {
+                    return false;
+                }
+                $prod = 1;
+                $last = 1;
+                foreach ($factors as $f) {
+                    $p = is_array($f) && is_int($f['p'] ?? null) ? $f['p'] : null;
+                    $e = is_array($f) && is_int($f['e'] ?? null) ? $f['e'] : null;
+                    if ($p === null || $e === null || $p <= $last || $e < 1 || $e > 20 || ! self::isPrime($p)) {
+                        return false;
+                    }
+                    for ($i = 0; $i < $e; $i++) {
+                        $prod *= $p;
+                        if ($prod > $a) {
+                            return false;
+                        }
+                    }
+                    $last = $p;
+                }
+
+                return $prod === $a;
+            case 'prime':
+                // « a est premier » (says: true) ou « a n'est pas premier » (says: false), dit juste
+                $a = $n('a');
+                if ($a === null || ! is_bool($c['says'] ?? null)) {
+                    return false;
+                }
+
+                return $c['says'] === self::isPrime($a);
             default:
                 return false;
         }
+    }
+
+    /** a est premier : exactement deux diviseurs (0 et 1 ne le sont pas). */
+    private static function isPrime(int $a): bool
+    {
+        if ($a < 2) {
+            return false;
+        }
+        for ($d = 2; $d * $d <= $a; $d++) {
+            if ($a % $d === 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**

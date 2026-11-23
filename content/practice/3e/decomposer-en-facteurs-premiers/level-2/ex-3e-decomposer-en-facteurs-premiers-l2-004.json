@@ -1,0 +1,143 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-004",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Une décomposition inachevée",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Tom a écrit : $180 = 2 \\times 90 = 2 \\times 2 \\times 45$. Il s’arrête et annonce : « La décomposition de $180$ est $2 \\times 2 \\times 45$. »"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Tom a-t-il terminé la décomposition de $180$ en produit de facteurs premiers ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde le dernier facteur de Tom."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$45$ est-il un nombre premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$45 = 3 \\times 3 \\times 5$ n’est pas premier : Tom s’est arrêté trop tôt.",
+        "incorrect": "Un facteur de Tom se divise encore : lequel ?"
+      },
+      "solution": {
+        "lines": [
+          "$45$ se termine par $5$ : il est divisible par $5$, il n’est pas premier.",
+          "Tom n’a pas terminé."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Termine la décomposition de $180$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3^2*5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Continue avec $45$ : est-il divisible par $3$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise par $3$ autant de fois que possible, puis passe à $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 = 2^2 \\times 3^2 \\times 5$.",
+        "incorrect": "Continue les divisions sur $45$ jusqu’à obtenir le quotient $1$.",
+        "notPrime": "Ton produit vaut bien $180$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $180$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $180$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$180 \\div 2 = 90$",
+          "$90 \\div 2 = 45$",
+          "$45 \\div 3 = 15$",
+          "$15 \\div 3 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $180 = 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^2 \\times 3^2 \\times 5$."
+        ],
+        "result": "180 = 2^2 \\times 3^2 \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*2*45"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*2*3*15"
+        },
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3*5"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

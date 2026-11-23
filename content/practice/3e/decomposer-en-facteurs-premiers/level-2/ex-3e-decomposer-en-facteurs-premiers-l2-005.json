@@ -1,0 +1,130 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-005",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Écrire avec des puissances",
+    "estimatedMinutes": 2,
+    "tags": [
+      "puissances",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": "On considère le produit $P = 3 \\times 3 \\times 3 \\times 5 \\times 5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle écriture est égale à $P$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3^3 \\times 5^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3^2 \\times 5^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        },
+        {
+          "id": "C",
+          "content": "$9 \\times 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        },
+        {
+          "id": "D",
+          "content": "$15^5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PUISSANCE-LUE-PRODUIT"
+        }
+      ],
+      "answerFormat": "Choisis une écriture",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de fois le facteur $3$ est-il écrit ? et le facteur $5$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Le facteur $3$ est écrit trois fois et le facteur $5$ deux fois : $P = 3^3 \\times 5^2$.",
+        "incorrect": "L’exposant d’un facteur est le nombre de fois où il est écrit."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 3 \\times 3 = 3^3$ et $5 \\times 5 = 5^2$.",
+          "Donc $P = 3^3 \\times 5^2$."
+        ],
+        "result": "P = 3^3 \\times 5^2"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $P$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "675",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$3^3 = 27$ et $5^2 = 25$."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 27 \\times 25 = 675$.",
+        "incorrect": "Calcule d’abord $3^3$ et $5^2$, puis leur produit."
+      },
+      "solution": {
+        "lines": [
+          "$3^3 = 27$ et $5^2 = 25$",
+          "$P = 27 \\times 25 = 675$"
+        ],
+        "result": "P = 675"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "90"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

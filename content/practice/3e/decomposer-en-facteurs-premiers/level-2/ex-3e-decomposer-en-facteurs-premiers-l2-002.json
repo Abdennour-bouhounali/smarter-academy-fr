@@ -1,0 +1,154 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-002",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "L’échelle des divisions de 150",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Pour décomposer $150$, Adam écrit les divisions successives dans un tableau : à gauche le nombre à diviser, à droite le nombre premier par lequel il le divise.",
+    "table": {
+      "head": [
+        "Nombre",
+        "Divisé par"
+      ],
+      "rows": [
+        [
+          "150",
+          "2"
+        ],
+        [
+          "…",
+          "3"
+        ],
+        [
+          "25",
+          "5"
+        ],
+        [
+          "5",
+          "5"
+        ],
+        [
+          "1",
+          ""
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel nombre manque dans la deuxième ligne du tableau ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ce nombre est le quotient de la ligne du dessus."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule $150 \\div 2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\div 2 = 75$.",
+        "incorrect": "Chaque ligne contient le quotient de la division de la ligne précédente."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\div 2 = 75$",
+          "puis $75 \\div 3 = 25$, $25 \\div 5 = 5$ et $5 \\div 5 = 1$."
+        ],
+        "result": "75"
+      },
+      "timeSeconds": 40
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris la décomposition de $150$ en produit de facteurs premiers que donne le tableau.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3*5^2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les facteurs sont les nombres de la colonne de droite."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le nombre $5$ apparaît deux fois."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 = 2 \\times 3 \\times 5^2$.",
+        "incorrect": "Recopie tous les nombres de la colonne de droite, sans en oublier un.",
+        "notPrime": "Ton produit vaut bien $150$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $150$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $150$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\div 2 = 75$",
+          "$75 \\div 3 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $150 = 2 \\times 3 \\times 5 \\times 5 = 2 \\times 3 \\times 5^2$."
+        ],
+        "result": "150 = 2 \\times 3 \\times 5^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3*5"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*3*25"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

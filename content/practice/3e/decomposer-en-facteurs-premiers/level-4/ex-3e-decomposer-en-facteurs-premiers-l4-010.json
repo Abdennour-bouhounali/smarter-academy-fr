@@ -1,0 +1,177 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-010",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le programme et les puissances",
+    "estimatedMinutes": 4,
+    "tags": [
+      "programmation",
+      "puissances"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On utilise le programme suivant avec le nombre $1\\,700$. « $N$ modulo $d$ » est le reste de la division de $N$ par $d$.",
+    "table": {
+      "head": [
+        "Ligne",
+        "Instruction"
+      ],
+      "rows": [
+        [
+          "1",
+          "mettre N à 1700"
+        ],
+        [
+          "2",
+          "mettre d à 2"
+        ],
+        [
+          "3",
+          "répéter jusqu’à ce que N = 1"
+        ],
+        [
+          "4",
+          "    si N modulo d = 0 alors"
+        ],
+        [
+          "5",
+          "        ajouter d à la liste Facteurs"
+        ],
+        [
+          "6",
+          "        mettre N à N / d"
+        ],
+        [
+          "7",
+          "    sinon"
+        ],
+        [
+          "8",
+          "        ajouter 1 à d"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de fois la ligne $8$ « ajouter 1 à d » est-elle exécutée avant que le premier $5$ entre dans la liste ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Avec $d = 2$, le programme divise deux fois : que vaut alors $N$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ensuite, compte les passages de $d = 2$ à $d = 5$."
+        }
+      ],
+      "feedback": {
+        "correct": "Après deux divisions par $2$, $N = 425$ ; $d$ passe de $2$ à $3$, de $3$ à $4$, de $4$ à $5$ : trois fois.",
+        "incorrect": "Suis les valeurs de $N$ et de $d$ tour par tour."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,700 \\div 2 = 850$, $850 \\div 2 = 425$ : $425$ est impair.",
+          "$d$ passe à $3$ (reste $2$), à $4$ (reste $1$), à $5$ (reste $0$).",
+          "La ligne $8$ est exécutée $3$ fois."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris, avec des puissances, la décomposition de $1\\,700$ que donne la liste Facteurs.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*5^2*17",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Continue à suivre le programme avec $N = 425$ et $d = 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte combien de fois chaque nombre entre dans la liste."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,700 = 2^2 \\times 5^2 \\times 17$.",
+        "incorrect": "Termine la liste, puis regroupe les facteurs identiques.",
+        "notPrime": "Ton produit vaut bien $1\\,700$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,700$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,700$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,700 \\div 2 = 850$",
+          "$850 \\div 2 = 425$",
+          "$425 \\div 5 = 85$",
+          "$85 \\div 5 = 17$",
+          "$17 \\div 17 = 1$",
+          "Donc $1\\,700 = 2 \\times 2 \\times 5 \\times 5 \\times 17 = 2^2 \\times 5^2 \\times 17$."
+        ],
+        "result": "1\\,700 = 2^2 \\times 5^2 \\times 17"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*5*17"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2^2*425"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

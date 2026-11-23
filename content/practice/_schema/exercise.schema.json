@@ -29,6 +29,14 @@
       "type": "string",
       "pattern": "^ex-[a-z0-9]+(-[a-z0-9]+)*-l[1-5]-[0-9]{3}$"
     },
+    "brevet": {
+      "description": "3e (obligatoire dans une banque de 3e, facultatif ailleurs) : la partie du brevet que l'exercice entraîne — 1 automatismes sans calculatrice, 2 problèmes, null ni l'une ni l'autre. Règles : scripts/validate-lib.mjs › brevetTagErrors.",
+      "enum": [1, 2, null]
+    },
+    "calculator": {
+      "description": "La calculatrice est-elle permise ? `brevet: 1` impose false.",
+      "type": "boolean"
+    },
     "generator": {
       "description": "Provenance d'un exercice GÉNÉRÉ : l'outil, sa version, la graine. Informatif ; jamais lu par le moteur.",
       "type": "object",
@@ -100,13 +108,13 @@
           "description": "Mastery V2 — la demande cognitive, pour l'EXPLICATION de la maîtrise (« réussi sur une question de transfert »). Jamais un poids.",
           "enum": ["recall", "apply", "transfer", "reason"]
         },
-        "answerType": { "enum": ["choice", "multiChoice", "rational", "affine", "interval", "point", "integerSet"] },
+        "answerType": { "enum": ["choice", "multiChoice", "rational", "affine", "interval", "point", "integerSet", "factorization"] },
         "answerFormat": {
           "description": "Visible par l'élève : COMMENT saisir. Ne doit jamais révéler la réponse (invariant 8).",
           "type": "string"
         },
         "expectedAnswer": {
-          "description": "Jamais montré. Forme dépendante de answerType — voir le validateur."
+          "description": "Jamais montré. Forme dépendante de answerType — voir le validateur. `factorization` : la décomposition CANONIQUE en chaîne, bases premières strictement croissantes, exposant 1 omis, sans espace (\"2^3*3^2*5\")."
         },
         "evaluationPolicy": {
           "type": "object",
@@ -114,7 +122,10 @@
           "properties": {
             "acceptEquivalent": { "type": "boolean" },
             "tolerance": { "type": ["string", "null"] },
-            "requiredForm": { "enum": ["irreducible", null] }
+            "requiredForm": {
+              "description": "`irreducible` (rational) : une fraction juste non réduite est partielle. `powers` (factorization) : chaque premier UNE fois avec son exposant ; un premier répété est partiel (feedback.powersExpected).",
+              "enum": ["irreducible", "powers", null]
+            }
           }
         },
         "choices": {
@@ -166,7 +177,12 @@
             "correct": { "type": "string", "minLength": 3 },
             "incorrect": { "type": "string", "minLength": 3 },
             "partial": { "type": "string" },
-            "notIrreducible": { "type": "string" }
+            "notIrreducible": { "type": "string" },
+            "notPrime": { "description": "factorization : le produit vaut le nombre, un facteur n'est pas premier.", "type": "string" },
+            "zeroExponent": { "description": "factorization : le produit vaut le nombre, un exposant vaut 0.", "type": "string" },
+            "wrongExponents": { "description": "factorization : les bons premiers, mais pas le nombre.", "type": "string" },
+            "wrongProduct": { "description": "factorization : un autre produit.", "type": "string" },
+            "powersExpected": { "description": "factorization, requiredForm powers : juste, mais un premier répété au lieu de sa puissance.", "type": "string" }
           }
         },
         "visual": { "$ref": "#/$defs/visual" },

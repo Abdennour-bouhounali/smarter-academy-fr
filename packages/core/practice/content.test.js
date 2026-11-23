@@ -30,7 +30,7 @@ const exercises = allExercises();
  * parce qu'une cascade de ternaires oubliait silencieusement chaque nouveau
  * type : une question correcte était alors déclarée « refusée ».
  */
-const VALUE_TYPES = new Set(['rational', 'integerSet']);
+const VALUE_TYPES = new Set(['rational', 'integerSet', 'factorization']);
 
 function wrapValue(q, value) {
   return VALUE_TYPES.has(q.answerType) ? { value } : value;

@@ -1,0 +1,133 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-004",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "209 est-il premier ?",
+    "estimatedMinutes": 2,
+    "tags": [
+      "nombres premiers",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Léna a essayé de diviser $209$ par $2$, $3$, $5$ et $7$ : aucune division ne tombe juste."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Peut-elle déjà conclure que $209$ est premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare $7 \\times 7$ et $209$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Quel est le nombre premier suivant à essayer ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 7 = 49$ est bien plus petit que $209$ : il faut continuer, et $209 = 11 \\times 19$.",
+        "incorrect": "Tant que $p \\times p$ ne dépasse pas le nombre, il reste des essais à faire."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 7 = 49 < 209$ : on ne peut pas encore conclure.",
+          "On essaie $11$ : $209 = 11 \\times 19$."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Décompose $209$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "11*19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Essaie $11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $19$ est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$209 = 11 \\times 19$.",
+        "incorrect": "Continue les essais avec les nombres premiers après $7$.",
+        "notPrime": "Ton produit vaut bien $209$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $209$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $209$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$209 \\div 11 = 19$",
+          "$19 \\div 19 = 1$",
+          "Donc $209 = 11 \\times 19$."
+        ],
+        "result": "209 = 11 \\times 19"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "209"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

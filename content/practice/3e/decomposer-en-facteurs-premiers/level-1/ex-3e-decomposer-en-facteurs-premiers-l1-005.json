@@ -1,0 +1,154 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-005",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "L’ordre des divisions",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Inès décompose $90$ en produit de facteurs premiers. Elle a commencé par diviser par $2$ : $90 = 2 \\times 45$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Par quel nombre premier doit-elle maintenant essayer de diviser $45$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ORDRE-DES-ESSAIS"
+        },
+        {
+          "id": "D",
+          "content": "$9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        }
+      ],
+      "answerFormat": "Choisis un nombre",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$45$ est-il encore divisible par $2$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On essaie les nombres premiers dans l’ordre : $2$, $3$, $5$, $7$…"
+        }
+      ],
+      "feedback": {
+        "correct": "$45$ est impair, donc on passe au nombre premier suivant, $3$ : $45 = 3 \\times 15$.",
+        "incorrect": "Essaie les nombres premiers dans l’ordre, en partant du plus petit qui peut encore convenir."
+      },
+      "solution": {
+        "lines": [
+          "$45$ est impair : il n’est plus divisible par $2$.",
+          "Le nombre premier suivant est $3$, et $45 \\div 3 = 15$."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Termine la décomposition de $90$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3^2*5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Après $45 \\div 3 = 15$, le quotient $15$ se divise-t-il encore par $3$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue jusqu’à obtenir un quotient égal à $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 = 2 \\times 3^2 \\times 5$.",
+        "incorrect": "Continue les divisions jusqu’à ce que le quotient soit $1$ : chaque diviseur trouvé est un facteur.",
+        "notPrime": "Ton produit vaut bien $90$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $90$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $90$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$90 \\div 2 = 45$",
+          "$45 \\div 3 = 15$",
+          "$15 \\div 3 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $90 = 2 \\times 3 \\times 3 \\times 5 = 2 \\times 3^2 \\times 5$."
+        ],
+        "result": "90 = 2 \\times 3^2 \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*3*15"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*45"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*5*9"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

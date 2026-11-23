@@ -1,0 +1,261 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-004",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Corriger un programme",
+    "estimatedMinutes": 5,
+    "tags": [
+      "programmation",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Ana a écrit un programme pour décomposer un nombre en facteurs premiers. Elle le teste avec $200$.",
+    "table": {
+      "head": [
+        "Ligne",
+        "Instruction"
+      ],
+      "rows": [
+        [
+          "1",
+          "mettre N à 200"
+        ],
+        [
+          "2",
+          "mettre d à 2"
+        ],
+        [
+          "3",
+          "répéter jusqu’à ce que d > N"
+        ],
+        [
+          "4",
+          "    si N modulo d = 0 alors"
+        ],
+        [
+          "5",
+          "        ajouter d à la liste Facteurs"
+        ],
+        [
+          "6",
+          "        mettre N à N / d"
+        ],
+        [
+          "7",
+          "    ajouter 1 à d"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que contient la liste Facteurs à la fin du programme d’Ana ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2$ ; $4$ ; $5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2$ ; $2$ ; $2$ ; $5$ ; $5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "id": "C",
+          "content": "$2$ ; $5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-UNE-DIVISION-PAR-PREMIER"
+        },
+        {
+          "id": "D",
+          "content": "$2$ ; $4$ ; $25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        }
+      ],
+      "answerFormat": "Choisis une liste",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ici, la ligne $7$ est exécutée à chaque tour, que le reste soit nul ou non."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Suis les valeurs : $d = 2$ et $N = 200$, puis $d = 3$ et $N = 100$…"
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 2$ : on ajoute $2$, $N = 100$ ; $d = 3$ : rien ; $d = 4$ : on ajoute $4$, $N = 25$ ; $d = 5$ : on ajoute $5$, $N = 5$ ; $d = 6 > 5$ : fin.",
+        "incorrect": "À chaque tour $d$ augmente de $1$, même juste après une division : suis les valeurs de $d$ et de $N$."
+      },
+      "solution": {
+        "lines": [
+          "$d = 2$ : le reste de $200$ par $2$ est nul, on ajoute $2$ et $N = 100$.",
+          "$d = 3$ : rien. $d = 4$ : le reste de $100$ par $4$ est nul, on ajoute $4$ et $N = 25$.",
+          "$d = 5$ : on ajoute $5$ et $N = 5$. $d = 6 > 5$ : le programme s’arrête.",
+          "La liste contient $2$ ; $4$ ; $5$."
+        ],
+        "result": "2 ; 4 ; 5"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle modification corrige le programme ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Ajouter $1$ à $d$ seulement quand $N$ modulo $d$ n’est pas nul (dans un « sinon »).",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Commencer avec $d$ égal à $1$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-UN-EST-PREMIER"
+        },
+        {
+          "id": "C",
+          "content": "Remplacer « mettre N à N / d » par « mettre N à N − d ».",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-LECTURE-RESTE"
+        },
+        {
+          "id": "D",
+          "content": "Arrêter la boucle quand $d$ dépasse $10$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis une modification",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quand un nombre premier divise $N$, peut-il le diviser encore une fois ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Après une division réussie, faut-il passer tout de suite au $d$ suivant ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut garder le même $d$ tant qu’il divise $N$ : $200 = 2 \\times 2 \\times 2 \\times 5 \\times 5$.",
+        "incorrect": "Le défaut vient de la ligne $7$ : elle change $d$ même quand $d$ divise encore $N$."
+      },
+      "solution": {
+        "lines": [
+          "Après $N = 100$, le nombre $2$ divise encore $N$ : il ne faut pas passer à $3$.",
+          "On n’ajoute $1$ à $d$ que lorsque le reste n’est pas nul."
+        ],
+        "result": "\\text{« ajouter 1 à d » dans un « sinon »}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Écris la décomposition de $200$ en facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^3*5^2",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$200 = 2 \\times 100$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte les facteurs $2$ et les facteurs $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 = 2^3 \\times 5^2$.",
+        "incorrect": "Divise par $2$ tant que c’est possible, puis par $5$, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $200$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $200$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $200$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$200 \\div 2 = 100$",
+          "$100 \\div 2 = 50$",
+          "$50 \\div 2 = 25$",
+          "$25 \\div 5 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $200 = 2 \\times 2 \\times 2 \\times 5 \\times 5 = 2^3 \\times 5^2$."
+        ],
+        "result": "200 = 2^3 \\times 5^2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*4*5^2"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*4*25"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

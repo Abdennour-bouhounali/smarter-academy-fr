@@ -1,0 +1,149 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-009",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Par où commencer pour 132",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Pour décomposer $132$, par quel nombre premier commence-t-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ORDRE-DES-ESSAIS"
+        },
+        {
+          "id": "C",
+          "content": "$11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ORDRE-DES-ESSAIS"
+        },
+        {
+          "id": "D",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-FACTEUR-COMPOSE"
+        }
+      ],
+      "answerFormat": "Choisis un nombre",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "On essaie les nombres premiers dans l’ordre, du plus petit au plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "$132$ est pair : on commence par $2$, le plus petit nombre premier.",
+        "incorrect": "Le plus petit nombre premier qui divise $132$ est le premier à essayer."
+      },
+      "solution": {
+        "lines": [
+          "$2$ est le plus petit nombre premier, et $132$ est pair.",
+          "On commence par $132 \\div 2 = 66$."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 30
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Décompose $132$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3*11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$132 \\div 2 = 66$, et $66$ est encore pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Après les divisions par $2$, essaie $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$132 = 2^2 \\times 3 \\times 11$.",
+        "incorrect": "Divise par $2$ tant que c’est possible, puis passe à $3$.",
+        "notPrime": "Ton produit vaut bien $132$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $132$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $132$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$132 \\div 2 = 66$",
+          "$66 \\div 2 = 33$",
+          "$33 \\div 3 = 11$",
+          "$11 \\div 11 = 1$",
+          "Donc $132 = 2 \\times 2 \\times 3 \\times 11 = 2^2 \\times 3 \\times 11$."
+        ],
+        "result": "132 = 2^2 \\times 3 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "2*3*11"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*66"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "4*3*11"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

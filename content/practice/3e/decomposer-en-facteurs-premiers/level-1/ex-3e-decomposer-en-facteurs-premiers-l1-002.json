@@ -1,0 +1,140 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-002",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Repérer un nombre premier",
+    "estimatedMinutes": 2,
+    "tags": [
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": "Rappel : un nombre premier est un nombre entier qui a exactement deux diviseurs, $1$ et lui-même."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Parmi les nombres $21$, $27$, $29$ et $33$, lequel est premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$21$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "$27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "C",
+          "content": "$29$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$33$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        }
+      ],
+      "answerFormat": "Choisis un nombre",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche dans les tables de $3$ et de $7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Trois de ces nombres sont dans la table de $3$ ou de $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 = 3 \\times 7$, $27 = 3 \\times 9$, $33 = 3 \\times 11$ ; $29$ n’a pour diviseurs que $1$ et $29$.",
+        "incorrect": "Teste la division de chaque nombre par $2$, $3$ et $5$."
+      },
+      "solution": {
+        "lines": [
+          "$21 = 3 \\times 7$ ; $27 = 3 \\times 9$ ; $33 = 3 \\times 11$.",
+          "$29$ n’est divisible ni par $2$, ni par $3$, ni par $5$, et $7 \\times 7 = 49 > 29$ : il est premier."
+        ],
+        "result": "29"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le nombre $1$ est un nombre premier.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-UN-EST-PREMIER"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de diviseurs le nombre $1$ a-t-il ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$1$ n’a qu’un seul diviseur, lui-même : il n’est pas premier.",
+        "incorrect": "Compte les diviseurs de $1$ et relis le rappel."
+      },
+      "solution": {
+        "lines": [
+          "Un nombre premier a exactement deux diviseurs.",
+          "$1$ n’en a qu’un : $1$ n’est pas un nombre premier."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 30
+    }
+  ]
+}

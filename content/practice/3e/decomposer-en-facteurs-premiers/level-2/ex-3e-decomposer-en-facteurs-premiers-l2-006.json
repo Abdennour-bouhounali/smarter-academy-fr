@@ -1,0 +1,144 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l2-006",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer 66 et 70",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $66$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3*11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$66$ est pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $33$ est-il dans la table de $3$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$66 = 2 \\times 3 \\times 11$.",
+        "incorrect": "Divise par $2$, puis essaie $3$ sur le quotient.",
+        "notPrime": "Ton produit vaut bien $66$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $66$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $66$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$66 \\div 2 = 33$",
+          "$33 \\div 3 = 11$",
+          "$11 \\div 11 = 1$",
+          "Donc $66 = 2 \\times 3 \\times 11$."
+        ],
+        "result": "66 = 2 \\times 3 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*33"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "6*11"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $70$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*5*7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$70$ est pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient $35$ se termine par $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$70 = 2 \\times 5 \\times 7$.",
+        "incorrect": "Divise par $2$, puis par $5$, et regarde ce qui reste.",
+        "notPrime": "Ton produit vaut bien $70$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $70$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $70$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\div 2 = 35$",
+          "$35 \\div 5 = 7$",
+          "$7 \\div 7 = 1$",
+          "Donc $70 = 2 \\times 5 \\times 7$."
+        ],
+        "result": "70 = 2 \\times 5 \\times 7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*35"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "7*10"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

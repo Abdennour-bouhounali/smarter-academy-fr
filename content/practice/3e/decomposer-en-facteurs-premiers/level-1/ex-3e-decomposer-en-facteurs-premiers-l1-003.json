@@ -1,0 +1,144 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-003",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Décomposer deux petits nombres",
+    "estimatedMinutes": 2,
+    "tags": [
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose chaque nombre en produit de facteurs premiers.",
+      "statement": "Décompose $30$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3*5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Commence par diviser par $2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Puis essaie $3$, puis $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 = 2 \\times 3 \\times 5$.",
+        "incorrect": "Divise par le plus petit nombre premier qui convient, puis recommence avec le quotient.",
+        "notPrime": "Ton produit vaut bien $30$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $30$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $30$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\div 2 = 15$",
+          "$15 \\div 3 = 5$",
+          "$5 \\div 5 = 1$",
+          "Donc $30 = 2 \\times 3 \\times 5$."
+        ],
+        "result": "30 = 2 \\times 3 \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*15"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "5*6"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $42$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3*7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$42$ est pair."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Après la division par $2$, essaie $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$42 = 2 \\times 3 \\times 7$.",
+        "incorrect": "Divise par $2$, puis continue avec le quotient.",
+        "notPrime": "Ton produit vaut bien $42$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $42$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $42$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "$42 \\div 2 = 21$",
+          "$21 \\div 3 = 7$",
+          "$7 \\div 7 = 1$",
+          "Donc $42 = 2 \\times 3 \\times 7$."
+        ],
+        "result": "42 = 2 \\times 3 \\times 7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "6*7"
+        },
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*21"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

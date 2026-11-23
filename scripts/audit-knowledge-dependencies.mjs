@@ -19,7 +19,7 @@
 //   node scripts/audit-knowledge-dependencies.mjs [--lesson <id>] [--grade 3e]
 //                                                 [--report] [--gate] [--strict] [--json]
 
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import {
   repoRoot, findLessonDirs, parseLessonConfig, buildLessonIndex, listSourceFiles, moduleFileNumber,
@@ -27,6 +27,7 @@ import {
 import { readKnowledge } from './lib/knowledgeData.mjs';
 import { ACTIVE_GRADE_IDS } from '../packages/core/curriculum/activeGrades.js';
 import { buildModuleStream } from './lib/exposureStream.mjs';
+import { isV2Lesson } from './validate-lib.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (name) => argv.includes(`--${name}`);
@@ -77,11 +78,10 @@ export function auditLesson(lessonDir, catalogue, options = {}) {
   });
 
   const knowledge = readKnowledge(lessonDir);
-  // A v2 lesson (`retiredModules: true` in its routes.jsx, LESSON_V2.md §2) has no module page: there is no exposure
-  // stream to audit. Its rules are forged in its world, checked by its own tests (`world/forges.test.js`) and the status
-  // script — not here.
-  const routesFile = join(lessonDir, 'routes.jsx');
-  if (existsSync(routesFile) && /retiredModules:\s*true/.test(readFileSync(routesFile, 'utf-8'))) {
+  // A v2 lesson (its `lesson.pack.js`, `validate-lib.mjs › isV2Lesson`, LESSON_V2.md §2) has no module page: there is
+  // no exposure stream to audit. Its rules are forged in its world, checked by its own tests (`world/forges.test.js`)
+  // and the status script — not here.
+  if (isV2Lesson(lessonDir)) {
     return {
       id: config.id, grade: config.grade, dir: rel, skipped: 'v2 — no module page',
       hasKnowledge: knowledge.file !== null, brickCount: 0, questionCount: 0, requiresCount: 0,

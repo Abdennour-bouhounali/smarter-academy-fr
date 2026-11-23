@@ -1,0 +1,135 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l5-005",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 5,
+  "brevet": 2,
+  "calculator": false,
+  "metadata": {
+    "title": "Le nombre mystère",
+    "estimatedMinutes": 4,
+    "tags": [
+      "facteurs premiers",
+      "puissances",
+      "problème"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "« Je suis un nombre entier compris entre $100$ et $200$. Ma décomposition en facteurs premiers ne contient que les nombres $2$ et $3$. Je suis divisible par $27$, mais pas par $4$. »"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est ce nombre ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "162",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divisible par $27$ : l’exposant de $3$ est au moins $3$. Pas divisible par $4$ : combien de facteurs $2$ au plus ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Essaie les nombres $3^3$, $3^4$, $2 \\times 3^3$, $2 \\times 3^4$… et garde ceux entre $100$ et $200$."
+        }
+      ],
+      "feedback": {
+        "correct": "Avec au plus un facteur $2$ et au moins trois facteurs $3$ : $27$, $54$, $81$, $162$, $243$… Le seul entre $100$ et $200$ est $162 = 2 \\times 3^4$.",
+        "incorrect": "Écris les nombres de la forme $3^b$ et $2 \\times 3^b$ avec $b \\geqslant 3$, et regarde lesquels sont entre $100$ et $200$."
+      },
+      "solution": {
+        "lines": [
+          "Pas divisible par $4$ : au plus un facteur $2$. Divisible par $27$ : au moins trois facteurs $3$.",
+          "$3^3 = 27$, $3^4 = 81$, $3^5 = 243$ ; $2 \\times 3^3 = 54$, $2 \\times 3^4 = 162$, $2 \\times 3^5 = 486$.",
+          "Le seul nombre entre $100$ et $200$ est $162$."
+        ],
+        "result": "162"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-MEMES-PREMIERS-SUFFISENT",
+          "value": "108"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris sa décomposition en facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2*3^4",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte ses facteurs $2$ et ses facteurs $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$162 = 2 \\times 3^4$.",
+        "incorrect": "Divise par $2$, puis par $3$ autant de fois que possible.",
+        "notPrime": "Ton produit vaut bien $162$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $162$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $162$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$162 \\div 2 = 81$",
+          "$81 \\div 3 = 27$",
+          "$27 \\div 3 = 9$",
+          "$9 \\div 3 = 3$",
+          "$3 \\div 3 = 1$",
+          "Donc $162 = 2 \\times 3 \\times 3 \\times 3 \\times 3 = 2 \\times 3^4$."
+        ],
+        "result": "162 = 2 \\times 3^4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-FACTEUR-COMPOSE",
+          "value": "2*81"
+        },
+        {
+          "id": "MISC-FACT-PUISSANCE-LUE-PRODUIT",
+          "value": "2*3^3"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

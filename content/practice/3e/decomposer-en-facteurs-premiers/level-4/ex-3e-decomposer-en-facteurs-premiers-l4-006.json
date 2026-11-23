@@ -1,0 +1,228 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l4-006",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Chercher un diviseur à la calculatrice",
+    "estimatedMinutes": 3,
+    "tags": [
+      "calculatrice",
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Hugo veut décomposer $1\\,457$. Il divise ce nombre par les nombres premiers à partir de $3$ et note ce qu’affiche sa calculatrice.",
+    "table": {
+      "head": [
+        "Division",
+        "Affichage"
+      ],
+      "rows": [
+        [
+          "1 457 ÷ 3",
+          "485,666…"
+        ],
+        [
+          "1 457 ÷ 7",
+          "208,142…"
+        ],
+        [
+          "1 457 ÷ 11",
+          "132,454…"
+        ],
+        [
+          "1 457 ÷ 13",
+          "112,076…"
+        ],
+        [
+          "1 457 ÷ 17",
+          "85,705…"
+        ],
+        [
+          "1 457 ÷ 19",
+          "76,684…"
+        ],
+        [
+          "1 457 ÷ 23",
+          "63,347…"
+        ],
+        [
+          "1 457 ÷ 29",
+          "50,241…"
+        ],
+        [
+          "1 457 ÷ 31",
+          "47"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Pourquoi Hugo n’a-t-il pas essayé de diviser par $2$ ni par $5$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1\\,457$ est impair et ne se termine ni par $0$ ni par $5$.",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Parce que $2$ et $5$ ne sont pas premiers.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-PREMIER-IMPAIR"
+        },
+        {
+          "id": "C",
+          "content": "Parce qu’on ne divise jamais par $2$ un nombre de quatre chiffres.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ORDRE-DES-ESSAIS"
+        }
+      ],
+      "answerFormat": "Choisis une raison",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde le dernier chiffre de $1\\,457$."
+        }
+      ],
+      "feedback": {
+        "correct": "Le chiffre des unités de $1\\,457$ est $7$ : il n’est divisible ni par $2$ ni par $5$.",
+        "incorrect": "La divisibilité par $2$ et par $5$ se lit sur le dernier chiffre."
+      },
+      "solution": {
+        "lines": [
+          "Le dernier chiffre de $1\\,457$ est $7$.",
+          "Il n’est ni pair, ni terminé par $0$ ou $5$ : pas de division par $2$ ni par $5$."
+        ],
+        "result": "\\text{Le dernier chiffre est 7}"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Décompose $1\\,457$ en produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs",
+      "expectedAnswer": "31*47",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche dans le tableau la seule division qui donne un nombre entier."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le quotient est-il premier ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,457 = 31 \\times 47$.",
+        "incorrect": "Une seule ligne du tableau affiche un nombre entier : utilise-la.",
+        "notPrime": "Ton produit vaut bien $1\\,457$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,457$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,457$ : reprends les divisions une par une."
+      },
+      "solution": {
+        "lines": [
+          "Le tableau donne $1\\,457 \\div 31 = 47$.",
+          "$47$ est premier ($7 \\times 7 = 49 > 47$).",
+          "Donc $1\\,457 = 31 \\times 47$."
+        ],
+        "result": "1\\,457 = 31 \\times 47"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-SEMBLE-PREMIER",
+          "value": "1457"
+        }
+      ],
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Un camarade affirme : « $1\\,457$ est premier, car aucun nombre premier inférieur à $30$ ne le divise. »",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Jusqu’où faut-il aller ? Compare $37 \\times 37$ à $1\\,457$."
+        }
+      ],
+      "feedback": {
+        "correct": "Il fallait aller jusqu’à $37$, car $37 \\times 37 = 1\\,369 \\leqslant 1\\,457$ ; et $31$ divise $1\\,457$.",
+        "incorrect": "Tant que $p \\times p$ ne dépasse pas le nombre, on ne peut pas conclure."
+      },
+      "solution": {
+        "lines": [
+          "$31 \\times 31 = 961$ et $37 \\times 37 = 1\\,369$ sont inférieurs à $1\\,457$ : il faut continuer après $30$.",
+          "Et $1\\,457 = 31 \\times 47$ : l’affirmation est fausse."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l1-004",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Lire une décomposition",
+    "estimatedMinutes": 1,
+    "tags": [
+      "facteurs premiers",
+      "calcul mental"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01"
+    }
+  },
+  "statement": {
+    "content": "On donne la décomposition en facteurs premiers de deux nombres $A$ et $B$.",
+    "formulas": [
+      "A = 2 \\times 5 \\times 11",
+      "B = 3 \\times 3 \\times 7"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "statement": "Calcule $A$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "110",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Commence par $2 \\times 5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 10 \\times 11 = 110$.",
+        "incorrect": "Calcule d’abord $2 \\times 5$, puis multiplie par $11$."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2 \\times 5 \\times 11$",
+          "$A = 10 \\times 11 = 110$"
+        ],
+        "result": "A = 110"
+      },
+      "timeSeconds": 40
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Calcule $B$.",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "63",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Commence par $3 \\times 3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 9 \\times 7 = 63$.",
+        "incorrect": "Calcule d’abord $3 \\times 3$, puis multiplie par $7$."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3 \\times 3 \\times 7$",
+          "$B = 9 \\times 7 = 63$"
+        ],
+        "result": "B = 63"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-UNE-DIVISION-PAR-PREMIER",
+          "value": "21"
+        }
+      ],
+      "timeSeconds": 40
+    }
+  ]
+}

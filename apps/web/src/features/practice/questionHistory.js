@@ -68,8 +68,9 @@ export function formatAnswer(question, answer) {
       const picked = (question.choices ?? []).filter((c) => ids.includes(c.id));
       return picked.length ? { kind: 'rich', text: picked.map((c) => c.content).join(' ; ') } : null;
     }
+    case 'factorization':
     case 'rational':
-      // Saisie MathLive (feuille d'examen) : on relit la formule telle qu'écrite.
+      // Saisie MathLive (feuille d'examen, décomposition) : on relit la formule telle qu'écrite.
       if (typeof answer.latex === 'string' && answer.latex.trim()) return { kind: 'rich', text: `$${answer.latex}$` };
       // falls through
     case 'integerSet': {

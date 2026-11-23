@@ -21,6 +21,7 @@ import { Rational, rationalEquals, normalizeNumeric } from './rational.js';
 import { parseAffineAnswer, affineEquals, affineToString } from './affineCanonical.js';
 import { parseInterval, intervalEquals, intervalToString } from './intervalCompare.js';
 import { isIrreducible } from '../arithmetic/divisibility.js';
+import { parseFactorization, productOf, isPrime, canonicalFactorization, MAX_FACTORIZED } from './factorization.js';
 
 export const OUTCOMES = Object.freeze({
   CORRECT: 'correct',
@@ -39,7 +40,7 @@ export const isInertOutcome = (o) => o === OUTCOMES.SYNTAX_ERROR || o === OUTCOM
 
 /** Types de réponse gérés. Le validateur de contenu compare cette liste au schéma. */
 export const SUPPORTED_ANSWER_TYPES = Object.freeze([
-  'choice', 'multiChoice', 'rational', 'affine', 'interval', 'point', 'integerSet', 'selfCheck',
+  'choice', 'multiChoice', 'rational', 'affine', 'interval', 'point', 'integerSet', 'selfCheck', 'factorization',
 ]);
 
 /**
@@ -295,6 +296,55 @@ function evaluatePoint(answer, question) {
   return result(OUTCOMES.INCORRECT, { misconceptionId, normalized });
 }
 
+/* ── Décomposition en produit de facteurs premiers (3e) ──────────────────────
+ *
+ * La clé est canonique (`2^3*3^2*5`) ; l'élève écrit un produit dans n'importe quel ordre (factorization.js).
+ * Deux modes, par `evaluationPolicy.requiredForm` :
+ *   - absent : tout produit de nombres PREMIERS égal au nombre est juste — `2^3*3^2*5` (chaque premier une fois)
+ *     est `correct`, `2*2*2*3*3*5` (un premier répété) est `equivalent_correct` ;
+ *   - `'powers'` : chaque premier UNE fois avec son exposant — un premier répété est `partially_correct`
+ *     (`feedbackKey: 'powersExpected'`), comme une fraction juste mais non réduite.
+ * Les erreurs, toutes `incorrect`, se distinguent par `feedbackKey` :
+ *   - `notPrime` : le produit vaut le nombre mais un facteur n'est pas premier (`4*15`, `1*2^3*…`, le nombre seul) ;
+ *   - `zeroExponent` : le produit vaut le nombre mais un exposant vaut 0 ;
+ *   - `wrongExponents` : exactement les bons premiers, mais le produit n'est pas le nombre ;
+ *   - `wrongProduct` : tout autre produit qui n'est pas le nombre.
+ * Une signature (`misconceptionSignatures`) correspond quand elle a la même écriture canonique que la réponse.
+ */
+function evaluateFactorization(answer, question) {
+  const raw = answer?.value;
+  const given = parseFactorization(raw);
+  if (!given) return syntaxError(String(raw ?? ''));
+
+  const expected = parseFactorization(question.expectedAnswer);
+  const n = expected ? productOf(expected) : null;
+  if (!expected || n === null || n < 2 || n > MAX_FACTORIZED || !expected.every((f) => f.e >= 1 && isPrime(f.p))) {
+    throw new Error(`expectedAnswer illisible pour ${question.id}`);
+  }
+
+  const normalized = canonicalFactorization(given);
+  const signature = () =>
+    matchSignature(question, (v) => {
+      const sig = parseFactorization(v);
+      return sig ? canonicalFactorization(sig) === normalized : false;
+    });
+  const bases = new Set(given.map((f) => f.p));
+
+  if (productOf(given) === n) {
+    if (given.some((f) => f.e === 0)) return result(OUTCOMES.INCORRECT, { normalized, feedbackKey: 'zeroExponent', misconceptionId: signature() });
+    if (!given.every((f) => isPrime(f.p))) return result(OUTCOMES.INCORRECT, { normalized, feedbackKey: 'notPrime', misconceptionId: signature() });
+    if (bases.size === given.length) return result(OUTCOMES.CORRECT, { normalized });
+    if (question.evaluationPolicy?.requiredForm === 'powers') {
+      return result(OUTCOMES.PARTIALLY_CORRECT, { normalized, feedbackKey: 'powersExpected', misconceptionId: signature() });
+    }
+    return result(OUTCOMES.EQUIVALENT_CORRECT, { normalized });
+  }
+
+  const primes = new Set(expected.map((f) => f.p));
+  const samePrimes = given.every((f) => f.e >= 1 && primes.has(f.p)) && bases.size === primes.size;
+  return result(OUTCOMES.INCORRECT, { normalized, feedbackKey: samePrimes ? 'wrongExponents' : 'wrongProduct', misconceptionId: signature() });
+}
+
 /* ── Auto-évaluation (« بيّن أن »، « برّر ») ──────────────────────────────
  *
  * Une démonstration ne se corrige pas automatiquement. Deux temps (décision
@@ -326,6 +376,7 @@ const EVALUATORS = {
   point: evaluatePoint,
   integerSet: evaluateIntegerSet,
   selfCheck: evaluateSelfCheck,
+  factorization: evaluateFactorization,
 };
 
 /**

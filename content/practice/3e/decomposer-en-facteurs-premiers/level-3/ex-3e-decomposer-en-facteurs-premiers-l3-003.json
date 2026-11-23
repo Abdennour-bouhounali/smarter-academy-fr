@@ -1,0 +1,185 @@
+{
+  "id": "ex-3e-decomposer-en-facteurs-premiers-l3-003",
+  "lessonCode": "decomposer-en-facteurs-premiers",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Savoir où s’arrêter",
+    "estimatedMinutes": 4,
+    "tags": [
+      "nombres premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_decomposer-en-facteurs-premiers_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Zoé veut savoir si $127$ est un nombre premier. Elle essaie de le diviser par les nombres premiers dans l’ordre : $2$, $3$, $5$, $7$…"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le plus grand nombre premier qu’elle doit essayer ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Si $127 = a \\times b$, l’un des deux facteurs est le plus petit : que peut-on dire de son carré ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule $p \\times p$ pour les nombres premiers $p$ successifs, et compare à $127$."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\times 11 = 121 \\leqslant 127$ mais $13 \\times 13 = 169 > 127$ : on s’arrête à $11$.",
+        "incorrect": "On essaie les nombres premiers $p$ tant que $p \\times p$ ne dépasse pas le nombre."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 11 = 121 \\leqslant 127$ ;",
+          "$13 \\times 13 = 169 > 127$.",
+          "Le dernier nombre premier à essayer est $11$."
+        ],
+        "result": "11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FACT-ARRET-MAL-PLACE",
+          "value": "63"
+        },
+        {
+          "id": "MISC-FACT-ARRET-MAL-PLACE",
+          "value": "127"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Aucune des divisions par $2$, $3$, $5$, $7$ et $11$ ne tombe juste. Pourquoi peut-elle s’arrêter ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Si $127$ avait un diviseur plus grand, son autre facteur serait plus petit que $13$ et aurait déjà été trouvé.",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Parce qu’un nombre premier se termine toujours par $7$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-SEMBLE-PREMIER"
+        },
+        {
+          "id": "C",
+          "content": "Parce qu’on essaie toujours exactement cinq nombres premiers.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        },
+        {
+          "id": "D",
+          "content": "Il faut continuer jusqu’à $63$, la moitié de $127$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis une raison",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Si $127 = a \\times b$ avec $a \\leqslant b$, que vaut au plus $a$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Dans $127 = a \\times b$ avec $a \\leqslant b$, on a $a \\times a \\leqslant 127$, donc $a \\leqslant 11$ : tous ces cas ont été essayés.",
+        "incorrect": "Pense à un produit $a \\times b$ : les deux facteurs ne peuvent pas être tous les deux grands."
+      },
+      "solution": {
+        "lines": [
+          "Si $127 = a \\times b$ avec $2 \\leqslant a \\leqslant b$, alors $a \\times a \\leqslant a \\times b = 127$.",
+          "Donc $a \\leqslant 11$ : un tel diviseur aurait déjà été trouvé."
+        ],
+        "result": "\\text{Le plus petit facteur serait au plus } 11"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$127$ est-il un nombre premier ?",
+      "learningPoints": [
+        {
+          "code": "3e_decomposer-en-facteurs-premiers_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FACT-ARRET-MAL-PLACE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis les deux réponses précédentes."
+        }
+      ],
+      "feedback": {
+        "correct": "Aucun nombre premier jusqu’à $11$ ne divise $127$, et on peut s’arrêter là : $127$ est premier.",
+        "incorrect": "Les divisions utiles ont toutes été faites : que peut-on conclure ?"
+      },
+      "solution": {
+        "lines": [
+          "Aucun des nombres $2$, $3$, $5$, $7$, $11$ ne divise $127$.",
+          "$13 \\times 13 > 127$ : $127$ est premier."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 30
+    }
+  ]
+}
