@@ -1,15 +1,13 @@
 # France rebuild plan — the French platform rebuilt on the DZ core
 
-**Status (2026-11-23): Stage 1 is done except what needs eyes — the tree is the lesson engine and the shell around a
-French catalogue; the API and the WHOLE web interface speak French, left to right (`locales/fr`, French routes, a
-test refuses an Arabic character anywhere in the web but the switched-off books store); payments, registration and
-accounts created by a school or a teacher are each CLOSED behind an admin switch; the 3e net is live with its lessons
-announced (« bientôt ») and none built. IN PROGRESS: chapter 1 of 3e reshaped to « Multiples et diviseurs » (owner),
-the web side of the managed-accounts switch, the math lab re-sorted to the French collège, the lesson skill and the
-validators adapted to France. NEXT: the first French lesson, « Décomposer un nombre en facteurs premiers », PORTED
-from DZ 4AM unit 1 on `divisorIsles` (§8). Everything is committed and pushed on `rebuild/dz-core`; nothing is
-deployed. Owed: one look at the French interface in a browser (nothing has been seen), the walks run, the API suite
-on MySQL, a local database. The progress log is §9.**
+**Status (2026-11-23, evening): the FIRST French lesson is built, walked and looked at — 3e « Décomposer un nombre
+en facteurs premiers » on `divisor-isles` (§9). Stage 1 is done except what needs eyes: the API and the whole web
+interface speak French; payments, registration and accounts created by a school or a teacher are each CLOSED behind an
+admin switch; the math lab shows the collège only; 59 lessons are announced (« bientôt »). NEXT: the owner PLAYS
+lesson 1 (his remarks go to `play.md`); then lesson 2 « Trouver le PGCD de deux nombres », which really ports from
+three DZ lessons; the shell seen in a browser (only the lesson's screens have been). Everything is committed and
+pushed on `rebuild/dz-core`; nothing is deployed. Owed: the shell's walks, the API suite on MySQL, a local database,
+the owner's validation of the 3e net. The progress log is §9.**
 
 This folder is the French platform being rebuilt from the Algerian one. It is the mirror image of
 `docs/ALGERIA_PLATFORM_MASTER_SPEC.md` (how DZ was made from FR in September 2026), and that spec's rule still binds:
@@ -370,6 +368,7 @@ Working rule learned on 2026-11-22: while agents share this folder, **every comm
 
 | Date | Step | What happened |
 |---|---|---|
+| 2026-11-23 | §8 (lesson 1) | **The first French lesson: `decomposer-en-facteurs-premiers`** — design `docs/reports/UNIT_3E_MULTIPLES_ET_DIVISEURS_DESIGN.md`. DZ had nothing to port whole (it excludes prime factorisation): ported — the world, the STOP experiment (`pairs`), the board's structure, 9 exercises; built new — a ladder for one number (`ladder · factor`), a remainder sheet (`sheet`), a typed exponent, the answer type `factorization` (JS = PHP, 49 shared cases), claims `factorization` and `prime`, a board station, a lab instrument, the warm-up family `4e.m1.r06`, a bank of 50 (10 per palier, brevet and calculator tags) with its oracle, the class test. Four keys (the smallest prime again and again; powers; when to stop; the sheet), a last bridge announced as « 2³ × 3² × 7 cases ». Walks green twice at 1366×768 (story, hub, trainer, board, launch; the sitting once); the walk library, never run in French, needed about 15 repairs; the walks and the main session's review of 26 screens found about 45 defects, fixed, each with its line in the skill's ledger. At `bcca5dbb`: web 398 files / 5,776 tests, core 1,021, scripts 145, API 1,566 (the same 8 MySQL-only do not pass); lint, unused, unreached, format, `check:lessons` (190.9 KB) pass. NOT done: the owner has not played it; the warm-up, the class test and the practice map were walked but not looked at; level-2 forms `divisible` and `write` of the warm-up are asked by no launch; key 2 cannot read key 1's ladders (the engine passes no experiment from one forge to another) |
 | 2026-11-23 | §8 (prep) | **The lesson skill and the validators are French** (`c388e94f`): the skill opens with « Port before you build » and keeps its whole ledger (8 lines moved to « no longer applies »); validators: sub-items a–h, brevet provenance, the `brevet` / `calculator` tags required in 3e, French typography as errors, French forbidden contexts; a v2 lesson is recognised by its pack. Scripts: 14 files, 141 tests. The port map of DZ 4AM unit 1 says: **DZ has NO prime-factorisation lesson** (lesson 1 is built new on `divisorIsles`, porting the STOP experiment and the divisibility lens); the PGCD lesson ports from three DZ lessons, the irreducible fraction from one, the gears lesson from none. The new rules have not met a real French bank. Chosen without the owner: brevet years 2017–2027, typography failures are errors, pork kept and bank interest removed in the thinking-lab list |
 | 2026-11-23 | 7bis (math lab) | **The math lab shows the collège only** (`40dd5a45`): `labConfig.js › LYCEE_LAB_ENABLED = false`; probability and statistics come to the collège, vectors / systems / sequences / conics / analysis stay hidden; no playing card or bet was found. About 15 walks open the hidden side and will fail; none run |
 | 2026-11-23 | 1F (accounts, web) | The admin card and the hiding of the roster import and credential buttons while closed (`3dccb02e`). Reported, not changed: the teacher's credential endpoint re-issues a password to a SELF-registered student (the school's refuses); a managed student who forgets his password has no way back while closed |

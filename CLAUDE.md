@@ -5,7 +5,7 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 
 | Where | What |
 |---|---|
-| `apps/web` | the React app (Vite, JSX — no TypeScript). The lesson engine: `src/lessons/common/`. A lesson will live in `src/lessons/college/<grade>/<theme>/<unit>/<lesson>/` — **there is no lesson yet** |
+| `apps/web` | the React app (Vite, JSX — no TypeScript). The lesson engine: `src/lessons/common/`. A lesson will live in `src/lessons/college/<grade>/<theme>/<unit>/<lesson>/` — **ONE lesson exists**: `college/3e/nombres_calculs/multiples-et-diviseurs/decomposer-en-facteurs-premiers/` (2026-11-23) |
 | `packages/core` | pure logic: the curriculum (`curriculum/fr/`: catalogue, programme, learning net, school calendar), number formats, progress, the practice evaluator |
 | `apps/api` | the Laravel API. Tests: `cd apps/api && php8.4 artisan test` (in-memory SQLite) |
 | `content/` | exercise banks, class tests, thinking-lab challenges — all EMPTY today |
@@ -19,7 +19,7 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   reads any Algerian file that was since deleted.
 - **Done**: every Algerian lesson, exercise bank, class test, textbook source and the three legacy lesson systems are
   deleted; the tree is the lesson ENGINE and the SHELL around it; the official French texts are filed; **the 3e net
-  is live** (`packages/core/curriculum/fr/`: 13 units, 60 lessons all `coming_soon`, 166 learning points with locked
+  is live** (`packages/core/curriculum/fr/`: 13 units, 60 lessons — ONE built and `available`, 59 `coming_soon` —, 166 learning points with locked
   ids, 55 programme items + 53 stubs of earlier grades — not yet validated by the owner; 6e, 5e, 4e are empty
   skeletons); `npm run lesson:brief -- <code>` prints what a lesson must teach; the server side of the payment switch
   is built (plan §4ter) — payments are CLOSED by default.
@@ -37,10 +37,12 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 - **Accounts created by a school or a teacher are CLOSED** behind an admin switch (`ManagedAccountsGate`; the admin's
   card « Comptes créés… » on the dashboard; `hooks/useManagedAccounts.js` hides the roster import and the credential
   buttons of the teacher's and the school's spaces while closed, and fails closed).
-- **NOT done yet — do not be surprised**: nothing has been SEEN in a browser and no walk has been run since the
-  translation; the API has never run on MySQL; the French rules of the validators (brevet provenance, the
-  `brevet` / `calculator` tags, French typography — `scripts/validate-lib.mjs`) have not met a real French bank yet;
-  the math lab's walks still open the hidden lycée side; a few comments in `apps/api` and `packages/core` still cite Arabic.
+- **NOT done yet — do not be surprised**: only the FIRST lesson's screens have been seen in a browser (its world, its
+  forges, its board, the teacher's memo, the brevet sitting — walked at 1366×768, `apps/web/e2e/lessons/`); the rest of
+  the shell (the student's and the teacher's spaces, the admin, the math lab, the public pages) has NOT been seen and
+  its walks have not run since the translation; the API has never run on MySQL and no local database exists (the
+  lesson walks need none: they double the server in the browser); the math lab's walks still open the hidden lycée
+  side; a few comments in `apps/api` and `packages/core` still cite Arabic.
 - **The two products are 100% separated** (owner): two repositories, two databases, two deployments, no shared runtime,
   no shared package, no country switch, no locale parameter. This repository holds ONE language.
 
@@ -110,7 +112,7 @@ answers: neutral everyday French contexts, euros, no religion, no brand, no bett
 - **Report honestly**: what failed, what was not checked, what you are unsure of. An agent's report is not a fact:
   re-run its numbers before committing.
 
-## The lesson engine (kept whole, with no lesson to play)
+## The lesson engine
 
 A v2 lesson is **content plus, at most once per unit, one world mechanic**:
 - the kit `apps/web/src/lessons/common/gameworld/kit/` (screens, the world runtime, the rule forge, the exam sitting,
@@ -138,7 +140,7 @@ A v2 lesson is **content plus, at most once per unit, one world mechanic**:
 | `npm run check:unused` | unused exports and i18n keys; its baseline only SHRINKS |
 | `npm run check:format` | Prettier on the listed areas |
 | `npm run check:lessons` | the validators, the generated indexes, the net, the calendar (which passes while saying the French year is not written), the entry budget (212 KB gzip) |
-| `node apps/web/e2e/<walk>.mjs` | walks at 1366×768 — rewritten for French but NOT run since; `_phase6-activation.mjs` and `access-limits.mjs` fail while payments are closed; no lesson walk exists |
+| `E2E_BASE=http://localhost:<port> E2E_SIZE=1366x768 node apps/web/e2e/lesson.mjs <lesson> all <outDir>` (then `sitting`, alone) | a lesson's walks at 1366×768, on a running `vite` of this tree — green for `decomposer-en-facteurs-premiers`. The shell's walks (`node apps/web/e2e/<walk>.mjs`) were rewritten for French and NOT run; `_phase6-activation.mjs` and `access-limits.mjs` fail while payments are closed |
 
 Generators: `generate:lesson-index`, `generate:lab-order`, `generate:learning-net`, `generate:compass-index`,
 `generate:lp-lock` (after APPENDING a learning point; it refuses a reorder on a built lesson).

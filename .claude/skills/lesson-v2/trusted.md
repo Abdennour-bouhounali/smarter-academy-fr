@@ -6,15 +6,27 @@ LIMITS it was proved for. A lesson whose data stays inside the limits checks tha
 the screen; a lesson that exceeds a limit walks it. A line is REMOVED when the screen's code changes after its commit
 (`git log <commit>..HEAD -- <files>`) or a lesson breaks it. **An empty table means: walk everything.**
 
-## The French table — EMPTY (2026-11-23)
+## The French table (first lines: 2026-11-23)
 
 | Screen | Files | Proved by, at commit | Proved for (limits) | Data test that stands in for the walk |
 |---|---|---|---|---|
+| The forge's frame — tiles, a refutation, an attack, the seal, a last step, a tablet | `kit/RuleForge.jsx`, `kit/Tablet.jsx`, `divisorIsles/forgeParts.jsx` | `decomposer-en-facteurs-premiers`, `bcca5dbb` | 2 or 3 columns of tiles, a tile up to « je la repose tant qu’elle tient »; a last step of four lines in ONE column (`use.column`), one with two raised exponent boxes and a yes/no, one of a program sentence and four boxes; a tablet of a rule, two sentences, two equalities and a note | the lesson's `forges.test.js`, `limits.test.js` |
+| `ladder · factor` | `divisorIsles/InquiryFactor.jsx` | same | a rack of 8 planks, a gap up to 495, 5 notebook lines shown | `inquiryFactor.render.test.jsx` |
+| `pairs` | `divisorIsles/Inquiry.jsx` | same | up to 16 planks tried (a gap of 221): the table shrinks, the strip breaks in two | `inquiryLayout.test.js` |
+| `sheet` | `divisorIsles/InquirySheet.jsx` | same | up to 19 lines in two blocks (4 641) | `inquirySheet.render.test.jsx` |
+| The last bridge announced by a label, its store, its 3D sign | `divisorIsles/DivisorIsles.jsx › Boss`, `Game.js` | same | a label of three powers (« 2³ × 3² × 7 »), two planks, the nudge of the story in the store (three lines) | `boss.render.test.jsx`; the sign: the walk measures it |
+| The board's `ladder` station | `features/classSession/LadderStation.jsx` | same | a ladder of 9 rungs (720), a sheet of 15 lines in three columns (2 387), an `after` of about 260 characters | `ladderStation.render.test.jsx` |
+| The lab's « L’échelle des facteurs » | `lessonlab/tools/FactorLadder.jsx` | same | 13 planks (8 192) | `factor.render.test.jsx` |
+| The brevet sitting with a `factorization` step | `kit/ExamSitting.jsx`, `features/practice/inputs/FactorizationInput.jsx` | same | the field without placeholder, its pad under it in two rows; a program listing of 7 lines | `examSittingField.render.test.jsx`, `problemTable.render.test.jsx` |
 
-Every screen below was proven on the Algerian platform, in Arabic, right to left. On 2026-11-23 the kit's words became
-French, its direction left to right, and nothing has been seen in a browser since (`CLAUDE.md`). By the rule above,
-every line left: **the first French lesson walks every screen** and writes here what it proves. The Algerian lines are
-kept below as the LIMITS to aim for and the data tests that already exist — never as a proof.
+Seen by the main session's eyes at that commit: 26 screens of the walk (the title, the first island, each experiment
+at its heaviest number, each forge's tiles, one refutation, each last step but key 3's, a tablet, the store and the
+sign, the knowledge map, two trainer sheets, one sitting sheet, two board stations, the memo, the lab). NOT looked at:
+the warm-up's screens, the class test, the practice map, the end of the world. Everything that is not in the table is
+walked by the next lesson.
+
+The lines below were proven on the Algerian platform, in Arabic, right to left: they are kept as LIMITS to aim for
+and as the data tests that already exist — never as a proof here.
 
 ## History — proven on the Algerian platform (NOT a proof here)
 
