@@ -1,6 +1,6 @@
 /**
  * THE INVESTIGATION `deal` of this world (see `Inquiry.jsx`, which mounts it; logic and state machine: `deal.js`).
- * Two collections drawn on a table (roses and lilies, dates and figs…) shared into k IDENTICAL lots (vases, baskets):
+ * Two collections drawn on a table (roses and lilies, apples and pears…) shared into k IDENTICAL lots (vases, baskets):
  * he chooses k, says BEFORE whether everything will be shared, and the world deals both collections round by round —
  * one item of each kind per lot and per round; what cannot be dealt stays on the table, apart. A table keeps every try.
  * Then he types the most lots and what one lot holds; a miss is answered by a deal, a row of his table, or « a number

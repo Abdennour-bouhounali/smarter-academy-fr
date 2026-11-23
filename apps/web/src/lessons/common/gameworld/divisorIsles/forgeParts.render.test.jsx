@@ -226,3 +226,68 @@ describe('a case that is a PAIR of gaps — two bridges, the same plank laid on 
     expect(count(line, /<rect/g)).toBe(3 + 1);
   });
 });
+
+describe('a case of a forge that is a FACTOR LADDER — its number and its planks, never one bridge', () => {
+  /** A factor case as a lesson writes it (forgeParts.jsx › `c.factor`). */
+  const factor = (n, planks, extra = {}) => ({
+    held: true,
+    factor: { n, planks, ...(extra.fell ? { fell: extra.fell } : {}) },
+    ...extra.c,
+  });
+
+  it('ask: the number alone; build and done: the planks in a row, as planks, then a green 1 — no product, no power, no name', () => {
+    const ask = renderToString(<Mirror c={factor(72, [2, 2, 2, 3, 3])} stage="ask" fast />);
+    expect(ask).toContain('data-rf-factor="72:2.2.2.3.3"');
+    expect(ask).toContain('data-rf-stage="ask"');
+    expect(count(ask, /data-rf-factor-plank=/g)).toBe(0);
+    expect(ask).not.toContain('data-rf-bridge');
+    const done = renderToString(<Mirror c={factor(72, [2, 2, 2, 3, 3])} stage="done" fast />);
+    expect(count(done, /data-rf-factor-plank="2"/g)).toBe(3);
+    expect(count(done, /data-rf-factor-plank="3"/g)).toBe(2);
+    expect(done).toContain('data-rf-factor-left="1"');
+    expect(done).toMatch(/rf-factor__end is-one/);
+    expect(done).toMatch(/class="rf-bridge rf-factor is-done is-held/);
+    // the planks' lengths are live SVG text; nothing between them: no ×, no power, no word
+    expect(done).not.toMatch(/×|\\times|<sup|\^|planche|facteur|premier|puissance/);
+    expect(done).toContain('aria-label="72 : 2 · 2 · 2 · 3 · 3 → 1"');
+  });
+
+  it('a ladder that stopped (« one division per prime »): what is left in amber, the plank that fell on it, its look', () => {
+    const c = { ...factor(72, [2, 3], { fell: 5 }), held: false };
+    const out = renderToString(<Mirror c={c} stage="done" fast />);
+    expect(out).toContain('data-rf-factor="72:2.3:5"');
+    expect(out).toContain('data-rf-factor-left="12"');
+    expect(out).toMatch(/rf-factor__end is-left/);
+    // 4 holds on 12: a plank that holds is not drawn as falling — the case is refused, as a plank that does not divide
+    expect(() => renderToString(<Mirror c={factor(72, [2, 3, 5])} stage="done" fast />)).toThrow(/does not hold on 12/);
+    const fell = { ...factor(495, [3, 3], { fell: 9 }), held: false };
+    const f = renderToString(<Mirror c={fell} stage="done" fast />);
+    expect(f).toContain('data-rf-factor-fell="9"'); // 9 on 55
+    expect(f).toContain('data-rf-factor-left="55"');
+    expect(f).toMatch(/class="rf-bridge rf-factor is-done is-fell/);
+    expect(() => renderToString(<Mirror c={factor(72, [2, 3], { fell: 4 })} stage="done" fast />)).toThrow(
+      /4 holds on 12/,
+    );
+    expect(beats(c)).toBe(3);
+    expect(beats(factor(72, [2, 2, 2, 3, 3]))).toBe(5);
+  });
+
+  it('its line names the number and the planks — never « a planche b » — and where they took it', () => {
+    const one = renderToString(<Line c={factor(72, [2, 2, 2, 3, 3])} />).replaceAll('<!-- -->', '');
+    expect(one).toContain('rf-line--factor');
+    expect(one).toContain('data-rf-factor-head="72:2.2.2.3.3"');
+    expect(one).toMatch(
+      /<strong>72<\/strong><span class="rf-factorhead__planks"><b>2<\/b><b>2<\/b><b>2<\/b><b>3<\/b><b>3<\/b><\/span>/,
+    );
+    expect(one).toContain('<em>arrive à 1</em>');
+    expect(one).not.toMatch(/planche de|×|\\times|<sup/);
+    const stop = renderToString(<Line c={{ ...factor(72, [2, 3], { fell: 5 }), held: false }} />).replaceAll(
+      '<!-- -->',
+      '',
+    );
+    expect(stop).toContain('<em>s’arrête sur 12\u00a0: la planche de 5 tombe</em>');
+    expect(stop).toContain('class="is-left"'); // the mini: an amber block where the ladder did not reach 1
+    const tagged = renderToString(<Line c={{ ...factor(60, [2, 2, 3, 5]), tag: 'tag[60]' }} />);
+    expect(tagged).toContain('<em>tag[60]</em>');
+  });
+});

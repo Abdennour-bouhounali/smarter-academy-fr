@@ -70,7 +70,7 @@ describe('the investigation screen `deal`', () => {
     // every item is a drawn symbol, used once per item (no raster image, no emoji as the drawing)
     expect(count(out, /href="#iqd-rose"/g)).toBe(40);
     expect(count(out, /href="#iqd-lily"/g)).toBe(56);
-    for (const kind of ['rose', 'lily', 'date', 'fig']) expect(out).toContain(`id="iqd-${kind}"`);
+    for (const kind of ['rose', 'lily', 'apple', 'pear']) expect(out).toContain(`id="iqd-${kind}"`);
     expect(out).not.toMatch(/<img|\.png|\.jpg|\.webp/);
     for (let k = 2; k <= 12; k += 1) expect(out).toContain(`data-iq-choice="${k}"`);
     expect(out).toContain('choose[0]');
@@ -134,8 +134,8 @@ describe('the investigation screen `deal`', () => {
     expect(out).not.toMatch(/undefined|NaN/);
   });
 
-  it('dates and figs in baskets: 12 lots fit, the glyphs and the lot shape follow the spec', () => {
-    const spec = { ...SPEC, a: { n: 60, item: 'date' }, b: { n: 60, item: 'fig' }, lot: 'basket' };
+  it('apples and pears in baskets: 12 lots fit, the glyphs and the lot shape follow the spec', () => {
+    const spec = { ...SPEC, a: { n: 60, item: 'apple' }, b: { n: 60, item: 'pear' }, lot: 'basket' };
     let s = run(
       [
         { type: 'choose', k: 12 },
@@ -148,7 +148,7 @@ describe('the investigation screen `deal`', () => {
     const out = html(s, spec);
     expect(count(out, /data-iq-lot="/g)).toBe(12);
     expect(out).toContain('iqd-lot--basket');
-    expect(count(out, /href="#iqd-date"/g)).toBe(60 + 2); // 60 in the lots; in the table, the row's label and the cell of what is left
+    expect(count(out, /href="#iqd-apple"/g)).toBe(60 + 2); // 60 in the lots; in the table, the row's label and the cell of what is left
     expect(out).toContain('data-iq-holds="5,5"');
   });
 });

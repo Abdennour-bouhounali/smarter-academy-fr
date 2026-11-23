@@ -25,9 +25,21 @@
  * then names it in those words (« 1003 et 34 ») instead of « a planche de b » (defects.md A10). A PAIR may carry `head` too —
  * a fraction drawn as its whole bridge over its lit stretch (`pair` = { a: the whole, b: the lit cells, d: the plank }):
  * its line then reads « 66/78 → 33/39 » (an isolated LTR run), not « 78 et 66 planche de 6 ».
+ *
+ * A case may be a FACTOR LADDER (`factor`): a number and the planks laid on it one after the other, each holding on what
+ * the ones before left (the investigation `ladder · factor`, `InquiryFactor.jsx`). No single bridge: the mirror draws the
+ * number, then the planks laid in a row — as planks, each with its length, nothing between them: no product, no power, no
+ * name —, then where they took it (1, or what is left in amber), and the plank that fell there when the case has one:
+ *   c.factor = { n, planks: [2, 2, 2, 3, 3], fell? }
+ *     n       the number (the gap's cells)
+ *     planks  the planks laid, in his order (each divides what is left — factorLadder.js › factorRungs refuses otherwise)
+ *     fell    a plank tried on what is left that did NOT hold (drawn falling, amber); absent when none
+ * Its line names the number and the planks (« 72 » then the planks as small planks) and where they took it, never
+ * « a planche b ». Whether the case holds is `held` (what the forge asks of it), its look `fits` or `held`.
  */
 import Inquiry from './Inquiry';
 import { dealOf } from './deal';
+import { factorRungs } from './factorLadder';
 import { Glyph, GlyphDefs, LOTS, Lot, LotShape, Pile, grid } from './dealParts';
 import { FORGE_TEXT as L } from './strings';
 import './forgeParts.css';
@@ -39,6 +51,7 @@ const fitsOf = (c) => c.fits ?? c.held;
 function Mirror({ c, stage, fast, tight = false }) {
   if (c.deal) return <DealMirror c={c} stage={stage} fast={fast} tight={tight} />;
   if (c.pair) return <PairMirror c={c} stage={stage} fast={fast} tight={tight} />;
+  if (c.factor) return <FactorMirror c={c} stage={stage} fast={fast} tight={tight} />;
   const W = 720;
   const cell = Math.min(34, W / Math.max(c.a, c.b));
   const x0 = (W - cell * c.a) / 2;
@@ -117,6 +130,7 @@ function Mirror({ c, stage, fast, tight = false }) {
 
 const Mini = ({ c }) => {
   if (c.deal) return <DealMini c={c} />;
+  if (c.factor) return <FactorMini c={c} />;
   if (c.pair) return <PairMini pair={c.pair} />;
   const W = 150;
   const cell = W / Math.max(c.a, 1);
@@ -278,6 +292,152 @@ const PairHead = ({ pair }) => (
     <strong dir="ltr">{pair.b}</strong>
   </span>
 );
+
+// ───────────────────────────── a case that is a FACTOR LADDER (`c.factor`) ─────────────────────────────
+// In a 720 × 150 scene (the single bridge's box, also `tight`): the number on the left, then the planks laid in a row,
+// then where they took it — a green « 1 », or what is left in amber with the plank that fell on it. The planks share the
+// room between the number and the end; eight planks or fewer keep their length written at 26 units.
+const FW = 720;
+const F_ROW = 46; // the top of the planks
+const F_H = 52;
+const F_X0 = 118; // after the number
+const F_ROOM = 470; // the planks and the plank that fell share this width
+const F_END = 640; // the centre of the end box
+/** What a factor case draws: its rungs, what is left, the plank that fell (only when it does not hold there). */
+function factorOf(f) {
+  const { rungs, left } = factorRungs(f.n, f.planks);
+  const fell = f.fell != null && left >= 2 && left % f.fell !== 0 ? f.fell : null;
+  if (f.fell != null && fell == null)
+    throw new RangeError(`factor: ${f.fell} holds on ${left} (in the ladder of ${f.n})`);
+  return { rungs, left, fell };
+}
+
+function FactorMirror({ c, stage, fast, tight }) {
+  const { n, planks } = c.factor;
+  const { left, fell } = factorOf(c.factor);
+  const built = stage !== 'ask';
+  const done = stage === 'done';
+  const slots = planks.length + (fell ? 1 : 0);
+  const w = Math.min(96, (F_ROOM - (slots - 1) * 6) / Math.max(1, slots));
+  const beat = fast ? 8 : 160;
+  const top = tight ? 24 : 0;
+  const look = done ? (fitsOf(c) ? 'is-held' : 'is-fell') : '';
+  return (
+    <svg
+      viewBox={`0 ${top} ${FW} ${150 - top * 2}`}
+      className={`rf-bridge rf-factor is-${stage} ${look} ${tight ? 'is-tight' : ''}`}
+      data-rf-factor={`${n}:${planks.join('.')}${fell ? `:${fell}` : ''}`}
+      data-rf-stage={stage}
+      role="img"
+      aria-label={`${n} : ${planks.join(' · ')}${fell ? ` · ${fell}` : ''} → ${left}`}
+    >
+      <text x="62" y={F_ROW + 36} textAnchor="middle" className="rf-cap rf-cap--a rf-factor__n">
+        {n}
+      </text>
+      {built &&
+        planks.map((d, k) => (
+          // eslint-disable-next-line react/no-array-index-key -- equal planks are legal: keyed by their place
+          <g key={k} className="rf-factor__plank" data-rf-factor-plank={d}>
+            <rect
+              x={F_X0 + k * (w + 6)}
+              y={F_ROW}
+              width={w}
+              height={F_H}
+              rx="7"
+              className={`rf-plank ${k % 2 ? 'is-alt' : ''}`}
+              style={{ animationDelay: `${k * beat}ms` }}
+            />
+            <text
+              x={F_X0 + k * (w + 6) + w / 2}
+              y={F_ROW + 35}
+              textAnchor="middle"
+              className="rf-factor__num"
+              style={{ animationDelay: `${k * beat}ms` }}
+            >
+              {d}
+            </text>
+          </g>
+        ))}
+      {built && fell && (
+        <g
+          className="rf-factor__fell"
+          style={{ animationDelay: `${planks.length * beat}ms` }}
+          data-rf-factor-fell={fell}
+        >
+          <rect
+            x={F_X0 + planks.length * (w + 6)}
+            y={F_ROW}
+            width={w}
+            height={F_H}
+            rx="7"
+            className="rf-plank"
+            style={{ animationDelay: `${planks.length * beat}ms` }}
+          />
+          <text
+            x={F_X0 + planks.length * (w + 6) + w / 2}
+            y={F_ROW + 35}
+            textAnchor="middle"
+            className="rf-factor__num"
+          >
+            {fell}
+          </text>
+        </g>
+      )}
+      {done && (
+        <g className={`rf-factor__end ${left === 1 ? 'is-one' : 'is-left'}`} data-rf-factor-left={left}>
+          <rect x={F_END - 40} y={F_ROW} width="80" height={F_H} rx="10" />
+          <text x={F_END} y={F_ROW + 36} textAnchor="middle">
+            {left}
+          </text>
+        </g>
+      )}
+    </svg>
+  );
+}
+
+/** The mini of a factor case: its planks side by side, an amber block when the ladder did not reach 1. */
+const FactorMini = ({ c }) => {
+  const { planks } = c.factor;
+  const { left } = factorOf(c.factor);
+  const W = 150;
+  const room = left === 1 ? W : W - 22;
+  const w = room / Math.max(1, planks.length);
+  return (
+    <svg viewBox={`0 0 ${W} 14`} className="rf-mini rf-mini--factor" aria-hidden="true">
+      {planks.map((d, k) => (
+        // eslint-disable-next-line react/no-array-index-key -- equal planks are legal: keyed by their place
+        <rect
+          key={k}
+          x={k * w + 0.75}
+          y="1"
+          width={Math.max(1, w - 1.5)}
+          height="12"
+          rx="2.5"
+          className={fitsOf(c) ? 'is-held' : ''}
+        />
+      ))}
+      {left > 1 && <rect x={W - 18} y="3" width="18" height="8" rx="3" className="is-left" />}
+    </svg>
+  );
+};
+
+/** The head of a factor case's line: the number, then its planks as small planks (no sign between them). */
+const FactorHead = ({ factor }) => (
+  <span className="rf-factorhead" dir="ltr" data-rf-factor-head={`${factor.n}:${factor.planks.join('.')}`}>
+    <strong>{factor.n}</strong>
+    <span className="rf-factorhead__planks">
+      {factor.planks.map((d, k) => (
+        // eslint-disable-next-line react/no-array-index-key -- equal planks are legal: keyed by their place
+        <b key={k}>{d}</b>
+      ))}
+    </span>
+  </span>
+);
+/** Where a factor case's planks took its number — and the plank that fell there. */
+const factorTag = (f) => {
+  const { left, fell } = factorOf(f);
+  return fell ? `${L.factorEnd(left)}\u00a0: ${L.factorFell(fell)}` : L.factorEnd(left);
+};
 
 // ───────────────────────────── a case that is a SHARING (`c.deal`) ─────────────────────────────
 // The mirror draws it in a 1000 × 230 scene (the bridge's own proportions: the same box in the mirror, also `tight`):
@@ -462,7 +622,7 @@ const DealMini = ({ c }) => {
 function Line({ c, children }) {
   return (
     <>
-      <div className={c.text ? 'rf-line--sentence' : c.pair ? 'rf-line--pair' : ''}>
+      <div className={c.text ? 'rf-line--sentence' : c.pair ? 'rf-line--pair' : c.factor ? 'rf-line--factor' : ''}>
         {c.mirror && (
           <i className="rf-inmirror" title={L.mirror}>
             🪞
@@ -472,6 +632,9 @@ function Line({ c, children }) {
           <span>{c.text}</span>
         ) : c.deal ? (
           <DealHead deal={c.deal} />
+        ) : c.factor ? (
+          // a factor ladder names its number and its planks, never « a planche b » (defects.md A10)
+          <FactorHead factor={c.factor} />
         ) : c.pair && c.head ? (
           // a pair that is not two gaps (a FRACTION: the whole, its lit stretch) names itself in its own words
           <span className="rf-line__head">{c.head}</span>
@@ -487,7 +650,20 @@ function Line({ c, children }) {
             <strong dir="ltr">{c.a}</strong> <span>{L.plank(c.b)}</span>
           </>
         )}
-        <em>{c.tag ?? (c.text ? (c.held ? L.true : L.false) : c.pair ? L.pair(c) : fitsOf(c) ? L.held : L.fell(c))}</em>
+        <em>
+          {c.tag ??
+            (c.text
+              ? c.held
+                ? L.true
+                : L.false
+              : c.pair
+                ? L.pair(c)
+                : c.factor
+                  ? factorTag(c.factor)
+                  : fitsOf(c)
+                    ? L.held
+                    : L.fell(c))}
+        </em>
       </div>
       <div className="rf-line2">
         <Mini c={c} />
@@ -501,11 +677,13 @@ export const FORGE_PARTS = {
   Mirror,
   Line,
   Inquiry,
-  // a pair: the plank is laid on both gaps at once, one stroke per plank of the longer row
+  // a pair: the plank is laid on both gaps at once, one stroke per plank of the longer row; a factor ladder: one per plank
   beats: (c) =>
     c.deal
       ? dealOf(c.deal.a.n, c.deal.b.n, c.deal.k).rounds
-      : c.pair
-        ? Math.max(pairRow(c.pair.a, c.pair.d).q, pairRow(c.pair.b, c.pair.d).q)
-        : c.q,
+      : c.factor
+        ? c.factor.planks.length + (c.factor.fell != null ? 1 : 0)
+        : c.pair
+          ? Math.max(pairRow(c.pair.a, c.pair.d).q, pairRow(c.pair.b, c.pair.d).q)
+          : c.q,
 };

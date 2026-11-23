@@ -281,11 +281,31 @@ export const fractionBox = (n = 'n', d = 'd', { w = 3, nw = w, dw = w } = {}) =>
 });
 /** A fraction printed in the same shape, nothing to type: `givenFraction(66, 78)`. */
 export const givenFraction = (n, d) => ({ frac: { n: String(n), d: String(d) } });
-/** The boxes of a line's tokens, in reading order — a fraction gives its numerator's box, then its denominator's. */
+/**
+ * A POWER in its own shape: the token `{ pow: { base, exp } }`, each part a printed number (a string) or a box `slot(…)`.
+ * The forge draws the exponent RAISED after its base (`kit/RuleForge.jsx`, the classes `rf-pow` / `rf-pow__exp`), as live
+ * DOM text; a typed exponent's box is named « exposant » (its accessible name). The keyboard meets the base, then the
+ * exponent. A power is ONE answer of its line, as a fraction is (defects.md B17, C14).
+ *   line(['1 400', '=', powerBox('2', 'e2'), '×', powerBox('5', 'e5'), '×', '7'])   // 1 400 = 2^□ × 5^□ × 7
+ *   line(['72', '=', powerBox(slot('p', 'le facteur', 1), 'e'), '×', givenPower(3, 2)])
+ */
+export const powerBox = (base, exp = 'e', { w = 1 } = {}) => ({
+  pow: { base: typeof base === 'object' ? base : String(base), exp: slot(exp, 'exposant', w) },
+});
+/** A power printed in the same shape, nothing to type: `givenPower(2, 3)` — 2 with a raised 3. */
+export const givenPower = (base, exp) => ({ pow: { base: String(base), exp: String(exp) } });
+/** The parts of a token that holds two (a fraction: numerator, denominator; a power: base, exponent), in reading order. */
+export const partsOf = (t) => (t?.frac ? [t.frac.n, t.frac.d] : t?.pow ? [t.pow.base, t.pow.exp] : null);
+/**
+ * The boxes of a line's tokens, in reading order — a fraction gives its numerator's box, then its denominator's; a power
+ * its base's box, then its exponent's.
+ */
 export const boxesOf = (tokens) =>
-  tokens.flatMap((t) =>
-    t?.frac ? [t.frac.n, t.frac.d].filter((x) => typeof x === 'object') : typeof t === 'object' ? [t] : [],
-  );
+  tokens.flatMap((t) => {
+    const parts = partsOf(t);
+    if (parts) return parts.filter((x) => typeof x === 'object');
+    return typeof t === 'object' ? [t] : [];
+  });
 
 /**
  * `use.make` from a list of pairs: one drawn with `rand`, then `build(A, B)` → the case.

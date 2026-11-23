@@ -1,5 +1,5 @@
 /**
- * The DRAWN PIECES of a sharing in this world — two collections on a table (roses and lilies, dates and figs…) and the
+ * The DRAWN PIECES of a sharing in this world — two collections on a table (roses and lilies, apples and pears…) and the
  * identical lots (vases, baskets) they are dealt into. Read by the investigation `deal` (`InquiryDeal.jsx`) and by the
  * mirror of a rule forge when a case is a sharing (`forgeParts.jsx › DealMirror`): the same items, the same lots, the
  * same « what is left is set apart in amber ».
@@ -31,21 +31,25 @@ const GLYPHS = {
       <circle className="iqd-lily-in" cx="10" cy="7.6" r="1.8" />
     </>
   ),
-  date: (
-    <>
-      <ellipse className="iqd-date" cx="10" cy="10.5" rx="4.6" ry="8" transform="rotate(18 10 10.5)" />
-      <path className="iqd-date-in" d="M8.5 5 q-1.4 5 0.6 11" />
-      <path className="iqd-stem" d="M11.5 2.6 l1.5 -1.8" />
-    </>
-  ),
-  fig: (
+  apple: (
     <>
       <path
-        className="iqd-fig"
-        d="M10 3 C12 5 17 9 16.5 13.5 C16 17.5 12.5 19 10 19 C7.5 19 4 17.5 3.5 13.5 C3 9 8 5 10 3 Z"
+        className="iqd-apple"
+        d="M10 5.6 C7.4 3.6 3 4.6 3 9.6 C3 14.6 6.4 18.6 8.6 18.6 C9.4 18.6 9.6 18 10 18 C10.4 18 10.6 18.6 11.4 18.6 C13.6 18.6 17 14.6 17 9.6 C17 4.6 12.6 3.6 10 5.6 Z"
       />
-      <path className="iqd-fig-in" d="M7 14.5 q3 2 6 0" />
-      <path className="iqd-stem" d="M10 3 V0.8" />
+      <path className="iqd-apple-in" d="M6 9 q0.4 -2.4 2.4 -3" />
+      <path className="iqd-stem" d="M10 5.6 V2" />
+      <path className="iqd-leaf" d="M10.4 3.4 q3 -2.6 5 -1 q-2.2 2.6 -5 1 z" />
+    </>
+  ),
+  pear: (
+    <>
+      <path
+        className="iqd-pear"
+        d="M10 3.4 C8 3.4 7.6 5.4 7.6 7.4 C7.6 9.2 4.4 10.6 4.4 14 C4.4 17 7 19 10 19 C13 19 15.6 17 15.6 14 C15.6 10.6 12.4 9.2 12.4 7.4 C12.4 5.4 12 3.4 10 3.4 Z"
+      />
+      <path className="iqd-pear-in" d="M7 14 q0.2 2.4 2.6 3" />
+      <path className="iqd-stem" d="M10 3.4 l0.8 -2.6" />
     </>
   ),
 };

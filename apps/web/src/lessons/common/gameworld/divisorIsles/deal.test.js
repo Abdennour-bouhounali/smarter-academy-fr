@@ -93,7 +93,7 @@ describe('deal — the state machine plays a whole experiment', () => {
   });
 
   it('a k bigger than both collections deals nothing: one tick ends it, everything stays on the table', () => {
-    const spec = { ...SPEC, a: { n: 3, item: 'date' }, b: { n: 5, item: 'fig' } };
+    const spec = { ...SPEC, a: { n: 3, item: 'apple' }, b: { n: 5, item: 'pear' } };
     const s = tryK(12, false, initDeal(), spec);
     expect(s.tries[0]).toMatchObject({ k: 12, restA: 3, restB: 5, ok: false });
   });

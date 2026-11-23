@@ -17,6 +17,8 @@
  *
  * Modes (`InquiryGcdModes.jsx`, logic `gcdModes.js`): common `witness`, nest `pair`, ladder `fold` and `both` — the
  * exported `Common`, `Ladder`, `Nest` mount them when `spec.mode` names them; any other spec plays the screens below.
+ * The ladder's mode `factor` (one gap, a rack of planks — a decomposition, not a gcd) is its own pair of files:
+ * `InquiryFactor.jsx` and `factorLadder.js`.
  *
  * `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shapes). Nothing here states a rule: every sentence
  * says what the strips, the shelves or the ladder have just done.
@@ -30,6 +32,7 @@ import { Head, Found, asNumber, onEnter } from './InquiryDivision';
 import { INQUIRY_TEXT } from './strings';
 import { expose, X0, SPAN, useLater, YesNo } from './inquiryParts';
 import { Witness, Pair, Fold, Both } from './InquiryGcdModes';
+import { Factor } from './InquiryFactor';
 
 /**
  * A gap drawn on the scene, with its length written at its end (and planks of d laid on it when d is given). A gap of 0
@@ -678,6 +681,7 @@ export function Ladder(props) {
   const { mode } = props.spec;
   if (mode === 'fold') return <Fold {...props} />;
   if (mode === 'both') return <Both {...props} />;
+  if (mode === 'factor') return <Factor {...props} />; // ONE gap and a rack of planks (InquiryFactor.jsx, factorLadder.js)
   return <LadderRows {...props} />;
 }
 export function Nest(props) {

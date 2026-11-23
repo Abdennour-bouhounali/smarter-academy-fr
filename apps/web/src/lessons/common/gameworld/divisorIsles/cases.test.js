@@ -15,7 +15,7 @@ describe('La coopérative du verger — the real-world cases', () => {
     ]);
   });
 
-  it('speaks French and counts in euros: no Arabic letter, no dinar, « 4\u202f500\u00a0€ »', () => {
+  it('speaks French and counts in euros: no Arabic letter, no dinar, « 250\u00a0€ »', () => {
     const arabic = /[\u0600-\u06FF]/;
     for (const mission of Object.keys(MISSIONS))
       for (let seed = 1; seed <= 30; seed += 1)
@@ -38,6 +38,30 @@ describe('La coopérative du verger — the real-world cases', () => {
     const price = String(trip.price).replace(/(\d)(\d{3})$/, '$1\u202f$2');
     expect(trip.brief).toContain(`${price}\u00a0€`);
     expect(trip.steps[2].tokens).toContain('€');
+  });
+
+  it('every price is a plausible FRENCH price, not a dinar amount re-signed (SKILL.md §1bis « Money »)', () => {
+    // an empty crate 2–5 €, a tray of eggs 1–25 €, a day's rental of a small truck 150–250 € (whole euros)
+    const range = {
+      cost: [['price', 2, 5]],
+      profit: [
+        ['p1', 2, 4],
+        ['p2', 1, 25],
+      ],
+      trip: [['price', 150, 250]],
+    };
+    for (const [kind, fields] of Object.entries(range))
+      for (let seed = 1; seed <= 200; seed += 1) {
+        const o = makeOrder(rng(seed * 7 + 1), kind, 0);
+        for (const [f, lo, hi] of fields) {
+          expect(Number.isInteger(o[f]), `${kind}.${f}`).toBe(true);
+          expect(o[f], `${kind}.${f}`).toBeGreaterThanOrEqual(lo);
+          expect(o[f], `${kind}.${f}`).toBeLessThanOrEqual(hi);
+        }
+      }
+    // a sum of four digits is still written « 1\u202f750\u00a0€ » (the one money helper of the web)
+    const big = makeOrder(rng(9), 'trip', 0);
+    expect(facts({ ...big, price: 1750 }, 0).join(' ')).toContain('1\u202f750\u00a0€');
   });
 
   it('every order of every mission is solvable: the right answer of each step is accepted, with text', () => {

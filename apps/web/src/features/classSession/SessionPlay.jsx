@@ -411,8 +411,9 @@ function Podium({ steps, students, seating }) {
                       cx={x}
                       top={top - KID}
                       foot={top - 2}
+                      // ordinary clothes and varied hair, the same for girls and boys: kidLook draws the hair
+                      // among DEFAULT_HAIR_STYLES — never a headscarf by default (plan §7bis, the owner's council)
                       {...kidLook(k.id)}
-                      hairStyle={gender === 'f' ? 'hijab' : 'short'}
                       mood="proud"
                       shadow={false}
                     />

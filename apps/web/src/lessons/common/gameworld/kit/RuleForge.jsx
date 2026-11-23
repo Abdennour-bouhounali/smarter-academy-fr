@@ -672,7 +672,9 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
  * The lines of the last step: tokens read left to right — a printed string, a box `slot(name, label, w)` (its label under
  * it when the step is one line), or a FRACTION `{ frac: { n, d } }` drawn in its own shape: numerator, a real bar,
  * denominator, each printed or typed (forgeBlocks.js › fractionBox / givenFraction; the look `di-frac`,
- * styles/trainer.css). `onType(name, digits)` receives what a box now holds.
+ * styles/trainer.css), or a POWER `{ pow: { base, exp } }`: the base, then the exponent raised after it (a `sup`), each
+ * printed or typed (forgeBlocks.js › powerBox / givenPower; the look `rf-pow`, ruleForge.css) — a typed exponent's box is
+ * named by its label (« exposant »). `onType(name, digits)` receives what a box now holds.
  */
 export function UseLines({ lines, vals, onType }) {
   const named = lines.length === 1;
@@ -707,6 +709,18 @@ export function UseLines({ lines, vals, onType }) {
                 {token(t.frac.n, 'n', false)}
                 <span className="di-frac__bar" aria-hidden="true" />
                 {token(t.frac.d, 'd', false)}
+              </span>
+            ) : t?.pow ? (
+              // a POWER: the base, then the exponent RAISED after it — live text, the base's box before the exponent's
+              // in the keyboard's order (forgeBlocks.js › powerBox / givenPower)
+              <span
+                key={k}
+                className={`rf-pow${boxesOf([t]).length ? ' rf-pow--typed' : ''}`}
+                dir="ltr"
+                data-rf-pow={[t.pow.base, t.pow.exp].map((x) => x.slot ?? x).join('^')}
+              >
+                <span className="rf-pow__base">{token(t.pow.base, 'b', false)}</span>
+                <sup className="rf-pow__exp">{token(t.pow.exp, 'e', false)}</sup>
               </span>
             ) : (
               token(t, k, named)

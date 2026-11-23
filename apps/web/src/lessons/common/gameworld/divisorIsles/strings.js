@@ -25,6 +25,9 @@ export const FORGE_TEXT = {
   fell: (c) => (c.b > c.a ? 's’effondre : planche trop longue' : `s’effondre : il reste ${counted(c.r, CELLS)}`),
   true: 'vraie',
   false: 'fausse',
+  // a case that is a FACTOR LADDER (`c.factor`): where its planks took the number — a fact, never a name
+  factorEnd: (left) => (left === 1 ? 'arrive à 1' : `s’arrête sur ${left}`),
+  factorFell: (d) => `la planche de ${d} tombe`,
   pair: (c) =>
     c.pair.need != null
       ? planks(c.pair.need)

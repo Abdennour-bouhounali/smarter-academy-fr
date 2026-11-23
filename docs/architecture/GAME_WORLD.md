@@ -226,7 +226,7 @@ at the depot. The summary node « 🏆 the exam challenge » (the lesson's node;
 
 ### « La coopérative du verger » — the real-world game (`cases.js`, `Depot.js`)
 
-The student runs the packing depot of a cooperative (dates, olive oil, eggs — a 3D oasis island far from the archipelago). A level is
+The student runs the packing depot of a cooperative (boxes of apples, bottles of apple juice, eggs — a 3D island far from the archipelago). Its prices are French (2026-11-23: an empty crate 2–5 €, a tray of eggs 1–25 €, a day's rental of a small truck 150–250 € — the Algerian amounts were dinars; `cases.test.js` pins the ranges). A level is
 a short day of ORDERS; an order is a real case solved in one to four STEPS. After a step **the depot packs for real what the student
 decided**: crates appear one by one, the equality `n = b × q + r` follows, and what does not fit stays on a red mat — or the last
 truck stays half empty. Seven kinds of order, one per idea:
@@ -902,7 +902,7 @@ predictions (§2ter-1 « A situation lived on the islands ») — opens directly
   `qasim-mushtarak-akbar` drew « 36 roses and 60 lilies in 12 vases » as « plank 12 » over « 60 cells », and its log read
   « 56 plank 5 » — in English). A case of this world may carry `deal` (`divisorIsles/forgeParts.jsx`):
   `c.deal = { a: { n, item }, b: { n, item }, k, lot, claim? }` — the two collections (how many, and the kind of item: a
-  glyph of `dealParts.jsx › GLYPHS`, rose / lily / date / fig), the number of identical lots `k` and their kind `lot`
+  glyph of `dealParts.jsx › GLYPHS`, rose / lily / apple / pear — the dates and figs of the Algerian world were replaced on 2026-11-23), the number of identical lots `k` and their kind `lot`
   (`vase`, `basket`: `dealParts.jsx › LOTS`), and `claim: [x, y]` when the case asks « does each lot hold x and y? ».
   Whether everything is shared is `fits` (or `held`), as for a bridge. The `Mirror` then draws it with the SAME pieces as
   the experiment `deal` (`dealParts.jsx`: `GlyphDefs`, `Pile`, `Lot`, `LotShape` — `InquiryDeal.jsx` draws with them too):
@@ -961,12 +961,38 @@ predictions (§2ter-1 « A situation lived on the islands ») — opens directly
   numerator first, no label under them. `kit/ruleForge.css` only sizes them (2.6rem one-line step, 2.1rem on a step of
   several lines) and centres a line that holds one. The boxes of a line are `forgeBlocks.js › boxesOf(tokens)` (a
   fraction gives its numerator's box, then its denominator's) — the frame reads them so. Tests:
-  `kit/ruleForgeFrac.render.test.jsx`. NOT yet: `authoring/test/suites.js › describeForges` reads a line's boxes as its
-  object tokens — a lesson with fractions hands the suite its lines flattened (`ikhtizal-kasr/world/forges.test.js ›
-  flat`) until the suite reads `boxesOf`; `describeLimits` counts a fraction as ONE object of its line.
+  `kit/ruleForgeFrac.render.test.jsx`. `authoring/test/suites.js › describeForges` reads a line's boxes with `boxesOf`
+  (and the typography of each part with `forgeBlocks.js › partsOf`); `describeLimits` counts a fraction as ONE object of
+  its line.
+- **A power in the last step is typed in its own shape** (2026-11-23, for the French lesson `decomposer-en-facteurs-premiers`,
+  key 2: « 1 400 = 2³ × 5² × 7 »): a token `{ pow: { base, exp } }` of a `use` line, each part a box `slot(…)` or a printed
+  number — built with `authoring/forgeBlocks.js › powerBox(base, expName, { w = 1 })` (the exponent typed, its box named
+  « exposant »; `base` a printed number, or a `slot(…)` when the base is typed too) and `givenPower(base, exp)` (printed;
+  never `'2^3'` as a string token). `kit/RuleForge.jsx › UseLines` draws it as ONE block `span.rf-pow` (`dir="ltr"`,
+  `data-rf-pow="base^exp"` — the box names or the numbers —, `rf-pow--typed` when it holds a box): the base
+  (`span.rf-pow__base`), then the exponent RAISED in a `sup.rf-pow__exp` — live DOM text; a typed exponent is a small box
+  (2rem, 1.6rem on a step of several lines: `kit/ruleForge.css`) with `data-rf-use=<name>` and `aria-label` « exposant »,
+  no label under it. The DOM order is the keyboard's: base, then exponent. `boxesOf` gives a power's base box (if any),
+  then its exponent's; `describeForges` and `describeLimits` read it like a fraction (ONE unit of its line). Example:
+  `line(['1 400', '=', powerBox(2, 'e2'), '×', powerBox(5, 'e5'), '×', '7'])`. Tests: `kit/ruleForgePow.render.test.jsx`,
+  `kit/authoring/forgeBlocks.test.js`. NOT yet: the trainer's `FormLines` (`kit/Trainer.jsx`) and the exam sheet do not
+  draw `{ pow }` (they have their own `boxesOf`).
 - **A case that is a FRACTION** (lesson 8): drawn as a `pair` — `{ a: the whole, b: its lit stretch, d: the plank laid
   on both }` — with its own `head` (an isolated LTR run, « 66/78 → 33/39 »): `forgeParts.jsx › Line` then names the
   pair by that head, never « 78 et 66 planche 6 ».
+- **A case that is a FACTOR LADDER** (2026-11-23, for `decomposer-en-facteurs-premiers`; design page « name what each
+  surface draws »): `c.factor = { n, planks, fell? }` — the number, the planks laid on it in his order (each must hold on
+  what the ones before left: `factorLadder.js › factorRungs` refuses otherwise), and `fell`, a plank tried on what is left
+  that did NOT hold (refused when it holds). `forgeParts.jsx › FactorMirror` draws it in the bridge's box (720 × 150, also
+  `tight`): the number on the left, the planks in a row as PLANKS with their lengths written on them (26 units) and nothing
+  between them — no product, no power, no name —, then where they took it (a green « 1 », or what is left in amber) and
+  the plank that fell there, dashed amber, falling. `ask`: the number alone; `build`: the planks, one per beat (`beats` =
+  the planks, + 1 for `fell`); `done`: the end box. A factor case that does not hold keeps its planks laid (only `fell`
+  falls). Its `Line` names the number and its planks as small planks (`rf-factorhead`, `data-rf-factor-head="n:2.2.3"`) and,
+  unless the case has a `tag`, where they took it (`FORGE_TEXT.factorEnd` « arrive à 1 » / « s’arrête sur 12 », with
+  `factorFell` « la planche de 5 tombe »); a mini of its planks plus an amber block when it did not reach 1. Hooks:
+  `data-rf-factor="n:2.2.3[:fell]"`, `data-rf-factor-plank`, `data-rf-factor-fell`, `data-rf-factor-left`. Tested:
+  `divisorIsles/forgeParts.render.test.jsx`.
 - NOT done: the class board (`LessonBoard`) forges only the first rule with the class; the three others are still asked
   and proved there. How a rule was found is kept in the browser only.
 
@@ -1000,7 +1026,7 @@ made for it.** The forge then opens on that experiment:
 **Every key of `qawasim-adad-tabii` opens on an experiment — four keys, four kinds** (owner, the same day: « not only
 this one … all the steps of rule discovery »); a test of the lesson fails if two of its keys share a kind.
 
-The twenty-two kinds of `divisorIsles/` (logic `inquiry.js`; screens `Inquiry.jsx` — strip and chart —, `InquiryMoves.jsx`
+The twenty-three kinds of `divisorIsles/` (logic `inquiry.js`; screens `Inquiry.jsx` — strip and chart —, `InquiryMoves.jsx`
 — wall and saw —, `InquiryCombine.jsx` — join and stack —, `InquiryProof.jsx` — peel and letters —,
 `InquiryDivision.jsx` — groups, rebuild, estimate, bracket —, `InquiryGcd.jsx` — common, ladder, nest —,
 `InquiryCycle.jsx` — cycle, with its own logic `cycle.js` and styles `inquiryCycle.css`, added on 2026-11-19 for the
@@ -1010,7 +1036,9 @@ unit 1, batch 2, and `InquiryLists.jsx` — lists — with `lists.js` and
 `inquiryLists.css`, added the same day for lesson 5 `tayin-pgcd`, and `InquirySort.jsx` — sort — with `sort.js` and
 `inquirySort.css`, added the same day for lessons 7 and 8, and `InquiryMeasure.jsx` — measure — and `InquiryPart.jsx`
 — part — with `measure.js`, `part.js`, `inquiryMeasure.css`, `inquiryPart.css`, added the same day for lesson 8
-`ikhtizal-kasr`; what every screen shares — the walks' dev hooks `FAST` / `expose`, the scene's frame
+`ikhtizal-kasr`, and `InquirySheet.jsx` — sheet — with `sheet.js` and `inquirySheet.css`, added on 2026-11-23 for the French
+lesson `decomposer-en-facteurs-premiers` (with the ladder's mode `factor`: `InquiryFactor.jsx`, `factorLadder.js`,
+`inquiryFactor.css`); what every screen shares — the walks' dev hooks `FAST` / `expose`, the scene's frame
 `X0` / `SPAN`, the timers `useLater`, the « yes / no » of a prediction — is ONE copy in `inquiryParts.jsx` (2026-11-19);
 styles `inquiry.css`; join … letters were added on 2026-11-18 for `khawass-qawasim`, groups … bracket the same day for the
 Euclidean division of 1AM `qisma-iqlidiya-baqi` and 2AM `qisma-iqlidiya-hasr`, common … nest the same day for the
@@ -1035,7 +1063,7 @@ drawing); its `inquiries.test.js` fails if two keys share a (kind, mode) — see
 | `estimate` | the technique for a big gap and a long plank: estimate the tens of planks, then the units (hundreds first when there are that many) (a PROCEDURE) | the whole gap is a bar; under it a RULER of the current step from 0 to 10 marks of b × 10^place (×10, ×20 … ×90, then ×1 … ×9), with what is left as a gold flag; he presses the biggest mark that does not pass the flag (chips 0 … 9 × 10^place). A mark past the flag, or one with room for the next mark, is answered by the fact (`fail`); the right one lays that block of planks (`sweep`, `plank`) and writes `from − b × count = left`. The steps are the kit's long division (`kit/longDivision.js`), so a 0 in the quotient is a step too. At the end `a = b × q + r` (`gate`). **Blind** (`blind: true` on the spec or on one round — 2026-11-19, for a three-digit plank whose multiples he does not know): the marks show their count only (« ×10 » … « ×1 » …), never the product, and the gold flag stands APART at the ruler's right end (placed on the ruler it would show which mark passes it); he presses a mark, THEN the world writes `b × count = value` against what is left (`value > left` — past the flag; `value + unit = next ≤ left` — room for one more), and every product he revealed stays under its mark until the step is laid (`data-iq-shown`). Every mark he pressed, refused ones included, is in the result's `guesses`. Without `blind` the ruler prints every product, as before. **Used by** 1AM `qisma-iqlidiya-baqi` (two-digit planks, sighted) and 2AM `qisma-iqlidiya-hasr` key 1 (`ESTIMATE_INQUIRY`: `blind: true`, THREE-digit planks 208, 248, 365 on the gap 4576 he has just crossed, then 2241 ÷ 365 and 22152 ÷ 208; the first round — the plank that filled his gap — is sighted, `blind: false`). The mirror of that forge draws what is left cell by cell up to `DRAW_MAX = 2600` cells (`world/forges.js`): its speed with that many cells has NOT been measured. |
 | `bracket` | a ÷ b lies between two consecutive natural numbers — the planks that are full and the planks that are needed; it IS a natural number exactly when nothing is left (a BRACKETING) | a number line of the multiples of b (eight steps around the flag, « … » and 0 at the left when the window does not start at 0; the mark below the flag stands 1 to 5 steps from the window's start, from (a + b) mod 5, so the flag's place changes with the round) with the gap a as a gold flag; he types the two numbers in the template « b × □ ≤ a < b × □ »; a miss is answered by the two products he made; the right pair lights the two marks (`b×lo`, `b×hi`) and the step between them, then he says whether the flag stands BETWEEN two marks or ON one; the world writes `a ÷ b` (`quotientTex`, computed on integers: a natural number, an exact decimal written exactly — 23 ÷ 5 = 4,6 —, or two places and « … » when it goes on) and `a = b × q + r`. Rounds include flags ON a mark (a multiple of b): the template still accepts exactly one pair (the mark the flag stands on, and the next), and once he has answered, that mark takes the flag's gold (`data-iq-onmark`) beside `a = b × q + 0`. |
 | `common` | the planks that hold BOTH gaps; the longest of them (the greatest common divisor) (a SEARCH over two gaps) | two strips, gap a above gap b; he TAKES each candidate plank from the tray and says BEFORE, twice, whether it holds a and whether it holds b (yes / no each, then « place », the lesson's word); the world lays it on both strips (`plank`), writes both divisions (`a = d × q + r`, rest green when 0) and the plank goes to its shelf: « a only », « b only », « both » (a fourth shelf « neither » appears only when a candidate holds neither). When the tray is empty he marks the longest plank of « both » and types how many planks « both » holds; a miss is answered by the fact (`sayMiss`) and he tries again. Rounds may have only the plank 1 in common, b a multiple of a, a = b. **`crown: false`** (spec or round, 2026-11-19): the experiment ends when the tray is empty and he has typed how many planks « both » holds — the longest is NOT asked, no chip of a shelf can be marked and nothing names or outlines the longest (the longest is its own search, `summit`; used where a lesson keeps the shelves and the next lesson searches the longest). Absent = the behaviour above. **Mode `witness`** (spec `mode: 'witness'`, 2026-11-19 — « ONE witness is enough »): the tray is the planks the lesson passes (the divisibility rules' 2, 3, 5, 9, 10); he takes and predicts as above, but the round ENDS as soon as ONE plank stands on the shelf « both »: the planks left stay in the tray (disabled) and the world asks « is one enough? » (yes / no — his answer is kept; the fact shown either way is that the round is over with one plank, no rule sentence). A tray where no plank fills both (85 and 119: their common plank 17 is not among the rules' planks) ends when the tray is empty, on the fact « no plank of this tray fills both » only — the kit never says the gaps share no plank, never names 17. The longest is never asked. **A gap of 0 cells** (lesson 5, « direct results »: `{ a: 27, b: 0 }`) is allowed in `common` (one gap only, never both): it is drawn as an empty dashed mark with its « 0 », no plank lies on it, every plank « fills » it and the calculation reads `0 = d × 0 + 0`; twins (27 ; 27) and (27 ; 1) play as any pair. |
-| `ladder` | a pair of gaps can be replaced by a simpler pair that keeps the same common planks, until one gap is gone; the last value that is not 0 is the longest common plank (Euclid — a PROCEDURE, `mode: 'subtract'` or `'divide'`) | a ladder of rows (left to right: its number, a bar of the gap a with the plank(s) b laid and the piece left in amber, the pair `(a ; b)` and its calculation `a − b = …` or `a = b × q + r`, then the planks that hold both gaps of that row with a ✓ — the same list on every row, a FACT). He types the NEXT pair `( □ ; □ )` (either order) for the first `manual` rows; the world writes the row anyway and answers by the fact. Then he types how many rows the ladder will have; the world finishes it (`sweep` per row, `gate` at the end) and the last value that is not 0 is lit gold. More than six rows: the first, one folded line « … », the last four. The result keeps the number of rows, so a lesson can compare the two modes on the same pair. **Mode `fold`** (2026-11-19 — « the remainder keeps the common planks »): the world writes the subtraction rows that take away the SAME gap (962 − 296 = 666, 666 − 296 = 370, 370 − 296 = 74), then he folds them into one line in its template `962 = 296 × □ + □`; a wrong fold is answered by the rows themselves (each row of the run counted 1×, 2×, 3×, what is left amber) and he folds again; the run becomes one folded line (its rows named « 1–3 », its bar, `a = b × q + r`, the ✓ list); after his `folds` runs the world finishes the ladder in folded lines and the last value that is not 0 is lit gold. **Mode `both`** (« which algorithm is faster »): the two ladders of the SAME pair side by side, subtractions and divisions; BEFORE they run he says which will be shorter — or « the same » — and by how many rows; the world runs both in step (a row of each per beat) and the counts stand under them. The drawing is bars only, all rows of both ladders sharing one height that shrinks with the longer ladder (1003 and 34: 31 rows against 2 on one screen, never scrolled); under each ladder its newest row as a formula. The same length happens only for twin gaps (a = b: one row each) — the logic's test sweeps it. |
+| `ladder` | a pair of gaps can be replaced by a simpler pair that keeps the same common planks, until one gap is gone; the last value that is not 0 is the longest common plank (Euclid — a PROCEDURE, `mode: 'subtract'` or `'divide'`) | a ladder of rows (left to right: its number, a bar of the gap a with the plank(s) b laid and the piece left in amber, the pair `(a ; b)` and its calculation `a − b = …` or `a = b × q + r`, then the planks that hold both gaps of that row with a ✓ — the same list on every row, a FACT). He types the NEXT pair `( □ ; □ )` (either order) for the first `manual` rows; the world writes the row anyway and answers by the fact. Then he types how many rows the ladder will have; the world finishes it (`sweep` per row, `gate` at the end) and the last value that is not 0 is lit gold. More than six rows: the first, one folded line « … », the last four. The result keeps the number of rows, so a lesson can compare the two modes on the same pair. **Mode `fold`** (2026-11-19 — « the remainder keeps the common planks »): the world writes the subtraction rows that take away the SAME gap (962 − 296 = 666, 666 − 296 = 370, 370 − 296 = 74), then he folds them into one line in its template `962 = 296 × □ + □`; a wrong fold is answered by the rows themselves (each row of the run counted 1×, 2×, 3×, what is left amber) and he folds again; the run becomes one folded line (its rows named « 1–3 », its bar, `a = b × q + r`, the ✓ list); after his `folds` runs the world finishes the ladder in folded lines and the last value that is not 0 is lit gold. **Mode `both`** (« which algorithm is faster »): the two ladders of the SAME pair side by side, subtractions and divisions; BEFORE they run he says which will be shorter — or « the same » — and by how many rows; the world runs both in step (a row of each per beat) and the counts stand under them. The drawing is bars only, all rows of both ladders sharing one height that shrinks with the longer ladder (1003 and 34: 31 rows against 2 on one screen, never scrolled); under each ladder its newest row as a formula. The same length happens only for twin gaps (a = b: one row each) — the logic's test sweeps it. **Mode `factor`** (2026-11-23, French `decomposer-en-facteurs-premiers` key 1 — a decomposition, not a gcd: its own files `InquiryFactor.jsx`, `factorLadder.js`, `inquiryFactor.css`): ONE gap n and a RACK of planks (the lesson's: 2, 3, 4, 5, 6, 7, 9, 11…). He takes the plank of his choice; the world lays it on the gap, drawn at ONE scale for the round. A plank that divides is laid edge to edge, the gap SHRINKS to the quotient and a notebook line is written in the layout of the `divide` ladder (its number, its bar, « 72 ÷ 2 = 36 »); one that does not divide FALLS from the end of the gap (what is left amber), the gap stays and its chip is marked (dashed amber) on that gap only. The rack never empties: a plank that held may — must — be taken again; a composite plank that divides is laid like any other. More than five lines: the first, « … », the last three. At 1 the planks that held stand in a row as PLANKS (no product, no power, no name). Every attempt, held or fell, is in the result in order with the gap before and after it. No prediction is asked: the plank he takes is his bet. |
 | `nest` | the common planks of two gaps are exactly the planks (divisors) of their longest common plank (a SET EQUALITY) | the world gives a, b, g (`given`, a formula line of the lesson) and the chips of the planks of g, and draws three strips a, b, g; for each probe (common ones, ones holding a single gap, longer than g, dividing g) he says, looking at g only, whether it holds BOTH gaps; the world lays it on the three strips (`plank`) and writes the three divisions; at the end the two lists — the planks of both gaps / the planks of g — stand side by side. **Mode `pair`** (2026-11-19 — « the difference keeps the common planks »): the third strip is replaced by a SECOND PAIR of gaps given by the spec ((b ; a − b) or (b ; r)): four strips on two pale bands; for each probe he says (yes / no, twice) whether it fills both gaps of the first pair and both of the second, then « place »; the world lays it on the four strips and writes the four divisions; at the end the planks of both gaps of each pair stand side by side (equal — a fact he sees; no sentence states it). |
 | `cycle` | what a plank of b can leave on a gap: 0, 1, …, b − 1 — never b cells or more — and the most is b − 1 (a PATTERN) | ONE plank b and a gap that GROWS one cell at a time (a, a + 1, a + 2 …). The first gap of a round is shown as a fact (its planks, the cells left, `a = b × q + r`); before each new cell he says how many cells will be left (chips 0 … b + 1: « b » can be said); the world adds the cell and lays every plank that fits (`sweep`, pitched by the cells left — or `plank` where one more plank goes in) and writes the division. Under the strip a STAIRCASE keeps one column per gap he has seen — as many small cells as were left: it climbs to b − 1 and falls to 0 where a plank went in (a mark of the plank; what he had said stays beside it, struck through, when the strip did otherwise). Then PROBES — planks he has not laid: he types the most cells the plank will leave and says whether b cells will be left once, BOTH before the world moves; the world then grows the gap alone from a gap the plank fills, through the whole climb, the fall and one more cell, and the staircase answers. What he found stays in a list. |
 | `summit` | the longest plank that fills both gaps is among the planks of the SHORTER gap: tried from the longest down, the first that fills the other gap is it, and the shorter ones need not be tried (a search for a MAXIMUM, with the reason to STOP) | two strips, gap a and gap b; when the round has a `start` (a plank he has just used that fills both) it lies on both strips with both divisions written. FREE TRIES (`free`, default 2): he TYPES any plank length (a box, 1 … the longer gap; any length is laid and answered); the world lays it on both strips and writes both divisions (rest green when 0); every plank laid stays as a mark on a LINE OF LENGTHS (1 … the shorter gap, a dashed tail up to the longer gap) coloured by what it did — both, a only, b only, neither; a try that fills both and is longer than the best so far becomes the best (ringed — a fact, no praise). Then ONE prediction (yes / no): can a plank that does NOT fill the shorter gap fill both? — answered by one of HIS tries when one fits, else by a plank the world lays (one that fills the longer gap only). THE DESCENT: the planks of the shorter gap appear as chips from the longest (its own length) down — laid right to left, the longest beside their label and on the same side as on the line of lengths; a mark standing on an end of the line (1, the shorter gap, the longer gap) carries no label of its own, the end writes its number — ; before each he says whether it fills the OTHER gap; the world lays it on both strips; the first that holds is crowned (gold chip, gold mark). Then « must the shorter planks still be tried? » (yes / no): on yes the world lays them all (`sweep`) — each shorter than the crown, a fact; on no, nothing more (not asked when the crown is 1). **Mode `first`** (per round): before the descent he types how many planks will be TRIED until one holds; he predicts the first plank only, the world finishes, and the count is shown against what he typed (one try exactly when the shorter gap's own length fills the longer). |
@@ -1043,6 +1071,7 @@ drawing); its `inquiries.test.js` fails if two keys share a (kind, mode) — see
 | `lists` | to find the longest plank of two small gaps: list the planks of each gap, cross the two lists, take the longest plank they share (a PROCEDURE on two lists) | two strips, gap a and gap b, and under them two LISTS, one above the other, one column per plank of either list (shortest at the left), so that equal planks stand one under the other. He BUILDS the list of gap a by pairs: he types a plank (a box); the world lays it on the gap — when it fills, `n = d × q` is written with the partner q in gold and both join the list, sorted; when it does not, `n = d × q + r` with the piece in amber, nothing added (lesson 2's method, not re-taught: no word about where to stop). The world CLOSES the list when every plank is in it; « the list is complete » said earlier is answered by ONE missing plank laid on the gap (the shortest missing; the list is not given — he types it). The same for gap b. Then he LINKS: he taps a plank of either list (« it is in both »); the world lays it on both strips and writes both divisions — a green line joins the two equal planks, or the plank is outlined amber with the division that leaves a piece. « All linked » said too early: ONE missing link is shown (dashed). LAST he taps the longest linked plank; a shorter pick is answered by a longer linked plank, shown on both strips; the right one is crowned gold. |
 | `sort` | a pair whose only common plank is 1 / a pair that shares a longer plank — for lesson 8, a fraction that can / cannot be counted again in a longer unit (a CLASSIFICATION) | a HAND of 5–8 cards, one pair of gaps `(a ; b)` each, or one fraction `a/b` with a real bar (the numerator is gap a); the card on the table lies between two BASKETS named by the lesson (never the mathematical name before the key is forged) and its two gaps are drawn as strips on one scale (up to 700 cells: a gap is one bar, a plank too thin to draw is one bar); the cards left in his hand are small cards he may tap to play another first. For each card he MAY open ONE instrument he already owns, among those the spec lists — `lists` (the planks of each gap, shortest first from the right, the planks of both outlined green), `summit` (the planks of the shorter gap from the longest down, each laid on both strips with its rest on the longer gap written under it, stopping on the first that fills), `ladder` (Euclid's rows `a = b × q + r` down to the rest 0, rest amber, 0 green); the world runs it fact by fact — numbers, divisions, planks laid, never a conclusion. Then he DRAGS the card into a basket (touch and mouse) or taps the basket. A card in its own basket stays there. A card in the OTHER basket is answered by what the world does: said « only 1 » for a pair that shares a longer plank → the longest shared plank is laid on both strips, both divisions written (rest 0); said « a longer plank » for a pair that shares none → the planks of the shorter gap are laid on both strips from the longest down, each rest written: none but 1 leaves no rest. Then « next » takes the card to the basket it belongs to (outlined amber there: the world moved it). Never the word « wrong ». At the end both baskets stay on screen with their cards — the evidence his rule is written from. |
 | `measure` | two gaps one above the other are ONE fraction; a plank that fills both is a UNIT in which both are counted again, and the fraction it writes is the same fraction; by any road the counts end on the same fraction, and one stage is enough with the longest common plank (a CHANGE OF UNIT) | two strips, the numerator above the denominator, a fraction bar drawn between them; the chain of equal fractions is written with real bars (KaTeX, one formula, never broken). He picks a plank — a chip of the lesson's candidates and/or a typed length, counted in the CURRENT unit (2 … the longer strip). One that does not fill both is laid: what is left shows in amber, both divisions are written, nothing changes (the chip is struck while that fraction stands). One that fills both: the world counts both strips again — they are re-drawn as that many planks — and the new fraction joins the chain with « = » (66/78 = 22/26 = 11/13). **Mode `stages`**: he goes on by the road HE chooses and ends a run by claiming « no plank but 1 fills both »; the world answers by trying the planks of the upper strip (shortest first) on the lower one — one that fills is laid and the run goes on, none: the run ends. Before a SECOND run (`runs`, default 2, never more than the planks that can open a road) he types where it will end (a fraction template); the second road must open with another plank (while one exists); it ends on the same fraction — a fact, his prediction beside it. **Mode `direct`**: one stage only; a plank that fills both is counted honestly (66/99 = 22/33), then the world tries the planks of the upper strip on the lower: when one still fills both, one stage was not enough and he starts again from the fraction given. |
+| `sheet` | for a large number, let a tool compute the remainders by the primes; read a line whose remainder is 0, divide, start again on the quotient; when no line shows 0, the number is prime (a SEARCH WITH A TOOL — 2026-11-23, French `decomposer-en-facteurs-premiers` key 4) | a SPREADSHEET drawn in DOM (`InquirySheet.jsx`): column letters A, B, row numbers, A1 the lesson's word, B1 the formula a French spreadsheet holds — « =MOD(2431;A2) » (LibreOffice Calc and Excel in French name it MOD and separate with « ; ») — and plain numbers under it. Column A holds the primes 2, 3, 5, 7, 11… as far as the spec's stop says (default: every prime p with p² ⩽ the number now on the sheet, so the sheet SHORTENS when the number becomes a quotient); the world fills column B one cell at a time. He clicks the line he reads as dividing: remainder 0 → the number becomes the quotient, a notebook line « 2431 ÷ 11 = 221 » is written beside the sheet and the sheet is filled again; a remainder that is not 0 → that line is marked amber, its remainder is what happened. A button lets him SAY the number is prime: accepted when no line shows 0 (the number joins the factors, the round ends), refused when one does — those lines are outlined green (a fact, never « faux »). More than ten lines stand in two blocks side by side, rows numbered on (3 127 needs the primes up to 53: 16 lines, two blocks of 8; 4 641: 19, 10 + 9); at most 24 lines. A quotient of 1 (a fixed stop) also ends the round. |
 | `part` | a part of a whole, re-cut in a longer unit: the painted length does not move, its writing does (13/39 = 1/3) — a fraction that comes out of a calculation is written again in the longest unit (a RE-CUT) | ONE strip, the whole (up to ~130 cells), and a painted part the world paints in strokes one after the other (5 cells, then 8), each stroke's length printed over it. He writes the fraction painted in its template (two boxes over a real bar — exactly the cells: painted over whole; a miss is answered by which count differs). Then he picks a plank (chips and/or typed, 2 … the whole) that fills the painted part AND the whole: one that does not is laid along the strip, outlined so the paint stays visible, what is left amber, both divisions written; one that does RE-CUTS the strip — the new cuts are drawn over the paint, which does not move, and the two writings stand side by side with « = ». He may instead claim « no plank but 1 fills both »: the world tries the planks of the painted part on the whole (a round whose part and whole share only 1 ends there, the writing unchanged; otherwise the plank it finds is laid and he picks again). One re-cut ends the round. |
 
 **Key 3 of `qawaid-qabiliyat-qisma` (« the last two digits », plank 4; an Algerian lesson) — what the code does.** The
@@ -1384,48 +1413,39 @@ rule, `data-iq`, `data-iq-stage`, `data-iq-goal`, `data-iq-calc`, `data-iq-fact`
 //         window.__inquiry = { kind: 'ladder', mode: 'both', ri, a, b, stage, shown, steps, said, rounds }
 //         stages: say → run → seen
 
-// nest — logic: inquiry.js › nestOf(a, b, probes) → { g, divisorsOfG, common, rows: [{ p, inG, both }], equal }
-//        (equal is always true — the lesson's test sweeps it)
-{ kind: 'nest',
-  rounds: [{ a, b, probes: [numbers…] }],             // mix: planks of g, planks of a single gap, longer than g
+// ladder · factor — logic factorLadder.js › layPlank(gap, d) → { plank, held, before, after } (after = gap ÷ d when it
+//          held, else gap); primeFactors(n), isPrime(p); factorRungs(n, planks) (a forge's `c.factor`);
+//          screen InquiryFactor.jsx › Factor (factorReducer, a pure FactorView). A spec without mode 'factor' never
+//          reaches these files.
+{ kind: 'ladder', mode: 'factor',
+  rack: [2, 3, 4, 5, 6, 7, 9, 11],                     // the planks he chooses from: each an integer ≥ 2, distinct; a
+                                                       //   round whose prime factors are not ALL on its rack is refused
+                                                       //   (RangeError — it could never reach 1)
+  rounds: [{ n: 60 }, { n: 72 }, { n: 495 }],          // n ≥ 2; a round may carry its own `rack`
   text: {
-    lead: (a, b) => …, goal: (a, b) => …,              // goal plain
-    given: ({ a, b, g }) => …,                         // a MathText line naming g (the lesson writes its notation)
-    divisorsLabel: (g) => …,                           // plain — over the chips of the planks of g (and in the end lists)
-    ask: ({ a, b, g, p }) => …,                        // looking at g only: does p hold both gaps? (yes / no)
-    yes, no,
-    seen: (f, guess) => …,                             // f = { a, b, g, p, inG, both, holdsA, holdsB, guess }
-    foundLine: (f) => …,                               // same f — kept in the list, dim when guess ≠ both
-    compare: (f) => …,                                 // f = { a, b, ...nestOf } — under the two lists
-    commonLabel: (a, b) => …,                          // plain — over the list of the planks of both gaps
+    lead: (n) => …, goal: (n) => …,                    // goal plain
+    ask: ({ n, gap, laid }) => …,                      // above the rack (gap = the gap now; laid = the planks that held)
+    rackLabel?,                                        // plain — before the chips of the rack
+    held: (a) => …, fell: (a) => …,                    // a = the attempt just made { plank, held, before, after }
+    folded: (k) => …,                                  // plain — the folded notebook line (k lines hidden)
+    laidLabel?,                                        // plain — before the row of planks laid, at the end
+    end: ({ n, planks, attempts }) => …,               // the gap is 1
+    foundLine: (r) => …,                               // r = the round of the result; dim when a plank fell
     next, done,
   } }
-// result: { rounds: [{ a, b, g, rows: [{ p, guess, both }] }] }
-//         hooks: data-iq-probe=<p>, data-iq-say="yes|no", data-iq-divs="1,2,…", data-iq-strip="a|b|g",
-//                data-iq-lists, data-iq-list="common|g"
-
-// nest · pair — logic gcdModes.js › pairOf(a, b, [x, y], probes) → { first, second (the planks of both gaps of each
-//        pair, shortest first), rows: [{ p, holdsA, holdsB, holdsX, holdsY, inFirst, inSecond }], equal };
-//        screen InquiryGcdModes.jsx › Pair (pairReducer, a pure PairView)
-{ kind: 'nest', mode: 'pair',
-  rounds: [{ a, b, pair: [x, y], probes: [numbers…] }],   // pair = (b ; a − b) or (b ; r), all > 0 — (152 ; 95), (95 ; 57)
-  text: {
-    lead: (a, b, [x, y]) => …, goal: (a, b, [x, y]) => …,
-    ask: ({ a, b, x, y, p }) => …,                     // does p fill both gaps of each pair?
-    onFirst: ({ a, b }) => …, onSecond: ({ x, y }) => …,   // plain — before each yes / no
-    yes, no, lay,
-    seen: (f, guess) => …,                             // f = { a, b, x, y, p, holdsA, holdsB, holdsX, holdsY, inFirst,
-                                                       //   inSecond, guessFirst, guessSecond }, guess = { first, second }
-    foundLine: (f) => …,                               // same f — dim when a prediction was not the fact
-    compare: ({ a, b, x, y, first, second, equal }) => …,   // under the two lists — a fact, never the rule
-    firstLabel: (a, b) => …, secondLabel: (x, y) => …, // plain — over each list
-    next, done,
-  } }
-// result: { rounds: [{ a, b, pair: [x, y], rows: [{ p, guessFirst, guessSecond, inFirst, inSecond }], first, second }] }
-//         hooks: data-iq="nest", data-iq-mode="pair", data-iq-probe=<p>, data-iq-pairs="a:b|x:y", data-iq-strip="a|b|x|y",
-//                data-iq-say-first|second="yes|no", data-iq-lay, data-iq-lists, data-iq-list="first|second" + data-iq-planks
-//         window.__inquiry = { kind: 'nest', mode: 'pair', ri, a, b, pair, pi, stage, rows, rounds }
-//         stages: guess → lay → guess … → compare
+// result: { rounds: [{ n, planks: [2, 2, 2, 3, 3] (the planks that held, in his order),
+//                      attempts: [{ plank, held, before, after }] (EVERY plank laid, in order, held or fell),
+//                      fell: <how many fell> }] }
+//         hooks: data-iq-mode="factor", data-iq-stage, data-iq-gap=<the gap now>, data-iq-rack="2,3,…",
+//                data-iq-plank=<d> (a chip; + data-iq-fell when it fell on the gap now), data-iq-strip="gap",
+//                data-iq-falls=<d> (the plank falling), data-iq-ladder + data-iq-lines=<n>, data-iq-row=<k> +
+//                data-iq-line="before:plank:after", data-iq-fold=<k>, data-iq-laid="2,2,3" + data-iq-laid-plank, data-iq-next
+//         window.__inquiry = { kind: 'ladder', mode: 'factor', ri, n, gap, stage, hand, laid, attempts, rounds }
+//         stages: pick → lay → pick … → seen (the gap is 1)
+// example (the words are the lesson's — French typography: U+00A0 before « : », U+202F before « ? »):
+//   { kind: 'ladder', mode: 'factor', rack: [2, 3, 4, 5, 6, 7, 9, 11], rounds: [{ n: 60 }, { n: 72 }, { n: 495 }],
+//     text: { lead: (n) => …, goal: (n) => …, ask: ({ gap }) => …, held: (a) => …, fell: (a) => …,
+//       folded: (k) => …, end: ({ n, planks }) => …, foundLine: (r) => …, next: 'Fossé suivant', done: 'Terminer' } }
 ```
 
 World sounds: common — `pick` (he takes a plank), `sweep` + `plank` (the world lays it on both strips), `success` /
@@ -1445,6 +1465,55 @@ the Euclidean division and the runs are the rows of the division ladder, pairs �
 number of divisions, equal only for twins, pairs ≤ 150; each state machine played with wrong and out-of-stage moves; the
 gap of 0 in `commonOf`) and `inquiryGcdModes.render.test.jsx` (each mode mounted by `Inquiry` and played stage by stage;
 1003 ; 34 folded behind « … » in `fold` and drawn as 31 + 2 bars in `both`; a gap of 0 drawn as its mark).
+Mode `factor`: sounds `pick` (a plank taken), `plank` (it held) or `hit` (it fell), `gate` at 1. Tests:
+`factorLadder.test.js` (isPrime against a sieve and primeFactors to 5 000; every n ≤ 600 played with the smallest plank
+that holds ends on its prime factors; 72 and 495 with the design's rack: 4, 6, 9 fall once the 2s and 3s are laid, 2 is
+taken again; wrong and out-of-stage moves) and `inquiryFactor.render.test.jsx` (mounted by `Inquiry`; a line « 72 ÷ 2 =
+36 »; a fall; the row of planks with no product; the fold past five lines; no French written by the kit).
+
+```js
+// sheet — logic sheet.js › sheetOf(n, stop) → [{ p, r }] (column A the primes up to stopOf(n, stop), column B n mod p;
+//         at most MAX_LINES = 24), zerosOf(lines); screen InquirySheet.jsx › Sheet (sheetReducer, a pure SheetView)
+{ kind: 'sheet',
+  stop?: 'square',                                     // also per round: 'square' (default — every prime p with p² ⩽ the
+                                                       //   number NOW on the sheet: it shortens with the quotient), a
+                                                       //   number (every prime up to it, fixed), or a function n → max
+  rounds: [{ n: 2431 }, { n: 4641 }, { n: 3127 }],     // n ≥ 2
+  text: {
+    lead: (n) => …, goal: (n) => …,                    // n = the round's first number; goal plain
+    primeHead,                                         // plain — cell A1 (the lesson's word for column A)
+    formula?: (n, cell) => …,                          // plain — cell B1; default « =MOD(n;A2) » (French LibreOffice / Excel)
+    ask: ({ n, lines }) => …,                          // the question of the moment, beside the « prime » button
+    prime,                                             // the button: he says the number is prime
+    held: (a) => …,                                    // a = { type: 'line', before, p, r: 0, held: true, after, lines, zeros }
+    miss: (a) => …,                                    // a = the same with r > 0, held: false — the remainder is the fact
+    notPrime: ({ n, zeros }) => …,                     // « prime » said while lines show 0 (zeros = their primes)
+    notebook?,                                         // plain — over the notebook lines
+    end: ({ n, factors, attempts }) => …,              // the round is over (factors = the primes found, in his order)
+    foundLine: (r) => …, next, done,                   // r = the round of the result; dim when a move was refused
+  } }
+// result: { rounds: [{ n, factors: [11, 13, 17],
+//                      attempts: [ { type: 'line', before, p, r, held, after, lines, zeros }
+//                                | { type: 'prime', before, held, lines, zeros } ] (every move, in order) }] }
+//         (lines = how many lines the sheet held then; zeros = its primes whose remainder was 0 then)
+//         hooks: data-iq="sheet", data-iq-stage, data-iq-n=<the number now>, data-iq-lines=<n>, data-iq-sheet +
+//                data-iq-blocks=<1|2>, data-iq-block, data-iq-formula, data-iq-line=<p> (+ data-iq-rest=<r> once filled,
+//                data-iq-said="held|miss", data-iq-zero), data-iq-prime, data-iq-notes=<n> + data-iq-note="before:p:after",
+//                data-iq-next
+//         window.__inquiry = { kind: 'sheet', ri, n, stage, lines: [p…], filled, factors, attempts, rounds }
+//         stages: fill (the world fills column B) → pick → fill … → seen
+// example (the words are the lesson's):
+//   { kind: 'sheet', rounds: [{ n: 2431 }, { n: 4641 }, { n: 3127 }],
+//     text: { lead: (n) => …, goal: (n) => …, primeHead: …, ask: ({ n, lines }) => …, prime: …, held: (a) => …,
+//       miss: (a) => …, notPrime: ({ n, zeros }) => …, notebook: …, end: ({ n, factors }) => …, foundLine: (r) => …,
+//       next: …, done: … } }
+```
+
+Sheet: sounds `sweep` per cell the world fills, `plank` (a line that divides) or `hit`, `key` (« prime » accepted) or
+`fail` (refused), `gate` at the end. Tests: `sheet.test.js` (the design's sheets: 15, 19 and 16 lines; every n from 2 to
+3 200 read by its first 0 ends on its prime factors and every « prime » said is true; a refused « prime »; a quotient of 1;
+out-of-stage moves) and `inquirySheet.render.test.jsx` (mounted by `Inquiry`; the formula cell; two blocks; a miss and a
+division; the refusal; 3 127 and 4 641 laid out; no French written by the kit).
 
 World sounds: groups — `pick` (his prediction), `plank` per plank laid, `hit` for the plank that does not fit, `sweep`
 per plank of « finish », `key` / `fail` on his count; rebuild — `pick`, `sweep` (the cloth), `plank` per extra plank,
@@ -1979,7 +2048,7 @@ The code is in THREE places:
 | `Depot.js`, `Worlds.js` | the 3D worlds of the cases: the depot, the friends' table, the tiler's site; `runSim` shows what was decided |
 | `ruleForge.js` (+ test), `forgeParts.jsx` (+ `forgeParts.render.test.jsx`), `dealParts.jsx` | the rule forge IN THIS WORLD: a bridge as a case, the evidence of a crossing, the law of the world as a forge (`remainderForge`), and how a case is drawn — a bridge, or a SHARING (`c.deal`) drawn with the pieces of the experiment `deal` (`dealParts.jsx`, shared with `InquiryDeal.jsx`) (§2sexies) |
 | `strings.js` | every sentence of the world (French), the sentence of a practice wave (`waveSay`) and the guidance after a mistake (`explain`) |
-| `inquiry.js` (+ `inquiry.test.js`, `inquiry2.test.js`, `inquiryDivision.test.js`, `inquiryGcd.test.js`), `Inquiry.jsx`, `InquiryMoves.jsx`, `InquiryCombine.jsx`, `InquiryProof.jsx`, `InquiryDivision.jsx`, `InquiryGcd.jsx`, `inquiry.css` | « Explore »: the pure logic and the screens of the experiments (§2sexies, twenty-two kinds — seven in their own files, below) |
+| `inquiry.js` (+ `inquiry.test.js`, `inquiry2.test.js`, `inquiryDivision.test.js`, `inquiryGcd.test.js`), `Inquiry.jsx`, `InquiryMoves.jsx`, `InquiryCombine.jsx`, `InquiryProof.jsx`, `InquiryDivision.jsx`, `InquiryGcd.jsx`, `inquiry.css` | « Explore »: the pure logic and the screens of the experiments (§2sexies, twenty-three kinds — eight in their own files, below) |
 | `cycle.js` (+ test), `InquiryCycle.jsx`, `inquiryCycle.css` (+ `inquiryCycle.render.test.jsx`) | the `cycle` kind in its own files: a reducer and a pure view (2026-11-19) |
 | `summit.js` (+ test), `InquirySummit.jsx`, `inquirySummit.css` (+ `inquirySummit.render.test.jsx`) | the `summit` kind: the longest plank of two gaps and the reason to stop (2026-11-19) |
 | `deal.js` (+ test), `InquiryDeal.jsx`, `inquiryDeal.css` (+ `inquiryDeal.render.test.jsx`) | the `deal` kind: two collections dealt into identical lots; its items and lots drawn in SVG (2026-11-19) |
@@ -1987,6 +2056,8 @@ The code is in THREE places:
 | `sort.js` (+ test), `InquirySort.jsx`, `inquirySort.css` (+ `inquirySort.render.test.jsx`) | the `sort` kind: a hand of pair or fraction cards sorted into two baskets, one instrument he owns per card, the world's witness for a card in the other basket (2026-11-19) |
 | `measure.js` (+ test), `InquiryMeasure.jsx`, `inquiryMeasure.css` (+ `inquiryMeasure.render.test.jsx`) | the `measure` kind: two strips are one fraction, counted again in a plank that fills both; the chain of equal fractions; `FracTpl` (a typed fraction: two boxes over a bar) and `fracTex` / `chainTex`, shared with `part` (2026-11-19) |
 | `part.js` (+ test), `InquiryPart.jsx`, `inquiryPart.css` (+ `inquiryPart.render.test.jsx`) | the `part` kind: a part of a whole painted in strokes, written, then re-cut in a plank that fills the part and the whole (2026-11-19) |
+| `sheet.js` (+ test), `InquirySheet.jsx`, `inquirySheet.css` (+ `inquirySheet.render.test.jsx`) | the `sheet` kind: a spreadsheet of the remainders of a large number by the primes, a line read as dividing, « prime » said and refused or accepted (2026-11-23) |
+| `factorLadder.js` (+ test), `InquiryFactor.jsx`, `inquiryFactor.css` (+ `inquiryFactor.render.test.jsx`) | the `ladder` mode `factor` (mounted by `InquiryGcd.jsx › Ladder`): one gap, a rack of planks, a notebook of the divisions that held, the planks laid in a row; `factorRungs` for a forge's `c.factor` (2026-11-23) |
 | `inquiryParts.jsx` | what every experiment screen shares: `FAST`, `expose`, `X0` / `SPAN`, `useLater`, `YesNo` |
 | `inquiryScreens`, `inquiryDivision`, `inquiryGcd`, `inquiryStages` `.render.test.jsx` | the screens rendered without a DOM: their first screen, and (`inquiryStages`) eight kinds played past it |
 | `../engine/builders.js`, `robot.js`, `audio.js`, `input.js` | reusable: low-poly builders, the robot, synthesised sound, keyboard + touch input |

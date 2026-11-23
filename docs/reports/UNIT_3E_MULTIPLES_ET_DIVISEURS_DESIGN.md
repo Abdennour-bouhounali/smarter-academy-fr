@@ -71,6 +71,23 @@ part 2 (problems where decomposing is the tool, calculator allowed). Sources: th
 `adapted`; brevet-modelled ones marked « Sur le modèle du brevet <année> » ONLY from a paper filed in
 `docs/curriculum/officiel/` — otherwise `adapted`.
 
+### What the bank showed (2026-11-23, after it was written: 50 exercises, primary points P1 65 · P2 44 · P3 23)
+
+Three things a student must be able to DO that the four keys above did not carry — the design is corrected, not the
+bank:
+
+1. **Reading a decomposition as a tool** (does 12 divide 2³ × 3² × 7? what is the quotient? is it a square?) carries
+   paliers 3–5, and the error « the same primes are there, so it divides » appears in 8 questions. It is not a fifth
+   key (comparing exponents is forged in lesson 2, where it gives the PGCD): here it is what key 2 is FOR — key 2's
+   last step ends on one such reading, the trainer's ladder holds reading questions from its third stage, and the
+   final mission (36 or 48 into 2³ × 3² × 7) is its test. The perfect-square reading stays in the bank only, as a
+   palier-5 problem.
+2. **Following a program** that tests divisors (5 of the 10 palier-4 sheets): key 4's experiment stays the
+   spreadsheet, but its last step and the trainer's key-4 questions include a short program in French blocks whose
+   trace the student completes (which divisor does it try next, when does it stop).
+3. **Where to stop** (p² ⩽ n) is nowhere in the 3e attendus or repères `[À VÉRIFIER DANS LE PROGRAMME OFFICIEL]`: it
+   is taught because deciding « this quotient is prime » is impossible without it. Key 3 stays.
+
 ## Lessons 2–5
 
 Not designed yet. Port sources are in `docs/curriculum/net-3e/fr_dz_table.json` and the plan's log of 2026-11-23.

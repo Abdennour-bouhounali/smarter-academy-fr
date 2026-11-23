@@ -233,7 +233,8 @@ const MAKE = {
       rand,
       nonDivisorsNear(n, b2, b2 - 5, b2 + 5).filter((x) => x >= 9),
     );
-    const price = pick(rand, [150, 180, 250, 320]);
+    // an empty crate of the cooperative, in whole euros: a French price (2–5 €), not a dinar amount re-signed
+    const price = pick(rand, [2, 3, 4, 5]);
     if (!b1) return null;
     const d1 = divide(n, b1);
     const good = GOODS.dates;
@@ -297,8 +298,9 @@ const MAKE = {
         return y ? g(y, x % y) : x;
       })(b1, b2);
     const n = lcm * int(rand, 2, Math.max(2, Math.floor(k / 2)));
-    const p1 = pick(rand, [100, 120, 150]);
-    const p2 = Math.round((p1 * (b2 / b1) * pick(rand, [0.9, 1.1])) / 10) * 10;
+    // a tray of 6 to 12 eggs sells for 2–4 €; the bigger tray costs about as much per egg (±10 %), in whole euros
+    const p1 = pick(rand, [2, 3, 4]);
+    const p2 = Math.max(1, Math.round(p1 * (b2 / b1) * pick(rand, [0.9, 1.1])));
     const q1 = n / b1;
     const q2 = n / b2;
     if (q1 > 36 || q1 * p1 === q2 * p2) return null;
@@ -354,7 +356,8 @@ const MAKE = {
     const q = int(rand, 3, 6);
     const r = int(rand, 5, b - 6);
     const n = b * q + r;
-    const price = pick(rand, [4500, 6000, 7500]);
+    // a day's rental of a small truck: 150–250 € (the Algerian amounts were dinars)
+    const price = pick(rand, [150, 200, 250]);
     return {
       kind: 'trip',
       key: K.baqi,

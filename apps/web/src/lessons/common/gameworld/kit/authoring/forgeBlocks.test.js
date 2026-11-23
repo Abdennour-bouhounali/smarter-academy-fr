@@ -3,16 +3,20 @@ import { complete, runOn } from '../forge';
 import { rng } from '../random';
 import {
   attacksOf,
+  boxesOf,
   byId,
   differenceBox,
   divisionRow,
   fills,
   firstBreak,
   firstWrong,
+  fractionBox,
   fromLog,
   fromRounds,
   gather,
   givenDivision,
+  givenFraction,
+  givenPower,
   hard,
   judge,
   lazy,
@@ -23,13 +27,16 @@ import {
   pairKey,
   pairPool,
   pairsOutside,
+  partsOf,
   pgcdBox,
   pgcdPairBox,
   plankCase,
+  powerBox,
   subtractionRow,
   makerOf,
 } from './forgeBlocks';
 import { euclid } from './numbers';
+import { slot } from '../forge';
 import { allRules } from './test/suites.js';
 
 /**
@@ -185,6 +192,30 @@ describe('authoring/forgeBlocks.js — the last step', () => {
     expect(pgcdPairBox(92, 69).tokens.map((t) => t.slot ?? t)).toEqual(['PGCD(92 ; 69)', '=', 'PGCD(69 ;', 'p', ')']);
     expect(line(['Carnet des soustractions :'])).toEqual({ dir: 'ltr', tokens: ['Carnet des soustractions :'] });
     expect(divisionRow(2, { w: 4 }).tokens[0]).toEqual({ slot: 'a2', label: 'le dividende', w: 4 });
+  });
+
+  it('a power in its own shape: its boxes are read base first, then exponent, like any other box', () => {
+    // 1 400 = 2^□ × 5^□ × 7 — the design's last step of key 2 (two raised boxes, named « exposant »)
+    const tokens = ['1 400', '=', powerBox(2, 'e2'), '×', powerBox(5, 'e5'), '×', '7'];
+    expect(tokens[2]).toEqual({ pow: { base: '2', exp: { slot: 'e2', label: 'exposant', w: 1 } } });
+    expect(boxesOf(tokens).map((t) => t.slot)).toEqual(['e2', 'e5']);
+    // a base typed too: the base's box, then the exponent's — the keyboard's order
+    const both = powerBox(slot('p', 'le facteur', 2), 'k', { w: 2 });
+    expect(boxesOf([both]).map((t) => [t.slot, t.label, t.w])).toEqual([
+      ['p', 'le facteur', 2],
+      ['k', 'exposant', 2],
+    ]);
+    // printed: nothing to type; the parts of a power or a fraction in reading order, none for anything else
+    expect(givenPower(3, 2)).toEqual({ pow: { base: '3', exp: '2' } });
+    expect(boxesOf([givenPower(3, 2), '×', givenFraction(66, 78)])).toEqual([]);
+    expect(partsOf(givenPower(3, 2))).toEqual(['3', '2']);
+    expect(partsOf(fractionBox('n', 'd')).map((x) => x.slot)).toEqual(['n', 'd']);
+    expect(partsOf('×')).toBe(null);
+    expect(partsOf(slot('x', 'x'))).toBe(null);
+    // a line of fractions, powers and boxes: every box once, in reading order
+    expect(
+      boxesOf([fractionBox('n', 'd'), '=', slot('g', 'g'), givenPower(2, 3), powerBox(5, 'e')]).map((t) => t.slot),
+    ).toEqual(['n', 'd', 'g', 'e']);
   });
 
   it('a pool of pairs without the bank’s; a draw replayed by its seed; the first wrong step', () => {

@@ -23,7 +23,7 @@ import { guardEvidence } from '../../evidence';
 import { rng } from '../../random';
 import { keysOfPoints } from '../../bankSitting';
 import { allQuestions, forgotten } from '../../sitting';
-import { boxesOf, pairKey } from '../forgeBlocks';
+import { boxesOf, pairKey, partsOf } from '../forgeBlocks';
 import { CELLS, COINS, DIVISIONS, PLANKS, ROWS, SUBTRACTIONS, gcd, range } from '../numbers';
 import { alone, bankPairs, islandNamesIn, linesWithBoth, pairLines, readBank, storiesOf } from './bank.js';
 // the one rule of a bridge with a marked stretch (pure, no three.js): the islands' stories are what this suite reads
@@ -741,13 +741,14 @@ export function describeForges(opts) {
             const lines = F.use.lines(c);
             expect(lines.length).toBeGreaterThanOrEqual(1);
             expect(lines.length).toBeLessThanOrEqual(4);
-            // a typed fraction (`fractionBox`) gives its numerator's box, then its denominator's (lesson 8)
+            // a typed fraction (`fractionBox`) gives its numerator's box, then its denominator's (lesson 8); a typed power
+            // (`powerBox`) its base's box, then its exponent's
             const boxes = lines.flatMap((l) => boxesOf(l.tokens));
             expect(boxes.map((t) => t.slot).sort()).toEqual(Object.keys(vals).sort());
             for (const t of boxes) expect(String(vals[t.slot]).length, t.slot).toBeLessThanOrEqual(t.w);
             for (const l of lines)
               for (const t of l.tokens)
-                if (t?.frac) for (const x of [t.frac.n, t.frac.d]) plain(typeof x === 'string' ? x : x.label);
+                if (partsOf(t)) for (const x of partsOf(t)) plain(typeof x === 'string' ? x : x.label);
                 else plain(typeof t === 'string' ? t : t.label);
             const asText = Object.fromEntries(Object.entries(vals).map(([k, v]) => [k, String(v)]));
             expect(F.use.check(c, asText, verdict)).toBe('ok');
@@ -1125,6 +1126,8 @@ export function describeLimits(opts) {
           expect(len(F.text.tryKey(c)), F.text.tryKey(c)).toBeLessThanOrEqual(Lm.tryKey);
           const lines = F.use.lines(c);
           expect(lines.length).toBeLessThanOrEqual(Lm.useLines);
+          // a fraction or a power (`{ frac }`, `{ pow }`) is ONE unit of its line, typed or printed, however many boxes it
+          // holds (defects.md B17, C14)
           for (const l of lines)
             expect(l.tokens.filter((t) => typeof t === 'object').length).toBeLessThanOrEqual(Lm.useBoxes);
         }

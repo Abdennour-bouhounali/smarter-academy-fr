@@ -633,6 +633,34 @@
   height: 2.1rem;
   font-size: 1.15rem;
 }
+/* a power of the last step (`{ pow: { base, exp } }`): the base, the exponent RAISED after it, smaller — printed or a
+   small box; the pair stays one block that never breaks across two lines */
+.rf-pow {
+  display: inline-flex;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+.rf-pow__base {
+  display: inline-flex;
+}
+.rf-pow__exp {
+  display: inline-flex;
+  margin-left: 0.08em;
+  font-size: 0.58em;
+  line-height: 1;
+  vertical-align: baseline;
+  transform: translateY(-0.15em);
+}
+.rf-use .rf-pow__exp input {
+  height: 2rem;
+  border-width: 2px;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+}
+.rf-uselines:not([data-rf-lines='1']) .rf-use .rf-pow__exp input {
+  height: 1.6rem;
+  font-size: 0.95rem;
+}
 
 @keyframes rf-lay {
   from {

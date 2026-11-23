@@ -20,3 +20,96 @@
 .rf-log li > .rf-line--pair em {
   flex: none;
 }
+
+/* A case that is a FACTOR LADDER (forgeParts.jsx › `c.factor`): the number, its planks laid in a row (as planks, their
+   length written on them, nothing between them), then where they took it — a green « 1 » or what is left in amber — and
+   the plank that fell there. The scene keeps the single bridge's box (`.rf-bridge`); SVG text is ≥ 26 units of 720. */
+.rf-factor .rf-factor__n {
+  font-size: 34px;
+  font-weight: 900;
+}
+.rf-factor__num {
+  fill: #06262c;
+  font:
+    900 26px 'Inter',
+    sans-serif;
+  opacity: 0;
+  animation: rf-lay 0.3s ease-out forwards;
+}
+/* a factor case that does not hold keeps its planks: only the plank that fell falls */
+.rf-bridge.rf-factor.is-fell .rf-plank {
+  opacity: 0;
+  animation: rf-lay 0.3s ease-out forwards;
+}
+.rf-factor__fell {
+  transform-box: fill-box;
+  transform-origin: left top;
+  animation: rf-factor-fall 1.3s ease-in forwards;
+}
+.rf-factor .rf-factor__fell .rf-plank {
+  fill: #fde68a;
+  stroke: #fbbf24;
+  stroke-dasharray: 6 4;
+}
+@keyframes rf-factor-fall {
+  0%,
+  55% {
+    transform: none;
+  }
+  to {
+    transform: translateY(34px) rotate(12deg);
+    opacity: 0.8;
+  }
+}
+.rf-factor__end rect {
+  stroke-width: 3;
+}
+.rf-factor__end.is-one rect {
+  fill: rgba(52, 211, 153, 0.25);
+  stroke: #34d399;
+}
+.rf-factor__end.is-left rect {
+  fill: rgba(251, 191, 36, 0.3);
+  stroke: #fbbf24;
+}
+.rf-factor__end text {
+  fill: #e8f6ff;
+  font:
+    900 30px 'Inter',
+    sans-serif;
+}
+
+/* its line of evidence: « 72 [2][2][2][3][3] · arrive à 1 » on ONE line */
+.rf-log li > .rf-line--factor {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.rf-log li > .rf-line--factor em {
+  flex: none;
+}
+.rf-factorhead {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rf-factorhead__planks {
+  display: inline-flex;
+  gap: 0.12rem;
+}
+.rf-factorhead__planks b {
+  padding: 0 0.32rem;
+  border-radius: 0.3rem;
+  border: 1px solid #7dfcff;
+  background: #2f7df6;
+  color: #ffffff;
+  font-size: 0.9em;
+  line-height: 1.35;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rf-factor__num,
+  .rf-factor__fell {
+    animation: none;
+    opacity: 1;
+  }
+}

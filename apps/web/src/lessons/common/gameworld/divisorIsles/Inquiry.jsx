@@ -9,7 +9,7 @@
  *        | groups, rebuild, estimate, bracket (`InquiryDivision.jsx` — the Euclidean division)
  *        | common, ladder, nest (`InquiryGcd.jsx` — the greatest common divisor) | cycle (`InquiryCycle.jsx`)
  *        | summit (`InquirySummit.jsx`) | deal (`InquiryDeal.jsx`) | lists (`InquiryLists.jsx`)
- *        | sort (`InquirySort.jsx`) | measure (`InquiryMeasure.jsx`) | part (`InquiryPart.jsx`)
+ *        | sort (`InquirySort.jsx`) | measure (`InquiryMeasure.jsx`) | part (`InquiryPart.jsx`) | sheet (`InquirySheet.jsx`)
  *   — every spec shape is in docs/architecture/GAME_WORLD.md « Explore ».
  * `text` is the LESSON's wording (this file names no lesson and writes none of its numbers).
  */
@@ -39,6 +39,7 @@ import { Lists } from './InquiryLists';
 import { Sort } from './InquirySort';
 import { Measure } from './InquiryMeasure';
 import { Part } from './InquiryPart';
+import { Sheet } from './InquirySheet';
 import { INQUIRY_TEXT } from './strings';
 import { FAST, expose } from './inquiryParts';
 import './inquiry.css';
@@ -624,6 +625,7 @@ export default function Inquiry({ spec, game, onDone }) {
     sort: Sort,
     measure: Measure,
     part: Part,
+    sheet: Sheet,
   }[spec.kind];
   return <Kind spec={spec} play={play} onDone={onDone} />;
 }
