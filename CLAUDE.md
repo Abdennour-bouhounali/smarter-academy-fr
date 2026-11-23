@@ -13,7 +13,8 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 
 ## Where this repository comes from, and what is true today (2026-11-22)
 
-- It was the old French site (still on `main`, commit `0ddfb98`). On 2026-11-22 the branch `rebuild/dz-core` replaced
+- It was the old French site (`0ddfb98`). **Since 2026-11-23 `main` is the rebuild, deployed to smarter-academy.fr** onto the
+  existing database (plan §9); every push to `main` deploys. On 2026-11-22 the branch `rebuild/dz-core` replaced
   the whole tree by the Algerian platform's (`smarter-academy-dz`, `dev` at `7f4cef1c`), which was far ahead, and
   started turning it into the French product. Commit `049380e` holds that import whole: `git show 049380e:<path>`
   reads any Algerian file that was since deleted.
