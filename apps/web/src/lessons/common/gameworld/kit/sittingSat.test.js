@@ -63,6 +63,30 @@ describe('a sitting is evidence whatever happened before it', () => {
     expect(w.tally).toEqual({ tens: { ok: 1, n: 1 } });
   });
 
+  it('a sheet with a `factorization` step (3e) is sat, and marked by the practice evaluator as the student typed it', async () => {
+    const fact = {
+      ...sheet('ex-fact'),
+      questions: [
+        {
+          ...sheet('ex-fact').questions[0],
+          statement: 'Décompose 72.',
+          answerType: 'factorization',
+          expectedAnswer: '2^3*3^2',
+        },
+      ],
+    };
+    const sittings = createBankSittings({ lesson: 'toy', levels, load: async () => [fact] });
+    await sittings.prepare();
+    const s = sittings.makeSubject(rng(1), 1, [], keyOf);
+    expect(s.exercises.map((e) => e.bankId)).toEqual(['ex-fact']);
+    const [q] = allQuestions(s);
+    expect(q.answerType).toBe('factorization');
+    // the LaTeX the practice space's FactorizationInput writes, exponents raised
+    expect(sittings.totalMark(s, { [q.id]: { value: '2^{3}\\times3^{2}' } })).toBe(s.total);
+    expect(sittings.totalMark(s, { [q.id]: { value: '2^{3}\\times9' } })).toBe(0);
+    expect(sittings.totalMark(s, { [q.id]: { value: '8\\times9' } })).toBe(0);
+  });
+
   it('opening a sitting and quitting costs nothing: nothing sent, nothing kept, the same sheets can come back', async () => {
     const sittings = createBankSittings({ lesson: 'toy', levels, load: async () => [sheet('ex-only')] });
     await sittings.prepare();

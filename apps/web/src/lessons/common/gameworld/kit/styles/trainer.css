@@ -256,6 +256,38 @@
   height: 2.15rem;
   font-size: 1.2rem;
 }
+/* ───────── a POWER in its own shape: the base, the exponent RAISED after it, smaller ─────────
+   The trainer's form (`Trainer.jsx › FormLines`, a token `{ pow: { base, exp } }`): the same look as the forge's last
+   step (`ruleForge.css › .rf-pow`, the same DOM — a span, the base, a `sup`), its own classes so the sheet does not need
+   the forge's stylesheet. Printed parts are <b>; the pair never breaks across two lines. */
+.di-pow {
+  display: inline-flex;
+  align-items: flex-start;
+  white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.di-pow__base {
+  display: inline-flex;
+}
+.di-pow > .di-pow__base > b,
+.di-pow > .di-pow__exp > b {
+  font-weight: 800;
+}
+.di-pow__exp {
+  display: inline-flex;
+  margin-left: 0.08em;
+  font-size: 0.58em;
+  line-height: 1;
+  vertical-align: baseline;
+  transform: translateY(-0.15em);
+}
+/* a typed exponent: a small box, raised; its digits at least the sheet's floor */
+.di-root .di-pow__exp .di-num--tr {
+  height: 1.75rem;
+  font-size: max(var(--di-min-font, 12px), 1rem);
+  padding: 0 0.15rem;
+}
 .di-sheet__reasons {
   display: grid;
   gap: 0.3rem;

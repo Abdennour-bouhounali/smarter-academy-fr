@@ -66,9 +66,41 @@ export const plain = (x) => {
   expect(String(x), String(x)).not.toMatch(/\$|\\/);
 };
 
-/** A side written plainly: each PGCD of numbers by its value, × as *, the minus sign as -, no LaTeX space. */
+/** The superscript digits a plain string writes an exponent with (« 2³ »). */
+const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+/**
+ * A side as a STRING: a string as it is; a list of tokens as the kit writes a line (`forgeBlocks.js`, `Trainer.jsx ›
+ * FormLines`) joined — strings, printed numbers, a printed power `{ pow: { base, exp } }` written `base^{exp}`, a printed
+ * fraction `{ frac: { n, d } }` written `\frac{n}{d}`; a box (`slot`, `num`, `choice`) stays a box, so the side is not
+ * arithmetic.
+ */
+function sideText(side) {
+  if (!Array.isArray(side)) return String(side);
+  const part = (x) => (typeof x === 'string' || typeof x === 'number' ? String(x) : '□');
+  return side
+    .map((t) =>
+      t?.pow
+        ? `${part(t.pow.base)}^{${part(t.pow.exp)}}`
+        : t?.frac
+          ? `\\frac{${part(t.frac.n)}}{${part(t.frac.d)}}`
+          : part(t),
+    )
+    .join(' ');
+}
+/**
+ * A side written plainly: each PGCD of numbers by its value, × as *, the minus sign as -, no LaTeX space; a POWER of
+ * numbers by its value — written `2^3`, `2^{3}`, `{2}^{3}` (LaTeX) or `2³` (superscript digits, a plain string).
+ */
 const normalSide = (side) =>
-  side
+  sideText(side)
+    .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (sup) => `^{${[...sup].map((c) => SUPERSCRIPTS.indexOf(c)).join('')}}`)
+    .replace(/\\,|\\;|\\ |\u202f|\u00a0/g, '')
+    // a base in braces or bare; an exponent in braces, or ONE digit bare — LaTeX raises one character: « 2^10 » is
+    // 2¹ then 0, an ambiguous writing that is not read (the side is skipped)
+    .replace(/\^\s*\d{2,}/g, '^□')
+    .replace(/(?:\{(\d+)\}|(\d+))\s*\^\s*(?:\{\s*(\d+)\s*\}|(\d))/g, (_, pb, p, eb, e) =>
+      String(Number(pb ?? p) ** Number(eb ?? e)),
+    )
     .replace(/\\mathrm\{PGCD\}\s*\((\d+)\s*;\s*(\d+)\)|PGCD\s*\((\d+)\s*;\s*(\d+)\)/g, (_, a, b, c, d) =>
       String(gcd(Number(a ?? c), Number(b ?? d))),
     )
@@ -77,7 +109,10 @@ const normalSide = (side) =>
     .replace(/\\,|\\;|\\ /g, '')
     .trim();
 
-/** The value of an arithmetic side: « 19 \\times 4 + 3 », « 152 - 95 », « \\mathrm{PGCD}(32 ; 44) »; null if not one. */
+/**
+ * The value of an arithmetic side: « 19 \\times 4 + 3 », « 152 - 95 », « \\mathrm{PGCD}(32 ; 44) », a product of POWERS
+ * « 2^{3} \\times 3^2 », « 2³ × 3² » — or a line's tokens with a printed `{ pow }` (`sideText`); null if not one.
+ */
 export function valueOf(side) {
   const t = normalSide(side);
   if (!/^\d+(\s*[-+*]\s*\d+)*$/.test(t)) return null;
@@ -814,6 +849,38 @@ export function answersOf(q, right, boxes, mistakes = () => []) {
 }
 
 /**
+ * What is wrong with the savoir-faire the keys of a lesson prove ([] when nothing): each key's point
+ * (`evidence.learningPointOf(id, key)`) is a catalogue id of THIS lesson that a module teaches, and
+ *   - without `pointOf`: each key proves its OWN point — all distinct (one point per key);
+ *   - with `pointOf` ({ key: 'P<n>' }, DECLARED when the lesson has more keys than points): every key is declared and
+ *     nothing else (a key with no point is refused), each proves the point declared for it, points are shared only as
+ *     declared, and every point a module teaches is proved by at least one key (a point no key proves is refused).
+ */
+export function pointErrors({ id, keys, evidence, config, pointOf }) {
+  const errors = [];
+  const points = keys.map((key) => evidence.learningPointOf(id, key));
+  const taught = new Set(config.modules.flatMap((m) => m.teachesLearningPointIds ?? []));
+  const own = new RegExp(`^[0-9a-z]+_${id}_P\\d+$`);
+  keys.forEach((key, i) => {
+    if (!own.test(String(points[i]))) errors.push(`${key}: ${points[i]} is not a point of ${id}`);
+    else if (!taught.has(points[i])) errors.push(`${key}: ${points[i]} is taught by no module`);
+  });
+  if (!pointOf) {
+    if (new Set(points).size !== keys.length) errors.push('two keys prove the same point, and no pointOf declares it');
+    return errors;
+  }
+  const declared = Object.keys(pointOf);
+  for (const key of keys) if (!declared.includes(key)) errors.push(`${key}: no point declared in pointOf`);
+  for (const key of declared) if (!keys.includes(key)) errors.push(`${key}: declared in pointOf, but not a key`);
+  keys.forEach((key, i) => {
+    if (pointOf[key] && !String(points[i]).endsWith(`_${pointOf[key]}`))
+      errors.push(`${key}: proves ${points[i]}, pointOf declares ${pointOf[key]}`);
+  });
+  for (const p of taught) if (!points.includes(p)) errors.push(`${p}: no key proves it`);
+  return errors;
+}
+
+/**
  * THE EVIDENCE — `world/evidence.js`.
  *
  *   describeEvidence({ id: '<lesson id>', keys: KEYS, evidence, trainerEvidence, trainer, check, solution,
@@ -826,17 +893,17 @@ export function answersOf(q, right, boxes, mistakes = () => []) {
  *   mistakes   (q, right) => [answers] — the mistakes of THIS lesson (the difference for the PGCD, a true equality
  *              that is not the one asked…): each must make the claim false when `check` refuses it
  *   seeds      sessions drawn per card (default 30); minPerKind (default 50)
+ *   pointOf    { key: 'P<n>' } — DECLARED when the lesson has more keys than learning points (two keys prove the same
+ *              point): every key is named with the point it proves, `evidence.learningPointOf` says the same, and every
+ *              point a module of the lesson teaches is proved by at least one key. Without it, each key proves its OWN
+ *              point (one point per key, all distinct) — the rule is not weakened for a lesson that has one per key.
  */
 export function describeEvidence(opts) {
   const { id, keys, evidence, trainerEvidence, trainer, check, solution, cards, boxes, config } = opts;
   const FIRST = { firstTry: true, helped: false };
   describe(`the evidence of « ${id} » — the shared checks (authoring/test/suites.js › describeEvidence)`, () => {
     it('each key proves one savoir-faire of the lesson, by its catalogue id, and a module of the lesson teaches it', () => {
-      const points = keys.map((key) => evidence.learningPointOf(id, key));
-      expect(new Set(points).size).toBe(keys.length);
-      for (const p of points) expect(p).toMatch(new RegExp(`^[0-9a-z]+_${id}_P\\d+$`));
-      const taught = new Set(config.modules.flatMap((m) => m.teachesLearningPointIds ?? []));
-      for (const p of points) expect(taught.has(p), p).toBe(true);
+      expect(pointErrors({ id, keys, evidence, config, pointOf: opts.pointOf })).toEqual([]);
     });
 
     it('for EVERY question of the trainer: the claim is true exactly when `check` accepts the WHOLE answer', () => {
@@ -886,14 +953,21 @@ export function describeEvidence(opts) {
 const isAnswerBox = (t) => Boolean(t && typeof t === 'object' && (t.num || t.choice));
 /** The kit's fraction template `{ frac: { n, d } }` (Trainer.jsx › FormLines). */
 const isFracToken = (t) => Boolean(t && typeof t === 'object' && t.frac && typeof t.frac === 'object');
+/** The kit's power template `{ pow: { base, exp } }` (Trainer.jsx › FormLines — the forge's `powerBox` / `givenPower`). */
+const isPowToken = (t) => Boolean(t && typeof t === 'object' && t.pow && typeof t.pow === 'object');
 /**
  * How many ANSWERS a line of a form asks (defects.md B17: a sheet whose boxes wrap one alone onto a line). A box or a
  * choice is one; a typed fraction — two boxes stacked over a bar — is ONE answer in its own shape, as wide as one box;
- * a printed fraction asks nothing.
+ * a typed power — a base and its raised exponent, one of them or both a box — is ONE answer too; a printed fraction or
+ * power asks nothing.
  */
 export const answersOnLine = (line) =>
-  line.tokens.filter((t) => isAnswerBox(t) || (isFracToken(t) && (isAnswerBox(t.frac.n) || isAnswerBox(t.frac.d))))
-    .length;
+  line.tokens.filter(
+    (t) =>
+      isAnswerBox(t) ||
+      (isFracToken(t) && (isAnswerBox(t.frac.n) || isAnswerBox(t.frac.d))) ||
+      (isPowToken(t) && (isAnswerBox(t.pow.base) || isAnswerBox(t.pow.exp))),
+  ).length;
 
 /**
  * THE TRAINER « Entraîne-toi » — `world/trainer.js`.
@@ -902,7 +976,8 @@ export const answersOnLine = (line) =>
  *     cards: KNOWLEDGE.graph.nodes.map((n) => n.id), kinds: ['farq', 'furuq', 'tap', 'tf'] });
  *
  * opts:   kinds — every kind a session can ask (each must be seen); boxes — at most this many answers a line (3, B17;
- *         a typed fraction `{ frac: { n, d } }` counts as ONE: `answersOnLine`);
+ *         a typed fraction `{ frac: { n, d } }` or a typed power `{ pow: { base, exp } }` counts as ONE:
+ *         `answersOnLine`);
  *         seeds — sessions per card (25)
  */
 export function describeTrainer(opts) {
@@ -946,7 +1021,7 @@ export function describeTrainer(opts) {
       expect([...seen].sort()).toEqual([...kinds].sort());
     });
 
-    it(`a line of an exam sheet holds at most ${maxBoxes} answers (defects.md B17); a typed fraction is ONE`, () => {
+    it(`a line of an exam sheet holds at most ${maxBoxes} answers (defects.md B17); a typed fraction or power is ONE`, () => {
       for (const q of all())
         for (const l of q.form?.lines ?? []) {
           expect(answersOnLine(l), `${q.kind} ${q.prompt}`).toBeLessThanOrEqual(maxBoxes);
@@ -956,6 +1031,20 @@ export function describeTrainer(opts) {
             expect(new Set(parts.map(isAnswerBox)).size, `${q.kind} ${q.prompt}: a half-typed fraction`).toBe(1);
             for (const x of parts) if (!isAnswerBox(x)) said(x);
           }
+          // a power: its base and its exponent, each a box or a printed number — never empty, never a formula
+          for (const t of l.tokens.filter(isPowToken))
+            for (const x of [t.pow.base, t.pow.exp]) {
+              expect(x, `${q.kind} ${q.prompt}: a power with a part missing`).toBeTruthy();
+              if (!isAnswerBox(x)) plain(x);
+            }
+          // an exponent is never a flat box printed after its base (« 2 [ ] »): a box named « exposant » right after a
+          // printed number stands in a power's `sup` instead (`{ pow }`)
+          l.tokens.forEach((t, k) => {
+            const before = l.tokens[k - 1];
+            const flat =
+              isAnswerBox(t) && /exposant/i.test(t.label ?? '') && /^\d+$/.test(String(before?.strong ?? before));
+            expect(flat, `${q.kind} ${q.prompt}: an exponent typed flat after its base`).toBe(false);
+          });
         }
     });
   });

@@ -19,6 +19,7 @@ import {
   looseComma,
   typographyErrors,
   plain,
+  pointErrors,
   said,
   storeHolders,
   stringsIn,
@@ -110,6 +111,75 @@ describe('the shared suites’ helpers', () => {
     expect(answersOnLine({ tokens: [given, '=', typed] })).toBe(1);
     expect(answersOnLine({ tokens: ['PGCD(66 ; 78)', '=', box('g')] })).toBe(1);
     expect(answersOnLine({ tokens: [box('a'), box('b'), typed, { choice: 'v', options: [] }] })).toBe(4);
+  });
+
+  it('a line of a trainer sheet: a typed power is ONE answer, a printed one none', () => {
+    const box = (num) => ({ num, label: num });
+    const exp = (p) => ({ pow: { base: String(p), exp: box(`e${p}`) } });
+    expect(answersOnLine({ tokens: ['72', '=', exp(2), '×', exp(3)] })).toBe(2);
+    expect(answersOnLine({ tokens: ['72', '=', { pow: { base: '2', exp: '3' } }, '×', exp(3)] })).toBe(1);
+    expect(answersOnLine({ tokens: [{ pow: { base: box('p'), exp: box('e') } }] })).toBe(1);
+  });
+
+  it('reads a POWER of numbers: LaTeX `^`, superscript digits, a line’s printed `{ pow }` token', () => {
+    expect(valueOf('2^{3} \\times 3^{2}')).toBe(72);
+    expect(valueOf('2^3 \\times 3^2 \\times 7')).toBe(504);
+    expect(valueOf('{2}^{3} \\times 5^{2} \\times 7')).toBe(1400);
+    expect(valueOf('2³ × 3²')).toBe(72);
+    expect(valueOf('2³ × 5² × 7')).toBe(1400);
+    expect(valueOf('10² + 1')).toBe(101);
+    expect(valueOf('2^{10}')).toBe(1024);
+    // LaTeX raises ONE character without braces: 2^10 is 2¹ then a 0 — not a side of numbers
+    expect(valueOf('2^10')).toBe(null);
+    // the kit's tokens: printed powers are read, a box is not a number
+    expect(valueOf(['2', '×', { pow: { base: '3', exp: '2' } }])).toBe(18);
+    expect(valueOf([{ pow: { base: '2', exp: { num: 'e', label: 'exposant' } } }])).toBe(null);
+    expect(valueOf('2^{n}')).toBe(null);
+    // a tablet's line carries its powers now: « 72 = 2³ × 3² » is read, and a false one fails
+    expect(equalitiesHold('72 = 2^{3} \\times 3^{2}')).toBe(1);
+    expect(equalitiesHold('1\\,400 = 2^3 \\times 5^2 \\times 7')).toBe(1);
+    expect(trueEqualities('donc $72 = 2^3 \\times 3^2$')).toBe(1);
+    expect(() => equalitiesHold('72 = 2^{2} \\times 3^{3}')).toThrow();
+    expect(() => equalitiesHold('504 = 2³ × 3 × 7')).toThrow();
+    // a side WITHOUT a power reads as before
+    expect(valueOf('19 \\times 4 + 3')).toBe(79);
+  });
+
+  it('the points the keys prove: one per key by default; a DECLARED many-to-one mapping when keys outnumber points', () => {
+    const id = 'toy-lesson';
+    const P = (n) => `3e_${id}_P${n}`;
+    const config = { modules: [{ teachesLearningPointIds: [P(1)] }, { teachesLearningPointIds: [P(2), P(3)] }] };
+    const evidenceOf = (table) => ({ learningPointOf: (_, key) => (table[key] ? P(table[key]) : null) });
+    // one point per key: fine; two keys on one point without a declaration: refused
+    expect(pointErrors({ id, keys: ['a', 'b', 'c'], evidence: evidenceOf({ a: 1, b: 2, c: 3 }), config })).toEqual([]);
+    const four = ['a', 'b', 'c', 'd'];
+    const shared = evidenceOf({ a: 1, b: 2, c: 1, d: 3 });
+    expect(pointErrors({ id, keys: four, evidence: shared, config })).toHaveLength(1);
+    // declared: accepted
+    const pointOf = { a: 'P1', b: 'P2', c: 'P1', d: 'P3' };
+    expect(pointErrors({ id, keys: four, evidence: shared, config, pointOf })).toEqual([]);
+    // a key with no point (undeclared, or proving none) is refused
+    expect(pointErrors({ id, keys: four, evidence: shared, config, pointOf: { a: 'P1', b: 'P2', d: 'P3' } })).toEqual([
+      'c: no point declared in pointOf',
+    ]);
+    expect(
+      pointErrors({ id, keys: four, evidence: evidenceOf({ a: 1, b: 2, d: 3 }), config, pointOf }).length,
+    ).toBeGreaterThan(0);
+    // a point no key proves is refused (P3 taught, nobody proves it)
+    const noP3 = evidenceOf({ a: 1, b: 2, c: 1, d: 2 });
+    expect(
+      pointErrors({ id, keys: four, evidence: noP3, config, pointOf: { a: 'P1', b: 'P2', c: 'P1', d: 'P2' } }),
+    ).toEqual([`${P(3)}: no key proves it`]);
+    // the declaration must be what the evidence says, and name only keys
+    expect(pointErrors({ id, keys: four, evidence: shared, config, pointOf: { ...pointOf, c: 'P2' } })).toEqual([
+      `c: proves ${P(1)}, pointOf declares P2`,
+    ]);
+    expect(pointErrors({ id, keys: four, evidence: shared, config, pointOf: { ...pointOf, e: 'P1' } })).toEqual([
+      'e: declared in pointOf, but not a key',
+    ]);
+    // a point of another lesson, or one no module teaches, is refused in both modes
+    const stray = { learningPointOf: (_, key) => (key === 'a' ? '3e_other_P1' : P(9)) };
+    expect(pointErrors({ id, keys: ['a', 'b'], evidence: stray, config })).toHaveLength(2);
   });
 
   it('reads an arithmetic side, a PGCD of numbers — and nothing with a letter or a box', () => {

@@ -10,7 +10,9 @@
  *         the two helps: « Guide-moi » (the bank's hints — never the answer) or « Explique-moi » (the bank's model solution).
  * The subject is drawn from the lesson's EXERCISE BANK, as it is (bankSitting.js): each step is answered in the widget the
  * practice space draws for its `answerType` — a choice (ChoiceInput), a number in its own shape (TemplateInput, the
- * answer-template standard), a set of integers (IntegerSetInput); a « Montrer que » step is written on the paper only.
+ * answer-template standard), a set of integers (IntegerSetInput), a decomposition in prime factors (FactorizationInput —
+ * the practice space's own field, exponents raised; it sends `{ value: <LaTeX>, latex }`); a « Montrer que » step is
+ * written on the paper only.
  * The bank loads when the sitting opens (a few small files, once); until then the sheet waits.
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -19,6 +21,7 @@ import MathText from '../../components/MathText';
 import ProblemTable from '../../components/ProblemTable';
 import ChoiceInput from '../../../../features/practice/inputs/ChoiceInput';
 import IntegerSetInput from '../../../../features/practice/inputs/IntegerSetInput';
+import FactorizationInput from '../../../../features/practice/inputs/FactorizationInput';
 import TemplateInput from '../../../../features/practice/answerTemplates/TemplateInput';
 import { templateFor } from '../../../../features/practice/answerTemplates/templateFor';
 import Fit from './Fit';
@@ -117,8 +120,11 @@ const Paper = ({ e, marks, toggle }) => (
   </section>
 );
 
-/** The box of a step, drawn by the practice space's own widget for its answer type. */
-function Field({ q, value, onChange }) {
+/**
+ * The box of a step, drawn by the practice space's own widget for its answer type — the widget `QuestionRenderer.jsx`
+ * mounts for it (a `factorization` step: FactorizationInput, never the number template).
+ */
+export function Field({ q, value, onChange }) {
   if (q.paper)
     return (
       <span className="xs-onpaper" data-xs-paper-only={q.id}>
@@ -131,6 +137,8 @@ function Field({ q, value, onChange }) {
         <ChoiceInput question={q.shown} value={value} onChange={onChange} />
       ) : q.answerType === 'integerSet' ? (
         <IntegerSetInput question={q.shown} value={value} onChange={onChange} />
+      ) : q.answerType === 'factorization' ? (
+        <FactorizationInput question={q.shown} value={value} onChange={onChange} />
       ) : (
         <TemplateInput template={templateFor(q.shown)} question={q.shown} onChange={onChange} ariaLabel={q.text} />
       )}
@@ -142,8 +150,8 @@ function Field({ q, value, onChange }) {
  * The line a fraction box writes under itself (the irreducible-fraction note of the template) is the same for every fraction
  * answer of a sheet: it is said once per leaf of the answer sheet (ExamSittingLeaves › quiet), not under each box.
  */
-function quietKey(q) {
-  if (q.paper || q.answerType === 'choice' || q.answerType === 'integerSet') return null;
+export function quietKey(q) {
+  if (q.paper || ['choice', 'integerSet', 'factorization'].includes(q.answerType)) return null;
   const t = templateFor(q.shown);
   return t.kind === 'fraction' ? `fraction:${t.irreducible ? 'irreducible' : 'whole'}` : null;
 }

@@ -12,6 +12,7 @@
  * shape `[singular, plural]` and passes them to `counted`.
  * Tested: `authoring/numbers.test.js`.
  */
+import { formatFr } from '@smarter-academy/core/numberFormat.js';
 
 // ───────────────────────── the numbers ─────────────────────────
 
@@ -105,11 +106,14 @@ export function listFr(xs) {
 /**
  * n and its noun, agreed: forms = [singular, plural]. French takes the singular for 0 and 1 (« 0 dalle », « 1 dalle »)
  * and the plural from 2 on (« 2 dalles », « 1003 dalles »). The number and the noun are joined by a no-break space, so a
- * count never splits across two lines (`FRENCH_LANGUAGE_CONTRACT.md` §4). A noun that never changes (« 3 fois »)
- * gives the same word twice.
+ * count never splits across two lines (`FRENCH_LANGUAGE_CONTRACT.md` §4). A whole number of four digits or more takes
+ * the French thousands separator, a narrow no-break space (the core's `formatFr`, imported: « 1 400 cases »,
+ * « 2 431 planches »; the « 1003 » above is written « 1 003 »); anything else is written as given. A noun that
+ * never changes (« 3 fois ») gives the same word twice.
  */
 export function counted(n, [one, many]) {
-  return `${n}\u00a0${Math.abs(n) < 2 ? one : many}`;
+  const written = Number.isInteger(n) && n >= 0 ? formatFr(n) : n;
+  return `${written}\u00a0${Math.abs(n) < 2 ? one : many}`;
 }
 
 // ───────────────────────── the words of the world « L’archipel des diviseurs » ─────────────────────────

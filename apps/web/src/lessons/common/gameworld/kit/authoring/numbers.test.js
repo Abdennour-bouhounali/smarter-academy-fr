@@ -98,10 +98,23 @@ describe('authoring/numbers.js — the French agreement', () => {
         '11 pièces',
         '100 pièces',
         '101 pièces',
-        '1833 pièces',
+        '1\u202f833 pièces',
       ].map((s) => s.replace(' ', NB)),
     );
     expect(counted(3, ['fois', 'fois'])).toBe(`3${NB}fois`);
+  });
+
+  it('a whole number of four digits or more takes the narrow no-break space of the thousands (the core’s formatFr)', () => {
+    const THIN = '\u202f';
+    expect(counted(756, CELLS)).toBe(`756${NB}cases`);
+    expect(counted(999, CELLS)).toBe(`999${NB}cases`);
+    expect(counted(1400, CELLS)).toBe(`1${THIN}400${NB}cases`);
+    expect(counted(2431, PLANKS)).toBe(`2${THIN}431${NB}planches`);
+    expect(counted(1234567, COINS)).toBe(`1${THIN}234${THIN}567${NB}pièces`);
+    // the agreement is the number's, not the last group's
+    expect(counted(1001, CELLS)).toBe(`1${THIN}001${NB}cases`);
+    // what is not a whole number is written as it is given
+    expect(counted('…', CELLS)).toBe(`…${NB}cases`);
   });
 
   it('every table of the world agrees with 1 and with 2 and more', () => {

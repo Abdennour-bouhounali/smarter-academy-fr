@@ -4,7 +4,8 @@
  *
  *   the stepper (no `typed`)   − / + between `min` and `max`, then « make » — the pilot's stubborn island
  *   the typed form (`typed`)   he TYPES the length in its own shape (a box and the printed unit); a length outside
- *                              1 … the longest gap, or an empty box, is answered by a sentence
+ *                              `min` … `max` (each one bounded by 1 … the longest gap), or an empty box, is answered by
+ *                              a sentence
  *   the bench (`bench`)        an inquiry spec played by the world's `Inquiry` in a frame of its own (the forge's), with a
  *                              way back to the workshop; what he did there is kept on the game (`Game.benchKept`) and
  *                              shown again when he reopens it. It gives facts; it never says which plank to make.
@@ -24,15 +25,21 @@ import '../kit/ruleForge.css';
 const gapsOf = (o) => (o.gaps?.length ? o.gaps : [o.a]);
 
 /**
- * What the typed box holds, judged: null when it is a length he can make (1 … the longest gap), else the sentence
- * that answers it (`W` = `T.workshop`).
+ * What the typed box holds, judged: null when it is a length he can make, else the sentence that answers it
+ * (`W` = `T.workshop`). The lengths he can make: from the workshop's `min` (at least 1) to its `max` (at most the
+ * longest gap) — `limits` = the overlay's `{ min, max }`; without them, 1 … the longest gap. Below a `min` of more than
+ * 1: `W.tooShortOf(min)`; past a `max` shorter than the longest gap: `W.tooLong(b, max, n, true)` (the workshop's own
+ * limit, not the gap's).
  */
-export function plankRefusal(text, gaps, W) {
+export function plankRefusal(text, gaps, W, limits = {}) {
   if (text === '' || text == null) return W.empty;
   const b = Number(text);
-  const max = Math.max(...gaps);
+  const longest = Math.max(...gaps);
+  const min = Number.isInteger(limits.min) && limits.min > 1 ? limits.min : 1;
+  const max = Number.isInteger(limits.max) && limits.max >= min ? Math.min(limits.max, longest) : longest;
   if (!Number.isInteger(b) || b < 1) return W.tooShort;
-  if (b > max) return W.tooLong(b, max, gaps.length);
+  if (b < min) return W.tooShortOf(min);
+  if (b > max) return W.tooLong(b, max, gaps.length, max < longest);
   return null;
 }
 
@@ -94,7 +101,7 @@ function Typed({ o, game }) {
   const [err, setErr] = useState(null);
   const make = (e) => {
     e.preventDefault();
-    const why = plankRefusal(text, gaps, W);
+    const why = plankRefusal(text, gaps, W, { min: o.min, max: o.max });
     if (why) setErr(why);
     else game.craft(Number(text));
   };

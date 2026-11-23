@@ -51,8 +51,10 @@ const pointOf = (q) => q.learningPoints?.find((p) => p.role === 'primary')?.code
  * The answer types a sitting draws (ChoiceInput, TemplateInput, IntegerSetInput; a « Montrer que » on paper). A sheet with another
  * (`multiChoice`, `affine`, `interval`, `point`) is not drawn in a sitting — it stays in « /espace/pratique », whose player
  * draws every type. None in the six v2 banks of 2026-11-18 (`docs/reports/BANK_AS_IS_2026-11-18.md`).
+ * `factorization` (a decomposition in prime factors, 3e — 2026-11-23): its value is the LaTeX the practice space's
+ * `FactorizationInput` writes, marked by the same evaluator (`packages/core/practice/factorization.js`).
  */
-const SITTING_TYPES = ['choice', 'rational', 'integerSet', 'selfCheck'];
+const SITTING_TYPES = ['choice', 'rational', 'integerSet', 'selfCheck', 'factorization'];
 
 /** Can this sheet be sat? An exam sheet of the bank whose every step has a type the sitting draws. */
 const sittable = (ex) =>
@@ -213,6 +215,8 @@ function schemeOf(q) {
 function writtenOf(q, v) {
   if (!answeredBank(q, v)) return null;
   if (q.answerType === 'choice') return shown(q.bank.choices?.find((c) => c.id === v.choiceId)?.content ?? '');
+  // a decomposition is the LaTeX FactorizationInput wrote (« 2^{3}\\times3^{2} »): a formula, never raw LaTeX on the copy
+  if (q.answerType === 'factorization') return `$${String(v.value).replaceAll('$', '')}$`;
   return String(v.value);
 }
 

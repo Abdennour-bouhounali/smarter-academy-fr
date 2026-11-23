@@ -5,7 +5,9 @@
  * (« =MOD(2431;A2) », filled down), the cells under it plain numbers the world fills one by one. He clicks the line he
  * reads as dividing: the number becomes the quotient, a line of the notebook is written and the sheet is filled again
  * (shorter, with the default stop); a line whose remainder is not 0 is marked with that remainder — what happened. When he
- * reads no 0 he says the number is prime: accepted when no line has the remainder 0, else those lines are shown.
+ * reads no 0 he says the number is prime: accepted when no line has the remainder 0, else refused by the lesson's
+ * sentence (`notPrime`) — the lines with 0 are NOT outlined: he reads the sheet again himself (main session,
+ * 2026-11-23: the world does not do the reading for him); the line he then clicks plays as any line.
  *
  * More than ten lines stand in two blocks side by side, the rows numbered on (3 127 needs the primes up to 53: 16 lines);
  * nothing scrolls. `spec.text` is the lesson's wording (GAME_WORLD.md « Explore », spec shape of `sheet`). Nothing here
@@ -32,7 +34,7 @@ function blocksOf(lines) {
 }
 
 /** One block of the sheet: the column letters, the header row (A1 the lesson's word, B1 the formula), the lines. */
-function Block({ T, n, lines, rows, filled, s, zerosShown, onLine, first }) {
+function Block({ T, n, lines, rows, filled, s, onLine, first }) {
   const pick = s.stage === 'pick';
   return (
     <div className="iq-sheet__block" data-iq-block={first ? 1 : 2} style={{ '--rows': rows }}>
@@ -60,7 +62,7 @@ function Block({ T, n, lines, rows, filled, s, zerosShown, onLine, first }) {
       {lines.map((l) => {
         const shown = l.row - 2 < filled;
         const last = s.last?.type === 'line' && s.last.before === n && s.last.p === l.p ? s.last : null;
-        const look = last ? (last.held ? 'is-held' : 'is-miss') : zerosShown.includes(l.p) ? 'is-zero' : '';
+        const look = last ? (last.held ? 'is-held' : 'is-miss') : '';
         return (
           <button
             key={l.p}
@@ -71,7 +73,6 @@ function Block({ T, n, lines, rows, filled, s, zerosShown, onLine, first }) {
             data-iq-line={l.p}
             {...(shown ? { 'data-iq-rest': l.r } : {})}
             {...(last ? { 'data-iq-said': last.held ? 'held' : 'miss' } : {})}
-            {...(zerosShown.includes(l.p) ? { 'data-iq-zero': '' } : {})}
           >
             <span className="iq-sheet__n">{l.row}</span>
             <span>{l.p}</span>
@@ -121,7 +122,6 @@ export function SheetView({ spec, state: s, act }) {
                 rows={rows}
                 filled={s.filled}
                 s={s}
-                zerosShown={refused ? refused.zeros : []}
                 onLine={act.line}
                 first={k === 0}
               />

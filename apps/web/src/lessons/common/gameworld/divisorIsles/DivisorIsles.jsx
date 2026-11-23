@@ -27,13 +27,17 @@ import { KT, TX } from '../kit/text';
 import { Instruction, Recall } from '../kit/Instruction';
 import { useLesson } from '../kit/LessonContext';
 
-function Equation({ eq, unit = planks }) {
-  const { a, b, q, r, live, unpaid, mark } = eq;
+export function Equation({ eq, unit = planks }) {
+  const { a, b, q, r, live, unpaid, mark, aTex } = eq;
   // a remainder that is not 0 is a FACT about the mould, not a mistake: amber, never the red of an error
   const col = live ? '#fbbf24' : r === 0 ? '#34d399' : '#fb923c';
+  // the last bridge announced by a LABEL (`aTex`, the story's `boss.label`): the label stands for a, and what is left is
+  // not written while the planks are laid — it would give a away; the final remainder is a fact again
+  const hidden = Boolean(aTex) && live;
+  const rest = hidden ? '\\ldots' : `\\textcolor{${col}}{${r}}`;
   return (
-    <div className={`di-eq ${live ? '' : r === 0 ? 'is-ok' : 'is-open'}`}>
-      <M>{`${a} = ${b} \\times ${q} + \\textcolor{${col}}{${r}}`}</M>
+    <div className={`di-eq ${live ? '' : r === 0 ? 'is-ok' : 'is-open'}`} {...(aTex ? { 'data-di-eq-label': '' } : {})}>
+      <M>{`${aTex ?? a} = ${b} \\times ${q} + ${rest}`}</M>
       {/* a marked stretch: its own division, once the planks have passed the mark — a joint falls on it only if 0 is left */}
       {mark?.shown && (
         <div className="di-eq__mark" data-di-eq-mark={mark.r}>
@@ -44,7 +48,7 @@ function Equation({ eq, unit = planks }) {
       <div className="di-eq__legend">
         <span>{unit(q)}</span>
         {/* `unpaid`: the purse ran out — what is still open is not a remainder (it is not smaller than the plank) */}
-        <span style={{ color: col }}>{`${unpaid ? T.hud.unpaid : T.hud.remainder} : ${r}`}</span>
+        {!hidden && <span style={{ color: col }}>{`${unpaid ? T.hud.unpaid : T.hud.remainder} : ${r}`}</span>}
       </div>
     </div>
   );
@@ -65,10 +69,10 @@ function Verdict({ v }) {
         {v.purse
           ? T.verdict.purse(v.q, v.need)
           : v.holds
-            ? T.verdict.holds(v.b, v.a)
+            ? T.verdict.holds(v.b, v.aText ?? v.a)
             : v.mark && v.r === 0
               ? T.verdict.markMiss(v.b, v.mark.m)
-              : T.verdict.open(v.b, v.a)}
+              : T.verdict.open(v.b, v.aText ?? v.a)}
       </p>
     </div>
   );
@@ -642,11 +646,15 @@ function Statues({ game }) {
 /**
  * The store of the last bridge. The mission is written at the top and never leaves; three steps: choose a mould and compute,
  * watch the world build it, pay. A mould already tried shows what it left.
+ * The compute step: the Euclidean division of the gap « a = b × [ ] + [ ] » — or, when the story announces the gap by a
+ * LABEL (`boss.label: { text, tex, sign? }`, « 2³ × 3² × 7 »), the label in place of a and ONE box, the number of planks
+ * « 2³ × 3² × 7 = 36 × [ ] » (`game.bossCount`): a is never printed, and no long division of a is offered as a model.
  */
-function Boss({ o, game }) {
+export function Boss({ o, game }) {
   const T = game.T;
   // the gap, the two moulds and the price are THE LESSON'S (its story): nothing of them is written in this screen
   const { a, boss } = game.bossSeg;
+  const label = boss.label ?? null;
   const [q, setQ] = useState('');
   const [r, setR] = useState('');
   const [cost, setCost] = useState('');
@@ -657,6 +665,13 @@ function Boss({ o, game }) {
     e.preventDefault();
     if (o.view === 'cost') {
       if (cost === '' || !game.bossCost(Number(cost))) setErr(T.boss.err.cost(cost === '' ? '…' : cost));
+      return;
+    }
+    if (label) {
+      const st = q === '' ? 'nan' : game.bossCount(o.b, Number(q));
+      if (st === 'long') setErr(T.boss.err.long(o.b, Number(q)));
+      else if (st === 'short') setErr(T.boss.err.short(o.b, Number(q)));
+      else if (st === 'nan') setErr(T.boss.err.count);
       return;
     }
     if (q === '' || r === '') {
@@ -720,7 +735,35 @@ function Boss({ o, game }) {
 
       {o.view !== 'choose' && (
         <form onSubmit={submit}>
-          {o.view === 'divide' ? (
+          {o.view === 'divide' && label ? (
+            <>
+              <h2>{T.boss.divide(o.b)}</h2>
+              <PaperGate tip={PT.tipCompute}>
+                <div className="di-template" dir="ltr" data-di-boss-count>
+                  <span data-di-boss-label>
+                    <M>{label.tex}</M>
+                  </span>
+                  <span>=</span>
+                  <span>{o.b}</span>
+                  <span>×</span>
+                  <label>
+                    <Num
+                      value={q}
+                      onChange={(v) => {
+                        setQ(v);
+                        setErr(null);
+                      }}
+                      w={2}
+                      autoFocus
+                      aria-label={T.boss.qLabel}
+                      data-di-q
+                    />
+                    <small>{T.boss.qLabel}</small>
+                  </label>
+                </div>
+              </PaperGate>
+            </>
+          ) : o.view === 'divide' ? (
             <>
               <h2>{T.boss.divide(o.b)}</h2>
               <PaperGate tip={PT.tipDivision} onModel={() => setModel(twin(a, o.b))}>

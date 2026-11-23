@@ -86,6 +86,41 @@ describe('the workshop', () => {
     for (const t of ['1', '4', '33', '44']) expect(plankRefusal(t, [32, 44], W)).toBeNull();
   });
 
+  it('`typed` honours the workshop’s `min` and `max` (they were ignored: any length 1 … the longest gap was made)', () => {
+    const W = T.workshop;
+    // a min of more than 1: below it, the workshop's own sentence
+    expect(plankRefusal('2', [60], W, { min: 3, max: 60 })).toBe(W.tooShortOf(3));
+    expect(W.tooShortOf(3)).toBe('Cet atelier fabrique des moules de 3\u00a0cases au moins.');
+    expect(plankRefusal('3', [60], W, { min: 3, max: 60 })).toBeNull();
+    expect(plankRefusal('0', [60], W, { min: 3, max: 60 })).toBe(W.tooShort);
+    // a max shorter than the gap (91 cases, planks up to 90): the gap's own length cannot be made
+    expect(plankRefusal('91', [91], W, { min: 1, max: 90 })).toBe(W.tooLong(91, 90, 1, true));
+    expect(W.tooLong(91, 90, 1, true)).toBe(
+      'Cet atelier fabrique des moules de 90\u00a0cases au plus\u00a0: 91, c’est trop long.',
+    );
+    expect(plankRefusal('90', [91], W, { min: 1, max: 90 })).toBeNull();
+    expect(plankRefusal('7', [91], W, { min: 1, max: 90 })).toBeNull();
+    // a max as long as the gap, or longer: the gap bounds it, with the gap's sentence as before
+    expect(plankRefusal('17', [16], W, { min: 1, max: 16 })).toBe(
+      'Un moule de 17 est plus long que tout le fossé (16).',
+    );
+    expect(plankRefusal('17', [16], W, { min: 1, max: 99 })).toBe(
+      'Un moule de 17 est plus long que tout le fossé (16).',
+    );
+    // min 1 and no limits: exactly the old answers
+    expect(plankRefusal('1', [16], W, { min: 1 })).toBeNull();
+    expect(plankRefusal('16', [16], W, {})).toBeNull();
+  });
+
+  it('`typed`: the form judges with the overlay’s own min and max', () => {
+    const game = fakeGame();
+    const out = html({ type: 'workshop', a: 91, seg: 3, gaps: [91], min: 1, max: 90, typed: true }, game);
+    expect(out).toContain('data-di-workshop="typed"');
+    // a story's sentence for the workshop's limit receives that limit (the lesson's: « … des planches de 90 cases au plus »)
+    const story = { ...T.workshop, tooLong: (b, max) => `max ${max}, typed ${b}` };
+    expect(plankRefusal('91', [91], story, { min: 1, max: 90 })).toBe('max 90, typed 91');
+  });
+
   it('`typed` with a bench: the button opens it — new, then « kept » once he has written in it', () => {
     const o = { type: 'workshop', a: 32, seg: 3, gaps: [32, 44], typed: true, bench: BENCH };
     expect(html(o)).toContain(`data-di-bench-open="new"`);

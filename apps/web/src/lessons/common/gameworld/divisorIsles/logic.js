@@ -3,6 +3,7 @@
  * The world is a chain of floating islands; a bridge of length `a` holds only when planks of ONE length `b` fill it exactly:
  * a = b × q + r, and the bridge holds ⇔ r = 0 ⇔ b is a divisor of a. Everything the scene shows is computed here.
  */
+import { counted, CELLS } from '../kit/authoring/numbers';
 
 /** Euclidean division of a by b (b ≥ 1): the planks laid (q) and the cells left empty (r). */
 export function divide(a, b) {
@@ -127,12 +128,36 @@ export const STATUES = {
   big: 120,
   q: 20,
   sentences: [
-    { id: 'qasim', before: '', mid: 'est un diviseur de', smallFirst: true },
-    { id: 'yaqsim', before: '', mid: 'divise', smallFirst: true },
-    { id: 'yaqbal', before: '', mid: 'est divisible par', smallFirst: false },
-    { id: 'mudaaf', before: '', mid: 'est un multiple de', smallFirst: false },
+    { id: 'diviseur', before: '', mid: 'est un diviseur de', smallFirst: true },
+    { id: 'divise', before: '', mid: 'divise', smallFirst: true },
+    { id: 'divisible', before: '', mid: 'est divisible par', smallFirst: false },
+    { id: 'multiple', before: '', mid: 'est un multiple de', smallFirst: false },
   ],
 };
+
+/**
+ * The last bridge announced by a LABEL of the story instead of its length (`boss.label`, GAME_WORLD.md « The store of
+ * the last bridge »): he types only HOW MANY planks of b fill it, worked out from the label (2³ × 3² × 7 ÷ 36 = 2 × 7).
+ * 'ok' — b × q is the gap; 'long' / 'short' — b fills the gap but q is not the count; 'open' — b does not fill the gap:
+ * no count is right, the world builds what he chose and shows what is left; 'nan' — not a whole number.
+ */
+export function checkCount(a, b, q) {
+  if (!Number.isInteger(q) || q < 0) return 'nan';
+  if (a % b) return 'open';
+  if (b * q > a) return 'long';
+  if (b * q < a) return 'short';
+  return 'ok';
+}
+
+/**
+ * What the sign over a gap says: the story's label for the last bridge when it gives one (`boss.label.sign`, else its
+ * `text` and « cases » — a product is never 0 or 1), else the gap's count (« 756 cases »). A label never shows `a`.
+ */
+export function gapSign(seg) {
+  const label = seg.boss?.label;
+  if (label) return label.sign ?? `${label.text}\u00a0${CELLS[1]}`;
+  return counted(seg.a, CELLS);
+}
 
 /** The final bridge: checks one Euclidean division typed by the student. Returns 'ok' or the reason it is refused ('long' = the planks overshoot the gap). */
 export function checkDivision(a, b, q, r) {

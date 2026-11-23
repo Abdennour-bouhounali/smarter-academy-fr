@@ -33,9 +33,8 @@ import {
   makeHoverboard,
   makeLighthouse,
 } from '../engine/builders';
-import { divide, predictOptions, bridgeStars, buildLayout, DASH, checkDivision } from './logic';
+import { divide, predictOptions, bridgeStars, buildLayout, DASH, checkDivision, checkCount, gapSign } from './logic';
 import { T as WORLD_TEXT, waveSay, waveHint } from './strings';
-import { counted, CELLS } from '../kit/authoring/numbers';
 import { gatePoints, PRACTICE_HEARTS, MAX_WAVES } from '../kit/ladder';
 import { makeMission, judge, facts, answerParts, WORLD_OF, ORDER_PAY, MISTAKE_COST, CASE_HEARTS } from './cases';
 import { Depot } from './Depot';
@@ -645,7 +644,8 @@ export class DivisorIslesGame extends WorldRuntime {
       g.add(tick);
     }
     if (seg.mark) this.buildMark(seg, g, q);
-    const label = textSprite(seg.mark ? this.T.mark.label(seg.mark, seg.a) : counted(seg.a, CELLS), {
+    // the last bridge may be announced by the story's label (« 2³ × 3² × 7 cases »), never by its count (logic.js › gapSign)
+    const label = textSprite(seg.mark ? this.T.mark.label(seg.mark, seg.a) : gapSign(seg), {
       h: 1.25,
       bg: 'rgba(10,26,60,0.86)',
       stroke: null,
@@ -1071,6 +1071,10 @@ export class DivisorIslesGame extends WorldRuntime {
     const mv = seg.mark ? markVerdict(a, seg.mark, b) : null;
     const eqMark = (laid) =>
       mv ? { mark: { ...mv.mark, shown: laid * b >= Math.min(a, mv.mark.m + (mv.mark.r ? b - mv.mark.r : 0)) } } : {};
+    // the last bridge announced by a LABEL (`boss.label`): the equation writes the label in place of a, and hides what is
+    // left while the planks are laid (r + b × q would give a away); the verdict names the label too
+    const lab = seg.boss?.label ?? null;
+    const named = lab ? { aTex: lab.tex, aText: lab.text } : {};
     this.logBridge(a, b);
     if (mv) this.logBridge(seg.mark, b);
     this.input.clear();
@@ -1079,7 +1083,7 @@ export class DivisorIslesGame extends WorldRuntime {
       overlay: null,
       prompt: null,
       verdict: null,
-      equation: { a, b, q: 0, r: a, live: true, ...eqMark(0) },
+      equation: { a, b, q: 0, r: a, live: true, ...eqMark(0), ...named },
     });
     // cinematic camera: from the side, the whole gap in view
     const mid = this.segPoint(seg, seg.len / 2);
@@ -1158,7 +1162,7 @@ export class DivisorIslesGame extends WorldRuntime {
       seg.count.userData.setText(String(k + 1));
       seg.count.position.copy(this.segPoint(seg, (k + 0.5) * b * seg.cell, 0, 1.6));
       this.set({
-        equation: { a, b, q: k + 1, r: a - b * (k + 1), live: true, ...eqMark(k + 1) },
+        equation: { a, b, q: k + 1, r: a - b * (k + 1), live: true, ...eqMark(k + 1), ...named },
         ...(purse ? { purse: { ...purse, left: purse.left - (k + 1) } } : {}),
       });
     }
@@ -1168,7 +1172,7 @@ export class DivisorIslesGame extends WorldRuntime {
       // THE PURSE IS EMPTY before the gap is filled: what is laid is shown, with what is still open, then it all goes back
       const open = a - b * paid;
       this.set({
-        equation: { a, b, q: paid, r: open, live: false, unpaid: true },
+        equation: { a, b, q: paid, r: open, live: false, unpaid: true, ...named },
         verdict: {
           right: null,
           first: false,
@@ -1205,7 +1209,7 @@ export class DivisorIslesGame extends WorldRuntime {
       this.save();
       return;
     }
-    this.set({ equation: { a, b, q, r, live: false, ...eqMark(q) } });
+    this.set({ equation: { a, b, q, r, live: false, ...eqMark(q), ...named } });
     this.robot.setChest(String(r), r === 0 ? true : null);
     seg.count.visible = false;
     // TWO results, never mixed: was the PREDICTION right? — then, does this mould fill the gap? A right prediction of a
@@ -1223,7 +1227,17 @@ export class DivisorIslesGame extends WorldRuntime {
       }
     }
     this.set({
-      verdict: { right, first, predicted, a, b, r, holds: mv ? mv.holds : r === 0, ...(mv ? { mark: mv.mark } : {}) },
+      verdict: {
+        right,
+        first,
+        predicted,
+        a,
+        b,
+        r,
+        holds: mv ? mv.holds : r === 0,
+        ...(mv ? { mark: mv.mark } : {}),
+        ...named,
+      },
     });
     if (seg.label) seg.label.visible = false; // the result panel takes its place on screen; crumble() brings it back
 
@@ -1457,12 +1471,19 @@ export class DivisorIslesGame extends WorldRuntime {
     this.logBridge(c.a, c.b, true);
     this.save();
   }
-  /** The evidence a save from before the forge still gives: the bridges that are standing, with the mould that holds them. */
+  /**
+   * The evidence a save from before the forge still gives: the bridges of THE STORY's road that are standing, each with
+   * the plank that holds it — the one he laid (`builtWith`, restored from the save), else the one the story names
+   * (`holdsWith`). A bridge that stands from the start (`standing`, a gap of 0) was never built: it is no evidence. The
+   * last sixteen, as the log keeps them.
+   */
   crossing() {
     if (this.log.length) return this.log;
     return this.segs
-      .filter((seg, i) => i < 3 && seg.kind === 'bridge' && seg.complete)
-      .map((seg) => ({ a: seg.a, b: { s15: 3, s16: 4, s42: 6 }[seg.id] }));
+      .filter((seg) => seg.kind === 'bridge' && seg.complete && !seg.standing)
+      .map((seg) => ({ a: seg.a, b: seg.builtWith ?? this.built?.[seg.id] ?? seg.holdsWith }))
+      .filter((x) => Number.isInteger(x.b) && x.b > 0)
+      .slice(-16);
   }
   /** The forge of a key of the lesson (`lesson.forges[key]`), in the mirror of the island where the story needs it. */
   openForge(key) {
@@ -1583,7 +1604,11 @@ export class DivisorIslesGame extends WorldRuntime {
   }
 
   // ───────────────────────────── the last bridge ─────────────────────────────
-  /** The store: the student CHOOSES a mould (32 or 36), types its Euclidean division, and the world shows what it builds. */
+  /**
+   * The store: the student CHOOSES a mould (the story's `boss.options`), types its Euclidean division
+   * (`bossDivision`) — or, when the story announces the gap by a label (`boss.label`), the number of planks only
+   * (`bossCount`) — and the world shows what it builds.
+   */
   bossOverlay(view, extra = {}) {
     return { type: 'boss', view, tried: { ...(this.flags.bossTried ?? {}) }, ...extra };
   }
@@ -1616,6 +1641,23 @@ export class DivisorIslesGame extends WorldRuntime {
     }
     this.forge(this.bossSeg, b, null);
     return 'ok';
+  }
+
+  /**
+   * The store of a last bridge announced by a LABEL (`boss.label`): he typed how many planks of b fill it, worked out
+   * from the label (logic.js › checkCount). A count that is not the one of a plank that fills the gap is refused with
+   * its sentence (`long`, `short`, `nan`: a wrong try of the store); a plank that does NOT fill the gap is built
+   * whatever count he typed — no count is right, and the world shows what is left (`open`).
+   */
+  bossCount(b, q) {
+    const status = checkCount(this.bossSeg.a, b, q);
+    if (status !== 'ok' && status !== 'open') {
+      this.flags.bossWrong = (this.flags.bossWrong ?? 0) + 1;
+      this.audio.play('fail');
+      return status;
+    }
+    this.forge(this.bossSeg, b, null);
+    return status;
   }
 
   bossCost(n) {

@@ -342,10 +342,15 @@ export const T = {
       gaps.length === 1 ? `Le moule pour le fossé ${gaps[0]}` : `Le moule pour les fossés ${listFr(gaps)}`,
     empty: 'Écris d’abord la longueur du moule.',
     tooShort: 'Le moule le plus court fait 1 case.',
-    tooLong: (b, max, n) =>
-      n === 1
-        ? `Un moule de ${b} est plus long que tout le fossé (${max}).`
-        : `Un moule de ${b} est plus long que chaque fossé ici : le plus long fait ${max}.`,
+    // the longest the plank may be: the longest gap — or the workshop's own `max` when it is shorter (`made`)
+    tooLong: (b, max, n, made = false) =>
+      made
+        ? `Cet atelier fabrique des moules de ${counted(max, CELLS)} au plus : ${b}, c’est trop long.`
+        : n === 1
+          ? `Un moule de ${b} est plus long que tout le fossé (${max}).`
+          : `Un moule de ${b} est plus long que chaque fossé ici : le plus long fait ${max}.`,
+    // the shortest the plank may be when the workshop's `min` is more than 1
+    tooShortOf: (min) => `Cet atelier fabrique des moules de ${counted(min, CELLS)} au moins.`,
     // the bench (`workshop.bench`): an experiment beside the workshop — it gives facts, never the plank to make
     bench: 'Le carnet des listes',
     benchSub: 'Ce que tu écris ici reste dans ton carnet',
@@ -378,10 +383,10 @@ export const T = {
     ask: 'Chaque gardien dit ce fait avec sa phrase. Touche une phrase pour échanger ses deux nombres, puis réveille-les.',
     go: 'Réveiller les gardiens',
     hint: {
-      qasim: '« 120 est un diviseur de 6 »  ? Des planches de 120 remplissent-elles un fossé de 6 cases ?',
-      yaqsim: '« 120 divise 6 »  ? Celui qui divise, c’est la longueur de la planche qui remplit le fossé.',
-      yaqbal: '« 6 est divisible par 120 »  ? Divise 6 par 120 : le reste est-il 0 ?',
-      mudaaf: '« 6 est un multiple de 120 »  ? Les multiples de 120 sont 120, 240, 360… 6 en fait-il partie ?',
+      diviseur: '« 120 est un diviseur de 6 »  ? Des planches de 120 remplissent-elles un fossé de 6 cases ?',
+      divise: '« 120 divise 6 »  ? Celui qui divise, c’est la longueur de la planche qui remplit le fossé.',
+      divisible: '« 6 est divisible par 120 »  ? Divise 6 par 120 : le reste est-il 0 ?',
+      multiple: '« 6 est un multiple de 120 »  ? Les multiples de 120 sont 120, 240, 360… 6 en fait-il partie ?',
     },
   },
   boss: {
@@ -408,6 +413,9 @@ export const T = {
     pay: 'Payer',
     err: {
       nan: 'Écris les deux nombres : le nombre de planches et les cases restantes.',
+      // a store whose gap the story announces by a LABEL (`boss.label`): ONE box, the number of planks
+      count: 'Écris le nombre de planches.',
+      short: (b, q) => `${planks(q)} de ${b}, cela fait ${counted(b * q, CELLS)} : le pont n’est pas rempli.`,
       long: (b, q) => `${planks(q)} de ${b}, cela fait ${counted(b * q, CELLS)} : plus long que le fossé (756) !`,
       sum: (b, q, r) => `Vérifie : $${b} \\times ${q} + ${r} = ${b * q + r}$, et le fossé fait 756 cases.`,
       big: (b, r) =>

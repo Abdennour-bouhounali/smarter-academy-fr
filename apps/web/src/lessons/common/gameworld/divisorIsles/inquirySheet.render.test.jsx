@@ -89,11 +89,25 @@ describe('sheet — the screen', () => {
     expect(html).not.toContain('data-iq-rest='); // the world fills it again
   });
 
-  it('« prime » with a 0 on the sheet is refused: the lines with 0 are shown; without one it is accepted and the round ends', () => {
-    const refused = view(play([{ type: 'prime' }], fill(initSheet(SPEC))));
+  // BEHAVIOUR CHANGED (main session, 2026-11-23): the refusal used to OUTLINE the lines showing 0 (`data-iq-zero`,
+  // `is-zero`) — the world did the reading for him. Now only the sentence stays; the sheet looks as before he said it, and
+  // the line he then clicks plays as any line.
+  it('« prime » with a 0 on the sheet is refused by the sentence alone, no line outlined; without one it is accepted and the round ends', () => {
+    const before = fill(initSheet(SPEC));
+    const refusedState = play([{ type: 'prime' }], before);
+    const refused = view(refusedState);
     expect(refused).toContain('notPrime[2431:11.13.17]');
-    expect(refused.match(/data-iq-zero=""/g)).toHaveLength(3);
+    expect(refused).not.toContain('data-iq-zero');
+    expect(refused).not.toContain('is-zero');
     expect(refused).toContain('data-iq-stage="pick"');
+    // every line is still there to click, drawn exactly as on the sheet before « prime »: same rests, same looks
+    const lines = (html) => html.match(/<button[^>]*data-iq-line="\d+"[^>]*>/g);
+    expect(lines(refused)).toEqual(lines(view(before)));
+    for (const b of lines(refused)) expect(b).not.toContain('disabled');
+    // the line he then clicks behaves as before: 11 holds, the sheet goes on with 221
+    const after = view(play([{ type: 'line', p: 11 }], refusedState));
+    expect(after).toContain('data-iq-note="2431:11:221"');
+    expect(after).toContain('data-iq-n="221"');
     let s = fill(initSheet(SPEC));
     for (const p of [11, 13]) s = fill(play([{ type: 'line', p }], s));
     s = play([{ type: 'prime' }], s);

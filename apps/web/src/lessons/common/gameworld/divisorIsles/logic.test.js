@@ -8,10 +8,13 @@ import {
   DASH_WAVES,
   buildLayout,
   checkDivision,
+  checkCount,
+  gapSign,
   STATUES,
   isDivisor,
 } from './logic';
-import { explain, waveSay } from './strings';
+import { explain, waveSay, T } from './strings';
+import { verifyClaim } from '../kit/claims';
 
 describe('L’archipel des diviseurs — logic', () => {
   it('divides: a = b × q + r with r < b', () => {
@@ -79,6 +82,48 @@ describe('L’archipel des diviseurs — logic', () => {
     expect(checkDivision(756, 32, 24, 0)).toBe('long'); // 24 planks of 32 = 768 cells: longer than the gap
     expect(checkDivision(756, 36, 21, 0)).toBe('ok');
     expect(STATUES.big).toBe(STATUES.small * STATUES.q);
+  });
+
+  it('a last bridge announced by a LABEL: only the number of planks is typed; a plank that does not fill is built anyway', () => {
+    expect(checkCount(504, 36, 14)).toBe('ok');
+    expect(checkCount(504, 36, 15)).toBe('long');
+    expect(checkCount(504, 36, 13)).toBe('short');
+    expect(checkCount(504, 36, 1.5)).toBe('nan');
+    expect(checkCount(504, 36, -1)).toBe('nan');
+    // 48 does not fill 504: no count is right — the world builds what he chose and shows what is left
+    for (const q of [0, 10, 11, 14]) expect(checkCount(504, 48, q)).toBe('open');
+  });
+
+  it('the sign over a gap: its count, or the story’s label for the last bridge — never the count then', () => {
+    expect(gapSign({ a: 756 })).toBe('756\u00a0cases');
+    expect(gapSign({ a: 1400 })).toBe('1\u202f400\u00a0cases');
+    expect(gapSign({ a: 756, boss: { options: [32, 36], price: 1850 } })).toBe('756\u00a0cases');
+    const label = { text: '2³ × 3² × 7', tex: '2^{3} \\times 3^{2} \\times 7' };
+    expect(gapSign({ a: 504, boss: { label } })).toBe('2³ × 3² × 7\u00a0cases');
+    expect(gapSign({ a: 504, boss: { label: { ...label, sign: 'Le dernier fossé' } } })).toBe('Le dernier fossé');
+    expect(gapSign({ a: 504, boss: { label } })).not.toContain('504');
+  });
+
+  it('the statues’ sentences are named by the `phrase` claim’s ids, each with the meaning that claim gives it', () => {
+    expect(STATUES.sentences.map((x) => x.id)).toEqual(['diviseur', 'divise', 'divisible', 'multiple']);
+    const words = {
+      diviseur: 'est un diviseur de',
+      divise: 'divise',
+      divisible: 'est divisible par',
+      multiple: 'est un multiple de',
+    };
+    for (const st of STATUES.sentences) {
+      expect(st.mid, st.id).toBe(words[st.id]);
+      // written the right way round (the divisor first when `smallFirst`), the claim is true; the other way, false
+      const right = st.smallFirst ? STATUES.small : STATUES.big;
+      const wrong = st.smallFirst ? STATUES.big : STATUES.small;
+      const claim = (first) => ({ kind: 'phrase', a: STATUES.big, b: STATUES.small, first, phrase: st.id });
+      expect(verifyClaim(claim(right)), st.id).toBe(true);
+      expect(verifyClaim(claim(wrong)), st.id).toBe(false);
+      // each sentence has its hint, under the same id
+      expect(typeof T.statues.hint[st.id], st.id).toBe('string');
+    }
+    expect(Object.keys(T.statues.hint).sort()).toEqual(STATUES.sentences.map((x) => x.id).sort());
   });
 });
 

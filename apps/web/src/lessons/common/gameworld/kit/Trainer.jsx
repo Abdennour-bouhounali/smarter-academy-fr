@@ -8,7 +8,8 @@
  *   tap   { options: [n, n, n] }                      — one sentence, gates to tap;
  *   tf    { statement, truth, reasons? }              — true / false; with `reasons` on the exam sheet;
  *   form  { tip, model?, single?, review?, lines }    — an exam answer in its own shape (see trainer.js › « a form »);
- *                                                       its tokens, a fraction template among them: `FormLines` below.
+ *                                                       its tokens, a fraction and a power template among them:
+ *                                                       `FormLines` below.
  */
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Star, RotateCcw, Gamepad2, FileText, ArrowRight } from 'lucide-react';
@@ -272,8 +273,17 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
 const isBox = (t) => Boolean(t && typeof t === 'object' && (t.num || t.choice));
 /** A fraction template `{ frac: { n, d } }`. */
 const isFrac = (t) => Boolean(t && typeof t === 'object' && t.frac && typeof t.frac === 'object');
-/** The answer boxes a token holds: itself, the boxes of a fraction template, or none. */
-const boxesOf = (t) => (isFrac(t) ? [t.frac.n, t.frac.d].filter(isBox) : isBox(t) ? [t] : []);
+/** A power template `{ pow: { base, exp } }`. */
+const isPow = (t) => Boolean(t && typeof t === 'object' && t.pow && typeof t.pow === 'object');
+/** The answer boxes a token holds: itself, the boxes of a fraction or a power template (in reading order), or none. */
+const boxesOf = (t) =>
+  isFrac(t)
+    ? [t.frac.n, t.frac.d].filter(isBox)
+    : isPow(t)
+      ? [t.pow.base, t.pow.exp].filter(isBox)
+      : isBox(t)
+        ? [t]
+        : [];
 
 /**
  * The lines of an exam FORM, in their own shape (the lesson describes them — kit/trainer.js › « a form »). A token is:
@@ -285,6 +295,13 @@ const boxesOf = (t) => (isFrac(t) ? [t.frac.n, t.frac.d].filter(isBox) : isBox(t
  *                                (typed — the same hook `data-di-tr=<num>`, numerator first in the keyboard order) or a
  *                                printed number / string (a fraction GIVEN by the statement). It is one answer in its
  *                                shape: on a line it counts as ONE (describeTrainer, defects.md B17).
+ *   { pow: { base, exp } }       a POWER in its own shape: the base, then the exponent RAISED after it (a `sup`), each a
+ *                                box `{ num, label, w? }` or a printed number / string — the forge's token
+ *                                (`authoring/forgeBlocks.js › powerBox / givenPower`), drawn as the forge draws it
+ *                                (`RuleForge.jsx › UseLines`: `span.rf-pow > span.rf-pow__base + sup.rf-pow__exp`) with the
+ *                                trainer's own classes of the same look (`di-pow`, styles/trainer.css), `dir="ltr"`,
+ *                                `data-di-pow="base^exp"` (a box by its name). ONE answer of its line, as a fraction is.
+ * A box may carry `w` (the digits it takes, 3 by default) — an exponent's box takes `w: 1` or `2`.
  */
 export function FormLines({ lines, v, set, locked }) {
   const box = (t, key) => (
@@ -292,6 +309,7 @@ export function FormLines({ lines, v, set, locked }) {
       key={key}
       value={v[t.num] ?? ''}
       onChange={set(t.num)}
+      {...(t.w ? { w: t.w } : {})}
       disabled={locked}
       aria-label={t.label}
       data-di-tr={t.num}
@@ -307,6 +325,21 @@ export function FormLines({ lines, v, set, locked }) {
           {part(t.frac.n, 'n')}
           <span className="di-frac__bar" aria-hidden="true" />
           {part(t.frac.d, 'd')}
+        </span>
+      );
+      return ltr ? el : <Fragment key={i}>{el} </Fragment>;
+    }
+    if (isPow(t)) {
+      const { base, exp } = t.pow;
+      const el = (
+        <span
+          key={i}
+          className={`di-pow${isBox(base) || isBox(exp) ? ' di-pow--typed' : ''}`}
+          dir="ltr"
+          data-di-pow={[base, exp].map((x) => (isBox(x) ? x.num : x)).join('^')}
+        >
+          <span className="di-pow__base">{part(base, 'b')}</span>
+          <sup className="di-pow__exp">{part(exp, 'e')}</sup>
         </span>
       );
       return ltr ? el : <Fragment key={i}>{el} </Fragment>;
