@@ -291,6 +291,33 @@
 .xs-field textarea {
   color: #1d3fae;
 }
+/* a DECOMPOSITION on the sheet (FactorizationInput, 3e): the field the width of the sheet, its pad UNDER it in two rows
+   of eight keys, the field written at the sheet's size — the practice space's tall pad beside a big field made the sheet
+   wider than the screen and zoomed it to 0.5; side by side, the field kept 160 px (first French sitting, 2026-11-23) */
+.xs-field[data-xs-type='factorization'] [data-factorization-answer] {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+.xs-field[data-xs-type='factorization'] math-field.sa-exam-mathfield.sa-pad-mathfield {
+  min-height: 2.6rem;
+  font-size: 1.45rem;
+}
+.xs-field[data-xs-type='factorization'] [data-math-pad] {
+  grid-template-columns: repeat(8, 2.4rem);
+  width: auto;
+  max-width: none;
+  gap: 0.25rem;
+  padding: 0.3rem;
+}
+.xs-field[data-xs-type='factorization'] [data-math-pad] button {
+  height: 2.1rem;
+  font-size: max(var(--di-min-font, 12px), 1rem);
+}
+/* the « n » raised on the power key (aⁿ) keeps the sheet's 12 px floor too, however far the sheet is zoomed down */
+.xs-field[data-xs-type='factorization'] [data-math-pad] sup {
+  font-size: max(var(--di-min-font, 12px), 0.75em);
+}
 .xs-onpaper {
   display: inline-flex;
   align-items: center;

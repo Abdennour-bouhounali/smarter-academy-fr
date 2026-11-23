@@ -140,7 +140,11 @@ export default function BoardMemo({ lessonId, memo }) {
   const Head = ({ k, lead }) => (
     <header className="mb-3">
       <h2 className="text-2xl font-black text-slate-900">{label(k)}</h2>
-      {lead && <p className="mt-1 text-sm font-semibold text-slate-500">{lead}</p>}
+      {lead && (
+        <p className="mt-1 text-sm font-semibold text-slate-500">
+          <T>{lead}</T>
+        </p>
+      )}
     </header>
   );
   return (
@@ -195,13 +199,22 @@ export default function BoardMemo({ lessonId, memo }) {
               <Head k="glance" />
               <div className="grid gap-3 lg:grid-cols-3">
                 <Card title={L.goal} icon={Check}>
-                  <p className="text-[17px] font-extrabold leading-8 text-slate-900">{g.goal}</p>
+                  <p className="text-[17px] font-extrabold leading-8 text-slate-900">
+                    {/* a formula of the memo (« $2^4$ ») is drawn, never left as raw LaTeX (first French memo) */}
+                    <MathText>{g.goal}</MathText>
+                  </p>
                 </Card>
                 <Card title={L.idea} icon={MessageCircle}>
-                  <p className="text-[17px] font-extrabold leading-8 text-slate-900">{g.idea}</p>
+                  <p className="text-[17px] font-extrabold leading-8 text-slate-900">
+                    {/* a formula of the memo (« $2^4$ ») is drawn, never left as raw LaTeX (first French memo) */}
+                    <MathText>{g.idea}</MathText>
+                  </p>
                 </Card>
                 <Card title={L.trap} icon={TriangleAlert} tone="!border-amber-300 !bg-amber-50">
-                  <p className="text-[17px] font-extrabold leading-8 text-amber-900">{g.trap}</p>
+                  <p className="text-[17px] font-extrabold leading-8 text-amber-900">
+                    {/* a formula of the memo (« $2^4$ ») is drawn, never left as raw LaTeX (first French memo) */}
+                    <MathText>{g.trap}</MathText>
+                  </p>
                 </Card>
               </div>
               <div className="mt-3 grid gap-3 lg:grid-cols-[1.2fr_1fr]">
@@ -259,7 +272,7 @@ export default function BoardMemo({ lessonId, memo }) {
                       <b className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-slate-900 text-xs text-white">
                         {k + 1}
                       </b>
-                      {c.can}
+                      <T>{c.can}</T>
                     </p>
                     <p className="text-[15px] font-semibold leading-7 text-slate-700">
                       <T>{c.see}</T>
@@ -268,7 +281,9 @@ export default function BoardMemo({ lessonId, memo }) {
                 ))}
               </div>
               <Card title={L.stands} tone="mt-3">
-                <p className="text-[15px] font-semibold leading-7 text-slate-800">{memo.stands}</p>
+                <p className="text-[15px] font-semibold leading-7 text-slate-800">
+                  <T>{memo.stands}</T>
+                </p>
               </Card>
             </div>
 
@@ -300,16 +315,18 @@ export default function BoardMemo({ lessonId, memo }) {
                       <div className="rounded-xl bg-slate-50 p-2">
                         <MemoFigure opening={o} />
                       </div>
-                      <p className="text-[15px] font-semibold leading-7 text-slate-800">{o.story}</p>
+                      <p className="text-[15px] font-semibold leading-7 text-slate-800">
+                        <T>{o.story}</T>
+                      </p>
                       <p className="rounded-xl bg-slate-900 px-3 py-2 text-[15px] font-extrabold leading-7 text-white">
                         <span className="text-slate-300">{L.ask} : </span>
-                        {o.ask}
+                        <T>{o.ask}</T>
                       </p>
                       <p className="text-[13px] font-semibold leading-6 text-slate-600">
-                        <b className="text-slate-900">{L.why}</b> {o.why}
+                        <b className="text-slate-900">{L.why}</b> <T>{o.why}</T>
                       </p>
                       <p className="text-[13px] font-semibold leading-6 text-slate-600">
-                        <b className="text-slate-900">{L.expect}</b> {o.expect}
+                        <b className="text-slate-900">{L.expect}</b> <T>{o.expect}</T>
                       </p>
                     </article>
                   );
@@ -335,7 +352,9 @@ export default function BoardMemo({ lessonId, memo }) {
                       <span className="rounded-full bg-slate-100 px-3 py-0.5 text-xs font-extrabold text-slate-600">
                         {L.min(p.min)}
                       </span>
-                      <span className="text-sm font-bold text-slate-500">{p.aim}</span>
+                      <span className="text-sm font-bold text-slate-500">
+                        <T>{p.aim}</T>
+                      </span>
                       <Link
                         to={classSessionPath(lessonId, p.moment)}
                         className="ms-auto inline-flex min-h-[36px] items-center gap-1 rounded-xl border border-slate-200 px-3 text-sm font-extrabold text-slate-800 hover:border-slate-900"
@@ -354,7 +373,7 @@ export default function BoardMemo({ lessonId, memo }) {
                           className={`rounded-xl p-2.5 text-[14px] font-semibold leading-6 text-slate-800 ${tone || 'bg-slate-50'}`}
                         >
                           <b className="mb-0.5 block text-xs font-extrabold text-slate-500">{t}</b>
-                          {v}
+                          <T>{v}</T>
                         </p>
                       ))}
                     </div>
@@ -412,7 +431,7 @@ export default function BoardMemo({ lessonId, memo }) {
                       <b className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-slate-900 text-xs font-black text-white">
                         {k + 1}
                       </b>
-                      {s}
+                      <T>{s}</T>
                     </li>
                   ))}
                 </ol>
@@ -482,7 +501,9 @@ export default function BoardMemo({ lessonId, memo }) {
                 </Card>
               </div>
               <Card title={L.nextLesson} tone="mt-3">
-                <p className="text-[15px] font-bold leading-7 text-slate-800">{memo.next}</p>
+                <p className="text-[15px] font-bold leading-7 text-slate-800">
+                  <T>{memo.next}</T>
+                </p>
               </Card>
             </div>
 

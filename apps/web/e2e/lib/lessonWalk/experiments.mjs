@@ -354,7 +354,221 @@ async function listsBench(ctx, spec) {
   await inquiryFits(w, page, `${name}-seen`);
 }
 
+// ───────────────────────────── the first French lesson's three kinds (decomposer-en-facteurs-premiers) ─────────────────────────────
+export const isPrime = (n) => {
+  if (n < 2) return false;
+  for (let d = 2; d * d <= n; d += 1) if (n % d === 0) return false;
+  return true;
+};
+/** The prime factors of n, increasing (the walk's own trial division). */
+export const primeFactorsOf = (n) => {
+  const out = [];
+  let x = n;
+  for (let p = 2; p * p <= x; p += 1)
+    while (x % p === 0) {
+      out.push(p);
+      x /= p;
+    }
+  if (x > 1) out.push(x);
+  return out;
+};
+const waitIq = (page, test, arg, ms = 15000) => page.waitForFunction(test, arg, { timeout: ms });
+
+// ── `ladder`, `factor`: a gap and a rack of planks; a plank that fills it makes the gap the number of planks laid, a plank
+// that does not falls; down to 1 case. Played: the planks of the walk's own prime factors in increasing order, and before
+// the third one a plank of the rack that does not fill what is left (a composite one if there is: « 4 » after the 2s).
+async function factorMode(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const rack = spec.rack;
+  for (const [ri, round] of spec.rounds.entries()) {
+    const n = round.n;
+    if (ri > 0) {
+      await page.click(ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]');
+      await waitIq(page, (r) => window.__inquiry?.ri === r && window.__inquiry?.stage === 'pick', ri);
+    }
+    const q = await iq(page);
+    w.expect(q.kind === 'ladder' && q.mode === 'factor' && q.n === n && q.gap === n, `${name}: round ${ri + 1} opens on the gap of ${n}`);
+    await tellsNothing(w, page, `${name} ${n}, start`, ctx.forbid());
+    if (ri === 0) await inquiryFits(w, page, `${name}-${n}-start`, exit);
+    const primes = primeFactorsOf(n);
+    w.check(
+      primes.every((p) => rack.includes(p)),
+      `${name}: every prime factor of ${n} (${primes.join(', ')}) lies on the rack ${rack.join(', ')} — computed here`,
+    );
+    let gap = n;
+    let fell = null;
+    for (const [k, p] of primes.entries()) {
+      if (k === Math.min(2, primes.length - 1) && fell == null) {
+        const misses = rack.filter((d) => gap % d !== 0);
+        fell = misses.find((d) => !isPrime(d)) ?? misses[0] ?? null;
+        if (fell != null) {
+          await page.click(`[data-iq-plank="${fell}"]`);
+          await waitIq(page, () => window.__inquiry?.stage === 'pick');
+          const after = await iq(page);
+          const f = await fact(page);
+          w.check(
+            after.gap === gap && (await page.locator(`[data-iq-plank="${fell}"][data-iq-fell]`).count()) === 1 && f.includes(String(gap % fell)),
+            `${name}: ${gap} = ${fell} × ${Math.floor(gap / fell)} + ${gap % fell} — the plank of ${fell} falls, the gap stays ${gap} (« ${f.trim().slice(0, 90)} »)`,
+          );
+          await tellsNothing(w, page, `${name} ${n}, a fall`, ctx.forbid());
+          await inquiryFits(w, page, `${name}-${n}-falls-${fell}`, exit);
+        }
+      }
+      await page.click(`[data-iq-plank="${p}"]`);
+      await waitIq(page, () => ['pick', 'seen'].includes(window.__inquiry?.stage));
+      gap /= p;
+      const now = await iq(page);
+      w.check(now.stage === 'seen' ? gap === 1 : now.gap === gap, `${name}: ${gap * p} ÷ ${p} = ${gap} — the gap is ${gap} (the world: ${now.gap})`);
+    }
+    w.expect((await stageOf(page)) === 'seen', `${name}: the gap of ${n} is down to 1 case`);
+    const laid = ((await page.getAttribute('[data-iq-laid]', 'data-iq-laid')) ?? '').split(',').map(Number);
+    w.check(laid.join() === primes.join(), `${name}: the planks that held on ${n} are ${primes.join(', ')} — computed here (${laid.join(', ')})`);
+    await tellsNothing(w, page, `${name} ${n}, the end`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-${n}-end`, exit);
+  }
+}
+
+// ── `pairs`: the planks of ONE gap tried in order, a plank and its partner walking toward each other. Gap 1: every plank to
+// two past the crossing, « maybe » (the world sweeps to the gap), then a pick too early, a pick too late, the right one.
+// Gap 2: the guess before trying (the walk's own last plank), the trials, the pick. Gap 3: the table ahead (planks and
+// squares, partners « ? »), the guess, the trials, the pick. The last plank is computed here: ⌊√a⌋.
+async function pairsMode(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const last = (a) => {
+    let d = 1;
+    while ((d + 1) * (d + 1) <= a) d += 1;
+    return d;
+  };
+  const stage = () => page.evaluate(() => window.__inquiry?.stage);
+  for (const [gi, a] of spec.gaps.entries()) {
+    const m = last(a);
+    const end = m + 2;
+    if (gi > 0) {
+      await page.click(ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]');
+      await waitIq(page, (g) => window.__inquiry?.gi === g, gi);
+    }
+    const q = await iq(page);
+    w.expect(q.kind === 'pairs' && q.a === a, `${name}: gap ${gi + 1} is ${a}`);
+    await tellsNothing(w, page, `${name} ${a}, start`, ctx.forbid());
+    if (gi > 0) {
+      w.expect((await stage()) === 'guess', `${name}: on ${a} he says the last plank BEFORE trying`);
+      if (gi >= 2)
+        w.check(
+          (await page.locator('[data-iq-tried]').count()) === end,
+          `${name}: on ${a} the table is there before any trial — ${end} planks with their squares (${await page.locator('[data-iq-tried]').count()})`,
+        );
+      await inquiryFits(w, page, `${name}-${a}-guess`, exit);
+      await page.click(`[data-iq-pick="${m}"]`);
+      await waitIq(page, () => window.__inquiry?.stage === 'try');
+    } else await inquiryFits(w, page, `${name}-${a}-start`, exit);
+    for (let d = 1; d <= end; d += 1) {
+      await page.click(`[data-iq-try="${d}"]`);
+      await page.waitForTimeout(40);
+      if (d === m + 1) {
+        const crossed = await page.getAttribute('[data-iq-crossed]', 'data-iq-crossed');
+        w.check(crossed === '1', `${name}: ${d} × ${d} = ${d * d} > ${a} — the strip shows the partner BEHIND the plank of ${d}`);
+        if (gi === 0) await inquiryFits(w, page, `${name}-${a}-crossed`, exit);
+      }
+    }
+    if (gi === 0) {
+      w.expect((await stage()) === 'ask', `${name}: two planks past the crossing, the question is his`);
+      await inquiryFits(w, page, `${name}-${a}-ask`, exit);
+      await page.click('[data-iq-ask="yes"]');
+      await page.waitForSelector('[data-iq-swept]', { timeout: 20000 });
+      await inquiryFits(w, page, `${name}-${a}-swept`, exit);
+      await page.click('[data-iq-swept]');
+      const early = m - 2;
+      await page.click(`[data-iq-pick="${early}"]`);
+      await page.waitForTimeout(80);
+      const fe = await fact(page);
+      w.check((await stage()) === 'pick' && fe.includes(String(early)), `${name}: ${early} is too early — said as a fact (« ${fe.trim().slice(0, 90)} »)`);
+      await page.click(`[data-iq-pick="${m + 1}"]`);
+      await page.waitForTimeout(80);
+      const fl = await fact(page);
+      w.check((await stage()) === 'pick' && fl.includes(String(m + 1)), `${name}: ${m + 1} is past the last — said as a fact (« ${fl.trim().slice(0, 90)} »)`);
+      await inquiryFits(w, page, `${name}-${a}-pick`, exit);
+    } else {
+      w.expect((await stage()) === 'pick', `${name}: the trials of ${a} done, he picks the last plank`);
+      if (gi >= 2) await inquiryFits(w, page, `${name}-${a}-table`, exit);
+    }
+    await page.click(`[data-iq-pick="${m}"]`);
+    await waitIq(page, () => window.__inquiry?.stage === 'found');
+    w.check(true, `${name}: the last plank to try for ${a} is ${m} — computed here (${m} × ${m} = ${m * m} ⩽ ${a} < ${(m + 1) ** 2})`);
+    await tellsNothing(w, page, `${name} ${a}, found`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-${a}-found`, exit);
+  }
+}
+
+// ── `sheet`: a spreadsheet, column A the primes p with p × p ⩽ the number, column B its remainders, filled by the world;
+// he clicks the line he reads (the number becomes the quotient) or says « prime ». Round 1: a line whose remainder is
+// not 0 first, « prime » said too early, then the first line of remainder 0 each time, « prime » when no line shows 0.
+async function sheetMode(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const linesOf = (x) => {
+    const out = [];
+    for (let p = 2; p * p <= x; p += 1) if (isPrime(p)) out.push(p);
+    return out;
+  };
+  const filled = () => waitIq(page, () => window.__inquiry?.stage === 'pick' || window.__inquiry?.stage === 'seen', null, 30000);
+  for (const [ri, round] of spec.rounds.entries()) {
+    if (ri > 0) {
+      await page.click(ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]');
+      await waitIq(page, (r) => window.__inquiry?.ri === r, ri);
+    }
+    let x = round.n;
+    const want = primeFactorsOf(round.n);
+    let shots = 0;
+    for (let guard = 0; guard < 12 && x > 1; guard += 1) {
+      await filled();
+      const q = await iq(page);
+      const lines = linesOf(x);
+      w.check(q.n === x && q.lines.join() === lines.join(), `${name}: the sheet of ${x} holds the primes ${lines[0] ?? '—'} … ${lines.at(-1) ?? '—'} (${lines.length} lines) — computed here`);
+      const rests = await page.evaluate(() =>
+        Object.fromEntries([...document.querySelectorAll('[data-iq-line]')].map((b) => [b.dataset.iqLine, b.dataset.iqRest])),
+      );
+      w.check(lines.every((p) => Number(rests[p]) === x % p), `${name}: column B of ${x} is every remainder — computed here`);
+      if (shots === 0 || lines.length >= 16) {
+        await tellsNothing(w, page, `${name} ${x}, the sheet`, ctx.forbid());
+        await inquiryFits(w, page, `${name}-${x}-sheet`, exit);
+        shots += 1;
+      }
+      const zero = lines.find((p) => x % p === 0);
+      if (ri === 0 && guard === 0) {
+        const miss = lines.find((p) => x % p !== 0);
+        await page.click(`[data-iq-line="${miss}"]`);
+        await page.waitForTimeout(80);
+        const f1 = await fact(page);
+        w.check((await iq(page)).n === x && f1.includes(String(x % miss)), `${name}: line ${miss} shows ${x % miss}: ${x} unchanged (« ${f1.trim().slice(0, 80)} »)`);
+        await page.click('[data-iq-prime]');
+        await page.waitForTimeout(80);
+        const f2 = await fact(page);
+        w.check((await iq(page)).n === x && f2.includes(String(zero)), `${name}: « prime » said of ${x}: the sheet answers that line ${zero} shows 0 (« ${f2.trim().slice(0, 80)} »)`);
+        await inquiryFits(w, page, `${name}-${x}-not-prime`, exit);
+      }
+      if (zero == null) {
+        await page.click('[data-iq-prime]');
+        x = 1;
+      } else {
+        await page.click(`[data-iq-line="${zero}"]`);
+        x /= zero;
+      }
+      await page.waitForTimeout(80);
+    }
+    await waitIq(page, () => window.__inquiry?.stage === 'seen');
+    const got = (await iq(page)).rounds.at(-1)?.factors ?? [];
+    w.check([...got].sort((p, q) => p - q).join() === want.join(), `${name}: ${round.n} = ${want.join(' × ')} — computed here (the notebook: ${got.join(', ')})`);
+    await tellsNothing(w, page, `${name} ${round.n}, the end`, ctx.forbid());
+    await inquiryFits(w, page, `${name}-${round.n}-end`, exit);
+  }
+}
+
 export const EXPERIMENTS = {
+  'ladder:factor': factorMode,
+  pairs: pairsMode,
+  sheet: sheetMode,
   lists: listsBench,
   'ladder:subtract': oneMode,
   'ladder:divide': oneMode,

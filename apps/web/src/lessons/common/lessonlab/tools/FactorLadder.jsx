@@ -10,9 +10,10 @@ import { useEffect, useState } from 'react';
 import { VW, VH, useChime, Tool, M } from '../kit';
 import { factorRungs, layPlank } from '../../gameworld/divisorIsles/factorLadder';
 import { counted } from '../../gameworld/kit/authoring/numbers';
-import { formatFr } from '@smarter-academy/core';
+import { formatFr, texFr } from '@smarter-academy/core';
 
 const LTR = { direction: 'ltr', unicodeBidi: 'isolate' };
+const NO_PLANKS = [];
 /** The planks on the rack, in two rows of seven (the last place of the second row is the whole gap). */
 export const RACK = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 const X_GAP = 290;
@@ -34,7 +35,9 @@ export const chipAt = (k) => ({ x: X_GAP + (k % 7) * CHIP.step, y: CHIP.y[Math.f
 export default function FactorLadder({ a, b, play, report, start = null }) {
   const [st, setSt] = useState({ a, planks: start?.planks ?? [], last: start?.last ?? null });
   const [other, setOther] = useState('');
-  const cur = st.a === a ? st : { a, planks: [], last: null };
+  // a new number: an empty ladder of its own — the SAME empty row at every render (a new [] each time re-ran the report
+  // effect below at every render: « Maximum update depth exceeded » when the number was typed, first French walk)
+  const cur = st.a === a ? st : { a, planks: NO_PLANKS, last: null };
   const { planks, last } = cur;
   const { rungs, left } = factorRungs(a, planks);
   const done = left === 1;
@@ -91,21 +94,25 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
           >
             Poser
           </button>
+          {/* a short label: the reading line beside the actions holds the sentence (French is longer than the Arabic
+              this bar was laid for — first French lesson, 2026-11-23: the stage was pushed past the screen) */}
           <button
             type="button"
             className="ll-btn ll-btn--ghost"
             onClick={undo}
             disabled={!planks.length}
+            aria-label="Retirer la dernière planche"
             data-ll-factor-undo
           >
-            Retirer la dernière planche
+            Retirer
           </button>
         </>
       }
       reading={
         done ? (
           <>
-            <M>{`${a} = ${planks.join(' \\times ')}`}</M>
+            {/* a long row (8 192 = 2 × 2 × … thirteen times) is written by the drawing above, not on this one line */}
+            {planks.length <= 6 && <M>{`${texFr(a)} = ${planks.map(texFr).join(' \\times ')}`}</M>}
             <span className="ll-chip ll-chip--good" data-ll-factor-done>
               Le fossé est franchi avec {counted(planks.length, ['planche', 'planches'])}
             </span>
@@ -116,16 +123,16 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
           </span>
         ) : last.held ? (
           <>
-            <M>{`${last.before} = ${last.plank} \\times ${last.after}`}</M>
+            <M>{`${texFr(last.before)} = ${last.plank} \\times ${texFr(last.after)}`}</M>
             <span className="ll-chip ll-chip--good" data-ll-factor-last="held">
               Le fossé fait maintenant {cells(left)}
             </span>
           </>
         ) : (
           <>
-            <M>{`${last.before} = ${last.plank} \\times ${q} + ${r}`}</M>
+            <M>{`${texFr(last.before)} = ${last.plank} \\times ${texFr(q)} + ${r}`}</M>
             <span className="ll-chip ll-chip--warm" data-ll-factor-last="fell">
-              Reste {r} : le fossé fait toujours {cells(left)}
+              Reste {r} : le fossé ne change pas
             </span>
           </>
         )
@@ -309,7 +316,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
           <text
             x={X_GAP}
             y="330"
-            fontSize="24"
+            fontSize={planks.length > 8 ? 17 : 24}
             fontWeight="800"
             style={{ ...LTR, fill: '#6ee7b7' }}
             data-ll-factor-product

@@ -174,7 +174,9 @@ export async function trainerWalk(L, D, opts) {
             good.length === 1,
             `tf « ${plain(q.statement).slice(0, 50)} »: exactly one reason states only true facts (${good.join()})`,
           );
-        return { truth: D.statement ? Boolean(D.statement(plain(q.statement))) : null, reason: good[0] };
+        // the descriptor's reading of the statement; null when it does not know that form (then the walk TRIES)
+        const said = D.statement ? D.statement(plain(q.statement)) : null;
+        return { truth: said == null ? null : Boolean(said), reason: good[0] };
       }
       const f = D.solve?.[q.kind];
       expect(f, `the descriptor solves the questions « ${q.kind} » (solve.${q.kind})`);

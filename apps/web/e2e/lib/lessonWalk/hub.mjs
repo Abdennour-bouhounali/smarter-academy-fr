@@ -7,6 +7,7 @@
 import { createWalk, PHONE } from '../walk.mjs';
 import { readLadder, rungShows, ladderFromDisk, bankOnDisk } from '../bankSheet.mjs';
 import { mapApart } from './checks.mjs';
+import { playLab } from './lab.mjs';
 import { worldOfLesson } from './worlds/index.mjs';
 
 export async function hubWalk(L, D, opts) {
@@ -170,11 +171,10 @@ export async function hubWalk(L, D, opts) {
     await page.click('[data-di-lab-open]');
     await page.waitForSelector('[data-ll-close]', { timeout: 15000 });
     await page.waitForTimeout(800);
-    await shot(page, 'door-lab', {
-      exit: ['[data-ll-close]'],
-      sound: ['[data-ll-sound]', '[data-di-sound]'],
-      numbers: true,
-    });
+    const LAB = { exit: ['[data-ll-close]'], sound: ['[data-ll-sound]', '[data-di-sound]'], numbers: true };
+    await shot(page, 'door-lab', LAB);
+    // the lesson's own instruments, played (lib/lessonWalk/lab.mjs)
+    await playLab({ w, page, shot: (label) => shot(page, label, LAB) });
     await page.click('[data-ll-close]');
     await backToTitle('« Mon labo »');
     await page.click('[data-di-launch-open]');

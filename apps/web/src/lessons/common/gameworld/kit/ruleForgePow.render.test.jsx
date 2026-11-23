@@ -4,6 +4,8 @@
 // printed power is drawn in the same shape. A line without a power draws as before. Server render.
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { UseLines } from './RuleForge';
 import { givenPower, line, powerBox } from './authoring/forgeBlocks';
 import { slot } from './forge';
@@ -59,5 +61,24 @@ describe('the forge’s last step — a power in its own shape', () => {
     ]);
     expect(plain).not.toContain('rf-pow');
     expect(plain).toContain('<b>78</b><b>=</b><label><input');
+  });
+});
+
+// A ladder of divisions is read from top to bottom: a forge that asks its four lines in ONE column (`use.column`) gets
+// `data-rf-column`, which the two-column grid of four lines leaves alone (first French lesson, the ladder of 126).
+describe('the forge’s last step — four lines in one column when the forge asks it', () => {
+  const four = [0, 1, 2, 3].map((i) =>
+    line([i ? slot(`n${i + 1}`, 'ce qui reste', 2) : '126', '|', slot(`d${i + 1}`, 'la planche', 2)]),
+  );
+  it('by default four lines are laid in two columns; `column` keeps them in one', () => {
+    const two = renderToString(<UseLines lines={four} vals={{}} onType={() => {}} />);
+    expect(two).toContain('data-rf-lines="4"');
+    expect(two).not.toContain('data-rf-column');
+    const one = renderToString(<UseLines lines={four} vals={{}} onType={() => {}} column />);
+    expect(one).toContain('data-rf-column');
+    const css = readFileSync(fileURLToPath(new URL('./ruleForge.css', import.meta.url)), 'utf8');
+    expect(css).toMatch(
+      /\.rf-uselines\[data-rf-lines='4'\]:not\(\[data-rf-column\]\) \{\s*grid-template-columns: 1fr 1fr;/,
+    );
   });
 });

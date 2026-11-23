@@ -230,7 +230,8 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
                   onClick={() => game.startPractice(next.node, next.level)}
                   data-di-next
                 >
-                  <Play size={18} fill="currentColor" /> {KT.map.next}:{' '}
+                  <Play size={18} fill="currentColor" /> {KT.map.next}
+                  {'\u00a0: '}
                   {text.levels[ladder.nodes[next.node].id][next.level]}
                 </button>
               ) : (

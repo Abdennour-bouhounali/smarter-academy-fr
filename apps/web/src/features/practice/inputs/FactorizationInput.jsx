@@ -16,7 +16,7 @@ import { mathToPlain } from '../../../utils/mathPlain';
  * jumeau PHP) le lit tel quel, si bien que ce que l'élève voit est exactement ce qui est noté — un exposant qui
  * avale un « × » (`2^{3\times3}`) est illisible, jamais relu autrement.
  */
-export default function FactorizationInput({ question, value, onChange, disabled }) {
+export default function FactorizationInput({ question, value, onChange, disabled, placeholder = true }) {
   const { t } = useTranslation('student');
   const fieldRef = useRef(null);
   const formatPlain = question.answerFormat ? mathToPlain(question.answerFormat) : '';
@@ -43,7 +43,9 @@ export default function FactorizationInput({ question, value, onChange, disabled
             onChange={(latex) => onChange(latex.trim() ? { value: latex, latex } : null)}
             disabled={disabled}
             ariaLabel={label}
-            placeholder={formatPlain ? `\\text{${formatPlain.replace(/[\\{}$]/g, '')}}` : ''}
+            // a long placeholder is the field's own width: on the brevet sheet (`placeholder={false}`), where the answer's
+            // format is written under the box, it widened the sheet past the screen (first French sitting, 2026-11-23)
+            placeholder={placeholder && formatPlain ? `\\text{${formatPlain.replace(/[\\{}$]/g, '')}}` : ''}
             className="w-full sa-pad-mathfield"
             pad
             onReady={(field) => {

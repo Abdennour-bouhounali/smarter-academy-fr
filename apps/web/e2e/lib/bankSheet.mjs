@@ -34,6 +34,40 @@ export const wrongOf = (q) => {
   return { value: '9999' };
 };
 
+/**
+ * A DECOMPOSITION typed in FactorizationInput as a student types it on the sheet (first French lesson, `answerType:
+ * 'factorization'`): the field is clicked and emptied, then the answer is written with the field's PAD (`data-pad-key`):
+ * the digits of each factor, « aⁿ » raises the exponent and → comes back down, « × » between two factors. `answer` is
+ * written the bank's way: « 2^3*3^2*5 » (or with × / \\times, braces allowed). Returns what the field holds.
+ */
+export async function typeFactorization(page, field, answer) {
+  const factors = String(answer)
+    .replace(/\\times|×|x/g, '*')
+    .replace(/[{}\s]/g, '')
+    .split('*')
+    .filter(Boolean);
+  const mf = field.locator('math-field');
+  await mf.click();
+  await page.waitForTimeout(150);
+  await page.keyboard.press('Control+A');
+  await page.keyboard.press('Backspace');
+  const key = (k) => field.locator(`[data-pad-key="${k}"]`).click();
+  for (const [i, f] of factors.entries()) {
+    const [base, exp] = f.split('^');
+    if (i > 0) await key('times');
+    for (const d of base) await key(d);
+    if (exp) {
+      await key('power');
+      for (const d of exp) await key(d);
+      await key('right');
+    }
+  }
+  await page.waitForTimeout(150);
+  const got = await mf.evaluate((el) => el.value).catch(() => null);
+  console.log(`NOTE  « ${answer} » written with the pad of the decomposition's field: it holds « ${got} »`);
+  return got;
+}
+
 /** Types an answer into the step's widget on the page shown (`[data-xs-field="<id>"]`). */
 export async function fillStep(page, q, v) {
   if (!v) return;
@@ -45,6 +79,10 @@ export async function fillStep(page, q, v) {
   }
   if (q.answerType === 'integerSet') {
     await field.locator('textarea').fill(v.value);
+    return;
+  }
+  if (q.answerType === 'factorization') {
+    await typeFactorization(page, field, v.value);
     return;
   }
   const kind = await field.locator('[data-template]').first().getAttribute('data-template');
@@ -104,8 +142,12 @@ export async function readLadder(page) {
   );
 }
 
-/** The steps a sitting draws (kit/bankSitting.js › SITTING_TYPES, as GAME_WORLD.md « Espace brevet » documents it). */
-const SITTING_TYPES = ['choice', 'rational', 'integerSet', 'selfCheck'];
+/**
+ * The steps a sitting draws (kit/bankSitting.js › SITTING_TYPES, as GAME_WORLD.md « Espace brevet » documents it) — the
+ * kit added `factorization` on 2026-11-23 and this copy lagged it (defects.md C12): the first French bank's ladder read
+ * the wrong minutes and points.
+ */
+const SITTING_TYPES = ['choice', 'rational', 'integerSet', 'selfCheck', 'factorization'];
 /** How many sheets a sitting of each level draws (the documented ladder: 1, 2, 2, 2, 1). */
 const SHEETS_PER_LEVEL = [1, 2, 2, 2, 1];
 /** « 02,5 » → 2.5: the points as the bank's exam paper writes them. */

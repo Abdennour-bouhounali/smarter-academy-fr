@@ -52,7 +52,12 @@ export const LADDER_WORDS = {
 };
 /** The most finished ladders kept beside the one being built. */
 const LADDER_KEEP = 2;
-const MAX_LINES_COLUMN = 8;
+/**
+ * Lines a column of the sheet holds: FIVE — 15 lines (2 387) in three columns. Eight a column left each line about 15 px
+ * high under the gap and the question at 1366×768: the numbers of the lines were written over one another (first French
+ * lesson's board walk, 2026-11-23).
+ */
+export const MAX_LINES_COLUMN = 5;
 const sfx = (name) => playSfx(name, { enabled: true });
 
 /** The ladder as a copybook writes it: each number on the left, the plank that held on the right of the bar. */
@@ -107,10 +112,16 @@ function Sheet({ step, st, onLay, onNoZero }) {
   const cols = Math.max(1, Math.ceil(lines.length / MAX_LINES_COLUMN));
   return (
     <div className="cs-ladder__sheet" data-cs-ladder-sheet={lines.length}>
-      <p className="cs-ladder__formula">
-        <span>{LADDER_WORDS.colB}</span>
-        <code>{LADDER_WORDS.formula(st.gap)}</code>
-      </p>
+      {/* the formula of column B and « Aucun reste nul » on ONE row above the lines: the lines keep the height */}
+      <div className="cs-ladder__sheethead">
+        <p className="cs-ladder__formula">
+          <span>{LADDER_WORDS.colB}</span>
+          <code>{LADDER_WORDS.formula(st.gap)}</code>
+        </p>
+        <button type="button" className="cs-btn" onClick={onNoZero} data-cs-ladder-nozero>
+          {LADDER_WORDS.noZero}
+        </button>
+      </div>
       <div className="cs-ladder__lines" style={{ '--cols': cols }}>
         {lines.map((l, k) => {
           const tried = st.fell.find((x) => x.plank === l.p);
@@ -131,9 +142,6 @@ function Sheet({ step, st, onLay, onNoZero }) {
           );
         })}
       </div>
-      <button type="button" className="cs-btn" onClick={onNoZero} data-cs-ladder-nozero>
-        {LADDER_WORDS.noZero}
-      </button>
     </div>
   );
 }

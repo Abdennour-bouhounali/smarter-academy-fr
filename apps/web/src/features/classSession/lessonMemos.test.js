@@ -26,3 +26,16 @@ describe('fiche du professeur — the written memo of a lesson that has its boar
     expect(openingFacts({ kind: 'rows', a: 15, b: 4, alt: 5 }).second).toMatchObject({ b: 5, q: 3, r: 0, exact: true });
   });
 });
+
+// The three cards of « La séance en une page » (BoardMemo.jsx) write a memo's sentences through MathText: a formula of
+// the memo (« lire $2^4$ comme $2 \times 4$ ») is drawn — the first French memo showed it as raw LaTeX (board walk).
+describe('the memo’s glance — formulas drawn', () => {
+  it('goal, idea and trap go through MathText', async () => {
+    const { readFileSync } = await import('node:fs');
+    const src = readFileSync(new URL('./BoardMemo.jsx', import.meta.url), 'utf8');
+    for (const k of ['goal', 'idea', 'trap']) expect(src).toMatch(new RegExp(`<MathText>\\{g\\.${k}\\}</MathText>`));
+    // …and every other sentence of the memo (criteria, openings, phases, sequence) through its `T` (MathText)
+    for (const f of ['c.can', 'memo.stands', 'o.story', 'o.ask', 'o.why', 'o.expect', 'p.aim', 'v', 's', 'lead'])
+      expect(src).toMatch(new RegExp(`<T>\\{${f.replaceAll('.', '\\.')}\\}</T>`));
+  });
+});

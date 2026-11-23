@@ -1,8 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import LessonBoard from './LessonBoard';
-import { LadderView, LADDER_WORDS } from './LadderStation';
+import { LadderView, LADDER_WORDS, MAX_LINES_COLUMN } from './LadderStation';
 import { ladderStart, ladderLay, ladderNoZero } from './lessonScripts';
 
 // the board's layers (pen, pointer) are portals into `document.body`: no DOM here, they draw nothing
@@ -122,5 +123,15 @@ describe('séance en classe — a factor ladder on the board', () => {
     // the smallest type of the station is 1rem (16 px) — what the back row reads
     const sizes = [...block.matchAll(/font-size:\s*([\d.]+)rem/g)].map((m) => Number(m[1]));
     expect(Math.min(...sizes)).toBeGreaterThanOrEqual(1);
+  });
+});
+
+// The sheet of 2 387 (15 lines) on the board at 1366×768: five lines a column (three columns), its formula and « Aucun
+// reste nul » on one row above them — eight a column wrote the lines over one another (first French lesson's walk).
+describe('the board’s sheet — laid so that no line is written over another', () => {
+  it('five lines a column, the button beside the formula', () => {
+    expect(MAX_LINES_COLUMN).toBe(5);
+    const css = readFileSync(fileURLToPath(new URL('./classSession.css', import.meta.url)), 'utf8');
+    expect(css).toMatch(/\.cs-ladder__lines \{[^}]*grid-template-rows: repeat\(5, minmax\(1\.75rem, 1fr\)\)/);
   });
 });

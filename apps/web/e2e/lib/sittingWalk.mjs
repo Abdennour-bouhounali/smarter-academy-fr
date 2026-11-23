@@ -26,7 +26,27 @@ export const NB = ' / ';
 export const SHEET_OUT = { exit: ['[data-xs-quit]', '[data-xs-close]'] };
 const fmt = (n) => String(n).replace('.', ',');
 /** Two answers the same — a decimal compared as the same number, comma or point (the screen sends « 7,2 », the bank writes 7.2: defects.md C18). */
-const sameAnswer = (a, b) => JSON.stringify(a)?.replace(/\./g, ',') === JSON.stringify(b)?.replace(/\./g, ',');
+/** A decomposition as the walk reads it — « 2^{2}\\times3^2 », « 2^2*3^2 » → « 2^2.3^2 » (its powers, in order), or null. */
+const decompOf = (v) => {
+  const t = String(v ?? '')
+    .replace(/\\times|×|\*/g, '*')
+    .replace(/[{}\s]/g, '');
+  if (!/^\d+(\^\d+)?(\*\d+(\^\d+)?)*$/.test(t) || !t.includes('*')) return null;
+  return t
+    .split('*')
+    .map((f) => (f.includes('^') ? f : `${f}^1`))
+    .join('.');
+};
+/**
+ * The answer sent is the one planned: as the same JSON (a decimal point or comma alike), or — a decomposition typed in
+ * MathLive sends its LaTeX « 2^2\\times3^2 » for the bank's « 2^2*3^2 » — as the same product of powers (C18: compare what
+ * the answer IS, never its spelling).
+ */
+const sameAnswer = (a, b) =>
+  JSON.stringify(a)?.replace(/\./g, ',') === JSON.stringify(b)?.replace(/\./g, ',') ||
+  // a MathLive field sends its LaTeX beside its value ({ value, latex }): the value is what he wrote
+  (a?.latex != null && String(a.value) === String(b?.value)) ||
+  (decompOf(a?.value) != null && decompOf(a?.value) === decompOf(b?.value));
 /** The words of a sentence outside its formulas (`$…$`): what must be read on screen as it is written. */
 export const words = (t) =>
   String(t ?? '')
@@ -189,6 +209,10 @@ export async function checkFields(w, page, steps, where) {
       );
       continue;
     }
+    // a decomposition's field is MathLive, a chunk of its own loaded with the first sheet: wait for it (its placeholder
+    // line stands in its place until then — lazy.jsx)
+    if (q.answerType === 'factorization')
+      await page.waitForSelector(`[data-xs-field="${q.id}"] math-field`, { timeout: 20000 }).catch(() => {});
     const f = await page.evaluate((id) => {
       const el = document.querySelector(`[data-xs-field="${id}"]`);
       if (!el) return null;
@@ -198,9 +222,13 @@ export async function checkFields(w, page, steps, where) {
         if (!t.parentElement.closest('.katex-mathml')) text += t.nodeValue;
       return {
         template: el.querySelector('[data-template]')?.dataset.template ?? null,
+        // a decomposition: its own field (MathLive, the exponents raised) and its pad
+        factorization: Boolean(el.querySelector('[data-factorization-answer] math-field')),
         buttons: el.querySelectorAll('button').length,
         area: Boolean(el.querySelector('textarea')),
-        text: text.replace(/\s+/g, ' '),
+        // read as SEEN (C11): white space as one space, and no bidi isolate (U+2066–U+2069) — `utils/bidi.js` still
+        // wraps « N / d » in invisible LTR marks inside a French sentence (an Algerian leftover, reported)
+        text: text.replace(/[\u2066-\u2069]/g, '').replace(/\s+/g, ' '),
       };
     }, q.id);
     const shape = !f
@@ -209,7 +237,9 @@ export async function checkFields(w, page, steps, where) {
         ? f.buttons === q.bank.choices.length
         : q.answerType === 'integerSet'
           ? f.area
-          : Boolean(f.template);
+          : q.answerType === 'factorization'
+            ? f.factorization
+            : Boolean(f.template);
     w.check(
       shape,
       `${where} ${q.qid} (${q.answerType}): answered in its own shape (${JSON.stringify(f && { ...f, text: undefined })})`,
@@ -511,9 +541,11 @@ export async function levelFive(w, { uid, id, grade, url, keys, bank, allow, sta
     subject.level === 5 &&
       subject.exercises.length === 1 &&
       subject.exercises[0].bankId === S.id &&
-      // kit/bankSitting.js: a sheet whose exam heading names a « problème » is titled « Problème » (kit/text.js › BANK.problem)
-      subject.exercises[0].title === 'Problème',
-    `level 5: ONE sheet, the « Problème » the walk asked for (${S.id}; drawn ${subject.exercises.map((e) => e.bankId).join(', ')})`,
+      // kit/bankSitting.js: a sheet whose exam heading names a « problème » is titled « Problème » (kit/text.js ›
+      // BANK.problem), any other « Exercice 1 » — read from the sheet ON DISK (the Algerian level 5 was always a « Problème »;
+      // the first French bank heads its level 5 « Exercice »)
+      subject.exercises[0].title === (/probl[eè]me/i.test(S.metadata?.exam?.heading ?? '') ? 'Problème' : 'Exercice 1'),
+    `level 5: ONE sheet, the one the walk asked for, titled as its heading says (${S.id}, heading « ${S.metadata?.exam?.heading} »; drawn ${subject.exercises.map((e) => `${e.bankId} « ${e.title} »`).join(', ')})`,
   );
   const steps = stepsOf(subject, bank);
   expect(
@@ -821,8 +853,7 @@ export async function copies(w, { uid, id, grade, url, keys, bank, allow, stage 
             (q, k) =>
               // a decimal is sent in the sheet's writing (« 2,2 » for the « 2.2 » typed — the first bank with decimal
               // answers, jidhr-tarbii, 2026-11-21): compared as the same number, comma or point
-              JSON.stringify(answers[k]?.answer)?.replace(/\./g, ',') ===
-                JSON.stringify(plan[q.id])?.replace(/\./g, ',') && answers[k]?.outcome !== 'correct',
+              sameAnswer(answers[k]?.answer, plan[q.id]) && answers[k]?.outcome !== 'correct',
           ),
         `wrong copy: each of the ${typed.length} answers is sent as he wrote it, never as right`,
       );

@@ -138,7 +138,7 @@ export function Field({ q, value, onChange }) {
       ) : q.answerType === 'integerSet' ? (
         <IntegerSetInput question={q.shown} value={value} onChange={onChange} />
       ) : q.answerType === 'factorization' ? (
-        <FactorizationInput question={q.shown} value={value} onChange={onChange} />
+        <FactorizationInput question={q.shown} value={value} onChange={onChange} placeholder={false} />
       ) : (
         <TemplateInput template={templateFor(q.shown)} question={q.shown} onChange={onChange} ariaLabel={q.text} />
       )}

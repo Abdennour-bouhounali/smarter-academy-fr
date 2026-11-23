@@ -169,10 +169,14 @@
   stroke-width: 3;
   stroke-dasharray: 6 5;
 }
+/* the table of the planks tried: its headings first, on the LEFT (French reads from there), then one column per plank. The
+   columns share the width (each at most 4.6rem): 16 planks — the 221 cases of the first French lesson, two past its
+   crossing at 14 — stand in the frame at 1366×768 instead of pushing it wider than the screen */
 .iq-table {
   display: flex;
   justify-content: center;
-  gap: 0.35rem;
+  gap: 0.3rem;
+  min-width: 0;
   min-height: 4.6rem;
 }
 .iq-table__head,
@@ -183,20 +187,22 @@
   justify-items: center;
 }
 .iq-table__head {
-  justify-items: end;
-  padding-inline-start: 0.5rem;
+  flex: none;
+  justify-items: start;
+  padding-inline-end: 0.3rem;
   font-size: 0.95rem;
   font-weight: 800;
   color: #9fd8ff;
-  order: 99;
 }
 .iq-try {
-  min-width: 4.6rem;
-  padding: 0 0.3rem;
+  flex: 0 1 4.6rem;
+  min-width: 0;
+  padding: 0 0.15rem;
+  white-space: nowrap;
   border-radius: 0.7rem;
   border: 1.5px solid rgba(159, 216, 255, 0.3);
   background: rgba(255, 255, 255, 0.05);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   animation: iq-pop 0.3s;
 }

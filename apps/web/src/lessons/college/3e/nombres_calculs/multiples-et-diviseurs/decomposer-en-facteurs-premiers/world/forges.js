@@ -239,6 +239,8 @@ const ladderForge = {
   nudge: (n) => ({ kind: 'experiment', cases: L_NUDGES[Math.min(3, n) - 1] }),
   use: {
     make: () => ({ n: L_USE, planks: primeFactors(L_USE), held: true }),
+    // a ladder is read from top to bottom: its four rungs in ONE column (RuleForge.jsx › UseLines)
+    column: true,
     lines: () =>
       Array.from({ length: L_ROWS }, (_, i) =>
         line([
@@ -844,7 +846,7 @@ const toolForge = {
     compare: (cases) => `Compare ces deux réponses pour ${nb(cases[0].n)} : laquelle n’a que des nombres premiers ?`,
     experiment: 'Regarde ces deux réponses : laquelle n’a que des nombres premiers ?',
     tryKey: () =>
-      `Un programme essaie d = 2, 3, 4… sur N = ${nb(T_USE)} : si d divise N, N devient N ÷ d, et d ne change pas. Puis décompose ${nb(T_USE)}.`,
+      `Un programme essaie $d = 2, 3, 4\\ldots$ sur $N = ${tx(T_USE)}$ : si d divise N, N devient $N \\div d$, et d ne change pas. Puis décompose ${nb(T_USE)}.`,
     use: {
       trace: 'Après une division, le programme garde le même d : il ne passe au suivant que si d ne divise pas N.',
       product: `Le produit de tes quatre nombres ne fait pas ${nb(T_USE)} : refais tes divisions.`,

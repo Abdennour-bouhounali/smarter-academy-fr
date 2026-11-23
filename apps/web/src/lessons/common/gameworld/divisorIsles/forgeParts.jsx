@@ -37,6 +37,7 @@
  * Its line names the number and the planks (« 72 » then the planks as small planks) and where they took it, never
  * « a planche b ». Whether the case holds is `held` (what the forge asks of it), its look `fits` or `held`.
  */
+import { formatFr } from '@smarter-academy/core';
 import Inquiry from './Inquiry';
 import { dealOf } from './deal';
 import { factorRungs } from './factorLadder';
@@ -332,7 +333,7 @@ function FactorMirror({ c, stage, fast, tight }) {
       aria-label={`${n} : ${planks.join(' · ')}${fell ? ` · ${fell}` : ''} → ${left}`}
     >
       <text x="62" y={F_ROW + 36} textAnchor="middle" className="rf-cap rf-cap--a rf-factor__n">
-        {n}
+        {formatFr(n)}
       </text>
       {built &&
         planks.map((d, k) => (
@@ -424,7 +425,8 @@ const FactorMini = ({ c }) => {
 /** The head of a factor case's line: the number, then its planks as small planks (no sign between them). */
 const FactorHead = ({ factor }) => (
   <span className="rf-factorhead" dir="ltr" data-rf-factor-head={`${factor.n}:${factor.planks.join('.')}`}>
-    <strong>{factor.n}</strong>
+    {/* « 2 431 »: French writes the thousands apart (FRENCH_LANGUAGE_CONTRACT.md §5) */}
+    <strong>{formatFr(factor.n)}</strong>
     <span className="rf-factorhead__planks">
       {factor.planks.map((d, k) => (
         // eslint-disable-next-line react/no-array-index-key -- equal planks are legal: keyed by their place

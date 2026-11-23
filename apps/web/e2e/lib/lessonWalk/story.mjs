@@ -20,6 +20,18 @@ import { worldOf } from './world.mjs';
 import { worldOfLesson } from './worlds/index.mjs';
 
 const fills = (n, d) => n % d === 0;
+const SUP = { '⁰': 0, '¹': 1, '²': 2, '³': 3, '⁴': 4, '⁵': 5, '⁶': 6, '⁷': 7, '⁸': 8, '⁹': 9 };
+/** The value of a product written with raised exponents, « 2³ × 3² × 7 » → 504 (the walk's own reading of a label). */
+export const labelValue = (text) =>
+  String(text)
+    .split('×')
+    .map((t) => t.replace(/\s/g, ''))
+    .reduce((v, t) => {
+      const m = t.match(/^(\d+)([⁰¹²³⁴⁵⁶⁷⁸⁹]*)$/);
+      if (!m) return NaN;
+      const e = m[2] ? Number([...m[2]].map((c) => SUP[c]).join('')) : 1;
+      return v * Number(m[1]) ** e;
+    }, 1);
 const range = (a, b) => Array.from({ length: Math.max(0, b - a + 1) }, (_, i) => a + i);
 
 /**
@@ -306,16 +318,21 @@ export async function storyWalk(L, D, opts) {
       await shotWorld(`island-${islands[h].id}-open`);
     };
 
-    /** A convoy whose head is island h. Returns the island he stands on after its last bridge. */
+    /**
+     * A convoy whose head is island h — or a SINGLE BRIDGE (a segment with no `convoy`, first French lesson
+     * `decomposer-en-facteurs-premiers`: every bridge built with the planks of its own island, its pedestals or its typed
+     * workshop). Returns the island he stands on after its last bridge.
+     */
     const convoy = async (h) => {
       const head = segs[h];
-      const group = segs.map((s, i) => ({ s, i })).filter((x) => x.s.convoy === head.convoy);
+      const single = !head.convoy;
+      const group = single ? [{ s: head, i: h }] : segs.map((s, i) => ({ s, i })).filter((x) => x.s.convoy === head.convoy);
       const gaps = group.filter((x) => !x.s.standing).map((x) => x.s.a);
-      const purse = convoys[head.convoy]?.purse ?? Infinity;
+      const purse = single ? Infinity : (convoys[head.convoy]?.purse ?? Infinity);
       const ws = head.workshop;
       // a workshop LOCKED (`open: false`) beside planks on pedestals: it opens once the first bridge fell twice
       const locked = Boolean(ws && ws.open === false);
-      await ctx.hook(`convoy:${head.convoy}:before`);
+      await ctx.hook(single ? `bridge:${head.id}:before` : `convoy:${head.convoy}:before`);
       const pedestals = locked || !ws ? await W.pedestals(h) : [];
       const offered = ws ? range(ws.min ?? 1, ws.max) : pedestals;
       const costs = (b) => gaps.reduce((t, a) => t + a / b, 0);
@@ -331,16 +348,20 @@ export async function storyWalk(L, D, opts) {
         : null;
       const markMiss =
         missPost != null && (S.markMiss ?? [segs.find((s) => s.convoy && s.mark)?.convoy]).includes(head.convoy);
+      const what = single ? `bridge « ${head.id} »` : `convoy « ${head.convoy} »`;
       expect(
         fit.length >= 1,
-        `convoy « ${head.convoy} » (${gaps.join(', ')}${purse < Infinity ? `, ${purse} coins` : ''}): a plank of ${ws ? 'the workshop' : offered.join(', ')} builds every gap (${fit.join(', ')}) — computed here`,
+        `${what} (${gaps.join(', ')}${purse < Infinity ? `, ${purse} coins` : ''}): a plank of ${ws ? 'the workshop' : offered.join(', ')} builds every gap (${fit.length > 12 ? `${fit.length} lengths` : fit.join(', ')}) — computed here`,
       );
-      if (!ws)
-        check(
-          fit.length === 1,
-          `convoy « ${head.convoy} »: ONE plank of the island builds every gap (${fit.join(', ')})`,
-        );
-      const right = Math.max(...fit);
+      if (!ws && !single)
+        check(fit.length === 1, `${what}: ONE plank of the island builds every gap (${fit.join(', ')})`);
+      // a convoy: the longest plank that builds it; a single bridge (several planks may hold — a composite one too): the
+      // shortest plank longer than 1 that fills it, as a student who tries the short planks first (1 when none does)
+      const right = single ? ([...fit].sort((x, y) => x - y).find((b) => b > 1) ?? fit[0]) : Math.max(...fit);
+      // a single bridge where the descriptor asks a FALL first (`story.fallFirst: [segment id]`): a plank of the island that
+      // leaves cells (the first such mould; in a workshop the shortest such length)
+      const fallFirst = single && (S.fallFirst ?? []).includes(head.id);
+      const falls = fallFirst ? (offered.find((b) => b > 1 && !fills(head.a, b)) ?? null) : null;
       // a plank that fills the first gap and not the second, that the purse pays (the longest such, shorter than the gap)
       const firstOnly =
         gaps.length >= 2
@@ -354,14 +375,16 @@ export async function storyWalk(L, D, opts) {
         (S.wrongFirst ?? [segs.find((s) => s.convoy)?.convoy]).includes(head.convoy) && firstOnly != null;
       const purseOut = (S.purseOut ?? []).includes(head.convoy) && tooCheap != null;
       console.log(
-        `NOTE  convoy « ${head.convoy} »: right ${right}${wrongFirst ? `, first only ${firstOnly}` : ''}${purseOut ? `, purse out ${tooCheap}` : ''}${markMiss ? `, misses the post ${missPost}` : ''} (computed)`,
+        `NOTE  ${what}: right ${right}${falls != null ? `, falls first ${falls}` : ''}${wrongFirst ? `, first only ${firstOnly}` : ''}${purseOut ? `, purse out ${tooCheap}` : ''}${markMiss ? `, misses the post ${missPost}` : ''} (computed)`,
       );
       for (const x of built) if (x.s.mark) await sign(x.i, `island « ${islands[h].name} », before he builds`);
 
       {
         const r = await W.road();
+        // a French number is written with a narrow no-break space between its thousands (« 1 400 »): read without it (C11)
+        const said = r.objective.replace(/\s/g, '');
         check(
-          gaps.every((a) => r.objective.includes(String(a))),
+          gaps.every((a) => said.includes(String(a))),
           `island « ${islands[h].name} »: the instruction names the gaps ${gaps.join(', ')}`,
         );
         if (purse < Infinity)
@@ -412,6 +435,23 @@ export async function storyWalk(L, D, opts) {
         }
       }
 
+      // ── a single bridge: a plank of the island that leaves cells falls first ──
+      if (falls != null) {
+        await hold(h, falls);
+        await W.ff(0.6);
+        await W.fire(h, async () => {
+          expect(await W.until((r) => r.verdict != null, 30), `the world shows its verdict on ${head.a}`);
+          const v = (await W.road()).verdict;
+          check(
+            !v.holds && v.r === head.a % falls,
+            `${head.a} = ${falls} × ${Math.floor(head.a / falls)} + ${head.a % falls}: the bridge of ${falls} falls (${JSON.stringify(v)})`,
+          );
+          await shotWorld(`g${head.a}-falls-${falls}`);
+          return 0;
+        });
+        check(!(await W.road()).segs[h].complete, `the bridge of ${falls} goes back: ${head.a} still to cross`);
+        await shotWorld(`g${head.a}-after-fall`);
+      }
       // ── a plank that fills the first gap only: the second refuses it, he walks back ──
       if (wrongFirst) {
         await hold(h, firstOnly);
@@ -500,7 +540,7 @@ export async function storyWalk(L, D, opts) {
       }
       // ── the right plank: every bridge of the convoy ──
       await hold(h, right, ws && firstWorkshop === false && wrongFirst ? 'enter' : 'button');
-      if (wrongFirst || purseOut || markMiss) {
+      if (wrongFirst || purseOut || markMiss || falls != null) {
         const r = await W.road();
         check(
           !r.segs[h].complete || r.segs[h].builtWith === right,
@@ -560,7 +600,7 @@ export async function storyWalk(L, D, opts) {
         } else await W.cross(i);
         await page.waitForTimeout(300);
         const to = i + 1;
-        if (S.reloadOn === to && group.some((x) => x.i === to)) {
+        if (S.reloadOn === to && (single || group.some((x) => x.i === to))) {
           await W.reload();
           const r = await W.road();
           expect(
@@ -568,13 +608,14 @@ export async function storyWalk(L, D, opts) {
               r.stage === to &&
               r.island === to &&
               (await W.standsWith(i, right)) &&
-              r.held === right,
-            `after a reload he is on « ${islands[to].name} », the bridge of ${right} behind him, the planks in hand (stage ${r.stage}, held ${r.held})`,
+              // the planks in hand are kept only inside a convoy (Game.js › restore: elsewhere the island gives them again)
+              r.held === (single ? null : right),
+            `after a reload he is on « ${islands[to].name} », the bridge of ${right} behind him${single ? ', his hand empty (a single bridge: the next island gives its planks)' : ', the planks in hand'} (stage ${r.stage}, held ${r.held})`,
           );
           await shotWorld(`reload-on-${islands[to].id}`);
         } else if (n < group.length - 1) await shotWorld(`island-${islands[to].id}`);
       }
-      lap(`convoy ${head.convoy}`);
+      lap(what);
       return group.at(-1).i + 1;
     };
 
@@ -852,11 +893,129 @@ export async function storyWalk(L, D, opts) {
       await storePay(k, Q);
     };
 
+    /**
+     * The store of a last bridge announced by a LABEL (`boss.label`, first French lesson: « 2³ × 3² × 7 cases », never its
+     * count): the walk reads the gap from the label ITSELF (its own arithmetic of the powers), and the store's step asks
+     * ONE box — how many planks (`[data-di-boss-count]`, `[data-di-q]`, no remainder box). Each option that does not fill
+     * the gap is tried first: the world builds it whatever count he typed and it FALLS (the store reopens with the cells
+     * left); the one that fills is asked a wrong count first (refused with its sentence), then the right one; the price.
+     */
+    const labelStore = async (k) => {
+      const seg = segs[k];
+      const label = seg.boss.label;
+      const A = labelValue(label.text);
+      expect(
+        A === seg.a,
+        `the last bridge's label « ${label.text} » is ${A} cells — computed here from its powers (the world's gap ${seg.a})`,
+      );
+      await shotWorld(`island-${islands[k].id}`);
+      await W.toAltar(k);
+      await W.ff(1.2);
+      await page.waitForTimeout(600);
+      // the gap ahead, its sign written with the label (a sprite of the 3D scene: seen on the screenshot, not in the DOM)
+      await shotWorld(`boss-sign-${islands[k].id}`);
+      await W.act();
+      await page.waitForTimeout(400);
+      const mission =((await page.textContent('[data-di-boss-mission]').catch(() => '')) ?? '').replace(/\s/g, '');
+      expect(
+        (await W.st()).overlay === 'boss' && mission.includes(label.text.replace(/\s/g, '')),
+        `the store opens on the lesson's problem: the bridge of « ${label.text} » cells`,
+      );
+      check(
+        !new RegExp(`(^|[^0-9])${A}([^0-9]|$)`).test(mission),
+        `the mission never writes the gap's count (${A}): only its decomposition`,
+      );
+      const moulds = await page
+        .locator('[data-di-mould]')
+        .evaluateAll((els) => els.map((e) => Number(e.dataset.diMould)));
+      const good = moulds.filter((b) => fills(A, b));
+      const bad = moulds.filter((b) => !fills(A, b));
+      expect(
+        good.length === 1 && bad.length >= 1,
+        `the store offers ${moulds.join(' and ')}: only ${good} fills ${label.text} = ${A} cells — computed here`,
+      );
+      await w.shot(page, 'boss', OUT);
+      const pick = async (b) => {
+        await page.click(`[data-di-mould="${b}"]`);
+        await page.waitForTimeout(300);
+        if (await page.locator('[data-di-pgate-go]').count()) await page.click('[data-di-pgate-go]');
+        await page.waitForSelector('[data-di-boss-count] [data-di-q]', { timeout: 8000 });
+        const form = await page.evaluate(() => ({
+          r: document.querySelectorAll('[data-di-r]').length,
+          label: document.querySelector('[data-di-boss-label]')?.textContent ?? '',
+          a: document.querySelectorAll('[data-di-boss-a]').length,
+        }));
+        check(
+          form.r === 0 && form.a === 0 && form.label.length > 0,
+          `planks of ${b}: ONE box, how many planks — the label written in place of the count, no remainder box (${JSON.stringify(form)})`,
+        );
+      };
+      for (const b of bad) {
+        await pick(b);
+        await page.fill('[data-di-q]', String(Math.floor(A / b)));
+        await w.shot(page, `boss-count-${b}`, OUT);
+        await page.click('[data-di-check]');
+        // the planks of b are laid on the gap and it falls: the moment it is being built, then the store again
+        let shotFall = false;
+        let s = 0;
+        for (let n = 0; n < 160; n += 1) {
+          const o = (await W.st()).o;
+          if ((await W.st()).overlay === 'boss' && o?.view === 'choose') break;
+          if (!shotFall && (await W.road()).verdict) {
+            shotFall = true;
+            await shotWorld(`boss-falls-${b}`);
+          }
+          await W.ff(0.5);
+          s += 0.5;
+        }
+        waits.push(`the store's ${b} built and fallen: ${s.toFixed(1)} s`);
+        const o = (await W.st()).o;
+        expect(o?.type === 'boss' && o.view === 'choose', `planks of ${b} fell: the store REOPENS`);
+        check(
+          o.tried?.[b] === A % b,
+          `${A} = ${b} × ${Math.floor(A / b)} + ${A % b}: the card of ${b} says ${A % b} cells left (${JSON.stringify(o.tried)})`,
+        );
+        const say = (await W.road()).say;
+        check(
+          say.includes(String(A % b)) && !new RegExp(`(^|[^0-9])${A}([^0-9]|$)`).test(say),
+          `the world says what is left, never the gap's count (« ${say.slice(0, 120)} »)`,
+        );
+        await w.shot(page, `boss-tried-${b}`, OUT);
+      }
+      const b = good[0];
+      const Q = A / b;
+      await pick(b);
+      await page.fill('[data-di-q]', String(Q - 1));
+      await page.click('[data-di-check]');
+      await page.waitForTimeout(300);
+      check(
+        ((await page.textContent('[data-di-boss-error]').catch(() => '')) ?? '').trim().length > 5 &&
+          (await W.st()).o?.view === 'divide',
+        `${Q - 1} planks of ${b} do not fill the bridge: refused with a sentence, the store waits`,
+      );
+      await w.shot(page, `boss-count-${b}-short`, OUT);
+      await page.fill('[data-di-q]', String(Q));
+      await w.shot(page, `boss-count-${b}`, OUT);
+      await page.click('[data-di-check]');
+      let s = 0;
+      for (let n = 0; n < 160 && (await W.st()).o?.view !== 'cost'; n += 1) {
+        await W.ff(0.5);
+        s += 0.5;
+      }
+      waits.push(`the last bridge, ${Q} planks of ${b}: ${s.toFixed(1)} s`);
+      expect((await W.st()).o?.view === 'cost', `the bridge of ${label.text} holds with ${Q} planks of ${b}: the store asks their price`);
+      await storePay(k, Q);
+    };
+
     const boss = async (k) => {
       await ctx.hook('boss:before');
       const seg = segs[k];
       if (seg.mark) {
         await markedStore(k);
+        return;
+      }
+      if (seg.boss?.label) {
+        await labelStore(k);
         return;
       }
       const A = seg.a;
@@ -950,7 +1109,8 @@ export async function storyWalk(L, D, opts) {
         } else if (seg.boss) {
           await boss(k);
           break;
-        } else if (seg.kind === 'bridge' && seg.convoy) {
+        } else if (seg.kind === 'bridge' && (seg.convoy || !seg.mark)) {
+          // a convoy, or a single bridge built with its own island's planks
           k = await convoy(k);
         } else if (seg.kind === 'bridge' && seg.mark) {
           k = await markedBridge(k);

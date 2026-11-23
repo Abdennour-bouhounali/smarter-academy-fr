@@ -9,6 +9,8 @@ import ORDER from './lessonOrder.generated.json';
 export const GRADES = [...ACTIVE_GRADE_IDS];
 /** The grade's name as the catalogue writes it — never a local table. */
 export const GRADE_NAMES = Object.fromEntries(getAllGrades().map((g) => [g.id, g.name]));
+/** « 4e » — the year inside a sentence (« vu en 4e »): never its capitalised name mid-sentence (« vu en Quatrième »). */
+export const GRADE_SHORT = Object.fromEntries(getAllGrades().map((g) => [g.id, g.shortName ?? g.id]));
 
 const RANK = new Map();
 GRADES.forEach((g, gi) => (ORDER[g] ?? []).forEach((code, i) => RANK.set(code, { grade: g, rank: gi * 1000 + i })));

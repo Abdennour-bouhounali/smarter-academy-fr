@@ -431,13 +431,16 @@ export const { waveOf } = ladder;
  */
 export const PRACTICE_MAP = {
   root: 'Décomposer un nombre',
+  // laid for the widest node name (« Décomposer en facteurs premiers », about 40 % of the map) at 1366×768: no name on
+  // another, no link's label on a name or an icon, the power node below the line from the root (the first French walk
+  // found « Les premiers fossés » over two icons, 2026-11-23)
   positions: {
-    root: [50, 8],
-    [K.ladder]: [20, 38],
-    [K.powers]: [50, 28],
-    [K.stop]: [80, 38],
-    [K.tool]: [35, 80],
-    [EXAM]: [75, 80],
+    root: [50, 7],
+    [K.ladder]: [50, 40],
+    [K.powers]: [82, 47],
+    [K.stop]: [82, 76],
+    [K.tool]: [22, 76],
+    [EXAM]: [19, 36],
   },
   edges: [
     ['root', K.ladder, 'Les premiers fossés'],

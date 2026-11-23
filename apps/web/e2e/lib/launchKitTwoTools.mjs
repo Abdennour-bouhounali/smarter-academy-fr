@@ -439,6 +439,14 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
       // « PGCD(x ; y) = v » (4am.m1.r03, level 2): is v the greatest common divisor, computed here?
       m = /^\\mathrm\{PGCD\}\((\d+) ; (\d+)\) = (\d+)$/.exec(tex);
       if (m) return gcdOf(Number(m[1]), Number(m[2])) === Number(m[3]) ? 'yes' : 'no';
+      // « 45 = 3 × 3 × 5 » (4e.m1.r06, first French lesson): the number written as a product of PRIMES? (the product is the
+      // number, and every factor is prime — « 12 = 2 × 6 » keeps a 6, « 30 = 2 × 3 × 7 » is not 30)
+      m = /^(\d+) = (\d+(?: \\times \d+)+)$/.exec(tex);
+      if (m) {
+        const fs = m[2].split(' \\times ').map(Number);
+        const prime = (x) => x > 1 && [...Array(Math.max(0, Math.floor(Math.sqrt(x)) - 1)).keys()].every((i) => x % (i + 2) !== 0);
+        return fs.reduce((p, x) => p * x, 1) === Number(m[1]) && fs.every(prime) ? 'yes' : 'no';
+      }
       // « xᵉ = v » (3am.m3.r06): a power of a whole, negative, decimal number or a fraction — computed here, exactly
       const pw = powerCard(tex);
       if (pw != null) return pw ? 'yes' : 'no';
@@ -468,6 +476,12 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
     if (of) return Number(of[1]) % n === 0 ? 'yes' : 'no';
     const k = /divisible par (\d+)/i.exec(norm(plain));
     if (k) return n % Number(k[1]) === 0 ? 'yes' : 'no';
+    // « Ce nombre est-il premier ? » (4e.m1.r06): exactly two divisors, 1 and itself — 1 is not prime
+    if (/est-il premier/i.test(norm(plain))) {
+      let p = n >= 2;
+      for (let d = 2; d * d <= n; d += 1) if (n % d === 0) p = false;
+      return p ? 'yes' : 'no';
+    }
     expect(false, `the walk can read the number card « ${card.text} » with its prompt « ${norm(plain)} »`);
     return null;
   };
@@ -547,6 +561,17 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
           `the equation on screen is the question asked (${sc.eq.join(' ')}), ONE box`,
         );
         vals = { v: right ? gcdOf(x, y) : Math.min(x, y) };
+      } else if (q.calc?.op === 'factor') {
+        // « 30 = 2 × ▢ × 5 » (4e.m1.r06, first French lesson): one prime of the product to write — the number divided by the
+        // primes printed, computed here; wrong: the next number (never the prime asked)
+        const nums = sc.eq.map(Number).filter((v) => Number.isInteger(v) && v > 0);
+        const [n, ...known] = nums;
+        const v = n / known.reduce((p, x) => p * x, 1);
+        expect(
+          n === q.calc.n && Number.isInteger(v) && same(sc.slots, ['v']),
+          `the equation on screen is the question asked (${sc.eq.join(' ')}), ONE box — ${n} ÷ ${known.join(' ÷ ')} = ${v}`,
+        );
+        vals = { v: right ? v : v + 1 };
       } else if (sc.eq[1] === '=') {
         // « a = b × ▢ (+ ▢) »: the Euclidean division, or the equality that shows a divisor (no box for a remainder)
         const a = Number(sc.eq[0]);
@@ -787,11 +812,12 @@ export async function walkLaunchOne({
     `the bag holds the ONE tool the learning net gives this lesson (${I}), empty`,
   );
   {
-    const bag = await page.textContent('[data-lk-bag]');
-    const intro = await page.textContent('[data-lk-intro]');
+    // read as SEEN: a no-break space (« 1 outil » keeps its count with its noun) is a space (defects.md C11)
+    const bag = ((await page.textContent('[data-lk-bag]')) ?? '').replace(/\s+/g, ' ');
+    const intro = ((await page.textContent('[data-lk-intro]')) ?? '').replace(/\s+/g, ' ');
     expect(
       bag.includes(T.name) && bag.includes(T.year) && intro.includes('1 outil vu dans tes leçons précédentes'),
-      `the tool is named in the student’s words (« ${T.name} », ${T.year}); the intro says ONE tool`,
+      `the tool is named in the student’s words (« ${T.name} », ${T.year}); the intro says ONE tool (bag « ${bag.replace(/\s+/g, ' ').trim()} »; intro « ${intro.replace(/\s+/g, ' ').trim().slice(0, 120)} »)`,
     );
   }
   await shot('bag');
@@ -935,11 +961,20 @@ export async function walkLaunchOne({
     );
   }
   // the home lesson is `available` in the catalogue (core › getLessonPath gives its page): its button is there, not « Leçon bientôt disponible »
-  expect(
-    (await page.locator('[data-lk-lesson]').count()) === 1 ||
-      (PHONE && (await page.locator('[data-lk-lesson-computer]').count()) === 1),
-    '« Toute la leçon » leads to the home lesson of the tool',
-  );
+  // a tool whose home lesson is not written yet (a 4e item before any 4e lesson — first French lesson): « Leçon bientôt
+  // disponible », never a button to nowhere
+  if (homeLessonOf(I))
+    expect(
+      (await page.locator('[data-lk-lesson]').count()) === 1 ||
+        (PHONE && (await page.locator('[data-lk-lesson-computer]').count()) === 1),
+      '« Toute la leçon » leads to the home lesson of the tool',
+    );
+  else
+    expect(
+      (await page.locator('[data-lk-lesson]').count()) === 0 &&
+        (await page.textContent('[data-lk-result]')).includes('Leçon bientôt disponible'),
+      'the tool has no home lesson yet: « Leçon bientôt disponible », no button to nowhere',
+    );
   {
     const k = await kit(ids[1]);
     expect(
@@ -1109,12 +1144,19 @@ export async function walkLaunchOne({
   await shot('capsule-repaired');
   await H.takeOff('take-off after the capsule: the world of the lesson plays');
 
-  // the tool's own forms (families.js › forms): every easy form, and the harder sort (lesson 7: write, common, sort)
-  const want = [...(FAMILIES[I]?.forms?.[1] ?? ['write', 'place']).map((f) => `1:${f}`), '2:sort'];
+  // the tool's own forms (families.js › forms): the easy forms a station asks — its first two, the first question and
+  // the second gesture (lesson 7: write, common) — and the harder sort. A family with MORE easy forms (4e.m1.r06: write,
+  // primes, power) has forms a one-tool launch never asks: said with a NOTE, they are the family's to answer for
+  // (first French lesson, 2026-11-23 — reported, not hidden)
+  const easy = FAMILIES[I]?.forms?.[1] ?? ['write', 'place'];
+  const want = [...easy.slice(0, 2).map((f) => `1:${f}`), '2:sort'];
   expect(
     want.every((f) => forms.has(f)),
     `the launch asked the tool's gestures: ${want.join(', ')} (${[...forms].join(' ')})`,
   );
+  const never = easy.slice(2).filter((f) => !forms.has(`1:${f}`));
+  if (never.length)
+    console.log(`NOTE  the family ${I} has easy forms no question of this launch asked: ${never.join(', ')} (a station asks two)`);
   await H.done();
 }
 

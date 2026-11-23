@@ -1039,6 +1039,12 @@ made for it.** The forge then opens on that experiment:
   rule, the tiles are skipped and the mirror ATTACKS it at once. The steps shown are then « Explore → Le miroir la teste →
   Scelle ta clé »; otherwise « Explore → Écris ta règle → Le miroir la teste → Scelle ta clé ». The predictions are not asked again: the experiment
   held them.
+- **A finished investigation is KEPT** (2026-11-23, first French lesson): `RuleForge` saves its result in the world's
+  flags (`flags.inquiries[key]`, then `game.save()`); a forge opened again on that save (its ✕, a closed page) starts on
+  the tiles with the evidence read from it. An investigation that writes the rule (`inquiry.writes`) is played again.
+  Test: `kit/ruleForgeKept.render.test.jsx`.
+- **`use.column: true`**: the last step's four lines stay in ONE column (a ladder of divisions read top to bottom: 126 | 2,
+  63 | 3…) instead of the two columns four lines get by default (`RuleForge.jsx › UseLines`, `data-rf-column`).
 - **The help of such a forge never narrows to a choice of two rules**: its third help is one more pair of cases to look at.
 - **An experiment says facts, never the rule**: every sentence tells what the strip or the chart has just done (a test
   of the lesson forbids the words of the rule in them); a miss is answered by a fact (« its partner 4 was tried before

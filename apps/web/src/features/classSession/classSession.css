@@ -4264,11 +4264,19 @@
   font-size: 1.15rem;
   color: #1e1b4b;
 }
-/* the sheet in columns of eight lines: 15 lines (2 387) stand in two columns, none is cut */
+/* the formula and « Aucun reste nul » on one row */
+.cs-ladder__sheethead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+/* the sheet in columns of FIVE lines (LadderStation.jsx › MAX_LINES_COLUMN): 15 lines (2 387) stand in three columns,
+   each line at least 1.75rem high — none is cut, none written over another */
 .cs-ladder__lines {
   flex: 1;
   display: grid;
-  grid-template-rows: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(1.75rem, 1fr));
   grid-template-columns: repeat(var(--cols, 1), 11rem);
   grid-auto-flow: column;
   gap: 0.2rem 1.2rem;

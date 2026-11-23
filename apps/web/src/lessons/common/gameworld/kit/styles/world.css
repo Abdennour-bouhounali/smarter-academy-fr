@@ -1155,7 +1155,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.9rem;
-  max-width: 42rem;
+  max-width: 46rem;
   text-align: center;
 }
 .di-title__eyebrow {
@@ -1168,7 +1168,10 @@
 }
 .di-title h1 {
   margin: 0;
-  font-size: clamp(3rem, 7.5vw, 5.4rem);
+  /* a French title is longer than the Arabic ones this size was set for: « L’archipel des diviseurs : le cap du phare » on
+     three lines at 7.5vw pushed the controls' hint under the window at 1366×768 (first French lesson, 2026-11-23) — two
+     lines at most at this size */
+  font-size: clamp(2.5rem, 4.4vw, 4.6rem);
   font-weight: 900;
   line-height: 1.25;
   color: #fff;

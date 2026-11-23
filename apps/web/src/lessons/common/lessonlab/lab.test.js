@@ -596,3 +596,13 @@ describe('Mon labo — the sounds', () => {
     expect(s.play('nothing')).toBe(false);
   });
 });
+
+// French typography in what the lab writes of each instrument (FRENCH_LANGUAGE_CONTRACT.md §4): no plain space before
+// « : » (a no-break space), nor before « ; ! ? » (a narrow one) — the first French lesson's instrument had one.
+describe('the instruments’ words — French typography', () => {
+  it('no ordinary space before a colon, a semicolon, an exclamation or a question mark', () => {
+    for (const t of TOOLS)
+      for (const s of [t.name, t.hint, ...Object.values(t.labels ?? {})].filter(Boolean))
+        expect(s, `${t.id}: « ${s} »`).not.toMatch(/ [:;!?]/);
+  });
+});

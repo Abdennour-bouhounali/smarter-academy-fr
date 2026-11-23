@@ -41,10 +41,18 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
   const { Mirror, Line } = parts;
   const T = forge.text;
   const idOf = forge.caseId;
-  const [rows, setRows] = useState(() => forge.evidence(log));
-  const cases = useMemo(() => forge.predictCases(forge.evidence(log)), []); // eslint-disable-line react-hooks/exhaustive-deps
   // a forge that declares an investigation opens on it: the student acts BEFORE any prediction is asked or tile offered
   const inquiry = forge.inquiry && parts.Inquiry ? forge.inquiry : null;
+  // what his investigation gave is KEPT in the world's save (`flags.inquiries[key]`): a student who leaves the forge (its
+  // ✕, a closed page) and comes back finds his tiles and his evidence, not the investigation to play again (defects.md
+  // B15 — first met on the first French lesson, whose first forge holds three ladders). A forge whose investigation
+  // writes the rule plays it again.
+  const kept = useMemo(() => {
+    const result = inquiry && !inquiry.writes ? (game.flags?.inquiries?.[forge.key] ?? null) : null;
+    return result ? (forge.fromInquiry?.(result) ?? {}) : null;
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const [rows, setRows] = useState(() => kept?.rows ?? forge.evidence(log));
+  const cases = useMemo(() => forge.predictCases(forge.evidence(log)), []); // eslint-disable-line react-hooks/exhaustive-deps
   // …and the investigation takes the place of the predictions; when it also WRITES the rule (`inquiry.writes`: what the
   // student claimed and the world accepted is his rule), no tile is offered either: the mirror attacks that rule at once
   // …and a forge with no investigation and no case to predict (its evidence is what he did in the WORLD, which held the
@@ -54,7 +62,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
     : cases.length
       ? PHASES
       : PHASES.filter((p) => p !== 'predict');
-  const [phase, setPhase] = useState(inquiry ? 'inquiry' : cases.length ? 'predict' : 'build');
+  const [phase, setPhase] = useState(kept ? 'build' : inquiry ? 'inquiry' : cases.length ? 'predict' : 'build');
   const [pi, setPi] = useState(0);
   const [results, setResults] = useState([]);
   const [show, setShow] = useState(() => ({ c: cases[0], stage: 'ask', guess: null }));
@@ -197,6 +205,10 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
 
   // ── 0. the investigation is over: what he did becomes his evidence — and, when it wrote the rule, his rule ──
   const afterInquiry = (result) => {
+    if (game.flags && !inquiry.writes) {
+      game.flags.inquiries = { ...(game.flags.inquiries ?? {}), [forge.key]: result };
+      game.save?.();
+    }
     const out = forge.fromInquiry?.(result) ?? {};
     if (out.rows) setRows(out.rows);
     if (out.rule) {
@@ -618,6 +630,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
                 </p>
                 <UseLines
                   lines={useLines}
+                  column={forge.use.column}
                   vals={use.vals}
                   onType={(name, value) => setUse({ ...use, vals: { ...use.vals, [name]: value }, fb: null })}
                 />
@@ -676,7 +689,11 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
  * printed or typed (forgeBlocks.js › powerBox / givenPower; the look `rf-pow`, ruleForge.css) — a typed exponent's box is
  * named by its label (« exposant »). `onType(name, digits)` receives what a box now holds.
  */
-export function UseLines({ lines, vals, onType }) {
+/**
+ * The last step's lines. Four lines stand in two columns (one sentence each) — unless the forge asks them in ONE column
+ * (`use.column: true`): a ladder of divisions is read from top to bottom (126 | 2, then 63 | 3…), never across.
+ */
+export function UseLines({ lines, vals, onType, column = false }) {
   const named = lines.length === 1;
   const token = (t, key, label) =>
     typeof t === 'object' ? (
@@ -695,7 +712,7 @@ export function UseLines({ lines, vals, onType }) {
       <b key={key}>{t}</b>
     );
   return (
-    <div className="rf-uselines" data-rf-lines={lines.length}>
+    <div className="rf-uselines" data-rf-lines={lines.length} {...(column ? { 'data-rf-column': '' } : {})}>
       {lines.map((line, i) => (
         <div key={i} className="rf-use" dir={line.dir ?? 'ltr'}>
           {line.tokens.map((t, k) =>

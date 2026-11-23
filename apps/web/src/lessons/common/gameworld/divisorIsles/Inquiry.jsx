@@ -49,6 +49,22 @@ const SW = 1000;
 const SX0 = 44;
 const SX1 = 956;
 
+/**
+ * The numbers written under the strip that can stand there without touching (all on ONE row of the scene): a long gap
+ * puts its planks a few units apart (221 cases: 4 units a plank — the first French lesson drew « 1 2 3 … 16 » on one
+ * another). They are taken in order of what they say — the planks that hold and their partners first, then the planks
+ * that fell — and one is left out when it would touch one already written; the table under the strip lists every plank.
+ * `items`: [{ key, x, text, size }] in that order → the keys kept. A label is about 0.62 × its size wide a character.
+ */
+export function spacedLabels(items, gap = 6) {
+  const kept = [];
+  for (const it of items) {
+    const w = String(it.text).length * 0.62 * it.size;
+    if (kept.every((k) => Math.abs(k.x - it.x) >= (k.w + w) / 2 + gap)) kept.push({ ...it, w });
+  }
+  return new Set(kept.map((k) => k.key));
+}
+
 function Pairs({ spec, play, onDone }) {
   const T = spec.text;
   const [gi, setGi] = useState(0);
@@ -122,6 +138,12 @@ function Pairs({ spec, play, onDone }) {
 
   const picking = stage === 'guess' || stage === 'pick';
   const chips = Array.from({ length: Math.min(a, end + 3) }, (_, i) => i + 1);
+  const held = tries.filter((t) => t.whole && !t.crossed);
+  const shownLabels = spacedLabels([
+    ...held.map((t) => ({ key: `d${t.d}`, x: x(t.d), text: t.d, size: 19 })),
+    ...held.filter((t) => t.q !== t.d).map((t) => ({ key: `q${t.d}`, x: x(t.q), text: t.q, size: 19 })),
+    ...tries.filter((t) => !t.whole).map((t) => ({ key: `f${t.d}`, x: x(t.d), text: t.d, size: 16 })),
+  ]);
   const partnerText = (t) => (t.whole ? String(t.q) : T.between(Math.floor(t.partner), Math.floor(t.partner) + 1));
 
   return (
@@ -163,10 +185,12 @@ function Pairs({ spec, play, onDone }) {
                 {t.q !== t.d && <path pathLength="1" d={`M ${xa} 100 Q ${(xa + xb) / 2} ${100 - h * 2} ${xb} 100`} />}
                 <circle cx={xa} cy="113" r="9" />
                 <circle cx={xb} cy="113" r="9" className="is-partner" />
-                <text x={xa} y="146">
-                  {t.d}
-                </text>
-                {t.q !== t.d && (
+                {shownLabels.has(`d${t.d}`) && (
+                  <text x={xa} y="146">
+                    {t.d}
+                  </text>
+                )}
+                {t.q !== t.d && shownLabels.has(`q${t.d}`) && (
                   <text x={xb} y="146" className="is-partner">
                     {t.q}
                   </text>
@@ -175,7 +199,7 @@ function Pairs({ spec, play, onDone }) {
             );
           })}
         {tries
-          .filter((t) => !t.whole)
+          .filter((t) => !t.whole && shownLabels.has(`f${t.d}`))
           .map((t) => (
             <text key={t.d} x={x(t.d)} y="146" className="iq-fell">
               {t.d}

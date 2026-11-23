@@ -30,7 +30,7 @@ import {
 import { getLessonPath } from '@smarter-academy/core';
 import { toolsForLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import MathText from '../components/MathText';
-import { GRADE_NAMES } from '../lessonlab/order';
+import { GRADE_SHORT } from '../lessonlab/order';
 import { setReturnTo } from '../components/returnToLesson';
 import { useIsPhoneScreen } from '../../../components/auth/RequireLargeScreen';
 import { PHONE_LESSONS } from '../../../components/auth/phoneLessons';
@@ -59,7 +59,8 @@ const LessonLab = lazy(() => import('../lessonlab/LessonLab'));
 const L = {
   title: 'L’échauffement',
   bag: 'Ma trousse',
-  from: (g) => `vu en ${GRADE_NAMES[g]}`,
+  // « vu en 4e » (FRENCH_LANGUAGE_CONTRACT.md: « 3e »; a year's name is not capitalised inside a sentence)
+  from: (g) => `vu en ${GRADE_SHORT[g] ?? g}`,
   close: 'Fermer',
   sound: 'Son',
   fuel: 'Temps restant',

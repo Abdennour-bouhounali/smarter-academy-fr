@@ -289,5 +289,10 @@ describe('a case of a forge that is a FACTOR LADDER — its number and its plank
     expect(stop).toContain('class="is-left"'); // the mini: an amber block where the ladder did not reach 1
     const tagged = renderToString(<Line c={{ ...factor(60, [2, 2, 3, 5]), tag: 'tag[60]' }} />);
     expect(tagged).toContain('<em>tag[60]</em>');
+    // a number of four digits is written the French way, its thousands apart — the line and the mirror (first French
+    // lesson: « 2431 » in the log of its sheets)
+    const big = factor(2431, [11, 13, 17]);
+    expect(renderToString(<Line c={big} />)).toContain('<strong>2\u202f431</strong>');
+    expect(renderToString(<Mirror c={big} stage="done" fast />)).toContain('>2\u202f431</text>');
   });
 });

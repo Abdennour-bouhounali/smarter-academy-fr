@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { GRADES, GRADE_NAMES, placeOf, isReached, compareLessons } from './order';
+import { GRADES, GRADE_NAMES, GRADE_SHORT, placeOf, isReached, compareLessons } from './order';
 
 // The generated order is EMPTY until the French lessons: a neutral order of four lessons over two grades stands in.
 vi.mock('./lessonOrder.generated.json', () => ({
@@ -21,5 +21,12 @@ describe('Mon labo — where a lesson sits in the four years', () => {
     expect(placeOf('a5').grade).toBe('5e');
     expect(placeOf('inconnue')).toBeNull();
     expect(['a3', 'a6', 'a5', 'b6'].sort(compareLessons)).toEqual(['a6', 'b6', 'a5', 'a3']);
+  });
+});
+
+describe('the year inside a sentence', () => {
+  it('« vu en 4e »: the short name of each year, never the capitalised one', () => {
+    expect(GRADES.every((g) => /^[3-6]e$/.test(GRADE_SHORT[g]))).toBe(true);
+    expect(GRADE_SHORT['4e']).toBe('4e');
   });
 });

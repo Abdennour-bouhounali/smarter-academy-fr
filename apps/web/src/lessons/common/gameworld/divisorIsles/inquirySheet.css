@@ -4,7 +4,7 @@
    is green, a remainder that is not 0 amber — as everywhere in this world. More than ten lines stand in two blocks of
    equal height: 24 lines (two blocks of 12 under their two header rows) fit the forge's screen at 1366 × 768 with no
    scroll. HTML text keeps the 12 px floor (--di-min-font). */
-.iq--sheet {
+.iq.iq--sheet {
   grid-template-rows: auto auto minmax(0, 1fr) auto auto auto;
 }
 .iq-sheet-main {
@@ -14,8 +14,12 @@
   align-items: start;
   min-height: 0;
 }
-.iq-sheet {
+/* scoped: the proof's notebook is `.iq-sheet` too (inquiry.css › .iq-proof, a COLUMN) — unscoped, the rule loaded last
+   stacked this kind's two blocks one under the other and the second ran under the buttons (first French lesson, the
+   sheets of 4 641 and 3 127 at 1366×768) */
+.iq--sheet .iq-sheet {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 1rem;
   min-height: 0;

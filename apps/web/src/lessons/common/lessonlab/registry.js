@@ -199,7 +199,8 @@ export const TOOLS = [
     lesson: 'decomposer-en-facteurs-premiers',
     icon: '🪜',
     name: 'L’échelle des facteurs',
-    hint: 'Ton nombre est un fossé : pose des planches une à une. Le fossé raccourcit à chaque planche qui le remplit — jusqu’où peux-tu aller ?',
+    // one line of the lab's head at 1366×768 (the first, longer wording ended on an ellipsis there)
+    hint: 'Ton nombre est un fossé : chaque planche qui le remplit le raccourcit. Jusqu’où ?',
     needs: 'a',
     labels: { a: 'Le nombre' },
     range: { a: [2, 9999], b: [1, 99] },

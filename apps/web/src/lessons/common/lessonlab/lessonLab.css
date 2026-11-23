@@ -366,6 +366,8 @@
   height: 100%;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
+  /* one column the width of the stage: a long reading or bar of actions never widens the drawing past the stage */
+  grid-template-columns: minmax(0, 1fr);
 }
 .ll-draw {
   min-height: 0;
@@ -454,6 +456,18 @@
   display: flex;
   gap: 0.45rem;
   flex: none;
+}
+/* a length typed inside a button of the bar (« Planche de ▢ »): the world's own box, never a white field */
+.ll-btn input {
+  width: 3.6em;
+  height: 2rem;
+  border-radius: 0.6rem;
+  border: 2px solid #7dfcff;
+  background: rgba(125, 252, 255, 0.1);
+  color: #eafcff;
+  font: inherit;
+  text-align: center;
+  outline: none;
 }
 .ll-btn {
   display: inline-flex;

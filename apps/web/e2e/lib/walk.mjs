@@ -110,6 +110,8 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
   let oks = 0;
   const fails = [];
   const errors = [];
+  /** console.error of the app (a React warning — « Maximum update depth exceeded » — is one): counted at the end. */
+  const consoleErrors = [];
   let n = 0;
   let browser = null;
   const shrunk = new Map();
@@ -196,7 +198,10 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
       console.log('pageerror', e.message);
     });
     page.on('console', (m) => {
-      if (m.type() === 'error' && !/favicon|fonts|ERR_|Failed to load resource/.test(m.text())) console.log('console.error', m.text().slice(0, 300));
+      if (m.type() === 'error' && !/favicon|fonts|ERR_|Failed to load resource/.test(m.text())) {
+        console.log('console.error', m.text().slice(0, 300));
+        consoleErrors.push(m.text().slice(0, 160));
+      }
     });
     // The DOM, then the app's own sign that it started (index.html's boot spinner replaced by React), then a quiet
     // network AT BEST: « networkidle » alone waited on every dev module and could time out the whole walk (a load flake).
@@ -408,6 +413,8 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
 
   async function finish() {
     check(errors.length === 0, `no page error${errors.length ? ' — ' + errors.slice(0, 3).join(' | ') : ''}`);
+    const ce = [...new Set(consoleErrors)];
+    check(ce.length === 0, `no console error${ce.length ? ' — ' + ce.slice(0, 3).join(' | ') : ''}`);
     if (shrunk.size) console.log('note: content scaled below ×0.8 to fit at:', [...shrunk].map(([k, v]) => `${k} @ ${v}`).join('; '));
     console.log(`walk ${name} @ ${SIZE_NAME}: ${oks} ok, ${fails.length} FAIL, ${Math.round((Date.now() - t0) / 1000)} s`);
     if (fails.length) console.log('failed:\n  - ' + fails.join('\n  - '));

@@ -35,6 +35,16 @@ describe('the box of a sitting step', () => {
     expect(quietKey(step('factorization'))).toBe(null);
   });
 
+  it('on the sheet a decomposition has no placeholder (its format is written under it) and a compact pad', async () => {
+    const html = draw(
+      step('factorization', { answerFormat: 'Un produit de puissances de nombres premiers : tape ^ pour l’exposant' }),
+    );
+    expect(html).not.toContain('placeholder="\\text{');
+    const { readFileSync } = await import('node:fs');
+    const css = readFileSync(new URL('./examSitting.css', import.meta.url), 'utf8');
+    expect(css).toMatch(/\.xs-field\[data-xs-type='factorization'\] \[data-math-pad\] \{[^}]*repeat\(8, 2\.4rem\)/);
+  });
+
   it('a `rational` step still draws the number template, as before', () => {
     const html = draw(step('rational', { answerFormat: 'Un nombre entier' }));
     expect(html).toContain('data-xs-type="rational"');

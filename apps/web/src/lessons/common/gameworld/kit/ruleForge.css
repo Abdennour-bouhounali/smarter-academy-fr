@@ -792,8 +792,12 @@
   gap: 0.35rem 1.6rem;
   justify-items: center;
 }
-.rf-uselines[data-rf-lines='4'] {
+.rf-uselines[data-rf-lines='4']:not([data-rf-column]) {
   grid-template-columns: 1fr 1fr;
+}
+/* a ladder of divisions, read from top to bottom (`use.column`): one column, its lines a little closer */
+.rf-uselines[data-rf-column] {
+  row-gap: 0.15rem;
 }
 .rf-uselines:not([data-rf-lines='1']) .rf-use {
   align-items: center;

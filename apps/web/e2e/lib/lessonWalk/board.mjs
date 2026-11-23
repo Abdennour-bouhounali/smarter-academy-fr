@@ -35,6 +35,176 @@ const NAMES = [
 /** The words of an `ask` step's cards when the step gives none (features/classSession/lessonScripts.js › ASK_WORDS). */
 const PLANK_WORDS = { card: 'Planche', held: 'Tient', fell: 'S’effondre' };
 
+const isPrimeN = (n) => {
+  if (n < 2) return false;
+  for (let d = 2; d * d <= n; d += 1) if (n % d === 0) return false;
+  return true;
+};
+
+/**
+ * The board's `ladder` station (`features/classSession/LadderStation.jsx`, first French lesson): ONE gap broken plank by
+ * plank, the class proposing, the board laying. Played with the walk's own arithmetic:
+ *   a rack: the smallest plank of the rack that fills what is left, each time; on the FIRST ladder station a plank that
+ *     leaves cells falls first (its division beside it), one plank is taken back (« Retirer la dernière planche »), and once
+ *     the gap is 1 case « Une autre échelle » lays the longest planks that fill, the first ladder kept beside it;
+ *     a gap no plank of the rack fills (a prime beyond the rack): « Tout le fossé » (`whole`);
+ *   a sheet: the first line whose remainder is 0 (every remainder of the sheet checked against the walk's own), and when no
+ *     remainder is 0, « Aucun reste nul »; on the first sheet a line that is not 0 first.
+ * The gap shown after every plank, the product at the end, the proof (`after`).
+ */
+async function boardLadder({ page, check, expect, shot, clean, attr, step: s, first }) {
+  const gapNow = async () => Number(await attr('[data-cs-ladder-gap]', 'data-cs-ladder-gap'));
+  const lay = async (sel, want) => {
+    await page.click(sel);
+    await page.waitForTimeout(250);
+    const g = await gapNow();
+    check(g === want, `${s.id}: the gap is now ${want} cases (the board: ${g})`);
+  };
+  expect((await gapNow()) === s.n, `${s.id}: the ladder opens on the gap of ${s.n} cases`);
+  await clean(`${s.id}-start`);
+  await shot(`ladder-${s.id}-start`);
+  const run = async ({ longest = false, wrong = false, undo = false } = {}) => {
+    let gap = s.n;
+    let fell = !wrong;
+    let undone = !undo;
+    let planks = [];
+    for (let guard = 0; guard < 40 && gap > 1; guard += 1) {
+      if (s.sheet) {
+        const lines = await page.$$eval('[data-cs-ladder-line]', (els) =>
+          els.map((e) => [Number(e.dataset.csLadderLine), Number(e.dataset.csLadderR)]),
+        );
+        const want = [];
+        for (let p = 2; p * p <= gap; p += 1) if (isPrimeN(p)) want.push(p);
+        check(
+          lines.map((l) => l[0]).join() === want.join() && lines.every(([p, r]) => r === gap % p),
+          `${s.id}: the sheet of ${gap} — the primes ${want[0] ?? '—'} … ${want.at(-1) ?? '—'} and every remainder, computed here`,
+        );
+        // every line of the sheet whole and apart (2026-11-23: eight lines a column wrote them over one another)
+        const crowded = await page.$$eval('[data-cs-ladder-line]', (els) => {
+          const rs = els.map((e) => ({ p: e.dataset.csLadderLine, r: e.getBoundingClientRect(), h: e.scrollHeight }));
+          const out = [];
+          for (const x of rs)
+            if (x.r.height < 24 || x.h > x.r.height + 2) out.push(`line ${x.p} is ${Math.round(x.r.height)} px high`);
+          for (let i = 0; i < rs.length; i += 1)
+            for (let j = i + 1; j < rs.length; j += 1) {
+              const [a, b] = [rs[i].r, rs[j].r];
+              if (
+                Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 &&
+                Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1
+              )
+                out.push(`lines ${rs[i].p} / ${rs[j].p} overlap`);
+            }
+          return out;
+        });
+        check(
+          crowded.length === 0,
+          `${s.id}: the ${lines.length} lines of the sheet of ${gap} stand whole and apart${crowded.length ? ' — ' + crowded.slice(0, 4).join(' | ') : ''}`,
+        );
+        const zero = want.find((p) => gap % p === 0);
+        if (!fell && zero != null) {
+          const miss = want.find((p) => gap % p !== 0);
+          await page.click(`[data-cs-ladder-line="${miss}"]`);
+          await page.waitForTimeout(250);
+          check(
+            (await gapNow()) === gap && (await attr('[data-cs-ladder-last]', 'data-cs-ladder-last')) === 'fell',
+            `${s.id}: line ${miss} shows ${gap % miss}: nothing laid, its division written`,
+          );
+          await page.click('[data-cs-ladder-nozero]');
+          await page.waitForTimeout(250);
+          check(
+            (await gapNow()) === gap && (await page.$$('.cs-ladder__line.is-zero')).length >= 1,
+            `${s.id}: « Aucun reste nul » on ${gap}: the lines whose remainder IS 0 are marked, nothing laid`,
+          );
+          await clean(`${s.id}-nozero`);
+          await shot(`ladder-${s.id}-not-yet`);
+          fell = true;
+        }
+        if (want.length >= 8 && !planks.length) await shot(`ladder-${s.id}-sheet-${gap}`);
+        if (zero == null) {
+          await lay('[data-cs-ladder-nozero]', 1);
+          planks = [...planks, gap];
+          gap = 1;
+        } else {
+          await lay(`[data-cs-ladder-line="${zero}"]`, gap / zero);
+          planks = [...planks, zero];
+          gap /= zero;
+        }
+        continue;
+      }
+      const rack = await page.$$eval('[data-cs-ladder-plank]', (els) => els.map((e) => e.dataset.csLadderPlank));
+      const nums = rack.filter((x) => x !== 'whole').map(Number);
+      const fit = nums.filter((d) => d <= gap && gap % d === 0);
+      if (!fell) {
+        const miss = nums.find((d) => d <= gap && gap % d !== 0);
+        if (miss != null) {
+          await page.click(`[data-cs-ladder-plank="${miss}"]`);
+          await page.waitForTimeout(250);
+          check(
+            (await gapNow()) === gap && (await attr('[data-cs-ladder-last]', 'data-cs-ladder-last')) === 'fell',
+            `${s.id}: ${gap} = ${miss} × ${Math.floor(gap / miss)} + ${gap % miss} — the plank of ${miss} falls, the gap stays ${gap}`,
+          );
+          await clean(`${s.id}-fell`);
+          await shot(`ladder-${s.id}-fell-${miss}`);
+        }
+        fell = true;
+      }
+      if (!fit.length) {
+        expect(
+          rack.includes('whole') && isPrimeN(gap),
+          `${s.id}: no plank of the rack fills ${gap} — ${gap} is prime: « Tout le fossé »`,
+        );
+        await lay('[data-cs-ladder-plank="whole"]', 1);
+        planks = [...planks, gap];
+        gap = 1;
+        continue;
+      }
+      const d = longest ? Math.max(...fit) : Math.min(...fit);
+      await lay(`[data-cs-ladder-plank="${d}"]`, gap / d);
+      planks = [...planks, d];
+      gap /= d;
+      if (!undone && planks.length === 2) {
+        await page.click('[data-cs-ladder-undo]');
+        await page.waitForTimeout(250);
+        check((await gapNow()) === gap * d, `${s.id}: the last plank taken back — the gap is ${gap * d} again`);
+        gap *= d;
+        planks = planks.slice(0, -1);
+        undone = true;
+      }
+    }
+    expect((await attr('[data-cs-ladder]', 'data-cs-ladder-done')) === 'true', `${s.id}: the gap is down to 1 case`);
+    const product = planks.reduce((p, x) => p * x, 1);
+    check(product === s.n, `${s.id}: ${s.n} = ${planks.join(' × ')} — computed here`);
+    return planks;
+  };
+  const planks = await run({ wrong: first || Boolean(s.sheet), undo: first && !s.sheet });
+  check(
+    (await page.$$('[data-cs-ladder-after]')).length === 1 && (await page.$$('[data-cs-ladder-product]')).length === 1,
+    `${s.id}: the row written as one product, then the board's proof`,
+  );
+  if (s.group) {
+    const groups = await page.$$eval('[data-cs-ladder-group]', (els) => els.map((e) => e.dataset.csLadderGroup));
+    const want = [...new Set(planks)].sort((x, y) => x - y).map((p) => `${p}:${planks.filter((x) => x === p).length}`);
+    check(
+      groups.join() === want.join(),
+      `${s.id}: the row counted plank by plank: ${want.join(', ')} (${groups.join(', ')})`,
+    );
+  }
+  await clean(s.id);
+  await shot(`ladder-${s.id}`);
+  if (first && !s.sheet) {
+    await page.click('[data-cs-ladder-another]');
+    await page.waitForTimeout(250);
+    expect((await gapNow()) === s.n, `${s.id}: « Une autre échelle » starts again on ${s.n}`);
+    await run({ longest: true });
+    check(
+      (await attr('[data-cs-ladder-earlier]', 'data-cs-ladder-earlier')) === '1',
+      `${s.id}: the first ladder is kept beside the second`,
+    );
+    await clean(`${s.id}-another`);
+    await shot(`ladder-${s.id}-another`);
+  }
+}
+
 export async function boardWalk(L, D, opts) {
   const BASE = process.env.E2E_BASE || 'http://localhost:5173';
   const URL_ = `${BASE}/enseignant/seance/${L.id}?classe=7`;
@@ -153,10 +323,18 @@ export async function boardWalk(L, D, opts) {
     errors.push(e.message);
     console.log('pageerror', e.message);
   });
+  // a console.error of the app (a React warning) counts as a page error
+  page.on('console', (m) => {
+    if (m.type() === 'error' && !/favicon|fonts|ERR_|Failed to load resource/.test(m.text())) {
+      errors.push(`console.error: ${m.text().slice(0, 160)}`);
+      console.log('console.error', m.text().slice(0, 300));
+    }
+  });
   let n = 0;
 
   /** What every screen of the board must hold (the board walks' layout rules, the 12 px floor, covered buttons, the ✕). */
-  const shot = async (name, wait = 450) => {
+  /** `exit`: the screen's own ✕ — the board's (`[data-cs-lesson-exit]`), or the test's (`[data-cs-exit]`, SessionPlay). */
+  const shot = async (name, wait = 450, exitSel = '[data-cs-lesson-exit]') => {
     await page.waitForTimeout(wait);
     const bad = await page.evaluate(() => {
       const out = [];
@@ -211,50 +389,53 @@ export async function boardWalk(L, D, opts) {
       bad.length === 0,
       `${name}: nothing scrolls, leaves the screen or its card, the oral question whole${bad.length ? ' — ' + bad.join(' | ') : ''}`,
     );
-    const soft = await page.evaluate((FLOOR) => {
-      const tiny = [];
-      const covered = [];
-      const zoomOf = (el) => {
-        let z = 1;
-        for (let x = el; x && x.nodeType === 1; x = x.parentElement) z *= parseFloat(getComputedStyle(x).zoom) || 1;
-        return z;
-      };
-      const root = document.querySelector('.cs-root');
-      const wk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-      for (let t = wk.nextNode(); t; t = wk.nextNode()) {
-        const p = t.parentElement;
-        if (!p || !t.nodeValue.trim() || p.closest('.katex, svg, script, style')) continue;
-        const r = p.getBoundingClientRect();
-        if (r.width <= 1 || r.height <= 1 || r.bottom < 0 || r.top > innerHeight) continue;
-        const cs = getComputedStyle(p);
-        if (cs.visibility === 'hidden' || Number(cs.opacity) === 0) continue;
-        const px = parseFloat(cs.fontSize) * zoomOf(p);
-        if (px < FLOOR)
-          tiny.push(
-            `${p.tagName.toLowerCase()}.${String(p.className).split(' ')[0]} ${px.toFixed(1)}px « ${t.nodeValue.trim().slice(0, 20)} »`,
-          );
-      }
-      for (const b of root.querySelectorAll('button')) {
-        const r = b.getBoundingClientRect();
-        if (r.width < 2 || r.height < 2 || r.bottom < 0 || r.top > innerHeight) continue;
-        const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-        if (top && !b.contains(top) && !top.contains(b))
-          covered.push(b.textContent.trim().slice(0, 18) || b.getAttribute('aria-label'));
-      }
-      const x = document.querySelector('[data-cs-lesson-exit]');
-      let exit = false;
-      if (x) {
-        const r = x.getBoundingClientRect();
-        const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-        exit =
-          r.width > 0 &&
-          r.left >= -1 &&
-          r.right <= innerWidth + 1 &&
-          r.top >= -1 &&
-          Boolean(top && (top === x || x.contains(top)));
-      }
-      return { tiny: [...new Set(tiny)], covered: [...new Set(covered)], exit };
-    }, FLOOR_PX);
+    const soft = await page.evaluate(
+      ([FLOOR, EXIT]) => {
+        const tiny = [];
+        const covered = [];
+        const zoomOf = (el) => {
+          let z = 1;
+          for (let x = el; x && x.nodeType === 1; x = x.parentElement) z *= parseFloat(getComputedStyle(x).zoom) || 1;
+          return z;
+        };
+        const root = document.querySelector('.cs-root');
+        const wk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        for (let t = wk.nextNode(); t; t = wk.nextNode()) {
+          const p = t.parentElement;
+          if (!p || !t.nodeValue.trim() || p.closest('.katex, svg, script, style')) continue;
+          const r = p.getBoundingClientRect();
+          if (r.width <= 1 || r.height <= 1 || r.bottom < 0 || r.top > innerHeight) continue;
+          const cs = getComputedStyle(p);
+          if (cs.visibility === 'hidden' || Number(cs.opacity) === 0) continue;
+          const px = parseFloat(cs.fontSize) * zoomOf(p);
+          if (px < FLOOR)
+            tiny.push(
+              `${p.tagName.toLowerCase()}.${String(p.className).split(' ')[0]} ${px.toFixed(1)}px « ${t.nodeValue.trim().slice(0, 20)} »`,
+            );
+        }
+        for (const b of root.querySelectorAll('button')) {
+          const r = b.getBoundingClientRect();
+          if (r.width < 2 || r.height < 2 || r.bottom < 0 || r.top > innerHeight) continue;
+          const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          if (top && !b.contains(top) && !top.contains(b))
+            covered.push(b.textContent.trim().slice(0, 18) || b.getAttribute('aria-label'));
+        }
+        const x = document.querySelector(EXIT);
+        let exit = false;
+        if (x) {
+          const r = x.getBoundingClientRect();
+          const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          exit =
+            r.width > 0 &&
+            r.left >= -1 &&
+            r.right <= innerWidth + 1 &&
+            r.top >= -1 &&
+            Boolean(top && (top === x || x.contains(top)));
+        }
+        return { tiny: [...new Set(tiny)], covered: [...new Set(covered)], exit };
+      },
+      [FLOOR_PX, exitSel],
+    );
     check(
       soft.tiny.length === 0,
       `${name}: no text under 12 px${soft.tiny.length ? ' — ' + soft.tiny.slice(0, 6).join(' | ') : ''}`,
@@ -263,7 +444,7 @@ export async function boardWalk(L, D, opts) {
       soft.covered.length === 0,
       `${name}: no button is covered${soft.covered.length ? ' — ' + soft.covered.join(' | ') : ''}`,
     );
-    check(soft.exit, `${name}: the board's ✕ is on screen and a click reaches it`);
+    check(soft.exit, `${name}: the screen's ✕ (${exitSel}) is on screen and a click reaches it`);
     n += 1;
     await page.screenshot({ path: `${OUT}/${String(n).padStart(2, '0')}-${name}.png` });
   };
@@ -330,6 +511,7 @@ export async function boardWalk(L, D, opts) {
     );
     await page.click('[data-cs-open="lesson"]');
     let named = [];
+    let ladderSeen = false;
     for (const [k, s] of steps.entries()) {
       if (k > 0) await page.click('[data-cs-lesson-next]');
       await stepIs(s.id);
@@ -430,6 +612,12 @@ export async function boardWalk(L, D, opts) {
         );
         await clean(s.id);
         await shot(s.id);
+      } else if (s.kind === 'ladder') {
+        // a FACTOR LADDER (first French lesson, `LadderStation.jsx`): every plank laid is computed here
+        await notYet(`${s.id}, before its name`, still);
+        await boardLadder({ page, check, expect, shot, clean, attr, step: s, first: !ladderSeen });
+        ladderSeen = true;
+        await notYet(s.id, still);
       } else if (s.kind === 'court') {
         // « Le palais des dalles »: a court and its rods (worlds/rootCourts.mjs › boardCourt)
         await notYet(`${s.id}, before its name`, still);
@@ -448,7 +636,104 @@ export async function boardWalk(L, D, opts) {
         (await text('[data-cs-lesson-next]')).includes('Test de fin'),
       'the last station leads to the end test (« Test de fin »)',
     );
+
+    // ══ « Test de fin »: the lesson's class test on the board (SessionPlay.jsx) ══
+    // The answer of each question is read from the page's dev hook (`window.__classSession.q`), as the Algerian
+    // class-session walk did: a class test's keys are the lesson's own content, every one re-computed by its
+    // `board/board.test.js` — the walk checks that the board TAKES the right one and meets a wrong one with a sentence.
+    if (DEFAULT.end?.length) {
+      await page.click('[data-cs-lesson-next]');
+      await page.waitForSelector('[data-cs-play]', { timeout: 15000 });
+      const live = () => page.evaluate(() => window.__classSession);
+      const kinds = new Set();
+      let right = 0;
+      for (let k = 0; k < DEFAULT.end.length; k += 1) {
+        const { q } = await live();
+        const good = k !== 1; // the second question is missed on purpose
+        if (!kinds.has(q.kind)) {
+          kinds.add(q.kind);
+          await clean(`end test, question ${k + 1}`);
+          await shot(`end-test-q${k + 1}-${q.kind}`, 450, '[data-cs-exit]');
+        }
+        if (q.kind === 'choice')
+          await page.click(`[data-cs-option="${good ? q.answer : (q.answer + 1) % q.options.length}"]`);
+        else if (q.kind === 'truefalse') await page.click(`[data-cs-option="${String(good ? q.answer : !q.answer)}"]`);
+        else {
+          for (const d of String(good ? q.answer : Number(q.answer) + 1)) await page.click(`[data-cs-key="${d}"]`);
+          await page.click('[data-cs-key="ok"]');
+        }
+        await page.waitForSelector('[data-cs-said]');
+        const said = await attr('[data-cs-said]', 'data-cs-said');
+        check(
+          said === (good ? 'right' : 'miss'),
+          `end test, question ${k + 1} (${q.kind}): ${good ? 'the right answer is taken' : 'a wrong answer is met by a sentence'} (${said})`,
+        );
+        if (!good) {
+          check(
+            !/\bfau(?:x|sse)\b/i.test((await text('[data-cs-said] p')) ?? ''),
+            'end test: the miss is never called « faux »',
+          );
+          if (await page.locator('[data-cs-reveal]').count()) await page.click('[data-cs-reveal]');
+          await clean('end test, a miss');
+          await shot(`end-test-q${k + 1}-miss`, 450, '[data-cs-exit]');
+        }
+        if (good) right += 1;
+        await page.click('[data-cs-next]');
+      }
+      await page.waitForSelector('[data-cs-result]', { timeout: 10000 });
+      const res = await attr('[data-cs-result]', 'data-cs-result');
+      check(
+        res === `${right}/${DEFAULT.end.length}`,
+        `the end test's result: ${right} of ${DEFAULT.end.length} (${res})`,
+      );
+      await clean('end test, the result');
+      await shot('end-test-result', 450, '[data-cs-close], [data-cs-back], [data-cs-exit]');
+    }
     check(errors.length === 0, `no page error${errors.length ? ' — ' + errors.slice(0, 3).join(' | ') : ''}`);
+
+    // ══ « La fiche du professeur »: the lesson's written memo (BoardMemo.jsx), every part ══
+    if (L.memo) {
+      await page.goto(`${BASE}/enseignant/cours/${L.id}/memoire`, { waitUntil: 'domcontentloaded' });
+      await page.waitForSelector('[data-board-memo]', { timeout: 30000 });
+      await page.waitForTimeout(800);
+      const parts = await page.$$eval('[data-memo-go]', (els) => els.map((e) => e.dataset.memoGo));
+      expect(parts.length >= 2, `the teacher's memo opens with its parts (${parts.join(', ')})`);
+      for (const part of parts) {
+        await page.click(`[data-memo-go="${part}"]`);
+        await page.waitForTimeout(400);
+        const t = await page.evaluate(() => {
+          const root = document.querySelector('[data-board-memo]');
+          let text = '';
+          const tiny = [];
+          const wk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+          for (let x = wk.nextNode(); x; x = wk.nextNode()) {
+            const p = x.parentElement;
+            if (!p || p.closest('.katex-mathml, script, style') || !p.getClientRects().length) continue;
+            if (getComputedStyle(p).visibility === 'hidden') continue;
+            if (!p.closest('.katex')) text += ` ${x.nodeValue}`;
+            const px = parseFloat(getComputedStyle(p.closest('.katex') ?? p).fontSize);
+            if (x.nodeValue.trim() && px < 11.95)
+              tiny.push(`${px.toFixed(1)}px « ${x.nodeValue.trim().slice(0, 20)} »`);
+          }
+          return {
+            raw: (text.match(/\$|\\[a-zA-Z]{2,}/) ?? [null])[0],
+            arabic: /[؀-ۿ]/.test(text),
+            wide: document.documentElement.scrollWidth > window.innerWidth + 1,
+            tiny: [...new Set(tiny)].slice(0, 4),
+          };
+        });
+        check(
+          !t.raw && !t.arabic && !t.wide && t.tiny.length === 0,
+          `the memo, part « ${part} »: no raw formula, no Arabic letter, nothing wider than the screen, no text under 12 px${t.raw ? ` — « ${t.raw} »` : ''}${t.tiny.length ? ' — ' + t.tiny.join(' | ') : ''}`,
+        );
+        n += 1;
+        await page.screenshot({ path: `${OUT}/${String(n).padStart(2, '0')}-memo-${part}.png` });
+      }
+      check(
+        errors.length === 0,
+        `no page error on the memo${errors.length ? ' — ' + errors.slice(0, 3).join(' | ') : ''}`,
+      );
+    }
   } catch (e) {
     if (!fails.length || !String(e.message).startsWith(fails.at(-1))) {
       console.log('FAIL', `the walk stopped: ${String(e.message).split('\n')[0]}`);
