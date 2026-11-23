@@ -50,6 +50,8 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 
 ## Start of a session
 
+0. **`docs/TWO_PLATFORMS_PLAN.md`** — the CURRENT plan (2026-11-24): how France and Algeria are developed together, the
+   lean lesson pipeline (Opus generates, two quality gates), the two tests to run (the PGCD, Thalès). Not run yet.
 1. `docs/FRANCE_REBUILD_PLAN.md` — the status line at its top, §4 (what the current step must leave behind), §7 (what
    waits for the owner), §9 (the log; its first line is a working rule about commits).
 2. `docs/README.md` — which document is authoritative for what, and which ones still describe unconverted code.

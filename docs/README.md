@@ -27,6 +27,7 @@ the interface is French and reads left to right (since 2026-11-22), and no real 
 
 | Area | Authoritative document | Status |
 |---|---|---|
+| What comes next: both platforms together, the lean lesson pipeline, the two tests | [`TWO_PLATFORMS_PLAN.md`](./TWO_PLATFORMS_PLAN.md) | a plan, not run |
 | The rebuild: steps, decisions, log | [`FRANCE_REBUILD_PLAN.md`](./FRANCE_REBUILD_PLAN.md) | current |
 | French language, register, typography, direction, formats, content and culture rules | [`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md) | current — applied (the web is French since 2026-11-22) |
 | The whole system (apps, API domains, auth, grades) | [`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md) | imported, corrected |
