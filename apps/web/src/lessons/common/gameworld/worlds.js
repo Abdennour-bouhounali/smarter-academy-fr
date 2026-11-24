@@ -7,4 +7,5 @@ export const WORLDS = {
   'divisor-isles': () => import('./divisorIsles/DivisorIsles'),
   'mission-isle': () => import('./missionIsle/MissionIsle'),
   'root-courts': () => import('./rootCourts/RootCourts'),
+  'nile-pyramids': () => import('./nilePyramids/NilePyramids'),
 };

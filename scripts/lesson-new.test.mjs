@@ -44,7 +44,7 @@ function fixture() {
   fs.mkdirSync(worlds, { recursive: true });
   fs.writeFileSync(
     path.join(worlds, 'worlds.js'),
-    "export const WORLDS = {\n  'divisor-isles': () => import('./divisorIsles/DivisorIsles'),\n  'root-courts': () => import('./rootCourts/RootCourts'),\n};\n",
+    "export const WORLDS = {\n  'divisor-isles': () => import('./divisorIsles/DivisorIsles'),\n  'root-courts': () => import('./rootCourts/RootCourts'),\n  'nile-pyramids': () => import('./nilePyramids/NilePyramids'),\n};\n",
   );
   fs.copyFileSync(path.join(REPO, '.prettierrc.json'), path.join(root, '.prettierrc.json'));
   fs.mkdirSync(path.join(root, 'apps/web/src/lessons/college/9z/nombres_calculs/unite-test/deja-la'), {
@@ -199,5 +199,25 @@ describe('lesson:new — the skeleton of a lesson', () => {
     for (const name of ['K', 'MODULE_KEYS', 'TABLETS', 'STORY'])
       expect(story).toContain(`export const ${name} = notWritten('world/story.js › ${name}');`);
     expect(story).toContain('decomposer-en-facteurs-premiers/world/story.js');
+  });
+
+  it('a world that asks for more gets it: the pyramids add world/tablets.js and world/run.js, TABLETS leaves story.js', async () => {
+    const root = fixture();
+    const { files } = await scaffold(root, 'lecon-neuve', { world: 'nile-pyramids' });
+    expect([...files].sort()).toEqual([...EXPECTED, `${DIR}/world/run.js`, `${DIR}/world/tablets.js`].sort());
+    const read = (f) => fs.readFileSync(path.join(root, DIR, f), 'utf8');
+    expect(read('world/tablets.js')).toContain("export const TABLETS = notWritten('world/tablets.js › TABLETS');");
+    expect(read('world/run.js')).toContain("export const LEGS = notWritten('world/run.js › LEGS');");
+    expect(read('world/run.js')).toContain('talis-hisab-atwal/world/run.js');
+    expect(read('world/story.js')).not.toContain('export const TABLETS');
+    for (const f of ['world/index.js', 'world/story.test.js', 'world/limits.test.js'])
+      expect(read(f), f).toContain("import { TABLETS } from './tablets';");
+    const prettier = await import('prettier');
+    const options = JSON.parse(fs.readFileSync(path.join(REPO, '.prettierrc.json'), 'utf8'));
+    for (const file of files) {
+      const text = fs.readFileSync(path.join(root, file), 'utf8');
+      expect(() => parse(text, { sourceType: 'module', plugins: ['jsx'] }), file).not.toThrow();
+      expect(await prettier.check(text, { ...options, filepath: file }), file).toBe(true);
+    }
   });
 });

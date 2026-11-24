@@ -394,7 +394,7 @@ describe('Mon labo — the mathematics the instruments draw', () => {
 
   it('« La corde et le triangle »: its quests name no key of the lesson it will serve', () => {
     // the instrument itself (tools/RopeTriangle.jsx, its tile in registry.js) draws its triangle with the pyramids
-    // world's figure spec: it comes with that world. Its mathematics (`ropeOf`) and its quests are here already.
+    // world's figure spec (`nilePyramids/figure.js`); its drawing is tested in `rope.render.test.jsx`.
     // The words of the lesson's keys never stand on its quests — nor a ratio written, nor a verdict of error
     const said = QUESTS.rope.map((q) => q.text).join(' ');
     expect(said).not.toMatch(

@@ -197,6 +197,21 @@ export const TOOLS = [
     load: () => import('./tools/FractionPlatform'),
   },
   {
+    // a triangle of the student's own (the ropes AB = a and AC = b, knotted every metre) and a cut [MN] whose two knots
+    // his hand ties: the two ropes drawn at one length show where each knot stands on its rope, the figure (GeoFigure)
+    // what the cut does. Facts only: it names no key of its lesson, writes no ratio and runs nothing on its own.
+    // Untagged, as every instrument no French lesson has taken yet (its design: `thales-configuration-papillon`)
+    id: 'rope',
+    lesson: null,
+    icon: '🪢',
+    name: 'La corde et le triangle',
+    hint: 'Noue les deux bouts d’un segment sur les deux cordes du triangle : quand est-il parallèle au troisième côté ?',
+    needs: 'ab',
+    labels: { a: 'La corde AB', b: 'La corde AC' },
+    range: { a: [2, 30], b: [2, 30] },
+    load: () => import('./tools/RopeTriangle'),
+  },
+  {
     // a number of the student's own as a gap; his hand chooses planks (2 to 13, any length typed, the whole gap) and the
     // world lays them (`divisorIsles/factorLadder.js`): the ladder, the row of planks laid, the product once the gap is
     // 1 case — facts only, no order imposed, no word of its lesson's tablets (safe before the keys, §2)

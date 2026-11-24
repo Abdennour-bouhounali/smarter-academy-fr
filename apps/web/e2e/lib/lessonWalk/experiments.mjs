@@ -11,6 +11,7 @@ import { inquiryFits, ownTools, tellsNothing } from './checks.mjs';
  * `saidBack` regexp in the experiment's descriptor. (A `data-iq-hit` on the fact would be a better handle: not in the engine.)
  */
 const SAID_BACK = /comme tu l[’']a(?:s|vais) (?:écrit|dit|prédit|annoncé)/i;
+import { halfturnExperiment, planExperiment, scaleExperiment } from './worlds/nilePyramidsExperiments.mjs';
 import { calcExperiment, chaseExperiment, roundtripExperiment } from './worlds/rootCourtsExperiments.mjs';
 
 // ───────────────────────────── the walk's own arithmetic (never the lesson's answers) ─────────────────────────────
@@ -816,6 +817,10 @@ export const EXPERIMENTS = {
   // trouver-le-pgcd (2026-11-23)
   deal: dealMode,
   'nest:pair': pairMode,
+  // « Les pyramides » (worlds/nilePyramidsExperiments.mjs)
+  plan: planExperiment,
+  halfturn: halfturnExperiment,
+  scale: scaleExperiment,
 };
 
 /** Plays the experiment `spec` on the screen now open; ends on its « next » (a bench: back to its workshop). */

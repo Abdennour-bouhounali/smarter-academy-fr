@@ -1,0 +1,241 @@
+/*
+ * The pyramids world — the world's own HUD. Every selector is prefixed by the shell's root: a colour set on a class alone is
+ * beaten by `.di-root p { color: inherit }` (defects D13). What he must read is 18 px or more at 1366×768; a button
+ * inside the HUD takes the pointer back from the middle column (defects D21).
+ */
+.di-root .np-hud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.di-root .np-rope {
+  display: flex;
+  align-items: stretch;
+  gap: 0.55rem;
+  pointer-events: auto;
+}
+.di-root .np-rope__cell {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.9rem;
+  background: rgba(120, 72, 12, 0.94);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(48, 24, 4, 0.35);
+}
+.di-root .np-rope__cell small {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fde7b0;
+}
+.di-root .np-rope__cell b {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .np-rope__drop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 0;
+  border-radius: 0.9rem;
+  background: rgba(15, 33, 71, 0.92);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.di-root .np-rope__drop kbd {
+  padding: 0 0.4rem;
+  border-radius: 0.35rem;
+  background: #fff;
+  color: #0f2147;
+  font-size: 1rem;
+}
+.di-root .np-fact {
+  padding: 0.55rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(255, 251, 240, 0.97);
+  box-shadow: 0 8px 22px rgba(3, 10, 30, 0.3);
+  text-align: center;
+}
+.di-root .np-fact p {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.15rem;
+}
+.di-root .np-fact__line {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.di-root .np-fact .np-fact__what {
+  margin-top: 0.25rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.di-root .np-fact--ok .np-fact__what {
+  color: #15803d;
+}
+.di-root .np-fact--gap .np-fact__what {
+  color: #b45309;
+}
+.di-root .np-fact--over .np-fact__what {
+  color: #6d28d9;
+}
+.di-root .np-back {
+  pointer-events: auto;
+}
+/* The top view's button: bottom left, above the register's column, clear of the instruction and the kit's buttons */
+.di-root .np-top {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  pointer-events: auto;
+}
+.di-root .np-top.is-on {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+/* The field register: on the left, the kit's recall card keeps the right (both PHYSICAL sides: the kit's card is
+   placed by `right`, so these stay `left` in either direction) */
+.di-root .np-register {
+  position: absolute;
+  top: 4.4rem;
+  left: 1rem;
+  z-index: 4;
+  width: min(15rem, 22vw);
+  padding: 0.6rem 0.9rem 0.7rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 244, 214, 0.96);
+  color: #3b2a06;
+  box-shadow: 0 8px 22px rgba(3, 10, 30, 0.32);
+  pointer-events: none;
+}
+.di-root .np-register h3 {
+  margin: 0 0 0.35rem;
+  color: #7c4a03;
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+.di-root .np-register ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.di-root .np-register li {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  padding: 0.12rem 0;
+  color: #3b2a06;
+  font-size: 1.2rem;
+  direction: ltr;
+}
+.di-root .np-register li small {
+  color: #6b5a33;
+  font-size: 1.125rem;
+}
+.di-root .np-register li .np-register__by {
+  margin-inline-start: 0.3rem;
+  font-weight: 700;
+}
+.di-root .np-register li.is-measured {
+  color: #1d4ed8;
+}
+.di-root .np-register li.is-typed {
+  color: #7c2d12;
+  font-weight: 700;
+}
+.di-root .di-center:has(~ .np-register) {
+  width: min(92vw, 44rem, calc(100vw - 2 * (min(17rem, 24vw) + 2rem)));
+}
+/* the card of the one order */
+.di-root .np-order__ask {
+  font-size: 1.35rem;
+}
+.di-root .np-order__line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+  font-size: 1.5rem;
+}
+.di-root .np-order__in {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.di-root .np-order__unit {
+  color: #e5e7eb;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.di-root .np-order__refused {
+  color: #b45309;
+  font-size: 1.125rem;
+  text-align: center;
+}
+.di-root .np-order__go {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.di-root .np-order__frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+.di-root .np-order__frac i {
+  display: block;
+  width: 5rem;
+  height: 2px;
+  background: #e5e7eb;
+}
+.di-root .np-order__frac .di-num {
+  width: 5rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.di-root .np-fact .np-fact__quarry {
+  margin-top: 0.25rem;
+  color: #6d28d9;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+/* the mission card and the box at noon: the schematic figure beside the lines */
+.di-root .np-card__cols {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+.di-root .np-card__fig {
+  /* its labels at 12 px however far the card is zoomed to fit (k × the floor, plus the padding): at 18rem they read
+     9.7 px on the plateau's mission card (the walk, 2026-11-24) */
+  flex: 0 0 max(18rem, calc(var(--di-min-font, 12px) * var(--np-fig-k, 0) + 0.8rem));
+  padding: 0.4rem;
+  border-radius: 1rem;
+  background: #fffdf6;
+  color: #334155;
+}
+.di-root .np-card__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.di-root .np-card .np-card__lead {
+  margin: 0 0 0.4rem;
+  font-size: 1.125rem;
+}
+.di-root .np-card .np-card__fact {
+  margin: 0.5rem 0 0;
+  color: #b45309;
+  font-size: 1.125rem;
+  font-weight: 700;
+}

@@ -2,12 +2,7 @@ import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
 import { onStep, steerAngle, turnStep } from './steer';
 import { GameInput } from '../engine/input';
-
-/**
- * The turn of the pyramids world (its `logic.js › TURN`, owner 2026-11-24: one press turns him 5°, held past 0,3 s at
- * 90° a second). That world is not in this tree yet: its numbers are written here, the kit's turn is tested on them.
- */
-const TURN = Object.freeze({ step: 5, rate: 90, delay: 0.3 });
+import { TURN } from '../nilePyramids/logic';
 
 const RAD = Math.PI / 180;
 const dirOf = (a) => ({ x: Math.sin(a), z: Math.cos(a) });

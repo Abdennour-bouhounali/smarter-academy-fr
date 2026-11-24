@@ -1,0 +1,161 @@
+/*
+ * The pyramids world — the three experiments (plan, halfturn, scale), inside the kit's forge frame (designed 1280 × 720,
+ * zoomed ≈ 1.067 at 1366 × 768: 1rem ≈ 17 px). What he reads is 1.08rem or more (≥ 18 px). Every selector is scoped.
+ */
+.np-iq-frame {
+  grid-column: 1 / -1;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+}
+.np-iq {
+  flex: 1;
+  min-width: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 1.4rem;
+  background: #fbf6ea;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  color: #0f172a;
+}
+.np-iq .np-iq__lead {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.np-iq .np-iq__row {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  min-height: 0;
+}
+.np-iq .np-iq__fig {
+  flex: 0 0 24rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  background: #fffdf6;
+  box-shadow: inset 0 0 0 1px #e7dcc0;
+}
+.np-iq .np-iq__side {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.np-iq h4 {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #7c4a03;
+}
+.np-iq .np-iq__cards,
+.np-iq .np-iq__choices,
+.np-iq .np-iq__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.np-iq .np-iq__card {
+  padding: 0.35rem 0.8rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.8rem;
+  background: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+.np-iq .np-iq__card.is-on {
+  border-color: #1d4ed8;
+  background: #dbeafe;
+}
+.np-iq .np-iq__card.is-refused {
+  border-color: #b45309;
+  background: #fef3c7;
+}
+.np-iq .np-iq__card.is-hint {
+  box-shadow: 0 0 0 3px #f59e0b;
+}
+.np-iq .np-iq__refused {
+  margin: 0;
+  color: #b45309;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+.np-iq .np-iq__type,
+.np-iq .np-iq__dial {
+  /* written left to right, but standing at the start (the right) of the column, under the cards */
+  align-self: flex-start;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.2rem;
+}
+.np-iq .np-iq__type .di-num {
+  width: 7ch;
+  font-size: 1.2rem;
+}
+.np-iq .np-iq__frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+.np-iq .np-iq__frac i {
+  display: block;
+  width: 4.2rem;
+  height: 2px;
+  background: #0f172a;
+}
+.np-iq .np-iq__frac .di-num {
+  width: 4.2rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.np-iq .np-iq__ask {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.np-iq .np-iq__angle {
+  min-width: 4rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.np-iq .np-iq__out {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+.np-iq .np-iq__laid {
+  width: 22rem;
+  max-width: 100%;
+}
+.np-iq .np-iq__fact {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+.np-iq .np-iq__fact.is-fits {
+  color: #15803d;
+}
+.np-iq .np-iq__fact.is-gap {
+  color: #b45309;
+}
+.np-iq .np-iq__fact.is-overhang {
+  color: #6d28d9;
+}
+.np-iq .np-iq__chain {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.np-iq .rf-btn small {
+  margin-inline-start: 0.4rem;
+  font-size: 1.08rem;
+}

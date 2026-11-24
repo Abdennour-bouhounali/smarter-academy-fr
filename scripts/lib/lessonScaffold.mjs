@@ -31,6 +31,34 @@ const COMMON_FROM_ROOT = '../../../../../common';
 const COMMON_FROM_SUB = '../../../../../../common';
 const SUITES = `${COMMON_FROM_SUB}/gameworld/kit/authoring/test/suites.js`;
 
+/**
+ * What a WORLD asks of a lesson beyond L1's files (L1 plays `divisor-isles`; a world absent here needs nothing more).
+ * `tablets`: the tablets live in their own `world/tablets.js` (not in `story.js`); `stubs`: the world's own content files,
+ * stubbed like the others, each with the lesson whose shape it copies (`source`, a path from the repository).
+ */
+const DZ_PYRAMIDS = '../smarter-academy-dz/apps/web/src/lessons/moyen/4am/handasa/khassiyat-talis/talis-hisab-atwal';
+const WORLD_CONTENT = {
+  'nile-pyramids': {
+    tablets: true,
+    stubs: [
+      {
+        file: 'world/tablets.js',
+        what: 'THE TABLETS of the lesson: the rule each key gives, shown once it is sealed (`lesson.rules`).',
+        exports: [['TABLETS', '{ <key id>: { icon, title, lines, math, notes } } — the tablet of each rule']],
+        source: `${DZ_PYRAMIDS}/world/tablets.js`,
+      },
+      {
+        file: 'world/run.js',
+        what: 'THE FELUCCA’S LEGS of the lesson: the kit’s rail between two docks (`story.legs[i]`, read by `nilePyramids/Game.js`).',
+        exports: [
+          ['LEGS', '[leg…] — leg i sails from the route’s dock i to the next; without a leg the felucca simply sails'],
+        ],
+        source: `${DZ_PYRAMIDS}/world/run.js`,
+      },
+    ],
+  },
+};
+
 const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 
 /**
@@ -94,15 +122,16 @@ const camel = (code) => {
 const q = (s) => `'${String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
 
 /** A stub content file: its header, then one `notWritten` per export the tree reads. */
-function stub({ file, what, l1, exports, depth = 1 }) {
+function stub({ file, what, l1, exports, depth = 1, source }) {
   const helper = depth === 0 ? `./${HELPER}` : `../${HELPER}`;
   const lines = exports.map(
     ([name, shape]) => `/** ${shape} */\nexport const ${name} = notWritten(${q(`${file} › ${name}`)});`,
   );
+  const shape = source ? `Its shape is \`${source}\`` : `Its shape is L1's: \`apps/web/src/lessons/${L1}/${l1}\``;
   return `/**
  * ${what}
  *
- * ${MARKER}: written by \`npm run lesson:new\` as a STUB. Its shape is L1's: \`apps/web/src/lessons/${L1}/${l1}\`.
+ * ${MARKER}: written by \`npm run lesson:new\` as a STUB. ${shape}.
  * Replace every \`notWritten(…)\` with the lesson's content (and drop the import below when none is left).
  */
 import { notWritten } from '${helper}';
@@ -142,6 +171,9 @@ export function scaffoldFiles(info, world, { hasBank = true } = {}) {
   const { code, title } = info;
   const base = `/courses/${info.level}/${info.grade}/${info.chapterId}/${code}`;
   const S = (n) => `world/${n}`;
+  const W = WORLD_CONTENT[world] ?? {};
+  // where `TABLETS` is exported: `story.js` (L1), or the world's own `tablets.js`
+  const tabletsImport = W.tablets ? `import { TABLETS } from './tablets';` : null;
   const coach = Array.from({ length: Math.max(info.points, 1) }, (_, i) => `P${i + 1}`)
     .map((p) => `    ${p}: ${q(`${MARKER} — the knowledge sheet (world/knowledge.js) behind ${p}`)},`)
     .join('\n');
@@ -280,7 +312,7 @@ import { KEYS, journey } from './journey';
 import { CARDS, KNOWLEDGE } from './knowledge';
 import { ladder, PRACTICE_MAP } from './practice';
 import { sittings } from './sitting.draft';
-import { MODULE_KEYS, STORY, TABLETS } from './story';
+${tabletsImport ? `import { MODULE_KEYS, STORY } from './story';\n${tabletsImport}` : `import { MODULE_KEYS, STORY, TABLETS } from './story';`}
 import { TEXT } from './text';
 import { trainer } from './trainer';
 
@@ -337,7 +369,9 @@ export const sittings = createBankSittings({ lesson: ${q(code)}, levels: LEVELS 
       [
         ['K', "the names of the keys: { name: '<key id>' } (L1: { ladder: 'plus-petit-premier', … })"],
         ['MODULE_KEYS', '{ <module number>: [<key id>…] } — the keys each module of the config needs'],
-        ['TABLETS', '{ <key id>: { icon, title, lines, math, notes } } — the tablet of each rule'],
+        ...(W.tablets
+          ? []
+          : [['TABLETS', '{ <key id>: { icon, title, lines, math, notes } } — the tablet of each rule']]),
         ['STORY', '{ segments, text: { say, objective, … }, … } — the road the world plays'],
       ],
     ],
@@ -419,6 +453,7 @@ export const sittings = createBankSittings({ lesson: ${q(code)}, levels: LEVELS 
     ],
   ];
   for (const [file, what, exports] of stubs) add(file, stub({ file, what, l1: file, exports }));
+  for (const s of W.stubs ?? []) add(s.file, stub({ ...s, l1: s.file }));
 
   // ── the tests that call the shared suites ──
   const l1t = (n) => `apps/web/src/lessons/${L1}/world/${n}`;
@@ -430,7 +465,9 @@ export const sittings = createBankSittings({ lesson: ${q(code)}, levels: LEVELS 
       what: `THE STORY of ${code}: the shared checks (authoring kit), then the road's own.`,
       imports: [
         `import { describeStory } from '${SUITES}';`,
-        `import { STORY, TABLETS } from './story';`,
+        ...(tabletsImport
+          ? [`import { STORY } from './story';`, tabletsImport]
+          : [`import { STORY, TABLETS } from './story';`]),
         `import { KEYS } from './journey';`,
       ],
       own: [
@@ -590,7 +627,7 @@ describeEvidence({
         `import { KEYS } from './journey';`,
         `import { KNOWLEDGE } from './knowledge';`,
         `import { PRACTICE_MAP } from './practice';`,
-        `import { TABLETS } from './story';`,
+        tabletsImport ?? `import { TABLETS } from './story';`,
       ],
       own: [['OBJECTIVES', '[every instruction the story can show, with the longest arguments its road gives them]']],
       call: `describeLimits({

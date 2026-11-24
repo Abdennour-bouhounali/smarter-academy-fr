@@ -63,7 +63,20 @@ const isStringTable = (file) => /(^|\/)(strings|text)\.js$/.test(file);
 // Algerian lesson used stays until a French lesson decides. The first one (`decomposer-en-facteurs-premiers`,
 // 2026-11-23) took its lines out of this list; each line below is what no French lesson uses yet.
 const LESSON_ENGINE = 'lesson engine — no French lesson yet';
+// The pyramids world and its kit pieces (2026-11-24) are one code with Algeria, where its lesson uses these exports; the
+// French lessons on it (`thales-configuration-papillon`, …) are not built yet. Each line leaves when one imports it.
+const PYRAMIDS = 'pyramids world — read by the Algerian lesson; no French lesson on the world yet';
 const KEPT = {
+  'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#decimalBox': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#ratioChoice': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/kit/claims.js#scaleClaim': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/kit/exact.js#isInteger': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/nilePyramids/logic.js#CAMERA_BOX': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/nilePyramids/plan.js#laidFact': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/nilePyramids/scale.js#copyOf': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/nilePyramids/surd.js#isRational': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/nilePyramids/surd.js#lenEqual': PYRAMIDS,
+  'apps/web/src/lessons/common/gameworld/nilePyramids/surd.js#lenTex': PYRAMIDS,
   'apps/web/src/lessons/common/components/kidFigure.js#HAIR_STYLES': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/logic.js#DASH_WAVES': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/divisorIsles/logic.js#STATUES': LESSON_ENGINE,
