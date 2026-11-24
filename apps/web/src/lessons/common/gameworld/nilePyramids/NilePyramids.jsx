@@ -277,9 +277,9 @@ export function OrderCard({ o, game }) {
 }
 
 /**
- * THE MISSION CARD (`story.mission`) and THE BOX AT NOON (`story.box`): a written problem in the kit's `UseLines`, beside
- * a schematic figure (GeoFigure, not to scale — and it says so, gate F4). « check » makes the world act; a line that does
- * not hold yet is answered with a FACT.
+ * THE MISSION CARD (`story.mission`) and THE BOX AT NOON (`story.box`): its lead beside a schematic figure (GeoFigure,
+ * not to scale — and it says so, gate F4), then the written problem in the kit's `UseLines`, one line under the other
+ * across the card. « check » makes the world act; a line that does not hold yet is answered with a FACT.
  */
 export function StoryCard({ kind, game }) {
   const m = kind === 'mission' ? game.story.mission : game.story.box;
@@ -310,23 +310,26 @@ export function StoryCard({ kind, game }) {
                 <MathText>{l}</MathText>
               </p>
             ))}
-            <div className="np-card__lines">
-              <UseLines
-                lines={lines}
-                vals={vals}
-                onType={(name, value) => {
-                  setVals({ ...vals, [name]: value });
-                  setFact(null);
-                }}
-              />
-            </div>
-            {fact && (
-              <p className="np-card__fact" data-np-card-fact>
-                <MathText>{fact}</MathText>
-              </p>
-            )}
           </div>
         </div>
+        {/* the lines across the whole card, under the figure and the lead, read from top to bottom: beside the figure
+            a line wider than the lead's column overflowed the card (the walk, 2026-11-24) */}
+        <div className="np-card__lines">
+          <UseLines
+            lines={lines}
+            vals={vals}
+            column
+            onType={(name, value) => {
+              setVals({ ...vals, [name]: value });
+              setFact(null);
+            }}
+          />
+        </div>
+        {fact && (
+          <p className="np-card__fact" data-np-card-fact>
+            <MathText>{fact}</MathText>
+          </p>
+        )}
         <div className="np-order__go">
           <button
             type="button"

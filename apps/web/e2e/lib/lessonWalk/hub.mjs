@@ -109,7 +109,7 @@ export async function hubWalk(L, D, opts) {
     const save = {
       v: 1,
       stage: L.lesson.story.legs
-        ? L.lesson.story.legs.length
+        ? Object.keys(L.lesson.story.legs).length
         : (L.lesson.story.segments ?? L.lesson.story.terraces).length - 1,
       stars: {},
       gems: [],

@@ -46,6 +46,7 @@ describe('Mon labo — the instruments a lesson may show', () => {
     expect(TOOLS.filter((t) => t.lesson !== null).map((t) => [t.id, t.lesson])).toEqual([
       ['common', 'trouver-le-pgcd'],
       ['lists', 'trouver-le-pgcd'],
+      ['rope', 'thales-configuration-papillon'],
       ['factor', 'decomposer-en-facteurs-premiers'],
     ]);
     for (const t of TOOLS) {
@@ -72,6 +73,17 @@ describe('Mon labo — the instruments a lesson may show', () => {
     ]);
     expect(next.cabinet[0].lessons[0].title).toBe('Décomposer un nombre en facteurs premiers');
     expect(hasLab('decomposer-en-facteurs-premiers')).toBe(true);
+  });
+
+  it('« Le théorème de Thalès (papillon) » has the rope; the instruments of the 3e lessons before it are in its cabinet', () => {
+    const lab = toolsFor('thales-configuration-papillon');
+    expect(lab.mine.map((t) => t.id)).toEqual(['rope']);
+    expect(lab.cabinet.flatMap((g) => g.lessons.map((l) => l.code))).toEqual([
+      'decomposer-en-facteurs-premiers',
+      'trouver-le-pgcd',
+    ]);
+    expect(toolsFor('thales-configuration-papillon', { earlierOnly: true }).all.map((t) => t.id)).not.toContain('rope');
+    expect(hasLab('thales-configuration-papillon')).toBe(true);
   });
 
   it('opened BEFORE the lesson (« L’échauffement », `earlierOnly`): only the instruments of the lessons before it', () => {

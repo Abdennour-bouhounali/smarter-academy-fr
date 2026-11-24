@@ -47,8 +47,6 @@ import {
   write,
 } from './math';
 
-export { K };
-
 /**
  * The lesson's modules (its config keeps them as DATA: progress, the reports and the compass read their numbers) and the
  * keys each needs: module 1 is dock 3 (K1), module 2 dock 4 (K2), module 3 the last dock (the mission, the problem of
@@ -105,12 +103,13 @@ function recall(game, id) {
   if (id === 'summit') {
     out.push(`$AS = ${RIVER.AS}$ m, $SE = ${RIVER.SE}$ m et $ER = ${RIVER.ER}$ m.`);
     const ferry = lastOf(game, 'ferry');
-    if (ferry) out.push(`La corde du bac, $AF = ${tx(ferry.typed)}$ m : ${T.fact[ferry.fact]}`);
+    // the world's fact is a sentence of its own (a capital letter): after a full stop, never after « : »
+    if (ferry) out.push(`La corde du bac : $AF = ${tx(ferry.typed)}$ m. ${T.fact[ferry.fact]}`);
   }
   if (id === 'plateau') {
     const cap = lastOf(game, 'capstone');
     const k = cap && ratioTex(cap.typed);
-    if (k) out.push(`Le pyramidion, chaque longueur × $${k}$ : ${T.stage.fact[cap.fact]}`);
+    if (k) out.push(`Le pyramidion : chaque longueur × $${k}$. ${T.stage.fact[cap.fact]}`);
   }
   return frAll(out.slice(-3));
 }

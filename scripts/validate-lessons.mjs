@@ -467,7 +467,11 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
       continue;
     }
     const evidenceFile = join(lessonDir, 'world', 'evidence.js');
-    const points = existsSync(evidenceFile) ? readFileSync(evidenceFile, 'utf-8').match(/const POINTS = \{([^}]*)\}/)?.[1] ?? '' : '';
+    const evidenceText = existsSync(evidenceFile) ? readFileSync(evidenceFile, 'utf-8') : '';
+    // a key proves the point POINTS names; a point proved by answers of several keys is listed in ANSWER_POINTS
+    const points =
+      (evidenceText.match(/const POINTS = \{([^}]*)\}/)?.[1] ?? '') +
+      (evidenceText.match(/const ANSWER_POINTS = \[([^\]]*)\]/)?.[1] ?? '');
     migratedCoverage.set(indexKey, new Set([...points.matchAll(/'(P\d+)'/g)].map((m) => `${gradeId}_${code}_${m[1]}`)));
     continue;
   }

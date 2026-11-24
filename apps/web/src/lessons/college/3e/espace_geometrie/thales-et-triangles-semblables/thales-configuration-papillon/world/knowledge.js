@@ -91,6 +91,11 @@ export const KNOWLEDGE_GRAPH = frAll({
             role: 'why',
             text: `$${fr(B.VM, B.VB)} = ${k(B.VM, B.VB)}$ mais $${fr(B.VC, B.VN)} = ${k(B.VC, B.VN)}$ : chaque longueur va avec celle de la même droite, $OA$ avec $OE$ et $OB$ avec $OF$.`,
           },
+          // the corrected writing, the part the knowledge card shows last (the walk waits for it, `is-right`)
+          {
+            role: 'right',
+            text: `$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$ : $${fr(B.VM, B.VB)} = ${fr(B.VN, B.VC)} = ${k(B.VM, B.VB)}$.`,
+          },
         ],
       },
       reveals: [],
@@ -142,6 +147,10 @@ export const KNOWLEDGE_GRAPH = frAll({
           {
             role: 'why',
             text: `$${fr(B.VM, AE)} = ${k(B.VM, AE)}$ mais $${fr(tex(B.MN), B.BC)} = ${k(B.MN, B.BC)}$ : $AE$ traverse $O$. Depuis $O$ : $OE = AE - OA = ${AE} - ${B.VM} = ${B.VB}$.`,
+          },
+          {
+            role: 'right',
+            text: `$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$ : $${fr(B.VM, B.VB)} = ${fr(tex(B.MN), B.BC)} = ${k(B.VM, B.VB)}$.`,
           },
         ],
       },
@@ -250,22 +259,24 @@ export const LESSON_KNOWLEDGE = {
 };
 
 /**
- * Where each node sits on the MAP (percent of the map box): five rows (5, 23, 41, 59, 76), three cards a row at most,
+ * Where each node sits on the MAP (percent of the map box): five rows (9, 26, 43, 65, 86), three cards a row at most,
  * on the columns 17 %, 50 %, 83 % (lesson 1's measured grid). Every link joins two NEIGHBOUR rows, so its label sits at
- * least 8,5 % from both rows. French titles are long: the walk looks at this map first (not verified).
+ * least 8,5 % from both rows. Walked 2026-11-24: at 5 the root's card left the map's top, and the three-line card of the
+ * method (« Calculer une longueur dans le papillon ») at 59 stood over the labels of its links; the gaps around it are
+ * wider.
  */
 const POSITIONS = {
-  papillon: [50, 5],
-  'demi-tour': [17, 23],
-  'trois-rapports': [50, 23],
-  'produit-en-croix': [83, 23],
-  partenaire: [17, 41],
-  redaction: [50, 41],
-  'exemple-papillon': [83, 41],
-  'depuis-le-sommet': [50, 59],
-  'a-travers': [17, 76],
-  'exemple-calcul': [50, 76],
-  emboites: [83, 76],
+  papillon: [50, 9],
+  'demi-tour': [17, 26],
+  'trois-rapports': [50, 26],
+  'produit-en-croix': [83, 26],
+  partenaire: [17, 43],
+  redaction: [50, 43],
+  'exemple-papillon': [83, 43],
+  'depuis-le-sommet': [50, 65],
+  'a-travers': [17, 86],
+  'exemple-calcul': [50, 86],
+  emboites: [83, 86],
 };
 
 export const KNOWLEDGE = { graph: KNOWLEDGE_GRAPH, modules: LESSON_KNOWLEDGE.modules, positions: POSITIONS };

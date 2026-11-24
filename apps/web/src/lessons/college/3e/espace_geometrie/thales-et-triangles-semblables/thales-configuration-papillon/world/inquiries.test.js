@@ -29,7 +29,7 @@ import {
 import { chain } from '../../../../../../common/gameworld/nilePyramids/figure';
 import { HalfturnView } from '../../../../../../common/gameworld/nilePyramids/InquiryHalfturn';
 import { PlanView } from '../../../../../../common/gameworld/nilePyramids/InquiryPlan';
-import { HALFTURN_INQUIRY, INQUIRIES, PLAN_INQUIRY } from './inquiries';
+import { HALFTURN_INQUIRY, PLAN_INQUIRY } from './inquiries';
 import { FORGES } from './forges';
 import { K, over, plus, times, write } from './math';
 
@@ -38,6 +38,8 @@ globalThis.window = globalThis.window ?? {};
 
 const K1 = K.papillon;
 const K2 = K.calcul;
+/** The experiment of each key (one per key: no (kind, mode) twice). */
+const INQUIRIES = { [K1]: HALFTURN_INQUIRY, [K2]: PLAN_INQUIRY };
 
 /** Every string of a value: a string, a function called with sample letters, an object's values. */
 const stringsOf = (v) => {

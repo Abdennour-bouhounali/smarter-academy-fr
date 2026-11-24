@@ -851,8 +851,8 @@ const DIVISOR_LISTS = {
 
 // ───────────────────────── 4e.m4.r04 — une parallèle dans un triangle (4e), et la quatrième proportionnelle ─────────────────────────
 // What the 3e lesson of the butterfly stands on from 4e (ported from the Algerian family `3am.m2.r03`, the ratios in a
-// triangle; the French net item is `4e.m4.r04`, Thalès in the NESTED triangles, which holds the fourth proportional of
-// `4e.m2.r09` as its tool of calculation): in a triangle ABC cut by (MN) ∥ (BC), M on [AB] and N on [AC] — the nested
+// triangle; the French net item is `4e.m4.r04`, Thalès in the NESTED triangles, with the fourth proportional as its tool
+// of calculation — `4e.m2.r09`, proportionality in geometry, has its own family below): in a triangle ABC cut by (MN) ∥ (BC), M on [AB] and N on [AC] — the nested
 // position only —, the lengths of AMN are proportional to those of ABC; and the fourth proportional found by the cross
 // product. Every length is a whole number of centimetres: the triangles are similar by p/q (p < q, nothing shared),
 // AM = p·s, AB = q·s, AN = p·t, AC = q·t, MN = p·w, BC = q·w. Nothing here names the lesson's keys (a butterfly, a point
@@ -862,7 +862,9 @@ const DIVISOR_LISTS = {
  * figures and its board's stations — UNIT_3E_THALES_DESIGN.md § 3 — and the items of its class test), their whole
  * lengths from 10 up, one figure a line: a triangle of the kit never shows TWO numbers that stand together in one of them
  * — a figure met first in the lesson is not one the kit has just shown. `launchkit.test.js` reads the lesson's files and
- * checks every pair.
+ * checks every pair. A STATIC copy (shared code never imports a lesson): re-read on 2026-11-24 after the forges'
+ * renumbering (K1's crooked attack, K2's last step) — every renumbered length is a decimal, which no question of the kit
+ * writes (whole centimetres), so no line changed. The rectangles of `4e.m2.r09` avoid the same pairs.
  */
 const TRI_AVOID = [
   '72 52 416 81 468',
@@ -1062,10 +1064,184 @@ const PARALLEL_IN_TRIANGLE = {
   ],
 };
 
-// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Four
+// ───────────────────────── 4e.m2.r09 — la proportionnalité en géométrie (4e) : agrandir, réduire ─────────────────────────
+// The other core tool the learning net gives the 3e lesson of the butterfly: proportionality met in GEOMETRY — a rectangle
+// enlarged or reduced keeps its shape when every length is multiplied by one number; its unknown length is a fourth
+// proportional, found by the cross product. The rectangle's sides a (before), b (after) and c (the other side before)
+// are whole centimetres, the answer v = b × c ÷ a whole too: the ratio p/q in lowest terms, a = p·s, b = q·s, c = p·t,
+// v = q·t (an enlargement; a reduction swaps p and q). No triangle, no parallel, no word of the lesson's keys or world;
+// no number pair of its figures (`triFree`).
+/** Where a level draws its rectangle: p < q (the ratio), the multipliers s ≠ t, the longest length, enlarged or reduced. */
+const RECT_FROM = {
+  first: { q: [2, 2], m: [1, 4], top: 8, reduce: false },
+  1: { q: [2, 5], m: [1, 5], top: 30, reduce: false },
+  2: { q: [3, 7], m: [2, 8], top: 60, reduce: true },
+};
+const RECT_CACHE = {};
+/** Every rectangle a level may show: { a, b, c, v } with a/b = c/v; at level 2 the slips of its sort apart from the truth. */
+function rectPool(level) {
+  if (RECT_CACHE[level]) return RECT_CACHE[level];
+  const R = RECT_FROM[level];
+  const list = [];
+  for (let q = R.q[0]; q <= R.q[1]; q += 1)
+    for (let p = 1; p < q; p += 1) {
+      if (gcdOf(p, q) !== 1) continue;
+      const [x, y] = R.reduce ? [q, p] : [p, q];
+      for (let s = R.m[0]; s <= R.m[1]; s += 1)
+        for (let t = R.m[0]; t <= R.m[1]; t += 1) {
+          if (s === t) continue;
+          const T = { a: x * s, b: y * s, c: x * t, v: y * t };
+          if (Math.max(T.a, T.b, T.c, T.v) > R.top) continue;
+          const slips = [];
+          if (level === 2) {
+            // a two-digit figure; the additive slip positive, the flipped one whole and under 100 (the bank and the
+            // stories write numbers from 100 up): the sort has its two traps
+            if (Math.max(T.a, T.c) < 13) continue;
+            const add = T.c + (T.b - T.a);
+            if (add <= 0 || (T.a * T.c) % T.b !== 0 || (T.a * T.c) / T.b >= 100) continue;
+            slips.push(add, (T.a * T.c) / T.b);
+          }
+          if (!triFree([...Object.values(T), ...slips])) continue;
+          list.push(T);
+        }
+    }
+  RECT_CACHE[level] = list;
+  return list;
+}
+const rectOf = (rand, level, first = false) => pick(rand, rectPool(first ? 'first' : level));
+/** The rectangle's sentence: its two sides, what it becomes (one side after), never the answer. */
+const rectIntro = (T, reduce) =>
+  `Un rectangle de $${T.a}$\u00a0cm sur $${T.c}$\u00a0cm est ${reduce ? 'réduit' : 'agrandi'}\u00a0: son côté de $${T.a}$\u00a0cm mesure maintenant $${T.b}$\u00a0cm.`;
+
+/** « a/b = c/▢ » about a rectangle enlarged (level 1) or reduced (level 2): the new length of its side c. */
+function rectWrite(rand, level, first) {
+  const reduce = level === 2;
+  const T = rectOf(rand, level, first && !reduce);
+  return {
+    gesture: 'write',
+    calc: { op: 'fourth', a: T.a, b: T.b, c: T.c },
+    prompt: `${rectIntro(T, reduce)} Complète l’égalité pour trouver la nouvelle longueur de son côté de $${T.c}$ cm.`,
+    tokens: [
+      { frac: [String(T.a), String(T.b)] },
+      '=',
+      { frac: [String(T.c), S('v', 'longueur', String(T.v).length)] },
+    ],
+  };
+}
+
+/** « a/b = c/▢ » on a map (level 1): a length drawn, its real length. */
+function mapWrite(rand, level, first) {
+  const T = rectOf(rand, 1, first);
+  return {
+    gesture: 'write',
+    calc: { op: 'fourth', a: T.a, b: T.b, c: T.c },
+    prompt: `Sur une carte, $${T.a}$\u00a0cm représentent $${T.b}$\u00a0km dans la réalité. Un chemin mesure $${T.c}$\u00a0cm sur la carte. Complète l’égalité pour trouver sa longueur réelle, en kilomètres.`,
+    tokens: [
+      { frac: [String(T.a), String(T.b)] },
+      '=',
+      { frac: [String(T.c), S('v', 'kilomètres', String(T.v).length)] },
+    ],
+  };
+}
+
+/** Three equalities about one reduced rectangle: the right one, both fractions turned, the difference added, one turned. */
+function rectSort(rand) {
+  const T = rectOf(rand, 2);
+  const eq = (a, b, c, d) => `$\\frac{${a}}{${b}} = \\frac{${c}}{${d}}$`;
+  const CARDS = {
+    right: [eq(T.a, T.b, T.c, T.v), null],
+    turned: [eq(T.b, T.a, T.v, T.c), null],
+    add: [eq(T.a, T.b, T.c, T.c + (T.b - T.a)), 'add-not-times'],
+    flip: [eq(T.a, T.b, T.c, (T.a * T.c) / T.b), 'ratio-flipped'],
+  };
+  const kinds = shuffle(
+    rand,
+    pick(rand, [
+      ['right', 'add', 'flip'],
+      ['turned', 'add', 'flip'],
+      ['right', 'turned', 'add'],
+      ['right', 'turned', 'flip'],
+    ]),
+  );
+  return {
+    gesture: 'sort',
+    rect: T,
+    prompt: `${rectIntro(T, true)} Chaque égalité donne-t-elle la nouvelle longueur de son côté de $${T.c}$\u00a0cm\u202f? Envoie-la dans sa boîte.`,
+    bins: [
+      { id: 'yes', label: 'Elle convient' },
+      { id: 'no', label: 'Elle ne convient pas' },
+    ],
+    cards: kinds.map((kind, i) => {
+      const [text, trap] = CARDS[kind];
+      return { id: `c${i + 1}`, text, bin: trap ? 'no' : 'yes', trap };
+    }),
+  };
+}
+
+/** The worked example: the ratio kept, the cross product, the length. Its first step answers the mistake shown. */
+function rectExample(rand, level, { mistake = null } = {}) {
+  const reduce = level === 2;
+  const T = rectOf(rand, reduce ? 2 : 1);
+  let first;
+  if (mistake === 'add-not-times')
+    first = `${reduce ? 'Retirer' : 'Ajouter'} à $${T.c}$ la différence $${Math.abs(T.b - T.a)}$ entre les deux longueurs du premier côté donnerait $${T.c + (T.b - T.a)}$\u00a0: la figure ne garderait pas sa forme, on multiplie, on n’ajoute pas.`;
+  else if (mistake === 'ratio-flipped')
+    first =
+      'On écrit les deux fractions dans le même ordre\u00a0: une longueur avant, sur la même longueur après, dans les deux fractions.';
+  else
+    first = `Le rectangle est ${reduce ? 'réduit' : 'agrandi'}\u00a0: ses longueurs après sont proportionnelles à ses longueurs avant.`;
+  return {
+    title: `Calculer une longueur d’une figure ${reduce ? 'réduite' : 'agrandie'}`,
+    steps: [
+      first,
+      `Le côté de $${T.a}$ cm mesure $${T.b}$ cm après : $\\frac{${T.a}}{${T.b}} = \\frac{${T.c}}{x}$, où $x$ est la nouvelle longueur du côté de $${T.c}$ cm.`,
+      `Produit en croix\u00a0: $${T.a} \\times x = ${T.b} \\times ${T.c} = ${T.b * T.c}$.`,
+      `Donc $x = ${T.b * T.c} \\div ${T.a} = ${T.v}$\u00a0cm.`,
+    ],
+  };
+}
+
+const FIGURE_RATIO = {
+  item: '4e.m2.r09',
+  // the name of the gesture (the item has no French lesson yet: « Revois d’abord » names the item itself)
+  name: 'Agrandir et réduire une figure',
+  icon: '📐',
+  // no French lesson of 4e is written: no instrument belongs to this item yet (the capsule skips its lab step)
+  labTool: null,
+  mistakes: ['add-not-times', 'ratio-flipped'],
+  forms: { 1: ['enlarge', 'map'], 2: ['sort', 'reduce'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'map' ? mapWrite(rand, level, first) : form === 'sort' ? rectSort(rand) : rectWrite(rand, level, first),
+  example: rectExample,
+  rules: [
+    {
+      id: 'shape',
+      title: 'Agrandir ou réduire',
+      text: 'Agrandir ou réduire une figure, c’est multiplier toutes ses longueurs par un même nombre\u00a0: ses longueurs après sont proportionnelles à ses longueurs avant.',
+      example:
+        'Un côté de $2$\u00a0cm mesure $6$\u00a0cm après\u00a0: le côté de $3$\u00a0cm mesure alors $\\frac{6 \\times 3}{2} = 9$\u00a0cm.',
+      check: { m: 2, w: 6, t: 3, v: 9 },
+    },
+    {
+      id: 'cross',
+      title: 'Le produit en croix',
+      text: 'Si $\\frac{a}{b} = \\frac{c}{d}$, alors $a \\times d = b \\times c$\u00a0: la longueur cherchée se trouve par le produit en croix.',
+      example: '$\\frac{2}{6} = \\frac{3}{d}$\u00a0: $2 \\times d = 6 \\times 3 = 18$, donc $d = 9$.',
+      check: { m: 2, w: 6, t: 3, v: 9 },
+    },
+  ],
+  memo: [
+    'Une figure agrandie ou réduite garde sa forme\u00a0: toutes ses longueurs sont multipliées par un même nombre.',
+    'On écrit deux fractions dans le même ordre (une longueur avant sur la même longueur après), puis le produit en croix.',
+    'On multiplie, on n’ajoute pas\u00a0: la différence entre deux longueurs ne reste pas la même.',
+    'Exemple\u00a0: $\\frac{2}{6} = \\frac{3}{x}$, donc $2 \\times x = 18$ et $x = 9$.',
+  ],
+};
+
+// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Five
 // families today: `4e.m1.r06`, the one tool the net gives the first 3e lesson; `3e.m1.r05` and `4e.m1.r08`, the two
-// tools of the second (the PGCD lesson); `4e.m4.r04`, the tool of the butterfly lesson of the Thalès unit (its other
-// core item, `4e.m2.r09`, the fourth proportional, is measured INSIDE this family: no family of its own). The Algerian families (their question generators, rules and memos) are in
+// tools of the second (the PGCD lesson); `4e.m2.r09` and `4e.m4.r04`, the two core tools of the butterfly lesson of the
+// Thalès unit (a figure enlarged or reduced; a parallel in a triangle). The Algerian families (their question generators, rules and memos) are in
 // git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French family PORTS what fits and is keyed
 // by a French item.
 export const FAMILIES = {
@@ -1073,6 +1249,7 @@ export const FAMILIES = {
   '3e.m1.r05': BIG_DECOMPOSITION,
   '4e.m1.r08': DIVISOR_LISTS,
   '4e.m4.r04': PARALLEL_IN_TRIANGLE,
+  '4e.m2.r09': FIGURE_RATIO,
 };
 
 export const familyFor = (item) => FAMILIES[item] ?? null;

@@ -603,7 +603,10 @@ export async function npStoryWalk(L, D, opts) {
       }
     };
 
-    for (let i = 0; i < STAGES.length; i += 1) {
+    // the docks the story plays (`story.stages`, none given: the five), downstream — a dock's index is its place in the world
+    const route = (L.lesson.story?.stages ?? STAGES).map((id) => STAGES.indexOf(id)).sort((a, b) => a - b);
+    expect(route.length && route.every((i) => i >= 0), `the story's stages are the world's (${route.join(', ')})`);
+    for (const [n, i] of route.entries()) {
       const x = await s();
       expect(x.at === i, `stage ${i + 1} « ${STAGES[i]} »: he stands at its dock (${x.at})`);
       await shotWorld(`${STAGES[i]}-arrive`);
@@ -615,13 +618,16 @@ export async function npStoryWalk(L, D, opts) {
       }
       await playStage(i);
       lap(`stage ${STAGES[i]}`);
-      if (i === 0) {
-        // a reload after the first key: he comes back on the field, the key kept
+      if (n === 0) {
+        // a reload after the first key: he comes back on the route's first stage, the key kept
         await W.reload();
         const r = await s();
-        check(r.at === 0 && r.keys.includes(keys[0]), `after a reload: on the field, the key « ${keys[0]} » kept`);
+        check(
+          r.at === i && r.keys.includes(keys[0]),
+          `after a reload: on the stage « ${STAGES[i]} », the key « ${keys[0]} » kept`,
+        );
       }
-      if (i === STAGES.length - 1) break;
+      if (n === route.length - 1) break;
       await topView(`top-${STAGES[i]}`);
       if (i === 3) await steering(`${STAGES[i]}, down the ramp`);
       // the dock: the felucca, its leg on the rail
@@ -635,10 +641,10 @@ export async function npStoryWalk(L, D, opts) {
       await page.click('[data-gr-start]');
       await ff(0.5);
       const res = await playRail(w, page, ff, D.run, {
-        miss: i === 0 ? 2 : 0,
+        miss: n === 0 ? 2 : 0,
         label: `leg ${i + 1}`,
         OUT: { exit: ['[data-gr-leave]'], numbers: false },
-        shots: i === 0 ? { 1: 'leg-1-buoy', fact: 'leg-1-fact' } : { 1: `leg-${i + 1}-buoy` },
+        shots: n === 0 ? { 1: `leg-${i + 1}-buoy`, fact: `leg-${i + 1}-fact` } : { 1: `leg-${i + 1}-buoy` },
       });
       check(res.won, `leg ${i + 1}: the felucca reaches the next dock (${res.score} buoys, ${res.hearts} hearts)`);
       await page.waitForSelector('[data-gr-run="over"] [data-gr-leave]', { timeout: 8000 });

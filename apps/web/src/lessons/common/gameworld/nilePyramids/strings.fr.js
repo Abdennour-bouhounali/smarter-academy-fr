@@ -39,7 +39,7 @@ export const WORLD_TEXT = {
     rope: 'La corde à nœuds',
     knots: (n) => `${dec(n)} m`,
     drop: 'Lâcher la corde',
-    register: 'Le carnet du champ',
+    register: 'Le carnet de terrain',
     record: 'Le carnet des arpenteurs',
     plan: 'Le plan des bâtisseurs',
     reads: 'La corde indique',
@@ -107,7 +107,7 @@ export const WORLD_TEXT = {
     above: 'Zéro est au-dessus du sommet.',
   },
   say: {
-    tied: (seg, n) => `$${seg} = ${tex(n)}$ m. Je l’ai noté dans le carnet du champ.`,
+    tied: (seg, n) => `$${seg} = ${tex(n)}$ m. Je l’ai noté dans le carnet de terrain.`,
     built: 'Les bâtisseurs posent l’assise.',
     star: 'Ta prédiction a vu juste du premier coup.',
     water: 'Ici, c’est l’eau : la corde ne la traverse pas, et tu n’y marches pas.',

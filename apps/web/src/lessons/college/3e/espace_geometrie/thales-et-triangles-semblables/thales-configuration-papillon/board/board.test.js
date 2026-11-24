@@ -14,6 +14,8 @@ import {
   stringsIn,
 } from '../../../../../../common/gameworld/kit/authoring/test/suites';
 import { collisions, readBank, storiesOf } from '../../../../../../common/gameworld/kit/authoring/test/bank';
+import { CAPSTONE } from '../../../../../../common/gameworld/nilePyramids/logic';
+import { FACE, NUMBERS, PLATEAU } from '../world/math';
 
 /** « La leçon au tableau » of `thales-configuration-papillon`: every length the board and the memo say is computed here. */
 const KINDS = ['ask', 'name', 'trace'];
@@ -136,22 +138,39 @@ const FORBIDDEN = {
   'calcul-depuis-le-sommet': ['part du sommet', 'depuis le sommet', 'chaque longueur', 'recoll', 'celui d’en face'],
 };
 /**
- * The world's numbers, group by group (UNIT_3E_THALES_DESIGN.md § 3 — duplicated here until `world/math.js` exports
- * them): no pair of one group stands in one station. Integers under 10 are in every sheet and are not tracked.
+ * The world's numbers, group by group (UNIT_3E_THALES_DESIGN.md § 3), READ from `world/math.js` (its forges' figures, the
+ * mission, the box) and the world's own constants it re-exports (the summit's capstone): no pair of one group stands in
+ * one station. Integers under 10 are in every sheet and are not tracked.
  */
+/** Every number a figure of the forges writes: its lengths, those across the vertex, its pieces, its errors. */
+const figureNumbers = (...figs) =>
+  figs.flatMap((f) => [
+    ...Object.values(f.len),
+    ...Object.values(f.across ?? {}),
+    ...Object.values(f.pieces ?? {}),
+    ...Object.values(f.errors ?? {}),
+    ...(f.short ? [f.short] : []),
+  ]);
+const { papillon: P1, calcul: P2 } = NUMBERS;
 const WORLD_GROUPS = [
-  ['72', '9', '52', '416', '81', '468', '6,5'],
-  ['99', '2,75', '2,5'],
-  ['4', '7', '6', '10,5', '8', '14', '6,5', '11,5'],
-  ['5', '7,5', '8', '12', '9', '13,5', '4', '2,5', '4,5'],
-  ['4,2', '7', '5,1', '9', '8,5', '5,4'],
-  ['2', '4', '6', '4,5', '13,5', '9', '5,5', '16,5', '8,25', '49,5'],
-  ['9', '11', '5', '22,5', '27,5', '12,5', '31,5', '38,5', '17,5'],
-  ['4', '10', '5', '4,5', '6', '7,5', '3', '12,5', '1,8'],
-  ['2', '3', '104', '115', '219', '230', '146', '177', '292', '0,5', '0,25', '73', '133', '584'],
+  Object.values(P1.river),
+  [FACE.base, FACE.edge, times(FACE.base, CAPSTONE.k), times(FACE.edge, CAPSTONE.k)],
+  figureNumbers(...P1.rounds),
+  figureNumbers(...P1.attacks),
+  figureNumbers(P1.use),
+  figureNumbers(P2.rounds[0]),
+  figureNumbers(P2.rounds[1], P2.attacks[1]),
+  figureNumbers(P2.rounds[2], P2.attacks[0]),
+  figureNumbers(P2.use),
+  [...Object.values(NUMBERS.mission), ...Object.values(NUMBERS.box), PLATEAU.base].flatMap((x) => x.split('/')),
 ];
-/** The coefficients the world sails with (design § 3): the board's are others. */
-const WORLD_K = ['4/7', '2/3', '3/5', '1/3', '2/5', '1/8', '1/584', '1/36'];
+/** The coefficients the world sails with: each forge figure's, the summit's, the sun's, the box's. The board's are others. */
+const WORLD_K = [
+  ...[...P1.rounds, ...P1.attacks, P1.use, ...P2.rounds, ...P2.attacks, P2.use].map((f) => over(f.len.VM, f.len.VB)),
+  CAPSTONE.k,
+  PLATEAU.tan,
+  over(NUMBERS.box.depth, NUMBERS.box.OH),
+];
 const tracked = (x) => read(x).d !== 1n || compare(x, '10') >= 0;
 const worldPair = (g) =>
   WORLD_GROUPS.find((wg) => {
@@ -374,7 +393,10 @@ describe('Thalès dans le papillon — the script of the lesson on the board', (
 
   it('writes only true relations in what the class reads, every formula in LaTeX', () => {
     const count = allTrue(steps.flatMap((s) => [s.text, s.after].filter(Boolean)));
-    expect(count).toBeGreaterThanOrEqual(14);
+    // 9 relations since the proofs beside the figure were cut to fit the board at 1366 × 768 (the walk, 2026-11-24: the
+    // wrong cards' computations of « rues », « ciseaux » and « jardin » and the scissors' quotient left; each length a
+    // card shows is still computed in FIG)
+    expect(count).toBeGreaterThanOrEqual(9);
     for (const s of steps) for (const f of formulas([s.text, s.after].join(' '))) expect(f, s.id).not.toMatch(/[×*÷]/);
   });
 

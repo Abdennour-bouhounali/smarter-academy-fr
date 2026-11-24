@@ -74,7 +74,7 @@ const agree = (seg, x, products) => `${is(seg, x)} : ${products}, les deux produ
  * The right value of a wave, from its data alone — ONE definition, used to build the wave, to judge him and by the
  * tests (which compute it again by the proportion itself).
  */
-export function truthOf(w) {
+function truthOf(w) {
   const d = w.data;
   switch (w.type) {
     case 'rapport':
@@ -322,10 +322,10 @@ const TEXT = frAll({
   lost: { title: 'Plus de cœurs', text: 'La felouque revient à son embarcadère : refais la traversée.' },
 });
 /** The names of the legs, on the rail's card (a place of the river, never a rule). */
-export const LEG_NAMES = { 2: 'De la largeur du Nil au pyramidion', 3: 'Du pyramidion à la grande pyramide' };
+const LEG_NAMES = { 2: 'De la largeur du Nil au pyramidion', 3: 'Du pyramidion à la grande pyramide' };
 
 /** The leg from dock i (its place in the world): the content `story.legs[i]` hands the world. */
-export function legOf(i) {
+function legOf(i) {
   const mix = LEG_MIX[i];
   return {
     total: 4,

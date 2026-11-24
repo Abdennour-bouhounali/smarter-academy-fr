@@ -28,6 +28,8 @@ import { K, equal, over, read, times, typedNumber, typedWhole } from './math';
 
 /** The savoir-faire each key proves (the codes of the lesson's learning points) — see the header. */
 export const POINTS = { [K.papillon]: 'P1', [K.calcul]: 'P3' };
+/** The savoir-faire proved by ANSWERS rather than by a key (read by scripts/validate-lessons.mjs, like POINTS). */
+export const ANSWER_POINTS = ['P2'];
 const base = createEvidence({ grade: '3e', points: POINTS });
 /**
  * The evidence of this lesson: the kit's, but an answer that proves P2 (its evidence carries `point`) is sent under P2.
@@ -36,7 +38,7 @@ const base = createEvidence({ grade: '3e', points: POINTS });
 export const evidence = {
   ...base,
   payloadOf(lessonId, context, ev, attemptId) {
-    if (!ev?.point) return base.payloadOf(lessonId, context, ev, attemptId);
+    if (!ANSWER_POINTS.includes(ev?.point)) return base.payloadOf(lessonId, context, ev, attemptId);
     return { attemptId, learningPoint: `3e_${lessonId}_${ev.point}`, context, claim: ev.claim };
   },
   caseEvidence: () => null,

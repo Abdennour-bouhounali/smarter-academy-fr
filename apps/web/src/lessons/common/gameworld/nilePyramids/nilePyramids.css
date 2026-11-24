@@ -102,12 +102,12 @@
   background: #1d4ed8;
   color: #ffffff;
 }
-/* The field register: on the left, the kit's recall card keeps the right (both PHYSICAL sides: the kit's card is
-   placed by `right`, so these stay `left` in either direction) */
+/* The field register: on the side where reading ENDS — the kit's recall card stands where it starts
+   (`inset-inline-start`, kit/styles/world.css): left to right the two had stood one over the other (the walk, 2026-11-24) */
 .di-root .np-register {
   position: absolute;
   top: 4.4rem;
-  left: 1rem;
+  inset-inline-end: 1rem;
   z-index: 4;
   width: min(15rem, 22vw);
   padding: 0.6rem 0.9rem 0.7rem;
@@ -210,7 +210,7 @@
   font-size: 1.125rem;
   font-weight: 700;
 }
-/* the mission card and the box at noon: the schematic figure beside the lines */
+/* the mission card and the box at noon: the schematic figure beside the lead, the lines under both */
 .di-root .np-card__cols {
   display: flex;
   gap: 1.2rem;
@@ -232,6 +232,9 @@
 .di-root .np-card .np-card__lead {
   margin: 0 0 0.4rem;
   font-size: 1.125rem;
+}
+.di-root .np-card .np-card__lines {
+  margin-top: 0.6rem;
 }
 .di-root .np-card .np-card__fact {
   margin: 0.5rem 0 0;

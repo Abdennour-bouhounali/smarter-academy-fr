@@ -200,9 +200,9 @@ export const TOOLS = [
     // a triangle of the student's own (the ropes AB = a and AC = b, knotted every metre) and a cut [MN] whose two knots
     // his hand ties: the two ropes drawn at one length show where each knot stands on its rope, the figure (GeoFigure)
     // what the cut does. Facts only: it names no key of its lesson, writes no ratio and runs nothing on its own.
-    // Untagged, as every instrument no French lesson has taken yet (its design: `thales-configuration-papillon`)
+    // Taken by `thales-configuration-papillon` (its design's port map)
     id: 'rope',
-    lesson: null,
+    lesson: 'thales-configuration-papillon',
     icon: '🪢',
     name: 'La corde et le triangle',
     hint: 'Noue les deux bouts d’un segment sur les deux cordes du triangle : quand est-il parallèle au troisième côté ?',

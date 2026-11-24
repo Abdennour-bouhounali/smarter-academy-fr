@@ -223,17 +223,24 @@ const forge1 = {
   use: {
     make: () => USE1,
     figure: () => USE1_FIG,
+    // its lines one under the other: in the kit's two columns (four lines) they pushed the figure off the screen (the walk)
+    column: true,
     lines: () => [
+      // « A, O, E sont alignés, ainsi que B, O, F » — with « Les points » before each triple the line was too wide for its
+      // column beside the figure: each choice stood four buttons high and the step left the window (the walk, 2026-11-24)
       line([
-        'Les points',
         choiceBox('t1', 'trois points alignés', TRIPLES),
-        'sont alignés, ainsi que les points',
+        'sont alignés, ainsi que',
         choiceBox('t2', 'trois autres points alignés', TRIPLES),
         '\u202f;',
       ]),
-      line(['les droites', choiceBox('par', 'deux droites', PARALLELS), 'sont parallèles. Donc\u00a0:']),
+      // « (AB) et (EF) sont parallèles », the choice naming the two lines: with « les droites » before it the line took
+      // two rows and the step left the window at 1366 × 768 (the walk, 2026-11-24)
+      line([choiceBox('par', 'deux droites', PARALLELS), 'sont parallèles. Donc\u00a0:']),
       line([
-        { frac: { n: 'OA', d: choiceBox('r1d', 'le dénominateur', ['OE', 'AE', 'OB']) } },
+        // two denominators: OE, or AE across O (the trap of the key). A third (OB) made the line of three ratios 623 px
+        // wide, and the figure beside it left the screen at 1366 px (the walk, 2026-11-24)
+        { frac: { n: 'OA', d: choiceBox('r1d', 'le dénominateur', ['OE', 'AE']) } },
         '=',
         ratioChoice('r2n', 'r2d', ['OB', 'OF', 'BF', 'AB', 'EF']),
         '=',
@@ -286,8 +293,9 @@ const forge1 = {
       eqLine(
         `${ratioTex1(c, ['VM', 'VB'])} = ${rtL(lenOver(c.len.VM, c.len.VB))} \\;;\\; ${ratioTex1(c, ['VN', 'VC'])} = ${rtL(lenOver(c.len.VN, c.len.VC))} \\;;\\; ${frac(segName(c, 'MN'), segName(c, 'BC'))} = ${rtL(third1(c))}`,
       ),
-    tryKey: (c) =>
-      `$(AE)$ et $(BF)$ sécantes en $O$, $(AB) \\parallel (EF)$ : $OA = ${num(c.len.VM)}$ m, $OE = ${num(c.len.VB)}$ m, $OB = ${num(c.len.VN)}$ m, $EF = ${num(c.len.BC)}$ m. Écris la phrase et calcule $OF$.`,
+    // the lengths are written on the figure beside the lines (in metres): the question names the configuration only —
+    // written out in three rows, the step left the window at 1366 × 768 (the walk, 2026-11-24)
+    tryKey: () => '$(AB) \\parallel (EF)$\u202f; écris la phrase et calcule $OF$, en mètres.',
     use: {
       align: 'Les points alignés : deux droites passent par O, chacune porte trois points de la figure.',
       par: 'Les droites parallèles : celles que l’énoncé donne parallèles, les deux côtés qui ne passent pas par O.',
@@ -305,12 +313,14 @@ const forge1 = {
 export const USE1 = thalesCase({ kind: 'butterfly', names: { ...PAP.use.names }, len: { ...PAP.use.len } });
 /**
  * OA, OE, OB and EF given; OF asked (AB = 5,4 is neither given nor asked). Drawn SCHEMATIC (`figure.js › draw`, the
- * same lengths on the two lines, the angle at O closed to 44°): at its true angle (70°) it stands 256 px tall at its
- * 12 px label floor, over the 250 px beside the lines. Every length written is the case's.
+ * same lengths on the two lines, the angle at O closed to about 52°): at its true angle (70°) it stands 256 px tall at
+ * its 12 px label floor, over the 250 px beside the lines. Drawn closer (MN 3,6, about 44°), it wrote OA and OB one over
+ * the other at O (the walk, 2026-11-24): at MN 4,2 the two labels stand apart, 213 px tall. Every length written is the
+ * case's.
  */
 export const USE1_FIG = {
   ...USE1,
-  draw: { ...USE1.len, MN: '3,6', BC: '6' },
+  draw: { ...USE1.len, MN: '4,2', BC: '7' },
   show: ['VM', 'VB', 'VN', 'BC', 'VC'],
   ask: ['VC'],
   parallel: true,
@@ -482,6 +492,8 @@ const forge2 = {
   use: {
     make: () => USE2,
     figure: () => USE2_FIG,
+    // its lines one under the other: in the kit's two columns (four lines) they pushed the figure off the screen (the walk)
+    column: true,
     lines: () => [
       line([
         { frac: { n: 'OA', d: choiceBox('den', 'le dénominateur', [...CAL.use.choices]) } },
@@ -534,8 +546,9 @@ const forge2 = {
     wordsHint: 'Par exemple : chaque longueur…',
     experiment: 'Regarde bien : deux longueurs posées par le miroir. Laquelle touche les deux bords ?',
     eq: (c) => eqLine(`${segName(c, c.unknown)} = ${num(c.len[c.unknown])}`),
+    // a unit never stands alone at the start of a line (U+00A0 after each length)
     tryKey: (c) =>
-      `$(AE)$ et $(BF)$ sécantes en $O$, $(AB) \\parallel (EF)$ : $OA = ${num(c.len.VM)}$ cm, $AE = ${num(c.len.VMB)}$ cm, $OB = ${num(c.len.VN)}$ cm, $EF = ${num(c.len.BC)}$ cm. Calcule $OE$, $OF$ et $AB$.`,
+      `$(AE)$ et $(BF)$ sécantes en $O$, $(AB) \\parallel (EF)$ : $OA = ${num(c.len.VM)}$\u00a0cm, $AE = ${num(c.len.VMB)}$\u00a0cm, $OB = ${num(c.len.VN)}$\u00a0cm, $EF = ${num(c.len.BC)}$\u00a0cm. Calcule $OE$, $OF$ et $AB$.`,
     use: {
       across: 'AE traverse le point O : ce n’est pas une longueur depuis O. Laquelle part de O, sur la même droite ?',
       den: 'Le dénominateur : sur la droite de A, la longueur depuis O de l’autre côté.',

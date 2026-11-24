@@ -43,13 +43,13 @@ import { waveOf } from './practice';
 // ───────────────────────────── the letters and the figures ─────────────────────────────
 
 /** The letters of a butterfly: the lines (MB) and (NC) cut at V, M and B on both sides of V. */
-export const BUTTERFLY_NAMES = [
+const BUTTERFLY_NAMES = [
   { V: 'O', M: 'A', B: 'E', N: 'B', C: 'F' },
   { V: 'I', M: 'G', B: 'K', N: 'H', C: 'L' },
   { V: 'J', M: 'R', B: 'T', N: 'S', C: 'U' },
 ];
 /** The letters of a nested figure: V the vertex, M on [VB], N on [VC]. */
-export const NESTED_NAMES = [
+const NESTED_NAMES = [
   { V: 'A', M: 'M', B: 'B', N: 'N', C: 'C' },
   { V: 'E', M: 'G', B: 'F', N: 'H', C: 'D' },
   { V: 'R', M: 'U', B: 'S', N: 'W', C: 'T' },
@@ -84,9 +84,15 @@ function describe(names, butterfly) {
 /** The widest figure drawn as it is, unturned (trainerFigure's px): the question beside it keeps about 300 px. */
 const UPRIGHT = 250;
 /**
+ * The tallest figure beside a question (px at its floor): a figure 345 px tall (allowed by the trainer's room, 350) made
+ * the panel zoom down and its words fall to 11,5 px under a hint or a correction (the French walk, 2026-11-24).
+ */
+const LOW = 290;
+/**
  * THE FIGURE of a question (`q.figure`): the world's Thalès figure with its letters, the lengths `show` written and those
  * `ask` written « ? ». Drawn as it is when it fits the trainer's room at its 12 px floor, else turned by 15° steps to the
- * NARROWEST turn that fits (DZ walk, 2026-11-24). `above`: a question of three fractions, its figure above it.
+ * NARROWEST turn that fits and stands at most LOW px tall (DZ walk, 2026-11-24; else the narrowest that fits).
+ * `above`: a question of three fractions, its figure above it.
  */
 function figureOf(f, names, butterfly, { show = [], ask = [], above = false } = {}) {
   const fig = { kind: butterfly ? 'butterfly' : 'nested', names, len: { ...f } };
@@ -99,9 +105,10 @@ function figureOf(f, names, butterfly, { show = [], ask = [], above = false } = 
     const low = Array.from({ length: 24 }, (_, i) => at(i * 15)).filter((x) => x.t.fitsAbove);
     return (low.sort((a, b) => a.t.height - b.t.height)[0] ?? flat).spec;
   }
-  if (flat.t.fits && flat.t.width <= UPRIGHT) return flat.spec;
+  if (flat.t.fits && flat.t.width <= UPRIGHT && flat.t.height <= LOW) return flat.spec;
   const turns = Array.from({ length: 24 }, (_, i) => at(i * 15)).filter((x) => x.t.fits);
-  return (turns.sort((a, b) => a.t.width - b.t.width || a.t.height - b.t.height)[0] ?? flat).spec;
+  const low = turns.filter((x) => x.t.height <= LOW);
+  return ((low.length ? low : turns).sort((a, b) => a.t.width - b.t.width || a.t.height - b.t.height)[0] ?? flat).spec;
 }
 /** « $OA = 26$, $OE = 45{,}5$ et $OB = 32$ » — the lengths given, each a formula. */
 const lengths = (names, f, keys) => {
@@ -109,7 +116,6 @@ const lengths = (names, f, keys) => {
   return each.length < 2 ? each.join('') : `${each.slice(0, -1).join(', ')} et ${each.at(-1)}`;
 };
 const UNIT = 'cm';
-const UNIT_NOTE = 'Les longueurs sont en centimètres.';
 /** A figure of the trainer, its letters and its other lengths. */
 function drawFigure(rand, butterfly) {
   const f = pick(rand, butterfly ? FIGURES.butterfly : FIGURES.nested);
@@ -207,8 +213,11 @@ function solve(i, pos, j) {
   const [ri, rj] = [RATIOS[i], RATIOS[j]];
   return pos === 0 ? { U: ri[0], P: ri[1], Q: rj[0], D: rj[1] } : { U: ri[1], P: ri[0], Q: rj[1], D: rj[0] };
 }
-/** The formula of a length computed: « \\dfrac{45{,}5 \\times 32}{26} = 56 ». */
-const computed = (f, s) => `\\dfrac{${tex(f[s.P])} \\times ${tex(f[s.Q])}}{${tex(f[s.D])}} = ${tex(f[s.U])}`;
+/**
+ * The formula of a length computed, on one line: « 45{,}5 \\times 32 \\div 26 = 56 » — over a fraction bar the
+ * correction stood two rows high under a 341 px figure, and the panel zoomed its words under 12 px (the walk, 2026-11-24).
+ */
+const computed = (f, s) => `${tex(f[s.P])} \\times ${tex(f[s.Q])} \\div ${tex(f[s.D])} = ${tex(f[s.U])}`;
 
 // ───────────────────────────── the kinds of question ─────────────────────────────
 const Q = {
@@ -266,7 +275,7 @@ const Q = {
       across,
       k: write(over(f.VM, f.VB)),
       figure: figureOf(f, names, true, { show: given }),
-      prompt: `${describe(names, true)} ${UNIT_NOTE} On donne ${lengths(names, f, given)}. Calcule le rapport $${fr(s(asked[0]), s(asked[1]))}$.`,
+      prompt: `${describe(names, true)} On donne, en centimètres, ${lengths(names, f, given)}. Calcule le rapport $${fr(s(asked[0]), s(asked[1]))}$.`,
       form: {
         tip: 'tipCompute',
         lines: [{ ltr: true, tokens: [{ frac: { n: s(asked[0]), d: s(asked[1]) } }, '=', fracBox('n', 'd')] }],
@@ -337,7 +346,7 @@ const Q = {
       names,
       sol,
       figure: figureOf(f, names, true, { show: [sol.P, sol.Q, sol.D, sol.U], ask: [sol.U] }),
-      prompt: `${describe(names, true)} ${UNIT_NOTE} On donne ${lengths(names, f, [sol.P, sol.Q, sol.D])}. Calcule la longueur $${seg(names, sol.U)}$.`,
+      prompt: `${describe(names, true)} On donne, en centimètres, ${lengths(names, f, [sol.P, sol.Q, sol.D])}. Calcule la longueur $${seg(names, sol.U)}$.`,
       form: {
         tip: 'tipCompute',
         lines: [{ ltr: true, tokens: [seg(names, sol.U), '=', lengthBox('x', seg(names, sol.U)), UNIT] }],
@@ -367,7 +376,7 @@ const Q = {
       side: 'VB',
       ...spec,
       figure: figureOf(f, names, true, { show: ['VM', 'VMB', spec.other, spec.sol.U], ask: [spec.sol.U] }),
-      prompt: `${describe(names, true)} ${UNIT_NOTE} On donne ${lengths(names, f, ['VM', 'VMB', spec.other])}. Calcule la longueur $${seg(names, 'VB')}$, puis la longueur $${seg(names, spec.sol.U)}$.`,
+      prompt: `${describe(names, true)} On donne, en centimètres, ${lengths(names, f, ['VM', 'VMB', spec.other])}. Calcule $${seg(names, 'VB')}$, puis $${seg(names, spec.sol.U)}$.`,
       form: {
         tip: 'tipCompute',
         lines: [
@@ -396,7 +405,7 @@ const Q = {
       names,
       ...spec,
       figure: figureOf(f, names, false, { show: [spec.part, spec.piece, spec.other, spec.sol.U], ask: [spec.sol.U] }),
-      prompt: `${describe(names, false)} ${UNIT_NOTE} On donne ${lengths(names, f, [spec.part, spec.piece, spec.other])}. Calcule la longueur $${seg(names, spec.side)}$, puis la longueur $${seg(names, spec.sol.U)}$.`,
+      prompt: `${describe(names, false)} On donne, en centimètres, ${lengths(names, f, [spec.part, spec.piece, spec.other])}. Calcule $${seg(names, spec.side)}$, puis $${seg(names, spec.sol.U)}$.`,
       form: {
         tip: 'tipCompute',
         lines: [
@@ -478,18 +487,20 @@ export function solution(q) {
 
 /** Is the typed length v the right one? */
 const sameLength = (v, x) => v != null && equal(v, x);
-/** A hint for a length typed: the inverted ratio, the length across, the sum, or what to write. */
+/**
+ * A hint for a length typed: the inverted ratio, the length across, the sum, or what to write — ONE line under the
+ * figure (two lines made the panel zoom its words under 12 px, the walk, 2026-11-24).
+ */
 function lengthHint(q, s, typed) {
-  if (typed == null)
-    return `Écris la longueur $${seg(q.names, s.U)}$ en nombre, avec une virgule s’il le faut : par exemple $32{,}5$.`;
+  if (typed == null) return `Écris $${seg(q.names, s.U)}$ en nombre, avec une virgule s’il le faut.`;
   const f = q.f;
   if (equal(typed, over(times(f[s.P], f[s.D]), f[s.Q])))
-    return `Le rapport est renversé : écris les deux rapports dans le même ordre, $${seg(q.names, 'VM')}$ sur $${seg(q.names, 'VB')}$ par exemple, puis fais les produits en croix.`;
+    return `Rapport renversé : écris-les dans le même ordre, comme $${seg(q.names, 'VM')}$ sur $${seg(q.names, 'VB')}$.`;
   if (f.VMB && (equal(typed, f.VMB) || equal(typed, f.VNC)))
-    return `Cette longueur traverse le point $${q.names.V}$ : dans le papillon, chaque longueur part de $${q.names.V}$.`;
+    return `Cette longueur traverse $${q.names.V}$ : chaque longueur part de $${q.names.V}$.`;
   if (equal(typed, plus(f[s.P], f[s.Q])) || equal(typed, minus(f[s.P], f[s.Q])) || equal(typed, minus(f[s.Q], f[s.P])))
-    return 'Les longueurs ne s’ajoutent pas et ne se retranchent pas ici : les rapports sont égaux, fais les produits en croix.';
-  return `Écris les deux rapports qui contiennent $${seg(q.names, s.U)}$ et trois longueurs connues, puis fais les produits en croix.`;
+    return 'Les longueurs ne s’ajoutent pas ici : fais le produit en croix.';
+  return `Le rapport avec $${seg(q.names, s.U)}$, un rapport connu, puis le produit en croix.`;
 }
 /** The ratios chosen are the chain (or the chain upside down, every ratio)? */
 function chainHint(q, v) {

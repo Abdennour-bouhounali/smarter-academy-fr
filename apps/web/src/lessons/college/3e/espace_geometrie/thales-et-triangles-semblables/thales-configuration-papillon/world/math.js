@@ -1,8 +1,8 @@
 /**
  * THE MATHS of lesson `thales-configuration-papillon` — PURE. The exact numbers (`kit/exact.js`: a length is TEXT
- * « 22,5 », « 5/6 », read exactly; a float never decides), French typography (`frAll`) and agreement (`counted`,
- * `listFr`) are the kit's; the stages' numbers are the WORLD's (`nilePyramids/logic.js`: RIVER, CAPSTONE, PLATEAU,
- * CAMERA_BOX, FACE). All are RE-EXPORTED here, never copied (defects.md D8).
+ * « 22,5 », « 5/6 », read exactly; a float never decides) and French typography (`frAll`) are the kit's; the stages'
+ * numbers are the WORLD's (`nilePyramids/logic.js`: RIVER, PLATEAU, FACE — the ones this lesson's files read). They are
+ * RE-EXPORTED here, never copied (defects.md D8).
  *
  * What is this lesson's own: its two key ids, the numbers of the design (`docs/reports/UNIT_3E_THALES_DESIGN.md` § 2–§ 3,
  * ONE place — the story, the forges, the tablets, the tests read them; every group was run pair by pair against the bank
@@ -28,15 +28,8 @@ export {
   times,
   write,
 } from '../../../../../../common/gameworld/kit/exact';
-export { counted, frAll, listFr } from '../../../../../../common/gameworld/kit/authoring/numbers';
-export {
-  CAMERA_BOX,
-  CAPSTONE,
-  FACE,
-  PLATEAU,
-  RIVER,
-  riverFigure,
-} from '../../../../../../common/gameworld/nilePyramids/logic';
+export { frAll } from '../../../../../../common/gameworld/kit/authoring/numbers';
+export { FACE, PLATEAU, RIVER, riverFigure } from '../../../../../../common/gameworld/nilePyramids/logic';
 
 /**
  * The two keys, in the order of the docks (design § 2). `journey.js › KEYS` writes the same ids as single-quoted
@@ -228,7 +221,7 @@ export function typedFrac(n, d) {
  * A number in a PLAIN sentence: « 6 561 » (a whole number of four digits or more grouped by U+202F, the core's
  * `formatFr`), « 22,5 » (the decimal comma). Every number of a sentence goes through it (defects.md B31).
  */
-export const nb = (x) => {
+const nb = (x) => {
   const t = write(x);
   return /^\d+$/.test(t) ? formatFr(Number(t)) : t;
 };

@@ -71,7 +71,7 @@ export async function trainerWalk(L, D, opts) {
       stage: L.lesson.story.segments
         ? L.lesson.story.segments.length
         : L.lesson.story.legs
-          ? L.lesson.story.legs.length
+          ? Object.keys(L.lesson.story.legs).length
           : L.lesson.story.terraces.length - 1,
       stars: {},
       gems: [],

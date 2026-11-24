@@ -15,7 +15,7 @@
  *                            his number: it touches, leaves a gap or goes over, the size written.
  * Every sentence is a FACT about what he did — never a rule, never a key's name (`inquiries.test.js`).
  */
-import { K, NUMBERS, RIVER, riverFigure } from './math';
+import { NUMBERS, RIVER, riverFigure } from './math';
 
 const PAP = NUMBERS.papillon;
 const CAL = NUMBERS.calcul;
@@ -23,9 +23,9 @@ const CAL = NUMBERS.calcul;
 /** HIS river round the stake S: E and R on this bank, A and F across (k = 1/8) — what the world logged at dock 3. */
 export const TURN_RIVER = { ...riverFigure(RIVER), head: 'Le Nil' };
 /** Round 2: the parallel butterfly I K L / P Q (k = 4/7). */
-export const TURN_PARALLEL = { kind: 'butterfly', names: { ...PAP.rounds[0].names }, len: { ...PAP.rounds[0].len } };
+const TURN_PARALLEL = { kind: 'butterfly', names: { ...PAP.rounds[0].names }, len: { ...PAP.rounds[0].len } };
 /** Round 3: the crooked one on the same small triangle (PQ = 11,5, cos Î = −1/4). */
-export const TURN_CROOKED = { kind: 'butterfly', names: { ...PAP.rounds[1].names }, len: { ...PAP.rounds[1].len } };
+const TURN_CROOKED = { kind: 'butterfly', names: { ...PAP.rounds[1].names }, len: { ...PAP.rounds[1].len } };
 
 export const HALFTURN_INQUIRY = {
   kind: 'halfturn',
@@ -42,10 +42,18 @@ const planFig = (r) => ({
   len: { ...r.len, ...(r.across ?? {}), ...(r.pieces ?? {}) },
 });
 
-/** Round 1: HIS river, whole (SR, SF exact roots, never shown: `show` is what he is given). */
-export const PLAN_RIVER = { ...riverFigure(RIVER), head: 'Le Nil' };
-export const PLAN_NESTED = planFig(CAL.rounds[1]);
-export const PLAN_BUTTERFLY = planFig(CAL.rounds[2]);
+/**
+ * Round 1: HIS river, whole (SR, SF exact roots, never shown: `show` is what he is given). Drawn LOWER than the world's
+ * schematic river (AF drawn 60 for SA 72, not 120; k = 1/3 kept): at 120 the figure stood 500 px tall and the course
+ * laid under it covered its letters (the walk, 2026-11-24). Drawing only: every length written is the river's.
+ */
+const PLAN_RIVER = {
+  ...riverFigure(RIVER),
+  head: 'Le Nil',
+  draw: { VM: '24', VB: '72', MN: '20', BC: '60', VN: '31,24', VC: '93,72' },
+};
+const PLAN_NESTED = planFig(CAL.rounds[1]);
+const PLAN_BUTTERFLY = planFig(CAL.rounds[2]);
 
 export const PLAN_INQUIRY = {
   kind: 'plan',
@@ -60,6 +68,3 @@ export const PLAN_INQUIRY = {
     lead: 'Personne ne peut mesurer cette longueur. Choisis deux cartes, mets deux cordes bout à bout ou coupe un morceau s’il le faut, puis écris la longueur.',
   },
 };
-
-/** The experiment of each key (one per key: no (kind, mode) twice). */
-export const INQUIRIES = { [K.papillon]: HALFTURN_INQUIRY, [K.calcul]: PLAN_INQUIRY };

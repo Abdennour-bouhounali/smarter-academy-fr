@@ -248,7 +248,8 @@ export const SCRIPT = {
       question: 'À quelle distance du rond-point se trouve le coin D ? Choisissez avant de vérifier.',
       ...ask(ru.OD, [ruCrossed, ru.OD, ruAcross]),
       words: LENGTH,
-      after: `Un demi-tour autour de $O$ pose $OAB$ sur $[OC)$ et $[OD)$, $(AB)$ parallèle à $(CD)$ : la figure emboîtée de 4e. Donc $\\dfrac{OD}{OB} = \\dfrac{OC}{OA}$ et $OD = ${cross(R.OB, R.OC, R.OA)}$. Le partenaire de $OB$ est sur sa droite : $OD$, pas $OC$ ($${cross(R.OB, R.OA, R.OC)}$). Toute la rue $AC = ${tex(ru.AC)}$ ne part pas de $O$ : $${cross(R.OB, ru.AC, R.OA)}$.`,
+      // short: beside the figure, the 400 characters it had pushed the cards out of their place (the walk, 2026-11-24)
+      after: `Un demi-tour autour de $O$ donne la figure emboîtée de 4e, donc $OD = ${cross(R.OB, R.OC, R.OA)}$. La carte $${tex(ruCrossed)}$ échange $OA$ et $OC$ ; la carte $${tex(ruAcross)}$ prend toute la rue $AC$.`,
       cue: 'Un demi-tour autour de O : où le petit triangle arrive-t-il ?',
     },
     {
@@ -261,7 +262,7 @@ export const SCRIPT = {
       question: 'De combien les anneaux A et B sont-ils écartés ?',
       ...ask(ci.AB, [ciAcross, ciDiff, ci.AB]),
       words: LENGTH,
-      after: `Les points $A$, $O$, $C$ sont alignés, ainsi que les points $B$, $O$, $D$ ; les droites $(AB)$ et $(CD)$ sont parallèles. D’après le théorème de Thalès : $\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$, donc $AB = ${cross(X.CD, X.OA, X.OC)}$. Avec toute la branche $AC = ${tex(ci.AC)}$, on trouverait $${cross(X.CD, X.OA, ci.AC)}$.`,
+      after: `Les points $A$, $O$, $C$ sont alignés, ainsi que les points $B$, $O$, $D$ ; les droites $(AB)$ et $(CD)$ sont parallèles. D’après le théorème de Thalès : $\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$, donc $AB = ${tex(ci.AB)}$.`,
       cue: 'Avant les rapports : quels points sont alignés ? Quelles droites ?',
     },
     {
@@ -296,7 +297,7 @@ export const SCRIPT = {
       question: 'Quelle est la longueur du muret ?',
       ...ask(ja.CD, [jaDiff, ja.CD, jaAcross]),
       words: LENGTH,
-      after: `L’allée $AC$ traverse le bassin : $OC = ${tex(J.AC)} - ${tex(J.OA)} = ${tex(ja.OC)}$. Puis $\\dfrac{CD}{AB} = \\dfrac{OC}{OA}$, donc $CD = ${cross(J.AB, ja.OC, J.OA)}$. Avec toute l’allée : $${cross(J.AB, J.AC, J.OA)}$, un muret trop long.`,
+      after: `L’allée $AC$ traverse le bassin : $OC = ${tex(J.AC)} - ${tex(J.OA)} = ${tex(ja.OC)}$, donc $CD = ${cross(J.AB, ja.OC, J.OA)}$. Avec toute l’allée, $${tex(jaAcross)}$ : un muret trop long.`,
       cue: 'L’allée AC traverse le bassin : quelle longueur va dans le rapport ?',
     },
     {

@@ -32,8 +32,8 @@ import {
 } from './engine';
 
 describe('L’échauffement — the families and how an answer is graded', () => {
-  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second), `4e.m4.r04` (the butterfly)', () => {
-    expect(Object.keys(FAMILIES)).toEqual(['4e.m1.r06', '3e.m1.r05', '4e.m1.r08', '4e.m4.r04']);
+  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second), `4e.m4.r04` and `4e.m2.r09` (the butterfly)', () => {
+    expect(Object.keys(FAMILIES)).toEqual(['4e.m1.r06', '3e.m1.r05', '4e.m1.r08', '4e.m4.r04', '4e.m2.r09']);
     expect(familyFor('6e.t1.r01')).toBeNull();
   });
 
@@ -732,10 +732,12 @@ describe('L’échauffement — « Une parallèle dans un triangle » (4e.m4.r04
       ['4e.m4.r04', 'core'],
       ['5e.m4.r03', 'support'],
     ]);
-    // ONE family (design § 5): the fourth proportional of `4e.m2.r09` is measured inside it, the half-turn shows its turn
+    // a family per core tool, in the net's order (the figure enlarged first); the half-turn of 5e shows its turn in the world
     const tools = planTools(links, (id) => Boolean(familyFor(id)));
-    expect(tools.map((t) => [t.item, t.weight])).toEqual([[ITEM, 'core']]);
-    expect(familyFor('4e.m2.r09')).toBeNull();
+    expect(tools.map((t) => [t.item, t.weight])).toEqual([
+      ['4e.m2.r09', 'core'],
+      [ITEM, 'core'],
+    ]);
     expect(familyFor('5e.m4.r03')).toBeNull();
     expect(getItem(ITEM)).toBeTruthy();
     expect(F.item).toBe(ITEM);
@@ -879,5 +881,116 @@ describe('L’échauffement — « Une parallèle dans un triangle » (4e.m4.r04
       );
     }
     expect(['🦋', '📏']).not.toContain(F.icon);
+  });
+
+  describe('« Agrandir et réduire une figure » (4e.m2.r09), the other core tool of the butterfly', () => {
+    const R = FAMILIES['4e.m2.r09'];
+    /** Is « a/b = c/d » true? Computed here from the card's text. */
+    const eqTrue = (t) => {
+      const m = t.match(/^\$\\frac\{(\d+)\}\{(\d+)\} = \\frac\{(\d+)\}\{(\d+)\}\$$/);
+      expect(m, t).toBeTruthy();
+      const [a, b, c, d] = m.slice(1).map(Number);
+      return a * d === b * c;
+    };
+
+    it('is an item of the net, with its rules, its memo, its two named slips and no instrument', () => {
+      expect(getItem('4e.m2.r09')).toBeTruthy();
+      expect(R.item).toBe('4e.m2.r09');
+      expect(R.memo.length).toBeGreaterThanOrEqual(3);
+      expect(R.memo.length).toBeLessThanOrEqual(4);
+      expect(R.forms[2][0]).toBe('sort');
+      for (const m of R.mistakes) expect(MISTAKES[m], m).toBeTruthy();
+      expect(R.labTool).toBeNull();
+      expect(R.icon).not.toBe(F.icon);
+      expect(R.name).not.toBe(F.name);
+    });
+
+    it('every length is computed apart, whole, under 100, its slips named, and no pair of the lesson’s figures is shown', () => {
+      const seen = new Set();
+      const forms = new Set();
+      for (let seed = 1; seed <= 300; seed += 1) {
+        for (const [level, form] of [
+          [1, 'enlarge'],
+          [1, 'map'],
+          [2, 'reduce'],
+        ]) {
+          const w = makeQuestion(rng(seed * 104723 + level), '4e.m2.r09', level, form, { first: seed % 5 === 0 });
+          forms.add(form);
+          const c = w.calc;
+          expect(c.op).toBe('fourth');
+          const v = fourthApart(c);
+          expect(Number.isInteger(v) && v > 0 && v < 100, JSON.stringify(c)).toBe(true);
+          expect(w.tokens[0]).toEqual({ frac: [String(c.a), String(c.b)] });
+          expect(w.tokens[2].frac[0]).toBe(String(c.c));
+          expect(slotsOf(w.tokens).map((t) => t.slot)).toEqual(['v']);
+          expect(grade(w, { v: String(v) })).toEqual({ correct: true, mistake: null });
+          const add = c.c + (c.b - c.a);
+          if (add !== v && add > 0)
+            expect(grade(w, { v: String(add) })).toEqual({ correct: false, mistake: 'add-not-times' });
+          if ((c.a * c.c) % c.b === 0 && (c.a * c.c) / c.b !== v && (c.a * c.c) / c.b !== add)
+            expect(grade(w, { v: String((c.a * c.c) / c.b) })).toEqual({ correct: false, mistake: 'ratio-flipped' });
+          expect(grade(w, { v: String(v + 1) }).correct).toBe(false);
+          expect(together([c.a, c.b, c.c, v]), JSON.stringify(c)).toBe(null);
+          // the sentence gives the three lengths of the equality, never the answer
+          for (const x of [c.a, c.b, c.c]) expect(w.prompt).toContain(`$${x}$`);
+          expect(level === 2 ? v < c.c : v > c.c, JSON.stringify(c)).toBe(true); // reduced, enlarged
+          if (seed % 5 === 0 && level === 1) expect(Math.max(c.b, v)).toBeLessThanOrEqual(8); // the very first: a near-certain win
+        }
+        const s = makeQuestion(rng(seed * 7907 + 2), '4e.m2.r09', 2, 'sort');
+        expect(s.cards).toHaveLength(3);
+        expect(new Set(s.cards.map((k) => k.text)).size).toBe(3);
+        expect(s.cards.some((k) => k.bin === 'yes') && s.cards.some((k) => k.bin === 'no')).toBe(true);
+        const shown = s.cards.flatMap((k) => k.text.match(/\d+/g).map(Number));
+        expect(Math.max(...shown)).toBeLessThan(100);
+        expect(together([...Object.values(s.rect), ...shown]), JSON.stringify(s.rect)).toBe(null);
+        const a = Object.fromEntries(s.cards.map((k) => [k.id, eqTrue(k.text) ? 'yes' : 'no']));
+        expect(grade(s, a)).toEqual({ correct: true, mistake: null });
+        for (const k of s.cards) {
+          expect(k.bin, k.text).toBe(a[k.id]);
+          if (k.bin === 'no') {
+            expect(grade(s, { ...a, [k.id]: 'yes' })).toEqual({ correct: false, mistake: k.trap });
+            seen.add(k.trap);
+          }
+        }
+      }
+      expect([...seen].sort()).toEqual(['add-not-times', 'ratio-flipped']);
+      expect([...forms].sort()).toEqual(['enlarge', 'map', 'reduce']);
+    });
+
+    it('the worked examples, the rules and the memo are true, French, and say no word of the lesson', () => {
+      const texts = [
+        ...stringsIn({ rules: R.rules, memo: R.memo, name: R.name }),
+        ...R.mistakes.map((m) => MISTAKES[m]),
+      ];
+      for (let seed = 1; seed <= 60; seed += 1)
+        for (const level of [1, 2]) {
+          for (const form of R.forms[level]) {
+            const q = makeQuestion(rng(seed * 37 + level), '4e.m2.r09', level, form);
+            texts.push(q.prompt, ...(q.bins ?? []).map((b) => b.label), ...(q.cards ?? []).map((c) => c.text));
+          }
+          for (const mistake of [null, ...R.mistakes]) {
+            const e = R.example(rng(seed), level, { mistake });
+            expect(e.steps.length).toBeGreaterThanOrEqual(4);
+            const [, a, b, c] = e.steps[1].match(/\\frac\{(\d+)\}\{(\d+)\} = \\frac\{(\d+)\}\{x\}/).map(Number);
+            const x = fourthApart({ a, b, c });
+            expect(e.steps[2]).toContain(`$${a} \\times x = ${b} \\times ${c} = ${b * c}$`);
+            expect(e.steps.at(-1)).toContain(`$x = ${b * c} \\div ${a} = ${x}$`);
+            if (mistake === 'add-not-times') expect(e.steps[0]).toContain(`donnerait $${c + (b - a)}$`);
+            texts.push(e.title, ...e.steps);
+          }
+        }
+      for (const r of R.rules) {
+        expect(r.check.m * r.check.v).toBe(r.check.w * r.check.t);
+        expect(r.example).toContain(`= ${r.check.v}`);
+      }
+      for (const t of texts) {
+        expect(typographyErrors(t), t).toEqual([]);
+        expect(agreementErrors(t), t).toEqual([]);
+        expect(t, t).not.toMatch(/undefined|NaN|\$-|-\d/);
+        expect(t.toLowerCase(), t).not.toMatch(
+          /thalès|papillon|demi-tour|sommet|autre côté|traverse|sécante|symétri|faux|nil\b|pyramide|felouque|corde|passeur|triangle|parallèle/,
+        );
+      }
+    });
   });
 });

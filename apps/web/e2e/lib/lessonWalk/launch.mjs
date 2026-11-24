@@ -50,9 +50,10 @@ export async function sittingPart(L, D, opts) {
     id: L.id,
     url: L.url,
     keys: L.lesson.keys,
-    // the lesson's last island (a save beyond its road crashes the world)
+    // the lesson's last island (a save beyond its road crashes the world); a story of legs counts one dock more than
+    // its legs — an array of them, or an object keyed by the dock each leaves (a route of `story.stages`)
     stage: L.lesson.story.legs
-      ? L.lesson.story.legs.length
+      ? Object.keys(L.lesson.story.legs).length
       : (L.lesson.story.islands ?? L.lesson.story.terraces).length - 1,
     uid: (D.uid ?? 9900) + 90,
     foreign: opts.foreign,

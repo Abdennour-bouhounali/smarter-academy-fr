@@ -20,6 +20,33 @@ const fits = (ctx, label) => inquiryFits(ctx.w, ctx.page, label, ['.rf-root [dat
 const iq = (page) => page.evaluate(() => window.__inquiry);
 const add = (a, b) => sub(a, mul(b, '-1'));
 const PIECES = { MB: ['VB', 'VM'], NC: ['VC', 'VN'] };
+/**
+ * Per figure kind, each line through the vertex as [whole, first part, second part] (`plan.js` names its joins so: a join
+ * `a+b` gives the whole, a cut `whole-a` gives b) and the two of them that are lengths FROM THE VERTEX — the ones a ratio
+ * card holds: on a NESTED figure a side VB and its pieces VM, MB; on a BUTTERFLY the length across the vertex VMB and its
+ * two lengths from the vertex VM, VB.
+ */
+const LINES = {
+  nested: [
+    { whole: 'VB', a: 'VM', b: 'MB', vertex: ['VB', 'VM'] },
+    { whole: 'VC', a: 'VN', b: 'NC', vertex: ['VC', 'VN'] },
+  ],
+  butterfly: [
+    { whole: 'VMB', a: 'VM', b: 'VB', vertex: ['VM', 'VB'] },
+    { whole: 'VNC', a: 'VN', b: 'VC', vertex: ['VN', 'VC'] },
+  ],
+};
+/** A length the round SHOWS that its figure does not write: a nested figure's piece, a butterfly's length across. */
+function derived(len, key, kind) {
+  for (const l of LINES[kind]) {
+    if (key !== l.whole && key !== l.b) continue;
+    if (kind === 'nested' && key === l.b && len[l.whole] != null && len[l.a] != null)
+      return write(sub(len[l.whole], len[l.a]));
+    if (kind === 'butterfly' && key === l.whole && len[l.a] != null && len[l.b] != null)
+      return write(add(len[l.a], len[l.b]));
+  }
+  return null;
+}
 
 /** The card a plan needs for an unknown, and the card wholly known once the pieces are joined. */
 function planCards(known, unknown) {
@@ -35,9 +62,12 @@ function planCards(known, unknown) {
 }
 
 /**
- * `plan` — per round: the lengths GIVEN (and the joins the walk makes: two pieces of a side end to end), the two cards
- * of a plan, the unknown computed here and typed, laid: it FITS. On the first round a course of the WRONG length first
- * (the piece's ratio: the length times MB / VB), laid as a gap or an overhang, then the button for another course (`data-iq-next`).
+ * `plan` — per round: the lengths GIVEN, then the joins and cuts the walk makes so that the lengths FROM THE VERTEX of a
+ * line are known (a nested side from its two pieces end to end, `VM+MB`; a butterfly's length from the vertex cut off the
+ * length across it, `VMB-VM`), the two cards of a plan, the unknown computed here and typed, laid: it FITS, laid where the
+ * world lays that length (`data-iq-laid-on`: on a butterfly a length on a line through the vertex is a rope from the
+ * vertex, every other length a course). On the first round a course of the WRONG length first (one more than the
+ * truth), an overhang, then the button for another course (`data-iq-next`).
  */
 export async function planExperiment(ctx, spec) {
   const { w, page } = ctx;
@@ -46,34 +76,46 @@ export async function planExperiment(ctx, spec) {
     await page.waitForFunction((u) => document.querySelector('.np-iq')?.dataset.iqUnknown === u, r.unknown, {
       timeout: 10000,
     });
-    const len = { ...r.fig.len };
-    if (len.VB && len.VM) len.MB = write(sub(len.VB, len.VM));
-    if (len.VC && len.VN) len.NC = write(sub(len.VC, len.VN));
-    const given = Object.fromEntries(r.given.map((k) => [k, len[k]]));
-    const want = solveLength(given, r.unknown);
-    // the joins: a side from the vertex given in two pieces is joined end to end
-    const known = new Set(r.given);
-    for (const [whole, a, b] of [
-      ['VB', 'VM', 'MB'],
-      ['VC', 'VN', 'NC'],
-    ])
-      if (known.has(a) && known.has(b) && !known.has(whole)) {
-        await page.click(`.np-iq [data-iq-join="${a}+${b}"]`);
-        known.add(whole);
-      } else if (known.has(whole) && known.has(b) && !known.has(a)) {
-        // a whole side less its piece: the part from the vertex
-        await page.click(`.np-iq [data-iq-join="${whole}-${b}"]`);
-        known.add(a);
+    const kind = r.fig.kind === 'butterfly' ? 'butterfly' : 'nested';
+    // only what the round SHOWS is read (a river's lengths not given are roots the walk never needs)
+    const known = Object.fromEntries(r.given.map((k) => [k, r.fig.len[k] ?? derived(r.fig.len, k, kind)]));
+    w.expect(
+      Object.values(known).every((v) => v != null),
+      `${ctx.name}, round ${i + 1}: every length given is known (${JSON.stringify(known)})`,
+    );
+    for (const l of LINES[kind]) {
+      const has = { whole: known[l.whole] != null, a: known[l.a] != null, b: known[l.b] != null };
+      if (l.vertex.every((k) => known[k] != null)) continue;
+      if (kind === 'nested' && has.a && has.b && !has.whole) {
+        await page.click(`.np-iq [data-iq-join="${l.a}+${l.b}"]`);
+        known[l.whole] = write(add(known[l.a], known[l.b]));
+      } else if (kind === 'nested' && has.whole && has.b && !has.a) {
+        await page.click(`.np-iq [data-iq-join="${l.whole}-${l.b}"]`);
+        known[l.a] = write(sub(known[l.whole], known[l.b]));
+      } else if (kind === 'butterfly' && has.whole && has.a && !has.b) {
+        await page.click(`.np-iq [data-iq-join="${l.whole}-${l.a}"]`);
+        known[l.b] = write(sub(known[l.whole], known[l.a]));
+      } else if (kind === 'butterfly' && has.whole && has.b && !has.a) {
+        await page.click(`.np-iq [data-iq-join="${l.whole}-${l.b}"]`);
+        known[l.a] = write(sub(known[l.whole], known[l.b]));
       }
-    const { withIt, whole } = planCards(known, r.unknown);
+    }
+    const fromVertex = Object.fromEntries(
+      ['VM', 'VB', 'VN', 'VC', 'MN', 'BC', 'MB', 'NC'].filter((k) => known[k] != null).map((k) => [k, known[k]]),
+    );
+    const want = solveLength(fromVertex, r.unknown, kind);
+    const { withIt, whole } = planCards(new Set(Object.keys(known)), r.unknown);
     w.expect(withIt && whole, `${ctx.name}, round ${i + 1}: two cards make a plan for ${r.unknown} (computed here)`);
     await page.click(`.np-iq [data-iq-card="${withIt.id}"]`);
     await page.click(`.np-iq [data-iq-card="${whole.id}"]`);
     if (i === 0) await fits(ctx, `${ctx.name}-plan`);
+    const on = kind === 'butterfly' && r.unknown !== 'MN' && r.unknown !== 'BC' ? 'line' : 'course';
     const lay = async (x) => {
       await page.fill('.np-iq [data-iq-in]', write(x));
       await page.click('.np-iq [data-iq-lay]');
       await page.waitForSelector('.np-iq [data-iq-laid]');
+      const laidOn = await page.getAttribute('.np-iq [data-iq-laid-on]', 'data-iq-laid-on');
+      w.check(laidOn === on, `${ctx.name}, round ${i + 1}: ${r.unknown} is laid as a ${on} (${laidOn})`);
       return page.getAttribute('.np-iq [data-iq-laid]', 'data-iq-laid');
     };
     if (i === 0) {

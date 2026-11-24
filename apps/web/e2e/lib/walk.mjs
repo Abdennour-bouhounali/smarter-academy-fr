@@ -252,11 +252,15 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
           const cs = getComputedStyle(el);
           if (/(auto|scroll)/.test(cs.overflowY) && el.scrollHeight > el.clientHeight + 2 && !el.closest('[data-di-fit-scroll]')) bad.push(`scrolls: ${name(el)}`);
           if (/(auto|scroll)/.test(cs.overflowX) && el.scrollWidth > el.clientWidth + 2 && !el.closest('[data-di-slides]')) bad.push(`scrolls sideways: ${name(el)}`);
+          // a box whose overflow is hidden, scrolled sideways by the focus of a box beyond its edge: the start of its
+          // content is lost (the pyramids' mission card, 2026-11-24 — its lines wider than their column)
+          if (el.scrollLeft > 1 && !/^(INPUT|TEXTAREA)$/.test(el.tagName) && !el.closest('[data-di-slides]')) bad.push(`cut sideways (scrolled ${Math.round(el.scrollLeft)} px): ${name(el)}`);
         }
         for (const box of document.querySelectorAll('[data-di-fitbox]')) {
           const o = box.getBoundingClientRect();
           const i = box.firstElementChild.getBoundingClientRect();
           if (o.height > 0 && i.height > o.height + 3 && !box.hasAttribute('data-di-fit-scroll')) bad.push(`cut: ${name(box.parentElement)} (${Math.round(i.height)} in ${Math.round(o.height)}, scale ${box.dataset.diFitz})`);
+          if (o.width > 0 && i.width > o.width + 3 && !box.hasAttribute('data-di-fit-scroll')) bad.push(`cut sideways: ${name(box.parentElement)} (${Math.round(i.width)} in ${Math.round(o.width)}, scale ${box.dataset.diFitz})`);
           if (Number(box.dataset.diFitz) < 0.8 && o.height > 0) small.push(`${name(box.parentElement)} ×${box.dataset.diFitz}`);
         }
         for (const sel of ['.di-card', '.di-step', '.di-page__fit', '.di-jcard', '.di-kpanel', '.xs-head', '.xs-paper', '.xs-sheet', '.xs-foot', '.di-trainer']) {
