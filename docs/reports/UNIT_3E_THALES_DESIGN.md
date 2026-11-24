@@ -342,3 +342,19 @@ None left by this design: the clean-up (DZ first, one code) and the map (only th
 | N16 | « // » or `\parallel` | `\parallel` (∥) in formulas, words in sentences, never « // » |
 
 Gate A's second reading is owed on this version.
+
+### As built (2026-11-24) — what changed from this page while building
+
+- **Numbers moved off the bank** (pairwise collisions found while building): K1's crooked attack OV 2,5 → **3,9**, UV
+  4,5 → **5,3** (OU 4 and the big triangle unchanged; « 7,5 ; 2,5 » stood on l3-007). K2's last step OB 5 → **5,8**, EF
+  4,5 → **6,9**, so OF 7,5 → **8,7**, AB 3 → **4,6**, and the errors become **14,5** and **2,76** (« 4,5 ; 1,8 » stood
+  on l2-008; F3's 12,5 is gone with it). The table of § « Numbers checked » above keeps the values as designed.
+- **F1**: each triple of points of K1's last step is ONE choice token; « ratios all inverted » deleted. The sentence has
+  no « D’après le théorème de Thalès » (no name before the tablet); the tablet carries the whole sentence.
+- **W3** shipped the other way round: `halfturn` prints no chain by default (`chainOwn: true` to show it), so K1 sets
+  nothing.
+- **P2** is proved by ANSWERS of both keys (`world/evidence.js › ANSWER_POINTS`, read by `scripts/validate-lessons.mjs`),
+  not by a key: the kit maps one key to one point.
+- Dock 2 (not on France's map) is named « Le chantier des bâtisseurs » in `strings.fr.js` (« atelier » is the math lab).
+- Walked at 1366×768: story 962 ok, hub 278, trainer 557, board 248, launch 165, sitting 2595 — 0 FAIL. The board's
+  count of checked relations went from 14 to 9 when its two long proofs were cut to fit beside their figures.

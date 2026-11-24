@@ -187,3 +187,20 @@ the walk README does not list the two new players.
   just before is in that session's scratch folder, which a reboot clears): finish it keeping `users`, or go back to
   the SQLite file (`apps/api/.env` was switched to MySQL).
 - Brand, tu/vous, and the points of `FRANCE_REBUILD_PLAN.md` §7 still open.
+
+**Test 2 — Thalès, a new world for both platforms, 2026-11-24.** DZ first: the world « الأهرامات » (`nile-pyramids`)
+designed, gated (A), built and walked with `talis-hisab-atwal` (5 docks, 4 keys; story 1 491 ok, hub, trainer, board,
+sitting 2 101, launch — 0 FAIL), published in the local DZ database; local branch `feat/thales-pyramids`, not pushed.
+Then made ONE code for two countries (W1–W4: the words in `strings.<country>.js`, `story.stages`, `chainOwn` opt-in,
+`plan` on butterflies) and carried to France with the kit pieces it needed (`784f483a`), its French words
+(`strings.fr.js`), then `thales-configuration-papillon` built on it (3 docks, 2 keys): `lesson:new` → wave 1 (world ∥
+board) → wave 2 (forges) → `lesson:assemble` → one walk agent → gate B on 3 screens by the main session → checks (lint,
+format, unused, unreached, lesson validators, web suite 6 266 tests) → published locally (lesson 724, 5 modules, 50
+exercises). What the French walk changed in shared files was carried back to DZ and re-walked (`e6bc783c`).
+Found on the way: the API refused a `scale` claim (`claim.a`/`b` required) — fixed in both.
+Cost of the France half (agents only, from their notices): kit port 346 k, contracts 206 k, the W1–W4 changes 263 k,
+French words 252 k, world 460 k, board 412 k, forges 284 k, walk-fix 634 k — **≈ 2.9 M**, plus the DZ walk round 2
+(383 k). Over the 1.2 M target: the world crossing (kit + words + contracts ≈ 0.8 M) is paid once; the lesson itself
+≈ 1.8 M, of which the walk agent is the largest part, as in test 1.
+Open: `trouver-le-pgcd story` shows 15 « its line wraps » in the forge log on this machine since the reboot — the SAME
+15 at its own commit `11594db8`, so the cause is the environment, not today's code; not resolved.

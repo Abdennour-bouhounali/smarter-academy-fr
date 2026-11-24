@@ -5,7 +5,7 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 
 | Where | What |
 |---|---|
-| `apps/web` | the React app (Vite, JSX — no TypeScript). The lesson engine: `src/lessons/common/`. A lesson will live in `src/lessons/college/<grade>/<theme>/<unit>/<lesson>/` — **ONE lesson exists**: `college/3e/nombres_calculs/multiples-et-diviseurs/decomposer-en-facteurs-premiers/` (2026-11-23) |
+| `apps/web` | the React app (Vite, JSX — no TypeScript). The lesson engine: `src/lessons/common/`. A lesson will live in `src/lessons/college/<grade>/<theme>/<unit>/<lesson>/` — **THREE lessons exist** (3e): `decomposer-en-facteurs-premiers` and `trouver-le-pgcd` (`nombres_calculs/multiples-et-diviseurs/`, world `divisor-isles`), `thales-configuration-papillon` (`espace_geometrie/thales-et-triangles-semblables/`, world `nile-pyramids`, one code with Algeria — only `strings.fr.js` is France's) |
 | `packages/core` | pure logic: the curriculum (`curriculum/fr/`: catalogue, programme, learning net, school calendar), number formats, progress, the practice evaluator |
 | `apps/api` | the Laravel API. Tests: `cd apps/api && php8.4 artisan test` (in-memory SQLite) |
 | `content/` | exercise banks, class tests, thinking-lab challenges — all EMPTY today |
@@ -20,7 +20,7 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   reads any Algerian file that was since deleted.
 - **Done**: every Algerian lesson, exercise bank, class test, textbook source and the three legacy lesson systems are
   deleted; the tree is the lesson ENGINE and the SHELL around it; the official French texts are filed; **the 3e net
-  is live** (`packages/core/curriculum/fr/`: 13 units, 60 lessons — ONE built and `available`, 59 `coming_soon` —, 166 learning points with locked
+  is live** (`packages/core/curriculum/fr/`: 13 units, 60 lessons — THREE built and `available`, 57 `coming_soon` —, 166 learning points with locked
   ids, 55 programme items + 53 stubs of earlier grades — not yet validated by the owner; 6e, 5e, 4e are empty
   skeletons); `npm run lesson:brief -- <code>` prints what a lesson must teach; the server side of the payment switch
   is built (plan §4ter) — payments are CLOSED by default.
