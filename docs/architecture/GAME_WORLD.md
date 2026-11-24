@@ -167,6 +167,26 @@ questions on the point of that card, in TWO FORMATS that alternate and drift tow
   right phrase », « Vrai ou faux ? Justifie. » (`TRAINER.tfAsk`), « without any calculation, name two divisors ») —
   paper numbers, the answer typed in its own shape (`a = b × [ ] + [ ]`, then « so b [is / is not] a divisor of a »).
 
+**A question may carry a FIGURE** (2026-11-24, carried from the Algerian platform with commit `784f483a`): a kind of
+the lesson's `trainer.js` sets `q.figure` on the question it returns — the SAME data as a bank sheet's `statement.figure`
+(a plane figure: `points`, `segments` with `label` / `arrows` / `tone`, `ariaLabel`…; or `kind: 'space' | 'chart' |
+'tape'`), on any of the three shapes (tap, tf, form) and either format. `Trainer.jsx › QuestionFigure` draws it with the
+question by `components/StatementFigure.jsx` — never a second renderer — in a white box (`data-di-tr-figure=<kind>`).
+Where: BESIDE the question when the figure is not flat (height / width > 0.45) and no line of the form writes three
+fractions (`Trainer.jsx › besideIt`, the question box then says `data-di-tr-q="figure"`), else ABOVE it
+(`data-di-tr-q="plain"`) — a chain of three ratios needs the panel's width, a formula never breaks. Its width
+(`kit/trainerFigure.js`, the sitting's rule of `sheetFigure.js`): never narrower than `k × --di-min-font` (its smallest
+label ≥ 12 px whatever the panel's `Fit` zoom), else its natural width (at most 360), no taller than 220 px
+(`TRAINER_FIGURE.tall`); the box's padding (`pad`, 13 px) is outside the drawing. `trainerFigure(fig).fits` says it stays
+within the room of a figure BESIDE its question (`TRAINER_FIGURE.room`, a column of 315 × 350 px at its floor: the
+question keeps about 250 px of the ~570 px panel), `fitsAbove` within the room ABOVE a question whose form writes three
+fractions (`TRAINER_FIGURE.above`, 560 × 260) — a lesson's trainer test asserts the one its question uses (on the
+Algerian platform a landscape figure of 340 px beside its question squeezed it into 220 px, the panel zoomed and its
+words fell under 12 px; a lesson turns or redraws its figure, never shrinks it below its floor). A question without
+`figure` draws exactly as before (`kit/trainerFigure.render.test.jsx`: `decomposer-en-facteurs-premiers` carries none and
+draws none). Not yet measured in a browser. **First user: Planned** — no French lesson's trainer sets `q.figure` yet;
+the Thalès lesson of the « Les pyramides » world will (written when that world crosses).
+
 A wrong answer gets a HINT first — what the answer gives, never the answer — then, after a second one, the written correction
 « Correction » (`check` → `hint`, `fix`). Stars = questions right at the first try, kept per card (`know.trained`). The 13 cards map
 to five plans (`PLAN_OF`): by remainder, by product, the four sentences, 1 and the number itself, and a mix for the idea and the summary.
@@ -317,7 +337,9 @@ the kit's `UseLines`, its lines one under the other, each box named by the words
 fact of the world about the first line that does not hold yet; solved, it is kept (`flags.mission`) and the story ends.
 
 **The mechanic** (`rootCourts/logic.js` is its law, pure and exact — fractions of BigInt; a number is TEXT everywhere
-else: « 30 », « 5,47 », « 49/64 »):
+else: « 30 », « 5,47 », « 49/64 »; since 2026-11-24 its exact numbers are the kit's `kit/exact.js`, which
+`rootCourts/logic.js` imports and re-exports — `read`, `write`, `tex`, `compare`, `equal`, `square`, `times`, `minus`,
+`magnitude`, `approx`, `isDecimal` — so its readers keep importing them from the world):
 
 - a TERRACE of the ksar holds square COURTS; a court's area is written on its gate, in tiles;
 - at a court's corner post the student takes the ROD (`E`) and walks along the wall with ← →: **his walk is the
@@ -358,6 +380,19 @@ direction. `steers()` says when the keys walk him (false while the world reads t
 while he holds the rod); `lookTo(angle)` turns him at once (on arriving, after a fall). ON in « Le palais des dalles » only: the
 worlds of the islands keep « forward / turn round » until the owner asks, because every walk of their lessons steers
 with it and would have to be re-run.
+
+**The other way to read the keys of a free view — `turnKeys()`** (2026-11-24, carried from the Algerian platform with
+commit `784f483a`; there the owner said of the clock « when I press right he goes left » and « one click turns him by
+5° »). A world whose `turnKeys()` returns `{ step, rate, delay }` (degrees, degrees a second, seconds) gets HIS OWN
+facing instead of the world's clock: ← → TURN him — one press (a key, or the touch stick pushed aside) turns him by
+exactly `step` degrees at once, a key held keeps turning at `rate` after `delay` seconds and, let go, he rests on the
+nearest step (a tap never overshoots) —, ↑ walks him forward along where he faces, ↓ back (at 0,6 of the pace). The
+lens stands behind him and turns with him, so right on screen is always his right. Pure part: `kit/steer.js` —
+`steerAngle(twelve, ax)` (the clock, the default), `onStep(a, step)`, `turnStep(t, x, dt, turn)` — tested in
+`kit/steer.test.js`. The default `null` keeps the clock of « Le palais des dalles » unchanged. Why the clock can betray
+him: its twelve is the WORLD's heading — once the lens has swung round behind him (he walked back, or a framing turned
+it), → still means the world's three o'clock, which is then his left. No French world returns a `turnKeys()` yet: its
+first user, the « Les pyramides » world (5° a press), is **Planned**.
 
 **The building yard — the root's own gesture** (`terrace.yard = { crates: ['9', '25'] }`, owner 2026-11-21 after a
 brainstorm): on a court he picks a LENGTH and the world answers an area (that is squaring); the yard goes the other way.
@@ -433,6 +468,33 @@ is a kit part since 2026-11-21: it names no world and no lesson. A world owns on
 content: `{ levels, gates, round(level, random, n) → { ask, tex?, options × 3, right, why × 3 }, total?, text }`.
 Without `total` the run ends with the last heart; with `total` it is a COURSE that ends after that many gates
 (`won`). A gate that was not the right one shows a FACT (`why`), never « wrong ».
+
+**Two options of the run** (2026-11-24, carried from the Algerian platform with commit `784f483a`; `kit/GateRun.js`
+lists them at its top). A world that passes neither keeps the rail of light and its rules unchanged
+(`kit/gateRun.test.js` pins the scene and two scripted runs by fingerprints taken before the options; `rootCourts`
+passes none, `divisorIsles` has its own rail):
+
+- `skin: { name, track(), rider(), gate(lane), lanes?, labelY?, bob?, lead?, camera?: { back, up, ahead, look } }` — the
+  WORLD's meshes in place of the rail, the hoverboard and the arches. `track().userData.flow(step, dt)` scrolls what
+  passes by and `userData.tick(dt, t)` animates; `rider()` is built along +z, its origin where the hero stands,
+  `userData.deck` the height of his feet; `gate(lane).userData.dress(state)` gets `'idle' | 'taken' | 'picked' | 'right'
+  | 'other'`. `lanes` is the spacing (2.5 on the rail), `labelY` the height of the numbers (4.3), `bob` the swell of the
+  rider, `lead` how far ahead a gate and an obstacle are DRAWN when they reach him (a prow meets its buoy; 0 on the rail;
+  the judging does not move). The HUD gets `gr-run--<name>` and `data-gr-skin` (`GateRunHud.jsx`).
+- `hazards: { mesh(), every?: 1, cost?: 1, react?: 0.9 }` — one obstacle in one lane, HALFWAY between two gates
+  (`hazardPlan`): any lane, the right one included (where it sits says nothing of the answer), never closer than `react`
+  seconds to a gate, none if the speed forbids it. In his lane it costs `cost` hearts and shakes the rider
+  (`game.shake`); the gate and its question never change; the last heart ends the run as lost, and « again » restarts
+  the leg. `state.run` carries `hazard` (its lane, null once passed) and `bumps`; the HUD shows them as
+  `data-gr-hazard` / `data-gr-bumps`, shakes the hearts and shows `text.bump` if the lesson gives it.
+- `railSpeed(level, score)` is exported: the rail's own pace, for a world that sets its own pace for one kind of run
+  only.
+- For a walk, in development: `window.__gateRun` → `{ skin, lane, hearts, bumps, speed, gate: { n, dx, s }, hazard:
+  { lane, dx, s } }` (metres and seconds ahead of him — never the right gate). The walk library plays it in
+  `e2e/lib/lessonWalk/gateRun.mjs` (§5).
+
+No French world passes `skin` or `hazards` yet. Their first user — the felucca of « Les pyramides » on its river, with
+crocodiles (`riverRun()`) — is **Planned**: it crosses with that world.
 **Not yet migrated:** the endless run of `missionIsle/Game.js` (« the number race » of the Algerian lesson) still carries its own copy of this engine (the kit's was
 extracted from it, line for line); it moves to the kit when the owner says so. `divisorIsles/Game.js` has the first run.
 
@@ -536,7 +598,7 @@ subject, blue for what the student writes, RED for the corrector and never befor
 
 | Phase | What the student has | What he does NOT have |
 |---|---|---|
-| `read` — reading time | the whole subject (the bank's sheets, each with its statement, formulas, table and numbered steps « 2) b) »); a tap underlines a word or a number in pencil | any answer box |
+| `read` — reading time | the whole subject (the bank's sheets, each with its statement, formulas, table, FIGURE and numbered steps « 2) b) »); a tap underlines a word or a number in pencil | any answer box |
 | `sit` — the sitting | the subject on one side, the answer sheet on the other (one sheet per page, never a screen back; every page stays mounted, hidden when not on screen, so a box keeps what he typed); each step answered in the practice space's OWN widget for its `answerType` — `choice` → `ChoiceInput`, `rational` → `TemplateInput` (the answer templates, `templateFor`), `integerSet` → `IntegerSetInput`, `factorization` → `FactorizationInput` (the practice space's own field, exponents raised; it sends `{ value: <LaTeX>, latex }` and the copy handed back writes it as a formula — until 2026-11-23 it drew `TemplateInput`; `kit/examSittingField.render.test.jsx`); a `selfCheck` step (« Montrer que ») has no box: « À rédiger sur ta copie seulement »; a flag « J’y reviendrai »; a quiet pace line; one notice at the last minute; « Je rends ma copie » asks once; **« Quitter »** in the header (reading time and sitting; owner, 2026-11-17) leaves after ONE confirmation (« Quitter le brevet blanc ? » — « Je continue » / « Oui, je quitte »): nothing is marked, no evidence is sent, the ladder does not move, and the same level opens again on a new sheet (`Game.js › quitSitting`); **a forgotten exercise is shown first** (owner, 2026-11-16): if an exercise that is not on screen has NO box filled at all, the first « Je rends ma copie » turns the answer sheet to it and names it (`EXAM.forgotOne`: « Attention : rien n’est écrit pour “Exercice 2”. Le voici. » + « Je continue ») — once per sitting; the next « Je rends ma copie » is accepted, exercises empty or not (`sitting.js › forgotten`, `answered`). It says only « empty », never right or wrong; the time-out hand-in is not delayed by it | any verdict: no tick, no mark, no red, no hint, no sound |
 | `back` — the copy handed back | the total in a red circle and an appreciation; a red mark per question (✓ ½ ✗, « Pas de réponse », ✎ for a step written on paper); for a question: the scheme to tick against his own paper, then « Guide-moi » (the bank's HINTS — never the answer — and back to the paper) or « Explique-moi » (the bank's model solution, its lines and its boxed result); « Mon carnet de révision »: one line to write by hand per rule that lost points | — |
 
@@ -564,6 +626,19 @@ subject, blue for what the student writes, RED for the corrector and never befor
   count evidence whatever happen »): a sheet sat again — after a blank copy, after reading its model solution — is drawn and
   sent like the first time (the draw only leaves out the sheets of the last miss while the level has others, as before);
   opening a sitting and quitting costs nothing (nothing is recorded, marked or sent). `kit/sittingSat.test.js` checks both.
+- **A sheet's figure is drawn** (2026-11-24, carried from the Algerian platform with commit `784f483a`):
+  `statement.figure` (`bankSitting.js › fromBank` keeps it as `figure`, its letters and lengths never rewritten) is drawn
+  by the practice space's own renderer, `components/StatementFigure.jsx` (the switch on `kind` that `ExerciseStatement`
+  and `ExamSheet` use — never a second drawing), on the paper of `read` and `sit` (`ExamSitting.jsx › SheetFigure`,
+  `data-xs-figure=<kind>`): floated at the paper's inline end (the right) with the statement and its steps beside it — at
+  reading time too; ONE sheet with a figure at reading time takes the whole paper (`examSitting.css`). Its width is its
+  practice width (`maxWidth`, GeoFigure's 360, 540 on squared paper), never less than the width at which its smallest
+  label reads 12 px however far the paper is zoomed to fit (`kit/sheetFigure.js`: a plane figure's viewBox width ÷ its
+  smallest label size — 13 for a length, 12 for an angle, 10 for an axis tick — × the 12 px floor `--di-min-font`; the
+  other kinds keep their natural width). Tests: `kit/examSitting.render.test.jsx` (a figure drawn, its floor; no box
+  without one) and `kit/bankDisplay.test.js`, which draws every figure of every v2 lesson's bank and checks each against
+  `validateStatementFigure` and the 12 px floor (a bank without figures passes with nothing to check — today's French
+  banks).
 - **An answer sheet too long for its box is shown in LEAVES, never cut, never scrolled** (2026-11-20; `kit/ExamSittingLeaves.jsx`,
   logic `kit/sheetLeaves.js`). The answer sheet is a `Fit` with the 12 px floor; when it reaches Fit's smallest scale
   (`min`) and is STILL taller than its box, Fit says so (`onShort`) and the answers are measured and split into leaves at a
@@ -648,7 +723,9 @@ felt BETWEEN two levels of the exam, never inside a sitting.
   A level is passed at **80 %** of its points (`PASS`); stars: 1 from 80 %, 2 from 90 %, 3 for a full paper. A passed level
   opens the next. Each sitting draws its sheets at random from the bank's level (ten sheets each).
 - **Adapted to the student** (`applySitting`, `weakKinds`): after a sheet under 80 %, what lost points is remembered for that
-  level — the rule KEYS of the lost steps (a step's savoir-faire → the key, `keysOfPoints`) and the sheets themselves (`ex:<id>`);
+  level — the rule KEYS of the lost steps (a step's savoir-faire → the key, `keysOfPoints`; when several keys prove one
+  savoir-faire it names the FIRST in the story's order, the key that forges it — since 2026-11-24, before which the last
+  one won) and the sheets themselves (`ex:<id>`);
   the next sheet of the level leaves out the sheets already missed while the level has others, and puts the sheets that ask
   the missed keys FIRST (`focus`). After two fails in a row the student is sent to train on the rule first (« Entraîne-toi d’abord »
   opens the card of the first missed key: `cards.ofExercise[w] ?? cards.ofKey[w]`).
@@ -973,10 +1050,33 @@ predictions (§2ter-1 « A situation lived on the islands ») — opens directly
   (`khawass-qawasim › noPredictions`, its four forges) and leaves the words of that step (`text.ask`, `fact`, `next`)
   unwritten. (Other v2 lessons still return cases there; on a forge that opens on an experiment the kit has no
   « Prédis » phase, so they are computed and never shown.)
-- **Known limit of the kit — the last step (`use`) asks ONE verdict**: besides the typed boxes of `use.lines`, `use.verdict`
-  is a single yes / no (`data-rf-use-verdict`, `RuleForge.jsx`), and `check(case, values, verdict)` receives one boolean. A
-  last step that needs two separate judgements (or a choice among more than two) cannot be written yet: the lesson
-  folds it into boxes, or the kit must grow first.
+- **The last step (`use`) asks ONE verdict** besides its lines: `use.verdict` is a single yes / no
+  (`data-rf-use-verdict`, `RuleForge.jsx`), and `check(case, values, verdict)` receives one boolean. Since 2026-11-24
+  (carried from the Algerian platform with commit `784f483a`) any other judgement is a CHOICE token of a line (below),
+  as many as the step needs.
+- **The last step may draw its figure** (2026-11-24, optional): a world whose `parts` carry `UseFigure({ c })` gets it
+  drawn beside the step (`.rf-usewith`: one column — the question, the lines, the buttons, the feedback — and the figure,
+  `data-rf-use-figure`); `c` is `forge.use.figure(case)` when the lesson gives it, else the case `use.make()` gave. A
+  world without that part draws the step as before. No French world gives `UseFigure` yet (**Planned**, with « Les
+  pyramides »).
+- **The tokens of a `use` line** (2026-11-24; built by `authoring/forgeBlocks.js`, drawn by `RuleForge.jsx › UseLines`;
+  `check` receives `{ [name]: text }`):
+
+  | Token | Built with | Drawn | Hooks |
+  |---|---|---|---|
+  | a printed string | `'='`, `'AB'` | `<b>` | — |
+  | a box, digits only | `slot(name, label, w)` | `<input inputMode="numeric">`, w digits | `data-rf-use=<name>` |
+  | a DECIMAL box | `decimalBox(name, label, w = 5)` = `slot(name, label, w, { decimal: true })` | `<input inputMode="decimal">`: digits and ONE comma, a point typed becomes a comma, w characters with the comma (`forge.js › typedDecimal`) | `data-rf-use=<name>` + `data-rf-decimal` |
+  | a CHOICE | `choiceBox(name, label, options, { dir })` — options strings or `{ id, text }`, `dir` `'ltr'` by default | `kit/ChoiceToken.jsx`: a radio group of buttons all visible, click or arrows in reading order (→ forward on a left-to-right line), Home / End, Tab enters on the picked one; never inside a `<label>`; its value is the id picked | `data-kit-choice=<name>` (+ `data-kit-chosen=<id>`, '' while none), `data-kit-option=<id>`, `aria-checked` |
+  | a fraction | `fractionBox`, `givenFraction`, `ratioChoice(n, d, options, { dOptions })` (a ratio of segment names: a choice over a real bar over a choice, labelled « le numérateur » / « le dénominateur ») | stacked, `di-frac` | `data-rf-frac="n/d"` and its parts' hooks |
+
+  A decimal value is TEXT (« 57,5 »): the lesson reads it with `exact.js › read` / `tryRead`, never `Number` (NaN). A
+  box is answered under its `slot`, a choice under its `choice` (`forge.js › boxName`); `boxesOf(tokens)` lists both, a
+  fraction's parts in order. The look of a choice is `kit-choice` (`styles/trainer.css` — the one place; `ruleForge.css`
+  sizes it in cyan; ≥ 12 px). `describeForges` reads them: a choice's right value is one of its option ids and EVERY
+  other option must be refused with a sentence of `text.use`; a decimal answer is written `\d+(,\d+)?` and is made
+  wrong by + 100 exactly (« 157,5 »). Tests: `kit/choiceDecimal.render.test.jsx`. Walked by no walk yet; no French
+  lesson uses a decimal box or a choice yet.
 - **A fraction in the last step is typed in its own shape** (2026-11-20, lesson 8 `ikhtizal-kasr` first): a token
   `{ frac: { n, d } }` of a `use` line, each part a box `slot(…)` or a printed number — built with
   `authoring/forgeBlocks.js › fractionBox(n, d, { w, nw, dw })` (typed) and `givenFraction(n, d)` (printed; never
@@ -2049,11 +2149,16 @@ The code is in THREE places:
 | `Paper.jsx` | the paper mode: the gate, the sign, the long-division model sheet | — |
 | `Spaces.jsx` | `ExamLadder`, `Promotion`, `ProgressPage` (« Ma progression ») | `journey`, `sittings`, `rules`, `cards`, `evidence` |
 | `ExamSitting.jsx`, `examSitting.css` | the screen of « Brevet blanc » (§2quater): the bank's sheets, the practice widgets | `sittings` (from `createBankSittings`), `rules`, `keys`, `evidence` |
-| `Trainer.jsx` | the screen of « Entraîne-toi »: it draws a tap, a true / false, or a FORM the lesson describes | `trainer` |
+| `Trainer.jsx` | the screen of « Entraîne-toi »: it draws a tap, a true / false, or a FORM the lesson describes — and a question's `figure` beside or above it (`QuestionFigure`) | `trainer` |
+| `trainerFigure.js` (+ `trainerFigure.render.test.jsx`) | the width of a trainer question's figure: its 12 px floor, its natural width, the room at 1366 × 768 (`fits`, `fitsAbove`) | `q.figure` |
+| `sheetFigure.js` | the width of a bank sheet's figure on the sitting's paper (`natural`, `k`): the 12 px rule the trainer and the class board reuse | `statement.figure` |
 | `KnowledgePage.jsx` | the full-page « Fiche de connaissances » | `knowledge`: `{ graph, modules, positions }` |
 | `LessonWorld.jsx` | **the shell**: the canvas, the top bar, the controls, the overlay switch; it mounts `<LessonProvider>` and creates the world's game | `world` (below) and the pack |
 | `Title.jsx`, `PracticeHub.jsx`, `Tablet.jsx`, `Result.jsx`, `End.jsx` | the title screen, the practice hub (the lesson's mind map as a level select), a rule tablet, the result of a level, the end | `ladder`, `journey`, `rules`, `keys`, `text`, `practiceMap` |
-| `claims.js` (+ test) | the kinds of claim a game answer can make and `verifyClaim` — the browser's copy of the server's `ClaimVerifier` (one fixture) | — |
+| `claims.js` (+ test) | the kinds of claim a game answer can make and `verifyClaim` — the browser's copy of the server's `ClaimVerifier` (one fixture; the kinds are listed in `LESSON_V2.md` §1bis, the last one `scale`); `scaleClaim` builds a `scale` claim from decimal lengths | — |
+| `ChoiceToken.jsx` | a CHOICE inside a written answer: a radio group of buttons (the forge's last step, the trainer's form); `choiceStep` its keys | — |
+| `exact.js` (+ test) | THE KIT'S EXACT NUMBERS (2026-11-24): `{ n, d }` of BigInt, reduced — `of`, `read` (« 77,5 », « 77.5 », `7{,}5`, « 5/6 », `\dfrac{5}{6}`, « −9 »; throws otherwise), `tryRead` (null), `compare`, `equal`, `plus`, `minus`, `times`, `over`, `square`, `magnitude`, `isInteger`, `isDecimal`, `write` (« 77,5 », or « 5/6 » when no finite decimal), `tex` (`77{,}5`, `\dfrac{5}{6}`), `fourth(a, b, c)` (the x of a/b = c/x); `approx` for DRAWING only. Nothing compares floats. A world never imports another world: what was `rootCourts/logic.js`'s own lives here | — |
+| `steer.js` (+ test) | the keys of a free view, pure: `steerAngle` (the world's clock), `onStep`, `turnStep` (his own facing, `turnKeys()`) | — |
 | `forge.js`, `RuleForge.jsx`, `ruleForge.css` | « Forge ta règle »: the frame of a rule forge (pure) and its screen — predict, write the rule with tiles, the mirror tests and attacks it, seal, use (§2sexies) | `forges` (one description per key) and the world's `parts` |
 | `parts.jsx` | a formula, the toast, the robot's bubble, the touch stick, a card over the world, three stars, a box for a number | — |
 | `styles/` | eleven style sheets, one per screen (`world`, `practice`, `knowledge`, `cases`, `trainer`, `paper`, `steps`, `knowledgeJourney`, `fit`, `spaces`, `phone`), imported by `styles/index.js` **in the order of the cascade** — `fit.css` and `phone.css` override the others, so a new sheet takes its place in that list and is never imported from a screen. Classes `di-…` | — |
@@ -2114,6 +2219,8 @@ new world implements them and nothing else of the runtime:
 | `onStart()` | the story begins or resumes |
 | `stepPhase(phase, dt)`, `lanesLive(phase)`, `stepWorld(dt, phase)`, `robotPose(phase)` | a phase of its own (a run on a rail), its animations, how the robot holds itself |
 | `heading()`, `cameraShot(phase)`, `followsHero(phase)`, `fov()`, `skyTarget()` | the camera when it does not follow the robot, and the sky |
+| `freeLook()`, `steers()`, `turnKeys()` | a view that follows him in every direction; when his keys walk him; how they read — `null` (default) the world's clock, or `{ step, rate, delay }` his own facing (`kit/steer.js`, §2ter-3) |
+| `sunDir()`, `shadowBox()`, `fogRange()` | the LIGHT (2026-11-24): the unit vector towards the sun (default: the fixed sun of every world before, at +22, 38, +16 from the robot); `{ half, near, far, distance, at? }` the box of the sun's shadow map, how far the sun stands from its target and that target (default ±26 around the robot); `[near, far]` of the fog (default `[70, 300]`) — the camera sees twice as far, never under 1200. Read every frame (`applyLight`); a changed box re-fits the shadow camera. A slow machine drops the shadow MAP only (`adaptQuality`): a shadow that carries mathematics is drawn by the world as a mesh of its own. No French world overrides them yet (`kit/worldLight.test.js`) |
 | `busy()`, `pausesWorld(page)` | may the hub open now; does this full-screen page hide the world |
 
 The runtime gives a world: `this.scene`, `this.hero`, `this.robot`, `this.input`, `this.audio`, `this.particles`,
@@ -2163,6 +2270,13 @@ A lesson declares its content in ONE `lesson.pack.js` (`LESSON_V2.md` §1, 2026-
 - a trainer question is a `tap` (`options`), a true / false (`statement`, `truth`, `reasons?`), or a `form` — lines of
   tokens: a string, `{ strong }`, `{ text }` (a legacy `rtl` flag is ignored), `{ num, label }`, `{ choice, options }`, `{ frac: { n, d } }` —
   `kit/trainer.js`, drawn by `kit/Trainer.jsx › FormLines`.
+  **A decimal box and a choice as buttons** (2026-11-24, carried from the Algerian platform with commit `784f483a`):
+  `{ num, label, decimal: true, w? }` takes digits and ONE comma (« 77,5 »; a point typed becomes a comma; w characters,
+  default 5; hooks `data-di-tr=<num>` + `data-di-tr-decimal`) — every box without `decimal` is unchanged (digits only,
+  `Num` w = 3). `{ choice, options, buttons: true }` draws the choice with `kit/ChoiceToken.jsx` (buttons all visible,
+  keyboard and click, left to right; hooks `data-kit-choice=<choice>`, `data-kit-option=<id or value>`) and sets the
+  option's `value` as the list does; without `buttons` the choice stays the `<select data-di-tr>` it always was (the
+  walks drive it with `selectOption`). Both may stand inside a `{ frac }`.
   **The fraction template** (2026-11-20, lesson 8 `ikhtizal-kasr` first): ONE token `{ frac: { n, d } }`, `n` and `d`
   each a box `{ num, label }` (typed) or a printed number / string (a fraction GIVEN by the statement — never `'66/78'`
   as text). It is drawn stacked: `span.di-frac` (`dir="ltr"`, `data-di-frac`, `di-frac--typed` when it holds boxes)
@@ -2225,7 +2339,15 @@ Unit tests: `npx vitest run src/lessons/common/gameworld` in `apps/web` (the kit
 world's pure logic and its render tests; every generated wave has exactly one right gate; every wrong gate has its
 guidance). Walks: none — the Algerian game walks (`gameworld-divisor-isles.mjs`, `gameworld-field.mjs`,
 `gameworld-practice.mjs`, `gameworld-sync.mjs`, the sitting and hub walks) were deleted with their lessons; the walk
-library stays (`e2e/lib/walk.mjs`, `e2e/lib/lessonWalk/`, `sittingWalk.mjs`, `launchKitTwoTools.mjs`). A lesson's walk
+library stays (`e2e/lib/walk.mjs`, `e2e/lib/lessonWalk/`, `sittingWalk.mjs`, `launchKitTwoTools.mjs`). Since
+2026-11-24 (commit `784f483a`): the kit's rail is played for EVERY world by `e2e/lib/lessonWalk/gateRun.mjs`
+(`playRail` — each gate judged by the descriptor's arithmetic from what the rail shows, one taken wrong on purpose, an
+obstacle `window.__gateRun.hazard` in the gate's lane left before it is met and the lane taken back after it — and
+`railPractice`, the hub's practice level; moved out of `worlds/rootCourts.mjs`; its `README.md` lists what else the
+library learned there), and `walk.mjs › tinyText` / `fontFloor` measure an SVG text ON SCREEN — its font size × its
+drawing's scale (its box in user units against its box in pixels: the viewBox stretched, every transform), not the
+CSS zooms alone (a figure drawn wider than its viewBox read 6.9 px for a label of 12; a thumbnail passed at 3 px). The
+walk players of « Les pyramides » (`worlds/nilePyramids.mjs`, its experiments) are **Planned**. A lesson's walk
 plays its whole world as a simulated student at 1366×768, checks that a reload offers the save, that a module address
 lands on the world, and that a TEACHER never gets the world.
 

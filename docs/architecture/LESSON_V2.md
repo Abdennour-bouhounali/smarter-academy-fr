@@ -93,7 +93,7 @@ The server holds no code of a lesson's game. An answer that counts toward a lear
 numbers of the question and what the student wrote) to `POST /lessons/{code}/game-evidence`, and
 `Domain/GameWorld/ClaimVerifier.php` re-computes its verdict from the numbers alone. The kinds of claim (`division`,
 `product`, `phrase`, `sure`, `containers`, `pair`, `divisors`, `stop`, `divisible`, `bracket`, `fullNeeded`, `pgcd`,
-`coprime`, `commonDivisor`, `fraction`, `factorization`, `prime`) are statements about natural numbers — they belong to no lesson. Each states the
+`coprime`, `commonDivisor`, `fraction`, `factorization`, `prime`, `scale`) are statements about natural numbers — they belong to no lesson. Each states the
 WHOLE answer (e.g. `bracket`: b × lo ≤ a < b × hi with hi = lo + 1; `fullNeeded`: full = ⌊a ÷ b⌋ and need = ⌈a ÷ b⌉;
 `pgcd`: g = PGCD(a ; b), a and b not both 0; `coprime`: `says` = (PGCD = 1); `commonDivisor`: d ≥ 1 divides a and b —
 with the option `notOne: true`, d ≥ 2; `fraction` (a/b given, p/q written): a × q = p × b, b and q > 0, and
@@ -103,7 +103,16 @@ from `bracket` on admit only naturals ≤ 10^6 on both sides. `factorization` (2
 2 ≤ a ≤ 10^6, every p prime, the p strictly INCREASING (each prime once), every e ≥ 1 (≤ 20), product = a — the
 decomposition written with its powers; `prime`: `{a, says}`, `says` = (a is prime; 0 and 1 are not). These two carry ONE
 number: `GameEvidenceController` requires `claim.b` for every kind except `ClaimVerifier::SINGLE` (`factorization`,
-`prime`). `phrase` (`{a, b, first, phrase}`) names its four sentences by French-neutral ids since 2026-11-23:
+`prime`). `scale` (2026-11-24, carried from the Algerian platform with commit `784f483a`, the Thalès keys): the
+lengths of triangle (1) `from` and their partners in (2) `to` (1 to 6 pairs, naturals ≥ 1 and ≤ 10^6 in ONE unit for the
+claim — a decimal length is sent in a smaller unit, 42,5 and 68 as 85 and 136 halves: `kit/claims.js › scaleClaim`
+reads « 42,5 » exactly with `kit/exact.js` and does it), and the student's k = p/q (p, q > 0, any equal writing):
+from[i] × p = to[i] × q for EVERY pair; with `says` (`'enlargement'` | `'reduction'`) his word must be the one k gives
+(k > 1 an enlargement, k < 1 a reduction, k = 1 neither — a present `says` that is null or another string is false). A
+ratio or a fourth proportional is the `fraction` kind, not a new one. A `scale` claim carries no `a` / `b`:
+`GameEvidenceController` requires `claim.a` unless the kind is `scale`, does not require `claim.b` for it, and requires
+`claim.from` and `claim.to` (arrays, at most 6); its item (`ClaimVerifier::itemId`) is its first pair of partner
+lengths. No French lesson sends a `scale` claim yet. `phrase` (`{a, b, first, phrase}`) names its four sentences by French-neutral ids since 2026-11-23:
 `diviseur` (« est un diviseur de ») and `divise` (« divise ») put the divisor first, `multiple` (« est un multiple de »)
 and `divisible` (« est divisible par ») the multiple; an old Arabic id is false on both sides.
 

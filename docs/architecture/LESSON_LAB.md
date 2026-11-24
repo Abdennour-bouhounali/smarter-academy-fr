@@ -111,6 +111,20 @@ returns the quests the state has just proved. Nothing is ticked before the stude
 
 ### The instruments (the fifteen Algerian ones untagged; `factor` tagged)
 
+**`rope` « La corde et le triangle » — its mathematics crossed, the instrument is Planned** (2026-11-24, commit
+`784f483a`). On the Algerian platform it is the first instrument drawn by `GeoFigure`: a triangle ABC whose sides from A
+are knotted ropes AB = a and AC = b (whole metres, 2 to 30), a knot M on [AB] and a knot N on [AC] moved by the hand; the
+knots stand on one line exactly when (MN) ∥ (BC). What is in this tree: `logic.js › ropeOf(a, b, m, n)` → `{ am, mb,
+an, nc, aligned }` (`aligned` ⇔ m × b = n × a, integers only), `QUESTS.rope` (`align`: a parallel cut on two ropes of
+different lengths; `two`: two different parallel cuts on one triangle; `big`: a parallel cut with both ropes above
+20 m) and its `observe` case (reported only after a knot moved, `moved`, with `found` the values of m already cut),
+and the `.ll-rope` styles. `lab.test.js` proves the law for every triangle it can show (PGCD(a ; b) − 1 parallel cuts on
+whole knots) and keeps the lesson's words (« Thalès », « papillon », « coefficient », « proportion », « agrandissement »,
+« réduction », « rapport », a fraction, « faux ») off its quests. NOT in this tree: the instrument `tools/RopeTriangle.jsx`
+and its tile in `registry.js` — it draws its triangle with the « Les pyramides » world's figure spec and crosses with
+that world.
+
+
 | id | The hand holds | What is read |
 |---|---|---|
 | `rows` | the wall (the divisor) | a counters in rows of b: full rows, counters left over, `a = b × q + r` |
