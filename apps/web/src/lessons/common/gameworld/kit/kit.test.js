@@ -424,6 +424,19 @@ describe('kit/bankSitting — a toy bank, served as it is', () => {
     const evidence = createEvidence({ grade: 'g', points: { tens: 'P1', odd: 'P2' } });
     expect(keysOfPoints('toy', { keys: ['tens', 'odd'], evidence })).toEqual(keyOf);
   });
+
+  it('keysOfPoints: two keys on one savoir-faire — the code names the FIRST key, the one that forges it', () => {
+    const evidence = createEvidence({ grade: 'g', points: { a: 'P1', b: 'P2', c: 'P2', d: 'P3', e: null } });
+    expect(keysOfPoints('toy', { keys: ['a', 'b', 'c', 'd', 'e'], evidence })).toEqual({
+      g_toy_P1: 'a',
+      g_toy_P2: 'b',
+      g_toy_P3: 'd',
+    });
+    // the order of the story decides, not the order of the points
+    expect(keysOfPoints('toy', { keys: ['c', 'b'], evidence })).toEqual({ g_toy_P2: 'c' });
+    expect(keysOfPoints('toy', {})).toEqual({});
+    expect(keysOfPoints('toy', { keys: ['a'] })).toEqual({});
+  });
 });
 
 describe('kit/journey — with a toy lesson', () => {

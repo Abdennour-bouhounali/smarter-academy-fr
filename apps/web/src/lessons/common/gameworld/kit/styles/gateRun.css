@@ -145,3 +145,68 @@
   unicode-bidi: isolate;
   direction: ltr;
 }
+/*
+ * The river skin (`GateRun` option `skin.name = 'river'`, K-b): each number is a navy tag over its buoy — 2.4rem at the
+ * front, never under 0.65 of it far away (about 25 px at 1366×768, over the 18 px floor).
+ */
+.gr-run--river .gr-gate {
+  padding: 0.05em 0.55em;
+  border-radius: 0.6em;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: rgba(15, 33, 71, 0.88);
+  font-size: 2.4rem;
+  text-shadow: none;
+  box-shadow: 0 4px 14px rgba(5, 14, 36, 0.45);
+}
+.gr-run--river .gr-gate.is-right {
+  border-color: #6ef3a5;
+}
+.gr-run--river .gr-gate.is-other {
+  border-color: #fcd34d;
+}
+/* an obstacle touched: the hearts shake once, and the lesson's line (`text.bump`) fades under the order */
+.gr-hearts--bump {
+  animation: gr-shake 0.6s ease-out;
+}
+@keyframes gr-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+.gr-bump {
+  position: absolute;
+  top: 14.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(127, 29, 29, 0.85);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  animation: gr-fade 1.8s ease-out forwards;
+}
+@keyframes gr-fade {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gr-hearts--bump,
+  .gr-bump {
+    animation: none;
+  }
+}

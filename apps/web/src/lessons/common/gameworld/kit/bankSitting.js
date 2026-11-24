@@ -135,6 +135,8 @@ function fromBank(ex, i, keyOf = {}) {
     minutes: ex.metadata?.estimatedMinutes ?? 5,
     statement: shown(ex.statement?.content ?? ''),
     formulas: (ex.statement?.formulas ?? []).map(shown),
+    // the figure as the bank draws it (the practice space's StatementFigure): its letters and lengths are never rewritten
+    figure: ex.statement?.figure ?? null,
     table: ex.statement?.table
       ? {
           ...ex.statement.table,
@@ -398,8 +400,18 @@ export function createBankSittings({ lesson, levels = BANK_LEVELS, load = loadFr
   };
 }
 
-/** The rule key of each savoir-faire code of a lesson, from its pack (`keys` and `evidence.learningPointOf`). */
-export const keysOfPoints = (lessonCode, { keys = [], evidence } = {}) =>
-  Object.fromEntries(
-    keys.map((k) => [evidence?.learningPointOf?.(lessonCode, k), k]).filter(([code]) => Boolean(code)),
-  );
+/**
+ * The rule key of each savoir-faire code of a lesson, from its pack (`keys` and `evidence.learningPointOf`). When several
+ * keys prove the same savoir-faire, the code names the FIRST of them in the order of the story — the key that forges it
+ * (2026-11-24, on the Algerian platform: a lesson whose two keys both prove P2 reviews a P2 sheet on the first key's
+ * card); until then the last one won. The question's key decides the card a missed sheet opens (`weakKinds` →
+ * `lesson.cards.ofKey`).
+ */
+export function keysOfPoints(lessonCode, { keys = [], evidence } = {}) {
+  const out = {};
+  for (const k of keys) {
+    const code = evidence?.learningPointOf?.(lessonCode, k);
+    if (code && !(code in out)) out[code] = k;
+  }
+  return out;
+}

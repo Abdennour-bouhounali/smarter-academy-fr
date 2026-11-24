@@ -8,7 +8,8 @@
   background: #fffdf6;
   color: #1e293b;
   border: 1.5px solid #1e293b;
-  font-size: 0.9rem; /* 12 px or more also when a full sheet is fitted ×0.96 at 1024×768 (2026-11-19) */
+  /* the 12 px floor of a fitted panel (Fit › --di-min-font: « Entraîne-toi » with a figure, 2026-11-24) */
+  font-size: max(var(--di-min-font, 12px), 0.9rem);
   font-weight: 800;
   white-space: nowrap;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);

@@ -120,10 +120,18 @@ export default function ClassSessionPage() {
   const script = usePackPart(lessonId, 'script');
   const world = usePackPart(lessonId, 'world'); // the lesson's own rule tablets: one wording for his world and for the board
   if (script === undefined || world === undefined) return <ClassSessionSkeleton />;
-  return <ClassSession key={lessonId} lessonId={lessonId} script={script} rules={world?.rules ?? {}} />;
+  return (
+    <ClassSession
+      key={lessonId}
+      lessonId={lessonId}
+      script={script}
+      rules={world?.rules ?? {}}
+      askWorld={world?.boardAsk}
+    />
+  );
 }
 
-function ClassSession({ lessonId, script, rules }) {
+function ClassSession({ lessonId, script, rules, askWorld }) {
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
   const { token } = useContext(AuthContext);
@@ -453,6 +461,7 @@ function ClassSession({ lessonId, script, rules }) {
             <LessonBoard
               script={script}
               rules={rules}
+              askWorld={askWorld}
               students={students}
               seating={seating}
               memo={memo}

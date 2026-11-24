@@ -25,6 +25,7 @@ import {
   courtSettled,
   pieceOf,
   closerPiece,
+  ropeOf,
   decText,
   hundredths,
   QUESTS,
@@ -391,6 +392,40 @@ describe('Mon labo — the mathematics the instruments draw', () => {
     expect(src).not.toMatch(/<img|\.png|\.jpg/);
   });
 
+  it('« La corde et le triangle »: its quests name no key of the lesson it will serve', () => {
+    // the instrument itself (tools/RopeTriangle.jsx, its tile in registry.js) draws its triangle with the pyramids
+    // world's figure spec: it comes with that world. Its mathematics (`ropeOf`) and its quests are here already.
+    // The words of the lesson's keys never stand on its quests — nor a ratio written, nor a verdict of error
+    const said = QUESTS.rope.map((q) => q.text).join(' ');
+    expect(said).not.toMatch(
+      /thalès|papillon|coefficient|proportion|agrandissement|réduction|rapport|\\frac|\\dfrac|\bfaux\b|fausse|erreur/i,
+    );
+    expect(said).not.toMatch(/[\u0600-\u06FF]/);
+  });
+
+  it('« La corde et le triangle »: the two knots stand on one line exactly when the cut is parallel — for every triangle it can show', () => {
+    let aligned = 0;
+    for (let a = 2; a <= 30; a += 1)
+      for (let b = 2; b <= 30; b += 1) {
+        let here = 0;
+        for (let m = 1; m < a; m += 1)
+          for (let n = 1; n < b; n += 1) {
+            const R = ropeOf(a, b, m, n);
+            expect([R.am, R.mb, R.an, R.nc]).toEqual([m, a - m, n, b - n]);
+            // the same place along the two ropes: m/a = n/b, compared as fractions — never as floats
+            expect(R.aligned).toBe(m * b === n * a);
+            if (R.aligned) here += 1;
+          }
+        // a parallel cut on whole knots exists exactly when the two ropes share a divisor bigger than 1 — then PGCD − 1 of them
+        expect(here).toBe(gcd(a, b) - 1);
+        aligned += here;
+      }
+    expect(aligned).toBeGreaterThan(500);
+    expect(ropeOf(12, 9, 8, 6).aligned).toBe(true);
+    expect(ropeOf(12, 9, 4, 8).aligned).toBe(false);
+    expect(ropeOf(13, 7, 6, 3).aligned).toBe(false); // nothing shared: no knot of AC answers a knot of AB
+  });
+
   it('pairs every divisor with its partner', () => {
     expect(divisorPairs(36)).toEqual([
       [1, 36],
@@ -466,6 +501,18 @@ describe('Mon labo — « Essaie »', () => {
     expect(observe('piece', { a: 2, b: 12, p: 17, moved: true }, new Set())).toEqual(['one', 'close']); // 1/144
     expect(observe('piece', { a: 3, b: 11, p: 19, moved: true }, new Set())).toEqual([]); // 361 − 363: 2/121
     expect(observe('piece', { a: 3, b: 12, p: 21, moved: true }, new Set())).toEqual([]); // 441 − 432: 9/144
+    expect(observe('rope', { a: 12, b: 9, m: 8, n: 6 }, new Set())).toEqual([]); // the hand never moved a knot
+    expect(observe('rope', { a: 12, b: 9, m: 4, n: 8, moved: true }, new Set())).toEqual([]); // not parallel
+    expect(observe('rope', { a: 12, b: 9, m: 8, n: 6, moved: true, found: [8] }, new Set())).toEqual(['align']);
+    expect(observe('rope', { a: 12, b: 9, m: 4, n: 3, moved: true, found: [8, 4] }, new Set())).toEqual([
+      'align',
+      'two',
+    ]);
+    expect(observe('rope', { a: 10, b: 10, m: 3, n: 3, moved: true, found: [3] }, new Set())).toEqual([]); // two equal ropes
+    expect(observe('rope', { a: 24, b: 22, m: 12, n: 11, moved: true, found: [12] }, new Set())).toEqual([
+      'align',
+      'big',
+    ]);
     expect(observe('court', { a: 399, b: 1, s: 20, moved: true, tried: [19, 20] }, new Set())).toEqual([
       'bracket',
       'most',

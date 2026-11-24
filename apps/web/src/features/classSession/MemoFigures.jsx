@@ -6,6 +6,8 @@
  * what is LEFT, green what fits exactly.
  */
 import { openingFacts } from './lessonMemos';
+import StatementFigure from '../../lessons/common/components/StatementFigure';
+import { sheetFigure } from '../../lessons/common/gameworld/kit/sheetFigure';
 import { approx } from '../../lessons/common/gameworld/rootCourts/logic';
 import { tiles, tileWord } from '../../lessons/common/gameworld/rootCourts/strings';
 import { cellsOf } from './lessonScripts';
@@ -311,8 +313,29 @@ function CourtFig({ o }) {
   );
 }
 
+/**
+ * A GEOMETRY opening: its `figure` is a bank sheet's `statement.figure` (plane: points, segments, parallels, lengths),
+ * drawn by the practice space's own StatementFigure — never a second renderer — at its practice width, never narrower
+ * than the width where its smallest label reads 12 px (`kit/sheetFigure.js`, the exam sitting's rule).
+ */
+function Geo({ o }) {
+  const f = sheetFigure(o.figure);
+  if (!f) return null;
+  return (
+    <div
+      className="mf mf--geo"
+      data-memo-figure={f.kind}
+      style={{ maxWidth: f.natural, minWidth: `calc(var(--di-min-font, 12px) * ${f.k})`, marginInline: 'auto' }}
+    >
+      <StatementFigure {...o.figure} maxWidth="100%" />
+    </div>
+  );
+}
+
 const KINDS = { bridge: Bridge, teams: Teams, shelves: Shelves, tiles: Tiles, court: CourtFig };
+/** The drawing of an opening: its own `figure` when it carries one (geometry), else the figure of its `kind`. */
 export default function MemoFigure({ opening }) {
+  if (opening.figure) return <Geo o={opening} />;
   const Figure = KINDS[opening.kind];
   return Figure ? <Figure o={opening} /> : null;
 }

@@ -51,7 +51,9 @@ export async function sittingPart(L, D, opts) {
     url: L.url,
     keys: L.lesson.keys,
     // the lesson's last island (a save beyond its road crashes the world)
-    stage: (L.lesson.story.islands ?? L.lesson.story.terraces).length - 1,
+    stage: L.lesson.story.legs
+      ? L.lesson.story.legs.length
+      : (L.lesson.story.islands ?? L.lesson.story.terraces).length - 1,
     uid: (D.uid ?? 9900) + 90,
     foreign: opts.foreign,
     foreignNumbers: opts.foreignNumbers,

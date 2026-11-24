@@ -72,7 +72,8 @@
   padding: 0 0.5rem;
   border-radius: 0.3rem;
   background: #fde68a;
-  font-size: 0.8rem;
+  /* the 12 px floor of the panel's zoom (Fit floor): 0.8rem read 11.2 px once a figure's panel was zoomed (the walk) */
+  font-size: max(var(--di-min-font, 12px), 0.8rem);
   margin-inline-end: 0.3rem;
 }
 .di-trainer__end {

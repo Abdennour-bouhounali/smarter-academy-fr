@@ -6,12 +6,15 @@
  * the verdict from the numbers alone; it never trusts the browser's. `verifyClaim` is the browser's copy of that rule: the
  * game uses it to show « Ma progression » at once.
  *
- * A claim kind belongs to no lesson: it is a statement about natural numbers that any lesson may use.
+ * A claim kind belongs to no lesson: it is a statement about natural numbers that any lesson may use (a decimal length is
+ * sent as a natural in a smaller unit: `scaleClaim`).
  * TO ADD A KIND (a lesson needs a statement none of these makes): write it HERE and in `ClaimVerifier.php` (`KINDS` and
  * `verify`), add rows that are true and rows that are false to the ONE fixture both sides read
  * (`apps/api/tests/Fixtures/game-claims.json`). `claims.test.js` fails when the two lists differ, when a kind has no row of
  * each verdict, or when the two sides disagree on a row.
  */
+import { read } from './exact';
+
 const natural = (x) => Number.isInteger(x) && x >= 0;
 /** The numbers admitted by the kinds below: naturals of school size, ≤ 10^6 — the server's `MAX` (no product overflows). */
 const MAX = 1000000;
@@ -141,6 +144,25 @@ const KINDS = {
   factorization: isFactorization,
   /** « a is prime » (`says: true`) or « a is not prime » (`says: false`) said rightly. */
   prime: (c) => n(c.a) && typeof c.says === 'boolean' && c.says === isPrime(c.a),
+  /** THE SCALE of two triangles in a Thalès position: every length of (1) `from[i]`, multiplied by k = p/q, gives its
+   * partner of (2) `to[i]` (from[i] × p = to[i] × q, for every pair — 1 to 6 pairs); any writing of k equal to it is
+   * accepted (85/136 for 5/8). The lengths are naturals in ONE unit for the whole claim: 42,5 and 68 are sent as 425 and
+   * 680 (tenths) or 85 and 136 (halves), which leaves k unchanged — `scaleClaim` below does it. With `says` ('enlargement' or 'reduction'), the
+   * student's word must be the one k gives: k > 1 an enlargement, k < 1 a reduction (k = 1 is neither). */
+  scale: (c) =>
+    Array.isArray(c.from) &&
+    Array.isArray(c.to) &&
+    c.from.length >= 1 &&
+    c.from.length <= 6 &&
+    c.from.length === c.to.length &&
+    [...c.from, ...c.to].every((x) => n(x) && x > 0) &&
+    n(c.p) &&
+    n(c.q) &&
+    c.p > 0 &&
+    c.q > 0 &&
+    c.from.every((x, i) => x * c.p === c.to[i] * c.q) &&
+    (c.says === undefined ||
+      (c.says !== null && c.says === (c.p > c.q ? 'enlargement' : c.p < c.q ? 'reduction' : null))),
 };
 
 export const CLAIM_KINDS = Object.keys(KINDS);
@@ -148,3 +170,33 @@ export const CLAIM_KINDS = Object.keys(KINDS);
 /** The verdict of a claim, from its numbers alone. An unknown kind is never right. */
 export const verifyClaim = (claim) =>
   Boolean(claim) && Object.hasOwn(KINDS, claim.kind) && Boolean(KINDS[claim.kind](claim));
+
+/**
+ * A `scale` claim from lengths as a student or a statement writes them (« 42,5 », '68', 2.75 — read EXACTLY by
+ * `exact.js › read`): every length is brought to ONE unit small enough that each is a natural (the smallest: 42,5 = 85/2
+ * makes it the half), and k is the student's p/q. `says` ('enlargement' | 'reduction') is his word, when he wrote one.
+ *   scaleClaim({ from: [68, 92], to: ['42,5', '57,5'], p: 5, q: 8, says: 'reduction' })
+ *     → { kind: 'scale', from: [136, 184], to: [85, 115], p: 5, q: 8, says: 'reduction' }
+ * Any exact number works (1/3 too: the unit is then a third). A length that is not a number (« abc », '') gives a claim
+ * that is never right (an empty `from`). p and q are numbers: a lesson turns the student's boxes into numbers first.
+ */
+export function scaleClaim({ from, to, p, q, says }) {
+  let lengths;
+  try {
+    lengths = [...from, ...to].map(read);
+  } catch {
+    lengths = null;
+  }
+  const unit = lengths?.reduce((m, x) => (m % x.d === 0n ? m : (m * x.d) / gcdBig(m, x.d)), 1n);
+  const whole = lengths?.map((x) => Number((x.n * unit) / x.d));
+  const ok = whole && whole.every(Number.isSafeInteger);
+  return {
+    kind: 'scale',
+    from: ok ? whole.slice(0, from.length) : [],
+    to: ok ? whole.slice(from.length) : [],
+    p,
+    q,
+    ...(says !== undefined ? { says } : {}),
+  };
+}
+const gcdBig = (a, b) => (b === 0n ? a : gcdBig(b, a % b));

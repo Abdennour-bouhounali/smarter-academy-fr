@@ -19,8 +19,9 @@
  *   tf    { kind: 'tf', statement, truth, reasons? }   the answer is { truth, reason? }
  *   a form — every other kind: { form: { tip, model?, single?, review?, lines } }
  *     lines   [{ ltr?, tokens }] — a token is a sign or a word (string), { strong: n } a number of the statement,
- *             { text } a word inside a line of numbers (a legacy `rtl` flag is ignored), { num: slot, label } a box to fill,
- *             { choice: slot, options: [{ value, text, id? }] } a word to choose
+ *             { text } a word inside a line of numbers (a legacy `rtl` flag is ignored), { num: slot, label } a box to fill
+ *             (whole number; `decimal: true` takes one comma, « 77,5 »), { choice: slot, options: [{ value, text, id? }] }
+ *             a word to choose (a list; `buttons: true` shows the options as buttons), { frac: { n, d } } a fraction of these
  *     the answer is { [slot]: value }, or the value of ONE slot when `single` names it
  *     tip     which advice the paper gate gives (`tipDivision`, `tipWrite` of Paper.jsx › PT)
  *     model   { a, b }: a long division the paper model can pose — a twin before the answer, itself after

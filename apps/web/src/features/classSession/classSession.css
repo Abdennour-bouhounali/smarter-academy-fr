@@ -1968,6 +1968,47 @@
   gap: 0.55rem;
   min-height: 0;
 }
+.cs-askstep__body {
+  display: contents;
+}
+/* an `ask` that carries its FIGURE (`step.figure`, the practice space's StatementFigure): the figure at the inline end, at
+   the width where its smallest label reads 18 px at 1366 × 768 (`--cs-fig-w`, boardFigure.js), the question and its
+   cards beside it. Nothing is drawn under a card but its verdict. */
+.cs-askstep.cs-askstep--figure {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--cs-fig-w);
+  gap: 1.1rem;
+}
+.cs-askstep--figure .cs-askstep__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+  min-height: 0;
+}
+.cs-askfig {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  width: var(--cs-fig-w);
+}
+.cs-askfig figure {
+  margin: 0;
+}
+.cs-lesson .cs-askstep--figure .cs-say {
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+.cs-lesson .cs-askstep--figure .cs-quest {
+  font-size: 1.5rem;
+}
+.cs-askstep--figure .cs-plankcard b {
+  font-size: 3.2rem;
+}
+.cs-lesson .cs-askstep--figure .cs-after {
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
 .cs-lab {
   flex: 1;
   display: grid;

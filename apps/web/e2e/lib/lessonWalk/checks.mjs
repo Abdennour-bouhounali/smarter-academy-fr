@@ -140,9 +140,10 @@ export async function lastStepLayout(w, page, where) {
     const bad = [];
     lines.forEach((l, i) => {
       const r = l.getBoundingClientRect();
+      // a unit of a line: a typed fraction, a box, a choice among written options (kit/ChoiceToken.jsx) — each ONE
       const units = [
         ...l.querySelectorAll('[data-rf-frac]'),
-        ...[...l.querySelectorAll('[data-rf-use]')].filter((b) => !b.closest('[data-rf-frac]')),
+        ...[...l.querySelectorAll('[data-rf-use], [data-kit-choice]')].filter((b) => !b.closest('[data-rf-frac]')),
       ].map((b) => b.getBoundingClientRect());
       if (units.length && Math.max(...units.map((b) => b.top)) >= Math.min(...units.map((b) => b.bottom)))
         bad.push(`line ${i + 1}: its boxes wrap`);
@@ -150,14 +151,18 @@ export async function lastStepLayout(w, page, where) {
       const row = lines.filter((x) => Math.abs(x.getBoundingClientRect().top - r.top) < 3);
       const tall = row.flatMap((x) => [
         ...[...x.querySelectorAll('[data-rf-frac]')].map((b) => b.getBoundingClientRect().height),
-        ...[...x.querySelectorAll('[data-rf-use]')].map((b) => b.getBoundingClientRect().height),
+        ...[...x.querySelectorAll('[data-rf-use], [data-kit-choice]')].map((b) => b.getBoundingClientRect().height),
       ]);
       const bh = tall.length ? Math.max(...tall) : units.length ? Math.max(...units.map((b) => b.height)) : 30;
       if (r.height > bh * 1.9) bad.push(`line ${i + 1}: ${Math.round(r.height)} px tall (a box ${Math.round(bh)})`);
       if (r.right > root.right + 1 || r.left < root.left - 1 || r.bottom > root.bottom + 1)
         bad.push(`line ${i + 1} leaves the forge`);
     });
-    return { n: lines.length, boxes: lines.map((l) => l.querySelectorAll('[data-rf-use]').length), bad };
+    return {
+      n: lines.length,
+      boxes: lines.map((l) => l.querySelectorAll('[data-rf-use], [data-kit-choice]').length),
+      bad,
+    };
   });
   w.check(
     m.bad.length === 0,

@@ -236,7 +236,8 @@ export const attacksOf =
 
 // ───────────────────────── the last step: the rule decides, typed in its own shape ─────────────────────────
 
-/** A line of the last step: tokens (a string, or a box `slot(name, label, w)`), read left to right by default. */
+/** A line of the last step: tokens (a string, a box `slot(name, label, w)`, a `decimalBox`, a `choiceBox`, a fraction,
+ * a power), read left to right by default. */
 export const line = (tokens, dir = 'ltr') => ({ dir, tokens });
 /** « □ − □ = □ » — row i of the subtraction algorithm, typed whole. */
 export const subtractionRow = (i, w = 3) =>
@@ -297,8 +298,38 @@ export const givenPower = (base, exp) => ({ pow: { base: String(base), exp: Stri
 /** The parts of a token that holds two (a fraction: numerator, denominator; a power: base, exponent), in reading order. */
 export const partsOf = (t) => (t?.frac ? [t.frac.n, t.frac.d] : t?.pow ? [t.pow.base, t.pow.exp] : null);
 /**
+ * A DECIMAL box: digits and ONE comma, « 77,5 » (a point typed is written as a comma). Its value reaches `check` as that
+ * text: read it with `exact.js › tryRead`, never `Number('77,5')` (NaN). `w` counts the comma.
+ *   line(['MN', '=', decimalBox('mn', 'MN')])   // MN = [57,5]
+ */
+export const decimalBox = (name, label, w = 5) => slot(name, label, w, { decimal: true });
+
+/**
+ * A CHOICE: pick one of a few written options (`kit/ChoiceToken.jsx` — buttons, keyboard and click). `options` are
+ * strings (each its own id) or { id, text }; the value `check` receives is the id picked. `dir` is the direction its
+ * options read in (left to right by default).
+ *   line([choiceBox('kind', 'la transformation', [{ id: 'small', text: 'réduction' }, { id: 'big', text: 'agrandissement' }])])
+ */
+export const choiceBox = (name, label, options, { dir = 'ltr' } = {}) => ({
+  choice: name,
+  label,
+  options: options.map((o) => (typeof o === 'string' ? { id: o, text: o } : o)),
+  dir,
+});
+/**
+ * A RATIO written with segment names: a fraction whose numerator and denominator are each a CHOICE among `options`
+ * (the same list for both unless `dOptions` is given).
+ *   line([ratioChoice('r1n', 'r1d', ['AM', 'AB', 'MB']), '=', ratioChoice('r2n', 'r2d', ['AN', 'AC', 'NC'])])
+ */
+export const ratioChoice = (n, d, options, { dOptions = options } = {}) => ({
+  frac: {
+    n: choiceBox(n, 'le numérateur', options),
+    d: choiceBox(d, 'le dénominateur', dOptions),
+  },
+});
+/**
  * The boxes of a line's tokens, in reading order — a fraction gives its numerator's box, then its denominator's; a power
- * its base's box, then its exponent's.
+ * its base's box, then its exponent's. A box is answered under `slot`, a choice under `choice` (`forge.js › boxName`).
  */
 export const boxesOf = (tokens) =>
   tokens.flatMap((t) => {

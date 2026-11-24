@@ -72,6 +72,43 @@ describe('the exam sitting — a bank sheet on its first screen', () => {
     expect(html).not.toContain('data-xs-field'); // reading time: nothing can be answered yet
   });
 
+  it("draws a sheet's FIGURE with the practice space's renderer, never narrower than its 12 px floor", async () => {
+    const figure = {
+      points: { A: [0, 0], B: [6, 0], C: [0, 4], M: [3, 0], N: [0, 2] },
+      segments: [['A', 'B'], ['A', 'C'], ['B', 'C'], { from: 'M', to: 'N', label: '2,5 cm' }],
+      ariaLabel: 'Triangle ABC, (MN) parallèle à (BC)',
+      maxWidth: 300,
+    };
+    const sheet = {
+      ...BANK[0],
+      id: 'ex-toy-l1-002',
+      statement: { content: 'Sur la figure ci-contre, (MN) // (BC).', figure },
+    };
+    const withFig = createBankSittings({ lesson: 'toy', load: async () => [sheet] });
+    await withFig.prepare();
+    const html = renderToString(
+      <LessonProvider lesson={{ ...lesson, sittings: withFig }}>
+        <ExamSitting game={game} level={1} />
+      </LessonProvider>,
+    );
+    expect(html).toContain('data-xs-figure="plane"');
+    expect(html).toContain('data-geo-figure'); // GeoFigure, through StatementFigure — the practice space's own drawing
+    expect(html).toContain('aria-label="Triangle ABC, (MN) parallèle à (BC)"');
+    expect(html).toContain('2,5 cm');
+    expect(html).toMatch(/--xs-fig-natural:300px;--xs-fig-k:\d+(\.\d+)?/);
+    // the figure stands beside the statement, inside the sheet of the bank
+    expect(html.indexOf('data-xs-figure')).toBeGreaterThan(html.indexOf('data-xs-bank="ex-toy-l1-002"'));
+  });
+
+  it('draws no figure box for a sheet without one', () => {
+    const html = renderToString(
+      <LessonProvider lesson={lesson}>
+        <ExamSitting game={game} level={1} />
+      </LessonProvider>,
+    );
+    expect(html).not.toContain('data-xs-figure');
+  });
+
   it('waits for the bank when it is not loaded yet', () => {
     const later = createBankSittings({ lesson: 'toy', load: () => new Promise(() => {}) });
     const html = renderToString(

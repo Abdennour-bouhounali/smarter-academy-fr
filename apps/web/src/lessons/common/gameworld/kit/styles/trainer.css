@@ -40,7 +40,8 @@
   gap: 0.35rem;
   padding: 0.15rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.9rem; /* 12 px or more also when a full sheet is fitted ×0.96 at 1024×768 (2026-11-19) */
+  /* the 12 px floor of a fitted panel (Fit › --di-min-font: « Entraîne-toi » with a figure, 2026-11-24) */
+  font-size: max(var(--di-min-font, 12px), 0.9rem);
   font-weight: 800;
 }
 .di-trainer__badge.is-game {
@@ -183,7 +184,7 @@
   border-radius: 0.3rem;
   background: #1e293b;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: max(var(--di-min-font, 12px), 0.9rem);
 }
 .di-sheet__statement {
   margin: 0;
@@ -288,6 +289,61 @@
   font-size: max(var(--di-min-font, 12px), 1rem);
   padding: 0 0.15rem;
 }
+/* ───────── a CHOICE inside a written answer (ChoiceToken.jsx): buttons all visible, one picked ─────────
+   THE ONE PLACE of this look in the kit (2026-11-24, K-c): the trainer's form (`{ choice, options, buttons: true }`) and the
+   forge's last step (`{ choice, label, options }`). The border follows the text (currentColor), so it reads on the white
+   sheet and on a dark panel; a screen sizes it and sets the picked colours. Never under 12 px. */
+.kit-choice {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+}
+.kit-choice > button {
+  min-height: 2.2rem;
+  padding: 0 0.7rem;
+  border: 2px solid currentColor;
+  border-radius: 0.55rem;
+  background: transparent;
+  color: inherit;
+  font:
+    800 max(var(--di-min-font, 12px), 1.05rem) 'Inter',
+    sans-serif;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0.78;
+}
+.kit-choice > button:hover:not(:disabled),
+.kit-choice > button:focus-visible {
+  opacity: 1;
+  outline: 3px solid rgba(251, 191, 36, 0.6);
+  outline-offset: 1px;
+}
+/* the picked one is filled: ink on the white sheet; a dark panel sets --kit-choice-on and --kit-choice-on-text */
+.kit-choice > button.is-on {
+  opacity: 1;
+  background: var(--kit-choice-on, #1e293b);
+  box-shadow: none;
+  border-color: var(--kit-choice-on, #1e293b);
+  color: var(--kit-choice-on-text, #fff);
+}
+.kit-choice > button:disabled {
+  cursor: default;
+}
+/* inside a fraction (a segment name over the bar): smaller, on one row */
+.di-frac .kit-choice {
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+}
+.di-frac .kit-choice > button {
+  min-height: 1.9rem;
+  padding: 0 0.4rem;
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+}
 .di-sheet__reasons {
   display: grid;
   gap: 0.3rem;
@@ -371,5 +427,41 @@
   color: inherit;
 }
 .di-trainer--done p {
+  margin: 0;
+}
+/* a question and its figure (Trainer.jsx › `di-tr-q`): the figure BESIDE the question (after it in reading order: on its right), so the panel's
+   height holds both at 1366 × 768 — never narrower than its floor, at most 44 % of the panel otherwise */
+.di-tr-q {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+.di-tr-q[data-di-tr-q='figure'] {
+  flex-direction: row;
+  align-items: center;
+}
+.di-tr-q[data-di-tr-q='figure'] > :not(.di-tr-figure) {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.di-tr-q[data-di-tr-q='figure'] > .di-tr-figure {
+  order: 2;
+  width: max(min(var(--tr-fig-w), 44%), calc(var(--di-min-font, 12px) * var(--tr-fig-k, 0) + 0.8rem));
+}
+/* a question's figure (`q.figure`, Trainer.jsx › QuestionFigure): above the question, centred; never narrower than its
+   12 px floor — k × --di-min-font, the floor in the units of every zoom above it (trainerFigure.js), PLUS its padding
+   (0.8rem): the drawing is the box less its padding, and was drawn 4 % under its floor (labels of 11.5 px, the walk) */
+.di-tr-figure {
+  align-self: center;
+  width: max(var(--tr-fig-w), calc(var(--di-min-font, 12px) * var(--tr-fig-k, 0) + 0.8rem));
+  max-width: none;
+  flex: none;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.9rem;
+  background: #fff;
+}
+.di-tr-figure figure,
+.di-tr-figure svg {
   margin: 0;
 }

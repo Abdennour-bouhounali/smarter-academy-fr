@@ -348,6 +348,17 @@ export function bracketOf(a, b, n) {
 }
 
 /**
+ * « La corde et le triangle » — a triangle ABC whose two sides from A are knotted ropes, AB = a and AC = b whole metres, and a cut
+ * [MN] whose two ends the hand ties on a knot: M at AM = m on [AB], N at AN = n on [AC] (0 < m < a, 0 < n < b). Each rope
+ * drawn at one common length, M stands at m/a of it and N at n/b: the two knots stand on one line exactly when
+ * m × b = n × a — and then, and only then, (MN) ∥ (BC). Integers only: `aligned` and the pieces `mb`, `nc`. (When a and b
+ * share nothing but 1, no whole pair of knots is aligned: the instrument says what it sees, never why.)
+ */
+export function ropeOf(a, b, m, n) {
+  return { am: m, mb: a - m, an: n, nc: b - n, aligned: m * b === n * a };
+}
+
+/**
  * « Essaie »: the small missions of each instrument. `seen` is the instrument's memory of what the student has already made
  * (a Set of facts written by `observe`); a quest is done when its fact is in it. Nothing here states a rule: a quest only
  * names something to MAKE; the instrument shows what happens.
@@ -443,6 +454,20 @@ export const QUESTS = {
       text: 'Encadre le côté d’une salle de plus de 150 dalles entre les côtés de deux carrés que tu as essayés.',
     },
     { id: 'most', text: 'Fais qu’il reste au moins 20 dalles hors du plus grand carré entier.' },
+  ],
+  rope: [
+    {
+      id: 'align',
+      text: 'Place les deux nœuds pour que le segment soit parallèle au troisième côté, avec deux cordes de longueurs différentes.',
+    },
+    {
+      id: 'two',
+      text: 'Dans un même triangle, trouve deux segments différents, tous deux parallèles au troisième côté.',
+    },
+    {
+      id: 'big',
+      text: 'Rends le segment parallèle au troisième côté dans un triangle dont chaque corde mesure plus de 20 m.',
+    },
   ],
   piece: [
     {
@@ -577,6 +602,14 @@ export function observe(tool, st, seen) {
       if (!C.perfect && a > 150 && courtSettled(a, tried)) put('bracket');
       if (C.left >= 20 && tried.includes(C.k)) put('most');
     }
+  } else if (tool === 'rope') {
+    // reported only after the hand moved a knot (`moved`), with the two knots `m`, `n` and the parallel cuts it made on
+    // this triangle (`found`: the values of m)
+    if (st.moved && Number.isInteger(st.m) && Number.isInteger(st.n) && ropeOf(a, b, st.m, st.n).aligned) {
+      if (a !== b) put('align');
+      if (new Set(st.found ?? []).size >= 2) put('two');
+      if (a > 20 && b > 20) put('big');
+    }
   } else if (tool === 'piece') {
     // reported only after the hand moved the rod (`moved`), with the numerator `p` it holds; b is the denominator
     if (st.moved && Number.isInteger(st.p) && st.p > 0) {
@@ -641,6 +674,11 @@ export function luckyPair(tool, rand = Math.random) {
       return { a: k * k, b: 1 };
     }
     return { a: int(12, ah), b: 1 };
+  }
+  if (tool.id === 'rope') {
+    // two ropes that share a divisor bigger than 1: a parallel cut exists on whole knots
+    const g = int(2, 6);
+    return { a: g * int(2, 5), b: g * int(2, 5) };
   }
   if (tool.id === 'piece') {
     // a court of more than one tile — a perfect square once in four draws — and a denominator from 2

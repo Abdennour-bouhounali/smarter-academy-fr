@@ -336,6 +336,24 @@
   font-size: max(var(--di-min-font, 12px), 1.1rem);
   white-space: nowrap;
 }
+/* The FIGURE of a sheet (`statement.figure`, drawn by the practice space's StatementFigure): beside the statement and its
+   steps, at the paper's inline end. Its width is its practice width, and never less than the width at which its smallest
+   label reads 12 px however far the paper is zoomed (`--xs-fig-k` × the 12 px floor — sheetFigure.js). */
+.xs-ex:has(> .xs-figure) {
+  display: flow-root;
+}
+.xs-figure {
+  float: inline-end;
+  width: max(var(--xs-fig-natural), calc(var(--di-min-font, 12px) * var(--xs-fig-k, 0)));
+  margin: 0 0 0.4rem;
+  margin-inline-start: 1.1rem;
+}
+.xs-figure figure {
+  margin: 0;
+}
+.xs-figure figcaption {
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+}
 .xs-lead {
   font-weight: 700;
 }
@@ -774,6 +792,13 @@
 }
 .xs-paper--read > .xs-cols--2 {
   grid-template-columns: 1fr 1.3fr;
+}
+/* ONE sheet with a FIGURE at reading time: the whole paper. The figure keeps its 12 px labels by its width in SCREEN pixels
+   (sheetFigure.js), so a column capped in CSS pixels (46rem) lost to it as the paper zoomed down: the text beside it wrapped
+   ever narrower, grew taller, the paper zoomed further and was cut at its minimum (l5-001 of talis-hisab-atwal, 2026-11-24).
+   Across the whole paper the text and the figure keep the same proportions at every zoom. */
+.xs-paper--read > .xs-cols--1:has(.xs-figure) {
+  grid-template-columns: minmax(0, 1fr);
 }
 .xs-cols--1 .xs-statement,
 .xs-cols--1 ol,

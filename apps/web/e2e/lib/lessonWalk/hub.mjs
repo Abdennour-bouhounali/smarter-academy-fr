@@ -108,7 +108,9 @@ export async function hubWalk(L, D, opts) {
     const practice = Object.fromEntries(KEYS.map((k) => [`${k}:1`, { stars: 2, best: 800 }]));
     const save = {
       v: 1,
-      stage: (L.lesson.story.segments ?? L.lesson.story.terraces).length - 1,
+      stage: L.lesson.story.legs
+        ? L.lesson.story.legs.length
+        : (L.lesson.story.segments ?? L.lesson.story.terraces).length - 1,
       stars: {},
       gems: [],
       keys: KEYS,

@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import MathText from '../../lessons/common/components/MathText';
 import { ArrowBack, ArrowForward } from '../../components/common/DirectionalIcons';
+import StatementFigure from '../../lessons/common/components/StatementFigure';
 
 // the lesson's game world (three.js): its own chunk, loaded only when a mission is opened on the board
 const LessonGameWorld = lazy(() => import('../../lessons/common/gameworld/LessonGameWorld'));
@@ -43,6 +44,7 @@ import {
 import { Court, CourtMini } from '../../lessons/common/gameworld/rootCourts/courtParts';
 import BoardBridge, { BridgeBar, buildMs } from './BoardBridge';
 import LadderStation from './LadderStation';
+import { boardFigure } from './boardFigure';
 import { ClassWindow, Speaker, BoardTools, BoardLayers, useBoardTools, BL } from './board';
 import { callName, teamsOf, teamOfStudent } from './session';
 import WorldLoading from '../../lessons/common/gameworld/WorldLoading';
@@ -61,6 +63,8 @@ import {
   FORMS,
   askRight,
   askWords,
+  askProof,
+  askHeld,
   courtCards,
   courtRodTex,
   courtShown,
@@ -139,8 +143,13 @@ const LL = {
   me: 'Je la lis moi-même',
   recall: 'Qui s’en souvient ?',
   check: 'On vérifie avec les ponts',
+  // a station proved by its FIGURE, or a world that draws nothing under its cards: never a bridge's word
+  checkFigure: 'On vérifie sur la figure',
+  checkPlain: 'On vérifie',
   askRight: 'La classe a trouvé.',
   askLook: 'Regardons les ponts.',
+  askLookFigure: 'Regardons la figure.',
+  askLookPlain: 'Regardons de plus près.',
   true: 'Vrai',
   false: 'Faux',
   copy: 'On recopie dans le cahier',
@@ -779,12 +788,62 @@ function Name({ step, memo, onPick, onMe, rules }) {
 }
 
 /**
- * One question, answered by the class and PROVED by bridges: every plank chosen or not is built in one line. A step whose
- * choices are not planks (bouquets, boxes…) names them with its own `words` ({ card, held, fell }); a missing word keeps
- * the board's default (« Planche », « Tient », « S’effondre »).
+ * One card of an `ask`: its label and its value; once checked, its verdict — under a bridge (`proof` 'bridge': the plank
+ * built over the gap in one line, and its equality) or alone (`proof` 'none': a station with its own figure, or a world
+ * that draws nothing under its cards).
  */
-function Ask({ step }) {
+export function AskCard({ step, option: o, proof, words, picked, checked, onPick }) {
+  const c = proof === 'bridge' ? outcome(step.a, o) : null;
+  const held = askHeld(step, o, proof);
+  return (
+    <button
+      type="button"
+      className={`cs-plankcard ${picked ? 'is-picked' : ''} ${checked ? (held ? 'is-held' : 'is-fell') : ''}`}
+      onClick={onPick}
+      aria-pressed={picked}
+      data-cs-ask-option={o}
+    >
+      <small>{words.card}</small>
+      <b dir="ltr">{o}</b>
+      {checked && (
+        <>
+          {c && <BridgeBar c={c} />}
+          {c && (
+            <span dir="ltr">
+              <MathText>{`$${equalityOf(c)}$`}</MathText>
+            </span>
+          )}
+          <em>{held ? words.held : words.fell}</em>
+        </>
+      )}
+    </button>
+  );
+}
+
+/**
+ * The FIGURE of a station (`step.figure`, a bank sheet's `statement.figure`), drawn by the practice space's own
+ * StatementFigure at the board's width: its smallest label 18 px or more at 1366 × 768 (`boardFigure.js`).
+ */
+function BoardFigure({ fig }) {
+  const f = boardFigure(fig);
+  if (!f) return null;
+  return (
+    <div className="cs-askfig" data-cs-figure={f.kind} style={{ '--cs-fig-w': `${f.width}px` }}>
+      <StatementFigure {...fig} maxWidth="100%" />
+    </div>
+  );
+}
+
+/**
+ * One question, answered by the class and PROVED: over bridges by default (every plank chosen or not is built in one
+ * line), by its own FIGURE when the station carries one (no bridge under its cards), or as the lesson's world says
+ * (`world` = its `boardAsk`, `lessonScripts.js › askProof`). A step whose choices are not planks (bouquets, boxes,
+ * lengths…) names them with its own `words` ({ card, held, fell }); a missing word keeps the board's default
+ * (« Planche », « Tient », « S’effondre »).
+ */
+function Ask({ step, world }) {
   const words = askWords(step);
+  const proof = askProof(step, world);
   const [picked, setPicked] = useState([]);
   const [checked, setChecked] = useState(false);
   const single = step.answer.length === 1;
@@ -792,84 +851,84 @@ function Ask({ step }) {
   const toggle = (o) => {
     if (!checked) setPicked((p) => (single ? [o] : p.includes(o) ? p.filter((x) => x !== o) : [...p, o]));
   };
+  const figure = step.figure ? <BoardFigure fig={step.figure} /> : null;
   return (
-    <div className="cs-askstep" data-cs-ask={step.id} data-cs-ask-checked={checked}>
-      <p className="cs-say">
-        <MathText>{step.text}</MathText>
-      </p>
-      <p className="cs-quest">{step.question}</p>
-      <div
-        className="cs-planks"
-        style={{ '--n': step.options.length }}
-        data-many={step.options.length > 4 ? '' : undefined}
-      >
-        {step.options.map((o) => {
-          const c = outcome(step.a, o);
-          return (
-            <button
+    <div
+      className={`cs-askstep ${figure ? 'cs-askstep--figure' : ''}`}
+      data-cs-ask={step.id}
+      data-cs-ask-checked={checked}
+      data-cs-ask-proof={proof}
+    >
+      {figure}
+      <div className="cs-askstep__body">
+        <p className="cs-say">
+          <MathText>{step.text}</MathText>
+        </p>
+        <p className="cs-quest">{step.question}</p>
+        <div
+          className="cs-planks"
+          style={{ '--n': step.options.length }}
+          data-many={step.options.length > 4 ? '' : undefined}
+        >
+          {step.options.map((o) => (
+            <AskCard
               key={o}
-              type="button"
-              className={`cs-plankcard ${picked.includes(o) ? 'is-picked' : ''} ${checked ? (c.held ? 'is-held' : 'is-fell') : ''}`}
-              onClick={() => toggle(o)}
-              aria-pressed={picked.includes(o)}
-              data-cs-ask-option={o}
-            >
-              <small>{words.card}</small>
-              <b dir="ltr">{o}</b>
-              {checked && (
-                <>
-                  <BridgeBar c={c} />
-                  <span dir="ltr">
-                    <MathText>{`$${equalityOf(c)}$`}</MathText>
-                  </span>
-                  <em>{c.held ? words.held : words.fell}</em>
-                </>
-              )}
-            </button>
-          );
-        })}
-      </div>
-      <div className="cs-actrow">
-        {!checked ? (
-          <button
-            type="button"
-            className="cs-btn cs-btn--main cs-btn--big"
-            onClick={() => {
-              setChecked(true);
-              sfx(right ? 'correct' : 'notyet');
-            }}
-            disabled={picked.length === 0}
-            data-cs-ask-check
-          >
-            {LL.check}
-          </button>
-        ) : (
-          <p className={`cs-after ${right ? 'is-right' : ''}`} data-cs-ask-result={right ? 'right' : 'look'}>
-            <b>
-              {right ? (
-                <>
-                  <Star size={20} fill="currentColor" /> {LL.askRight}
-                </>
-              ) : (
-                LL.askLook
-              )}
-            </b>
-            <span>
-              <MathText>{step.after}</MathText>
-            </span>
+              step={step}
+              option={o}
+              proof={proof}
+              words={words}
+              picked={picked.includes(o)}
+              checked={checked}
+              onPick={() => toggle(o)}
+            />
+          ))}
+        </div>
+        <div className="cs-actrow">
+          {!checked ? (
             <button
               type="button"
-              className="cs-btn"
+              className="cs-btn cs-btn--main cs-btn--big"
               onClick={() => {
-                setChecked(false);
-                setPicked([]);
+                setChecked(true);
+                sfx(right ? 'correct' : 'notyet');
               }}
-              data-cs-ask-again
+              disabled={picked.length === 0}
+              data-cs-ask-check
             >
-              <RotateCcw size={18} /> {LL.again}
+              {proof === 'bridge' ? LL.check : step.figure ? LL.checkFigure : LL.checkPlain}
             </button>
-          </p>
-        )}
+          ) : (
+            <p className={`cs-after ${right ? 'is-right' : ''}`} data-cs-ask-result={right ? 'right' : 'look'}>
+              <b>
+                {right ? (
+                  <>
+                    <Star size={20} fill="currentColor" /> {LL.askRight}
+                  </>
+                ) : proof === 'bridge' ? (
+                  LL.askLook
+                ) : step.figure ? (
+                  LL.askLookFigure
+                ) : (
+                  LL.askLookPlain
+                )}
+              </b>
+              <span>
+                <MathText>{step.after}</MathText>
+              </span>
+              <button
+                type="button"
+                className="cs-btn"
+                onClick={() => {
+                  setChecked(false);
+                  setPicked([]);
+                }}
+                data-cs-ask-again
+              >
+                <RotateCcw size={18} /> {LL.again}
+              </button>
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -1076,7 +1135,7 @@ function Trace({ step, rules }) {
   );
 }
 
-export default function LessonBoard({ script, rules, students, seating, memo, setMemo, onEndTest, onExit }) {
+export default function LessonBoard({ script, rules, askWorld, students, seating, memo, setMemo, onEndTest, onExit }) {
   const tools = useBoardTools();
   const [classOpen, setClassOpen] = useState(false);
   const [speaker, setSpeaker] = useState(null);
@@ -1210,7 +1269,7 @@ export default function LessonBoard({ script, rules, students, seating, memo, se
             onMe={() => setSpeaker('teacher')}
           />
         )}
-        {step.kind === 'ask' && <Ask step={step} />}
+        {step.kind === 'ask' && <Ask step={step} world={askWorld} />}
         {step.kind === 'statements' && <Statements step={step} />}
         {step.kind === 'court' && <CourtStation step={step} />}
         {step.kind === 'ladder' && <LadderStation step={step} />}

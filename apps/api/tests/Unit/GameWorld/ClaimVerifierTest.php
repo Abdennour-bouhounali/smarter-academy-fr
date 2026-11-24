@@ -50,6 +50,26 @@ class ClaimVerifierTest extends TestCase
         $this->assertFalse(ClaimVerifier::verify([...$c, 'a' => 6, 'b' => 12, 'x' => '5']));
     }
 
+    public function test_a_scale_holds_for_every_pair_and_names_its_direction(): void
+    {
+        // ABC (68 ; 92) to AMN (42,5 ; 57,5), sent in tenths: k = 5/8 or any equal writing, a reduction
+        $c = ['kind' => 'scale', 'from' => [680, 920], 'to' => [425, 575]];
+        $this->assertTrue(ClaimVerifier::verify([...$c, 'p' => 5, 'q' => 8, 'says' => 'reduction']));
+        $this->assertTrue(ClaimVerifier::verify([...$c, 'p' => 85, 'q' => 136]));
+        // the inverted k, and the wrong word
+        $this->assertFalse(ClaimVerifier::verify([...$c, 'p' => 8, 'q' => 5]));
+        $this->assertFalse(ClaimVerifier::verify([...$c, 'p' => 5, 'q' => 8, 'says' => 'enlargement']));
+        // one pair that does not follow k is enough to refuse it
+        $this->assertFalse(ClaimVerifier::verify([...$c, 'to' => [425, 576], 'p' => 5, 'q' => 8]));
+        // a decimal length is never sent as it is: the claim's unit makes it a natural
+        $this->assertFalse(ClaimVerifier::verify([...$c, 'to' => [42.5, 57.5], 'p' => 5, 'q' => 80]));
+        // `from` as an object (keys that are not 0, 1, …) is not a list of lengths
+        $this->assertFalse(ClaimVerifier::verify([...$c, 'from' => ['x' => 680, 'y' => 920], 'p' => 5, 'q' => 8]));
+        // k = 1 is neither, and a `says` sent as null is never right (as in the browser)
+        $this->assertTrue(ClaimVerifier::verify(['kind' => 'scale', 'from' => [7], 'to' => [7], 'p' => 2, 'q' => 2]));
+        $this->assertFalse(ClaimVerifier::verify(['kind' => 'scale', 'from' => [7], 'to' => [7], 'p' => 2, 'q' => 2, 'says' => null]));
+    }
+
     public function test_the_same_division_is_the_same_item(): void
     {
         $this->assertSame('division-756x36', ClaimVerifier::itemId(['kind' => 'division', 'a' => 756, 'b' => 36, 'q' => 21, 'r' => 0]));

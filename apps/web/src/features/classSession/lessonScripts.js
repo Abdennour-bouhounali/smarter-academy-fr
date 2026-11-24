@@ -86,6 +86,10 @@ export function missingEvidence(log) {
  *   ask         one question with choices, PROVED by bridges the board builds (`single` or several right answers);
  *               optional `words: { card, held, fell }` — the label of a card and its two verdicts, when the choices are
  *               not planks (bouquets, boxes…); a word left out keeps the board's « Planche » / « Tient » / « S’effondre »;
+ *               optional `figure` — a GEOMETRY FIGURE, the same data as a bank sheet's `statement.figure` (plane:
+ *               points, segments, parallels, lengths), drawn beside the question by the practice space's own
+ *               StatementFigure (`boardFigure.js` says how wide); such a station draws NO bridge under its cards — a card
+ *               agrees when it is in `answer` (`askProof`, `askHeld`);
  *   statements  sentences the class judges true or false, each proved by an equality;
  *   name        the rule gets its name: the tablet of the lesson (`tablet` key of the game's strings — one wording for the
  *               student's world and for the board), read aloud by a student or by the teacher;
@@ -120,6 +124,17 @@ export const askRight = (step, picked) =>
 /** The words of an `ask` step's cards: the label of a card and its two verdicts — the step's own `words`, or the planks'. */
 const ASK_WORDS = { card: 'Planche', held: 'Tient', fell: 'S’effondre' };
 export const askWords = (step) => ({ ...ASK_WORDS, ...step.words });
+/**
+ * What the board draws under an `ask` card once the class checks: the WORLD's drawing — `'bridge'` (the default: the
+ * plank bridge of the divisor isles (`divisorIsles`) and its equality « a = b × q + r », every lesson before the geometry units) or
+ * `'none'` (the verdict word only). The lesson's world content says it (`world/` › `boardAsk`, handed to the board by
+ * `ClassSessionPage`); a station that carries its own `figure` draws nothing under its cards, whatever the world.
+ */
+const ASK_PROOFS = Object.freeze(['bridge', 'none']);
+export const askProof = (step, world) => (step.figure ? 'none' : ASK_PROOFS.includes(world) ? world : 'bridge');
+/** Does a card agree? Over a bridge: its plank fills the gap `a` (`ruleForge.js › outcome`); otherwise: it is in `answer`. */
+export const askHeld = (step, option, proof = askProof(step)) =>
+  proof === 'bridge' ? outcome(step.a, option).held : step.answer.includes(option);
 /**
  * The words of a `court` step's cards: a card's label (« Toise », or « Salle » when the cards are courts — the words of `rootCourts/strings.js`) and the three
  * things a platform does — the world's own nouns, never a plank's (« Planche / Tient / S’effondre ») and never « wrong ».

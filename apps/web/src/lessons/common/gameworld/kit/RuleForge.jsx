@@ -6,6 +6,9 @@
  *                                the screen with the tiles (the robot's experiment while he builds) — draw it in less height
  *   Line({ c })                  the case as one line of the evidence
  *   beats(c)                     how many strokes the mirror needs to build it (the sound and the wait follow)
+ *   UseFigure({ c })             OPTIONAL: the last step's figure, drawn beside its lines (`data-rf-use-figure`); `c` is
+ *                                `forge.use.figure(case)` when the lesson gives it, else the case `use.make()` gave.
+ *                                Without it the last step is its lines alone, as before
  * The student does not receive the rule on a tablet: he predicts, writes HIS rule with tiles, and the MIRROR tests it —
  * first on his own evidence, then on a new case chosen to break it. A rule that survives becomes his key. The verdict is
  * always what the world does in front of him, never « wrong ».
@@ -27,8 +30,11 @@ import {
   testsOf,
   streak,
   sealRecord,
+  boxName,
+  typedDecimal,
 } from './forge';
 import { boxesOf } from './authoring/forgeBlocks';
+import ChoiceToken from './ChoiceToken';
 import './ruleForge.css';
 import { FORGE as L } from './text';
 
@@ -229,7 +235,7 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
   const useLines = use ? forge.use.lines(use.c) : [];
   const useSlots = useLines.flatMap((line) => boxesOf(line.tokens));
   const useFilled =
-    use && useSlots.every((t) => (use.vals[t.slot] ?? '') !== '') && (!forge.use.verdict || use.verdict !== null);
+    use && useSlots.every((t) => (use.vals[boxName(t)] ?? '') !== '') && (!forge.use.verdict || use.verdict !== null);
   const checkUse = () => {
     const fb = forge.use.check(use.c, use.vals, use.verdict);
     if (fb === 'ok') {
@@ -241,6 +247,58 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
     play('ui');
     setUse({ ...use, fb });
   };
+  /** The last step's question, lines, buttons and feedback (one column beside the world's figure when it draws one). */
+  const useBody = use && (
+    <>
+      <p className="rf-q">
+        <MathText>{T.tryKey(use.c)}</MathText>
+      </p>
+      <UseLines
+        lines={useLines}
+        column={forge.use.column}
+        vals={use.vals}
+        onType={(name, value) => setUse({ ...use, vals: { ...use.vals, [name]: value }, fb: null })}
+      />
+      <div className="rf-row">
+        {forge.use.verdict && (
+          <>
+            <button
+              type="button"
+              className={`rf-btn rf-btn--hold ${use.verdict === true ? 'is-on' : ''}`}
+              onClick={() => setUse({ ...use, verdict: true, fb: null })}
+              aria-pressed={use.verdict === true}
+              data-rf-use-verdict="yes"
+            >
+              {T.yes}
+            </button>
+            <button
+              type="button"
+              className={`rf-btn rf-btn--fall ${use.verdict === false ? 'is-on' : ''}`}
+              onClick={() => setUse({ ...use, verdict: false, fb: null })}
+              aria-pressed={use.verdict === false}
+              data-rf-use-verdict="no"
+            >
+              {T.no}
+            </button>
+          </>
+        )}
+        <button
+          type="button"
+          className="rf-btn rf-btn--main"
+          onClick={checkUse}
+          disabled={!useFilled || use.fb === 'ok'}
+          data-rf-use-check
+        >
+          {L.check}
+        </button>
+      </div>
+      {use.fb && (
+        <p className={`rf-fb ${use.fb === 'ok' ? 'is-right' : ''}`} data-rf-use-fb={use.fb}>
+          {use.fb === 'ok' ? `✓ ${T.useOk}` : T.use[use.fb]}
+        </p>
+      )}
+    </>
+  );
 
   // ── the robot: never the rule ──
   const askHelp = () => {
@@ -625,52 +683,17 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
 
             {phase === 'use' && use && (
               <>
-                <p className="rf-q">
-                  <MathText>{T.tryKey(use.c)}</MathText>
-                </p>
-                <UseLines
-                  lines={useLines}
-                  column={forge.use.column}
-                  vals={use.vals}
-                  onType={(name, value) => setUse({ ...use, vals: { ...use.vals, [name]: value }, fb: null })}
-                />
-                <div className="rf-row">
-                  {forge.use.verdict && (
-                    <>
-                      <button
-                        type="button"
-                        className={`rf-btn rf-btn--hold ${use.verdict === true ? 'is-on' : ''}`}
-                        onClick={() => setUse({ ...use, verdict: true, fb: null })}
-                        aria-pressed={use.verdict === true}
-                        data-rf-use-verdict="yes"
-                      >
-                        {T.yes}
-                      </button>
-                      <button
-                        type="button"
-                        className={`rf-btn rf-btn--fall ${use.verdict === false ? 'is-on' : ''}`}
-                        onClick={() => setUse({ ...use, verdict: false, fb: null })}
-                        aria-pressed={use.verdict === false}
-                        data-rf-use-verdict="no"
-                      >
-                        {T.no}
-                      </button>
-                    </>
-                  )}
-                  <button
-                    type="button"
-                    className="rf-btn rf-btn--main"
-                    onClick={checkUse}
-                    disabled={!useFilled || use.fb === 'ok'}
-                    data-rf-use-check
-                  >
-                    {L.check}
-                  </button>
-                </div>
-                {use.fb && (
-                  <p className={`rf-fb ${use.fb === 'ok' ? 'is-right' : ''}`} data-rf-use-fb={use.fb}>
-                    {use.fb === 'ok' ? `✓ ${T.useOk}` : T.use[use.fb]}
-                  </p>
+                {/* an OPTIONAL part of the world: the last step's figure beside its question, lines, buttons and
+                    feedback (none: unchanged) */}
+                {parts.UseFigure ? (
+                  <div className="rf-usewith">
+                    <div className="rf-usecol">{useBody}</div>
+                    <div className="rf-usefig" data-rf-use-figure>
+                      <parts.UseFigure c={forge.use.figure?.(use.c) ?? use.c} />
+                    </div>
+                  </div>
+                ) : (
+                  useBody
                 )}
               </>
             )}
@@ -683,12 +706,15 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
 
 /**
  * The lines of the last step: tokens read left to right — a printed string (its `$…$` drawn by MathText: a variable is
- * written one way, italic, as in the question), a box `slot(name, label, w)` (its label under
- * it when the step is one line), or a FRACTION `{ frac: { n, d } }` drawn in its own shape: numerator, a real bar,
- * denominator, each printed or typed (forgeBlocks.js › fractionBox / givenFraction; the look `di-frac`,
- * styles/trainer.css), or a POWER `{ pow: { base, exp } }`: the base, then the exponent raised after it (a `sup`), each
- * printed or typed (forgeBlocks.js › powerBox / givenPower; the look `rf-pow`, ruleForge.css) — a typed exponent's box is
- * named by its label (« exposant »). `onType(name, digits)` receives what a box now holds.
+ * written one way, italic, as in the question), a box `slot(name, label, w)` (its label under it when the step is one
+ * line; digits only), a DECIMAL box `slot(name, label, w, { decimal: true })` (digits and one comma,
+ * `inputMode="decimal"`, `data-rf-decimal`), a CHOICE `{ choice, label, options }` (ChoiceToken.jsx — its hooks
+ * `data-kit-choice` / `data-kit-option`), a FRACTION `{ frac: { n, d } }` drawn in its own shape: numerator, a real bar,
+ * denominator, each printed, typed or chosen (forgeBlocks.js › fractionBox / givenFraction / ratioChoice; the look
+ * `di-frac`, styles/trainer.css), or a POWER `{ pow: { base, exp } }`: the base, then the exponent raised after it (a
+ * `sup`), each printed or typed (forgeBlocks.js › powerBox / givenPower; the look `rf-pow`, ruleForge.css) — a typed
+ * exponent's box is named by its label (« exposant »). `onType(name, value)` receives what a box now holds, or the id a
+ * choice picked.
  */
 /**
  * The last step's lines. Four lines stand in two columns (one sentence each) — unless the forge asks them in ONE column
@@ -696,22 +722,44 @@ export default function RuleForge({ forge, parts, game, log, onSeal }) {
  */
 export function UseLines({ lines, vals, onType, column = false }) {
   const named = lines.length === 1;
-  const token = (t, key, label) =>
-    typeof t === 'object' ? (
-      <label key={key}>
-        <input
-          inputMode="numeric"
-          style={{ width: `${(t.w ?? 3) * 0.7 + 0.9}em` }}
-          value={vals[t.slot] ?? ''}
-          onChange={(e) => onType(t.slot, digits(e.target.value, t.w ?? 3))}
-          aria-label={t.label}
-          data-rf-use={t.slot}
-        />
-        {label && <small>{t.label}</small>}
-      </label>
+  const input = (t) =>
+    t.choice != null ? (
+      <ChoiceToken
+        name={t.choice}
+        label={t.label}
+        options={t.options}
+        value={vals[t.choice] ?? null}
+        onPick={(id) => onType(t.choice, id)}
+        dir={t.dir ?? 'ltr'}
+      />
     ) : (
+      <input
+        inputMode={t.decimal ? 'decimal' : 'numeric'}
+        style={{ width: `${(t.w ?? 3) * 0.7 + 0.9}em` }}
+        value={vals[t.slot] ?? ''}
+        onChange={(e) =>
+          onType(t.slot, t.decimal ? typedDecimal(e.target.value, t.w ?? 5) : digits(e.target.value, t.w ?? 3))
+        }
+        aria-label={t.label}
+        data-rf-use={t.slot}
+        data-rf-decimal={t.decimal ? '' : undefined}
+      />
+    );
+  // a choice is never inside a <label>: a click on its words would pick its first option
+  const token = (t, key, label) =>
+    typeof t !== 'object' ? (
       // a printed word or number; a variable of the sentence is written `$N$` (one way, as in the question above it)
       <b key={key}>{String(t).includes('$') ? <MathText>{t}</MathText> : t}</b>
+    ) : t.choice != null ? (
+      <span key={key} className="rf-use__choice">
+        {input(t)}
+        {label && <small>{t.label}</small>}
+      </span>
+    ) : (
+      <label key={key}>
+        {input(t)}
+        {label && <small>{t.label}</small>}
+      </label>
     );
   return (
     <div className="rf-uselines" data-rf-lines={lines.length} {...(column ? { 'data-rf-column': '' } : {})}>
@@ -723,7 +771,7 @@ export function UseLines({ lines, vals, onType, column = false }) {
                 key={k}
                 className={`di-frac rf-frac${boxesOf([t]).length ? ' di-frac--typed' : ''}`}
                 dir="ltr"
-                data-rf-frac={[t.frac.n, t.frac.d].map((x) => x.slot ?? x).join('/')}
+                data-rf-frac={[t.frac.n, t.frac.d].map((x) => (typeof x === 'object' ? boxName(x) : x)).join('/')}
               >
                 {token(t.frac.n, 'n', false)}
                 <span className="di-frac__bar" aria-hidden="true" />
@@ -736,7 +784,7 @@ export function UseLines({ lines, vals, onType, column = false }) {
                 key={k}
                 className={`rf-pow${boxesOf([t]).length ? ' rf-pow--typed' : ''}`}
                 dir="ltr"
-                data-rf-pow={[t.pow.base, t.pow.exp].map((x) => x.slot ?? x).join('^')}
+                data-rf-pow={[t.pow.base, t.pow.exp].map((x) => (typeof x === 'object' ? boxName(x) : x)).join('^')}
               >
                 <span className="rf-pow__base">{token(t.pow.base, 'b', false)}</span>
                 <sup className="rf-pow__exp">{token(t.pow.exp, 'e', false)}</sup>

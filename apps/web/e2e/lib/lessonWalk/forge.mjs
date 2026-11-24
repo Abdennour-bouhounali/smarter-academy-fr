@@ -7,6 +7,7 @@
 // the descriptor names one (`falseTiles[key]`).
 import { noName, ownTools, pairChecks, tilesFit, lastStepLayout, WRONG_WORD } from './checks.mjs';
 import { playExperiment } from './experiments.mjs';
+import { q, sub, write } from './worlds/exact.mjs';
 
 /** Every rule the tiles of `forge` can write: [{ rule, tiles }]. */
 export function allRules(forge) {
@@ -17,6 +18,8 @@ export function allRules(forge) {
 
 /** The tiles of the rule that holds, and the false rule the walk plays first. */
 export function tilesOf(forge, descriptor) {
+  // an experiment that WRITES the rule (`inquiry.writes`): no tile is offered, the mirror attacks his rule at once
+  if (forge.inquiry?.writes) return { rule: null, right: [], wrong: [] };
   const right = allRules(forge).filter((x) => forge.isTheRule(x.rule));
   if (right.length !== 1)
     throw new Error(`forge ${forge.key}: ${right.length} rules hold — exactly one must (forges.test.js)`);
@@ -45,20 +48,23 @@ export async function playForge(ctx, key) {
   const truth = D.truth?.[key];
   expect(typeof truth === 'function', `the descriptor computes the world's verdict of forge « ${key} » (truth.${key})`);
   const { rule: theRule, right, wrong } = tilesOf(forge, D);
+  const writes = Boolean(forge.inquiry?.writes);
   console.log(
-    `NOTE  forge « ${key} »: the rule that holds is ${right.join(' + ')} (derived); the false rule played: ${wrong.join(' + ')}`,
+    writes
+      ? `NOTE  forge « ${key} »: its experiment WRITES the rule — no tile, the mirror attacks at once`
+      : `NOTE  forge « ${key} »: the rule that holds is ${right.join(' + ')} (derived); the false rule played: ${wrong.join(' + ')}`,
   );
   await ctx.hook(`forge:${key}:before`);
 
   // ── its experiment, when it has one; else it opens on its tiles ──
   if (forge.inquiry) {
-    // the islands' investigation frame `.iq`; « Le palais des dalles »'s `.rq-iq` (worlds/rootCourtsExperiments.mjs)
-    await page.waitForSelector('.rf-root .iq, .rf-root .rq-iq', { timeout: 15000 });
+    // the islands' investigation frame `.iq`; « Le palais des dalles »'s `.rq-iq`; the pyramids' `.np-iq` (worlds/*Experiments.mjs)
+    await page.waitForSelector('.rf-root .iq, .rf-root .rq-iq, .rf-root .np-iq', { timeout: 15000 });
     await playExperiment(
       { w, page, name: `${name}-${forge.inquiry.mode ?? forge.inquiry.kind}`, where: 'forge', forbid: ctx.forbid },
       forge.inquiry,
     );
-    await page.waitForSelector('[data-rf="build"]', { timeout: 15000 });
+    await page.waitForSelector(writes ? '[data-rf="attack"]' : '[data-rf="build"]', { timeout: 15000 });
   } else {
     await page.waitForSelector('[data-rf="build"]', { timeout: 15000 });
     const f = await fg();
@@ -81,34 +87,6 @@ export async function playForge(ctx, key) {
     );
   }
   const pairs = (await fg()).rows.every((r) => r.pair);
-  await ownTools(w, page, `${name}, the tiles`);
-  await tilesFit(w, page, name);
-  await noName(w, page, `${name}, the tiles`, ctx.forbidOf(key));
-  if (pairs) await pairChecks(w, page, `${name}, the tiles`);
-  if (D.notBridge?.includes(key)) {
-    const log = await page.evaluate(() =>
-      [...document.querySelectorAll('.rf-root [data-rf-row]')].map((r) => r.textContent.trim()),
-    );
-    check(
-      !log.some((l) => /\bplanches?\b/i.test(l)),
-      `${name} is not about a bridge: no line of its log says « planche » (A10) — ${log.join(' | ')}`,
-    );
-  }
-  await w.shot(page, `${name}-tiles`, ctx.OUT);
-
-  // ── the ✕ inside the first forge, a tile picked: back, the same mirror waits ──
-  if (ctx.first) {
-    await page.click(`[data-rf-tile="${right[0]}"]`);
-    await W.leaveAndReturn(`inside ${name}`, ['.rf-root [data-di-exit]'], ctx.startLabel);
-    await W.ff(1.5);
-    await page.waitForSelector('[data-rf="build"]', { timeout: 15000 });
-    const s = await W.st();
-    expect(
-      s.overlay === 'forge' && (await fg()).key === key,
-      `back from the forge's ✕: the same mirror « ${key} » waits, no key skipped`,
-    );
-  }
-
   const hear = async (fn) => {
     await page.evaluate(() => {
       const a = window.__world.audio;
@@ -136,59 +114,92 @@ export async function playForge(ctx, key) {
     return yes;
   };
 
-  // ── a false rule: refuted on his own evidence, or broken by the mirror's first attack ──
-  for (const t of wrong) await page.click(`[data-rf-tile="${t}"]`);
-  await tilesFit(w, page, `${name}, a false rule`);
-  await w.shot(page, `${name}-false-build`, ctx.OUT);
-  await page.click('[data-rf-test]');
-  await page.waitForSelector('[data-rf-refuted], [data-rf-agreed]', { timeout: 20000 });
-  if (await page.locator('[data-rf-refuted]').count()) {
-    const id = await page.getAttribute('[data-rf-refuted]', 'data-rf-refuted');
-    const fb = (await page.textContent('[data-rf-refuted]')) ?? '';
-    check(
-      (await page.locator(`[data-rf-row="${id}"][data-rf-mark="refute"]`).count()) === 1 && !WRONG_WORD.test(fb),
-      `${name}: « ${wrong.join(' + ')} » REFUTED on his own line ${id}, marked; said as a fact (« ${fb.trim().slice(0, 90)} »)`,
-    );
-    if (pairs) await pairChecks(w, page, `${name}, refuted`);
-    await w.shot(page, `${name}-refuted`, ctx.OUT);
-  } else {
-    await page.click('[data-rf-dare]');
-    await page.waitForSelector('[data-rf-say]');
-    const c = (await fg()).atk.list[0];
-    const yes = verdict(c, `${name}, the false rule's attack`);
-    await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
-    const heard = await hear(async () => {
-      await page.click('[data-rf-fire]');
-      await page.waitForSelector('[data-rf-broken]', { timeout: 20000 });
-    });
-    const fb = (await page.textContent('[data-rf-broken]')) ?? '';
-    check(
-      !WRONG_WORD.test(fb) && (await page.locator('[data-rf-attack-next], [data-rf-seal]').count()) === 0,
-      `${name}: « ${wrong.join(' + ')} » agrees with his lines, BROKEN by the mirror's attack ${caseOf(c)} — only « Je corrige ma règle » (« ${fb.trim().slice(0, 90)} »)`,
-    );
-    check(
-      heard.includes(yes ? 'success' : 'crumble'),
-      `${name}: the broken rule is heard (${[...new Set(heard)].join(', ')})`,
-    );
-    if (pairs) await pairChecks(w, page, `${name}, broken`);
-    await w.shot(page, `${name}-broken`, ctx.OUT);
-  }
-  await page.click('[data-rf-fix]');
-  await page.waitForSelector('[data-rf="build"]');
+  if (!writes) await tilesPart();
+  async function tilesPart() {
+    await ownTools(w, page, `${name}, the tiles`);
+    await tilesFit(w, page, name);
+    await noName(w, page, `${name}, the tiles`, ctx.forbidOf(key));
+    if (pairs) await pairChecks(w, page, `${name}, the tiles`);
+    if (D.notBridge?.includes(key)) {
+      const log = await page.evaluate(() =>
+        [...document.querySelectorAll('.rf-root [data-rf-row]')].map((r) => r.textContent.trim()),
+      );
+      check(
+        !log.some((l) => /\bplanches?\b/i.test(l)),
+        `${name} is not about a bridge: no line of its log says « planche » (A10) — ${log.join(' | ')}`,
+      );
+    }
+    await w.shot(page, `${name}-tiles`, ctx.OUT);
 
-  // ── the rule that holds: agreed, attacked, sealed ──
-  for (const t of right) await page.click(`[data-rf-tile="${t}"]`);
-  await page.click('[data-rf-test]');
-  await page.waitForSelector('[data-rf-agreed]', { timeout: 20000 });
-  await w.shot(page, `${name}-agreed`, ctx.OUT);
-  await page.click('[data-rf-dare]');
-  await page.waitForSelector('[data-rf="attack"]');
+    // ── the ✕ inside the first forge, a tile picked: back, the same mirror waits ──
+    if (ctx.first) {
+      await page.click(`[data-rf-tile="${right[0]}"]`);
+      await W.leaveAndReturn(`inside ${name}`, ['.rf-root [data-di-exit]'], ctx.startLabel);
+      await W.ff(1.5);
+      await page.waitForSelector('[data-rf="build"]', { timeout: 15000 });
+      const s = await W.st();
+      expect(
+        s.overlay === 'forge' && (await fg()).key === key,
+        `back from the forge's ✕: the same mirror « ${key} » waits, no key skipped`,
+      );
+    }
+
+    // ── a false rule: refuted on his own evidence, or broken by the mirror's first attack ──
+    for (const t of wrong) await page.click(`[data-rf-tile="${t}"]`);
+    await tilesFit(w, page, `${name}, a false rule`);
+    await w.shot(page, `${name}-false-build`, ctx.OUT);
+    await page.click('[data-rf-test]');
+    await page.waitForSelector('[data-rf-refuted], [data-rf-agreed]', { timeout: 20000 });
+    if (await page.locator('[data-rf-refuted]').count()) {
+      const id = await page.getAttribute('[data-rf-refuted]', 'data-rf-refuted');
+      const fb = (await page.textContent('[data-rf-refuted]')) ?? '';
+      check(
+        (await page.locator(`[data-rf-row="${id}"][data-rf-mark="refute"]`).count()) === 1 && !WRONG_WORD.test(fb),
+        `${name}: « ${wrong.join(' + ')} » REFUTED on his own line ${id}, marked; said as a fact (« ${fb.trim().slice(0, 90)} »)`,
+      );
+      if (pairs) await pairChecks(w, page, `${name}, refuted`);
+      await w.shot(page, `${name}-refuted`, ctx.OUT);
+    } else {
+      await page.click('[data-rf-dare]');
+      await page.waitForSelector('[data-rf-say]');
+      const c = (await fg()).atk.list[0];
+      const yes = verdict(c, `${name}, the false rule's attack`);
+      await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
+      const heard = await hear(async () => {
+        await page.click('[data-rf-fire]');
+        await page.waitForSelector('[data-rf-broken]', { timeout: 20000 });
+      });
+      const fb = (await page.textContent('[data-rf-broken]')) ?? '';
+      check(
+        !WRONG_WORD.test(fb) && (await page.locator('[data-rf-attack-next], [data-rf-seal]').count()) === 0,
+        `${name}: « ${wrong.join(' + ')} » agrees with his lines, BROKEN by the mirror's attack ${caseOf(c)} — only « Je corrige ma règle » (« ${fb.trim().slice(0, 90)} »)`,
+      );
+      check(
+        heard.includes(yes ? 'success' : 'crumble'),
+        `${name}: the broken rule is heard (${[...new Set(heard)].join(', ')})`,
+      );
+      if (pairs) await pairChecks(w, page, `${name}, broken`);
+      await w.shot(page, `${name}-broken`, ctx.OUT);
+    }
+    await page.click('[data-rf-fix]');
+    await page.waitForSelector('[data-rf="build"]');
+
+    // ── the rule that holds: agreed, attacked, sealed ──
+    for (const t of right) await page.click(`[data-rf-tile="${t}"]`);
+    await page.click('[data-rf-test]');
+    await page.waitForSelector('[data-rf-agreed]', { timeout: 20000 });
+    await w.shot(page, `${name}-agreed`, ctx.OUT);
+    await page.click('[data-rf-dare]');
+    await page.waitForSelector('[data-rf="attack"]');
+  }
+  // the rule he holds now: the tiles' (derived), or the one his experiment wrote
+  const held = writes ? (await fg()).rule : theRule;
   for (let i = 0; i < 8; i += 1) {
     const a = (await fg()).atk;
     const c = a.list[a.i];
     const yes = verdict(c, `${name}, attack ${i + 1}`);
     check(
-      Boolean(forge.says(theRule, c)) === yes,
+      Boolean(forge.says(held, c)) === yes,
       `${name}, attack ${i + 1}: the rule that holds says what the world does`,
     );
     await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
@@ -222,7 +233,25 @@ export async function playForge(ctx, key) {
   // a last step may end on two buttons « yes / no » (`use.verdict: true` in the forge, `data-rf-use-verdict`): the
   // descriptor gives it as `verdict: 'yes' | 'no'` beside the boxes
   const boxOf = (v) => Object.fromEntries(Object.entries(v).filter(([k]) => k !== 'verdict'));
-  const boxes = await page.locator('.rf-root [data-rf-use]').evaluateAll((els) => els.map((e) => e.dataset.rfUse));
+  // every box of the last step: a typed one (`data-rf-use`) or a choice among written options (`data-kit-choice`)
+  const boxes = await page
+    .locator('.rf-root [data-rf-use], .rf-root .rf-uselines [data-kit-choice]')
+    .evaluateAll((els) => els.map((e) => e.dataset.rfUse ?? e.dataset.kitChoice));
+  // the last step's figure (the kit's slot `data-rf-use-figure`): a world that measures it says so (`data-*-use-figure`)
+  const figure = await page.evaluate(() => {
+    const slot = document.querySelector('.rf-root [data-rf-use-figure]');
+    if (!slot) return null;
+    const own = [...slot.querySelectorAll('*')].find((e) =>
+      Object.keys(e.dataset).some((k) => /UseFigure$/.test(k) && k !== 'rfUseFigure'),
+    );
+    const k = own && Object.keys(own.dataset).find((x) => /UseFigure$/.test(x));
+    return { said: k ? own.dataset[k] : null, svg: Boolean(slot.querySelector('svg')) };
+  });
+  if (figure)
+    check(
+      figure.svg && (figure.said == null || figure.said === 'fits'),
+      `${name}: the last step's figure is drawn and fits its room, its labels at 12 px or more (${figure.said ?? 'drawn'})`,
+    );
   check(
     boxes.every((b) => b in vals) && Object.keys(boxOf(vals)).every((k) => boxes.includes(k)),
     `${name}: the walk fills every box of the last step (${boxes.join(', ')})`,
@@ -234,16 +263,47 @@ export async function playForge(ctx, key) {
   );
   await lastStepLayout(w, page, `${name}, the last step`);
   const fillUse = async (v) => {
-    for (const [nm, x] of Object.entries(boxOf(v))) await page.fill(`[data-rf-use="${nm}"]`, String(x));
+    for (const [nm, x] of Object.entries(boxOf(v)))
+      if (await page.locator(`.rf-root [data-rf-use="${nm}"]`).count())
+        await page.fill(`.rf-root [data-rf-use="${nm}"]`, String(x));
+      else await page.click(`.rf-root [data-kit-choice="${nm}"] [data-kit-option="${x}"]`);
     if (v.verdict) await page.click(`.rf-root [data-rf-use-verdict="${v.verdict}"]`);
+    // the answer to THIS check: a feedback element left by the try before is marked first, and an accepted step may go
+    // to its tablet at once (read in the page, in one wait — never an element that is gone)
+    await page.evaluate(() => document.querySelector('[data-rf-use-fb]')?.setAttribute('data-walk-old', ''));
     await page.click('[data-rf-use-check]');
-    await page.waitForSelector('[data-rf-use-fb]');
-    return page.getAttribute('[data-rf-use-fb]', 'data-rf-use-fb');
+    const said = await page.waitForFunction(
+      () => {
+        const fb = document.querySelector('[data-rf-use-fb]:not([data-walk-old])');
+        if (fb) return fb.dataset.rfUseFb;
+        return document.querySelector('[data-di-my-rule], [data-di-tablet]') ? 'ok' : null;
+      },
+      null,
+      { timeout: 15000 },
+    );
+    return said.jsonValue();
   };
-  const last = Object.keys(boxOf(vals)).at(-1);
+  // the last TYPED box + 1 (exactly: « 57,5 » → « 58,5 »); a step of choices only answers its last choice otherwise
+  const typedKeys = Object.keys(boxOf(vals)).filter((k) => /^-?[\d,./]+$/.test(String(vals[k])));
+  const last = typedKeys.at(-1);
+  // a step of choices only: its FIRST choice set to another of its options (the reason, before the ratios)
+  const firstChoice = Object.keys(boxOf(vals)).find((k) => !typedKeys.includes(k));
+  const otherOption = firstChoice
+    ? await page.evaluate(
+        ([k, x]) =>
+          [...document.querySelectorAll(`.rf-root [data-kit-choice="${k}"] [data-kit-option]`)]
+            .map((b) => b.dataset.kitOption)
+            .find((id) => id !== String(x)),
+        [firstChoice, vals[firstChoice]],
+      )
+    : null;
   const bad =
     D.useWrong?.[key]?.(u) ??
-    (last ? { ...vals, [last]: Number(vals[last]) + 1 } : { ...vals, verdict: vals.verdict === 'yes' ? 'no' : 'yes' });
+    (last
+      ? { ...vals, [last]: write(sub(q(String(vals[last])), '-1')) }
+      : otherOption
+        ? { ...vals, [firstChoice]: otherOption }
+        : { ...vals, verdict: vals.verdict === 'yes' ? 'no' : 'yes' });
   const said = await fillUse(bad);
   check(said !== 'ok', `${name}: a wrong last step is refused with its own sentence (« ${said} »)`);
   await w.shot(page, `${name}-use-wrong`, ctx.OUT);

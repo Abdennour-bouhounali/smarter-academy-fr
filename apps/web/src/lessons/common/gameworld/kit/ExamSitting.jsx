@@ -13,12 +13,15 @@
  * answer-template standard), a set of integers (IntegerSetInput), a decomposition in prime factors (FactorizationInput —
  * the practice space's own field, exponents raised; it sends `{ value: <LaTeX>, latex }`); a « Montrer que » step is
  * written on the paper only.
+ * A sheet's `statement.figure` is drawn by the practice space's own StatementFigure, beside its statement and steps, its
+ * labels never under 12 px (sheetFigure.js).
  * The bank loads when the sitting opens (a few small files, once); until then the sheet waits.
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Flag, Clock, PenLine, VolumeX, X, Compass, BookOpenCheck, NotebookPen, LogOut } from 'lucide-react';
 import MathText from '../../components/MathText';
 import ProblemTable from '../../components/ProblemTable';
+import StatementFigure from '../../components/StatementFigure';
 import ChoiceInput from '../../../../features/practice/inputs/ChoiceInput';
 import IntegerSetInput from '../../../../features/practice/inputs/IntegerSetInput';
 import FactorizationInput from '../../../../features/practice/inputs/FactorizationInput';
@@ -28,6 +31,7 @@ import Fit from './Fit';
 import Leaves from './ExamSittingLeaves';
 import { useLesson } from './LessonContext';
 import { keysOfPoints } from './bankSitting';
+import { sheetFigure } from './sheetFigure';
 import { allQuestions, answered, forgotten, pace, appreciation, tick, timeUp } from './sitting';
 import { EXAM as L } from './text';
 
@@ -62,10 +66,29 @@ function Markable({ text, id, marks, toggle }) {
   );
 }
 
-/** The statement of a sheet: its sentences (each word can be underlined), its formulas, its table — the bank's own. */
+/**
+ * The figure of a sheet, drawn by the practice space's own renderer (StatementFigure) beside the statement and its steps.
+ * Never narrower than its 12 px floor: its labels stay readable however far the paper is zoomed down (sheetFigure.js).
+ */
+function SheetFigure({ fig }) {
+  const f = sheetFigure(fig);
+  if (!f) return null;
+  return (
+    <div
+      className="xs-figure"
+      data-xs-figure={f.kind}
+      style={{ '--xs-fig-natural': `${f.natural}px`, '--xs-fig-k': f.k }}
+    >
+      <StatementFigure {...fig} maxWidth="100%" />
+    </div>
+  );
+}
+
+/** The statement of a sheet: its figure, its sentences (each word can be underlined), its formulas, its table. */
 function Statement({ e, marks, toggle }) {
   return (
     <>
+      {e.figure && <SheetFigure fig={e.figure} />}
       {e.statement.split('\n\n').map((p, i) => (
         <p key={i} className="xs-statement">
           <Markable text={p} id={`${e.id}:${i}`} marks={marks} toggle={toggle} />

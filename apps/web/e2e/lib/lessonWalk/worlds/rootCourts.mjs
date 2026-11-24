@@ -16,6 +16,7 @@ import { playForge } from '../forge.mjs';
 import { worldOf } from '../world.mjs';
 import { cmp, eq, isqrt, platform, q, sub, write } from './exact.mjs';
 import { rcTerracesWalk } from './rootCourtsTerraces.mjs';
+import { playRail, railPractice } from '../gateRun.mjs';
 
 /** A sentence that calls an answer wrong (../checks.mjs › WRONG_WORD). */
 const WRONG_WORDS = WRONG_WORD;
@@ -42,7 +43,7 @@ export const ROOT_COURTS = {
   /** The story's player (../story.mjs hands it a lesson of this world). */
   story: (L, D, opts) => rcStoryWalk(L, D, opts),
   /** The hub's « Continuer l’entraînement » (../hub.mjs, part 4): a practice level on the kit's rail. */
-  practice: (args) => rcPractice(args),
+  practice: (args) => railPractice(args),
   /** The names of every lesson of the islands that this lesson's own text never writes (lib/lessonWords.mjs › namesOf). */
   foreignWords(L, extra = []) {
     const own = stringsOf([L.lesson, L.script, L.memo, L.config]).join('\n');
@@ -444,86 +445,6 @@ export function rcWorld(w, page, L) {
     numRe,
     hiddenNow,
   };
-}
-
-// ───────────────────────────── the rail of light (a course, or a practice level) ─────────────────────────────
-/**
- * Plays the run open on the kit's rail: each gate's right lane is computed by `judge(ask, tex, gateText)` from what the
- * rail SHOWS (the order, its formula's source, the three numbers); gate `miss` (1-based) is taken wrong on purpose: its
- * fact is read, a heart is lost. Returns { score, hearts, won, total, misses }.
- */
-export async function playRail(w, page, ff, judge, { miss = 2, label, OUT, shots = {} }) {
-  const { expect, check } = w;
-  const run = () =>
-    page.evaluate(() => {
-      const r = window.__world.getState().run;
-      return r
-        ? {
-            stage: r.stage,
-            n: r.n,
-            lane: r.lane,
-            hearts: r.hearts,
-            score: r.score,
-            won: r.won,
-            total: r.total,
-            why: r.why,
-          }
-        : null;
-    });
-  const seen = {};
-  let missed = 0;
-  let last = 0;
-  for (let k = 0; k < 2000; k += 1) {
-    const r = await run();
-    if (!r || r.stage === 'over') break;
-    if (r.stage === 'go' && r.n !== last) {
-      last = r.n;
-      await page.waitForTimeout(60);
-      const g = await page.evaluate(() => ({
-        // the order in words (its formula read apart, from its source)
-        ask: (() => {
-          const el = document.querySelector('[data-gr-ask] strong')?.cloneNode(true);
-          el?.querySelectorAll('.gr-tex, .katex').forEach((k) => k.remove());
-          return el?.textContent.trim() ?? '';
-        })(),
-        tex: document.querySelector('[data-gr-ask] annotation')?.textContent ?? null,
-        gates: [...document.querySelectorAll('[data-gr-gate]')].map(
-          (b) => b.querySelector('annotation')?.textContent ?? b.textContent.trim(),
-        ),
-      }));
-      const right = g.gates.map((x) => judge(g.ask, g.tex, x));
-      expect(
-        right.filter(Boolean).length === 1,
-        `${label}, gate ${r.n}: « ${g.ask.replace(/\s+/g, ' ').slice(0, 50)} » ${g.tex ?? ''} — exactly ONE of ${g.gates.join(' / ')} is right, computed here`,
-      );
-      let want = right.indexOf(true);
-      if (r.n === miss) {
-        want = (want + 1) % 3;
-        missed += 1;
-      }
-      for (let d = r.lane; d !== want; d += Math.sign(want - d)) {
-        await page.keyboard.press(want > d ? 'ArrowRight' : 'ArrowLeft');
-        await ff(0.08);
-      }
-      const now = await run();
-      check(now.lane === want, `${label}, gate ${r.n}: ← → bring him to lane ${want} (${now.lane})`);
-      if (shots[r.n]) await w.shot(page, shots[r.n], OUT);
-      seen[r.n] = { want, right: right.indexOf(true) };
-    }
-    if (r.stage === 'hit' && !seen[`hit${r.n}`]) {
-      seen[`hit${r.n}`] = true;
-      await page.waitForTimeout(150);
-      const why = ((await page.textContent('[data-gr-why]').catch(() => '')) ?? '').trim();
-      check(
-        r.n === miss && why.length > 4 && !WRONG_WORDS.test(why),
-        `${label}, gate ${r.n} (taken wrong on purpose): the run stops on its FACT, never « wrong » (« ${why.slice(0, 90)} »); ${r.hearts} hearts left`,
-      );
-      if (shots.fact) await w.shot(page, shots.fact, OUT);
-    }
-    await ff(0.2);
-  }
-  const end = await run();
-  return { ...(end ?? {}), misses: missed };
 }
 
 // ───────────────────────────── the story ─────────────────────────────
@@ -964,62 +885,6 @@ export async function rcStoryWalk(L, D, opts) {
 }
 
 // ───────────────────────────── the hub: a practice level on the rail ─────────────────────────────
-/**
- * « Continuer l’entraînement » on the practice hub: the level it proposes is run on the kit's rail (`Game.startPractice`): every gate
- * judged by `descriptor.run`, the second taken wrong on purpose (its fact, a heart), then the kit's result card — its
- * stars are the hearts left — and back to the hub, then to the title screen.
- */
-async function rcPractice({ w, page, D, TEXT }) {
-  const { expect, check, shot, ff } = w;
-  const st = () =>
-    page.evaluate(() => ({
-      phase: window.__world.getState().phase,
-      overlay: window.__world.getState().overlay,
-      run: window.__world.getState().run,
-    }));
-  const nextName = ((await page.textContent('[data-di-next]')) ?? '').trim();
-  expect(
-    Object.values(TEXT.levels)
-      .flat()
-      .some((x) => nextName.includes(x)),
-    `« Continuer l’entraînement » proposes one of the lesson's levels (« ${nextName} »)`,
-  );
-  await page.click('[data-di-next]');
-  await ff(page, 0.4);
-  let x = await st();
-  expect(
-    x.phase === 'run' && x.run?.stage === 'go' && x.run.hearts === 3,
-    `the level runs on the rail of light: 3 hearts (${x.run?.stage}, ${x.run?.total} gates)`,
-  );
-  const total = x.run.total;
-  const res = await playRail(w, page, (sec) => ff(page, sec), D.run, {
-    miss: 2,
-    label: 'practice',
-    OUT: { exit: ['[data-gr-leave]'], numbers: false },
-    shots: { 1: 'practice-gate', fact: 'practice-fact' },
-  });
-  expect(
-    await page
-      .waitForSelector('[data-di-result]', { timeout: 15000 })
-      .then(() => true)
-      .catch(() => false),
-    'the level is over: the result card of the kit',
-  );
-  x = await st();
-  const o = x.overlay;
-  check(
-    o?.type === 'result' && o.win && o.stars === 2 && o.mistakes === 1 && res.misses === 1,
-    `the result: won, ${o?.stars} stars = the hearts left after ONE gate missed on purpose (${total} gates; ${JSON.stringify({ win: o?.win, stars: o?.stars, mistakes: o?.mistakes })})`,
-  );
-  await shot(page, 'practice-result', { exit: ['[data-di-result-map]', '[data-di-exit]'], numbers: false });
-  await page.click('[data-di-result-map]');
-  await page.waitForSelector('[data-di-mapcard]');
-  check((await st()).overlay?.type === 'map', '« La carte » on the result card comes back to the hub');
-  await page.click('[data-di-map-close]');
-  await page.waitForSelector('[data-di-start]');
-  expect((await st()).phase === 'title', 'the hub closed: back on the title screen');
-}
-
 // ───────────────────────────── the board: a `court` station ─────────────────────────────
 /**
  * A `court` station of « Séance en classe » (`features/classSession/LessonBoard.jsx › CourtStation`): every card that does NOT

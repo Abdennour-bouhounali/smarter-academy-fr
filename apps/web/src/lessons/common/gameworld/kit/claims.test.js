@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { CLAIM_KINDS, verifyClaim } from './claims';
+import { CLAIM_KINDS, scaleClaim, verifyClaim } from './claims';
 
 const api = (path) => fileURLToPath(new URL(`../../../../../../api/${path}`, import.meta.url));
 const FIXTURE = JSON.parse(readFileSync(api('tests/Fixtures/game-claims.json'), 'utf8'));
@@ -50,6 +50,39 @@ describe('the claims of a game answer — one rule for the browser and for the s
     // an op that is not one of the three strings is never right — an array is not '+' (the server reads it strictly)
     expect(verifyClaim({ ...c, a: 6, b: 12, op: ['+'] })).toBe(false);
     expect(verifyClaim({ ...c, a: 6, b: 12, op: 'constructor' })).toBe(false);
+  });
+
+  it('a scale holds for EVERY pair and names its direction; a decimal length travels as a natural of a smaller unit', () => {
+    const c = { kind: 'scale', from: [680, 920], to: [425, 575] };
+    expect(verifyClaim({ ...c, p: 5, q: 8, says: 'reduction' })).toBe(true);
+    expect(verifyClaim({ ...c, p: 85, q: 136 })).toBe(true);
+    expect(verifyClaim({ ...c, p: 8, q: 5 })).toBe(false); // the inverted k
+    expect(verifyClaim({ ...c, p: 5, q: 8, says: 'enlargement' })).toBe(false);
+    expect(verifyClaim({ ...c, to: [425, 576], p: 5, q: 8 })).toBe(false);
+    expect(verifyClaim({ ...c, to: [42.5, 57.5], p: 5, q: 80 })).toBe(false);
+    expect(verifyClaim({ ...c, from: { 0: 680, 1: 920, length: 2 }, p: 5, q: 8 })).toBe(false);
+    expect(verifyClaim({ kind: 'scale', from: [7], to: [7], p: 2, q: 2 })).toBe(true);
+    expect(verifyClaim({ kind: 'scale', from: [7], to: [7], p: 2, q: 2, says: null })).toBe(false);
+  });
+
+  it('`scaleClaim` reads the lengths exactly (« 42,5 », 2.75, « 7{,}5 ») and brings them to one unit', () => {
+    const k4 = scaleClaim({ from: [68, 92], to: ['42,5', '57,5'], p: 5, q: 8, says: 'reduction' });
+    // 42,5 = 85/2: the unit is the half
+    expect(k4).toEqual({ kind: 'scale', from: [136, 184], to: [85, 115], p: 5, q: 8, says: 'reduction' });
+    expect(verifyClaim(k4)).toBe(true);
+    expect(scaleClaim({ from: ['99'], to: [2.75], p: 1, q: 36 })).toEqual({
+      kind: 'scale',
+      from: [396],
+      to: [11],
+      p: 1,
+      q: 36,
+    });
+    // the student's 57,4 for MN: false; halves and quarters together take the quarter
+    expect(verifyClaim(scaleClaim({ from: [68, 92], to: ['42,5', '57,4'], p: 5, q: 8 }))).toBe(false);
+    expect(scaleClaim({ from: ['0,5', '7{,}5'], to: ['0,25', 1], p: 1, q: 2 }).from).toEqual([2, 30]);
+    // what is not a number never makes a true claim
+    expect(verifyClaim(scaleClaim({ from: ['abc'], to: [1], p: 1, q: 1 }))).toBe(false);
+    expect(verifyClaim(scaleClaim({ from: [''], to: [''], p: 1, q: 1 }))).toBe(false);
   });
 
   it('never trusts a claim it does not understand', () => {

@@ -23,7 +23,7 @@ final class ClaimVerifier
 {
     public const KINDS = [
         'division', 'product', 'phrase', 'sure', 'containers', 'pair', 'divisors', 'stop', 'divisible',
-        'bracket', 'fullNeeded', 'pgcd', 'coprime', 'commonDivisor', 'fraction', 'factorization', 'prime',
+        'bracket', 'fullNeeded', 'pgcd', 'coprime', 'commonDivisor', 'fraction', 'factorization', 'prime', 'scale',
     ];
 
     /** Les genres qui portent sur UN nombre `a`, sans `b` (GameEvidenceController ne l'exige pas pour eux). */
@@ -215,6 +215,35 @@ final class ClaimVerifier
                 }
 
                 return $c['says'] === self::isPrime($a);
+            case 'scale':
+                // L'ÉCHELLE de deux triangles en position de Thalès : chaque longueur de (1) `from[i]` fois k = p/q donne
+                // sa partenaire de (2) `to[i]` (from[i] × p = to[i] × q, pour chaque paire — 1 à 6 paires) ; toute
+                // écriture de k égale est admise. Les longueurs sont des naturels dans UNE unité commune (42,5 et 68
+                // arrivent en dixièmes : 425 et 680). Avec `says` ('enlargement' ou 'reduction'), le mot de l'élève doit
+                // être celui que donne k : k > 1 un agrandissement, k < 1 une réduction (k = 1 n'est ni l'un ni l'autre).
+                [$p, $q] = [$n('p'), $n('q')];
+                $from = $c['from'] ?? null;
+                $to = $c['to'] ?? null;
+                if ($p === null || $q === null || $p === 0 || $q === 0 || ! is_array($from) || ! is_array($to)
+                    || ! array_is_list($from) || ! array_is_list($to) || count($from) < 1 || count($from) > 6
+                    || count($from) !== count($to)) {
+                    return false;
+                }
+                foreach ([...$from, ...$to] as $x) {
+                    if (! is_int($x) || $x < 1 || $x > self::MAX) {
+                        return false;
+                    }
+                }
+                foreach ($from as $i => $x) {
+                    if ($x * $p !== $to[$i] * $q) {
+                        return false;
+                    }
+                }
+                if (! array_key_exists('says', $c)) {
+                    return true;
+                }
+
+                return $c['says'] === ($p > $q ? 'enlargement' : ($p < $q ? 'reduction' : null)) && $c['says'] !== null;
             default:
                 return false;
         }
@@ -271,6 +300,9 @@ final class ClaimVerifier
     /** L'identité d'un item généré : la même division posée deux fois est le MÊME item (règle des items distincts). */
     public static function itemId(array $c): string
     {
+        if (($c['kind'] ?? null) === 'scale') { // its item is its first pair of partner lengths
+            $c = ['kind' => 'scale', 'a' => $c['from'][0] ?? null, 'b' => $c['to'][0] ?? null];
+        }
         $parts = array_map(static fn ($k) => isset($c[$k]) && is_int($c[$k]) ? (string) $c[$k] : '-', ['a', 'b']);
 
         return ($c['kind'] ?? 'x').'-'.implode('x', $parts);

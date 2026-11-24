@@ -21,9 +21,38 @@ const PRACTICE = join(ROOT, 'content/practice');
 const LESSONS = join(ROOT, 'apps/web/src/lessons');
 
 /** « 85;119 » — a pair in either order, as a key (the same as forgeBlocks.js › pairKey). */
-const keyOf = (x, y) => [x, y].sort((p, q) => p - q).join(';');
-/** A number standing alone in a text (not a piece of a longer number). */
-export const alone = (n) => new RegExp(`(?<![0-9])${n}(?![0-9])`);
+const keyOf = (x, y) => [x, y].sort((p, q) => valueOf(p) - valueOf(q)).join(';');
+const COMMA_TEXT = /\{,\}|,/;
+/** A decimal comma as a bank writes it: « 7,5 », LaTeX « 7{,}5 ». */
+const COMMA = String.raw`(?:,|\{,\})`;
+/** A fraction as a bank writes it: « 5/6 », `\dfrac{5}{6}`, `\frac{5}{6}`, `\tfrac{5}{6}`. */
+const fractionRe = (p, q) =>
+  String.raw`(?:(?<![0-9])${p}\s*/\s*${q}|\\[dt]?frac\s*\{\s*${p}\s*\}\s*\{\s*${q}\s*\})(?![0-9])`;
+/**
+ * A number standing alone in a text (not a piece of a longer number). A whole number keeps its old reading (it still
+ * stands in « 0,49 »: the check errs on the side of a collision). A DECIMAL (57.5, or the text « 57,5 ») stands in
+ * « 57,5 » or « 57{,}5 » — never in « 157,5 », « 57,55 », nor in a figure's coordinates (« 57.5 », JSON points). A
+ * FRACTION « 5/6 » stands as « 5/6 » or `\dfrac{5}{6}`.
+ */
+export const alone = (n) => {
+  const t = String(n).trim().replace(COMMA_TEXT, '.');
+  const frac = /^(\d+)\/(\d+)$/.exec(t);
+  if (frac) return new RegExp(fractionRe(frac[1], frac[2]));
+  const dec = /^(\d+)\.(\d+)$/.exec(t);
+  if (dec) return new RegExp(String.raw`(?<![0-9])(?<![0-9]${COMMA})${dec[1]}${COMMA}${dec[2]}(?![0-9])`);
+  return new RegExp(`(?<![0-9])${n}(?![0-9])`);
+};
+/**
+ * A number of the authoring kit: a whole number (85), a decimal (57.5, '57,5', '57{,}5') or a fraction ('5/6').
+ * → its value as a JS number, to sort and to compare with the headline floor (100) — never to decide an answer.
+ */
+export function valueOf(n) {
+  const t = String(n).trim().replace(COMMA_TEXT, '.');
+  const frac = /^(\d+)\/(\d+)$/.exec(t);
+  return frac ? Number(frac[1]) / Number(frac[2]) : Number(t);
+}
+/** A number as a bank writes it: « 85 », « 57,5 », « 5/6 ». */
+export const shown = (n) => String(n).trim().replace(COMMA_TEXT, '.').replace('.', ',');
 
 /** The grade folder of a lesson's bank (« 3e »), or null when it has none. */
 export function gradeOf(id) {
@@ -42,9 +71,71 @@ export function readBank(id, grade = gradeOf(id)) {
       readdirSync(join(dir, lvl))
         .filter((f) => f.endsWith('.json'))
         .sort()
-        .map((f) => ({ file: join(lvl, f), level: lvl, text: readFileSync(join(dir, lvl, f), 'utf8') })),
+        .map((f) => {
+          const text = readFileSync(join(dir, lvl, f), 'utf8');
+          return { file: join(lvl, f), level: lvl, text, body: withoutMetadata(text) };
+        }),
     );
   return { id, grade, dir, sheets };
+}
+
+/**
+ * A sheet's text WITHOUT the textbook's bookkeeping of its `"metadata"`: the `"source"` block (« page: 104 », the
+ * activity's number) and every field whose value is a bare number (« estimatedMinutes », « points: "03" »). The
+ * metadata's WORDS stay (its title is shown on the sheet and names the exercise's numbers). A sheet is pretty-printed
+ * JSON: a block ends at the first line indented as it opened. `body` is what is searched for a number; `text` stays
+ * whole (the named pairs are read from it, as before).
+ */
+export function withoutMetadata(text) {
+  const lines = text.split('\n');
+  const at = lines.findIndex((l) => /^ {2}"metadata": \{\s*$/.test(l));
+  const end = at < 0 ? -1 : lines.findIndex((l, i) => i > at && /^ {2}\},?\s*$/.test(l));
+  if (end < 0) return text;
+  const drop = new Set();
+  for (let i = at + 1; i < end; i += 1) {
+    const open = /^( +)"source": \{\s*$/.exec(lines[i]);
+    if (open) {
+      const close = new RegExp(`^${open[1]}\\},?\\s*$`);
+      for (; i < end && !close.test(lines[i]); i += 1) drop.add(i);
+      drop.add(i);
+    } else if (/^\s*"[^"]+": (?:"?\d+"?|null),?\s*$/.test(lines[i])) drop.add(i);
+  }
+  return lines.filter((_, i) => !drop.has(i)).join('\n');
+}
+
+/** What is searched in a sheet: its `body`, or its whole `text` for a bank built by hand (tests, `{ text }` only). */
+const bodyOf = (s) => s.body ?? withoutMetadata(s.text);
+
+/** A decimal « 7,5 » / « 7{,}5 », a fraction « \dfrac{5}{6} » / « 5/6 », or a whole number, as written in a text. */
+const NUMBER_RE =
+  /\\[dt]?frac\s*\{\s*(\d+)\s*\}\s*\{\s*(\d+)\s*\}|(?<![0-9.])(\d+)\s*\/\s*(\d+)(?![0-9.])|(?<![0-9.])(\d+)(?:,|\{,\})(\d+)(?![0-9])|(?<![0-9.,])(\d+)(?![0-9])(?!\.[0-9])/g;
+/**
+ * Every number the bank WRITES (its body: statements, questions, solutions, figure labels; never the metadata nor a
+ * figure's coordinates, nor the sheet's bookkeeping — its ids, its steps « 01 », its answer-format hint): a Map « 57,5 » → the sheets where it stands, the decimals
+ * and fractions written as the bank writes them. A whole number that is the piece of a decimal or a fraction is not
+ * counted again.
+ */
+const NOT_WRITTEN = /^\s*"(?:id|lessonCode|code|step|level|difficulty|timeSeconds|answerFormat|maxWidth)":/;
+/** A JSON number on its own (a figure's coordinate, `"arrows": 1`): not a number the sheet writes. */
+const JSON_NUMBER = /^\s*(?:"[^"]+":\s*)?-?\d+(?:\.\d+)?,?\s*$/;
+export function bankNumbers(bank) {
+  const out = new Map();
+  for (const s of bank.sheets) {
+    const written = bodyOf(s)
+      .split('\n')
+      .filter((l) => !NOT_WRITTEN.test(l) && !JSON_NUMBER.test(l))
+      .join('\n');
+    for (const m of written.matchAll(NUMBER_RE)) {
+      const n = m[1] ? `${m[1]}/${m[2]}` : m[3] ? `${m[3]}/${m[4]}` : m[5] ? `${m[5]},${m[6]}` : m[7];
+      if (!out.has(n)) out.set(n, new Set());
+      out.get(n).add(s.file);
+    }
+  }
+  return new Map(
+    [...out]
+      .sort(([p], [q]) => valueOf(p) - valueOf(q) || p.localeCompare(q))
+      .map(([n, sheets]) => [n, [...sheets].sort()]),
+  );
 }
 
 /**
@@ -69,10 +160,10 @@ export const pairLines = (text, x, y, most = 6) =>
   text.split('\n').filter((l) => alone(x).test(l) && alone(y).test(l) && (l.match(/\d+/g) ?? []).length <= most);
 /** The lines of the bank where x and y stand together (`pairLines`), with their sheet. */
 export const linesWithBoth = (bank, x, y) =>
-  bank.sheets.flatMap((s) => pairLines(s.text, x, y).map((l) => `${s.file}: ${l.trim()}`));
+  bank.sheets.flatMap((s) => pairLines(bodyOf(s), x, y).map((l) => `${s.file}: ${l.trim()}`));
 
 /** The sheets where n stands alone. */
-const sheetsWith = (bank, n) => bank.sheets.filter((s) => alone(n).test(s.text)).map((s) => s.file);
+const sheetsWith = (bank, n) => bank.sheets.filter((s) => alone(n).test(bodyOf(s))).map((s) => s.file);
 
 /** Every `world/story.js` of the lessons, but `exceptId`'s: { file, text }. */
 export function storiesOf({ exceptId = null } = {}) {
@@ -108,7 +199,7 @@ export function collisions(bank, nums, { stories = storiesOf({ exceptId: bank.id
   const bankLines = pair ? linesWithBoth(bank, x, y) : [];
   const storyLines = pair ? stories.flatMap((s) => pairLines(s.text, x, y).map((l) => `${s.file}: ${l.trim()}`)) : [];
   const numbers = nums
-    .filter((n) => n >= 100)
+    .filter((n) => valueOf(n) >= 100)
     .map((n) => ({
       n,
       sheets: sheetsWith(bank, n),

@@ -16,6 +16,8 @@ import { tmpdir } from 'node:os';
 import { GL_ARGS } from '../gpu.mjs';
 import { FOREIGN, FOREIGN_NUMBERS, FLOOR_PX } from '../walk.mjs';
 import { boardCourt } from './worlds/rootCourts.mjs';
+import { eq, write } from './worlds/exact.mjs';
+import { WRONG_WORD } from './checks.mjs';
 
 const CONTENT = join(dirname(fileURLToPath(import.meta.url)), '../../../../../content');
 const NAMES = [
@@ -546,6 +548,53 @@ export async function boardWalk(L, D, opts) {
         }
         await clean('situation-held');
         await shot('situation-held', 900);
+      } else if (s.kind === 'ask' && s.figure) {
+        // a station that carries its FIGURE (the pyramids world's board first): its cards are lengths, the one asked is
+        // computed by the descriptor from the lengths the figure writes; « On vérifie sur la figure » proves it — no bridge drawn
+        const judge = D.board?.[s.id];
+        expect(judge, `${s.id}: the descriptor computes the length this figure asks (board.${s.id})`);
+        const want = judge(s);
+        const right = s.options.filter((o) => eq(String(o), want));
+        const wrong = s.options.find((o) => !eq(String(o), want));
+        expect(
+          right.length === 1 && wrong != null,
+          `${s.id}: ONE card is the length asked, ${write(want)} — computed here from the figure's lengths (${s.options.join(', ')})`,
+        );
+        const shown = await page.$$eval('[data-cs-ask-option]', (els) => els.map((e) => Number(e.dataset.csAskOption)));
+        expect(shown.join() === s.options.join(), `${s.id}: the cards on the board are ${s.options.join(', ')}`);
+        await notYet(`${s.id}, before its check`, still);
+        check(
+          (await page.locator('[data-cs-figure]').count()) === 1,
+          `${s.id}: the station draws its figure (${await page.getAttribute('[data-cs-figure]', 'data-cs-figure').catch(() => 'none')})`,
+        );
+        await clean(`${s.id}-open`);
+        await shot(`ask-${s.id}-open`);
+        await page.click(`[data-cs-ask-option="${wrong}"]`);
+        check(
+          ((await text('[data-cs-ask-check]')) ?? '').includes('On vérifie sur la figure'),
+          `${s.id}: one card picked, « On vérifie sur la figure »`,
+        );
+        await page.click('[data-cs-ask-check]');
+        expect(
+          (await attr('[data-cs-ask-result]', 'data-cs-ask-result')) === 'look' &&
+            (await page.$$('.cs-plankcard .bbar')).length === 0,
+          `${s.id}: a wrong card (${wrong}) is answered by the figure's proof, never « wrong », no bridge drawn`,
+        );
+        const said = (await text('[data-cs-ask-result]')) ?? '';
+        check(!WRONG_WORD.test(said), `${s.id}: the proof never says « wrong »`);
+        await clean(`${s.id}-look`);
+        await shot(`ask-${s.id}-look`);
+        await page.click('[data-cs-ask-again]');
+        await page.click(`[data-cs-ask-option="${right[0]}"]`);
+        await page.click('[data-cs-ask-check]');
+        expect(
+          (await attr('[data-cs-ask-result]', 'data-cs-ask-result')) === 'right' &&
+            (await page.$$('.cs-plankcard.is-held')).length === 1,
+          `${s.id}: the card ${right[0]} is the right answer`,
+        );
+        await notYet(s.id, still);
+        await clean(s.id);
+        await shot(`ask-${s.id}`);
       } else if (s.kind === 'ask') {
         const words = { ...PLANK_WORDS, ...s.words };
         const right = s.options.filter((o) => s.a % o === 0);

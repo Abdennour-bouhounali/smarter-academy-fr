@@ -51,6 +51,15 @@ class GameEvidenceTest extends TestCase
         ], $overrides));
     }
 
+    public function test_a_scale_claim_is_accepted_without_a_and_b(): void
+    {
+        [, $token] = $this->student();
+        $claim = ['kind' => 'scale', 'from' => [136, 184], 'to' => [85, 115], 'p' => 5, 'q' => 8, 'says' => 'reduction'];
+        $this->send($token, ['claim' => $claim])->assertStatus(201)->assertJsonPath('outcome', 'correct');
+        $this->send($token, ['attemptId' => 'gw-0002', 'claim' => ['kind' => 'scale', 'p' => 5, 'q' => 8]])->assertStatus(422);
+        $this->assertSame('scale-136x85', ClaimVerifier::itemId($claim));
+    }
+
     public function test_the_two_verifiers_share_one_fixture(): void
     {
         $fixture = json_decode(file_get_contents(base_path('tests/Fixtures/game-claims.json')), true);

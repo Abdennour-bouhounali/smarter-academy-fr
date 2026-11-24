@@ -415,10 +415,20 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
    * The sentences are the French families' words (families.js › MISTAKES: « 6 est un diviseur de 42 », « 42 est un
    * multiple de 6 »; gestures.jsx › the list card, `listFr`); white space, no-break included, read as one space.
    */
-  const boxOf = (card, plain) => {
+  const boxOf = (card, plain, promptTex = []) => {
     if (card.tex) {
       // KaTeX may keep the style it drew in (« \displaystyle 210 = 24 \times 7 + 42 »): the equality is what follows it
       const tex = texOf(card.tex);
+      // « AC = v », « MN = v » (3am.m2.r03, level 2): the length of the prompt's triangle, computed here
+      const tm = /^(AC|MN) = (\d+)$/.exec(tex);
+      if (tm) {
+        const T = triOf(promptTex);
+        expect(
+          ['AM', 'AB', 'AN', 'BC'].every((k) => k in T),
+          `the prompt writes the triangle's lengths (${JSON.stringify(T)})`,
+        );
+        return triLength(T, tm[1]) === Number(tm[2]) ? 'yes' : 'no';
+      }
       let m = /^(\d+) = (\d+) \\times (\d+) ([+-]) (\d+)$/.exec(tex);
       if (m) {
         const [a, b, k, r] = [m[1], m[2], m[3], m[5]].map(Number);
@@ -485,6 +495,16 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
     expect(false, `the walk can read the number card « ${card.text} » with its prompt « ${norm(plain)} »`);
     return null;
   };
+  /** The lengths of the triangle a prompt writes (« $AM = 6$, $AB = 14$ … »; the Algerian family 3am.m2.r03 first), from its formulas' sources. */
+  const triOf = (tex) =>
+    Object.fromEntries(
+      tex
+        .map((t) => /^([A-Z]{2}) = (\d+)$/.exec(texOf(t)))
+        .filter(Boolean)
+        .map((m) => [m[1], Number(m[2])]),
+    );
+  /** A length of the triangle cut by (MN) ∥ (BC), from the lengths given (AM / AB = AN / AC = MN / BC), computed here. */
+  const triLength = (T, ask) => (ask === 'AC' ? (T.AB * T.AN) / T.AM : (T.AM * T.BC) / T.AB);
   const type = async (v) => {
     for (const d of String(v)) await S.page.click(`[data-lk-key="${d}"]`);
   };
@@ -494,8 +514,8 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
     const { q } = await cur();
     const card = await cardInHand();
     expect(Boolean(card), 'a card is in the hand');
-    const { plain } = await onScreen();
-    const bin = boxOf(card, plain);
+    const { plain, tex } = await onScreen();
+    const bin = boxOf(card, plain, tex);
     const game = q.cards.find((c) => c.id === card.id);
     expect(
       game && game.bin === bin,
@@ -513,7 +533,32 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
     const sc = await onScreen();
     if (q.gesture === 'write') {
       let vals;
-      if (sc.fracs.length === 2) {
+      if (q.calc?.op === 'fourth' && sc.fracs.length === 2) {
+        // « a/b = c/▢ » (3am.m2.r03, level 1): the fourth proportional — a box as the DENOMINATOR — computed here; wrong:
+        // the difference added (the slip « add-not-times »)
+        const [a, b] = sc.fracs[0].split('/').map(Number);
+        const [c, box] = sc.fracs[1].split('/');
+        expect(
+          box === '▢' && a === q.calc.a && b === q.calc.b && Number(c) === q.calc.c && same(sc.slots, ['v']),
+          `the equation on screen is the question asked (${sc.fracs.join(' = ')}), the box under the bar`,
+        );
+        const v = (b * Number(c)) / a;
+        expect(Number.isInteger(v), `${sc.fracs.join(' = ')}: a whole fourth proportional (${v})`);
+        const slip = Number(c) + (b - a);
+        vals = { v: right ? v : slip !== v ? slip : v + 1 };
+      } else if (q.calc?.op === 'fourth') {
+        // « AC = ▢ cm », « MN = ▢ cm » (3am.m2.r03): a length of the prompt's triangle — the unit printed AFTER the box
+        const ask = sc.eq[0];
+        const T = triOf(sc.tex);
+        expect(
+          ['AC', 'MN'].includes(ask) && sc.eq[1] === '=' && sc.eq.at(-1) === 'cm' && same(sc.slots, ['v']),
+          `a length to compute, ONE box, « cm » printed after it (${sc.eq.join(' ')})`,
+        );
+        const v = triLength(T, ask);
+        expect(Number.isInteger(v), `${ask} from ${JSON.stringify(T)}: a whole length (${v})`);
+        const slip = ask === 'AC' ? T.AN + (T.AB - T.AM) : T.BC - (T.AB - T.AM);
+        vals = { v: right ? v : slip !== v && slip > 0 ? slip : v + 1 };
+      } else if (sc.fracs.length === 2) {
         // « n/d = m/▢ » or « n/d = ▢/m » (1am.m5.r02): the term that keeps the value, computed here; wrong: the same
         // number subtracted from both terms (the slip « subtract-not-divide »), or the term left as it was
         const [n, d] = sc.fracs[0].split('/').map(Number);

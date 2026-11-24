@@ -17,7 +17,8 @@
  * Usage and a skeleton of every test file: `authoring/README.md`. Proved on two real lessons: `authoring/proof.*.test.js`.
  */
 import { describe, it, expect } from 'vitest';
-import { complete, ruleKey, runOn, testsOf } from '../../forge';
+import { boxName, complete, ruleKey, runOn, testsOf } from '../../forge';
+import { plus, tryRead, write } from '../../exact';
 import { verifyClaim } from '../../claims';
 import { guardEvidence } from '../../evidence';
 import { rng } from '../../random';
@@ -608,6 +609,12 @@ export function describeStory(opts) {
  *   draw        { max: 90, laid: 40, tag: 12 } — what a mirror can draw: the longer gap, planks on one bridge, a log tag
  *   pairOf      (case) => [x, y] | null — the pair a case names (default [c.A, c.B])
  */
+/** The length of a short text as it is SEEN (a MathText tag: « la pièce $\\tfrac{6}{5}$ » reads « la pièce 6 »). */
+const seenLength = (t) =>
+  String(t)
+    .replace(/\\[dt]?frac\{([^}]*)\}\{([^}]*)\}/g, (_, a, b) => (a.length >= b.length ? a : b))
+    .replace(/\$/g, '').length;
+
 export function describeForges(opts) {
   const { forges, keys, roads, before = {}, inquiry = {}, solve, forbidden = {} } = opts;
   const draw = { max: 90, laid: 40, tag: 12, ...opts.draw };
@@ -718,7 +725,8 @@ export function describeForges(opts) {
             expect([c.pair.a, c.pair.b, c.pair.d], idc).toEqual([c.A, c.B, c.d]);
             expect(c.fits, idc).toBe(c.A % c.d === 0 && c.B % c.d === 0);
           }
-          if (c.tag != null) expect(String(c.tag).length, c.tag).toBeLessThanOrEqual(draw.tag);
+          // a tag's length as SEEN: a formula's dollars are not drawn, a fraction is as wide as its wider term
+          if (c.tag != null) expect(seenLength(c.tag), c.tag).toBeLessThanOrEqual(draw.tag);
           const p = pairOf(c);
           if (p) expect(bankSet.has(pairKey(...p)), `${key} ${idc}: a pair of the bank`).toBe(false);
         }
@@ -836,23 +844,48 @@ export function describeForges(opts) {
             expect(lines.length).toBeGreaterThanOrEqual(1);
             expect(lines.length).toBeLessThanOrEqual(4);
             // a typed fraction (`fractionBox`) gives its numerator's box, then its denominator's (lesson 8); a typed power
-            // (`powerBox`) its base's box, then its exponent's
+            // (`powerBox`) its base's box, then its exponent's; a box is answered under its `slot`, a choice
+            // (`choiceBox`) under its `choice` (forge.js › boxName)
             const boxes = lines.flatMap((l) => boxesOf(l.tokens));
-            expect(boxes.map((t) => t.slot).sort()).toEqual(Object.keys(vals).sort());
-            for (const t of boxes) expect(String(vals[t.slot]).length, t.slot).toBeLessThanOrEqual(t.w);
+            expect(boxes.map(boxName).sort()).toEqual(Object.keys(vals).sort());
+            for (const t of boxes)
+              if (t.choice != null)
+                expect(
+                  t.options.map((o) => o.id),
+                  t.choice,
+                ).toContain(vals[t.choice]);
+              else if (t.decimal) {
+                // a decimal box: what the student types — digits and one comma, never a point
+                expect(String(vals[t.slot]), t.slot).toMatch(/^\d+(,\d+)?$/);
+                expect(String(vals[t.slot]).length, t.slot).toBeLessThanOrEqual(t.w);
+              } else expect(String(vals[t.slot]).length, t.slot).toBeLessThanOrEqual(t.w);
+            const words = (t) =>
+              typeof t === 'string' ? [t] : [t.label, ...(t.choice != null ? t.options.map((o) => o.text) : [])];
             // a printed string may write a variable `$N$` (drawn by MathText: one way, as in the question)
             for (const l of lines)
               for (const t of l.tokens)
-                if (partsOf(t)) for (const x of partsOf(t)) plain(typeof x === 'string' ? x : x.label);
+                if (partsOf(t)) for (const x of partsOf(t)) words(x).forEach(plain);
                 else if (typeof t === 'string') said(t);
-                else plain(t.label);
+                else words(t).forEach(plain);
             const asText = Object.fromEntries(Object.entries(vals).map(([k, v]) => [k, String(v)]));
             expect(F.use.check(c, asText, verdict)).toBe('ok');
             said(F.text.tryKey(c));
+            // each answer wrong in turn: a number off by 100 (a decimal stays a decimal: « 157,5 »), every OTHER option
+            // of a choice — each must be refused, with a sentence of `text.use`
+            const box = Object.fromEntries(boxes.map((t) => [boxName(t), t]));
             for (const name of Object.keys(vals)) {
-              const fb = F.use.check(c, { ...asText, [name]: String(Number(vals[name]) + 100) }, verdict);
-              expect(fb, `${key} ${name}`).not.toBe('ok');
-              expect(typeof F.text.use[fb], `${key} text.use.${fb}`).toBe('string');
+              const t = box[name];
+              const wrong =
+                t?.choice != null
+                  ? t.options.map((o) => o.id).filter((id) => id !== vals[name])
+                  : t?.decimal && tryRead(vals[name])
+                    ? [write(plus(tryRead(vals[name]), 100))]
+                    : [String(Number(vals[name]) + 100)];
+              for (const w of wrong) {
+                const fb = F.use.check(c, { ...asText, [name]: w }, verdict);
+                expect(fb, `${key} ${name} = ${w}`).not.toBe('ok');
+                expect(typeof F.text.use[fb], `${key} text.use.${fb}`).toBe('string');
+              }
             }
             const p = pairOf(c);
             if (p) expect(bankSet.has(pairKey(...p)), `${key} last step ${p}: a pair of the bank`).toBe(false);

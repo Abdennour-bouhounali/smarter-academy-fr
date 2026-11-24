@@ -10,6 +10,7 @@
 import { createWalk } from '../walk.mjs';
 import { mapLaidOut, WRONG_WORD } from './checks.mjs';
 import { gcd } from './experiments.mjs';
+import { q as num, sub, write } from './worlds/exact.mjs';
 
 const plain = (text) =>
   String(text)
@@ -65,8 +66,13 @@ export async function trainerWalk(L, D, opts) {
     const practice = Object.fromEntries(KEYS.map((k) => [`${k}:1`, { stars: 2, best: 800 }]));
     const save = {
       v: 1,
-      // the islands' road counts its segments; « Le palais des dalles » its terraces (the save's last place)
-      stage: L.lesson.story.segments ? L.lesson.story.segments.length : L.lesson.story.terraces.length - 1,
+      // the islands' road counts its segments; « Le palais des dalles » its terraces; a world of legs (the pyramids' boat
+      // trips) its docks (one more than its legs)
+      stage: L.lesson.story.segments
+        ? L.lesson.story.segments.length
+        : L.lesson.story.legs
+          ? L.lesson.story.legs.length
+          : L.lesson.story.terraces.length - 1,
       stars: {},
       gems: [],
       keys: KEYS,
@@ -187,7 +193,11 @@ export async function trainerWalk(L, D, opts) {
       if (q.kind === 'tap') return q.options.find((n) => n !== v);
       if (q.kind === 'tf') return { truth: !v.truth, reason: v.reason };
       const last = Object.keys(v).at(-1);
-      return { ...v, [last]: typeof v[last] === 'number' ? v[last] + 1 : { other: v[last] } };
+      // a number + 1 (a decimal « 57,5 » exactly: « 58,5 »); a choice: another of its options
+      const x = v[last];
+      if (typeof x === 'number') return { ...v, [last]: x + 1 };
+      if (/^\d+(,\d+)?$/.test(String(x))) return { ...v, [last]: write(sub(num(String(x)), '-1')) };
+      return { ...v, [last]: { other: x } };
     };
     const reply = async (q, v) => {
       if (await page.locator('[data-di-pgate-go]').count()) {
@@ -204,6 +214,24 @@ export async function trainerWalk(L, D, opts) {
         return;
       }
       for (const [k, x] of Object.entries(v)) {
+        // a choice drawn as buttons (kit/ChoiceToken.jsx): the option whose id or words are the answer — or another one
+        const group = `[data-di-trainer] [data-kit-choice="${k}"]`;
+        if (await page.locator(group).count()) {
+          const id = await page.evaluate(
+            ([g, want]) => {
+              const opts = [...document.querySelectorAll(`${g} [data-kit-option]`)].map((b) => ({
+                id: b.dataset.kitOption,
+                text: b.textContent.trim(),
+              }));
+              const is = (o, x) => o.id === String(x) || o.text === String(x);
+              return (typeof want === 'object' ? opts.find((o) => !is(o, want.other)) : opts.find((o) => is(o, want)))
+                ?.id;
+            },
+            [group, x],
+          );
+          await page.click(`${group} [data-kit-option="${id ?? x}"]`);
+          continue;
+        }
         const sel = `[data-di-tr="${k}"]`;
         if ((await page.evaluate((s) => document.querySelector(s)?.tagName, sel)) === 'SELECT') {
           const opt = await page.evaluate(

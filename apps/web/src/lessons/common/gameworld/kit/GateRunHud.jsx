@@ -8,6 +8,9 @@
  *
  * `game` answers `startRun()`, `leaveRun()`, `pauseRun(on)`, `runLane(d)` and holds the engine as `game.gateRun`.
  * A gate's `why` is drawn by MathText: a fraction in it is written `$\\dfrac{p}{q}$`, never « p/q ».
+ * A world that sails with a `skin` (`GateRun` options) gets `gr-run--<skin>` and `data-gr-skin`: on the river the numbers
+ * are tags over the buoys. With `hazards`: `data-gr-hazard` is the lane of the obstacle ahead ('' once passed) and
+ * `data-gr-bumps` the obstacles touched; a touch shakes the hearts (and shows `text.bump` when the lesson gives one).
  * `content.text` is the lesson's: { title, say, rule, start, again, leave, order, gate, of, pause, resume, quit, won: { title, text }, lost: { title, text } }.
  */
 import { ArrowLeft, ArrowRight, Flame, Heart, Pause, Play, Star, Trophy, X, Zap } from 'lucide-react';
@@ -67,11 +70,25 @@ export default function GateRunHud({ run: r, game, content }) {
     );
   }
   const paused = r.stage === 'paused';
+  const skin = game.gateRun?.o?.skin?.name;
+  const hazards = r.bumps != null;
   return (
-    <section className="gr-run" data-gr-run={r.stage} data-gr-round={r.n} data-gr-lane={r.lane}>
+    <section
+      className={skin ? `gr-run gr-run--${skin}` : 'gr-run'}
+      data-gr-run={r.stage}
+      data-gr-round={r.n}
+      data-gr-lane={r.lane}
+      data-gr-skin={skin}
+      data-gr-hazard={hazards ? (r.hazard ?? '') : undefined}
+      data-gr-bumps={hazards ? r.bumps : undefined}
+    >
       <div className="di-dash" data-di-dash="gate-run">
         <div className="di-dash__meta">
-          <span className="di-dash__hearts" data-gr-hearts={r.hearts}>
+          <span
+            className={r.bumps ? 'di-dash__hearts gr-hearts--bump' : 'di-dash__hearts'}
+            data-gr-hearts={r.hearts}
+            key={`h${r.bumps ?? 0}`}
+          >
             {[0, 1, 2].map((k) => (
               <Heart key={k} size={22} className={k < r.hearts ? 'is-on' : ''} fill="currentColor" aria-hidden="true" />
             ))}
@@ -142,6 +159,11 @@ export default function GateRunHud({ run: r, game, content }) {
           <Option o={o} />
         </b>
       ))}
+      {r.bumps > 0 && T.bump && r.stage === 'go' && (
+        <div className="gr-bump" key={`b${r.bumps}`} data-gr-bump={r.bumps}>
+          {T.bump}
+        </div>
+      )}
       {paused && (
         <div className="gr-paused" data-gr-paused>
           <div className="gr-card">

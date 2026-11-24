@@ -10,12 +10,20 @@
  *   form  { tip, model?, single?, review?, lines }    — an exam answer in its own shape (see trainer.js › « a form »);
  *                                                       its tokens, a fraction and a power template among them:
  *                                                       `FormLines` below.
+ * Any of the three may carry `figure` — the data of a bank sheet's `statement.figure` (a plane figure: points, segments,
+ * parallels, lengths; or `space` / `chart` / `tape`): it is drawn ABOVE the question by the practice space's own
+ * `components/StatementFigure.jsx`, never narrower than its 12 px floor (`trainerFigure.js`). Without it the question is
+ * drawn exactly as before.
  */
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Star, RotateCcw, Gamepad2, FileText, ArrowRight } from 'lucide-react';
 import MathText from '../../components/MathText';
+import StatementFigure from '../../components/StatementFigure';
+import { trainerFigure } from './trainerFigure';
 import { useLesson } from './LessonContext';
 import { sessionStars, SESSION } from './trainer';
+import { typedDecimal } from './forge';
+import ChoiceToken from './ChoiceToken';
 import { PaperGate, PaperModel, PaperChip, PT } from './Paper';
 import { twin } from './longDivision';
 import { guardEvidence } from './evidence';
@@ -40,18 +48,32 @@ const Marked = ({ text }) =>
 
 /** The value an option is known by in the page: its `id`, or its value written out. */
 const idOf = (option) => option.id ?? String(option.value);
-const Num = ({ value, onChange, w = 3, ...rest }) => (
-  <input
-    className="di-num di-num--tr"
-    dir="ltr"
-    inputMode="numeric"
-    pattern="[0-9]*"
-    value={value}
-    style={{ width: `${w + 1.4}ch` }}
-    onChange={(e) => onChange(e.target.value.replace(/[^0-9]/g, '').slice(0, w + 1))}
-    {...rest}
-  />
-);
+/** A box: digits only (w + 1 at most) — or, `decimal`, digits and ONE comma (« 77,5 », a point typed becomes a comma;
+ * at most w characters, default 5): the lesson reads it with `exact.js › read`. */
+const Num = ({ value, onChange, w = 3, decimal = false, ...rest }) =>
+  decimal ? (
+    <input
+      className="di-num di-num--tr"
+      dir="ltr"
+      inputMode="decimal"
+      value={value}
+      style={{ width: `${w + 1.4}ch` }}
+      onChange={(e) => onChange(typedDecimal(e.target.value, w))}
+      data-di-tr-decimal=""
+      {...rest}
+    />
+  ) : (
+    <input
+      className="di-num di-num--tr"
+      dir="ltr"
+      inputMode="numeric"
+      pattern="[0-9]*"
+      value={value}
+      style={{ width: `${w + 1.4}ch` }}
+      onChange={(e) => onChange(e.target.value.replace(/[^0-9]/g, '').slice(0, w + 1))}
+      {...rest}
+    />
+  );
 
 export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence }) {
   const { makeSession, check, solution, answerLabel, evidenceOf } = useLesson().trainer;
@@ -206,28 +228,33 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
       <div hidden={rev !== null} className="di-trainer__live">
         {paper && !fb?.final && <PaperChip />}
         {/* once the answer is final, the sheet gives way to ONE line — the question and what was answered — so the correction has the room */}
-        {fb?.final && q.format === 'exam' ? (
-          <div className="di-sheet di-sheet--done" data-di-tr-recap>
-            <p className="di-sheet__q">
-              <b>{L.question(i + 1)}</b> <MathText>{q.kind === 'tf' ? `« ${q.statement} »` : q.prompt}</MathText>
-            </p>
-            <p className="di-sheet__mine">
-              <small>{L.mine}</small> <MathText>{log.current[i]?.attempts.at(-1)?.label ?? ''}</MathText>
-            </p>
-          </div>
-        ) : (
-          <Question
-            key={`${run}-${i}`}
-            q={q}
-            index={i}
-            locked={Boolean(fb?.final)}
-            onSubmit={submit}
-            onModel={() => {
-              helped.current = true;
-              setModel({ ...twin(q.form.model.a, q.form.model.b), own: false });
-            }}
-          />
-        )}
+        {/* a question with a figure that is not flat lays it BESIDE the question: above it, the two did not fit the
+            panel's height at 1366 × 768 without zooming its text under 12 px (found on the Algerian platform's walk, 2026-11-24) */}
+        <div className="di-tr-q" data-di-tr-q={besideIt(q) ? 'figure' : 'plain'}>
+          <QuestionFigure fig={q.figure} />
+          {fb?.final && q.format === 'exam' ? (
+            <div className="di-sheet di-sheet--done" data-di-tr-recap>
+              <p className="di-sheet__q">
+                <b>{L.question(i + 1)}</b> <MathText>{q.kind === 'tf' ? `« ${q.statement} »` : q.prompt}</MathText>
+              </p>
+              <p className="di-sheet__mine">
+                <small>{L.mine}</small> <MathText>{log.current[i]?.attempts.at(-1)?.label ?? ''}</MathText>
+              </p>
+            </div>
+          ) : (
+            <Question
+              key={`${run}-${i}`}
+              q={q}
+              index={i}
+              locked={Boolean(fb?.final)}
+              onSubmit={submit}
+              onModel={() => {
+                helped.current = true;
+                setModel({ ...twin(q.form.model.a, q.form.model.b), own: false });
+              }}
+            />
+          )}
+        </div>
         {fb && (
           <p
             className={`di-trainer__fb ${fb.ok ? 'is-ok' : fb.final ? 'is-fix' : 'is-hint'}`}
@@ -270,6 +297,36 @@ export default function Trainer({ nodeId, best = 0, onDone, onPaper, onEvidence 
   );
 }
 
+/**
+ * The figure of a question (`q.figure`), above it, drawn by StatementFigure — the one renderer of a statement's figure.
+ * Its width: `k × --di-min-font` at least (its smallest label at 12 px whatever the panel's zoom), else the width
+ * `trainerFigure` gives (its natural width, no taller than the room allows). Nothing when the question has none.
+ */
+export function QuestionFigure({ fig }) {
+  const f = trainerFigure(fig);
+  if (!f) return null;
+  return (
+    <div
+      className="di-tr-figure"
+      data-di-tr-figure={f.kind}
+      style={{ '--tr-fig-w': `${f.width}px`, '--tr-fig-k': f.k }}
+    >
+      <StatementFigure {...fig} maxWidth="100%" />
+    </div>
+  );
+}
+
+/**
+ * A figure stands BESIDE its question when it is not flat (a flat one above takes little height and leaves the width),
+ * and when no line of the question's form writes three fractions (a chain of three ratios needs the panel's width: a
+ * formula never breaks across two lines).
+ */
+const besideIt = (q) => {
+  const f = q.figure ? trainerFigure(q.figure) : null;
+  const wide = (q.form?.lines ?? []).some((l) => (l.tokens ?? []).filter((t) => isFrac(t)).length >= 3);
+  return Boolean(f?.height && f.height / f.width > 0.45 && !wide);
+};
+
 /** A token of a form line that is answered: a box `{ num }` or a choice `{ choice }`. */
 const isBox = (t) => Boolean(t && typeof t === 'object' && (t.num || t.choice));
 /** A fraction template `{ frac: { n, d } }`. */
@@ -291,7 +348,12 @@ const boxesOf = (t) =>
  *   'text'                       a sign or words (on an `ltr` line: a sign of the formula);
  *   { strong } · { text }        a printed number · a printed piece (a legacy `rtl` flag is ignored);
  *   { num, label }               a box to type a whole number in (`data-di-tr=<num>`);
+ *   { num, label, decimal, w? }  a DECIMAL box: digits and one comma, « 77,5 » (a point typed becomes a comma; w
+ *                                characters, default 5; the same hook, plus `data-di-tr-decimal`) — read it with
+ *                                `exact.js › read`, never `Number`;
  *   { choice, options }          a list to choose from (`data-di-tr=<choice>`);
+ *   { choice, options, buttons } the same choice as buttons all visible (ChoiceToken.jsx: keyboard and click; hooks
+ *                                `data-kit-choice=<choice>`, `data-kit-option=<id or value>`) — also inside a fraction;
  *   { frac: { n, d } }           a FRACTION in its own shape: n stacked over a real bar over d, each a box `{ num, label }`
  *                                (typed — the same hook `data-di-tr=<num>`, numerator first in the keyboard order) or a
  *                                printed number / string (a fraction GIVEN by the statement). It is one answer in its
@@ -305,17 +367,55 @@ const boxesOf = (t) =>
  * A box may carry `w` (the digits it takes, 3 by default) — an exponent's box takes `w: 1` or `2`.
  */
 export function FormLines({ lines, v, set, locked }) {
-  const box = (t, key) => (
-    <Num
-      key={key}
-      value={v[t.num] ?? ''}
-      onChange={set(t.num)}
-      {...(t.w ? { w: t.w } : {})}
-      disabled={locked}
-      aria-label={t.label}
-      data-di-tr={t.num}
-    />
-  );
+  // a choice drawn as buttons (`buttons: true`, ChoiceToken.jsx — its options read left to right) or, by default, the
+  // list it always was
+  const choice = (t, key) => {
+    const chosen = t.options.find((o) => o.value === v[t.choice]);
+    if (t.buttons)
+      return (
+        <ChoiceToken
+          key={key}
+          name={t.choice}
+          label={t.label}
+          options={t.options.map((o) => ({ id: idOf(o), text: o.text }))}
+          value={chosen ? idOf(chosen) : null}
+          onPick={(id) => set(t.choice)(t.options.find((o) => idOf(o) === id)?.value ?? null)}
+          disabled={locked}
+          dir={t.dir ?? 'ltr'}
+        />
+      );
+    return (
+      <select
+        key={key}
+        value={chosen ? idOf(chosen) : ''}
+        onChange={(e) => set(t.choice)(t.options.find((o) => idOf(o) === e.target.value)?.value ?? null)}
+        disabled={locked}
+        data-di-tr={t.choice}
+      >
+        <option value="">{L.pick}</option>
+        {t.options.map((o) => (
+          <option key={idOf(o)} value={idOf(o)}>
+            {o.text}
+          </option>
+        ))}
+      </select>
+    );
+  };
+  const box = (t, key) => {
+    if (t.choice) return choice(t, key);
+    const extra = t.decimal ? { decimal: true, w: t.w ?? 5 } : t.w ? { w: t.w } : {};
+    return (
+      <Num
+        key={key}
+        value={v[t.num] ?? ''}
+        onChange={set(t.num)}
+        disabled={locked}
+        aria-label={t.label}
+        data-di-tr={t.num}
+        {...extra}
+      />
+    );
+  };
   const part = (x, key) => (isBox(x) ? box(x, key) : <b key={key}>{x}</b>);
   const token = (t, i, ltr) => {
     if (typeof t === 'string') {
@@ -356,24 +456,7 @@ export function FormLines({ lines, v, set, locked }) {
         </b>
       );
     if (t.text != null) return <span key={i}>{t.text}</span>;
-    if (t.num) return box(t, i);
-    const chosen = t.options.find((o) => o.value === v[t.choice]);
-    return (
-      <select
-        key={i}
-        value={chosen ? idOf(chosen) : ''}
-        onChange={(e) => set(t.choice)(t.options.find((o) => idOf(o) === e.target.value)?.value ?? null)}
-        disabled={locked}
-        data-di-tr={t.choice}
-      >
-        <option value="">{L.pick}</option>
-        {t.options.map((o) => (
-          <option key={idOf(o)} value={idOf(o)}>
-            {o.text}
-          </option>
-        ))}
-      </select>
-    );
+    return box(t, i);
   };
   return lines.map((line, k) => (
     <div key={k} className="di-sheet__line" dir={line.ltr ? 'ltr' : undefined}>

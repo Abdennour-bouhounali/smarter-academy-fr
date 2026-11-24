@@ -55,9 +55,11 @@ export const partKeys = () => MEMO_PARTS.flatMap((g) => g.keys.map(([k]) => k));
  * The numbers of an opening situation, computed: how many fit, how many are left — for the drawing and the caption.
  * A `court` (a square court of the `rootCourts` world: area `a`, rods `b` and `alt`, numbers as text): what the platform built
  * on each rod does — `kind` ride / band / jam, `diff` the band or what sticks out, exact (`rootCourts/logic.js`); `r` is
- * that difference.
+ * that difference. A GEOMETRY opening carries its own `figure` (a bank sheet's `statement.figure`): no numbers to lay.
  */
 export function openingFacts(o) {
+  // a geometry opening is its `figure` (drawn by StatementFigure): nothing is laid or left
+  if (o.figure && o.a == null) return { a: null, first: { r: null, exact: null }, second: null };
   if (o.kind === 'court') {
     const try1 = (b) => {
       const out = courtOutcome(numberRod(String(b)), String(o.a));

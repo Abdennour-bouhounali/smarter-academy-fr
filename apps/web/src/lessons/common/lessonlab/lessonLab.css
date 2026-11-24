@@ -383,7 +383,9 @@
   overflow: visible;
   direction: ltr;
 }
-.ll-draw text {
+/* the instrument's own drawing writes light on the dark board; a GeoFigure on its white card keeps its own inks (this
+   rule painted the rope card's letters and lengths #eafcff on white: unreadable — the hub walk, 2026-11-24) */
+.ll-draw text:not([data-geo-figure] text) {
   font-family: inherit;
   font-weight: 800;
   fill: #eafcff;
@@ -1482,4 +1484,39 @@
   .ll-bench {
     gap: 0.3rem;
   }
+}
+
+/* « La corde et le triangle »: the two knotted ropes on one side, the triangle (GeoFigure, a light card: its ink is the shared
+   figure's) on the other */
+.ll-rope {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  /* the figure's card: 20rem, or what its labels need at 12 px (RopeTriangle.jsx › --ll-rope-fig) */
+  grid-template-columns: minmax(0, 1fr) max(20rem, var(--ll-rope-fig, 0px));
+  gap: 0.8rem;
+  align-items: center;
+}
+.ll-rope > svg {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  overflow: visible;
+  direction: ltr;
+}
+.ll-rope__card {
+  min-width: 0;
+  align-self: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 1.2rem;
+  border: 2px solid rgba(125, 252, 255, 0.35);
+  background: #f8fafc;
+}
+.ll-rope__card[data-ll-rope-figure='parallel'] {
+  border-color: #34d399;
+}
+.ll-rope__card [data-geo-figure] {
+  margin: 0 auto;
 }

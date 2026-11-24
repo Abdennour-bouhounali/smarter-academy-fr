@@ -13,7 +13,8 @@
 //   rawLatex    no `$` and no backslash command readable on screen outside a drawn formula (`.katex`);
 //   formulas    every drawn formula reads left to right (KaTeX's atoms in order) and keeps ONE line — a formula laid in
 //               rows by its author (`\begin{array}`) is checked row by row;
-//   fontFloor   no visible text under 12 px (computed size × every CSS zoom above it), at EVERY size, for every walk — a
+//   fontFloor   no visible text under 12 px (computed size × every CSS zoom above it; an SVG text × its drawing's scale ON
+//               SCREEN, since 2026-11-24), at EVERY size, for every walk — a
 //               drawn formula is measured at its own size (the `.katex` box: its exponents and indices are KaTeX's), nothing
 //               else is exempt (the knowledge map included, since 2026-11-19);
 //   wayOut      a way out (the selectors given) is on screen and nothing covers it; `sound: true` asks the sound button too;
@@ -57,7 +58,8 @@ export const FOREIGN_NUMBERS = [756, 1850];
 export const FLOOR_PX = 11.95;
 
 /**
- * The visible texts under 12 px on the page (computed size × every CSS zoom above it; a drawn formula at the size of its
+ * The visible texts under 12 px on the page (computed size × every CSS zoom above it, an SVG text × its drawing's scale on
+ * screen; a drawn formula at the size of its
  * `.katex` box) — the rule of `shot`, for the walks that keep their own screenshot function. Returns « tag.class 11.2px « text » ».
  */
 export const tinyText = (page) =>
@@ -85,6 +87,18 @@ export const tinyText = (page) =>
       for (let x = el; x && x.nodeType === 1; x = x.parentElement) z *= parseFloat(getComputedStyle(x).zoom) || 1;
       return z;
     };
+    // An SVG text is drawn at its font size × the scale of its drawing (the viewBox stretched to the box, every transform)
+    // × the zooms: it is measured ON SCREEN, its box in user units against its box in pixels. The zooms alone were the
+    // rule until 2026-11-24 — a figure drawn wider than its viewBox (the sitting's floored figures) read 6.9 px for a
+    // label of 12, and a drawing shrunk inside its box passed at a size it never has (3 px letters in a thumbnail).
+    const scaleOf = (el) => {
+      if (el instanceof SVGGraphicsElement && el.ownerSVGElement) {
+        const bb = el.getBBox();
+        const rr = el.getBoundingClientRect();
+        if (bb.width > 0 && bb.height > 0) return Math.min(rr.width / bb.width, rr.height / bb.height);
+      }
+      return zoomOf(el);
+    };
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     for (let t = w.nextNode(); t; t = w.nextNode()) {
       const p = t.parentElement;
@@ -95,7 +109,7 @@ export const tinyText = (page) =>
       const r = p.getBoundingClientRect();
       if (r.width <= 1 || r.height <= 1 || r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) continue;
       const el = p.closest('.katex') ?? p;
-      const px = parseFloat(getComputedStyle(el).fontSize) * zoomOf(el);
+      const px = parseFloat(getComputedStyle(el).fontSize) * scaleOf(el);
       if (px < FLOOR && !underLayer(p, r)) tiny.push(`${el.tagName.toLowerCase()}.${String(el.className?.baseVal ?? el.className).split(' ')[0]} ${px.toFixed(1)}px « ${t.nodeValue.trim().slice(0, 24)} »`);
     }
     return [...new Set(tiny)];
@@ -280,6 +294,15 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
           for (let x = el; x && x.nodeType === 1; x = x.parentElement) z *= parseFloat(getComputedStyle(x).zoom) || 1;
           return z;
         };
+        // an SVG text measured on screen (tinyText › scaleOf: its viewBox's scale and every transform, not the zooms alone)
+        const scaleOf = (el) => {
+          if (el instanceof SVGGraphicsElement && el.ownerSVGElement) {
+            const bb = el.getBBox();
+            const rr = el.getBoundingClientRect();
+            if (bb.width > 0 && bb.height > 0) return Math.min(rr.width / bb.width, rr.height / bb.height);
+          }
+          return zoomOf(el);
+        };
         const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
         for (let t = w.nextNode(); t; t = w.nextNode()) {
           const p = t.parentElement;
@@ -317,7 +340,7 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
           {
             // a formula is read at its own size (its exponents and indices are smaller by KaTeX's design)
             const el = p.closest('.katex') ?? p;
-            const px = parseFloat(getComputedStyle(el).fontSize) * zoomOf(el);
+            const px = parseFloat(getComputedStyle(el).fontSize) * scaleOf(el);
             if (px < FLOOR_PX) tiny.push(`${el.tagName.toLowerCase()}.${String(el.className?.baseVal ?? el.className).split(' ')[0]} ${px.toFixed(1)}px « ${v.trim().slice(0, 24)} »`);
           }
         }

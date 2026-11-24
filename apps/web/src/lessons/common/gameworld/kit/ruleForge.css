@@ -662,6 +662,28 @@
   font-size: 0.95rem;
 }
 
+/* a CHOICE of the last step (`{ choice, label, options }`, ChoiceToken.jsx — the look `kit-choice`, styles/trainer.css):
+   cyan like the boxes, the picked one filled; its label under it on a one-line step */
+.rf-use .rf-use__choice {
+  display: grid;
+  justify-items: center;
+  --kit-choice-on: #7dfcff;
+  --kit-choice-on-text: #0b1d33;
+  color: #7dfcff;
+}
+.rf-use .kit-choice > button {
+  min-height: 2.6rem;
+  font-size: 1.35rem;
+}
+.rf-uselines:not([data-rf-lines='1']) .rf-use .kit-choice > button {
+  min-height: 2.2rem;
+  font-size: 1.05rem;
+}
+.rf-uselines .rf-use .rf-frac .kit-choice > button {
+  min-height: 1.9rem;
+  font-size: 0.95rem;
+}
+
 @keyframes rf-lay {
   from {
     opacity: 0;
@@ -784,6 +806,27 @@
   -webkit-line-clamp: 2;
   line-clamp: 2;
   overflow: hidden;
+}
+
+/* ───────── the last step with the world's figure beside its lines (`parts.UseFigure`, optional) ───────── */
+.rf-usewith {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  max-width: 100%;
+}
+.rf-usecol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.rf-usefig {
+  flex: none;
+  display: grid;
+  place-items: center;
 }
 
 /* ───────── the last step written on several lines (one sentence per line) ───────── */

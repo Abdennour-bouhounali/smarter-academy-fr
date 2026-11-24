@@ -25,7 +25,11 @@
  *                      `predictCases` returning [] skips the prediction step: a forge without an `inquiry` then opens
  *                      on its tiles (its evidence came from the world, which held the predictions)
  *   use                { make(rand) → case, lines(case) → lines of tokens, verdict?: true, check(case, values, verdict) }
- *                      a token is a string or `slot(name, label, w)`; `check` returns 'ok' or a key of `text.use`
+ *                      a token is a string, a box `slot(name, label, w)` (digits only), a DECIMAL box
+ *                      `slot(name, label, w, { decimal: true })` (digits and one comma: « 77,5 »), a CHOICE
+ *                      `{ choice: name, label, options: [{ id, text }] }` (its value is the id picked), or a fraction
+ *                      `{ frac: { n, d } }` whose parts are any of these or printed (authoring/forgeBlocks.js builds them);
+ *                      `check` receives { [name]: text } and returns 'ok' or a key of `text.use`
  *   logs?              true when a case the mirror shows joins the world's own log (`game.logMirror`)
  *   text               the wording of this forge (the screen lists the keys it reads)
  * A case always carries `held`: what the world really does with it.
@@ -34,8 +38,36 @@ export const PREDICT_NEED = 3;
 /** The lines of evidence the screen shows at once. */
 export const EVIDENCE_MAX = 8;
 
-/** A box to fill in the last step: its name in the answer, its label for a screen reader, its width in digits. */
-export const slot = (name, label, w = 3) => ({ slot: name, label, w });
+/**
+ * A box to fill in the last step: its name in the answer, its label for a screen reader, its width in characters. With
+ * `{ decimal: true }` it also takes ONE comma (a point typed is written as a comma): « 77,5 » — read it with
+ * `exact.js › read` / `tryRead`, never `Number`.
+ */
+export const slot = (name, label, w = 3, { decimal = false } = {}) => ({
+  slot: name,
+  label,
+  w,
+  ...(decimal && { decimal }),
+});
+/** The name a token of the last step is answered under: a box's `slot`, a choice's `choice`. */
+export const boxName = (t) => t.slot ?? t.choice;
+
+/**
+ * What a DECIMAL box keeps of what was typed: digits and the FIRST separator — a comma or a point — written as a comma;
+ * at most `w` characters. typedDecimal('77.5') → '77,5'.
+ */
+export function typedDecimal(text, w = 5) {
+  let seen = false;
+  let out = '';
+  for (const ch of String(text)) {
+    if (ch >= '0' && ch <= '9') out += ch;
+    else if (!seen && (ch === ',' || ch === '.')) {
+      seen = true;
+      out += ',';
+    }
+  }
+  return out.slice(0, w);
+}
 
 export const emptyRule = (forge) => Object.fromEntries(forge.slots.map((s) => [s.id, null]));
 /** Has every slot one of its own tiles? */
