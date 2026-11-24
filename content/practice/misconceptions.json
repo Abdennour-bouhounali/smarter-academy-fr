@@ -136,5 +136,64 @@
     "relatedLearningPoints": [
       "3e_trouver-le-pgcd_P4"
     ]
+  },
+  "MISC-THALES-RAPPORT-INVERSE": {
+    "label": "Retourner un seul des rapports de l’égalité de Thalès",
+    "explanation": "Les rapports s’écrivent tous dans le même ordre : le même triangle au numérateur, l’autre au dénominateur. On peut tous les retourner, jamais un seul.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P2",
+      "3e_thales-configuration-papillon_P3"
+    ]
+  },
+  "MISC-THALES-MORCEAU": {
+    "label": "Prendre un morceau de côté au lieu de la longueur entière depuis le sommet",
+    "explanation": "Dans la configuration emboîtée, chaque longueur part du sommet commun : le grand côté est la longueur entière (AB = AM + MB), pas le morceau MB.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P2"
+    ]
+  },
+  "MISC-THALES-A-TRAVERS": {
+    "label": "Prendre, dans le papillon, la longueur qui traverse le point d’intersection",
+    "explanation": "Dans le papillon, chaque longueur part du point d’intersection O : on utilise OE, jamais AE = OA + OE, qui traverse O.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P2",
+      "3e_thales-configuration-papillon_P3"
+    ]
+  },
+  "MISC-THALES-PARTENAIRE-CROISE": {
+    "label": "Associer une longueur à celle qui lui fait face sur le dessin, et non à sa partenaire de la même droite",
+    "explanation": "Dans un rapport, les deux longueurs sont portées par la même droite passant par le point d’intersection : OA va avec OE quand A, O, E sont alignés.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P1",
+      "3e_thales-configuration-papillon_P2"
+    ]
+  },
+  "MISC-THALES-SANS-PARALLELE": {
+    "label": "Utiliser le théorème de Thalès sans savoir que deux droites sont parallèles",
+    "explanation": "Deux droites sécantes ne suffisent pas : le théorème de Thalès demande aussi deux droites parallèles, données ou démontrées.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P1"
+    ]
+  },
+  "MISC-THALES-CONFIGURATION": {
+    "label": "Confondre la configuration emboîtée et la configuration en papillon",
+    "explanation": "Si les points sont du même côté du sommet commun, les triangles sont emboîtés ; s’ils sont de part et d’autre, c’est le papillon. L’égalité des trois rapports vaut dans les deux cas.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P1"
+    ]
+  },
+  "MISC-THALES-ADDITION": {
+    "label": "Ajouter la même différence au lieu de multiplier par le même nombre",
+    "explanation": "Les longueurs sont proportionnelles : on passe d’un triangle à l’autre en multipliant par un même nombre, pas en ajoutant une même longueur.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P3"
+    ]
+  },
+  "MISC-THALES-PYTHAGORE-SOMME": {
+    "label": "Ajouter les carrés quand on cherche un côté de l’angle droit",
+    "explanation": "Le carré de l’hypoténuse est la somme des carrés des deux autres côtés : pour un côté de l’angle droit, on soustrait.",
+    "relatedLearningPoints": [
+      "3e_thales-configuration-papillon_P3"
+    ]
   }
 }

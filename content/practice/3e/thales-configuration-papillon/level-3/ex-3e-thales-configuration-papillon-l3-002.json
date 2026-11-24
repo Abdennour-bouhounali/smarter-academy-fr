@@ -1,0 +1,204 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-002",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les rapports et la phrase qui les justifie",
+    "estimatedMinutes": 4,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(GJ)$ et $(HK)$ se coupent en $I$, et les droites $(GH)$ et $(JK)$ sont parallèles.",
+    "figure": {
+      "points": {
+        "I": [
+          0,
+          0
+        ],
+        "G": [
+          -2.0673,
+          -0.7524
+        ],
+        "H": [
+          -0.9,
+          1.5588
+        ],
+        "J": [
+          2.8942,
+          1.0534
+        ],
+        "K": [
+          1.26,
+          -2.1823
+        ]
+      },
+      "segments": [
+        {
+          "from": "I",
+          "to": "G"
+        },
+        {
+          "from": "I",
+          "to": "J"
+        },
+        {
+          "from": "I",
+          "to": "H"
+        },
+        {
+          "from": "I",
+          "to": "K"
+        },
+        {
+          "from": "G",
+          "to": "H",
+          "arrows": 1
+        },
+        {
+          "from": "J",
+          "to": "K",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (GJ) et (HK) se coupent en I ; G et H d’un côté de I, J et K de l’autre ; (GH) parallèle à (JK).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle égalité donne le théorème de Thalès ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{IG}{GJ} = \\dfrac{IH}{HK} = \\dfrac{GH}{JK}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{IG}{IJ} = \\dfrac{IH}{IK} = \\dfrac{GH}{JK}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{IJ}{IG} = \\dfrac{IH}{IK} = \\dfrac{GH}{JK}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-RAPPORT-INVERSE"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{IG}{IK} = \\dfrac{IH}{IJ} = \\dfrac{GH}{JK}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le point commun aux deux droites sécantes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$G$ et $J$ sont sur la même droite ; $H$ et $K$ aussi."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{IG}{IJ} = \\dfrac{IH}{IK} = \\dfrac{GH}{JK}$.",
+        "incorrect": "Chaque rapport réunit deux longueurs issues de $I$, sur la même droite, le triangle $IGH$ au numérateur."
+      },
+      "solution": {
+        "lines": [
+          "D’après le théorème de Thalès : $\\dfrac{IG}{IJ} = \\dfrac{IH}{IK} = \\dfrac{GH}{JK}$."
+        ],
+        "result": "\\dfrac{IG}{IJ} = \\dfrac{IH}{IK} = \\dfrac{GH}{JK}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle phrase permet d’utiliser le théorème de Thalès sur cette figure ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Les points $G$, $I$, $J$ sont alignés, ainsi que les points $H$, $I$, $K$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        },
+        {
+          "id": "B",
+          "content": "Les points $G$, $I$, $K$ sont alignés, ainsi que les points $H$, $I$, $J$, et $(GH) \\parallel (JK)$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "C",
+          "content": "Les points $G$, $I$, $J$ sont alignés, ainsi que les points $H$, $I$, $K$, et $(GH) \\parallel (JK)$.",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Il faut deux alignements et une information de plus."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Vérifie sur la figure quels points sont sur une même droite."
+        }
+      ],
+      "feedback": {
+        "correct": "Les deux alignements passent par $I$, et les droites $(GH)$ et $(JK)$ sont parallèles.",
+        "incorrect": "Une phrase complète cite les deux alignements, justes, ET les deux droites parallèles."
+      },
+      "solution": {
+        "lines": [
+          "Les points $G$, $I$, $J$ sont alignés, ainsi que les points $H$, $I$, $K$ ; les droites $(GH)$ et $(JK)$ sont parallèles."
+        ],
+        "result": "Deux alignements et le parallélisme"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

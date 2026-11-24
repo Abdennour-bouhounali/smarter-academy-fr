@@ -1,0 +1,312 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-001",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Choisir la bonne donnée",
+    "estimatedMinutes": 10,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Dans le quadrilatère $ABCD$, les diagonales $[AC]$ et $[BD]$ se coupent en $O$. On donne $OA = 2{,}6$ cm, $OC = 6{,}5$ cm, $OB = 2{,}4$ cm et $AB = 2{,}2$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.3564,
+          1.0988
+        ],
+        "B": [
+          -0.5391,
+          2.3387
+        ],
+        "C": [
+          5.891,
+          -2.747
+        ],
+        "D": [
+          1.3478,
+          -5.8467
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "2,6"
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "label": "6,5"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "2,4"
+        },
+        {
+          "from": "O",
+          "to": "D"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2,2"
+        },
+        {
+          "from": "C",
+          "to": "D"
+        },
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        }
+      ],
+      "ariaLabel": "Quadrilatère ABCD, diagonales [AC] et [BD] sécantes en O ; OA = 2,6 cm, OC = 6,5 cm, OB = 2,4 cm, AB = 2,2 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle information faut-il en plus pour utiliser le théorème de Thalès dans les triangles $OAB$ et $OCD$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Les droites $(AD)$ et $(BC)$ sont parallèles.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "Les droites $(AB)$ et $(CD)$ sont parallèles.",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Le point $O$ est le milieu de $[AC]$.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le théorème parle de deux droites parallèles : lesquelles, pour ces deux triangles ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Les côtés parallèles sont un côté de chaque triangle, opposés au point $O$."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut $(AB) \\parallel (CD)$ : un côté de chaque triangle, en face du point $O$.",
+        "incorrect": "Les droites parallèles sont un côté du triangle $OAB$ et un côté du triangle $OCD$."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$.",
+          "Pour les triangles $OAB$ et $OCD$, il faut aussi $(AB) \\parallel (CD)$."
+        ],
+        "result": "(AB) \\parallel (CD)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "On sait maintenant que $(AB) \\parallel (CD)$. Quelle égalité donne le théorème de Thalès ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{OC}{OA} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-RAPPORT-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Chaque longueur part de $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$A$ va avec $C$, et $B$ avec $D$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$.",
+        "incorrect": "Dans chaque rapport, deux longueurs issues de $O$ sur la même droite, le triangle $OAB$ au numérateur."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $C$ sont alignés, ainsi que les points $B$, $O$, $D$ ; les droites $(AB)$ et $(CD)$ sont parallèles (question 1).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$."
+        ],
+        "result": "\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $CD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $CD$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD = \\dfrac{2{,}2 \\times 6{,}5}{2{,}6} = 5{,}5$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OC} = \\dfrac{AB}{CD}$, donc $\\dfrac{2{,}6}{6{,}5} = \\dfrac{2{,}2}{CD}$.",
+          "$CD = \\dfrac{2{,}2 \\times 6{,}5}{2{,}6} = 5{,}5$ cm."
+        ],
+        "result": "CD = 5{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,88"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "6,1"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Calcule $OD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OD$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = \\dfrac{2{,}4 \\times 6{,}5}{2{,}6} = 6$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OC} = \\dfrac{OB}{OD}$, donc $\\dfrac{2{,}6}{6{,}5} = \\dfrac{2{,}4}{OD}$.",
+          "$OD = \\dfrac{2{,}4 \\times 6{,}5}{2{,}6} = 6$ cm."
+        ],
+        "result": "OD = 6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,96"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

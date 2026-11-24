@@ -1,0 +1,219 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-010",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le tréteau du menuisier",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Les deux pieds $[AD]$ et $[BC]$ d’un tréteau se croisent en $O$. En haut, les points $A$ et $B$ sont écartés de $AB = 0{,}3$ m ; au sol, les pieds sont écartés de $DC = 0{,}75$ m, et $(AB)$ est parallèle au sol $(DC)$. Un pied mesure $AD = 0{,}91$ m.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.15,
+          0.212
+        ],
+        "B": [
+          0.15,
+          0.212
+        ],
+        "D": [
+          0.375,
+          -0.531
+        ],
+        "C": [
+          -0.375,
+          -0.531
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "0,3 m",
+          "arrows": 1
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "0,75 m",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "w"
+      },
+      "ariaLabel": "Tréteau vu de face : pieds [AD] et [BC] croisés en O ; (AB) parallèle au sol (DC) ; AB = 0,3 m, DC = 0,75 m.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle est la valeur du rapport $\\dfrac{OD}{OA}$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,5",
+      "answerFormat": "Un nombre décimal ou une fraction",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les droites $(AD)$ et $(BC)$ se coupent en $O$, et $(AB) \\parallel (DC)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ce rapport est égal au rapport de deux écartements, dans le même ordre."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OD}{OA} = \\dfrac{DC}{AB} = \\dfrac{0{,}75}{0{,}3} = 2{,}5$.",
+        "incorrect": "Écris l’égalité des trois rapports dans les triangles $ODC$ et $OAB$."
+      },
+      "solution": {
+        "lines": [
+          "D’après le théorème de Thalès : $\\dfrac{OD}{OA} = \\dfrac{OC}{OB} = \\dfrac{DC}{AB}$.",
+          "$\\dfrac{OD}{OA} = \\dfrac{0{,}75}{0{,}3} = 2{,}5$."
+        ],
+        "result": "\\dfrac{OD}{OA} = 2{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,4"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OA$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,26",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le pied $[AD]$ traverse $O$ : $AD = OA + OD$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OD$ vaut $2{,}5$ fois $OA$ : combien de fois $OA$ dans tout le pied ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = OA + 2{,}5 \\times OA = 3{,}5 \\times OA$, donc $OA = \\dfrac{0{,}91}{3{,}5} = 0{,}26$ m.",
+        "incorrect": "$AD = OA + OD$ et $OD = 2{,}5 \\times OA$ : le pied mesure $3{,}5$ fois $OA$."
+      },
+      "solution": {
+        "lines": [
+          "$OD = 2{,}5 \\times OA$, donc $AD = OA + OD = 3{,}5 \\times OA$.",
+          "$OA = \\dfrac{0{,}91}{3{,}5} = 0{,}26$ m."
+        ],
+        "result": "OA = 0{,}26"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "0,364"
+        }
+      ],
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $OD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,65",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Tu connais $AD$ et $OA$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$O$ est entre $A$ et $D$."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = AD - OA = 0{,}91 - 0{,}26 = 0{,}65$ m.",
+        "incorrect": "$OD = AD - OA$, ou $OD = 2{,}5 \\times OA$."
+      },
+      "solution": {
+        "lines": [
+          "$OD = AD - OA = 0{,}91 - 0{,}26 = 0{,}65$ m (ou $2{,}5 \\times 0{,}26$)."
+        ],
+        "result": "OD = 0{,}65"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

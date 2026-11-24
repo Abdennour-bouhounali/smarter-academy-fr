@@ -1,0 +1,207 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-001",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le papillon : l’égalité, puis la longueur EF",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et les droites $(AB)$ et $(EF)$ sont parallèles. On donne $OA = 2{,}5$ cm, $OE = 3$ cm et $AB = 4$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.1651,
+          1.25
+        ],
+        "B": [
+          1.884,
+          1.3192
+        ],
+        "E": [
+          2.5981,
+          -1.5
+        ],
+        "F": [
+          -2.2608,
+          -1.583
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "2,5"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "3"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "4",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF) ; OA = 2,5 cm, OE = 3 cm, AB = 4 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle égalité donne le théorème de Thalès sur cette figure ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{OA}{OF} = \\dfrac{OB}{OE} = \\dfrac{AB}{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{OA}{AE} = \\dfrac{OB}{BF} = \\dfrac{AB}{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{OE}{OA} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-RAPPORT-INVERSE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le point où les deux droites se coupent, et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque longueur du triangle $OAB$ va avec la longueur du triangle $OEF$ portée par la même droite."
+        }
+      ],
+      "feedback": {
+        "correct": "Les triangles $OAB$ et $OEF$ : $A$ va avec $E$ (droite $(AE)$), $B$ va avec $F$ (droite $(BF)$).",
+        "incorrect": "Dans chaque rapport, les deux longueurs partent de $O$ et sont sur la même droite."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$."
+        ],
+        "result": "\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{4 \\times 3}{2{,}5} = 4{,}8$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{2{,}5}{3} = \\dfrac{4}{EF}$.",
+          "$EF = \\dfrac{4 \\times 3}{2{,}5} = 4{,}8$ cm."
+        ],
+        "result": "EF = 4{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "10/3"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "8,8"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

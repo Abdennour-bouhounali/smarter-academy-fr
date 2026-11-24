@@ -1,0 +1,230 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-004",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les tasseaux d’une étagère",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Une étagère murale a deux planches horizontales, $[AB]$ en haut et $[EF]$ en bas. Deux tasseaux droits $[AE]$ et $[BF]$ les relient et se croisent en $O$. On donne $OA = 0{,}36$ m, $OE = 0{,}54$ m, $OB = 0{,}42$ m et $AB = 0{,}5$ m.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.203,
+          0.297
+        ],
+        "B": [
+          0.297,
+          0.297
+        ],
+        "E": [
+          0.305,
+          -0.446
+        ],
+        "F": [
+          -0.445,
+          -0.446
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "E"
+        },
+        {
+          "from": "B",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "0,5 m",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "w"
+      },
+      "ariaLabel": "Étagère : planches (AB) en haut et (EF) en bas, parallèles ; tasseaux [AE] et [BF] croisés en O ; AB = 0,5 m.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $OF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,63",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OF = \\dfrac{0{,}42 \\times 0{,}54}{0{,}36} = 0{,}63$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (planches horizontales).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$, donc $\\dfrac{0{,}36}{0{,}54} = \\dfrac{0{,}42}{OF}$.",
+          "$OF = \\dfrac{0{,}42 \\times 0{,}54}{0{,}36} = 0{,}63$ m."
+        ],
+        "result": "OF = 0{,}63"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,28"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle est la longueur du tasseau $[BF]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,05",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le tasseau $[BF]$ passe par $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Il est fait de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$BF = OB + OF = 0{,}42 + 0{,}63 = 1{,}05$ m.",
+        "incorrect": "$BF$ traverse $O$ : $BF = OB + OF$."
+      },
+      "solution": {
+        "lines": [
+          "$O \\in [BF]$ : $BF = OB + OF = 0{,}42 + 0{,}63 = 1{,}05$ m."
+        ],
+        "result": "BF = 1{,}05"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "0,63"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule la largeur $EF$ de la planche du bas.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,75",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{0{,}5 \\times 0{,}54}{0{,}36} = 0{,}75$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{0{,}36}{0{,}54} = \\dfrac{0{,}5}{EF}$.",
+          "$EF = \\dfrac{0{,}5 \\times 0{,}54}{0{,}36} = 0{,}75$ m."
+        ],
+        "result": "EF = 0{,}75"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1/3"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

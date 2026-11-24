@@ -1,0 +1,189 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l2-006",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Vrai ou faux : la bonne partenaire",
+    "estimatedMinutes": 4,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.0785,
+          1.2
+        ],
+        "B": [
+          1.5427,
+          1.8385
+        ],
+        "E": [
+          3.1178,
+          -1.8
+        ],
+        "F": [
+          -2.314,
+          -2.7578
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Lina écrit : $\\dfrac{OA}{OF} = \\dfrac{OB}{OE}$. Vrai ou faux ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Sur quelle droite sont $O$, $A$ et $F$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Une longueur va avec sa partenaire de la même droite, de l’autre côté de $O$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ et $F$ ne sont pas sur la même droite : la partenaire de $OA$ est $OE$.",
+        "incorrect": "$F$ est sur la droite $(BF)$, pas sur la droite $(AE)$ : $OA$ et $OF$ ne vont pas ensemble."
+      },
+      "solution": {
+        "lines": [
+          "$A$, $O$, $E$ sont alignés : la partenaire de $OA$ est $OE$.",
+          "L’égalité juste est $\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$ ; celle de Lina ne l’est pas."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Tom écrit : $\\dfrac{AB}{EF} = \\dfrac{OB}{OF}$. Vrai ou faux ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris l’égalité des trois rapports de cette figure."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compare l’égalité de Tom à deux des trois rapports."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB}{EF}$ et $\\dfrac{OB}{OF}$ sont deux des trois rapports égaux.",
+        "incorrect": "Écris les trois rapports égaux : celui de $AB$ et $EF$ y est, celui de $OB$ et $OF$ aussi."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "Donc $\\dfrac{AB}{EF} = \\dfrac{OB}{OF}$ : l’égalité de Tom est juste."
+        ],
+        "result": "Vrai"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

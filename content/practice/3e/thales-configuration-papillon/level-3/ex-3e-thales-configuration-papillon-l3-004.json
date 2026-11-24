@@ -1,0 +1,211 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-004",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux configurations sur une figure",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$. Le point $M$ est sur $[OA]$, le point $N$ sur $[OB]$, et les droites $(MN)$, $(AB)$ et $(EF)$ sont parallèles.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.7207,
+          2.4575
+        ],
+        "B": [
+          1.8354,
+          2.6213
+        ],
+        "E": [
+          1.5486,
+          -2.2117
+        ],
+        "F": [
+          -1.6519,
+          -2.3592
+        ],
+        "M": [
+          -0.7743,
+          1.1059
+        ],
+        "N": [
+          0.8259,
+          1.1796
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; M sur [OA], N sur [OB] ; E et F de l’autre côté de O ; (MN), (AB) et (EF) parallèles.",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Dans les triangles $OMN$ et $OAB$, complète : $\\dfrac{OM}{\\ldots} = \\dfrac{ON}{OB}$",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$MA$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-MORCEAU"
+        },
+        {
+          "id": "B",
+          "content": "$OE$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        },
+        {
+          "id": "C",
+          "content": "$OA$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ et $A$ sont du même côté de $O$ : les triangles sont emboîtés."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque longueur part de $O$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OM}{OA} = \\dfrac{ON}{OB}$ : le grand côté est la longueur entière depuis $O$.",
+        "incorrect": "Dans les triangles emboîtés, le dénominateur est la longueur entière $OA$, qui part de $O$."
+      },
+      "solution": {
+        "lines": [
+          "$M \\in [OA]$, $N \\in [OB]$ et $(MN) \\parallel (AB)$ : $\\dfrac{OM}{OA} = \\dfrac{ON}{OB} = \\dfrac{MN}{AB}$."
+        ],
+        "result": "OA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Dans les triangles $OAB$ et $OEF$, complète : $\\dfrac{OA}{\\ldots} = \\dfrac{OB}{OF}$",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$OE$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$AE$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "C",
+          "content": "$OM$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ et $E$ sont de part et d’autre de $O$ : c’est le papillon."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "La longueur cherchée part de $O$, sur la droite $(AE)$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$ : dans le papillon aussi, chaque longueur part de $O$.",
+        "incorrect": "Le dénominateur part de $O$ vers $E$ ; il ne traverse pas $O$."
+      },
+      "solution": {
+        "lines": [
+          "$A$, $O$, $E$ alignés, $B$, $O$, $F$ alignés, $(AB) \\parallel (EF)$ : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$."
+        ],
+        "result": "OE"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

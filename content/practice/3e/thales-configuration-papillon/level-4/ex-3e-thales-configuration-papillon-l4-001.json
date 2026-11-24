@@ -1,0 +1,327 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-001",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Pythagore, un parallélisme, puis Thalès",
+    "estimatedMinutes": 12,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, la droite $(AF)$ est perpendiculaire à $(AB)$ en $A$ ; les points $A$, $E$, $D$ sont alignés, ainsi que les points $B$, $E$, $F$. On donne $AB = 2{,}8$ cm, $AE = 3{,}3$ cm, $ED = 2$ cm et $BD = 4{,}5$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "D": [
+          6,
+          -4.5
+        ],
+        "E": [
+          3.7358,
+          -2.8019
+        ],
+        "F": [
+          0,
+          -7.425
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2,8"
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "label": "4,5"
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "label": "3,3"
+        },
+        {
+          "from": "E",
+          "to": "D",
+          "label": "2"
+        },
+        {
+          "from": "A",
+          "to": "F"
+        },
+        {
+          "from": "B",
+          "to": "F"
+        }
+      ],
+      "rightAngles": [
+        [
+          "F",
+          "A",
+          "B"
+        ]
+      ],
+      "caption": "Les longueurs ne sont pas à l’échelle.",
+      "ariaLabel": "(AF) perpendiculaire à (AB) en A ; A, E, D alignés ; B, E, F alignés ; AB = 2,8 cm, AE = 3,3 cm, ED = 2 cm, BD = 4,5 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $AD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5,3",
+      "answerFormat": "Un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le point $E$ est entre $A$ et $D$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "La longueur $AD$ est faite de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = AE + ED = 3{,}3 + 2 = 5{,}3$ cm.",
+        "incorrect": "Additionne les deux morceaux $AE$ et $ED$."
+      },
+      "solution": {
+        "lines": [
+          "$E \\in [AD]$ : $AD = AE + ED = 3{,}3 + 2 = 5{,}3$ cm."
+        ],
+        "result": "AD = 5{,}3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Démontre que le triangle $ABD$ est rectangle en $B$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse, puis compare-la au corrigé.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quel est le plus grand côté du triangle $ABD$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compare le carré du plus grand côté à la somme des carrés des deux autres."
+        }
+      ],
+      "feedback": {
+        "correct": "Ta rédaction contient chaque élément du corrigé.",
+        "incorrect": "Compare ta rédaction au corrigé, ligne par ligne."
+      },
+      "solution": {
+        "lines": [
+          "$AD^{2} = 5{,}3^{2} = 28{,}09$.",
+          "$AB^{2} + BD^{2} = 2{,}8^{2} + 4{,}5^{2} = 7{,}84 + 20{,}25 = 28{,}09$.",
+          "$AD^{2} = AB^{2} + BD^{2}$ : d’après la réciproque du théorème de Pythagore, le triangle $ABD$ est rectangle en $B$."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Déduis-en que les droites $(BD)$ et $(AF)$ sont parallèles.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse, puis compare-la au corrigé.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux droites ont un point commun avec $(AB)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Que sais-tu de deux droites perpendiculaires à une même droite ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Ta rédaction contient chaque élément du corrigé.",
+        "incorrect": "Compare ta rédaction au corrigé, ligne par ligne."
+      },
+      "solution": {
+        "lines": [
+          "$(BD) \\perp (AB)$ (question 2) et $(AF) \\perp (AB)$ (données).",
+          "Deux droites perpendiculaires à une même droite sont parallèles : $(BD) \\parallel (AF)$."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle égalité donne le théorème de Thalès dans les triangles $EAF$ et $EDB$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{EA}{EB} = \\dfrac{EF}{ED} = \\dfrac{AF}{DB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{EA}{AD} = \\dfrac{EF}{FB} = \\dfrac{AF}{DB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{EA}{ED} = \\dfrac{EF}{EB} = \\dfrac{AF}{DB}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{ED}{EA} = \\dfrac{EF}{EB} = \\dfrac{AF}{DB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-RAPPORT-INVERSE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les droites $(AD)$ et $(BF)$ se coupent en $E$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$A$ et $D$ sont sur la même droite ; $F$ et $B$ aussi."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EA}{ED} = \\dfrac{EF}{EB} = \\dfrac{AF}{DB}$.",
+        "incorrect": "Chaque rapport réunit deux longueurs issues de $E$ sur la même droite, le triangle $EAF$ au numérateur."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $E$, $D$ sont alignés, ainsi que les points $F$, $E$, $B$ ; $(AF) \\parallel (DB)$.",
+          "D’après le théorème de Thalès : $\\dfrac{EA}{ED} = \\dfrac{EF}{EB} = \\dfrac{AF}{DB}$."
+        ],
+        "result": "\\dfrac{EA}{ED} = \\dfrac{EF}{EB} = \\dfrac{AF}{DB}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "Calcule $AF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7,425",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AF = \\dfrac{3{,}3 \\times 4{,}5}{2} = 7{,}425$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les droites $(AD)$ et $(BF)$ se coupent en $E$, et $(AF) \\parallel (BD)$ (question 3).",
+          "$\\dfrac{EA}{ED} = \\dfrac{AF}{DB}$, donc $\\dfrac{3{,}3}{2} = \\dfrac{AF}{4{,}5}$.",
+          "$AF = \\dfrac{3{,}3 \\times 4{,}5}{2} = 7{,}425$ cm."
+        ],
+        "result": "AF = 7{,}425"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "30/11"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "11,925"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

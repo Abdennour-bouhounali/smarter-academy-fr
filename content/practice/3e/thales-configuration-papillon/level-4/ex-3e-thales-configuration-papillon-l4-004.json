@@ -1,0 +1,237 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-004",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Dans un triangle rectangle",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$BEM$ est un triangle rectangle en $B$ tel que $BE = 3{,}2$ cm et $BM = 2{,}4$ cm.",
+    "figure": {
+      "points": {
+        "B": [
+          0,
+          0
+        ],
+        "E": [
+          3.2,
+          0
+        ],
+        "M": [
+          0,
+          2.4
+        ],
+        "K": [
+          2.4,
+          0.6
+        ],
+        "L": [
+          2.4,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "E",
+          "label": "3,2"
+        },
+        {
+          "from": "B",
+          "to": "M",
+          "label": "2,4",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "M"
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "arrows": 1
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "B",
+          "M"
+        ]
+      ],
+      "labels": {
+        "K": "ne"
+      },
+      "ariaLabel": "Triangle BEM rectangle en B, BE = 3,2 cm, BM = 2,4 cm ; K sur [EM] ; la parallèle à (BM) passant par K coupe [BE] en L.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $ME$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le triangle $BEM$ est rectangle en $B$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Utilise le théorème de Pythagore."
+        }
+      ],
+      "feedback": {
+        "correct": "$ME^{2} = 3{,}2^{2} + 2{,}4^{2} = 16$, donc $ME = 4$ cm.",
+        "incorrect": "$[ME]$ est l’hypoténuse : $ME^{2} = BE^{2} + BM^{2}$."
+      },
+      "solution": {
+        "lines": [
+          "Le triangle $BEM$ est rectangle en $B$ : $ME^{2} = BE^{2} + BM^{2}$ (théorème de Pythagore).",
+          "$ME^{2} = 3{,}2^{2} + 2{,}4^{2} = 10{,}24 + 5{,}76 = 16$, donc $ME = \\sqrt{16} = 4$ cm."
+        ],
+        "result": "ME = 4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "Le point $K$ est sur $[EM]$, avec $EK = 1$ cm. La parallèle à $(BM)$ passant par $K$ coupe $[BE]$ en $L$.",
+      "statement": "Calcule $EL$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EL$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EL = \\dfrac{1 \\times 3{,}2}{4} = 0{,}8$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $E$, $K$, $M$ sont alignés, ainsi que les points $E$, $L$, $B$, du même côté de $E$ ; $(KL) \\parallel (MB)$.",
+          "D’après le théorème de Thalès : $\\dfrac{EK}{EM} = \\dfrac{EL}{EB} = \\dfrac{KL}{MB}$.",
+          "$\\dfrac{EK}{EM} = \\dfrac{EL}{EB}$, donc $\\dfrac{1}{4} = \\dfrac{EL}{3{,}2}$.",
+          "$EL = \\dfrac{1 \\times 3{,}2}{4} = 0{,}8$ cm."
+        ],
+        "result": "EL = 0{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "12,8"
+        },
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "16/15"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "Calcule $KL$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,6",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $KL$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL = \\dfrac{1 \\times 2{,}4}{4} = 0{,}6$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EK}{EM} = \\dfrac{KL}{MB}$, donc $\\dfrac{1}{4} = \\dfrac{KL}{2{,}4}$.",
+          "$KL = \\dfrac{1 \\times 2{,}4}{4} = 0{,}6$ cm."
+        ],
+        "result": "KL = 0{,}6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "9,6"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

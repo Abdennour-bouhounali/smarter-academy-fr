@@ -1,0 +1,200 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-007",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Compléter un rapport",
+    "estimatedMinutes": 4,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.125,
+          0.5694
+        ],
+        "B": [
+          1.2856,
+          1.5321
+        ],
+        "E": [
+          3.4,
+          -0.911
+        ],
+        "F": [
+          -2.057,
+          -2.4514
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Complète l’égalité : $\\dfrac{OA}{OE} = \\dfrac{OB}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$EF$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "$BF$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "C",
+          "content": "$OF$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA$ et $OE$ partent de $O$ sur la droite $(AE)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Fais de même sur la droite $(BF)$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$ : deux longueurs qui partent de $O$, sur la même droite.",
+        "incorrect": "Le dénominateur part de $O$, sur la même droite que $OB$, de l’autre côté de $O$."
+      },
+      "solution": {
+        "lines": [
+          "Sur la droite $(BF)$, la partenaire de $OB$ est $OF$, de l’autre côté de $O$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$."
+        ],
+        "result": "OF"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Complète l’égalité : $\\dfrac{OE}{OA} = \\dfrac{OF}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$OB$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$BF$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "C",
+          "content": "$OA$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ici, le triangle $OEF$ est au numérateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde le même ordre dans le second rapport."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OE}{OA} = \\dfrac{OF}{OB}$ : les deux rapports sont retournés ensemble.",
+        "incorrect": "Le second rapport suit le même ordre que le premier : le triangle $OEF$ au numérateur, le triangle $OAB$ au dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "On peut retourner TOUS les rapports en même temps.",
+          "$\\dfrac{OE}{OA} = \\dfrac{OF}{OB}$."
+        ],
+        "result": "OB"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

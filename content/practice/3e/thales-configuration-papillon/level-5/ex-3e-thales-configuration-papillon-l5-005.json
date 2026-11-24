@@ -1,0 +1,176 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-005",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le projecteur et l’écran",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Dans un projecteur, une petite image $AB$ de $3{,}6$ cm de haut est placée à $9$ cm de la lentille $O$. Les rayons passent par $O$ et forment sur un écran l’image agrandie $EF$, à l’envers : les points $A$, $O$, $E$ sont alignés, ainsi que $B$, $O$, $F$, et l’écran $(EF)$ est parallèle à $(AB)$.",
+    "figure": {
+      "points": {
+        "A": [
+          -2,
+          0.6
+        ],
+        "B": [
+          -2,
+          -0.6
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "E": [
+          6,
+          -1.8
+        ],
+        "F": [
+          6,
+          1.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3,6 cm",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        },
+        {
+          "from": "A",
+          "to": "E"
+        },
+        {
+          "from": "B",
+          "to": "F"
+        }
+      ],
+      "labels": {
+        "O": "n"
+      },
+      "caption": "Les longueurs ne sont pas à l’échelle.",
+      "ariaLabel": "La lentille O ; l’image AB de 3,6 cm à gauche, l’écran EF à droite, (AB) parallèle à (EF) ; les droites (AE) et (BF) se coupent en O.",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "L’écran est à $4$ m de la lentille. Quelle est la hauteur $EF$ de l’image sur l’écran, en mètres ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,6",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris toutes les longueurs dans la même unité."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité de Thalès dans les triangles $OAB$ et $OEF$, et garde celle qui contient $EF$."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{3{,}6 \\times 400}{9} = 160$ cm, soit $1{,}6$ m.",
+        "incorrect": "$4$ m $= 400$ cm ; puis $\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$."
+      },
+      "solution": {
+        "lines": [
+          "$OE = 4$ m $= 400$ cm.",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{9}{400} = \\dfrac{3{,}6}{EF}$, donc $EF = \\dfrac{3{,}6 \\times 400}{9} = 160$ cm $= 1{,}6$ m."
+        ],
+        "result": "EF = 1{,}6\\text{ m}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,1"
+        }
+      ],
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Pour que l’image mesure $2$ m de haut, à quelle distance de la lentille faut-il placer l’écran, en mètres ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cette fois, l’inconnue est $OE$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris $\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$ avec $EF$ en centimètres."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = \\dfrac{9 \\times 200}{3{,}6} = 500$ cm, soit $5$ m.",
+        "incorrect": "Convertis $2$ m en centimètres, puis $\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$."
+      },
+      "solution": {
+        "lines": [
+          "$EF = 2$ m $= 200$ cm.",
+          "$\\dfrac{9}{OE} = \\dfrac{3{,}6}{200}$, donc $OE = \\dfrac{9 \\times 200}{3{,}6} = 500$ cm $= 5$ m."
+        ],
+        "result": "OE = 5\\text{ m}"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

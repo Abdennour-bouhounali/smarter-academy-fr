@@ -1,0 +1,198 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l2-007",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Compléter les rapports",
+    "estimatedMinutes": 4,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(MP)$ et $(NQ)$ se coupent en $I$, et les droites $(MN)$ et $(PQ)$ sont parallèles.",
+    "figure": {
+      "points": {
+        "I": [
+          0,
+          0
+        ],
+        "M": [
+          -0.3473,
+          1.9696
+        ],
+        "N": [
+          2.4432,
+          0.8893
+        ],
+        "P": [
+          0.5904,
+          -3.3483
+        ],
+        "Q": [
+          -4.1534,
+          -1.5118
+        ]
+      },
+      "segments": [
+        {
+          "from": "I",
+          "to": "M"
+        },
+        {
+          "from": "I",
+          "to": "P"
+        },
+        {
+          "from": "I",
+          "to": "N"
+        },
+        {
+          "from": "I",
+          "to": "Q"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1
+        },
+        {
+          "from": "P",
+          "to": "Q",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (MP) et (NQ) se coupent en I ; M et N d’un côté de I, P et Q de l’autre ; (MN) parallèle à (PQ).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Complète l’égalité : $\\dfrac{IM}{IP} = \\dfrac{\\ldots}{PQ}$",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$IQ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "$MN$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$MP$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$PQ$ est un côté du triangle $IPQ$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Au numérateur, le côté du triangle $IMN$ qui lui correspond."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{IM}{IP} = \\dfrac{MN}{PQ}$ : $MN$ et $PQ$ sont les deux côtés parallèles.",
+        "incorrect": "Le numérateur est un côté du triangle $IMN$ : celui qui est parallèle à $PQ$."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{IM}{IP} = \\dfrac{IN}{IQ} = \\dfrac{MN}{PQ}$."
+        ],
+        "result": "MN"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Complète l’égalité : $\\dfrac{IQ}{IN} = \\dfrac{IP}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$MP$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "B",
+          "content": "$PQ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "C",
+          "content": "$IM$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ici, le triangle $IPQ$ est au numérateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$P$ et $M$ sont sur la même droite issue de $I$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{IQ}{IN} = \\dfrac{IP}{IM}$ : les rapports sont tous retournés ensemble.",
+        "incorrect": "Le dénominateur part de $I$, sur la droite $(MP)$, du côté du triangle $IMN$."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{IP}{IM} = \\dfrac{IQ}{IN} = \\dfrac{PQ}{MN}$ (tous les rapports retournés)."
+        ],
+        "result": "IM"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

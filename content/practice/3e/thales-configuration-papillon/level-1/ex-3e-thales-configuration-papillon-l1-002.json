@@ -1,0 +1,185 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-002",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un rapport, puis la longueur PQ",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(KP)$ et $(LQ)$ se coupent en $O$, et $(KL) \\parallel (PQ)$. On donne $OK = 2$ cm, $OP = 3$ cm et $KL = 2{,}4$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K": [
+          -1.5321,
+          1.2856
+        ],
+        "L": [
+          1.2,
+          2.0785
+        ],
+        "P": [
+          2.2982,
+          -1.9284
+        ],
+        "Q": [
+          -1.8,
+          -3.1178
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "K",
+          "label": "2"
+        },
+        {
+          "from": "O",
+          "to": "P",
+          "label": "3"
+        },
+        {
+          "from": "O",
+          "to": "L"
+        },
+        {
+          "from": "O",
+          "to": "Q"
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "label": "2,4",
+          "arrows": 1
+        },
+        {
+          "from": "P",
+          "to": "Q",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (KP) et (LQ) se coupent en O ; K et L d’un côté de O, P et Q de l’autre ; (KL) parallèle à (PQ) ; OK = 2 cm, OP = 3 cm, KL = 2,4 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle est la valeur du rapport $\\dfrac{OL}{OQ}$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2/3",
+      "answerFormat": "Une fraction, comme 3/4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le point où les deux droites se coupent, et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le rapport $\\dfrac{OL}{OQ}$ est égal à un autre rapport dont tu connais les deux longueurs."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OL}{OQ} = \\dfrac{OK}{OP} = \\dfrac{2}{3}$.",
+        "incorrect": "Cherche le rapport égal à $\\dfrac{OL}{OQ}$ : les deux longueurs sur la droite $(KP)$, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $K$, $O$, $P$ sont alignés, ainsi que les points $L$, $O$, $Q$ ; les droites $(KL)$ et $(PQ)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OK}{OP} = \\dfrac{OL}{OQ} = \\dfrac{KL}{PQ}$.",
+          "Donc $\\dfrac{OL}{OQ} = \\dfrac{OK}{OP} = \\dfrac{2}{3}$."
+        ],
+        "result": "\\dfrac{OL}{OQ} = \\dfrac{2}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,5"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $PQ$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3,6",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $PQ$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$PQ = \\dfrac{2{,}4 \\times 3}{2} = 3{,}6$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OK}{OP} = \\dfrac{OL}{OQ} = \\dfrac{KL}{PQ}$ (question 1).",
+          "$\\dfrac{OK}{OP} = \\dfrac{KL}{PQ}$, donc $\\dfrac{2}{3} = \\dfrac{2{,}4}{PQ}$.",
+          "$PQ = \\dfrac{2{,}4 \\times 3}{2} = 3{,}6$ cm."
+        ],
+        "result": "PQ = 3{,}6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,6"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

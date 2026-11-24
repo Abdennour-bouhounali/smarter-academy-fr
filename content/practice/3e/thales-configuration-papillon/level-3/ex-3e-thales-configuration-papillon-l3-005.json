@@ -1,0 +1,194 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-005",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Calculer OF et AB",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$. On donne $OA = 3{,}5$ cm, $OE = 5{,}6$ cm, $OB = 4{,}5$ cm et $EF = 6{,}4$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.867,
+          2.0075
+        ],
+        "B": [
+          0.2678,
+          4.492
+        ],
+        "E": [
+          4.5872,
+          -3.212
+        ],
+        "F": [
+          -0.4285,
+          -7.1872
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "3,5"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "5,6"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "4,5"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "6,4",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF) ; OA = 3,5 cm, OE = 5,6 cm, OB = 4,5 cm, EF = 6,4 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $OF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7,2",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OF = \\dfrac{4{,}5 \\times 5{,}6}{3{,}5} = 7{,}2$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$, donc $\\dfrac{3{,}5}{5{,}6} = \\dfrac{4{,}5}{OF}$.",
+          "$OF = \\dfrac{4{,}5 \\times 5{,}6}{3{,}5} = 7{,}2$ cm."
+        ],
+        "result": "OF = 7{,}2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "2,8125"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "6,6"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $AB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{3{,}5 \\times 6{,}4}{5{,}6} = 4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{3{,}5}{5{,}6} = \\dfrac{AB}{6{,}4}$.",
+          "$AB = \\dfrac{3{,}5 \\times 6{,}4}{5{,}6} = 4$ cm."
+        ],
+        "result": "AB = 4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "10,24"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

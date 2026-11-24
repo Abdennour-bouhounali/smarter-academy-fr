@@ -1,0 +1,196 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l2-005",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Peut-on utiliser le théorème de Thalès ?",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$. On donne $OA = 3$ cm, $OE = 4{,}5$ cm, $OB = 2$ cm et $AB = 2{,}8$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.8191,
+          1.0261
+        ],
+        "B": [
+          -0.1906,
+          1.9909
+        ],
+        "E": [
+          4.2287,
+          -1.5392
+        ],
+        "F": [
+          0.3717,
+          -3.8823
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "3"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "4,5"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "2"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2,8"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; rien n’indique que (AB) et (EF) sont parallèles ; OA = 3 cm, OE = 4,5 cm, OB = 2 cm, AB = 2,8 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Peut-on calculer $EF$ avec le théorème de Thalès, avec ces seules données ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui, car les droites $(AE)$ et $(BF)$ se coupent en $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        },
+        {
+          "id": "B",
+          "content": "Non, car rien ne dit que $(AB)$ et $(EF)$ sont parallèles",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Oui, car les points $A$, $O$, $E$ sont alignés",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis les données une à une."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Que demande le théorème de Thalès, en plus de deux droites sécantes ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Le théorème demande deux droites parallèles : ici, aucune donnée ne le dit.",
+        "incorrect": "Deux droites sécantes et des points alignés ne suffisent pas : il faut deux droites parallèles."
+      },
+      "solution": {
+        "lines": [
+          "Le théorème de Thalès s’utilise quand deux droites sécantes sont coupées par deux droites PARALLÈLES.",
+          "Ici, rien ne dit que $(AB)$ et $(EF)$ sont parallèles : on ne peut pas l’utiliser."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "On apprend maintenant que les droites $(AB)$ et $(EF)$ sont parallèles. Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,2",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{2{,}8 \\times 4{,}5}{3} = 4{,}2$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (nouvelle donnée).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{3}{4{,}5} = \\dfrac{2{,}8}{EF}$.",
+          "$EF = \\dfrac{2{,}8 \\times 4{,}5}{3} = 4{,}2$ cm."
+        ],
+        "result": "EF = 4{,}2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "28/15"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

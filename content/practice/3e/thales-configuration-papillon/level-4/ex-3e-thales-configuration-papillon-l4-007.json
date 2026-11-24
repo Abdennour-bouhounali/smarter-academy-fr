@@ -1,0 +1,188 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-007",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le compas de réduction",
+    "estimatedMinutes": 7,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un compas de réduction est fait de deux branches $[AE]$ et $[BF]$ articulées en $O$, avec $OA = OB = 3{,}5$ cm et $OE = OF = 10{,}5$ cm. Quelle que soit l’ouverture, les droites $(AB)$ et $(EF)$ sont parallèles.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.9059,
+          3.3807
+        ],
+        "B": [
+          3.1155,
+          1.595
+        ],
+        "E": [
+          2.7177,
+          -10.1421
+        ],
+        "F": [
+          -9.3465,
+          -4.785
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "3,5"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "10,5"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Compas de réduction : branches [AE] et [BF] articulées en O ; OA = OB = 3,5 cm ; OE = OF = 10,5 cm ; (AB) parallèle à (EF).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Les grandes pointes sont écartées de $EF = 13{,}2$ cm. Calcule l’écartement $AB$ des petites pointes.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{3{,}5 \\times 13{,}2}{10{,}5} = 4{,}4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (construction du compas).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{3{,}5}{10{,}5} = \\dfrac{AB}{13{,}2}$.",
+          "$AB = \\dfrac{3{,}5 \\times 13{,}2}{10{,}5} = 4{,}4$ cm."
+        ],
+        "result": "AB = 4{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "39,6"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Zoé veut maintenant tracer un segment de $5$ cm avec les petites pointes. De combien doit-elle écarter les grandes pointes ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{5 \\times 10{,}5}{3{,}5} = 15$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{3{,}5}{10{,}5} = \\dfrac{5}{EF}$.",
+          "$EF = \\dfrac{5 \\times 10{,}5}{3{,}5} = 15$ cm."
+        ],
+        "result": "EF = 15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "5/3"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

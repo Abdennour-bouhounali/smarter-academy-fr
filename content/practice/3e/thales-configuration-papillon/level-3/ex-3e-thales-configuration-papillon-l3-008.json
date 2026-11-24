@@ -1,0 +1,242 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-008",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Pythagore, puis Thalès",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l3-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "L’unité de longueur est le centimètre. $ABC$ est un triangle rectangle en $A$ tel que $AB = 3{,}6$ et $BC = 6$.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3.6,
+          0
+        ],
+        "C": [
+          0,
+          4.8
+        ],
+        "E": [
+          1.6,
+          0
+        ],
+        "M": [
+          1.6,
+          2.6667
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "6"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "E",
+          "to": "M"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "E",
+          "M"
+        ]
+      ],
+      "ariaLabel": "Triangle ABC rectangle en A ; E sur [AB] ; la perpendiculaire à (AB) en E coupe (BC) en M.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $AC$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le triangle $ABC$ est rectangle en $A$ : quel est son plus grand côté ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Utilise le théorème de Pythagore."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^{2} = 6^{2} - 3{,}6^{2} = 23{,}04$, donc $AC = 4{,}8$.",
+        "incorrect": "$[BC]$ est l’hypoténuse : $AC^{2} = BC^{2} - AB^{2}$."
+      },
+      "solution": {
+        "lines": [
+          "Le triangle $ABC$ est rectangle en $A$ : $AB^{2} + AC^{2} = BC^{2}$ (théorème de Pythagore).",
+          "$AC^{2} = 6^{2} - 3{,}6^{2} = 36 - 12{,}96 = 23{,}04$, donc $AC = \\sqrt{23{,}04} = 4{,}8$."
+        ],
+        "result": "AC = 4{,}8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "Le point $E$ est sur $[AB]$, avec $AE = 1{,}6$. La perpendiculaire à $(AB)$ passant par $E$ coupe $(BC)$ en $M$.",
+      "statement": "Calcule la valeur exacte de $BM$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10/3",
+      "answerFormat": "Une fraction comme 7/9, ou un nombre décimal",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Toutes les longueurs partent de $B$ : calcule d’abord $BE$."
+        }
+      ],
+      "feedback": {
+        "correct": "$BM = \\dfrac{2 \\times 6}{3{,}6} = \\dfrac{10}{3}$.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$(AC) \\perp (AB)$ (triangle rectangle en $A$) et $(EM) \\perp (AB)$ : deux droites perpendiculaires à une même droite sont parallèles, donc $(EM) \\parallel (AC)$.",
+          "Les points $B$, $E$, $A$ sont alignés, ainsi que les points $B$, $M$, $C$, du même côté de $B$.",
+          "$BE = AB - AE = 3{,}6 - 1{,}6 = 2$.",
+          "D’après le théorème de Thalès : $\\dfrac{BE}{BA} = \\dfrac{BM}{BC} = \\dfrac{EM}{AC}$.",
+          "$\\dfrac{BE}{BA} = \\dfrac{BM}{BC}$, donc $\\dfrac{2}{3{,}6} = \\dfrac{BM}{6}$.",
+          "$BM = \\dfrac{2 \\times 6}{3{,}6} = \\dfrac{10}{3}$."
+        ],
+        "result": "BM = \\dfrac{10}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "10,8"
+        },
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "8/3"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "Calcule la valeur exacte de $EM$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "8/3",
+      "answerFormat": "Une fraction comme 7/9, ou un nombre décimal",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EM$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EM = \\dfrac{2 \\times 4{,}8}{3{,}6} = \\dfrac{8}{3}$.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{BE}{BA} = \\dfrac{EM}{AC}$, donc $\\dfrac{2}{3{,}6} = \\dfrac{EM}{4{,}8}$.",
+          "$EM = \\dfrac{2 \\times 4{,}8}{3{,}6} = \\dfrac{8}{3}$."
+        ],
+        "result": "EM = \\dfrac{8}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "8,64"
+        },
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "32/15"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

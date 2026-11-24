@@ -1,0 +1,185 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-008",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les mâts croisés d’une tente",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "À l’avant d’une tente, deux mâts droits $[AD]$ et $[BC]$ se croisent en $O$. Leurs pieds $D$ et $C$ sont posés au sol ; au-dessus de $O$, une barre relie leurs extrémités $A$ et $B$, parallèlement au sol. On donne $OA = OB = 0{,}3$ m, $OD = OC = 1{,}35$ m et $AB = 0{,}36$ m.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.18,
+          0.24
+        ],
+        "B": [
+          0.18,
+          0.24
+        ],
+        "D": [
+          0.81,
+          -1.08
+        ],
+        "C": [
+          -0.81,
+          -1.08
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "0,36 m",
+          "arrows": 1
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "w"
+      },
+      "ariaLabel": "Avant d’une tente : mâts [AD] et [BC] croisés en O ; barre (AB) parallèle au sol (DC) ; AB = 0,36 m.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule l’écartement $DC$ des pieds des mâts sur le sol.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,62",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $DC$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$DC = \\dfrac{0{,}36 \\times 1{,}35}{0{,}3} = 1{,}62$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $D$ sont alignés, ainsi que les points $B$, $O$, $C$ ; les droites $(AB)$ et $(DC)$ sont parallèles (barre et sol parallèles).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{DC}$.",
+          "$\\dfrac{OA}{OD} = \\dfrac{AB}{DC}$, donc $\\dfrac{0{,}3}{1{,}35} = \\dfrac{0{,}36}{DC}$.",
+          "$DC = \\dfrac{0{,}36 \\times 1{,}35}{0{,}3} = 1{,}62$ m."
+        ],
+        "result": "DC = 1{,}62"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,08"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "1,41"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle est la longueur d’un mât ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,65",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un mât va de $A$ à $D$ en passant par $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Additionne les deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = OA + OD = 0{,}3 + 1{,}35 = 1{,}65$ m.",
+        "incorrect": "$AD$ traverse $O$ : $AD = OA + OD$."
+      },
+      "solution": {
+        "lines": [
+          "$O \\in [AD]$ : $AD = OA + OD = 0{,}3 + 1{,}35 = 1{,}65$ m."
+        ],
+        "result": "AD = 1{,}65"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "1,35"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

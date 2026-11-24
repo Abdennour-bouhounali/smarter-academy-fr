@@ -1,0 +1,190 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l2-003",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un petit triangle de l’autre côté de A",
+    "estimatedMinutes": 6,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l3-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les points $B'$ et $C'$ sont de l’autre côté du point $A$ : $A$ est entre $B$ et $B'$, et entre $C$ et $C'$. Les droites $(B'C')$ et $(BC)$ sont parallèles. On donne $AB = 3{,}2$ cm, $AC = 4{,}5$ cm, $BC = 3$ cm et $AB' = 1{,}6$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3.007,
+          1.0945
+        ],
+        "C": [
+          4.18,
+          -1.6667
+        ],
+        "B'": [
+          -1.5035,
+          -0.5473
+        ],
+        "C'": [
+          -2.09,
+          0.8334
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3,2"
+        },
+        {
+          "from": "A",
+          "to": "B'",
+          "label": "1,6"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "4,5"
+        },
+        {
+          "from": "A",
+          "to": "C'"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "3",
+          "arrows": 1
+        },
+        {
+          "from": "B'",
+          "to": "C'",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "A est entre B et B’, et entre C et C’ ; (B’C’) parallèle à (BC) ; AB = 3,2 cm, AC = 4,5 cm, BC = 3 cm, AB’ = 1,6 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $AC'$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,25",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AC'$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC' = \\dfrac{1{,}6 \\times 4{,}5}{3{,}2} = 2{,}25$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $B$, $A$, $B'$ sont alignés, ainsi que les points $C$, $A$, $C'$ ; les droites $(B'C')$ et $(BC)$ sont parallèles.",
+          "D’après le théorème de Thalès : $\\dfrac{AB'}{AB} = \\dfrac{AC'}{AC} = \\dfrac{B'C'}{BC}$.",
+          "$\\dfrac{AB'}{AB} = \\dfrac{AC'}{AC}$, donc $\\dfrac{1{,}6}{3{,}2} = \\dfrac{AC'}{4{,}5}$.",
+          "$AC' = \\dfrac{1{,}6 \\times 4{,}5}{3{,}2} = 2{,}25$ cm."
+        ],
+        "result": "AC' = 2{,}25"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $B'C'$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $B'C'$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$B'C' = \\dfrac{1{,}6 \\times 3}{3{,}2} = 1{,}5$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AB'}{AB} = \\dfrac{B'C'}{BC}$, donc $\\dfrac{1{,}6}{3{,}2} = \\dfrac{B'C'}{3}$.",
+          "$B'C' = \\dfrac{1{,}6 \\times 3}{3{,}2} = 1{,}5$ cm."
+        ],
+        "result": "B'C' = 1{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "6"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

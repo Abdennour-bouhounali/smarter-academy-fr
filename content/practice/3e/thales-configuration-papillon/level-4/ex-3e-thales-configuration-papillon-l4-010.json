@@ -1,0 +1,223 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-010",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux câbles qui se croisent",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Une passerelle est tenue par deux poteaux verticaux $[AB]$ et $[DC]$, de hauteurs $AB = 3{,}2$ m et $DC = 4{,}8$ m, plantés en $B$ et $C$. Deux câbles tendus $[AC]$ et $[BD]$ se croisent en $O$. Le câble $[AC]$ mesure $12$ m.",
+    "figure": {
+      "points": {
+        "B": [
+          0,
+          0
+        ],
+        "A": [
+          0,
+          3.2
+        ],
+        "C": [
+          7,
+          0
+        ],
+        "D": [
+          7,
+          4.8
+        ],
+        "O": [
+          2.8,
+          1.92
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3,2 m"
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "4,8 m"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "B",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        }
+      ],
+      "labels": {
+        "O": "s"
+      },
+      "caption": "Les longueurs ne sont pas à l’échelle.",
+      "ariaLabel": "Deux poteaux verticaux [AB] et [DC] ; câbles [AC] et [BD] croisés en O ; AB = 3,2 m, DC = 4,8 m.",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Les droites $(AB)$ et $(DC)$ sont parallèles. Quelle est la valeur du rapport $\\dfrac{OA}{OC}$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2/3",
+      "answerFormat": "Une fraction, comme 3/4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les droites $(AC)$ et $(BD)$ se coupent en $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le rapport $\\dfrac{OA}{OC}$ est égal au rapport des hauteurs des poteaux, dans le même ordre."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OC} = \\dfrac{AB}{CD} = \\dfrac{3{,}2}{4{,}8} = \\dfrac{2}{3}$.",
+        "incorrect": "Écris l’égalité des trois rapports dans les triangles $OAB$ et $OCD$."
+      },
+      "solution": {
+        "lines": [
+          "$(AB) \\parallel (DC)$ : deux droites verticales.",
+          "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$.",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD} = \\dfrac{3{,}2}{4{,}8} = \\dfrac{2}{3}$."
+        ],
+        "result": "\\dfrac{OA}{OC} = \\dfrac{2}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,5"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OA$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,8",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le câble $[AC]$ traverse le point $O$ : $AC = OA + OC$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OA$ représente $2$ parts et $OC$ en représente $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = \\dfrac{2}{5} \\times 12 = 4{,}8$ m.",
+        "incorrect": "$OA$ et $OC$ sont dans le rapport $\\dfrac{2}{3}$ ET leur somme est $12$ m."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OC} = \\dfrac{2}{3}$ : $OA$ fait $2$ parts, $OC$ en fait $3$, et $AC = 5$ parts $= 12$ m.",
+          "$OA = \\dfrac{2}{5} \\times 12 = 4{,}8$ m."
+        ],
+        "result": "OA = 4{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "8"
+        }
+      ],
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $OC$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7,2",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Tu connais $AC$ et $OA$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$O$ est entre $A$ et $C$."
+        }
+      ],
+      "feedback": {
+        "correct": "$OC = 12 - 4{,}8 = 7{,}2$ m.",
+        "incorrect": "$OC = AC - OA$."
+      },
+      "solution": {
+        "lines": [
+          "$OC = AC - OA = 12 - 4{,}8 = 7{,}2$ m."
+        ],
+        "result": "OC = 7{,}2"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

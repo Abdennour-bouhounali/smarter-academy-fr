@@ -1,0 +1,242 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-002",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La rédaction de Léo",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Dans un jardin, deux allées droites $[AE]$ et $[BF]$ se croisent en $O$, au pied d’une fontaine. Deux clôtures $[AB]$ et $[EF]$ sont parallèles. On donne $OA = 14{,}4$ m, $OE = 21{,}6$ m et $AB = 11{,}4$ m. Léo a écrit : « Les droites $(AB)$ et $(EF)$ sont parallèles. D’après le théorème de Thalès, $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$. »",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -12.4708,
+          7.2
+        ],
+        "B": [
+          -2.0504,
+          11.8235
+        ],
+        "E": [
+          18.7062,
+          -10.8
+        ],
+        "F": [
+          3.0756,
+          -17.7353
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "14,4 m"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "21,6 m"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "11,4 m",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Deux allées [AE] et [BF] se croisent en O ; clôtures (AB) et (EF) parallèles ; OA = 14,4 m, OE = 21,6 m, AB = 11,4 m.",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que manque-t-il à la rédaction de Léo ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Les deux alignements : $A$, $O$, $E$, puis $B$, $O$, $F$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "La longueur $OB$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        },
+        {
+          "id": "C",
+          "content": "Rien : sa rédaction est complète",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis la phrase type du théorème de Thalès dans le papillon."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Léo cite le parallélisme. Que dit-il des points ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut dire que $A$, $O$, $E$ sont alignés, ainsi que $B$, $O$, $F$ : c’est ce qui fait le papillon.",
+        "incorrect": "Une rédaction complète cite les deux alignements ET le parallélisme ; une longueur n’est pas une condition."
+      },
+      "solution": {
+        "lines": [
+          "Il manque : « Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$. »"
+        ],
+        "result": "Les deux alignements"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule la longueur $EF$ de la seconde clôture.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "17,1",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{11{,}4 \\times 21{,}6}{14{,}4} = 17{,}1$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{14{,}4}{21{,}6} = \\dfrac{11{,}4}{EF}$.",
+          "$EF = \\dfrac{11{,}4 \\times 21{,}6}{14{,}4} = 17{,}1$ m."
+        ],
+        "result": "EF = 17{,}1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "7,6"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "18,6"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle est la longueur de l’allée $[AE]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "36",
+      "answerFormat": "Un nombre, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "L’allée passe par la fontaine $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Additionne les deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$AE = OA + OE = 14{,}4 + 21{,}6 = 36$ m.",
+        "incorrect": "$O$ est entre $A$ et $E$ : $AE = OA + OE$."
+      },
+      "solution": {
+        "lines": [
+          "$O \\in [AE]$ : $AE = OA + OE = 14{,}4 + 21{,}6 = 36$ m."
+        ],
+        "result": "AE = 36"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

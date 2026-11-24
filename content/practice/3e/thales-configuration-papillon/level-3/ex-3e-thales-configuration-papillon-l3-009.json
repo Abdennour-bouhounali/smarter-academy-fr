@@ -1,0 +1,225 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-009",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Justifier, puis calculer",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AD)$ et $(BC)$ se coupent en $S$, et les droites $(AB)$ et $(CD)$ sont parallèles. On donne $SA = 2{,}1$ cm, $SD = 3{,}5$ cm, $AB = 2{,}7$ cm et $SC = 4$ cm.",
+    "figure": {
+      "points": {
+        "S": [
+          0,
+          0
+        ],
+        "A": [
+          -1.8187,
+          1.05
+        ],
+        "B": [
+          0.5561,
+          2.3347
+        ],
+        "D": [
+          3.0312,
+          -1.75
+        ],
+        "C": [
+          -0.9268,
+          -3.8912
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "A",
+          "label": "2,1"
+        },
+        {
+          "from": "S",
+          "to": "D",
+          "label": "3,5"
+        },
+        {
+          "from": "S",
+          "to": "B"
+        },
+        {
+          "from": "S",
+          "to": "C",
+          "label": "4"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2,7",
+          "arrows": 1
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AD) et (BC) se coupent en S ; A et B d’un côté de S, D et C de l’autre ; (AB) parallèle à (CD) ; SA = 2,1 cm, SD = 3,5 cm, AB = 2,7 cm, SC = 4 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Justifie que l’on peut utiliser le théorème de Thalès, puis écris l’égalité des trois rapports.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse, puis compare-la au corrigé.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cite les deux alignements qui passent par $S$, puis les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Dans chaque rapport, les deux longueurs partent de $S$ sur la même droite."
+        }
+      ],
+      "feedback": {
+        "correct": "Ta rédaction contient chaque élément du corrigé.",
+        "incorrect": "Compare ta rédaction au corrigé, ligne par ligne."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $S$, $D$ sont alignés, ainsi que les points $B$, $S$, $C$ ; les droites $(AB)$ et $(CD)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{SA}{SD} = \\dfrac{SB}{SC} = \\dfrac{AB}{DC}$."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $CD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $DC$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$DC = \\dfrac{2{,}7 \\times 3{,}5}{2{,}1} = 4{,}5$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SA}{SD} = \\dfrac{AB}{DC}$, donc $\\dfrac{2{,}1}{3{,}5} = \\dfrac{2{,}7}{DC}$.",
+          "$DC = \\dfrac{2{,}7 \\times 3{,}5}{2{,}1} = 4{,}5$ cm."
+        ],
+        "result": "DC = 4{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,62"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $SB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $SB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$SB = \\dfrac{2{,}1 \\times 4}{3{,}5} = 2{,}4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SA}{SD} = \\dfrac{SB}{SC}$, donc $\\dfrac{2{,}1}{3{,}5} = \\dfrac{SB}{4}$.",
+          "$SB = \\dfrac{2{,}1 \\times 4}{3{,}5} = 2{,}4$ cm."
+        ],
+        "result": "SB = 2{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "20/3"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

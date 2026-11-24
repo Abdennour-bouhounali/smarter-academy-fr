@@ -1,0 +1,190 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-003",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux longueurs de part et d’autre de A",
+    "estimatedMinutes": 6,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l2-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les points $L$, $A$, $B$ sont alignés, ainsi que les points $M$, $A$, $C$, et le point $A$ est entre les deux autres à chaque fois. Les droites $(LM)$ et $(BC)$ sont parallèles. On donne $AL = 2$ cm, $AM = 3$ cm, $LM = 2$ cm et $BC = 4$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "L": [
+          -1.8794,
+          -0.684
+        ],
+        "M": [
+          -2.793,
+          1.0951
+        ],
+        "B": [
+          3.7588,
+          1.368
+        ],
+        "C": [
+          5.586,
+          -2.1902
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "L",
+          "label": "2"
+        },
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "label": "3"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "L",
+          "to": "M",
+          "label": "2",
+          "arrows": 1
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "4",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les points L, A, B sont alignés, ainsi que M, A, C, avec A entre les deux autres ; (LM) parallèle à (BC) ; AL = 2 cm, AM = 3 cm, LM = 2 cm, BC = 4 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $AB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{2 \\times 4}{2} = 4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $L$, $A$, $B$ sont alignés, ainsi que les points $M$, $A$, $C$ ; les droites $(LM)$ et $(BC)$ sont parallèles.",
+          "D’après le théorème de Thalès : $\\dfrac{AL}{AB} = \\dfrac{AM}{AC} = \\dfrac{LM}{BC}$.",
+          "$\\dfrac{AL}{AB} = \\dfrac{LM}{BC}$, donc $\\dfrac{2}{AB} = \\dfrac{2}{4}$.",
+          "$AB = \\dfrac{2 \\times 4}{2} = 4$ cm."
+        ],
+        "result": "AB = 4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $AC$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AC$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\dfrac{3 \\times 4}{2} = 6$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AC} = \\dfrac{LM}{BC}$, donc $\\dfrac{3}{AC} = \\dfrac{2}{4}$.",
+          "$AC = \\dfrac{3 \\times 4}{2} = 6$ cm."
+        ],
+        "result": "AC = 6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,5"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

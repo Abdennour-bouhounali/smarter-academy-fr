@@ -1,0 +1,188 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-008",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "La longueur à travers le point O",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$. On donne $OA = 2$ cm, $AE = 7$ cm et $AB = 4$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.8126,
+          0.8452
+        ],
+        "B": [
+          2.1672,
+          1.2462
+        ],
+        "E": [
+          4.5315,
+          -2.113
+        ],
+        "F": [
+          -5.418,
+          -3.1155
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "2"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "4",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF) ; OA = 2 cm, AE = 7 cm, AB = 4 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $OE$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le point $O$ est entre $A$ et $E$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "La longueur $AE$ est faite de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = AE - OA = 7 - 2 = 5$ cm.",
+        "incorrect": "$AE$ va de $A$ à $E$ en passant par $O$ : enlève le morceau $OA$."
+      },
+      "solution": {
+        "lines": [
+          "$O$ est entre $A$ et $E$, donc $AE = OA + OE$.",
+          "$OE = 7 - 2 = 5$ cm."
+        ],
+        "result": "OE = 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "7"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{4 \\times 5}{2} = 10$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{2}{5} = \\dfrac{4}{EF}$.",
+          "$EF = \\dfrac{4 \\times 5}{2} = 10$ cm."
+        ],
+        "result": "EF = 10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,6"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "14"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

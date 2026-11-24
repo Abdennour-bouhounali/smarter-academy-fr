@@ -1,0 +1,257 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-005",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Papillon, emboîtée ou aucune ?",
+    "estimatedMinutes": 4,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(RT)$ et $(SU)$ se coupent en $O$, et les droites $(RS)$ et $(TU)$ sont parallèles.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "R": [
+          -1.8794,
+          0.684
+        ],
+        "S": [
+          1.6853,
+          1.4141
+        ],
+        "T": [
+          2.6312,
+          -0.9576
+        ],
+        "U": [
+          -2.3594,
+          -1.9797
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "R"
+        },
+        {
+          "from": "O",
+          "to": "T"
+        },
+        {
+          "from": "O",
+          "to": "S"
+        },
+        {
+          "from": "O",
+          "to": "U"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "arrows": 1
+        },
+        {
+          "from": "T",
+          "to": "U",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (RT) et (SU) se coupent en O ; R et S d’un côté de O, T et U de l’autre ; (RS) parallèle à (TU).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle configuration forment les triangles $ORS$ et $OTU$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Une configuration emboîtée",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        },
+        {
+          "id": "B",
+          "content": "Une configuration en papillon",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Aucune configuration de Thalès",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde de quel côté du point $O$ se trouvent $T$ et $U$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Deux triangles qui ne se recouvrent pas et se touchent en un sommet : comment s’appelle cette figure ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$R$ et $S$ sont d’un côté de $O$, $T$ et $U$ de l’autre : c’est le papillon.",
+        "incorrect": "Les deux triangles sont de part et d’autre du point $O$, et les droites $(RS)$ et $(TU)$ sont parallèles."
+      },
+      "solution": {
+        "lines": [
+          "Les droites $(RT)$ et $(SU)$ se coupent en $O$, avec $O$ entre $R$ et $T$ et entre $S$ et $U$, et $(RS) \\parallel (TU)$.",
+          "Les triangles $ORS$ et $OTU$ forment une configuration de Thalès en papillon."
+        ],
+        "result": "Papillon"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Les points $G$, $H$, $K$ sont alignés dans cet ordre, ainsi que les points $G$, $L$, $M$, et les droites $(HL)$ et $(KM)$ sont parallèles. Quelle configuration forment les triangles $GHL$ et $GKM$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Une configuration en papillon",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        },
+        {
+          "id": "B",
+          "content": "Aucune configuration de Thalès",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-CONFIGURATION"
+        },
+        {
+          "id": "C",
+          "content": "Une configuration emboîtée",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Place les points dans l’ordre donné, sur deux droites issues de $G$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Les points $H$ et $K$ sont-ils du même côté de $G$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$H$ et $K$ sont du même côté de $G$ : le petit triangle est dans le grand.",
+        "incorrect": "Dans l’ordre $G$, $H$, $K$, les points $H$ et $K$ sont du même côté de $G$."
+      },
+      "solution": {
+        "lines": [
+          "$H$ et $K$ sont du même côté de $G$, ainsi que $L$ et $M$, et $(HL) \\parallel (KM)$.",
+          "Le triangle $GHL$ est dans le triangle $GKM$ : c’est la configuration emboîtée."
+        ],
+        "result": "Emboîtée"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Les droites $(VY)$ et $(WZ)$ se coupent en $P$, avec $P$ entre $V$ et $Y$ et entre $W$ et $Z$. On ne sait rien d’autre. Quelle configuration forment les triangles $PVW$ et $PYZ$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Une configuration en papillon",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        },
+        {
+          "id": "B",
+          "content": "Aucune configuration de Thalès",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Une configuration emboîtée",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis les données : lesquelles parlent de droites parallèles ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le théorème de Thalès demande deux droites parallèles."
+        }
+      ],
+      "feedback": {
+        "correct": "Rien ne dit que $(VW)$ et $(YZ)$ sont parallèles : aucune configuration de Thalès.",
+        "incorrect": "Deux droites qui se coupent ne suffisent pas : il faut aussi deux droites parallèles."
+      },
+      "solution": {
+        "lines": [
+          "Rien ne dit que les droites $(VW)$ et $(YZ)$ sont parallèles.",
+          "Sans droites parallèles, ce n’est pas une configuration de Thalès."
+        ],
+        "result": "Aucune"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-010",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le périmètre du triangle OEF",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$. On donne $OA = 2{,}4$ cm, $AE = 6{,}4$ cm, $OB = 2{,}1$ cm et $AB = 1{,}5$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.0785,
+          1.2
+        ],
+        "B": [
+          -0.7794,
+          1.95
+        ],
+        "E": [
+          3.4642,
+          -2.0
+        ],
+        "F": [
+          1.299,
+          -3.25
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "2,4"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "2,1"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,5",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF) ; OA = 2,4 cm, AE = 6,4 cm, OB = 2,1 cm, AB = 1,5 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $OE$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le point $O$ est entre $A$ et $E$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "La longueur $AE$ est faite de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = AE - OA = 6{,}4 - 2{,}4 = 4$ cm.",
+        "incorrect": "$AE$ traverse le point $O$ : enlève le morceau $OA$."
+      },
+      "solution": {
+        "lines": [
+          "$O$ est entre $A$ et $E$ : $OE = AE - OA = 6{,}4 - 2{,}4 = 4$ cm."
+        ],
+        "result": "OE = 4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "6,4"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OF = \\dfrac{2{,}1 \\times 4}{2{,}4} = 3{,}5$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$, donc $\\dfrac{2{,}4}{4} = \\dfrac{2{,}1}{OF}$.",
+          "$OF = \\dfrac{2{,}1 \\times 4}{2{,}4} = 3{,}5$ cm."
+        ],
+        "result": "OF = 3{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,26"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{1{,}5 \\times 4}{2{,}4} = 2{,}5$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{2{,}4}{4} = \\dfrac{1{,}5}{EF}$.",
+          "$EF = \\dfrac{1{,}5 \\times 4}{2{,}4} = 2{,}5$ cm."
+        ],
+        "result": "EF = 2{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,9"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Calcule le périmètre du triangle $OEF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le périmètre est la somme des trois côtés."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Utilise $OE$, $OF$ et $EF$ trouvées plus haut."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE + OF + EF = 4 + 3{,}5 + 2{,}5 = 10$ cm.",
+        "incorrect": "Additionne les trois côtés du triangle $OEF$, pas ceux du triangle $OAB$."
+      },
+      "solution": {
+        "lines": [
+          "$OE + OF + EF = 4 + 3{,}5 + 2{,}5 = 10$ cm."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

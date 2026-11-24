@@ -1,0 +1,191 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-003",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Vrai ou faux : la longueur qui traverse O",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.8794,
+          0.684
+        ],
+        "B": [
+          -0.7351,
+          2.0735
+        ],
+        "E": [
+          2.8191,
+          -1.026
+        ],
+        "F": [
+          1.1026,
+          -3.1103
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; A et B d’un côté de O, E et F de l’autre ; (AB) parallèle à (EF).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "On lit : « Comme $(AB) \\parallel (EF)$, on a $\\dfrac{OA}{AE} = \\dfrac{AB}{EF}$. » Vrai ou faux ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Vrai",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "B",
+          "content": "Faux",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Où commence et où finit la longueur $AE$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Dans le papillon, chaque longueur d’un rapport part de $O$."
+        }
+      ],
+      "feedback": {
+        "correct": "$AE$ traverse le point $O$ : elle n’est pas un terme de l’égalité. On a $\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$.",
+        "incorrect": "La longueur $AE$ va de $A$ à $E$ en passant par $O$ : elle ne part pas de $O$."
+      },
+      "solution": {
+        "lines": [
+          "$AE = OA + OE$ traverse $O$.",
+          "L’égalité juste est $\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$."
+        ],
+        "result": "Faux"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "On donne $OA = 2$ cm, $AE = 5$ cm et $AB = 1{,}8$ cm. Emma calcule $EF = \\dfrac{1{,}8 \\times 5}{2}$. Calcule la bonne valeur de $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,7",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Commence par la longueur qui part de $O$ sur la droite $(AE)$."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{1{,}8 \\times 3}{2} = 2{,}7$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$O$ est entre $A$ et $E$ : $OE = AE - OA = 5 - 2 = 3$ cm.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{2}{3} = \\dfrac{1{,}8}{EF}$.",
+          "$EF = \\dfrac{1{,}8 \\times 3}{2} = 2{,}7$ cm."
+        ],
+        "result": "EF = 2{,}7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,2"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "4,5"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

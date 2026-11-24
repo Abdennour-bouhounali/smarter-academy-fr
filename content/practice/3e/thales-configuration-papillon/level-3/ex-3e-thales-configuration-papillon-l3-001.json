@@ -1,0 +1,190 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-001",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Calculer OF et GH",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(GF)$ et $(EH)$ se coupent en $O$, et $(EF) \\parallel (GH)$. On donne $EF = 2$ cm, $OE = 1{,}3$ cm, $OG = 4$ cm et $OH = 3{,}9$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "E": [
+          -0.65,
+          1.1258
+        ],
+        "F": [
+          1.2434,
+          0.4815
+        ],
+        "H": [
+          1.95,
+          -3.3774
+        ],
+        "G": [
+          -3.7302,
+          -1.4445
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "E",
+          "label": "1,3"
+        },
+        {
+          "from": "O",
+          "to": "H",
+          "label": "3,9"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "O",
+          "to": "G",
+          "label": "4"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "2",
+          "arrows": 1
+        },
+        {
+          "from": "H",
+          "to": "G",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (GF) et (EH) se coupent en O ; E et F d’un côté de O, H et G de l’autre ; (EF) parallèle à (GH) ; EF = 2 cm, OE = 1,3 cm, OG = 4 cm, OH = 3,9 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Donne la valeur exacte de $OF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4/3",
+      "answerFormat": "Une fraction comme 7/9, ou un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OF = \\dfrac{1{,}3 \\times 4}{3{,}9} = \\dfrac{4}{3}$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $E$, $O$, $H$ sont alignés, ainsi que les points $F$, $O$, $G$ ; les droites $(EF)$ et $(GH)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OE}{OH} = \\dfrac{OF}{OG} = \\dfrac{EF}{HG}$.",
+          "$\\dfrac{OE}{OH} = \\dfrac{OF}{OG}$, donc $\\dfrac{1{,}3}{3{,}9} = \\dfrac{OF}{4}$.",
+          "$OF = \\dfrac{1{,}3 \\times 4}{3{,}9} = \\dfrac{4}{3}$ cm."
+        ],
+        "result": "OF = \\dfrac{4}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "12"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $GH$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $HG$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$HG = \\dfrac{2 \\times 3{,}9}{1{,}3} = 6$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OE}{OH} = \\dfrac{EF}{HG}$, donc $\\dfrac{1{,}3}{3{,}9} = \\dfrac{2}{HG}$.",
+          "$HG = \\dfrac{2 \\times 3{,}9}{1{,}3} = 6$ cm."
+        ],
+        "result": "HG = 6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "2/3"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

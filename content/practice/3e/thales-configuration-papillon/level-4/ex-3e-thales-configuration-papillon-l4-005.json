@@ -1,0 +1,250 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-005",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Rédiger, puis calculer",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(RT)$ et $(SU)$ se coupent en $V$, et les droites $(RS)$ et $(TU)$ sont parallèles. On donne $VR = 2{,}8$ cm, $VT = 4{,}2$ cm et $RS = 3{,}2$ cm.",
+    "figure": {
+      "points": {
+        "V": [
+          0,
+          0
+        ],
+        "R": [
+          -2.2936,
+          1.606
+        ],
+        "S": [
+          0.7851,
+          2.4786
+        ],
+        "T": [
+          3.4404,
+          -2.409
+        ],
+        "U": [
+          -1.1777,
+          -3.7179
+        ]
+      },
+      "segments": [
+        {
+          "from": "V",
+          "to": "R",
+          "label": "2,8"
+        },
+        {
+          "from": "V",
+          "to": "T",
+          "label": "4,2"
+        },
+        {
+          "from": "V",
+          "to": "S"
+        },
+        {
+          "from": "V",
+          "to": "U"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "label": "3,2",
+          "arrows": 1
+        },
+        {
+          "from": "T",
+          "to": "U",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (RT) et (SU) se coupent en V ; R et S d’un côté de V, T et U de l’autre ; (RS) parallèle à (TU) ; VR = 2,8 cm, VT = 4,2 cm, RS = 3,2 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle phrase commence la rédaction ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Les droites $(RS)$ et $(TU)$ sont parallèles.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-SANS-PARALLELE"
+        },
+        {
+          "id": "B",
+          "content": "Les points $R$, $V$, $T$ sont alignés, ainsi que les points $S$, $V$, $U$ ; les droites $(RS)$ et $(TU)$ sont parallèles.",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Les points $R$, $V$, $U$ sont alignés, ainsi que les points $S$, $V$, $T$ ; les droites $(RS)$ et $(TU)$ sont parallèles.",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "La phrase cite deux alignements et un parallélisme."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Vérifie sur la figure quels points sont sur une même droite passant par $V$."
+        }
+      ],
+      "feedback": {
+        "correct": "Deux alignements justes qui passent par $V$, puis les deux droites parallèles.",
+        "incorrect": "Il faut les DEUX alignements, justes, et le parallélisme."
+      },
+      "solution": {
+        "lines": [
+          "Les points $R$, $V$, $T$ sont alignés, ainsi que les points $S$, $V$, $U$ ; les droites $(RS)$ et $(TU)$ sont parallèles."
+        ],
+        "result": "Deux alignements et le parallélisme"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "D’après le théorème de Thalès, quelle égalité suit ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{VR}{VT} = \\dfrac{VS}{VU} = \\dfrac{RS}{TU}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{VR}{VU} = \\dfrac{VS}{VT} = \\dfrac{RS}{TU}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{VR}{RT} = \\dfrac{VS}{SU} = \\dfrac{RS}{TU}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Chaque longueur part de $V$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R$ va avec $T$, et $S$ avec $U$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{VR}{VT} = \\dfrac{VS}{VU} = \\dfrac{RS}{TU}$.",
+        "incorrect": "Dans chaque rapport, deux longueurs issues de $V$ sur la même droite."
+      },
+      "solution": {
+        "lines": [
+          "D’après le théorème de Thalès : $\\dfrac{VR}{VT} = \\dfrac{VS}{VU} = \\dfrac{RS}{TU}$."
+        ],
+        "result": "\\dfrac{VR}{VT} = \\dfrac{VS}{VU} = \\dfrac{RS}{TU}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $TU$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $TU$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$TU = \\dfrac{3{,}2 \\times 4{,}2}{2{,}8} = 4{,}8$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{VR}{VT} = \\dfrac{RS}{TU}$, donc $\\dfrac{2{,}8}{4{,}2} = \\dfrac{3{,}2}{TU}$.",
+          "$TU = \\dfrac{3{,}2 \\times 4{,}2}{2{,}8} = 4{,}8$ cm."
+        ],
+        "result": "TU = 4{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "32/15"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-004",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Calculer AB et OD",
+    "estimatedMinutes": 5,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l2-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AC)$ et $(BD)$ se coupent en $O$, et $(AB) \\parallel (CD)$. On donne $OA = 3$ cm, $OC = 6$ cm, $OB = 2{,}5$ cm et $CD = 8$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.5981,
+          1.5
+        ],
+        "B": [
+          1.3567,
+          2.0999
+        ],
+        "C": [
+          5.1962,
+          -3.0
+        ],
+        "D": [
+          -2.7134,
+          -4.1998
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "3"
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "label": "6"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "2,5"
+        },
+        {
+          "from": "O",
+          "to": "D"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "8",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AC) et (BD) se coupent en O ; A et B d’un côté de O, C et D de l’autre ; (AB) parallèle à (CD) ; OA = 3 cm, OC = 6 cm, OB = 2,5 cm, CD = 8 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $AB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{3 \\times 8}{6} = 4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $C$ sont alignés, ainsi que les points $B$, $O$, $D$ ; les droites $(AB)$ et $(CD)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$.",
+          "$\\dfrac{OA}{OC} = \\dfrac{AB}{CD}$, donc $\\dfrac{3}{6} = \\dfrac{AB}{8}$.",
+          "$AB = \\dfrac{3 \\times 8}{6} = 4$ cm."
+        ],
+        "result": "AB = 4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "16"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OD$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = \\dfrac{2{,}5 \\times 6}{3} = 5$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OC} = \\dfrac{OB}{OD}$, donc $\\dfrac{3}{6} = \\dfrac{2{,}5}{OD}$.",
+          "$OD = \\dfrac{2{,}5 \\times 6}{3} = 5$ cm."
+        ],
+        "result": "OD = 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,25"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

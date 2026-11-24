@@ -1,0 +1,234 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-007",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La table élévatrice",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Une table élévatrice d’atelier est soutenue par deux bras $[AD]$ et $[BC]$ qui se croisent en $O$. Le plateau $(AB)$ reste parallèle au sol $(DC)$. Dans une position donnée : $OA = 0{,}9$ m, $OD = 1{,}5$ m, $OC = 1{,}4$ m et $DC = 2{,}1$ m.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.671,
+          0.599
+        ],
+        "B": [
+          0.589,
+          0.599
+        ],
+        "D": [
+          1.119,
+          -0.999
+        ],
+        "C": [
+          -0.981,
+          -0.999
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "2,1 m",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "e"
+      },
+      "ariaLabel": "Table élévatrice vue de côté : bras [AD] et [BC] croisés en O ; plateau (AB) parallèle au sol (DC) ; DC = 2,1 m.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule la longueur $AB$ du plateau entre les deux bras.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,26",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{0{,}9 \\times 2{,}1}{1{,}5} = 1{,}26$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $D$ sont alignés, ainsi que les points $B$, $O$, $C$ ; les droites $(AB)$ et $(DC)$ sont parallèles (plateau et sol parallèles).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{DC}$.",
+          "$\\dfrac{OA}{OD} = \\dfrac{AB}{DC}$, donc $\\dfrac{0{,}9}{1{,}5} = \\dfrac{AB}{2{,}1}$.",
+          "$AB = \\dfrac{0{,}9 \\times 2{,}1}{1{,}5} = 1{,}26$ m."
+        ],
+        "result": "AB = 1{,}26"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "3,5"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "1,5"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,84",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB = \\dfrac{0{,}9 \\times 1{,}4}{1{,}5} = 0{,}84$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OD} = \\dfrac{OB}{OC}$, donc $\\dfrac{0{,}9}{1{,}5} = \\dfrac{OB}{1{,}4}$.",
+          "$OB = \\dfrac{0{,}9 \\times 1{,}4}{1{,}5} = 0{,}84$ m."
+        ],
+        "result": "OB = 0{,}84"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "7/3"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle est la longueur du bras $[BC]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,24",
+      "answerFormat": "Un nombre décimal, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le bras $[BC]$ passe par $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Il est fait de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = OB + OC = 0{,}84 + 1{,}4 = 2{,}24$ m.",
+        "incorrect": "$BC$ traverse $O$ : $BC = OB + OC$."
+      },
+      "solution": {
+        "lines": [
+          "$O \\in [BC]$ : $BC = OB + OC = 0{,}84 + 1{,}4 = 2{,}24$ m."
+        ],
+        "result": "BC = 2{,}24"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "1,4"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

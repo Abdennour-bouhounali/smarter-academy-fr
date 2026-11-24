@@ -1,0 +1,198 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l2-002",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le quadrilatère ABCD : des valeurs exactes",
+    "estimatedMinutes": 6,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Dans le quadrilatère $ABCD$, les droites $(AB)$ et $(CD)$ sont parallèles, et les diagonales $(AC)$ et $(BD)$ se coupent en $O$. On donne $AB = 4$ cm, $OA = 3$ cm, $OB = 2$ cm et $OC = 5$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.8191,
+          1.0261
+        ],
+        "B": [
+          1.1322,
+          1.6487
+        ],
+        "C": [
+          4.6985,
+          -1.7102
+        ],
+        "D": [
+          -1.887,
+          -2.7478
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "3"
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "label": "5"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "2"
+        },
+        {
+          "from": "O",
+          "to": "D"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "4",
+          "arrows": 1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "arrows": 1
+        },
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        }
+      ],
+      "ariaLabel": "Quadrilatère ABCD, (AB) parallèle à (CD), diagonales (AC) et (BD) sécantes en O ; AB = 4 cm, OA = 3 cm, OB = 2 cm, OC = 5 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Donne la valeur exacte de $OD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10/3",
+      "answerFormat": "Une fraction comme 7/9, ou un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OD$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = \\dfrac{2 \\times 5}{3} = \\dfrac{10}{3}$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $C$ sont alignés, ainsi que les points $B$, $O$, $D$ ; les droites $(AB)$ et $(CD)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OC} = \\dfrac{OB}{OD} = \\dfrac{AB}{CD}$.",
+          "$\\dfrac{OA}{OC} = \\dfrac{OB}{OD}$, donc $\\dfrac{3}{5} = \\dfrac{2}{OD}$.",
+          "$OD = \\dfrac{2 \\times 5}{3} = \\dfrac{10}{3}$ cm."
+        ],
+        "result": "OD = \\dfrac{10}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,2"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Donne la valeur exacte de $CD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "20/3",
+      "answerFormat": "Une fraction comme 7/9, ou un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $CD$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD = \\dfrac{4 \\times 5}{3} = \\dfrac{20}{3}$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OC} = \\dfrac{AB}{CD}$, donc $\\dfrac{3}{5} = \\dfrac{4}{CD}$.",
+          "$CD = \\dfrac{4 \\times 5}{3} = \\dfrac{20}{3}$ cm."
+        ],
+        "result": "CD = \\dfrac{20}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "2,4"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

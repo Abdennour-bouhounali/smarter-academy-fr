@@ -1,0 +1,239 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-002",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La largeur d’une rivière",
+    "estimatedMinutes": 10,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour mesurer la largeur d’une rivière sans la traverser, Nathan repère un arbre $T$ sur l’autre rive et plante un piquet $B$ sur sa rive, de sorte que $(TB)$ soit perpendiculaire à la rive. Il longe la rive de $B$ jusqu’à un piquet $O$, sur $31{,}5$ m, puis continue jusqu’à un point $C$, à $6{,}3$ m de $O$. Il s’éloigne alors de la rivière, perpendiculairement à la rive, jusqu’au point $D$ d’où il voit le piquet $O$ cacher l’arbre $T$ : $CD = 8$ m.",
+    "figure": {
+      "points": {
+        "T": [
+          0,
+          40
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "O": [
+          31.5,
+          0
+        ],
+        "C": [
+          37.8,
+          0
+        ],
+        "D": [
+          37.8,
+          -8
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "O",
+          "label": "31,5 m"
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "label": "6,3 m"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "8 m"
+        },
+        {
+          "from": "T",
+          "to": "B"
+        },
+        {
+          "from": "T",
+          "to": "D"
+        }
+      ],
+      "rightAngles": [
+        [
+          "T",
+          "B",
+          "O"
+        ],
+        [
+          "O",
+          "C",
+          "D"
+        ]
+      ],
+      "labels": {
+        "O": "ne"
+      },
+      "ariaLabel": "T sur l’autre rive, B, O, C sur la rive, (TB) et (CD) perpendiculaires à la rive ; T, O, D alignés ; BO = 31,5 m, OC = 6,3 m, CD = 8 m.",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Justifie que les droites $(TB)$ et $(CD)$ sont parallèles.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "Écris ta réponse, puis compare-la au corrigé.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quelle droite est perpendiculaire à la fois à $(TB)$ et à $(CD)$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Que sais-tu de deux droites perpendiculaires à une même droite ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Ta rédaction contient chaque élément du corrigé.",
+        "incorrect": "Compare ta rédaction au corrigé, ligne par ligne."
+      },
+      "solution": {
+        "lines": [
+          "$(TB)$ et $(CD)$ sont toutes deux perpendiculaires à la rive $(BC)$.",
+          "Deux droites perpendiculaires à une même droite sont parallèles : $(TB) \\parallel (CD)$."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "a",
+      "lead": "La commune veut construire une passerelle de $4$ m de plus que la largeur $TB$ de la rivière. Un mètre de passerelle coûte $1\\,250$ €.",
+      "statement": "Calcule la largeur $TB$ de la rivière.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "40",
+      "answerFormat": "Un nombre, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $BT$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$BT = \\dfrac{8 \\times 31{,}5}{6{,}3} = 40$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $B$, $O$, $C$ sont alignés, ainsi que les points $T$, $O$, $D$ ; $(TB) \\parallel (CD)$ (question 1).",
+          "D’après le théorème de Thalès : $\\dfrac{OC}{OB} = \\dfrac{OD}{OT} = \\dfrac{CD}{BT}$.",
+          "$\\dfrac{OC}{OB} = \\dfrac{CD}{BT}$, donc $\\dfrac{6{,}3}{31{,}5} = \\dfrac{8}{BT}$.",
+          "$BT = \\dfrac{8 \\times 31{,}5}{6{,}3} = 40$ m."
+        ],
+        "result": "BT = 40"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,6"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "48"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "b",
+      "statement": "Combien coûte la passerelle ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "55000",
+      "answerFormat": "Un nombre entier, en euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule d’abord la longueur de la passerelle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie cette longueur par le prix d’un mètre."
+        }
+      ],
+      "feedback": {
+        "correct": "$44 \\times 1\\,250 = 55\\{,}000$ €.",
+        "incorrect": "La passerelle mesure $4$ m de plus que la rivière : ajoute, puis multiplie par le prix d’un mètre."
+      },
+      "solution": {
+        "lines": [
+          "La passerelle mesure $40 + 4 = 44$ m.",
+          "Elle coûte $44 \\times 1\\,250 = 55\\{,}000$ €."
+        ],
+        "result": "55\\{,}000"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "50000"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

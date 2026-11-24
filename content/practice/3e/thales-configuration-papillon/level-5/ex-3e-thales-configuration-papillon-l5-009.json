@@ -1,0 +1,192 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-009",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La largeur d’un étang",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour mesurer la largeur $AB$ d’un étang, Manon plante un piquet $O$ sur la berge. Elle prolonge la droite $(AO)$ jusqu’à un point $E$ et la droite $(BO)$ jusqu’à un point $F$, de l’autre côté de $O$, de sorte que $(EF)$ soit parallèle à $(AB)$. Elle mesure $OA = 25{,}2$ m, $OE = 6{,}3$ m, $OF = 5{,}5$ m et $EF = 7{,}9$ m.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -19.3043,
+          16.1982
+        ],
+        "B": [
+          12.2264,
+          18.2898
+        ],
+        "E": [
+          4.8261,
+          -4.0495
+        ],
+        "F": [
+          -3.0566,
+          -4.5724
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "6,3 m"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "7,9 m",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Étang entre A et B ; piquet O ; E sur (AO) et F sur (BO) au-delà de O ; (EF) parallèle à (AB) ; OE = 6,3 m, EF = 7,9 m.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule la largeur $AB$ de l’étang.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "31,6",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{25{,}2 \\times 7{,}9}{6{,}3} = 31{,}6$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (construction).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{25{,}2}{6{,}3} = \\dfrac{AB}{7{,}9}$.",
+          "$AB = \\dfrac{25{,}2 \\times 7{,}9}{6{,}3} = 31{,}6$ m."
+        ],
+        "result": "AB = 31{,}6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,975"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "26,8"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "22",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB = \\dfrac{25{,}2 \\times 5{,}5}{6{,}3} = 22$ m.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$, donc $\\dfrac{25{,}2}{6{,}3} = \\dfrac{OB}{5{,}5}$.",
+          "$OB = \\dfrac{25{,}2 \\times 5{,}5}{6{,}3} = 22$ m."
+        ],
+        "result": "OB = 22"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,375"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

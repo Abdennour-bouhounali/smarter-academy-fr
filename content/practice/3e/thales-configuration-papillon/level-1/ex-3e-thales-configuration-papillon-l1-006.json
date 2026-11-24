@@ -1,0 +1,211 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l1-006",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les trois rapports dans une figure tournée",
+    "estimatedMinutes": 4,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(RU)$ et $(TV)$ se coupent en $S$, et les droites $(RT)$ et $(UV)$ sont parallèles.",
+    "figure": {
+      "points": {
+        "S": [
+          0,
+          0
+        ],
+        "R": [
+          0.5176,
+          1.9319
+        ],
+        "T": [
+          2.3635,
+          -0.4168
+        ],
+        "U": [
+          -0.6729,
+          -2.5115
+        ],
+        "V": [
+          -3.0726,
+          0.5418
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "R"
+        },
+        {
+          "from": "S",
+          "to": "U"
+        },
+        {
+          "from": "S",
+          "to": "T"
+        },
+        {
+          "from": "S",
+          "to": "V"
+        },
+        {
+          "from": "R",
+          "to": "T",
+          "arrows": 1
+        },
+        {
+          "from": "U",
+          "to": "V",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (RU) et (TV) se coupent en S ; R et T d’un côté de S, U et V de l’autre ; (RT) parallèle à (UV).",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle égalité est juste ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{SU}{SR} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-RAPPORT-INVERSE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{SR}{RU} = \\dfrac{ST}{TV} = \\dfrac{RT}{UV}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{SR}{SV} = \\dfrac{ST}{SU} = \\dfrac{RT}{UV}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{SR}{SU} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le point où les droites se coupent : chaque longueur part de lui."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R$ et $U$ sont sur la même droite ; $T$ et $V$ aussi."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SR}{SU} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}$ : chaque longueur avec sa partenaire de la même droite.",
+        "incorrect": "Dans chaque rapport : une longueur du triangle $SRT$ au-dessus, sa partenaire du triangle $SUV$ en dessous, sur la même droite."
+      },
+      "solution": {
+        "lines": [
+          "Les points $R$, $S$, $U$ sont alignés, ainsi que les points $T$, $S$, $V$ ; $(RT) \\parallel (UV)$.",
+          "D’après le théorème de Thalès : $\\dfrac{SR}{SU} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}$."
+        ],
+        "result": "\\dfrac{SR}{SU} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel rapport est égal à $\\dfrac{RT}{UV}$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{SR}{SV}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-PARTENAIRE-CROISE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{SR}{SU}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{SU}{SR}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-RAPPORT-INVERSE"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{SR}{RU}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-THALES-A-TRAVERS"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$RT$ est un côté du triangle $SRT$, $UV$ un côté du triangle $SUV$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde le même ordre : le triangle $SRT$ en haut, le triangle $SUV$ en bas."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{RT}{UV} = \\dfrac{SR}{SU}$ : $R$ et $U$ sont sur la même droite issue de $S$.",
+        "incorrect": "Le rapport cherché a ses deux longueurs sur une même droite passant par $S$, et le triangle $SRT$ au numérateur."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SR}{SU} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}$, donc $\\dfrac{RT}{UV} = \\dfrac{SR}{SU}$ (ou $\\dfrac{ST}{SV}$)."
+        ],
+        "result": "\\dfrac{SR}{SU}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

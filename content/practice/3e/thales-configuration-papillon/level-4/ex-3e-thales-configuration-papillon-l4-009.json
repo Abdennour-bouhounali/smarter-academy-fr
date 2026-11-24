@@ -1,0 +1,245 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-009",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Pythagore, puis le papillon",
+    "estimatedMinutes": 9,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, le triangle $OAB$ est rectangle en $A$, avec $OA = 2$ cm et $AB = 1{,}5$ cm. Les droites $(AE)$ et $(BF)$ se coupent en $O$, $(AB) \\parallel (EF)$, et $OE = 3{,}2$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.0,
+          0.0
+        ],
+        "B": [
+          -2.0,
+          1.5
+        ],
+        "E": [
+          3.2,
+          -0.0
+        ],
+        "F": [
+          3.2,
+          -2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "2"
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "3,2"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,5",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "A",
+          "B"
+        ],
+        [
+          "O",
+          "E",
+          "F"
+        ]
+      ],
+      "ariaLabel": "Triangle OAB rectangle en A ; les droites (AE) et (BF) se coupent en O ; (AB) parallèle à (EF) ; OA = 2 cm, AB = 1,5 cm, OE = 3,2 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $OB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,5",
+      "answerFormat": "Un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le triangle $OAB$ est rectangle en $A$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Utilise le théorème de Pythagore."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB^{2} = 2^{2} + 1{,}5^{2} = 6{,}25$, donc $OB = 2{,}5$ cm.",
+        "incorrect": "$[OB]$ est l’hypoténuse : $OB^{2} = OA^{2} + AB^{2}$."
+      },
+      "solution": {
+        "lines": [
+          "Le triangle $OAB$ est rectangle en $A$ : $OB^{2} = OA^{2} + AB^{2}$ (théorème de Pythagore).",
+          "$OB^{2} = 4 + 2{,}25 = 6{,}25$, donc $OB = 2{,}5$ cm."
+        ],
+        "result": "OB = 2{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OF = \\dfrac{2{,}5 \\times 3{,}2}{2} = 4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $E$ sont alignés, ainsi que les points $B$, $O$, $F$ ; les droites $(AB)$ et $(EF)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$, donc $\\dfrac{2}{3{,}2} = \\dfrac{2{,}5}{OF}$.",
+          "$OF = \\dfrac{2{,}5 \\times 3{,}2}{2} = 4$ cm."
+        ],
+        "result": "OF = 4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "1,5625"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "6,5"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{1{,}5 \\times 3{,}2}{2} = 2{,}4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{2}{3{,}2} = \\dfrac{1{,}5}{EF}$.",
+          "$EF = \\dfrac{1{,}5 \\times 3{,}2}{2} = 2{,}4$ cm."
+        ],
+        "result": "EF = 2{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "0,9375"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l5-003",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des morceaux et une traversée",
+    "estimatedMinutes": 10,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les droites $(AE)$ et $(BF)$ se coupent en $O$. Le point $M$ est sur $[OA]$ et le point $N$ sur $[OB]$ ; les droites $(MN)$, $(AB)$ et $(EF)$ sont parallèles. On donne $OM = 1{,}4$ cm, $MA = 2{,}6$ cm, $AE = 10$ cm et $AB = 3{,}2$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2.8284,
+          2.8284
+        ],
+        "B": [
+          0.2798,
+          3.5891
+        ],
+        "E": [
+          4.2426,
+          -4.2426
+        ],
+        "F": [
+          -0.4197,
+          -5.3837
+        ],
+        "M": [
+          -0.9899,
+          0.9899
+        ],
+        "N": [
+          0.0979,
+          1.2562
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "E"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3,2",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "arrows": 1
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "Les droites (AE) et (BF) se coupent en O ; M sur [OA], N sur [OB] ; E et F de l’autre côté de O ; (MN), (AB), (EF) parallèles ; OM = 1,4 cm, MA = 2,6 cm, AE = 10 cm, AB = 3,2 cm.",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $OA$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le point $M$ est sur le segment $[OA]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OA$ est faite de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = OM + MA = 1{,}4 + 2{,}6 = 4$ cm.",
+        "incorrect": "Additionne les deux morceaux de $[OA]$."
+      },
+      "solution": {
+        "lines": [
+          "$M \\in [OA]$ : $OA = OM + MA = 1{,}4 + 2{,}6 = 4$ cm."
+        ],
+        "result": "OA = 4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "2,6"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $MN$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,12",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $MN$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{1{,}4 \\times 3{,}2}{4} = 1{,}12$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$M \\in [OA]$, $N \\in [OB]$ et $(MN) \\parallel (AB)$ : $\\dfrac{OM}{OA} = \\dfrac{ON}{OB} = \\dfrac{MN}{AB}$.",
+          "$\\dfrac{OM}{OA} = \\dfrac{MN}{AB}$, donc $\\dfrac{1{,}4}{4} = \\dfrac{MN}{3{,}2}$.",
+          "$MN = \\dfrac{1{,}4 \\times 3{,}2}{4} = 1{,}12$ cm."
+        ],
+        "result": "MN = 1{,}12"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "64/7"
+        },
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "112/65"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $OE$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le point $O$ est entre $A$ et $E$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Enlève à $AE$ le morceau qui va de $A$ à $O$."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = AE - OA = 10 - 4 = 6$ cm.",
+        "incorrect": "$AE$ traverse $O$ : $OE = AE - OA$."
+      },
+      "solution": {
+        "lines": [
+          "$O \\in [AE]$ : $OE = AE - OA = 10 - 4 = 6$ cm."
+        ],
+        "result": "OE = 6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "10"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $EF$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{3{,}2 \\times 6}{4} = 4{,}8$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$A$, $O$, $E$ alignés, $B$, $O$, $F$ alignés et $(AB) \\parallel (EF)$ : $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$.",
+          "$\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$, donc $\\dfrac{4}{6} = \\dfrac{3{,}2}{EF}$.",
+          "$EF = \\dfrac{3{,}2 \\times 6}{4} = 4{,}8$ cm."
+        ],
+        "result": "EF = 4{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "32/15"
+        },
+        {
+          "id": "MISC-THALES-A-TRAVERS",
+          "value": "8"
+        }
+      ],
+      "timeSeconds": 150
+    }
+  ]
+}

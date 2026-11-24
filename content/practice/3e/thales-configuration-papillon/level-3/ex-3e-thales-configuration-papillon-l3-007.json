@@ -1,0 +1,234 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l3-007",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un papillon dans un parallélogramme",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_thales-configuration-papillon_P2",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l4-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ est un parallélogramme tel que $AB = 5$ et $BC = 3$. Le point $M$ est sur le segment $[AD]$, avec $AM = 2$. La droite $(BM)$ coupe la droite $(DC)$ en $N$.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4.924,
+          0.8682
+        ],
+        "C": [
+          5.3134,
+          3.8429
+        ],
+        "D": [
+          0.3894,
+          2.9746
+        ],
+        "M": [
+          0.2596,
+          1.9831
+        ],
+        "N": [
+          -2.0726,
+          2.5405
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "5"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "3"
+        },
+        {
+          "from": "C",
+          "to": "D"
+        },
+        {
+          "from": "D",
+          "to": "A"
+        },
+        {
+          "from": "B",
+          "to": "N"
+        },
+        {
+          "from": "N",
+          "to": "D"
+        }
+      ],
+      "labels": {
+        "N": "n",
+        "M": "w"
+      },
+      "ariaLabel": "Parallélogramme ABCD, AB = 5, BC = 3 ; M sur [AD] ; la droite (BM) coupe la droite (DC) en N, au-delà de D.",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $MD$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1",
+      "answerFormat": "Un nombre",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Dans un parallélogramme, les côtés opposés ont la même longueur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$M$ est sur le segment $[AD]$."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = BC = 3$, donc $MD = 3 - 2 = 1$.",
+        "incorrect": "Calcule d’abord $AD$, puis enlève le morceau $AM$."
+      },
+      "solution": {
+        "lines": [
+          "$ABCD$ est un parallélogramme : $AD = BC = 3$.",
+          "$M \\in [AD]$ : $MD = AD - AM = 3 - 2 = 1$."
+        ],
+        "result": "MD = 1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $DN$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $DN$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$DN = \\dfrac{1 \\times 5}{2} = 2{,}5$.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$(DC) \\parallel (AB)$ car $ABCD$ est un parallélogramme, et $N \\in (DC)$ : $(DN) \\parallel (AB)$.",
+          "Les points $A$, $M$, $D$ sont alignés, ainsi que les points $B$, $M$, $N$.",
+          "D’après le théorème de Thalès : $\\dfrac{MD}{MA} = \\dfrac{MN}{MB} = \\dfrac{DN}{AB}$.",
+          "$\\dfrac{MD}{MA} = \\dfrac{DN}{AB}$, donc $\\dfrac{1}{2} = \\dfrac{DN}{5}$.",
+          "$DN = \\dfrac{1 \\times 5}{2} = 2{,}5$."
+        ],
+        "result": "DN = 2{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "10"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $CN$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les points $N$, $D$, $C$ sont alignés : dans quel ordre ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$CN$ est faite de deux morceaux."
+        }
+      ],
+      "feedback": {
+        "correct": "$CN = CD + DN = 5 + 2{,}5 = 7{,}5$.",
+        "incorrect": "$D$ est entre $N$ et $C$ : additionne $CD$ et $DN$."
+      },
+      "solution": {
+        "lines": [
+          "$CD = AB = 5$, et $D$ est entre $N$ et $C$.",
+          "$CN = CD + DN = 5 + 2{,}5 = 7{,}5$."
+        ],
+        "result": "CN = 7{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "2,5"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "id": "ex-3e-thales-configuration-papillon-l4-008",
+  "lessonCode": "thales-configuration-papillon",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La planche à repasser",
+    "estimatedMinutes": 8,
+    "tags": [
+      "théorème de Thalès",
+      "configuration du papillon"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_thales-configuration-papillon_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Les deux pieds $[AD]$ et $[BC]$ d’une planche à repasser se croisent en $O$. Ils sont fixés sous la planche en $A$ et $B$, et touchent le sol en $D$ et $C$ ; la planche $(AB)$ est parallèle au sol $(DC)$. On donne $OA = 36{,}4$ cm, $OD = 54{,}6$ cm, $OB = 33{,}2$ cm et $DC = 45{,}6$ cm.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -18.863,
+          31.131
+        ],
+        "B": [
+          11.537,
+          31.131
+        ],
+        "D": [
+          28.295,
+          -46.697
+        ],
+        "C": [
+          -17.305,
+          -46.697
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "arrows": 1
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "45,6",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "e"
+      },
+      "ariaLabel": "Planche à repasser vue de côté : pieds [AD] et [BC] croisés en O ; (AB) parallèle au sol (DC) ; DC = 45,6 cm.",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $AB$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $AB$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{36{,}4 \\times 45{,}6}{54{,}6} = 30{,}4$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "Les points $A$, $O$, $D$ sont alignés, ainsi que les points $B$, $O$, $C$ ; les droites $(AB)$ et $(DC)$ sont parallèles (données).",
+          "D’après le théorème de Thalès : $\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{DC}$.",
+          "$\\dfrac{OA}{OD} = \\dfrac{AB}{DC}$, donc $\\dfrac{36{,}4}{54{,}6} = \\dfrac{AB}{45{,}6}$.",
+          "$AB = \\dfrac{36{,}4 \\times 45{,}6}{54{,}6} = 30{,}4$ cm."
+        ],
+        "result": "AB = 30{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "68,4"
+        },
+        {
+          "id": "MISC-THALES-ADDITION",
+          "value": "27,4"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $OC$.",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "49,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère les deux droites sécantes et les deux droites parallèles."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris l’égalité des trois rapports, puis garde celle qui contient $OC$ et trois longueurs connues."
+        }
+      ],
+      "feedback": {
+        "correct": "$OC = \\dfrac{33{,}2 \\times 54{,}6}{36{,}4} = 49{,}8$ cm.",
+        "incorrect": "Relis ton égalité : chaque longueur part du point d’intersection, et chaque rapport réunit deux longueurs portées par la même droite, dans le même ordre."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OD} = \\dfrac{OB}{OC}$, donc $\\dfrac{36{,}4}{54{,}6} = \\dfrac{33{,}2}{OC}$.",
+          "$OC = \\dfrac{33{,}2 \\times 54{,}6}{36{,}4} = 49{,}8$ cm."
+        ],
+        "result": "OC = 49{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-RAPPORT-INVERSE",
+          "value": "332/15"
+        }
+      ],
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle est la longueur du pied $[BC]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_thales-configuration-papillon_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_thales-configuration-papillon_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "83",
+      "answerFormat": "Un nombre décimal, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le pied $[BC]$ passe par $O$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Additionne les deux morceaux du pied."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = OB + OC = 33{,}2 + 49{,}8 = 83$ cm.",
+        "incorrect": "$BC$ traverse le point $O$ : $BC = OB + OC$."
+      },
+      "solution": {
+        "lines": [
+          "$O \\in [BC]$ : $BC = OB + OC = 33{,}2 + 49{,}8 = 83$ cm."
+        ],
+        "result": "BC = 83"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-THALES-MORCEAU",
+          "value": "49,8"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

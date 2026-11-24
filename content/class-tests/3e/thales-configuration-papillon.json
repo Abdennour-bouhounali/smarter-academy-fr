@@ -1,0 +1,410 @@
+{
+  "_comment": "La séance en classe — les tests PAR DÉFAUT de la leçon « Thalès dans le papillon » (docs/architecture/CLASS_SESSION.md §4). `start` ouvre l’heure : ce sur quoi la leçon s’appuie (la quatrième proportionnelle, 4e.m2.r09 ; Thalès dans les triangles emboîtés, 4e.m4.r04), puis deux questions de la NOUVELLE leçon dans des mots de géométrie, sans le nom d’une clé (`teaser` : une longueur de l’autre côté du point d’intersection, une longueur qui traverse ce point — elles reviennent à la fin avec d’autres nombres et la même réponse, `pairOf`). `end` ferme l’heure sur les trois points de la leçon (P1 l’égalité des trois rapports et la phrase qui la justifie : e3, e4, e6, e8 ; P2 l’ordre des longueurs, la longueur qui traverse : e2, e5 ; P3 calculer une longueur : e1, e5, e7). `pool` : d’autres questions préparées que le professeur peut ajouter à sa copie. Une réponse numérique est un nombre entier (le pavé du tableau n’a que des chiffres). Chaque question porte un `check` aux types du test algérien (`fourth`, `thales` — `butterfly`, `p` les morceaux, `across` les longueurs qui traversent le point d’intersection —, `thalesRatios`) d’où sa réponse a été RECALCULÉE au moment de l’écrire ; `sentence`, `needsParallel` et la clé `claim` d’un `thalesRatios` sont propres à ce test. Aucun test du dépôt ne relit encore ces `check` (defaultTests.test.js n’existe qu’en Algérie). Les nombres sont propres au test : ni ceux du monde de l’élève, ni des paires de la banque ou des autres leçons françaises (règle par paire de docs/reports/UNIT_3E_THALES_DESIGN.md §3). Un test de classe ne change jamais la progression d’un élève.",
+  "lesson": "thales-configuration-papillon",
+  "grade": "3e",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "4e.m2.r09",
+      "kind": "number",
+      "text": "Quelle est la valeur de $x$ dans l’égalité $\\dfrac{2}{5} = \\dfrac{x}{15}$ ?",
+      "answer": 6,
+      "check": {
+        "type": "fourth",
+        "a": "2",
+        "b": "5",
+        "c": "15",
+        "at": "num"
+      }
+    },
+    {
+      "id": "s2",
+      "item": "4e.m2.r09",
+      "kind": "truefalse",
+      "text": "Dans l’égalité $\\dfrac{4}{7} = \\dfrac{10}{x}$, on a $x = 17{,}5$.",
+      "answer": true,
+      "check": {
+        "type": "fourth",
+        "a": "4",
+        "b": "7",
+        "c": "10",
+        "claim": "17.5"
+      }
+    },
+    {
+      "id": "s3",
+      "item": "4e.m4.r04",
+      "kind": "number",
+      "text": "Dans le triangle $ABC$, le point $M$ est sur $[AB]$, le point $N$ sur $[AC]$, et $(MN) \\parallel (BC)$. $AM = 3$, $AB = 7$ et $BC = 14$. Calcule $MN$.",
+      "answer": 6,
+      "check": {
+        "type": "thales",
+        "s": ["3", null, null],
+        "b": ["7", null, "14"],
+        "ask": "s3"
+      }
+    },
+    {
+      "id": "s4",
+      "item": "4e.m4.r04",
+      "kind": "choice",
+      "text": "Dans le triangle $EFG$, le point $K$ est sur $[EF]$, le point $L$ sur $[EG]$, et $(KL) \\parallel (FG)$. Quelle égalité est juste ?",
+      "options": [
+        "$\\dfrac{EK}{KF} = \\dfrac{EL}{LG} = \\dfrac{KL}{FG}$",
+        "$\\dfrac{EK}{EF} = \\dfrac{EL}{EG} = \\dfrac{KL}{FG}$",
+        "$\\dfrac{EK}{EF} = \\dfrac{EG}{EL} = \\dfrac{KL}{FG}$"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "thalesRatios",
+        "vertex": "E",
+        "lines": [
+          ["K", "F"],
+          ["L", "G"]
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "item": "4e.m4.r04",
+      "kind": "truefalse",
+      "text": "Dans le triangle $ABC$, le point $M$ est sur $[AB]$, le point $N$ sur $[AC]$, et $(MN) \\parallel (BC)$. $AM = 4$, $MB = 5$ et $BC = 18$, donc $MN = 14{,}4$.",
+      "answer": false,
+      "check": {
+        "type": "thales",
+        "s": ["4", null, null],
+        "b": [null, null, "18"],
+        "p": ["5", null],
+        "ask": "s3",
+        "claim": "14.4"
+      }
+    },
+    {
+      "id": "s6",
+      "item": "4e.m2.r09",
+      "kind": "choice",
+      "text": "Quelle est la valeur de $x$ dans l’égalité $\\dfrac{2}{3} = \\dfrac{x}{9}$ ?",
+      "options": ["$6$", "$8$", "$13{,}5$"],
+      "answer": 0,
+      "check": {
+        "type": "fourth",
+        "a": "2",
+        "b": "3",
+        "c": "9",
+        "at": "num"
+      }
+    },
+    {
+      "id": "s7",
+      "item": "4e.m4.r04",
+      "kind": "number",
+      "text": "Dans le triangle $ABC$, le point $M$ est sur $[AB]$, le point $N$ sur $[AC]$, et $(MN) \\parallel (BC)$. $AM = 2$, $MB = 3$ et $MN = 4$. Calcule $BC$.",
+      "answer": 10,
+      "check": {
+        "type": "thales",
+        "s": ["2", null, "4"],
+        "b": [null, null, null],
+        "p": ["3", null],
+        "ask": "b3"
+      }
+    },
+    {
+      "id": "s8",
+      "item": "4e.m2.r09",
+      "kind": "truefalse",
+      "text": "Dans l’égalité $\\dfrac{3}{4} = \\dfrac{x}{8}$, on a $x = 6$.",
+      "answer": true,
+      "check": {
+        "type": "fourth",
+        "a": "3",
+        "b": "4",
+        "c": "8",
+        "at": "num",
+        "claim": "6"
+      }
+    },
+    {
+      "id": "s9",
+      "item": "3e.m4.r05",
+      "teaser": true,
+      "kind": "number",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. $OA = 3$, $OC = 9$ et $AB = 4$. Calcule $CD$.",
+      "answer": 12,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["3", null, "4"],
+        "b": ["9", null, null],
+        "ask": "b3"
+      }
+    },
+    {
+      "id": "s10",
+      "item": "3e.m4.r05",
+      "teaser": true,
+      "kind": "number",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. $OA = 2$, $AC = 8$ et $AB = 3$. Calcule $CD$.",
+      "answer": 9,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["2", null, "3"],
+        "b": [null, null, null],
+        "across": ["8", null],
+        "ask": "b3"
+      }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "3e.m4.r05",
+      "pairOf": "s9",
+      "kind": "number",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. $OA = 2$, $OC = 8$ et $AB = 3$. Calcule $CD$.",
+      "answer": 12,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["2", null, "3"],
+        "b": ["8", null, null],
+        "ask": "b3"
+      }
+    },
+    {
+      "id": "e2",
+      "item": "3e.m4.r05",
+      "pairOf": "s10",
+      "kind": "number",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. $OA = 4$, $AC = 16$ et $AB = 3$. Calcule $CD$.",
+      "answer": 9,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["4", null, "3"],
+        "b": [null, null, null],
+        "across": ["16", null],
+        "ask": "b3"
+      }
+    },
+    {
+      "id": "e3",
+      "item": "3e.m4.r05",
+      "kind": "choice",
+      "text": "Les points $B$, $O$, $D$ sont alignés, ainsi que $C$, $O$, $E$, avec $O$ entre les deux autres, et $(BC) \\parallel (DE)$. Quelle égalité est juste ?",
+      "options": [
+        "$\\dfrac{OB}{OD} = \\dfrac{OC}{OE} = \\dfrac{BC}{DE}$",
+        "$\\dfrac{OB}{OE} = \\dfrac{OC}{OD} = \\dfrac{BC}{DE}$",
+        "$\\dfrac{OB}{BD} = \\dfrac{OC}{CE} = \\dfrac{BC}{DE}$"
+      ],
+      "answer": 0,
+      "check": {
+        "type": "thalesRatios",
+        "vertex": "O",
+        "lines": [
+          ["B", "D"],
+          ["C", "E"]
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "item": "3e.m4.r05",
+      "kind": "truefalse",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. Donc $\\dfrac{OA}{OD} = \\dfrac{OB}{OC}$.",
+      "answer": false,
+      "check": {
+        "type": "thalesRatios",
+        "vertex": "O",
+        "lines": [
+          ["A", "C"],
+          ["B", "D"]
+        ],
+        "claim": [
+          ["A", "D"],
+          ["B", "C"]
+        ]
+      }
+    },
+    {
+      "id": "e5",
+      "item": "3e.m4.r05",
+      "kind": "number",
+      "text": "Les droites $(AE)$ et $(BF)$ se coupent en $O$, avec $O$ entre $A$ et $E$ et entre $B$ et $F$, et $(AB) \\parallel (EF)$. $OA = 3$, $AE = 8$ et $OB = 6$. Calcule $BF$.",
+      "answer": 16,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["3", "6", null],
+        "b": [null, null, null],
+        "across": ["8", null],
+        "ask": "p2"
+      }
+    },
+    {
+      "id": "e6",
+      "item": "3e.m4.r05",
+      "kind": "choice",
+      "text": "Les droites $(AE)$ et $(BF)$ se coupent en $O$. Que faut-il savoir pour écrire $\\dfrac{OA}{OE} = \\dfrac{OB}{OF}$ ?",
+      "options": [
+        "Seulement que $(AB) \\parallel (EF)$",
+        "Seulement que $A$, $O$, $E$ sont alignés, ainsi que $B$, $O$, $F$",
+        "Que $A$, $O$, $E$ sont alignés, ainsi que $B$, $O$, $F$, et que $(AB) \\parallel (EF)$"
+      ],
+      "answer": 2,
+      "check": {
+        "type": "sentence",
+        "needs": ["alignments", "parallel"]
+      }
+    },
+    {
+      "id": "e7",
+      "item": "3e.m2.r09",
+      "kind": "number",
+      "text": "Les points $A$, $O$, $E$ sont alignés, ainsi que $B$, $O$, $F$, avec $O$ entre les deux autres, et $(AB) \\parallel (EF)$. $OA = 2$, $OE = 3$, $OB = 4$ et $AB = 4$. Quel est le périmètre du triangle $OEF$ ?",
+      "answer": 15,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["2", "4", "4"],
+        "b": ["3", null, null],
+        "ask": "perimeterBig"
+      }
+    },
+    {
+      "id": "e8",
+      "item": "3e.m4.r05",
+      "kind": "truefalse",
+      "text": "Les droites $(AE)$ et $(BF)$ se coupent en $O$ ; on ne sait rien d’autre. On peut calculer $EF$ avec le théorème de Thalès.",
+      "answer": false,
+      "check": {
+        "type": "needsParallel",
+        "given": ["alignments"]
+      }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "3e.m4.r05",
+      "kind": "number",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. $OA = 6$, $OB = 8$ et $OC = 9$. Calcule $OD$.",
+      "answer": 12,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["6", "8", null],
+        "b": ["9", null, null],
+        "ask": "b2"
+      }
+    },
+    {
+      "id": "p2",
+      "item": "3e.m4.r05",
+      "kind": "choice",
+      "text": "Les points $A$, $O$, $C$ sont alignés, ainsi que $B$, $O$, $D$, avec $O$ entre les deux autres, et $(AB) \\parallel (CD)$. $OA = 4$, $OC = 6$ et $CD = 9$. Quelle est la longueur $AB$ ?",
+      "options": ["$13{,}5$", "$6$", "$7$"],
+      "answer": 1,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["4", null, null],
+        "b": ["6", null, "9"],
+        "ask": "s3"
+      }
+    },
+    {
+      "id": "p3",
+      "item": "4e.m4.r04",
+      "kind": "number",
+      "text": "Dans le triangle $ABC$, le point $M$ est sur $[AB]$, le point $N$ sur $[AC]$, et $(MN) \\parallel (BC)$. $AM = 3$, $MB = 6$ et $MN = 4$. Calcule $BC$.",
+      "answer": 12,
+      "check": {
+        "type": "thales",
+        "s": ["3", null, "4"],
+        "b": [null, null, null],
+        "p": ["6", null],
+        "ask": "b3"
+      }
+    },
+    {
+      "id": "p4",
+      "item": "4e.m2.r09",
+      "kind": "number",
+      "text": "Quelle est la valeur de $x$ dans l’égalité $\\dfrac{4}{6} = \\dfrac{6}{x}$ ?",
+      "answer": 9,
+      "check": {
+        "type": "fourth",
+        "a": "4",
+        "b": "6",
+        "c": "6"
+      }
+    },
+    {
+      "id": "p5",
+      "item": "3e.m4.r05",
+      "kind": "choice",
+      "text": "Les points $R$, $S$, $U$ sont alignés, ainsi que $T$, $S$, $V$, avec $S$ entre les deux autres, et $(RT) \\parallel (UV)$. Quelle égalité est juste ?",
+      "options": [
+        "$\\dfrac{SR}{SV} = \\dfrac{ST}{SU} = \\dfrac{RT}{UV}$",
+        "$\\dfrac{SR}{RU} = \\dfrac{ST}{TV} = \\dfrac{RT}{UV}$",
+        "$\\dfrac{SR}{SU} = \\dfrac{ST}{SV} = \\dfrac{RT}{UV}$"
+      ],
+      "answer": 2,
+      "check": {
+        "type": "thalesRatios",
+        "vertex": "S",
+        "lines": [
+          ["R", "U"],
+          ["T", "V"]
+        ]
+      }
+    },
+    {
+      "id": "p6",
+      "item": "3e.m4.r05",
+      "kind": "number",
+      "text": "Les droites $(AE)$ et $(BF)$ se coupent en $O$, avec $O$ entre $A$ et $E$ et entre $B$ et $F$, et $(AB) \\parallel (EF)$. $OA = 2$, $AE = 7$ et $AB = 2$. Calcule $EF$.",
+      "answer": 5,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["2", null, "2"],
+        "b": [null, null, null],
+        "across": ["7", null],
+        "ask": "b3"
+      }
+    },
+    {
+      "id": "p7",
+      "item": "3e.m4.r05",
+      "kind": "truefalse",
+      "text": "Les droites $(AE)$ et $(BF)$ se coupent en $O$, et $(AB) \\parallel (EF)$. Donc $\\dfrac{OA}{AE} = \\dfrac{AB}{EF}$.",
+      "answer": false,
+      "check": {
+        "type": "thalesRatios",
+        "vertex": "O",
+        "lines": [
+          ["A", "E"],
+          ["B", "F"]
+        ],
+        "claim": "across"
+      }
+    },
+    {
+      "id": "p8",
+      "item": "3e.m2.r09",
+      "kind": "number",
+      "text": "Les deux pieds $[AD]$ et $[BC]$ d’un tabouret pliant se croisent en $O$ ; l’assise $(AB)$ est parallèle au sol $(DC)$. $OA = 30{,}8$ cm, $OD = 46{,}2$ cm et $AB = 34$ cm. Quel est l’écartement $DC$ des pieds, en centimètres ?",
+      "answer": 51,
+      "check": {
+        "type": "thales",
+        "butterfly": true,
+        "s": ["30.8", null, "34"],
+        "b": ["46.2", null, null],
+        "ask": "b3"
+      }
+    }
+  ]
+}
