@@ -550,7 +550,7 @@ class DemoDataSeeder extends Seeder
     private function seat(ClassroomMembershipService $service, array $student, Classroom $classroom, int $daysAgo): int
     {
         try {
-            $membership = $service->join($student['user'], $classroom, ClassroomMembership::VIA_JOIN_CODE, null, consented: true);
+            $membership = $service->join($student['user'], $classroom, ClassroomMembership::VIA_JOIN_CODE, consented: true);
         } catch (\Throwable $e) {
             // Une capacité épuisée est une information, pas un échec : on la
             // dit, et la démonstration continue.

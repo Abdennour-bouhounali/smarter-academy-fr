@@ -69,6 +69,10 @@ export const MISTAKES = {
     'Attention : un nombre impair n’est pas forcément premier — cherche un diviseur autre que 1 et lui-même.',
   'two-is-prime': 'Attention : 2 est un nombre premier — ses seuls diviseurs sont 1 et 2.',
   'not-all-prime': 'Attention : chaque nombre du produit doit être premier — un 6 s’écrit encore 2 × 3.',
+  'add-not-times':
+    'Attention : les longueurs sont proportionnelles — on les multiplie par un même nombre, on ne leur ajoute pas une même différence.',
+  'ratio-flipped':
+    'Attention : écris les deux fractions dans le même ordre, puis fais le produit en croix — n’en retourne pas une.',
 };
 
 const gcdOf = (x, y) => (y === 0 ? x : gcdOf(y, x % y));
@@ -84,6 +88,8 @@ const CALC = {
   pow: (c) => c.x ** c.e,
   // n = (the known primes) × ▢ — the missing number of a product (`4e.m1.r06`)
   factor: (c) => c.n / c.known.reduce((p, x) => p * x, 1),
+  // a/b = c/▢ — the fourth proportional, the term v with a × v = b × c (`4e.m4.r04`)
+  fourth: (c) => (c.b * c.c) / c.a,
 };
 
 const calcValue = (c) => CALC[c.op](c);
@@ -109,6 +115,7 @@ function gradeCalc(q, answer) {
   if (c.op === 'pgcd') return { correct: false, mistake: pgcdSlip(c.x, c.y, v) };
   if (c.op === 'frac') return { correct: false, mistake: fracSlip(c, v) };
   if (c.op === 'factor') return { correct: false, mistake: 'product-false' };
+  if (c.op === 'fourth') return { correct: false, mistake: fourthSlip(c, v) };
   const p = c.x * c.y;
   const slip = (w) => [c.x * (c.y - 1), c.x * (c.y + 1), (c.x - 1) * c.y, (c.x + 1) * c.y].includes(w) && w !== p;
   if (c.op === 'times') return { correct: false, mistake: slip(v) ? 'table-slip' : null };
@@ -842,12 +849,231 @@ const DIVISOR_LISTS = {
   ],
 };
 
-// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Three
+// ───────────────────────── 4e.m4.r04 — une parallèle dans un triangle (4e), et la quatrième proportionnelle ─────────────────────────
+// What the 3e lesson of the butterfly stands on from 4e (ported from the Algerian family `3am.m2.r03`, the ratios in a
+// triangle; the French net item is `4e.m4.r04`, Thalès in the NESTED triangles, which holds the fourth proportional of
+// `4e.m2.r09` as its tool of calculation): in a triangle ABC cut by (MN) ∥ (BC), M on [AB] and N on [AC] — the nested
+// position only —, the lengths of AMN are proportional to those of ABC; and the fourth proportional found by the cross
+// product. Every length is a whole number of centimetres: the triangles are similar by p/q (p < q, nothing shared),
+// AM = p·s, AB = q·s, AN = p·t, AC = q·t, MN = p·w, BC = q·w. Nothing here names the lesson's keys (a butterfly, a point
+// beyond the vertex, a half-turn, a length from the vertex), nor the theorem's name, nor a word of its world.
+/**
+ * The figures of the world « Les pyramides » as the lesson of the butterfly plays it (its story's numbers, its practice
+ * figures and its board's stations — UNIT_3E_THALES_DESIGN.md § 3 — and the items of its class test), their whole
+ * lengths from 10 up, one figure a line: a triangle of the kit never shows TWO numbers that stand together in one of them
+ * — a figure met first in the lesson is not one the kit has just shown. `launchkit.test.js` reads the lesson's files and
+ * checks every pair.
+ */
+const TRI_AVOID = [
+  '72 52 416 81 468',
+  '104 115 219 146 177 292 230 73 133 584',
+  '26 32 56 24 42 88',
+  '30 40 21 28 26 70 49',
+  '17 19 15',
+  '23 29 24 36',
+  '19 24 60 23 36',
+  '31 29 18 27',
+  '13 16 40 21 24',
+  '32 40',
+  '28 13',
+  '24 44 68 33',
+  '29 35 50 85 64',
+  '28 26',
+  '10 16',
+  '34 51',
+].map((line) => line.split(' ').map(Number));
+const triPairKey = (x, y) => (x < y ? `${x};${y}` : `${y};${x}`);
+const TRI_PAIRS = new Set(TRI_AVOID.flatMap((g) => g.flatMap((x, i) => g.slice(i + 1).map((y) => triPairKey(x, y)))));
+/** Do the numbers shown hold no pair of a figure of the world (numbers below 10 stand in every sheet: never a pair)? */
+const triFree = (xs) => {
+  const big = [...new Set(xs.filter((x) => x >= 10))];
+  return big.every((x, i) => big.slice(i + 1).every((y) => !TRI_PAIRS.has(triPairKey(x, y))));
+};
+/** Where a level draws its triangle: the ratio's denominator q, the multipliers s, t, w and the longest side. */
+const TRI_FROM = {
+  first: { q: [2, 2], m: [1, 4], top: 8 },
+  1: { q: [2, 5], m: [1, 4], top: 30 },
+  2: { q: [2, 6], m: [2, 9], top: 60 },
+};
+const TRI_CACHE = {};
+/** Every triangle a level may show, filtered once: s ≠ t ≠ w (the additive slip never equals the truth), a true triangle. */
+function triPool(level) {
+  if (TRI_CACHE[level]) return TRI_CACHE[level];
+  const R = TRI_FROM[level];
+  const list = [];
+  for (let q = R.q[0]; q <= R.q[1]; q += 1)
+    for (let p = 1; p < q; p += 1) {
+      if (gcdOf(p, q) !== 1) continue;
+      for (let s = R.m[0]; s <= R.m[1]; s += 1)
+        for (let t = R.m[0]; t <= R.m[1]; t += 1)
+          for (let w = R.m[0]; w <= R.m[1]; w += 1) {
+            if (s === t || s === w || t === w || s + t <= w || s + w <= t || t + w <= s) continue;
+            const T = { AM: p * s, AB: q * s, AN: p * t, AC: q * t, MN: p * w, BC: q * w };
+            if (Math.max(T.AB, T.AC, T.BC) > R.top) continue;
+            // level 2 writes two-digit lengths; the additive slips stay positive and apart from the truth
+            if (level === 2 && Math.max(T.AB, T.AC, T.BC) < 13) continue;
+            if (T.BC - (T.AB - T.AM) <= 0) continue;
+            // every number a question of the level may show: the six lengths and, at level 2, the slips of the sort
+            const slips = level === 2 ? [T.AN + (T.AB - T.AM), T.BC - (T.AB - T.AM), (T.AB * T.BC) / T.AM] : [];
+            if (!triFree([...Object.values(T), ...slips])) continue;
+            list.push(T);
+          }
+    }
+  TRI_CACHE[level] = list;
+  return list;
+}
+const triangleOf = (rand, level, first = false) => pick(rand, triPool(first ? 'first' : level));
+const triData = (T, keys) => andList(keys.map((k) => `$${k} = ${T[k]}$`));
+const TRI_INTRO =
+  'Dans le triangle $ABC$, le point $M$ est sur $[AB]$, le point $N$ est sur $[AC]$, et $(MN) \\parallel (BC)$. Les longueurs sont en centimètres\u00a0:';
+/** The slip an answer v to « a/b = c/▢ » shows: the difference added (additive), or one fraction turned upside down. */
+function fourthSlip(c, v) {
+  if (v === c.c + (c.b - c.a)) return 'add-not-times';
+  if (v * c.b === c.a * c.c) return 'ratio-flipped';
+  return null;
+}
+const cmBox = (v) => S('v', 'longueur', String(v).length);
+
+/** « a/b = c/▢ » (level 1): the fourth proportional, two real fraction bars. */
+function fourthWrite(rand, level, first) {
+  const T = triangleOf(rand, 1, first);
+  const c = { op: 'fourth', a: T.AM, b: T.AB, c: T.AN };
+  return {
+    gesture: 'write',
+    calc: c,
+    prompt: 'Complète pour que l’égalité soit vraie.',
+    tokens: [
+      { frac: [String(c.a), String(c.b)] },
+      '=',
+      { frac: [String(c.c), S('v', 'dénominateur', String(T.AC).length)] },
+    ],
+  };
+}
+
+/** A length of the triangle from three others: AC (level 1, from AM, AB, AN) or MN (level 2, from AM, AB, BC). */
+function triWrite(rand, level, first) {
+  const T = triangleOf(rand, level, first);
+  const ask = level === 1 ? 'AC' : 'MN';
+  // AM/AB = AN/AC → AM × AC = AB × AN; AB/AM = BC/MN → AB × MN = AM × BC
+  const c = ask === 'AC' ? { op: 'fourth', a: T.AM, b: T.AB, c: T.AN } : { op: 'fourth', a: T.AB, b: T.AM, c: T.BC };
+  return {
+    gesture: 'write',
+    calc: c,
+    prompt: `${TRI_INTRO} ${triData(T, ask === 'AC' ? ['AM', 'AB', 'AN'] : ['AM', 'AB', 'BC'])}. Calcule $${ask}$.`,
+    tokens: [ask, '=', cmBox(T[ask]), 'cm'],
+  };
+}
+
+/** Three claims « AC = v », « MN = v » about one triangle: the length, the difference added, a fraction turned upside down. */
+function triSort(rand) {
+  const T = triangleOf(rand, 2);
+  const flipMN = (T.AB * T.BC) % T.AM === 0 ? (T.AB * T.BC) / T.AM : null;
+  const CARDS = {
+    ac: ['AC', T.AC, null],
+    acAdd: ['AC', T.AN + (T.AB - T.AM), 'add-not-times'],
+    mn: ['MN', T.MN, null],
+    mnAdd: ['MN', T.BC - (T.AB - T.AM), 'add-not-times'],
+    mnFlip: ['MN', flipMN, 'ratio-flipped'],
+  };
+  const shapes = [
+    ['ac', 'mnAdd', 'mn'],
+    ['acAdd', 'mn', 'ac'],
+    ['ac', 'mnFlip', 'acAdd'],
+    ['mn', 'acAdd', 'mnFlip'],
+    ['mnAdd', 'ac', 'mnFlip'],
+  ].filter((k) => flipMN != null || !k.includes('mnFlip'));
+  const kinds = shuffle(rand, pick(rand, shapes));
+  return {
+    gesture: 'sort',
+    tri: T,
+    prompt: `${TRI_INTRO} ${triData(T, ['AM', 'AB', 'AN', 'BC'])}. Chaque longueur convient-elle\u202f? Envoie-la dans sa boîte.`,
+    bins: [
+      { id: 'yes', label: 'Elle convient' },
+      { id: 'no', label: 'Elle ne convient pas' },
+    ],
+    cards: kinds.map((kind, i) => {
+      const [ask, v, trap] = CARDS[kind];
+      return { id: `c${i + 1}`, text: `$${ask} = ${v}$`, ask, v, bin: trap ? 'no' : 'yes', trap };
+    }),
+  };
+}
+
+/** The worked example: the two equal fractions of the triangle, the cross product, the length. Its first step answers the mistake shown. */
+function triExample(rand, level, { mistake = null } = {}) {
+  const T = triangleOf(rand, level === 2 ? 2 : 1);
+  let first;
+  if (mistake === 'add-not-times')
+    first = `Ajouter à $AN$ la différence $${T.AB - T.AM}$ entre $AB$ et $AM$ donnerait $${T.AN + (T.AB - T.AM)}$\u00a0: les longueurs des deux triangles sont proportionnelles, on multiplie, on n’ajoute pas.`;
+  else if (mistake === 'ratio-flipped')
+    first =
+      'On écrit les deux fractions dans le même ordre\u00a0: une longueur du petit triangle sur la longueur qui lui correspond dans le grand, dans les deux fractions.';
+  else
+    first =
+      'La droite $(MN)$ est parallèle à $(BC)$\u00a0: les longueurs du triangle $AMN$ sont proportionnelles à celles du triangle $ABC$.';
+  return {
+    title: 'Calculer une longueur dans un triangle',
+    steps: [
+      first,
+      `$\\frac{AM}{AB} = \\frac{AN}{AC}$, soit $\\frac{${T.AM}}{${T.AB}} = \\frac{${T.AN}}{AC}$.`,
+      `Produit en croix\u00a0: $${T.AM} \\times AC = ${T.AB} \\times ${T.AN} = ${T.AB * T.AN}$.`,
+      `Donc $AC = ${T.AB * T.AN} \\div ${T.AM} = ${T.AC}$\u00a0cm.`,
+    ],
+  };
+}
+
+const PARALLEL_IN_TRIANGLE = {
+  item: '4e.m4.r04',
+  // the name of the gesture (the item has no French lesson yet: « Revois d’abord » names the item itself)
+  name: 'Une parallèle dans un triangle',
+  icon: '🔺',
+  // no French lesson of 4e is written: no instrument belongs to this item yet (the capsule skips its lab step); the
+  // rope of « Mon labo » is the 3e lesson's own instrument, never shown before it (`earlierOnly`, LESSON_LAB.md §2)
+  labTool: null,
+  mistakes: ['add-not-times', 'ratio-flipped'],
+  forms: { 1: ['fourth', 'triangle'], 2: ['sort', 'side'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'fourth'
+      ? fourthWrite(rand, level, first)
+      : form === 'sort'
+        ? triSort(rand)
+        : triWrite(rand, level, first),
+  example: triExample,
+  rules: [
+    {
+      id: 'fourth',
+      title: 'La quatrième proportionnelle',
+      text: 'Si $\\frac{a}{b} = \\frac{c}{d}$, alors $a \\times d = b \\times c$\u00a0: on trouve le quatrième nombre par le produit en croix.',
+      example: '$\\frac{2}{6} = \\frac{3}{d}$\u00a0: $2 \\times d = 6 \\times 3 = 18$, donc $d = 9$.',
+      check: { m: 2, w: 6, t: 3, v: 9 },
+    },
+    {
+      id: 'triangle',
+      title: 'Des longueurs proportionnelles',
+      text: 'Dans le triangle $ABC$, si $M$ est sur $[AB]$, $N$ sur $[AC]$ et $(MN) \\parallel (BC)$, alors les longueurs du triangle $AMN$ sont proportionnelles à celles du triangle $ABC$.',
+      example: '$AM = 2$, $AB = 6$ et $AN = 3$\u00a0: $\\frac{2}{6} = \\frac{3}{AC}$, donc $AC = 9$.',
+      check: { m: 2, w: 6, t: 3, v: 9 },
+    },
+  ],
+  memo: [
+    'Dans le triangle $ABC$, avec $M$ sur $[AB]$, $N$ sur $[AC]$ et $(MN) \\parallel (BC)$, les longueurs de $AMN$ sont proportionnelles à celles de $ABC$.',
+    'On écrit deux fractions égales dans le même ordre, puis le produit en croix\u00a0: $\\frac{a}{b} = \\frac{c}{d}$ donne $a \\times d = b \\times c$.',
+    'On multiplie, on n’ajoute pas\u00a0: la différence entre deux longueurs ne reste pas la même dans l’autre triangle.',
+    'Exemple\u00a0: $\\frac{2}{6} = \\frac{3}{AC}$, donc $2 \\times AC = 18$ et $AC = 9$.',
+  ],
+};
+
+// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Four
 // families today: `4e.m1.r06`, the one tool the net gives the first 3e lesson; `3e.m1.r05` and `4e.m1.r08`, the two
-// tools of the second (the PGCD lesson). The Algerian families (their question generators, rules and memos) are in
+// tools of the second (the PGCD lesson); `4e.m4.r04`, the tool of the butterfly lesson of the Thalès unit (its other
+// core item, `4e.m2.r09`, the fourth proportional, is measured INSIDE this family: no family of its own). The Algerian families (their question generators, rules and memos) are in
 // git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French family PORTS what fits and is keyed
 // by a French item.
-export const FAMILIES = { '4e.m1.r06': DECOMPOSITION, '3e.m1.r05': BIG_DECOMPOSITION, '4e.m1.r08': DIVISOR_LISTS };
+export const FAMILIES = {
+  '4e.m1.r06': DECOMPOSITION,
+  '3e.m1.r05': BIG_DECOMPOSITION,
+  '4e.m1.r08': DIVISOR_LISTS,
+  '4e.m4.r04': PARALLEL_IN_TRIANGLE,
+};
 
 export const familyFor = (item) => FAMILIES[item] ?? null;
 
