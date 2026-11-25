@@ -76,7 +76,8 @@ export const WORLD_TEXT = {
   order: {
     canal: {
       title: 'Avant la mesure',
-      ask: (seg) => `Quelle est la longueur du canal $${seg}$ ?`,
+      ask: (seg) =>
+        `Quelle longueur prévois-tu pour le canal $${seg}$ ? Écris ton estimation à partir de ce que tu as mesuré : elle n’est pas notée, la corde lit ensuite la vraie longueur.`,
       send: 'Envoyer aux bâtisseurs',
     },
     course: {
