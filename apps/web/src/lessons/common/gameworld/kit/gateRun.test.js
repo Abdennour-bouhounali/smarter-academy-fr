@@ -320,6 +320,25 @@ describe('a round that says how long it takes (`seconds`): its gate that many se
   });
 });
 
+describe('a round that names points carries its `figure` (a GeoFigure spec): `state.run.figure`, null without it', () => {
+  const open = (content) => {
+    const g = fakeGame();
+    const run = new GateRun(g, { x: 0, y: 0.3, z: 0, speedOf: () => 10 });
+    run.build();
+    withRandom(4, () => {
+      run.open(content);
+      run.start();
+    });
+    return g;
+  };
+  it('the default run publishes no figure; a round with one publishes it as it is', () => {
+    expect(open(CONTENT).state.run.figure).toBeNull();
+    const figure = { points: { A: [0, 0], B: [1, 0] }, segments: [{ from: 'A', to: 'B', label: '?' }] };
+    const g = open({ ...CONTENT, round: (...a) => ({ ...CONTENT.round(...a), figure }) });
+    expect(g.state.run.figure).toBe(figure);
+  });
+});
+
 describe('the hazards: one lane closed between two gates, a heart if he touches it', () => {
   it('sits halfway between two gates, at least `react` seconds from the next one, in any lane — or nowhere if too fast', () => {
     const r = seeded(11);

@@ -9,8 +9,11 @@
  *         other line; three lengths from the vertex, the fourth;
  *   leg 3 (summit → plateau), after K2 — NEW, across the vertex: the length across given (the one from the vertex is
  *         cut first), or the length across asked (the two from the vertex are joined).
- * Four right buoys reach the next dock (`total: 4`). Every buoy is NUMERIC (the rail draws no figure: the order names the
- * segments, « (AB) ∥ (EF) »), MENTAL numbers: k = p/q with q ≤ 9, a length p × m or q × m with m ≤ 9.
+ * Four right buoys reach the next dock (`total: 4`). Every buoy is NUMERIC, MENTAL numbers: k = p/q with q ≤ 9, a length
+ * p × m or q × m with m ≤ 9. Every buoy names points, and carries its FIGURE (owner, 2026-11-25: « the questions in the
+ * river need a schema that show A B C »): the world's Thalès figure with the order's letters, the lengths it gives
+ * written, « ? » on the one asked and the chevrons of the parallel (`figureOf`; drawn by the HUD beside the order,
+ * `kit/GateRunHud.jsx`). A length across the vertex (AE, BF) is written along its line through O (`figureSpec`'s VMB, VNC).
  * The SAME generators are the practice ladder's (`practice.js`): a leg is the first level of the node of the key just
  * sealed.
  *
@@ -22,6 +25,7 @@
  */
 import { pick, shuffle } from '../../../../../../common/gameworld/kit/random';
 import { WORLD_TEXT } from '../../../../../../common/gameworld/nilePyramids/strings';
+import { buoyFigure } from '../../../../../../common/gameworld/nilePyramids/figure';
 import { compare, equal, frAll, isInteger, K, over, times, tx, write } from './math';
 
 /** k < 1, q ≤ 9 — none written by the bank (run.test.js reads it: 2/3, 3/4, 2/5, 3/5, 4/5, 5/7, 5/8 are). */
@@ -52,6 +56,27 @@ const pairsOf = (xs) => xs.flatMap((x, i) => xs.slice(i + 1).map((y) => [x, y]))
 const clear = (pairs) => pairs.every(([a, b]) => !TAKEN.has(pairKey(a, b)));
 
 const kOf = (k) => k.split('/').map(Number);
+/**
+ * THE FIGURE of a buoy (`nilePyramids/figure.js › buoyFigure`): `names` the order's letters, `len` the lengths, `show`
+ * those written, `ask` the one written « ? ». `draw`: lengths for the SHAPE only, when the order gives too few to draw it
+ * (a ratio and one length) — taken from the wave's own numbers at the same k; never written.
+ */
+const figureOf =
+  (kind, names, len, show, ask, draw = null) =>
+  () =>
+    buoyFigure(
+      {
+        kind,
+        names,
+        len: Object.fromEntries(Object.entries(len).map(([k, v]) => [k, String(v)])),
+        ...(draw ? { draw } : {}),
+      },
+      { show, ask },
+    );
+/** The butterfly of the orders: A and E on one line through O, B and F on the other, (AB) ∥ (EF). */
+const BUTTERFLY = { V: 'O', M: 'A', B: 'E', N: 'B', C: 'F' };
+const NESTED = { V: 'A', M: 'M', B: 'B', N: 'N', C: 'C' };
+
 /** A gate: a whole number, or its writing (« 13,5 »). */
 const gate = (x) => {
   const t = write(x);
@@ -118,8 +143,9 @@ export const SPARE = 5;
  * A wave: the right gate, two others drawn from `pool` (never one the wave would count right, never twice the same, at
  * most 6 characters, positive), each with its fact. null (« ask again ») when the pool has fewer than two.
  */
-function waveOf(rand, wave, pool, sentence, rightSentence) {
-  // French typography on every sentence of the buoy (a no-break space before « : »…)
+function waveOf(rand, { drawing, ...wave }, pool, sentence, rightSentence) {
+  // French typography on every sentence of the buoy (a no-break space before « : »…); `drawing`: its figure, drawn only
+  // once the wave is made (`figureOf`)
   const base = { ...wave, say: frAll(wave.say) };
   const fact = (g) => frAll(sentence(g));
   const rightFact = frAll(rightSentence);
@@ -146,6 +172,7 @@ function waveOf(rand, wave, pool, sentence, rightSentence) {
   return {
     ...base,
     seconds: THINK[base.type] + SPARE,
+    ...(drawing ? { figure: drawing() } : {}),
     // the ladder never draws the same numbers twice in a row: its `a` / `b` are the order's formula
     a: base.tex,
     b: base.say,
@@ -179,6 +206,15 @@ export const GENERATORS = {
       tex: `\\dfrac{OA}{OE} = \\dfrac{${p}}{${q}} \\quad OF = ${OF}`,
       data: { k, side: String(OF) },
       pairs: [],
+      // the ratio stays in the order: OF written, OB « ? »; OE for the shape only (4/5 of OF), OA at the same k
+      drawing: figureOf('butterfly', BUTTERFLY, { VN: p * m, VC: OF }, ['VN', 'VC'], ['VN'], {
+        VM: write(times(String(OF), `${4 * p}/${5 * q}`)),
+        VB: write(times(String(OF), '4/5')),
+        VN: String(p * m),
+        VC: String(OF),
+        MN: null,
+        BC: null,
+      }),
     };
     const right = truthOf(base);
     // OA / OE = OB / OF ⟺ OB × q = OF × p
@@ -201,6 +237,13 @@ export const GENERATORS = {
       tex: `OA = ${OA} \\quad OE = ${OE} \\quad OB = ${OB}`,
       data: { small: String(OA), big: String(OE), other: String(OB) },
       pairs,
+      drawing: figureOf(
+        'butterfly',
+        BUTTERFLY,
+        { VM: OA, VB: OE, VN: OB, VC: q * n },
+        ['VM', 'VB', 'VN', 'VC'],
+        ['VC'],
+      ),
     };
     const right = truthOf(base);
     // OA / OE = OB / OF ⟺ OA × OF = OE × OB
@@ -227,6 +270,14 @@ export const GENERATORS = {
       tex: `OA = ${OA} \\quad AE = ${AE} \\quad OB = ${OB}`,
       data: { OA: String(OA), OE: String(OE), OB: String(OB) },
       pairs,
+      // AE across the vertex, written along its line through O
+      drawing: figureOf(
+        'butterfly',
+        BUTTERFLY,
+        { VM: OA, VB: OE, VN: OB, VC: q * n, VMB: AE },
+        ['VM', 'VMB', 'VN', 'VC'],
+        ['VC'],
+      ),
     };
     const right = truthOf(base);
     const cut = `$OE = ${AE} - ${OA} = ${OE}$`;
@@ -253,6 +304,14 @@ export const GENERATORS = {
       tex: `OA = ${OA} \\quad OE = ${OE} \\quad OB = ${OB}`,
       data: { OA: String(OA), OE: String(OE), OB: String(OB) },
       pairs,
+      // BF across the vertex, asked: « BF = ? » along its line through O
+      drawing: figureOf(
+        'butterfly',
+        BUTTERFLY,
+        { VM: OA, VB: OE, VN: OB, VC: OF, VNC: OB + OF },
+        ['VM', 'VB', 'VN', 'VNC'],
+        ['VNC'],
+      ),
     };
     const from = `${prod(OA, OF)} et ${prod(OE, OB)}, donc ${is('OF', OF)}`;
     const sum = `$BF = ${OB} + ${OF} = ${OB + OF}$`;
@@ -279,6 +338,7 @@ export const GENERATORS = {
       tex: `AM = ${AM} \\quad MB = ${MB} \\quad AN = ${AN}`,
       data: { small: String(AM), big: String(AB), other: String(AN) },
       pairs,
+      drawing: figureOf('nested', NESTED, { VM: AM, VB: AB, VN: AN, VC: q * n, MB }, ['VM', 'MB', 'VN', 'VC'], ['VC']),
     };
     const right = truthOf(base);
     const join = `$AB = ${AM} + ${MB} = ${AB}$`;
@@ -319,7 +379,7 @@ export const gateOption = (g) => {
   const m = /^(\d+)\/(\d+)$/.exec(String(g));
   return m ? { tex: `\\dfrac{${m[1]}}{${m[2]}}` } : { t: String(g) };
 };
-/** A wave as the rail plays it: { ask, tex, options × 3, right, why × 3 }. */
+/** A wave as the rail plays it: { ask, tex, options × 3, right, why × 3, seconds, figure }. */
 export const roundOf = (w) => ({
   ask: w.say,
   tex: w.tex ?? null,
@@ -327,6 +387,7 @@ export const roundOf = (w) => ({
   right: w.good,
   why: w.gates.map((g, i) => (i === w.good ? w.why.right : (w.why.wrong?.[g] ?? w.why.right))),
   seconds: w.seconds,
+  ...(w.figure ? { figure: w.figure } : {}),
 });
 
 /** The words of the rail's cards (`kit/GateRunHud.jsx › content.text`): the world's, a leg's own where it differs. */

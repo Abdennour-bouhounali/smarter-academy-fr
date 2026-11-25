@@ -54,3 +54,32 @@ export function trainerFigure(fig) {
       Math.ceil((floor * vh) / vw) <= TRAINER_FIGURE.above.height,
   };
 }
+
+/**
+ * THE RUN'S FIGURE (`kit/GateRunHud.jsx › data-gr-figure`): the drawing of a round that names points (`round.figure`),
+ * in its own light panel on the inline-start side, BELOW the order's card (which may span most of the width: a French
+ * order with its formula) — never over the order, its fact, the hearts, the buoys in mid-river or the two arrows at the
+ * bottom corners (1366 × 768; gateRun.css › .gr-figure). RUN_FIGURE.room is the DRAWING's room in px (the panel adds `pad`
+ * on each side: at most 306 × 360). A GeoFigure's longer side is 368 units and a length is written at 13: at its 12 px
+ * floor a figure is 340 px along its longer side, so the room is a PORTRAIT one (a figure wider than high is turned,
+ * `nilePyramids/figure.js › buoyFigure`). Drawn at the room's width, or narrower when it would stand taller than the
+ * room, never under its floor (`sheetFigure.js › k`, as the trainer). `fits`: its floor stands in the room — the lessons'
+ * `run.test.js` assert it for every figure they give. → { k, width, height, label, fits }, or null (no plane figure).
+ */
+export const RUN_FIGURE = { label: 12, room: { width: 290, height: 344 }, pad: 8 };
+export function runFigure(fig) {
+  const f = sheetFigure(fig);
+  if (!f || f.kind !== 'plane') return null;
+  const [, , vw, vh] = layoutGeoFigure(fig).viewBox;
+  const { room, label } = RUN_FIGURE;
+  const floor = Math.ceil(f.k * label);
+  const width = Math.max(floor, Math.min(room.width, Math.floor((room.height * vw) / vh)));
+  const height = Math.ceil((width * vh) / vw);
+  return {
+    k: f.k,
+    width,
+    height,
+    label: Math.round((width / f.k) * 100) / 100,
+    fits: width <= room.width && height <= room.height,
+  };
+}

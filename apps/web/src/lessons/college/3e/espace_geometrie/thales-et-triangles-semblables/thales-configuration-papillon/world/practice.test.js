@@ -4,6 +4,7 @@
 import { describe, it, expect } from 'vitest';
 import { rng } from '../../../../../../common/gameworld/kit/random';
 import { SUMMARY } from '../../../../../../common/gameworld/kit/ladder';
+import { roundOfWave } from '../../../../../../common/gameworld/nilePyramids/practice';
 import { plain, typographyErrors } from '../../../../../../common/gameworld/kit/authoring/test/suites.js';
 import { ladder, PRACTICE_MAP, PRACTICE_NODES } from './practice';
 import { isRight, LEG_MIX, SPARE, THINK } from './run';
@@ -37,6 +38,15 @@ describe(`${ID} — the practice ladder`, () => {
     ladder.nodes.forEach((node, n) =>
       node.levels.forEach((_, l) => {
         for (const w of ladder.makeRun(rng(n * 7 + l + 1), n, l)) expect(w.seconds).toBe(THINK[w.type] + SPARE);
+      }),
+    );
+  });
+
+  it('every buoy of every level carries its figure to the river (`roundOfWave`): five points, its own letters', () => {
+    ladder.nodes.forEach((node, n) =>
+      node.levels.forEach((_, l) => {
+        for (const w of ladder.makeRun(rng(n * 7 + l + 1), n, l))
+          expect(Object.keys(roundOfWave(w).figure.points), w.type).toHaveLength(5);
       }),
     );
   });

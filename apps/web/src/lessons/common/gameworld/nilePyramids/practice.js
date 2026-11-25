@@ -11,7 +11,8 @@
  *     stars = the hearts left (a crocodile costs one, a wrong buoy one), a level lost gives none and never lowers a best
  *
  * A wave of the lesson carries what the river shows — `say` (the order), `tex?`, `gates` (three numbers or short texts,
- * « p/q » drawn over a real bar), `good`, `why: { right, wrong: { [gate]: fact } }` — the felucca's legs' own shape.
+ * « p/q » drawn over a real bar), `good`, `why: { right, wrong: { [gate]: fact } }`, `seconds?`, `figure?` (the drawing of a
+ * wave that names points) — the felucca's legs' own shape.
  */
 import { PRACTICE_HEARTS } from '../kit/ladder';
 import { railSpeed } from '../kit/GateRun';
@@ -30,6 +31,8 @@ export const roundOfWave = (w) => ({
   right: w.good,
   why: w.gates.map((g, k) => (k === w.good ? w.why.right : (w.why.wrong?.[g] ?? w.why.right))),
   seconds: w.seconds,
+  // the drawing of a wave that names points (`nilePyramids/figure.js › buoyFigure`), drawn beside the order
+  ...(w.figure ? { figure: w.figure } : {}),
 });
 
 /** The pace of a level that names none: the felucca's legs' at their first buoy (`kit/GateRun.js › railSpeed`). */

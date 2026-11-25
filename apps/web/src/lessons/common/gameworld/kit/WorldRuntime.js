@@ -851,7 +851,9 @@ export class WorldRuntime {
     el.toggleAttribute('data-far', it !== this.activeIt);
     const w = this.canvas.clientWidth;
     const hgt = this.canvas.clientHeight;
-    const x = Math.max(150, Math.min(w - 150, (v.x * 0.5 + 0.5) * w));
+    // never cut by the window's edge: the bubble's own half-width, not a fixed margin (a far place's bubble is wide)
+    const edge = Math.max(150, el.offsetWidth / 2 + 12);
+    const x = Math.max(edge, Math.min(w - edge, (v.x * 0.5 + 0.5) * w));
     let y = Math.max(150, Math.min(hgt - 150, (-v.y * 0.5 + 0.5) * hgt));
     // the bubble never covers THE INSTRUCTION (it stays on screen, GAME_WORLD.md §2ter-1): when the thing to use stands
     // behind it — a tall instruction at 1024×768 — the bubble drops just under it

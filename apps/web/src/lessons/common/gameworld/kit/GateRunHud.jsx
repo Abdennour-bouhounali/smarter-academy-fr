@@ -11,14 +11,35 @@
  * A world that sails with a `skin` (`GateRun` options) gets `gr-run--<skin>` and `data-gr-skin`: on the river the numbers
  * are tags over the buoys. With `hazards`: `data-gr-hazard` is the lane of the obstacle ahead ('' once passed) and
  * `data-gr-bumps` the obstacles touched; a touch shakes the hearts (and shows `text.bump` when the lesson gives one).
+ * A round that names points carries `figure` (a GeoFigure spec, `state.run.figure`): it is drawn by the practice space's
+ * own `components/StatementFigure.jsx` in its light panel `data-gr-figure`, on the inline-start side under the order (the
+ * RIGHT in Arabic, the left in French; `data-gr-has-figure` holds the fact card narrower beside it), while the order is up (`go`, `paused`) and beside the fact (`hit`) — at its
+ * 12 px floor (`trainerFigure.js › runFigure`).
  * `content.text` is the lesson's: { title, say, rule, start, again, leave, order, gate, of, pause, resume, quit, won: { title, text }, lost: { title, text } }.
  */
 import { ArrowLeft, ArrowRight, Flame, Heart, Pause, Play, Star, Trophy, X, Zap } from 'lucide-react';
 import MathText from '../../components/MathText';
+import StatementFigure from '../../components/StatementFigure';
 import { M } from './parts';
+import { RUN_FIGURE, runFigure } from './trainerFigure';
 import './styles/gateRun.css';
 
 const Option = ({ o }) => (o.tex ? <M>{o.tex}</M> : <span dir="ltr">{o.t}</span>);
+
+/** The figure of the round, in its own panel: its width from `runFigure` (never under its 12 px floor), plus its padding. */
+function RunFigure({ fig }) {
+  const f = runFigure(fig);
+  if (!f) return null;
+  return (
+    <div
+      className="gr-figure"
+      data-gr-figure
+      style={{ width: `${f.width + 2 * RUN_FIGURE.pad}px`, padding: `${RUN_FIGURE.pad}px` }}
+    >
+      <StatementFigure {...fig} maxWidth="100%" />
+    </div>
+  );
+}
 
 export default function GateRunHud({ run: r, game, content }) {
   const T = content.text;
@@ -81,6 +102,7 @@ export default function GateRunHud({ run: r, game, content }) {
       data-gr-skin={skin}
       data-gr-hazard={hazards ? (r.hazard ?? '') : undefined}
       data-gr-bumps={hazards ? r.bumps : undefined}
+      data-gr-has-figure={r.figure ? '' : undefined}
     >
       <div className="di-dash" data-di-dash="gate-run">
         <div className="di-dash__meta">
@@ -146,6 +168,7 @@ export default function GateRunHud({ run: r, game, content }) {
           </div>
         )}
       </div>
+      {r.figure && (r.stage === 'go' || paused || r.stage === 'hit') && <RunFigure fig={r.figure} />}
       {r.options.map((o, lane) => (
         <b
           key={`${r.n}-${lane}`}

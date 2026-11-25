@@ -465,7 +465,16 @@ The rail of light (the robot on its board seen from behind, three arches, ← �
 is a kit part since 2026-11-21: it names no world and no lesson. A world owns one `GateRun`, passes it its runtime hooks
 (`stepWorld`, `lanesLive`, `robotPose`, `cameraShot`, `dispose` — listed at the top of the file) and draws
 `<GateRunHud run={s.run} game={game} content={…} />` over everything while `state.run` is set. The lesson gives the
-content: `{ levels, gates, round(level, random, n) → { ask, tex?, options × 3, right, why × 3 }, total?, text }`.
+content: `{ levels, gates, round(level, random, n) → { ask, tex?, options × 3, right, why × 3, seconds?, figure? }, total?, text }`.
+**A round that names points carries `figure`** (2026-11-25, owner: « the questions in the river need a schema that show
+A B C »): a GeoFigure spec, published as `state.run.figure` (null without it — a world without figures is unchanged) and
+drawn by the HUD with the practice space's `components/StatementFigure.jsx` in its own light panel `data-gr-figure`, while
+the order is up (`go`, `paused`) and beside the fact (`hit`): on the inline-start side (the right in Arabic, the left in
+French), 16 px from the edge, its top at 16 rem — under the order's card, away from the buoys and the arrows —, at most
+306 × 360 px (`kit/trainerFigure.js › RUN_FIGURE`, `runFigure`: never under its 12 px label floor); the fact card is held
+to 44 rem beside it. On the Nile the lessons build it with `nilePyramids/figure.js › buoyFigure` (the order's letters, the
+lengths given, « ? » on the asked one, the chevrons; turned, or its free angle narrowed, until it fits), in their
+`run.js`; a buoy of k only (no point) has none.
 Without `total` the run ends with the last heart; with `total` it is a COURSE that ends after that many gates
 (`won`). A gate that was not the right one shows a FACT (`why`), never « wrong ».
 

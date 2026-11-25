@@ -10,12 +10,14 @@
  *                                          MN and BC may be null (unknown); `withPieces` adds the pieces MB, NC of a
  *                                          nested figure, the lengths ACROSS the vertex VMB, VNC of a butterfly
  *     draw?: { VM, VB, VN, VC, MN, BC },   lengths for the DRAWING only, when the true shape cannot be read (the river:
- *                                          9 beside 416) — a schematic figure; every value written is still `len`'s
+ *                                          9 beside 416) — a schematic figure; every value written is still `len`'s;
+ *                                          `draw.cos` (a float) the cosine of the angle at V, when BC and MN are unknown
  *   }
  * nested: M on [VB], N on [VC]; butterfly: M and N on the OTHER side of V. (MN) ∥ (BC) exactly when the three ratios
  * VM/VB, VN/VC, MN/BC are equal (`chain`). Floats are for DRAWING only.
  */
 import { sheetFigure } from '../kit/sheetFigure';
+import { runFigure } from '../kit/trainerFigure';
 import { layoutGeoFigure } from '../../components/geoFigure';
 import { lenApprox as approx, lenCompare as compare, lenOver, lenPlus, lenTimes, lenWrite as write } from './surd';
 import { FIGURE_TEXT } from './strings';
@@ -68,7 +70,8 @@ export function points(fig) {
   const vb = approx(VB);
   const vc = approx(VC);
   let cos;
-  if (BC != null) cos = (vb * vb + vc * vc - sq(BC)) / (2 * vb * vc);
+  if (fig.draw?.cos != null) cos = fig.draw.cos;
+  else if (BC != null) cos = (vb * vb + vc * vc - sq(BC)) / (2 * vb * vc);
   else {
     // BC unknown: the angle from the small triangle (MN known), or a fair default
     const vm = approx(VM);
@@ -219,6 +222,60 @@ export function mirrorFigure(c) {
     .filter((f) => f.width <= MIRROR.widest)
     .sort((x, y) => x.height - y.height)[0];
   return best && best.height < flat.height ? { turn: best.turn, width: best.width } : { turn: 0, width: null };
+}
+
+/**
+ * A buoy's figure is a SCHEMA, not a drawing to scale (owner, 2026-11-25: AM = 14, AB = 16, AN = 49 drew a sliver where
+ * M and B touched and « AC = ? » sat on two lines): its written lengths are the question's, its SHAPE is evened out —
+ * the two sides from the vertex within 0,7 and 1,45 of each other, the small triangle 35 % to 70 % of the big one (a
+ * butterfly's two triangles within ½ and 2 of each other), the angle at the vertex between 53° and 84°. The parallel
+ * stays a parallel (one ratio on both lines).
+ */
+function schema(fig) {
+  const shape = fig.draw ?? fig.len;
+  const [vb, vc, vm, vn] = ['VB', 'VC', 'VM', 'VN'].map((k) => (shape[k] == null ? null : approx(shape[k])));
+  if (!(vb > 0 && vc > 0 && vm > 0 && vn > 0)) return fig;
+  const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
+  const fly = fig.kind === 'butterfly';
+  const sides = clamp(vc / vb, 0.7, 1.45);
+  const k = fly ? clamp(vm / vb, 0.5, 2) : clamp(vm / vb, 0.35, 0.7);
+  const P = points(fig);
+  const [cx, cy] = P[fig.names.C];
+  const cos = clamp(cx / Math.hypot(cx, cy), 0.1, 0.6);
+  const s = (x) => x.toFixed(4);
+  return { ...fig, draw: { VB: '1', VC: s(sides), VM: s(k), VN: s(k * sides), cos } };
+}
+
+/**
+ * A BUOY'S FIGURE (a buoy of the felucca's legs or of the practice ladder that names points — the lessons' `run.js`):
+ * the figure with the lengths `show` written, `ask` written « ? » and the chevrons of the parallel, drawn in the run's
+ * panel (`kit/trainerFigure.js › runFigure`, at its 12 px floor). As it is when it fits the panel's room, else the
+ * smallest turn (by 15°, either way) that fits — the figure stays as near as it can to the way it was made. A figure
+ * that fits at no turn (a fat butterfly: two long lines crossing at 70°, as wide as high whichever way) and whose angle
+ * is free (BC and MN unknown, the default angle) is drawn with a narrower angle at V (`draw.cos`), then turned.
+ * → the GeoFigure spec (`round.figure`).
+ */
+export function buoyFigure(raw, { show, ask = [] }) {
+  const fig = schema(raw);
+  const at = (f, turn) => {
+    const spec = figureSpec(f, { show, ask, parallel: true, turn });
+    return { spec, t: runFigure(spec), turn };
+  };
+  const away = (x) => Math.min(x.turn, 360 - x.turn);
+  const best = (f) => {
+    const flat = at(f, 0);
+    if (flat.t.fits) return flat;
+    return Array.from({ length: 24 }, (_, i) => at(f, i * 15))
+      .filter((x) => x.t.fits)
+      .sort((a, b) => away(a) - away(b) || a.t.height - b.t.height)[0];
+  };
+  const shape = fig.draw ?? fig.len;
+  const free = shape.BC == null && shape.MN == null;
+  for (const cos of free ? [null, 0.55, 0.7, 0.8] : [null]) {
+    const got = best(cos == null ? fig : { ...fig, draw: { ...shape, cos } });
+    if (got) return got.spec;
+  }
+  return at(fig, 0).spec;
 }
 
 /**

@@ -18,6 +18,7 @@ import {
 import { chainHolds, sameRatio } from '../../../../../../common/gameworld/kit/authoring/test/ratios';
 import { GENERATORS, LEG_MIX, LEGS, REDUCE, SPARE, THINK, fairWave, gateOption, isRight, roundOf } from './run';
 import { K, compare, read, write, times, over } from './math';
+import { runFigure } from '../../../../../../common/gameworld/kit/trainerFigure';
 
 const ID = 'thales-configuration-papillon';
 const KINDS = Object.keys(GENERATORS);
@@ -157,6 +158,52 @@ describe(`${ID} — the felucca’s legs`, () => {
   it('a gate is drawn over a real bar when it is a fraction', () => {
     expect(gateOption('4/7')).toEqual({ tex: '\\dfrac{4}{7}' });
     expect(gateOption(21)).toEqual({ t: '21' });
+  });
+});
+
+describe(`${ID} — every buoy carries its FIGURE (owner, 2026-11-25: « a schema that show A B C »)`, () => {
+  /** The two letters of a segment, in order: « AC » for { from: 'C', to: 'A' }. */
+  const ends = (s) => [s.from, s.to].sort().join('');
+  const sorted = (name) => name.split('').sort().join('');
+  it('its letters, its lengths given (across the vertex too), « ? » on the asked one, the chevrons, at 12 px in the panel', () => {
+    const seen = new Set();
+    // many seeds: a fat butterfly fits at no turn of its first angle (`buoyFigure` narrows it)
+    for (const w of waves(300)) {
+      const r = roundOf(w);
+      const tag = `${w.type} ${w.say} ${w.tex}`;
+      seen.add(w.type);
+      const f = r.figure;
+      expect(f, tag).toBeTruthy();
+      // every letter the order names is a point of the figure
+      const letters = new Set(`${w.say} ${w.tex}`.replace(/\\[a-z]+/g, '').match(/[A-Z]/g));
+      for (const l of letters) expect(Object.keys(f.points), tag).toContain(l);
+      // « ? » on the length asked, and on it alone
+      const asked = w.say.match(/[A-Z]{2}/g).at(-1);
+      const unknown = f.segments.filter((s) => s.label === '?' || /= \?$/.test(s.label ?? ''));
+      expect(unknown.map(ends), tag).toEqual([sorted(asked)]);
+      // every length the order gives is written on its segment; a ratio given (« OA / OE = p / q ») stays in the order
+      for (const [, seg, n] of w.tex.matchAll(/([A-Z]{2}) = (\d+)/g)) {
+        const on = f.segments.filter((s) => ends(s) === sorted(seg) && (s.label === n || s.label === `${seg} = ${n}`));
+        expect(on, `${tag} — ${seg}`).toHaveLength(1);
+      }
+      // nothing else written: the lengths given and the one asked
+      expect(
+        f.segments.filter((s) => s.label != null),
+        tag,
+      ).toHaveLength([...w.tex.matchAll(/[A-Z]{2} = \d/g)].length + 1);
+      expect(
+        f.segments.filter((s) => s.arrows),
+        tag,
+      ).toHaveLength(2);
+      const t = runFigure(f);
+      expect(t.fits, tag).toBe(true);
+      expect(t.label, tag).toBeGreaterThanOrEqual(12);
+    }
+    expect([...seen].sort()).toEqual([...KINDS].sort());
+  });
+  it('the legs hand it to the rail (`roundOf`)', () => {
+    for (const i of [2, 3])
+      expect(Object.keys(LEGS[i].round(1, rng(3), 0).figure.points).sort()).toEqual(['A', 'B', 'E', 'F', 'O']);
   });
 });
 

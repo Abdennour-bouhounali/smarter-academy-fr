@@ -16,7 +16,10 @@
  * THE CONTENT is the lesson's, given to `open(content)`:
  *
  *   { levels: [{ name, from }], gates, round(level, random, n) → { ask, tex?, options: [{ t } | { tex }] × 3, right, why: [3],
- *     seconds? }, total? }
+ *     seconds?, figure? }, total? }
+ *
+ * `figure` (optional) is a GeoFigure spec — the drawing of a round that names points: `state.run.figure` (null without
+ * it), drawn by the HUD in its own panel (`kit/trainerFigure.js › runFigure`). A world without figures is unchanged.
  *
  * `seconds` (optional) is the time the round needs — the lesson's estimate of the thinking, plus a margin: its gate is
  * placed that many seconds of travel ahead, never closer than `gap`; the run's option `warmup` adds seconds before the
@@ -318,6 +321,7 @@ export class GateRun {
         stage: 'go',
         ask: r.round.ask,
         tex: r.round.tex ?? null,
+        figure: r.round.figure ?? null,
         options: r.round.options,
         lane: r.lane,
         hearts: r.hearts,
@@ -594,13 +598,14 @@ export class GateRun {
       }
       // a gate further than one gap (a round that takes time): its numbers wait one gap ahead, over their lanes, where
       // the three can be read apart — they meet the buoy when it comes within the gap
-      const near = Math.min(r.x, this.o.gap);
+      // (at 60 % of the gap, not at the gap: there the lanes drew the three numbers touching — the walk, 2026-11-25)
+      const near = Math.min(r.x, this.o.gap * (r.gap > this.o.gap ? 0.6 : 1));
       v.set(
         this.o.x + Math.max(near, 0.5) + this.lead,
         this.o.y + (this.o.skin?.labelY ?? 4.3),
         this.laneZ(lane),
       ).project(this.game.camera);
-      const far = Math.max(0, Math.min(1, near / this.o.gap));
+      const far = Math.max(0, Math.min(1, Math.min(r.x, this.o.gap) / this.o.gap));
       el.style.visibility = 'visible';
       el.style.transform = `translate(${(v.x * 0.5 + 0.5) * w}px, ${(-v.y * 0.5 + 0.5) * hgt}px) translate(-50%, -50%) scale(${1.25 - 0.6 * far})`;
     });

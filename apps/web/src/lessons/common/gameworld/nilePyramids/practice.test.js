@@ -90,6 +90,13 @@ describe('a practice level on the river — the pure part', () => {
     expect(buoyOption('13,75')).toEqual({ t: '13,75' });
   });
 
+  it('a wave that names points hands its figure to the river; one without has none', () => {
+    const w = wave('k1')(rng(1));
+    expect('figure' in roundOfWave(w)).toBe(false);
+    const figure = { points: { A: [0, 0], B: [1, 0] }, segments: [] };
+    expect(roundOfWave({ ...w, figure }).figure).toBe(figure);
+  });
+
   it('the pace is the level’s own, rising a little with each buoy; a level without one sails at the legs’ pace', () => {
     const one = practiceRun({ ladder, node: 0, level: 0, random: rng(1), text: WORLD_TEXT.practice }).drill;
     expect(practiceSpeed(one, 0)).toBe(6);

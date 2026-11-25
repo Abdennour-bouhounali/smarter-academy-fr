@@ -139,6 +139,33 @@
 .gr-gate.is-other {
   color: #fcd34d;
 }
+/*
+ * The figure of a round that names points (`GateRunHud.jsx › RunFigure`): a light card on the inline-start side (the
+ * RIGHT in Arabic, the left in French), 16 px from the edge, its top at 16 rem (256 px) — under the order's card, which
+ * a French order with its formula stretches over most of the width (its bottom near y 240 with a fraction in it). At
+ * most 306 × 360 px (`trainerFigure.js › RUN_FIGURE`): it ends by y 616, above the two arrows of the bottom corners
+ * (from y 662), and at most 322 px from its edge — away from the buoys in mid-river (x 600–800). While it is drawn the
+ * fact card is held to 44 rem (704 px centred: x 331–1035), so the two never meet. Under the pause's veil (z-index 6).
+ */
+.gr-figure {
+  position: absolute;
+  top: 16rem;
+  inset-inline-start: 1rem;
+  z-index: 3;
+  box-sizing: border-box;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.96);
+  color: #10203f;
+  box-shadow: 0 12px 34px rgba(3, 10, 30, 0.4);
+  pointer-events: none;
+}
+.gr-figure figure,
+.gr-figure svg {
+  margin: 0;
+}
+.di-root .gr-run[data-gr-has-figure] .di-dash__say.gr-why strong {
+  max-width: 40rem;
+}
 /* a formula of the order: one left-to-right island inside the Arabic line (a radical drawn right-to-left loses its bar) */
 .gr-tex {
   display: inline-block;
