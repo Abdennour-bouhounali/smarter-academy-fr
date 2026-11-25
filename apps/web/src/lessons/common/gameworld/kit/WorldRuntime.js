@@ -670,7 +670,19 @@ export class WorldRuntime {
           }
         }
       }
+    // a world that names its next place (`guideAt()`, opt-in) keeps the « E » bubble over it from any distance — the
+    // world is big, and he must see where the next round is without walking about (owner, 2026-11-25); E acts only near
+    let shown = best;
+    if (!best && h.grounded && this.guideAt) {
+      const g = this.guideAt();
+      const p = g?.prompt();
+      if (p) {
+        shown = g;
+        label = p;
+      }
+    }
     this.activeIt = best;
+    this.promptIt = shown;
     if (label !== this.state.prompt) this.set({ prompt: label });
     if (this.input.take('act') && best) best.act();
   }
@@ -826,13 +838,17 @@ export class WorldRuntime {
   placePrompt() {
     const el = this.promptEl;
     if (!el) return;
-    const it = this.state.phase === 'play' ? this.activeIt : null;
+    const it = this.state.phase === 'play' ? (this.promptIt ?? this.activeIt) : null;
     if (!it || !this.state.prompt) {
       el.style.visibility = 'hidden';
       return;
     }
     const v = this.tmpV ?? (this.tmpV = new THREE.Vector3());
     v.set(it.x, it.y, it.z).project(this.camera);
+    // the guided place behind him: the bubble waits at the bottom edge, on the side he must turn to
+    const behind = v.z >= 1 && it !== this.activeIt;
+    if (behind) v.set(-v.x, -1, 0);
+    el.toggleAttribute('data-far', it !== this.activeIt);
     const w = this.canvas.clientWidth;
     const hgt = this.canvas.clientHeight;
     const x = Math.max(150, Math.min(w - 150, (v.x * 0.5 + 0.5) * w));
@@ -852,7 +868,7 @@ export class WorldRuntime {
       const under = r.bottom - base.top + 8 + el.offsetHeight;
       if (x + half > r.left - base.left && x - half < r.right - base.left && y < under) y = under;
     }
-    el.style.visibility = v.z < 1 ? 'visible' : 'hidden';
+    el.style.visibility = v.z < 1 || behind ? 'visible' : 'hidden';
     el.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-50%, -100%)`;
   }
 

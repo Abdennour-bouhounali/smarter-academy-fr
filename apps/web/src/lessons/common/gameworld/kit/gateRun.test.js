@@ -288,6 +288,38 @@ describe("the skin's `lead`: a gate and an obstacle drawn ahead of him when they
   });
 });
 
+describe('a round that says how long it takes (`seconds`): its gate that many seconds of travel ahead', () => {
+  const timed = (seconds) => ({ ...CONTENT, round: (...a) => ({ ...CONTENT.round(...a), seconds }) });
+  const first = (opts, content) => {
+    const g = fakeGame();
+    const run = new GateRun(g, { x: 0, y: 0.3, z: 0, speedOf: () => 10, ...opts });
+    run.build();
+    return withRandom(4, () => {
+      run.open(content);
+      run.start();
+      return run;
+    });
+  };
+  it('places the first gate `seconds` × speed ahead, plus the lead-in and `warmup` seconds; the next ones `seconds` apart', () => {
+    expect(first({}, CONTENT).runner.x).toBe(34 + 10);
+    expect(first({}, timed(25)).runner.x).toBe(250 + 10);
+    expect(first({ warmup: 3 }, timed(25)).runner.x).toBe(250 + 10 + 30);
+    const run = first({ warmup: 3, hazards: { mesh: croc } }, timed(25));
+    expect(run.runner.hz.m.position.x).toBeCloseTo(run.runner.x - 125, 9);
+    withRandom(5, () => {
+      for (let f = 0; f < 2000 && run.runner.n < 2; f += 1) {
+        if (run.runner.pause <= 0) run.lane(Math.sign(run.runner.round.right - run.runner.lane));
+        run.step(0.05);
+      }
+    });
+    expect(run.runner.n).toBe(2);
+    expect(run.runner.x).toBeGreaterThan(240);
+  });
+  it('never closer than one gap: a short round keeps the gap', () => {
+    expect(first({}, timed(1)).runner.x).toBe(34 + 10);
+  });
+});
+
 describe('the hazards: one lane closed between two gates, a heart if he touches it', () => {
   it('sits halfway between two gates, at least `react` seconds from the next one, in any lane — or nowhere if too fast', () => {
     const r = seeded(11);

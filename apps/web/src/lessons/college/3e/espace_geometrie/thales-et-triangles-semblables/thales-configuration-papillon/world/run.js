@@ -100,6 +100,21 @@ export function isRight(w, n) {
 }
 
 /**
+ * How long each kind of buoy takes a 3e student, in seconds, computing in his head while he steers (owner, 2026-11-25:
+ * « estimate the time of each question and then five seconds »): reading the order, the steps of the computation, the
+ * choice of a buoy. `SPARE` is the owner's five seconds; the rail places the buoy row `seconds` of travel ahead
+ * (`kit/GateRun.js › next`).
+ */
+export const THINK = {
+  rapport: 12, // OF ÷ q × p
+  longueur: 20, // simplify OA / OE, then OB ÷ p × q
+  travers: 25, // OE = AE − OA first, then the computation above
+  traversInconnu: 25, // OF from the vertex, then OB + OF
+  emboite: 25, // AB = AM + MB first, then the computation above
+};
+export const SPARE = 5;
+
+/**
  * A wave: the right gate, two others drawn from `pool` (never one the wave would count right, never twice the same, at
  * most 6 characters, positive), each with its fact. null (« ask again ») when the pool has fewer than two.
  */
@@ -130,6 +145,7 @@ function waveOf(rand, wave, pool, sentence, rightSentence) {
   const gates = shuffle(rand, [gate(right), ...others.map(gate)]);
   return {
     ...base,
+    seconds: THINK[base.type] + SPARE,
     // the ladder never draws the same numbers twice in a row: its `a` / `b` are the order's formula
     a: base.tex,
     b: base.say,
@@ -310,6 +326,7 @@ export const roundOf = (w) => ({
   options: w.gates.map(gateOption),
   right: w.good,
   why: w.gates.map((g, i) => (i === w.good ? w.why.right : (w.why.wrong?.[g] ?? w.why.right))),
+  seconds: w.seconds,
 });
 
 /** The words of the rail's cards (`kit/GateRunHud.jsx › content.text`): the world's, a leg's own where it differs. */

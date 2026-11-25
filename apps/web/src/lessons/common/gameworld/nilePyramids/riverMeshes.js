@@ -440,5 +440,7 @@ export function riverRun({ every = 1, cost = 1 } = {}) {
       camera: { back: 12, up: 7, ahead: 18, look: 0.5 },
     },
     hazards: { mesh: () => crocodile(), every, cost },
+    // three seconds more before the first buoy: he settles in the boat before the first question (owner, 2026-11-25)
+    warmup: 3,
   };
 }

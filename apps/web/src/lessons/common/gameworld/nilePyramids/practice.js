@@ -29,6 +29,7 @@ export const roundOfWave = (w) => ({
   options: w.gates.map(buoyOption),
   right: w.good,
   why: w.gates.map((g, k) => (k === w.good ? w.why.right : (w.why.wrong?.[g] ?? w.why.right))),
+  seconds: w.seconds,
 });
 
 /** The pace of a level that names none: the felucca's legs' at their first buoy (`kit/GateRun.js › railSpeed`). */

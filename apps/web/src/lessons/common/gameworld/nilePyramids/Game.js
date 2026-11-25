@@ -96,6 +96,7 @@ import {
   makeFlightBeam,
   makeGhostStick,
 } from './scenery';
+import { makeBeacon } from '../engine/builders';
 import { WORLD_TEXT, withStory } from './strings';
 import { topFrame, declutter, TOP_FOV } from './topView';
 
@@ -621,28 +622,42 @@ export class NilePyramidsGame extends WorldRuntime {
     sc.add(this.laid);
 
     // where a step begins (a stake, the masons' table, the ramp…): E there acts — one interact per place
+    this.guides = [];
     this.P.forEach((pts, i) => {
       const keys = new Set(this.stages[i].steps.flatMap((s) => [s.from, s.at]).filter(Boolean));
       for (const k of keys)
-        this.addInteract(
-          pts[k].x,
-          pts[k].z,
-          () => this.stepPrompt(i, k),
-          () => this.stepAct(i, k),
-          k === 'top' ? 4 : 2.6,
-          (pts[k].y ?? 0) + 3.1,
+        this.guides.push(
+          Object.assign(
+            this.addInteract(
+              pts[k].x,
+              pts[k].z,
+              () => this.stepPrompt(i, k),
+              () => this.stepAct(i, k),
+              k === 'top' ? 4 : 2.6,
+              (pts[k].y ?? 0) + 3.1,
+            ),
+            { ground: pts[k].y ?? 0 },
+          ),
         );
     });
     // the dock of the stage he stands on: board the felucca once the stage is over
     this.route.forEach((i) =>
-      this.addInteract(
-        BANK_X + 2,
-        DOCK_Z[i],
-        () => this.dockPrompt(i),
-        () => this.dockAct(i),
-        3.2,
+      this.guides.push(
+        Object.assign(
+          this.addInteract(
+            BANK_X + 2,
+            DOCK_Z[i],
+            () => this.dockPrompt(i),
+            () => this.dockAct(i),
+            3.2,
+          ),
+          { ground: 0 },
+        ),
       ),
     );
+    // the next place is lit from afar — a beam over it, its « E » bubble kept over it (`guideAt`) — after every round
+    this.beacon = makeBeacon(1.3);
+    sc.add(this.beacon);
     // the rope in his hand: E lets it go wherever he is (defects D26) — read here, not as a bubble over the knot
     this.onDropKey = (e) => {
       if (e.code === 'KeyE' && !e.repeat && this.hold && this.state.phase === 'play') this.drop();
@@ -1174,6 +1189,10 @@ export class NilePyramidsGame extends WorldRuntime {
     if (this.state.at !== i || this.hold || this.onTop || this.topView) return null;
     if (!this.stepNow() && this.nextDock(i) != null) return this.T.prompt.board(this.T.docks[this.nextDock(i)]);
     return null;
+  }
+  /** The place of the next round, wherever he stands (the runtime keeps its « E » bubble over it, the beacon lights it). */
+  guideAt() {
+    return this.guides.find((g) => g.prompt()) ?? null;
   }
   dockAct(i) {
     if (!this.stepNow() && this.nextDock(i) != null) this.board(i);
@@ -1982,6 +2001,12 @@ export class NilePyramidsGame extends WorldRuntime {
     for (const t of Object.values(this.tables))
       if (t.userData.board.visible) t.userData.board.material.emissiveIntensity = 0.9 + Math.sin(this.time * 3) * 0.4;
     this.showLabels(ph);
+    const guide = ph === 'play' ? this.promptIt : null;
+    this.beacon.visible = Boolean(guide);
+    if (guide) {
+      this.beacon.position.set(guide.x, guide.ground, guide.z);
+      this.beacon.userData.animate(this.time, dt, guide === this.activeIt);
+    }
     if (this.stickyCine && ph === 'play') {
       const ax = this.input.axis();
       if (Math.hypot(ax.x, ax.y) > 0.3 || this.hold) {

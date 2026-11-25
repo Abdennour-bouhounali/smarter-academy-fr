@@ -15,8 +15,12 @@
  *
  * THE CONTENT is the lesson's, given to `open(content)`:
  *
- *   { levels: [{ name, from }], gates, round(level, random, n) → { ask, tex?, options: [{ t } | { tex }] × 3, right, why: [3] },
- *     total? }
+ *   { levels: [{ name, from }], gates, round(level, random, n) → { ask, tex?, options: [{ t } | { tex }] × 3, right, why: [3],
+ *     seconds? }, total? }
+ *
+ * `seconds` (optional) is the time the round needs — the lesson's estimate of the thinking, plus a margin: its gate is
+ * placed that many seconds of travel ahead, never closer than `gap`; the run's option `warmup` adds seconds before the
+ * first gate. A round without it is one `gap` ahead, as before.
  *
  * `gates` right answers raise the level. WITHOUT `total` the run has no end but the last heart (« the number race »); WITH
  * `total` it is a COURSE of that many gates: it ends when the last one is passed (`won: true`) — or with the last heart.
@@ -299,7 +303,7 @@ export class GateRun {
       hz: null,
     };
     this.hazards.forEach((m) => (m.visible = false));
-    this.next(this.o.gap + 10);
+    this.next(true);
   }
   levelOf(level) {
     const L = this.content.levels;
@@ -330,10 +334,19 @@ export class GateRun {
       },
     });
   }
-  /** The next gate, one gap ahead, on the other set of arches: the one just passed keeps going behind him. */
-  next(at = this.o.gap) {
+  /**
+   * The next gate, on the other set of arches: the one just passed keeps going behind him. A round that says how long it
+   * takes (`seconds`: thinking time and a margin, the lesson's estimate) is placed that many seconds of travel ahead —
+   * never closer than one gap (owner, 2026-11-25: « the question is complex and needs more time »); the FIRST gate gets
+   * `warmup` seconds more. A round without `seconds` keeps the gap.
+   */
+  next(first = false) {
     const r = this.runner;
     r.round = this.content.round(r.level, Math.random, r.n);
+    const s = r.round.seconds;
+    const gap = s > 0 ? Math.max(this.o.gap, this.speed() * s) : this.o.gap;
+    const at = first ? gap + 10 + this.speed() * (this.o.warmup ?? 0) : gap;
+    r.gap = gap; // the obstacle sits halfway along THIS spacing (the first gate's lead-in is not part of it)
     r.set = 1 - r.set;
     r.x = at;
     r.n += 1;
@@ -351,7 +364,7 @@ export class GateRun {
     if (!hz) return;
     r.hz = null;
     if ((r.n - 1) % (hz.every ?? 1) !== 0) return;
-    const plan = hazardPlan({ gap: this.o.gap, speed: this.speed(), random: Math.random, react: hz.react });
+    const plan = hazardPlan({ gap: r.gap ?? this.o.gap, speed: this.speed(), random: Math.random, react: hz.react });
     if (!plan) return;
     const m = this.hazards[r.n % 2];
     m.visible = true;
@@ -579,12 +592,15 @@ export class GateRun {
         el.style.visibility = 'hidden';
         return;
       }
+      // a gate further than one gap (a round that takes time): its numbers wait one gap ahead, over their lanes, where
+      // the three can be read apart — they meet the buoy when it comes within the gap
+      const near = Math.min(r.x, this.o.gap);
       v.set(
-        this.o.x + Math.max(r.x, 0.5) + this.lead,
+        this.o.x + Math.max(near, 0.5) + this.lead,
         this.o.y + (this.o.skin?.labelY ?? 4.3),
         this.laneZ(lane),
       ).project(this.game.camera);
-      const far = Math.max(0, Math.min(1, r.x / this.o.gap));
+      const far = Math.max(0, Math.min(1, near / this.o.gap));
       el.style.visibility = 'visible';
       el.style.transform = `translate(${(v.x * 0.5 + 0.5) * w}px, ${(-v.y * 0.5 + 0.5) * hgt}px) translate(-50%, -50%) scale(${1.25 - 0.6 * far})`;
     });

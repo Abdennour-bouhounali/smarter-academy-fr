@@ -16,7 +16,7 @@ import {
   pairLines,
 } from '../../../../../../common/gameworld/kit/authoring/test/bank.js';
 import { chainHolds, sameRatio } from '../../../../../../common/gameworld/kit/authoring/test/ratios';
-import { GENERATORS, LEG_MIX, LEGS, REDUCE, fairWave, gateOption, isRight, roundOf } from './run';
+import { GENERATORS, LEG_MIX, LEGS, REDUCE, SPARE, THINK, fairWave, gateOption, isRight, roundOf } from './run';
 import { K, compare, read, write, times, over } from './math';
 
 const ID = 'thales-configuration-papillon';
@@ -90,6 +90,11 @@ describe(`${ID} — the felucca’s legs`, () => {
         expect(r.right).toBeGreaterThanOrEqual(0);
       }
       for (const [kind, params] of LEG_MIX[i]) expect(fairWave(rng(5), kind, params).key).toBe(keyOf[i]);
+      // every buoy row is its kind's thinking time plus the owner's five seconds ahead (2026-11-25)
+      for (let n = 0; n < 4; n += 1) {
+        const [kind] = LEG_MIX[i][n % LEG_MIX[i].length];
+        expect(leg.round(1, rng(n + 1), n).seconds).toBe(THINK[kind] + SPARE);
+      }
       for (const s of [leg.text.title, leg.text.say, leg.text.won.title, leg.text.lost.text]) {
         plain(s);
         expect(typographyErrors(s), s).toEqual([]);
