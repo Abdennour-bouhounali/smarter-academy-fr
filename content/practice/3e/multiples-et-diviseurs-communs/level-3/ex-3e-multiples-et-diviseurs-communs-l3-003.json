@@ -1,0 +1,128 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-003",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Macarons et financiers",
+    "estimatedMinutes": 5,
+    "tags": [
+      "outil",
+      "partage"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Une pâtissière a $30$ macarons et $45$ financiers. Elle veut préparer des boîtes identiques, avec le plus de boîtes possible, sans rien garder."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le nombre de boîtes ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de boîtes peut-elle préparer au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les diviseurs de $30$, puis ceux de $45$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Prends le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Le plus grand diviseur commun de $30$ et de $45$ est $15$.",
+        "incorrect": "Le nombre de boîtes divise $30$ et $45$ : cherche le plus grand."
+      },
+      "solution": {
+        "lines": [
+          "$30$ = $15$ × $2$ et $45$ = $15$ × $3$.",
+          "$2$ et $3$ n’ont pas de diviseur commun autre que $1$ : $15$ boîtes."
+        ],
+        "result": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "90"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-006",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un budget pour la passerelle",
+    "estimatedMinutes": 9,
+    "tags": [
+      "passerelle",
+      "prix",
+      "budget"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Deux équipes bâtissent une passerelle à partir de la même rive. L’équipe A pose des planches de $27$ cm à $2$ € pièce, l’équipe B des planches de $45$ cm à $3$ € pièce. On pose un pilier chaque fois que les deux équipes finissent une planche entière en même temps ; le budget total est de $100$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle est la longueur d’un tronçon entre la rive (ou un pilier) et le pilier suivant, en centimètres ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "135",
+      "answerFormat": "Un nombre de centimètres",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$27$ = $3^{3}$ et $45$ = $3^{2} \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Plus petit multiple commun non nul."
+        }
+      ],
+      "feedback": {
+        "correct": "$3^{3} \\times 5 = 135$.",
+        "incorrect": "La longueur est un multiple de $27$ ET de $45$ : cherche le plus petit non nul."
+      },
+      "solution": {
+        "lines": [
+          "$27$ = $3^{3}$ et $45$ = $3^{2} \\times 5$.",
+          "Plus petit multiple commun : $3^{3} \\times 5 = 135$."
+        ],
+        "result": "135"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "1215"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien coûtent les planches d’un tronçon, en euros ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "19",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Planches de A : $135$ ÷ $27$. Planches de B : $135$ ÷ $45$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie chaque nombre de planches par son prix et additionne."
+        }
+      ],
+      "feedback": {
+        "correct": "$5$ × $2$ + $3$ × $3$ = $19$.",
+        "incorrect": "Compte les planches de chaque équipe, multiplie par le prix, puis additionne."
+      },
+      "solution": {
+        "lines": [
+          "A : $135$ ÷ $27$ = $5$ planches, soit $5$ × $2$ = $10$ €.",
+          "B : $135$ ÷ $45$ = $3$ planches, soit $3$ × $3$ = $9$ €.",
+          "Total : $10$ + $9$ = $19$ €."
+        ],
+        "result": "19"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tronçons complets le budget permet-il de construire ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le budget par le coût d’un tronçon."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$100$ ÷ $19$."
+        }
+      ],
+      "feedback": {
+        "correct": "$100$ ÷ $19$ ≈ $5$, et $5$ × $19$ = $95$ ≤ $100$.",
+        "incorrect": "Combien de fois $19$ € tiennent-ils dans $100$ € ? Un tronçon se paie entièrement."
+      },
+      "solution": {
+        "lines": [
+          "$5$ × $19$ = $95$ € ≤ $100$ € ; $6$ × $19$ = $114$ € > $100$ €.",
+          "$5$ tronçons."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "6"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle longueur de passerelle, en centimètres, ce budget permet-il de construire ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "675",
+      "answerFormat": "Un nombre de centimètres",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Chaque tronçon mesure $135$ cm."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$5$ × $135$."
+        }
+      ],
+      "feedback": {
+        "correct": "$5$ × $135$ = $675$.",
+        "incorrect": "Multiplie le nombre de tronçons par la longueur d’un tronçon."
+      },
+      "solution": {
+        "lines": [
+          "$5$ × $135$ = $675$ cm."
+        ],
+        "result": "675"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PAS-LE-PLUS-PETIT",
+          "value": "100"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

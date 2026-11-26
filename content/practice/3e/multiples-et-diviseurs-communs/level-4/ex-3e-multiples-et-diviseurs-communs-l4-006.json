@@ -1,0 +1,208 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-006",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des lots pour la kermesse",
+    "estimatedMinutes": 6,
+    "tags": [
+      "outil",
+      "PGCD",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Pour la kermesse, une association a $232$ stylos et $348$ cahiers. Elle veut composer des lots identiques, le plus de lots possible, en utilisant tout. Chaque lot est vendu $9$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le nombre de lots ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de lots peut-elle composer au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "116",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$232$ = $2^{3} \\times 29$ et $348$ = $2^{2} \\times 3 \\times 29$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde les nombres premiers communs avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{2} \\times 29 = 116$.",
+        "incorrect": "Plus grand diviseur commun de $232$ et de $348$."
+      },
+      "solution": {
+        "lines": [
+          "$232$ = $2^{3} \\times 29$ et $348$ = $2^{2} \\times 3 \\times 29$.",
+          "PGCD : $2^{2} \\times 29 = 116$."
+        ],
+        "result": "116"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "696"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de cahiers y a-t-il dans un lot ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Il y a $116$ lots."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $348$ par $116$."
+        }
+      ],
+      "feedback": {
+        "correct": "$348$ ÷ $116$ = $3$.",
+        "incorrect": "Divise le nombre de cahiers par le nombre de lots."
+      },
+      "solution": {
+        "lines": [
+          "$348$ ÷ $116$ = $3$."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle somme, en euros, rapporte la vente de tous les lots ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "1044",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Nombre de lots × prix d’un lot."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$116$ × $9$."
+        }
+      ],
+      "feedback": {
+        "correct": "$116$ × $9$ = $1\\,044$.",
+        "incorrect": "Multiplie le nombre de lots par le prix d’un lot."
+      },
+      "solution": {
+        "lines": [
+          "$116$ × $9$ = $1\\,044$.",
+          "La vente rapporte $1\\,044$ €."
+        ],
+        "result": "1044"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

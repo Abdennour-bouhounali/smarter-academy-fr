@@ -1,0 +1,135 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-002",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux feux qui clignotent",
+    "estimatedMinutes": 3,
+    "tags": [
+      "feux",
+      "multiples communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Un feu rouge s’allume toutes les $6$ s et un feu bleu toutes les $9$ s. Ils s’allument ensemble à l’instant $0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de secondes s’allument-ils ensemble pour la première fois après l’instant $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$54$ s",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PRODUIT"
+        },
+        {
+          "id": "B",
+          "content": "$18$ s",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3$ s",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "D",
+          "content": "$0$ s",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-ZERO"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les instants où s’allume le feu rouge, puis ceux du feu bleu."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier instant (après $0$) qui est dans les deux listes."
+        }
+      ],
+      "feedback": {
+        "correct": "Rouge : $6$, $12$, $18$… Bleu : $9$, $18$… Ils se retrouvent à $18$ s.",
+        "incorrect": "Écris les instants de chaque feu et cherche le premier instant commun après $0$."
+      },
+      "solution": {
+        "lines": [
+          "Feu rouge : $6$, $12$, $18$, $24$…",
+          "Feu bleu : $9$, $18$, $27$…",
+          "Premier instant commun après $0$ : $18$ s."
+        ],
+        "result": "18 s"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de fois le feu rouge s’est-il allumé entre l’instant $1$ et l’instant $18$ inclus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les instants du feu rouge jusqu’à $18$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte-les."
+        }
+      ],
+      "feedback": {
+        "correct": "Le feu rouge s’allume à $6$, $12$ et $18$ s : $3$ fois.",
+        "incorrect": "Écris les instants du feu rouge jusqu’à $18$ s et compte-les."
+      },
+      "solution": {
+        "lines": [
+          "Instants du feu rouge : $6$, $12$, $18$.",
+          "Cela fait $3$ allumages."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

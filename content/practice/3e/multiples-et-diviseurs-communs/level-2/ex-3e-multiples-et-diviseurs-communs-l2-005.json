@@ -1,0 +1,126 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-005",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "De 18 et 30 au plus petit multiple commun",
+    "estimatedMinutes": 4,
+    "tags": [
+      "décompositions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "On donne $18 = 2 \\times 3^{2}$ et $30 = 2 \\times 3 \\times 5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $18$ et de $30$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2*3^2*5",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quels nombres premiers apparaissent dans $18$ ou dans $30$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, garde le plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$, $3^{2}$ et $5$.",
+        "incorrect": "Prends tous les nombres premiers, chacun avec son plus grand exposant.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Facteurs : $2$ (exposant $1$ des deux côtés), $3$ (exposants $2$ et $1$), $5$ (exposant $1$).",
+          "Le nombre : $2 \\times 3^{2} \\times 5$."
+        ],
+        "result": "2 \\times 3^$2$ \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2*3"
+        },
+        {
+          "id": "MISC-PPCM-FACTEURS-COMMUNS-SEULS",
+          "value": "2*3^2"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2^2*3^3*5"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule ce nombre.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2 \\times 9 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2 \\times 5 = 10$, puis $10 \\times 9$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 9 \\times 5 = 90$.",
+        "incorrect": "Calcule $3^{2} = 9$ puis multiplie par $2$ et par $5$."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3^{2} \\times 5 = 2 \\times 9 \\times 5 = 90$."
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

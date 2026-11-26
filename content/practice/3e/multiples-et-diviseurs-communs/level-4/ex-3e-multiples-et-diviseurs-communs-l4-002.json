@@ -1,0 +1,160 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-002",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Trois lignes de bus",
+    "estimatedMinutes": 6,
+    "tags": [
+      "bus",
+      "horaires"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Trois lignes de bus partent ensemble de la gare à $6$ h. La ligne A repart toutes les $7$ min, la ligne B toutes les $9$ min, la ligne C toutes les $10$ min."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de minutes les trois lignes repartent-elles ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "630",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$7$, $9$ et $10$ sont premiers deux à deux : ils n’ont aucun facteur premier en commun."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Aucun facteur n’est compté deux fois."
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ × $9$ × $10$ = $630$ : ici le produit est le plus petit multiple commun.",
+        "incorrect": "Écris les décompositions : $7$, $3^{2}$ et $2 \\times 5$."
+      },
+      "solution": {
+        "lines": [
+          "$7$ est premier, $9$ = $3^{2}$, $10$ = $2 \\times 5$ : aucun nombre premier en commun.",
+          "Plus petit multiple commun : $7 \\times 3^{2} \\times 2 \\times 5 = 630$."
+        ],
+        "result": "630"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "À quelle minute de l’heure repartent-elles ensemble ? On rappelle que $630$ min = $10$ h $30$ min.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre de minutes entre $0$ et $59$",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6$ h + $10$ h $30$ min."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Quelle heure est-il ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$6$ h + $10$ h $30$ min = $16$ h $30$ min.",
+        "incorrect": "Ajoute $10$ h $30$ min à $6$ h."
+      },
+      "solution": {
+        "lines": [
+          "$6$ h + $10$ h $30$ min = $16$ h $30$ min."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "630"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Le service dure $15$ h, soit $900$ min. Combien de fois les trois lignes repartent-elles ensemble après le départ de $6$ h ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de multiples de $630$ y a-t-il jusqu’à $900$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$630$ × $2$ = $1\\,260$."
+        }
+      ],
+      "feedback": {
+        "correct": "$630$ ≤ $900$ < $1\\,260$ : une seule fois.",
+        "incorrect": "Compte les multiples non nuls de $630$ qui ne dépassent pas $900$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples non nuls de $630$ : $630$, $1\\,260$…",
+          "Seul $630$ est inférieur ou égal à $900$."
+        ],
+        "result": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "630"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

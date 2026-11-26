@@ -1,0 +1,178 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-008",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Quand le produit est le bon nombre",
+    "estimatedMinutes": 6,
+    "tags": [
+      "cas particulier",
+      "feux"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Deux feux clignotent, l’un toutes les $17$ s, l’autre toutes les $23$ s. Ils clignotent ensemble à l’instant $0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de secondes clignotent-ils ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "391",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$17$ et $23$ sont des nombres premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Aucun facteur n’est commun : le plus petit multiple commun est leur produit."
+        }
+      ],
+      "feedback": {
+        "correct": "$17$ × $23$ = $391$.",
+        "incorrect": "Pour deux nombres premiers différents, le plus petit multiple commun non nul est leur produit."
+      },
+      "solution": {
+        "lines": [
+          "$17$ et $23$ sont premiers et différents.",
+          "Plus petit multiple commun : $17 \\times 23 = 391$."
+        ],
+        "result": "391"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PAS-LE-PLUS-PETIT",
+          "value": "782"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Pourquoi le produit $17$ × $23$ est-il ici le plus petit multiple commun non nul ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Parce que $17$ et $23$ n’ont aucun diviseur commun autre que $1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Parce que le produit est toujours le plus petit multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PRODUIT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les décompositions : $17$ et $23$ ont-ils un facteur premier en commun ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Dans le produit, un facteur est-il compté deux fois ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Sans facteur commun, rien n’est compté deux fois dans le produit.",
+        "incorrect": "Le produit convient seulement quand les deux nombres n’ont pas de facteur premier en commun."
+      },
+      "solution": {
+        "lines": [
+          "Aucun nombre premier n’est commun à $17$ et à $23$.",
+          "Le produit ne contient aucun facteur en double : il est minimal."
+        ],
+        "result": "Parce que 17 et 23 n’ont aucun diviseur commun autre que 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Deux autres feux clignotent toutes les $18$ s et toutes les $45$ s. Au bout de combien de secondes clignotent-ils ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$18$ = $2 \\times 3^{2}$ et $45$ = $3^{2} \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ces deux nombres ont des facteurs premiers communs : le produit ne convient pas."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} \\times 5 = 90$.",
+        "incorrect": "Prends chaque nombre premier avec son plus grand exposant."
+      },
+      "solution": {
+        "lines": [
+          "$18$ = $2 \\times 3^{2}$ et $45$ = $3^{2} \\times 5$.",
+          "Plus petit multiple commun : $2 \\times 3^{2} \\times 5 = 90$.",
+          "Le produit $18$ × $45$ = $810$ est neuf fois trop grand."
+        ],
+        "result": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "810"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

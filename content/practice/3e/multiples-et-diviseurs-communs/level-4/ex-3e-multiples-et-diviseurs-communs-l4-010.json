@@ -1,0 +1,179 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-010",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un train et un car, à quelle heure ?",
+    "estimatedMinutes": 7,
+    "tags": [
+      "décompositions",
+      "horaires"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un train part toutes les $66$ min et un car toutes les $90$ min d’une même gare. Ils sont partis ensemble à $5$ h $40$. On donne $66 = 2 \\times 3 \\times 11$ et $90 = 2 \\times 3^{2} \\times 5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $66$ et de $90$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2*3^2*5*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Tous les nombres premiers de $66$ ou de $90$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chacun avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} \\times 5 \\times 11$.",
+        "incorrect": "Tous les nombres premiers, chacun avec son plus grand exposant.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Le $2$ et le $3$ sont dans les deux ($3$ : exposants $1$ et $2$ → $3^{2}$).",
+          "$5$ ne figure que dans $90$, $11$ que dans $66$.",
+          "Le nombre : $2 \\times 3^{2} \\times 5 \\times 11$."
+        ],
+        "result": "2 \\times 3^$2$ \\times 5 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2*3"
+        },
+        {
+          "id": "MISC-PPCM-FACTEURS-COMMUNS-SEULS",
+          "value": "2*3^2"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2^2*3^3*5*11"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule ce nombre : au bout de combien de minutes repartent-ils ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "990",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2 \\times 9 \\times 5 \\times 11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2 \\times 9 \\times 5 = 90$, puis $90 \\times 11$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\times 11 = 990$.",
+        "incorrect": "Calcule le produit étape par étape."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3^{2} \\times 5 \\times 11 = 90 \\times 11 = 990$."
+        ],
+        "result": "990"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "5940"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "On rappelle que $990$ min = $16$ h $30$ min. À quelle heure entière, dans la journée, repartent-ils ensemble ? Donne le nombre d’heures.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "22",
+      "answerFormat": "Un nombre d’heures",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$5$ h $40$ + $16$ h $30$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$40$ + $30$ = $70$ minutes, c’est $1$ heure et $10$ minutes."
+        }
+      ],
+      "feedback": {
+        "correct": "$5$ h $40$ + $16$ h $30$ = $22$ h $10$.",
+        "incorrect": "Additionne les heures, puis les minutes, et convertis si les minutes dépassent $60$."
+      },
+      "solution": {
+        "lines": [
+          "$5$ h + $16$ h = $21$ h et $40$ min + $30$ min = $70$ min.",
+          "$70$ min = $1$ h $10$ min : ils repartent ensemble à $22$ h $10$."
+        ],
+        "result": "22"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "21"
+        }
+      ],
+      "timeSeconds": 120
+    }
+  ]
+}

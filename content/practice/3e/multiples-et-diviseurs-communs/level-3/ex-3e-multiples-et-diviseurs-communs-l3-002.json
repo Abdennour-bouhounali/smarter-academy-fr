@@ -1,0 +1,165 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-002",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux engrenages",
+    "estimatedMinutes": 5,
+    "tags": [
+      "engrenages",
+      "tours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Deux roues dentées s’engrènent : l’une a $18$ dents, l’autre $27$. Un repère est marqué sur chaque roue ; au départ, les deux repères sont face à face."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de dents ont défilé quand les repères sont de nouveau face à face pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "54",
+      "answerFormat": "Un nombre de dents",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de dents défilées est un multiple de $18$ ET de $27$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Écris les multiples de $27$ et cherche le premier qui est un multiple de $18$."
+        }
+      ],
+      "feedback": {
+        "correct": "$54$ = $18$ × $3$ = $27$ × $2$.",
+        "incorrect": "Cherche le plus petit multiple commun non nul de $18$ et de $27$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $27$ : $27$, $54$.",
+          "$27$ n’est pas un multiple de $18$ ; $54$ = $18$ × $3$."
+        ],
+        "result": "54"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "486"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de tours la roue de $18$ dents a-t-elle faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par le nombre de dents de cette roue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$54$ ÷ $18$."
+        }
+      ],
+      "feedback": {
+        "correct": "$54$ ÷ $18$ = $3$ tours.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$54$ ÷ $18$ = $3$."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "2"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tours la roue de $27$ dents a-t-elle faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par le nombre de dents de cette roue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$54$ ÷ $27$."
+        }
+      ],
+      "feedback": {
+        "correct": "$54$ ÷ $27$ = $2$ tours.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$54$ ÷ $27$ = $2$."
+        ],
+        "result": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "3"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

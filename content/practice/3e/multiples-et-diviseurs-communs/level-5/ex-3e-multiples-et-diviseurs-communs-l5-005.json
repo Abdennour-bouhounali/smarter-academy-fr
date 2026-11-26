@@ -1,0 +1,261 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-005",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une guirlande à fabriquer et à régler",
+    "estimatedMinutes": 9,
+    "tags": [
+      "outil",
+      "PGCD",
+      "guirlande"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Léonie a $54$ ampoules rouges et $90$ ampoules vertes. Elle veut fabriquer le plus de guirlandes identiques possible, en utilisant toutes les ampoules. Ensuite, elle règle un feu rouge qui clignote toutes les $54$ s et un feu vert toutes les $90$ s ; ils démarrent ensemble."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le nombre de guirlandes ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de guirlandes peut-elle fabriquer au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "18",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$54$ = $2 \\times 3^{3}$ et $90$ = $2 \\times 3^{2} \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Nombres premiers communs, plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} = 18$.",
+        "incorrect": "Plus grand diviseur commun de $54$ et de $90$."
+      },
+      "solution": {
+        "lines": [
+          "$54$ = $2 \\times 3^{3}$ et $90$ = $2 \\times 3^{2} \\times 5$.",
+          "PGCD : $2 \\times 3^{2} = 18$."
+        ],
+        "result": "18"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "270"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien d’ampoules rouges y a-t-il dans une guirlande ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Il y a $18$ guirlandes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $54$ par $18$."
+        }
+      ],
+      "feedback": {
+        "correct": "$54$ ÷ $18$ = $3$.",
+        "incorrect": "Divise le nombre d’ampoules rouges par le nombre de guirlandes."
+      },
+      "solution": {
+        "lines": [
+          "$54$ ÷ $18$ = $3$."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Au bout de combien de secondes les deux feux clignotent-ils ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "270",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cette fois, ce sont des instants : multiple commun."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{3} \\times 5 = 270$.",
+        "incorrect": "Plus petit multiple commun non nul de $54$ et de $90$."
+      },
+      "solution": {
+        "lines": [
+          "Plus petit multiple commun : $2 \\times 3^{3} \\times 5 = 270$."
+        ],
+        "result": "270"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "18"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "4860"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "Combien de minutes entières se sont écoulées à ce moment-là ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre de minutes entières",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1$ minute = $60$ secondes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$270$ ÷ $60$ = $4$ reste …"
+        }
+      ],
+      "feedback": {
+        "correct": "$270$ s = $4$ min $30$ s : $4$ minutes entières.",
+        "incorrect": "Divise $270$ par $60$ et garde le quotient entier."
+      },
+      "solution": {
+        "lines": [
+          "$270$ = $4$ × $60$ + $30$.",
+          "$270$ s = $4$ min $30$ s."
+        ],
+        "result": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "270"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

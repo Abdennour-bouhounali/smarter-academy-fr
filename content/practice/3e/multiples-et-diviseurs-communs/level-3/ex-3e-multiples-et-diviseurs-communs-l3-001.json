@@ -1,0 +1,142 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-001",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un facteur qu’il ne faut pas oublier",
+    "estimatedMinutes": 5,
+    "tags": [
+      "décompositions",
+      "exposants"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On donne $A = 2^{2} \\times 5^{2} \\times 7$ et $B = 2^{3} \\times 5 \\times 11$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $A$ et de $B$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^3*5^2*7*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Liste tous les nombres premiers de $A$ et de $B$ : $2$, $5$, $7$, $11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde pour chacun son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3}$, $5^{2}$, $7$ et $11$.",
+        "incorrect": "Tous les nombres premiers, chacun avec son plus grand exposant.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Exposants du $2$ : $2$ et $3$ → $2^{3}$.",
+          "Exposants du $5$ : $2$ et $1$ → $5^{2}$.",
+          "$7$ seulement dans $A$, $11$ seulement dans $B$ : on les garde.",
+          "Le nombre : $2^{3} \\times 5^{2} \\times 7 \\times 11$."
+        ],
+        "result": "2^$3$ \\times 5^$2$ \\times 7 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2^2*5"
+        },
+        {
+          "id": "MISC-PPCM-FACTEURS-COMMUNS-SEULS",
+          "value": "2^3*5^2"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2^5*5^3*7*11"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le nombre $N = 2^{3} \\times 5^{2} \\times 7$ est-il un multiple de $B$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-FACTEUR-OUBLIE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un multiple de $B$ doit contenir tous les facteurs de $B$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$B$ contient-il un facteur que $N$ n’a pas ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$N$ ne contient pas le facteur $11$ de $B$.",
+        "incorrect": "Cherche un facteur premier de $B$ qui manque dans $N$."
+      },
+      "solution": {
+        "lines": [
+          "$B$ contient le facteur $11$.",
+          "$N$ ne le contient pas : $N$ n’est pas un multiple de $B$."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

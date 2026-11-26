@@ -81,3 +81,4 @@ Library changes, loudly, with the lessons they touch. Unsure points; ledger line
 
 **Not enough?** Descriptor keys and hooks → `LW/README.md` « The descriptor », « Hooks »; adding to the library →
 « Adding to the library »; what it does not play → « Not covered »; a defect's story → its line in `defects.md` §C.
+- **C26** — a number grouped by thousands (« 2 121 ») split by the number readers: read it as ONE number (`readScreen`, `numbersIn`).

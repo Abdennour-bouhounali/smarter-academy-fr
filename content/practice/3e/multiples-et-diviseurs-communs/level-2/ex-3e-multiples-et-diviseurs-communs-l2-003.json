@@ -1,0 +1,125 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-003",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un exposant contre l’autre",
+    "estimatedMinutes": 4,
+    "tags": [
+      "décompositions",
+      "exposants"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "On donne $A = 2^{2} \\times 7$ et $B = 2 \\times 7^{2}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $A$ et de $B$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^2*7^2",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare les exposants du $2$ dans $A$ et dans $B$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Fais de même pour le $7$ et garde, à chaque fois, le plus grand."
+        }
+      ],
+      "feedback": {
+        "correct": "Le $2$ avec l’exposant $2$, le $7$ avec l’exposant $2$ : $2^{2} \\times 7^{2}$.",
+        "incorrect": "Garde, pour chaque nombre premier, le plus grand des deux exposants.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Facteur $2$ : exposants $2$ et $1$, on garde $2$.",
+          "Facteur $7$ : exposants $1$ et $2$, on garde $2$.",
+          "Le nombre : $2^{2} \\times 7^{2}$."
+        ],
+        "result": "2^$2$ \\times 7^$2$"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2*7"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2^3*7^3"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule ce nombre.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "196",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule $2^{2}$ et $7^{2}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$4 \\times 49$."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 49 = 196$.",
+        "incorrect": "Calcule $2^{2} = 4$ et $7^{2} = 49$, puis multiplie."
+      },
+      "solution": {
+        "lines": [
+          "$2^{2} = 4$ et $7^{2} = 49$.",
+          "$4 \\times 49 = 196$."
+        ],
+        "result": "196"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

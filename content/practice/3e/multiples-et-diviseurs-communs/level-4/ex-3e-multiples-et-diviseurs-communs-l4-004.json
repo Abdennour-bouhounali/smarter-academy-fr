@@ -1,0 +1,169 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-004",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des carreaux pour une salle",
+    "estimatedMinutes": 6,
+    "tags": [
+      "outil",
+      "PGCD",
+      "carrelage"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une salle rectangulaire mesure $585$ cm sur $390$ cm. On veut la recouvrir entièrement de carreaux carrés tous identiques, sans les couper, les plus grands possible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le côté d’un carreau ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le côté d’un carreau, en centimètres ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "195",
+      "answerFormat": "Un nombre de centimètres",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté divise $585$ et $390$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$585$ = $195$ × $3$ et $390$ = $195$ × $2$.",
+        "incorrect": "Le plus grand nombre qui divise $585$ et $390$."
+      },
+      "solution": {
+        "lines": [
+          "$585$ − $390$ = $195$, et $390$ = $195$ × $2$.",
+          "Le plus grand diviseur commun est $195$."
+        ],
+        "result": "195"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "1170"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de carreaux faut-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de carreaux dans la longueur ? dans la largeur ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les deux nombres."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ × $2$ = $6$ carreaux.",
+        "incorrect": "Divise chaque dimension par le côté d’un carreau, puis multiplie."
+      },
+      "solution": {
+        "lines": [
+          "$585$ ÷ $195$ = $3$ et $390$ ÷ $195$ = $2$.",
+          "$3$ × $2$ = $6$."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-008",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un plateau et un pignon de vélo",
+    "estimatedMinutes": 9,
+    "tags": [
+      "engrenages",
+      "vélo"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Sur un vélo, le plateau a $50$ dents et le pignon de la roue arrière en a $15$. La chaîne relie les deux. Au départ, une maille de la chaîne est sur une dent précise du plateau et sur une dent précise du pignon."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de dents ont défilé quand la maille se retrouve sur les mêmes dents du plateau et du pignon pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "150",
+      "answerFormat": "Un nombre de dents",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$50$ = $2 \\times 5^{2}$ et $15$ = $3 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 \\times 5^{2} = 150$.",
+        "incorrect": "Plus petit multiple commun non nul de $50$ et de $15$."
+      },
+      "solution": {
+        "lines": [
+          "$50$ = $2 \\times 5^{2}$ et $15$ = $3 \\times 5$.",
+          "Plus petit multiple commun : $2 \\times 3 \\times 5^{2} = 150$."
+        ],
+        "result": "150"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "750"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de tours de pédale (donc de plateau) cela représente-t-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $50$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$150$ ÷ $50$."
+        }
+      ],
+      "feedback": {
+        "correct": "$150$ ÷ $50$ = $3$.",
+        "incorrect": "Un tour de plateau, c’est $50$ dents qui défilent."
+      },
+      "solution": {
+        "lines": [
+          "$150$ ÷ $50$ = $3$."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "10"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tours le pignon a-t-il faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$150$ ÷ $15$."
+        }
+      ],
+      "feedback": {
+        "correct": "$150$ ÷ $15$ = $10$.",
+        "incorrect": "Un tour de pignon, c’est $15$ dents qui défilent."
+      },
+      "solution": {
+        "lines": [
+          "$150$ ÷ $15$ = $10$."
+        ],
+        "result": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "3"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Le cycliste pédale à $90$ tours par minute. Combien de fois par minute la maille se retrouve-t-elle sur les mêmes dents ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "La situation se répète tous les $3$ tours de pédale."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$90$ ÷ $3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ ÷ $3$ = $30$.",
+        "incorrect": "Combien de fois $3$ tours tiennent-ils dans $90$ tours ?"
+      },
+      "solution": {
+        "lines": [
+          "$90$ ÷ $3$ = $30$ fois par minute."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

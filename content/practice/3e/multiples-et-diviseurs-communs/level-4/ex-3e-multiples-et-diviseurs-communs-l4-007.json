@@ -1,0 +1,171 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-007",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une guirlande à deux couleurs",
+    "estimatedMinutes": 6,
+    "tags": [
+      "guirlande",
+      "rendez-vous"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Sur une guirlande, les ampoules vertes s’allument toutes les $25$ s et les ampoules rouges toutes les $30$ s. Les deux couleurs s’allument ensemble à l’instant $0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de secondes les deux couleurs s’allument-elles ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "150",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$25$ = $5^{2}$ et $30$ = $2 \\times 3 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 \\times 5^{2} = 150$.",
+        "incorrect": "Plus petit multiple commun non nul de $25$ et de $30$."
+      },
+      "solution": {
+        "lines": [
+          "$25$ = $5^{2}$ et $30$ = $2 \\times 3 \\times 5$.",
+          "$2 \\times 3 \\times 5^{2} = 150$."
+        ],
+        "result": "150"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "750"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Pendant $15$ minutes, combien de fois les deux couleurs s’allument-elles ensemble après l’instant $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$15$ min = $900$ s."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$900$ ÷ $150$."
+        }
+      ],
+      "feedback": {
+        "correct": "$900$ ÷ $150$ = $6$.",
+        "incorrect": "Convertis $15$ min en secondes puis compte les multiples de $150$."
+      },
+      "solution": {
+        "lines": [
+          "$15$ min = $900$ s.",
+          "$900$ ÷ $150$ = $6$ rencontres."
+        ],
+        "result": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "150"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Le deuxième rendez-vous a lieu au bout de combien de minutes ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le deuxième rendez-vous est le deuxième multiple non nul de $150$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$300$ s = … min."
+        }
+      ],
+      "feedback": {
+        "correct": "$300$ s = $5$ min.",
+        "incorrect": "Double la première durée, puis convertis en minutes."
+      },
+      "solution": {
+        "lines": [
+          "Deuxième rendez-vous : $150$ × $2$ = $300$ s.",
+          "$300$ ÷ $60$ = $5$ min."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "150"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

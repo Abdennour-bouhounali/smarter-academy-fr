@@ -1,0 +1,169 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-009",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un engrenage de 28 et 42 dents",
+    "estimatedMinutes": 6,
+    "tags": [
+      "engrenages",
+      "tours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "Une roue dentée de $28$ dents s’engrène avec une roue de $42$ dents. Un repère est peint sur chaque roue ; au départ, les repères sont face à face."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de dents ont défilé quand les repères sont de nouveau face à face pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "84",
+      "answerFormat": "Un nombre de dents",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$28$ = $2^{2} \\times 7$ et $42$ = $2 \\times 3 \\times 7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{2} \\times 3 \\times 7 = 84$.",
+        "incorrect": "Plus petit multiple commun non nul de $28$ et de $42$."
+      },
+      "solution": {
+        "lines": [
+          "$28$ = $2^{2} \\times 7$ et $42$ = $2 \\times 3 \\times 7$.",
+          "$2^{2} \\times 3 \\times 7 = 84$."
+        ],
+        "result": "84"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "1176"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "14"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de tours la roue de $28$ dents a-t-elle faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $28$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$84$ ÷ $28$."
+        }
+      ],
+      "feedback": {
+        "correct": "$84$ ÷ $28$ = $3$.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$84$ ÷ $28$ = $3$."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "2"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tours la roue de $42$ dents a-t-elle faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $42$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$84$ ÷ $42$."
+        }
+      ],
+      "feedback": {
+        "correct": "$84$ ÷ $42$ = $2$.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$84$ ÷ $42$ = $2$."
+        ],
+        "result": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "3"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

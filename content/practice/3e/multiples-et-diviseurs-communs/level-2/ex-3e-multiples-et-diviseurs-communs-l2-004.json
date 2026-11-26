@@ -1,0 +1,135 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-004",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Multiple commun ou diviseur commun ?",
+    "estimatedMinutes": 4,
+    "tags": [
+      "outil",
+      "bus",
+      "barquettes"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Deux situations, deux questions : dans chacune, dis ce que l’on cherche."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Deux bus partent ensemble de la gare à $8$ h. Le premier repart toutes les $6$ min, le second toutes les $15$ min. Pour savoir quand ils sont de nouveau ensemble, que cherche-t-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un diviseur commun de $6$ et de $15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un multiple commun de $6$ et de $15$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les instants de départ de chaque bus sont-ils des multiples ou des diviseurs ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un instant commun aux deux bus est un ... commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Les instants de départ sont des multiples : on cherche un multiple commun.",
+        "incorrect": "On cherche des instants : ce sont des multiples."
+      },
+      "solution": {
+        "lines": [
+          "Le premier bus part aux multiples de $6$, le second aux multiples de $15$.",
+          "On cherche un multiple commun."
+        ],
+        "result": "Un multiple commun"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Une boulangère partage $54$ chouquettes et $81$ éclairs en barquettes identiques, en faisant le plus de barquettes possible, sans rien garder. Que cherche-t-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun de $54$ et de $81$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun de $54$ et de $81$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de barquettes doit partager $54$ ET $81$ sans reste."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un nombre qui partage sans reste, c’est un ... de $54$."
+        }
+      ],
+      "feedback": {
+        "correct": "Le nombre de barquettes divise $54$ et $81$ : on cherche un diviseur commun.",
+        "incorrect": "Partager sans reste : le nombre de barquettes divise les deux quantités."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre de barquettes divise $54$ et divise $81$.",
+          "On cherche donc un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

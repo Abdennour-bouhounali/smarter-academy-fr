@@ -1,0 +1,121 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-007",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux phares",
+    "estimatedMinutes": 5,
+    "tags": [
+      "phares",
+      "durées"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Un phare émet un éclat toutes les $15$ s, un autre toutes les $18$ s. À $21$ h $0$ min $0$ s, ils éclatent ensemble."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de secondes éclatent-ils ensemble pour la première fois après $21$ h ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les multiples de $18$ jusqu’à ce que l’un soit un multiple de $15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$18$, $36$, $54$, $72$, $90$…"
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ = $15$ × $6$ = $18$ × $5$.",
+        "incorrect": "Cherche le plus petit multiple commun non nul de $15$ et de $18$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $18$ : $18$, $36$, $54$, $72$, $90$.",
+          "Seul $90$ est aussi un multiple de $15$ ($15$ × $6$)."
+        ],
+        "result": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "270"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "À $21$ h $1$ min, à quelle seconde de la minute éclatent-ils ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Une seconde entre $0$ et $59$",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$90$ s, c’est $1$ minute et encore …"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$90$ − $60$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ s = $1$ min $30$ s : à $21$ h $1$ min $30$ s.",
+        "incorrect": "Convertis $90$ s en minutes et secondes."
+      },
+      "solution": {
+        "lines": [
+          "$90$ s = $60$ s + $30$ s = $1$ min $30$ s."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "90"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

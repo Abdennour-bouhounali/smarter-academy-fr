@@ -29,7 +29,7 @@ export const TOOLS = [
   },
   {
     id: 'jumps',
-    lesson: null,
+    lesson: 'multiples-et-diviseurs-communs',
     icon: '🦘',
     name: 'Les sauts des multiples',
     hint: 'Saute à pas égaux depuis 0 : tombes-tu pile sur le drapeau ?',
@@ -159,7 +159,7 @@ export const TOOLS = [
     // where k divides both, the strip regroups and the fraction is written in pieces — facts only; neither the tile nor
     // the instrument names a key of its lesson
     id: 'strip',
-    lesson: null,
+    lesson: 'fraction-irreductible',
     icon: '🎞️',
     name: 'La bande de la fraction',
     hint: 'Ta fraction sur une bande allumée : choisis la longueur d’un morceau. Ses jointures tombent-elles là où finit la lumière, et là où finit la bande ?',

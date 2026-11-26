@@ -85,3 +85,4 @@ from lesson 1's board. Longer → the brief's file.
 
 **Not enough?** A station kind → `CLASS_SESSION.md` §5ter; the memo → §2quater; the class test → §4; a family →
 `LAUNCH_KIT.md`; French → `FRENCH_LANGUAGE_CONTRACT.md` §4–§7.
+- **A12 / B50** — a board figure showing the answer before the check (`figureAfter`); a station or tile text overflowing its card (L3 and L4, 2026-11-26).

@@ -1,0 +1,214 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-001",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une chaîne de deux pignons",
+    "estimatedMinutes": 6,
+    "tags": [
+      "engrenages",
+      "tours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un pignon de $40$ dents s’engrène avec un pignon de $56$ dents. Au départ, un repère de chaque pignon est face à face."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de dents ont défilé quand les repères sont de nouveau face à face pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "280",
+      "answerFormat": "Un nombre de dents",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$40$ = $2^{3} \\times 5$ et $56$ = $2^{3} \\times 7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3} \\times 5 \\times 7 = 280$.",
+        "incorrect": "Plus petit multiple commun non nul de $40$ et de $56$."
+      },
+      "solution": {
+        "lines": [
+          "$40$ = $2^{3} \\times 5$ et $56$ = $2^{3} \\times 7$.",
+          "$2^{3} \\times 5 \\times 7 = 280$."
+        ],
+        "result": "280"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2240"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "8"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de tours le pignon de $40$ dents a-t-il faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $40$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$280$ ÷ $40$."
+        }
+      ],
+      "feedback": {
+        "correct": "$280$ ÷ $40$ = $7$.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$280$ ÷ $40$ = $7$."
+        ],
+        "result": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tours le pignon de $56$ dents a-t-il faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $56$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$280$ ÷ $56$."
+        }
+      ],
+      "feedback": {
+        "correct": "$280$ ÷ $56$ = $5$.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$280$ ÷ $56$ = $5$."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "7"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Le pignon de $40$ dents tourne à $70$ tours par minute. Combien de fois par minute les deux repères se retrouvent-ils face à face ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les repères se retrouvent chaque fois que le pignon de $40$ dents a fait $7$ tours."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$70$ ÷ $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$70$ ÷ $7$ = $10$.",
+        "incorrect": "Combien de fois $7$ tours tiennent-ils dans $70$ tours ?"
+      },
+      "solution": {
+        "lines": [
+          "Rencontre tous les $7$ tours du pignon de $40$ dents.",
+          "$70$ ÷ $7$ = $10$ rencontres par minute."
+        ],
+        "result": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "14"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

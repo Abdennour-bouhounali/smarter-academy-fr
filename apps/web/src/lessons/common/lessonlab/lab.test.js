@@ -44,8 +44,10 @@ describe('Mon labo — the instruments a lesson may show', () => {
   it('tags an instrument with the lesson that introduces it, gives each a module and quests', () => {
     // the French lessons tag their own; the Algerian instruments stay listed nowhere until a French lesson takes one
     expect(TOOLS.filter((t) => t.lesson !== null).map((t) => [t.id, t.lesson])).toEqual([
+      ['jumps', 'multiples-et-diviseurs-communs'],
       ['common', 'trouver-le-pgcd'],
       ['lists', 'trouver-le-pgcd'],
+      ['strip', 'fraction-irreductible'],
       ['rope', 'thales-configuration-papillon'],
       ['factor', 'decomposer-en-facteurs-premiers'],
     ]);
@@ -81,6 +83,8 @@ describe('Mon labo — the instruments a lesson may show', () => {
     expect(lab.cabinet.flatMap((g) => g.lessons.map((l) => l.code))).toEqual([
       'decomposer-en-facteurs-premiers',
       'trouver-le-pgcd',
+      'fraction-irreductible',
+      'multiples-et-diviseurs-communs',
     ]);
     expect(toolsFor('thales-configuration-papillon', { earlierOnly: true }).all.map((t) => t.id)).not.toContain('rope');
     expect(hasLab('thales-configuration-papillon')).toBe(true);

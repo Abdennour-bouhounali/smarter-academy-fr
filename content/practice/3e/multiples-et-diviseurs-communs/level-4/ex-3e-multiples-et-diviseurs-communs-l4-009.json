@@ -1,0 +1,215 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-009",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Verrines, quiches et minuteurs",
+    "estimatedMinutes": 7,
+    "tags": [
+      "outil",
+      "PGCD",
+      "durées"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un traiteur prépare $180$ verrines et $270$ mini-quiches. Il veut les ranger sur des plateaux identiques, avec le plus de plateaux possible, en utilisant tout. Dans sa cuisine, deux minuteurs sonnent, l’un toutes les $180$ s, l’autre toutes les $270$ s ; ils démarrent ensemble."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le nombre de plateaux ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de plateaux au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$180$ = $2^{2} \\times 3^{2} \\times 5$ et $270$ = $2 \\times 3^{3} \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Nombres premiers communs, plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} \\times 5 = 90$.",
+        "incorrect": "Plus grand diviseur commun de $180$ et de $270$."
+      },
+      "solution": {
+        "lines": [
+          "$180$ = $2^{2} \\times 3^{2} \\times 5$ et $270$ = $2 \\times 3^{3} \\times 5$.",
+          "PGCD : $2 \\times 3^{2} \\times 5 = 90$."
+        ],
+        "result": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "540"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Au bout de combien de secondes les deux minuteurs sonnent-ils ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "540",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cette fois, ce sont des instants : multiple commun."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{2} \\times 3^{3} \\times 5 = 540$.",
+        "incorrect": "Plus petit multiple commun non nul de $180$ et de $270$."
+      },
+      "solution": {
+        "lines": [
+          "Plus petit multiple commun : $2^{2} \\times 3^{3} \\times 5 = 540$."
+        ],
+        "result": "540"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "90"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "48600"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Exprime cette durée en minutes.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1$ minute = $60$ secondes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$540$ ÷ $60$."
+        }
+      ],
+      "feedback": {
+        "correct": "$540$ ÷ $60$ = $9$.",
+        "incorrect": "Divise le nombre de secondes par $60$."
+      },
+      "solution": {
+        "lines": [
+          "$540$ ÷ $60$ = $9$."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

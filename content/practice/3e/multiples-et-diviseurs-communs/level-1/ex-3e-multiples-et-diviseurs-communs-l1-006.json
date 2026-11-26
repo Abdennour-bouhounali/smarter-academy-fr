@@ -1,0 +1,118 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-006",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les multiples communs de 9 et de 15",
+    "estimatedMinutes": 3,
+    "tags": [
+      "multiples communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche les multiples communs de $9$ et de $15$ qui sont inférieurs à $100$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris tous les multiples non nuls communs à $9$ et à $15$ inférieurs à $100$.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        45,
+        90
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les multiples de $15$ jusqu’à $100$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde ceux qui sont aussi des multiples de $9$."
+        }
+      ],
+      "feedback": {
+        "correct": "$45$ = $9$ × $5$ = $15$ × $3$ et $90$ = $9$ × $10$ = $15$ × $6$.",
+        "incorrect": "Pars des multiples de $15$ et teste chacun : est-il dans la table de $9$ ?"
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $15$ : $15$, $30$, $45$, $60$, $75$, $90$.",
+          "Parmi eux, ceux de la table de $9$ : $45$ et $90$."
+        ],
+        "result": "45 ; 90"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le plus petit multiple commun non nul de $9$ et de $15$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "45",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Regarde ta liste de multiples communs."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Prends le plus petit."
+        }
+      ],
+      "feedback": {
+        "correct": "Le plus petit est $45$.",
+        "incorrect": "Le plus petit de la liste, et non nul."
+      },
+      "solution": {
+        "lines": [
+          "Multiples communs : $45$, $90$.",
+          "Le plus petit : $45$."
+        ],
+        "result": "45"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "135"
+        }
+      ],
+      "timeSeconds": 45
+    }
+  ]
+}

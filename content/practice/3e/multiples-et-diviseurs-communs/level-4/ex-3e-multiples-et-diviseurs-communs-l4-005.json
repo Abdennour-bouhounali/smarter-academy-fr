@@ -1,0 +1,175 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-005",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux équipes qui se reposent",
+    "estimatedMinutes": 6,
+    "tags": [
+      "cycles",
+      "jours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "L’équipe Bleue travaille un jour, puis se repose $8$ jours, puis retravaille un jour, et ainsi de suite. L’équipe Verte travaille un jour, puis se repose $14$ jours, et ainsi de suite. Les deux équipes travaillent le jour $1$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de jours dure un cycle de l’équipe Bleue, jour de travail compris ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre de jours",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un cycle = jour de travail + jours de repos."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1$ + $8$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1$ + $8$ = $9$ jours.",
+        "incorrect": "Le cycle comprend le jour de travail ET les jours de repos."
+      },
+      "solution": {
+        "lines": [
+          "$1$ + $8$ = $9$."
+        ],
+        "result": "9"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-JOURS-DE-SOMMEIL",
+          "value": "8"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le premier jour après le jour $1$ où les deux équipes travaillent ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "46",
+      "answerFormat": "Un numéro de jour",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le cycle de l’équipe Verte est $15$ jours."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Plus petit multiple commun de $9$ et $15$, puis ajoute-le au jour $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$9$ = $3^{2}$, $15$ = $3 \\times 5$ : $3^{2} \\times 5 = 45$ ; jour $1$ + $45$ = $46$.",
+        "incorrect": "Plus petit multiple commun des deux cycles, puis ajoute-le au jour $1$."
+      },
+      "solution": {
+        "lines": [
+          "Cycles : $9$ et $15$ jours.",
+          "$9$ = $3^{2}$ et $15$ = $3 \\times 5$ : plus petit multiple commun $3^{2} \\times 5 = 45$.",
+          "Jour $1$ + $45$ = jour $46$."
+        ],
+        "result": "46"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-DECALAGE-JOUR",
+          "value": "45"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "136"
+        },
+        {
+          "id": "MISC-PPCM-JOURS-DE-SOMMEIL",
+          "value": "23"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Pendant les $200$ premiers jours, combien de jours les deux équipes travaillent-elles ensemble, le jour $1$ compris ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux équipes travaillent aux jours $1$, $46$, $91$…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue tant que le numéro ne dépasse pas $200$."
+        }
+      ],
+      "feedback": {
+        "correct": "Jours $1$, $46$, $91$, $136$ et $181$ : $5$ jours.",
+        "incorrect": "Ajoute $45$ à chaque fois à partir du jour $1$, jusqu’à $200$."
+      },
+      "solution": {
+        "lines": [
+          "Jours : $1$, $46$, $91$, $136$, $181$.",
+          "$226$ dépasse $200$ : il y a $5$ jours."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "4"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

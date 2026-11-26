@@ -1,0 +1,254 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-001",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une passerelle à deux équipes",
+    "estimatedMinutes": 8,
+    "tags": [
+      "passerelle",
+      "prix"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Deux équipes bâtissent une même passerelle à partir de la rive. L’équipe rouge pose des planches de $45$ cm à $3$ € pièce, l’équipe bleue des planches de $50$ cm à $4$ € pièce. Un pilier ne peut être posé qu’à un endroit où les deux équipes finissent une planche entière."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "À quelle distance de la rive se trouve le premier pilier possible ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "450",
+      "answerFormat": "Un nombre de centimètres",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$45$ = $3^{2} \\times 5$ et $50$ = $2 \\times 5^{2}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Plus petit multiple commun non nul."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} \\times 5^{2} = 450$.",
+        "incorrect": "La distance est un multiple de $45$ ET de $50$ : cherche le plus petit non nul."
+      },
+      "solution": {
+        "lines": [
+          "$45$ = $3^{2} \\times 5$ et $50$ = $2 \\times 5^{2}$.",
+          "Plus petit multiple commun : $2 \\times 3^{2} \\times 5^{2} = 450$."
+        ],
+        "result": "450"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2250"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de planches l’équipe rouge pose-t-elle jusqu’à ce pilier ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise la distance par la longueur d’une planche rouge."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$450$ ÷ $45$."
+        }
+      ],
+      "feedback": {
+        "correct": "$450$ ÷ $45$ = $10$.",
+        "incorrect": "Divise $450$ par $45$."
+      },
+      "solution": {
+        "lines": [
+          "$450$ ÷ $45$ = $10$."
+        ],
+        "result": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de planches l’équipe bleue pose-t-elle jusqu’à ce pilier ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise la distance par la longueur d’une planche bleue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$450$ ÷ $50$."
+        }
+      ],
+      "feedback": {
+        "correct": "$450$ ÷ $50$ = $9$.",
+        "incorrect": "Divise $450$ par $50$."
+      },
+      "solution": {
+        "lines": [
+          "$450$ ÷ $50$ = $9$."
+        ],
+        "result": "9"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "10"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Combien coûtent les planches des deux équipes jusqu’à ce pilier, en euros ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "66",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Coût rouge : nombre de planches × $3$ €."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Coût bleu : nombre de planches × $4$ €."
+        }
+      ],
+      "feedback": {
+        "correct": "$10$ × $3$ + $9$ × $4$ = $66$.",
+        "incorrect": "Additionne le coût des planches rouges et celui des planches bleues."
+      },
+      "solution": {
+        "lines": [
+          "Rouge : $10$ × $3$ = $30$ €.",
+          "Bleu : $9$ × $4$ = $36$ €.",
+          "Total : $30$ + $36$ = $66$ €."
+        ],
+        "result": "66"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "La passerelle doit faire $1\\,000$ cm. Combien de piliers peut-on poser, à des endroits où les deux équipes finissent une planche, sans dépasser $1\\,000$ cm ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les piliers sont aux multiples non nuls de $450$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de multiples de $450$ sont inférieurs ou égaux à $1\\,000$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "À $450$ cm et $900$ cm : $2$ piliers.",
+        "incorrect": "Compte les multiples non nuls de $450$ qui ne dépassent pas $1\\,000$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $450$ : $450$, $900$, $1\\,350$…",
+          "$1\\,350$ dépasse $1\\,000$ : $2$ piliers."
+        ],
+        "result": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "450"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

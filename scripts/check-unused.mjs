@@ -82,7 +82,6 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/divisorIsles/ruleForge.js#SMALL': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#differenceBox': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#fromRounds': LESSON_ENGINE,
-  'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#givenDivision': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#makerOf': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#pairPool': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/authoring/forgeBlocks.js#pairsOutside': LESSON_ENGINE,

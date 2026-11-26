@@ -195,5 +195,162 @@
     "relatedLearningPoints": [
       "3e_thales-configuration-papillon_P3"
     ]
+  },
+  "MISC-FRAC-DIVISEURS-VUS-SEULEMENT": {
+    "label": "Conclure qu’une fraction est irréductible parce qu’on ne voit pas de simplification par $2$, $3$ ou $5$ (oublier de chercher un facteur premier commun plus grand, comme $7$, $11$ ou $17$)",
+    "explanation": "Une fraction n’est irréductible que si ses deux termes n’ont AUCUN facteur premier commun : on le vérifie en décomposant, pas en essayant seulement les petits nombres.",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P1",
+      "3e_fraction-irreductible_P2"
+    ]
+  },
+  "MISC-FRAC-IMPAIRS-IRREDUCTIBLE": {
+    "label": "Croire qu’une fraction dont les deux termes sont impairs est forcément irréductible",
+    "explanation": "Deux nombres impairs peuvent avoir un facteur premier commun ($3$, $5$, $7$…) : $\\dfrac{15}{21}$ se simplifie par $3$. Seule la décomposition en facteurs premiers tranche.",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P1"
+    ]
+  },
+  "MISC-FRAC-COMPOSES-DONC-REDUCTIBLE": {
+    "label": "Croire qu’une fraction dont les termes ne sont pas des nombres premiers se simplifie forcément",
+    "explanation": "Une fraction est irréductible quand ses deux termes n’ont aucun facteur premier commun, même si aucun des deux n’est premier : $\\dfrac{9}{20}$ est irréductible.",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P1"
+    ]
+  },
+  "MISC-FRAC-ARRET-EN-CHEMIN": {
+    "label": "S’arrêter en cours de simplification : diviser par un facteur commun puis rendre une fraction qui peut encore se simplifier",
+    "explanation": "La fraction est irréductible seulement quand il ne reste aucun facteur premier commun : après chaque simplification, on vérifie les deux nouveaux termes (ou on divise d’un coup par le PGCD).",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P2",
+      "3e_fraction-irreductible_P3",
+      "3e_fraction-irreductible_P4"
+    ]
+  },
+  "MISC-FRAC-RETRANCHER-LE-MEME": {
+    "label": "Simplifier en retranchant le même nombre au numérateur et au dénominateur",
+    "explanation": "Simplifier, c’est DIVISER le numérateur et le dénominateur par le même nombre ; retrancher change la valeur de la fraction.",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P2"
+    ]
+  },
+  "MISC-FRAC-DIVISER-UN-SEUL-TERME": {
+    "label": "Diviser seulement le numérateur (ou seulement le dénominateur) par le facteur commun",
+    "explanation": "Les deux termes se divisent par le même nombre : diviser un seul terme change la valeur de la fraction.",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P2",
+      "3e_fraction-irreductible_P4"
+    ]
+  },
+  "MISC-FRAC-SIMPLIFIER-UNE-SOMME": {
+    "label": "Barrer un terme qui se répète dans une somme du numérateur et du dénominateur",
+    "explanation": "On ne simplifie que des FACTEURS d’un produit : dans $\\dfrac{6+9}{6+21}$, on calcule d’abord les sommes ($\\dfrac{15}{27}$), puis on simplifie.",
+    "relatedLearningPoints": [
+      "3e_fraction-irreductible_P2",
+      "3e_fraction-irreductible_P3"
+    ]
+  },
+  "MISC-PPCM-PRODUIT": {
+    "label": "Donner le produit des deux nombres comme plus petit multiple commun",
+    "explanation": "Le produit est un multiple commun, mais pas toujours le plus petit : si les deux nombres ont un facteur premier en commun, il est compté deux fois. Avec $6$ et $8$, le produit $48$ est dépassé par $24$.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P1",
+      "3e_multiples-et-diviseurs-communs_P2",
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-PRODUIT-JAMAIS": {
+    "label": "Croire que le produit n’est jamais le plus petit multiple commun",
+    "explanation": "Quand les deux nombres n’ont aucun facteur premier en commun, le produit ne compte rien deux fois : c’est bien le plus petit multiple commun non nul.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P2"
+    ]
+  },
+  "MISC-PPCM-EXPOSANT-PETIT": {
+    "label": "Appliquer la règle du PGCD : les facteurs communs avec le plus petit exposant",
+    "explanation": "Un multiple commun doit contenir TOUT ce que contient chaque nombre : chaque nombre premier présent dans l’un ou l’autre, avec son plus GRAND exposant.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P2"
+    ]
+  },
+  "MISC-PPCM-FACTEURS-COMMUNS-SEULS": {
+    "label": "Oublier les nombres premiers qui ne figurent que dans l’un des deux nombres",
+    "explanation": "Un multiple de $A$ contient tous les facteurs premiers de $A$ ; un multiple commun contient donc aussi ceux de $B$, même s’ils ne sont pas communs.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P2"
+    ]
+  },
+  "MISC-PPCM-FACTEUR-OUBLIE": {
+    "label": "Croire qu’un nombre est multiple d’un autre alors qu’il lui manque un facteur premier",
+    "explanation": "Pour être un multiple de $B$, un nombre doit contenir chaque facteur premier de $B$ avec au moins son exposant.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P2"
+    ]
+  },
+  "MISC-PPCM-MULTIPLE-D-UN-SEUL": {
+    "label": "Retenir un nombre qui n’est le multiple que d’un seul des deux nombres",
+    "explanation": "Un multiple COMMUN doit être un multiple des deux nombres : on teste chacun.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P1"
+    ]
+  },
+  "MISC-PPCM-ZERO": {
+    "label": "Retenir $0$ comme premier rendez-vous",
+    "explanation": "Le nombre $0$ est un multiple de tout nombre, mais c’est le départ, pas une rencontre : on cherche le plus petit multiple commun NON NUL.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P1",
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-PAS-LE-PLUS-PETIT": {
+    "label": "Donner un multiple commun qui n’est pas le plus petit (la deuxième rencontre, un multiple du bon nombre)",
+    "explanation": "Les multiples communs se répètent : le premier rendez-vous est le plus petit multiple commun non nul, les suivants sont ses multiples.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P1",
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-PGCD-OU-PPCM": {
+    "label": "Confondre multiple commun et diviseur commun : prendre le mauvais outil",
+    "explanation": "Deux rythmes qui se retrouvent donnent un multiple commun ; un partage en lots identiques sans reste donne un diviseur commun.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P1",
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-TOURS-INVERSES": {
+    "label": "Échanger les tours des deux roues (diviser par le nombre de dents de l’autre roue)",
+    "explanation": "Le nombre de tours d’une roue est le nombre de dents défilées divisé par SES dents : la petite roue fait le plus de tours.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-JOURS-DE-SOMMEIL": {
+    "label": "Prendre le nombre de jours de repos pour la durée du cycle",
+    "explanation": "Un cycle comprend le jour de travail ET les jours de repos : il dure un jour de plus que le repos.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-DECALAGE-JOUR": {
+    "label": "Donner l’écart entre deux rendez-vous au lieu du numéro du jour",
+    "explanation": "Le plus petit multiple commun est une durée à partir du jour $1$ : le jour du rendez-vous est le jour de départ plus cette durée.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-NB-DE-RENCONTRES": {
+    "label": "Donner le plus petit multiple commun au lieu du nombre de rencontres demandé (ou compter un multiple de trop ou de moins)",
+    "explanation": "Le plus petit multiple commun est la durée entre deux rencontres : le nombre de rencontres s’obtient en comptant ses multiples dans la durée donnée.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
+  },
+  "MISC-PPCM-HORAIRE": {
+    "label": "Donner la durée alors qu’on demande une heure, ou convertir mal minutes et secondes",
+    "explanation": "Une durée s’ajoute à l’heure de départ, puis on convertit : $60$ minutes font une heure, $60$ secondes une minute.",
+    "relatedLearningPoints": [
+      "3e_multiples-et-diviseurs-communs_P3"
+    ]
   }
 }

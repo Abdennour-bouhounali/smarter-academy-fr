@@ -1,0 +1,208 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-009",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Trois phares",
+    "estimatedMinutes": 9,
+    "tags": [
+      "phares",
+      "durées"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Trois phares émettent un éclat, le premier toutes les $4$ s, le deuxième toutes les $9$ s, le troisième toutes les $11$ s. Ils éclatent ensemble à l’instant $0$. On donne $4 = 2^{2}$, $9 = 3^{2}$ et $11$ est premier."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $4$, $9$ et $11$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^2*3^2*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les trois nombres ont-ils un nombre premier en commun ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Aucun : garde chacun avec son exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{2} \\times 3^{2} \\times 11$.",
+        "incorrect": "Tous les nombres premiers, chacun avec son plus grand exposant.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Aucun nombre premier n’est commun : $2$, $3$ et $11$ apparaissent séparément.",
+          "Le nombre : $2^{2} \\times 3^{2} \\times 11$."
+        ],
+        "result": "2^$2$ \\times 3^$2$ \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2*3*11"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Au bout de combien de secondes éclatent-ils ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "396",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$4 \\times 9 \\times 11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$36 \\times 11$."
+        }
+      ],
+      "feedback": {
+        "correct": "$36 \\times 11 = 396$.",
+        "incorrect": "Calcule le produit de la question précédente."
+      },
+      "solution": {
+        "lines": [
+          "$2^{2} \\times 3^{2} \\times 11 = 36 \\times 11 = 396$."
+        ],
+        "result": "396"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de minutes entières cela représente-t-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre de minutes entières",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1$ minute = $60$ secondes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$396$ ÷ $60$."
+        }
+      ],
+      "feedback": {
+        "correct": "$396$ = $6$ × $60$ + $36$ : $6$ minutes entières.",
+        "incorrect": "Divise $396$ par $60$ et garde le quotient entier."
+      },
+      "solution": {
+        "lines": [
+          "$396$ = $6$ × $60$ + $36$."
+        ],
+        "result": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "396"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Pendant $1$ heure, soit $3\\,600$ s, combien de fois éclatent-ils ensemble après l’instant $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte les multiples non nuls de $396$ jusqu’à $3\\,600$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$3\\,600$ ÷ $396$ ≈ $9{,}1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$9$ × $396$ = $3\\,564$ ≤ $3\\,600$ < $3\\,960$.",
+        "incorrect": "Divise $3\\,600$ par $396$ et garde la partie entière."
+      },
+      "solution": {
+        "lines": [
+          "$9$ × $396$ = $3\\,564$ et $10$ × $396$ = $3\\,960$.",
+          "$3\\,564$ ≤ $3\\,600$ < $3\\,960$ : $9$ fois."
+        ],
+        "result": "9"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "396"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

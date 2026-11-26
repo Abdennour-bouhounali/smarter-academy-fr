@@ -82,3 +82,4 @@ walks: per forge, the hooks in order, the right tiles, one false rule and its re
 **Not enough?** A kind and its `text.*` keys → `GAME_WORLD.md` « Explore » (table of kinds, « To add a kind »); the
 forge's frame → `GAME_WORLD.md` §2sexies; a forge skeleton → `KIT/authoring/README.md` « Skeletons »; the design
 questions → `review.md` §A.
+- **A14 / B48** — numbers of the dash shown in a mirror before the dash; a log line that names « décompositions » without showing them: `c.sub`, or the bars.

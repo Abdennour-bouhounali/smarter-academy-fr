@@ -103,7 +103,7 @@ Classified links: **113** (74 core, 39 support). Classified grades: 3e.
 | # | Weight | Earlier competence | Its lesson | Why (support only) |
 |---|---|---|---|---|
 | 1 | **core** | Il calcule avec les nombres rationnels : addition, soustraction, multiplication, division. (`4e.m1.r01`) | _no lesson yet in 4e_ |  |
-| 2 | support | Il simplifie une fraction pour la rendre irréductible. (`3e.m1.r06`) | Rendre une fraction irréductible — Troisième _(not published)_ | The result is expected in irreducible form, but the computation itself can be right without simplifying. |
+| 2 | support | Il simplifie une fraction pour la rendre irréductible. (`3e.m1.r06`) | Rendre une fraction irréductible — Troisième | The result is expected in irreducible form, but the computation itself can be right without simplifying. |
 
 ### Mettre un problème en équation — `mettre-un-probleme-en-equation`
 

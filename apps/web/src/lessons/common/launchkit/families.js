@@ -1238,10 +1238,156 @@ const FIGURE_RATIO = {
   ],
 };
 
-// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Five
+// ───────────────────────── 4e.m1.r07 — des fractions égales (4e), les nombres premiers pour les écrire ─────────────────────────
+// What « Rendre une fraction irréductible » stands on from 4e (ported from the Algerian family `1am.m5.r02`, rewritten in
+// French): two fractions are EQUAL when both terms are divided (or multiplied) by the same number. Its slips: the same
+// number SUBTRACTED from both terms, one term divided and not the other. A fraction is written with a real bar: a token
+// `{ frac: [top, bottom] }`, one of the two a box (`S`). The given fractions are the platform's own: never a fraction the
+// lesson's bank, its board, its class test or its world write (`launchkit.test.js` re-reads them). The kit is played just
+// before the lesson: nothing here names one of its keys — no stages, no fraction that « cannot » be rewritten, no greatest
+// divisor, no prime factors; ONE number divides both terms.
+/** The fractions (numerator < denominator, denominator ≤ 180) the lesson writes: bank, board, class test, world. */
+const FRAC_AVOID = new Set(
+  '1/2 1/3 2/3 1/4 3/4 5/4 1/5 2/5 3/5 4/5 1/6 4/6 5/6 1/7 2/7 3/7 4/7 5/7 6/7 1/8 3/8 5/8 7/8 1/9 2/9 4/9 5/9 7/9 8/9 1/10 2/10 3/10 5/10 7/10 9/10 5/11 7/11 9/11 1/12 2/12 4/12 5/12 7/12 8/12 10/12 11/12 1/14 3/14 5/14 6/14 7/14 8/14 9/14 10/14 11/14 13/14 2/15 3/15 4/15 6/15 7/15 9/15 12/15 13/15 10/16 12/16 12/17 13/17 5/18 7/18 12/18 13/19 1/20 3/20 9/20 11/20 12/20 14/20 16/20 17/20 4/21 8/21 9/21 14/21 15/21 19/22 5/23 10/23 15/24 18/24 8/25 10/25 15/25 23/25 19/26 8/27 15/27 21/27 5/28 15/28 16/28 21/28 23/28 5/29 12/29 6/30 9/30 11/30 13/30 14/30 18/30 19/30 21/30 9/32 15/32 24/32 5/33 15/33 10/34 4/35 5/35 14/35 18/35 21/35 22/35 26/35 26/38 2/39 11/39 17/39 26/39 16/40 21/40 23/41 34/41 18/42 28/42 30/42 35/42 41/42 21/43 28/44 7/45 8/45 14/45 15/45 18/45 27/45 29/45 31/45 35/45 17/46 41/46 18/48 36/48 15/49 21/49 28/49 35/49 15/50 17/50 39/50 28/51 34/51 26/52 38/52 33/55 34/55 32/56 45/56 38/57 5/58 36/60 45/60 48/60 28/63 34/63 49/63 35/64 39/65 52/65 57/66 51/68 8/70 33/70 42/70 44/70 5/72 45/72 54/72 55/72 30/75 45/75 52/76 33/77 55/77 52/78 18/81 46/82 12/84 14/84 36/84 55/84 70/84 34/85 68/85 55/88 56/88 12/90 40/90 54/90 58/90 62/90 82/92 65/96 42/98 56/98 70/98 44/99 45/105 60/105 36/108 60/108 66/110 70/110 77/111 64/112 84/112 15/120 69/123 91/124 108/126 99/132 95/133 30/135 105/135 84/140 45/150 102/153 119/153 66/154 26/156 130/156 115/161 99/165 119/165 63/168 112/168 126/168 133/171 15/174 30/174 100/175 66/176 110/176 95/228 85/238 138/246'.split(
+    ' ',
+  ),
+);
+/** Where a level draws its fraction n/d = (k × p)/(k × q), 1 ≤ p < q: k the number that divides both terms. */
+const FRAC_FROM = {
+  first: { k: [2, 2], q: [3, 5], low: 0 },
+  1: { k: [2, 5], q: [3, 9], low: 0 },
+  2: { k: [3, 12], q: [4, 15], low: 30 },
+};
+function fracPair(rand, level, { first = false } = {}) {
+  const R = FRAC_FROM[first ? 'first' : level];
+  for (let i = 0; i < 500; i += 1) {
+    const k = int(rand, R.k[0], R.k[1]);
+    const q = int(rand, R.q[0], R.q[1]);
+    const p = int(rand, 1, q - 1);
+    const [n, d] = [k * p, k * q];
+    if (d < R.low || gcdOf(p, q) !== 1 || FRAC_AVOID.has(`${n}/${d}`)) continue;
+    return { n, d, k, p, q };
+  }
+  return level === 2 ? { n: 56, d: 98, k: 14, p: 4, q: 7 } : { n: 14, d: 21, k: 7, p: 2, q: 3 };
+}
+const fracTex = (n, d) => `\\frac{${n}}{${d}}`;
+
+/** « n/d = p/▢ » or « n/d = ▢/q », written with two fraction bars: the student writes the missing term. */
+function fracWrite(rand, level, first) {
+  const { n, d, p, q } = fracPair(rand, level, { first: first && level === 1 });
+  const side = first || rand() < 0.5 ? 'bottom' : 'top';
+  const c = { op: 'frac', n, d, m: side === 'bottom' ? p : q, side };
+  const w = String(calcValue(c)).length;
+  return {
+    gesture: 'write',
+    calc: c,
+    prompt: 'Complète pour obtenir une fraction égale à la première.',
+    tokens: [
+      { frac: [String(n), String(d)] },
+      '=',
+      { frac: side === 'bottom' ? [String(p), S('v', 'Le dénominateur', w)] : [S('v', 'Le numérateur', w), String(q)] },
+    ],
+  };
+}
+
+/** Three equalities « n/d = x/y », each on its own fraction: divided, multiplied, a number subtracted, one term divided. */
+function fracSort(rand, level) {
+  const make = (kind, id) => {
+    const { n, d, k, p, q } = fracPair(rand, level);
+    const j = k === 2 ? 3 : 2;
+    const [x, y] =
+      kind === 'divide' ? [p, q] : kind === 'times' ? [p * j, q * j] : kind === 'subtract' ? [p, d - (n - p)] : [p, d];
+    const trap = kind === 'subtract' ? 'subtract-not-divide' : kind === 'one' ? 'one-term-only' : null;
+    return { id, text: `$${fracTex(n, d)} = ${fracTex(x, y)}$`, n, d, x, y, bin: n * y === d * x ? 'yes' : 'no', trap };
+  };
+  const kinds = shuffle(
+    rand,
+    pick(rand, [
+      ['divide', 'subtract', 'one'],
+      ['divide', 'times', 'subtract'],
+      ['one', 'divide', 'times'],
+      ['subtract', 'divide', 'one'],
+    ]),
+  );
+  const cards = [];
+  for (const kind of kinds) {
+    let c = make(kind, `c${cards.length + 1}`);
+    for (let i = 0; i < 30 && cards.some((o) => o.text === c.text || (o.n === c.n && o.d === c.d)); i += 1)
+      c = make(kind, c.id);
+    cards.push(c);
+  }
+  return {
+    gesture: 'sort',
+    prompt: 'Chaque égalité est-elle vraie ? Envoie-la dans sa boîte.',
+    bins: [
+      { id: 'yes', label: 'Égalité vraie' },
+      { id: 'no', label: 'Égalité qui change la fraction' },
+    ],
+    cards,
+  };
+}
+
+/** The worked example: a number that divides both terms, the two divisions, the equal fraction. Its first step answers the mistake shown. */
+function fracExample(rand, level, { mistake = null } = {}) {
+  const { n, d, k, p, q } = fracPair(rand, level === 2 ? 2 : 1);
+  let first;
+  if (mistake === 'subtract-not-divide')
+    first = `On retire ${n - p} au numérateur et au dénominateur : on obtient $${fracTex(p, d - (n - p))}$, qui n’est pas égale à $${fracTex(n, d)}$. On divise, on ne soustrait pas.`;
+  else if (mistake === 'one-term-only')
+    first = `On divise le numérateur seul : on obtient $${fracTex(p, d)}$, qui n’est pas égale à $${fracTex(n, d)}$. On divise le numérateur ET le dénominateur.`;
+  else first = 'On cherche un nombre qui divise le numérateur et le dénominateur.';
+  return {
+    title: `Une fraction égale à ${n} sur ${d}`,
+    steps: [
+      first,
+      `Le nombre ${k} divise ${n} et ${d} : $${n} = ${k} \\times ${p}$ et $${d} = ${k} \\times ${q}$.`,
+      `On divise le numérateur et le dénominateur par ${k} : $${fracTex(n, d)} = ${fracTex(`${n} \\div ${k}`, `${d} \\div ${k}`)} = ${fracTex(p, q)}$.`,
+      `Les fractions $${fracTex(n, d)}$ et $${fracTex(p, q)}$ sont égales.`,
+    ],
+  };
+}
+
+const EQUAL_FRACTIONS = {
+  item: '4e.m1.r07',
+  name: 'Les fractions égales',
+  icon: '🍰',
+  // no earlier lesson of the unit owns an instrument for it: the capsule skips its lab step
+  labTool: null,
+  mistakes: ['subtract-not-divide', 'one-term-only'],
+  forms: { 1: ['write', 'equal'], 2: ['sort', 'write'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'write' ? fracWrite(rand, level, first) : fracSort(rand, form === 'equal' ? 1 : 2),
+  example: fracExample,
+  rules: [
+    {
+      id: 'equal',
+      title: 'Deux fractions égales',
+      text: 'Si on divise le numérateur et le dénominateur d’une fraction par un même nombre, ou si on les multiplie par un même nombre, on obtient une fraction égale.',
+      example:
+        '$\\frac{9}{15} = \\frac{9 \\div 3}{15 \\div 3} = \\frac{3}{5}$ et $\\frac{3}{5} = \\frac{3 \\times 7}{5 \\times 7} = \\frac{21}{35}$.',
+      check: { a: 9, b: 3, q: 3, r: 0 },
+    },
+    {
+      id: 'divide',
+      title: 'On divise les deux termes',
+      text: 'Pour écrire une fraction avec des nombres plus petits, on divise son numérateur et son dénominateur par un nombre qui les divise tous les deux ; on ne leur retire pas un même nombre.',
+      example:
+        'Le nombre 4 divise 20 et 28 : $\\frac{20}{28} = \\frac{5}{7}$ ; mais si on retire 15 aux deux termes, on obtient $\\frac{5}{13}$, qui n’est pas égale.',
+      check: { a: 28, b: 4, q: 7, r: 0 },
+    },
+  ],
+  memo: [
+    'On divise le numérateur et le dénominateur d’une fraction par un même nombre, ou on les multiplie par un même nombre : on obtient une fraction égale.',
+    'Pour écrire une fraction avec des nombres plus petits, on divise ses deux termes par un nombre qui les divise tous les deux.',
+    'On ne retire pas un même nombre aux deux termes, et on ne divise pas un seul des deux.',
+    'Exemple : $\\frac{9}{15} = \\frac{3}{5}$, en divisant le numérateur et le dénominateur par 3.',
+  ],
+};
+
+// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Six
 // families today: `4e.m1.r06`, the one tool the net gives the first 3e lesson; `3e.m1.r05` and `4e.m1.r08`, the two
 // tools of the second (the PGCD lesson); `4e.m2.r09` and `4e.m4.r04`, the two core tools of the butterfly lesson of the
-// Thalès unit (a figure enlarged or reduced; a parallel in a triangle). The Algerian families (their question generators, rules and memos) are in
+// Thalès unit (a figure enlarged or reduced; a parallel in a triangle); `4e.m1.r07`, the equal fractions the third lesson of the unit stands on. The Algerian families (their question generators, rules and memos) are in
 // git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French family PORTS what fits and is keyed
 // by a French item.
 export const FAMILIES = {
@@ -1250,6 +1396,7 @@ export const FAMILIES = {
   '4e.m1.r08': DIVISOR_LISTS,
   '4e.m4.r04': PARALLEL_IN_TRIANGLE,
   '4e.m2.r09': FIGURE_RATIO,
+  '4e.m1.r07': EQUAL_FRACTIONS,
 };
 
 export const familyFor = (item) => FAMILIES[item] ?? null;

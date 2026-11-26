@@ -1,0 +1,135 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-007",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Quel outil pour deux feux ?",
+    "estimatedMinutes": 3,
+    "tags": [
+      "feux",
+      "outil"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Un feu s’allume toutes les $6$ s, un autre toutes les $14$ s. Ils sont allumés ensemble à l’instant $0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Pour trouver quand ils s’allument de nouveau ensemble, que cherche-t-on ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un diviseur commun de $6$ et de $14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un multiple commun de $6$ et de $14$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Le produit $6$ × $14$, toujours",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PRODUIT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les instants d’allumage du premier feu sont des multiples de quel nombre ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Et ceux du second ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Les instants d’un feu sont ses multiples : un instant commun est un multiple commun.",
+        "incorrect": "Les instants d’allumage sont des multiples : lequel de ces outils fait apparaître des multiples ?"
+      },
+      "solution": {
+        "lines": [
+          "Le premier feu s’allume aux multiples de $6$, le second aux multiples de $14$.",
+          "Un instant où les deux s’allument est un multiple commun de $6$ et de $14$."
+        ],
+        "result": "Un multiple commun de 6 et de 14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Au bout de combien de secondes s’allument-ils ensemble pour la première fois après l’instant $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "42",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Multiples de $14$ : $14$, $28$, $42$…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Quel est le premier qui est aussi un multiple de $6$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$42$ = $6$ × $7$ = $14$ × $3$.",
+        "incorrect": "Teste les multiples de $14$ un à un : est-il dans la table de $6$ ?"
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $14$ : $14$, $28$, $42$.",
+          "$14$ et $28$ ne sont pas dans la table de $6$ ; $42$ = $6$ × $7$.",
+          "Au bout de $42$ s."
+        ],
+        "result": "42"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "84"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-001",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux camions devant le portail",
+    "estimatedMinutes": 4,
+    "tags": [
+      "multiples communs",
+      "camions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Un camion rouge passe devant un portail toutes les $8$ min, un camion bleu toutes les $14$ min. Ils sont passés ensemble à midi."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Dans combien de minutes passeront-ils de nouveau ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "56",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les premiers multiples de chaque nombre, en deux listes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier nombre qui figure dans les deux listes (autre que $0$)."
+        }
+      ],
+      "feedback": {
+        "correct": "Multiples de $8$ : … $56$. Multiples de $14$ : $14$, $28$, $42$, $56$.",
+        "incorrect": "Écris les multiples de $14$, puis cherche le premier qui est dans la table de $8$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $14$ : $14$, $28$, $42$, $56$.",
+          "$14$, $28$ et $42$ ne sont pas des multiples de $8$ ; $56$ = $8$ × $7$.",
+          "Au bout de $56$ min."
+        ],
+        "result": "56"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "112"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le produit $8$ × $14$ = $112$ est-il le plus petit multiple commun non nul de $8$ et de $14$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PRODUIT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare $112$ avec ta réponse précédente."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$56$ est-il un multiple commun ? Est-il plus petit ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$56$ < $112$ et $56$ est un multiple commun.",
+        "incorrect": "Un multiple commun plus petit existe."
+      },
+      "solution": {
+        "lines": [
+          "$56$ est un multiple commun de $8$ et de $14$.",
+          "$56$ < $112$ : le produit n’est pas le plus petit."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

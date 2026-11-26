@@ -1,0 +1,272 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-007",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux problèmes, deux outils",
+    "estimatedMinutes": 9,
+    "tags": [
+      "outil",
+      "PGCD",
+      "coureurs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Deux problèmes indépendants. Problème 1 : deux coureurs partent ensemble de la ligne de départ d’une piste ; l’un boucle un tour en $88$ s, l’autre en $110$ s. Problème 2 : pour un goûter, on dispose de $150$ mini-pizzas et de $225$ sandwichs à répartir sur des plateaux identiques, en utilisant tout, avec le plus de plateaux possible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Problème 1 : que cherche-t-on pour savoir quand les coureurs se retrouvent sur la ligne de départ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un diviseur commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un multiple commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut un instant qui soit dans les deux rythmes : on cherche un multiple commun, le plus petit non nul.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché est un multiple de chaque période : un multiple commun, le plus petit non nul."
+        ],
+        "result": "Un multiple commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Au bout de combien de secondes se retrouvent-ils sur la ligne de départ pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "440",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$88$ = $2^{3} \\times 11$ et $110$ = $2 \\times 5 \\times 11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3} \\times 5 \\times 11 = 440$.",
+        "incorrect": "Plus petit multiple commun non nul de $88$ et de $110$."
+      },
+      "solution": {
+        "lines": [
+          "$88$ = $2^{3} \\times 11$ et $110$ = $2 \\times 5 \\times 11$.",
+          "Plus petit multiple commun : $2^{3} \\times 5 \\times 11 = 440$."
+        ],
+        "result": "440"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "9680"
+        },
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "22"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de minutes entières cela représente-t-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "7",
+      "answerFormat": "Un nombre de minutes entières",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1$ minute = $60$ secondes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$440$ ÷ $60$."
+        }
+      ],
+      "feedback": {
+        "correct": "$440$ = $7$ × $60$ + $20$ : $7$ minutes entières.",
+        "incorrect": "Divise $440$ par $60$ et garde le quotient entier."
+      },
+      "solution": {
+        "lines": [
+          "$440$ = $7$ × $60$ + $20$."
+        ],
+        "result": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "440"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Problème 2 : que cherche-t-on pour trouver le nombre de plateaux ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "Combien de plateaux au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "75",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$150$ = $2 \\times 3 \\times 5^{2}$ et $225$ = $3^{2} \\times 5^{2}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Nombres premiers communs, plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 5^{2} = 75$.",
+        "incorrect": "Plus grand diviseur commun de $150$ et de $225$."
+      },
+      "solution": {
+        "lines": [
+          "$150$ = $2 \\times 3 \\times 5^{2}$ et $225$ = $3^{2} \\times 5^{2}$.",
+          "PGCD : $3 \\times 5^{2} = 75$."
+        ],
+        "result": "75"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "450"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

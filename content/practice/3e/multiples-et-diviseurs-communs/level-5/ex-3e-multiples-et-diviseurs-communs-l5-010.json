@@ -1,0 +1,261 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-010",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La fête de l’école",
+    "estimatedMinutes": 9,
+    "tags": [
+      "outil",
+      "PGCD",
+      "prix",
+      "horaires"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour la fête de l’école, des parents préparent des plateaux identiques avec $110$ cakes et $165$ gaufres, en utilisant tout et en faisant le plus de plateaux possible. Chaque plateau est vendu $7$ €. Par ailleurs, le manège s’arrête toutes les $24$ min et la tombola tire un numéro toutes les $30$ min ; les deux commencent ensemble à $14$ h."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le nombre de plateaux ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de plateaux peut-on préparer au plus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "55",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$110$ = $2 \\times 5 \\times 11$ et $165$ = $3 \\times 5 \\times 11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Nombres premiers communs, plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 11 = 55$.",
+        "incorrect": "Plus grand diviseur commun de $110$ et de $165$."
+      },
+      "solution": {
+        "lines": [
+          "$110$ = $2 \\times 5 \\times 11$ et $165$ = $3 \\times 5 \\times 11$.",
+          "PGCD : $5 \\times 11 = 55$."
+        ],
+        "result": "55"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "330"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle somme, en euros, rapporte la vente de tous les plateaux ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "385",
+      "answerFormat": "Un nombre entier d’euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Nombre de plateaux × prix d’un plateau."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$55$ × $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$55$ × $7$ = $385$.",
+        "incorrect": "Multiplie le nombre de plateaux par le prix d’un plateau."
+      },
+      "solution": {
+        "lines": [
+          "$55$ × $7$ = $385$.",
+          "La vente rapporte $385$ €."
+        ],
+        "result": "385"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Au bout de combien de minutes le manège s’arrête-t-il en même temps que la tombola tire un numéro, pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "120",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$24$ = $2^{3} \\times 3$ et $30$ = $2 \\times 3 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3} \\times 3 \\times 5 = 120$.",
+        "incorrect": "Plus petit multiple commun non nul de $24$ et de $30$."
+      },
+      "solution": {
+        "lines": [
+          "$24$ = $2^{3} \\times 3$ et $30$ = $2 \\times 3 \\times 5$.",
+          "Plus petit multiple commun : $2^{3} \\times 3 \\times 5 = 120$."
+        ],
+        "result": "120"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "6"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "La fête dure de $14$ h à $18$ h. Combien de fois le manège s’arrête-t-il en même temps que la tombola tire un numéro après $14$ h ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$4$ h = $240$ min."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de multiples non nuls de $120$ jusqu’à $240$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "À $120$ min et $240$ min : $2$ fois.",
+        "incorrect": "Convertis la durée en minutes puis compte les multiples non nuls de $120$."
+      },
+      "solution": {
+        "lines": [
+          "De $14$ h à $18$ h : $4$ h = $240$ min.",
+          "Multiples non nuls de $120$ jusqu’à $240$ : $120$ et $240$.",
+          "$2$ fois."
+        ],
+        "result": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "120"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

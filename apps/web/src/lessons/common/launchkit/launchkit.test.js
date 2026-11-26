@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { FAMILIES, MISTAKES, familyFor, complete, grade, slotsOf, makeQuestion, pickForm } from './families';
 import { toolsForLesson, getItem } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { toolById, toolsFor } from '../lessonlab/registry';
@@ -32,8 +32,15 @@ import {
 } from './engine';
 
 describe('L’échauffement — the families and how an answer is graded', () => {
-  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second), `4e.m4.r04` and `4e.m2.r09` (the butterfly)', () => {
-    expect(Object.keys(FAMILIES)).toEqual(['4e.m1.r06', '3e.m1.r05', '4e.m1.r08', '4e.m4.r04', '4e.m2.r09']);
+  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second), `4e.m4.r04` and `4e.m2.r09` (the butterfly), `4e.m1.r07` (the equal fractions)', () => {
+    expect(Object.keys(FAMILIES)).toEqual([
+      '4e.m1.r06',
+      '3e.m1.r05',
+      '4e.m1.r08',
+      '4e.m4.r04',
+      '4e.m2.r09',
+      '4e.m1.r07',
+    ]);
     expect(familyFor('6e.t1.r01')).toBeNull();
   });
 
@@ -992,5 +999,163 @@ describe('L’échauffement — « Une parallèle dans un triangle » (4e.m4.r04
         );
       }
     });
+  });
+});
+
+describe('L’échauffement — « Les fractions égales » (4e.m1.r07), the tool of « Rendre une fraction irréductible »', () => {
+  const ITEM = '4e.m1.r07';
+  const F = FAMILIES[ITEM];
+  const rng = (seed) => {
+    let s = seed;
+    return () => {
+      s = (s * 16807) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  };
+  /** « \frac{a}{b} = \frac{c}{d} » → [a, b, c, d], read from the written card (never from the generator's fields). */
+  const readEq = (text) => text.match(/\d+/g).map(Number);
+  /** The fractions n/d (n < d, d ≤ 180) the lesson writes: its bank, its class test, its board and its memo, read from disk. */
+  const LESSON_DIR = '../../college/3e/nombres_calculs/multiples-et-diviseurs/fraction-irreductible';
+  const written = (() => {
+    const out = new Set();
+    const scan = (t) => {
+      for (const m of t
+        .replace(/\\\\,|\u202f|\u00a0/g, '')
+        .matchAll(/\\\\[dt]?frac\{\s*(\d+)\s*\}\{\s*(\d+)\s*\}|(?<![0-9])(\d+)\s*\/\s*(\d+)(?![0-9])/g)) {
+        const [n, d] = [Number(m[1] ?? m[3]), Number(m[2] ?? m[4])];
+        if (n < d && d <= 180) out.add(`${n}/${d}`);
+      }
+    };
+    const bank = new URL('../../../../../../content/practice/3e/fraction-irreductible/', import.meta.url);
+    for (const level of readdirSync(bank))
+      for (const f of readdirSync(new URL(`${level}/`, bank)))
+        scan(readFileSync(new URL(`${level}/${f}`, bank), 'utf8'));
+    scan(
+      readFileSync(
+        new URL('../../../../../../content/class-tests/3e/fraction-irreductible.json', import.meta.url),
+        'utf8',
+      ),
+    );
+    for (const f of ['script.js', 'memo.js'])
+      scan(readFileSync(new URL(`${LESSON_DIR}/board/${f}`, import.meta.url), 'utf8'));
+    return out;
+  })();
+  /** The answer, computed apart: a write is the missing term, a sort sends each equality where a cross product says. */
+  const right = (q) => {
+    if (q.gesture === 'sort')
+      return Object.fromEntries(
+        q.cards.map((c) => {
+          const [n, d, x, y] = readEq(c.text);
+          return [c.id, n * y === d * x ? 'yes' : 'no'];
+        }),
+      );
+    const [n, d, m] = [q.calc.n, q.calc.d, q.calc.m];
+    return { v: String(q.calc.side === 'bottom' ? (d * m) / n : (n * m) / d) };
+  };
+  const each = (fn) => {
+    for (const level of [1, 2])
+      for (const form of F.forms[level])
+        for (let seed = 1; seed <= 150; seed += 1)
+          fn(level, form, makeQuestion(rng(seed * 7 + level), ITEM, level, form, { first: seed % 5 === 0 }), seed);
+  };
+  // the words of the lesson's keys: a warm-up is played BEFORE the lesson
+  const KEY_WORDS = /irréductible|simplifi|pgcd|commun|facteur|plus grand|barr|une seule étape/;
+
+  it('is the second core tool the learning net gives the lesson, after the decomposition, with its rules and memo', () => {
+    const tools = planTools(toolsForLesson('fraction-irreductible'), (id) => Boolean(familyFor(id)));
+    expect(tools.map((t) => [t.item, t.weight])).toEqual([
+      ['3e.m1.r05', 'core'],
+      ['4e.m1.r07', 'core'],
+    ]);
+    expect(getItem(ITEM)).toBeTruthy();
+    expect(F.item).toBe(ITEM);
+    expect(F.memo.length).toBeGreaterThanOrEqual(3);
+    expect(F.memo.length).toBeLessThanOrEqual(4);
+    expect(F.forms[1][0]).toBe('write'); // the first question of a launch is an easy one to write
+    expect(F.forms[2][0]).toBe('sort');
+    expect(F.labTool).toBeNull(); // no instrument of an earlier lesson of the unit
+    for (const m of F.mistakes) expect(MISTAKES[m], m).toBeTruthy();
+  });
+
+  it('every generated question is true: the answer computed apart is graded right and can be handed in', () => {
+    each((level, form, q) => {
+      const a = right(q);
+      expect(complete(q, a), `${form}`).toBe(true);
+      expect(grade(q, a), `L${level} ${form}: ${JSON.stringify(q).slice(0, 200)}`).toEqual({
+        correct: true,
+        mistake: null,
+      });
+      if (q.gesture === 'sort') {
+        expect(q.cards).toHaveLength(3);
+        expect(new Set(q.cards.map((c) => c.text)).size).toBe(3);
+        expect(q.cards.some((c) => c.bin === 'yes') && q.cards.some((c) => c.bin === 'no')).toBe(true);
+        for (const c of q.cards) {
+          expect(c.bin, c.text).toBe(right(q)[c.id]);
+          if (c.trap) {
+            expect(MISTAKES[c.trap], c.trap).toBeTruthy();
+            expect(grade(q, { ...a, [c.id]: 'yes' }).mistake, c.text).toBeTruthy();
+          }
+        }
+      }
+    });
+  });
+
+  it('names the two slips, and the very first question of a launch is a near-certain win with a small denominator', () => {
+    const q = makeQuestion(rng(3), ITEM, 1, 'write', { first: true });
+    const v = Number(right(q).v);
+    const given = q.calc.side === 'bottom' ? q.calc.d : q.calc.n;
+    const other = q.calc.side === 'bottom' ? q.calc.n : q.calc.d;
+    expect(grade(q, { v: String(given - (other - q.calc.m)) }).mistake).toBe('subtract-not-divide');
+    expect(grade(q, { v: String(given) }).mistake).toBe('one-term-only');
+    expect(v).toBeLessThan(given);
+    expect(q.calc.d).toBeLessThanOrEqual(10);
+  });
+
+  it('its fractions are none the lesson writes (bank, class test, board, memo), and its examples are true', () => {
+    expect(written.size).toBeGreaterThan(100);
+    each((level, form, q) => {
+      if (q.gesture === 'sort')
+        for (const c of q.cards) expect(written.has(`${readEq(c.text)[0]}/${readEq(c.text)[1]}`), c.text).toBe(false);
+      else expect(written.has(`${q.calc.n}/${q.calc.d}`), `${q.calc.n}/${q.calc.d}`).toBe(false);
+    });
+    for (let seed = 1; seed <= 60; seed += 1)
+      for (const level of [1, 2])
+        for (const mistake of [null, ...F.mistakes]) {
+          const e = F.example(rng(seed), level, { mistake });
+          const [k, n, d, n2, k2, p, d2, k3, q] = e.steps[1].match(/\d+/g).map(Number);
+          expect([n2, d2, k2, k3]).toEqual([n, d, k, k]);
+          expect(k * p).toBe(n);
+          expect(k * q).toBe(d);
+          expect(e.steps.at(-1)).toContain(`\\frac{${p}}{${q}}`);
+        }
+    const [equal, divide] = F.rules;
+    expect(equal.check.b * equal.check.q + equal.check.r).toBe(equal.check.a);
+    expect(divide.check.b * divide.check.q + divide.check.r).toBe(divide.check.a);
+    expect(9 / 3).toBe(3);
+    expect(15 / 3).toBe(5);
+    expect((3 * 7) / (5 * 7)).toBe(3 / 5);
+    expect(20 / 4 / (28 / 4)).toBe(5 / 7);
+    expect(20 - 15).toBe(5);
+    expect(28 - 15).toBe(13);
+  });
+
+  it('writes French, and no word of the lesson’s keys (it is played BEFORE the lesson)', () => {
+    const texts = [...stringsIn({ rules: F.rules, memo: F.memo, name: F.name }), ...F.mistakes.map((m) => MISTAKES[m])];
+    for (let seed = 1; seed <= 40; seed += 1)
+      for (const level of [1, 2]) {
+        for (const form of F.forms[level]) {
+          const q = makeQuestion(rng(seed), ITEM, level, form);
+          texts.push(q.prompt, ...(q.bins ?? []).map((b) => b.label));
+        }
+        for (const mistake of [null, ...F.mistakes]) {
+          const e = F.example(rng(seed), level, { mistake });
+          texts.push(e.title, ...e.steps);
+        }
+      }
+    for (const t of texts) {
+      expect(typographyErrors(t), t).toEqual([]);
+      expect(agreementErrors(t), t).toEqual([]);
+      expect(t.toLowerCase(), t).not.toMatch(KEY_WORDS);
+    }
   });
 });

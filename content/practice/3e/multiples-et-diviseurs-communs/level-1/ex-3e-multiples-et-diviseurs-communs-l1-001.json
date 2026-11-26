@@ -1,0 +1,168 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-001",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les multiples de 6 et de 8",
+    "estimatedMinutes": 3,
+    "tags": [
+      "multiples communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "On écrit les multiples non nuls de $6$ et de $8$, jusqu’à $48$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris les multiples non nuls de $6$ inférieurs ou égaux à $48$.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        6,
+        12,
+        18,
+        24,
+        30,
+        36,
+        42,
+        48
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte de $6$ en $6$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand tu dépasses $48$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les multiples de $6$ jusqu’à $48$ sont $6$, $12$, $18$, $24$, $30$, $36$, $42$ et $48$.",
+        "incorrect": "Compte de $6$ en $6$ sans en sauter ni en ajouter : $6$, $12$, $18$…"
+      },
+      "solution": {
+        "lines": [
+          "On ajoute $6$ à chaque fois : $6$, $12$, $18$, $24$, $30$, $36$, $42$, $48$."
+        ],
+        "result": "6 ; 12 ; 18 ; 24 ; 30 ; 36 ; 42 ; 48"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris les multiples non nuls de $8$ inférieurs ou égaux à $48$.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        8,
+        16,
+        24,
+        32,
+        40,
+        48
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte de $8$ en $8$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Arrête-toi quand tu dépasses $48$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les multiples de $8$ jusqu’à $48$ sont $8$, $16$, $24$, $32$, $40$ et $48$.",
+        "incorrect": "Compte de $8$ en $8$ : $8$, $16$, $24$…"
+      },
+      "solution": {
+        "lines": [
+          "On ajoute $8$ à chaque fois : $8$, $16$, $24$, $32$, $40$, $48$."
+        ],
+        "result": "8 ; 16 ; 24 ; 32 ; 40 ; 48"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quel est le plus petit multiple commun non nul de $6$ et de $8$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "24",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les premiers multiples de chaque nombre, en deux listes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier nombre qui figure dans les deux listes (autre que $0$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$24$ est le premier nombre non nul présent dans les deux listes.",
+        "incorrect": "Repère le premier nombre non nul écrit dans les deux listes."
+      },
+      "solution": {
+        "lines": [
+          "Les nombres présents dans les deux listes : $24$ et $48$.",
+          "Le plus petit, non nul : $24$."
+        ],
+        "result": "24"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "48"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

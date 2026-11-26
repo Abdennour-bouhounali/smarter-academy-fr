@@ -1,0 +1,138 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-010",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les multiples communs de 6 et de 7",
+    "estimatedMinutes": 4,
+    "tags": [
+      "multiples communs",
+      "zéro"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "On cherche les multiples communs de $6$ et de $7$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris les multiples non nuls communs à $6$ et à $7$ inférieurs ou égaux à $100$.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        42,
+        84
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les multiples de $7$ jusqu’à $100$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde ceux qui sont dans la table de $6$."
+        }
+      ],
+      "feedback": {
+        "correct": "$42$ = $6$ × $7$ et $84$ = $6$ × $14$.",
+        "incorrect": "Teste les multiples de $7$ un à un dans la table de $6$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $7$ : $7$, $14$, … , $42$, … , $84$, … , $98$.",
+          "Dans la table de $6$ : $42$ et $84$."
+        ],
+        "result": "42 ; 84"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel multiple commun retient-on pour savoir quand deux rythmes de $6$ et de $7$ se retrouvent pour la première fois après le départ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-ZERO"
+        },
+        {
+          "id": "B",
+          "content": "$13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "C",
+          "content": "$42$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$84$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PAS-LE-PLUS-PETIT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le départ est à l’instant $0$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On veut le premier instant APRÈS le départ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0$ est le départ ; le premier instant après est $42$.",
+        "incorrect": "$0$ est un multiple commun, mais c’est le départ : cherche le plus petit multiple commun non nul."
+      },
+      "solution": {
+        "lines": [
+          "$0$ est le départ, pas une rencontre.",
+          "$84$ est une rencontre, mais pas la première.",
+          "La première rencontre : $42$."
+        ],
+        "result": "42"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

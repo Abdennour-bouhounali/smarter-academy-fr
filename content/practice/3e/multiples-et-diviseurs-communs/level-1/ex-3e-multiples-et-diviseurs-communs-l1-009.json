@@ -1,0 +1,123 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-009",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Avec les décompositions de 6 et de 10",
+    "estimatedMinutes": 3,
+    "tags": [
+      "décompositions",
+      "multiples communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On donne $A = 2 \\times 3$ et $B = 2 \\times 5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $A$ et de $B$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2*3*5",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un multiple de $A$ contient $2$ et $3$ ; un multiple de $B$ contient $2$ et $5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde chaque facteur premier une fois s’il est dans l’un ou l’autre."
+        }
+      ],
+      "feedback": {
+        "correct": "On garde $2$, $3$ et $5$ : $2 \\times 3 \\times 5$.",
+        "incorrect": "Le nombre doit contenir tous les facteurs de $A$ ET tous ceux de $B$, sans doubler inutilement le $2$.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "$A$ contient $2$ et $3$ ; $B$ contient $2$ et $5$.",
+          "Le plus petit nombre qui contient tout cela : $2 \\times 3 \\times 5$."
+        ],
+        "result": "2 \\times 3 \\times 5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2^2*3*5"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule ce nombre.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue $2 \\times 3 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2 \\times 3 = 6$, puis multiplie par $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 \\times 5 = 30$.",
+        "incorrect": "Effectue le produit étape par étape."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3 \\times 5 = 30$."
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

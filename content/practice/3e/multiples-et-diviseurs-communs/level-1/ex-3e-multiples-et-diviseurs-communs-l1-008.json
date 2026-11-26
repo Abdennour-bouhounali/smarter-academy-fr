@@ -1,0 +1,128 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-008",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Quand un nombre divise l’autre",
+    "estimatedMinutes": 3,
+    "tags": [
+      "cars",
+      "multiples communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Un car part de la gare toutes les $5$ min, un autre toutes les $15$ min. Ils partent ensemble à $0$ min."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de minutes partent-ils de nouveau ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les départs du second car : $15$, $30$…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le premier car part-il à l’instant $15$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$15$ est un multiple de $5$ : à $15$ min, les deux cars partent.",
+        "incorrect": "Teste le premier départ du second car : est-ce aussi un départ du premier ?"
+      },
+      "solution": {
+        "lines": [
+          "Départs du premier car : $5$, $10$, $15$…",
+          "Premier départ du second car : $15$ min, déjà un départ du premier."
+        ],
+        "result": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "75"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le produit $5$ × $15$ = $75$ est-il le plus petit multiple commun non nul de $5$ et de $15$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PRODUIT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare $75$ avec le résultat de la question précédente."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un multiple commun plus petit existe-t-il ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$15$ est un multiple commun plus petit que $75$.",
+        "incorrect": "Un multiple commun plus petit existe : celui que tu viens de trouver."
+      },
+      "solution": {
+        "lines": [
+          "$15$ est un multiple de $5$ et de $15$.",
+          "$15$ < $75$ : le produit n’est pas le plus petit."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

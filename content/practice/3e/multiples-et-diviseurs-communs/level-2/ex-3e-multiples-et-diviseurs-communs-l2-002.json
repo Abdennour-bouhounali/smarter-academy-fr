@@ -1,0 +1,141 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-002",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un plus petit multiple commun en facteurs premiers",
+    "estimatedMinutes": 4,
+    "tags": [
+      "décompositions",
+      "exposants"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "On donne $A = 2^{2} \\times 3^{2} \\times 7$ et $B = 2 \\times 3^{3} \\times 5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $A$ et de $B$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "2^2*3^3*5*7",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Fais la liste de tous les nombres premiers qui apparaissent dans $A$ ou dans $B$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Pour chacun, garde le plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{2}$, $3^{3}$, $5$ et $7$ : on garde chaque nombre premier avec son plus grand exposant.",
+        "incorrect": "Prends TOUS les nombres premiers de $A$ et de $B$, chacun avec son plus grand exposant.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Nombres premiers présents : $2$, $3$, $5$, $7$.",
+          "Plus grands exposants : $2^{2}$, $3^{3}$, $5^{1}$, $7^{1}$.",
+          "Le nombre : $2^{2} \\times 3^{3} \\times 5 \\times 7$."
+        ],
+        "result": "2^$2$ \\times 3^$3$ \\times 5 \\times 7"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "2*3^2"
+        },
+        {
+          "id": "MISC-PPCM-FACTEURS-COMMUNS-SEULS",
+          "value": "2^2*3^3"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "2^3*3^5*5*7"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le nombre premier $7$ n’apparaît que dans $A$. Doit-il figurer dans le plus petit multiple commun ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Non, il n’est pas commun aux deux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-FACTEURS-COMMUNS-SEULS"
+        },
+        {
+          "id": "B",
+          "content": "Oui, un multiple de $A$ est un multiple de $7$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un multiple de $A$ doit être divisible par $A$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$A$ est-il divisible par $7$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Un multiple de $A$ contient tous les facteurs de $A$, donc le $7$.",
+        "incorrect": "Pour être un multiple de $A$, le nombre doit contenir tous les facteurs premiers de $A$."
+      },
+      "solution": {
+        "lines": [
+          "$A$ contient $7$ : tout multiple de $A$ aussi.",
+          "Le $7$ doit donc figurer dans le plus petit multiple commun."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

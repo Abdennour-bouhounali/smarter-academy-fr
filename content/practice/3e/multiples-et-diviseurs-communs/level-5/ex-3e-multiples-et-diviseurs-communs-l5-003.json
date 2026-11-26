@@ -1,0 +1,222 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-003",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Trois équipes qui se reposent",
+    "estimatedMinutes": 8,
+    "tags": [
+      "cycles",
+      "jours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Trois équipes travaillent un jour, puis se reposent : l’équipe A $8$ jours, l’équipe B $9$ jours, l’équipe C $14$ jours, et ainsi de suite. Les trois équipes travaillent le jour $1$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de jours dure un cycle de l’équipe B, jour de travail compris ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre de jours",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un cycle = jour de travail + jours de repos."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1$ + $9$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1$ + $9$ = $10$.",
+        "incorrect": "Le cycle comprend le jour de travail ET les jours de repos."
+      },
+      "solution": {
+        "lines": [
+          "$1$ + $9$ = $10$."
+        ],
+        "result": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-JOURS-DE-SOMMEIL",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Au bout de combien de jours le motif des trois équipes recommence-t-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre de jours",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les cycles sont $9$, $10$ et $15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$9$ = $3^{2}$, $10$ = $2 \\times 5$, $15$ = $3 \\times 5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} \\times 5 = 90$.",
+        "incorrect": "Plus petit multiple commun non nul des trois cycles."
+      },
+      "solution": {
+        "lines": [
+          "Cycles : $9$, $10$ et $15$ jours.",
+          "Plus petit multiple commun : $2 \\times 3^{2} \\times 5 = 90$."
+        ],
+        "result": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "1350"
+        },
+        {
+          "id": "MISC-PPCM-JOURS-DE-SOMMEIL",
+          "value": "31"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quel est le premier jour après le jour $1$ où les trois équipes travaillent ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "91",
+      "answerFormat": "Un numéro de jour",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ajoute au jour $1$ le nombre de jours trouvé."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1$ + $90$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1$ + $90$ = $91$.",
+        "incorrect": "Le jour $1$ est le départ : ajoute la durée du motif."
+      },
+      "solution": {
+        "lines": [
+          "Jour $1$ + $90$ = jour $91$."
+        ],
+        "result": "91"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-DECALAGE-JOUR",
+          "value": "90"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "1351"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quel est le premier jour après le jour $1$ où seules les équipes A et C travaillent ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "46",
+      "answerFormat": "Un numéro de jour",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les cycles de A et de C sont $9$ et $15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Plus petit multiple commun de $9$ et de $15$, puis ajoute-le au jour $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "Plus petit multiple commun de $9$ et de $15$ : $45$, donc jour $46$.",
+        "incorrect": "Plus petit multiple commun de $9$ et de $15$, puis ajoute-le au jour $1$."
+      },
+      "solution": {
+        "lines": [
+          "$9$ = $3^{2}$ et $15$ = $3 \\times 5$ : plus petit multiple commun $3^{2} \\times 5 = 45$.",
+          "Jour $1$ + $45$ = jour $46$."
+        ],
+        "result": "46"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-DECALAGE-JOUR",
+          "value": "45"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "136"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

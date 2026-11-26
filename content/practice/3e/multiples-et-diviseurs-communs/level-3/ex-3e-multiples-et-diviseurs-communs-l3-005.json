@@ -1,0 +1,172 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-005",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux bénévoles, un cycle",
+    "estimatedMinutes": 5,
+    "tags": [
+      "cycles",
+      "jours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Inès travaille un jour, puis se repose $7$ jours, puis retravaille un jour, et ainsi de suite. Hugo travaille un jour, puis se repose $9$ jours, et ainsi de suite. Tous deux travaillent le jour $1$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel est le prochain jour où Inès travaille ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un numéro de jour",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Après le jour $1$, elle se repose pendant les jours $2$ à …"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compte les jours de repos, puis le jour de travail."
+        }
+      ],
+      "feedback": {
+        "correct": "Repos les jours $2$ à $8$ : elle retravaille le jour $9$.",
+        "incorrect": "Écris les jours un par un : travail, puis $7$ jours de repos, puis le jour de travail."
+      },
+      "solution": {
+        "lines": [
+          "Jour $1$ : travail. Jours $2$ à $8$ : repos ($7$ jours).",
+          "Jour $9$ : travail."
+        ],
+        "result": "9"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-JOURS-DE-SOMMEIL",
+          "value": "8"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de jours se passent entre deux jours de travail d’Hugo ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte le jour de travail et les jours de repos."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1$ + $9$."
+        }
+      ],
+      "feedback": {
+        "correct": "Un cycle dure $1$ + $9$ = $10$ jours.",
+        "incorrect": "Le cycle comprend le jour de travail ET les jours de repos."
+      },
+      "solution": {
+        "lines": [
+          "Un cycle : $1$ jour de travail et $9$ jours de repos.",
+          "Il dure $10$ jours."
+        ],
+        "result": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-JOURS-DE-SOMMEIL",
+          "value": "9"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quel est le premier jour après le jour $1$ où Inès et Hugo travaillent tous les deux ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "41",
+      "answerFormat": "Un numéro de jour",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Inès travaille aux jours $1$, $9$, $17$… ; Hugo aux jours $1$, $11$, $21$…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Les écarts sont des multiples de leurs cycles ($8$ et $10$)."
+        }
+      ],
+      "feedback": {
+        "correct": "Les cycles sont $8$ et $10$ : plus petit multiple commun $40$, donc jour $1$ + $40$ = $41$.",
+        "incorrect": "Cherche le plus petit multiple commun des deux cycles, puis ajoute-le au jour $1$."
+      },
+      "solution": {
+        "lines": [
+          "Cycle d’Inès : $8$ jours ; cycle d’Hugo : $10$ jours.",
+          "Le plus petit multiple commun non nul de $8$ et $10$ est $40$.",
+          "Ils travaillent ensemble le jour $1$ + $40$ = $41$."
+        ],
+        "result": "41"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-DECALAGE-JOUR",
+          "value": "40"
+        },
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "81"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

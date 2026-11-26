@@ -1,0 +1,120 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-004",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux bus à l’arrêt",
+    "estimatedMinutes": 3,
+    "tags": [
+      "bus",
+      "rendez-vous"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Deux bus quittent ensemble l’arrêt de la mairie. Le bus A y repasse toutes les $6$ min, le bus B toutes les $8$ min."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Dans combien de minutes seront-ils de nouveau ensemble à l’arrêt ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "24",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les passages du bus A, puis ceux du bus B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier passage commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Ils se retrouvent au bout de $24$ min.",
+        "incorrect": "Écris les instants de passage de chaque bus et cherche le premier instant commun."
+      },
+      "solution": {
+        "lines": [
+          "Bus A : $6$, $12$, $18$, $24$…",
+          "Bus B : $8$, $16$, $24$…",
+          "Premier instant commun : $24$ min."
+        ],
+        "result": "24"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "48"
+        },
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "2"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de fois le bus A s’est-il arrêté pendant ces $24$ min, en comptant le dernier passage commun ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le bus A passe toutes les $6$ min."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $24$ par $6$."
+        }
+      ],
+      "feedback": {
+        "correct": "$24$ ÷ $6$ = $4$ : le bus A s’est arrêté $4$ fois.",
+        "incorrect": "Combien de fois $6$ « rentre » dans $24$ ?"
+      },
+      "solution": {
+        "lines": [
+          "$24$ ÷ $6$ = $4$."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-007",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux roues dentées",
+    "estimatedMinutes": 4,
+    "tags": [
+      "engrenages",
+      "tours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Deux roues dentées s’engrènent : l’une a $6$ dents, l’autre $10$. On colle un repère sur une dent de chaque roue ; au départ, les deux repères sont face à face."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Combien de dents ont défilé quand les deux repères sont de nouveau face à face pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre de dents",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le nombre de dents qui ont défilé est un multiple de $6$ ET de $10$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "On cherche le plus petit multiple commun non nul."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ est le plus petit multiple commun non nul de $6$ et de $10$.",
+        "incorrect": "Le nombre de dents défilées est un multiple de chacun des deux nombres de dents : cherche le plus petit."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $10$ : $10$, $20$, $30$.",
+          "$30$ = $6$ × $5$."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "60"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de tours la roue de $6$ dents a-t-elle faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une roue de $6$ dents fait un tour quand $6$ dents ont défilé."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $30$ par $6$."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ ÷ $6$ = $5$ tours.",
+        "incorrect": "Divise le nombre de dents défilées par le nombre de dents de cette roue."
+      },
+      "solution": {
+        "lines": [
+          "$30$ ÷ $6$ = $5$."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "3"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tours la roue de $10$ dents a-t-elle faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une roue de $10$ dents fait un tour quand $10$ dents ont défilé."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $30$ par $10$."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ ÷ $10$ = $3$ tours.",
+        "incorrect": "Divise le nombre de dents défilées par le nombre de dents de cette roue."
+      },
+      "solution": {
+        "lines": [
+          "$30$ ÷ $10$ = $3$."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "5"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -878,6 +878,93 @@ attacks, the seal, the last step and the tablet. Two mechanics of the world « L
   the length box (`data-di-bench-kept=<lines>`, at most 4 lines, 1.15 rem; the kit writes no word of it); no `kept`, no
   state, a state the kind refuses, a `kept` that throws or returns no line: no card. The bench gives facts; it never says which plank to make. Test:
   `divisorIsles/workshop.render.test.jsx`, `divisorIsles/inquirySheet.render.test.jsx`.
+- **A WALKWAY — he places the PILLAR, two crews lay** (segment `kind: 'walkway'`, 2026-11-26, for 3e
+  `multiples-et-diviseurs-communs`; no lesson plays it yet — **never seen in a browser**). Story shape: `{ id, kind:
+  'walkway', len, crews: [16, 20], ruler: 400, scale: 'fixed' | 'fit', ticks?: { minor, label }, convoy?, bench? }` and
+  `story.convoys[id].purse` as for bridges. On the island it leaves, a post « le pilier » (a beacon while it is to build,
+  the prompt `T.walkway.prompt`) and the crews (the world's robot, a ring of `mouldColor(b)`, b on its chest); E opens
+  the overlay `{ type: 'walkway', seg, bench? }` — `divisorIsles/Chantier.jsx`. He types the pillar's distance (0 …
+  `ruler` for `fixed`, 0 … 999 999 for `fit`; ←/→ ±1, Shift ±10; Enter or `data-di-plant` plants it, drawn AT ONCE),
+  then `data-di-lay`: lane A then lane B, plank by plank, ≤ 40 beats in ≤ 2 s (`plank` per beat); `data-di-take` takes it
+  back (not while laying); ✕ / Escape close. Logic `walkway.js › lay(crews, d, purse)`: per lane `planks = ⌊d ÷ b⌋`,
+  `short = d − b × planks`; `holds = d > 0 && every lane ends`; `cost = Σ planks`; `paid = holds && cost ⩽ purse left`;
+  verdict `shore` (d = 0) · `short` · `ruins` (holds, the purse cannot pay) · `paid`. **The purse is read after the
+  WHOLE walkway is laid, and a refused walkway costs no coin** — unlike a bridge's purse, which spends as it lays
+  (`walkwayGame.js › walkwayPurse`: `{ of, left }`, left = of − the paid try's cost). Every try is kept
+  (`flags.walkways[id].tries`, read back by `walkway.js › triesFrom`) and LOGGED (`game.log` gets `{ kind: 'walkway',
+  seg, d, lanes, holds, cost, paid }`, the last 24 entries — the forge's `evidence(log)`); a paid try stands the walkway
+  (two lanes in the crews' colours across the segment, `seg.a = d`, `seg.cell = len ÷ d`, the island beyond does NOT
+  move) and calls `story.onHold(game, seg, try)`. **Draw at 1366 × 768** (`crewLanes.jsx › PlankLanes`, 1 160 px at 1 : 1,
+  the water 1 100 px): `fixed` = 1 100 ÷ `ruler` px a case (400 → 2,75: 16 = 44 px, 80 at 220 px), labels about every
+  eighth of the ruler (50 for 400, 100 for 700), small ticks five times as dense; `fit` = per try, 1 100 px = 1,15 ×
+  max(d, the longest plank), relabelled with the largest round step (1, 2, 2,5, 5 × 10^k) that leaves at least four
+  labels after 0 — four to seven (13 248: 2 500 a label, 414 = 30 px, 192 = 14 px); a lane whose planks are under 6 px or
+  more than 120 is ONE band with `W.band(planks, b)`; a shortfall amber with `W.short(n)`, the label under the lane with a
+  leader when the shortfall is narrower than 64 px (all of K1's); the pillar a brand-blue post with `W.pillar(d)`. The
+  panel is a card of 1 220 px (`chantier.css`): the instruction, the box and its buttons, the facts on the right (one per
+  lane `W.lane(lane, i, try)`, then `W.verdict(try, purse)`; `W.shore` alone at 0), the lanes under them. **Words**: the
+  story's `text.walkway` = { title, instruction, prompt, objective, before, after, boxLabel?, plant, lay, take, bench,
+  benchSub, benchBack, error: { empty, nan, range(max) }, crew(i, b), pillar(d), short(n), band(n, b), lane(l, i, t),
+  shore, verdict(t, purse), purse(left, of) } — the kit has NO default (a walkway without it throws at build).
+  `bench`: « Le tableur » over the panel, the workshop's bench frame and `flags.benches` (`Game.openBench` / `closeBench`
+  accept the walkway's overlay), its kept card under the box (`Workshop.jsx › benchKeptLines`). Hooks:
+  `data-di-walkway=<id>`, `data-di-in="pillar"`, `data-di-plant`, `data-di-lay`, `data-di-take`, `data-di-lane="A|B"`
+  (+ `data-di-planks`, `data-di-short`), `data-di-post=<d>`, `data-di-walkway-verdict="paid|ruins|short|shore"`,
+  `data-di-purse`, `data-di-walkway-fact`, `data-di-walkway-error`, `data-di-bench-open`; `window.__walkway` (dev).
+  Tests: `walkway.test.js`, `chantier.render.test.jsx`, `walkwayGame.test.js`. The walk library has no handler for it yet.
+  **Built as** (differs from the lesson-4 design, accepted 2026-11-26): the panel is a card of about 500 px tall (the
+  design said 430); the claim of its forges is `ppcm` `{ a, b, more?, m }` (`LESSON_V2.md` §1bis), not `{ ns, m }`.
+  **A walkway in a convoy is a PURSE only** (2026-11-26, lesson 4's forges agent): `Game.purseOf` counts a finished
+  walkway as its planks (`planksOf`: Σ a ÷ crew — 80 on 16 / 20 spends 9 of 14), not a ÷ `builtWith` as a bridge; and
+  the story suite's `kit/authoring/test/suites.js › convoysOf` skips walkways (a convoy of planks is bridges only —
+  test `kit/authoring/suites.test.js`, `divisorIsles/purse.test.js`).
+- **A TRY THAT DID NOT HOLD is heard by the story** (`story.onMiss(game, seg, b)`, optional — `Game.js › missed`,
+  2026-11-26 for lesson 3 `fraction-irreductible`): cells left open, the post off a joint, the purse empty — the try is
+  logged as before, and the story may look at it again (e.g. a mirror that stays shut until named planks were all
+  fired). The kit's end card says « 0 chute » for a run with no failed try (owner, agreed 2026-11-26).
+- **A guided retry never pushes a wave past the last gate** (2026-11-26, `kit/ladder.js › waveBack`): the crash « arches »
+  of a retry on the last wave of a ladder came from there. **The hub map's labels wrap at 17rem** and
+  `kit/mapNudge.js` moves a card by hand where two would still touch (far islands: lesson 3's labels still overlap by
+  under 12 px — a debt). `Ladder` station of the class board: an optional `step.words` replaces its sentence.
+- **THE FINAL MISSION — `story.mission`, ported from `rootCourts`** (2026-11-26; no lesson of this world gives one yet).
+  `{ prompt, objective?, title, lead: [...], lines(), check(values) → 'ok' | a FACT, posters?, window?, text: { check,
+  later, posters(left, of), spent }, onSolved?(game), onSpent?(game) }`. A board on the LAST island (a post with a
+  beacon; `walkwayGame.js › missionOpen` — the story has one, not solved, he stands on the last island); E →
+  `openMission()` → the overlay `{ type: 'mission' }`, `divisorIsles/Mission.jsx` (the lead, the kit's `UseLines`, the
+  fact). `posters: n` — each wrong answer spends a poster of the RUN (`flags.missionRun`); the last one ends the run
+  (`text.spent`, the boxes close, `onSpent`, `flags.missionRuns`), the next opening starts a new run; without `posters` a
+  wrong try costs nothing but its fact (rootCourts). `window: { cycles, day(values), labels: { team(i), since(n),
+  before(from) } }` — under the answer, the teams' rows on 31 days of 34 px around the typed day (`crews.js › windowOf`;
+  the kit writes the day heads grouped by thousands, « 2 116 », and `since` / `before` must too — `mission.render.test.jsx`),
+  run from the window's first day to it in ≈ 1,5 s; the fact shows when the run reaches it. A fact is written by the
+  story from `crews.js › daysFact(cycles, day)` = { kind: 'start' | 'first' | 'again' | 'some' | 'none', working, idle }
+  — from who works that day, never the answer. `solveMission()` keeps `flags.mission`, calls `onSolved`, and
+  `arrive(last)` plays the finale only once the mission is solved. Hooks: `data-di-mission="open|over"`,
+  `data-di-mission-lines` (its boxes `data-rf-use=<slot>`), `data-di-mission-check`, `data-di-mission-later`,
+  `data-di-mission-fact`, `data-di-posters`, `data-di-mission-over`, `data-di-window`; `window.__mission` (dev). Tests:
+  `walkwayGame.test.js`, `mission.render.test.jsx`. **Built as** (differs from the lesson-4 design, accepted 2026-11-26):
+  the posters refill at the next OPENING of the board (no walk), and the day box is the story's `UseLines` box
+  (`data-rf-use=<slot>`, not `data-di-in="day"`).
+  **The plaque — the same mission with a FRACTION answer** (2026-11-26, for 3e `fraction-irreductible`, its design's
+  « Kit work » 1; built as a variant of `story.mission`, not the design's `bossOverlay('write')`): `{ …, at: <island
+  index>, opens: <segment id>, plaques: 2, refill: { at: <island index> }, write: { calc: { x, y, op, z, w }, p, q },
+  jetty?: { lanterns, lit, red }, objective?: string | (game) => string, check(values, writing) }`.
+  `at` — the board stands on that island (default the last); `opens` — the road out of it, a STANDING bridge, stays
+  shut (deck hidden, not walkable) until the mission is solved (`walkwayGame.js › shutMissionRoad`, called by
+  `restore`), then stands; the finale plays only when he reaches the last island. `plaques` is `posters` by its
+  design's name (`text.plaques(left, of)` = `text.posters`). `refill.at` — after the last plaque of a run the board is
+  shut (`missionWalkBack()`) until he stands on that island again; a ridden dash rail is then WALKABLE
+  (`walkableSeg`: only when the story's mission has `refill` — every other lesson keeps the rail as it was). `write` —
+  without `lines`, ONE fraction box (`plaque.js › plaqueLines`: slots `p` over `q`); the world judges what the typed
+  fraction IS (`plaque.js › writingOf` → `{ kind: 'empty' | 'nan' | 'other' | 'notReduced' | 'ok', P, Q }`) and passes it
+  to the story's `check(values, writing)`, which writes the refusal (no number); an empty or unreadable box spends no
+  plaque; `p/q` must be the calculation's irreducible result (`checkWrite`, else the board throws at build). `jetty` —
+  `lanterns` dark spheres along both sides of the road, `lit` of them lit on the solve, `red` of the lit ones red; no
+  count is ever written. Evidence: the story sends the claim `fraction` with `op` (`kit/claims.js`). Tests:
+  `plaque.test.js` (every writing P/Q ≤ 300 of 3/34 × 85/87 against a count; the server claim agrees),
+  `walkwayGame.test.js` (the shut road, two plaques, the walk back, the rail, the lanterns, no finale before the last
+  island), `mission.render.test.jsx`. **Never seen in a browser**: whether the rail reads as a road when walked, and the
+  lanterns' look.
 
 First used by lesson 4 `qasim-mushtarak-akbar` (keys 1 and 2: one choice of planks for two gaps; then planks that all
 fill both, and a purse that only the longest pays). NOT yet unit-tested: the mechanic lives in the 3D runtime
@@ -1173,7 +1260,7 @@ made for it.** The forge then opens on that experiment:
 **Every key of `qawasim-adad-tabii` opens on an experiment — four keys, four kinds** (owner, the same day: « not only
 this one … all the steps of rule discovery »); a test of the lesson fails if two of its keys share a kind.
 
-The twenty-three kinds of `divisorIsles/` (logic `inquiry.js`; screens `Inquiry.jsx` — strip and chart —, `InquiryMoves.jsx`
+The twenty-four kinds of `divisorIsles/` (`crews`, the twenty-fourth, 2026-11-26: its own files `crews.js`, `InquiryCrews.jsx`, `inquiryCrews.css`) (logic `inquiry.js`; screens `Inquiry.jsx` — strip and chart —, `InquiryMoves.jsx`
 — wall and saw —, `InquiryCombine.jsx` — join and stack —, `InquiryProof.jsx` — peel and letters —,
 `InquiryDivision.jsx` — groups, rebuild, estimate, bracket —, `InquiryGcd.jsx` — common, ladder, nest —,
 `InquiryCycle.jsx` — cycle, with its own logic `cycle.js` and styles `inquiryCycle.css`, added on 2026-11-19 for the
@@ -1222,6 +1309,7 @@ drawing); its `inquiries.test.js` fails if two keys share a (kind, mode) — see
 outlined (main session, 2026-11-23: the world does not do the reading for him — until then they were outlined green,
 `data-iq-zero`); the line he then clicks plays as any line. More than ten lines stand in two blocks side by side, rows numbered on (3 127 needs the primes up to 53: 16 lines, two blocks of 8; 4 641: 19, 10 + 9); at most 24 lines. A quotient of 1 (a fixed stop) also ends the round. |
 | `part` | a part of a whole, re-cut in a longer unit: the painted length does not move, its writing does (13/39 = 1/3) — a fraction that comes out of a calculation is written again in the longest unit (a RE-CUT) | ONE strip, the whole (up to ~130 cells), and a painted part the world paints in strokes one after the other (5 cells, then 8), each stroke's length printed over it. He writes the fraction painted in its template (two boxes over a real bar — exactly the cells: painted over whole; a miss is answered by which count differs). Then he picks a plank (chips and/or typed, 2 … the whole) that fills the painted part AND the whole: one that does not is laid along the strip, outlined so the paint stays visible, what is left amber, both divisions written; one that does RE-CUTS the strip — the new cuts are drawn over the paint, which does not move, and the two writings stand side by side with « = ». He may instead claim « no plank but 1 fills both »: the world tries the planks of the painted part on the whole (a round whose part and whole share only 1 ends there, the writing unchanged; otherwise the plank it finds is laid and he picks again). One re-cut ends the round. |
+| `crews` | two (or more) rhythms that start together meet again after a common multiple — read back into the story (mode `story`, a MODELLING) / teams that work one day then rest meet again on day 1 + a common multiple of their cycles (mode `days`, a PATTERN IN TIME) — 2026-11-26, for 3e `multiples-et-diviseurs-communs` keys 3 and 4; no lesson mounts it yet | `story`: he reads a story card (words only), translates it with chips (« une case, c’est » · the planks of crew A · of crew B — a wrong chip gets the story's fact and goes back), places the pillar and lets the crews lay on the story's OWN ruler (the walkway's panel), then types what the story asked (integers, or « □ h □ min »; a wrong value: its fact, again). `days`: one row per team on a day axis (0 days since the start at the left), the asked rows outlined; before each run he types the day; « Jour suivant » lights the next column team after team, « Avance » runs four days a second (« Pause »); the run stops on the day the asked teams all work and writes the fact beside his prediction — and, with `stopOn: 'all-but-one'`, on each day where every team but one works, naming it. A first stage may ask how many days have passed on day 1 (chips). Nothing is drawn as a gear. |
 
 **Key 3 of `qawaid-qabiliyat-qisma` (« the last two digits », plank 4; an Algerian lesson) — what the code does.** The
 experiment is `join` / `sum` (`world/inquiries.js › HUNDREDS_INQUIRY`): it starts from the gate dash he has just ridden
@@ -1956,6 +2044,13 @@ fraction is `FracTpl` (two boxes over a bar, `data-iq-in="num"` / `"den"`), shar
 { kind: 'measure',
   chips?: [2, 3, …],                                   // candidate planks for every round (a round's own `chips` wins);
                                                        //   none: the typed box only (always on screen)
+  typed?: true,                                        // false (spec or round): NO typed box and no « lay » — chips only
+                                                       //   (needs chips, else it throws) — 2026-11-26, off by default
+  long?: false,                                        // true: a strip of more than ~130 cells — the strips are one bar
+                                                       //   each (as always under 6 px a cell), and a plank laid under
+                                                       //   3 px is ONE band with its count (`data-iq-band=<count>`, a
+                                                       //   number only); planks ⩾ 3 px are drawn one by one — 2026-11-26
+                                                       //   (722/1 786: 38 and 19 drawn, 2 one band). Off by default
   rounds: [{ a, b,                                     // a above (numerator), b below; up to ~130 cells (one scale)
              mode?: 'stages' | 'direct',               // default 'stages'
              runs?: 2,                                 // stages: the roads asked (clamped to the planks that open one)
@@ -2037,6 +2132,82 @@ both, the painted end never moves and is a cut; the state machine through a wron
 `inquiryMeasure.render.test.jsx`, `inquiryPart.render.test.jsx` (mounted by `Inquiry`; each mode PLAYED stage by stage
 from the reducer — chain, divisions, the world's check, the prediction template, « again »; 130 + 117 cells drawn; the
 paint drawn at the same place before and after the re-cut).
+
+**Spec shape of `crews`** (2026-11-26, `divisorIsles/crews.js` + `InquiryCrews.jsx` + `crewLanes.jsx`, styles
+`inquiryCrews.css`, `crewLanes.css`; the same conventions: `T` = `spec.text`, plain strings go into SVG text; the kit writes
+no French — its render test fails on any word that is not the lesson's):
+
+```js
+{ kind: 'crews', mode: 'story', ruler: 700, ticks?: { minor, label },
+  rounds: [{ text: '…' | ['…', …],                       // the story card, words only (≤ 5 lines, 18 px)
+             unit: { options: ['une dent', …], right },   // « une case, c’est » — its chips
+             numbers: [32, 20, 52, 12, 2],                // the crews' chips: translation errors only, never a result
+             crews: [32, 20],                             // the planks of the story (either crew may take either)
+             ask: [{ id, label, value, after? } | { id, label, value: [10, 0], clock: true }] }],
+  text: { lead(round, ri), goal(round, ri), translate, unitAsk, crewAsk(i),
+          mapFact({ slot, value, right, round, ri }),     // a wrong chip: the story's fact
+          pillar: { before, after, plant, lay, take, error: { empty, nan, range(max) }, crew(i, b), pillar(d),
+                    short(n), band(n, b), lane(l, i, t), shore, verdict(t) },   // the walkway's words (no purse)
+          toStory, hour, minute, check,
+          backFact({ id, said, ask, round }),             // a value read back wrong: its fact, never the answer
+          end(roundResult, round), foundLine(roundResult, round), next, done } }
+// stages per round: read → map → pillar (until a pillar holds, « toStory ») → back → seen
+//   built as (accepted 2026-11-26): ANY pillar that holds opens « toStory » (640 too); the read-back refutes it
+// at 1366 × 768 (walk 2026-11-26, fixed the same day): once the translation is set its three slots are ONE row
+//   (`.iq-crews__map.is-set`), « toStory » sits among the panel's buttons (`PillarPanel › aside`), the facts take a
+//   44 rem column — `pillar.lane` must hold ONE line there (≤ 64 characters, the lesson's test) — and the lanes are drawn
+//   with `crewLanes.jsx › STORY_LANES` (224 px for two lanes, the panel's 254)
+// result: { rounds: [{ mapping: { unit, A, B }, mapTries: [{ slot, value, right }], pillars: [{ d, holds, verdict }],
+//           d (the last pillar that held), said: [{ id, said, right }] }] }
+// hooks: data-iq="crews", data-iq-mode, data-iq-stage, data-iq-read, data-iq-slot=<unit|A|B>, data-iq-chip="A:32",
+//        data-iq-placed, data-iq-chosen, the walkway's data-di-*/data-iq-in="pillar", data-iq-plant, data-iq-lay,
+//        data-iq-take, data-iq-back, data-iq-ask=<id>, data-iq-in=<id> | "<id>:h" | "<id>:min", data-iq-check,
+//        data-iq-fact, data-iq-next, data-iq-found
+//        window.__inquiry = { kind, mode, ri, stage, map, pillar: { stage, d, tries }, backOk, rounds }
+
+{ kind: 'crews', mode: 'days', teams: [{ sleep: 1, work?: 1 }, …], days: 62,   // a team works on day d when d − 1 is a
+  stages: [{ ask: 'zero', options?: [0, 1] },                                  //   multiple of its cycle (work + sleep)
+           { teams: [1, 2], run: 'step' }, { teams: [1, 2, 3], run: 'fast' },
+           { teams: [1, 2, 3, 4], run: 'fast', stopOn: 'all-but-one' }, …],    // the day met must be ≤ `days` (else throws)
+  text: { lead(stage, si), goal(stage, si), rows: { team(i), since(n) },
+          zeroAsk, zeroFact({ said, right }), sayAsk(stage), dayBefore, say, saidLine(day),
+          step, fast, pause, stopFact({ day, team }), met({ day, said, teams, sleepers }),
+          foundLine(stageResult), next, done } }
+// result: { zero, zeroTries, stages: [{ teams, said, day, sleepers: [{ day, team }] }] }
+// hooks: data-iq-mode="days", data-iq-stage="zero|say|run|stop|met", data-iq-day, data-iq-si, data-iq-zero=<v>,
+//        data-iq-in="day", data-iq-say, data-iq-said, data-iq-step, data-iq-fast, data-iq-pause, data-iq-next,
+//        data-iq-row=<team> + data-iq-asked, data-iq-cell="<team>:<day>" + data-iq-on, data-cl-day, data-cl-cols, data-cl-col
+//        window.__inquiry = { kind, mode, si, phase, day, said, meet, stops, stages }
+```
+
+Drawn at 1366 × 768: `days` — 62 columns of 17 px + a team column of 110 px = 1 164 px (`crewLanes.jsx › dayCol`, narrower
+when there are more days, never under 12); a row 60 px, its upper half lit brand blue with a hammer (rest: grey, a moon —
+SVG `<symbol>`s used per cell), under each lit cell the days since the start (18 px). `story` — the walkway's panel at the
+spec's `ruler` (700 → 1,571 px a case: 160 at 251 px, 640 at 1 006 px). World sounds: `pick` / `fail` on a chip, `plank`
+per laying beat, `fail` / `gate` on a read-back; days — `sweep` per day run, `hit` on a stop, `gate` on the day met, `key` /
+`fail` on day 1. Tests: `crews.test.js` (every first meeting of every triple of cycles ≤ 12 against a count, every day of
+the design's K4 and of its mission table through the reducer and `daysFact`, the two stories played with wrong chips, a
+pillar too far, wrong read-backs), `inquiryCrews.render.test.jsx` (mounted by `Inquiry`; each mode drawn stage by stage;
+no gear; no word of the kit). **Never seen in a browser; the walk library has no handler for `crews:story` /
+`crews:days`.**
+
+**A forge's case about CREWS** (2026-11-26, lesson 4's mirrors — `divisorIsles/forgeCrews.jsx`, dispatched by
+`forgeParts.jsx` before every other case shape; a case with none of these fields draws exactly as before):
+`c.walk = { crews: [A, B], d }` — a pillar on a two-crew walkway (keys 1 and 2): the walkway's lanes
+(`crewLanes.jsx › PlankLanes`, geometry `CASE`: 720 units wide, two lanes 2 × 68 + 58 = 194 units, drawn in the mirror's
+box of 10,6 rem — 18 px text at about 15 px), its scale fitted to the case (`scaleOf`, `fit`), the pillar, the shortfall
+in amber, the crews named `FORGE_TEXT.plank(b)`; hooks `data-rf-lane="A|B"` + `data-di-planks`, `data-di-short`,
+`data-di-post`. A STORY claim `{ story, a, b, kind: 'meet' | 'turns', v, who? }` (key 3) is drawn the same way, the crews
+named by their numbers only, the pillar at `v` (meet) or `v × who` (turns); a `clock` claim needs its own `walk` (the
+kit does not know the story's start) — without it, its sentence alone, never an empty bridge. `c.days = { cycles, day,
+teams? }` (key 4): `DayRows` `compact` (rows of 32, a team column of 60 named by its number, no « days since », a glyph
+only in columns ⩾ 14 px), 31 … 62 days from day 1, or 31 days around a later day (`forgeCrews.jsx › daysWindow`), the
+day outlined. Asked, a case is its sentence alone (no « De quel pont… » hint); held, its planks / its day green; its line
+keeps its sentence and tag, with a small drawing (`CrewsMini`); its beats are its planks (≤ 40), 1 for days. Test:
+`forgeCrews.render.test.jsx`.
+`c.sub` (2026-11-26, lesson 3's forge of decompositions): a line in WORDS shown in the forge log instead of two bars —
+the decompositions of the pair (« 34 = 2 × 17 »); a log line that names « décompositions » must show them
+(`walk › checks.mjs › pairChecks` accepts a `c.sub` line instead of two bars).
 
 The lesson's own test must check that every `ok` card `holdsOn` every sample, that every false card is refuted by one
 (`refuteCard(...) !== null`), that `checkProofOrder(cards, order, statement.gives).ok`, and that `order` holds exactly
@@ -2202,7 +2373,7 @@ The code is in THREE places:
 | `Depot.js`, `Worlds.js` | the 3D worlds of the cases: the depot, the friends' table, the tiler's site; `runSim` shows what was decided |
 | `ruleForge.js` (+ test), `forgeParts.jsx` (+ `forgeParts.render.test.jsx`), `dealParts.jsx` | the rule forge IN THIS WORLD: a bridge as a case, the evidence of a crossing, the law of the world as a forge (`remainderForge`), and how a case is drawn — a bridge, or a SHARING (`c.deal`) drawn with the pieces of the experiment `deal` (`dealParts.jsx`, shared with `InquiryDeal.jsx`) (§2sexies) |
 | `strings.js` | every sentence of the world (French), the sentence of a practice wave (`waveSay`) and the guidance after a mistake (`explain`) |
-| `inquiry.js` (+ `inquiry.test.js`, `inquiry2.test.js`, `inquiryDivision.test.js`, `inquiryGcd.test.js`), `Inquiry.jsx`, `InquiryMoves.jsx`, `InquiryCombine.jsx`, `InquiryProof.jsx`, `InquiryDivision.jsx`, `InquiryGcd.jsx`, `inquiry.css` | « Explore »: the pure logic and the screens of the experiments (§2sexies, twenty-three kinds — eight in their own files, below) |
+| `inquiry.js` (+ `inquiry.test.js`, `inquiry2.test.js`, `inquiryDivision.test.js`, `inquiryGcd.test.js`), `Inquiry.jsx`, `InquiryMoves.jsx`, `InquiryCombine.jsx`, `InquiryProof.jsx`, `InquiryDivision.jsx`, `InquiryGcd.jsx`, `inquiry.css` | « Explore »: the pure logic and the screens of the experiments (§2sexies, twenty-four kinds — nine in their own files, below) |
 | `cycle.js` (+ test), `InquiryCycle.jsx`, `inquiryCycle.css` (+ `inquiryCycle.render.test.jsx`) | the `cycle` kind in its own files: a reducer and a pure view (2026-11-19) |
 | `summit.js` (+ test), `InquirySummit.jsx`, `inquirySummit.css` (+ `inquirySummit.render.test.jsx`) | the `summit` kind: the longest plank of two gaps and the reason to stop (2026-11-19) |
 | `deal.js` (+ test), `InquiryDeal.jsx`, `inquiryDeal.css` (+ `inquiryDeal.render.test.jsx`) | the `deal` kind: two collections dealt into identical lots; its items and lots drawn in SVG (2026-11-19) |
@@ -2211,6 +2382,14 @@ The code is in THREE places:
 | `measure.js` (+ test), `InquiryMeasure.jsx`, `inquiryMeasure.css` (+ `inquiryMeasure.render.test.jsx`) | the `measure` kind: two strips are one fraction, counted again in a plank that fills both; the chain of equal fractions; `FracTpl` (a typed fraction: two boxes over a bar) and `fracTex` / `chainTex`, shared with `part` (2026-11-19) |
 | `part.js` (+ test), `InquiryPart.jsx`, `inquiryPart.css` (+ `inquiryPart.render.test.jsx`) | the `part` kind: a part of a whole painted in strokes, written, then re-cut in a plank that fills the part and the whole (2026-11-19) |
 | `sheet.js` (+ test), `InquirySheet.jsx`, `inquirySheet.css` (+ `inquirySheet.render.test.jsx`) | the `sheet` kind: a spreadsheet of the remainders of a large number by the primes, a line read as dividing, « prime » said and refused or accepted (2026-11-23) |
+| `plaque.js` (+ test) | the plaque variant of the final mission: a calculation's result, and what a typed fraction IS against it (`writingOf`); the fraction box line (2026-11-26) |
+| `forgeCrews.jsx` (+ `forgeCrews.render.test.jsx`) | a forge's case about crews: a walkway pillar, a story claim, teams on their days (drawn by `crewLanes.jsx`) |
+| `inquiryMeasureOptions.render.test.jsx` | the `measure` options `typed: false` and `long: true`, off by default |
+| `crews.js` (+ test), `InquiryCrews.jsx`, `inquiryCrews.css` (+ `inquiryCrews.render.test.jsx`) | the `crews` kind: modes `story` (a story translated into crews, a pillar on its own ruler, read back) and `days` (teams that work and rest, run day by day); `daysFact` and `windowOf` for the final mission (2026-11-26) |
+| `crewLanes.jsx`, `crewLanes.css` | the one drawing of crews: `PlankLanes` (lanes from one start, planks, the shortfall, the pillar) and `DayRows` (a row per team on a day axis) |
+| `walkway.js` (+ test), `Chantier.jsx`, `chantier.css` (+ `chantier.render.test.jsx`) | the segment `walkway`: the logic, the scale rule, the panel's state machine; the panel (`PillarPanel`, also mounted by `crews` mode `story`) |
+| `walkwayGame.js` (+ test) | the world's side of the walkway (post, crews, 3D lanes, purse, log) and of the final mission (`story.mission`, posters), installed on `DivisorIslesGame` |
+| `Mission.jsx`, `mission.css` (+ `mission.render.test.jsx`) | the final mission's card: the lead, the boxes, the posters, the 31-day window |
 | `factorLadder.js` (+ test), `InquiryFactor.jsx`, `inquiryFactor.css` (+ `inquiryFactor.render.test.jsx`) | the `ladder` mode `factor` (mounted by `InquiryGcd.jsx › Ladder`): one gap, a rack of planks, a notebook of the divisions that held, the planks laid in a row; `factorRungs` for a forge's `c.factor` (2026-11-23) |
 | `inquiryParts.jsx` | what every experiment screen shares: `FAST`, `expose`, `X0` / `SPAN`, `useLater`, `YesNo` |
 | `inquiryScreens`, `inquiryDivision`, `inquiryGcd`, `inquiryStages` `.render.test.jsx` | the screens rendered without a DOM: their first screen, and (`inquiryStages`) eight kinds played past it |

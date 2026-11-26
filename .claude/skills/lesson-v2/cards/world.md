@@ -88,3 +88,5 @@ student HOLDS at each key's island. Longer → the file the brief names.
 **Not enough?** A suite option → its comment in `KIT/authoring/test/suites.js`; the order of writing →
 `KIT/authoring/README.md` « The order to write a `world/` »; claims → `LESSON_V2.md` §1bis; convoys → `GAME_WORLD.md`
 §2ter-1; French → `FRENCH_LANGUAGE_CONTRACT.md` §4–§7.
+- **A13 / B49 / B51** — a refusal that GIVES THE ANSWER; a pillar's label crossing a lane's label; hub map labels on one line (L3 and L4, 2026-11-26).
+- **B47** — a story that never hears a failed try: use `story.onMiss`.

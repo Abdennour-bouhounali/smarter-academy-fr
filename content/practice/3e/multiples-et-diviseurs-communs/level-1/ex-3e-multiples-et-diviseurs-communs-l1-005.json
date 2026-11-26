@@ -1,0 +1,134 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-005",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux cloches",
+    "estimatedMinutes": 3,
+    "tags": [
+      "cloches",
+      "rendez-vous"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Deux cloches sonnent ensemble à l’instant $0$. L’une sonne toutes les $4$ s, l’autre toutes les $7$ s."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quand sonnent-elles de nouveau ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "À l’instant $0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-ZERO"
+        },
+        {
+          "id": "B",
+          "content": "Au bout de $28$ s",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "Au bout de $56$ s",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PAS-LE-PLUS-PETIT"
+        },
+        {
+          "id": "D",
+          "content": "Au bout de $1$ s",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les instants de la cloche de $4$ s, puis ceux de la cloche de $7$ s."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le premier instant commun non nul est le bon."
+        }
+      ],
+      "feedback": {
+        "correct": "Le premier instant commun non nul est $28$ s.",
+        "incorrect": "L’instant $0$ est le départ : cherche le premier instant commun APRÈS le départ, et le plus petit."
+      },
+      "solution": {
+        "lines": [
+          "Cloche de $4$ s : $4$, $8$, … , $28$…",
+          "Cloche de $7$ s : $7$, $14$, $21$, $28$…",
+          "Le premier instant commun non nul : $28$ s."
+        ],
+        "result": "Au bout de 28 s"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de fois la cloche de $7$ s sonne-t-elle entre les deux rencontres, rencontre de $28$ s comprise ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "4",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "La cloche sonne toutes les $7$ s."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise $28$ par $7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$28$ ÷ $7$ = $4$.",
+        "incorrect": "Combien de fois $7$ « rentre » dans $28$ ?"
+      },
+      "solution": {
+        "lines": [
+          "$28$ ÷ $7$ = $4$."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -113,6 +113,9 @@ for (const u of anchorUnits) {
       .sort((a, b) => GRADE_N[a.lesson.grade] - GRADE_N[b.lesson.grade] || pos.get(a.lesson.code) - pos.get(b.lesson.code))
       .forEach((n) => push(n.lesson, anchor.code, n.via));
   }
+  // a unit whose lessons are ALL published pushes nothing above, so nothing called its synthesis: it enters here, in its
+  // unit's turn — never at the end of the queue (first met 2026-11-26: « Multiples et diviseurs », its four lessons built)
+  queueSynthesisIfComplete(u.code);
   phases.push({ grade: 'now', unit: u, from: start, to: queue.length, stubGrades: [...stubGrades].sort((a, b) => GRADE_N[b] - GRADE_N[a]) });
 }
 for (const g of GRADES.map((x) => x.id).reverse()) {

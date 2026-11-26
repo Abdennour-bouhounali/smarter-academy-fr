@@ -1,0 +1,123 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-006",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Des feux et des minutes",
+    "estimatedMinutes": 4,
+    "tags": [
+      "feux",
+      "rendez-vous"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Un feu clignote toutes les $10$ s, un autre toutes les $25$ s. Ils clignotent ensemble à l’instant $0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de secondes clignotent-ils ensemble pour la première fois après l’instant $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "50",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les premiers multiples de chaque nombre, en deux listes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier nombre qui figure dans les deux listes (autre que $0$)."
+        }
+      ],
+      "feedback": {
+        "correct": "Multiples de $25$ : $25$, $50$. $50$ = $10$ × $5$.",
+        "incorrect": "Écris les multiples de $25$ et teste-les dans la table de $10$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $25$ : $25$, $50$, $75$…",
+          "$25$ n’est pas un multiple de $10$ ; $50$ = $10$ × $5$."
+        ],
+        "result": "50"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "250"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de fois clignotent-ils ensemble pendant les $3$ minutes qui suivent l’instant $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$3$ minutes font $180$ secondes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ils se retrouvent toutes les $50$ s : combien de multiples de $50$ y a-t-il jusqu’à $180$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Aux instants $50$, $100$ et $150$ s : $3$ fois.",
+        "incorrect": "Convertis les $3$ minutes en secondes, puis compte les multiples de $50$ jusqu’à cette durée."
+      },
+      "solution": {
+        "lines": [
+          "$3$ min = $180$ s.",
+          "Multiples de $50$ jusqu’à $180$ : $50$, $100$, $150$.",
+          "Ils clignotent ensemble $3$ fois."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "50"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

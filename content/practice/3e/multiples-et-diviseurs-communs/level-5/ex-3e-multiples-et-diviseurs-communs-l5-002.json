@@ -1,0 +1,219 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-002",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux pignons et un compteur",
+    "estimatedMinutes": 8,
+    "tags": [
+      "engrenages",
+      "tours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un pignon de $33$ dents s’engrène avec un pignon de $55$ dents. Au départ, un repère de chaque pignon est face à face. On donne $33 = 3 \\times 11$ et $55 = 5 \\times 11$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris le plus petit multiple commun non nul de $33$ et de $55$ sous la forme d’un produit de facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "expectedAnswer": "3*5*11",
+      "answerFormat": "Un produit de nombres premiers : tape × (ou *) entre les facteurs, ^ pour un exposant",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quels nombres premiers apparaissent ? Le $11$ est dans les deux."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 5 \\times 11$.",
+        "incorrect": "Tous les nombres premiers, chacun avec son plus grand exposant ; le $11$ une seule fois.",
+        "notPrime": "Ton produit a la bonne valeur, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais pas les bons exposants : compare-les un à un.",
+        "wrongProduct": "Ce produit ne convient pas : reprends les facteurs un par un."
+      },
+      "solution": {
+        "lines": [
+          "Le $11$ est commun, exposant $1$ des deux côtés.",
+          "$3$ ne figure que dans $33$, $5$ que dans $55$.",
+          "Le nombre : $3 \\times 5 \\times 11$."
+        ],
+        "result": "3 \\times 5 \\times 11"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "3*5*11^2"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "11"
+        }
+      ],
+      "timeSeconds": 90,
+      "work": "optional"
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de dents ont défilé quand les repères sont de nouveau face à face pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "165",
+      "answerFormat": "Un nombre de dents",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule $3 \\times 5 \\times 11$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$15 \\times 11$."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 11 = 165$.",
+        "incorrect": "Calcule le produit de la question précédente."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 5 \\times 11 = 15 \\times 11 = 165$."
+        ],
+        "result": "165"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "1815"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de tours le pignon de $33$ dents a-t-il faits ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "5",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise le nombre de dents défilées par $33$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$165$ ÷ $33$."
+        }
+      ],
+      "feedback": {
+        "correct": "$165$ ÷ $33$ = $5$.",
+        "incorrect": "Une roue fait un tour quand autant de dents que la sienne ont défilé."
+      },
+      "solution": {
+        "lines": [
+          "$165$ ÷ $33$ = $5$."
+        ],
+        "result": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "3"
+        }
+      ],
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Le pignon de $33$ dents tourne à $90$ tours par minute. Combien de fois par minute les deux repères se retrouvent-ils face à face ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "18",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les repères se retrouvent tous les $5$ tours du pignon de $33$ dents."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$90$ ÷ $5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ ÷ $5$ = $18$.",
+        "incorrect": "Combien de fois $5$ tours tiennent-ils dans $90$ tours ?"
+      },
+      "solution": {
+        "lines": [
+          "Rencontre tous les $5$ tours du pignon de $33$ dents.",
+          "$90$ ÷ $5$ = $18$ rencontres par minute."
+        ],
+        "result": "18"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-TOURS-INVERSES",
+          "value": "30"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

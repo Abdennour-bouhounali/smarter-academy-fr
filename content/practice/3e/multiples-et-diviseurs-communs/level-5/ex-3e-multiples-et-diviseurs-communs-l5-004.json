@@ -1,0 +1,209 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l5-004",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un champ en carrés",
+    "estimatedMinutes": 8,
+    "tags": [
+      "outil",
+      "PGCD",
+      "champ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un champ rectangulaire mesure $1\\,190$ m sur $1\\,785$ m. Un agriculteur veut le partager en parcelles carrées toutes identiques, sans reste, les plus grandes possible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver le côté d’une parcelle ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le côté d’une parcelle, en mètres ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "595",
+      "answerFormat": "Un nombre de mètres",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1\\,190$ = $2 \\times 5 \\times 7 \\times 17$ et $1\\,785$ = $3 \\times 5 \\times 7 \\times 17$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Nombres premiers communs, plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 7 \\times 17 = 595$.",
+        "incorrect": "Plus grand diviseur commun de $1\\,190$ et de $1\\,785$."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,190$ = $2 \\times 5 \\times 7 \\times 17$ et $1\\,785$ = $3 \\times 5 \\times 7 \\times 17$.",
+          "PGCD : $5 \\times 7 \\times 17 = 595$."
+        ],
+        "result": "595"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "3570"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Combien de parcelles obtient-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Combien de parcelles dans chaque sens ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1\\,190$ ÷ $595$ et $1\\,785$ ÷ $595$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ × $3$ = $6$ parcelles.",
+        "incorrect": "Divise chaque dimension par le côté d’une parcelle, puis multiplie."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,190$ ÷ $595$ = $2$ et $1\\,785$ ÷ $595$ = $3$.",
+          "$2$ × $3$ = $6$."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Il hésite à découper en parcelles de $85$ m de côté. Combien de parcelles obtiendrait-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "294",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$85$ divise-t-il $1\\,190$ et $1\\,785$ ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1\\,190$ ÷ $85$ et $1\\,785$ ÷ $85$."
+        }
+      ],
+      "feedback": {
+        "correct": "$14$ × $21$ = $294$ parcelles.",
+        "incorrect": "Divise chaque dimension par $85$, puis multiplie."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,190$ ÷ $85$ = $14$ et $1\\,785$ ÷ $85$ = $21$.",
+          "$14$ × $21$ = $294$."
+        ],
+        "result": "294"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

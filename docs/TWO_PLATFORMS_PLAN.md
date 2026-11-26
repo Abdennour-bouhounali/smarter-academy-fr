@@ -180,6 +180,40 @@ agent). Gate A defects against Opus: 2 (design level, before the build); gate B:
 awaits the owner's yes); the warning on `ex-3e-trouver-le-pgcd-l5-010` q3 (two distractors without a misconception);
 the walk README does not list the two new players.
 
+**Test 3 — the two last lessons of unit 3e « Multiples et diviseurs », 2026-11-26 (uncommitted).** Built on `divisor-isles`:
+`fraction-irreductible` (lesson 3; ported from DZ `ikhtizal-kasr`, its key 2 rebuilt on prime factors; final mission « la plaque
+du gardien », 3/34 × 85/87 = 5/58, distractor 85/986) and `multiples-et-diviseurs-communs` (lesson 4; nothing ported; the
+owner's five-team workshop, day 61; mission three ferries, day 681, 3 posters a run). The unit now has its 4 lessons, so its
+summary page exists. Four NEW kit pieces: segment `walkway`, inquiry `crews` (modes `story`, `days`), `story.mission` (and its
+`write` variant, the plaque: 2 plaques a run), claim `ppcm` (JS + `ClaimVerifier.php` + fixture); small ones: `measure` options
+`typed: false` / `long: true`, `story.onMiss`, `c.sub`, the hub map's wrap and `kit/mapNudge.js`, `kit/ladder.js › waveBack`
+(a guided retry no longer pushes a wave past the last gate — the crash « arches »), the end card « 0 chute », thousands grouped
+in strings, `figureAfter` on the board, `LadderStation` `step.words`. The walk library gained `walkwayStory`, `crewsExperiments`,
+`measure:stages` / `measure:direct` and the plaque; `readScreen` and `numbersIn` read « 2 121 » as ONE number (it had made 248
+« another lesson's number » on lesson 2); `pairChecks` accepts a `c.sub` line.
+Walks at 1366×768, final, 0 FAIL: L3 story 1583, hub 337, trainer 688, board 295, sitting 2606; L4 story 1445, hub 335, trainer
+779, board 329, sitting 2610. References re-walked after the shared changes: `trouver-le-pgcd` hub 336, trainer 777, board 317
+(0 FAIL; its story 15 FAIL, all « its line wraps » in the forge log — the 15 already recorded as environment), `decomposer-en-facteurs-premiers`
+board 286, thales hub 278 / board 248 — 0 FAIL. Banks 50 + 50, `validate:exercises --strict` clean; lint, format, unused, unreached
+green; `check:lessons`: both lessons cover all points, fails only on the known local-DB drift. Web suite 6 732 tests green (475 files); core 1 020 of 1 021 (the failure: 3 pre-existing duplicate signatures in `trouver-le-pgcd`’s bank, l1-009, l3-005, l3-006 — for the owner); scripts 175 green.
+**Owner's decisions taken by default (he said « continue » without answering; he may override):** « plus petit multiple commun »
+in full, never « PPCM »; no gear drawn; five teams as rows, 0 at the left; the go for the new pieces; mission costs; the plaque
+and the `measure` options.
+**Defects by who found them.** Gate A (fable): L3 7 to fix and 6 of pedagogy, L4 13 defects and 4 of pedagogy — all corrected
+before any code. Gate B (fable): L3 6 to fix (pedagogy 1, 2, 4, 6, minor), L4 9 to fix and 5 of pedagogy — corrected, except the
+debts below. The walk-fix agents: the number readers (C26), the guided retry (`waveBack`), the forge log. Ledger lines added:
+A12–A14, B47–B51, C26 (`defects.md`).
+**Cost (agents only, from their notices):** designs 0,54 + 0,38 M; gate A 0,13 + 0,13; banks 0,21 + 0,22; kit 0,50; worlds
+0,43 + 0,58; boards 0,31 + 0,26; forges 0,43 + 0,43; revision 0,17 + 0,17; walk descriptors 0,54; walk-fix L3 0,22 + 0,35, L4
+0,47; gate B 0,14 + 0,15 — **about 6,8 M for the two lessons with the four new kit pieces, against 1,2 M a lesson: OVER.** The
+causes: the new kit pieces (0,5 M of kit plus the worlds that drew them) and the walk-fix rounds (1,04 M). Plus, the same day, a
+fix of the Thalès world (`636349db`: the Nile sight walk seen inland), not counted. Models: all `opus` except banks, worlds,
+boards and revision on `sonnet`, gates on `fable`.
+**Open:** nothing published in the local database (it is in the drifted state of §10); the debts — L3 13 (far islands' labels
+overlap by < 12 px), 14 (forge mini-bars thin, kit), 15 (K2 sealed sentence clumsy); L4 rest of 11 (the evidence list opens
+scrolled), 12 (kit subtitle wraps with four steps; the built rule loses its column labels), 15 (translucent panel), 16 (typed
+« 2129 » ungrouped) and « avant » not fitting the 110 px team column; the 15 « its line wraps » of `trouver-le-pgcd story`.
+
 ## 10. Open, for the owner at the start of the session
 
 - May the session write in DZ for test 2, and how (branch or patches)? May engine patches be prepared for DZ?

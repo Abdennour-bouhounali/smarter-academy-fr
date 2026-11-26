@@ -1,0 +1,170 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l4-003",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Trois jardins à arroser",
+    "estimatedMinutes": 6,
+    "tags": [
+      "jardins",
+      "jours"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un jardinier arrose le jardin A tous les $9$ jours, le jardin B tous les $10$ jours et le jardin C tous les $15$ jours. Il a arrosé les trois jardins le même jour, le jour $0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de jours arrose-t-il de nouveau les trois jardins le même jour ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "90",
+      "answerFormat": "Un nombre de jours",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$9$ = $3^{2}$, $10$ = $2 \\times 5$ et $15$ = $3 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3^{2} \\times 5 = 90$.",
+        "incorrect": "Plus petit multiple commun non nul de $9$, $10$ et $15$."
+      },
+      "solution": {
+        "lines": [
+          "$9$ = $3^{2}$, $10$ = $2 \\times 5$, $15$ = $3 \\times 5$.",
+          "Plus petit multiple commun : $2 \\times 3^{2} \\times 5 = 90$."
+        ],
+        "result": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "1350"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "1"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de fois arrose-t-il les trois jardins le même jour pendant les $300$ jours qui suivent le jour $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compte les multiples de $90$ jusqu’à $300$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$90$ × $3$ = $270$, et $90$ × $4$ dépasse $300$."
+        }
+      ],
+      "feedback": {
+        "correct": "Aux jours $90$, $180$ et $270$ : $3$ fois.",
+        "incorrect": "Compte les multiples non nuls de $90$ qui ne dépassent pas $300$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $90$ : $90$, $180$, $270$…",
+          "$90$ × $4$ dépasse $300$ : il y en a $3$."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "90"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "À quel jour a lieu le troisième arrosage commun, en comptant à partir du jour $0$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "270",
+      "answerFormat": "Un numéro de jour",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le premier a lieu au jour $90$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le troisième est le troisième multiple non nul de $90$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ × $3$ = $270$.",
+        "incorrect": "Le troisième multiple non nul de $90$."
+      },
+      "solution": {
+        "lines": [
+          "Premier : $90$ ; deuxième : $180$ ; troisième : $270$."
+        ],
+        "result": "270"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PAS-LE-PLUS-PETIT",
+          "value": "90"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

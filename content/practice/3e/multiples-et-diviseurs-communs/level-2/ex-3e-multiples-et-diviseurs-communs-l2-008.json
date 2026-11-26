@@ -1,0 +1,121 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l2-008",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "À quelle heure ?",
+    "estimatedMinutes": 4,
+    "tags": [
+      "bus",
+      "horaires"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Deux bus quittent ensemble le dépôt à $8$ h $15$. Le premier repart toutes les $6$ min, le second toutes les $15$ min."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de minutes repartent-ils ensemble ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les premiers multiples de chaque nombre, en deux listes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier nombre qui figure dans les deux listes (autre que $0$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ est un multiple de $6$ et de $15$.",
+        "incorrect": "Écris les multiples de $15$ et cherche le premier qui est dans la table de $6$."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $15$ : $15$, $30$.",
+          "$15$ n’est pas un multiple de $6$ ; $30$ = $6$ × $5$."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "90"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "À $8$ h $15$, ils partent ensemble. Ils repartent ensemble à $8$ h … : quel est le nombre de minutes ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "45",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ajoute la durée trouvée à $15$ min."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$15$ + $30$."
+        }
+      ],
+      "feedback": {
+        "correct": "$15$ + $30$ = $45$ : à $8$ h $45$.",
+        "incorrect": "Ajoute la durée à l’heure de départ, en minutes."
+      },
+      "solution": {
+        "lines": [
+          "$8$ h $15$ + $30$ min = $8$ h $45$."
+        ],
+        "result": "45"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "30"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

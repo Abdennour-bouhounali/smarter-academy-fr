@@ -1,0 +1,222 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-010",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Des rubans et une machine",
+    "estimatedMinutes": 6,
+    "tags": [
+      "outil",
+      "PGCD",
+      "durées"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Léo a deux rubans de $150$ cm et de $180$ cm. Il veut les couper en morceaux tous de même longueur, les plus longs possible, sans chute."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Que cherche-t-on pour trouver la longueur d’un morceau ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un multiple commun",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "B",
+          "content": "Un diviseur commun",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit être la réponse : un multiple ou un diviseur des deux nombres ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Partager sans reste → diviseur ; se retrouver en même temps → multiple."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut partager sans reste : on cherche un diviseur commun, le plus grand.",
+        "incorrect": "Demande-toi si la situation partage des quantités sans reste ou fait se retrouver deux rythmes."
+      },
+      "solution": {
+        "lines": [
+          "Le nombre cherché divise les deux quantités : un diviseur commun, le plus grand."
+        ],
+        "result": "Un diviseur commun"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle est la longueur d’un morceau, en centimètres ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre de centimètres",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "La longueur divise $150$ et $180$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le plus grand diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "$150$ = $30$ × $5$ et $180$ = $30$ × $6$.",
+        "incorrect": "Le plus grand nombre qui divise $150$ et $180$."
+      },
+      "solution": {
+        "lines": [
+          "$150$ = $30$ × $5$ et $180$ = $30$ × $6$.",
+          "$5$ et $6$ n’ont pas de diviseur commun autre que $1$ : $30$ cm."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "900"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Dans son atelier, une machine fabrique une pièce toutes les $150$ s et une autre toutes les $180$ s. Elles démarrent ensemble. Au bout de combien de secondes fabriquent-elles une pièce en même temps pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "900",
+      "answerFormat": "Un nombre de secondes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ici, ce sont des instants qui se retrouvent : multiple ou diviseur ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$150$ = $2 \\times 3 \\times 5^{2}$ et $180$ = $2^{2} \\times 3^{2} \\times 5$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{2} \\times 3^{2} \\times 5^{2} = 900$.",
+        "incorrect": "Plus petit multiple commun non nul : tous les nombres premiers, chacun avec son plus grand exposant."
+      },
+      "solution": {
+        "lines": [
+          "$150$ = $2 \\times 3 \\times 5^{2}$ et $180$ = $2^{2} \\times 3^{2} \\times 5$.",
+          "Plus petit multiple commun : $2^{2} \\times 3^{2} \\times 5^{2} = 900$."
+        ],
+        "result": "900"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "27000"
+        },
+        {
+          "id": "MISC-PPCM-PGCD-OU-PPCM",
+          "value": "30"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Exprime cette durée en minutes.",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1$ minute = $60$ secondes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$900$ ÷ $60$."
+        }
+      ],
+      "feedback": {
+        "correct": "$900$ ÷ $60$ = $15$.",
+        "incorrect": "Divise le nombre de secondes par $60$."
+      },
+      "solution": {
+        "lines": [
+          "$900$ ÷ $60$ = $15$."
+        ],
+        "result": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-HORAIRE",
+          "value": "900"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}

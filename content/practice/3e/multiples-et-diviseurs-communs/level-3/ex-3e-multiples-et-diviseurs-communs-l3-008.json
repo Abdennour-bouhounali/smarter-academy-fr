@@ -1,0 +1,127 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l3-008",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux lignes de bus",
+    "estimatedMinutes": 6,
+    "tags": [
+      "bus",
+      "horaires"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "Deux lignes de bus partent ensemble du dépôt à $6$ h. La ligne A repart toutes les $24$ min, la ligne B toutes les $28$ min."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Au bout de combien de minutes repartent-elles ensemble pour la première fois ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "168",
+      "answerFormat": "Un nombre de minutes",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose $24$ et $28$ en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$24$ = $2^{3} \\times 3$ et $28$ = $2^{2} \\times 7$ : garde chaque nombre premier avec son plus grand exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{3} \\times 3 \\times 7 = 168$.",
+        "incorrect": "Décompose $24$ et $28$, puis garde chaque nombre premier avec son plus grand exposant."
+      },
+      "solution": {
+        "lines": [
+          "$24$ = $2^{3} \\times 3$ et $28$ = $2^{2} \\times 7$.",
+          "Plus petit multiple commun : $2^{3} \\times 3 \\times 7 = 168$."
+        ],
+        "result": "168"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "672"
+        },
+        {
+          "id": "MISC-PPCM-EXPOSANT-PETIT",
+          "value": "4"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien de fois repartent-elles ensemble entre $6$ h exclu et $13$ h inclus ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "De $6$ h à $13$ h, il s’écoule $7$ heures : combien de minutes ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de multiples de $168$ jusqu’à cette durée ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ h = $420$ min et $2$ × $168$ = $336$ ≤ $420$ < $3$ × $168$.",
+        "incorrect": "Convertis la durée en minutes puis compte les multiples de $168$ qu’elle contient."
+      },
+      "solution": {
+        "lines": [
+          "De $6$ h à $13$ h : $7$ h = $420$ min.",
+          "$420$ ÷ $168$ = $2{,}5$ : il y a $2$ multiples de $168$ avant $420$.",
+          "Rendez-vous à $168$ et $336$ min."
+        ],
+        "result": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-NB-DE-RENCONTRES",
+          "value": "168"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

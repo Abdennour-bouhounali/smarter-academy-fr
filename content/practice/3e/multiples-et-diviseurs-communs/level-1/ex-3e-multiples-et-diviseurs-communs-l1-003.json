@@ -1,0 +1,142 @@
+{
+  "id": "ex-3e-multiples-et-diviseurs-communs-l1-003",
+  "lessonCode": "multiples-et-diviseurs-communs",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un multiple commun de 10 et de 15",
+    "estimatedMinutes": 3,
+    "tags": [
+      "multiples communs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_multiples-et-diviseurs-communs_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "On cherche des multiples communs de $10$ et de $15$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Lequel de ces nombres est un multiple commun de $10$ et de $15$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-MULTIPLE-D-UN-SEUL"
+        },
+        {
+          "id": "B",
+          "content": "$5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-PGCD-OU-PPCM"
+        },
+        {
+          "id": "C",
+          "content": "$45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-PPCM-MULTIPLE-D-UN-SEUL"
+        },
+        {
+          "id": "D",
+          "content": "$30$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Un multiple commun est un multiple de $10$ ET un multiple de $15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Teste chaque nombre : se trouve-t-il dans la liste des multiples de $10$ ? de $15$ ?"
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ = $10$ × $3$ = $15$ × $2$ : c’est un multiple des deux.",
+        "incorrect": "Teste les nombres un à un : il doit être un multiple de $10$ et un multiple de $15$."
+      },
+      "solution": {
+        "lines": [
+          "$20$ est un multiple de $10$, pas de $15$.",
+          "$5$ divise $10$ et $15$ : c’est un diviseur, pas un multiple.",
+          "$45$ est un multiple de $15$, pas de $10$.",
+          "$30$ est un multiple de $10$ et de $15$."
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel est le plus petit multiple commun non nul de $10$ et de $15$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_multiples-et-diviseurs-communs_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "30",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les premiers multiples de chaque nombre, en deux listes."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le premier nombre qui figure dans les deux listes (autre que $0$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ est le premier nombre non nul qui est dans les deux listes.",
+        "incorrect": "Écris les multiples de $10$, puis ceux de $15$, et cherche le premier nombre commun."
+      },
+      "solution": {
+        "lines": [
+          "Multiples de $10$ : $10$, $20$, $30$…",
+          "Multiples de $15$ : $15$, $30$…",
+          "Le plus petit multiple commun non nul est $30$."
+        ],
+        "result": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-PPCM-PRODUIT",
+          "value": "150"
+        }
+      ],
+      "timeSeconds": 60
+    }
+  ]
+}
