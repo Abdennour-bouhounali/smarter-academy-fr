@@ -119,9 +119,15 @@
   gap: 0.7rem;
   padding: 1rem 1.2rem 1.1rem;
 }
+/* the title keeps its room: never squeezed into a column of one word per line (2026-11-26, the French labels are
+   longer) — when the controls do not fit beside it, they go to the line below */
+.di-page__head {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
 .di-page__head > div:first-child {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 1 1 16rem;
+  min-width: min(16rem, 100%);
   overflow: hidden;
 }
 .di-page__head h2 {
@@ -134,12 +140,16 @@
   flex: none;
   white-space: nowrap;
 }
-@media (max-width: 1500px) {
+@media (max-width: 1900px) {
   .di-pill__label {
     display: none;
   }
   .di-page__head .di-btn {
-    padding: 0 1rem;
+    padding: 0 0.8rem;
+    font-size: 0.92rem;
+  }
+  .di-page__head h2 {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 1101px) {

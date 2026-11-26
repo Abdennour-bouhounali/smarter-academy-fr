@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useIsPhoneScreen } from '../../components/auth/RequireLargeScreen';
 import { PHONE_TOOL_IDS } from '../../components/auth/phoneLessons';
-import { Brain, ClipboardList, FileText, Home, NotebookPen, Presentation, Users } from 'lucide-react';
+import { BookOpenCheck, Brain, ClipboardList, FileText, Home, NotebookPen, Presentation, Users } from 'lucide-react';
 import { getLessonById, getLessonPath } from '@smarter-academy/core';
 import MathLabel from '../../lessons/common/components/MathLabel';
 import { teacherBankPath } from '../practice/teacherBank';
-import { classCardPath, classSessionPath, classTrackingPath, toolHasContent } from './boardLessons';
+import { classCardPath, classSessionPath, classTrackingPath, revisionPath, toolHasContent } from './boardLessons';
 import { lessonFilePagePath } from './lessonFileDoc';
 import './teacherPanel.css';
 
@@ -28,6 +28,7 @@ const ALL_TOOLS = (lessonId) => [
   { id: 'session', icon: Presentation, to: classSessionPath(lessonId), main: true },
   { id: 'memo', icon: FileText, to: `/enseignant/cours/${encodeURIComponent(lessonId)}/memoire` },
   { id: 'file', icon: NotebookPen, to: lessonFilePagePath(lessonId) },
+  { id: 'revision', icon: BookOpenCheck, to: revisionPath(lessonId, 'enseignant') },
   { id: 'bank', icon: ClipboardList, to: teacherBankPath(lessonId) },
   { id: 'track', icon: Users, to: classTrackingPath(lessonId) },
   { id: 'card', icon: Brain, to: classCardPath(lessonId) },

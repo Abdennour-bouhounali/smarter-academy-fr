@@ -157,6 +157,9 @@ const DiagnosticResult = lazy(() => import('./pages/student/diagnostic/Diagnosti
 // Moteur d'exercices. Trois routes paramétrées, pas une par leçon : la
 // pratique est indépendante de l'arbre des leçons, et `lessonCode` suffit
 // puisque les codes de leçon sont globalement uniques.
+// « La page de révision » and « le résumé de l’unité » (REVISION_PAGE.md): lazy pages for both spaces.
+const RevisionPage = lazy(() => import('./features/revision/RevisionPage'));
+const UnitSummaryPage = lazy(() => import('./features/revision/UnitSummaryPage'));
 const PracticeHub = lazy(() => import('./pages/student/practice/PracticeHub'));
 const PracticeSession = lazy(() => import('./pages/student/practice/PracticeSession'));
 const PracticeSummary = lazy(() => import('./pages/student/practice/PracticeSummary'));
@@ -401,6 +404,8 @@ function AppRoutes() {
               directement. */}
           {/* Exercices : tablette et ordinateur seulement (RequireLargeScreen). */}
           <Route element={<RequireLargeScreen />}>
+            <Route path="revision/:lessonId" element={<RevisionPage />} />
+            <Route path="revision/unite/:unitId" element={<UnitSummaryPage />} />
             <Route path="pratique/:lessonCode" element={<PracticeHub />} />
             <Route path="pratique/:lessonCode/session/:sessionId" element={<PracticeSession />} />
             <Route path="pratique/:lessonCode/bilan/:sessionId" element={<PracticeSummary />} />
@@ -510,6 +515,8 @@ function AppRoutes() {
             {/* « Suivi de la classe » et « fiche de connaissances » d'une leçon : dans l'espace enseignant, sous l'en-tête commun des outils */}
             <Route path="suivi/:lessonId" element={<TeacherLessonTracking />} />
             <Route path="carte/:lessonId" element={<TeacherLessonCard />} />
+            <Route path="revision/:lessonId" element={<RevisionPage teacher />} />
+            <Route path="revision/unite/:unitId" element={<UnitSummaryPage teacher />} />
             <Route path="pratique/:lessonCode" element={<TeacherBankGate />} />
             <Route path="pratique/:lessonCode/:level/:exerciseId" element={<TeacherBankGate player />} />
           </Route>

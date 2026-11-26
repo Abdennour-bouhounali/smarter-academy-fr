@@ -106,3 +106,5 @@ The old French site's own documents are on `main`.
 
 Documents and code comments are written in English and French. The product is French
 ([`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md)) and so is its interface.
+
+- La page de révision of a lesson and the unit summary (2026-11-26): [`architecture/REVISION_PAGE.md`](./architecture/REVISION_PAGE.md).

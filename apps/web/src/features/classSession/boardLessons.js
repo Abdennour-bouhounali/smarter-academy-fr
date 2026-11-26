@@ -36,11 +36,18 @@ export const hasTeacherBank = (lessonId) => hasClassBoard(lessonId) || hasWorld(
  */
 const KNOWLEDGE_LESSONS = Object.freeze(lessonsWithPack('knowledge'));
 export const toolHasContent = (lessonId, toolId) => {
+  // « la page de révision » is written lesson by lesson: its tab exists only where the page does
+  if (toolId === 'revision') return hasRevision(lessonId);
   if (!hasWorld(lessonId)) return true;
   // « la fiche de connaissances » reads the lesson's own knowledge: a unit's last lesson has none (the unit's rules are its recap)
   if (toolId === 'card') return hasClassBoard(lessonId) && KNOWLEDGE_LESSONS.includes(lessonId);
   return hasClassBoard(lessonId) || ['lesson', 'bank', 'track'].includes(toolId);
 };
+
+/** « La page de révision » (REVISION_PAGE.md): the lessons whose pack has one, and its address in each space. */
+const REVISION_LESSONS = Object.freeze(lessonsWithPack('revision'));
+export const hasRevision = (lessonId) => REVISION_LESSONS.includes(lessonId);
+export const revisionPath = (lessonId, space = 'espace') => `/${space}/revision/${encodeURIComponent(lessonId)}`;
 
 /** The four moments of the hour, in order (the set-up screen and the teacher's card show them the same way). */
 export const MOMENTS = Object.freeze(['start', 'revise', 'lesson', 'end']);

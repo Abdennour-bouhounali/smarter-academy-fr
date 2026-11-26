@@ -170,6 +170,8 @@ async function statusOf(entry) {
       bare.length ? `no family for ${bare.map((t) => t.id).join(', ')}` : `${tools.length} core tool(s)`,
     );
   }
+  // « La page de révision » (owner, 2026-11-26, REVISION_PAGE.md §2); a unit's last lesson teaches no rule
+  if (!missions) add('S7 revision page: in the pack, revision.js', Boolean(flags.revision) && has('revision.js'));
   add(
     'T1–T3 board: script and written memo',
     Boolean(flags.board) && has('board', 'script.js') && has('board', 'memo.js'),

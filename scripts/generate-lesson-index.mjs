@@ -12,7 +12,7 @@
  * d'arabe, rien de pédagogique — et la configuration complète se charge avec la leçon (registry.loadLessonConfig).
  *
  * Depuis le 2026-11-17 la ligne d'une leçon porte aussi les DRAPEAUX de son paquet (`lesson.pack.js`, LESSON_V2.md) :
- * `pack: { phone?, world?, knowledge?, coach?, board? }` — voir `packFlags` plus bas.
+ * `pack: { phone?, world?, knowledge?, coach?, board?, revision? }` — voir `packFlags` plus bas.
  *
  * Source : chaque `lesson.config.js` sous apps/web/src/lessons/<niveau>/<classe>/… (modules de données sans
  * import, lisibles par Node). Seules les classes ACTIVES (activeGrades.js) sont indexées.
@@ -73,13 +73,14 @@ async function packFlags(dir, lessonId, rel) {
   const { LESSON_PACK: p } = await import(pathToFileURL(file).href);
   if (!p) { problems.push(`${where} : no LESSON_PACK export`); return null; }
   if (p.id !== lessonId) problems.push(`${where} : id « ${p.id} » ≠ the lesson « ${lessonId} »`);
-  const KNOWN = ['id', 'phone', 'world', 'knowledge', 'coach', 'board'];
+  const KNOWN = ['id', 'phone', 'world', 'knowledge', 'coach', 'board', 'revision'];
   for (const k of Object.keys(p)) if (!KNOWN.includes(k)) problems.push(`${where} : unknown key « ${k} » (known: ${KNOWN.join(', ')})`);
   const fn = (v) => typeof v === 'function';
   if (p.world && !(typeof p.world.id === 'string' && fn(p.world.content))) problems.push(`${where} : world = { id, content: () => import() }`);
   if (p.knowledge && !fn(p.knowledge)) problems.push(`${where} : knowledge = () => import()`);
   if (p.coach && !(p.knowledge && Object.values(p.coach).every((v) => typeof v === 'string'))) problems.push(`${where} : coach = { <الكفاءة>: <knowledge item id> } and needs « knowledge »`);
   if (p.board && !(fn(p.board.script) && fn(p.board.memo))) problems.push(`${where} : board = { script: () => import(), memo: () => import() }`);
+  if (p.revision && !fn(p.revision)) problems.push(`${where} : revision = () => import()`);
   if (p.phone != null && typeof p.phone !== 'boolean') problems.push(`${where} : phone = true | false`);
   const flags = {};
   if (p.phone) flags.phone = true;
@@ -87,6 +88,7 @@ async function packFlags(dir, lessonId, rel) {
   if (p.knowledge) flags.knowledge = true;
   if (p.coach) flags.coach = true;
   if (p.board) flags.board = true;
+  if (p.revision) flags.revision = true;
   return flags;
 }
 

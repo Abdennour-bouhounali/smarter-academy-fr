@@ -92,10 +92,12 @@ is not « done » (§3) while the list is not empty.
 The server holds no code of a lesson's game. An answer that counts toward a learning point is sent as a **claim** (the
 numbers of the question and what the student wrote) to `POST /lessons/{code}/game-evidence`, and
 `Domain/GameWorld/ClaimVerifier.php` re-computes its verdict from the numbers alone. The kinds of claim (`division`,
-`product`, `phrase`, `sure`, `containers`, `pair`, `divisors`, `stop`, `divisible`, `bracket`, `fullNeeded`, `pgcd`,
+`product`, `phrase`, `sure`, `containers`, `pair`, `divisors`, `stop`, `divisible`, `bracket`, `fullNeeded`, `pgcd`, `ppcm`,
 `coprime`, `commonDivisor`, `fraction`, `factorization`, `prime`, `scale`) are statements about natural numbers — they belong to no lesson. Each states the
 WHOLE answer (e.g. `bracket`: b × lo ≤ a < b × hi with hi = lo + 1; `fullNeeded`: full = ⌊a ÷ b⌋ and need = ⌈a ÷ b⌉;
-`pgcd`: g = PGCD(a ; b), a and b not both 0; `coprime`: `says` = (PGCD = 1); `commonDivisor`: d ≥ 1 divides a and b —
+`pgcd`: g = PGCD(a ; b), a and b not both 0; `ppcm` (2026-11-26): `{ a, b, more?: [c, …], m }` — m = the smallest common
+multiple of a, b and the 0 to 4 numbers of `more`, every number ≥ 1, 1 ≤ m ≤ 10^6 (a multiple past 10^6 is never claimed
+right; `a` and `b` are the first two numbers because `GameEvidenceController` requires them); `coprime`: `says` = (PGCD = 1); `commonDivisor`: d ≥ 1 divides a and b —
 with the option `notOne: true`, d ≥ 2; `fraction` (a/b given, p/q written): a × q = p × b, b and q > 0, and
 PGCD(p ; q) = 1 unless `reduced: false` — with the option `op` (`'+'`, `'-'`, `'*'`), the claim also carries the
 calculation `x/y op z/w` (naturals ≤ 10^6, y and w > 0) and a/b must EQUAL its result, computed on each side). The kinds
@@ -247,6 +249,7 @@ that have content for the lesson; the memo door comes back with the board.
 | T2 the class test | `content/class-tests/<grade>/<id>.json` |
 | the phone | **PAUSED**: `pack.phone` stays `false`; not part of « done » |
 | a walk | a walk of `apps/web/e2e/` that names the lesson and plays its world |
+| the revision page (owner, 2026-11-26) | `pack.revision` and `revision.js`, checked by `features/revision/revision.test.js` (`REVISION_PAGE.md` §2) |
 | published | status `available` in the catalogue |
 | no module page | no `modules/`, a `lesson.pack.js` exporting `LESSON_PACK` (`isV2Lesson`, §2), no mission player in `lesson.config.js` |
 

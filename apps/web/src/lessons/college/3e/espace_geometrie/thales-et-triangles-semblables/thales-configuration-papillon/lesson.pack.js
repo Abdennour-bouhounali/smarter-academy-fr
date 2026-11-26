@@ -19,6 +19,7 @@ export const LESSON_PACK = {
     P2: 'papillon',
     P3: 'calcul-depuis-le-sommet',
   },
+  revision: () => import('./revision.js').then((m) => m.REVISION),
   // the class session: the lesson on the board and its written memo
   board: {
     script: () => import('./board/script.js').then((m) => m.SCRIPT),

@@ -16,6 +16,7 @@ export const LESSON_PACK = {
   // the exam coach: the knowledge sheet behind each learning point (savoir-faire) of the lesson (world/evidence.js ›
   // POINTS) — P1 ← the method of key 1, P2 ← the powers, P3 ← the spreadsheet and the program
   coach: { P1: 'plus-petit-premier', P2: 'puissances', P3: 'tableur' },
+  revision: () => import('./revision.js').then((m) => m.REVISION),
   // the class session: the lesson on the board and its written memo
   board: {
     script: () => import('./board/script.js').then((m) => m.SCRIPT),

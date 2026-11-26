@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { lessonPackFlags, lessonsWithPack, loadLessonPack, getBuiltLessons } from './registry';
 import { hasPackPart, loadPackPart } from './lessonPack';
 
-const FLAGS = ['phone', 'world', 'knowledge', 'coach', 'board'];
+const FLAGS = ['phone', 'world', 'knowledge', 'coach', 'board', 'revision'];
 const WITH_PACK = getBuiltLessons()
   .map((l) => l.id)
   .filter((id) => Object.keys(lessonPackFlags(id)).length > 0);

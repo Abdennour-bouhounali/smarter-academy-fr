@@ -8,6 +8,7 @@
  *   coach      { <learning point (savoir-faire)>: <knowledge item id> } — the sheet the exam coach reminds
  *   script     « la leçon au tableau »: the steps of the class session
  *   memo       its written memo
+ *   revision   « la page de révision »: the lesson on one scrolling page (REVISION_PAGE.md)
  * Never in the entry bundle: the flags (`registry › lessonPackFlags`) answer « has it one? » without loading anything.
  */
 import { useEffect, useState } from 'react';
@@ -19,6 +20,7 @@ const PARTS = {
   coach: { flag: 'coach', read: (pack) => pack.coach },
   script: { flag: 'board', read: (pack) => pack.board.script() },
   memo: { flag: 'board', read: (pack) => pack.board.memo() },
+  revision: { flag: 'revision', read: (pack) => pack.revision() },
 };
 
 /** Has this lesson that part? Answered from the generated flags: nothing is loaded. */

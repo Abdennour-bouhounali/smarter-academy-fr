@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { BookOpen, Compass, Wand2, ListChecks, Landmark, Lock, ChevronDown, Flag } from 'lucide-react';
@@ -20,6 +20,8 @@ import PrerequisiteLessonChips from '../lessons/common/components/PrerequisiteLe
 import UnitOpenerFigure from './unit/UnitOpenerFigure';
 import { useCatalogueHref } from '../components/student/catalogueLink';
 import UnitMissionView from './unit/UnitMissionView';
+import { summaryLessons, unitSummaryPath } from '../features/revision/unitSummary';
+import { hasRevision, revisionPath } from '../features/classSession/boardLessons';
 import { unitMissionOf } from './unit/unitMissions';
 import { StatusDot, ProgressLine, minutesOf, tileKind } from '../components/student/lessonTileParts';
 
@@ -35,6 +37,11 @@ import { StatusDot, ProgressLine, minutesOf, tileKind } from '../components/stud
  *
  * A STUDENT of a converted unit (owner, 2026-11-09) sees `UnitMissionView` instead (unit/unitMissions.js); the teacher
  * keeps THIS page.
+ *
+ * The plain version (owner, 2026-11-26, the same as the Algerian unit page): for the student, « Ta leçon maintenant » on
+ * top — the lesson to do, « Commencer / Continuer », « Page de révision » when it has one, « Dans cette leçon » —; then
+ * the lessons as ONE list, each row with its state, « Tu es ici », « Page de révision » and its main button; the
+ * « Résumé du chapitre » in the header once every lesson of the unit is complete (REVISION_PAGE.md).
  */
 const MASTERY_DOT = {
   unassessed: 'bg-nav-line',
@@ -48,6 +55,8 @@ const PRIMARY =
   'inline-flex min-h-[44px] items-center gap-1.5 rounded-xl bg-nav-accent px-4 text-sm font-bold text-white hover:bg-[#3350c4]';
 const QUIET =
   'inline-flex min-h-[44px] items-center gap-1.5 rounded-xl border-[1.5px] border-nav-line bg-white px-4 text-sm font-bold text-nav-ink hover:border-nav-accent';
+const SECONDARY =
+  'inline-flex min-h-[44px] items-center gap-1.5 whitespace-nowrap rounded-xl border border-nav-accent bg-white px-4 text-sm font-bold text-nav-accent hover:bg-nav-accent-soft';
 
 function masteryIndex(profile) {
   // The profile is nested by class then by lesson (see findLessonMasteryRows); flattened here by point code.
@@ -68,7 +77,7 @@ function masteryIndex(profile) {
  * for the teacher its étapes. `next` marks the lesson the student should open now: its line is the filled one and its
  * details are open.
  */
-function LessonBlock({ lesson, index, mastery, next, t }) {
+function LessonBlock({ lesson, index, mastery, next, t, openRequest }) {
   const { isLessonClosed, isLessonHiddenByClass, lessonStatus } = useContentAvailability();
   const { isTeacher } = useLearningViewer();
   // Hidden by the teacher: unavailable for the student of that class, without touching the publication.
@@ -88,7 +97,15 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
   const mastered = points.filter((lp) => resolveMasteryState(mastery.get(lp.id)) === 'mastered').length;
   const minutes = minutesOf(lesson.duration);
   const kind = !available ? 'soon' : tileKind('open', progressPercent);
-  const [open, setOpen] = useState(next && !isTeacher);
+  const [open, setOpen] = useState(false);
+  const row = useRef(null);
+  // « Dans cette leçon » of the card on top opens this row and brings it into view
+  useEffect(() => {
+    if (openRequest?.id !== lesson.id) return;
+    setOpen(true);
+    row.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [openRequest, lesson.id]);
+  const revision = available && hasRevision(lesson.id);
   const facts = [
     points.length > 0 && t('unit.pointsCount', { count: points.length }),
     minutes != null && t('unit.minutes', { n: minutes }),
@@ -97,7 +114,8 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
 
   return (
     <article
-      className={`relative overflow-hidden rounded-2xl border bg-white ${draft ? 'border-dashed border-nav-line' : next ? 'border-nav-now' : 'border-nav-line'}`}
+      ref={row}
+      className={`relative scroll-mt-4 border-t border-nav-line ${next ? 'bg-nav-accent-soft' : ''}`}
       data-unit-lesson={lesson.id}
     >
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 p-4">
@@ -120,12 +138,26 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
               </span>
             )}
             <PublicationBadge status={lessonStatus(lesson.id)} />
+            {next && (
+              <span className="whitespace-nowrap rounded-full bg-nav-accent px-2.5 py-0.5 font-inter text-xs font-black text-white">
+                {t('unit.mission.here')}
+              </span>
+            )}
           </h3>
           <p className="mt-0.5 font-inter text-xs font-semibold text-nav-muted">
             {isSynthesis && `${t('unit.synthesisTag')} · `}
             {facts.join(' · ')}
           </p>
         </div>
+        {revision && (
+          <Link
+            to={revisionPath(lesson.id, isTeacher ? 'enseignant' : 'espace')}
+            className={SECONDARY}
+            data-unit-revision={lesson.id}
+          >
+            {t('unit.mission.revision')}
+          </Link>
+        )}
         {available && isTeacher && built && <TeacherLessonActions lesson={lesson} />}
         {available && !(isTeacher && built) && (
           <Link to={lesson.path} className={next ? PRIMARY : QUIET}>
@@ -251,6 +283,55 @@ function LessonBlock({ lesson, index, mastery, next, t }) {
   );
 }
 
+/** « Ta leçon maintenant »: the lesson to open now, and the three ways in (REVISION_PAGE.md, owner 2026-11-26). */
+function NowCard({ lesson, n, total, first, t, onDetails }) {
+  const { progressPercent } = getLessonProgress(lesson.id, getTotalModules(lesson.id));
+  const minutes = minutesOf(lesson.duration);
+  return (
+    <article className="rounded-2xl border border-nav-line bg-white p-5" data-unit-now={lesson.id}>
+      <p className="font-inter text-sm font-black text-nav-accent">
+        {first ? t('unit.mission.startTag') : t('unit.mission.nowTag')}
+        <span className="ms-2 font-bold text-nav-muted">
+          {t('unit.mission.lessonOf', { n, total })}
+          {minutes != null && ` · ${t('unit.mission.minutes', { n: minutes })}`}
+        </span>
+      </p>
+      <h2 className="mt-1 font-space text-2xl font-extrabold leading-snug text-nav-ink">
+        <MathLabel>{lesson.title}</MathLabel>
+      </h2>
+      {progressPercent > 0 && (
+        <div
+          className="mt-3 flex items-center gap-2 font-inter text-sm font-bold text-nav-muted"
+          data-unit-now-progress={progressPercent}
+        >
+          <span className="h-2 w-48 overflow-hidden rounded-full bg-nav-line">
+            <span className="block h-full rounded-full bg-nav-done" style={{ width: `${progressPercent}%` }} />
+          </span>
+          {t('unit.mission.progress', { p: progressPercent })}
+        </div>
+      )}
+      <div className="mt-4 flex flex-wrap gap-2.5">
+        <Link to={lesson.path} className={PRIMARY} data-unit-continue>
+          {first
+            ? t('unit.mission.startUnit')
+            : progressPercent > 0
+              ? t('unit.mission.continue')
+              : t('unit.mission.startLesson')}
+          <ArrowForward className="h-4 w-4" aria-hidden="true" />
+        </Link>
+        {hasRevision(lesson.id) && (
+          <Link to={revisionPath(lesson.id)} className={SECONDARY} data-unit-revision={lesson.id}>
+            {t('unit.mission.revision')}
+          </Link>
+        )}
+        <button type="button" onClick={onDetails} className={SECONDARY} data-unit-whats-in>
+          {t('unit.mission.whatsIn')}
+        </button>
+      </div>
+    </article>
+  );
+}
+
 export default function UnitPage() {
   // Cette page mène à des leçons : leur runtime partagé arrive pendant
   // l'inactivité, le clic ne l'attend pas (lessonRuntimeLoader.js).
@@ -268,7 +349,8 @@ export default function UnitPage() {
   // Même contrat de décalage haut que le sommaire et les modules de leçon.
   const chrome = useLessonChromeLayout();
   const mastery = useMemo(() => masteryIndex(profile), [profile]);
-  const { isTeacher } = useLearningViewer();
+  const { isTeacher, usesWorkspaceShell } = useLearningViewer();
+  const [openRequest, setOpenRequest] = useState(null);
 
   if (!unit || unit.levelId !== levelId || unit.gradeId !== gradeId || unit.chapterId !== chapterId)
     return <Navigate to="/courses" replace />;
@@ -304,6 +386,7 @@ export default function UnitPage() {
   // The lesson to open NOW: the first one available and not finished. A teacher has none (he is not a learner here).
   const all = unit.synthesis ? [...lessons, unit.synthesis] : lessons;
   const nextId = isTeacher ? null : (all.find((l) => l.status === 'available' && !isDone(l))?.id ?? null);
+  const nextLesson = all.find((l) => l.id === nextId) ?? null;
   const FOLD = 'rounded-2xl border border-nav-line bg-white';
   const FOLD_HEAD =
     'flex min-h-[48px] cursor-pointer list-none items-center gap-2 px-4 font-inter text-sm font-bold text-nav-ink [&::-webkit-details-marker]:hidden';
@@ -335,20 +418,31 @@ export default function UnitPage() {
                 <MathLabel>{unit.title}</MathLabel>
               </h1>
             </div>
-            <div className={`w-full sm:w-56 ${isTeacher ? 'hidden' : ''}`} data-tour="unit.progress">
-              <div className="flex items-baseline justify-between font-inter text-sm font-bold text-nav-ink">
-                <span>{t('unit.lessonsDone')}</span>
-                <span dir="ltr">
-                  {done}
-                  {' / '}
-                  {lessons.length}
-                </span>
-              </div>
-              <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-nav-line">
-                <div
-                  className="h-full rounded-full bg-nav-done"
-                  style={{ width: `${lessons.length ? (done / lessons.length) * 100 : 0}%` }}
-                />
+            <div className="flex flex-wrap items-end gap-4">
+              {usesWorkspaceShell && summaryLessons(unit).length > 0 && (
+                <Link
+                  to={unitSummaryPath(unit.id, isTeacher ? 'enseignant' : 'espace')}
+                  className="inline-flex min-h-[44px] items-center rounded-xl border border-nav-accent bg-white px-4 font-inter text-sm font-bold text-nav-accent hover:bg-nav-accent-soft"
+                  data-unit-summary-link
+                >
+                  {t('unit.mission.summary')}
+                </Link>
+              )}
+              <div className={`w-full sm:w-56 ${isTeacher ? 'hidden' : ''}`} data-tour="unit.progress">
+                <div className="flex items-baseline justify-between font-inter text-sm font-bold text-nav-ink">
+                  <span>{t('unit.lessonsDone')}</span>
+                  <span dir="ltr">
+                    {done}
+                    {' / '}
+                    {lessons.length}
+                  </span>
+                </div>
+                <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-nav-line">
+                  <div
+                    className="h-full rounded-full bg-nav-done"
+                    style={{ width: `${lessons.length ? (done / lessons.length) * 100 : 0}%` }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -410,8 +504,21 @@ export default function UnitPage() {
           </div>
         </header>
 
-        <section className="space-y-3">
-          <h2 className="font-space text-lg font-bold text-nav-ink">{t('unit.lessons', { count: lessons.length })}</h2>
+        {nextLesson && (
+          <NowCard
+            lesson={nextLesson}
+            n={all.indexOf(nextLesson) + 1}
+            total={all.length}
+            first={done === 0 && getLessonProgress(nextLesson.id, getTotalModules(nextLesson.id)).progressPercent === 0}
+            t={t}
+            onDetails={() => setOpenRequest({ id: nextLesson.id, at: Date.now() })}
+          />
+        )}
+
+        <section className="overflow-hidden rounded-2xl border border-nav-line bg-white">
+          <h2 className="px-4 py-3 font-space text-lg font-bold text-nav-ink">
+            {t('unit.lessons', { count: lessons.length })}
+          </h2>
           {lessons.map((lesson, i) => (
             <LessonBlock
               key={lesson.id}
@@ -420,6 +527,7 @@ export default function UnitPage() {
               mastery={mastery}
               next={lesson.id === nextId}
               t={t}
+              openRequest={openRequest}
             />
           ))}
           {unit.synthesis && (
@@ -429,6 +537,7 @@ export default function UnitPage() {
               mastery={mastery}
               next={unit.synthesis.id === nextId}
               t={t}
+              openRequest={openRequest}
             />
           )}
         </section>

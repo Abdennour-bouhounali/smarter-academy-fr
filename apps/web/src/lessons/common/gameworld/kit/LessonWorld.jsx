@@ -36,6 +36,8 @@ import { sendGameEvidence, flushGameEvidence, newAttemptId } from './evidenceSen
 import { sendSitting, flushSittings, uuid } from './bankEvidence';
 import { usePhoneScreen } from '../engine/phoneScreen';
 import TurnPhone from '../../../../components/common/TurnPhone';
+import { useLearningViewer } from '../../../../features/learning/learningViewer';
+import { hasRevision, revisionPath } from '../../../../features/classSession/boardLessons';
 import { launchDone } from '../../launchkit/store';
 import KnowledgePage from './KnowledgePage';
 import ExamSitting from './ExamSitting';
@@ -240,6 +242,12 @@ function Shell({ world, game, rootRef, exitTo, basePath, config, onRestart, mast
   const { keys, rules, sittings } = useLesson();
   const s = useSyncExternalStore(game.subscribe, game.getState);
   const [full, setFull] = useState(false);
+  // « La page de révision » (REVISION_PAGE.md): a door of the title screen, for an account whose lesson has the page
+  const viewer = useLearningViewer();
+  const revisionTo =
+    viewer.usesWorkspaceShell && hasRevision(config.id)
+      ? revisionPath(config.id, viewer.isTeacher ? 'enseignant' : 'espace')
+      : null;
   const coarse = useMemo(() => window.matchMedia?.('(pointer: coarse)').matches, []);
   const { upright } = usePhoneScreen();
   useEffect(() => {
@@ -415,6 +423,7 @@ function Shell({ world, game, rootRef, exitTo, basePath, config, onRestart, mast
           game={game}
           world={world}
           lessonTitle={config.title}
+          revisionTo={revisionTo}
           onBegin={() => (launchDone(config.id) ? game.start() : game.openLaunch(true))}
           onRestart={onRestart}
           coarse={coarse}

@@ -25,7 +25,7 @@ export const studentDoors = [
     labelKey: 'doors.lessons',
     icon: BookOpen,
     path: '/espace/cours',
-    match: ['/courses'],
+    match: ['/courses', '/espace/revision'],
     pages: [
       { labelKey: 'myCourses', path: '/espace/cours' },
       { labelKey: 'explore', path: '/espace/explorer' },

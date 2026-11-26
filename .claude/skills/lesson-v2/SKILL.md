@@ -287,3 +287,8 @@ the first island to the end), and any screen whose content exceeds the limits it
 last lesson » is not a proof for content of another size: the gate dash worked for five lessons and sent the hero to
 the wrong island in the first lesson with a longer road (`defects.md` D6). French sentences are LONGER than the Arabic
 ones they replace (often by a third): a limit proved in Arabic proves nothing for French text.
+
+## The revision page is part of every lesson with rules (owner, 2026-11-26)
+
+After the knowledge sheets and the memo exist, one agent writes `revision.js` (brief `briefs.md` §S, contract
+`docs/architecture/REVISION_PAGE.md` §2). A lesson without it is not done: its test and `status:lesson-v2` say so.

@@ -293,3 +293,10 @@ session does that to-do (`SKILL.md` §2 step 4). The block below is the rule set
 > - Update the walk's expectations when you change a number or a sentence; never weaken an assertion.
 > - Two fix agents at once split by files (the student's world ∥ the board, the warm-up, the lab); a test of the
 >   other agent's area that your change breaks is REPORTED with the fix it needs.
+
+## §S. The revision page (`revision.js`) — every lesson with rules
+
+> Blocks of §0 first. Read `docs/architecture/REVISION_PAGE.md` §2. Write `<L>/revision.js` and add
+> `revision: () => import('./revision.js').then((m) => m.REVISION),` to `<L>/lesson.pack.js` (do not run the index
+> generator). Check: `cd apps/web && npx vitest run src/features/revision -t "<id>" --maxWorkers=2`.
+> « No rule is told » does not apply to this page. Report every number you are unsure of.

@@ -16,6 +16,7 @@ export const LESSON_PACK = {
   // the exam coach: the knowledge sheet behind each learning point (savoir-faire) of the lesson (world/evidence.js ›
   // POINTS) — P1 ← the common divisors, P2 ← the prime factors, P3 ← Euclid, P4 ← the identical lots
   coach: { P1: 'diviseurs-communs', P2: 'pgcd-facteurs', P3: 'euclide', P4: 'lots-identiques' },
+  revision: () => import('./revision.js').then((m) => m.REVISION),
   // the class session: the lesson on the board and its written memo
   board: {
     script: () => import('./board/script.js').then((m) => m.SCRIPT),
