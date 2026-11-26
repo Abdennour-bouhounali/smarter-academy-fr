@@ -209,7 +209,7 @@ A12–A14, B47–B51, C26 (`defects.md`).
 causes: the new kit pieces (0,5 M of kit plus the worlds that drew them) and the walk-fix rounds (1,04 M). Plus, the same day, a
 fix of the Thalès world (`636349db`: the Nile sight walk seen inland), not counted. Models: all `opus` except banks, worlds,
 boards and revision on `sonnet`, gates on `fable`.
-**Open:** nothing published in the local database (it is in the drifted state of §10); the debts — L3 13 (far islands' labels
+Published locally the same day at the owner's remark « Bientôt »: `smarter:import-curriculum`, `smarter:import-content-registry`, `smarter:publish-available-content` (backup first) — both lessons `available`, `published`, `free`. **Open:** the debts — L3 13 (far islands' labels
 overlap by < 12 px), 14 (forge mini-bars thin, kit), 15 (K2 sealed sentence clumsy); L4 rest of 11 (the evidence list opens
 scrolled), 12 (kit subtitle wraps with four steps; the built rule loses its column labels), 15 (translucent panel), 16 (typed
 « 2129 » ungrouped) and « avant » not fitting the 110 px team column; the 15 « its line wraps » of `trouver-le-pgcd story`.
