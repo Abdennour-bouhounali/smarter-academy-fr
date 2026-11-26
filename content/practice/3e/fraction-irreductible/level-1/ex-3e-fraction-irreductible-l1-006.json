@@ -1,0 +1,193 @@
+{
+  "id": "ex-3e-fraction-irreductible-l1-006",
+  "lessonCode": "fraction-irreductible",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Bien simplifier une fraction",
+    "estimatedMinutes": 4,
+    "tags": [
+      "simplifier",
+      "erreurs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Trois élèves simplifient une fraction."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Dis si chaque élève a raison.",
+      "statement": "Léo simplifie $\\dfrac{15}{45}$ en retranchant $10$ au numérateur et au dénominateur : il obtient $\\dfrac{5}{35}$. A-t-il raison ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-RETRANCHER-LE-MEME"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Simplifier une fraction, c’est diviser son numérateur ET son dénominateur par le même nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Compare $\\dfrac{15}{45}$ et $\\dfrac{5}{35}$ : divise par $5$ le haut et le bas de chacune."
+        }
+      ],
+      "feedback": {
+        "correct": "Cette écriture respecte la règle : la fraction garde la même valeur.",
+        "incorrect": "Vérifie que la fraction obtenue garde la même valeur que la fraction de départ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{15}{45} = \\dfrac{1}{3}$ et $\\dfrac{5}{35} = \\dfrac{1}{7}$ : les deux fractions ne sont pas égales.",
+          "On simplifie en divisant, jamais en retranchant."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Inès simplifie $\\dfrac{12}{20}$ en divisant seulement le numérateur par $4$ : elle obtient $\\dfrac{3}{20}$. A-t-elle raison ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISER-UN-SEUL-TERME"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Simplifier une fraction, c’est diviser son numérateur ET son dénominateur par le même nombre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Que devient le dénominateur ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Cette écriture respecte la règle : la fraction garde la même valeur.",
+        "incorrect": "Vérifie que la fraction obtenue garde la même valeur que la fraction de départ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{12}{20} = \\dfrac{3}{5}$ alors que $\\dfrac{3}{20}$ est beaucoup plus petit.",
+          "Il faut diviser le numérateur ET le dénominateur par le même nombre."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "lead": "Simplifie.",
+      "statement": "Rends la fraction $\\dfrac{28}{42}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{28}{42} = \\dfrac{2}{3}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$28 = 2 \\times 2 \\times 7$ et $42 = 2 \\times 3 \\times 7$.",
+          "Les facteurs premiers communs : $2 \\times 7$.",
+          "$\\dfrac{28}{42} = \\dfrac{2 \\times 7 \\times 2}{2 \\times 7 \\times 3} = \\dfrac{2}{3}$."
+        ],
+        "result": "\\dfrac{28}{42} = \\dfrac{2}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "14/21"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "4/6"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -191,7 +191,13 @@ export async function pairChecks(w, page, where) {
       const head = li.querySelector(':scope > div');
       const id = li.dataset.rfRow;
       if (!head?.classList.contains('rf-line--pair')) out.bad.push(`${id}: not a pair line`);
-      if (li.querySelectorAll('svg.rf-mini--pair > g').length !== 2) out.bad.push(`${id}: its mini is not two bars`);
+      // its mini: two bars — or, for a case that says what it is built on (`c.sub`, a fraction's two decompositions,
+      // gate B of fraction-irreductible, 2026-11-26), that one line of words, whole and not cut
+      const sub = li.querySelector('.rf-line__sub');
+      if (sub) {
+        if (!sub.textContent.trim()) out.bad.push(`${id}: its decompositions line is empty`);
+        if (sub.scrollWidth > sub.clientWidth + 1) out.bad.push(`${id}: its decompositions line is cut`);
+      } else if (li.querySelectorAll('svg.rf-mini--pair > g').length !== 2) out.bad.push(`${id}: its mini is not two bars`);
       if (!head) continue;
       const lh = Math.max(
         ...[...head.querySelectorAll('strong, span, em')].map((e) => e.getBoundingClientRect().height),

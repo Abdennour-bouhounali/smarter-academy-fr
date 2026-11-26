@@ -85,6 +85,28 @@ describe('the claims of a game answer — one rule for the browser and for the s
     expect(verifyClaim(scaleClaim({ from: [''], to: [''], p: 1, q: 1 }))).toBe(false);
   });
 
+  it('the smallest common multiple (`ppcm`): of two numbers or more, never 0, a common multiple that is not the smallest is false', () => {
+    const lcm = (ns) => {
+      for (let m = 1; ; m += 1) if (ns.every((x) => m % x === 0)) return m;
+    };
+    // every pair up to 40 against a brute count
+    for (let a = 1; a <= 40; a += 1)
+      for (let b = 1; b <= 40; b += 1) {
+        const m = lcm([a, b]);
+        expect(verifyClaim({ kind: 'ppcm', a, b, m })).toBe(true);
+        expect(verifyClaim({ kind: 'ppcm', a, b, m: 2 * m })).toBe(false);
+        if (m > 1) expect(verifyClaim({ kind: 'ppcm', a, b, m: m - 1 })).toBe(false);
+      }
+    expect(verifyClaim({ kind: 'ppcm', a: 2, b: 3, more: [4, 5, 6], m: 60 })).toBe(true);
+    expect(verifyClaim({ kind: 'ppcm', a: 8, b: 17, more: [20], m: 680 })).toBe(true);
+    expect(verifyClaim({ kind: 'ppcm', a: 16, b: 20, m: 0 })).toBe(false);
+    expect(verifyClaim({ kind: 'ppcm', a: 0, b: 20, m: 0 })).toBe(false);
+    expect(verifyClaim({ kind: 'ppcm', a: 16, b: 20, more: [1, 1, 1, 1, 1], m: 80 })).toBe(false); // at most 6 numbers
+    expect(verifyClaim({ kind: 'ppcm', a: 16, b: 20, more: [2.5], m: 80 })).toBe(false);
+    // a multiple past 10^6 is never claimed right, even when it is the true one
+    expect(verifyClaim({ kind: 'ppcm', a: 999983, b: 999979, m: 999983 * 999979 })).toBe(false);
+  });
+
   it('never trusts a claim it does not understand', () => {
     expect(verifyClaim(null)).toBe(false);
     expect(verifyClaim({})).toBe(false);

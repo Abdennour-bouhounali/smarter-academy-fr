@@ -1,0 +1,226 @@
+{
+  "id": "ex-3e-fraction-irreductible-l4-009",
+  "lessonCode": "fraction-irreductible",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les prêts d’une bibliothèque",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Une bibliothèque municipale a prêté $1\\,575$ documents en un mois : $945$ livres, $225$ DVD, les autres sont des magazines."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction des documents représentent les livres ? Donne-la sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{945}{1\\,575} = \\dfrac{3}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$945 = 3 \\times 3 \\times 3 \\times 5 \\times 7$ et $1\\,575 = 3 \\times 3 \\times 5 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs : $3 \\times 3 \\times 5 \\times 7$.",
+          "$\\dfrac{945}{1\\,575} = \\dfrac{3 \\times 3 \\times 5 \\times 7 \\times 3}{3 \\times 3 \\times 5 \\times 7 \\times 5} = \\dfrac{3}{5}$."
+        ],
+        "result": "\\dfrac{945}{1\\,575} = \\dfrac{3}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "315/525"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "189/315"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "135/225"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Détermine $\\text{PGCD}(225 ; 1\\,575)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "225",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(225 ; 1\\,575) = 225$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$225 = 3 \\times 3 \\times 5 \\times 5$",
+          "$1\\,575 = 3 \\times 3 \\times 5 \\times 5 \\times 7$",
+          "Les facteurs premiers communs : $3 \\times 3 \\times 5 \\times 5 = 225$."
+        ],
+        "result": "225"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction des documents représentent les DVD ? Donne-la sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{225}{1\\,575} = \\dfrac{1}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$225 = 3 \\times 3 \\times 5 \\times 5$ et $1\\,575 = 3 \\times 3 \\times 5 \\times 5 \\times 7$, donc $\\text{PGCD}(225 ; 1\\,575) = 225$.",
+          "$225 \\div 225 = 1$ et $1\\,575 \\div 225 = 7$.",
+          "$\\dfrac{225}{1\\,575} = \\dfrac{1}{7}$."
+        ],
+        "result": "\\dfrac{225}{1\\,575} = \\dfrac{1}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "75/525"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "45/315"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle fraction des documents représentent les livres et les DVD ensemble ? Calcule $\\dfrac{945}{1\\,575} + \\dfrac{225}{1\\,575}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "26/35",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{26}{35}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{945}{1\\,575} + \\dfrac{225}{1\\,575} = \\dfrac{26}{35}$"
+        ],
+        "result": "\\dfrac{26}{35}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

@@ -135,6 +135,9 @@ export function frAll(x) {
 
 // ───────────────────────── the French agreement of a number and its noun ─────────────────────────
 
+/** The noun agreed with n, alone (a label under its number): under 2 singular — « 0 chute », « 1 chute », « 2 chutes ». */
+export const agreed = (n, [one, many]) => (Math.abs(n) < 2 ? one : many);
+
 /**
  * n and its noun, agreed: forms = [singular, plural]. French takes the singular for 0 and 1 (« 0 dalle », « 1 dalle »)
  * and the plural from 2 on (« 2 dalles », « 1003 dalles »). The number and the noun are joined by a no-break space, so a
@@ -145,7 +148,7 @@ export function frAll(x) {
  */
 export function counted(n, [one, many]) {
   const written = Number.isInteger(n) && n >= 0 ? formatFr(n) : n;
-  return `${written}\u00a0${Math.abs(n) < 2 ? one : many}`;
+  return `${written}\u00a0${agreed(n, [one, many])}`;
 }
 
 // ───────────────────────── the words of the world « L’archipel des diviseurs » ─────────────────────────

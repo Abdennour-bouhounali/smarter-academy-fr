@@ -1,0 +1,126 @@
+{
+  "id": "ex-3e-fraction-irreductible-l1-009",
+  "lessonCode": "fraction-irreductible",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le PGCD en une étape",
+    "estimatedMinutes": 3,
+    "tags": [
+      "PGCD",
+      "simplifier"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On veut simplifier $\\dfrac{18}{45}$ en une seule étape."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Utilise le PGCD.",
+      "statement": "Détermine $\\text{PGCD}(18 ; 45)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(18 ; 45) = 9$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 2 \\times 3 \\times 3$",
+          "$45 = 3 \\times 3 \\times 5$",
+          "Les facteurs premiers communs : $3 \\times 3 = 9$."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "lead": "Divise le numérateur et le dénominateur par ce PGCD.",
+      "statement": "Rends la fraction $\\dfrac{18}{45}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18}{45} = \\dfrac{2}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 2 \\times 3 \\times 3$ et $45 = 3 \\times 3 \\times 5$, donc $\\text{PGCD}(18 ; 45) = 9$.",
+          "$18 \\div 9 = 2$ et $45 \\div 9 = 5$.",
+          "$\\dfrac{18}{45} = \\dfrac{2}{5}$."
+        ],
+        "result": "\\dfrac{18}{45} = \\dfrac{2}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "6/15"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

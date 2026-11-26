@@ -1,0 +1,130 @@
+{
+  "id": "ex-3e-fraction-irreductible-l1-010",
+  "lessonCode": "fraction-irreductible",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Diviser par le PGCD",
+    "estimatedMinutes": 3,
+    "tags": [
+      "PGCD",
+      "simplifier"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On veut simplifier $\\dfrac{30}{42}$ en une seule étape."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Utilise le PGCD.",
+      "statement": "Détermine $\\text{PGCD}(30 ; 42)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "6",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(30 ; 42) = 6$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$30 = 2 \\times 3 \\times 5$",
+          "$42 = 2 \\times 3 \\times 7$",
+          "Les facteurs premiers communs : $2 \\times 3 = 6$."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "lead": "Divise le numérateur et le dénominateur par ce PGCD.",
+      "statement": "Rends la fraction $\\dfrac{30}{42}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "5/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{30}{42} = \\dfrac{5}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$30 = 2 \\times 3 \\times 5$ et $42 = 2 \\times 3 \\times 7$, donc $\\text{PGCD}(30 ; 42) = 6$.",
+          "$30 \\div 6 = 5$ et $42 \\div 6 = 7$.",
+          "$\\dfrac{30}{42} = \\dfrac{5}{7}$."
+        ],
+        "result": "\\dfrac{30}{42} = \\dfrac{5}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "15/21"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "10/14"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

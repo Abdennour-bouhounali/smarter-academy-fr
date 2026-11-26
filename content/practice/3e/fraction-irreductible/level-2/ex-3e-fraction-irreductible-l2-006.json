@@ -1,0 +1,143 @@
+{
+  "id": "ex-3e-fraction-irreductible-l2-006",
+  "lessonCode": "fraction-irreductible",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Simplifier des fractions plus grandes",
+    "estimatedMinutes": 3,
+    "tags": [
+      "simplifier",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Rends chaque fraction irréductible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Donne chaque résultat sous forme de fraction irréductible.",
+      "statement": "Rends la fraction $\\dfrac{90}{225}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{90}{225} = \\dfrac{2}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$90 = 2 \\times 3 \\times 3 \\times 5$ et $225 = 3 \\times 3 \\times 5 \\times 5$.",
+          "Les facteurs premiers communs : $3 \\times 3 \\times 5$.",
+          "$\\dfrac{90}{225} = \\dfrac{3 \\times 3 \\times 5 \\times 2}{3 \\times 3 \\times 5 \\times 5} = \\dfrac{2}{5}$."
+        ],
+        "result": "\\dfrac{90}{225} = \\dfrac{2}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "30/75"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "18/45"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Rends la fraction $\\dfrac{110}{176}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "5/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{110}{176} = \\dfrac{5}{8}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$110 = 2 \\times 5 \\times 11$ et $176 = 2 \\times 2 \\times 2 \\times 2 \\times 11$.",
+          "Les facteurs premiers communs : $2 \\times 11$.",
+          "$\\dfrac{110}{176} = \\dfrac{2 \\times 11 \\times 5}{2 \\times 11 \\times 8} = \\dfrac{5}{8}$."
+        ],
+        "result": "\\dfrac{110}{176} = \\dfrac{5}{8}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "55/88"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "10/16"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

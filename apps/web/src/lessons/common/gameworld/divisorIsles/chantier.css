@@ -1,0 +1,88 @@
+/* THE CHANTIER (Chantier.jsx) — the walkway's panel: 1 180 px wide over the world at 1366 × 768 (the lanes' drawing is
+   1 160 px at 1 : 1), the instruction compact above, the box and its buttons on the left, the facts on the right (at most
+   four lines, 18 px), the lanes under them. Nothing scrolls. Scoped to .ch-*; the card is widened only when it holds a
+   chantier. The investigation `crews` mounts the same .ch-panel inside its own frame. */
+.di-card:has(.ch-root) {
+  width: min(100%, 1220px);
+  padding: 1rem 1.2rem 1rem;
+}
+.ch-root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: start;
+}
+.ch-instruction {
+  margin: 0 !important;
+  font-size: 1.125rem !important;
+  line-height: 1.5 !important;
+  font-weight: 700;
+}
+.ch-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ch-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 32rem);
+  gap: 1rem;
+  align-items: start;
+}
+.ch-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.ch-template {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.ch-template .di-num {
+  height: 2.9rem;
+  font-size: 1.6rem;
+}
+.ch-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ch-error {
+  margin: 0 !important;
+  font-size: 1.125rem !important;
+  color: #ffe2a8;
+  font-weight: 700;
+}
+.ch-facts {
+  min-height: 4.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(125, 252, 255, 0.08);
+  border: 1px solid rgba(125, 252, 255, 0.25);
+}
+.ch-facts p {
+  margin: 0.1rem 0 !important;
+  font-size: 1.125rem !important;
+  line-height: 1.45 !important;
+  font-weight: 700;
+}
+.ch-facts p.is-ok {
+  color: #8dffb0;
+}
+.ch-facts .ch-purse {
+  color: #ffe2a8;
+}
+.ch-kept {
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.8rem;
+  background: rgba(125, 252, 255, 0.08);
+}
+.ch-kept p {
+  margin: 0.05rem 0 !important;
+  font-size: 1.125rem !important;
+  line-height: 1.45 !important;
+}

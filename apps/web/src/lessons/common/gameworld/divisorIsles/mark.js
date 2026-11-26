@@ -10,6 +10,7 @@
  * A segment declares `mark: 66` (and, for a stretch marked in two strokes, `strokes: [5, 8]`, whose sum is the mark).
  * Pure logic, no three.js: `Game.js` draws it, this file says what is true.
  */
+import { texFr } from '@smarter-academy/core';
 
 /** What planks of `b` do on a gap of `a` cells whose first `mark` cells are marked. */
 export function markVerdict(a, mark, b) {
@@ -45,6 +46,6 @@ export function signChain(a, mark, planks = []) {
 /** `\frac{66}{78} = \frac{33}{39}`; a stretch in two strokes opens on its sum: `\frac{5}{39} + \frac{8}{39} = \frac{13}{39}`. */
 export function signTex(chain, strokes = null) {
   const [, whole] = chain[0];
-  const head = strokes?.length > 1 ? [strokes.map((s) => `\\frac{${s}}{${whole}}`).join(' + ')] : [];
-  return [...head, ...chain.map(([n, d]) => `\\frac{${n}}{${d}}`)].join(' = ');
+  const head = strokes?.length > 1 ? [strokes.map((s) => `\\frac{${texFr(s)}}{${texFr(whole)}}`).join(' + ')] : [];
+  return [...head, ...chain.map(([n, d]) => `\\frac{${texFr(n)}}{${texFr(d)}}`)].join(' = ');
 }

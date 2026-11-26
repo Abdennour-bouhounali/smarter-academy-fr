@@ -47,6 +47,16 @@ describe('the shared suites’ helpers', () => {
     expect(buildersOf([39], 3, range(1, 39), [13])).toEqual([13]);
   });
 
+  it('a walkway carries a convoy for its purse only: it is no plank convoy', () => {
+    const segs = [
+      { id: 'w', kind: 'walkway', crews: [16, 20], convoy: 'quai' },
+      { id: 'p', kind: 'bridge', a: 0, standing: true },
+      { id: 'x', kind: 'bridge', a: 90, holdsWith: 18, convoy: 'c' },
+      { id: 'y', kind: 'bridge', a: 54, holdsWith: 18, convoy: 'c' },
+    ];
+    expect(convoysOf(segs)).toEqual([{ id: 'c', segs: [segs[2], segs[3]], head: 2, end: 3 }]);
+  });
+
   it('catches a marked road that cannot be built, and a store with two options that hold within the purse', () => {
     const island = (n) => ({ name: `Île ${'ABCD'[n]}` });
     const road = (segments, convoys) => ({ segments, convoys, islands: [0, 1, 2].map(island) });

@@ -1,0 +1,227 @@
+{
+  "id": "ex-3e-fraction-irreductible-l3-010",
+  "lessonCode": "fraction-irreductible",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "PGCD, puis fraction irréductible",
+    "estimatedMinutes": 6,
+    "tags": [
+      "PGCD",
+      "simplifier"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l2-004",
+      "learningPoint": "3e_fraction-irreductible_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère les nombres $1\\,080$, $1\\,296$, $1\\,456$ et $2\\,184$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "Première fraction",
+      "statement": "Détermine $\\text{PGCD}(1\\,080 ; 1\\,296)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "216",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(1\\,080 ; 1\\,296) = 216$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,080 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 5$",
+          "$1\\,296 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 = 216$."
+        ],
+        "result": "216"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris $\\dfrac{1\\,080}{1\\,296}$ sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,080}{1\\,296} = \\dfrac{5}{6}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,080 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 5$ et $1\\,296 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$, donc $\\text{PGCD}(1\\,080 ; 1\\,296) = 216$.",
+          "$1\\,080 \\div 216 = 5$ et $1\\,296 \\div 216 = 6$.",
+          "$\\dfrac{1\\,080}{1\\,296} = \\dfrac{5}{6}$."
+        ],
+        "result": "\\dfrac{1\\,080}{1\\,296} = \\dfrac{5}{6}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "540/648"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "360/432"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "Seconde fraction",
+      "statement": "Détermine $\\text{PGCD}(1\\,456 ; 2\\,184)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "728",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(1\\,456 ; 2\\,184) = 728$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,456 = 2 \\times 2 \\times 2 \\times 2 \\times 7 \\times 13$",
+          "$2\\,184 = 2 \\times 2 \\times 2 \\times 3 \\times 7 \\times 13$",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 7 \\times 13 = 728$."
+        ],
+        "result": "728"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Écris $\\dfrac{1\\,456}{2\\,184}$ sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,456}{2\\,184} = \\dfrac{2}{3}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,456 = 2 \\times 2 \\times 2 \\times 2 \\times 7 \\times 13$ et $2\\,184 = 2 \\times 2 \\times 2 \\times 3 \\times 7 \\times 13$, donc $\\text{PGCD}(1\\,456 ; 2\\,184) = 728$.",
+          "$1\\,456 \\div 728 = 2$ et $2\\,184 \\div 728 = 3$.",
+          "$\\dfrac{1\\,456}{2\\,184} = \\dfrac{2}{3}$."
+        ],
+        "result": "\\dfrac{1\\,456}{2\\,184} = \\dfrac{2}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "728/1092"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "208/312"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "112/168"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

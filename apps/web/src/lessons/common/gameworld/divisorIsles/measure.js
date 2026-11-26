@@ -58,6 +58,8 @@ export const lastOf = (a, b) => [a / gcd(a, b), b / gcd(a, b)];
 /** The round the screen is on, with everything it derives from its numbers. */
 export function measureNow(spec, s) {
   const r = spec.rounds[s.ri];
+  if ((r.typed ?? spec.typed) === false && !(r.chips ?? spec.chips)?.length)
+    throw new RangeError('measure: `typed: false` needs chips');
   const mode = r.mode ?? 'stages';
   const g = gcd(r.a, r.b);
   const firsts = bothPlanks(r.a, r.b); // every plank that can open a road
@@ -71,6 +73,10 @@ export function measureNow(spec, s) {
     // a second road needs a second first plank: never more runs than first planks (at least one run)
     runs: mode === 'direct' ? 1 : Math.max(1, Math.min(wanted, firsts.length)),
     chips: r.chips ?? spec.chips ?? null,
+    // options, off by default (2026-11-26): `typed: false` hides the typed box (chips only); `long: true` draws a strip
+    // of more than ~130 cells as one bar, a plank too thin to see (under 3 px) as ONE band with its count
+    typed: r.typed ?? spec.typed ?? true,
+    long: r.long ?? spec.long ?? false,
   };
 }
 

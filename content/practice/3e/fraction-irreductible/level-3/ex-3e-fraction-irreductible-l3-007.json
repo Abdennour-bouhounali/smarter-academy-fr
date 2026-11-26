@@ -1,0 +1,122 @@
+{
+  "id": "ex-3e-fraction-irreductible-l3-007",
+  "lessonCode": "fraction-irreductible",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un calcul à simplifier",
+    "estimatedMinutes": 3,
+    "tags": [
+      "calcul",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l1-004",
+      "learningPoint": "3e_fraction-irreductible_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Calcule, puis donne chaque résultat sous forme irréductible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Donne chaque résultat sous forme de fraction irréductible.",
+      "statement": "Calcule $A = \\dfrac{2}{3} + \\dfrac{7}{12} \\times \\dfrac{4}{21}$ et donne le résultat sous forme de fraction irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "7/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{7}{9}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{12} \\times \\dfrac{4}{21} = \\dfrac{28}{252} = \\dfrac{1}{9}$",
+          "$A = \\dfrac{2}{3} + \\dfrac{7}{12} \\times \\dfrac{4}{21} = \\dfrac{7}{9}$"
+        ],
+        "result": "A = \\dfrac{7}{9}"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Calcule $B = \\dfrac{3}{8} + \\dfrac{5}{6} \\times \\dfrac{9}{10}$ et donne le résultat sous forme de fraction irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "9/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{9}{8}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} \\times \\dfrac{9}{10} = \\dfrac{45}{60} = \\dfrac{3}{4}$",
+          "$B = \\dfrac{3}{8} + \\dfrac{5}{6} \\times \\dfrac{9}{10} = \\dfrac{9}{8}$"
+        ],
+        "result": "B = \\dfrac{9}{8}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

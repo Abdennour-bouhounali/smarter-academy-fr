@@ -17,6 +17,12 @@ describe('the purse of a convoy', () => {
     ];
     expect(P.purseOf.call(game(two, 12), two[1])).toEqual({ of: 12, left: 8, n: 2 });
   });
+  it('counts a standing WALKWAY as the planks of its crews to the pillar, not as one coin', () => {
+    const quai = [{ convoy: 'c', kind: 'walkway', crews: [16, 20], a: 80, complete: true, builtWith: 80 }];
+    expect(P.purseOf.call(game(quai, 14), quai[0])).toEqual({ of: 14, left: 5, n: 1 });
+    const open = [{ convoy: 'c', kind: 'walkway', crews: [16, 20], a: 0, complete: false, builtWith: null }];
+    expect(P.purseOf.call(game(open, 14), open[0])).toEqual({ of: 14, left: 14, n: 1 });
+  });
   it('has a word for one bridge and for two', () => {
     expect(T.purse.one).toBe('Pièces du pont');
     expect(T.purse.label).toBe('Pièces des deux ponts');

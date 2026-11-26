@@ -149,15 +149,22 @@ export function worldOf(w, page, L) {
     await page.keyboard.up('ArrowUp');
     await ff(0.3);
   };
-  /** Fires the held plank on bridge i; returns the GAME seconds he waited until the world was his again. */
-  const fire = async (i, during) => {
+  /**
+   * Fires the held plank on bridge i; returns the GAME seconds he waited until the world was his again — or until
+   * `stopOn(state)` holds (a try that opens a mirror: the world is not his again, a forge is on screen).
+   */
+  const fire = async (i, during, { stopOn = null } = {}) => {
     await toAltar(i);
     await act();
     expect((await st()).overlay !== 'predict', `bridge ${i}: a convoy asks no prediction before it builds`);
     const t0 = Date.now();
     let waited = 0.2;
     if (during) waited += (await during()) ?? 0;
-    for (let k = 0; k < 400 && (await st()).phase !== 'play'; k += 1) {
+    const busy = async () => {
+      const s = await st();
+      return s.phase !== 'play' && !(stopOn && stopOn(s));
+    };
+    for (let k = 0; k < 400 && (await busy()); k += 1) {
       await ff(0.5);
       waited += 0.5;
     }
@@ -217,7 +224,9 @@ export function worldOf(w, page, L) {
     let shotTaken = !onWay;
     let toward = { pos: 'ArrowRight', neg: 'ArrowLeft' };
     let r = await road();
-    for (let k = 0; k < 80 && r.island !== to; k += 1) {
+    // 80 steps cross a bridge; a long segment walked back (the dash's rail, `mission.refill`) gets the steps its length needs
+    const steps = Math.max(80, Math.ceil((await across()).len / 0.6) + 20);
+    for (let k = 0; k < steps && r.island !== to; k += 1) {
       const was = await across();
       const want = Math.abs(was.v) > 0.35 ? (was.v > 0 ? toward.pos : toward.neg) : null;
       if (want !== steer) {

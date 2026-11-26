@@ -346,11 +346,15 @@ function fakeGame(story, held) {
   const game = new Proxy(base, { get: (t, p) => (p in t ? t[p] : () => undefined) });
   return { game, opened, modules };
 }
-/** The convoys of a road, in order: { id, segs: [segment…], head: index }. */
+/**
+ * The PLANK convoys of a road, in order: { id, segs: [segment…], head: index }. A walkway (`kind: 'walkway'`) carries a
+ * `convoy` for its purse only — two crews, no plank to choose: it is no plank convoy and is left out (its pillar is the
+ * story's own test).
+ */
 export const convoysOf = (segments) => {
   const out = [];
   segments.forEach((s, i) => {
-    if (!s.convoy) return;
+    if (!s.convoy || s.kind === 'walkway') return;
     const last = out.at(-1);
     if (last?.id === s.convoy && last.end === i - 1) {
       last.segs.push(s);

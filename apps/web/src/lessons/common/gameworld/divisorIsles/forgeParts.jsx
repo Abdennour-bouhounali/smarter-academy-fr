@@ -36,6 +36,10 @@
  *     fell    a plank tried on what is left that did NOT hold (drawn falling, amber); absent when none
  * Its line names the number and the planks (« 72 » then the planks as small planks) and where they took it, never
  * « a planche b ». Whether the case holds is `held` (what the forge asks of it), its look `fits` or `held`.
+ *
+ * A case about CREWS (2026-11-26, lesson 4): a pillar on a two-crew walkway (`c.walk = { crews, d }`), a story claim
+ * (`c.story` with `a`, `b`, `kind`, `v`, `who?`) or teams on their days (`c.days = { cycles, day }`) — drawn by
+ * `forgeCrews.jsx` with the walkway's lanes and the days' rows (`crewLanes.jsx`); its line is its sentence.
  */
 import { formatFr } from '@smarter-academy/core';
 import Inquiry from './Inquiry';
@@ -43,6 +47,7 @@ import { dealOf } from './deal';
 import { factorRungs } from './factorLadder';
 import { Glyph, GlyphDefs, LOTS, Lot, LotShape, Pile, grid } from './dealParts';
 import { FORGE_TEXT as L } from './strings';
+import { CrewsMirror, CrewsMini, crewsBeats, isCrewCase } from './forgeCrews';
 import './forgeParts.css';
 
 /** Does the BRIDGE of the case hold? (its own `fits`, or the truth of the case when they are the same thing) */
@@ -50,6 +55,7 @@ const fitsOf = (c) => c.fits ?? c.held;
 
 /** The bridge in the mirror: `a` cells, planks of `b`, what is left in amber. `stage`: ask (the gap and one plank) | build | done. */
 function Mirror({ c, stage, fast, tight = false }) {
+  if (isCrewCase(c)) return <CrewsMirror c={c} stage={stage} tight={tight} />;
   if (c.deal) return <DealMirror c={c} stage={stage} fast={fast} tight={tight} />;
   if (c.pair) return <PairMirror c={c} stage={stage} fast={fast} tight={tight} />;
   if (c.factor) return <FactorMirror c={c} stage={stage} fast={fast} tight={tight} />;
@@ -130,6 +136,7 @@ function Mirror({ c, stage, fast, tight = false }) {
 }
 
 const Mini = ({ c }) => {
+  if (isCrewCase(c)) return <CrewsMini c={c} />;
   if (c.deal) return <DealMini c={c} />;
   if (c.factor) return <FactorMini c={c} />;
   if (c.pair) return <PairMini pair={c.pair} />;
@@ -715,8 +722,16 @@ function Line({ c, children }) {
                     : L.fell(c))}
         </em>
       </div>
-      <div className="rf-line2">
-        <Mini c={c} />
+      <div className={c.sub ? 'rf-line2 rf-line2--sub' : 'rf-line2'}>
+        {/* a case may say what its line is built on in words (`sub`: a fraction's two decompositions) — read in place of
+            the bars, whose cells are too thin to count on a large bridge (a gate B of 2026-11-26) */}
+        {c.sub ? (
+          <small className="rf-line__sub" dir="ltr">
+            {c.sub}
+          </small>
+        ) : (
+          <Mini c={c} />
+        )}
         {children}
       </div>
     </>
@@ -729,11 +744,13 @@ export const FORGE_PARTS = {
   Inquiry,
   // a pair: the plank is laid on both gaps at once, one stroke per plank of the longer row; a factor ladder: one per plank
   beats: (c) =>
-    c.deal
-      ? dealOf(c.deal.a.n, c.deal.b.n, c.deal.k).rounds
-      : c.factor
-        ? c.factor.planks.length + (c.factor.fell != null ? 1 : 0)
-        : c.pair
-          ? pairBeats(c.pair)
-          : c.q,
+    isCrewCase(c)
+      ? crewsBeats(c)
+      : c.deal
+        ? dealOf(c.deal.a.n, c.deal.b.n, c.deal.k).rounds
+        : c.factor
+          ? c.factor.planks.length + (c.factor.fell != null ? 1 : 0)
+          : c.pair
+            ? pairBeats(c.pair)
+            : c.q,
 };

@@ -13,9 +13,10 @@
 // Hooks: `descriptor.steps['island:<id>:before' | 'convoy:<name>:before' | 'forge:<key>:before' | 'forge:<key>:after' |
 // 'dash:before' | 'boss:before']` = async (ctx) => {} — run at that moment, ctx holds the page and the gestures.
 import { createWalk, SIZE } from '../walk.mjs';
-import { worldShot, wordsRe } from './checks.mjs';
+import { worldShot, wordsRe, WRONG_WORD as WRONG_RE } from './checks.mjs';
 import { playExperiment } from './experiments.mjs';
 import { playForge } from './forge.mjs';
+import { walkwayPlayers } from './walkwayStory.mjs';
 import { worldOf } from './world.mjs';
 import { worldOfLesson } from './worlds/index.mjs';
 
@@ -145,22 +146,26 @@ export async function storyWalk(L, D, opts) {
      * Planks of b, in hand, fired on marked bridge i: they fill the gap and the post stands in the middle of a plank —
      * refused (`verdict.mark`), the stretch's own division on screen (`data-di-eq-mark` = its remainder).
      */
-    const postMiss = async (i, b, label) => {
+    const postMiss = async (i, b, label, fireOpts) => {
       const seg = segs[i];
       const stood = (await W.road()).segs[i];
-      await W.fire(i, async () => {
-        expect(await W.until((r) => r.verdict != null, 60), `the world shows its verdict on ${seg.a}`);
-        const v = (await W.road()).verdict;
-        const eqMark = await page.getAttribute('[data-di-eq-mark]', 'data-di-eq-mark').catch(() => null);
-        check(
-          !v.holds && v.r === 0 && v.mark?.r === seg.mark % b && eqMark === String(seg.mark % b),
-          `${seg.a} = ${b} × ${seg.a / b}, but ${seg.mark} = ${b} × ${Math.floor(seg.mark / b)} + ${seg.mark % b}: the gap is filled and the post stands in a plank — refused (verdict ${JSON.stringify(v)}, the stretch's line ${eqMark})`,
-        );
-        const said = ((await page.textContent('.di-verdict').catch(() => '')) ?? '').trim();
-        check(said.includes(String(seg.mark)), `the verdict says where the post stands (« ${said} »)`);
-        await shotWorld(label);
-        return 0;
-      });
+      await W.fire(
+        i,
+        async () => {
+          expect(await W.until((r) => r.verdict != null, 60), `the world shows its verdict on ${seg.a}`);
+          const v = (await W.road()).verdict;
+          const eqMark = await page.getAttribute('[data-di-eq-mark]', 'data-di-eq-mark').catch(() => null);
+          check(
+            !v.holds && v.r === 0 && v.mark?.r === seg.mark % b && eqMark === String(seg.mark % b),
+            `${seg.a} = ${b} × ${seg.a / b}, but ${seg.mark} = ${b} × ${Math.floor(seg.mark / b)} + ${seg.mark % b}: the gap is filled and the post stands in a plank — refused (verdict ${JSON.stringify(v)}, the stretch's line ${eqMark})`,
+          );
+          const said = ((await page.textContent('.di-verdict').catch(() => '')) ?? '').trim();
+          check(said.includes(String(seg.mark)), `the verdict says where the post stands (« ${said} »)`);
+          await shotWorld(label);
+          return 0;
+        },
+        fireOpts,
+      );
       const now = (await W.road()).segs[i];
       check(
         now.complete === stood.complete && now.builtWith === stood.builtWith,
@@ -168,26 +173,84 @@ export async function storyWalk(L, D, opts) {
       );
       await sign(i, `after ${b} missed the post`);
     };
+    /**
+     * Planks of b fired on marked bridge i leave cells of the gap (b does not fill it): refused, the bridge as it was —
+     * unbuilt, or standing again with the plank `standing` — and the sign unchanged.
+     */
+    const openMiss = async (i, b, label, standing, fireOpts) => {
+      const seg = segs[i];
+      await W.fire(
+        i,
+        async () => {
+          expect(await W.until((x) => x.verdict != null, 30), `the world shows its verdict on ${seg.a}`);
+          const v = (await W.road()).verdict;
+          check(
+            !v.holds && v.r === seg.a % b,
+            `${seg.a} = ${b} × ${Math.floor(seg.a / b)} + ${seg.a % b}: the planks of ${b} do not fill the bridge (${JSON.stringify(v)})`,
+          );
+          await shotWorld(label);
+          return 0;
+        },
+        fireOpts,
+      );
+      check(
+        standing == null ? !(await W.road()).segs[i].complete : await W.standsWith(i, standing),
+        standing == null
+          ? `the bridge of ${b} goes back: ${seg.a} still to cross`
+          : `a failed rebuild with ${b}: the bridge stands again with ${standing}, as it was`,
+      );
+      await sign(i, `after ${b} left cells`);
+    };
+    /**
+     * After the mirror a marked bridge was waiting for: back on its island, the sign holds every writing and he crosses
+     * again; or the forge's ✕ reopened the world on the save's island — the card on the right recalls the sign.
+     */
+    const afterMirror = async (k) => {
+      const seg = segs[k];
+      const name = islands[k].name;
+      const s = await W.road();
+      if (s.island === k) {
+        await sign(k, `after the mirror, back on « ${name} »`);
+        await shotWorld(`${islands[k].id}-sign-all`);
+        if (s.facing === -1 || facingBack) await W.crossAgain(k, `${islands[k].id} → ${islands[k + 1].id} again`);
+        else await W.cross(k);
+        facingBack = false;
+      } else {
+        // the forge's ✕ reopened the world on the save's island (defects.md C9): the card on the right recalls the sign
+        facingBack = false;
+        const card = ((await page.textContent('[data-di-recall]').catch(() => '')) ?? '').replace(/\s+/g, '');
+        const want = signChainOf(seg, heldOn[k]).split(/[=/]/);
+        check(
+          want.every((x) => card.includes(x)),
+          `on « ${islands[k + 1].name} » the card on the right recalls the sign ${signChainOf(seg, heldOn[k])}`,
+        );
+        await shotWorld(`${islands[k + 1].id}-recall-sign-all`);
+      }
+    };
     /** Planks of b fired on marked bridge i hold: the equation's second line shown while it is built; the sign grows. */
-    const markHold = async (i, b, label) => {
+    const markHold = async (i, b, label, fireOpts) => {
       const seg = segs[i];
       let lines = null;
-      const t = await W.fire(i, async () => {
-        // the stretch's own division, once the planks have passed the post
-        let s = 0;
-        for (let k = 0; k < 120; k += 1) {
-          const eq = await page.evaluate(() => window.__world.getState().equation);
-          if (eq?.mark?.shown || !eq) break;
-          await W.ff(0.25);
-          s += 0.25;
-        }
-        lines = await page.evaluate(() => ({
-          main: Boolean(document.querySelector('.di-eq')),
-          mark: document.querySelector('[data-di-eq-mark]')?.dataset.diEqMark ?? null,
-        }));
-        if (label) await shotWorld(label);
-        return s;
-      });
+      const t = await W.fire(
+        i,
+        async () => {
+          // the stretch's own division, once the planks have passed the post
+          let s = 0;
+          for (let k = 0; k < 120; k += 1) {
+            const eq = await page.evaluate(() => window.__world.getState().equation);
+            if (eq?.mark?.shown || !eq) break;
+            await W.ff(0.25);
+            s += 0.25;
+          }
+          lines = await page.evaluate(() => ({
+            main: Boolean(document.querySelector('.di-eq')),
+            mark: document.querySelector('[data-di-eq-mark]')?.dataset.diEqMark ?? null,
+          }));
+          if (label) await shotWorld(label);
+          return s;
+        },
+        fireOpts,
+      );
       if (seg.a / b > 30) waits.push(`${b} on ${seg.a} (${seg.a / b} planks): ${t.toFixed(1)} s`);
       check(
         lines?.main && lines.mark === '0',
@@ -426,8 +489,9 @@ export async function storyWalk(L, D, opts) {
           await page.fill('[data-di-workshop="typed"] [data-di-in="plank"]', String(long));
           await page.click('[data-di-workshop="typed"] [data-di-craft]');
           const e1 = (await W.workshopError()) ?? '';
+          // the number as SEEN: « 1 787 » is written with its thousands (U+202F) — read without the space (C11)
           check(
-            e1.includes(String(long)) && (await W.st()).held == null,
+            e1.replace(/\s/g, '').includes(String(long)) && (await W.st()).held == null,
             `${long} is longer than every gap: refused (« ${e1.trim()} »)`,
           );
           await w.shot(page, `workshop-${islands[h].id}-error`, { exit: ['.di-veil [data-di-exit]'], numbers: true });
@@ -647,14 +711,42 @@ export async function storyWalk(L, D, opts) {
         `NOTE  marked bridge ${seg.a} (${seg.mark} lit) on « ${name} »: holds ${holders.join(', ')}; misses the post ${misses.join(', ') || '—'}; does not fill ${open.join(', ') || '—'} (computed)`,
       );
       const r0 = await W.road();
+      // a stretch lit in STROKES (`seg.strokes`, fraction-irreductible: « 65 puis 4 ») is named by its strokes, not their sum
+      const lit = seg.strokes ?? [seg.mark];
       check(
-        r0.objective.includes(String(seg.a)) && r0.objective.includes(String(seg.mark)),
-        `island « ${name} »: the instruction names the bridge, ${seg.a} cells, ${seg.mark} lit`,
+        r0.objective.includes(String(seg.a)) && lit.every((x) => r0.objective.includes(String(x))),
+        `island « ${name} »: the instruction names the bridge, ${seg.a} cells, ${lit.join(' then ')} lit`,
       );
       await sign(k, `island « ${name} », before he builds`);
       await shotWorld(`island-${islands[k].id}`);
       await foldOnce(k);
-      if (misses.length) {
+      // the descriptor's plan of this bridge (`story.marked[seg.id]` = { first, reload, after }): absent, as before
+      const plan = S.marked?.[seg.id] ?? null;
+      const fired = new Set();
+      if (plan?.first) {
+        // the planks tried BEFORE any bridge stands, in his order: each misses the post or leaves cells
+        for (const b of plan.first) {
+          expect(
+            moulds.includes(b) && !holdsMark(seg, b),
+            `plan of ${seg.id}: ${b} is a plank of « ${name} » that does not hold`,
+          );
+          await W.take(b);
+          await W.ff(0.6);
+          if (fills(seg.a, b)) await postMiss(k, b, `post-missed-${seg.a}-${b}`);
+          else await openMiss(k, b, `g${seg.a}-falls-${b}`, null);
+          fired.add(b);
+        }
+        if (plan.reload) {
+          await W.reload();
+          const r = await W.road();
+          expect(
+            r.phase === 'play' && r.stage === k && r.island === k && !r.segs[k].complete && r.held == null,
+            `after a reload he is on « ${name} », the bridge unbuilt, his hand empty (stage ${r.stage}, held ${r.held})`,
+          );
+          await sign(k, `after the reload on « ${name} »`);
+          await shotWorld(`reload-on-${islands[k].id}`);
+        }
+      } else if (misses.length) {
         await W.take(misses[0]);
         await W.ff(0.6);
         await postMiss(k, misses[0], `post-missed-${seg.a}-${misses[0]}`);
@@ -680,7 +772,8 @@ export async function storyWalk(L, D, opts) {
         await sign(k, `back on « ${name} », the sign is this bridge's own`);
         await shotWorld(`island-${islands[k].id}-back`);
         if (open.length) {
-          const b = open[0];
+          // with a plan, a plank he has not fired yet (else the first that leaves cells, as before)
+          const b = plan ? (open.find((x) => !fired.has(x)) ?? open[0]) : open[0];
           await W.take(b);
           await W.ff(0.6);
           await W.fire(k, async () => {
@@ -701,28 +794,56 @@ export async function storyWalk(L, D, opts) {
         for (const b of holders.slice(1)) {
           await W.take(b);
           await W.ff(0.6);
-          await markHold(k, b, null);
+          // with a plan, the last hold that opens the mirror ends the wait at once (the forge is on screen)
+          await markHold(
+            k,
+            b,
+            null,
+            plan && b === holders.at(-1) ? { stopOn: (x) => x.overlay === 'forge' } : undefined,
+          );
         }
         // the last hold opens the mirror the sign was waiting for (it covers the island): its forges first
         await forges();
-        const s = await W.road();
-        if (s.island === k) {
-          await sign(k, `after the mirror, back on « ${name} »`);
-          await shotWorld(`${islands[k].id}-sign-all`);
-          if (s.facing === -1 || facingBack) await W.crossAgain(k, `${islands[k].id} → ${islands[k + 1].id} again`);
-          else await W.cross(k);
-          facingBack = false;
-        } else {
-          // the forge's ✕ reopened the world on the save's island (defects.md C9): the card on the right recalls the sign
-          facingBack = false;
-          const card = ((await page.textContent('[data-di-recall]').catch(() => '')) ?? '').replace(/\s+/g, '');
-          const want = signChainOf(seg, heldOn[k]).split(/[=/]/);
-          check(
-            want.every((x) => card.includes(x)),
-            `on « ${islands[k + 1].name} » the card on the right recalls the sign ${signChainOf(seg, heldOn[k])}`,
-          );
-          await shotWorld(`${islands[k + 1].id}-recall-sign-all`);
+        await afterMirror(k);
+      } else if (plan?.after) {
+        // ── ONE plank holds, and the mirror ahead waits until named planks of this island were ALL fired (lesson 3's
+        // `story.onMiss`): he crosses, is sent back, walks back, and fires the planks of `plan.after` on the standing
+        // bridge — each refused, the bridge standing again; the mirror opens on the LAST of them, never before ──
+        await W.cross(k);
+        await page.waitForTimeout(400);
+        await W.ff(1);
+        const r = await W.road();
+        expect(r.island === k + 1, `with the plank ${holders[0]} he can cross to « ${islands[k + 1].name} »`);
+        check(
+          r.overlay == null && r.objective.includes(name),
+          `on « ${islands[k + 1].name} » no mirror opens; the instruction sends him back to « ${name} » (« ${r.objective.slice(0, 80)} »)`,
+        );
+        await shotWorld(`island-${islands[k + 1].id}-sent-back`);
+        await W.walkBack(k, `walk-back-to-${islands[k].id}`, (label) => shotWorld(label));
+        facingBack = true;
+        await sign(k, `back on « ${name} », the sign is this bridge's own`);
+        for (const [n, b] of plan.after.entries()) {
+          const last = n === plan.after.length - 1;
+          expect(moulds.includes(b), `plan of ${seg.id}: ${b} lies on a pedestal of « ${name} »`);
+          await W.take(b);
+          await W.ff(0.6);
+          const stop = last ? { stopOn: (x) => x.overlay === 'forge' } : {};
+          if (holdsMark(seg, b)) await markHold(k, b, null, stop);
+          else if (fills(seg.a, b)) await postMiss(k, b, `post-missed-${seg.a}-${b}`, stop);
+          else await openMiss(k, b, `g${seg.a}-fails-${b}`, holders[0], stop);
+          fired.add(b);
+          if (!last)
+            check(
+              (await W.st()).overlay !== 'forge',
+              `« ${name} »: ${[...fired].join(', ')} fired — the mirror ahead is still shut`,
+            );
         }
+        expect(
+          await W.until((x) => x.overlay === 'forge', 10),
+          `« ${name} »: ${plan.after.at(-1)}, the last plank of the plan, is fired — the mirror ahead OPENS`,
+        );
+        await forges();
+        await afterMirror(k);
       } else {
         await W.cross(k);
       }
@@ -1159,6 +1280,266 @@ export async function storyWalk(L, D, opts) {
       await storePay(k, Q);
     };
 
+    /**
+     * THE PLAQUE (`story.mission` with `write`, `opens`, `plaques`, `refill` — divisorIsles/walkwayGame.js, first played by
+     * fraction-irreductible): on island k the keeper's board asks a FRACTION, the calculation read from the plaque's own
+     * text (`mission.lead`) and computed here; the road `opens` (segment k) stays SHUT and its lanterns DARK until the
+     * right plaque. Played: a writing equal to the result but not finished (the result divided by its smallest common
+     * prime, or the result itself), a reload (the plaques left are kept), a writing that is not the result (the slip
+     * « across », x + z over y + w) — the run spent, the boxes closed; the walk back to the quay `refill.at` and forward
+     * again (two new plaques); the right writing: the road stands, its lanterns lit in the calculation's own proportions,
+     * a module marked; he crosses to the next island. Every refusal is read back: a sentence, NO number. Returns the
+     * island he stands on.
+     */
+    const plaque = async (k) => {
+      await ctx.hook('mission:before');
+      const m = L.lesson.story.mission;
+      const seg = segs[k];
+      const of = m.plaques ?? m.posters;
+      expect(
+        m.opens === seg.id && (m.at ?? islands.length - 1) === k && m.write && Number.isInteger(of) && of >= 2,
+        `the mission of « ${islands[k].name} » opens the road « ${seg.id} », asks a fraction, gives ${of} plaques`,
+      );
+      // the calculation, from the plaque's own text: « \dfrac{x}{y} \times \dfrac{z}{w} »
+      const texOf = (t) => String(t).replace(/\\,/g, '');
+      const calcRe = /\\d?frac\{(\d+)\}\{(\d+)\}\s*(\\times|\+)\s*\\d?frac\{(\d+)\}\{(\d+)\}/;
+      const found = m.lead.map((l) => texOf(l).match(calcRe)).find(Boolean);
+      expect(found, `the plaque's text writes its calculation (« ${m.lead.join(' ').slice(0, 120)} »)`);
+      const [x, y, z, ww] = [1, 2, 4, 5].map((i) => Number(found[i]));
+      const times = found[3] !== '+';
+      const [A, B] = times ? [x * z, y * ww] : [x * ww + z * y, y * ww];
+      const g = (p, q) => (q ? g(q, p % q) : p);
+      const G = g(A, B);
+      const right = [A / G, B / G];
+      const c = m.write.calc;
+      check(
+        c.x === x && c.y === y && c.z === z && c.w === ww && (c.op === '*') === times,
+        `the plaque's text states the calculation the world checks (${x}/${y} ${times ? '×' : '+'} ${z}/${ww})`,
+      );
+      expect(G > 1, `${x}/${y} ${times ? '×' : '+'} ${z}/${ww} = ${A}/${B} is not finished yet (${G}) — computed here`);
+      // the wrong writings, computed here: equal but not finished; not the result
+      const p0 = (() => {
+        for (let d = 2; d <= G; d += 1) if (G % d === 0) return d;
+        return G;
+      })();
+      const unfinished = g(A / p0, B / p0) > 1 ? [A / p0, B / p0] : [A, B];
+      let other = [x + z, y + ww];
+      if (other[0] * B === A * other[1]) other = [right[0] + 1, right[1]];
+      const wrongs = [unfinished, other];
+      while (wrongs.length < of) wrongs.push([right[0], right[1] + wrongs.length]);
+      console.log(
+        `NOTE  the plaque: ${A}/${B} = ${right.join('/')}; refused first ${wrongs.map((v) => v.join('/')).join(', ')} (computed)`,
+      );
+      /** The road and its lanterns, as the world draws them (a count of each colour — never a count written). */
+      const jetty = () =>
+        page.evaluate((i) => {
+          const sg = window.__world.segs[i];
+          const ls = sg.lanterns ?? [];
+          const lit = ls.filter((l) => l.material.emissive && l.material.emissive.getHex() !== 0);
+          const red = lit.filter((l) => l.material.color.r > 0.9 && l.material.color.g < 0.5);
+          return {
+            complete: sg.complete,
+            deck: sg.deck ? sg.deck.visible : null,
+            n: ls.length,
+            lit: lit.length,
+            red: red.length,
+          };
+        }, k);
+      const j0 = await jetty();
+      check(
+        !j0.complete && j0.deck !== true && j0.lit === 0,
+        `before the plaque the road « ${seg.id} » is SHUT and its ${j0.n} lanterns dark (${JSON.stringify(j0)})`,
+      );
+      {
+        const o = (await W.road()).objective.replace(/\s/g, '');
+        check(
+          [x, y, z, ww].every((v) => o.includes(String(v))),
+          `island « ${islands[k].name} »: the instruction writes the calculation (${x}/${y}, ${z}/${ww})`,
+        );
+      }
+      await shotWorld(`island-${islands[k].id}`);
+      /** He goes to the keeper's board; `open`: E opens the plaque (else nothing must open). */
+      const toBoard = async (open) => {
+        const p = await page.evaluate((i) => {
+          const gw = window.__world;
+          const it = gw.missionIt;
+          const isl = gw.isl[i];
+          return it ? [it.x, it.z, isl.x, isl.z] : null;
+        }, k);
+        expect(p, `the keeper's board stands on « ${islands[k].name} »`);
+        const d = Math.hypot(p[2] - p[0], p[3] - p[1]) || 1;
+        await W.tp(p[0] + ((p[2] - p[0]) / d) * 1.6, p[1] + ((p[3] - p[1]) / d) * 1.6);
+        await W.ff(0.4);
+        // `ff` steps the world without drawing: the « E » bubble React has just mounted is hidden until the runtime's next
+        // frame places it (WorldRuntime.placePrompt) — wait for two drawn frames before reading it (2026-11-26: read
+        // hidden twice on F, though E opened the plaque)
+        await page.evaluate(
+          () =>
+            new Promise((done) => {
+              requestAnimationFrame(() => requestAnimationFrame(done));
+              setTimeout(done, 1000);
+            }),
+        );
+        check(
+          (await W.promptShown()) === open,
+          `at the keeper's board: the « E » prompt is ${open ? 'shown' : 'NOT shown'}`,
+        );
+        await W.act();
+        await page.waitForTimeout(300);
+        const s = await W.st();
+        if (!open) {
+          check(s.overlay == null, 'the run is spent: E opens nothing until he has walked back');
+          return;
+        }
+        expect(s.overlay === 'mission', 'E at the board opens the plaque');
+        await page.waitForSelector('[data-di-mission="open"]', { timeout: 8000 });
+      };
+      const attr = (sel, a) => page.getAttribute(sel, a).catch(() => null);
+      const left = async () => Number(await attr('[data-di-posters]', 'data-di-posters'));
+      /** One plaque engraved; returns the fact read back (null when it was the right one). */
+      const engrave = async (v, label) => {
+        await page.fill('[data-di-mission] [data-rf-use="p"]', String(v[0]));
+        await page.fill('[data-di-mission] [data-rf-use="q"]', String(v[1]));
+        await page.click('[data-di-mission-check]');
+        if (v[0] === right[0] && v[1] === right[1]) return null;
+        await page.waitForSelector('[data-di-mission-fact]', { timeout: 8000 });
+        await page.waitForTimeout(250);
+        const f = ((await page.textContent('[data-di-mission-fact]')) ?? '').trim();
+        await w.shot(page, label, OUT);
+        return f;
+      };
+      // ── the plaque: the box, the plaques left, nothing to engrave while a box is empty ──
+      await toBoard(true);
+      {
+        const seen = await page.evaluate(() => ({
+          frac: document.querySelector('[data-di-mission] [data-rf-frac]')?.dataset.rfFrac ?? null,
+          boxes: [...document.querySelectorAll('[data-di-mission] [data-rf-use]')].map((e) => e.dataset.rfUse),
+          disabled: document.querySelector('[data-di-mission-check]')?.disabled ?? null,
+          lead: (document.querySelector('[data-di-mission]')?.textContent ?? '').replace(/[\s  ]/g, ''),
+        }));
+        check(
+          seen.frac === 'p/q' && seen.boxes.join() === 'p,q' && seen.disabled === true,
+          `the plaque: ONE fraction box (p over q), « engrave » waits for both boxes (${JSON.stringify({ ...seen, lead: undefined })})`,
+        );
+        check(
+          [x, y, z, ww].every((v) => seen.lead.includes(String(v))) &&
+            (!m.jetty || ![m.jetty.lanterns, m.jetty.lit].some((n) => seen.lead.includes(String(n)))),
+          'the plaque writes the calculation, never a count of lanterns',
+        );
+        check((await left()) === of, `the chip: ${of} blank plaques (${await left()})`);
+      }
+      await w.shot(page, 'plaque', OUT);
+      // ── the first plaques refused ──
+      const facts = [];
+      for (const [n, v] of wrongs.entries()) {
+        if (n === 1) {
+          // a reload between two plaques: the plaques left are kept
+          await page.click('[data-di-mission-later]');
+          await W.ff(0.4);
+          check((await W.st()).overlay == null, '« later » closes the plaque');
+          await W.reload();
+          const r = await W.road();
+          expect(
+            r.phase === 'play' && r.stage === k,
+            `after a reload he is on « ${islands[k].name} » (stage ${r.stage})`,
+          );
+          await shotWorld(`reload-on-${islands[k].id}`);
+          await toBoard(true);
+          check((await left()) === of - 1, `after the reload, ${of - 1} blank plaque(s) left (${await left()})`);
+        }
+        const f = await engrave(v, `plaque-refused-${v.join('-')}`);
+        facts.push(f);
+        const kind = v[0] * B === A * v[1] ? 'not finished' : 'not the result';
+        check(
+          f.length > 5 && !/\d/.test(f) && !WRONG_RE.test(f),
+          `${v.join('/')} (${kind}): refused with a sentence, NO number, never « faux » (« ${f} »)`,
+        );
+        check((await left()) === of - n - 1, `${of - n - 1} blank plaque(s) left (${await left()})`);
+      }
+      check(
+        facts[0] !== facts[1],
+        `an unfinished writing and a writing that is not the result get two different sentences`,
+      );
+      // ── the run spent: the boxes closed, the walk back to the quay ──
+      check(
+        (await attr('[data-di-mission]', 'data-di-mission')) === 'over' &&
+          (await page.locator('[data-di-mission-over]').count()) === 1 &&
+          (await page.locator('[data-di-mission-check], [data-di-mission] [data-rf-use]').count()) === 0,
+        'no blank plaque left: the run is over, its sentence shown, no box, no « engrave »',
+      );
+      await w.shot(page, 'plaque-spent', OUT);
+      await page.click('[data-di-mission-later]');
+      await W.ff(0.4);
+      const quay = m.refill?.at;
+      expect(Number.isInteger(quay) && quay < k, `the mission sends him back to a quay behind him (${quay})`);
+      check(
+        (await W.road()).objective.includes(islands[quay].name),
+        `the instruction sends him back to « ${islands[quay].name} »`,
+      );
+      await shotWorld(`plaque-spent-${islands[k].id}`);
+      await toBoard(false);
+      for (let i = k - 1; i >= quay; i -= 1)
+        await W.walkBack(i, `walk-back-to-${islands[i].id}`, (label) => shotWorld(label));
+      await W.ff(0.6);
+      check(
+        await page.evaluate(() => window.__world.flags.missionRun == null),
+        `on « ${islands[quay].name} »: a new run of plaques`,
+      );
+      await shotWorld(`quay-${islands[quay].id}`);
+      for (let i = quay; i < k; i += 1) await W.crossAgain(i, `${islands[i].id} → ${islands[i + 1].id} again`);
+      await page.waitForTimeout(300);
+      expect((await W.road()).island === k, `back on « ${islands[k].name} »`);
+      // ── the right plaque ──
+      await toBoard(true);
+      check((await left()) === of, `two new blank plaques (${await left()})`);
+      await page.evaluate(() => {
+        const gw = window.__world;
+        window.__modulesDone = [];
+        const real = gw.onModule;
+        gw.onModule = (n) => {
+          window.__modulesDone.push(String(n));
+          return real.call(gw, n);
+        };
+      });
+      await engrave(right, null);
+      await W.ff(0.8);
+      const j1 = await jetty();
+      const mods = await page.evaluate(() => window.__modulesDone ?? []);
+      expect(
+        (await W.st()).overlay == null && j1.complete,
+        `${right.join('/')} is engraved: the plaque closes, the road « ${seg.id} » stands`,
+      );
+      check(
+        j1.n > 0 && j1.red * right[1] === j1.n * right[0] && j1.lit * ww === j1.n * z && j1.red * y === j1.lit * x,
+        `the lanterns light: ${j1.lit} of ${j1.n} lit (${z}/${ww}), ${j1.red} of the lit red (${x}/${y}), ${j1.red} of ${j1.n} red = ${right.join('/')} — computed here`,
+      );
+      check(mods.length >= 1, `solving the plaque marks a module of the lesson (${mods.join(', ') || 'none'})`);
+      await shotWorld(`jetty-lit-${islands[k].id}`);
+      await W.cross(k);
+      await page.waitForTimeout(300);
+      expect((await W.road()).island === k + 1, `over the lit road he reaches « ${islands[k + 1].name} »`);
+      lap('the plaque');
+      return k + 1;
+    };
+
+    // the walkway, a lone standing bridge, the mission with a day box (walkwayStory.mjs — lesson 4)
+    const lw = walkwayPlayers({
+      w,
+      page,
+      W,
+      L,
+      D,
+      segs,
+      islands,
+      convoys,
+      OUT,
+      shotWorld,
+      lap,
+      hook: ctx.hook,
+      forbid,
+      islandsForbid,
+    });
+
     // ══ the road, island by island ══
     let k = 0;
     try {
@@ -1166,6 +1547,8 @@ export async function storyWalk(L, D, opts) {
         await ctx.hook(`island:${islands[k]?.id}:before`);
         await forges();
         const seg = segs[k];
+        // past the last segment: a final mission that is not a plaque (`story.mission` without `write`) waits here
+        if (!seg && L.lesson.story.mission && !L.lesson.story.mission.write) await lw.dayMission(k);
         if (!seg) break;
         if (seg.kind === 'rail') {
           expect(
@@ -1178,6 +1561,13 @@ export async function storyWalk(L, D, opts) {
         } else if (seg.boss) {
           await boss(k);
           break;
+        } else if (L.lesson.story.mission?.write && L.lesson.story.mission.opens === seg.id) {
+          // the road a plaque opens (`story.mission.write` + `opens`): the plaque first
+          k = await plaque(k);
+        } else if (seg.kind === 'walkway') {
+          k = await lw.walkway(k);
+        } else if (await lw.isLoneStanding(k)) {
+          k = await lw.standing(k);
         } else if (seg.kind === 'bridge' && (seg.convoy || !seg.mark)) {
           // a convoy, or a single bridge built with its own island's planks
           k = await convoy(k);

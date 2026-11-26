@@ -1,0 +1,175 @@
+{
+  "id": "ex-3e-fraction-irreductible-l4-006",
+  "lessonCode": "fraction-irreductible",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La récolte d’un verger",
+    "estimatedMinutes": 5,
+    "tags": [
+      "problème",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Un verger a produit $1\\,440$ kg de fruits : $1\\,080$ kg de pommes, $240$ kg de poires, le reste est du coing."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction des fruits représentent les pommes ? Donne-la sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,080}{1\\,440} = \\dfrac{3}{4}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,080 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 5$ et $1\\,440 = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5$.",
+          "$\\dfrac{1\\,080}{1\\,440} = \\dfrac{2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 3}{2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 4} = \\dfrac{3}{4}$."
+        ],
+        "result": "\\dfrac{1\\,080}{1\\,440} = \\dfrac{3}{4}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "540/720"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "360/480"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "216/288"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle fraction des fruits représentent les pommes et les poires ensemble ? Calcule $\\dfrac{1\\,080}{1\\,440} + \\dfrac{240}{1\\,440}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "11/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{11}{12}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1\\,080}{1\\,440} + \\dfrac{240}{1\\,440} = \\dfrac{11}{12}$"
+        ],
+        "result": "\\dfrac{11}{12}"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction des fruits représentent les coings ? Calcule $1 - \\dfrac{1\\,080}{1\\,440} - \\dfrac{240}{1\\,440}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{1}{12}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{1\\,080}{1\\,440} = \\dfrac{1}{4}$",
+          "$1 - \\dfrac{1\\,080}{1\\,440} - \\dfrac{240}{1\\,440} = \\dfrac{1}{12}$"
+        ],
+        "result": "\\dfrac{1}{12}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

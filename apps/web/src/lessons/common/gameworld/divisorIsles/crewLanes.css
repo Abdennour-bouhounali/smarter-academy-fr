@@ -1,0 +1,114 @@
+/* THE CREWS' LANES (crewLanes.jsx) — SVG drawn at 1 : 1. Shapes are the brand blue (#2f7df6), never black; the
+   shortfall amber (#fbbf24) as everywhere in this world; text light on the world's dark panels, never under 12 px — what
+   the student must read (a crew's name, a shortfall, the pillar's distance, the days since the start) is 18 px. Scoped
+   to .cl-*: nothing here touches another kind. */
+.cl-lanes,
+.cl-days {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: inherit;
+}
+.cl-ruler line {
+  stroke: #9fd8ff;
+  stroke-width: 1.5;
+}
+.cl-tick {
+  fill: #cfe9ff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.cl-crew {
+  /* a halo of the panel's colour: the pillar's line passes behind the name, never across it */
+  paint-order: stroke;
+  stroke: #0b1a3f;
+  stroke-width: 6px;
+  stroke-linejoin: round;
+  fill: #e8f6ff;
+  font-size: 18px;
+  font-weight: 800;
+}
+.cl-water {
+  fill: rgba(47, 125, 246, 0.12);
+  stroke: rgba(159, 216, 255, 0.35);
+  stroke-width: 1;
+}
+.cl-plank {
+  fill: #2f7df6;
+  stroke: #cfe9ff;
+  stroke-width: 1.5;
+}
+.cl-band rect {
+  fill: #2f7df6;
+}
+.cl-band__count {
+  fill: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+}
+.cl-short rect {
+  fill: rgba(251, 191, 36, 0.45);
+  stroke: #fbbf24;
+  stroke-width: 2;
+}
+.cl-short line {
+  stroke: #fbbf24;
+  stroke-width: 2;
+}
+.cl-short text {
+  fill: #ffe2a8;
+  font-size: 18px;
+  font-weight: 800;
+}
+.cl-post rect {
+  fill: #2f7df6;
+  stroke: #e8f6ff;
+  stroke-width: 1.5;
+}
+.cl-post text {
+  fill: #e8f6ff;
+  font-size: 18px;
+  font-weight: 800;
+}
+/* the days */
+.cl-dayhead {
+  fill: #cfe9ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.cl-team {
+  fill: #e8f6ff;
+  font-size: 18px;
+  font-weight: 800;
+}
+.cl-on {
+  fill: #2f7df6;
+}
+.cl-off {
+  fill: rgba(159, 216, 255, 0.16);
+}
+.cl-dark {
+  fill: rgba(255, 255, 255, 0.04);
+}
+.cl-glyph-on {
+  fill: #ffffff;
+}
+.cl-glyph-off {
+  fill: #9fb3c8;
+}
+.cl-since {
+  fill: #e8f6ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.cl-ask {
+  fill: none;
+  stroke: #7dfcff;
+  stroke-width: 2;
+}
+.cl-today {
+  fill: none;
+  stroke: #fbbf24;
+  stroke-width: 2.5;
+}

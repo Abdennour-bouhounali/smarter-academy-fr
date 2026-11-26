@@ -13,6 +13,7 @@ import { inquiryFits, ownTools, tellsNothing } from './checks.mjs';
 const SAID_BACK = /comme tu l[’']a(?:s|vais) (?:écrit|dit|prédit|annoncé)/i;
 import { halfturnExperiment, planExperiment, scaleExperiment } from './worlds/nilePyramidsExperiments.mjs';
 import { calcExperiment, chaseExperiment, roundtripExperiment } from './worlds/rootCourtsExperiments.mjs';
+import { crewsDays, crewsStory } from './crewsExperiments.mjs';
 
 // ───────────────────────────── the walk's own arithmetic (never the lesson's answers) ─────────────────────────────
 export const gcd = (a, b) => (b ? gcd(b, a % b) : a);
@@ -801,6 +802,313 @@ async function pairMode(ctx, spec) {
   }
 }
 
+// ───────────────────────────── the third French lesson's kind (fraction-irreductible, 2026-11-26) ─────────────────────────────
+// `measure` (divisorIsles/measure.js, InquiryMeasure.jsx): two strips one above the other are ONE fraction; a plank that
+// fills both counts them again. The walk's own arithmetic: the planks that fill both are the common divisors; the world's
+// check of « no plank but 1 fills both » tries the planks of the upper strip (shortest first) on the lower one.
+
+/** The world's check, computed here: the first plank longer than 1 of p that fills q (null: none). */
+const stillFills = (p, q) => divisors(p).find((d) => d > 1 && q % d === 0) ?? null;
+/** The smallest plank longer than 1 that does NOT fill both (among `chips` when the round has chips). */
+const refusingPlank = (a, b, chips) =>
+  (chips ?? Array.from({ length: Math.max(a, b) - 1 }, (_, i) => i + 2)).find((d) => a % d !== 0 || b % d !== 0) ??
+  null;
+
+/** What both `measure` modes share: the round's options read from the spec, a plank laid by its chip or typed. */
+function measureKit(ctx, spec, round) {
+  const { page } = ctx;
+  const chips = round.chips ?? spec.chips ?? null;
+  const typed = (round.typed ?? spec.typed) !== false;
+  const long = Boolean(round.long ?? spec.long);
+  const factText = async () => bare(await fact(page));
+  /**
+   * Lays the plank d — its chip when the round has one (always, `typed: false`), else typed — and waits until the world
+   * has laid it: the strips counted again (`chainLen` fractions in the chain), or a plank refused (the fact names d).
+   */
+  const lay = async (d, { chainLen = null, until = null } = {}) => {
+    if (!typed || (chips ?? []).includes(d)) await page.click(`.iq [data-iq-chip="${d}"]`);
+    else {
+      await page.fill('.iq [data-iq-in="plank"]', String(d));
+      await page.click('.iq [data-iq-lay]');
+    }
+    await page.waitForFunction(
+      ([n, want, dd]) => {
+        const q = window.__inquiry;
+        if (!q || q.stage === 'lay') return false;
+        if (want) return q.stage === want;
+        if (n != null) return q.stage === 'pick' && q.chain.length === n;
+        const f = (document.querySelector('.iq [data-iq-fact]')?.textContent ?? '').replace(/[\s  ]/g, '');
+        return q.stage === 'pick' && f.includes(String(dd));
+      },
+      [chainLen, until, d],
+      { timeout: 60000 },
+    );
+    await page.waitForTimeout(150);
+  };
+  return { chips, typed, long, lay, factText };
+}
+
+/** The bands of a LONG strip (`long: true`): a plank thinner than 3 px drawn as ONE band per strip, its count written. */
+const bandsOf = (page) =>
+  page.evaluate(() =>
+    Object.fromEntries(
+      [...document.querySelectorAll('.iq [data-iq-strip]')].map((s) => [
+        s.dataset.iqStrip,
+        s.querySelector('[data-iq-band]')?.dataset.iqBand ?? null,
+      ]),
+    ),
+  );
+
+/** The options of the screen: `typed: false` shows no typed box and no « lay » button, only its chips (and their values). */
+async function measureOptions(w, page, name, kit, spec) {
+  const seen = await page.evaluate(() => ({
+    box: document.querySelectorAll('.iq [data-iq-in="plank"]').length,
+    lay: document.querySelectorAll('.iq [data-iq-lay]').length,
+    chips: [...document.querySelectorAll('.iq [data-iq-chip]')].map((c) => Number(c.dataset.iqChip)),
+  }));
+  if (!kit.typed)
+    w.check(
+      seen.box === 0 && seen.lay === 0 && seen.chips.length > 0,
+      `${name}: chips only — no typed box, no « lay » button (${JSON.stringify(seen)})`,
+    );
+  else
+    w.check(
+      seen.box === 1 && seen.lay === 1,
+      `${name}: ONE typed box and its « lay » button (${JSON.stringify(seen)})`,
+    );
+  if (kit.chips)
+    w.check(
+      seen.chips.join() === kit.chips.join(),
+      `${name}: the chips are the spec's ${kit.chips.join(', ')} (${seen.chips.join(', ')})`,
+    );
+  if (spec.mode === 'direct')
+    w.check(
+      (await page.locator('.iq [data-iq-end]').count()) === 0,
+      `${name}: ONE stage only — no « no plank fills both » button`,
+    );
+}
+
+/**
+ * `measure`, `stages`: plank after plank on each round's two strips, the walk's own prime planks smallest first, as often
+ * as both strips hold them. On the first round a plank that does not fill both is laid first (refused, the strips
+ * unchanged, its chip marked); on the first round that needs two planks or more he CLAIMS too early that no plank fills
+ * both — the world finds the one that still does (computed here) and he goes on. His last claim: the world tries every
+ * plank of the upper strip and none fills the lower one. A round of `runs: 2` (a prediction, then another road) predicts
+ * the walk's own end and opens the second road by the longest common plank. Every round is played; a round that is not
+ * the last ends on its « next ».
+ */
+async function measureStages(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const next = ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]';
+  let claimedEarly = false;
+  for (const [ri, round] of spec.rounds.entries()) {
+    const { a, b } = round;
+    const tag = `${name}-r${ri + 1}`;
+    if (ri > 0) {
+      await page.click(next);
+      await waitIq(page, (r) => window.__inquiry?.ri === r && window.__inquiry?.stage === 'pick', ri);
+    }
+    const kit = measureKit(ctx, spec, round);
+    const q0 = await iq(page);
+    w.expect(
+      q0.kind === 'measure' && q0.mode === 'stages' && q0.a === a && q0.b === b,
+      `${tag}: the strips of ${a} over ${b} (the world: ${q0.kind} ${q0.mode} ${q0.a}/${q0.b})`,
+    );
+    await measureOptions(w, page, tag, kit, spec);
+    await tellsNothing(w, page, `${tag}, start`, ctx.forbid());
+    await inquiryFits(w, page, `${tag}-start`, exit);
+    const g = gcd(a, b);
+    const strikes = primeFactorsOf(g);
+    if (kit.chips)
+      w.expect(
+        strikes.every((p) => kit.chips.includes(p)),
+        `${tag}: every prime plank of ${a} and ${b} (${strikes.join(', ') || 'none'}) is a chip — computed here`,
+      );
+    // ── a plank that does not fill both, on the first round ──
+    const refusing = ri === 0 ? refusingPlank(a, b, kit.chips) : null;
+    if (refusing != null) {
+      await kit.lay(refusing);
+      const q = await iq(page);
+      const f = await kit.factText();
+      w.check(
+        q.chain.length === 1 &&
+          (await page.getAttribute('.iq[data-iq-frac], .iq [data-iq-frac]', 'data-iq-frac')) === `${a}:${b}` &&
+          f.includes(String(refusing)),
+        `${tag}: ${a} = ${refusing} × ${Math.floor(a / refusing)} + ${a % refusing}, ${b} = ${refusing} × ${Math.floor(b / refusing)} + ${b % refusing} — the plank of ${refusing} does not fill both, the strips stay ${a}/${b}, the fact says it (« ${f.slice(0, 90)} »)`,
+      );
+      if (kit.chips)
+        w.check(
+          (await page.getAttribute(`.iq [data-iq-chip="${refusing}"]`, 'data-iq-chip-state')) === 'no',
+          `${tag}: the chip ${refusing} is marked « does not fill both »`,
+        );
+      await tellsNothing(w, page, `${tag}, a plank refused`, ctx.forbid());
+      await inquiryFits(w, page, `${tag}-refused-${refusing}`, exit);
+    }
+    // ── the roads of the round: each to its end, the world's check each time ──
+    for (let run = 0; run < 4; run += 1) {
+      let cur = [a, b];
+      const chain = [[a, b]];
+      // a second road opens with ANOTHER plank: the longest common plank not used first (the walk's own)
+      const firsts = run === 0 ? [] : [g];
+      const plan = [...firsts, ...primeFactorsOf(g / (firsts[0] ?? 1))];
+      for (const [k, p] of plan.entries()) {
+        await kit.lay(p, { chainLen: chain.length + 1 });
+        const from = cur;
+        cur = [cur[0] / p, cur[1] / p];
+        chain.push(cur);
+        const q = await iq(page);
+        const f = await kit.factText();
+        w.check(
+          q.chain.map((x) => x.join('/')).join(',') === chain.map((x) => x.join('/')).join(',') &&
+            [p, ...from].every((v) => f.includes(String(v))),
+          `${tag}: ${from[0]} = ${p} × ${cur[0]} and ${from[1]} = ${p} × ${cur[1]} — the strips write ${chain.map((x) => x.join('/')).join(' = ')}, the fact counts them (« ${f.slice(0, 90)} ») — computed here`,
+        );
+        // the claim made too early, once: a plank still fills both, the world finds it
+        if (!claimedEarly && k < plan.length - 1) {
+          claimedEarly = true;
+          const want = stillFills(cur[0], cur[1]);
+          await page.click('.iq [data-iq-end]');
+          await waitIq(
+            page,
+            () => window.__inquiry?.stage === 'pick' && window.__inquiry?.check?.found != null,
+            undefined,
+            60000,
+          );
+          await page.waitForTimeout(200);
+          const c = (await iq(page)).check;
+          const f2 = await kit.factText();
+          w.check(
+            c.found === want &&
+              JSON.stringify(c.at) === JSON.stringify(cur) &&
+              f2.includes(String(want)) &&
+              (await page.locator('.iq [data-iq-end]').count()) === 1,
+            `${tag}: he says « no plank fills both » on ${cur[0]}/${cur[1]} — the world finds ${want} (${cur[0]} = ${want} × ${cur[0] / want}, ${cur[1]} = ${want} × ${cur[1] / want}), the fact says it and he goes on (« ${f2.slice(0, 80)} ») — computed here`,
+          );
+          await tellsNothing(w, page, `${tag}, a claim too early`, ctx.forbid());
+          await inquiryFits(w, page, `${tag}-claim-too-early`, exit);
+        }
+      }
+      // his claim: no plank longer than a cell fills both
+      await page.click('.iq [data-iq-end]');
+      await waitIq(page, () => ['predict', 'seen'].includes(window.__inquiry?.stage), undefined, 60000);
+      await page.waitForTimeout(250);
+      const q = await iq(page);
+      const tried = (await page.getAttribute('.iq [data-iq-check]', 'data-iq-check').catch(() => '')) ?? '';
+      const want = divisors(cur[0])
+        .filter((d) => d > 1)
+        .map((d) => `${d}:0`)
+        .join(',');
+      const f = await kit.factText();
+      w.check(
+        q.check?.found == null &&
+          tried === want &&
+          cur[0] * g === a &&
+          cur[1] * g === b &&
+          cur.every((v) => f.includes(String(v))),
+        `${tag}: ${cur[0]}/${cur[1]} — the world tries ${want.replace(/:0/g, '') || 'no plank'} on ${cur[1]}, none fills it (${tried || '—'}); the fact writes the end (« ${f.slice(0, 90)} ») — computed here`,
+      );
+      if (q.stage === 'seen') break;
+      // another road: he predicts where it ends (the walk's own), then lays its first plank
+      await tellsNothing(w, page, `${tag}, the prediction`, ctx.forbid());
+      await inquiryFits(w, page, `${tag}-predict`, exit);
+      await page.fill('.iq [data-iq-in="num"]', String(a / g));
+      await page.fill('.iq [data-iq-in="den"]', String(b / g));
+      await page.click('.iq [data-iq-predict]');
+      await waitIq(page, () => window.__inquiry?.stage === 'pick' && window.__inquiry?.chain.length === 1);
+    }
+    w.expect((await stageOf(page)) === 'seen', `${tag}: the round of ${a}/${b} is over`);
+    await tellsNothing(w, page, `${tag}, the end`, ctx.forbid());
+    await inquiryFits(w, page, `${tag}-end`, exit);
+  }
+}
+
+/**
+ * `measure`, `direct`: ONE plank per attempt on the strips. First a plank that does not fill both (refused; on a LONG
+ * strip — `long: true` — a plank under 3 px is ONE band per strip, its count computed here); then the smallest common
+ * plank that is not the longest: counted, the world finds a plank that still fills both (« one stage is not enough »,
+ * computed), he starts again from the fraction given; then the longest common plank: the round is over.
+ */
+async function measureDirect(ctx, spec) {
+  const { w, page, name } = ctx;
+  const exit = ctx.where === 'forge' ? ['.rf-root [data-di-exit]'] : undefined;
+  const next = ctx.where === 'forge' ? '.rf-root [data-iq-next]' : '[data-iq-next]';
+  for (const [ri, round] of spec.rounds.entries()) {
+    const { a, b } = round;
+    const tag = `${name}-r${ri + 1}`;
+    if (ri > 0) {
+      await page.click(next);
+      await waitIq(page, (r) => window.__inquiry?.ri === r && window.__inquiry?.stage === 'pick', ri);
+    }
+    const kit = measureKit(ctx, spec, round);
+    const q0 = await iq(page);
+    w.expect(
+      q0.kind === 'measure' && q0.mode === 'direct' && q0.a === a && q0.b === b,
+      `${tag}: the strips of ${a} over ${b} (the world: ${q0.kind} ${q0.mode} ${q0.a}/${q0.b})`,
+    );
+    await measureOptions(w, page, tag, kit, spec);
+    await tellsNothing(w, page, `${tag}, start`, ctx.forbid());
+    await inquiryFits(w, page, `${tag}-start`, exit);
+    const g = gcd(a, b);
+    w.expect(g > 1, `${tag}: ${a} and ${b} share a plank longer than 1 (${g}) — computed here`);
+    // ── a plank that does not fill both ──
+    const refusing = refusingPlank(a, b, kit.typed ? null : kit.chips);
+    if (refusing != null) {
+      await kit.lay(refusing);
+      const f = await kit.factText();
+      w.check(
+        (await iq(page)).chain.length === 1 && f.includes(String(refusing)),
+        `${tag}: ${a} = ${refusing} × ${Math.floor(a / refusing)} + ${a % refusing}, ${b} = ${refusing} × ${Math.floor(b / refusing)} + ${b % refusing} — the plank of ${refusing} is refused, the strips stay ${a}/${b} (« ${f.slice(0, 90)} »)`,
+      );
+      // a plank of d cells is at most d × 1000 / max(a, b) units of the 1000-wide scene: under 3, ONE band per strip
+      if (kit.long && (refusing * 1000) / Math.max(a, b) < 3) {
+        const bands = await bandsOf(page);
+        w.check(
+          bands.a === String(Math.floor(a / refusing)) && bands.b === String(Math.floor(b / refusing)),
+          `${tag}: on the long strips the planks of ${refusing} are ONE band each, ${Math.floor(a / refusing)} over ${Math.floor(b / refusing)} — computed here (${JSON.stringify(bands)})`,
+        );
+      }
+      await tellsNothing(w, page, `${tag}, a plank refused`, ctx.forbid());
+      await inquiryFits(w, page, `${tag}-refused-${refusing}`, exit);
+    }
+    // ── one stage that is not enough ──
+    const small = common(a, b).find((d) => d > 1 && d < g) ?? null;
+    if (small != null) {
+      await kit.lay(small, { until: 'again' });
+      const to = [a / small, b / small];
+      const want = stillFills(...to);
+      const q = await iq(page);
+      const f = await kit.factText();
+      w.check(
+        q.chain.map((x) => x.join('/')).join(',') === `${a}/${b},${to.join('/')}` &&
+          q.check?.found === want &&
+          [want, ...to].every((v) => f.includes(String(v))),
+        `${tag}: with ${small}, ${a}/${b} = ${to.join('/')} — and ${want} still fills ${to[0]} and ${to[1]}: one stage is not enough, the fact says it (« ${f.slice(0, 100)} ») — computed here`,
+      );
+      await tellsNothing(w, page, `${tag}, not enough`, ctx.forbid());
+      await inquiryFits(w, page, `${tag}-not-enough-${small}`, exit);
+      await page.click('.iq [data-iq-again]');
+      await waitIq(page, () => window.__inquiry?.stage === 'pick' && window.__inquiry?.chain.length === 1);
+      w.check(
+        (await page.getAttribute('.iq[data-iq-frac], .iq [data-iq-frac]', 'data-iq-frac')) === `${a}:${b}`,
+        `${tag}: he starts again from ${a}/${b}`,
+      );
+    }
+    // ── the longest common plank: one stage is enough ──
+    await kit.lay(g, { until: 'seen' });
+    const q = await iq(page);
+    const f = await kit.factText();
+    w.check(
+      q.chain.map((x) => x.join('/')).join(',') === `${a}/${b},${a / g}/${b / g}` &&
+        q.check?.found == null &&
+        [a / g, b / g].every((v) => f.includes(String(v))),
+      `${tag}: with ${g}, ${a}/${b} = ${a / g}/${b / g} and no plank longer than 1 fills both — one stage (« ${f.slice(0, 100)} ») — computed here`,
+    );
+    await tellsNothing(w, page, `${tag}, the end`, ctx.forbid());
+    await inquiryFits(w, page, `${tag}-end`, exit);
+  }
+}
+
 export const EXPERIMENTS = {
   'ladder:factor': factorMode,
   pairs: pairsMode,
@@ -821,6 +1129,12 @@ export const EXPERIMENTS = {
   plan: planExperiment,
   halfturn: halfturnExperiment,
   scale: scaleExperiment,
+  // fraction-irreductible (2026-11-26): `typed: false` (chips only) and `long: true` (one band per thin plank)
+  'measure:stages': measureStages,
+  'measure:direct': measureDirect,
+  // multiples-et-diviseurs-communs (2026-11-26, crewsExperiments.mjs)
+  'crews:story': crewsStory,
+  'crews:days': crewsDays,
 };
 
 /** Plays the experiment `spec` on the screen now open; ends on its « next » (a bench: back to its workshop). */

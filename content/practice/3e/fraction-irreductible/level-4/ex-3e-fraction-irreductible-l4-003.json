@@ -1,0 +1,230 @@
+{
+  "id": "ex-3e-fraction-irreductible-l4-003",
+  "lessonCode": "fraction-irreductible",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les ventes d’une boulangerie",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Un samedi, une boulangerie a vendu $1\\,188$ viennoiseries : $660$ croissants, $396$ pains au chocolat, les autres sont des chaussons."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction des viennoiseries représentent les croissants ? Donne-la sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "5/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{660}{1\\,188} = \\dfrac{5}{9}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$660 = 2 \\times 2 \\times 3 \\times 5 \\times 11$ et $1\\,188 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 11$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 11$.",
+          "$\\dfrac{660}{1\\,188} = \\dfrac{2 \\times 2 \\times 3 \\times 11 \\times 5}{2 \\times 2 \\times 3 \\times 11 \\times 9} = \\dfrac{5}{9}$."
+        ],
+        "result": "\\dfrac{660}{1\\,188} = \\dfrac{5}{9}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "330/594"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "220/396"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "60/108"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Détermine $\\text{PGCD}(396 ; 1\\,188)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "396",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(396 ; 1\\,188) = 396$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$396 = 2 \\times 2 \\times 3 \\times 3 \\times 11$",
+          "$1\\,188 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 11$",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 3 \\times 11 = 396$."
+        ],
+        "result": "396"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction des viennoiseries représentent les pains au chocolat ? Donne-la sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{396}{1\\,188} = \\dfrac{1}{3}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$396 = 2 \\times 2 \\times 3 \\times 3 \\times 11$ et $1\\,188 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 11$, donc $\\text{PGCD}(396 ; 1\\,188) = 396$.",
+          "$396 \\div 396 = 1$ et $1\\,188 \\div 396 = 3$.",
+          "$\\dfrac{396}{1\\,188} = \\dfrac{1}{3}$."
+        ],
+        "result": "\\dfrac{396}{1\\,188} = \\dfrac{1}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "198/594"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "132/396"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "36/108"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle fraction des viennoiseries représentent les croissants et les pains au chocolat ensemble ? Calcule $\\dfrac{660}{1\\,188} + \\dfrac{396}{1\\,188}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "8/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{8}{9}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{660}{1\\,188} + \\dfrac{396}{1\\,188} = \\dfrac{8}{9}$"
+        ],
+        "result": "\\dfrac{8}{9}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

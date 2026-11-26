@@ -15,6 +15,7 @@
  * `FracTpl` (a typed fraction in its own shape: two boxes over a bar) and `chainTex` are shared with `InquiryPart.jsx`.
  */
 import { useReducer, useState } from 'react';
+import { formatFr, texFr } from '@smarter-academy/core';
 import MathText from '../../components/MathText';
 import { Num } from '../kit/parts';
 import { initMeasure, measureNow, measureReducer, measureResult, checkOf, countAgain } from './measure';
@@ -28,8 +29,12 @@ const YA = 34;
 const YBAR = 94;
 const YB = 128;
 
-/** A fraction written with a real bar (KaTeX), and a chain of equal fractions — one formula, never broken. */
-const fracTex = ([p, q]) => `\\dfrac{${p}}{${q}}`;
+/**
+ * A fraction written with a real bar (KaTeX), and a chain of equal fractions — one formula, never broken. A whole number
+ * of four digits or more takes its thousands (`texFr`: « 1\,786 »); anything else is written as given.
+ */
+const texOf = (n) => (Number.isInteger(n) && n >= 0 ? texFr(n) : n);
+const fracTex = ([p, q]) => `\\dfrac{${texOf(p)}}{${texOf(q)}}`;
 export const chainTex = (chain) => chain.map(fracTex).join(' = ');
 
 /**
@@ -56,13 +61,29 @@ function laidNow(s) {
   return null;
 }
 
-/** One strip in the current unit: its cells (or, once counted again, its planks), a plank laid on it, its count. */
-function Strip({ n, unitPx, d, counted, y, tag, k }) {
+/** Under this width (px) a laid plank of a LONG strip (`long: true`) is drawn as one band with its count. */
+const THIN = 3;
+
+/**
+ * One strip in the current unit: its cells (or, once counted again, its planks), a plank laid on it, its count. With
+ * `long`, a plank too thin to see is ONE band over the planks that fit, their count written on it (a number, no word).
+ */
+function Strip({ n, unitPx, d, counted, y, tag, k, long = false }) {
+  const whole = d ? Math.floor(n / d) : 0;
+  const band = long && d && d * unitPx < THIN && whole > 0;
   return (
     <g data-iq-strip={tag} data-iq-count={n}>
       <Span key={k} n={n} d={d ?? (counted ? 1 : 0)} u={unitPx} y={y} laid={Boolean(d) || counted} />
+      {band && (
+        <g className="iq-meas-band" data-iq-band={whole}>
+          <rect className="iq-plank" x={X0} y={y - 4} width={whole * d * unitPx} height={38} rx="5" />
+          <text className="iq-meas-band__n" x={X0 + (whole * d * unitPx) / 2} y={y + 21} textAnchor="middle">
+            {formatFr(whole)}
+          </text>
+        </g>
+      )}
       <text className="iq-scene__num" x={X0 + n * unitPx} y={y - 12} direction="ltr">
-        {n}
+        {formatFr(n)}
       </text>
     </g>
   );
@@ -145,9 +166,9 @@ export function MeasureView({ spec, state, act, input = { plank: '', num: '', de
       <Head i={s.ri} n={spec.rounds.length} lead={T.lead(a, b, mode)} goal={T.goal(a, b, mode)} />
 
       <svg className="iq-scene" viewBox="0 0 1000 176" role="img" aria-label={`${p}\u00a0/\u00a0${q}`}>
-        <Strip n={p} unitPx={unitPx} d={d} counted={counted} y={YA} tag="a" k={`a${k}`} />
+        <Strip n={p} unitPx={unitPx} d={d} counted={counted} y={YA} tag="a" k={`a${k}`} long={now.long} />
         <line className="iq-meas-bar" x1={X0} y1={YBAR} x2={X0 + Math.max(a, b) * u} y2={YBAR} />
-        <Strip n={q} unitPx={unitPx} d={d} counted={counted} y={YB} tag="b" k={`b${k}`} />
+        <Strip n={q} unitPx={unitPx} d={d} counted={counted} y={YB} tag="b" k={`b${k}`} long={now.long} />
       </svg>
 
       <div className="iq-meas-calc" dir="ltr" data-iq-calc>
@@ -181,26 +202,30 @@ export function MeasureView({ spec, state, act, input = { plank: '', num: '', de
                     data-iq-chip={c}
                     data-iq-chip-state={refusedHere.has(c) ? 'no' : ''}
                   >
-                    {c}
+                    {formatFr(c)}
                   </button>
                 ))}
               </div>
             )}
-            <div className="iq-tpl">
-              <label>
-                <Num
-                  value={input.plank}
-                  onChange={(v) => act.type('plank', v)}
-                  w={String(Math.max(p, q)).length}
-                  data-iq-in="plank"
-                  onKeyDown={onEnter(act.lay)}
-                />
-                <small>{T.unit}</small>
-              </label>
-            </div>
-            <button type="button" className="rf-btn rf-btn--main" onClick={act.lay} data-iq-lay>
-              {T.lay}
-            </button>
+            {now.typed && (
+              <>
+                <div className="iq-tpl">
+                  <label>
+                    <Num
+                      value={input.plank}
+                      onChange={(v) => act.type('plank', v)}
+                      w={String(Math.max(p, q)).length}
+                      data-iq-in="plank"
+                      onKeyDown={onEnter(act.lay)}
+                    />
+                    <small>{T.unit}</small>
+                  </label>
+                </div>
+                <button type="button" className="rf-btn rf-btn--main" onClick={act.lay} data-iq-lay>
+                  {T.lay}
+                </button>
+              </>
+            )}
             {mode === 'stages' && (
               <button type="button" className="rf-btn" onClick={act.end} data-iq-end>
                 {T.end}
@@ -218,7 +243,7 @@ export function MeasureView({ spec, state, act, input = { plank: '', num: '', de
                   className={`iq-chip iq-chip--s iq-meas-tried ${t.fills ? 'is-fills' : 'is-no'}`}
                   data-iq-tried={t.d}
                 >
-                  {t.d}
+                  {formatFr(t.d)}
                 </span>
               ))}
             </div>

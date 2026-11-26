@@ -45,4 +45,8 @@ describe('a bridge with a marked stretch', () => {
       '\\frac{5}{39} + \\frac{8}{39} = \\frac{13}{39} = \\frac{1}{3}',
     );
   });
+
+  it('a number of four digits or more takes the French thousands (LaTeX thin space)', () => {
+    expect(signTex(signChain(1786, 722, [38]))).toBe('\\frac{722}{1\\,786} = \\frac{19}{47}');
+  });
 });

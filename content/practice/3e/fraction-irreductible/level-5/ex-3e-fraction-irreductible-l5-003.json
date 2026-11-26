@@ -1,0 +1,209 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-003",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La saison d’une équipe de handball",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l5-006",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Une équipe de handball joue $45$ matchs dans la saison. Après $30$ matchs, elle compte $21$ victoires, $6$ matchs nuls et $3$ défaites. L’entraîneur voudrait que la fraction de victoires sur la saison entière soit d’au moins $\\dfrac{3}{5}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Écris la fraction $\\dfrac{21}{30}$ des matchs gagnés sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "7/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{21}{30} = \\dfrac{7}{10}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$21 = 3 \\times 7$ et $30 = 2 \\times 3 \\times 5$.",
+          "Les facteurs premiers communs : $3$.",
+          "$\\dfrac{21}{30} = \\dfrac{3 \\times 7}{3 \\times 10} = \\dfrac{7}{10}$."
+        ],
+        "result": "\\dfrac{21}{30} = \\dfrac{7}{10}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris la fraction $\\dfrac{6}{30}$ des matchs nuls sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{30} = \\dfrac{1}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$6 = 2 \\times 3$ et $30 = 2 \\times 3 \\times 5$.",
+          "Les facteurs premiers communs : $2 \\times 3$.",
+          "$\\dfrac{6}{30} = \\dfrac{2 \\times 3 \\times 1}{2 \\times 3 \\times 5} = \\dfrac{1}{5}$."
+        ],
+        "result": "\\dfrac{6}{30} = \\dfrac{1}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "3/15"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "2/10"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction des matchs joués est formée de défaites ? Calcule $1 - \\dfrac{7}{10} - \\dfrac{1}{5}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{1}{10}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{7}{10} = \\dfrac{3}{10}$",
+          "$1 - \\dfrac{7}{10} - \\dfrac{1}{5} = \\dfrac{1}{10}$"
+        ],
+        "result": "\\dfrac{1}{10}"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Combien de victoires l’équipe doit-elle encore obtenir, au minimum, sur les $15$ matchs restants ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "6",
+      "counted": false,
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule d’abord le nombre de victoires sur la saison entière."
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut au moins $6$ victoires de plus.",
+        "incorrect": "Reprends le calcul avec les données de l’énoncé."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} \\times 45 = 27$ victoires au total.",
+          "$27 - 21 = 6$ victoires de plus."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

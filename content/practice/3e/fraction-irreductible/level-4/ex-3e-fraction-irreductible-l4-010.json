@@ -1,0 +1,171 @@
+{
+  "id": "ex-3e-fraction-irreductible-l4-010",
+  "lessonCode": "fraction-irreductible",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les voyageurs d’une ligne de train",
+    "estimatedMinutes": 5,
+    "tags": [
+      "problème",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Une ligne de train a transporté $1\\,232$ voyageurs dans la journée : $704$ le matin, $308$ à midi, les autres le soir."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction des voyageurs représentent les voyageurs du matin ? Donne-la sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "4/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{704}{1\\,232} = \\dfrac{4}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$704 = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 11$ et $1\\,232 = 2 \\times 2 \\times 2 \\times 2 \\times 7 \\times 11$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 2 \\times 11$.",
+          "$\\dfrac{704}{1\\,232} = \\dfrac{2 \\times 2 \\times 2 \\times 2 \\times 11 \\times 4}{2 \\times 2 \\times 2 \\times 2 \\times 11 \\times 7} = \\dfrac{4}{7}$."
+        ],
+        "result": "\\dfrac{704}{1\\,232} = \\dfrac{4}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "352/616"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "64/112"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle fraction des voyageurs représentent les voyageurs du matin et les voyageurs de midi ensemble ? Calcule $\\dfrac{704}{1\\,232} + \\dfrac{308}{1\\,232}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "23/28",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{23}{28}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{704}{1\\,232} + \\dfrac{308}{1\\,232} = \\dfrac{23}{28}$"
+        ],
+        "result": "\\dfrac{23}{28}"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction des voyageurs représentent les voyageurs du soir ? Calcule $1 - \\dfrac{704}{1\\,232} - \\dfrac{308}{1\\,232}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "5/28",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{5}{28}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{704}{1\\,232} = \\dfrac{3}{7}$",
+          "$1 - \\dfrac{704}{1\\,232} - \\dfrac{308}{1\\,232} = \\dfrac{5}{28}$"
+        ],
+        "result": "\\dfrac{5}{28}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

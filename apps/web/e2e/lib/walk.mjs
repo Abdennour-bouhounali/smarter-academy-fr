@@ -381,7 +381,10 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
           }
         }
         for (const f of foreign) if (text.includes(f)) words.push(f);
-        if (checkNumbers) for (const k of foreignNumbers) if (new RegExp(`(^|[^0-9])${k}([^0-9]|$)`).test(text)) words.push(String(k));
+        // a number grouped by thousands (« 2 121 », U+202F / U+2009 / U+00A0 before three digits) is ONE number: its tail
+        // group is not read as a number of its own (lesson 4's mission window, 2026-11-26)
+        const joined = text.replace(/(\d)[\u202f\u2009\u00a0](?=\d{3}(?!\d))/g, '$1');
+        if (checkNumbers) for (const k of foreignNumbers) if (new RegExp(`(^|[^0-9])${k}([^0-9]|$)`).test(joined)) words.push(String(k));
         // the word of the vocabulary is « savoir-faire » (FRENCH_LANGUAGE_CONTRACT.md §3), never « point d’apprentissage »
         const learningPoint = /points? d[’']apprentissage/i.test(text);
         // money is in euros: « DA » glued to a number (« 900DA ») is a dinar too — no Latin letter on either side (a segment DA

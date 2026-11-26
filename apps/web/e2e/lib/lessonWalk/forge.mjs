@@ -230,6 +230,19 @@ export async function playForge(ctx, key) {
   const solve = D.use?.[key];
   expect(typeof solve === 'function', `the descriptor computes the last step of « ${key} » (use.${key})`);
   const vals = solve(u);
+  // a CHOICE the descriptor picks by reading its options (a function of [{ id, text }] → the id; fraction-irreductible's
+  // « ce que je barre »: the walk reads « 3² et 23 » and compares it with its own arithmetic) — resolved here, once
+  for (const [k, pickOf] of Object.entries(vals)) {
+    if (typeof pickOf !== 'function') continue;
+    const opts = await page.$$eval(`.rf-root [data-kit-choice="${k}"] [data-kit-option]`, (els) =>
+      els.map((e) => ({ id: e.dataset.kitOption, text: e.textContent.trim() })),
+    );
+    vals[k] = pickOf(opts);
+    expect(
+      opts.some((o) => o.id === vals[k]),
+      `${name}: the choice « ${k} » is picked by the walk's own reading of its options (${opts.map((o) => o.text).join(' | ')} → ${vals[k]})`,
+    );
+  }
   // a last step may end on two buttons « yes / no » (`use.verdict: true` in the forge, `data-rf-use-verdict`): the
   // descriptor gives it as `verdict: 'yes' | 'no'` beside the boxes
   const boxOf = (v) => Object.fromEntries(Object.entries(v).filter(([k]) => k !== 'verdict'));

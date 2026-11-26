@@ -89,7 +89,8 @@ export function missingEvidence(log) {
  *               optional `figure` — a GEOMETRY FIGURE, the same data as a bank sheet's `statement.figure` (plane:
  *               points, segments, parallels, lengths), drawn beside the question by the practice space's own
  *               StatementFigure (`boardFigure.js` says how wide); such a station draws NO bridge under its cards — a card
- *               agrees when it is in `answer` (`askProof`, `askHeld`);
+ *               agrees when it is in `answer` (`askProof`, `askHeld`); optional `figureAfter` — the figure once the class
+ *               has checked (the proof drawn), `figure` being what it shows before, never the answer (2026-11-26);
  *   statements  sentences the class judges true or false, each proved by an equality;
  *   name        the rule gets its name: the tablet of the lesson (`tablet` key of the game's strings — one wording for the
  *               student's world and for the board), read aloud by a student or by the teacher;

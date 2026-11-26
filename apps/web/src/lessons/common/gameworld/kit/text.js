@@ -11,7 +11,7 @@
  *   FORGE   the rule forge « Forge ta règle » (RuleForge.jsx)
  *   PT      the paper mode (Paper.jsx, which re-exports it)
  */
-import { counted, listFr } from './authoring/numbers';
+import { agreed, counted, listFr } from './authoring/numbers';
 
 const MINUTES = ['minute', 'minutes'];
 const POINTS = ['point', 'points'];
@@ -68,6 +68,7 @@ export const TX = {
     noSheet: 'Pas encore de sujet pour ce palier',
   },
   lab: { open: 'Mon labo' },
+  revision: { open: 'Page de révision' },
   launch: { open: 'L’échauffement' },
   progress: {
     open: 'Ma progression',
@@ -211,7 +212,8 @@ export const KT = {
   end: {
     stars: 'Étoiles',
     gems: 'Cristaux',
-    falls: 'Chutes',
+    /** The label under the number of falls: « 0 chute », « 2 chutes » (agreed with it). */
+    falls: (n) => agreed(n, ['Chute', 'Chutes']),
     time: 'Temps',
     /** The time of the story, in whole minutes. */
     min: (m) => `${m} min`,

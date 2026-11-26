@@ -111,6 +111,24 @@ describe('la séance en classe — a station that draws a geometry figure', () =
   });
 });
 
+describe('la séance en classe — a figure with two states (`figureAfter`, 2026-11-26)', () => {
+  // the after-state draws the proof: here a rose segment the before-state does not have
+  const proofDrawn = { ...figure, segments: [...figure.segments, { from: 'A', to: 'C', label: '10', tone: 'rose' }] };
+  const twoStates = { ...withFig, id: 't', figureAfter: proofDrawn };
+  it('before the check: the figure alone — the proof (the post of the walkways) is not on the board', () => {
+    const html = board(twoStates);
+    expect(html).toContain('data-cs-figure-state="before"');
+    expect(html).toContain('data-geo-figure');
+    expect(html).not.toContain('#e11d48'); // the after-state's rose stroke
+    expect(html).not.toMatch(/>10</);
+  });
+  it('a station without `figureAfter` renders exactly as before: no state, the same markup', () => {
+    const html = board(withFig);
+    expect(html).not.toContain('data-cs-figure-state');
+    expect(html).toBe(board({ ...withFig, figureAfter: undefined }));
+  });
+});
+
 describe('la fiche du professeur — an opening that draws a geometry figure', () => {
   it('draws its figure with the practice space’s renderer, never narrower than its 12 px floor', () => {
     const o = { id: 'g', kind: 'thales', title: 'Passerelle', figure };

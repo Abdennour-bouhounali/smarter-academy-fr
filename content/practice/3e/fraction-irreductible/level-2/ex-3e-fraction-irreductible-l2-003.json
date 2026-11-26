@@ -1,0 +1,121 @@
+{
+  "id": "ex-3e-fraction-irreductible-l2-003",
+  "lessonCode": "fraction-irreductible",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Facteurs premiers communs",
+    "estimatedMinutes": 3,
+    "tags": [
+      "facteurs premiers",
+      "fraction irréductible"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Pour savoir si on peut simplifier, on cherche les facteurs premiers communs."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Cherche les facteurs premiers communs aux deux termes.",
+      "statement": "Écris tous les nombres premiers qui divisent à la fois $42$ et $70$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        2,
+        7
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose chaque nombre en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde les nombres premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Les facteurs premiers communs sont $2$, $7$ : la fraction $\\dfrac{42}{70}$ n’est pas irréductible.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux nombres : vérifie chacun."
+      },
+      "solution": {
+        "lines": [
+          "$42 = 2 \\times 3 \\times 7$.",
+          "$70 = 2 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs sont $2$ et $7$."
+        ],
+        "result": "2 ; 7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Écris tous les nombres premiers qui divisent à la fois $45$ et $105$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        3,
+        5
+      ],
+      "answerFormat": "Les nombres, séparés par des virgules",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose chaque nombre en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Garde les nombres premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Les facteurs premiers communs sont $3$, $5$ : la fraction $\\dfrac{45}{105}$ n’est pas irréductible.",
+        "incorrect": "Il en manque, ou un nombre de ta liste ne divise pas les deux nombres : vérifie chacun."
+      },
+      "solution": {
+        "lines": [
+          "$45 = 3 \\times 3 \\times 5$.",
+          "$105 = 3 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs sont $3$ et $5$."
+        ],
+        "result": "3 ; 5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": "ex-3e-fraction-irreductible-l2-002",
+  "lessonCode": "fraction-irreductible",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Trouver l’intrus irréductible",
+    "estimatedMinutes": 3,
+    "tags": [
+      "fraction irréductible",
+      "reconnaître"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Une seule fraction est irréductible parmi les quatre."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "statement": "Laquelle de ces fractions est irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{34}{85}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{38}{57}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{45}{56}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{51}{68}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une fraction irréductible n’a aucun facteur premier commun au numérateur et au dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Décompose les deux termes de chaque fraction, ou cherche un diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Les deux termes de cette fraction n’ont aucun facteur premier commun.",
+        "incorrect": "Une autre fraction est irréductible : cherche, pour chacune, un facteur premier commun."
+      },
+      "solution": {
+        "lines": [
+          "$34 = 2 \\times 17$ et $85 = 5 \\times 17$ : le facteur premier $17$ est commun, on peut simplifier.",
+          "$38 = 2 \\times 19$ et $57 = 3 \\times 19$ : le facteur premier $19$ est commun, on peut simplifier.",
+          "$45 = 3 \\times 3 \\times 5$ et $56 = 2 \\times 2 \\times 2 \\times 7$ : aucun facteur premier commun, la fraction est irréductible.",
+          "$51 = 3 \\times 17$ et $68 = 2 \\times 2 \\times 17$ : le facteur premier $17$ est commun, on peut simplifier."
+        ],
+        "result": "$\\dfrac{45}{56}$"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Laquelle de ces fractions est irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{26}{52}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{49}{63}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{33}{70}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{44}{99}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une fraction irréductible n’a aucun facteur premier commun au numérateur et au dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Décompose les deux termes de chaque fraction, ou cherche un diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Les deux termes de cette fraction n’ont aucun facteur premier commun.",
+        "incorrect": "Une autre fraction est irréductible : cherche, pour chacune, un facteur premier commun."
+      },
+      "solution": {
+        "lines": [
+          "$26 = 2 \\times 13$ et $52 = 2 \\times 2 \\times 13$ : les facteurs premiers $2$ et $13$ sont communs, on peut simplifier.",
+          "$49 = 7 \\times 7$ et $63 = 3 \\times 3 \\times 7$ : le facteur premier $7$ est commun, on peut simplifier.",
+          "$33 = 3 \\times 11$ et $70 = 2 \\times 5 \\times 7$ : aucun facteur premier commun, la fraction est irréductible.",
+          "$44 = 2 \\times 2 \\times 11$ et $99 = 3 \\times 3 \\times 11$ : le facteur premier $11$ est commun, on peut simplifier."
+        ],
+        "result": "$\\dfrac{33}{70}$"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -35,7 +35,7 @@ import {
 } from '../engine/builders';
 import { divide, predictOptions, bridgeStars, buildLayout, DASH, checkDivision, checkCount, gapSign } from './logic';
 import { T as WORLD_TEXT, waveSay, waveHint } from './strings';
-import { gatePoints, PRACTICE_HEARTS, MAX_WAVES } from '../kit/ladder';
+import { gatePoints, PRACTICE_HEARTS, waveBack } from '../kit/ladder';
 import { makeMission, judge, facts, answerParts, WORLD_OF, ORDER_PAY, MISTAKE_COST, CASE_HEARTS } from './cases';
 import { Depot } from './Depot';
 import { WorldRuntime, easeOut, damp } from '../kit/WorldRuntime';
@@ -43,11 +43,17 @@ import { ShareScene, TileScene } from './Worlds';
 
 /** The 3D worlds of the real cases, built the first time they are played. */
 import { markVerdict, signChain } from './mark';
+import { WALKWAY_METHODS } from './walkwayGame';
 
 const WORLDS = { depot: Depot, share: ShareScene, tiling: TileScene };
 const MISSION_PAN = new THREE.Vector3(0, 2.4, 3.2); // the notebook and the paper stand on the two sides
 
 const BRIDGE_HALF = 1.15;
+/**
+ * The planks a standing segment of a convoy cost: a bridge, its gap ÷ its plank; a WALKWAY (its `a` = the pillar, its
+ * `builtWith` = the pillar too), the planks of each crew to the pillar — not « 1 ».
+ */
+const planksOf = (s) => (s.kind === 'walkway' ? s.crews.reduce((n, b) => n + s.a / b, 0) : s.a / s.builtWith);
 
 /** Sky palettes along the journey: morning → noon → gold → dusk → night. [top, bottom, sun colour, sun intensity, ambient, night] */
 const SKIES = [
@@ -152,7 +158,13 @@ export class DivisorIslesGame extends WorldRuntime {
     }
 
     this.isl.forEach((isl, i) => this.buildIsland(isl, i));
-    this.segs.forEach((seg) => (seg.kind === 'rail' ? this.buildRail(seg) : this.buildBridge(seg)));
+    this.segs.forEach((seg) =>
+      seg.kind === 'rail'
+        ? this.buildRail(seg)
+        : seg.kind === 'walkway'
+          ? this.buildWalkway(seg)
+          : this.buildBridge(seg),
+    );
     this.heldMesh = null;
   }
   spawnPoint() {
@@ -172,7 +184,7 @@ export class DivisorIslesGame extends WorldRuntime {
     if (!h)
       return { ahead: Math.min(this.state.stage, last), behind: Math.max(0, Math.min(this.state.stage, last) - 1) };
     for (const seg of this.segs) {
-      if (seg.kind !== 'bridge' || seg.builtLen <= 0) continue;
+      if (!this.walkableSeg(seg) || seg.builtLen <= 0) continue;
       const u = (h.pos.x - seg.sx) * seg.dx + (h.pos.z - seg.sz) * seg.dz;
       const v = (h.pos.x - seg.sx) * seg.rx + (h.pos.z - seg.sz) * seg.rz;
       if (Math.abs(v) <= BRIDGE_HALF + 0.4 && u > 0.6 && u < seg.len - 0.6)
@@ -327,6 +339,8 @@ export class DivisorIslesGame extends WorldRuntime {
       this.board.position.y = 0.35 + Math.sin(this.time * 2.4) * 0.07;
     if (this.lit) this.lighthouse.userData.beams.rotation.y += dt * 0.5;
     if (this.depot) this.depot.update(this.time);
+    this.stepWalkways(dt, ph);
+    this.stepMission(dt, ph);
   }
 
   // ───────────────────────────── store ─────────────────────────────
@@ -405,6 +419,8 @@ export class DivisorIslesGame extends WorldRuntime {
       );
       this.placePedestals(isl, i, seg.moulds, local, reserved);
     }
+    if (seg && seg.kind === 'walkway') this.buildPillarPost(isl, seg, local, reserved);
+    if (this.story.mission && i === this.missionAt()) this.buildMissionBoard(isl, local, reserved);
     if (isl.feature === 'guardians') this.buildGuardians(isl, local, reserved);
     if (this.segs[i] === this.rail) this.buildBoard(isl, i, local);
     if (isl.feature === 'anvil') {
@@ -830,6 +846,8 @@ export class DivisorIslesGame extends WorldRuntime {
       }
       this.markComplete(seg, true);
     });
+    // the road a final mission opens stays shut until it is solved (`walkwayGame.js › shutMissionRoad`)
+    this.shutMissionRoad();
     if (this.flags.storm) this.swapStormPedestals();
     if (this.flags.statues) this.statues?.forEach((s) => s.userData.lit(true));
     if (this.rail.complete) this.board.position.copy(this.segPoint(this.rail, this.rail.len - 3, 0, 0.35));
@@ -861,7 +879,7 @@ export class DivisorIslesGame extends WorldRuntime {
     const of = seg?.convoy ? this.convoys[seg.convoy]?.purse : null;
     if (!of) return null;
     const group = this.convoyOf(seg);
-    const spent = group.reduce((n, s) => n + (s.complete && s.builtWith ? s.a / s.builtWith : 0), 0);
+    const spent = group.reduce((n, s) => n + (s.complete && s.builtWith ? planksOf(s) : 0), 0);
     // `n`: the bridges it pays — the chip says « the purse of the bridge » for a convoy of one (lesson 8)
     return { of, left: of - spent, n: group.length };
   }
@@ -1207,6 +1225,7 @@ export class DivisorIslesGame extends WorldRuntime {
       if (seg.boss) this.bossRefused(b, { purse: true, laid: paid, need: q });
       this.refreshObjective();
       this.save();
+      this.missed(seg, b);
       return;
     }
     this.set({ equation: { a, b, q, r, live: false, ...eqMark(q), ...named } });
@@ -1261,6 +1280,7 @@ export class DivisorIslesGame extends WorldRuntime {
       if (seg.boss) this.bossRefused(b, { mark: mv.mark.r });
       this.refreshObjective();
       this.save();
+      this.missed(seg, b);
       return;
     }
     if (r === 0) {
@@ -1294,7 +1314,16 @@ export class DivisorIslesGame extends WorldRuntime {
       this.cine = null;
       this.set({ phase: 'play' });
       this.afterFail(seg, b, q, r, right);
+      this.missed(seg, b);
     }
+  }
+
+  /**
+   * A try that did NOT hold (cells left open, the post off a joint, the purse empty) is in the log too: the story may look
+   * at it again (`story.onMiss(game, seg, b)` — e.g. a mirror that waits until named planks were all fired). Optional.
+   */
+  missed(seg, b) {
+    this.story.onMiss?.(this, seg, b);
   }
 
   finishBridge(seg, b, q) {
@@ -1409,10 +1438,14 @@ export class DivisorIslesGame extends WorldRuntime {
         o = this.T.objective.convoyBack(this.isl[this.convoyOf(seg)[0].index].name);
       else if (i === this.stoneAt && !this.flags.key4) o = this.T.objective.stone;
       else if (seg.boss) o = seg.complete && this.flags.bossPaid ? this.T.objective.bossCross : this.T.objective.bossGo;
+      else if (seg.kind === 'walkway' && !seg.complete) o = this.T.walkway.objective;
       else if (seg.complete) o = this.T.objective.cross;
       else if (seg.kind === 'rail') o = this.boardReady() ? this.T.objective.board : this.T.objective.statues;
       else o = this.T.objective.bridge(seg.a);
     }
+    // on the island of the final mission, while it waits (or waits for the walk back), the story's line
+    const waits = i === this.missionAt() && !this.flags.mission ? this.missionObjective() : null;
+    if (waits) o = waits;
     if (this.state.objective !== o) this.set({ objective: o });
     this.syncSign();
     // the purse of the convoy he is building (shown while one of its bridges is still to build)
@@ -1433,7 +1466,8 @@ export class DivisorIslesGame extends WorldRuntime {
     this.save();
     // what the story does on this island: a sentence, a forge (no rule is told), a module marked, the stone…
     this.story.onArrive?.(this, k);
-    if (k === this.isl.length - 1) this.finale();
+    // the story ends on its last island — after the lesson's final mission, when it has one (`story.mission`)
+    if (k === this.isl.length - 1 && (!this.story.mission || this.flags.mission)) this.finale();
   }
 
   openStone() {
@@ -1587,13 +1621,13 @@ export class DivisorIslesGame extends WorldRuntime {
   }
   openBench() {
     const o = this.state.overlay;
-    if (o?.type !== 'workshop' || !o.bench) return;
+    if ((o?.type !== 'workshop' && o?.type !== 'walkway') || !o.bench) return;
     this.audio.play('ui');
     this.set({ overlay: { ...o, benchOpen: true } });
   }
   closeBench(kept) {
     const o = this.state.overlay;
-    if (o?.type !== 'workshop') return;
+    if (o?.type !== 'workshop' && o?.type !== 'walkway') return;
     if (kept) this.flags.benches = { ...this.flags.benches, [this.segs[o.seg].id]: kept };
     this.set({ overlay: { ...o, benchOpen: false } });
     this.save();
@@ -1865,7 +1899,8 @@ export class DivisorIslesGame extends WorldRuntime {
           }
           // GUIDED: the run stops on the mistake, says why with the true division, and a question of the same kind comes back
           let again = false;
-          if (d.waves.length < MAX_WAVES) {
+          // a gate left on the rail (its gates are the story dash's: 6 in some lessons, kit/ladder.js › waveBack)
+          if (waveBack(d.waves.length, seg.gates.length)) {
             d.waves.push(this.lesson.ladder.makeWave(Math.random, d.node, d.level, w));
             this.dressGate(d.waves.length - 1);
             again = true;
@@ -2446,7 +2481,7 @@ export class DivisorIslesGame extends WorldRuntime {
   walkable(x, z) {
     for (const isl of this.isl) if (Math.hypot(x - isl.x, z - isl.z) <= isl.R - 0.12) return true;
     for (const seg of this.segs) {
-      if (seg.kind !== 'bridge' || seg.builtLen <= 0) continue;
+      if (!this.walkableSeg(seg) || seg.builtLen <= 0) continue;
       const u = (x - seg.sx) * seg.dx + (z - seg.sz) * seg.dz;
       const v = (x - seg.sx) * seg.rx + (z - seg.sz) * seg.rz;
       if (Math.abs(v) <= BRIDGE_HALF && u >= -0.7 && u <= seg.builtLen) return true;
@@ -2454,6 +2489,9 @@ export class DivisorIslesGame extends WorldRuntime {
     return false;
   }
 }
+
+// the walkway segment and the final mission (`walkwayGame.js`)
+Object.assign(DivisorIslesGame.prototype, WALKWAY_METHODS);
 
 function distToSeg(px, pz, ax, az, bx, bz) {
   const dx = bx - ax;

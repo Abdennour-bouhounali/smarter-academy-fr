@@ -4,7 +4,7 @@
  * The French agreement of a number and its noun is the kit's (`kit/authoring/numbers.js › counted`).
  */
 import { counted, listFr, PLANKS, CELLS } from '../kit/authoring/numbers';
-import { formatFr } from '@smarter-academy/core';
+import { formatFr, texFr } from '@smarter-academy/core';
 
 /** « 1 planche », « 21 planches » — the number is always written. */
 export const planks = (q) => counted(q, PLANKS);
@@ -12,6 +12,10 @@ export const planks = (q) => counted(q, PLANKS);
 const cells = (r) => counted(r, ['case vide', 'cases vides']);
 /** « il reste 1 case vide », « il reste 3 cases vides ». */
 const remain = (r) => `il reste ${cells(r)}`;
+/** A whole number as French writes it: « 1 786 » from four digits on (a narrow no-break space); anything else as given. */
+const nb = (n) => (Number.isInteger(n) && n >= 0 ? formatFr(n) : n);
+/** The same inside LaTeX: « 1\\,786 ». */
+const tx = (n) => (Number.isInteger(n) && n >= 0 ? texFr(n) : n);
 /** A sentence's first letter in capital. */
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -223,8 +227,8 @@ export const T = {
     amount: 'Montant',
   },
   prompt: {
-    take: (b) => `Prends le moule ${b}`,
-    forge: (b) => `Construis le pont avec des planches de ${b}`,
+    take: (b) => `Prends le moule ${nb(b)}`,
+    forge: (b) => `Construis le pont avec des planches de ${nb(b)}`,
     needMould: 'Prends d’abord un moule',
     statues: 'Réveille les gardiens',
     board: 'Monte sur le glisseur de lumière',
@@ -250,7 +254,7 @@ export const T = {
       `Pas de planches sur cette île. Retourne à « ${name} » et choisis des planches qui construisent les deux ponts`,
   },
   /** What matters from the island before (kit/Instruction.jsx › Recall): the gap he has just crossed. */
-  recall: { bridge: (a, b, q) => `Le fossé précédent : $${a} = ${b} \\times ${q}$` },
+  recall: { bridge: (a, b, q) => `Le fossé précédent : $${tx(a)} = ${tx(b)} \\times ${tx(q)}$` },
   /** The purse of a convoy: a coin per plank, whatever its length. */
   purse: { label: 'Pièces des deux ponts', one: 'Pièces du pont' },
   say: {
@@ -267,12 +271,13 @@ export const T = {
     convoyOnly: 'Les deux ponts se construisent avec les mêmes planches : prends-les sur l’île précédente.',
     // a marked stretch (`mark.js`): the gap is filled, but the post of the mark stands in the middle of a plank
     markMiss: (b, mark) =>
-      `Le pont est plein, mais le poteau du lampadaire, à la case ${mark.m}, tombe au milieu d’une planche : ${mark.m} = ${b} × ${mark.q} + ${mark.r}. Le poteau ne tient que sur une jointure entre deux planches.`,
+      `Le pont est plein, mais le poteau du lampadaire, à la case ${nb(mark.m)}, tombe au milieu d’une planche : ${nb(mark.m)} = ${nb(b)} × ${nb(mark.q)} + ${nb(mark.r)}. Le poteau ne tient que sur une jointure entre deux planches.`,
     purseOut: (laid, need) =>
       `Plus de pièces ! ${planks(laid)} posée${laid < 2 ? '' : 's'}, et le pont a besoin de ${planks(need)}. Il faut une pièce par planche, quelle que soit sa longueur.`,
     gapRight: (r) => `Comme tu l’as prédit : ${remain(r)}. Ce moule ne convient donc pas : essaie un autre moule.`,
     gapShort: (r) => `Il reste ${r}… Le pont ne tient que s’il est rempli exactement.`,
-    tooLong: (b, a) => `Une planche de ${b} est plus longue que tout le fossé (${a}) ! Aucune planche n’est entrée.`,
+    tooLong: (b, a) =>
+      `Une planche de ${nb(b)} est plus longue que tout le fossé (${nb(a)}) ! Aucune planche n’est entrée.`,
     ok: (b, q) =>
       q === 1
         ? `1 planche de ${b} remplit tout le fossé. Traverse !`
@@ -293,7 +298,7 @@ export const T = {
     g7: 'L’île têtue ! Le fossé ne fait que 7 cases. Essaie ses moules…',
     anvilOpen:
       'Aucun moule de l’île ne remplit 7 ! L’atelier est ouvert : fabrique un moule de la longueur que tu veux.',
-    crafted: (b) => `Le moule de ${b} est prêt. Au socle !`,
+    crafted: (b) => `Le moule de ${nb(b)} est prêt. Au socle !`,
     h: 'Avant le grand pont, la stèle de cette île t’interroge sur le fossé têtu.',
     stoneWaits: 'La stèle attend ta réponse : la flèche jaune te guide.',
     boss: 'Voici le grand pont : 756 cases jusqu’au phare. Va au socle lumineux : dans la réserve, il n’y a que deux moules, 32 et 36.',
@@ -311,18 +316,19 @@ export const T = {
   // Two SEPARATE results after a forge: the student's prediction (right or not), then what the mould does to the gap.
   // a bridge with a marked stretch: its label over the gap, the name of its sign
   mark: {
-    label: (m, a) => `${counted(m, ['case éclairée', 'cases éclairées'])} sur ${a}`,
-    sign: 'Panneau du pont',
+    label: (m, a) => `${counted(m, ['case éclairée', 'cases éclairées'])} sur ${nb(a)}`,
+    sign: 'Pancarte du pont',
     stretch: 'La partie éclairée',
   },
   verdict: {
-    markMiss: (b, m) => `Le moule ${b} remplit le pont, mais aucune jointure à la case ${m} : le poteau ne tient pas`,
-    purse: (laid, need) => `${planks(laid)} sur ${need} : plus de pièces avant que le pont soit plein`,
+    markMiss: (b, m) =>
+      `Le moule ${nb(b)} remplit le pont, mais aucune jointure à la case ${nb(m)} : le poteau ne tient pas`,
+    purse: (laid, need) => `${planks(laid)} sur ${nb(need)} : plus de pièces avant que le pont soit plein`,
     right: (r) => (r === 0 ? 'Ta prédiction est juste : aucune case vide' : `Ta prédiction est juste : ${remain(r)}`),
     wrong: (p, r) => `Tu as prédit ${p}, et le reste est ${r}`,
     star: 'Étoile de prédiction',
-    holds: (b, a) => `Le moule ${b} remplit exactement ${a} : le pont tient`,
-    open: (b, a) => `Le moule ${b} ne remplit pas ${a} : le pont ne tient pas`,
+    holds: (b, a) => `Le moule ${nb(b)} remplit exactement ${nb(a)} : le pont tient`,
+    open: (b, a) => `Le moule ${nb(b)} ne remplit pas ${nb(a)} : le pont ne tient pas`,
   },
   predict: {
     title: (a, b) => `Des planches de ${b} sur un fossé de ${counted(a, CELLS)}`,
@@ -348,10 +354,10 @@ export const T = {
     // the longest the plank may be: the longest gap — or the workshop's own `max` when it is shorter (`made`)
     tooLong: (b, max, n, made = false) =>
       made
-        ? `Cet atelier fabrique des moules de ${counted(max, CELLS)} au plus : ${b}, c’est trop long.`
+        ? `Cet atelier fabrique des moules de ${counted(max, CELLS)} au plus : ${nb(b)}, c’est trop long.`
         : n === 1
-          ? `Un moule de ${b} est plus long que tout le fossé (${max}).`
-          : `Un moule de ${b} est plus long que chaque fossé ici : le plus long fait ${max}.`,
+          ? `Un moule de ${nb(b)} est plus long que tout le fossé (${nb(max)}).`
+          : `Un moule de ${nb(b)} est plus long que chaque fossé ici : le plus long fait ${nb(max)}.`,
     // the shortest the plank may be when the workshop's `min` is more than 1
     tooShortOf: (min) => `Cet atelier fabrique des moules de ${counted(min, CELLS)} au moins.`,
     // the bench (`workshop.bench`): an experiment beside the workshop — it gives facts, never the plank to make

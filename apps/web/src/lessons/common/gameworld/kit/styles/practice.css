@@ -142,9 +142,15 @@
   white-space: nowrap;
   box-shadow: 0 0 24px rgba(255, 247, 214, 0.5);
 }
+/* A node: its ICON sits on its point (-3.375rem: where a one-line name used to centre it), its name hangs below, wrapped
+   at 17rem (the widest one-line name of lessons 1 and 2 still on one line); PracticeHub.jsx moves a node whose name is
+   wider than the room by its point into the map (--di-node-dx, mapNudge.js), its icon and pips back onto the point. */
 .di-node {
+  --di-node-dx: 0px;
   position: absolute;
-  transform: translate(-50%, -50%);
+  width: max-content;
+  max-width: 17rem;
+  transform: translate(calc(-50% + var(--di-node-dx)), -3.375rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,7 +164,7 @@
   transition: transform 0.15s;
 }
 .di-node:hover {
-  transform: translate(-50%, -50%) scale(1.07);
+  transform: translate(calc(-50% + var(--di-node-dx)), -3.375rem) scale(1.07);
 }
 .di-node__icon {
   display: grid;
@@ -170,13 +176,15 @@
   background: radial-gradient(circle at 35% 30%, #2f4fb0, #101f52);
   border: 3px solid rgba(255, 255, 255, 0.3);
   transition: all 0.2s;
+  transform: translateX(calc(-1 * var(--di-node-dx)));
 }
 .di-node strong {
   font-size: 0.86rem;
   font-weight: 800;
-  white-space: nowrap;
+  line-height: 1.15;
+  text-align: center;
   padding: 0.05rem 0.5rem;
-  border-radius: 999px;
+  border-radius: 0.6rem;
   background: rgba(6, 14, 38, 0.7);
 }
 .di-node.is-open .di-node__icon {
@@ -195,13 +203,14 @@
   box-shadow:
     0 0 0 5px rgba(251, 191, 36, 0.35),
     0 0 26px rgba(251, 191, 36, 0.7);
-  transform: scale(1.08);
+  transform: translateX(calc(-1 * var(--di-node-dx))) scale(1.08);
 }
 .di-node--exam.is-open .di-node__icon {
   background: radial-gradient(circle at 35% 30%, #b7791f, #5b3a06);
   border-color: #fbbf24;
 }
 .di-node__pips {
+  transform: translateX(calc(-1 * var(--di-node-dx)));
   display: inline-flex;
   gap: 4px;
   direction: ltr;

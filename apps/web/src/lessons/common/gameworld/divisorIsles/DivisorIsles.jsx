@@ -16,6 +16,8 @@ import { divisionTip, ruleTip } from '../kit/tips';
 import RuleForge from '../kit/RuleForge';
 import { FORGE_PARTS } from './forgeParts';
 import Workshop from './Workshop';
+import Chantier from './Chantier';
+import Mission from './Mission';
 import MissionRunner from '../missions/MissionRunner';
 import { signTex } from './mark';
 
@@ -955,6 +957,10 @@ const WORLD = {
         return <Statues game={game} />;
       case 'workshop':
         return <Workshop o={o} game={game} />;
+      case 'walkway':
+        return <Chantier o={o} game={game} />;
+      case 'mission':
+        return <Mission game={game} />;
       case 'boss':
         return <Boss key={`${o.view}-${o.b ?? ''}`} o={o} game={game} />;
       default:

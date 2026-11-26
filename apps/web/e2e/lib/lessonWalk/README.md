@@ -64,6 +64,54 @@ raw LaTeX, formulas left to right on one line, no word or number of another less
 - `launchKitTwoTools.mjs`: the capsule's questions count in the forms met; EVERY easy form of the tool is expected
   (strict again).
 
+## What the third French lesson added (2026-11-26 — `fraction-irreductible`, written before its first run)
+
+- **Experiment kinds** `measure:stages` and `measure:direct` (`experiments.mjs`; `divisorIsles/measure.js`): `stages`
+  lays the walk's own prime planks smallest first (as often as both strips hold them), a plank that does not fill both
+  first on round 1 (refused, its chip marked), ONE claim « no plank fills both » made too early (the world's find computed
+  here), then the last claim (every plank of the upper strip tried, none fills — computed); a round of `runs: 2` predicts
+  the end and opens its second road by the longest common plank. `direct`: a refused plank, then the smallest common plank
+  that is not the PGCD (« not enough », the plank that still fills both computed, « again »), then the PGCD. Options:
+  `typed: false` → no typed box, no « lay », only the spec's chips; `long: true` → a plank under 3 px is ONE band per strip,
+  `data-iq-band` = ⌊n ÷ d⌋ (computed). Facts are read back (their numbers), `inquiryFits` and `tellsNothing` at each stage.
+- **A plan per marked bridge** (`descriptor.story.marked[segId] = { first, reload, after }`, `story.mjs › markedBridge`;
+  absent, the bridge is played as before): `first` — planks tried before any bridge stands (each misses the post or leaves
+  cells; `openMiss`), then a reload if `reload`; `after` — ONE plank holds, he crosses, is SENT BACK (the instruction names
+  the island, no mirror), walks back and fires these planks on the standing bridge, each refused, the bridge standing
+  again; the mirror ahead must stay shut until the LAST of them (`story.onMiss`). A bridge lit in strokes (`seg.strokes`)
+  is named by its strokes in the instruction. `W.fire(i, during, { stopOn })` stops waiting when a forge opens.
+- **The plaque** (`story.mission` with `write` + `opens`, `story.mjs › plaque`, hook `mission:before`): the calculation
+  read from `mission.lead` and computed here; the road shut and its lanterns dark; the fraction box (`data-rf-frac="p/q"`,
+  `data-rf-use` p, q), « engrave » disabled while empty; a writing equal but unfinished, a reload (plaques kept), a writing
+  that is not the result — each refusal a sentence with NO digit, two different sentences, `data-di-posters` counting down;
+  the run over (`data-di-mission="over"`, `data-di-mission-over`, no box), E opens nothing, the walk back to `refill.at`
+  (over the rail: `walkBack` takes the steps a long segment needs) and forward, two new plaques; the right writing: the road
+  stands, its lanterns lit in the calculation's own proportions (red / all = the answer, lit / all and red / lit its two
+  fractions), a module marked (`onModule` spied); he crosses to the last island, the finale.
+- **A choice picked by reading it** (`forge.mjs`): a `use` value that is a FUNCTION of the options `[{ id, text }]` returns
+  the id (K4's « ce que je barre »: the walk parses « 3² et 23 » against its own arithmetic).
+
+## What the fourth French lesson added (2026-11-26 — `multiples-et-diviseurs-communs`, written before its first run)
+
+- `walkwayStory.mjs` (called from `story.mjs › the road`): **the walkway** (`kind: 'walkway'`): the instruction names the
+  crews and the purse, E at the lit post opens the chantier; its bench if any (played by its experiment kind, its card
+  kept under the box, reopened); the pillars of `descriptor.story.walkway[segId]` (default: the first multiple of the
+  longer plank that is not common, then 0) — each typed, planted (the post at d before any crew lays, the ruler reaching
+  it), laid: each lane's planks and shortfall, the verdict `short` / `ruins` / `shore` / `paid`, the facts read back with
+  their numbers, the purse unchanged by a refusal — then the first common multiple, paid, the purse less its planks;
+  Escape, the walkway standing, he crosses; the card on the right recalls the pillar. **A lone standing bridge** (a gap of
+  0 outside a convoy, on an island with no pedestal). **The day mission** (`story.mission` with `lines` and `posters`, no
+  `write`), after the last segment: the rests read from its lead, the day computed (1 + the smallest common multiple of
+  the cycles); the rest days' trap, the day before, a later meeting (`descriptor.story.missionTries` overrides) — each a
+  fact naming the day, never the answer, the 31-day window `data-di-window`, a poster spent; the run over; the board
+  reopened with its posters; the answer; a module marked.
+- `crewsExperiments.mjs` (registered in `experiments.mjs › EXPERIMENTS`): `crews:story` (the story's two rhythms written,
+  no chip holding a result, the unit, a crew chip that is not a rhythm first on round 1, the pillar at the first common
+  multiple, the read-backs computed from their labels — the other crew's turns first on round 1, the duration read as a
+  clock time —, each refusal a fact that never writes the answer) and `crews:days` (a wrong chip on day 1 first, then 0;
+  each stage the walk's own day typed, a `step` run clicked day by day, a `fast` run stopping on every day where all teams
+  but one work — computed — resumed each time, the met column lit as computed, the days inside the frame).
+
 ## Another world: « Le palais des dalles » (`root-courts`, 2026-11-21 — `jidhr-tarbii`)
 
 A lesson whose pack names a world of `worlds/index.mjs` is walked by that world's files; the islands' path

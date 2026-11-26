@@ -122,6 +122,38 @@ describe('the workshop', () => {
     expect(plankRefusal('91', [91], story, { min: 1, max: 90 })).toBe('max 90, typed 91');
   });
 
+  it('a number of four digits or more is grouped by thousands in every refusal and in the world’s lines (« 1 786 »)', () => {
+    const W = T.workshop;
+    // 2026-11-26, fraction-irreductible: « Un moule de 1787 est plus long que tout le fossé (1786). »
+    expect(plankRefusal('1787', [1786], W)).toBe('Un moule de 1 787 est plus long que tout le fossé (1 786).');
+    expect(plankRefusal('1787', [722, 1786], W)).toBe(
+      'Un moule de 1 787 est plus long que chaque fossé ici : le plus long fait 1 786.',
+    );
+    expect(W.tooLong(1201, 1200, 1, true)).toContain('1 200 cases au plus : 1 201,');
+    // the bridge's label, the verdicts, the prompts, the card on the right (LaTeX: « 1\,786 »)
+    expect(T.mark.label(722, 1786)).toBe('722 cases éclairées sur 1 786');
+    expect(T.verdict.holds(38, 1786)).toContain('exactement 1 786');
+    expect(T.verdict.open(5, 1786)).toContain('pas 1 786');
+    expect(T.verdict.markMiss(1001, 1722)).toContain(
+      'moule 1 001 remplit le pont, mais aucune jointure à la case 1 722',
+    );
+    expect(T.say.markMiss(7, { m: 1722, q: 246, r: 0 })).toContain('1 722 = 7 × 246 + 0');
+    expect(T.recall.bridge(1786, 38, 47)).toBe('Le fossé précédent : $1\\,786 = 38 \\times 47$');
+    // small numbers as before
+    expect(T.verdict.open(5, 96)).toBe('Le moule 5 ne remplit pas 96 : le pont ne tient pas');
+    // no number of four digits or more is left without its space
+    const all = [
+      plankRefusal('1787', [1786], W),
+      plankRefusal('12345', [1786, 9999], W),
+      T.mark.label(1000, 2000),
+      T.verdict.purse(3, 1200),
+      T.prompt.take(1200),
+      T.say.crafted(1200),
+      T.say.tooLong(1201, 1200),
+    ];
+    for (const s of all) expect(s).not.toMatch(/\d{4}/);
+  });
+
   it('`typed` with a bench: the button opens it — new, then « kept » once he has written in it', () => {
     const o = { type: 'workshop', a: 32, seg: 3, gaps: [32, 44], typed: true, bench: BENCH };
     expect(html(o)).toContain(`data-di-bench-open="new"`);

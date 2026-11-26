@@ -1,0 +1,130 @@
+{
+  "id": "ex-3e-fraction-irreductible-l3-008",
+  "lessonCode": "fraction-irreductible",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux nombres à écrire en fraction irréductible",
+    "estimatedMinutes": 3,
+    "tags": [
+      "calcul",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l4-002",
+      "learningPoint": "3e_fraction-irreductible_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "On considère les nombres $A$ et $B$ suivants."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "Donne chaque résultat sous forme de fraction irréductible.",
+      "statement": "Calcule $A = \\dfrac{5}{18} + \\dfrac{11}{30}$ et donne le résultat sous forme de fraction irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "29/45",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{29}{45}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{5}{18} + \\dfrac{11}{30} = \\dfrac{58}{90} = \\dfrac{29}{45}$"
+        ],
+        "result": "A = \\dfrac{29}{45}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "58/90"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $B = \\dfrac{13}{14} - \\dfrac{3}{10}$ et donne le résultat sous forme de fraction irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "22/35",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{22}{35}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{13}{14} - \\dfrac{3}{10} = \\dfrac{44}{70} = \\dfrac{22}{35}$"
+        ],
+        "result": "B = \\dfrac{22}{35}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "44/70"
+        }
+      ],
+      "timeSeconds": 100
+    }
+  ]
+}

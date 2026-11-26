@@ -1,0 +1,223 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-010",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Une piste cyclable",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Pour construire une piste cyclable de $3\\,120$ m, deux équipes travaillent. L’équipe A a réalisé $\\dfrac{7}{18}$ de la piste et l’équipe B $\\dfrac{3}{10}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction de la piste les deux équipes ont-elles réalisée ensemble ? Calcule $\\dfrac{7}{18} + \\dfrac{3}{10}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "31/45",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{31}{45}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{18} + \\dfrac{3}{10} = \\dfrac{62}{90} = \\dfrac{31}{45}$"
+        ],
+        "result": "\\dfrac{31}{45}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "62/90"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle fraction de la piste reste-t-il à construire ? Calcule $1 - \\left(\\dfrac{7}{18} + \\dfrac{3}{10}\\right)$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "14/45",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{14}{45}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{18} + \\dfrac{3}{10} = \\dfrac{62}{90} = \\dfrac{31}{45}$",
+          "$1 - \\left(\\dfrac{7}{18} + \\dfrac{3}{10}\\right) = \\dfrac{14}{45}$"
+        ],
+        "result": "\\dfrac{14}{45}"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "Un bilan",
+      "statement": "Détermine $\\text{PGCD}(2\\,340 ; 3\\,120)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "780",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(2\\,340 ; 3\\,120) = 780$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,340 = 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 13$",
+          "$3\\,120 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 13$",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 5 \\times 13 = 780$."
+        ],
+        "result": "780"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "À la fin de la semaine, $2\\,340$ m sont terminés. Écris la fraction $\\dfrac{2\\,340}{3\\,120}$ de la piste terminée sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2\\,340}{3\\,120} = \\dfrac{3}{4}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,340 = 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 13$ et $3\\,120 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 13$, donc $\\text{PGCD}(2\\,340 ; 3\\,120) = 780$.",
+          "$2\\,340 \\div 780 = 3$ et $3\\,120 \\div 780 = 4$.",
+          "$\\dfrac{2\\,340}{3\\,120} = \\dfrac{3}{4}$."
+        ],
+        "result": "\\dfrac{2\\,340}{3\\,120} = \\dfrac{3}{4}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "1170/1560"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "780/1040"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "468/624"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

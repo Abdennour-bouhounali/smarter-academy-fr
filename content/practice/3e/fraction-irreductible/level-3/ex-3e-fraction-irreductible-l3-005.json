@@ -1,0 +1,196 @@
+{
+  "id": "ex-3e-fraction-irreductible-l3-005",
+  "lessonCode": "fraction-irreductible",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Simplifier avec méthode",
+    "estimatedMinutes": 4,
+    "tags": [
+      "simplifier",
+      "facteurs premiers",
+      "erreurs"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Rends chaque fraction irréductible, puis juge une simplification."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Donne chaque résultat sous forme de fraction irréductible.",
+      "statement": "Rends la fraction $\\dfrac{198}{462}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{198}{462} = \\dfrac{3}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$198 = 2 \\times 3 \\times 3 \\times 11$ et $462 = 2 \\times 3 \\times 7 \\times 11$.",
+          "Les facteurs premiers communs : $2 \\times 3 \\times 11$.",
+          "$\\dfrac{198}{462} = \\dfrac{2 \\times 3 \\times 11 \\times 3}{2 \\times 3 \\times 11 \\times 7} = \\dfrac{3}{7}$."
+        ],
+        "result": "\\dfrac{198}{462} = \\dfrac{3}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "99/231"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "66/154"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "18/42"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Rends la fraction $\\dfrac{300}{525}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "4/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{300}{525} = \\dfrac{4}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$300 = 2 \\times 2 \\times 3 \\times 5 \\times 5$ et $525 = 3 \\times 5 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs : $3 \\times 5 \\times 5$.",
+          "$\\dfrac{300}{525} = \\dfrac{3 \\times 5 \\times 5 \\times 4}{3 \\times 5 \\times 5 \\times 7} = \\dfrac{4}{7}$."
+        ],
+        "result": "\\dfrac{300}{525} = \\dfrac{4}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "100/175"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "60/105"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "lead": "Juge cette simplification.",
+      "statement": "Un élève simplifie $\\dfrac{6 + 9}{6 + 21}$ en barrant les $6$ : il obtient $\\dfrac{9}{21}$. A-t-il raison ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-SIMPLIFIER-UNE-SOMME"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule le numérateur et le dénominateur avant de simplifier."
+        }
+      ],
+      "feedback": {
+        "correct": "Cette écriture respecte la règle : la fraction garde la même valeur.",
+        "incorrect": "Vérifie que la fraction obtenue garde la même valeur que la fraction de départ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6 + 9}{6 + 21} = \\dfrac{15}{27} = \\dfrac{5}{9}$ alors que $\\dfrac{9}{21} = \\dfrac{3}{7}$.",
+          "On ne barre que des facteurs d’un produit, jamais un terme d’une somme."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

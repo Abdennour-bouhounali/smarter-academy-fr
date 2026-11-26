@@ -1,0 +1,179 @@
+{
+  "id": "ex-3e-fraction-irreductible-l1-005",
+  "lessonCode": "fraction-irreductible",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Barrer les facteurs communs",
+    "estimatedMinutes": 4,
+    "tags": [
+      "simplifier",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "On veut rendre la fraction $\\dfrac{32}{56}$ irréductible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose les deux termes de la fraction.",
+      "statement": "Décompose $32$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^5",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible, puis par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue avec les nombres premiers suivants jusqu’à obtenir $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 = 2^{5}$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $5$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $32$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $32$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $32$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$32 = 2 \\times 2 \\times 2 \\times 2 \\times 2$"
+        ],
+        "result": "32 = 2^{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $56$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^3*7",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible, puis par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue avec les nombres premiers suivants jusqu’à obtenir $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$56 = 2^{3} \\times 7$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $5$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $56$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $56$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $56$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$56 = 2 \\times 2 \\times 2 \\times 7$"
+        ],
+        "result": "56 = 2^{3} \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "lead": "Simplifie.",
+      "statement": "Rends la fraction $\\dfrac{32}{56}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "4/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{32}{56} = \\dfrac{4}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$32 = 2 \\times 2 \\times 2 \\times 2 \\times 2$ et $56 = 2 \\times 2 \\times 2 \\times 7$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2$.",
+          "$\\dfrac{32}{56} = \\dfrac{2 \\times 2 \\times 2 \\times 4}{2 \\times 2 \\times 2 \\times 7} = \\dfrac{4}{7}$."
+        ],
+        "result": "\\dfrac{32}{56} = \\dfrac{4}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "16/28"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

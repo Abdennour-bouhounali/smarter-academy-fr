@@ -186,6 +186,9 @@ function Last({ st }) {
 /** The pure view of the station: what the board draws for a ladder `st` (and the ladders finished before it). */
 export function LadderView({ step, st, earlier = [], onLay, onNoZero, onUndo, onAnother }) {
   const done = ladderDone(st);
+  // a lesson may name its gap in its own words (`step.words`: `start` before the first plank, `gap` after, `crossed`) —
+  // a ladder on a lit stretch is not a gap to cross (a gate B of 2026-11-26)
+  const W = { ...LADDER_WORDS, ...step.words };
   return (
     <div className="cs-ladderstep" data-cs-ladder={step.id} data-cs-ladder-done={done}>
       <p className="cs-say">
@@ -197,14 +200,14 @@ export function LadderView({ step, st, earlier = [], onLay, onNoZero, onUndo, on
           <div className={`cs-ladder__gap ${done ? 'is-done' : ''}`} data-cs-ladder-gap={st.gap}>
             {done ? (
               <>
-                <small>{LADDER_WORDS.crossed}</small>
+                <small>{W.crossed}</small>
                 <span dir="ltr" data-cs-ladder-product>
                   <MathText>{`$${ladderTex(st)}$`}</MathText>
                 </span>
               </>
             ) : (
               <>
-                <small>{LADDER_WORDS.gap}</small>
+                <small>{st.gap === step.n ? (W.start ?? W.gap) : W.gap}</small>
                 <b>{ladderCells(st.gap)}</b>
               </>
             )}

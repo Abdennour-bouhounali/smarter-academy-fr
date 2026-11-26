@@ -30,7 +30,7 @@ export default function End({ s, o, stars, game, world, basePath, config, onRest
         </div>
         <div>
           <b dir="ltr">{s.falls}</b>
-          <span>{KT.end.falls}</span>
+          <span>{KT.end.falls(s.falls)}</span>
         </div>
         <div>
           <b>{KT.end.min(min)}</b>

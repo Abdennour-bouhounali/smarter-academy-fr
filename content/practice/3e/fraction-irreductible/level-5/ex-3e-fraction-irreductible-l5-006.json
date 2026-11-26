@@ -1,0 +1,232 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-006",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le budget d’un foyer",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions",
+      "euros"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un foyer dispose de $2\\,400$ € par mois. Le loyer coûte $720$ € et l’alimentation $480$ €."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction du budget représente le loyer ? Écris $\\dfrac{720}{2\\,400}$ sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{720}{2\\,400} = \\dfrac{3}{10}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$720 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5$ et $2\\,400 = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 5$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5$.",
+          "$\\dfrac{720}{2\\,400} = \\dfrac{2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 3}{2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 10} = \\dfrac{3}{10}$."
+        ],
+        "result": "\\dfrac{720}{2\\,400} = \\dfrac{3}{10}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "360/1200"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "240/800"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "144/480"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quelle fraction du budget représente l’alimentation ? Écris $\\dfrac{480}{2\\,400}$ sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{480}{2\\,400} = \\dfrac{1}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$480 = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5$ et $2\\,400 = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 5$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5$.",
+          "$\\dfrac{480}{2\\,400} = \\dfrac{2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 1}{2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 5 \\times 5} = \\dfrac{1}{5}$."
+        ],
+        "result": "\\dfrac{480}{2\\,400} = \\dfrac{1}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "240/1200"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "160/800"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "96/480"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction du budget représentent le loyer et l’alimentation ensemble ? Calcule $\\dfrac{3}{10} + \\dfrac{1}{5}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{1}{2}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{10} + \\dfrac{1}{5} = \\dfrac{5}{10} = \\dfrac{1}{2}$"
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "5/10"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle somme, en euros, reste-t-il pour les autres dépenses ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier d’euros",
+      "expectedAnswer": "1200",
+      "counted": false,
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Relis l’énoncé : quelle quantité cherches-tu ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Il reste $1\\,200$ €.",
+        "incorrect": "Reprends le calcul avec les données de l’énoncé."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,400 - 720 - 480 = 1\\,200$.",
+          "On retrouve la moitié du budget : $\\dfrac{1}{2} \\times 2\\,400 = 1\\,200$."
+        ],
+        "result": "1200"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "id": "ex-3e-fraction-irreductible-l4-001",
+  "lessonCode": "fraction-irreductible",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les livres d’une médiathèque",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "Une médiathèque possède $1\\,296$ livres : $756$ romans, $432$ bandes dessinées, les autres sont des documentaires."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction des livres représentent les romans ? Donne-la sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "7/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{756}{1\\,296} = \\dfrac{7}{12}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$756 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 7$ et $1\\,296 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 3 \\times 3$.",
+          "$\\dfrac{756}{1\\,296} = \\dfrac{2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 7}{2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 12} = \\dfrac{7}{12}$."
+        ],
+        "result": "\\dfrac{756}{1\\,296} = \\dfrac{7}{12}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "378/648"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "252/432"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Détermine $\\text{PGCD}(432 ; 1\\,296)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "432",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(432 ; 1\\,296) = 432$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$432 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3$",
+          "$1\\,296 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 = 432$."
+        ],
+        "result": "432"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction des livres représentent les bandes dessinées ? Donne-la sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{432}{1\\,296} = \\dfrac{1}{3}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$432 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3$ et $1\\,296 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$, donc $\\text{PGCD}(432 ; 1\\,296) = 432$.",
+          "$432 \\div 432 = 1$ et $1\\,296 \\div 432 = 3$.",
+          "$\\dfrac{432}{1\\,296} = \\dfrac{1}{3}$."
+        ],
+        "result": "\\dfrac{432}{1\\,296} = \\dfrac{1}{3}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "216/648"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "144/432"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle fraction des livres représentent les romans et les bandes dessinées ensemble ? Calcule $\\dfrac{756}{1\\,296} + \\dfrac{432}{1\\,296}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "11/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{11}{12}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{756}{1\\,296} + \\dfrac{432}{1\\,296} = \\dfrac{11}{12}$"
+        ],
+        "result": "\\dfrac{11}{12}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

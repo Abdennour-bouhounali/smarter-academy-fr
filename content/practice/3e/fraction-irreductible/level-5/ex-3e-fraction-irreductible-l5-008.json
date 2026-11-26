@@ -1,0 +1,233 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-008",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les musiciens d’un orchestre",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un orchestre compte $198$ musiciens à cordes et $330$ musiciens à vent, soit $528$ musiciens en tout."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "Cordes et vents",
+      "statement": "Détermine $\\text{PGCD}(198 ; 330)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "66",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(198 ; 330) = 66$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$198 = 2 \\times 3 \\times 3 \\times 11$",
+          "$330 = 2 \\times 3 \\times 5 \\times 11$",
+          "Les facteurs premiers communs : $2 \\times 3 \\times 11 = 66$."
+        ],
+        "result": "66"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris le rapport $\\dfrac{198}{330}$ des cordes aux vents sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{198}{330} = \\dfrac{3}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$198 = 2 \\times 3 \\times 3 \\times 11$ et $330 = 2 \\times 3 \\times 5 \\times 11$, donc $\\text{PGCD}(198 ; 330) = 66$.",
+          "$198 \\div 66 = 3$ et $330 \\div 66 = 5$.",
+          "$\\dfrac{198}{330} = \\dfrac{3}{5}$."
+        ],
+        "result": "\\dfrac{198}{330} = \\dfrac{3}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "99/165"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "66/110"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "18/30"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "Part des cordes",
+      "statement": "Quelle fraction des musiciens joue d’un instrument à cordes ? Écris $\\dfrac{198}{528}$ sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{198}{528} = \\dfrac{3}{8}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$198 = 2 \\times 3 \\times 3 \\times 11$ et $528 = 2 \\times 2 \\times 2 \\times 2 \\times 3 \\times 11$.",
+          "Les facteurs premiers communs : $2 \\times 3 \\times 11$.",
+          "$\\dfrac{198}{528} = \\dfrac{2 \\times 3 \\times 11 \\times 3}{2 \\times 3 \\times 11 \\times 8} = \\dfrac{3}{8}$."
+        ],
+        "result": "\\dfrac{198}{528} = \\dfrac{3}{8}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "99/264"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "66/176"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "18/48"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle fraction des musiciens joue d’un instrument à vent ? Calcule $1 - \\dfrac{3}{8}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "5/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{5}{8}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{3}{8} = \\dfrac{5}{8}$"
+        ],
+        "result": "\\dfrac{5}{8}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

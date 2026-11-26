@@ -16,6 +16,11 @@ import { pick, shuffle } from './random';
 
 const WAVES_PER_LEVEL = 6;
 export const MAX_WAVES = 8; // a mistake brings the same kind of question back, as long as a gate is free on the rail
+/**
+ * May a mistake bring a wave back? Only while the run holds fewer than MAX_WAVES waves AND the rail has a gate left for
+ * it: a world's rail has as many gates as its story dash has waves (6 in some lessons), never a gate it lacks.
+ */
+export const waveBack = (waves, gates) => waves < Math.min(MAX_WAVES, gates);
 export const PRACTICE_HEARTS = 3;
 /** The id of the summary node: it has no key of its own, every wave carries the key of the rule it uses. */
 export const SUMMARY = 'exam';

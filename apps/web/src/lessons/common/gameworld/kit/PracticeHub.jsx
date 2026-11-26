@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { X, Star, Lock, Play, Lightbulb, Truck, Zap, BookOpen, FileText } from 'lucide-react';
 import Fit, { cardRoom } from './Fit';
 import { useLesson } from './LessonContext';
@@ -6,6 +6,18 @@ import { SUMMARY } from './ladder';
 import { KT, TX } from './text';
 import { M, Stars } from './parts';
 import { ExamLadder } from './Spaces';
+import { nodeNudge } from './mapNudge';
+
+/** Moves each node of the map inside it when its name, wrapped, is wider than the room by its point (mapNudge.js). */
+function nudgeNodes(map) {
+  if (!map) return;
+  const room = map.clientWidth;
+  for (const b of map.querySelectorAll('.di-node')) {
+    // layout boxes, never transformed ones: the point is the node's left (x %), the node is centred on it
+    const dx = room ? nodeNudge(b.offsetLeft, b.offsetWidth, room) : 0;
+    b.style.setProperty('--di-node-dx', `${Math.round(dx)}px`);
+  }
+}
 
 /**
  * « L’espace d’entraînement » — the lesson's mind map as the level select of the practice game (`useLesson().practiceMap`: where each
@@ -18,6 +30,16 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
   // « no rule is told »: a key's name (its tablet's title) and its levels' names appear only once he holds the key
   const nameOf = (id, isOpen) => (isOpen || id === SUMMARY ? nodeMeta(id).title : KT.hidden);
   const [space, setSpace] = useState(space0 ?? 'game');
+  const mapRef = useRef(null);
+  // after every render (the names change with the keys), and again once the fonts are in (the names' widths change)
+  useLayoutEffect(() => {
+    nudgeNodes(mapRef.current);
+    let live = true;
+    document.fonts?.ready?.then(() => live && nudgeNodes(mapRef.current));
+    return () => {
+      live = false;
+    };
+  });
   const keys = s.openKeys;
   const progress = s.practice;
   const next = ladder.nextLevel(keys, progress);
@@ -100,7 +122,7 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
           {space === 'exam' && <ExamLadder s={s} game={game} />}
           {space === 'game' && (
             <div className="di-map__body">
-              <div className="di-map" dir="ltr">
+              <div className="di-map" dir="ltr" ref={mapRef}>
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                   {practiceMap.edges.map(([a, b, , dashed]) => (
                     <line

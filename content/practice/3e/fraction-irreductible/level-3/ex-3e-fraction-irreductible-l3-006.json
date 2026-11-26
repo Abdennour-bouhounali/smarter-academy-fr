@@ -1,0 +1,151 @@
+{
+  "id": "ex-3e-fraction-irreductible-l3-006",
+  "lessonCode": "fraction-irreductible",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Des fractions à grands termes",
+    "estimatedMinutes": 3,
+    "tags": [
+      "simplifier",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "Rends chaque fraction irréductible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Donne chaque résultat sous forme de fraction irréductible.",
+      "statement": "Rends la fraction $\\dfrac{540}{630}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "6/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{540}{630} = \\dfrac{6}{7}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$540 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 5$ et $630 = 2 \\times 3 \\times 3 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs : $2 \\times 3 \\times 3 \\times 5$.",
+          "$\\dfrac{540}{630} = \\dfrac{2 \\times 3 \\times 3 \\times 5 \\times 6}{2 \\times 3 \\times 3 \\times 5 \\times 7} = \\dfrac{6}{7}$."
+        ],
+        "result": "\\dfrac{540}{630} = \\dfrac{6}{7}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "270/315"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "180/210"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "108/126"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Rends la fraction $\\dfrac{594}{792}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{594}{792} = \\dfrac{3}{4}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$594 = 2 \\times 3 \\times 3 \\times 3 \\times 11$ et $792 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 11$.",
+          "Les facteurs premiers communs : $2 \\times 3 \\times 3 \\times 11$.",
+          "$\\dfrac{594}{792} = \\dfrac{2 \\times 3 \\times 3 \\times 11 \\times 3}{2 \\times 3 \\times 3 \\times 11 \\times 4} = \\dfrac{3}{4}$."
+        ],
+        "result": "\\dfrac{594}{792} = \\dfrac{3}{4}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "297/396"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "198/264"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "54/72"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

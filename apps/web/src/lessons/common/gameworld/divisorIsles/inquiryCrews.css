@@ -1,0 +1,108 @@
+/* THE INVESTIGATION `crews` (InquiryCrews.jsx) — in the frame of the division screens (inquiry.css › .iq). `story`: the
+   story card (words only, 18 px, at most five lines), the chips of the translation, the walkway's panel on the story's
+   own ruler, the questions back to the story. `days`: one row per team on a day axis of up to 62 columns (17 px each:
+   1 164 px with the team column), drawn at 1 : 1 (crewLanes.css). Nothing scrolls; text never under 12 px. Scoped to
+   .iq--crews / .iq-crews__*. */
+.iq.iq--crews {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.iq-crews__story {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(159, 216, 255, 0.3);
+}
+.iq-crews__story p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.iq-crews__map {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+/* once the translation is set (stages pillar, back, seen): its three slots on ONE row */
+.iq-crews__map.is-set {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.35rem 2rem;
+}
+/* the walkway's panel in the mirror: a wider facts column (one line a lane), the box's column narrower */
+.iq--crews .ch-top {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 44rem);
+}
+.iq-crews__slot {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.iq-crews__ask {
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+.iq--crews .iq-chip.is-on {
+  border-color: #2f7df6;
+  background: rgba(47, 125, 246, 0.35);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.iq-crews__asks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem 1.2rem;
+}
+.iq-crews__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.iq-crews__back .di-num {
+  height: 2.6rem;
+  font-size: 1.4rem;
+}
+.iq-crews__back.is-ok .di-num {
+  border-color: #8dffb0;
+}
+.iq-crews__days {
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+}
+.iq-crews__say {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+/* his own translation, locked: light text on its blue, read while he places the pillar (gate B 2026-11-26: dark on
+   blue — `.rf-root .iq-chip.is-on` writes it dark for the light cyan of the other kinds) */
+.rf-root .iq--crews .iq-chip.is-on,
+.iq--crews .iq-chip.is-on {
+  color: #f1f8ff;
+}
+/* « Le jour » before the box: one line (gate B 2026-11-26: « Le / jour ») */
+.iq-crews__say > span:not(.iq-askline) {
+  white-space: nowrap;
+}
+.iq-crews__say .di-num {
+  height: 2.6rem;
+  font-size: 1.4rem;
+}
+.iq-crews__said {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffe2a8;
+}

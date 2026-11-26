@@ -35,7 +35,7 @@ const M = [2, 3, 4, 5, 6, 7, 8, 9];
 /**
  * The pairs of numbers of ten and more that stand on one line of the bank (computed from
  * `content/practice/3e/thales-configuration-papillon` with `bank.js › linesWithBoth`), then on one line of another
- * French lesson's story (`bank.js › storiesOf`, `pairLines`: the two lessons of « Multiples et diviseurs ») — re-checked by
+ * French lesson's story (`bank.js › storiesOf`, `pairLines`: the lessons of « Multiples et diviseurs ») — re-checked by
  * run.test.js on every wave it draws: a wave that would show one is drawn again.
  */
 const TAKEN = new Set(
@@ -46,7 +46,9 @@ const TAKEN = new Set(
     '65;91 69;75 75;91 ' +
     '11;13 11;23 11;89 11;91 12;15 12;27 12;42 12;57 13;27 13;90 13;91 15;18 15;45 15;54 15;57 15;60 15;90 16;72 ' +
     '16;91 16;97 17;85 18;30 18;54 18;90 30;42 30;90 31;52 45;60 51;57 51;59 53;59 54;90 55;86 57;59 60;72 60;91 ' +
-    '60;97 72;91 72;97 84;90 90;91 91;97 96;97'
+    '60;97 72;91 72;97 84;90 90;91 91;97 96;97 ' +
+    // the two lessons added to the unit on 2026-11-26 (`fraction-irreductible`, `multiples-et-diviseurs-communs`)
+    '16;20'
   ).split(' '),
 );
 const pairKey = (a, b) => [Number(a), Number(b)].sort((x, y) => x - y).join(';');

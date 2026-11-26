@@ -58,6 +58,19 @@ function isResult(c) {
   return A / g === c.a / h && B / g === c.b / h;
 }
 
+/**
+ * The smallest common multiple of `ns` (naturals ≥ 1), or 0 when it passes MAX: no claim on such a multiple is right.
+ * a × b ÷ PGCD(a ; b) is computed as a ÷ PGCD × b, so every step stays ≤ MAX × MAX (exact in a double).
+ */
+function lcmOf(ns) {
+  let m = 1;
+  for (const x of ns) {
+    m = (m / gcd(m, x)) * x;
+    if (m > MAX) return 0;
+  }
+  return m;
+}
+
 const KINDS = {
   /** a = b × q + r with r < b, and « b fills a » said rightly. */
   division: (c) =>
@@ -112,6 +125,16 @@ const KINDS = {
     c.need === Math.ceil(c.a / c.b),
   /** g is the greatest common divisor of a and b, not both 0 (PGCD(a ; 0) = a). */
   pgcd: (c) => n(c.a) && n(c.b) && n(c.g) && c.a + c.b > 0 && c.g === gcd(c.a, c.b),
+  /** m is the smallest common multiple of a, b and the numbers of `more` (0 to 4 others): every number ≥ 1, m ≤ 10^6
+   * and m > 0 (0 is a multiple of every number, never the one asked). `a` and `b` are the first two numbers, as the
+   * server's evidence route wants every claim but one-number kinds to carry them. */
+  ppcm: (c) => {
+    const more = c.more === undefined ? [] : c.more;
+    if (!Array.isArray(more) || more.length > 4) return false;
+    const ns = [c.a, c.b, ...more];
+    if (!ns.every((x) => n(x) && x >= 1) || !n(c.m) || c.m < 1) return false;
+    return c.m === lcmOf(ns);
+  },
   /** « a and b are coprime » said rightly: PGCD(a ; b) = 1. */
   coprime: (c) =>
     n(c.a) && n(c.b) && c.a >= 1 && c.b >= 1 && typeof c.says === 'boolean' && c.says === (gcd(c.a, c.b) === 1),

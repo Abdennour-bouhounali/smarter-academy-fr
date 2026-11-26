@@ -1,0 +1,187 @@
+{
+  "id": "ex-3e-fraction-irreductible-l3-004",
+  "lessonCode": "fraction-irreductible",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Une fraction à simplifier",
+    "estimatedMinutes": 4,
+    "tags": [
+      "simplifier",
+      "facteurs premiers"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "On veut rendre la fraction $\\dfrac{252}{420}$ irréductible."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Décompose les deux termes.",
+      "statement": "Décompose $252$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3^2*7",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible, puis par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue avec les nombres premiers suivants jusqu’à obtenir $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 2^{2} \\times 3^{2} \\times 7$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $5$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $252$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $252$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $252$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 2 \\times 2 \\times 3 \\times 3 \\times 7$"
+        ],
+        "result": "252 = 2^{2} \\times 3^{2} \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Décompose $420$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3*5*7",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible, puis par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue avec les nombres premiers suivants jusqu’à obtenir $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$420 = 2^{2} \\times 3 \\times 5 \\times 7$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $5$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $420$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $420$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $420$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$420 = 2 \\times 2 \\times 3 \\times 5 \\times 7$"
+        ],
+        "result": "420 = 2^{2} \\times 3 \\times 5 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "lead": "Simplifie.",
+      "statement": "Rends la fraction $\\dfrac{252}{420}$ irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{252}{420} = \\dfrac{3}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 2 \\times 2 \\times 3 \\times 3 \\times 7$ et $420 = 2 \\times 2 \\times 3 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 7$.",
+          "$\\dfrac{252}{420} = \\dfrac{2 \\times 2 \\times 3 \\times 7 \\times 3}{2 \\times 2 \\times 3 \\times 7 \\times 5} = \\dfrac{3}{5}$."
+        ],
+        "result": "\\dfrac{252}{420} = \\dfrac{3}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "126/210"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "84/140"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "36/60"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

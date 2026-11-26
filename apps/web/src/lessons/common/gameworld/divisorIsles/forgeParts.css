@@ -118,3 +118,33 @@
     opacity: 1;
   }
 }
+/* a case about CREWS (forgeCrews.jsx): the walkway's lanes or the days' rows in the bridge's box, height to the drawing;
+   held — the planks / the asked day green, as a bridge that holds */
+.rf-bridge.rf-walk,
+.rf-bridge.rf-days {
+  height: auto;
+  max-height: 10.6rem;
+}
+.rf-bridge.rf-walk.is-held .cl-plank,
+.rf-bridge.rf-walk.is-held .cl-band rect {
+  fill: #34d399;
+}
+.rf-bridge.rf-days.is-held .cl-today {
+  stroke: #34d399;
+}
+
+/* a row of the log said in words (`c.sub`, forgeParts.jsx › Line): a fraction's two decompositions, under its head */
+/* its line grows with it: the decompositions, then what his rule says, on a second line when both do not fit */
+.rf-log li > .rf-line2.rf-line2--sub {
+  height: auto;
+  min-height: 1.1rem;
+  flex-wrap: wrap;
+  row-gap: 0.15rem;
+}
+.rf-line2 .rf-line__sub {
+  font-size: max(var(--di-min-font, 12px), 0.8rem);
+  font-weight: 700;
+  color: #cbd5e1;
+  line-height: 1.25;
+  unicode-bidi: isolate;
+}

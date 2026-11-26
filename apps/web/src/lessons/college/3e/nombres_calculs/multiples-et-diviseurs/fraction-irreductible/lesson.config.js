@@ -1,0 +1,170 @@
+/**
+ * 3e — « Rendre une fraction irréductible » (lesson 3 of the chapter « Multiples et diviseurs », programme item
+ * `3e.m1.r06`). A v2 lesson: the student plays it in the world « L’archipel des diviseurs » (`lesson.pack.js`, `world/`),
+ * built from the French net's learning points (`npm run lesson:brief -- fraction-irreductible`) and the design
+ * `docs/reports/UNIT_3E_MULTIPLES_ET_DIVISEURS_DESIGN.md` (lesson 3, version 2). It has NO module page: the `modules`
+ * below are DATA — their ids and numbers are how progress is stored (the world marks them, `onModule`;
+ * `world/story.js › MODULE_KEYS` says which keys each one needs), every report reads them, and their addresses redirect
+ * to the lesson's home. The points: P2 ← K1 `simplifier-facteurs`, P1 ← K2 `irreductible`, P4 ← K3
+ * `diviser-par-le-pgcd`, P3 ← K4 `resultat-irreductible`.
+ * DRAFT (`.draft`): renamed `lesson.config.js` by `npm run lesson:assemble`.
+ */
+export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/fraction-irreductible';
+
+export const LESSON_CONFIG = {
+  id: 'fraction-irreductible',
+  kind: 'lesson',
+  unit: 'multiples-et-diviseurs',
+  unitTitle: 'Multiples et diviseurs',
+  sequentialUnlock: true,
+  title: 'Rendre une fraction irréductible',
+  description:
+    'Simplifier une fraction en barrant les facteurs premiers communs de ses deux décompositions ; reconnaître une fraction irréductible ; la rendre irréductible en une étape en divisant par le PGCD ; et donner le résultat d’un calcul sous forme irréductible.',
+  level: 'college',
+  grade: '3e',
+  chapter: 'nombres_calculs',
+  chapterTitle: 'Nombres et calculs',
+  passingScore: 4,
+  masteryThreshold: 0.8,
+  emoji: '🔒',
+  estimatedDurationMin: 60,
+  skills: [
+    'Reconnaître qu’une fraction est irréductible quand son numérateur et son dénominateur n’ont aucun facteur premier commun, c’est-à-dire quand leur PGCD vaut 1',
+    'Rendre une fraction irréductible en décomposant numérateur et dénominateur en facteurs premiers, puis en simplifiant leurs facteurs premiers communs',
+    'Donner le résultat d’un calcul de fractions sous forme irréductible',
+    'Rendre une fraction irréductible en une seule étape, en divisant numérateur et dénominateur par leur PGCD',
+  ],
+  teachingScope: {
+    include: [
+      'La fraction irréductible : un numérateur et un dénominateur sans facteur premier commun, de PGCD 1',
+      'Simplifier par les décompositions en facteurs premiers : chaque facteur premier commun barré autant de fois qu’il est dans les deux termes',
+      'Rendre irréductible en une étape : diviser le numérateur et le dénominateur par leur PGCD',
+      'Le résultat d’un calcul de fractions (somme, produit) donné sous forme irréductible ; dans un produit, barrer avant de multiplier',
+    ],
+    exclude: [
+      'Les opérations sur les fractions comme sujet d’étude (leçon « Résoudre des problèmes avec des fractions »)',
+      'Le vocabulaire « nombres premiers entre eux » (le programme de 3e ne le demande pas ici)',
+      'Les fractions égales obtenues en divisant les deux termes par un même nombre (acquises en 5e–4e, mesurées par l’échauffement)',
+    ],
+  },
+  // The lesson's progressive map is the world's « carte des connaissances »: the `KNOWLEDGE_GRAPH` of the knowledge its
+  // pack declares (`lesson.pack.js › knowledge`) — the only one (LESSON_V2.md §2).
+  knowledgeMap: true,
+  knowledgeMapMode: 'progressive',
+  // lessons 1 and 2 of the chapter: decomposing (K1's tool) and the PGCD (K2's criterion, K3's number)
+  priorKnowledge: ['decomposer-en-facteurs-premiers', 'trouver-le-pgcd'],
+  resources: [],
+  modules: [
+    {
+      id: '00',
+      number: 0,
+      slug: 'echauffement',
+      path: `${LESSON_BASE_PATH}/echauffement`,
+      title: 'Échauffement',
+      desc: 'Ce qu’il faut avant la leçon, mesuré par l’échauffement : décomposer un nombre, écrire des fractions égales.',
+      stage: 'prerequisite_check',
+      color: 'teal',
+      style: 'diagnostic',
+      estimatedMin: 6,
+      difficulty: 1,
+      actionText: 'Je vérifie mes acquis',
+    },
+    {
+      id: '01',
+      number: 1,
+      slug: 'simplifier-par-les-facteurs-premiers',
+      path: `${LESSON_BASE_PATH}/simplifier-par-les-facteurs-premiers`,
+      title: 'Simplifier avec les facteurs premiers',
+      desc: 'Un pont éclairé, sa pancarte écrite de trois façons : des planches premières sur les deux bandes.',
+      stage: 'trigger',
+      teachesLearningPointIds: ['3e_fraction-irreductible_P2'],
+      color: 'indigo',
+      style: 'featured',
+      estimatedMin: 12,
+      difficulty: 2,
+      actionText: 'Je pose des planches',
+    },
+    {
+      id: '02',
+      number: 2,
+      slug: 'fraction-irreductible',
+      path: `${LESSON_BASE_PATH}/fraction-irreductible`,
+      title: 'La fraction irréductible',
+      desc: 'Un pont que seule la planche de 1 tient : sa pancarte ne change plus.',
+      stage: 'discovery',
+      teachesLearningPointIds: ['3e_fraction-irreductible_P1'],
+      color: 'violet',
+      style: 'featured',
+      estimatedMin: 10,
+      difficulty: 2,
+      actionText: 'J’essaie toutes les planches',
+    },
+    {
+      id: '03',
+      number: 3,
+      slug: 'diviser-par-le-pgcd',
+      path: `${LESSON_BASE_PATH}/diviser-par-le-pgcd`,
+      title: 'En une étape, par le PGCD',
+      desc: 'Un long pont, une bourse, le carnet de l’atelier : une seule planche pour tout réécrire.',
+      stage: 'discovery',
+      teachesLearningPointIds: ['3e_fraction-irreductible_P4'],
+      color: 'emerald',
+      style: 'featured',
+      estimatedMin: 12,
+      difficulty: 3,
+      actionText: 'Je fabrique la planche',
+    },
+    {
+      id: '04',
+      number: 4,
+      slug: 'le-resultat-d-un-calcul',
+      path: `${LESSON_BASE_PATH}/le-resultat-d-un-calcul`,
+      title: 'Le résultat d’un calcul',
+      desc: 'Deux équipes éclairent un pont chacune de son côté : la somme de leurs parts.',
+      stage: 'practice_lab',
+      teachesLearningPointIds: ['3e_fraction-irreductible_P3'],
+      color: 'amber',
+      style: 'featured',
+      estimatedMin: 10,
+      difficulty: 3,
+      actionText: 'Je lis la pancarte',
+    },
+    // The lesson's problem (track: 'problem'): it counts in completion, never in mastery — the final mission of the world
+    // (world/story.js › PROBLEM_MODULE): the keeper's plaque, a product to engrave in irreducible form, two blank plaques.
+    {
+      id: '05',
+      number: 5,
+      slug: 'la-plaque-du-gardien',
+      path: `${LESSON_BASE_PATH}/la-plaque-du-gardien`,
+      title: 'Problème de la leçon',
+      desc: 'La plaque du gardien : la part des lanternes rouges, gravée sous forme irréductible.',
+      stage: 'practice_lab',
+      track: 'problem',
+      teachesLearningPointIds: [
+        '3e_fraction-irreductible_P1',
+        '3e_fraction-irreductible_P2',
+        '3e_fraction-irreductible_P3',
+        '3e_fraction-irreductible_P4',
+      ],
+      color: 'amber',
+      style: 'featured',
+      estimatedMin: 6,
+      difficulty: 3,
+      actionText: 'Je grave la plaque',
+    },
+    {
+      id: '06',
+      number: 6,
+      slug: 'evaluation',
+      path: `${LESSON_BASE_PATH}/evaluation`,
+      title: 'Évaluation',
+      desc: 'Les savoir-faire de la leçon, sur des questions au format du brevet.',
+      stage: 'evaluation',
+      color: 'slate',
+      style: 'boss',
+      estimatedMin: 8,
+      difficulty: 4,
+      actionText: 'Je passe l’évaluation',
+    },
+  ],
+};

@@ -5,7 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rng, int, pick, shuffle } from './random';
-import { createLadder, buildWave, gatePoints, SUMMARY } from './ladder';
+import { createLadder, buildWave, gatePoints, SUMMARY, MAX_WAVES, waveBack } from './ladder';
+import { nodeNudge } from './mapNudge';
 import { createTrainer, SESSION, sessionStars } from './trainer';
 import {
   answered,
@@ -199,6 +200,42 @@ describe('kit/ladder — with a toy lesson', () => {
         expect(w.gates.filter((n) => isRight(w, n))).toEqual([w.gates[w.good]]);
       }
     expect(() => ladder.waveOf(rng(1), 'never', {})).toThrow();
+  });
+
+  it('the hub map moves a node whose name is wider than its room into the map, never one that fits', () => {
+    // 2026-11-26 walk of fraction-irreductible: a name at 82 % of a 587 px map ran 85 px past its edge and, focused,
+    // scrolled the map 92 px sideways
+    const W = 587;
+    expect(nodeNudge(0.5 * W, 250, W)).toBe(0);
+    expect(nodeNudge(0.82 * W, 150, W)).toBe(0);
+    const dx = nodeNudge(0.82 * W, 272, W);
+    expect(dx).toBeLessThan(0);
+    expect(0.82 * W + dx + 136).toBeCloseTo(W - 6, 6);
+    const left = nodeNudge(0.19 * W, 272, W);
+    expect(left).toBeGreaterThan(0);
+    expect(0.19 * W + left - 136).toBeCloseTo(6, 6);
+    // wider than the map: centred in it
+    expect(nodeNudge(0.82 * W, 700, W)).toBeCloseTo(W / 2 - 0.82 * W, 6);
+    for (let x = 0; x <= 100; x += 5)
+      for (const w of [80, 160, 240, 272]) {
+        const d = nodeNudge((x / 100) * W, w, W);
+        const l = (x / 100) * W + d - w / 2;
+        expect(l, `at ${x} %, ${w} px`).toBeGreaterThanOrEqual(6 - 1e-9);
+        expect(l + w, `at ${x} %, ${w} px`).toBeLessThanOrEqual(W - 6 + 1e-9);
+      }
+  });
+
+  it('a mistake brings a wave back only while the rail has a gate left for it (a 6-gate rail: never a 7th)', () => {
+    // 2026-11-26 walk of fraction-irreductible: a wrong gate on a run of 6 waves on a 6-gate rail asked for gate 7 —
+    // « Cannot read properties of undefined (reading 'arches') », the run stopped dead
+    expect(waveBack(5, 6)).toBe(true);
+    expect(waveBack(6, 6)).toBe(false);
+    expect(waveBack(7, 8)).toBe(true);
+    expect(waveBack(MAX_WAVES, 20)).toBe(false);
+    for (let seed = 1; seed <= 10; seed += 1) {
+      const run = ladder.makeRun(rng(seed), 0, 0);
+      expect(waveBack(run.length, run.length)).toBe(false);
+    }
   });
 
   it('opens a node with its key, a level after the one before it, the summary after every first level', () => {

@@ -1,0 +1,228 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-001",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La pause des collégiens",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "PGCD",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l5-009",
+      "learningPoint": "3e_fraction-irreductible_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Dans un collège de $1\\,620$ élèves, on a demandé à chacun son activité préférée pendant la pause : $594$ choisissent le football, $324$ le basket, les autres le tennis de table."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "Le football",
+      "statement": "Détermine $\\text{PGCD}(594 ; 1\\,620)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "54",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(594 ; 1\\,620) = 54$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$594 = 2 \\times 3 \\times 3 \\times 3 \\times 11$",
+          "$1\\,620 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3 \\times 5$",
+          "Les facteurs premiers communs : $2 \\times 3 \\times 3 \\times 3 = 54$."
+        ],
+        "result": "54"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris la fraction $\\dfrac{594}{1\\,620}$ des élèves qui choisissent le football sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "11/30",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{594}{1\\,620} = \\dfrac{11}{30}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$594 = 2 \\times 3 \\times 3 \\times 3 \\times 11$ et $1\\,620 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3 \\times 5$, donc $\\text{PGCD}(594 ; 1\\,620) = 54$.",
+          "$594 \\div 54 = 11$ et $1\\,620 \\div 54 = 30$.",
+          "$\\dfrac{594}{1\\,620} = \\dfrac{11}{30}$."
+        ],
+        "result": "\\dfrac{594}{1\\,620} = \\dfrac{11}{30}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "297/810"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "198/540"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "Le basket",
+      "statement": "Écris la fraction $\\dfrac{324}{1\\,620}$ des élèves qui choisissent le basket sous forme irréductible, en décomposant en facteurs premiers.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{324}{1\\,620} = \\dfrac{1}{5}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$324 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$ et $1\\,620 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3 \\times 5$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3$.",
+          "$\\dfrac{324}{1\\,620} = \\dfrac{2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3 \\times 1}{2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 3 \\times 5} = \\dfrac{1}{5}$."
+        ],
+        "result": "\\dfrac{324}{1\\,620} = \\dfrac{1}{5}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "162/810"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "108/540"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "Le tennis de table",
+      "statement": "Quelle fraction des élèves choisit le tennis de table ? Calcule $1 - \\dfrac{11}{30} - \\dfrac{1}{5}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "13/30",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{13}{30}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{11}{30} = \\dfrac{19}{30}$",
+          "$1 - \\dfrac{11}{30} - \\dfrac{1}{5} = \\dfrac{13}{30}$"
+        ],
+        "result": "\\dfrac{13}{30}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

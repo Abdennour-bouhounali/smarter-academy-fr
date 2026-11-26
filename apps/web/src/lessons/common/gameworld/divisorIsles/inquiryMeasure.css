@@ -100,3 +100,12 @@
     animation: none;
   }
 }
+/* `long: true` (2026-11-26): a plank too thin to see on a long strip is one band, its count on it (18 px, white) */
+.iq-meas-band .iq-plank {
+  opacity: 0.85;
+}
+.iq-meas-band__n {
+  fill: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+}

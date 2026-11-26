@@ -1,0 +1,186 @@
+{
+  "id": "ex-3e-fraction-irreductible-l1-003",
+  "lessonCode": "fraction-irreductible",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Des termes impairs",
+    "estimatedMinutes": 3,
+    "tags": [
+      "fraction irréductible",
+      "reconnaître"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Trois fractions dont le numérateur et le dénominateur sont impairs."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Dis si chaque fraction est irréductible.",
+      "statement": "La fraction $\\dfrac{21}{35}$ est-elle irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche un nombre premier qui figure dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Un facteur premier commun existe : $\\dfrac{21}{35}$ peut encore se simplifier.",
+        "incorrect": "Compare les facteurs premiers du numérateur et du dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$21 = 3 \\times 7$ et $35 = 5 \\times 7$ : le facteur premier $7$ est commun, on peut simplifier."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "La fraction $\\dfrac{15}{49}$ est-elle irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-COMPOSES-DONC-REDUCTIBLE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche un nombre premier qui figure dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Aucun facteur premier commun : $\\dfrac{15}{49}$ est irréductible.",
+        "incorrect": "Compare les facteurs premiers du numérateur et du dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$15 = 3 \\times 5$ et $49 = 7 \\times 7$ : aucun facteur premier commun, la fraction est irréductible."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "statement": "La fraction $\\dfrac{27}{45}$ est-elle irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-IMPAIRS-IRREDUCTIBLE"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche un nombre premier qui figure dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Un facteur premier commun existe : $\\dfrac{27}{45}$ peut encore se simplifier.",
+        "incorrect": "Compare les facteurs premiers du numérateur et du dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$27 = 3 \\times 3 \\times 3$ et $45 = 3 \\times 3 \\times 5$ : le facteur premier $3$ est commun, on peut simplifier."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -824,11 +824,18 @@ export function AskCard({ step, option: o, proof, words, picked, checked, onPick
  * The FIGURE of a station (`step.figure`, a bank sheet's `statement.figure`), drawn by the practice space's own
  * StatementFigure at the board's width: its smallest label 18 px or more at 1366 × 768 (`boardFigure.js`).
  */
-function BoardFigure({ fig }) {
+function BoardFigure({ fig, size = fig, state = null }) {
   const f = boardFigure(fig);
   if (!f) return null;
+  // `size`: the figure whose width the station keeps (its state before the check), so the cards do not move after it
+  const w = Math.max(f.width, boardFigure(size)?.width ?? 0);
   return (
-    <div className="cs-askfig" data-cs-figure={f.kind} style={{ '--cs-fig-w': `${f.width}px` }}>
+    <div
+      className="cs-askfig"
+      data-cs-figure={f.kind}
+      {...(state ? { 'data-cs-figure-state': state } : {})}
+      style={{ '--cs-fig-w': `${w}px` }}
+    >
       <StatementFigure {...fig} maxWidth="100%" />
     </div>
   );
@@ -851,7 +858,16 @@ function Ask({ step, world }) {
   const toggle = (o) => {
     if (!checked) setPicked((p) => (single ? [o] : p.includes(o) ? p.filter((x) => x !== o) : [...p, o]));
   };
-  const figure = step.figure ? <BoardFigure fig={step.figure} /> : null;
+  // `figureAfter` (optional): what the figure shows once the class has checked — the proof drawn (the pillar where both
+  // lanes end); before the check, `figure` alone, which must not show the answer
+  const after = Boolean(step.figure && step.figureAfter);
+  const figure = step.figure ? (
+    <BoardFigure
+      fig={after && checked ? step.figureAfter : step.figure}
+      size={step.figure}
+      state={after ? (checked ? 'after' : 'before') : null}
+    />
+  ) : null;
   return (
     <div
       className={`cs-askstep ${figure ? 'cs-askstep--figure' : ''}`}

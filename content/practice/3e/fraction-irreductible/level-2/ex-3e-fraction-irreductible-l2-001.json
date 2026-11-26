@@ -1,0 +1,187 @@
+{
+  "id": "ex-3e-fraction-irreductible-l2-001",
+  "lessonCode": "fraction-irreductible",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Fractions à reconnaître",
+    "estimatedMinutes": 3,
+    "tags": [
+      "fraction irréductible",
+      "reconnaître"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l2-008",
+      "learningPoint": "3e_fraction-irreductible_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Trois fractions sont écrites au tableau."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "lead": "Pour chaque fraction, dis si elle est irréductible.",
+      "statement": "La fraction $\\dfrac{34}{51}$ est-elle irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche un nombre premier qui figure dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Un facteur premier commun existe : $\\dfrac{34}{51}$ peut encore se simplifier.",
+        "incorrect": "Compare les facteurs premiers du numérateur et du dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$34 = 2 \\times 17$ et $51 = 3 \\times 17$ : le facteur premier $17$ est commun, on peut simplifier."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "La fraction $\\dfrac{35}{64}$ est-elle irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-COMPOSES-DONC-REDUCTIBLE"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche un nombre premier qui figure dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Aucun facteur premier commun : $\\dfrac{35}{64}$ est irréductible.",
+        "incorrect": "Compare les facteurs premiers du numérateur et du dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$35 = 5 \\times 7$ et $64 = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2$ : aucun facteur premier commun, la fraction est irréductible."
+        ],
+        "result": "Oui"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "c",
+      "statement": "La fraction $\\dfrac{55}{77}$ est-elle irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "Non",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche un nombre premier qui figure dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "Un facteur premier commun existe : $\\dfrac{55}{77}$ peut encore se simplifier.",
+        "incorrect": "Compare les facteurs premiers du numérateur et du dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$55 = 5 \\times 11$ et $77 = 7 \\times 11$ : le facteur premier $11$ est commun, on peut simplifier."
+        ],
+        "result": "Non"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

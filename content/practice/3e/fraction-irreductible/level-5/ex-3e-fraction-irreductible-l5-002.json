@@ -1,0 +1,172 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-002",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un mélange de peintures",
+    "estimatedMinutes": 4,
+    "tags": [
+      "problème",
+      "PGCD",
+      "proportion"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l5-001",
+      "learningPoint": "3e_fraction-irreductible_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Pour repeindre le préau de l’école, un peintre mélange $1\\,188$ mL de peinture jaune et $792$ mL de peinture bleue."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Détermine $\\text{PGCD}(1\\,188 ; 792)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "396",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(1\\,188 ; 792) = 396$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,188 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 11$",
+          "$792 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 11$",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 3 \\times 11 = 396$."
+        ],
+        "result": "396"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Écris la fraction $\\dfrac{1\\,188}{792}$ (quantité de jaune sur quantité de bleu) sous forme irréductible, en divisant par ce PGCD.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,188}{792} = \\dfrac{3}{2}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,188 = 2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 11$ et $792 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 11$, donc $\\text{PGCD}(1\\,188 ; 792) = 396$.",
+          "$1\\,188 \\div 396 = 3$ et $792 \\div 396 = 2$.",
+          "$\\dfrac{1\\,188}{792} = \\dfrac{3}{2}$."
+        ],
+        "result": "\\dfrac{1\\,188}{792} = \\dfrac{3}{2}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "594/396"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "396/264"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "108/72"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Pour un autre chantier, il utilise $12$ L de peinture jaune, avec le même rapport entre le jaune et le bleu. Combien de litres de peinture bleue mélange-t-il ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre de litres entier",
+      "expectedAnswer": "8",
+      "counted": false,
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise la fraction irréductible trouvée plus haut."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Combien de litres représente une part de jaune ?"
+        }
+      ],
+      "feedback": {
+        "correct": "Il faut $8$ L de bleu pour $12$ L de jaune.",
+        "incorrect": "Reprends le calcul avec les données de l’énoncé."
+      },
+      "solution": {
+        "lines": [
+          "Le rapport jaune sur bleu est $\\dfrac{3}{2}$ : le jaune est $3$ parts et le bleu $2$ parts.",
+          "$12 \\div 3 = 4$ L par part, donc $4 \\times 2 = 8$ L de bleu."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -40,6 +40,7 @@ import { Sort } from './InquirySort';
 import { Measure } from './InquiryMeasure';
 import { Part } from './InquiryPart';
 import { Sheet } from './InquirySheet';
+import { Crews } from './InquiryCrews';
 import { INQUIRY_TEXT } from './strings';
 import { FAST, expose } from './inquiryParts';
 import './inquiry.css';
@@ -691,6 +692,7 @@ export default function Inquiry({ spec, game, onDone }) {
     measure: Measure,
     part: Part,
     sheet: Sheet,
+    crews: Crews,
   }[spec.kind];
   return <Kind spec={spec} play={play} onDone={onDone} />;
 }

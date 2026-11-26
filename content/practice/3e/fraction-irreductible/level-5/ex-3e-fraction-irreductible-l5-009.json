@@ -1,0 +1,226 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-009",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Les kilomètres d’un club de randonnée",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "facteurs premiers",
+      "fractions"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Un club de randonnée a prévu de parcourir $2\\,520$ km dans l’année. À l’automne, il en a déjà parcouru $1\\,980$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "Décompose les deux nombres.",
+      "statement": "Décompose $1\\,980$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^2*3^2*5*11",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible, puis par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue avec les nombres premiers suivants jusqu’à obtenir $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,980 = 2^{2} \\times 3^{2} \\times 5 \\times 11$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $5$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $1\\,980$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $1\\,980$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $1\\,980$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,980 = 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 11$"
+        ],
+        "result": "1\\,980 = 2^{2} \\times 3^{2} \\times 5 \\times 11"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Décompose $2\\,520$ en produit de facteurs premiers, avec des puissances.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "factorization",
+      "answerFormat": "Un produit de puissances de nombres premiers : tape ^ pour l’exposant, × (ou *) entre les facteurs",
+      "expectedAnswer": "2^3*3^2*5*7",
+      "evaluationPolicy": {
+        "requiredForm": "powers"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Divise par $2$ tant que c’est possible, puis par $3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Continue avec les nombres premiers suivants jusqu’à obtenir $1$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,520 = 2^{3} \\times 3^{2} \\times 5 \\times 7$.",
+        "incorrect": "Divise par $2$, puis par $3$, puis par $5$, chaque fois autant que possible, et compte les facteurs.",
+        "notPrime": "Ton produit vaut bien $2\\,520$, mais un de ses facteurs n’est pas premier : décompose-le à son tour.",
+        "wrongExponents": "Ce sont les bons nombres premiers, mais ton produit ne vaut pas $2\\,520$ : recompte combien de fois chacun divise.",
+        "wrongProduct": "Ton produit ne vaut pas $2\\,520$ : reprends les divisions une par une.",
+        "powersExpected": "C’est juste, mais écris chaque facteur premier une seule fois, avec son exposant."
+      },
+      "solution": {
+        "lines": [
+          "$2\\,520 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 7$"
+        ],
+        "result": "2\\,520 = 2^{3} \\times 3^{2} \\times 5 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quelle fraction du parcours prévu le club a-t-il déjà parcourue ? Écris $\\dfrac{1\\,980}{2\\,520}$ sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "11/14",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose le numérateur et le dénominateur en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie les facteurs premiers qui figurent dans les deux décompositions."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,980}{2\\,520} = \\dfrac{11}{14}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,980 = 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 11$ et $2\\,520 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 7$.",
+          "Les facteurs premiers communs : $2 \\times 2 \\times 3 \\times 3 \\times 5$.",
+          "$\\dfrac{1\\,980}{2\\,520} = \\dfrac{2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 11}{2 \\times 2 \\times 3 \\times 3 \\times 5 \\times 14} = \\dfrac{11}{14}$."
+        ],
+        "result": "\\dfrac{1\\,980}{2\\,520} = \\dfrac{11}{14}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "990/1260"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "660/840"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "396/504"
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Quelle fraction du parcours reste-t-il à faire ? Calcule $1 - \\dfrac{11}{14}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "3/14",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{3}{14}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{11}{14} = \\dfrac{3}{14}$"
+        ],
+        "result": "\\dfrac{3}{14}"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

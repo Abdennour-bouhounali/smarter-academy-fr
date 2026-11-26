@@ -1,0 +1,164 @@
+{
+  "id": "ex-3e-fraction-irreductible-l1-002",
+  "lessonCode": "fraction-irreductible",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Repérer la fraction irréductible",
+    "estimatedMinutes": 3,
+    "tags": [
+      "fraction irréductible",
+      "reconnaître"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "01,5"
+    }
+  },
+  "statement": {
+    "content": "Quatre fractions sont proposées à chaque question."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "a",
+      "statement": "Laquelle de ces fractions est irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{6}{15}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{14}{35}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{9}{20}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{12}{18}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une fraction irréductible n’a aucun facteur premier commun au numérateur et au dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Décompose les deux termes de chaque fraction, ou cherche un diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Les deux termes de cette fraction n’ont aucun facteur premier commun.",
+        "incorrect": "Une autre fraction est irréductible : cherche, pour chacune, un facteur premier commun."
+      },
+      "solution": {
+        "lines": [
+          "$6 = 2 \\times 3$ et $15 = 3 \\times 5$ : le facteur premier $3$ est commun, on peut simplifier.",
+          "$14 = 2 \\times 7$ et $35 = 5 \\times 7$ : le facteur premier $7$ est commun, on peut simplifier.",
+          "$9 = 3 \\times 3$ et $20 = 2 \\times 2 \\times 5$ : aucun facteur premier commun, la fraction est irréductible.",
+          "$12 = 2 \\times 2 \\times 3$ et $18 = 2 \\times 3 \\times 3$ : les facteurs premiers $2$ et $3$ sont communs, on peut simplifier."
+        ],
+        "result": "$\\dfrac{9}{20}$"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "b",
+      "statement": "Laquelle de ces fractions est irréductible ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{10}{25}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{21}{28}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{8}{27}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{18}{24}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FRAC-DIVISEURS-VUS-SEULEMENT"
+        }
+      ],
+      "answerFormat": "Choisis, puis compare ta justification au corrigé",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Une fraction irréductible n’a aucun facteur premier commun au numérateur et au dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Décompose les deux termes de chaque fraction, ou cherche un diviseur commun."
+        }
+      ],
+      "feedback": {
+        "correct": "Les deux termes de cette fraction n’ont aucun facteur premier commun.",
+        "incorrect": "Une autre fraction est irréductible : cherche, pour chacune, un facteur premier commun."
+      },
+      "solution": {
+        "lines": [
+          "$10 = 2 \\times 5$ et $25 = 5 \\times 5$ : le facteur premier $5$ est commun, on peut simplifier.",
+          "$21 = 3 \\times 7$ et $28 = 2 \\times 2 \\times 7$ : le facteur premier $7$ est commun, on peut simplifier.",
+          "$8 = 2 \\times 2 \\times 2$ et $27 = 3 \\times 3 \\times 3$ : aucun facteur premier commun, la fraction est irréductible.",
+          "$18 = 2 \\times 3 \\times 3$ et $24 = 2 \\times 2 \\times 2 \\times 3$ : les facteurs premiers $2$ et $3$ sont communs, on peut simplifier."
+        ],
+        "result": "$\\dfrac{8}{27}$"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

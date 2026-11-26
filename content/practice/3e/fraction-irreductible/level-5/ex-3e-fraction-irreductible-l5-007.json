@@ -1,0 +1,210 @@
+{
+  "id": "ex-3e-fraction-irreductible-l5-007",
+  "lessonCode": "fraction-irreductible",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un club de lecture",
+    "estimatedMinutes": 6,
+    "tags": [
+      "problème",
+      "fractions",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_fraction-irreductible_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Dans un club de lecture de $405$ adhérents, $\\dfrac{7}{12}$ des adhérents sont des collégiens et, parmi eux, $\\dfrac{8}{21}$ sont en 3e."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle fraction des adhérents est formée de collégiens de 3e ? Calcule $\\dfrac{7}{12} \\times \\dfrac{8}{21}$ et donne le résultat sous forme irréductible.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "2/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Effectue d’abord les opérations prioritaires, puis écris le résultat sous forme de fraction."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Simplifie ensuite la fraction obtenue : décompose le numérateur et le dénominateur en facteurs premiers."
+        }
+      ],
+      "feedback": {
+        "correct": "Le résultat est $\\dfrac{2}{9}$, sous forme irréductible.",
+        "incorrect": "Reprends le calcul étape par étape, puis simplifie le résultat.",
+        "notIrreducible": "Ton résultat est juste, mais la fraction peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{12} \\times \\dfrac{8}{21} = \\dfrac{56}{252} = \\dfrac{2}{9}$"
+        ],
+        "result": "\\dfrac{2}{9}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "56/252"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Combien d’adhérents du club sont des collégiens de 3e ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Un nombre entier",
+      "expectedAnswer": "90",
+      "counted": false,
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Utilise la fraction irréductible trouvée."
+        }
+      ],
+      "feedback": {
+        "correct": "Le club compte $90$ collégiens de 3e.",
+        "incorrect": "Reprends le calcul avec les données de l’énoncé."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{9} \\times 405 = 90$."
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "Vérification",
+      "statement": "Détermine $\\text{PGCD}(90 ; 405)$.",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "45",
+      "answerFormat": "Un nombre entier",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Décompose les deux nombres en facteurs premiers."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie les facteurs premiers communs, chacun avec le plus petit exposant."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\text{PGCD}(90 ; 405) = 45$.",
+        "incorrect": "Ce nombre ne divise pas les deux, ou un diviseur commun plus grand existe : reprends les décompositions."
+      },
+      "solution": {
+        "lines": [
+          "$90 = 2 \\times 3 \\times 3 \\times 5$",
+          "$405 = 3 \\times 3 \\times 3 \\times 3 \\times 5$",
+          "Les facteurs premiers communs : $3 \\times 3 \\times 5 = 45$."
+        ],
+        "result": "45"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Écris la fraction $\\dfrac{90}{405}$ sous forme irréductible, en divisant par ce PGCD. Retrouves-tu la fraction de la première question ?",
+      "learningPoints": [
+        {
+          "code": "3e_fraction-irreductible_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "Une fraction irréductible, écrite a/b",
+      "expectedAnswer": "2/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche d’abord le PGCD du numérateur et du dénominateur."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le numérateur et le dénominateur par ce PGCD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{90}{405} = \\dfrac{2}{9}$, et cette fraction est irréductible.",
+        "incorrect": "Vérifie que tu as simplifié par tous les facteurs premiers communs, et seulement par ceux-là.",
+        "notIrreducible": "Ta fraction est égale à la bonne, mais elle peut encore se simplifier : cherche un facteur premier commun aux deux termes."
+      },
+      "solution": {
+        "lines": [
+          "$90 = 2 \\times 3 \\times 3 \\times 5$ et $405 = 3 \\times 3 \\times 3 \\times 3 \\times 5$, donc $\\text{PGCD}(90 ; 405) = 45$.",
+          "$90 \\div 45 = 2$ et $405 \\div 45 = 9$.",
+          "$\\dfrac{90}{405} = \\dfrac{2}{9}$."
+        ],
+        "result": "\\dfrac{90}{405} = \\dfrac{2}{9}"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "30/135"
+        },
+        {
+          "id": "MISC-FRAC-ARRET-EN-CHEMIN",
+          "value": "18/81"
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -70,7 +70,14 @@ function leaves(value) {
   walk(value);
   return { strings, numbers };
 }
-const numbersIn = (s) => (String(s).match(/\d+/g) ?? []).map(Number);
+// a number grouped by thousands is ONE number: « 13 248 » (U+202F / U+2009 / U+00A0) and LaTeX `13\,248` are 13248,
+// never 13 and 248 (lesson 4's 13 248 made 248 « another lesson's number » on lesson 2's screens, 2026-11-26)
+const numbersIn = (s) =>
+  (
+    String(s)
+      .replace(/(\d)(?:\\,|[   ])(?=\d{3}(?!\d))/g, '$1')
+      .match(/\d+/g) ?? []
+  ).map(Number);
 
 /**
  * The numbers of the OTHER lessons of the world that this lesson never writes: their gaps of 100 cells or more (the

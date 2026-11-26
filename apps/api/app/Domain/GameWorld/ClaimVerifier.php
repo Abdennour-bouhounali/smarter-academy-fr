@@ -23,7 +23,7 @@ final class ClaimVerifier
 {
     public const KINDS = [
         'division', 'product', 'phrase', 'sure', 'containers', 'pair', 'divisors', 'stop', 'divisible',
-        'bracket', 'fullNeeded', 'pgcd', 'coprime', 'commonDivisor', 'fraction', 'factorization', 'prime', 'scale',
+        'bracket', 'fullNeeded', 'pgcd', 'ppcm', 'coprime', 'commonDivisor', 'fraction', 'factorization', 'prime', 'scale',
     ];
 
     /** Les genres qui portent sur UN nombre `a`, sans `b` (GameEvidenceController ne l'exige pas pour eux). */
@@ -152,6 +152,29 @@ final class ClaimVerifier
                 }
 
                 return $g === self::gcd($a, $b);
+            case 'ppcm':
+                // m est le plus petit multiple commun de a, b et des nombres de `more` (0 à 4 autres) : chaque nombre
+                // ≥ 1, m ≤ 10^6 et m > 0 (0 est un multiple de tout nombre, jamais celui qu'on demande)
+                $more = array_key_exists('more', $c) ? $c['more'] : [];
+                if (! is_array($more) || ! array_is_list($more) || count($more) > 4) {
+                    return false;
+                }
+                [$a, $b, $m] = [$n('a'), $n('b'), $n('m')];
+                if ($a === null || $b === null || $m === null || $a < 1 || $b < 1 || $m < 1) {
+                    return false;
+                }
+                $lcm = 1;
+                foreach ([$a, $b, ...$more] as $x) {
+                    if (! is_int($x) || $x < 1 || $x > self::MAX) {
+                        return false;
+                    }
+                    $lcm = intdiv($lcm, self::gcd($lcm, $x)) * $x;
+                    if ($lcm > self::MAX) {
+                        return false;
+                    }
+                }
+
+                return $m === $lcm;
             case 'coprime':
                 // « a et b sont premiers entre eux » dit juste
                 [$a, $b] = [$n('a'), $n('b')];
