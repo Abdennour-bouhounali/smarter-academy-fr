@@ -129,7 +129,7 @@ export function npWorld(w, page, L) {
    * lengthens it, the arrow is HELD until two knots before, released, then tapped knot by knot; released on the stake's
    * knot, it ties. Returns the knots where it tied.
    */
-  const slideTo = async (target, label) => {
+  const slideTo = async (target, label, onNear) => {
     await page.waitForSelector('[data-np-rope]', { timeout: 8000 });
     let grow = 'ArrowRight';
     await page.keyboard.press(grow);
@@ -179,6 +179,8 @@ export function npWorld(w, page, L) {
       );
       await page.keyboard.up(grow);
       await ff(0.08);
+      // a picture of the walk two knots before its stake (the sight walk: the land behind him, the post ahead)
+      if (onNear) await onNear();
     }
     const t1 = Date.now();
     for (let n = 0; n < 400 && (await knots()) != null; n += 1) {
@@ -444,7 +446,8 @@ export async function npStoryWalk(L, D, opts) {
             target = Math.round(dist(P[st.from], P[st.toward]) - Number(String(am).trim().replace(',', '.')));
           } else if (st.stick) target = 'probe';
           if (i === 0 && st.id === 'AM') await shotWorld(`${tag}-rope`);
-          const tied = await W.slideTo(target, tag);
+          if (st.sight) await shotWorld(`${tag}-sight`);
+          const tied = await W.slideTo(target, tag, st.sight ? () => shotWorld(`${tag}-near`) : undefined);
           expect(tied, `${tag}: released on ${target ?? 'the last built course'}, the rope ties`);
           await ff(0.4);
           const reg = await register();

@@ -148,7 +148,7 @@ export const WORLD_TEXT = {
       bankStart:
         'Mesure à la corde, le long de la rive, du piquet $A$ jusqu’au vieux piquet $S$ : appuie sur E en $A$, puis sur les flèches.',
       sight:
-        'Depuis le piquet $E$, marche avec la corde perpendiculairement à la rive, jusqu’à ce que le piquet $S$ cache le poteau $F$ dans l’œil de Zéro. Lâche la corde là.',
+        'Depuis le piquet $E$, éloigne-toi du fleuve avec la corde, tout droit dans les terres (flèche →), jusqu’à ce que le piquet $S$ cache le poteau $F$ dans l’œil de Zéro. Lâche la corde là.',
       ferry:
         'La corde du bac se coupe avant la traversée. Écris la longueur $AF$ au piquet $A$ : la corde est lancée jusqu’au poteau $F$.',
       climb: 'Le pyramidion attend. Monte au sommet : appuie sur E au pied de la rampe.',

@@ -114,6 +114,8 @@ const SUN_NOON = sunVector('8', Math.PI / 2);
 /** The summit's top platform: the pyramid's base × the capstone's k (99 × 1/36 = 2,75) — given on the summit's record. */
 const SUMMIT_TOP = write(times(FACE.base, CAPSTONE.k));
 const ZERO = 0.55; // the kit's robot is about 2,2 units tall: drawn about 1,2 m, as planned (§1.2)
+const SIGHT_EYE = 1.25; // Zero's eye on the sight line (stage 3), in metres
+const SIGHT_DIP = 8; // degrees the sight looks down: the land under him in the bottom third, the far post kept high
 const AMBER = 0xf59e0b;
 const VIOLET = 0x8b5cf6;
 const v3 = (p) => new THREE.Vector3(p.x, p.y ?? 0, p.z);
@@ -520,13 +522,21 @@ export class NilePyramidsGame extends WorldRuntime {
     f.look.set(h.x + d.x * 2, Math.max(-2, h.y) + 0.8, h.z + d.y * 2);
     return { pos: f.pos, look: f.look, k: 4.5 };
   }
-  /** Zero's eye, from the knot he stands on, along the line to the far post (stage 3, `cameraShot('sight')`). */
+  /**
+   * Zero's eye, from the knot he stands on, along the line to the far post (stage 3, `cameraShot('sight')`). The eye
+   * stays ON the line (S hides F exactly where it should), but it looks SIGHT_DIP degrees down: the sand under him, the
+   * rope back to the stake E and the water's edge fill the bottom of the screen, and that strip of land grows as he
+   * backs away — he SEES he walks inland, never into the river (owner, 2026-11-26: « how, by walking in the water? »).
+   */
   sightShot() {
     const p = slidePoint(this.hold.s);
     const F = this.pts.river.F;
     const s = this.sightCam ?? (this.sightCam = { pos: new THREE.Vector3(), look: new THREE.Vector3() });
-    s.pos.set(p.x, 1.25, p.z);
-    s.look.set(F.x, 2.5, F.z);
+    const dx = F.x - p.x;
+    const dz = F.z - p.z;
+    const l = Math.hypot(dx, dz) || 1;
+    s.pos.set(p.x, SIGHT_EYE, p.z);
+    s.look.set(p.x + (dx / l) * 10, SIGHT_EYE - 10 * Math.tan((SIGHT_DIP * Math.PI) / 180), p.z + (dz / l) * 10);
     return { pos: s.pos, look: s.look, k: 8 };
   }
   /** On the summit: the top eight metres framed close — the capstone about 150 px wide (§1.5). */
