@@ -714,8 +714,11 @@ Owner request: the student practises in the GAME first, then in the REAL format;
 felt BETWEEN two levels of the exam, never inside a sitting.
 
 - **« Espace jeu » / « Espace brevet »** — a switch at the top of the practice hub (`KnowledgeMap`, `data-di-space`). The game
-  space is the 16 levels of §2bis. The exam space opens once the student has PLAYED: the four keys and the first run of each
-  (`journey.js › examOpen`). The title screen no longer opens a sitting directly.
+  space is the 16 levels of §2bis. **« Espace brevet » is the FIRST of the two, the one the hub opens on, and it is OPEN FROM THE START, even for a
+  student who never played** (owner, 2026-11-26 — it used to wait for the four keys and the first run of each;
+  `journey.js › examOpen`). Its levels still open one after the other; « Ensuite » still advises the game first.
+  The game's nodes are open from the start too (`ladder.js › nodeOpen`, same day): a rule's games no longer wait for its
+  key, and « Fiche de connaissances » shows every card named. The lesson's tools also run with NO world (LESSON_V2.md §2bis). The title screen no longer opens a sitting directly.
 - **The ladder** (`Spaces.jsx › ExamLadder`, `bankSitting.js › BANK_LEVELS`): five rising steps — the five levels of the
   lesson's bank, with the names the practice space gives them.
 

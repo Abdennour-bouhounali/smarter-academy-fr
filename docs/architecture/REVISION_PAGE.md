@@ -7,8 +7,8 @@ here the same day from `smarter-academy-dz` (its `docs/architecture/REVISION_PAG
 ## 1. Where it is
 | Who | Door | Address |
 |---|---|---|
-| Student | « Page de révision » on the title screen of the lesson's world | `/espace/revision/:lessonId` |
-| Teacher | the tab « Page de révision » of the lesson's tools, and the same title-screen door | `/enseignant/revision/:lessonId` |
+| Student | « Page de révision » on HIS HOME of the lesson (`features/lessonHome`; LESSON_V2.md §2bis) — no longer on the world's title screen nor on the unit page's rows (owner, 2026-11-26) | `/espace/revision/:lessonId` |
+| Teacher | the tab « Page de révision » of the lesson's tools, and the row of the unit page | `/enseignant/revision/:lessonId` |
 
 A door shows only where the lesson's pack has the page. Both routes are behind `RequireLargeScreen`; the student's page
 is also behind the tier gate (`LessonAccessGate`).
@@ -59,6 +59,14 @@ the game world.
 Nothing on the server. Ticked steps stay in the browser (`sa:revision:<lesson>:steps`).
 
 ## 4. Look and print
+**The student's page is the 2D game look** (owner, 2026-11-26; `RevisionArcade.jsx`, `revisionArcade.css`, on the shared
+frame `features/versLeBrevet/Shell.jsx`): the SAME content and the same blocks (`RevisionBlock`, `RevisionQuiz`), a dark
+and a light look, a button back to the lesson's home, and two presentations behind one switch — « Par écrans » (one fixed
+screen at a time: a step flows into two columns and the browser cuts it into screens, so nothing scrolls and no block is
+split by hand; a formula too wide for its column is set smaller) and « En une page » (the seven steps on one page that
+scrolls). The plain sheet below stays the TEACHER's page and what PRINTS (it is kept in the student's page, hidden on
+screen). `/__qa/revision/:lessonId` shows the student's page with no account (dev builds only).
+
 Plain, one column up to 1720 px, the platform's blue; one line per math statement. « Imprimer » prints a compact memo
 sheet: two columns, small text, NO exercise and no quiz, only the first two worked examples.
 

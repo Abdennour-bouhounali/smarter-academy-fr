@@ -39,10 +39,15 @@ describe(`${ID} — the road and its modules`, () => {
     expect(STORY.stages).toHaveLength(3);
     expect(KNOWLEDGE.graph.nodes.length).toBeLessThanOrEqual(15);
     expect(Object.keys(PLAN_OF).sort()).toEqual(KNOWLEDGE.graph.nodes.map((n) => n.id).sort());
-    expect(journey.examOpen(KEYS, {})).toBe(false);
+    // « Espace brevet » is open from the start, with no key and no run (owner, 2026-11-26)
+    expect(journey.examOpen([], {})).toBe(true);
+    expect(journey.examOpen(KEYS, {})).toBe(true);
     const firstRuns = Object.fromEntries(ladder.nodes.map((n, i) => [ladder.levelId(i, 0), { stars: 1, best: 100 }]));
     expect(journey.examOpen(KEYS, firstRuns)).toBe(true);
-    expect(journey.examOpen(KEYS.slice(0, 1), firstRuns)).toBe(false);
+    expect(journey.examOpen(KEYS.slice(0, 1), firstRuns)).toBe(true);
+    // what « Ensuite » advises is unchanged: the game first, until the first run of each key is passed
+    expect(journey.nextStep({ finished: true, openKeys: KEYS, practice: {} }).do).toBe('game');
+    expect(journey.nextStep({ finished: true, openKeys: KEYS, practice: firstRuns }).do).not.toBe('game');
   });
 
   it('each module the world marks teaches what its keys prove; P2 by the answers that carry it (evidence.js)', () => {

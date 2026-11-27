@@ -4,7 +4,7 @@
 > Contrat et règles : [`docs/architecture/LEARNING_NET.md`](../architecture/LEARNING_NET.md).
 > Données : `packages/core/curriculum/fr/net/`.
 
-**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **5** leçons publiées · **55** leçons prévues (13 unités).
+**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **6** leçons publiées · **54** leçons prévues (13 unités).
 
 Légende des liens : `requires` (requiert) — prérequis, lien de révision ; `extends` (prolonge) — même notion plus loin dans la spirale, la leçon n’enseigne QUE la valeur ajoutée ; `consolidates` (consolide) — le programme répète l’item, la leçon le rappelle sans le reconstruire.
 

@@ -3,13 +3,14 @@
  * doors that open without replaying the story — the knowledge map, the practice space, « Ma progression », « Mon labo », « L’échauffement ».
  * A door whose part the lesson has not got yet (`lesson.notYet`, while a lesson is being built) is not shown: a door never
  * opens on nothing.
+ * « La page de révision » is NOT a door here any more (owner and council, 2026-11-26): it is outside the world, so its door is
+ * on the student's home of the lesson (`features/lessonHome`), where leaving the world comes back.
  */
-import { Link } from 'react-router-dom';
-import { RotateCcw, Map as MapIcon, BookOpen, BookOpenCheck, Trophy, FlaskConical, Backpack } from 'lucide-react';
+import { RotateCcw, Map as MapIcon, BookOpen, Trophy, FlaskConical, Backpack } from 'lucide-react';
 import { KT, TX } from './text';
 import { useLesson } from './LessonContext';
 
-export default function Title({ s, game, world, lessonTitle, revisionTo = null, onBegin, onRestart, coarse }) {
+export default function Title({ s, game, world, lessonTitle, onBegin, onRestart, coarse }) {
   const { notYet = [] } = useLesson();
   return (
     <div className="di-title">
@@ -21,11 +22,6 @@ export default function Title({ s, game, world, lessonTitle, revisionTo = null, 
           {s.hasSave ? KT.resume : KT.start}
         </button>
         <div className="di-row di-row--wrap di-title__doors">
-          {revisionTo && (
-            <Link to={revisionTo} className="di-btn di-btn--map" data-di-revision>
-              <BookOpenCheck size={18} /> {TX.revision.open}
-            </Link>
-          )}
           {!notYet.includes('know') && (
             <button type="button" className="di-btn di-btn--map" onClick={() => game.openKnow()} data-di-know-open>
               <BookOpen size={18} /> {TX.know.open}

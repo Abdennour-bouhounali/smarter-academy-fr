@@ -99,10 +99,11 @@ export default function PracticeHub() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, lessonCode, navigate, isTeacher]);
 
-  if (error && !overview) {
+  // an answer with no lesson in it (the server does not know this lesson yet) is an error to SAY, never a crash
+  if ((error && !overview) || (overview && !overview.lesson)) {
     return (
       <div className="sa-surface-plain sa-page sa-page--flush py-6 sm:py-8 space-y-6">
-        <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
+        <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error || t('practice.unavailable', { defaultValue: 'Les exercices de cette leçon ne sont pas encore disponibles ici.' })}</p>
         <Link to={coursesPath} className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← {t('practice.backToMyCourses')}
         </Link>

@@ -588,6 +588,9 @@ const coverageTargets = strict
 
 for (const code of coverageTargets) {
   const entry = lessonIndex.get(code);
+  // A unit's LAST lesson « Vers le brevet » (kind `synthesis`) is a rapid revision of the unit, never evidence: its
+  // learning point is not assessed there (owner, 2026-11-26: « remove that rule for this lesson »).
+  if (entry.kind === 'synthesis') continue;
   const covered = migratedCoverage.get(code) ?? new Set();
   for (const lpId of entry.learningPointIds) {
     if (!covered.has(lpId)) {

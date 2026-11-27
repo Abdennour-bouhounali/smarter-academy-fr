@@ -36,14 +36,13 @@ export const TX = {
   },
   close: 'Fermer',
   tip: 'Astuce',
-  // the two practice spaces: the game first, then the real exam — the game lives BETWEEN the levels of the exam, never inside
+  // the two practice spaces: the real exam FIRST and open from the start (owner, 2026-11-26), then the game — which lives
+  // BETWEEN the levels of the exam, never inside
   spaces: {
     game: 'Espace jeu',
     exam: 'Espace brevet',
     gameSub: 'Courses et missions : entraîne-toi en jouant.',
     examSub: 'Des brevets blancs sur papier : cinq paliers, d’un seul exercice à un sujet complet.',
-    examLocked:
-      'Joue d’abord : termine la première course de chaque clé dans l’espace jeu, et l’espace brevet s’ouvrira.',
     level: (n) => `Palier ${n}`,
     minutes,
     points,
@@ -68,7 +67,6 @@ export const TX = {
     noSheet: 'Pas encore de sujet pour ce palier',
   },
   lab: { open: 'Mon labo' },
-  revision: { open: 'Page de révision' },
   launch: { open: 'L’échauffement' },
   progress: {
     open: 'Ma progression',

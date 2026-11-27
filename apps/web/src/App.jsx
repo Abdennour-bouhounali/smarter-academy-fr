@@ -10,6 +10,9 @@ const Courses = lazy(() => import('./pages/Courses'));
 // No pricing, checkout or return page exists in this tree yet (plan §4, step 1F). What sells is behind
 // `PaidOutlet` (payments switch, §4ter); what has no French content yet behind `FeatureOutlet` (config/features.js).
 const FAQ = lazy(() => import('./pages/FAQ'));
+// PROTOTYPE, dev builds only: « Vers le brevet » in 2D on the first unit (docs/reports/VERS_LE_BREVET_PLAN.md §7 step 3).
+const RevisionQa = lazy(() => import('./features/revision/RevisionQa'));
+const LessonHomeQa = lazy(() => import('./features/lessonHome/LessonHomeQa'));
 const Contact = lazy(() => import('./pages/Contact'));
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -596,6 +599,8 @@ function AppRoutes() {
         <Route path="/methode" element={<Methode />} />
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
+        {import.meta.env.DEV && <Route path="/__qa/revision/:lessonId" element={<RevisionQa />} />}
+        {import.meta.env.DEV && <Route path="/__qa/accueil/:lessonId" element={<LessonHomeQa />} />}
         <Route path="/contact" element={<Contact />} />
 
         {/* L'écran d'attente entre l'inscription et l'espace élève.
@@ -654,7 +659,6 @@ function AppRoutes() {
             à la place de la leçon (RequireLargeScreen, 2026-10-27). */}
           <Route element={<RequireLargeScreen />}>{lessonRoutes}</Route>
         </Route>
-
       </Route>
     </Routes>
   );

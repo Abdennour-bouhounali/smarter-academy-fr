@@ -25,7 +25,7 @@ import Fit, { cardRoom } from './Fit';
 import { examLevelOpen } from './journey';
 import { useLesson } from './LessonContext';
 import { SoundToggle } from './parts';
-import { KT, TX } from './text';
+import { TX } from './text';
 
 const fmt = (n) => String(n).replace('.', ',');
 /** A rung whose level has no sheet to sit yet (`sittings.available`): said, never a dead button. */
@@ -54,15 +54,7 @@ export function ExamLadder({ s, game }) {
     };
   }, [sittings]);
   const exam = s.exam;
-  const open = journey.examOpen(s.openKeys, s.practice);
   const next = journey.nextExamLevel(exam);
-  if (!open)
-    return (
-      <div className="di-ladder di-ladder--locked" data-di-ladder="locked">
-        <Lock size={34} />
-        <p>{TX.spaces.examLocked}</p>
-      </div>
-    );
   return (
     <div className="di-ladder" data-di-ladder="open">
       <p className="di-dim">{TX.spaces.passAt}</p>
@@ -302,7 +294,7 @@ export function ProgressPage({ s, game, mastery = null, lessonId, lessonTitle })
                 <div key={r.key} className={`di-ptable__row ${r.earned ? '' : 'is-off'}`} data-di-prow={r.key}>
                   <span>
                     <i>{r.earned ? t.icon : '🔒'}</i>
-                    <strong>{r.earned ? t.title : KT.hidden}</strong>
+                    <strong>{t.title}</strong>
                     {!r.earned && <small>{P.notYet}</small>}
                   </span>
                   <span>

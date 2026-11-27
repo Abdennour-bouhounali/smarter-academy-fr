@@ -17,7 +17,14 @@ describe('the generation queue', () => {
     expect(ranks).toEqual([...ranks].sort((a, b) => a - b));
     for (const u of UNITS) {
       const ofUnit = queue.filter((q) => q.unit === u.code);
-      expect(ofUnit.at(-1)?.code, u.code).toBe(u.synthesisLessonCode);
+      // a unit whose synthesis is BUILT (the first one, 2026-11-26) has nothing left to close: it is out of the queue
+      const synthesisPlanned = planned.some((l) => l.code === u.synthesisLessonCode);
+      if (synthesisPlanned) expect(ofUnit.at(-1)?.code, u.code).toBe(u.synthesisLessonCode);
+      else
+        expect(
+          ofUnit.map((q) => q.code),
+          u.code,
+        ).not.toContain(u.synthesisLessonCode);
     }
   });
 

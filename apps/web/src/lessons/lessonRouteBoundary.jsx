@@ -5,6 +5,7 @@ import { loadLessonRuntimeCore } from './common/lessonRuntimeLoader';
 import { useLearningViewer } from '../features/learning/learningViewer';
 import LessonWaiting, { useOpensWorld } from './LessonWaiting';
 import { preloadWorld } from './worldPreload';
+import { toolAsked } from './lessonEntry';
 
 /**
  * LA FRONTIÈRE DE ROUTES DES LEÇONS — une seule pour toutes les leçons (2026-10-14).
@@ -66,7 +67,8 @@ function loadLessonRoutes(lessonId) {
     // Le runtime part EN MÊME TEMPS que les routes (sinon : routes → runtime →
     // page, un aller-retour de plus).
     loadLessonRuntimeCore().catch(() => {});
-    if (viewerPlaysWorlds) preloadWorld(lessonId);
+    // …unless the address asks for one of the lesson's tools: they open with NO world (lessonEntry.js › toolAsked)
+    if (viewerPlaysWorlds && !toolAsked(new URLSearchParams(window.location.search))) preloadWorld(lessonId);
     const promise = loadLessonRoutesFactory(lessonId)
       .then((factory) => {
         if (typeof factory !== 'function') throw new Error(`Lesson routes not found: ${lessonId}`);

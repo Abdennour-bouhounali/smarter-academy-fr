@@ -216,6 +216,33 @@ no exposure stream to audit) and `apps/web/scripts/lesson-v2-status.mjs` (« the
 retirement ledger) read the pack the same way since 2026-11-23 (`isV2Lesson`); no script looks at `routes.jsx` any
 more.
 
+## 2bis. Where a student lands, and a unit's last lesson (owner, 2026-11-26)
+
+- **The lesson's address is the STUDENT'S HOME of the lesson** (`features/lessonHome/LessonHome.jsx`, drawn by `LessonIndex`):
+  one plain page in the look of the teacher's lesson page — the way into the world in huge (« Entrer dans le monde de la
+  leçon » / « Continuer l'aventure »), a status line read with no world loaded, then « Aussi dans cette leçon »: « Sujets
+  de brevet », « Page de révision », « Résumé du chapitre » (each only where it exists), then « Ce que tu sauras faire ».
+- **The world is one step further, at `?monde=1`** (`lessons/lessonEntry.js` says it, for the home, the loading screen and
+  the walks). Leaving the world (`exitTo`) comes back to this home, no longer to the catalogue. A teacher's preview
+  (`?apercu=eleve`) still opens the world directly.
+- **The lesson's tools open WITH NO WORLD** (owner, 2026-11-26: « when the student enter one of this tools the world must
+  not be loaded »): « Espace d'entraînement », « Fiche de connaissances » and « Mon labo » are on the home AND on the
+  world's title screen (« they will exist in both »). From the home they are at `?outil=entrainement|fiche|labo`
+  (`lessons/lessonEntry.js`): `gameworld/LessonToolsLoader` loads the lesson's CONTENT only, `kit/LessonTools.jsx` mounts the
+  SAME screens on `kit/ToolsRuntime.js` — the same state, the same flows (`kit/lessonFlows.js`, shared with
+  `WorldRuntime`), the same save and the same evidence (`kit/runtimeWiring.js`) — and no three.js. Only a GAME LEVEL needs
+  the world: it is loaded then, straight on that run (`?monde=1&jouer=<node>:<level>`), and the end of the run comes back
+  to the home. A brevet paper (« Espace brevet ») is sat with no world. « Ma progression », « L'échauffement » and
+  « Recommencer » stay on the world's title screen only.
+- **Everything of the training space is open from the start** (owner, 2026-11-26): « Espace brevet », every rule's games
+  (`ladder.js › nodeOpen`) and every card of « Fiche de connaissances » (`KnowledgePage.jsx`), with or without the keys of
+  the story. Inside a rule the levels still open one after the other; the summary node still waits for the first level of
+  every rule; « Ensuite » still advises the story, then the game, then the papers.
+- **A unit's LAST lesson** (kind `synthesis`, « Vers le brevet ») is NOT a world: its `index.jsx` renders
+  `features/versLeBrevet/VersLeBrevet` with the unit's own content (`brevet.js` in its folder) — a rapid revision of the
+  unit, in two presentations. It is a revision, **never evidence**: `validate-lessons` asks it for one `practice_lab`
+  module and does NOT ask that its learning point be assessed. Built for « Multiples et diviseurs » only.
+
 ## 3. Is a lesson done? — the status script and the definition of done
 
 ```bash

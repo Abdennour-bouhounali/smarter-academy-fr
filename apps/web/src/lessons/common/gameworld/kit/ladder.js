@@ -83,13 +83,15 @@ export function createLadder({ nodes, generators, isRight }) {
   }
 
   /**
-   * What is open. A node opens with its key (earned in the story, on this device or another); the summary node opens once
-   * the first level of every other node is passed. Inside a node the levels open one after the other.
+   * What is open. EVERY rule's node is open from the start, even for a student who never played the lesson's story
+   * (owner, 2026-11-26 — a node used to open with its key, earned in the story; `keys` is kept in the signature for the
+   * callers); the summary node opens once the first level of every other node is passed. Inside a node the levels open
+   * one after the other.
    * `progress` = { [levelId]: { stars, best } }.
    */
   function nodeOpen(nodeIndex, keys, progress) {
     const node = nodes[nodeIndex];
-    if (node.id !== SUMMARY) return keys.includes(node.id);
+    if (node.id !== SUMMARY) return true;
     return nodes.every((n, i) => n.id === SUMMARY || stars(progress, levelId(i, 0)) > 0);
   }
   function levelOpen(nodeIndex, level, keys, progress) {

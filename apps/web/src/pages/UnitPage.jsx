@@ -39,7 +39,7 @@ import { StatusDot, ProgressLine, minutesOf, tileKind } from '../components/stud
  * keeps THIS page.
  *
  * The plain version (owner, 2026-11-26, the same as the Algerian unit page): for the student, « Ta leçon maintenant » on
- * top — the lesson to do, « Commencer / Continuer », « Page de révision » when it has one, « Dans cette leçon » —; then
+ * top — the lesson to do, « Commencer / Continuer », « Dans cette leçon » —; then
  * the lessons as ONE list, each row with its state, « Tu es ici », « Page de révision » and its main button; the
  * « Résumé du chapitre » in the header once every lesson of the unit is complete (REVISION_PAGE.md).
  */
@@ -105,7 +105,9 @@ function LessonBlock({ lesson, index, mastery, next, t, openRequest }) {
     setOpen(true);
     row.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [openRequest, lesson.id]);
-  const revision = available && hasRevision(lesson.id);
+  // « Page de révision » is a door of the STUDENT's home of the lesson now (owner, 2026-11-26: « remove these buttons from
+  // here »); the teacher, who has no such home, keeps it on the row.
+  const revision = available && isTeacher && hasRevision(lesson.id);
   const facts = [
     points.length > 0 && t('unit.pointsCount', { count: points.length }),
     minutes != null && t('unit.minutes', { n: minutes }),
@@ -150,11 +152,7 @@ function LessonBlock({ lesson, index, mastery, next, t, openRequest }) {
           </p>
         </div>
         {revision && (
-          <Link
-            to={revisionPath(lesson.id, isTeacher ? 'enseignant' : 'espace')}
-            className={SECONDARY}
-            data-unit-revision={lesson.id}
-          >
+          <Link to={revisionPath(lesson.id, 'enseignant')} className={SECONDARY} data-unit-revision={lesson.id}>
             {t('unit.mission.revision')}
           </Link>
         )}
@@ -319,11 +317,6 @@ function NowCard({ lesson, n, total, first, t, onDetails }) {
               : t('unit.mission.startLesson')}
           <ArrowForward className="h-4 w-4" aria-hidden="true" />
         </Link>
-        {hasRevision(lesson.id) && (
-          <Link to={revisionPath(lesson.id)} className={SECONDARY} data-unit-revision={lesson.id}>
-            {t('unit.mission.revision')}
-          </Link>
-        )}
         <button type="button" onClick={onDetails} className={SECONDARY} data-unit-whats-in>
           {t('unit.mission.whatsIn')}
         </button>

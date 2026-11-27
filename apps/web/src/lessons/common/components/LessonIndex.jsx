@@ -15,16 +15,21 @@ import MathLabel from './MathLabel';
 import WorldLoading from '../gameworld/WorldLoading';
 import { TeacherPanelSkeleton } from '../../../features/classSession/TeacherSkeletons';
 import { useCatalogueHref } from '../../../components/student/catalogueLink';
+import { opensWorldNow, toolAsked } from '../../lessonEntry';
 
 // The game world and the teacher's tools are lazy chunks, never in the entry bundle (three.js).
 const LessonGameWorld = lazy(() => import('../gameworld/LessonGameWorld'));
+const LessonHome = lazy(() => import('../../../features/lessonHome/LessonHome'));
+const LessonToolsLoader = lazy(() => import('../gameworld/LessonToolsLoader'));
 const TeacherLessonPanel = lazy(() => import('../../../features/classSession/TeacherLessonPanel'));
 const LessonToolsBar = lazy(() => import('../../../features/classSession/LessonToolsBar'));
 
 /**
  * THE HOME OF A V2 LESSON (docs/architecture/LESSON_V2.md §2) — rendered by the lesson's `index.jsx`:
  *
- *   - a STUDENT plays the game world his lesson names in its pack (`lesson.pack.js › world`);
+ *   - a STUDENT lands on HIS HOME of the lesson (`features/lessonHome/LessonHome`, owner 2026-11-26): a calm page like the teacher's, the way into
+ *     the world in huge, then what the lesson has outside it (the revision page…). The game world his lesson names in its
+ *     pack (`lesson.pack.js › world`) is one step further, at `?monde=1`; leaving it comes back to this home;
  *   - a TEACHER sees one calm page: where he is, the title and his card « Pour le professeur » (TeacherLessonPanel), which holds
  *     every tool of the class session and « Essayer comme un élève » — the student's world in PREVIEW (`?apercu=eleve`, nothing is
  *     recorded or sent, CLASS_SESSION.md §2);
@@ -143,6 +148,37 @@ export default function LessonIndex({ config, basePath }) {
   const pack = lessonPackFlags(config.id);
   const previewAsStudent = viewer.freeNavigation && searchParams.get('apercu') === 'eleve' && Boolean(pack.world);
   const worldId = !viewer.freeNavigation || previewAsStudent ? (pack.world ?? null) : null;
+  // one of the lesson's tools, opened from the home WITH NO WORLD (`?outil=…`, lessonEntry.js)
+  const tool = worldId && !previewAsStudent && !opensWorldNow(searchParams) ? toolAsked(searchParams) : null;
+  if (tool) {
+    return (
+      <Suspense fallback={null}>
+        <LessonToolsLoader
+          tool={tool}
+          config={config}
+          basePath={basePath}
+          exitTo={basePath}
+          onModule={(n) => markModuleCompleted(String(n))}
+          completedModules={completedModules}
+          mastery={Object.keys(masteryStatusById ?? {}).length ? masteryStatusById : null}
+        />
+      </Suspense>
+    );
+  }
+  // the student's home first: the world opens from it (`?monde=1`), or for a teacher's preview
+  if (worldId && !previewAsStudent && !opensWorldNow(searchParams)) {
+    return (
+      <Suspense fallback={null}>
+        <LessonHome
+          config={config}
+          basePath={basePath}
+          offsetClass={chrome.contentOffsetClass}
+          completedModules={completedModules}
+          masteryStatusById={masteryStatusById}
+        />
+      </Suspense>
+    );
+  }
   if (worldId) {
     return (
       <Suspense fallback={<WorldLoading lessonId={config.id} title={config.title} />}>
@@ -150,11 +186,7 @@ export default function LessonIndex({ config, basePath }) {
           worldId={worldId}
           config={config}
           basePath={basePath}
-          exitTo={
-            previewAsStudent
-              ? basePath
-              : catalogueHref({ level: config.level, grade: config.grade, chapter: config.chapter })
-          }
+          exitTo={basePath}
           onModule={(n) => {
             if (!previewAsStudent) markModuleCompleted(String(n));
           }}

@@ -25,11 +25,12 @@ function nudgeNodes(map) {
  * its levels. The panel beside it reminds the rule and lists the levels, easiest first.
  */
 export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
-  const { ladder, journey, rules, text, practiceMap } = useLesson();
+  const { ladder, rules, text, practiceMap } = useLesson();
   const nodeMeta = (id) => (id === SUMMARY ? text.summary : rules[id]);
   // « no rule is told »: a key's name (its tablet's title) and its levels' names appear only once he holds the key
   const nameOf = (id, isOpen) => (isOpen || id === SUMMARY ? nodeMeta(id).title : KT.hidden);
-  const [space, setSpace] = useState(space0 ?? 'game');
+  // « Espace brevet » first (owner, 2026-11-26) — unless the world sends him to one node of the game
+  const [space, setSpace] = useState(space0 ?? (selFrom == null ? 'exam' : 'game'));
   const mapRef = useRef(null);
   // after every render (the names change with the keys), and again once the fonts are in (the names' widths change)
   useLayoutEffect(() => {
@@ -71,6 +72,17 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
             <div>
               <h2>{TX.hub.title}</h2>
               <div className="di-spaces" role="tablist">
+                {/* « Espace brevet » first, and the space the hub opens on (owner, 2026-11-26) */}
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={space === 'exam'}
+                  className={space === 'exam' ? 'is-on' : ''}
+                  onClick={() => setSpace('exam')}
+                  data-di-space="exam"
+                >
+                  <FileText size={16} /> {TX.spaces.exam}
+                </button>
                 <button
                   type="button"
                   role="tab"
@@ -80,16 +92,6 @@ export default function PracticeHub({ s, game, sel: selFrom, space0 }) {
                   data-di-space="game"
                 >
                   <Zap size={16} /> {TX.spaces.game}
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={space === 'exam'}
-                  className={space === 'exam' ? 'is-on' : ''}
-                  onClick={() => setSpace('exam')}
-                  data-di-space="exam"
-                >
-                  {journey.examOpen(keys, progress) ? <FileText size={16} /> : <Lock size={15} />} {TX.spaces.exam}
                 </button>
                 <span className="di-dim">{space === 'game' ? TX.spaces.gameSub : TX.spaces.examSub}</span>
               </div>

@@ -298,6 +298,36 @@ cards; the kind `scale` and the claim `scale` (ported, unused); the leg « k » 
   K1's crooked rounds (the contrapositive) and extends K1's sentence.
 - `vers-le-brevet-thales-et-triangles-semblables`: no key; the docks become mission docks with brevet problems.
 
+### 8bis. Port maps of lessons 1 and 3 (step P, 2026-11-26 — read-only inventories of `../smarter-academy-dz`; nothing built)
+
+**`triangles-semblables`** — no FR↔DZ row. DZ teaches none of P1–P4 as such: its only material is the k half of
+`talis-hisab-atwal` (🔍 `muamil-k`, always inside a Thalès figure: shared vertex, parallel sides). Port: the 🔍 forge's
+shape and use step (→ P4, P3 in part), `SCALE_INQUIRY`, the K4 tablet, cards `muamil`/`takbir`, trainer `muamil`, leg 3 of
+`run.js`, the board stations `yard`/`corner`/`name-4`, the class-test items e6–e8, p2, p5, the k questions of 15 bank sheets
+not yet used by France (l1-005, l1-007, l1-009, l2-003, l2-005, l3-001, l3-009, l4-001, l5-003, l5-005, l5-008, l5-009,
+l5-010; pure k: l1-005, l1-007, l1-009, l3-009). Cut: 19 nested-only sheets (4e), `takbir-tasghir` (k², k³ → homothétie).
+**New, with no source**: P1 (similar by proportional sides — two SEPARATE triangles; the kind `scale` fixes the frame at a
+shared vertex: a new mode), P2 (similar by equal angles — no angle tool in the world, the kit or the lab), P3 beyond the
+trivial (matching the vertices of a turned or flipped triangle). No launch family for `4e.m2.r07` (fourth proportional);
+no lab instrument. Dock 4 is already the papillon lesson's: numbers to reserve against it. France re-computes no
+class-test `check` (DZ `defaultTests.test.js`).
+
+**`reciproque-de-thales`** — DZ `aksiya-talis` (4AM, `partial`), NOT v2 (textbook modules, no world, no board, no class
+test, no walk). Port: 24 of its 50 bank sheets — 18 butterfly (l1-002, l1-004, l1-006, l1-008, l2-003, l2-005, l2-006,
+l3-001 part 1, l3-002, l3-004, l3-005, l3-009, l4-003, l4-006, l4-007, l5-003, l5-004, l5-007) and 6 on the order of the
+points (l1-001, l2-010, l3-010, l4-004, l4-010, l5-006); the lab instrument `parallel-level` (1 505 lines) with
+`packages/core/arithmetic/thales.js › converse` (France has no such file); problems masala-1 (X-trestle) and masala-3
+(tent stake on the other side) as sheets. Cut: 26 nested-only sheets, the DZ key 🔑 `wadiyat-talis`, masala-2. Reused:
+launch families `4e.m4.r04`, `4e.m1.r07`. **New**: the world piece — dock 1 « Le champ du Nil » is NESTED only, the world
+knows only `'nested' | 'butterfly'` and its `chain()` reads equal ratios as « parallel », so a butterfly canal and the
+wrong-side trap need a new figure kind (or signed positions) and new field steps; the forge and its last step (it can
+extend K1's choice tokens of the papillon lesson); the board; the class test.
+
+**Open for the owner** (asked 2026-11-26): (1) both lessons need a NEW world mechanic — the skill asks his « go », and
+this page's rule is « the world's code changes in DZ FIRST », which this session may not do (« never write in DZ »);
+(2) the contraposée (« not parallel » from unequal ratios) is in six kept sheets and in no French point; (3) P3 of
+lesson 3 asks to cite « la réciproque » by name, which « no rule told before its seal » allows only after the tablet.
+
 ### Engine changes (each in DZ FIRST, then the patch to France; the DZ lesson declares all five stages and is unchanged)
 
 | # | Change | Files | Lines (tests apart) | Owner |

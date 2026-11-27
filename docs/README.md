@@ -29,6 +29,7 @@ the interface is French and reads left to right (since 2026-11-22), and no real 
 |---|---|---|
 | What comes next: both platforms together, the lean lesson pipeline, the two tests | [`TWO_PLATFORMS_PLAN.md`](./TWO_PLATFORMS_PLAN.md) | a plan, not run |
 | The rebuild: steps, decisions, log | [`FRANCE_REBUILD_PLAN.md`](./FRANCE_REBUILD_PLAN.md) | current |
+| A unit's last lesson « Vers le brevet », in 2D: the path, what is built once, what waits for the owner | [`reports/VERS_LE_BREVET_PLAN.md`](./reports/VERS_LE_BREVET_PLAN.md) (the three looks: [`reports/mockups/vers-le-brevet-2d.html`](./reports/mockups/vers-le-brevet-2d.html)) | a plan, not validated |
 | French language, register, typography, direction, formats, content and culture rules | [`architecture/FRENCH_LANGUAGE_CONTRACT.md`](./architecture/FRENCH_LANGUAGE_CONTRACT.md) | current — applied (the web is French since 2026-11-22) |
 | The whole system (apps, API domains, auth, grades) | [`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md) | imported, corrected |
 | A v2 lesson: its pack, its folder, what the server checks, done | [`architecture/LESSON_V2.md`](./architecture/LESSON_V2.md) | imported, corrected — no lesson yet |

@@ -1106,5 +1106,7 @@ export const LESSON_KINDS = Object.freeze(['lesson', 'synthesis']);
 export const REQUIRED_STAGES_BY_KIND = Object.freeze({
   lesson: ['trigger', 'discovery', 'formalization', 'practice_lab', 'evaluation'],
   // « أدمج تعلّماتي » de l'unité 1 s'ouvre sur ses entraînements (2026-10-13) : pas de `trigger`.
-  synthesis: ['practice_lab', 'evaluation'],
+  // France, owner 2026-11-26: a unit's last lesson « Vers le brevet » is a RAPID REVISION of the unit, never evidence —
+  // it has no evaluation stage (its quiz is a self-check, nothing is sent).
+  synthesis: ['practice_lab'],
 });

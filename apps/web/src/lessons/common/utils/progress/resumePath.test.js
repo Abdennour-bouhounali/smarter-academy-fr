@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 import { getModulePath, getTotalModules, getFirstModuleNumber, getAnyRegisteredLessonId, lessonsWithPack, lessonPackFlags, getBuiltLessons } from '../../../registry';
 import { getResumeModulePath } from './getResumeLesson';
+import { getLessonById } from '@smarter-academy/core';
 import lessons6e from '@smarter-academy/core/curriculum/fr/lessons_6e_2026_2027.json';
 import lessons5e from '@smarter-academy/core/curriculum/fr/lessons_5e_2026_2027.json';
 import lessons4e from '@smarter-academy/core/curriculum/fr/lessons_4e_2026_2027.json';
@@ -95,7 +96,10 @@ describe('a v2 lesson (a world in its pack) is resumed on its home, never on a m
   it('there are v2 lessons to check', () => {
     // the fixture's v2 lesson first (it is put in front of the real index), then exactly the published lessons
     expect(worlds[0]).toBe('lecon-monde');
-    expect(worlds.slice(1).sort()).toEqual([...PUBLISHED].sort());
+    // …a unit's last lesson « Vers le brevet » apart: it is published and has no world (it is the unit's rapid revision)
+    const withWorld = PUBLISHED.filter((id) => getLessonById(id)?.kind !== 'synthesis');
+    expect(withWorld.length).toBeLessThan(PUBLISHED.length);
+    expect(worlds.slice(1).sort()).toEqual([...withWorld].sort());
     expect(paged).toBe('lecon-pages');
   });
 

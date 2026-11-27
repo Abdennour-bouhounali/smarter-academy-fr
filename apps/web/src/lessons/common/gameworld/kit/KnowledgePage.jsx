@@ -10,7 +10,7 @@
  *     own `reveals`), each turned over by a tap and then becoming the card being read; above, the trail of what was found.
  *   the MAP (« La carte des connaissances »): all the cards and their links at once, a card's content in the side panel.
  * The whole page is scaled to the screen (`useFit`): a big screen gets big text, never a small page lost in the middle.
- * Gamified: a card is locked until its key is owned, ticked once read, and a rule is sealed in gold by its memory test.
+ * Gamified: every card is open from the start (owner, 2026-11-26), ticked once read, and a rule is sealed in gold by its memory test.
  */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -73,9 +73,9 @@ function useFit() {
 
 export default function KnowledgePage({ s, game, sel }) {
   const { NODES, EDGES, ITEMS, POS, byId } = useKnowledge();
-  const keys = s.openKeys;
   const { read, sealed, trained = {} } = s.know;
-  const isOpen = (n) => keys.includes(n.requires);
+  // every card is open from the start, even before the story (owner, 2026-11-26 — a card used to wait for its key)
+  const isOpen = () => true;
   const found = s.know.found?.length ? s.know.found : [NODES[0].id];
   const [mode, setMode] = useState(() => (found.length < NODES.length ? 'discover' : 'full'));
   const discovering = mode === 'discover';

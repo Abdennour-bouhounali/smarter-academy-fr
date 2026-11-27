@@ -8,7 +8,7 @@ import { ProgressPage } from './Spaces';
 import { LessonProvider } from './LessonContext';
 import { createLadder, SUMMARY } from './ladder';
 import { createJourney, emptyExam } from './journey';
-import { KT } from './text';
+import { KT, TX } from './text';
 
 globalThis.window = globalThis.window ?? {};
 // the sound switch reads the game's store (useSyncExternalStore), which a server render cannot: it is not under test here
@@ -66,36 +66,38 @@ const render = (el) => renderToString(<LessonProvider lesson={lesson}>{el}</Less
 // renderToString escapes no accented letter, but splits adjacent text nodes with comments: compare on the bare text
 const textOf = (html) => html.replace(/<!--.*?-->/g, '');
 
-describe('a key not held yet has no name on the kit screens', () => {
-  it('the practice hub: the held node shows its name, the locked one shows the neutral label and no level name', () => {
-    const html = textOf(render(<PracticeHub s={s} game={game} />));
+// Owner, 2026-11-26: « fiche de connaissances and the training games must be open even if the student did not start yet the
+// lesson game ». These tests used to hold the opposite (a key not held had no name, « ? ? ? »).
+describe('a rule is named and open on the kit screens from the start, with or without its key', () => {
+  it('the practice hub: the node of a key not held shows its name and its levels', () => {
+    const html = textOf(render(<PracticeHub s={s} game={game} space0="game" />));
     expect(html).toContain('Nom de la première règle');
     expect(html).toContain('Course de la première manche A');
-    expect(html).not.toContain('Nom de la deuxième règle');
-    expect(html).toContain(KT.hidden);
-    // the summary node is not a rule: its name stays
+    expect(html).toContain('Nom de la deuxième règle');
+    expect(html).not.toContain(KT.hidden);
     expect(html).toContain('Défi du brevet');
   });
 
-  it('the practice hub: the panel of a locked node does not name its rule nor its levels', () => {
+  it('the practice hub: the panel of a key not held names its rule and its levels, and is not locked', () => {
     const html = textOf(render(<PracticeHub s={s} game={game} sel={1} />));
     expect(html).toContain('data-di-panel="second"');
-    expect(html).not.toContain('Nom de la deuxième règle');
-    expect(html).not.toContain('Course secrète');
-    expect(html).toContain(KT.map.locked);
+    expect(html).toContain('Nom de la deuxième règle');
+    expect(html).toContain('Course secrète A');
+    expect(html).not.toContain(KT.map.locked);
   });
 
-  it('the practice hub: once the key is held, its name appears as before', () => {
+  it('the practice hub: with the key held, nothing changes', () => {
     const html = textOf(render(<PracticeHub s={{ ...s, openKeys: ['first', 'second'] }} game={game} sel={1} />));
     expect(html).toContain('Nom de la deuxième règle');
     expect(html).toContain('Course secrète A');
   });
 
-  it('« Ma progression »: a key not earned yet is a locked row without its name', () => {
+  it('« Ma progression »: a key not earned yet is named, and its row still says it is not won', () => {
     const html = textOf(render(<ProgressPage s={s} game={game} lessonId="toy" lessonTitle="Leçon" />));
     expect(html).toContain('data-di-prow="second"');
     expect(html).toContain('Nom de la première règle');
-    expect(html).not.toContain('Nom de la deuxième règle');
-    expect(html).toContain(KT.hidden);
+    expect(html).toContain('Nom de la deuxième règle');
+    expect(html).toContain(TX.progress.notYet);
+    expect(html).not.toContain(KT.hidden);
   });
 });

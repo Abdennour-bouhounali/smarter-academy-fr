@@ -23,8 +23,13 @@ export function createJourney({ keys, ladder, levels, stages, cards }) {
   const summary = ladder.nodes.findIndex((n) => n.id === SUMMARY);
   const nodeOf = (key) => ladder.nodes.findIndex((n) => n.id === key);
 
-  /** The exam space opens once the student has PLAYED: he holds every key and the first run of each is passed. */
-  const examOpen = (held, practice) => keys.every((k) => held.includes(k)) && ladder.nodeOpen(summary, held, practice);
+  /** He has PLAYED: he holds every key and the first run of each is passed. What `nextStep` advises before the exams. */
+  const played = (held, practice) => keys.every((k) => held.includes(k)) && ladder.nodeOpen(summary, held, practice);
+  /**
+   * « Espace brevet » is OPEN FROM THE START, even for a student who never played the lesson's game (owner, 2026-11-26 —
+   * it used to wait for `played`). Its levels still open one after the other (`examLevelOpen`).
+   */
+  const examOpen = () => true;
   const examLevelsPassed = (exam) => levels.filter((l) => starsOf(exam, l.n) > 0).length;
   const nextExamLevel = (exam) => levels.find((l) => !(starsOf(exam, l.n) > 0))?.n ?? null;
 
@@ -121,7 +126,7 @@ export function createJourney({ keys, ladder, levels, stages, cards }) {
   function nextStep(state) {
     const { stage = 0, finished = false, openKeys = [], practice = {}, exam = emptyExam(), tally = {} } = state;
     if (!finished && stage < stages && openKeys.length < keys.length) return { do: 'story' };
-    if (!examOpen(openKeys, practice)) {
+    if (!played(openKeys, practice)) {
       const n = ladder.nextLevel(openKeys, practice);
       return n ? { do: 'game', node: n.node, level: n.level } : { do: 'story' };
     }

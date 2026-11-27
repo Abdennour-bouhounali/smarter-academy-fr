@@ -280,24 +280,37 @@ export function worldOf(w, page, L) {
     await page.waitForTimeout(1200);
     return label;
   };
-  /** The ✕ is CLICKED: he really leaves the lesson; he opens it again and the title offers to RESUME. */
+  /**
+   * The ✕ is CLICKED: he really leaves the WORLD and lands on his home of the lesson (owner, 2026-11-26 — it used to be
+   * the catalogue); he opens the world again and the title offers to RESUME.
+   */
   const leaveAndReturn = async (where, exits, firstLabel) => {
     const sel = await w.reachable(page, exits);
     expect(sel !== null, `${where}: the ✕ is on screen and nothing covers it (${exits.join(' / ')})`);
     await page.click(sel);
     const t0 = Date.now();
     await page
-      .waitForFunction((id) => !location.pathname.endsWith(`/${id}`) && !document.querySelector('.di-root'), L.id, {
-        timeout: 15000,
-      })
+      .waitForFunction(
+        () => !document.querySelector('.di-root') && document.querySelector('[data-lesson-home]'),
+        null,
+        {
+          timeout: 15000,
+        },
+      )
       .catch(() => {});
     const gone = await page.evaluate(() => ({
-      path: location.pathname,
+      path: location.pathname + location.search,
       world: Boolean(document.querySelector('.di-root')),
+      home: document.querySelector('[data-lesson-home]')?.getAttribute('data-lesson-home') ?? null,
+      enter: document.querySelector('[data-lesson-home-enter]')?.getAttribute('href') ?? null,
     }));
     expect(
-      !gone.path.endsWith(`/${L.id}`) && !gone.world,
-      `${where}: the ✕ leaves the lesson (${gone.path}, after ${Date.now() - t0} ms)`,
+      !gone.world && gone.home === L.id && !gone.path.includes('monde='),
+      `${where}: the ✕ leaves the world for the lesson's home (${gone.path}, home ${gone.home}, after ${Date.now() - t0} ms)`,
+    );
+    check(
+      Boolean(gone.enter) && L.url.endsWith(gone.enter),
+      `${where}: the home's huge button goes back into the world (${gone.enter})`,
     );
     await page.goto(L.url, { waitUntil: 'domcontentloaded' });
     const label = await start();

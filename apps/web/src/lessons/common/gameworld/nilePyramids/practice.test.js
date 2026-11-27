@@ -192,7 +192,8 @@ describe('a practice level on the river — the world’s hooks (Game.js)', () =
   });
 
   it('refuses a level not open, a case level, and a level while he sails or runs', () => {
-    expect(standIn().g.startPractice(1, 0)).toBe(false); // k2 not held
+    // a rule's first level is open with or without its key (owner, 2026-11-26): it is the ORDER of the levels that holds
+    expect(standIn().g.startPractice(1, 1)).toBe(false); // k2 not held: its level 2 before its level 1
     expect(standIn().g.startPractice(0, 1)).toBe(false); // level 2 before level 1
     expect(standIn({ keys: ['k1', 'k2'], practice: { 'k2:1': { stars: 1, best: 0 } } }).g.startPractice(1, 1)).toBe(
       false,

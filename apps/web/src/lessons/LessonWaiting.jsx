@@ -7,6 +7,7 @@
 import { useLearningViewer } from '../features/learning/learningViewer';
 import { lessonPackFlags } from './registry';
 import WorldLoading from './common/gameworld/WorldLoading';
+import { opensWorldNow } from './lessonEntry';
 
 /** « Essayer comme un élève »: a teacher's preview of the student's world (CLASS_SESSION.md §2). */
 const isPreview = () =>
@@ -15,7 +16,9 @@ const isPreview = () =>
 /** Will this lesson's home be its game world for whoever is looking? Same answer as `LessonIndex`, known before it loads. */
 export function useOpensWorld(lessonId) {
   const viewer = useLearningViewer();
-  return Boolean(lessonPackFlags(lessonId).world) && (!viewer.freeNavigation || isPreview());
+  if (!lessonPackFlags(lessonId).world) return false;
+  // a student lands on his home of the lesson first: the world is one step further (`?monde=1`, lessonEntry.js)
+  return viewer.freeNavigation ? isPreview() : opensWorldNow(new URLSearchParams(window.location.search));
 }
 
 export default function LessonWaiting({ lessonId, title }) {

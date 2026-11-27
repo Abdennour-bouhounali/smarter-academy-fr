@@ -1,0 +1,272 @@
+/* « la page de révision » in the 2D game look (RevisionArcade.jsx): the SAME blocks as the plain page, dressed for
+   `.vb`. The plain page's rules are scoped to `.rv`; only the `.rv-…` block classes are dressed again here. */
+
+/* ── by screens: a step flows into columns, a screen is what the window holds ── */
+.rva-screen {
+  align-items: stretch;
+  justify-items: stretch;
+}
+.rva-pager {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  column-count: 2;
+  column-gap: 28px;
+  column-fill: auto;
+}
+.rva-pager.is-wide,
+.rva-flow.is-wide {
+  column-count: 1;
+}
+/* ── in one page: the same columns, as tall as they need ── */
+.rva-flow {
+  column-count: 2;
+  column-gap: 28px;
+}
+.rva-pager > *,
+.rva-flow > *,
+.vb [data-revision-quiz] > * {
+  break-inside: avoid;
+}
+.rva-intro {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.rva-jump {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+}
+.rva-jump .vb-tile {
+  min-height: 118px;
+  padding: 12px;
+}
+.rva-jump .vb-tile b {
+  font-size: 1.05rem;
+}
+.rva-jump .vb-tile__n {
+  background: var(--bot);
+}
+.vb-sec__head .vb-tile__n {
+  background: var(--bot);
+}
+.rva-done {
+  justify-self: end;
+  border: 2px solid var(--ok);
+}
+.rva-done[aria-pressed='true'] {
+  background: var(--ok);
+  color: var(--ok-ink);
+}
+.rva-end {
+  justify-items: center;
+  text-align: center;
+}
+.rva-more {
+  display: inline-block;
+  margin-bottom: 14px;
+  border: 2px solid var(--accent);
+}
+.vb a.rva-keylink {
+  display: grid;
+  place-content: center;
+  color: var(--key-ink);
+}
+
+/* ── the blocks ── */
+.vb .rv-box,
+.vb .rv-table,
+.vb .rv-note,
+.rva-pager > p,
+.rva-flow > p {
+  margin: 0 0 14px;
+}
+.vb .rv-box {
+  background: var(--panel);
+  border: 3px solid var(--edge);
+  border-radius: 18px;
+  box-shadow: 0 4px 0 var(--shadow);
+  padding: 11px 16px 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.vb .rv-box p {
+  margin: 3px 0;
+}
+.vb .rv-box ul,
+.vb .rv-box ol {
+  margin: 4px 0;
+  padding-inline-start: 1.4em;
+}
+.vb .rv-box ul {
+  list-style: disc;
+}
+.vb .rv-box ol {
+  list-style: decimal;
+}
+.vb .rv-box--rule {
+  border-color: var(--accent);
+  border-inline-start-width: 3px;
+  background: var(--panel);
+}
+.vb .rv-box--trap {
+  border-color: var(--bad);
+  border-inline-start-width: 3px;
+  background: var(--panel);
+}
+.vb .rv-box--example {
+  border-color: var(--go);
+}
+.vb .rv-box__tag {
+  font: 400 1.1rem/1.2 var(--fd);
+  color: var(--soft);
+}
+.vb .rv-box--rule .rv-box__tag {
+  color: var(--title);
+}
+.vb .rv-box--trap .rv-box__tag {
+  color: var(--bad);
+}
+.vb .rv-box--example .rv-box__tag {
+  color: var(--go);
+}
+.vb[data-theme='light'] .rv-box--example .rv-box__tag {
+  color: #0b8f84;
+}
+.vb .rv-box__head b {
+  font: 400 1.1rem/1.2 var(--fd);
+}
+.vb .rv-box__head span {
+  padding: 1px 10px;
+  border-radius: 99px;
+  background: var(--chip);
+  color: var(--soft);
+  font-weight: 800;
+}
+.vb .rv-formula {
+  text-align: center;
+  font-size: 1.12rem;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: var(--chip);
+}
+.vb .rv-concl {
+  font-weight: 800;
+}
+.vb summary {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 14px;
+  border-radius: 99px;
+  background: var(--key);
+  color: var(--key-ink);
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.vb summary::-webkit-details-marker {
+  display: none;
+}
+.vb .rv-solution {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--ok);
+  color: var(--ok-ink);
+}
+.vb .rv-note {
+  padding: 9px 14px;
+  border-radius: 14px;
+  background: var(--chip);
+  font-weight: 700;
+}
+.vb .rv-table {
+  overflow: visible;
+}
+.vb .rv-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 3px solid var(--edge);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--panel);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+.vb .rv-table th,
+.vb .rv-table td {
+  padding: 8px 12px;
+  text-align: start;
+  vertical-align: top;
+  border-bottom: 2px solid var(--seg);
+}
+.vb .rv-table tr:last-child td {
+  border-bottom: 0;
+}
+.vb .rv-table th {
+  background: var(--key);
+  color: var(--key-ink);
+  font: 400 1.05rem/1.2 var(--fd);
+}
+.vb .rv-options {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+.vb .rv-options button {
+  text-align: start;
+  padding: 7px 14px;
+  border: 3px solid var(--edge);
+  border-radius: 14px;
+  background: var(--field);
+  box-shadow: 0 3px 0 var(--shadow);
+  font-weight: 700;
+}
+.vb .rv-options button.is-right {
+  background: var(--ok);
+  color: var(--ok-ink);
+}
+.vb .rv-options button.is-wrong {
+  background: var(--bad);
+  color: var(--bad-ink);
+}
+.vb .rv-why {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--soft);
+}
+.vb .rv-btn {
+  min-height: 0;
+  padding: 5px 16px;
+  border: 2px solid var(--accent);
+  border-radius: 99px;
+  background: var(--chip);
+  color: var(--ink);
+  font-weight: 800;
+}
+/* a figure is drawn in the brand's blue for a white sheet: it keeps its white ground */
+.vb [data-geo-figure] {
+  display: block;
+  margin: 0 auto 14px;
+  padding: 8px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* on paper the plain page prints (revision.css): this one leaves */
+@media print {
+  .vb[data-revision-arcade] {
+    display: none !important;
+  }
+}
+@media screen {
+  .rv--paper {
+    display: none;
+  }
+}
+/* the quiz is a run of questions: it breaks between them, never as one piece */
+.rva-pager > [data-revision-quiz],
+.rva-flow > [data-revision-quiz] {
+  break-inside: auto;
+}

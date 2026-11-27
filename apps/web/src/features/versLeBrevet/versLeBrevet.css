@@ -1,0 +1,1163 @@
+/* « Vers le brevet » in 2D — PROTOTYPE. One fixed screen, built for 1366×768; a dark look and its light twin.
+   Colour and motion sit on the maths (key words, lots, the copy), never beside it (VERS_LE_BREVET_PLAN.md §3). */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:wght@500;700;800&display=swap');
+
+.vb {
+  --fd: 'Lilita One', 'Space Grotesk', sans-serif;
+  --fb: Rubik, Inter, sans-serif;
+  /* dark */
+  --bg: radial-gradient(circle at 78% 6%, #3b2fa0 0, #1a1642 55%, #120f30 100%);
+  --ink: #f6f4ff;
+  --soft: #b9b4e6;
+  --panel: #26215e;
+  --edge: #0c0a24;
+  --chip: rgb(12 10 36 / 60%);
+  --seg: rgb(255 255 255 / 18%);
+  --accent: #ffd23f;
+  --title: #ffd23f;
+  --k-d: #ffd23f;
+  --k-c: #ff6fa8;
+  --k-g: #3be8d8;
+  --k-ink: #120f30;
+  --a: #ff6fa8;
+  --b: #ffb02e;
+  --tray: #120f30;
+  --tray-edge: #5a4fd0;
+  --ok: #3be8a0;
+  --ok-ink: #06281b;
+  --bad: #ff4d6d;
+  --bad-ink: #fff;
+  --key: #ffd23f;
+  --key-ink: #120f30;
+  --go: #3be8d8;
+  --field: #120f30;
+  --bot: #6f5cff;
+  --stamp: #ff6fa8;
+  --shadow: rgb(12 10 36);
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 14px 22px 16px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 500 18px/1.45 var(--fb);
+}
+.vb[data-theme='light'] {
+  --bg: linear-gradient(160deg, #eef0ff, #e3f4ff);
+  --ink: #16133a;
+  --soft: #5b5788;
+  --panel: #fff;
+  --edge: #16133a;
+  --chip: rgb(22 19 58 / 9%);
+  --seg: rgb(22 19 58 / 16%);
+  --accent: #5b3df5;
+  --title: #4a2fe0;
+  --k-d: #ffd23f;
+  --k-c: #ff9cc3;
+  --k-g: #7df0d8;
+  --k-ink: #16133a;
+  --tray: #f1efff;
+  --tray-edge: #16133a;
+  --ok: #1fbf7a;
+  --ok-ink: #fff;
+  --bad: #ff4d6d;
+  --field: #fff;
+  --stamp: #d6336c;
+  --shadow: #16133a;
+}
+.vb button,
+.vb input {
+  font: inherit;
+  color: inherit;
+}
+.vb button {
+  cursor: pointer;
+}
+.vb button:disabled {
+  cursor: default;
+}
+.vb :focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.vb h1,
+.vb h4,
+.vb p {
+  margin: 0;
+}
+.vb h1,
+.vb h4 {
+  color: inherit; /* the app's own heading colour is for its light pages */
+}
+.vb h4 {
+  font: 400 1.25rem/1.2 var(--fd);
+  margin-bottom: 6px;
+}
+
+/* ── the top bar ── */
+.vb-segs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.vb-segs i {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--seg);
+  transition: background 0.3s;
+}
+.vb-segs i.is-done {
+  background: var(--accent);
+}
+.vb-segs i.is-on {
+  background: linear-gradient(90deg, var(--accent) 45%, var(--seg) 45%);
+}
+.vb-hud__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 9px;
+  font-weight: 700;
+}
+.vb-hud__title {
+  font: 400 1.6rem/1 var(--fd);
+  margin-inline-end: 4px;
+}
+.vb-grow {
+  flex: 1;
+}
+.vb-pill {
+  padding: 5px 13px;
+  border-radius: 99px;
+  background: var(--chip);
+  border: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.vb-points b {
+  display: inline-block;
+  font: 400 1.25rem/1 var(--fd);
+  color: var(--accent);
+}
+.vb-switch {
+  display: flex;
+  padding: 3px;
+  border-radius: 99px;
+  background: var(--chip);
+}
+.vb-switch button {
+  border: 0;
+  background: none;
+  border-radius: 99px;
+  padding: 3px 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.vb-switch button[aria-pressed='true'] {
+  background: var(--key);
+  color: var(--key-ink);
+}
+
+/* ── the middle ── */
+.vb-main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.2fr);
+  gap: 16px;
+  min-height: 0;
+}
+.vb-main--one {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.vb-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+.vb-panel {
+  background: var(--panel);
+  border: 3px solid var(--edge);
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--shadow);
+  padding: 14px 18px;
+  min-height: 0;
+}
+.vb-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+.vb-count {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--soft);
+  margin-bottom: 4px;
+}
+.vb-empty {
+  color: var(--soft);
+  font-weight: 500;
+}
+.vb-statement {
+  font-size: 1.14rem;
+  line-height: 2;
+}
+.vb-kw {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 9px;
+  font-weight: 800;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--k-ink);
+  transition: background 0.2s;
+}
+.vb-kw--d {
+  background: var(--k-d);
+}
+.vb-kw--c {
+  background: var(--k-c);
+}
+.vb-kw--g {
+  background: var(--k-g);
+}
+.vb-kw.is-alert {
+  background: var(--bad);
+  color: var(--bad-ink);
+}
+.vb-fact {
+  padding: 9px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+}
+.vb-fact.is-ok {
+  background: var(--ok);
+  color: var(--ok-ink);
+}
+.vb-fact.is-bad {
+  background: var(--bad);
+  color: var(--bad-ink);
+}
+.vb-q {
+  font: 400 2rem/1.1 var(--fd);
+  color: var(--title);
+}
+
+/* sentences, choices, a classmate's lines */
+.vb-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.vb-choices--row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.vb-choice {
+  text-align: start;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--panel);
+  border: 3px solid var(--edge);
+  box-shadow: 0 4px 0 var(--shadow);
+  font-weight: 700;
+  font-size: 1.02rem;
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
+}
+.vb-choice:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--shadow);
+}
+.vb-choice.is-crossed {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+.vb-choice.is-ok,
+.vb-choice.is-sound {
+  background: var(--ok);
+  color: var(--ok-ink);
+  opacity: 1;
+}
+.vb-choice.is-faulty {
+  background: var(--bad);
+  color: var(--bad-ink);
+  opacity: 1;
+}
+
+/* the copy */
+.vb-copy {
+  flex: 1;
+  overflow: hidden;
+}
+.vb-ln {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  font-variant-numeric: tabular-nums;
+}
+.vb-ln--say {
+  margin-top: 6px;
+  padding: 7px 12px;
+  border-radius: 12px;
+  background: var(--ok);
+  color: var(--ok-ink);
+  line-height: 1.4;
+}
+
+/* ── the pictures ── */
+.vb-trays {
+  display: grid;
+  gap: 7px;
+  align-content: start;
+}
+.vb-tray {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+  padding: 6px;
+  border-radius: 11px;
+  background: var(--tray);
+  border: 2px solid var(--tray-edge);
+  align-content: start;
+}
+.vb-tray--stock {
+  grid-template-columns: repeat(36, 1fr);
+}
+.vb-tray--stock .vb-tk {
+  animation-delay: calc(var(--i) * 2ms);
+}
+.vb-tk {
+  aspect-ratio: 1;
+  max-width: 22px;
+  border-radius: 50%;
+  background: var(--a);
+}
+.vb-tk--b {
+  border-radius: 3px;
+  background: var(--b);
+}
+.vb-rest {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+.vb-rest.is-bad {
+  background: var(--bad);
+  color: var(--bad-ink);
+}
+.vb-rest .vb-tk {
+  width: 14px;
+}
+.vb-rest span {
+  margin-inline-start: 6px;
+}
+.vb-tl {
+  width: 100%;
+  max-height: 270px;
+}
+.vb-tl__axis {
+  stroke: var(--soft);
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+}
+.vb-tl__dot--a {
+  fill: var(--a);
+}
+.vb-tl__dot--b {
+  fill: var(--b);
+}
+.vb-tl__dot.is-meet {
+  fill: var(--ok);
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+.vb-tl__num {
+  fill: var(--ink);
+  font: 700 15px var(--fb);
+}
+.vb-tl__at path {
+  stroke-width: 4;
+  stroke-dasharray: 8 6;
+  fill: none;
+}
+.vb-tl__at text {
+  font: 400 19px var(--fd);
+}
+.vb-tl__at.is-ok path {
+  stroke: var(--ok);
+}
+.vb-tl__at.is-ok text {
+  fill: var(--ok);
+}
+.vb-tl__at.is-bad path {
+  stroke: var(--bad);
+}
+.vb-tl__at.is-bad text {
+  fill: var(--bad);
+}
+
+/* ── the bottom bar ── */
+.vb-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-height: 96px;
+}
+.vb-bot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.vb-robot {
+  width: 76px;
+  height: 76px;
+  flex: none;
+}
+.vb-robot__head {
+  fill: var(--bot);
+  stroke: var(--edge);
+  stroke-width: 4;
+}
+.vb-robot__eye {
+  fill: #fff;
+  transition: transform 0.2s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.vb-robot__mouth {
+  display: none;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.vb-robot[data-mood='idle'] [data-for='idle'],
+.vb-robot[data-mood='oops'] [data-for='oops'],
+.vb-robot[data-mood='think'] [data-for='think'],
+.vb-robot[data-mood='win'] [data-for='win'] {
+  display: block;
+}
+.vb-robot[data-mood='oops'] .vb-robot__eye {
+  transform: scale(1.35);
+}
+.vb-robot[data-mood='win'] .vb-robot__eye {
+  transform: scaleY(0.35);
+}
+.vb-robot[data-mood='think'] .vb-robot__eye--r {
+  transform: translateY(-5px);
+}
+.vb-bubble {
+  background: var(--panel);
+  border: 3px solid var(--edge);
+  box-shadow: 0 5px 0 var(--shadow);
+  border-radius: 18px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.vb-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.vb-key {
+  min-width: 132px;
+  height: 66px;
+  padding: 0 24px;
+  border-radius: 18px;
+  border: 3px solid var(--edge);
+  background: var(--key);
+  color: var(--key-ink) !important;
+  font: 400 1.5rem/1 var(--fd) !important;
+  box-shadow: 0 7px 0 var(--shadow);
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
+}
+.vb-key--go {
+  background: var(--go);
+}
+.vb-key:active:not(:disabled) {
+  transform: translateY(5px);
+  box-shadow: 0 2px 0 var(--shadow);
+}
+.vb-key:disabled {
+  opacity: 0.5;
+}
+
+/* ── step 2: the plain sheet ── */
+.vb-question {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.vb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.vb-list li {
+  display: grid;
+  gap: 1px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--chip);
+}
+.vb-list em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--soft);
+}
+
+/* ── step 4: on paper ── */
+
+/* ── the opening and the end ── */
+.vb-end {
+  display: grid;
+  place-content: center;
+}
+.vb-stamp {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 4px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px double var(--stamp);
+  color: var(--stamp);
+  text-align: center;
+  transform: rotate(-9deg);
+}
+.vb-stamp b {
+  font: 400 2rem/1.05 var(--fd);
+  max-width: 220px;
+}
+.vb-stamp span {
+  font-weight: 800;
+}
+.vb-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.vb-confetti i {
+  position: absolute;
+  top: -20px;
+  width: 12px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vb-tk {
+    animation: vb-pop 0.28s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+    animation-delay: calc(var(--i) * 4ms);
+  }
+  .vb-rest.is-bad {
+    animation: vb-shake 0.45s 0.4s;
+  }
+  .vb-kw.is-alert {
+    animation: vb-pulse 0.7s 3;
+  }
+  .vb-fact,
+  .vb-ln,
+  .vb-tl__at {
+    animation: vb-slide 0.3s both;
+  }
+  .vb-robot[data-mood='win'] {
+    animation: vb-hop 0.5s 2;
+  }
+  .vb-points b {
+    animation: vb-bump 0.45s;
+  }
+  .vb-stamp {
+    animation: vb-stamp 0.5s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+  }
+  .vb-confetti i {
+    animation: vb-fall 1.6s cubic-bezier(0.2, 0.6, 0.6, 1) forwards;
+  }
+}
+@keyframes vb-pop {
+  from {
+    transform: scale(0) translateY(-14px);
+  }
+}
+@keyframes vb-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vb-shake {
+  20%,
+  60% {
+    transform: translateX(-7px);
+  }
+  40%,
+  80% {
+    transform: translateX(7px);
+  }
+}
+@keyframes vb-pulse {
+  50% {
+    transform: scale(1.12) rotate(-2deg);
+  }
+}
+@keyframes vb-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+}
+@keyframes vb-hop {
+  50% {
+    transform: translateY(-12px) rotate(-6deg);
+  }
+}
+@keyframes vb-bump {
+  40% {
+    transform: scale(1.6);
+  }
+}
+@keyframes vb-stamp {
+  from {
+    transform: scale(2.2) rotate(-30deg);
+    opacity: 0;
+  }
+}
+@keyframes vb-fall {
+  to {
+    transform: translate(var(--dx), 800px) rotate(var(--rot));
+    opacity: 0.9;
+  }
+}
+
+/* ── the chapter on one screen ── */
+.vb-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.vb-map__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.vb-map__lines path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 2 12;
+  vector-effect: non-scaling-stroke;
+}
+.vb-map__link {
+  position: absolute;
+  width: 9.8%;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--accent);
+}
+.vb-tile {
+  position: absolute;
+  width: 26%;
+  height: 46%;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 14px 16px;
+  text-align: start;
+  background: var(--panel);
+  border: 3px solid var(--edge);
+  border-radius: 22px;
+  box-shadow: 0 7px 0 var(--shadow);
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
+}
+.vb-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0 var(--shadow);
+}
+.vb-tile:active {
+  transform: translateY(5px);
+  box-shadow: 0 2px 0 var(--shadow);
+}
+.vb-tile b {
+  font: 400 1.35rem/1.1 var(--fd);
+}
+.vb-tile__n {
+  display: grid;
+  place-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  font: 400 1.5rem/1 var(--fd);
+  color: #fff;
+  background: var(--tone);
+  border: 3px solid var(--edge);
+}
+.vb-tile__rule {
+  font-weight: 700;
+  font-size: 1.06rem;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+}
+.vb-tile.is-seen {
+  border-color: var(--ok);
+}
+.vb-tile.is-seen::after {
+  content: '✓';
+  position: absolute;
+  top: 12px;
+  inset-inline-end: 14px;
+  display: grid;
+  place-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ok);
+  color: var(--ok-ink);
+  font-weight: 800;
+}
+.vb-tile[data-lesson='dec'] {
+  --tone: #6f5cff;
+}
+.vb-tile[data-lesson='pgcd'] {
+  --tone: #0b9c74;
+}
+.vb-tile[data-lesson='ppcm'] {
+  --tone: #e8590c;
+}
+.vb-tile[data-lesson='irr'] {
+  --tone: #d6336c;
+}
+.vb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.vb-chips i,
+.vb-chips button {
+  font-style: normal;
+  font-size: 0.86rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 0;
+  background: var(--k-d);
+  color: var(--k-ink);
+}
+.vb-map__then {
+  position: absolute;
+  width: 26%;
+  height: 46%;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  padding: 14px 18px;
+  border: 3px dashed var(--seg);
+  border-radius: 22px;
+  color: var(--soft);
+}
+.vb-map__then b {
+  font: 400 1.4rem/1.1 var(--fd);
+  color: var(--ink);
+}
+
+/* ── one lesson on one screen ── */
+.vb-idea p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.vb-rule {
+  border-color: var(--accent);
+}
+.vb-rule p {
+  font-weight: 700;
+}
+.vb-example {
+  margin-top: 6px !important;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: var(--chip);
+}
+.vb-trap {
+  border-color: var(--bad);
+}
+.vb-trap h4 {
+  color: var(--bad);
+}
+.vb-words .vb-chips button {
+  font-size: 0.98rem;
+  padding: 6px 14px;
+  background: var(--k-g);
+  box-shadow: 0 3px 0 var(--shadow);
+}
+.vb-words .vb-chips button[aria-pressed='true'] {
+  background: var(--k-d);
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--shadow);
+}
+.vb-def {
+  margin-top: 8px !important;
+  min-height: 3em;
+  font-weight: 600;
+  color: var(--soft);
+}
+.vb-manip {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 0;
+}
+.vb-keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.vb-key--mini {
+  min-width: 84px;
+  padding: 0 16px;
+}
+.vb-key[aria-pressed='true'] {
+  background: var(--go);
+  transform: translateY(5px);
+  box-shadow: 0 2px 0 var(--shadow);
+}
+.vb-big {
+  font: 400 3.2rem/1.15 var(--fd);
+  text-align: center;
+  margin-top: 26px !important;
+}
+.vb-big__rest {
+  display: inline-block;
+  padding: 0 14px;
+  border-radius: 16px;
+  background: var(--k-c);
+  color: var(--k-ink);
+  font-weight: 400;
+}
+.vb-big--done {
+  color: var(--ok);
+  margin-top: 0 !important;
+}
+.vb-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px !important;
+}
+.vb-chain__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.vb-chain i {
+  font: 400 2.6rem/1 var(--fd);
+  font-style: normal;
+}
+.vb-frac {
+  display: inline-grid;
+  justify-items: center;
+  font: 400 2.6rem/1.15 var(--fd);
+  opacity: 0.55;
+}
+.vb-frac b {
+  font-weight: 400;
+  padding: 0 10px;
+}
+.vb-frac b + b {
+  border-top: 5px solid currentcolor;
+}
+.vb-frac.is-now {
+  opacity: 1;
+  color: var(--title);
+  font-size: 3.6rem;
+}
+
+/* ── the solved exercises and the quiz ── */
+.vb-tag {
+  display: inline-block;
+  margin-inline-end: 10px;
+  padding: 0 9px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: var(--k-g);
+  color: var(--k-ink);
+  vertical-align: 2px;
+}
+.vb-quiz {
+  width: min(980px, 100%);
+  display: grid;
+  gap: 16px;
+  padding: 26px 30px;
+}
+.vb-question {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.vb-quiz .vb-choice {
+  flex: 1;
+  min-width: 180px;
+  min-height: 74px;
+  text-align: center;
+  font: 400 1.4rem/1.2 var(--fd);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .vb-tile {
+    animation: vb-rise 0.35s both;
+  }
+  .vb-frac.is-now,
+  .vb-big__rest {
+    animation: vb-pop 0.3s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+  }
+}
+@keyframes vb-rise {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+}
+
+/* ── fitted after the first look at 1366×768 ── */
+.vb-map__link {
+  padding: 3px 6px;
+  border-radius: 10px;
+  background: var(--edge);
+  color: var(--k-d);
+  z-index: 1;
+}
+.vb[data-theme='light'] .vb-map__link {
+  color: #fff;
+}
+.vb-idea,
+.vb-rule,
+.vb-trap {
+  padding: 9px 16px 10px;
+}
+.vb-idea h4,
+.vb-rule h4,
+.vb-trap h4,
+.vb-words h4 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+.vb-idea p,
+.vb-rule p,
+.vb-trap p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.vb-def {
+  min-height: 2.8em;
+  line-height: 1.4;
+}
+.vb-stage--center {
+  justify-content: center;
+}
+
+/* ── the same revision on ONE page that scrolls (« En une page ») ── */
+.vb h2 {
+  margin: 0;
+  color: inherit;
+  font: 400 1.9rem/1.1 var(--fd);
+}
+.vb-scroll {
+  position: relative;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  align-content: start;
+  gap: 44px;
+  padding: 4px 14px 60px 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+.vb-sec {
+  display: grid;
+  gap: 14px;
+  scroll-margin-top: 4px;
+}
+.vb-sec__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.vb-sec[data-lesson='dec'] {
+  --tone: #6f5cff;
+}
+.vb-sec[data-lesson='pgcd'] {
+  --tone: #0b9c74;
+}
+.vb-sec[data-lesson='ppcm'] {
+  --tone: #e8590c;
+}
+.vb-sec[data-lesson='irr'] {
+  --tone: #d6336c;
+}
+.vb-sec .vb-main {
+  min-height: 440px;
+  padding-bottom: 8px; /* the panels' thick shadow */
+}
+.vb-sec .vb-copy {
+  min-height: 330px;
+  overflow: visible;
+}
+.vb-sec .vb-copy .vb-key {
+  margin-top: 10px;
+}
+.vb-sec .vb-quiz {
+  justify-self: center;
+}
+.vb-sec__end {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+.vb-sec__end .vb-main {
+  width: 100%;
+  min-height: 340px;
+}
+.vb-jump {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.vb-tile--flow {
+  position: relative;
+  width: auto;
+  height: auto;
+  min-height: 200px;
+}
+.vb-jump__then {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--soft);
+}
+.vb-jump__then .vb-pill {
+  color: var(--ink);
+  border: 2px solid var(--accent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .vb-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* « En une page » has no robot's bar: its sentence is written where the student has just acted */
+.vb-note {
+  padding: 9px 14px;
+  border-radius: 14px;
+  background: var(--chip);
+  font-weight: 700;
+  min-height: 3.6em;
+}
+.vb-note[data-face='win'] {
+  background: var(--ok);
+  color: var(--ok-ink);
+}
+.vb-note[data-face='oops'] {
+  background: var(--bad);
+  color: var(--bad-ink);
+}
+.vb-sec .vb-copy .vb-note {
+  margin-top: 10px;
+  min-height: 0;
+}
+.vb-totop {
+  justify-self: center;
+  border: 2px solid var(--accent);
+}
+.vb[data-mode='page'] {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .vb-note {
+    animation: vb-slide 0.3s both;
+  }
+}
+
+/* ── the frame shared by every page of the look (Shell.jsx) ── */
+.vb-segs button {
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: var(--seg);
+  transition: background 0.3s;
+}
+.vb-segs button.is-done {
+  background: var(--accent);
+}
+.vb-segs button.is-on {
+  background: linear-gradient(90deg, var(--accent) 45%, var(--seg) 45%);
+}
+.vb-pill--name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vb a.vb-pill,
+.vb a.vb-key {
+  color: inherit;
+  text-decoration: none;
+}
+.vb-hud__title {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex: 0 1 auto;
+}
+.vb-hud__row > .vb-pill,
+.vb-hud__row > .vb-switch {
+  flex: none;
+}
+.vb-hud__row > .vb-pill--name {
+  flex: 0 1 auto;
+}
+.vb-switch button {
+  white-space: nowrap;
+}
+.vb-sec {
+  grid-template-columns: minmax(0, 1fr);
+}
+.vb a.vb-home {
+  border: 2px solid var(--accent);
+  flex: none;
+}

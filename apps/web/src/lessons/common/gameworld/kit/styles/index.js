@@ -5,6 +5,7 @@
  * each screen for a phone held sideways). A new sheet is added at its place in this list, never imported from a screen.
  */
 import './world.css'; // the HUD, the glass panels, the dash, the overlays, the title screen, the prompts in the world
+import './tools.css'; // the lesson's tools opened with no world: their ground
 import './practice.css'; // a run of the practice game, its map, the guidance card, the result of a run
 import './knowledge.css'; // « fiche de connaissances »: the full page
 import './cases.css'; // the screen of a real-world case
