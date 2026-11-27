@@ -1,0 +1,276 @@
+{
+  "id": "ex-3e-triangles-semblables-l3-007",
+  "lessonCode": "triangles-semblables",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un triangle retourné, reconnu par ses angles",
+    "estimatedMinutes": 6,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ ne sont pas dans la même position, et $DEF$ est retourné. On connaît $\\widehat{A} = 30^\\circ$ et $\\widehat{B} = 70^\\circ$ pour $ABC$, ainsi que $\\widehat{D} = 80^\\circ$ et $\\widehat{E} = 30^\\circ$ pour $DEF$.",
+    "figure": {
+      "points": {
+        "A": [
+          -3.8264,
+          0.9228
+        ],
+        "B": [
+          -0.8264,
+          0.9228
+        ],
+        "C": [
+          -1.3471,
+          2.3543
+        ],
+        "D": [
+          3.1508,
+          -1.5133
+        ],
+        "E": [
+          0.4605,
+          -2.4925
+        ],
+        "F": [
+          2.3887,
+          -0.1942
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "C",
+          "label": "30°"
+        },
+        {
+          "at": "B",
+          "from": "A",
+          "to": "C",
+          "label": "70°"
+        },
+        {
+          "at": "D",
+          "from": "E",
+          "to": "F",
+          "label": "80°"
+        },
+        {
+          "at": "E",
+          "from": "D",
+          "to": "F",
+          "label": "30°"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF ; ABC porte 30° en A et 70° en B, DEF porte 80° en D et 30° en E.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule la mesure de l’angle $\\widehat{F}$, en degrés.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "70",
+      "answerFormat": "Un nombre entier de degrés",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quelle est la somme des angles d’un triangle ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retranche à 180 les deux angles connus de $DEF$."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 - 80 - 30 = 70$.",
+        "incorrect": "La somme des trois angles d’un triangle est de 180° : retranche les deux angles connus."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{F} = 180 - 80 - 30 = 70^\\circ$."
+        ],
+        "result": "70^\\circ"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-TROISIEME-ANGLE",
+          "value": "250"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel sommet de $DEF$ est l’homologue de $B$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "B",
+          "content": "$E$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        },
+        {
+          "id": "C",
+          "content": "$F$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Deux sommets homologues portent des angles égaux."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Cherche le sommet de $DEF$ dont l’angle vaut celui de $B$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{B} = 70^\\circ = \\widehat{F}$ : $B$ et $F$ sont homologues.",
+        "incorrect": "Ne te fie pas à l’ordre des lettres : compare les angles."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{B} = 70^\\circ$ et $\\widehat{F} = 70^\\circ$.",
+          "$B$ et $F$ portent le même angle : ils sont homologues."
+        ],
+        "result": "F"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Quel côté de $DEF$ est l’homologue de $[AC]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$[DE]$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$[EF]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "C",
+          "content": "$[FD]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les extrémités du côté homologue sont les homologues des extrémités de $[AC]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Tu connais déjà l’homologue de $B$ ; cherche ceux de $A$ et de $C$ avec leurs angles."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ et $E$ portent $30^\\circ$, $C$ et $D$ portent $80^\\circ$ : l’homologue de $[AC]$ est $[ED]$, c’est-à-dire $[DE]$.",
+        "incorrect": "Cherche d’abord l’homologue de chaque extrémité de $[AC]$ avec les angles, puis relie-les."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{A} = 30^\\circ = \\widehat{E}$ : $A$ et $E$ sont homologues.",
+          "$\\widehat{C} = 80^\\circ = \\widehat{D}$ : $C$ et $D$ sont homologues.",
+          "L’homologue de $[AC]$ est donc $[ED]$."
+        ],
+        "result": "[DE]"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

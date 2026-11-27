@@ -111,6 +111,14 @@ returns the quests the state has just proved. Nothing is ticked before the stude
 
 ### The instruments (the fifteen Algerian ones untagged; `factor` tagged)
 
+**`similar` « Les deux triangles »** (2026-11-27, tagged `lesson: 'triangles-semblables'`; `lessonlab/similar.js` and its
+instrument, tests `similar.test.js`, `similar.render.test.jsx`): two triangles APART — ABC from « Mes nombres » (AB, AC),
+C dragged; DEF scaled by k (0,25 → 3), turned, flipped, its names moved round. It writes the three ranked sides' quotients
+and the quotients « par les noms » UNEVALUATED (« 7,5 ÷ 5 », « = / ≠ »), the angles of each, and lays DEF on ABC: « il le
+recouvre exactement » or not (exact fractions). « Essaie »: a reduction that covers; one equal angle that does not; a
+turned DEF that covers while its sides linked by the names give unequal quotients. No rule sentence. Seen once at
+1366×768 (nothing cut).
+
 **`rope` « La corde et le triangle » — its mathematics crossed, the instrument is Planned** (2026-11-24, commit
 `784f483a`). On the Algerian platform it is the first instrument drawn by `GeoFigure`: a triangle ABC whose sides from A
 are knotted ropes AB = a and AC = b (whole metres, 2 to 30), a knot M on [AB] and a knot N on [AC] moved by the hand; the

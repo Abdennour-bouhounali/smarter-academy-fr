@@ -1,0 +1,259 @@
+{
+  "id": "ex-3e-triangles-semblables-l5-010",
+  "lessonCode": "triangles-semblables",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un logo et sa bâche",
+    "estimatedMinutes": 10,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l5-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Défi",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Le logo d’un club de basket est un triangle $ABC$. La bâche du gymnase est un agrandissement de ce logo, de coefficient $k = 25$. Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Pour $ABC$ : $AB = 3{,}6$ cm, $BC = 5{,}4$ cm et $CA = 4{,}2$ cm. Les triangles $ABC$ et $DEF$ sont semblables ; les sommets homologues sont $A$ et $D$ ; $B$ et $E$ ; $C$ et $F$.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.4787,
+          0.4674
+        ],
+        "B": [
+          -0.5468,
+          0.9851
+        ],
+        "C": [
+          -2.9746,
+          2.7475
+        ],
+        "D": [
+          2.9707,
+          -1.7956
+        ],
+        "E": [
+          2.2867,
+          0.0838
+        ],
+        "F": [
+          0.7426,
+          -2.4883
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3,6"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "5,4"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "4,2"
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule la longueur $EF$ sur la bâche, en centimètres.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "135",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[EF]$ est $[BC]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[BC]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = k \\times BC = 25 \\times 5{,}4 = 135$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[EF]$ est l’homologue de $[BC]$.",
+          "$EF = k \\times BC = 25 \\times 5{,}4 = 135$ cm."
+        ],
+        "result": "EF = 135"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "0,216"
+        }
+      ],
+      "timeSeconds": 110
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule la longueur $FD$ sur la bâche, en mètres.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,05",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté $[FD]$ est l’homologue de $[CA]$ : multiplie par $k$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Convertis ensuite les centimètres en mètres."
+        }
+      ],
+      "feedback": {
+        "correct": "$FD = 25 \\times 4{,}2 = 105$ cm, soit $1{,}05$ m.",
+        "incorrect": "Pense à la conversion : 100 cm font 1 m."
+      },
+      "solution": {
+        "lines": [
+          "$[FD]$ est l’homologue de $[CA]$.",
+          "$FD = k \\times CA = 25 \\times 4{,}2 = 105$ cm, soit $1{,}05$ m."
+        ],
+        "result": "FD = 1{,}05"
+      },
+      "timeSeconds": 110
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule le périmètre de la bâche $DEF$, en centimètres.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "330",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le périmètre est la somme des trois côtés de $DEF$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule d’abord les côtés qui ne sont pas donnés, en utilisant le coefficient $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 + 135 + 105 = 330$ cm.",
+        "incorrect": "Additionne bien les trois côtés du triangle, chacun une seule fois."
+      },
+      "solution": {
+        "lines": [
+          "$90 + 135 + 105 = 330$ cm."
+        ],
+        "result": "330"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "On borde 12 bâches de ce modèle avec du ruban qui coûte $1{,}20$ € le mètre. Calcule le prix du ruban nécessaire.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "47,52",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le prix s’obtient en multipliant la longueur nécessaire par le prix d’un mètre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Vérifie d’abord la longueur totale à acheter."
+        }
+      ],
+      "feedback": {
+        "correct": "$39{,}6 \\times 1{,}2 = 47{,}52$ €.",
+        "incorrect": "Multiplie la longueur totale, en mètres, par le prix d’un mètre."
+      },
+      "solution": {
+        "lines": [
+          "Périmètre d’une bâche : $90 + 135 + 105 = 330$ cm, soit $3{,}3$ m ; pour 12 bâches : $12 \\times 3{,}3 = 39{,}6$ m.",
+          "$39{,}6 \\times 1{,}2 = 47{,}52$ €."
+        ],
+        "result": "47{,}52"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

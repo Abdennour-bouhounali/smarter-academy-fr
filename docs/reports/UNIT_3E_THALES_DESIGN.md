@@ -328,6 +328,220 @@ this page's rule is « the world's code changes in DZ FIRST », which this sessi
 (2) the contraposée (« not parallel » from unequal ratios) is in six kept sheets and in no French point; (3) P3 of
 lesson 3 asks to cite « la réciproque » by name, which « no rule told before its seal » allows only after the tablet.
 
+## Lesson 1 — `triangles-semblables` — « Reconnaître des triangles semblables » — design v4 (2026-11-27, after gate A's third reading)
+
+**BUILT 2026-11-27** — every walk green at 1366×768 (story 1 276, hub 279, trainer 543, board 310, launch 179, sitting 2 633), gate B « go » on its second reading. Gate A read this design three times (« back to design » each time; v1: 3 blocking, 6 notes; v2: 3 blocking, 6 notes;
+v3: 2 blocking, 5 notes) — all answered at the end. Owner, 2026-11-26: the new world pieces are built **in France only**. Every number is computed exactly
+by `reports/ts-numbers.py` of the session's scratch folder (« every line ok »), and **every SCREEN** (all the numbers one
+screen shows together) passes the unit's collision rule (§ 3) by `reports/ts-pairs.py`; the set was found by
+`reports/ts-search3.py`, which searched templates and angles screen by screen. Nothing is built.
+
+**What binds**: `3e.m4.r04` (« une définition et une propriété caractéristique »), `3e.m2.r09`; P1 sides proportional,
+P2 equal angles, P3 homologous vertices and sides (⇐ P1, P2), P4 a length from the ratio (⇐ P3).
+
+**§0ter — what he holds, what is new.** He holds (4e, measured by the launch kit: `4e.m2.r09` FIGURE_RATIO, `4e.m4.r04`,
+and a NEW family `4e.m2.r07`, the fourth proportional): enlargement and reduction by k, Thalès in nested triangles —
+two triangles that SHARE a vertex, so the figure gives him which vertex goes with which. **New**: two triangles that
+share NOTHING — apart, turned, flipped; « have they the same shape? » answered by their sides or by their angles; and the
+pairing the shared vertex used to give for free (P3). The DZ k material (Thalès-bound) brings only its use step's shape
+and its trainer, rebuilt (port map § 8bis).
+
+**Checklist A, item 5 — what he holds when each forge opens.** K1: the yard's world steps (the rope up a face's edge,
+courses cut to it: his 4e reduction), and the template; no word « semblable ». K2: K1 sealed — « semblables » and
+« homologues » are his words (K1's tablet); the route forces K1 before K2 (stages in order). The mission: K1 and K2.
+
+**Checklist A, item 0 — why no situation of the world replaces each experiment.** Dock 2's world steps are courses on a
+face (nested), dock 4's are « × k » from the summit (nested): both keep a shared vertex, the very help this lesson
+removes. So each dock's steps play as the world's scenery with the lesson's sentences, and each forge's evidence is a 2D
+experiment at the masons' table, where the triangles lie APART.
+
+**Docks**: `story.stages = ['workshop', 'summit', 'plateau']`. The docks' steps keep the WORLD's numbers — dock 2: the
+face's base 99, courses 10 and 20, the row 55, and the edge 90 (shown in France for the first time); dock 4: 99, 2,75,
+k = 1/36, as in the papillon lesson. **Disclosed as world geography** (as § 3 discloses 104, 52, 115): (10 ; 20) stands
+on several arithmetic sheets, (99 ; 2,75) is the papillon lesson's own dock; none of them is ever on a screen with a
+number of this lesson's forges or mission. The capstone stays « the same shape as the pyramid » (gate A 2nd, D3: no
+`story.summit` option — T4 is dropped).
+
+### K1 `cotes-proportionnels` — dock 2 (P1, P3)
+
+The masons trace triangles on the yard's sand before cutting (metres). The TEMPLATE T: 2 ; 3 ; 3,8 m. **New kind `pair`**
+(2D only: `nilePyramids/pair.js`, `InquiryPair.jsx`): T and a traced triangle drawn APART, turned or flipped. He predicts
+**« ce tracé a la forme du gabarit » · « il ne l'a pas »**. **The links, round by round** (gate A 3rd, D1):
+SIM, RED, ONE, DIFF — the world lays the FIRST link itself, between the two shortest sides, and he links the two others;
+TURN — the world shows a mason's links AS GIVEN (« un maçon a lié les côtés dans l'ordre de leurs noms »), then he relinks
+freely. **No quotient is evaluated on screen** (gate A 3rd, D2): each link is written « 4,5 ÷ 2 », and the world marks
+the three with « = » or « ≠ » between them; « avec ces liens : attendu … , mesuré … » writes only LENGTHS (one of the
+tracé, one × the first link's quotient, which is a length of the screen in every round). « Attendu / mesuré » is written in SIM, RED, ONE, DIFF only (the first link the world's, so every « attendu » is
+in the screen's checked set: 4,5 ; 5,7 or 1,5 ; 1,9); in TURN only the « = / ≠ » marks. So a screen shows only the
+lengths of its two triangles and those « attendu », all run by `ts-pairs.py`. **The verdict on the shape is the WORLD's own**, independent of his links (gate A 2nd,
+D1): it scales the tracé, turns or flips it, and lays it onto T — it covers T exactly, or it does not. A mislinked tracé
+that HAS the shape gets « ≠ » from his links AND the world's « il a la forme »: that clash refutes the tile « dans l'ordre
+des noms ».
+
+Rounds (m): SIM 4,5 ; 5,7 ; 3, turned (k = 3/2): the shape. RED 1,5 ; 1 ; 1,9, flipped (k = 1/2, a REDUCTION): the shape.
+ONE 3 ; 4,5 ; 5,1 — by size « attendu 4,5 ; 5,7 — mesuré 4,5 ; 5,1 »: not the shape. DIFF 3 ; 4 ; 4,8 — every side 1 m
+longer, « attendu 4,5 ; 5,7 — mesuré 4 ; 4,8 »: not the shape. TURN — SIM again, its sides NAMED so that linking in the
+order of the names pairs 2 → 4,5, 3 → 5,7, 3,8 → 3: « 4,5 ÷ 2 ≠ 5,7 ÷ 3 ≠ 3 ÷ 3,8 » — and the world lays it: the
+shape. He relinks by size: « = = ».
+
+Tiles — « Deux triangles ont la même forme quand [condition] »: les quotients des côtés rangés du plus petit au plus grand
+sont égaux ✓ · deux des trois quotients sont égaux (ONE) · les côtés ont la même différence (DIFF) · les quotients pris
+dans l'ordre des noms sont égaux (TURN). Last step (P1 + P3 + P4; choice tokens and fraction boxes as K1 of the papillon
+lesson): a tracé MNP, turned, **its three sides marked « court · moyen · long » by the world and only [MN] = 12 m written,
+marked « moyen »** (gate A 2nd, D6) → he pairs [MN] with the middle side of T (3), writes k = 12/3 = 4 and the two other
+sides 8 and 15,2. Tablet (after the seal): « Deux triangles sont **semblables** quand les longueurs de leurs côtés sont
+proportionnelles : on range les côtés de chacun du plus petit au plus grand, et les trois quotients sont égaux. Les côtés
+associés sont **homologues**. Si k < 1, c'est une réduction. »
+
+**Screen budget (1366×768, nothing scrolls — gate A 2nd, D9)**: the two triangles side by side (≈ 300 px each), three
+link chips under them, ONE line of three quotients, ONE line « attendu / mesuré », the prediction's two buttons and the
+world's verdict in the forge's own bar. **K2** (gate A 3rd, D5): the two triangles side by side, the protractor over the
+one being measured, ONE line per triangle « … ° ; … ° ; 180° − … = … ° », the pair of sides of R1, the slide drawn over
+the triangles (no panel of its own). **The mission card**: the figure (stick and palm, apart, their shadows) on the left,
+the four gated steps on the right, one line each, the next shown only when the one before is right. The brief states each
+budget; the walk measures it.
+
+### K2 `angles-egaux` — dock 4 (P2, P3)
+
+**New kind `angles`** (2D: `nilePyramids/angles.js`, `InquiryAngles.jsx`): two triangles apart; he sets a protractor on an
+angle of each (whole degrees); after two angles of a triangle the world writes its third (« 180° − … », the world's
+arithmetic on screen, never a tile; **180 is a constant of the world, like the integers under 10, not a tracked
+number** — disclosed: (180 ; 27) and (180 ; 55) stand on arithmetic and papillon sheets, gate A 3rd, D3). If he says « même forme », the world slides one onto the other, scaled by the
+quotient of the ONE pair of sides it writes (opposite the equal angles).
+
+Rounds: R1 the face 27° ; 41° and a block 27° ; 41° → 112° both; the sides opposite 112°: 6 and 8 → k = 4/3: it covers —
+the same shape, not the same size. R2 27° ; 41° against 27° ; 55° → 98°: one equal angle, another shape. R3 a block whose
+angles « are the face's × 1,25 », **drawn by the world** (33,75° ; 51,25° ; 140°, gate A 2nd, D5): 225° — the world cannot
+close it. R4 two sides proportional (4 ; 6 against 6 ; 9) with the angle between them 27° against 41°, **no protractor in
+R4** (the world writes only that angle): **the slide fails, no third side is written** (gate A 2nd D5, 4th note 4).
+
+Tiles — « Deux triangles sont semblables quand [condition] »: deux angles de l'un sont égaux à deux angles de l'autre ✓ ·
+un angle est le même (R2) · les angles de l'un sont ceux de l'autre multipliés par un même nombre autre que 1 (R3 —
+gate A 3rd, D6) · deux côtés de l'un
+sont proportionnels à deux côtés de l'autre (R4). Last step (P3): two triangles with equal angles, apart and flipped: he
+links each VERTEX to its homologous vertex (by its angle), then names the side homologous to a given side (opposite the
+equal angle). Tablet: « Si deux angles d'un triangle sont égaux à deux angles d'un autre triangle, alors ces deux
+triangles sont semblables. Le troisième angle est égal aussi : la somme des angles d'un triangle vaut 180°. »
+
+### The mission — the plateau, a date palm (P2 + P3 + P4)
+
+Not the Great Pyramid (146 is the papillon mission's): **a date palm** of the plateau (`scenery.js › makePalm`), at another
+hour (the story's sun, tan 4/5). The card: « Un bâton vertical de 1,6 m porte une ombre de 2 m. Au même moment, l'ombre du
+palmier mesure 21 m. Quelle est sa hauteur ? » The two triangles stand APART (no B5 slide). The card's steps, each
+**opening only when the one before is right** (gate A 2nd, D4): the two equal angles (the right angle, marked by the square, **never « 90° »** — gate A 3rd, D4 —, and the sun's
+angle — choice tokens: K2), the pairing of the vertices and of the sides (P3), k = 21 / 2 = 10,5 (K1's quotient), then h = 16,8 m.
+Distractor: the pairing inverted, 21 × 2 / 1,6 = 26,25 m. Zero rises to the palm's h (top · below · above).
+
+### World options (France only, owner 2026-11-26)
+
+| # | Option | Where | Size |
+|---|---|---|---|
+| T1 | the kind `pair` (2D) | `nilePyramids/pair.js`, `InquiryPair.jsx`, `KIND_TEXT.pair`, tests | new, ~400 lines |
+| T2 | the kind `angles` (2D, a protractor) | `nilePyramids/angles.js`, `InquiryAngles.jsx`, `KIND_TEXT.angles`, tests | new, ~500 lines |
+| T3 | the plateau's sun and measured object from the story (`story.plateau: { tan, object: 'palm', h, slide: false }`; default: the Great Pyramid, tan 2/3, the slide — the papillon lesson unchanged) | `Game.js` (3D, main session), `logic.js` | 60–120 |
+
+### Numbers (v4) — every SCREEN, pairwise (`ts-pairs.py`)
+
+| Screen | Numbers shown together | |
+|---|---|---|
+| K1 SIM / TURN | 2, 3, 3,8 · 4,5, 5,7, 3 (quotients written « 4,5 ÷ 2 », never evaluated) | CLEAR |
+| K1 RED | 2, 3, 3,8 · 1, 1,5, 1,9 | CLEAR |
+| K1 ONE | 2, 3, 3,8 · 3, 4,5, 5,1 · attendu 5,7 | CLEAR |
+| K1 DIFF | 2, 3, 3,8 · 3, 4, 4,8 · attendu 4,5, 5,7 | CLEAR |
+| K1 last step | 2, 3, 3,8 · 12 → 4, 8, 15,2 | CLEAR |
+| K2 R1 · R2 · R3 · R4 | 27, 41, 112, 6, 8 · + 55, 98 · + 1,25, 33,75, 51,25, 140, 225 · 27, 41, 4, 6, 9 | CLEAR each |
+| mission | 1,6, 2, 21, 10,5, 16,8 · 26,25 | CLEAR |
+| docks 2 and 4 (world) | 99, 10, 20, 55, 90 · 99, 2,75 | disclosed above |
+
+The k of the lesson: 3/2 (SIM), 1/2 (RED), 4 (K1 last step), 4/3 (K2 R1), 10,5 (mission) — no two screens share one but
+SIM, ONE and DIFF, which compare to the SAME template on purpose (gate A 2nd, D7). 16,8 is the palm only.
+
+### Bank, satellites, item 9 (gate A 2nd, D8)
+
+- **Weights**: P1 ← K1 (its rounds, its tiles, its last step); P2 ← K2; P3 ← both last steps and the mission's pairing;
+  P4 ← K1's last step, the mission and the bank. Bank `content/practice/3e/triangles-semblables/`, 50 sheets, 10 per
+  palier: **brevet part 1** (automatismes) carries P1 and P2 (recognise, from sides or angles), **part 2** (problems)
+  carries P3 and P4 (pair, then compute), about 25 / 25 as the papillon bank. Ported: the k questions of the 15 DZ sheets
+  (§ 8bis), rewritten on two separate triangles; new: P1, P2, P3 items (no DZ source).
+- Class test: DZ e6–e8, p2, p5 ported; new items for P1–P3. Launch kit: `4e.m2.r09`, `4e.m4.r04` (exist), a NEW family
+  `4e.m2.r07`. Lab: none. Board: DZ stations `yard`, `corner`, `name-4` rebuilt on separate triangles.
+
+### The walk's outline (v4)
+
+K1: the tiles above; SIM, RED, TURN « the shape » (TURN's linked-by-names quotients unequal), ONE, DIFF « not »; the last
+step 4, 8, 15,2. K2: R1 covers, R2 does not, R3 does not close, R4's slide fails; the last step's three vertex links and
+the side. The story's wrong first try: TURN linked by the names (unequal quotients, yet the world lays it), then by size.
+The mission: the inverted pairing 26,25 (Zero above), then 16,8. The launch's tool: the fourth proportional.
+
+### Gate A, first reading, answered
+
+| # | Defect | Answer |
+|---|---|---|
+| D1 | the mission was the papillon's (146, B5 slide) | a palm, the story's sun tan 4/5, h = 18, no slide; angles, pairing, k asked in order; distractor 28,125 (T3) |
+| D2 | K1's facts not computed, partly wrong | predict « a la forme / ne l'a pas »; the fact is « attendu / mesuré » per side, computed by the script |
+| D3 | two K2 tiles unrefuted | tiles « × un même nombre » (R3, 270°) and « deux côtés proportionnels » (R4) |
+| D4 | K2's sides impossible | one pair of sides written only (opposite the equal angles) |
+| D5 | no reduction | RED, k = 3/4, flipped |
+| D6 | « un quotient est le même » vague | « deux des trois quotients sont égaux », refuted by ONE |
+| D7 | items 0 and 5 unanswered | answered above |
+| D8 | dock 4 replays the papillon's numbers | T4: the story sets them |
+| D9 | 17,5 not free | gone; every figure run pair by pair |
+| Q1–Q4 | | both kinds kept; T3; no third key, P3 has its own bank and class-test items; the title keeps « semblables » |
+
+
+### Gate A, second reading, answered
+
+| # | Defect | Answer |
+|---|---|---|
+| 1 | K1's verdict came from HIS links | the world's own superposition decides the shape; his links only yield their quotients (fractions when needed) and « attendu / mesuré »; the shortest link first |
+| 2 | R3 clashed on its screen (31 ; 46,5), (1,5 ; 84) | new angles 27°, 41° (112°), R2 55°, R3 × 1,25; every screen run whole, CLEAR |
+| 3 | docks 2 and 4 had no numbers | the world's numbers kept and disclosed (as § 3 does); T4 dropped, the capstone keeps the pyramid's shape |
+| 4 | the mission winnable without the lesson | each step opens only when the one before is right: angles, pairing, k, h |
+| 5 | R4 wrote sides; R3 not whole degrees | R4: the failed slide only; R3: the world draws the angles |
+| 6 | how he knows [MN] is the middle side | the world marks the tracé's sides « court · moyen · long », [MN] « moyen » |
+| 7 | repeated k and 18 | k: 3/2, 1/2, 4, 4/3, 11,25; [MN] = 12, the palm 18 |
+| 8 | item 9 | weights and brevet parts above |
+| 9 | item labels swapped; screen budget | labels corrected; K1's screen budget written |
+
+### Gate A, third reading, answered
+
+| # | Defect | Answer |
+|---|---|---|
+| 1 | K1's linking contradictory (forced shortest first vs TURN by names) | per round: the world lays the first link in SIM, RED, ONE, DIFF; in TURN it shows a mason's links by the names as given, then he relinks |
+| 2 | the evaluated quotients clashed (1,5 ; 4,5), (10 ; 15), (38 ; 51), (19 ; 24) | no quotient evaluated: « 4,5 ÷ 2 » with = / ≠; every screen shows lengths only — CLEAR |
+| 3 | 180 on K2's screens | a constant of the world, disclosed |
+| 4 | « 90° » beside 18 | the right angle marked by the square, never « 90° » |
+| 5 | budgets for K2 and the mission | written |
+| 6 | R3's tile true for 1 | « autre que 1 » |
+| 7 | `story.stages` depends on W2, not built | already built: `logic.js › stageRoute`, read by `Game.js` (the papillon lesson plays `['river', 'summit', 'plateau']`) |
+
+### As built (2026-11-27) — what changed from this page while building
+
+- **The mission's numbers**: the rope ties only on a whole number of metres (`gestures.js › tied`), so the palm's
+  shadow 22,5 m could never be measured. Now: the stick 1,6 m casts 2 m (the same sun, tan 4/5), the palm's shadow
+  **21 m**, k = **10,5**, h = **16,8 m**, the inverted pairing **26,25 m** — the screen run whole through `ts-pairs.py`:
+  CLEAR (found by `reports/ts-search4.py`). The board's template station moved off 21: 2 ; 7,5 ; 8 → 2,4 ; 9 ; 9,6 (k = 6/5).
+- **World, France only**: `story.plateau` (the sun, a date palm, no slide — `nilePyramids/plateau.test.js`); a story
+  without `box` ENDS with its mission; the mission card reads `lines(vals)` (its lines open one by one); the kinds `pair`
+  and `angles` registered in `Inquiry.jsx`; `forgeParts.jsx` draws a case that carries its own scene (two triangles apart).
+- **« Mon labo »**: an instrument of its own, `similar` « Les deux triangles » (the design said « none »; the status
+  requires one).
+- **Bank**: one sheet was false (l1-009 gave only Â for ABC and wrote « 180 − 40 = 70 »): it now gives Ĉ = 70° too.
+  The shared test helper `kit/authoring/test/bank.js` no longer counts a time limit or a misconception signature's
+  value as a number the sheet shows.
+
+### Gate A, fourth reading — « go » (2026-11-27), with notes the briefs carry
+
+| # | Note | Where it goes |
+|---|---|---|
+| 1 | the mission's distractor was unreachable | the pairing step, when inverted, PLAYS its consequence (Zero rises to 26,25, above the palm) and then refuses; the walk checks it |
+| 2 | « 180° − … = … » could show a sum (68 ; 41 clash) | always « 180° − 27° − 41° = 112° », never the partial sum |
+| 3 | rounds together clash | ONE round per screen: no recap or log of earlier rounds beside the current round or the tiles (forge brief, walk) |
+| 4 | R4's other angles not whole | no protractor in R4: the world writes only the angle between the two sides; its pairs stay (4 ; 6) and (6 ; 9): every other pair tried, (10 ; 15), (12 ; 18), (8 ; 12), clashed with the arithmetic sheets; (6 ; 9) is CLEAR |
+| 5 | K2's last step had no numbers | its angles 27°, 41°, 112°, sides named by letters only — CLEAR |
+| 6 | rule named before the seal | the key ids never shown as titles before the seal; the world's first link is captioned « premier lien », never « le plus petit avec le plus petit » |
+| 7 | labels | items 0 / 5 corrected; « (v4) » |
+
 ### Engine changes (each in DZ FIRST, then the patch to France; the DZ lesson declares all five stages and is unchanged)
 
 | # | Change | Files | Lines (tests apart) | Owner |

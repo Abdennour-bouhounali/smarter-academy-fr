@@ -4,7 +4,7 @@
 > Contrat et règles : [`docs/architecture/LEARNING_NET.md`](../architecture/LEARNING_NET.md).
 > Données : `packages/core/curriculum/fr/net/`.
 
-**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **6** leçons publiées · **54** leçons prévues (13 unités).
+**108** items du programme officiel · **15** séquences · **17** fils conceptuels · **113** liens (9 consolidates, 78 requires, 26 extends) · **7** leçons publiées · **53** leçons prévues (13 unités).
 
 Légende des liens : `requires` (requiert) — prérequis, lien de révision ; `extends` (prolonge) — même notion plus loin dans la spirale, la leçon n’enseigne QUE la valeur ajoutée ; `consolidates` (consolide) — le programme répète l’item, la leçon le rappelle sans le reconstruire.
 
@@ -598,7 +598,7 @@ Prérequis venus d’autres fils : `3e.m2.r06`.
 | `3e.m2.r06` | Il fait le lien entre stabilisation des fréquences et probabilités. | `frequence-et-probabilite` _(prévue)_ | `3e.m2.r04`, `3e.m2.r03` |
 | `3e.m2.r07` | Il utilise le lien entre pourcentage d’évolution et coefficient multiplicateur. | `pourcentage-d-evolution` _(prévue)_ | `5e.m2.r04`, `4e.m2.r07` |
 | `3e.m2.r08` | Il modélise une situation de proportionnalité à l’aide d’une fonction linéaire. | `fonction-lineaire` _(prévue)_ | prolonge `4e.m2.r08`, `3e.m2.r15` |
-| `3e.m2.r09` | Il résout des problèmes en utilisant la proportionnalité dans le cadre de la géométrie. | `triangles-semblables` _(prévue)_ | prolonge `4e.m2.r09` |
+| `3e.m2.r09` | Il résout des problèmes en utilisant la proportionnalité dans le cadre de la géométrie. | `triangles-semblables` | prolonge `4e.m2.r09` |
 | `3e.m2.r10` | Il utilise les notations et le vocabulaire fonctionnels. | `notion-de-fonction` _(prévue)_ | prolonge `4e.m2.r10`, `5e.m1.r01` |
 | `3e.m2.r11` | Il détermine, à partir de tous les modes de représentation, l’image d’un nombre. | `notion-de-fonction` _(prévue)_ | `3e.m2.r10`, `5e.m1.r01` |
 | `3e.m2.r12` | Il passe d’un mode de représentation d’une fonction à un autre. | `lire-une-fonction` _(prévue)_ | `3e.m2.r10`, `4e.m2.r11`, `5e.m4.r01` |
@@ -629,7 +629,7 @@ Prérequis venus d’autres fils : `3e.m2.r06`.
 | `3e.m4.r01` | Il se repère sur une sphère (latitude, longitude). | `se-reperer-sur-une-sphere` _(prévue)_ | prolonge `4e.m4.r01` |
 | `3e.m4.r02` | Il construit et met en relation différentes représentations des solides étudiés au cours du cycle (représentations en perspective cavalière, vues de face, de dessus, en coupe, patrons) et leurs sections planes. | `representations-des-solides` _(prévue)_ | prolonge `4e.m4.r02` |
 | `3e.m4.r03` | Un logiciel de géométrie est utilisé pour visualiser des solides et leurs sections planes. | `sections-planes` _(prévue)_ | `3e.m4.r02`, `4e.m3.r05` |
-| `3e.m4.r04` | Les triangles semblables : une définition et une propriété caractéristique. | `triangles-semblables` _(prévue)_ | `4e.m2.r07`, `4e.m4.r03`, `5e.m4.r02` |
+| `3e.m4.r04` | Les triangles semblables : une définition et une propriété caractéristique. | `triangles-semblables` | `4e.m2.r07`, `4e.m4.r03`, `5e.m4.r02` |
 | `3e.m4.r05` | Le théorème de Thalès et sa réciproque dans la configuration du papillon sont énoncés et utilisés (démonstration possible, utilisant une symétrie centrale pour se ramener à la configuration étudiée en quatrième). | `thales-configuration-papillon` | prolonge `4e.m4.r04`, `5e.m4.r03` |
 | `3e.m4.r06` | Il utilise les lignes trigonométriques dans un triangle rectangle pour calculer des longueurs ou des mesures d’angles. | `cosinus-sinus-tangente` _(prévue)_ | prolonge `4e.m4.r06`, `4e.m4.r05` |
 | `3e.m4.r07` | Les élèves transforment (à la main ou à l’aide d’un logiciel) une figure par rotation […]. Le lien est fait entre angle et rotation | `rotation` _(prévue)_ | prolonge `4e.m4.r07`, `6e.m3.r01` |
@@ -674,7 +674,7 @@ _Aucune leçon._
 | 8 | `difference-de-deux-carres` — Factoriser une différence de deux carrés | prévue | `3e.m1.r12` |
 | 9 | `prouver-avec-le-calcul-litteral` — Prouver avec des lettres : programmes de calcul | prévue | `3e.m1.r08` |
 | 10 | `vers-le-brevet-developper-et-factoriser` — Vers le brevet — Développer et factoriser | synthèse | — |
-| 11 | `triangles-semblables` — Reconnaître des triangles semblables | prévue | `3e.m4.r04` `3e.m2.r09` |
+| 11 | `triangles-semblables` — Reconnaître des triangles semblables | publiée | `3e.m4.r04` `3e.m2.r09` |
 | 12 | `thales-configuration-papillon` — Thalès dans le papillon | publiée | `3e.m4.r05` `3e.m2.r09` |
 | 13 | `reciproque-de-thales` — Prouver que deux droites sont parallèles | prévue | `3e.m4.r05` |
 | 14 | `vers-le-brevet-thales-et-triangles-semblables` — Vers le brevet — Thalès et triangles semblables | synthèse | — |

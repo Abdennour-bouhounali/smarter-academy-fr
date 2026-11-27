@@ -1,0 +1,155 @@
+{
+  "id": "ex-3e-triangles-semblables-l3-004",
+  "lessonCode": "triangles-semblables",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Justifier la ressemblance",
+    "estimatedMinutes": 4,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ sont dessinés sans respecter l’échelle. Pour $ABC$ : $AB = 15$ cm, $BC = 25$ cm et $CA = 35$ cm. Pour $DEF$ : $DE = 14$ cm, $EF = 6$ cm et $FD = 10$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          -3.2143,
+          0.7814
+        ],
+        "B": [
+          -1.9286,
+          0.7814
+        ],
+        "C": [
+          -0.8571,
+          2.6372
+        ],
+        "D": [
+          3.0612,
+          -2.7079
+        ],
+        "E": [
+          1.5612,
+          -0.1098
+        ],
+        "F": [
+          1.3776,
+          -1.3823
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "15"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "25"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "35"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "14"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "6"
+        },
+        {
+          "from": "F",
+          "to": "D",
+          "label": "10"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF, dont les trois côtés portent leur longueur en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quelle phrase justifie que $ABC$ et $DEF$ sont semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{6}{15} = \\dfrac{10}{25} = \\dfrac{14}{35} = 0{,}4$ : les côtés sont proportionnels",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{6}{15} = \\dfrac{10}{25} = 0{,}4$ : deux quotients sur trois sont égaux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        },
+        {
+          "id": "C",
+          "content": "$14 - 35 = -21$ : le plus long côté a augmenté",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-DIFFERENCE"
+        },
+        {
+          "id": "D",
+          "content": "Les deux triangles sont dessinés avec trois côtés de longueurs différentes",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que doit-on vérifier sur les trois côtés ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Une justification complète porte sur les trois quotients."
+        }
+      ],
+      "feedback": {
+        "correct": "La justification cite les trois quotients de côtés de même rang.",
+        "incorrect": "Une justification complète porte sur les trois côtés, pas sur deux seulement."
+      },
+      "solution": {
+        "lines": [
+          "Du plus court au plus long : $\\dfrac{EF}{AB} = \\dfrac{6}{15}$, $\\dfrac{FD}{BC} = \\dfrac{10}{25}$, $\\dfrac{DE}{CA} = \\dfrac{14}{35}$.",
+          "Les trois quotients valent 0,4 : les triangles sont semblables."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

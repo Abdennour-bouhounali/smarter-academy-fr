@@ -1,0 +1,199 @@
+{
+  "id": "ex-3e-triangles-semblables-l2-005",
+  "lessonCode": "triangles-semblables",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Une réduction de rapport un quart",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Le coefficient $k = \\dfrac{1}{4}$ transforme $ABC$ en $DEF$. Pour $ABC$ : $BC = 36$ cm. Les triangles $ABC$ et $DEF$ sont semblables ; les sommets homologues sont $A$ et $D$ ; $B$ et $E$ ; $C$ et $F$.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.0268,
+          0.4909
+        ],
+        "B": [
+          -0.5835,
+          1.3242
+        ],
+        "C": [
+          -3.3897,
+          2.3848
+        ],
+        "D": [
+          2.0268,
+          -0.4909
+        ],
+        "E": [
+          0.5835,
+          -1.3242
+        ],
+        "F": [
+          3.3897,
+          -2.3848
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "36"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $EF$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "9",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[EF]$ est $[BC]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[BC]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = k \\times BC = 0{,}25 \\times 36 = 9$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[EF]$ est l’homologue de $[BC]$.",
+          "$EF = k \\times BC = 0{,}25 \\times 36 = 9$ cm."
+        ],
+        "result": "EF = 9"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "144"
+        }
+      ],
+      "timeSeconds": 110
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Le triangle $DEF$ est-il un agrandissement ou une réduction du triangle $ABC$ ? Justifie avec $k$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Une réduction, car $k < 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Un agrandissement, car $k < 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-K-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "Une réduction, car $DEF$ est dessiné plus petit",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "D",
+          "content": "Un agrandissement, car $k = \\dfrac{1}{4}$ est positif",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-K-INVERSE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Compare $k$ à 1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Si $k$ est plus petit que 1, les longueurs sont multipliées par un nombre plus petit que 1."
+        }
+      ],
+      "feedback": {
+        "correct": "Comme $\\dfrac{1}{4} < 1$, chaque longueur de $DEF$ est plus petite que celle de $ABC$ : c’est une réduction.",
+        "incorrect": "Le dessin n’est pas à l’échelle : c’est la valeur de $k$ qui décide, comparée à 1."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{1}{4}$ et $1 < 4$, donc $k < 1$.",
+          "Les longueurs sont multipliées par un nombre inférieur à 1 : $DEF$ est une réduction de $ABC$."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "id": "ex-3e-triangles-semblables-l1-001",
+  "lessonCode": "triangles-semblables",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Trois quotients pour deux triangles",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ sont dessinés sans respecter l’échelle. Pour $ABC$ : $AB = 5$ cm, $BC = 7$ cm et $CA = 9$ cm. Pour $DEF$ : $DE = 21$ cm, $EF = 27$ cm et $FD = 15$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          -3.1889,
+          0.6261
+        ],
+        "B": [
+          -1.5222,
+          0.6261
+        ],
+        "C": [
+          -1.2889,
+          2.9478
+        ],
+        "D": [
+          2.5528,
+          -2.1222
+        ],
+        "E": [
+          2.5528,
+          0.2111
+        ],
+        "F": [
+          0.8945,
+          -2.2889
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "5"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "7"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "9"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "21"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "27"
+        },
+        {
+          "from": "F",
+          "to": "D",
+          "label": "15"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF, dont les trois côtés portent leur longueur en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel quotient compare le côté le plus court de $DEF$ au côté le plus court de $ABC$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{FD}{AB}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{DE}{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{AB}{FD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-K-INVERSE"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{EF}{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Classe les côtés de chaque triangle du plus court au plus long."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un quotient compare deux côtés de même rang, celui de $DEF$ au numérateur."
+        }
+      ],
+      "feedback": {
+        "correct": "Le plus court côté de $DEF$ est $[FD]$, celui de $ABC$ est $[AB]$ : on les compare.",
+        "incorrect": "Compare des côtés de même rang : le plus court avec le plus court, le moyen avec le moyen, le plus long avec le plus long."
+      },
+      "solution": {
+        "lines": [
+          "Dans $ABC$, le côté le plus court est $[AB]$ ; dans $DEF$, c’est $[FD]$.",
+          "On écrit donc $\\dfrac{FD}{AB}$."
+        ],
+        "result": "\\dfrac{FD}{AB}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le quotient $\\dfrac{EF}{CA}$ des deux côtés les plus longs.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le côté le plus long de chaque triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise la longueur du côté de $DEF$ par celle du côté de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{27}{9} = 3$.",
+        "incorrect": "Le côté de $DEF$ est au numérateur, celui de $ABC$ au dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EF}{CA} = \\dfrac{27}{9} = 3$."
+        ],
+        "result": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "1/3"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "On trouve $\\dfrac{FD}{AB} = \\dfrac{DE}{BC} = \\dfrac{EF}{CA} = 3$. Les triangles $ABC$ et $DEF$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui : les trois quotients sont égaux",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non : leurs côtés n’ont pas les mêmes longueurs",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "C",
+          "content": "Non : leurs côtés ne sont pas écrits dans le même ordre",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        },
+        {
+          "id": "D",
+          "content": "On ne peut pas savoir : il manque un quotient",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que dit l’égalité des trois quotients des côtés de même rang ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un même nombre multiplie chacun des côtés de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les trois côtés de $DEF$ valent 3 fois ceux de $ABC$ : les triangles ont la même forme.",
+        "incorrect": "Deux triangles de même forme n’ont pas la même taille : seuls les quotients comptent."
+      },
+      "solution": {
+        "lines": [
+          "Les trois quotients sont égaux à 3.",
+          "Les longueurs des côtés sont proportionnelles : les triangles sont semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

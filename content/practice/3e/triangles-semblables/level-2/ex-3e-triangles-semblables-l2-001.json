@@ -1,0 +1,228 @@
+{
+  "id": "ex-3e-triangles-semblables-l2-001",
+  "lessonCode": "triangles-semblables",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Ajouter la même longueur",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ sont dessinés sans respecter l’échelle. Chaque côté de $DEF$ mesure 4 cm de plus que le côté de même rang de $ABC$. Pour $ABC$ : $AB = 5$ cm, $BC = 10$ cm et $CA = 12$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.9917,
+          0.5818
+        ],
+        "B": [
+          -1.7417,
+          0.5818
+        ],
+        "C": [
+          -1.2667,
+          3.0363
+        ],
+        "D": [
+          1.8726,
+          -2.7605
+        ],
+        "E": [
+          3.0659,
+          -1.5673
+        ],
+        "F": [
+          1.0615,
+          0.1278
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "5"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "10"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "12"
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF ; seuls les côtés de ABC portent leur longueur.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule le quotient $\\dfrac{DE}{AB}$ des deux côtés les plus courts.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ajoute 4 cm au côté le plus court de $ABC$ pour obtenir celui de $DEF$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le côté de $DEF$ par celui de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{5} = 1{,}8$.",
+        "incorrect": "Le côté de $DEF$ est au numérateur, celui de $ABC$ au dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{DE}{AB} = \\dfrac{9}{5} = 1{,}8$."
+        ],
+        "result": "1{,}8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le quotient $\\dfrac{EF}{BC}$ des deux côtés de longueur moyenne.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ajoute 4 cm au côté moyen de $ABC$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le côté moyen de $DEF$ par celui de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{10} = 1{,}4$.",
+        "incorrect": "Compare les côtés de longueur moyenne, un dans chaque triangle."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EF}{BC} = \\dfrac{14}{10} = 1{,}4$."
+        ],
+        "result": "1{,}4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Les triangles $ABC$ et $DEF$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Non : les deux quotients calculés sont différents",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Oui : chaque côté mesure 4 cm de plus",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-DIFFERENCE"
+        },
+        {
+          "id": "C",
+          "content": "Oui : les deux triangles sont plus grands et ont trois côtés",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "D",
+          "content": "On ne peut pas savoir : il manque un quotient",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Qu’est-ce qui doit être égal pour les trois côtés ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Ajouter la même longueur à chaque côté ne multiplie pas les côtés par le même nombre."
+        }
+      ],
+      "feedback": {
+        "correct": "1,8 et 1,4 sont différents : les longueurs ne sont pas proportionnelles.",
+        "incorrect": "Ajouter la même longueur à chaque côté ne donne pas des longueurs proportionnelles : compare les quotients."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{DE}{AB} = 1{,}8$ et $\\dfrac{EF}{BC} = 1{,}4$.",
+          "Ces quotients sont différents : les triangles ne sont pas semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

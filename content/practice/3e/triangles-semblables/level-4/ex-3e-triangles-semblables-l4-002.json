@@ -1,0 +1,256 @@
+{
+  "id": "ex-3e-triangles-semblables-l4-002",
+  "lessonCode": "triangles-semblables",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Trois côtés de longueurs voisines",
+    "estimatedMinutes": 7,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ ont la même forme. Les figures ne sont pas à l’échelle. Pour $ABC$ : $AB = 7$ cm, $BC = 9$ cm et $CA = 13$ cm. Pour $DEF$ : $DE = 19{,}8$ cm, $EF = 28{,}6$ cm et $FD = 15{,}4$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.9882,
+          0.3398
+        ],
+        "B": [
+          -1.4702,
+          0.8923
+        ],
+        "C": [
+          -1.5416,
+          2.968
+        ],
+        "D": [
+          1.3309,
+          -1.0986
+        ],
+        "E": [
+          3.2826,
+          -0.3883
+        ],
+        "F": [
+          1.3865,
+          -2.7131
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "7"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "9"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "13"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "19,8"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "28,6"
+        },
+        {
+          "from": "F",
+          "to": "D",
+          "label": "15,4"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF, dont les longueurs des côtés sont indiquées en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel sommet de $DEF$ est l’homologue de $A$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        },
+        {
+          "id": "B",
+          "content": "$E$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "C",
+          "content": "$F$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux côtés de $ABC$ qui partent de $A$ ont chacun un côté homologue dans $DEF$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "L’homologue de $A$ est le sommet commun aux deux côtés homologues de ceux-là."
+        }
+      ],
+      "feedback": {
+        "correct": "$F$ est le sommet commun aux côtés $[FD]$ et $[EF]$, homologues de $[AB]$ et $[CA]$.",
+        "incorrect": "Ne te fie ni à l’ordre des lettres ni à la position sur la page : cherche les côtés ou les angles qui se correspondent."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés de $ABC$ issus de $A$ sont $[AB]$ et $[CA]$ ; leurs homologues sont $[FD]$ et $[EF]$.",
+          "Leur sommet commun est $F$ : $A$ et $F$ sont homologues."
+        ],
+        "result": "F"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel sommet de $DEF$ est l’homologue de $C$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "B",
+          "content": "$E$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$F$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux côtés de $ABC$ qui partent de $C$ ont chacun un côté homologue dans $DEF$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "L’homologue de $C$ est le sommet commun aux deux côtés homologues de ceux-là."
+        }
+      ],
+      "feedback": {
+        "correct": "$E$ est le sommet commun aux côtés $[DE]$ et $[EF]$, homologues de $[BC]$ et $[CA]$.",
+        "incorrect": "Ne te fie ni à l’ordre des lettres ni à la position sur la page : cherche les côtés ou les angles qui se correspondent."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés de $ABC$ issus de $C$ sont $[BC]$ et $[CA]$ ; leurs homologues sont $[DE]$ et $[EF]$.",
+          "Leur sommet commun est $E$ : $C$ et $E$ sont homologues."
+        ],
+        "result": "E"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule le coefficient $k$ qui transforme $ABC$ en $DEF$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,2",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[BC]$ et $[DE]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $DEF$ par la longueur homologue de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{DE}{BC} = \\dfrac{19{,}8}{9} = 2{,}2$.",
+        "incorrect": "Divise la longueur du côté de $DEF$ par celle de son homologue dans $ABC$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[BC]$ et $[DE]$ sont homologues.",
+          "$k = \\dfrac{DE}{BC} = \\dfrac{19{,}8}{9} = 2{,}2$."
+        ],
+        "result": "k = 2{,}2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "5/11"
+        }
+      ],
+      "timeSeconds": 100
+    }
+  ]
+}

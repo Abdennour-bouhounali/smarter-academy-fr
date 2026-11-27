@@ -1,0 +1,256 @@
+{
+  "id": "ex-3e-triangles-semblables-l4-003",
+  "lessonCode": "triangles-semblables",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Deux équerres en bois",
+    "estimatedMinutes": 7,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un menuisier fabrique deux équerres triangulaires $PQR$ et $STU$ de même forme. Les figures ne sont pas à l’échelle. Pour $PQR$ : $PQ = 15$ cm, $QR = 20$ cm et $RP = 25$ cm. Pour $STU$ : $ST = 28$ cm, $TU = 35$ cm et $US = 21$ cm.",
+    "figure": {
+      "points": {
+        "P": [
+          -3.2,
+          0.6
+        ],
+        "Q": [
+          -1.4,
+          0.6
+        ],
+        "R": [
+          -1.4,
+          3
+        ],
+        "S": [
+          2.9928,
+          -1.2804
+        ],
+        "T": [
+          0.9144,
+          -0.0804
+        ],
+        "U": [
+          2.0928,
+          -2.8392
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "Q",
+          "label": "15"
+        },
+        {
+          "from": "Q",
+          "to": "R",
+          "label": "20"
+        },
+        {
+          "from": "R",
+          "to": "P",
+          "label": "25"
+        },
+        {
+          "from": "S",
+          "to": "T",
+          "label": "28"
+        },
+        {
+          "from": "T",
+          "to": "U",
+          "label": "35"
+        },
+        {
+          "from": "U",
+          "to": "S",
+          "label": "21"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, PQR et STU, dont les longueurs des côtés sont indiquées en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel côté de $STU$ est l’homologue de $[PQ]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$[ST]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        },
+        {
+          "id": "B",
+          "content": "$[TU]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "C",
+          "content": "$[US]$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les extrémités de $[PQ]$ ont chacune un sommet homologue dans $STU$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le côté homologue relie les homologues des deux extrémités."
+        }
+      ],
+      "feedback": {
+        "correct": "$P$ et $Q$ ont pour homologues $U$ et $S$ : l’homologue de $[PQ]$ est $[US]$.",
+        "incorrect": "Cherche d’abord l’homologue de chaque extrémité du côté, puis relie-les."
+      },
+      "solution": {
+        "lines": [
+          "$P$ et $U$ sont homologues, $Q$ et $S$ aussi.",
+          "Le côté homologue de $[PQ]$ est donc $[US]$."
+        ],
+        "result": "[US]"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel sommet de $STU$ est l’homologue de $R$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "B",
+          "content": "$T$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$U$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux côtés de $PQR$ qui partent de $R$ ont chacun un côté homologue dans $STU$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "L’homologue de $R$ est le sommet commun aux deux côtés homologues de ceux-là."
+        }
+      ],
+      "feedback": {
+        "correct": "$T$ est le sommet commun aux côtés $[ST]$ et $[TU]$, homologues de $[QR]$ et $[RP]$.",
+        "incorrect": "Ne te fie ni à l’ordre des lettres ni à la position sur la page : cherche les côtés ou les angles qui se correspondent."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés de $PQR$ issus de $R$ sont $[QR]$ et $[RP]$ ; leurs homologues sont $[ST]$ et $[TU]$.",
+          "Leur sommet commun est $T$ : $R$ et $T$ sont homologues."
+        ],
+        "result": "T"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule le coefficient $k$ qui transforme $PQR$ en $STU$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[QR]$ et $[ST]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $STU$ par la longueur homologue de $PQR$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{ST}{QR} = \\dfrac{28}{20} = 1{,}4$.",
+        "incorrect": "Divise la longueur du côté de $STU$ par celle de son homologue dans $PQR$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[QR]$ et $[ST]$ sont homologues.",
+          "$k = \\dfrac{ST}{QR} = \\dfrac{28}{20} = 1{,}4$."
+        ],
+        "result": "k = 1{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "5/7"
+        }
+      ],
+      "timeSeconds": 100
+    }
+  ]
+}

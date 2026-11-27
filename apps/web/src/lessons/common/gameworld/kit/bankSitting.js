@@ -413,5 +413,12 @@ export function keysOfPoints(lessonCode, { keys = [], evidence } = {}) {
     const code = evidence?.learningPointOf?.(lessonCode, k);
     if (code && !(code in out)) out[code] = k;
   }
+  // a savoir-faire proved by ANSWERS (no key of its own) may name the key whose last step teaches it
+  // (`evidence.answerKeys`: { P4: '<key>' } — 2026-11-27): its steps of a sheet count there
+  for (const [point, k] of Object.entries(evidence?.answerKeys ?? {})) {
+    // the point's full code, written as the key's own point is (`<grade>_<lesson>_P<n>`)
+    const code = evidence.learningPointOf?.(lessonCode, k)?.replace(/_P\d+$/, `_${point}`);
+    if (code && keys.includes(k) && !(code in out)) out[code] = k;
+  }
   return out;
 }

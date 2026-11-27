@@ -5,7 +5,7 @@
 > bands, the gate and the capsule, the store, the walk library `e2e/lib/launchKitTwoTools.mjs`. Since 2026-11-22 the
 > launch is French and left to right: its screen sentences (`LaunchKit.jsx`, the table at the top — the title
 > « L’échauffement », the bag « Ma trousse »), the gestures and the named mistakes (`families.js › MISTAKES`, each
-> « Attention : … ») are French, guarded by `ltr.render.test.jsx`. `families.js › FAMILIES` holds THREE families (§4bis):
+> « Attention : … ») are French, guarded by `ltr.render.test.jsx`. `families.js › FAMILIES` holds SEVEN families (§4bis; the seventh, `4e.m2.r07` « La quatrième proportionnelle », 2026-11-27):
 > `4e.m1.r06` « Nombres premiers et produits », the one tool the net gives the first 3e lesson (2026-11-23), and
 > `3e.m1.r05` « Produits de nombres premiers » and `4e.m1.r08` « Les diviseurs d’un nombre », the two core tools of the
 > second, `trouver-le-pgcd` (2026-11-24 — no launch walk has run them yet); the nine
@@ -165,7 +165,7 @@ at }`, `lessons[<code>] = { first, last, tries }`, the sound switch.
 - the gate (§3bis) lives in the browser like the rest: a teacher does not see who needed a capsule;
 - no picture of a learning point with its sources (measured / deduced), no automatic update from a later success, no
   « prerequisite or new idea? » diagnosis, no class grid;
-- three families only (§4bis): every other French item has none.
+- seven families only (§4bis): every other French item has none.
 
 ## 7. Check
 

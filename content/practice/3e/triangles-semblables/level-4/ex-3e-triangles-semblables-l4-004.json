@@ -1,0 +1,239 @@
+{
+  "id": "ex-3e-triangles-semblables-l4-004",
+  "lessonCode": "triangles-semblables",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Associer, puis calculer le périmètre",
+    "estimatedMinutes": 8,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Les triangles $KLM$ et $UVW$ ont la même forme. Les figures ne sont pas à l’échelle. Pour $KLM$ : $KL = 9$ cm, $LM = 11$ cm et $MK = 14$ cm. Pour $UVW$ : $UV = 33$ cm.",
+    "figure": {
+      "points": {
+        "K": [
+          -3.0156,
+          0.3148
+        ],
+        "L": [
+          -1.1528,
+          0.814
+        ],
+        "M": [
+          -1.8316,
+          3.0712
+        ],
+        "U": [
+          1.0236,
+          -1.0716
+        ],
+        "V": [
+          3.2386,
+          -0.2654
+        ],
+        "W": [
+          1.7378,
+          -2.863
+        ]
+      },
+      "segments": [
+        {
+          "from": "K",
+          "to": "L",
+          "label": "9"
+        },
+        {
+          "from": "L",
+          "to": "M",
+          "label": "11"
+        },
+        {
+          "from": "M",
+          "to": "K",
+          "label": "14"
+        },
+        {
+          "from": "U",
+          "to": "V",
+          "label": "33"
+        },
+        {
+          "from": "V",
+          "to": "W"
+        },
+        {
+          "from": "W",
+          "to": "U"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, KLM et UVW, dont les longueurs des côtés sont indiquées en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel sommet de $UVW$ est l’homologue de $M$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$U$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "B",
+          "content": "$V$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$W$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux côtés de $KLM$ qui partent de $M$ ont chacun un côté homologue dans $UVW$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "L’homologue de $M$ est le sommet commun aux deux côtés homologues de ceux-là."
+        }
+      ],
+      "feedback": {
+        "correct": "$V$ est le sommet commun aux côtés $[UV]$ et $[VW]$, homologues de $[LM]$ et $[MK]$.",
+        "incorrect": "Ne te fie ni à l’ordre des lettres ni à la position sur la page : cherche les côtés ou les angles qui se correspondent."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés de $KLM$ issus de $M$ sont $[LM]$ et $[MK]$ ; leurs homologues sont $[UV]$ et $[VW]$.",
+          "Leur sommet commun est $V$ : $M$ et $V$ sont homologues."
+        ],
+        "result": "V"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le coefficient $k$ qui transforme $KLM$ en $UVW$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[LM]$ et $[UV]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $UVW$ par la longueur homologue de $KLM$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{UV}{LM} = \\dfrac{33}{11} = 3$.",
+        "incorrect": "Divise la longueur du côté de $UVW$ par celle de son homologue dans $KLM$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[LM]$ et $[UV]$ sont homologues.",
+          "$k = \\dfrac{UV}{LM} = \\dfrac{33}{11} = 3$."
+        ],
+        "result": "k = 3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "1/3"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule le périmètre de $UVW$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "102",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le périmètre est la somme des trois côtés de $UVW$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule d’abord les côtés qui ne sont pas donnés, en utilisant le coefficient $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$33 + 42 + 27 = 102$ cm.",
+        "incorrect": "Additionne bien les trois côtés du triangle, chacun une seule fois."
+      },
+      "solution": {
+        "lines": [
+          "$33 + 42 + 27 = 102$ cm."
+        ],
+        "result": "102"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -16,6 +16,12 @@ import {
 } from '../../college/3e/espace_geometrie/thales-et-triangles-semblables/thales-configuration-papillon/board/script';
 import { MEMO as BUTTERFLY_MEMO } from '../../college/3e/espace_geometrie/thales-et-triangles-semblables/thales-configuration-papillon/board/memo';
 import BUTTERFLY_TEST from '../../../../../../content/class-tests/3e/thales-configuration-papillon.json';
+import { collisions, readBank, storiesOf } from '../gameworld/kit/authoring/test/bank';
+import {
+  BOARD as SIMILAR_BOARD,
+  FACTS as SIMILAR_FACTS,
+} from '../../college/3e/espace_geometrie/thales-et-triangles-semblables/triangles-semblables/board/script';
+import { MEMO_FACTS as SIMILAR_MEMO_FACTS } from '../../college/3e/espace_geometrie/thales-et-triangles-semblables/triangles-semblables/board/memo';
 import {
   planTools,
   nextStep,
@@ -32,7 +38,7 @@ import {
 } from './engine';
 
 describe('L’échauffement — the families and how an answer is graded', () => {
-  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second), `4e.m4.r04` and `4e.m2.r09` (the butterfly), `4e.m1.r07` (the equal fractions)', () => {
+  it('has the families of the French net: `4e.m1.r06` (the first 3e lesson), `3e.m1.r05` and `4e.m1.r08` (the second), `4e.m4.r04` and `4e.m2.r09` (the butterfly), `4e.m1.r07` (the equal fractions), `4e.m2.r07` (the fourth proportional)', () => {
     expect(Object.keys(FAMILIES)).toEqual([
       '4e.m1.r06',
       '3e.m1.r05',
@@ -40,6 +46,7 @@ describe('L’échauffement — the families and how an answer is graded', () =>
       '4e.m4.r04',
       '4e.m2.r09',
       '4e.m1.r07',
+      '4e.m2.r07',
     ]);
     expect(familyFor('6e.t1.r01')).toBeNull();
   });
@@ -1155,6 +1162,222 @@ describe('L’échauffement — « Les fractions égales » (4e.m1.r07), the too
     for (const t of texts) {
       expect(typographyErrors(t), t).toEqual([]);
       expect(agreementErrors(t), t).toEqual([]);
+      expect(t.toLowerCase(), t).not.toMatch(KEY_WORDS);
+    }
+  });
+});
+
+describe('L’échauffement — « La quatrième proportionnelle » (4e.m2.r07), the third tool of « Reconnaître des triangles semblables »', () => {
+  const ITEM = '4e.m2.r07';
+  const F = FAMILIES[ITEM];
+  const rng = (seed) => {
+    let s = seed;
+    return () => {
+      s = (s * 16807) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  };
+  /** Everything computed HERE, never read from the family: the fourth proportional found by trying every whole number. */
+  const fourthApart = (c) => {
+    for (let v = 1; v <= 999; v += 1) if (c.a * v === c.b * c.c) return v;
+    return NaN;
+  };
+  /** Does a sort card tell the table `t` truly? « c litres en x minutes » or, read the other way, « x minutes pour c litres ». */
+  const cardTrue = (t, card) => {
+    const [x, y] = card.text.match(/\d+/g).map(Number);
+    return card.text.includes(' pour ') ? x * t.a === y * t.b : x * t.b === y * t.a;
+  };
+  const right = (q) => {
+    if (q.gesture === 'sort')
+      return Object.fromEntries(q.cards.map((c) => [c.id, cardTrue(q.table, c) ? 'yes' : 'no']));
+    return { v: String(fourthApart(q.calc)) };
+  };
+  const each = (fn) => {
+    for (const level of [1, 2])
+      for (const form of F.forms[level])
+        for (let seed = 1; seed <= 200; seed += 1)
+          fn(level, form, makeQuestion(rng(seed * 7 + level), ITEM, level, form, { first: seed % 5 === 0 }), seed);
+  };
+  // the words of the lesson's keys and of its figures: a warm-up is played BEFORE the lesson
+  const KEY_WORDS = /triangle|angle|semblable|homologue|parallèle|thalès|papillon|côté|forme|figure|sommet|gabarit/;
+
+  it('is a core tool the learning net gives the lesson, an item of the net, with its rules, its memo, its named slips and no instrument', () => {
+    const links = toolsForLesson('triangles-semblables');
+    expect(links.map((l) => [l.id, l.weight]).filter(([, w]) => w === 'core')).toEqual(
+      expect.arrayContaining([
+        [ITEM, 'core'],
+        ['4e.m2.r09', 'core'],
+      ]),
+    );
+    // a family per core tool, in the net's order
+    const tools = planTools(links, (id) => Boolean(familyFor(id)));
+    expect(tools.map((t) => t.item)).toEqual(expect.arrayContaining([ITEM, '4e.m2.r09']));
+    expect(getItem(ITEM)).toBeTruthy();
+    expect(F.item).toBe(ITEM);
+    expect(F.memo.length).toBeGreaterThanOrEqual(3);
+    expect(F.memo.length).toBeLessThanOrEqual(4);
+    expect(F.forms[2][0]).toBe('sort');
+    for (const m of F.mistakes) expect(MISTAKES[m], m).toBeTruthy();
+    expect(F.labTool).toBeNull();
+    for (const other of Object.values(FAMILIES).filter((f) => f !== F)) {
+      expect(F.icon).not.toBe(other.icon);
+      expect(F.name).not.toBe(other.name);
+    }
+  });
+
+  it('every question is true: the answer computed apart is graded right, its slips are named, the very first is a near-certain win', () => {
+    const seen = new Set();
+    const forms = new Set();
+    each((level, form, q, seed) => {
+      forms.add(`${level}:${form}`);
+      const a = right(q);
+      expect(complete(q, a), form).toBe(true);
+      expect(grade(q, a), `${form} ${JSON.stringify(q.table)}`).toEqual({ correct: true, mistake: null });
+      if (q.gesture === 'write') {
+        const c = q.calc;
+        expect(c.op).toBe('fourth');
+        const v = fourthApart(c);
+        expect(Number.isInteger(v) && v > 0 && v < 100, JSON.stringify(c)).toBe(true);
+        expect(slotsOf(q.tokens).map((t) => t.slot)).toEqual(['v']);
+        // the sentence gives the three numbers of the table, never the answer
+        for (const x of [c.a, c.b, c.c]) expect(q.prompt).toContain(`$${x}$`);
+        const add = c.c + (c.b - c.a);
+        if (add !== v && add > 0) {
+          expect(grade(q, { v: String(add) })).toEqual({ correct: false, mistake: 'add-not-times' });
+          seen.add('add-not-times');
+        }
+        if ((c.a * c.c) % c.b === 0 && (c.a * c.c) / c.b !== v && (c.a * c.c) / c.b !== add) {
+          expect(grade(q, { v: String((c.a * c.c) / c.b) })).toEqual({ correct: false, mistake: 'ratio-flipped' });
+          seen.add('ratio-flipped');
+        }
+        expect(grade(q, { v: String(v + 1) }).correct).toBe(false);
+        if (seed % 5 === 0 && level === 1) expect(Math.max(c.a, c.b, c.c, v), 'the very first').toBeLessThanOrEqual(9);
+        if (level === 2) expect(v < c.c, 'a reduced table').toBe(true);
+      } else {
+        expect(q.cards).toHaveLength(3);
+        expect(new Set(q.cards.map((k) => k.text)).size).toBe(3);
+        expect(q.cards.some((k) => k.bin === 'yes') && q.cards.some((k) => k.bin === 'no')).toBe(true);
+        for (const k of q.cards) {
+          expect(k.bin, k.text).toBe(a[k.id]);
+          if (k.bin === 'no') {
+            expect(grade(q, { ...a, [k.id]: 'yes' })).toEqual({ correct: false, mistake: k.trap });
+            seen.add(k.trap);
+          }
+        }
+      }
+    });
+    expect([...seen].sort()).toEqual(['add-not-times', 'ratio-flipped']);
+    expect([...forms].sort()).toEqual(['1:price', '1:recipe', '2:sort', '2:tap']);
+  });
+
+  it('its pool shows no pair of numbers that a French bank, a story, a class test or the lesson’s own figures write together', () => {
+    const PRACTICE = new URL('../../../../../../content/practice/3e/', import.meta.url);
+    const banks = readdirSync(PRACTICE).map((id) => readBank(id));
+    const stories = storiesOf({ exceptId: 'triangles-semblables' });
+    const clearOf = (nums) => banks.every((b) => collisions(b, nums, { stories }).clear);
+    // the class tests of the unit, item by item, and the figures of the lesson: the numbers a screen shows together
+    const groups = [];
+    const CT = new URL('../../../../../../content/class-tests/3e/', import.meta.url);
+    for (const f of readdirSync(CT)) {
+      const t = JSON.parse(readFileSync(new URL(f, CT), 'utf8'));
+      for (const q of [...(t.start ?? []), ...(t.end ?? []), ...(t.pool ?? [])]) {
+        const nums = [
+          ...JSON.stringify({ text: q.text, options: q.options })
+            .replace(/\{,\}/g, ',')
+            .matchAll(/(?<![\d,])\d{2,3}(?![\d,])/g),
+        ].map((m) => Number(m[0]));
+        if (new Set(nums).size >= 2) groups.push([...new Set(nums)]);
+      }
+    }
+    const whole = (o) => Object.values(o).filter((v) => typeof v === 'string' && /^\d+$/.test(v) && Number(v) >= 10);
+    for (const b of Object.values(SIMILAR_BOARD)) groups.push(whole(b).map(Number));
+    for (const f of Object.values(SIMILAR_FACTS)) groups.push(whole(f).map(Number));
+    for (const m of Object.values(SIMILAR_MEMO_FACTS)) groups.push(whole(m).map(Number));
+    // the world's own numbers (UNIT_3E_THALES_DESIGN.md « Lesson 1 »): docks, forges, mission
+    groups.push(
+      [10, 20, 99, 55, 90],
+      [27, 41, 112],
+      [27, 55, 98, 112],
+      [140, 225],
+      [12, 15, 18, 22, 27],
+      [72, 52, 104, 115],
+    );
+    const pairs = new Set(
+      groups.flatMap((g) => g.flatMap((x, i) => g.slice(i + 1).map((y) => (x < y ? `${x};${y}` : `${y};${x}`)))),
+    );
+    const worldSingles = [10, 12, 15, 18, 20, 22, 27, 41, 52, 55, 72, 90, 98, 99, 104, 112, 115, 140, 146, 225];
+    expect(groups.length).toBeGreaterThanOrEqual(20);
+    const tables = [...FOURTH_POOL_LEVELS()];
+    for (const [a, b, c, v] of tables) {
+      // every number a question or a sort card of the table can show
+      const add = c + (b - a);
+      const flip = (a * c) % b === 0 ? (a * c) / b : null;
+      const shown = [...new Set([a, b, c, v, add, flip].filter((x) => x != null && x >= 10))];
+      for (const x of shown)
+        expect(worldSingles, `${a} ${b} ${c} ${v}: ${x} is a number of the world`).not.toContain(x);
+      for (let i = 0; i < shown.length; i += 1) {
+        expect(clearOf([shown[i]]), `${shown[i]}`).toBe(true);
+        for (let j = i + 1; j < shown.length; j += 1) {
+          const key = shown[i] < shown[j] ? `${shown[i]};${shown[j]}` : `${shown[j]};${shown[i]}`;
+          expect(pairs.has(key), `${a} ${b} ${c} ${v}: ${key} stands in a class test or a figure of the lesson`).toBe(
+            false,
+          );
+          expect(clearOf([shown[i], shown[j]]), `${a} ${b} ${c} ${v}: ${key} stands in a bank or a story`).toBe(true);
+        }
+      }
+    }
+    // every table is a table: a / b = c / v
+    for (const [a, b, c, v] of tables) expect(a * v).toBe(b * c);
+  });
+
+  /** Every table the pool can draw, read through the family itself (never a copy of the pool). */
+  function* FOURTH_POOL_LEVELS() {
+    const seenTables = new Set();
+    for (const [level, form, first] of [
+      [1, 'recipe', true],
+      [1, 'recipe', false],
+      [1, 'price', false],
+      [2, 'tap', false],
+      [2, 'sort', false],
+    ])
+      for (let seed = 1; seed <= 400; seed += 1) {
+        const q = makeQuestion(rng(seed * 31 + level), ITEM, level, form, { first });
+        const t = q.table ?? { a: q.calc.a, b: q.calc.b, c: q.calc.c, v: fourthApart(q.calc) };
+        const key = `${t.a},${t.b},${t.c},${t.v}`;
+        if (!seenTables.has(key)) {
+          seenTables.add(key);
+          yield [t.a, t.b, t.c, t.v];
+        }
+      }
+  }
+
+  it('the worked examples, the rules and the memo are true, French, and say no word of the lesson', () => {
+    const texts = [...stringsIn({ rules: F.rules, memo: F.memo, name: F.name }), ...F.mistakes.map((m) => MISTAKES[m])];
+    for (let seed = 1; seed <= 60; seed += 1)
+      for (const level of [1, 2]) {
+        for (const form of F.forms[level]) {
+          const q = makeQuestion(rng(seed * 37 + level), ITEM, level, form);
+          texts.push(q.prompt, ...(q.bins ?? []).map((b) => b.label), ...(q.cards ?? []).map((c) => c.text));
+        }
+        for (const mistake of [null, ...F.mistakes]) {
+          const e = F.example(rng(seed), level, { mistake });
+          expect(e.steps.length).toBeGreaterThanOrEqual(4);
+          const [, a, b, c] = e.steps[1].match(/\\frac\{(\d+)\}\{(\d+)\} = \\frac\{(\d+)\}\{x\}/).map(Number);
+          const x = fourthApart({ a, b, c });
+          expect(e.steps[2]).toContain(`$${a} \\times x = ${b} \\times ${c} = ${b * c}$`);
+          expect(e.steps.at(-1)).toContain(`$x = ${b * c} \\div ${a} = ${x}$`);
+          if (mistake === 'add-not-times') expect(e.steps[0]).toContain(`donnerait $${c + (b - a)}$`);
+          texts.push(e.title, ...e.steps);
+        }
+      }
+    for (const r of F.rules) {
+      expect(r.check.m * r.check.v).toBe(r.check.w * r.check.t);
+      expect(r.example).toContain(`= ${r.check.v}`);
+    }
+    for (const t of texts) {
+      expect(typographyErrors(t), t).toEqual([]);
+      expect(agreementErrors(t), t).toEqual([]);
+      expect(t, t).not.toMatch(/undefined|NaN|\$-|-\d/);
       expect(t.toLowerCase(), t).not.toMatch(KEY_WORDS);
     }
   });

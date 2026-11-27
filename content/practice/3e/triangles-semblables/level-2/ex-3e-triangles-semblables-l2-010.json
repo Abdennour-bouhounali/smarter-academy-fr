@@ -1,0 +1,264 @@
+{
+  "id": "ex-3e-triangles-semblables-l2-010",
+  "lessonCode": "triangles-semblables",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Deux angles, puis le troisième",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ sont dessinés sans respecter l’échelle. On connaît deux angles de chaque triangle : $\\widehat{A} = 46^\\circ$ et $\\widehat{B} = 71^\\circ$ pour le premier ; $\\widehat{D} = 71^\\circ$ et $\\widehat{F} = 63^\\circ$ pour le second.",
+    "figure": {
+      "points": {
+        "A": [
+          -3.6371,
+          0.6807
+        ],
+        "B": [
+          -0.81,
+          0.6807
+        ],
+        "C": [
+          -1.5529,
+          2.8385
+        ],
+        "D": [
+          3.3157,
+          -1.849
+        ],
+        "E": [
+          1.4988,
+          0.3163
+        ],
+        "F": [
+          1.1855,
+          -2.6673
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "C",
+          "label": "46°"
+        },
+        {
+          "at": "B",
+          "from": "A",
+          "to": "C",
+          "label": "71°"
+        },
+        {
+          "at": "D",
+          "from": "E",
+          "to": "F",
+          "label": "71°"
+        },
+        {
+          "at": "F",
+          "from": "D",
+          "to": "E",
+          "label": "63°"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF ; deux angles de chacun portent leur mesure en degrés.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule la mesure de l’angle $\\widehat{C}$, en degrés.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "63",
+      "answerFormat": "Un nombre entier de degrés",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quelle est la somme des angles d’un triangle ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retranche à 180 les deux angles connus de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 - 46 - 71 = 63$.",
+        "incorrect": "La somme des trois angles d’un triangle est de 180° : retranche les deux angles connus."
+      },
+      "solution": {
+        "lines": [
+          "La somme des angles d’un triangle est $180^\\circ$.",
+          "$\\widehat{C} = 180 - 46 - 71 = 63^\\circ$."
+        ],
+        "result": "63^\\circ"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-TROISIEME-ANGLE",
+          "value": "243"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule la mesure de l’angle $\\widehat{E}$, en degrés.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "46",
+      "answerFormat": "Un nombre entier de degrés",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Même méthode que pour le premier triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retranche à 180 les deux angles connus de $DEF$."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 - 71 - 63 = 46$.",
+        "incorrect": "La somme des trois angles d’un triangle est de 180° : retranche les deux angles connus."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{E} = 180 - 71 - 63 = 46^\\circ$."
+        ],
+        "result": "46^\\circ"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-TROISIEME-ANGLE",
+          "value": "226"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Les triangles $ABC$ et $DEF$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui : deux angles de $ABC$ sont égaux à deux angles de $DEF$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Oui : ils ont un angle égal",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-ANGLE"
+        },
+        {
+          "id": "C",
+          "content": "Non : les côtés ne sont pas égaux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "D",
+          "content": "Non : leurs angles ne sont pas dans le même ordre",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les trois angles de chaque triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Des triangles semblables ont deux angles égaux deux à deux."
+        }
+      ],
+      "feedback": {
+        "correct": "Les angles de $ABC$ sont 46°, 71°, 63° ; ceux de $DEF$ sont 71°, 46°, 63°, dans un autre ordre.",
+        "incorrect": "Écris les trois angles de chaque triangle et cherche ceux qui sont égaux deux à deux."
+      },
+      "solution": {
+        "lines": [
+          "$ABC$ : $46^\\circ$, $71^\\circ$, $63^\\circ$. $DEF$ : $71^\\circ$, $46^\\circ$, $63^\\circ$.",
+          "Les angles sont égaux deux à deux : les triangles sont semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

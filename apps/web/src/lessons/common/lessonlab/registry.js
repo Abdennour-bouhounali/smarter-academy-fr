@@ -226,6 +226,21 @@ export const TOOLS = [
     range: { a: [2, 9999], b: [1, 99] },
     load: () => import('./tools/FactorLadder'),
   },
+  {
+    // two triangles APART, of the student's own (AB = a, AC = b, BC set by the hand on C) and DEF built at the angle of A:
+    // k, the slide of DEF's far vertex, a turn, a flip, its names moved round. It shows the three sides of each ranked and
+    // linked by the names, their quotients « x ÷ y » with = or ≠ (never evaluated), the angles, and DEF laid on ABC — facts
+    // only: it names no key of its lesson and writes no rule (safe before the keys, LESSON_LAB.md §2)
+    id: 'similar',
+    lesson: 'triangles-semblables',
+    icon: '📐',
+    name: 'Les deux triangles',
+    hint: 'Deux triangles séparés : grandis, tourne, retourne, déforme le second. Quand recouvre-t-il le premier ?',
+    needs: 'ab',
+    labels: { a: 'Le côté AB', b: 'Le côté AC' },
+    range: { a: [2, 12], b: [2, 12] },
+    load: () => import('./tools/SimilarTriangles'),
+  },
 ];
 
 export const toolById = (id) => TOOLS.find((t) => t.id === id) ?? null;

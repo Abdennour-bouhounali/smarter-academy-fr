@@ -345,7 +345,9 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
     // instrument would name the key the student has not discovered yet (LESSON_LAB.md §2)
     const mine = await S.page.evaluate(() => ({
       group: document.querySelectorAll('[data-lesson-lab] [data-ll-mine]').length,
-      said: (document.querySelector('[data-lesson-lab] .ll-rail')?.textContent ?? '').includes('Les outils de cette leçon'),
+      said: (document.querySelector('[data-lesson-lab] .ll-rail')?.textContent ?? '').includes(
+        'Les outils de cette leçon',
+      ),
     }));
     say(
       mine.group === 0 && !mine.said,
@@ -454,7 +456,8 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
       m = /^(\d+) = (\d+(?: \\times \d+)+)$/.exec(tex);
       if (m) {
         const fs = m[2].split(' \\times ').map(Number);
-        const prime = (x) => x > 1 && [...Array(Math.max(0, Math.floor(Math.sqrt(x)) - 1)).keys()].every((i) => x % (i + 2) !== 0);
+        const prime = (x) =>
+          x > 1 && [...Array(Math.max(0, Math.floor(Math.sqrt(x)) - 1)).keys()].every((i) => x % (i + 2) !== 0);
         return fs.reduce((p, x) => p * x, 1) === Number(m[1]) && fs.every(prime) ? 'yes' : 'no';
       }
       // « xᵉ = v » (3am.m3.r06): a power of a whole, negative, decimal number or a fraction — computed here, exactly
@@ -476,6 +479,23 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
         const all = [];
         for (let d = 1; d <= n; d += 1) if (n % d === 0) all.push(d);
         return list.length === all.length && all.every((d, i) => list[i] === d) ? 'yes' : 'no';
+      }
+      // « c litres en v minutes », « v minutes pour c litres » (4e.m2.r07, level 2): does it say the same as the prompt's
+      // table « a litres en b minutes » (or pages and seconds)? — c × b = a × v, computed here
+      m = /^(\d+) (\S+) en (\d+) (\S+)$/.exec(t) ?? /^(\d+) (\S+) pour (\d+) (\S+)$/.exec(t);
+      if (m) {
+        const reverse = !/ en /.test(t);
+        const [c, u1, v, u2] = reverse ? [m[3], m[4], m[1], m[2]] : [m[1], m[2], m[3], m[4]];
+        const [ta, tb] = promptTex
+          .map(texOf)
+          .filter((x) => /^\d+$/.test(x))
+          .map(Number);
+        const p = norm(plain);
+        expect(
+          ta > 0 && tb > 0 && p.includes(`${u1} en`) && p.includes(u2),
+          `the prompt writes the table « ${ta} ${u1} en ${tb} ${u2} » (« ${p} »)`,
+        );
+        return Number(c) * tb === ta * Number(v) ? 'yes' : 'no';
       }
       expect(false, `the walk can read the sentence « ${t} »`);
     }
@@ -546,6 +566,28 @@ export function harness({ id, url, grade = '3e', outName, alien = [], alienLabel
         expect(Number.isInteger(v), `${sc.fracs.join(' = ')}: a whole fourth proportional (${v})`);
         const slip = Number(c) + (b - a);
         vals = { v: right ? v : slip !== v ? slip : v + 1 };
+      } else if (q.calc?.op === 'fourth' && !sc.eq.includes('=')) {
+        // a table written as a SENTENCE (4e.m2.r07: « Une recette pour 4 personnes demande 6 œufs. Combien d’œufs faut-il
+        // pour 6 personnes ? » — a recipe, a price, a tap, a printer): a, b, c read from the prompt's formulas, in the
+        // order the sentence gives them, ONE box and its unit after it; v = b × c ÷ a computed here; wrong: the difference
+        // added (the slip « add-not-times »)
+        const nums = sc.tex
+          .map(texOf)
+          .filter((t) => /^\d+$/.test(t))
+          .map(Number);
+        expect(
+          nums.length === 3 && same(sc.slots, ['v']),
+          `a table in a sentence: three numbers in the prompt, ONE box (${nums.join(', ')})`,
+        );
+        const [a, b, c] = nums;
+        expect(
+          a === q.calc.a && b === q.calc.b && c === q.calc.c,
+          `the prompt is the question asked (${a} ↔ ${b}, ${c} ↔ ▢)`,
+        );
+        const v = (b * c) / a;
+        expect(Number.isInteger(v), `${a} ↔ ${b}, ${c} ↔ ▢: a whole fourth proportional (${v})`);
+        const slip = c + (b - a);
+        vals = { v: right ? v : slip !== v && slip > 0 ? slip : v + 1 };
       } else if (q.calc?.op === 'fourth') {
         // « AC = ▢ cm », « MN = ▢ cm » (3am.m2.r03): a length of the prompt's triangle — the unit printed AFTER the box
         const ask = sc.eq[0];

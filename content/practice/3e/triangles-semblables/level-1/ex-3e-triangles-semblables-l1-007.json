@@ -1,0 +1,237 @@
+{
+  "id": "ex-3e-triangles-semblables-l1-007",
+  "lessonCode": "triangles-semblables",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Les trois côtés du triangle agrandi",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l1-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Le triangle $RST$ est un agrandissement de $KLM$ de coefficient $k = 2{,}5$. Pour $KLM$ : $KL = 4$ cm, $LM = 6$ cm et $MK = 7$ cm. Les triangles $KLM$ et $RST$ sont semblables ; les sommets homologues sont $K$ et $R$ ; $L$ et $S$ ; $M$ et $T$.",
+    "figure": {
+      "points": {
+        "K": [
+          -3.2213,
+          0.7467
+        ],
+        "L": [
+          -1.533,
+          0.449
+        ],
+        "M": [
+          -1.2457,
+          3.0043
+        ],
+        "R": [
+          3.3162,
+          -0.9687
+        ],
+        "S": [
+          1.7053,
+          -0.3824
+        ],
+        "T": [
+          0.9785,
+          -2.849
+        ]
+      },
+      "segments": [
+        {
+          "from": "K",
+          "to": "L",
+          "label": "4"
+        },
+        {
+          "from": "L",
+          "to": "M",
+          "label": "6"
+        },
+        {
+          "from": "M",
+          "to": "K",
+          "label": "7"
+        },
+        {
+          "from": "R",
+          "to": "S"
+        },
+        {
+          "from": "S",
+          "to": "T"
+        },
+        {
+          "from": "T",
+          "to": "R"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, KLM et RST.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $RS$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[RS]$ est $[KL]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[KL]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$RS = k \\times KL = 2{,}5 \\times 4 = 10$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[RS]$ est l’homologue de $[KL]$.",
+          "$RS = k \\times KL = 2{,}5 \\times 4 = 10$ cm."
+        ],
+        "result": "RS = 10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "1,6"
+        }
+      ],
+      "timeSeconds": 110
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $ST$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "15",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[ST]$ est $[LM]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[LM]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$ST = k \\times LM = 2{,}5 \\times 6 = 15$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[ST]$ est l’homologue de $[LM]$.",
+          "$ST = k \\times LM = 2{,}5 \\times 6 = 15$ cm."
+        ],
+        "result": "ST = 15"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "2,4"
+        }
+      ],
+      "timeSeconds": 110
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule $TR$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "17,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[TR]$ est $[MK]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[MK]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$TR = k \\times MK = 2{,}5 \\times 7 = 17{,}5$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[TR]$ est l’homologue de $[MK]$.",
+          "$TR = k \\times MK = 2{,}5 \\times 7 = 17{,}5$ cm."
+        ],
+        "result": "TR = 17{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "2,8"
+        }
+      ],
+      "timeSeconds": 110
+    }
+  ]
+}

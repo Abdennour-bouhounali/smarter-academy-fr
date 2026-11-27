@@ -1,0 +1,188 @@
+{
+  "id": "ex-3e-triangles-semblables-l2-003",
+  "lessonCode": "triangles-semblables",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le coefficient d’un triangle à l’autre",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l2-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Pour $EFG$ : $EF = 15$ cm et $FG = 20$ cm. Pour $KLM$ : $KL = 12$ cm. Les triangles $EFG$ et $KLM$ sont semblables ; les sommets homologues sont $E$ et $K$ ; $F$ et $L$ ; $G$ et $M$.",
+    "figure": {
+      "points": {
+        "E": [
+          -3.2,
+          0.6
+        ],
+        "F": [
+          -1.4,
+          0.6
+        ],
+        "G": [
+          -1.4,
+          3
+        ],
+        "K": [
+          2.3413,
+          0.0012
+        ],
+        "L": [
+          2.957,
+          -1.6902
+        ],
+        "M": [
+          0.7017,
+          -2.511
+        ]
+      },
+      "segments": [
+        {
+          "from": "E",
+          "to": "F",
+          "label": "15"
+        },
+        {
+          "from": "F",
+          "to": "G",
+          "label": "20"
+        },
+        {
+          "from": "G",
+          "to": "E"
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "label": "12"
+        },
+        {
+          "from": "L",
+          "to": "M"
+        },
+        {
+          "from": "M",
+          "to": "K"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, EFG et KLM.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule le coefficient $k$ qui transforme $EFG$ en $KLM$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[EF]$ et $[KL]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $KLM$ par la longueur homologue de $EFG$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{KL}{EF} = \\dfrac{12}{15} = 0{,}8$.",
+        "incorrect": "Divise la longueur du côté de $KLM$ par celle de son homologue dans $EFG$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[EF]$ et $[KL]$ sont homologues.",
+          "$k = \\dfrac{KL}{EF} = \\dfrac{12}{15} = 0{,}8$."
+        ],
+        "result": "k = 0{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "1,25"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule $LM$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "16",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[LM]$ est $[FG]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[FG]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$LM = k \\times FG = 0{,}8 \\times 20 = 16$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[LM]$ est l’homologue de $[FG]$.",
+          "$LM = k \\times FG = 0{,}8 \\times 20 = 16$ cm."
+        ],
+        "result": "LM = 16"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "25"
+        }
+      ],
+      "timeSeconds": 110
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "id": "ex-3e-triangles-semblables-l1-009",
+  "lessonCode": "triangles-semblables",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un triangle isocèle",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P2",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ sont dessinés sans respecter l’échelle. On connaît deux angles de chaque triangle : $\\widehat{A} = 40^\\circ$ et $\\widehat{C} = 70^\\circ$ pour le premier ; $\\widehat{E} = 70^\\circ$ et $\\widehat{F} = 70^\\circ$ pour le second.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.6427,
+          3.1661
+        ],
+        "B": [
+          -2.6427,
+          0.1661
+        ],
+        "C": [
+          -0.7146,
+          0.8678
+        ],
+        "D": [
+          0.4604,
+          -2.4779
+        ],
+        "E": [
+          3.3582,
+          -1.7014
+        ],
+        "F": [
+          2.1814,
+          -0.0206
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "C",
+          "label": "40°"
+        },
+        {
+          "at": "C",
+          "from": "A",
+          "to": "B",
+          "label": "70°"
+        },
+        {
+          "at": "E",
+          "from": "D",
+          "to": "F",
+          "label": "70°"
+        },
+        {
+          "at": "F",
+          "from": "D",
+          "to": "E",
+          "label": "70°"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF ; deux angles de chacun portent leur mesure en degrés.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule la mesure de l’angle $\\widehat{B}$, en degrés.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "70",
+      "answerFormat": "Un nombre entier de degrés",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Quelle est la somme des angles d’un triangle ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retranche à 180 les deux angles connus de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 - 40 - 70 = 70$.",
+        "incorrect": "La somme des trois angles d’un triangle est de 180° : retranche les deux angles connus."
+      },
+      "solution": {
+        "lines": [
+          "La somme des angles d’un triangle est $180^\\circ$.",
+          "$\\widehat{B} = 180 - 40 - 70 = 70^\\circ$."
+        ],
+        "result": "70^\\circ"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-TROISIEME-ANGLE",
+          "value": "320"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule la mesure de l’angle $\\widehat{D}$, en degrés.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "40",
+      "answerFormat": "Un nombre entier de degrés",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Même méthode que pour le premier triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Retranche à 180 les deux angles connus de $DEF$."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 - 70 - 70 = 40$.",
+        "incorrect": "La somme des trois angles d’un triangle est de 180° : retranche les deux angles connus."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{D} = 180 - 70 - 70 = 40^\\circ$."
+        ],
+        "result": "40^\\circ"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-TROISIEME-ANGLE",
+          "value": "220"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Les triangles $ABC$ et $DEF$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui : deux angles de $ABC$ sont égaux à deux angles de $DEF$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Oui : ils ont un angle égal",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-ANGLE"
+        },
+        {
+          "id": "C",
+          "content": "Non : les côtés ne sont pas égaux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "D",
+          "content": "Non : leurs angles ne sont pas dans le même ordre",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Écris les trois angles de chaque triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Des triangles semblables ont deux angles égaux deux à deux."
+        }
+      ],
+      "feedback": {
+        "correct": "Les angles de $ABC$ sont 40°, 70°, 70° ; ceux de $DEF$ sont 40°, 70°, 70°, dans un autre ordre.",
+        "incorrect": "Écris les trois angles de chaque triangle et cherche ceux qui sont égaux deux à deux."
+      },
+      "solution": {
+        "lines": [
+          "$ABC$ : $40^\\circ$, $70^\\circ$, $70^\\circ$. $DEF$ : $40^\\circ$, $70^\\circ$, $70^\\circ$.",
+          "Les angles sont égaux deux à deux : les triangles sont semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

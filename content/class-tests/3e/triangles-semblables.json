@@ -1,0 +1,390 @@
+{
+  "_comment": "La séance en classe — les tests PAR DÉFAUT de la leçon « Reconnaître des triangles semblables » (docs/architecture/CLASS_SESSION.md §4). `start` ouvre l’heure : ce sur quoi la leçon s’appuie (la quatrième proportionnelle, 4e.m2.r07 ; agrandir et réduire une figure, 4e.m2.r09), puis deux questions de la NOUVELLE leçon dans des mots de géométrie, sans le nom d’une clé (`teaser` : les côtés de deux triangles de même forme, les angles de deux triangles — elles reviennent à la fin avec d’autres nombres et la même réponse, `pairOf`). `end` ferme l’heure sur les quatre points de la leçon (P1 les côtés proportionnels : e1, e3 ; P2 deux angles égaux : e2, e4 ; P3 les sommets et les côtés homologues : e5 ; P4 une longueur avec le nombre k : e1, e6, e7, e8 — e6, e7 et e8 sont les questions sur k du test algérien `talis-hisab-atwal` (e6, e7, e8), reprises sur deux triangles séparés). `pool` : d’autres questions préparées que le professeur peut ajouter à sa copie (p2 et p5 sont celles du test algérien). Une réponse numérique est un nombre entier (le pavé du tableau n’a que des chiffres). Chaque question porte un `check` aux types du test algérien (`fourth`, `scale` — `from` et `to` les longueurs de deux côtés homologues, `k` le nombre, `ask` ce qu’on demande —) et à des types propres à ce test (`similarSides` : les côtés de deux triangles, `null` pour une longueur inconnue ; `similarAngles` : deux angles de chaque triangle ; `homologous` : la correspondance des sommets) d’où sa réponse a été RECALCULÉE au moment de l’écrire ; `board.test.js` les recalcule encore. Les nombres sont propres au test : ni ceux du monde de l’élève, ni des paires de la banque ou des autres leçons françaises (règle par paire de docs/reports/UNIT_3E_THALES_DESIGN.md §3). Un test de classe ne change jamais la progression d’un élève.",
+  "lesson": "triangles-semblables",
+  "grade": "3e",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "4e.m2.r07",
+      "kind": "number",
+      "text": "Quelle est la valeur de $x$ dans l’égalité $\\dfrac{3}{7} = \\dfrac{x}{35}$ ?",
+      "answer": 15,
+      "check": {
+        "type": "fourth",
+        "a": "3",
+        "b": "7",
+        "c": "35",
+        "at": "num"
+      }
+    },
+    {
+      "id": "s2",
+      "item": "4e.m2.r07",
+      "kind": "truefalse",
+      "text": "Dans l’égalité $\\dfrac{2}{7} = \\dfrac{16}{x}$, on a $x = 56$.",
+      "answer": true,
+      "check": {
+        "type": "fourth",
+        "a": "2",
+        "b": "7",
+        "c": "16",
+        "claim": "56"
+      }
+    },
+    {
+      "id": "s3",
+      "item": "4e.m2.r07",
+      "kind": "choice",
+      "text": "Quelle est la valeur de $x$ dans l’égalité $\\dfrac{4}{6} = \\dfrac{6}{x}$ ?",
+      "options": ["$8$", "$9$", "$4$"],
+      "answer": 1,
+      "check": {
+        "type": "fourth",
+        "a": "4",
+        "b": "6",
+        "c": "6"
+      }
+    },
+    {
+      "id": "s4",
+      "item": "4e.m2.r07",
+      "kind": "number",
+      "text": "Une recette pour $4$ personnes demande $6$ œufs. Combien d’œufs faut-il pour $14$ personnes ?",
+      "answer": 21,
+      "check": {
+        "type": "fourth",
+        "a": "4",
+        "b": "6",
+        "c": "14"
+      }
+    },
+    {
+      "id": "s5",
+      "item": "4e.m2.r09",
+      "kind": "number",
+      "text": "Un rectangle de $4$ cm sur $8$ cm est agrandi : son côté de $4$ cm mesure maintenant $7$ cm. Quelle est la nouvelle longueur de son côté de $8$ cm ?",
+      "answer": 14,
+      "check": {
+        "type": "fourth",
+        "a": "4",
+        "b": "7",
+        "c": "8"
+      }
+    },
+    {
+      "id": "s6",
+      "item": "4e.m2.r09",
+      "kind": "truefalse",
+      "text": "Un rectangle de $21$ cm sur $9$ cm est réduit : son côté de $21$ cm mesure maintenant $7$ cm. Son côté de $9$ cm mesure alors $3$ cm.",
+      "answer": true,
+      "check": {
+        "type": "fourth",
+        "a": "21",
+        "b": "7",
+        "c": "9",
+        "claim": "3"
+      }
+    },
+    {
+      "id": "s7",
+      "item": "4e.m2.r09",
+      "kind": "number",
+      "text": "Sur un plan, $5$ cm représentent $6$ m dans la réalité. Une pièce mesure $25$ cm sur le plan. Quelle est sa longueur réelle, en mètres ?",
+      "answer": 30,
+      "check": {
+        "type": "fourth",
+        "a": "5",
+        "b": "6",
+        "c": "25"
+      }
+    },
+    {
+      "id": "s8",
+      "item": "4e.m2.r09",
+      "kind": "truefalse",
+      "text": "Un rectangle de $4$ cm sur $9$ cm est agrandi : son côté de $4$ cm mesure maintenant $6$ cm. Son côté de $9$ cm mesure alors $11$ cm.",
+      "answer": false,
+      "check": {
+        "type": "fourth",
+        "a": "4",
+        "b": "6",
+        "c": "9",
+        "claim": "11"
+      }
+    },
+    {
+      "id": "s9",
+      "item": "3e.m4.r04",
+      "teaser": true,
+      "kind": "number",
+      "text": "Un triangle a pour côtés $5$ cm, $6$ cm et $8$ cm. Un autre triangle a la même forme, et son plus petit côté mesure $15$ cm. Quel est son plus grand côté, en centimètres ?",
+      "answer": 24,
+      "check": {
+        "type": "similarSides",
+        "a": ["5", "6", "8"],
+        "b": ["15", null, null],
+        "ask": "longest"
+      }
+    },
+    {
+      "id": "s10",
+      "item": "3e.m4.r04",
+      "teaser": true,
+      "kind": "truefalse",
+      "text": "Un triangle a des angles de $40°$ et de $65°$. Un autre triangle a des angles de $65°$ et de $75°$. Ces deux triangles ont la même forme.",
+      "answer": true,
+      "check": {
+        "type": "similarAngles",
+        "a": ["40", "65"],
+        "b": ["65", "75"],
+        "ask": "same"
+      }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "3e.m4.r04",
+      "pairOf": "s9",
+      "kind": "number",
+      "text": "Un triangle a pour côtés $3$ cm, $5$ cm et $7$ cm. Un autre triangle a la même forme, et son plus petit côté mesure $9$ cm. Quel est son plus grand côté, en centimètres ?",
+      "answer": 21,
+      "check": {
+        "type": "similarSides",
+        "a": ["3", "5", "7"],
+        "b": ["9", null, null],
+        "ask": "longest"
+      }
+    },
+    {
+      "id": "e2",
+      "item": "3e.m4.r04",
+      "pairOf": "s10",
+      "kind": "truefalse",
+      "text": "Un triangle a des angles de $31°$ et de $53°$. Un autre triangle a des angles de $53°$ et de $96°$. Ces deux triangles ont la même forme.",
+      "answer": true,
+      "check": {
+        "type": "similarAngles",
+        "a": ["31", "53"],
+        "b": ["53", "96"],
+        "ask": "same"
+      }
+    },
+    {
+      "id": "e3",
+      "item": "3e.m4.r04",
+      "kind": "choice",
+      "text": "Un triangle a pour côtés $1{,}7$ cm, $2{,}2$ cm et $3$ cm. Lequel de ces triangles a la même forme que lui ?",
+      "options": [
+        "Les côtés mesurent $2{,}7$ cm, $3{,}2$ cm et $4$ cm",
+        "Les côtés mesurent $3{,}4$ cm, $4{,}4$ cm et $6$ cm",
+        "Les côtés mesurent $3{,}4$ cm, $4{,}4$ cm et $7$ cm"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "similarSides",
+        "a": ["1,7", "2,2", "3"],
+        "options": [
+          ["2,7", "3,2", "4"],
+          ["3,4", "4,4", "6"],
+          ["3,4", "4,4", "7"]
+        ],
+        "ask": "which"
+      }
+    },
+    {
+      "id": "e4",
+      "item": "3e.m4.r04",
+      "kind": "choice",
+      "text": "Dans quel cas deux triangles ont-ils la même forme ?",
+      "options": [
+        "Ils ont chacun un angle de $64°$",
+        "Le premier a des angles de $31°$ et de $64°$, le second a des angles de $64°$ et de $85°$",
+        "Ils ont chacun un angle de $64°$ et un côté de $6$ cm"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "similarAngles",
+        "cases": [
+          [["64"], ["64"]],
+          [
+            ["31", "64"],
+            ["64", "85"]
+          ],
+          [["64"], ["64"]]
+        ],
+        "ask": "which"
+      }
+    },
+    {
+      "id": "e5",
+      "item": "3e.m4.r04",
+      "kind": "choice",
+      "text": "Les triangles $ABC$ et $DEF$ sont semblables, avec $A$ et $E$ homologues, $B$ et $F$ homologues, $C$ et $D$ homologues. Quel côté de $DEF$ est homologue de $[AB]$ ?",
+      "options": ["$[DE]$", "$[EF]$", "$[DF]$"],
+      "answer": 1,
+      "check": {
+        "type": "homologous",
+        "map": {
+          "A": "E",
+          "B": "F",
+          "C": "D"
+        },
+        "side": "AB",
+        "ask": "side"
+      }
+    },
+    {
+      "id": "e6",
+      "item": "3e.m2.r09",
+      "kind": "choice",
+      "text": "Les triangles $ABC$ et $DEF$ sont semblables, et $[DE]$ est homologue de $[AB]$, avec $AB = 21$ et $DE = 9$. Quel nombre $k$ multiplie les longueurs de $ABC$ pour donner celles de $DEF$ ?",
+      "options": ["$\\dfrac{7}{3}$", "$\\dfrac{3}{7}$", "$\\dfrac{2}{7}$"],
+      "answer": 1,
+      "check": {
+        "type": "scale",
+        "from": ["21"],
+        "to": ["9"],
+        "ask": "k"
+      }
+    },
+    {
+      "id": "e7",
+      "item": "3e.m2.r09",
+      "kind": "choice",
+      "text": "Les triangles $ABC$ et $DEF$ sont semblables, et $[DE]$ est homologue de $[AB]$, avec $AB = 11$ et $DE = 28$. Par rapport à $ABC$, le triangle $DEF$ est :",
+      "options": ["un agrandissement", "une réduction"],
+      "answer": 0,
+      "check": {
+        "type": "scale",
+        "from": ["11"],
+        "to": ["28"],
+        "ask": "kind"
+      }
+    },
+    {
+      "id": "e8",
+      "item": "3e.m2.r09",
+      "kind": "truefalse",
+      "text": "Le nombre $k$ qui transforme le triangle $ABC$ en son semblable $DEF$ est $\\dfrac{5}{11}$ ; donc le nombre qui transforme $DEF$ en $ABC$ est $\\dfrac{11}{5}$.",
+      "answer": true,
+      "check": {
+        "type": "scale",
+        "k": "5/11",
+        "ask": "back",
+        "claim": "11/5"
+      }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "3e.m4.r04",
+      "kind": "truefalse",
+      "text": "Un triangle a pour côtés $4$ cm, $6$ cm et $7$ cm. Un autre triangle a pour côtés $6$ cm, $9$ cm et $11$ cm. Ces deux triangles ont la même forme.",
+      "answer": false,
+      "check": {
+        "type": "similarSides",
+        "a": ["4", "6", "7"],
+        "b": ["6", "9", "11"],
+        "ask": "same"
+      }
+    },
+    {
+      "id": "p2",
+      "item": "3e.m2.r09",
+      "kind": "number",
+      "text": "Les côtés d’un triangle mesurent $7$ cm, $9$ cm et $15$ cm. Un triangle semblable s’obtient en multipliant chaque longueur par $k = 3$. Quel est son périmètre, en centimètres ?",
+      "answer": 93,
+      "check": {
+        "type": "scale",
+        "from": ["7", "9", "15"],
+        "k": "3",
+        "ask": "perimeter"
+      }
+    },
+    {
+      "id": "p3",
+      "item": "3e.m4.r04",
+      "kind": "number",
+      "text": "Les triangles $ABC$ et $DEF$ sont semblables. $ABC$ a des angles de $30°$ et de $62°$ ; $DEF$ a des angles de $62°$ et de $88°$. Combien mesure le troisième angle de $DEF$ ?",
+      "answer": 30,
+      "check": {
+        "type": "similarAngles",
+        "a": ["30", "62"],
+        "b": ["62", "88"],
+        "ask": "third"
+      }
+    },
+    {
+      "id": "p4",
+      "item": "3e.m4.r04",
+      "kind": "number",
+      "text": "Les triangles $ABC$ et $DEF$ sont semblables, avec $[AB]$ homologue de $[DE]$ et $[BC]$ homologue de $[EF]$. $AB = 6$ cm, $BC = 9$ cm et $DE = 14$ cm. Calcule $EF$.",
+      "answer": 21,
+      "check": {
+        "type": "scale",
+        "from": ["6", "9"],
+        "to": ["14", null],
+        "ask": "length"
+      }
+    },
+    {
+      "id": "p5",
+      "item": "3e.m2.r09",
+      "kind": "choice",
+      "text": "Le nombre $k$ qui transforme le triangle $ABC$ en son semblable $DEF$ est $\\dfrac{9}{14}$. Par rapport à $ABC$, le triangle $DEF$ est :",
+      "options": ["un agrandissement", "une réduction"],
+      "answer": 1,
+      "check": {
+        "type": "scale",
+        "k": "9/14",
+        "ask": "kind"
+      }
+    },
+    {
+      "id": "p6",
+      "item": "3e.m4.r04",
+      "kind": "truefalse",
+      "text": "Un triangle a pour côtés $3$ cm, $4$ cm et $6$ cm. On ajoute $2$ cm à chaque côté : le nouveau triangle a la même forme que le premier.",
+      "answer": false,
+      "check": {
+        "type": "similarSides",
+        "a": ["3", "4", "6"],
+        "b": ["5", "6", "8"],
+        "ask": "same"
+      }
+    },
+    {
+      "id": "p7",
+      "item": "3e.m4.r04",
+      "kind": "choice",
+      "text": "Deux triangles $ABC$ et $DEF$ ont deux angles égaux : $\\widehat{A} = \\widehat{E}$ et $\\widehat{B} = \\widehat{D}$. Quel sommet de $DEF$ est homologue du sommet $C$ ?",
+      "options": ["$D$", "$E$", "$F$"],
+      "answer": 2,
+      "check": {
+        "type": "homologous",
+        "map": {
+          "A": "E",
+          "B": "D"
+        },
+        "vertex": "C",
+        "ask": "vertex"
+      }
+    },
+    {
+      "id": "p8",
+      "item": "3e.m4.r04",
+      "kind": "truefalse",
+      "text": "Un triangle a un angle droit et un angle de $21°$. Un autre triangle a un angle droit et un angle de $69°$. Ces deux triangles ont la même forme.",
+      "answer": true,
+      "check": {
+        "type": "similarAngles",
+        "a": ["R", "21"],
+        "b": ["R", "69"],
+        "ask": "same"
+      }
+    }
+  ]
+}

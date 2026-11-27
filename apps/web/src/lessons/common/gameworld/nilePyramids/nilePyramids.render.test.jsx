@@ -130,3 +130,16 @@ describe('the pyramids world on screen', () => {
     expect(plain(out)).toContain(WORLD_TEXT.stage.card.notToScale);
   });
 });
+
+describe('the flight’s fact: the story may word where the height came from (gate B, 2026-11-27)', () => {
+  it('without `mission.heightSay` the world writes « Tu as écrit h = … »; with it, the story’s words', () => {
+    const verdict = { kind: 'flight', fact: 'above', typed: '26,25', seg: 'h' };
+    const plainG = renderToString(<Fact verdict={verdict} game={game} />);
+    expect(plain(plainG)).toContain(WORLD_TEXT.hud.typed);
+    const said = { ...game, story: { mission: { heightSay: (t) => `Avec ces côtés associés : $h = ${t}$ m` } } };
+    const out = renderToString(<Fact verdict={verdict} game={said} />);
+    expect(out).toContain('data-np-fact-say');
+    expect(plain(out)).not.toContain(WORLD_TEXT.hud.typed);
+    expect(plain(out)).toContain('Avec ces côtés associés');
+  });
+});

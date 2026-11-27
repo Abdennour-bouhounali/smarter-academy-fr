@@ -1,0 +1,93 @@
+{
+  "id": "ex-3e-triangles-semblables-l3-002",
+  "lessonCode": "triangles-semblables",
+  "level": 3,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un triangle semblable parmi quatre",
+    "estimatedMinutes": 4,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Un triangle $ABC$ a pour côtés 6 cm, 7,5 cm, 9 cm. On cherche un triangle de même forme."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Lequel de ces triangles est semblable à $ABC$ ? Les côtés sont donnés dans le désordre.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Un triangle de côtés 9 cm, 10,5 cm, 12 cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-DIFFERENCE"
+        },
+        {
+          "id": "B",
+          "content": "Un triangle de côtés 12 cm, 15 cm, 19 cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        },
+        {
+          "id": "C",
+          "content": "Un triangle de côtés 10 cm, 12,5 cm, 15 cm",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "Un triangle de côtés 9 cm, 11,25 cm, 13 cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Range les côtés de chaque triangle du plus court au plus long."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise les côtés de même rang : le quotient doit être le même pour les trois."
+        }
+      ],
+      "feedback": {
+        "correct": "Les trois quotients des côtés de même rang valent $\\dfrac{5}{3}$.",
+        "incorrect": "Range d’abord les côtés de chaque triangle, puis calcule les trois quotients : ils doivent tous être égaux."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés de $ABC$, du plus court au plus long : 6 cm, 7,5 cm, 9 cm.",
+          "Le triangle choisi donne 10 cm, 12,5 cm, 15 cm : les trois quotients valent $\\dfrac{5}{3}$."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

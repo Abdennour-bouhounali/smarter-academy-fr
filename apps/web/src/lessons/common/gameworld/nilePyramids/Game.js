@@ -30,8 +30,15 @@
  *   legs[i]             the content of the kit's rail from dock i (its place in the world, 0–4) to the route's next
  *   forges              { field?, workshop?, river?, summit? }: the key of the lesson's forge played at that stage's
  *                       table (`lesson.forges[key]`); a stage without one ends at its last order
- *   mission             { title, lead: [..], figure?, lines(), check(vals) → 'ok' | fact, height(vals) → h }
+ *   mission             { title, lead: [..], figure?, lines(vals), check(vals) → 'ok' | fact, height(vals) → h } —
+ *                       `lines(vals)` may return only the lines open so far (a card whose steps open one by one);
+ *                       `heightSay(typed)` may word the flight's banner (a height that comes from a pairing, not typed);
+ *                       without `box` the story ENDS with its mission
  *   box                 { title, lead: [..], figure?, lines(), check(vals) → 'ok' | fact }  (noon, the camera obscura)
+ *   plateau             { tan?, object?: 'pyramid' | 'palm', h?, stick?, slide? } — the plateau's sun (tan of its height),
+ *                       what is measured (the Great Pyramid, or a date palm of height h) and the stick; `slide: false`
+ *                       leaves the stick where it stands (two triangles APART, no B5). None given: the Great Pyramid,
+ *                       tan 2/3, the 2 m stick, the slide (France, 2026-11-27)
  *   recall(game, id), onArrive(game, id), afterKey[key](game), complete (false: the story is not the whole lesson)
  */
 import * as THREE from 'three';
@@ -52,6 +59,7 @@ import {
   riverFigure,
   pyramidHeight,
   shadowTip,
+  shadowLength,
   sunVector,
   topRate,
   frameDistance,
@@ -109,7 +117,6 @@ const GREAT = { x: 300, z: -800 };
 const WORKSHOP = { x: 70, z: -225, courses: 54 }; // 54 courses of the 90 m edge: the marks 10, 20, 40 are course tops
 const SUMMIT = { x: 70, z: -615, courses: 72, upTo: 70 }; // 70 of 72 courses: the top platform is 99 × 2/72 = 2,75
 const SUN_DAY = sunVector('4/5', 2.5);
-const SUN_PLATEAU = sunVector(PLATEAU.tan, Math.PI / 2); // from the east, square to the west face
 const SUN_NOON = sunVector('8', Math.PI / 2);
 /** The summit's top platform: the pyramid's base × the capstone's k (99 × 1/36 = 2,75) — given on the summit's record. */
 const SUMMIT_TOP = write(times(FACE.base, CAPSTONE.k));
@@ -119,6 +126,18 @@ const SIGHT_DIP = 8; // degrees the sight looks down: the land under him in the 
 const AMBER = 0xf59e0b;
 const VIOLET = 0x8b5cf6;
 const v3 = (p) => new THREE.Vector3(p.x, p.y ?? 0, p.z);
+
+/** The plateau a story asks for (`story.plateau`, header), with the world's defaults — the papillon lesson's plateau. */
+function plateauOf(story) {
+  const p = story?.plateau ?? {};
+  return {
+    tan: p.tan ?? PLATEAU.tan,
+    object: p.object === 'palm' ? 'palm' : 'pyramid',
+    h: p.h ?? PLATEAU.h,
+    stick: p.stick ?? PLATEAU.stick,
+    slide: p.slide ?? true,
+  };
+}
 
 export class NilePyramidsGame extends WorldRuntime {
   // ───────────────────────────── the world's hooks ─────────────────────────────
@@ -183,7 +202,8 @@ export class NilePyramidsGame extends WorldRuntime {
       topY: top,
     };
     // stage 5: the Great Pyramid, its shadow's tip A, the stick in the sun beside it, the box at 177 m (§3.7)
-    const tip = shadowTip({ tan: PLATEAU.tan, azimuth: Math.PI / 2, height: PLATEAU.h, foot: GREAT });
+    const pl = this.plateauSpec;
+    const tip = shadowTip({ tan: pl.tan, azimuth: Math.PI / 2, height: PLATEAU.h, foot: GREAT });
     const gh = approx(PLATEAU.base) / 2;
     const foot = { x: tip.x + 14, z: GREAT.z + 45 };
     const plateau = {
@@ -197,6 +217,12 @@ export class NilePyramidsGame extends WorldRuntime {
       box: { x: GREAT.x - gh - 177, y: 0, z: GREAT.z + 6 },
       tip,
     };
+    // a date palm measured instead of the pyramid: it stands apart from the stick, west of the pyramid's shadow
+    if (pl.object === 'palm') {
+      plateau.Pa = { x: foot.x - 6, y: 0, z: foot.z - 40 };
+      plateau.palmTip = shadowTip({ tan: pl.tan, azimuth: Math.PI / 2, height: pl.h, foot: plateau.Pa });
+      plateau.Pt = { x: plateau.palmTip.x, y: 0, z: plateau.palmTip.z };
+    }
     this.pts = { field, ws, river, summit, plateau };
     this.P = [field, ws, river, summit, plateau];
     this.stages = this.stageData().map((st, i) => (this.route.includes(i) ? st : { ...st, steps: [] }));
@@ -204,6 +230,7 @@ export class NilePyramidsGame extends WorldRuntime {
 
   /** The five stages as DATA: their steps, in order. A step is a slide, a prediction, an order, a climb, a card or a forge. */
   stageData() {
+    const pl = plateauOf(this.story ?? this.lesson?.story);
     const [fresh, old] = FIELD.canals;
     const canalSteps = (c, longOf) => {
       const [m, n] = c.ends;
@@ -334,7 +361,7 @@ export class NilePyramidsGame extends WorldRuntime {
       },
       {
         id: STAGE_IDS[4],
-        longest: PLATEAU.base,
+        longest: pl.object === 'palm' ? shadowLength(pl.h, pl.tan) : PLATEAU.base,
         steps: [
           {
             // a step's id is unique in the WHOLE story (`done` is one map): the field already has its « AM »
@@ -344,43 +371,59 @@ export class NilePyramidsGame extends WorldRuntime {
             toward: 'Mw',
             stake: null,
             seg: 'AM',
-            target: '3',
-            max: '8',
+            target: shadowLength(pl.stick, pl.tan),
+            max: String(Math.ceil(approx(shadowLength(pl.stick, pl.tan)) * 2.5)),
             stick: true,
           },
-          {
-            id: 'HA',
-            kind: 'slide',
-            from: 'H',
-            toward: 'A',
-            stake: 'A',
-            seg: 'HA',
-            target: '104',
-            max: '140',
-            shadow: true,
-          },
-          {
-            id: 'DG',
-            kind: 'slide',
-            from: 'D',
-            toward: 'G',
-            stake: 'G',
-            seg: 'DG',
-            target: PLATEAU.base,
-            max: '236',
-            base: true,
-          },
-          {
-            id: 'ghost',
-            kind: 'slide',
-            ghost: true,
-            from: 'Gh',
-            toward: 'A',
-            stake: null,
-            seg: null,
-            target: '45',
-            max: '60',
-          },
+          ...(pl.object === 'palm'
+            ? [
+                {
+                  id: 'palmShadow',
+                  kind: 'slide',
+                  from: 'Pa',
+                  toward: 'Pt',
+                  stake: 'Pt',
+                  seg: 'PS',
+                  target: shadowLength(pl.h, pl.tan),
+                  max: String(Math.ceil(approx(shadowLength(pl.h, pl.tan)) * 1.4)),
+                  shadow: true,
+                },
+              ]
+            : [
+                {
+                  id: 'HA',
+                  kind: 'slide',
+                  from: 'H',
+                  toward: 'A',
+                  stake: 'A',
+                  seg: 'HA',
+                  target: '104',
+                  max: '140',
+                  shadow: true,
+                },
+                {
+                  id: 'DG',
+                  kind: 'slide',
+                  from: 'D',
+                  toward: 'G',
+                  stake: 'G',
+                  seg: 'DG',
+                  target: PLATEAU.base,
+                  max: '236',
+                  base: true,
+                },
+                {
+                  id: 'ghost',
+                  kind: 'slide',
+                  ghost: true,
+                  from: 'Gh',
+                  toward: 'A',
+                  stake: null,
+                  seg: null,
+                  target: '45',
+                  max: '60',
+                },
+              ].filter((step) => pl.slide || !step.ghost)),
           ...(this.story.mission ? [{ id: 'mission', kind: 'mission', at: 'A' }] : []),
           ...(this.story.box ? [{ id: 'box', kind: 'box', at: 'box' }] : []),
         ],
@@ -388,6 +431,11 @@ export class NilePyramidsGame extends WorldRuntime {
     ];
   }
 
+  /** The plateau as the story sets it (`story.plateau`, header): the sun, what is measured, the stick, the slide. */
+  get plateauSpec() {
+    this.plateauMemo ??= plateauOf(this.lesson.story);
+    return this.plateauMemo;
+  }
   /** The docks this story plays, downstream (`logic.js › stageRoute`) — read from the lesson: the state needs it first. */
   get route() {
     this.routeMemo ??= stageRoute(this.lesson.story?.stages);
@@ -575,7 +623,12 @@ export class NilePyramidsGame extends WorldRuntime {
 
   // ───────────────────────────── K-f: the sun, its shadow box, the fog ─────────────────────────────
   sunDir() {
-    const v = this.state.at === 4 ? (this.flags.noon ? SUN_NOON : SUN_PLATEAU) : SUN_DAY;
+    const v =
+      this.state.at === 4
+        ? this.flags.noon
+          ? SUN_NOON
+          : (this.sunPlateau ??= sunVector(this.plateauSpec.tan, Math.PI / 2))
+        : SUN_DAY;
     return (this.sunVec ??= new THREE.Vector3()).set(v.x, v.y, v.z);
   }
   shadowBox() {
@@ -931,6 +984,7 @@ export class NilePyramidsGame extends WorldRuntime {
   }
 
   buildPlateau() {
+    const pl = this.plateauSpec;
     const H = approx(PLATEAU.h);
     const base = approx(PLATEAU.base);
     const p = this.pts.plateau;
@@ -959,22 +1013,28 @@ export class NilePyramidsGame extends WorldRuntime {
       makeRay({ x: GREAT.x, y: H, z: GREAT.z }, { x: p.tip.x, y: 0, z: p.tip.z }, 0.35, 0xffb21e),
     );
     this.scene.add(this.morning);
-    for (const [k, at, bg] of [
-      ['A', p.A, 'rgba(200,85,61,0.94)'],
-      ['H', p.H, 'rgba(29,78,216,0.92)'],
-      ['D', p.D, 'rgba(29,78,216,0.92)'],
-      ['G', p.G, 'rgba(29,78,216,0.92)'],
-    ]) {
+    this.morning.visible = pl.object === 'pyramid';
+    for (const [k, at, bg] of pl.object === 'palm'
+      ? []
+      : [
+          ['A', p.A, 'rgba(200,85,61,0.94)'],
+          ['H', p.H, 'rgba(29,78,216,0.92)'],
+          ['D', p.D, 'rgba(29,78,216,0.92)'],
+          ['G', p.G, 'rgba(29,78,216,0.92)'],
+        ]) {
       const l = makeLabel(k, { bg });
       l.position.set(at.x, 4, at.z);
       this.scene.add(l);
     }
-    const stickH = approx(PLATEAU.stick);
+    const stickH = approx(pl.stick);
     const stick = makeStick(stickH);
     stick.position.set(p.Mst.x, 0, p.Mst.z);
     this.scene.add(stick);
-    const st = shadowTip({ tan: PLATEAU.tan, azimuth: Math.PI / 2, height: PLATEAU.stick, foot: p.Mst });
-    this.morning.add(
+    const st = shadowTip({ tan: pl.tan, azimuth: Math.PI / 2, height: pl.stick, foot: p.Mst });
+    // the stick's shadow is drawn whatever is measured (it lives outside the pyramid's morning group)
+    this.stickShadow = new THREE.Group();
+    this.scene.add(this.stickShadow);
+    this.stickShadow.add(
       makeGroundShadow(
         [
           { x: p.Mst.x, z: p.Mst.z - 0.07 },
@@ -989,12 +1049,42 @@ export class NilePyramidsGame extends WorldRuntime {
     const ml = makeLabel('M', { bg: 'rgba(29,78,216,0.92)' });
     ml.position.set(p.Mst.x, 3.4, p.Mst.z);
     this.scene.add(ml);
-    // the stick's drawn triangle he slides along the axis (B5), and the column of his flight
-    this.ghost = makeGhostStick(stickH, approx(PLATEAU.stick) * 1.5);
+    // the stick's drawn triangle he slides along the axis (B5) — only when the story slides it — and the column of his flight
+    this.ghost = makeGhostStick(stickH, approx(shadowLength(pl.stick, pl.tan)));
     this.ghost.position.set(p.Gh.x, 0, p.Gh.z);
+    this.ghost.visible = pl.slide;
     this.scene.add(this.ghost);
+    // a date palm measured instead of the pyramid: the palm, its drawn shadow and its ray, apart from the stick
+    if (pl.object === 'palm') {
+      const ph = approx(pl.h);
+      const palm = makePalm(17, ph);
+      palm.position.set(p.Pa.x, 0, p.Pa.z);
+      this.scene.add(palm);
+      this.colliders.push({ x: p.Pa.x, z: p.Pa.z, r: 0.6 });
+      this.stickShadow.add(
+        makeGroundShadow(
+          [
+            { x: p.Pa.x, z: p.Pa.z - 0.35 },
+            { x: p.Pa.x, z: p.Pa.z + 0.35 },
+            { x: p.Pt.x, z: p.Pt.z + 0.15 },
+            { x: p.Pt.x, z: p.Pt.z - 0.15 },
+          ],
+          0.65,
+        ),
+        makeRay({ x: p.Pa.x, y: ph, z: p.Pa.z }, { x: p.Pt.x, y: 0, z: p.Pt.z }, 0.08, 0xffb21e),
+      );
+      for (const [k, at] of [
+        ['P', p.Pa],
+        ['S', p.Pt],
+      ]) {
+        const l = makeLabel(k, { bg: 'rgba(29,78,216,0.92)' });
+        l.position.set(at.x, 3.4, at.z);
+        this.scene.add(l);
+      }
+    }
+    const flightAt = pl.object === 'palm' ? p.Pa : GREAT;
     this.beam = makeFlightBeam();
-    this.beam.position.set(GREAT.x, 0, GREAT.z);
+    this.beam.position.set(flightAt.x, 0, flightAt.z);
     this.scene.add(this.beam);
     this.box = makeCameraBox();
     this.box.position.set(p.box.x, 0, p.box.z);
@@ -1143,7 +1233,7 @@ export class NilePyramidsGame extends WorldRuntime {
         { id: 'BC', tex: `BC = ${FACE.base}`, kind: 'record' },
         { id: 'top', tex: `MN = ${texNum(SUMMIT_TOP)}`, kind: 'record' },
       );
-    if (i === 4) rows.push({ id: 'stick', tex: `MN = ${PLATEAU.stick}`, kind: 'record' });
+    if (i === 4) rows.push({ id: 'stick', tex: `MN = ${texNum(this.plateauSpec.stick)}`, kind: 'record' });
     for (const step of st.steps) {
       const v = this.done[step.id];
       if (step.kind === 'predict') {
@@ -1581,14 +1671,19 @@ export class NilePyramidsGame extends WorldRuntime {
     const m = this.story.mission;
     const h = m.height?.(vals);
     const out = m.check(vals);
-    const fly = typedLength(h) ? order('flight', h, PLATEAU.h) : null;
+    const fly = typedLength(h) ? order('flight', h, this.plateauSpec.h) : null;
     this.closeOverlay();
     const after = () => {
       if (this.dead) return;
       if (out === 'ok') {
         this.done.mission = h ?? '1';
         this.save();
-        this.toNoon(true);
+        // a story with no box at noon (France, 2026-11-27) ends with its mission
+        if (this.story.box) this.toNoon(true);
+        else {
+          this.refreshObjective();
+          this.finale();
+        }
       } else if (out) this.say(out, 7);
       this.refreshObjective();
     };
@@ -1601,19 +1696,22 @@ export class NilePyramidsGame extends WorldRuntime {
   }
   fly(out) {
     const h = approx(out.typed);
-    const H = approx(PLATEAU.h);
+    const pl = this.plateauSpec;
+    const H = approx(pl.h);
+    const at = pl.object === 'palm' ? this.pts.plateau.Pa : GREAT;
+    const far = pl.object === 'palm' ? H * 1.6 : 230;
     this.set({ phase: 'fly', prompt: null, verdict: null });
     this.say(this.S.say.rise, 3);
     this.beam.visible = true;
     const start = this.hero.pos.clone();
     this.cine = {
-      pos: new THREE.Vector3(GREAT.x - 230, H * 0.75, GREAT.z + 210),
-      look: new THREE.Vector3(GREAT.x, Math.min(h, H * 1.6) * 0.8, GREAT.z),
+      pos: new THREE.Vector3(at.x - far, H * 0.75, at.z + far * (210 / 230)),
+      look: new THREE.Vector3(at.x, Math.min(h, H * 1.6) * 0.8, at.z),
     };
     return this.tween(3.2, (t) => {
       const y = h * t;
       this.beam.userData.set(y);
-      this.hero.pos.set(GREAT.x, y, GREAT.z);
+      this.hero.pos.set(at.x, y, at.z);
     })
       .then(() => {
         this.audio.play(holds(out.fact) ? 'success' : 'hit');
@@ -1632,6 +1730,7 @@ export class NilePyramidsGame extends WorldRuntime {
   toNoon(say) {
     this.flags.noon = true;
     this.morning.visible = false;
+    this.stickShadow.visible = false;
     this.box.visible = true;
     this.sunStage = null; // the sky follows
     if (say) this.say(this.S.say.noon, 4);
@@ -2001,7 +2100,8 @@ export class NilePyramidsGame extends WorldRuntime {
     }
     this.physSky.sky.position.copy(this.camera.position);
     // the drawn morning shadows belong to the plateau's morning sun only
-    this.morning.visible = this.state.at === 4 && !this.flags.noon;
+    this.morning.visible = this.plateauSpec.object === 'pyramid' && this.state.at === 4 && !this.flags.noon;
+    this.stickShadow.visible = this.state.at === 4 && !this.flags.noon;
     this.felucca.position.y = WATER_Y + 0.15 + Math.sin(this.time * 1.6) * 0.08;
     if (ph === 'sail' && this.sailing) this.stepSail(dt);
     for (const s of Object.values(this.stakes))

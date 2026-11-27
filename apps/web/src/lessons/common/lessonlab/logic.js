@@ -1,6 +1,7 @@
 /**
  * « Mon labo » — PURE mathematics of the instruments and their « Essaie » quests. No DOM here: every drawing READS these values.
  */
+import { similarOf, SIM_K } from './similar';
 export const divide = (a, b) => ({ q: Math.floor(a / b), r: a % b });
 export const divisorsOf = (a) => {
   const out = [];
@@ -469,6 +470,14 @@ export const QUESTS = {
       text: 'Rends le segment parallèle au troisième côté dans un triangle dont chaque corde mesure plus de 20 m.',
     },
   ],
+  similar: [
+    { id: 'small', text: 'Fais un triangle DEF plus petit que ABC, qui le recouvre exactement une fois posé dessus.' },
+    { id: 'angle', text: 'Fais deux triangles qui ont un angle égal, sans que DEF recouvre ABC.' },
+    {
+      id: 'names',
+      text: 'Fais que DEF, tourné, recouvre ABC alors que ses côtés liés par les noms donnent des quotients différents.',
+    },
+  ],
   piece: [
     {
       id: 'exact',
@@ -610,6 +619,17 @@ export function observe(tool, st, seen) {
       if (new Set(st.found ?? []).size >= 2) put('two');
       if (a > 20 && b > 20) put('big');
     }
+  } else if (tool === 'similar') {
+    // reported only after the hand moved something (`moved`), with BC (`c`), the factor (`ki`), the slide (`s`), the turn
+    // (`rot`, in steps of 30°), the flip and the names (`names`) — recomputed here, never taken from the drawing
+    const { c, ki, s, rot = 0, names = 0 } = st;
+    const ok = [c, ki, s].every(Number.isInteger) && ki >= 0 && ki < SIM_K.length && Math.abs(a - b) < c && c < a + b;
+    if (st.moved && ok && s >= 1) {
+      const S = similarOf(a, b, c, ki, s, names);
+      if (S.same && S.size === 'smaller') put('small');
+      if (!S.same && S.equalAngles.length) put('angle');
+      if (S.same && rot % 12 !== 0 && !(S.namedEq[0] && S.namedEq[1])) put('names');
+    }
   } else if (tool === 'piece') {
     // reported only after the hand moved the rod (`moved`), with the numerator `p` it holds; b is the denominator
     if (st.moved && Number.isInteger(st.p) && st.p > 0) {
@@ -679,6 +699,13 @@ export function luckyPair(tool, rand = Math.random) {
     // two ropes that share a divisor bigger than 1: a parallel cut exists on whole knots
     const g = int(2, 6);
     return { a: g * int(2, 5), b: g * int(2, 5) };
+  }
+  if (tool.id === 'similar') {
+    // two different sides from A: a triangle ABC that is not isosceles at A
+    const x = int(3, 12);
+    let y = int(3, 12);
+    if (y === x) y = x === 12 ? 7 : x + 1;
+    return { a: x, b: y };
   }
   if (tool.id === 'piece') {
     // a court of more than one tile — a perfect square once in four draws — and a denominator from 2

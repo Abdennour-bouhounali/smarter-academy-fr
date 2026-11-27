@@ -1,0 +1,216 @@
+{
+  "id": "ex-3e-triangles-semblables-l4-010",
+  "lessonCode": "triangles-semblables",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Un voile d’ombrage",
+    "estimatedMinutes": 10,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Un voile d’ombrage triangulaire $ABC$ est remplacé par un voile $DEF$ de même forme, plus grand, dont il faut border les trois côtés. Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Pour $ABC$ : $AB = 0{,}8$ m, $BC = 1{,}1$ m et $CA = 1{,}3$ m. Pour $DEF$ : $DE = 2$ m. Les triangles $ABC$ et $DEF$ sont semblables ; les sommets homologues sont $A$ et $D$ ; $B$ et $E$ ; $C$ et $F$.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.7961,
+          0.2135
+        ],
+        "B": [
+          -1.0612,
+          0.845
+        ],
+        "C": [
+          -2.1427,
+          3.1415
+        ],
+        "D": [
+          3.4206,
+          -1.2472
+        ],
+        "E": [
+          1.8218,
+          -0.3241
+        ],
+        "F": [
+          0.7576,
+          -2.6287
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "0,8"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "1,1"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "1,3"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "2"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule le coefficient $k$ qui transforme $ABC$ en $DEF$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[AB]$ et $[DE]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $DEF$ par la longueur homologue de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{DE}{AB} = \\dfrac{2}{0{,}8} = 2{,}5$.",
+        "incorrect": "Divise la longueur du côté de $DEF$ par celle de son homologue dans $ABC$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[AB]$ et $[DE]$ sont homologues.",
+          "$k = \\dfrac{DE}{AB} = \\dfrac{2}{0{,}8} = 2{,}5$."
+        ],
+        "result": "k = 2{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "0,4"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule la longueur de la bordure du voile $DEF$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le périmètre est la somme des trois côtés de $DEF$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule d’abord les côtés qui ne sont pas donnés, en utilisant le coefficient $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 2{,}75 + 3{,}25 = 8$ m.",
+        "incorrect": "Additionne bien les trois côtés du triangle, chacun une seule fois."
+      },
+      "solution": {
+        "lines": [
+          "$2 + 2{,}75 + 3{,}25 = 8$ m."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "La bordure coûte $4{,}60$ € le mètre. Calcule son prix.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "36,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en euros",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le prix s’obtient en multipliant la longueur nécessaire par le prix d’un mètre."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Vérifie d’abord la longueur totale à acheter."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 4{,}6 = 36{,}8$ €.",
+        "incorrect": "Multiplie la longueur totale, en mètres, par le prix d’un mètre."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 4{,}6 = 36{,}8$ €."
+        ],
+        "result": "36{,}8"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

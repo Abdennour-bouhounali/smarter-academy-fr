@@ -1,0 +1,266 @@
+{
+  "id": "ex-3e-triangles-semblables-l2-006",
+  "lessonCode": "triangles-semblables",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un quotient plus petit que 1",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $PQR$ et $UVW$ sont dessinés sans respecter l’échelle. Pour $PQR$ : $PQ = 20$ cm, $QR = 26$ cm et $RP = 28$ cm. Pour $UVW$ : $UV = 21$ cm, $VW = 15$ cm et $WU = 19{,}5$ cm.",
+    "figure": {
+      "points": {
+        "P": [
+          -2.9954,
+          0.3195
+        ],
+        "Q": [
+          -0.8851,
+          0.6916
+        ],
+        "R": [
+          -2.1196,
+          3.1888
+        ],
+        "U": [
+          3.3572,
+          -0.2286
+        ],
+        "V": [
+          0.5381,
+          -1.2546
+        ],
+        "W": [
+          2.1046,
+          -2.7168
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "Q",
+          "label": "20"
+        },
+        {
+          "from": "Q",
+          "to": "R",
+          "label": "26"
+        },
+        {
+          "from": "R",
+          "to": "P",
+          "label": "28"
+        },
+        {
+          "from": "U",
+          "to": "V",
+          "label": "21"
+        },
+        {
+          "from": "V",
+          "to": "W",
+          "label": "15"
+        },
+        {
+          "from": "W",
+          "to": "U",
+          "label": "19,5"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, PQR et UVW, dont les trois côtés portent leur longueur en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel quotient compare le côté le plus court de $UVW$ au côté le plus court de $PQR$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{VW}{PQ}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{UV}{PQ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{PQ}{VW}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-K-INVERSE"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{UV}{PQ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Classe les côtés de chaque triangle du plus court au plus long."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un quotient compare deux côtés de même rang, celui de $UVW$ au numérateur."
+        }
+      ],
+      "feedback": {
+        "correct": "Le plus court côté de $UVW$ est $[VW]$, celui de $PQR$ est $[PQ]$ : on les compare.",
+        "incorrect": "Compare des côtés de même rang : le plus court avec le plus court, le moyen avec le moyen, le plus long avec le plus long."
+      },
+      "solution": {
+        "lines": [
+          "Dans $PQR$, le côté le plus court est $[PQ]$ ; dans $UVW$, c’est $[VW]$.",
+          "On écrit donc $\\dfrac{VW}{PQ}$."
+        ],
+        "result": "\\dfrac{VW}{PQ}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le quotient $\\dfrac{UV}{RP}$ des deux côtés les plus longs.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,75",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le côté le plus long de chaque triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise la longueur du côté de $UVW$ par celle du côté de $PQR$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{21}{28} = 0{,}75$.",
+        "incorrect": "Le côté de $UVW$ est au numérateur, celui de $PQR$ au dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{UV}{RP} = \\dfrac{21}{28} = 0{,}75$."
+        ],
+        "result": "0{,}75"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "4/3"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "On trouve $\\dfrac{VW}{PQ} = \\dfrac{WU}{QR} = \\dfrac{UV}{RP} = 0{,}75$. Les triangles $PQR$ et $UVW$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui : les trois quotients sont égaux",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non : leurs côtés n’ont pas les mêmes longueurs",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "C",
+          "content": "Non : leurs côtés ne sont pas écrits dans le même ordre",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        },
+        {
+          "id": "D",
+          "content": "On ne peut pas savoir : il manque un quotient",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que dit l’égalité des trois quotients des côtés de même rang ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un même nombre multiplie chacun des côtés de $PQR$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les trois côtés de $UVW$ valent 0,75 fois ceux de $PQR$ : les triangles ont la même forme.",
+        "incorrect": "Deux triangles de même forme n’ont pas la même taille : seuls les quotients comptent."
+      },
+      "solution": {
+        "lines": [
+          "Les trois quotients sont égaux à 0,75.",
+          "Les longueurs des côtés sont proportionnelles : les triangles sont semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

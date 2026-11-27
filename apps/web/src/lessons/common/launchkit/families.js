@@ -1384,8 +1384,209 @@ const EQUAL_FRACTIONS = {
   ],
 };
 
-// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Six
-// families today: `4e.m1.r06`, the one tool the net gives the first 3e lesson; `3e.m1.r05` and `4e.m1.r08`, the two
+// ───────────────────────── 4e.m2.r07 — la quatrième proportionnelle (4e) : tableaux de proportionnalité ─────────────────────────
+// What « Reconnaître des triangles semblables » stands on from 4e besides the figure enlarged (`4e.m2.r09`): a fourth
+// proportional in an EVERYDAY table — a recipe, a price, a tap, a printer — found « by the procedure of his choice » (the
+// net's words: the cross product, or the number one multiplies by). No figure, no triangle, no angle, no word of the
+// lesson's keys. The quadruple { a, b, c, v } is a table of proportionality, a ↔ b and c ↔ v, drawn from a STATIC pool:
+// every number of it is whole, and no pair of numbers ≥ 10 of a question stands in another French lesson's bank, its
+// stories or its class tests, nor in the figures of the lesson this tool opens (`launchkit.test.js` re-reads the banks, the
+// stories and the lessons' files and checks every pair). A new bank sheet may break the pool: the test names the pair, the
+// pool is re-drawn. The slips are the family's two: the difference added, one fraction turned upside down.
+/** [a, b, c, v] with a / b = c / v: the very first question of a launch (everything under 10, a near-certain win). */
+const FOURTH_POOL = {
+  first: [
+    [1, 2, 2, 4],
+    [1, 2, 3, 6],
+    [2, 4, 1, 2],
+    [2, 4, 3, 6],
+    [3, 6, 1, 2],
+    [3, 6, 2, 4],
+    [1, 3, 2, 6],
+    [1, 3, 3, 9],
+    [2, 6, 1, 3],
+    [2, 6, 3, 9],
+    [3, 9, 1, 3],
+    [3, 9, 2, 6],
+    [2, 3, 4, 6],
+    [2, 3, 6, 9],
+    [4, 6, 2, 3],
+    [4, 6, 6, 9],
+    [6, 9, 2, 3],
+    [6, 9, 4, 6],
+  ],
+  // level 1: the enlarged table, v up to two digits
+  1: [
+    [2, 4, 7, 14],
+    [7, 14, 2, 4],
+    [8, 24, 3, 9],
+    [2, 8, 7, 28],
+    [2, 8, 8, 32],
+    [8, 32, 2, 8],
+    [8, 32, 7, 28],
+    [9, 36, 2, 8],
+    [9, 36, 7, 28],
+    [4, 24, 9, 54],
+    [5, 30, 8, 48],
+    [7, 42, 8, 48],
+    [8, 48, 7, 42],
+    [8, 48, 9, 54],
+    [9, 54, 4, 24],
+    [9, 54, 5, 30],
+    [9, 54, 8, 48],
+  ],
+  // level 2: the reduced table (b < a), two digits; the additive slip stays positive and apart from the truth
+  2: [
+    [14, 8, 77, 44],
+    [56, 48, 77, 66],
+    [63, 54, 56, 48],
+    [63, 54, 77, 66],
+    [48, 42, 88, 77],
+    [45, 25, 81, 45],
+    [81, 45, 45, 25],
+    [63, 56, 54, 48],
+  ],
+};
+const fourthOf = (rand, level, first = false) => pick(rand, FOURTH_POOL[first ? 'first' : level]);
+const plural = (n, [one, many]) => (n < 2 ? one : many);
+/** The wording of a table: « a things ↔ b things », « c things ↔ ▢ things », with its units agreed. */
+const FOURTH_SCENES = {
+  recipe: {
+    intro: (T) =>
+      `Une recette pour $${T.a}$ ${plural(T.a, ['personne', 'personnes'])} demande $${T.b}$ ${plural(T.b, ['œuf', 'œufs'])}.`,
+    ask: (T) => `Combien d’œufs faut-il pour $${T.c}$ ${plural(T.c, ['personne', 'personnes'])}\u202f?`,
+    box: 'œufs',
+    unit: 'œufs',
+  },
+  price: {
+    intro: (T) => `$${T.a}$ ${plural(T.a, ['cahier coûte', 'cahiers coûtent'])} $${T.b}$\u00a0€.`,
+    ask: (T) => `Combien coûtent $${T.c}$ ${plural(T.c, ['cahier', 'cahiers'])}\u202f?`,
+    box: 'euros',
+    unit: '€',
+  },
+  tap: {
+    intro: (T) => `Un robinet remplit $${T.a}$ litres en $${T.b}$ minutes.`,
+    ask: (T) => `Combien de minutes lui faut-il pour remplir $${T.c}$ litres\u202f?`,
+    box: 'minutes',
+    unit: 'minutes',
+  },
+  printer: {
+    intro: (T) => `Une imprimante sort $${T.a}$ pages en $${T.b}$ secondes.`,
+    ask: (T) => `Combien de secondes lui faut-il pour sortir $${T.c}$ pages\u202f?`,
+    box: 'secondes',
+    unit: 'secondes',
+  },
+};
+const fourthTable = (e) => ({ a: e[0], b: e[1], c: e[2], v: e[3] });
+/** A write question: the table in a sentence, the missing number in a box, its unit after it. */
+function fourthScene(rand, level, scene, first) {
+  const T = fourthTable(fourthOf(rand, level, first));
+  const S0 = FOURTH_SCENES[scene];
+  return {
+    gesture: 'write',
+    calc: { op: 'fourth', a: T.a, b: T.b, c: T.c },
+    table: T,
+    prompt: `${S0.intro(T)} ${S0.ask(T)}`,
+    tokens: [S('v', S0.box, String(T.v).length), S0.unit],
+  };
+}
+/** Three claims about one reduced table: « c litres en v minutes » (right, or read the other way), the difference added, a fraction turned. */
+function fourthSort(rand) {
+  const T = fourthTable(fourthOf(rand, 2));
+  const scene = pick(rand, ['tap', 'printer']);
+  const unit = scene === 'tap' ? ['litres', 'minutes'] : ['pages', 'secondes'];
+  const claim = (x) => `${T.c} ${unit[0]} en ${x} ${unit[1]}`;
+  const flip = (T.a * T.c) % T.b === 0 ? (T.a * T.c) / T.b : null;
+  const CARDS = {
+    right: [claim(T.v), null],
+    reverse: [`${T.v} ${unit[1]} pour ${T.c} ${unit[0]}`, null],
+    add: [claim(T.c + (T.b - T.a)), 'add-not-times'],
+    flip: [claim(flip), 'ratio-flipped'],
+  };
+  const shapes = [
+    ['right', 'add', 'flip'],
+    ['reverse', 'add', 'flip'],
+    ['right', 'reverse', 'add'],
+    ['reverse', 'right', 'add'],
+  ].filter((k) => flip != null || !k.includes('flip'));
+  const kinds = shuffle(rand, pick(rand, shapes));
+  return {
+    gesture: 'sort',
+    table: T,
+    prompt: `${FOURTH_SCENES[scene].intro(T)} Chaque phrase dit-elle la même chose que ce tableau\u202f? Envoie-la dans sa boîte.`,
+    bins: [
+      { id: 'yes', label: 'Elle convient' },
+      { id: 'no', label: 'Elle ne convient pas' },
+    ],
+    cards: kinds.map((kind, i) => {
+      const [text, trap] = CARDS[kind];
+      return { id: `c${i + 1}`, text, say: true, bin: trap ? 'no' : 'yes', trap };
+    }),
+  };
+}
+/** The worked example: the table, the two equal fractions, the cross product. Its first step answers the mistake shown. */
+function fourthExample(rand, level, { mistake = null } = {}) {
+  const T = fourthTable(fourthOf(rand, level === 2 ? 2 : 1));
+  let first;
+  if (mistake === 'add-not-times')
+    first = `Ajouter à $${T.b}$ la différence $${Math.abs(T.c - T.a)}$ des deux premiers nombres donnerait $${T.c + (T.b - T.a)}$\u00a0: les deux lignes du tableau sont multipliées par un même nombre, elles ne s’additionnent pas.`;
+  else if (mistake === 'ratio-flipped')
+    first =
+      'On écrit les deux fractions dans le même ordre\u00a0: le premier nombre sur le deuxième, puis le troisième sur celui qu’on cherche.';
+  else
+    first =
+      'Le tableau est un tableau de proportionnalité\u00a0: on passe d’une ligne à l’autre en multipliant par un même nombre.';
+  return {
+    title: 'Calculer un quatrième nombre',
+    steps: [
+      first,
+      `Le premier nombre est ${T.a}, le deuxième ${T.b}, le troisième ${T.c}\u00a0: $\\frac{${T.a}}{${T.b}} = \\frac{${T.c}}{x}$.`,
+      `Produit en croix\u00a0: $${T.a} \\times x = ${T.b} \\times ${T.c} = ${T.b * T.c}$.`,
+      `Donc $x = ${T.b * T.c} \\div ${T.a} = ${T.v}$.`,
+    ],
+  };
+}
+
+const FOURTH_PROPORTIONAL = {
+  item: '4e.m2.r07',
+  // the name of the gesture (the item has no French lesson yet: « Revois d’abord » names the item itself)
+  name: 'La quatrième proportionnelle',
+  icon: '⚖️',
+  // no French lesson of 4e is written: no instrument belongs to this item yet (the capsule skips its lab step)
+  labTool: null,
+  mistakes: ['add-not-times', 'ratio-flipped'],
+  forms: { 1: ['recipe', 'price'], 2: ['sort', 'tap'] },
+  make: (rand, level, form, { first = false } = {}) =>
+    form === 'sort'
+      ? fourthSort(rand)
+      : fourthScene(rand, level, form === 'tap' ? pick(rand, ['tap', 'printer']) : form, first && level === 1),
+  example: fourthExample,
+  rules: [
+    {
+      id: 'table',
+      title: 'Un tableau de proportionnalité',
+      text: 'Quand deux grandeurs sont proportionnelles, on passe d’une ligne du tableau à l’autre en multipliant par un même nombre\u00a0: on ne leur ajoute pas une même différence.',
+      example: '$4$ cahiers coûtent $6$\u00a0€\u00a0: $6$ cahiers coûtent $\\frac{6 \\times 6}{4} = 9$\u00a0€.',
+      check: { m: 4, w: 6, t: 6, v: 9 },
+    },
+    {
+      id: 'fourth',
+      title: 'La quatrième proportionnelle',
+      text: 'Si $\\frac{a}{b} = \\frac{c}{x}$, alors $a \\times x = b \\times c$\u00a0: le nombre cherché est $x = \\frac{b \\times c}{a}$.',
+      example: '$\\frac{4}{6} = \\frac{6}{x}$\u00a0: $4 \\times x = 6 \\times 6 = 36$, donc $x = 9$.',
+      check: { m: 4, w: 6, t: 6, v: 9 },
+    },
+  ],
+  memo: [
+    'Dans un tableau de proportionnalité, on passe d’une ligne à l’autre en multipliant par un même nombre.',
+    'Pour trouver le quatrième nombre, on peut écrire deux fractions égales, dans le même ordre, puis faire le produit en croix.',
+    'On multiplie, on n’ajoute pas\u00a0: la différence entre deux nombres d’une ligne ne reste pas la même.',
+    'Exemple\u00a0: $\\frac{4}{6} = \\frac{6}{x}$, donc $4 \\times x = 36$ et $x = 9$.',
+  ],
+};
+
+// Keyed by the item id of the learning net (`toolsForLesson` of `packages/core/curriculum/fr/net/learningNet.js`). Seven
+// families today (`4e.m2.r07`, the fourth proportional in a table, is the one the lesson of similar triangles adds): `4e.m1.r06`, the one tool the net gives the first 3e lesson; `3e.m1.r05` and `4e.m1.r08`, the two
 // tools of the second (the PGCD lesson); `4e.m2.r09` and `4e.m4.r04`, the two core tools of the butterfly lesson of the
 // Thalès unit (a figure enlarged or reduced; a parallel in a triangle); `4e.m1.r07`, the equal fractions the third lesson of the unit stands on. The Algerian families (their question generators, rules and memos) are in
 // git, `git show 049380e:apps/web/src/lessons/common/launchkit/families.js`: a French family PORTS what fits and is keyed
@@ -1397,6 +1598,7 @@ export const FAMILIES = {
   '4e.m4.r04': PARALLEL_IN_TRIANGLE,
   '4e.m2.r09': FIGURE_RATIO,
   '4e.m1.r07': EQUAL_FRACTIONS,
+  '4e.m2.r07': FOURTH_PROPORTIONAL,
 };
 
 export const familyFor = (item) => FAMILIES[item] ?? null;

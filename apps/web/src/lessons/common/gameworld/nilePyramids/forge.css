@@ -22,6 +22,11 @@
 .np-mirror:not(.is-tight) .np-mirror__fig {
   flex-basis: max(19.5rem, calc(var(--di-min-font, 12px) * var(--np-fig-k, 0) + 0.6rem));
 }
+/* a case's own scene (two triangles apart): its figure's own vertical margin is height the mirror under attack cannot
+   spare — the drawing is at its 12 px floor, the mirror grows to hold it (forgeParts.jsx › SceneMirror) */
+.np-mirror[data-np-scene] .np-mirror__fig figure {
+  margin-block: 0;
+}
 .np-gauge {
   flex: 0 1 18rem;
 }
@@ -70,6 +75,26 @@
 .np-line .np-line__tag {
   font-size: 1.08rem;
   color: #475569;
+}
+/* a case with its own drawing (forgeParts.jsx › SceneLine): the thumbnail and the name on one row, the mirror's verdict
+   on his rule on the next, the card's whole width and wrapped — a verdict cut to « Ta règle : pas la mê… » beside a tag
+   on three lines was the walk's (2026-11-27). The Thalès lines (the papillon lesson) keep their one row. */
+.np-line[data-np-scene] {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  row-gap: 0.15rem;
+  align-items: center;
+}
+.np-line[data-np-scene] .np-line__verdict {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.np-line[data-np-scene] .np-line__verdict .rf-says {
+  display: block;
+  white-space: normal;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 /* the last step's figure beside its lines (forgeParts.jsx › UseFigure): its width is its 12 px label floor */

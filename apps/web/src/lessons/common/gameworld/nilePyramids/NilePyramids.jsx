@@ -7,7 +7,7 @@
  * Hooks for the walks: `data-np-stage`, `data-np-rope=<knots>`, `data-np-drop`, `data-np-sight` (the sight line of
  * stage 3), `data-np-register` (rows: `data-np-row=<id>`), `data-np-order=<canal|course|mark|ferry|capstone>` (+
  * `data-np-predict` on the canal's card), `data-np-order-in` (or `data-np-order-n` / `data-np-order-d` for the
- * capstone's k), `data-np-order-send`, `data-np-order-later`, `data-np-refused=<why>`, `data-np-fact=<fact>`,
+ * capstone's k), `data-np-order-send`, `data-np-order-later`, `data-np-refused=<why>`, `data-np-fact=<fact>` (+ `data-np-fact-say`: the story’s words for the flight, `story.mission.heightSay(typed)`),
  * `data-np-quarry`, `data-np-top=<on|off>` (the top view's toggle; `data-np-top-back` while it is on), `data-np-mission` / `data-np-box` (the cards: `data-np-card-check`, `data-np-card-later`,
  * `data-np-card-fact`), `data-np-look`, `data-np-look-back`; the forge's are the kit's (`data-rf-*`, `data-iq-*`), the
  * rail's too (`data-gr-*`).
@@ -90,6 +90,9 @@ function factText(verdict, game) {
 
 export function Fact({ verdict, game }) {
   const T = game.T;
+  // the flight: a story may word where the height came from (`story.mission.heightSay(typed)` — the lesson's pairing
+  // carried out is not a height he wrote); without it, the world's « Tu as écrit h = … »
+  const said = verdict.kind === 'flight' ? (game.story?.mission?.heightSay?.(verdict.typed) ?? null) : null;
   return (
     <div className={`di-verdict np-fact np-fact--${TONE[verdict.fact]}`} data-np-fact={verdict.fact} data-di-clear>
       <p className="np-fact__line">
@@ -102,6 +105,10 @@ export function Fact({ verdict, game }) {
               {T.hud.reads} <M>{`${verdict.seg} = ${texOf(verdict.reading)}`}</M>
             </span>
           </>
+        ) : said ? (
+          <span data-np-fact-say>
+            <MathText>{said}</MathText>
+          </span>
         ) : (
           <span>
             {T.hud.typed} <M>{`${verdict.seg} = ${texOf(verdict.typed)}`}</M>
@@ -284,8 +291,9 @@ export function OrderCard({ o, game }) {
 export function StoryCard({ kind, game }) {
   const m = kind === 'mission' ? game.story.mission : game.story.box;
   const C = game.T.stage.card;
-  const lines = useMemo(() => m.lines(), [m]);
   const [vals, setVals] = useState({});
+  // `lines(vals)`: a story may open its card's lines one by one, from what is already right (Game.js header)
+  const lines = useMemo(() => m.lines(vals), [m, vals]);
   const [fact, setFact] = useState(null);
   const names = lines.flatMap((l) => boxesOf(l.tokens).map((t) => t.slot ?? t.choice));
   const filled = names.every((n) => (vals[n] ?? '') !== '');

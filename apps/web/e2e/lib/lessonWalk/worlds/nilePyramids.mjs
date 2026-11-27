@@ -16,7 +16,7 @@ import * as checks from '../checks.mjs';
 import { playForge } from '../forge.mjs';
 import { playRail, railPractice } from '../gateRun.mjs';
 import { worldOf } from '../world.mjs';
-import { q, sub, write } from './exact.mjs';
+import { eq, q, sub, write } from './exact.mjs';
 import { slashFractions } from './rootCourtsTerraces.mjs';
 import { solveLength } from './thales.mjs';
 
@@ -416,6 +416,9 @@ export async function npStoryWalk(L, D, opts) {
       let wrongCourse = false;
       let wrongMission = false;
       let wrongBox = false;
+      /** The wrong mission card's values and the boxes it opened, round by round (a card that opens line by line). */
+      let wrongVals = null;
+      let wrongRounds = [];
       for (let guard = 0; guard < 40; guard += 1) {
         const st = await W.step();
         if (!st) break;
@@ -552,34 +555,88 @@ export async function npStoryWalk(L, D, opts) {
           await W.actAt(P[st.kind === 'box' ? 'box' : 'A'], tag, 2);
           await page.waitForSelector(`[data-np-${st.kind}]`, { timeout: 5000 });
           const lead = L.lesson.story.mission.lead.join(' ');
-          const vals = st.kind === 'mission' ? D.mission(lead) : D.box(L.lesson.story.box.lead.join(' '), lead);
+          const vals =
+            st.kind === 'mission'
+              ? D.mission(lead, L.lesson.story.mission)
+              : D.box(L.lesson.story.box.lead.join(' '), lead);
+          const CARD = `[data-np-${st.kind}]`;
+          const boxNames = () =>
+            page
+              .locator(`${CARD} [data-rf-use], ${CARD} [data-kit-choice]`)
+              .evaluateAll((els) => els.map((e) => e.dataset.rfUse ?? e.dataset.kitChoice));
+          /**
+           * Fills the card's boxes as they OPEN: a card may show its lines one by one, each once the lines before hold
+           * (`mission.lines(vals)`, triangles-semblables 2026-11-27): the boxes on screen are filled, then the card is
+           * read again for the boxes that opened. Returns the boxes met, round by round.
+           */
           const fill = async (v) => {
-            for (const [nm, x] of Object.entries(v))
-              if (await page.locator(`[data-np-${st.kind}] [data-rf-use="${nm}"]`).count())
-                await page.fill(`[data-np-${st.kind}] [data-rf-use="${nm}"]`, String(x));
-              else await page.click(`[data-np-${st.kind}] [data-kit-choice="${nm}"] [data-kit-option="${x}"]`);
+            const met = new Set();
+            const rounds = [];
+            for (let n = 0; n < 8; n += 1) {
+              const fresh = (await boxNames()).filter((x) => !met.has(x));
+              if (!fresh.length) break;
+              rounds.push(fresh);
+              for (const nm of fresh) {
+                met.add(nm);
+                if (!(nm in v)) continue;
+                if (await page.locator(`${CARD} [data-rf-use="${nm}"]`).count())
+                  await page.fill(`${CARD} [data-rf-use="${nm}"]`, String(v[nm]));
+                else await page.click(`${CARD} [data-kit-choice="${nm}"] [data-kit-option="${v[nm]}"]`);
+              }
+              await page.waitForTimeout(120);
+            }
+            return rounds;
           };
-          const names = await page
-            .locator(`[data-np-${st.kind}] [data-rf-use], [data-np-${st.kind}] [data-kit-choice]`)
-            .evaluateAll((els) => els.map((e) => e.dataset.rfUse ?? e.dataset.kitChoice));
-          check(
-            names.every((x) => x in vals) && Object.keys(vals).every((x) => names.includes(x)),
-            `${tag}: the walk fills every box of the card (${names.join(', ')})`,
-          );
+          /** The flight his card sent Zero on (`Game.js › checkMission` logs it at once): the h, the world's fact. */
+          const flight = () =>
+            page.evaluate(() => {
+              const l = [...(window.__world.log ?? [])]
+                .reverse()
+                .find((x) => x.step === 'mission' && x.kind === 'flight');
+              return l ? { typed: l.typed, fact: l.fact, n: window.__world.log.length } : null;
+            });
+          /** Zero risen to the h he wrote: the world's fact against the walk's (`descriptor.missionRise(vals)`). */
+          const rise = async (v, label) => {
+            const want = D.missionRise?.(v);
+            if (!want) return;
+            for (let n = 0; n < 40 && (await s()).verdict?.kind !== 'flight'; n += 1) await ff(0.25);
+            const got = await flight();
+            check(
+              got != null && eq(String(got.typed), want.h) && got.fact === want.fact,
+              `${label}: Zero rises to ${write(want.h)} m — « ${want.fact} » computed here (the world: ${got?.typed} m, « ${got?.fact} »)`,
+            );
+            await w.shot(page, `${label}-rise`, { ...OUT, numbers: true });
+          };
           if (st.kind === 'mission' && !wrongMission) {
             wrongMission = true;
-            // the ratio upside down (AB / AM): Zero rises to the h he wrote — above the apex — then the card's fact
-            const bad = { ...vals, rn: vals.rd, rd: vals.rn };
-            await fill(bad);
+            // the descriptor's wrong card (default: the ratio upside down, AB / AM): Zero rises to the h he wrote, then
+            // the card's fact
+            const bad = D.missionWrong?.(vals) ?? { ...vals, rn: vals.rd, rd: vals.rn };
+            wrongVals = bad;
+            const rounds = await fill(bad);
+            const metBad = rounds.flat();
+            check(
+              metBad.every((x) => x in bad),
+              `${tag}: the walk fills every box the card opens (${rounds.map((r) => r.join(', ')).join(' | ')})`,
+            );
             await w.shot(page, `${tag}-card`, { exit: ['[data-np-card-later]', '[data-di-exit]'], numbers: true });
             await page.click('[data-np-card-check]');
+            await rise(bad, `${tag}-wrong`);
             for (let n = 0; n < 40 && (await s()).phase !== 'play'; n += 1) await ff(0.25);
             const said = (await s()).say;
             check(
               said.length > 8 && !WRONG_WORDS.test(said),
-              `${tag}: the ratio upside down — the world answers with a fact (« ${said.slice(0, 90)} »)`,
+              `${tag}: the wrong card — the world answers with a fact (« ${said.slice(0, 90)} »)`,
             );
+            const named = D.missionRise?.(bad)?.says;
+            if (named)
+              check(
+                named.test(said.replace(/\{,\}/g, ',').replace(/[  ]/g, ' ')),
+                `${tag}: the fact names what the wrong card gave (${named})`,
+              );
             await shotWorld(`${tag}-fact`);
+            // kept: a card whose lines open one by one shows none after the first line that does not hold (checked below)
+            wrongRounds = rounds;
             continue;
           }
           if (st.kind === 'box' && !wrongBox) {
@@ -595,11 +652,33 @@ export async function npStoryWalk(L, D, opts) {
             );
             await w.shot(page, `${tag}-fact`, { exit: ['[data-np-card-later]', '[data-di-exit]'], numbers: true });
           }
-          await fill(vals);
+          const rounds = await fill(vals);
+          const names = rounds.flat();
+          check(
+            names.every((x) => x in vals) && Object.keys(vals).every((x) => names.includes(x)),
+            `${tag}: the walk fills every box of the card (${rounds.map((r) => r.join(', ')).join(' | ')})`,
+          );
+          if (st.kind === 'mission' && rounds.length > 1) {
+            // the lines open one by one: the right card opened them in turn, the wrong one stopped at its first wrong line
+            const firstWrong = rounds.findIndex((r) =>
+              r.some((x) => wrongVals && String(wrongVals[x]) !== String(vals[x])),
+            );
+            check(
+              firstWrong < 0 ||
+                wrongRounds.flat().join() ===
+                  rounds
+                    .slice(0, firstWrong + 1)
+                    .flat()
+                    .join(),
+              `${tag}: the card opens its lines one by one (${rounds.length}); the wrong card showed none after its first wrong line (${wrongRounds.map((r) => r.join(', ')).join(' | ')})`,
+            );
+          }
           await w.shot(page, `${tag}-right`, { exit: ['[data-np-card-later]', '[data-di-exit]'], numbers: true });
           await page.click('[data-np-card-check]');
+          if (st.kind === 'mission') await rise(vals, `${tag}-right`);
           for (let n = 0; n < 50 && (await s()).phase !== 'play' && (await s()).phase !== 'end'; n += 1) await ff(0.25);
-          if (st.kind === 'mission') await shotWorld(`${tag}-noon`);
+          // noon after the mission when the story has its box; else the story ends with the mission (no noon)
+          if (st.kind === 'mission' && L.lesson.story.box) await shotWorld(`${tag}-noon`);
           continue;
         }
         expect(false, `${tag}: a step the walk knows (${st.kind})`);

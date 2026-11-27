@@ -1,0 +1,266 @@
+{
+  "id": "ex-3e-triangles-semblables-l1-008",
+  "lessonCode": "triangles-semblables",
+  "level": 1,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Un quotient décimal pour trois côtés",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $KLM$ et $RST$ sont dessinés sans respecter l’échelle. Pour $KLM$ : $KL = 5$ cm, $LM = 6$ cm et $MK = 9$ cm. Pour $RST$ : $RS = 12{,}6$ cm, $ST = 7$ cm et $TR = 8{,}4$ cm.",
+    "figure": {
+      "points": {
+        "K": [
+          -3.038,
+          0.3533
+        ],
+        "L": [
+          -1.4718,
+          0.9234
+        ],
+        "M": [
+          -1.4903,
+          2.9233
+        ],
+        "R": [
+          3.5324,
+          -1.8815
+        ],
+        "S": [
+          0.9344,
+          -0.3815
+        ],
+        "T": [
+          1.5332,
+          -1.9369
+        ]
+      },
+      "segments": [
+        {
+          "from": "K",
+          "to": "L",
+          "label": "5"
+        },
+        {
+          "from": "L",
+          "to": "M",
+          "label": "6"
+        },
+        {
+          "from": "M",
+          "to": "K",
+          "label": "9"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "label": "12,6"
+        },
+        {
+          "from": "S",
+          "to": "T",
+          "label": "7"
+        },
+        {
+          "from": "T",
+          "to": "R",
+          "label": "8,4"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, KLM et RST, dont les trois côtés portent leur longueur en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel quotient compare le côté le plus court de $RST$ au côté le plus court de $KLM$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{ST}{KL}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{RS}{KL}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{KL}{ST}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-K-INVERSE"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{RS}{KL}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Classe les côtés de chaque triangle du plus court au plus long."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un quotient compare deux côtés de même rang, celui de $RST$ au numérateur."
+        }
+      ],
+      "feedback": {
+        "correct": "Le plus court côté de $RST$ est $[ST]$, celui de $KLM$ est $[KL]$ : on les compare.",
+        "incorrect": "Compare des côtés de même rang : le plus court avec le plus court, le moyen avec le moyen, le plus long avec le plus long."
+      },
+      "solution": {
+        "lines": [
+          "Dans $KLM$, le côté le plus court est $[KL]$ ; dans $RST$, c’est $[ST]$.",
+          "On écrit donc $\\dfrac{ST}{KL}$."
+        ],
+        "result": "\\dfrac{ST}{KL}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le quotient $\\dfrac{RS}{MK}$ des deux côtés les plus longs.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "1,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le côté le plus long de chaque triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise la longueur du côté de $RST$ par celle du côté de $KLM$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12{,}6}{9} = 1{,}4$.",
+        "incorrect": "Le côté de $RST$ est au numérateur, celui de $KLM$ au dénominateur."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{RS}{MK} = \\dfrac{12{,}6}{9} = 1{,}4$."
+        ],
+        "result": "1{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "5/7"
+        }
+      ],
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "On trouve $\\dfrac{ST}{KL} = \\dfrac{TR}{LM} = \\dfrac{RS}{MK} = 1{,}4$. Les triangles $KLM$ et $RST$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Oui : les trois quotients sont égaux",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Non : leurs côtés n’ont pas les mêmes longueurs",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        },
+        {
+          "id": "C",
+          "content": "Non : leurs côtés ne sont pas écrits dans le même ordre",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTES-NON-ORDONNES"
+        },
+        {
+          "id": "D",
+          "content": "On ne peut pas savoir : il manque un quotient",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Que dit l’égalité des trois quotients des côtés de même rang ?"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Un même nombre multiplie chacun des côtés de $KLM$."
+        }
+      ],
+      "feedback": {
+        "correct": "Les trois côtés de $RST$ valent 1,4 fois ceux de $KLM$ : les triangles ont la même forme.",
+        "incorrect": "Deux triangles de même forme n’ont pas la même taille : seuls les quotients comptent."
+      },
+      "solution": {
+        "lines": [
+          "Les trois quotients sont égaux à 1,4.",
+          "Les longueurs des côtés sont proportionnelles : les triangles sont semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

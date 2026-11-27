@@ -36,7 +36,9 @@ import _traverse from '@babel/traverse';
 
 const traverse = _traverse.default ?? _traverse;
 // `CHECK_UNUSED_ROOT` points the check at another tree: its own test does (scripts/check-unused.test.mjs).
-const ROOT = path.resolve(process.env.CHECK_UNUSED_ROOT ?? path.join(path.dirname(fileURLToPath(import.meta.url)), '..'));
+const ROOT = path.resolve(
+  process.env.CHECK_UNUSED_ROOT ?? path.join(path.dirname(fileURLToPath(import.meta.url)), '..'),
+);
 const abs = (rel) => path.join(ROOT, rel);
 const rel = (file) => path.relative(ROOT, file);
 
@@ -67,6 +69,11 @@ const LESSON_ENGINE = 'lesson engine — no French lesson yet';
 // French lessons on it (`thales-configuration-papillon`, …) are not built yet. Each line leaves when one imports it.
 const PYRAMIDS = 'pyramids world — read by the Algerian lesson; no French lesson on the world yet';
 const KEPT = {
+  // the forge test of `triangles-semblables` reads the rounds the forges' cases are built from (2026-11-27)
+  'apps/web/src/lessons/college/3e/espace_geometrie/thales-et-triangles-semblables/triangles-semblables/world/forges.js#PAIR_CASES':
+    'the forge test checks every case against the design’s rounds',
+  'apps/web/src/lessons/college/3e/espace_geometrie/thales-et-triangles-semblables/triangles-semblables/world/forges.js#ANGLES_CASES':
+    'the forge test checks every case against the design’s rounds',
   'apps/web/src/lessons/common/gameworld/kit/claims.js#scaleClaim': PYRAMIDS,
   'apps/web/src/lessons/common/gameworld/nilePyramids/logic.js#CAMERA_BOX': PYRAMIDS,
   'apps/web/src/lessons/common/gameworld/nilePyramids/scale.js#copyOf': PYRAMIDS,
@@ -106,9 +113,9 @@ const KEPT = {
   'apps/web/src/lessons/common/gameworld/rootCourts/ruleForge.js#COURT_TEXT': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/rootCourts/ruleForge.js#evidenceOf': LESSON_ENGINE,
   'apps/web/src/lessons/common/gameworld/kit/random.js#rng':
-    'the seeded generator: every lesson\'s tests replay its generated content with it (the app itself draws with Math.random)',
+    "the seeded generator: every lesson's tests replay its generated content with it (the app itself draws with Math.random)",
   'apps/web/src/lessons/common/gameworld/kit/claims.js#CLAIM_KINDS':
-    'the kinds of claim the browser can verify: claims.test.js compares the list with the server\'s (ClaimVerifier::KINDS) — a kind known on one side only is a bug',
+    "the kinds of claim the browser can verify: claims.test.js compares the list with the server's (ClaimVerifier::KINDS) — a kind known on one side only is a bug",
 };
 
 const SKIP_DIRS = new Set(['node_modules', 'dist', 'public', 'vendor', '.git']);
@@ -129,7 +136,10 @@ function listFiles(dir, out = []) {
 const analysedFiles = ANALYSED.flatMap((dir) => listFiles(abs(dir)));
 const consumerFiles = [
   ...CONSUMERS.flatMap((dir) => listFiles(abs(dir))),
-  ...fs.readdirSync(abs('apps/web')).map((name) => abs(`apps/web/${name}`)).filter((file) => fs.statSync(file).isFile()),
+  ...fs
+    .readdirSync(abs('apps/web'))
+    .map((name) => abs(`apps/web/${name}`))
+    .filter((file) => fs.statSync(file).isFile()),
 ];
 const allFiles = [...new Set([...analysedFiles, ...consumerFiles])];
 const known = new Set(allFiles);
@@ -144,9 +154,17 @@ function resolveImport(from, spec) {
   const clean = spec.split('?')[0];
   if (clean.startsWith('.')) base = path.resolve(path.dirname(from), clean);
   else if (clean === '@smarter-academy/core') base = path.join(CORE, 'index.js');
-  else if (clean.startsWith('@smarter-academy/core/')) base = path.join(CORE, clean.slice('@smarter-academy/core/'.length));
+  else if (clean.startsWith('@smarter-academy/core/'))
+    base = path.join(CORE, clean.slice('@smarter-academy/core/'.length));
   else return null;
-  const candidates = [base, `${base}.js`, `${base}.jsx`, `${base}.mjs`, path.join(base, 'index.js'), path.join(base, 'index.jsx')];
+  const candidates = [
+    base,
+    `${base}.js`,
+    `${base}.jsx`,
+    `${base}.mjs`,
+    path.join(base, 'index.js'),
+    path.join(base, 'index.jsx'),
+  ];
   return candidates.find((candidate) => known.has(candidate)) ?? null;
 }
 
@@ -185,16 +203,19 @@ const nameOf = (node) => {
   if (!node) return null;
   if (node.type === 'Identifier' || node.type === 'JSXIdentifier') return node.name;
   if (node.type === 'StringLiteral') return node.value;
-  if ((node.type === 'MemberExpression' || node.type === 'OptionalMemberExpression') && !node.computed) return nameOf(node.property);
+  if ((node.type === 'MemberExpression' || node.type === 'OptionalMemberExpression') && !node.computed)
+    return nameOf(node.property);
   return null;
 };
-const isStaticMember = (node) => (node.type === 'MemberExpression' || node.type === 'OptionalMemberExpression') && !node.computed;
+const isStaticMember = (node) =>
+  (node.type === 'MemberExpression' || node.type === 'OptionalMemberExpression') && !node.computed;
 
 /**
  * The real reads of a name. Babel also counts the `export` statement of a name as a « reference » to it:
  * that one is not a read.
  */
-const readsOf = (scope, name) => (scope.getBinding(name)?.referencePaths ?? []).filter((ref) => ref.isIdentifier() || ref.isJSXIdentifier());
+const readsOf = (scope, name) =>
+  (scope.getBinding(name)?.referencePaths ?? []).filter((ref) => ref.isIdentifier() || ref.isJSXIdentifier());
 
 /** The names read one after the other from a reference: for `T` in `T.objective.cross(n)` → ['objective', 'cross']. */
 function chainFrom(ref) {
@@ -235,13 +256,16 @@ function readFile(file) {
           const imported = nameOf(spec.imported);
           use(target, imported);
           if (target && isStringTable(target)) {
-            for (const ref of readsOf(p.scope, spec.local.name)) tableReads.push({ file: target, trail: [imported, ...chainFrom(ref)] });
+            for (const ref of readsOf(p.scope, spec.local.name))
+              tableReads.push({ file: target, trail: [imported, ...chainFrom(ref)] });
           }
         } else {
           // `import * as ns`: what is read from it — or everything, when `ns` itself goes somewhere (`...ns`, `fn(ns)`).
           for (const ref of readsOf(p.scope, spec.local.name)) {
             const parent = ref.parent;
-            const read = (isStaticMember(parent) && parent.object === ref.node) || (parent.type === 'JSXMemberExpression' && parent.object === ref.node);
+            const read =
+              (isStaticMember(parent) && parent.object === ref.node) ||
+              (parent.type === 'JSXMemberExpression' && parent.object === ref.node);
             use(target, read ? nameOf(parent.property) : '*');
             if (target && isStringTable(target)) tableReads.push({ file: target, trail: chainFrom(ref) });
           }
@@ -254,8 +278,15 @@ function readFile(file) {
         const target = resolveImport(file, node.source.value);
         for (const spec of node.specifiers) {
           const exported = nameOf(spec.exported);
-          if (spec.type === 'ExportNamespaceSpecifier') record.exports.set(exported, { kind: 'all', from: target, line: node.loc.start.line });
-          else record.exports.set(exported, { kind: 're', from: target, name: nameOf(spec.local), line: node.loc.start.line });
+          if (spec.type === 'ExportNamespaceSpecifier')
+            record.exports.set(exported, { kind: 'all', from: target, line: node.loc.start.line });
+          else
+            record.exports.set(exported, {
+              kind: 're',
+              from: target,
+              name: nameOf(spec.local),
+              line: node.loc.start.line,
+            });
         }
         return;
       }
@@ -271,7 +302,8 @@ function readFile(file) {
             if (declarator.init?.type !== 'ObjectExpression') continue;
             record.tables.push({ name: declarator.id.name, node: declarator.init });
             // The table's own file may read it too (a sentence built from another one).
-            for (const ref of readsOf(p.scope, declarator.id.name)) tableReads.push({ file, trail: [declarator.id.name, ...chainFrom(ref)] });
+            for (const ref of readsOf(p.scope, declarator.id.name))
+              tableReads.push({ file, trail: [declarator.id.name, ...chainFrom(ref)] });
           }
         }
       }
@@ -293,19 +325,23 @@ function readFile(file) {
       if (callee.type === 'MemberExpression' && nameOf(callee) === 'glob' && callee.object.type === 'MetaProperty') {
         const patterns = first?.type === 'ArrayExpression' ? first.elements : [first];
         for (const pattern of patterns) {
-          if (pattern?.type === 'StringLiteral' && !pattern.value.startsWith('!')) expandGlob(file, pattern.value).forEach((target) => use(target, '*'));
+          if (pattern?.type === 'StringLiteral' && !pattern.value.startsWith('!'))
+            expandGlob(file, pattern.value).forEach((target) => use(target, '*'));
         }
       }
       // t('a.b') and friends: the first argument is a key (it may name a whole group, with `returnObjects`).
-      if (/^(t|tr|translate)$/.test(nameOf(callee) ?? '') && first?.type === 'StringLiteral') keyCalls.add(stripNamespace(first.value));
+      if (/^(t|tr|translate)$/.test(nameOf(callee) ?? '') && first?.type === 'StringLiteral')
+        keyCalls.add(stripNamespace(first.value));
     },
     NewExpression(p) {
       // new URL('./worker.js', import.meta.url)
       const [first] = p.node.arguments;
-      if (nameOf(p.node.callee) === 'URL' && first?.type === 'StringLiteral') use(resolveImport(file, first.value), '*');
+      if (nameOf(p.node.callee) === 'URL' && first?.type === 'StringLiteral')
+        use(resolveImport(file, first.value), '*');
     },
     JSXAttribute(p) {
-      if (p.node.name.name === 'i18nKey' && p.node.value?.type === 'StringLiteral') keyCalls.add(stripNamespace(p.node.value.value));
+      if (p.node.name.name === 'i18nKey' && p.node.value?.type === 'StringLiteral')
+        keyCalls.add(stripNamespace(p.node.value.value));
     },
     StringLiteral(p) {
       noteString(p.node.value);
@@ -418,7 +454,11 @@ function keyIsUsed(keyPath) {
       // a group named whole (`returnObjects`), a path built up to here then left open (`status.${kind}`),
       // or an open start closed by a written end (`${prefix}.title`)
       if (keyCalls.has(group) || heads.has(`${group}.`)) return true;
-      if (reach[i] && [...Array(i).keys()].some((start) => reach[start] && heads.has(`${parts.slice(start, i).join('.')}.`))) return true;
+      if (
+        reach[i] &&
+        [...Array(i).keys()].some((start) => reach[start] && heads.has(`${parts.slice(start, i).join('.')}.`))
+      )
+        return true;
       if (tails.has(`.${parts.slice(i).join('.')}`)) return true;
     }
   }
@@ -445,7 +485,8 @@ function entriesOf(objectNode, trail, out) {
     if (property.computed) continue;
     const key = nameOf(property.key);
     const here = [...trail, key];
-    if (property.type === 'ObjectProperty' && property.value.type === 'ObjectExpression') entriesOf(property.value, here, out);
+    if (property.type === 'ObjectProperty' && property.value.type === 'ObjectExpression')
+      entriesOf(property.value, here, out);
     else out.push({ trail: here, line: property.loc.start.line });
   }
   return out;
@@ -461,7 +502,10 @@ for (const [file, record] of records) {
       const read = reads.some((seen) => seen.every((part, i) => i >= trail.length || part === trail[i]));
       if (takenWhole || read) continue;
       if (keep(`table:${rel(file)}#${trail.join('.')}`)) continue;
-      problems.tables.push({ id: `table:${rel(file)}#${trail.join('.')}`, line: `${rel(file)}:${line}  ${trail.join('.')}` });
+      problems.tables.push({
+        id: `table:${rel(file)}#${trail.join('.')}`,
+        line: `${rel(file)}:${line}  ${trail.join('.')}`,
+      });
     }
   }
 }
@@ -480,7 +524,9 @@ const TITLES = {
 if (args.includes('--update-baseline')) {
   const next = Object.fromEntries(Object.keys(problems).map((kind) => [kind, problems[kind].map((p) => p.id).sort()]));
   fs.writeFileSync(BASELINE, `${JSON.stringify(next, null, 1)}\n`);
-  console.log(`check-unused: baseline rewritten — ${Object.values(next).flat().length} line(s). Read its diff before committing.`);
+  console.log(
+    `check-unused: baseline rewritten — ${Object.values(next).flat().length} line(s). Read its diff before committing.`,
+  );
   process.exit(0);
 }
 
@@ -492,7 +538,10 @@ const stale = [];
 for (const kind of kinds) {
   const accepted = new Set(baseline[kind] ?? []);
   const found = new Set(problems[kind].map((p) => p.id));
-  const lines = problems[kind].filter((p) => listing || !accepted.has(p.id)).map((p) => p.line).sort();
+  const lines = problems[kind]
+    .filter((p) => listing || !accepted.has(p.id))
+    .map((p) => p.line)
+    .sort();
   inBaseline += problems[kind].filter((p) => accepted.has(p.id)).length;
   fresh += problems[kind].filter((p) => !accepted.has(p.id)).length;
   stale.push(...[...accepted].filter((id) => !found.has(id)));
@@ -501,10 +550,20 @@ for (const kind of kinds) {
 if (listing) process.exit(0);
 
 const staleKept = only ? [] : Object.keys(KEPT).filter((key) => !usedKept.has(key));
-if (staleKept.length) console.error(`\ncheck-unused: these lines of KEPT keep nothing any more — remove them:\n  ${staleKept.join('\n  ')}`);
+if (staleKept.length)
+  console.error(
+    `\ncheck-unused: these lines of KEPT keep nothing any more — remove them:\n  ${staleKept.join('\n  ')}`,
+  );
 if (stale.length) {
-  console.error(`\ncheck-unused: ${stale.length} line(s) of the baseline are not unused any more (removed or used again) — delete them from scripts/check-unused.baseline.json:\n  ${stale.slice(0, 40).join('\n  ')}${stale.length > 40 ? '\n  …' : ''}`);
+  console.error(
+    `\ncheck-unused: ${stale.length} line(s) of the baseline are not unused any more (removed or used again) — delete them from scripts/check-unused.baseline.json:\n  ${stale.slice(0, 40).join('\n  ')}${stale.length > 40 ? '\n  …' : ''}`,
+  );
 }
-if (fresh) console.error(`\ncheck-unused: ${fresh} unused. Delete them, or name them in KEPT (scripts/check-unused.mjs) with the reason.`);
+if (fresh)
+  console.error(
+    `\ncheck-unused: ${fresh} unused. Delete them, or name them in KEPT (scripts/check-unused.mjs) with the reason.`,
+  );
 if (fresh || stale.length || staleKept.length || process.exitCode) process.exit(1);
-console.log(`✅ Nothing new is unused: ${records.size} files read, ${Object.keys(KEPT).length} kept on purpose, ${inBaseline} still in the baseline.`);
+console.log(
+  `✅ Nothing new is unused: ${records.size} files read, ${Object.keys(KEPT).length} kept on purpose, ${inBaseline} still in the baseline.`,
+);

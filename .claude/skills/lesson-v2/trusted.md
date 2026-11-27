@@ -103,3 +103,8 @@ generated: a random draw can exceed a line — lesson 5); the warm-up (cards dra
 | The experiment `chase` | the court of 2, five fractions up to 99/70, the ×1000 lens | `rootCourts/chase.test.js`, `inquiryChase.render.test.jsx` |
 | The board's `court` station with FRACTION rod cards and a gate given as a fraction | up to 5 cards; 529/49 with 23/7 | `features/classSession/courtStation.render.test.jsx` |
 | The instrument `piece` (`lessonlab/tools/FractionPlatform.jsx`) | area 2 with fifths and twelfths; 12/3 on 16 | `lessonlab/piece.render.test.jsx` |
+| The experiment `pair` (`nilePyramids/InquiryPair.jsx`) | two triangles apart, five rounds (world-first and given links), template 2 ; 3 ; 3,8, a stone up to 5,7 m | `nilePyramids/pair.render.test.jsx`; walked in `triangles-semblables` (2026-11-27) |
+| The experiment `angles` (`nilePyramids/InquiryAngles.jsx`) | four rounds: measured, drawn × 1,25 (« 225° ≠ 180° »), two sides with the angle between them | `nilePyramids/angles.render.test.jsx`; walked in `triangles-semblables` (2026-11-27) |
+| A forge whose cases carry their own `scene` (`forgeParts.jsx › SceneMirror`, `SceneLine`, thumbnails with no text) | two triangles apart, labels ≥ 12 px under attack (the figure cannot shrink) | `triangles-semblables/world/forges.test.js` |
+| The plateau with `story.plateau` (a date palm, its own sun, no slide) and a mission card opened line by line, ending the story | palm 16,8 m, shadow 21 m, five lines | `nilePyramids/plateau.test.js`; walked in `triangles-semblables` |
+| The instrument `similar` (`lessonlab`) | AB, AC 2–12, k 0,25–3 | `lessonlab/similar.render.test.jsx`; seen once at 1366×768 |

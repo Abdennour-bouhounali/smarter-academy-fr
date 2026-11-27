@@ -115,7 +115,8 @@ const NUMBER_RE =
  * and fractions written as the bank writes them. A whole number that is the piece of a decimal or a fraction is not
  * counted again.
  */
-const NOT_WRITTEN = /^\s*"(?:id|lessonCode|code|step|level|difficulty|timeSeconds|answerFormat|maxWidth)":/;
+// `value` is only ever a misconception signature's typed wrong answer (every French bank, 2026-11-27): never shown
+const NOT_WRITTEN = /^\s*"(?:id|lessonCode|code|step|level|difficulty|timeSeconds|answerFormat|maxWidth|value)":/;
 /** A JSON number on its own (a figure's coordinate, `"arrows": 1`): not a number the sheet writes. */
 const JSON_NUMBER = /^\s*(?:"[^"]+":\s*)?-?\d+(?:\.\d+)?,?\s*$/;
 export function bankNumbers(bank) {
@@ -163,7 +164,13 @@ export const linesWithBoth = (bank, x, y) =>
   bank.sheets.flatMap((s) => pairLines(bodyOf(s), x, y).map((l) => `${s.file}: ${l.trim()}`));
 
 /** The sheets where n stands alone. */
-const sheetsWith = (bank, n) => bank.sheets.filter((s) => alone(n).test(bodyOf(s))).map((s) => s.file);
+/** The lines of a sheet's body the student READS (the same filter as `bankNumbers`). */
+const writtenOf = (s) =>
+  bodyOf(s)
+    .split('\n')
+    .filter((l) => !NOT_WRITTEN.test(l) && !JSON_NUMBER.test(l))
+    .join('\n');
+const sheetsWith = (bank, n) => bank.sheets.filter((s) => alone(n).test(writtenOf(s))).map((s) => s.file);
 
 /** Every `world/story.js` of the lessons, but `exceptId`'s: { file, text }. */
 export function storiesOf({ exceptId = null } = {}) {

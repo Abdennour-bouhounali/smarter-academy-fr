@@ -1,0 +1,303 @@
+{
+  "id": "ex-3e-triangles-semblables-l5-001",
+  "lessonCode": "triangles-semblables",
+  "level": 5,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Associer, puis deux calculs",
+    "estimatedMinutes": 9,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P3",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Les triangles $PQR$ et $STU$ ont la même forme. Les figures ne sont pas à l’échelle. Pour $PQR$ : $PQ = 13$ cm, $QR = 14$ cm et $RP = 15$ cm. Pour $STU$ : $US = 11{,}2$ cm.",
+    "figure": {
+      "points": {
+        "P": [
+          -2.499,
+          -0.1434
+        ],
+        "Q": [
+          -0.5073,
+          1.5279
+        ],
+        "R": [
+          -2.9936,
+          2.8155
+        ],
+        "S": [
+          3.7213,
+          -1.2319
+        ],
+        "T": [
+          0.9022,
+          -0.2059
+        ],
+        "U": [
+          1.3765,
+          -2.7622
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "Q",
+          "label": "13"
+        },
+        {
+          "from": "Q",
+          "to": "R",
+          "label": "14"
+        },
+        {
+          "from": "R",
+          "to": "P",
+          "label": "15"
+        },
+        {
+          "from": "S",
+          "to": "T"
+        },
+        {
+          "from": "T",
+          "to": "U"
+        },
+        {
+          "from": "U",
+          "to": "S",
+          "label": "11,2"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, PQR et STU, dont les longueurs des côtés sont indiquées en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Quel sommet de $STU$ est l’homologue de $Q$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "B",
+          "content": "$T$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        },
+        {
+          "id": "C",
+          "content": "$U$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les deux côtés de $PQR$ qui partent de $Q$ ont chacun un côté homologue dans $STU$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "L’homologue de $Q$ est le sommet commun aux deux côtés homologues de ceux-là."
+        }
+      ],
+      "feedback": {
+        "correct": "$U$ est le sommet commun aux côtés $[TU]$ et $[US]$, homologues de $[PQ]$ et $[QR]$.",
+        "incorrect": "Ne te fie ni à l’ordre des lettres ni à la position sur la page : cherche les côtés ou les angles qui se correspondent."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés de $PQR$ issus de $Q$ sont $[PQ]$ et $[QR]$ ; leurs homologues sont $[TU]$ et $[US]$.",
+          "Leur sommet commun est $U$ : $Q$ et $U$ sont homologues."
+        ],
+        "result": "U"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Quel côté de $STU$ est l’homologue de $[PR]$ ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$[ST]$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$[TU]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-COTE-NON-HOMOLOGUE"
+        },
+        {
+          "id": "C",
+          "content": "$[US]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-HOMOLOGUES-POSITION"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Les extrémités de $[PR]$ ont chacune un sommet homologue dans $STU$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le côté homologue relie les homologues des deux extrémités."
+        }
+      ],
+      "feedback": {
+        "correct": "$P$ et $R$ ont pour homologues $T$ et $S$ : l’homologue de $[PR]$ est $[TS]$.",
+        "incorrect": "Cherche d’abord l’homologue de chaque extrémité du côté, puis relie-les."
+      },
+      "solution": {
+        "lines": [
+          "$P$ et $T$ sont homologues, $R$ et $S$ aussi.",
+          "Le côté homologue de $[PR]$ est donc $[TS]$."
+        ],
+        "result": "[TS]"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule le coefficient $k$ qui transforme $PQR$ en $STU$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "0,8",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[QR]$ et $[US]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $STU$ par la longueur homologue de $PQR$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{US}{QR} = \\dfrac{11{,}2}{14} = 0{,}8$.",
+        "incorrect": "Divise la longueur du côté de $STU$ par celle de son homologue dans $PQR$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[QR]$ et $[US]$ sont homologues.",
+          "$k = \\dfrac{US}{QR} = \\dfrac{11{,}2}{14} = 0{,}8$."
+        ],
+        "result": "k = 0{,}8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "1,25"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "Calcule $TU$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10,4",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[TU]$ est $[PQ]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[PQ]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$TU = k \\times PQ = 0{,}8 \\times 13 = 10{,}4$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[TU]$ est l’homologue de $[PQ]$.",
+          "$TU = k \\times PQ = 0{,}8 \\times 13 = 10{,}4$ cm."
+        ],
+        "result": "TU = 10{,}4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "16,25"
+        }
+      ],
+      "timeSeconds": 110
+    }
+  ]
+}

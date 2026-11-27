@@ -260,4 +260,3 @@ export function storyReducer(spec, s, a) {
   }
 }
 export const storyResult = (s) => ({ rounds: s.rounds });
-

@@ -1,0 +1,231 @@
+{
+  "id": "ex-3e-triangles-semblables-l2-009",
+  "lessonCode": "triangles-semblables",
+  "level": 2,
+  "brevet": 1,
+  "calculator": false,
+  "metadata": {
+    "title": "Le troisième quotient décide",
+    "estimatedMinutes": 5,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Automatismes",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les triangles $ABC$ et $DEF$ sont dessinés sans respecter l’échelle. Pour $ABC$ : $AB = 7$ cm, $BC = 11$ cm et $CA = 13$ cm. Pour $DEF$ : $DE = 22$ cm, $EF = 27$ cm et $FD = 14$ cm.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.5048,
+          0.1315
+        ],
+        "B": [
+          -1.1059,
+          0.9392
+        ],
+        "C": [
+          -2.3893,
+          3.1293
+        ],
+        "D": [
+          2.7736,
+          -0.8831
+        ],
+        "E": [
+          0.3291,
+          -0.8831
+        ],
+        "F": [
+          2.8973,
+          -2.4338
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "7"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "11"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "13"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "22"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "27"
+        },
+        {
+          "from": "F",
+          "to": "D",
+          "label": "14"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF, dont les trois côtés portent leur longueur en centimètres.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule le quotient $\\dfrac{FD}{AB}$ des deux côtés les plus courts.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Repère le plus court côté de chaque triangle."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le côté de $DEF$ est au numérateur."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{7} = 2$.",
+        "incorrect": "Divise la longueur du plus court côté de $DEF$ par celle du plus court côté de $ABC$."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{FD}{AB} = \\dfrac{14}{7} = 2$."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le quotient $\\dfrac{DE}{BC}$ des deux côtés de longueur moyenne.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "2",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Dans chaque triangle, le côté moyen est ni le plus court ni le plus long."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le côté moyen de $DEF$ par le côté moyen de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{22}{11} = 2$.",
+        "incorrect": "Compare bien les côtés de longueur moyenne, un dans chaque triangle."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{DE}{BC} = \\dfrac{22}{11} = 2$."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Les triangles $ABC$ et $DEF$ sont-ils semblables ?",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Non : le quotient $\\dfrac{EF}{CA}$ des plus longs côtés est différent des deux autres",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Oui : deux quotients sur trois sont égaux",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-UN-SEUL-RAPPORT"
+        },
+        {
+          "id": "C",
+          "content": "Oui : les côtés de $DEF$ sont tous plus longs que ceux de $ABC$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-DIFFERENCE"
+        },
+        {
+          "id": "D",
+          "content": "Non : les deux triangles n’ont pas la même taille",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SEMB-MEME-TAILLE"
+        }
+      ],
+      "answerFormat": "Choisis une réponse",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Il faut que les trois quotients soient égaux."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule le quotient qui reste, celui des plus longs côtés."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{27}{13}$ ne vaut pas 2 : les trois quotients ne sont pas égaux.",
+        "incorrect": "Pour des triangles semblables, les trois quotients des côtés de même rang sont égaux : il faut calculer le troisième."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EF}{CA} = \\dfrac{27}{13}$ ne vaut pas 2.",
+          "Les trois quotients ne sont pas égaux : les triangles ne sont pas semblables."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

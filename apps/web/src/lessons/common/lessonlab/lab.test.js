@@ -50,6 +50,7 @@ describe('Mon labo — the instruments a lesson may show', () => {
       ['strip', 'fraction-irreductible'],
       ['rope', 'thales-configuration-papillon'],
       ['factor', 'decomposer-en-facteurs-premiers'],
+      ['similar', 'triangles-semblables'],
     ]);
     for (const t of TOOLS) {
       if (t.lesson !== null) expect(placeOf(t.lesson), `${t.id}: ${t.lesson} in the catalogue`).toBeTruthy();
@@ -85,9 +86,18 @@ describe('Mon labo — the instruments a lesson may show', () => {
       'trouver-le-pgcd',
       'fraction-irreductible',
       'multiples-et-diviseurs-communs',
+      'triangles-semblables',
     ]);
     expect(toolsFor('thales-configuration-papillon', { earlierOnly: true }).all.map((t) => t.id)).not.toContain('rope');
     expect(hasLab('thales-configuration-papillon')).toBe(true);
+  });
+
+  it('« Reconnaître des triangles semblables » has the two triangles; the rope of the lesson after it is not there', () => {
+    const lab = toolsFor('triangles-semblables');
+    expect(lab.mine.map((t) => t.id)).toEqual(['similar']);
+    expect(lab.all.map((t) => t.id)).not.toContain('rope');
+    expect(toolsFor('triangles-semblables', { earlierOnly: true }).all.map((t) => t.id)).not.toContain('similar');
+    expect(hasLab('triangles-semblables')).toBe(true);
   });
 
   it('opened BEFORE the lesson (« L’échauffement », `earlierOnly`): only the instruments of the lessons before it', () => {
@@ -592,6 +602,7 @@ describe('Mon labo — the sounds', () => {
       'NumberCourt',
       'FractionPlatform',
       'FactorLadder',
+      'SimilarTriangles',
     ].map((n) => `./tools/${n}.jsx`),
   ];
   /** Every sound name written in the lab's code: play('x'…), useChime(play, 'x'…), and the two names of a « a ? 'x' : 'y' ». */

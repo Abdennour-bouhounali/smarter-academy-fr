@@ -11,7 +11,13 @@ import { inquiryFits, ownTools, tellsNothing } from './checks.mjs';
  * `saidBack` regexp in the experiment's descriptor. (A `data-iq-hit` on the fact would be a better handle: not in the engine.)
  */
 const SAID_BACK = /comme tu l[’']a(?:s|vais) (?:écrit|dit|prédit|annoncé)/i;
-import { halfturnExperiment, planExperiment, scaleExperiment } from './worlds/nilePyramidsExperiments.mjs';
+import {
+  anglesExperiment,
+  halfturnExperiment,
+  pairExperiment,
+  planExperiment,
+  scaleExperiment,
+} from './worlds/nilePyramidsExperiments.mjs';
 import { calcExperiment, chaseExperiment, roundtripExperiment } from './worlds/rootCourtsExperiments.mjs';
 import { crewsDays, crewsStory } from './crewsExperiments.mjs';
 
@@ -1129,6 +1135,8 @@ export const EXPERIMENTS = {
   plan: planExperiment,
   halfturn: halfturnExperiment,
   scale: scaleExperiment,
+  pair: pairExperiment,
+  angles: anglesExperiment,
   // fraction-irreductible (2026-11-26): `typed: false` (chips only) and `long: true` (one band per thin plank)
   'measure:stages': measureStages,
   'measure:direct': measureDirect,

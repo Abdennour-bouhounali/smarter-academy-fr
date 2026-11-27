@@ -1,0 +1,220 @@
+{
+  "id": "ex-3e-triangles-semblables-l3-009",
+  "lessonCode": "triangles-semblables",
+  "level": 3,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "Le périmètre du triangle agrandi",
+    "estimatedMinutes": 8,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "dz_port",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l3-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Le triangle $RST$ est un agrandissement de $KLM$ de coefficient $k = 3{,}5$. Pour $KLM$ : $KL = 5$ cm, $LM = 6$ cm et $MK = 9$ cm. Les triangles $KLM$ et $RST$ sont semblables ; les sommets homologues sont $K$ et $R$ ; $L$ et $S$ ; $M$ et $T$.",
+    "figure": {
+      "points": {
+        "K": [
+          -3.1252,
+          0.4478
+        ],
+        "L": [
+          -1.5153,
+          0.8792
+        ],
+        "M": [
+          -1.3594,
+          2.8731
+        ],
+        "R": [
+          3.2039,
+          -0.5495
+        ],
+        "S": [
+          1.5626,
+          -0.8389
+        ],
+        "T": [
+          1.2335,
+          -2.8116
+        ]
+      },
+      "segments": [
+        {
+          "from": "K",
+          "to": "L",
+          "label": "5"
+        },
+        {
+          "from": "L",
+          "to": "M",
+          "label": "6"
+        },
+        {
+          "from": "M",
+          "to": "K",
+          "label": "9"
+        },
+        {
+          "from": "R",
+          "to": "S"
+        },
+        {
+          "from": "S",
+          "to": "T"
+        },
+        {
+          "from": "T",
+          "to": "R"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, KLM et RST.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule $TR$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "31,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[TR]$ est $[MK]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[MK]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$TR = k \\times MK = 3{,}5 \\times 9 = 31{,}5$ cm.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[TR]$ est l’homologue de $[MK]$.",
+          "$TR = k \\times MK = 3{,}5 \\times 9 = 31{,}5$ cm."
+        ],
+        "result": "TR = 31{,}5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "18/7"
+        }
+      ],
+      "timeSeconds": 110
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule le périmètre du triangle $RST$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "70",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en cm",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le périmètre est la somme des trois côtés de $RST$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Calcule d’abord les côtés qui ne sont pas donnés, en utilisant le coefficient $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$17{,}5 + 21 + 31{,}5 = 70$ cm.",
+        "incorrect": "Additionne bien les trois côtés du triangle, chacun une seule fois."
+      },
+      "solution": {
+        "lines": [
+          "$17{,}5 + 21 + 31{,}5 = 70$ cm."
+        ],
+        "result": "70"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule le quotient du périmètre de $RST$ par le périmètre de $KLM$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "3,5",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Calcule le périmètre de $KLM$ : somme de ses trois côtés."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Divise le périmètre de $RST$ par celui de $KLM$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{70}{20} = 3{,}5$ : on retrouve $k$.",
+        "incorrect": "Le périmètre de $KLM$ est $5 + 6 + 9$ ; divise le grand périmètre par le petit."
+      },
+      "solution": {
+        "lines": [
+          "Périmètre de $KLM$ : $5 + 6 + 9 = 20$ cm.",
+          "$\\dfrac{70}{20} = 3{,}5$ : le périmètre est multiplié par $k$ lui aussi."
+        ],
+        "result": "3{,}5"
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

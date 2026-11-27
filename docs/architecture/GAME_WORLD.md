@@ -713,6 +713,12 @@ subject, blue for what the student writes, RED for the corrector and never befor
 Owner request: the student practises in the GAME first, then in the REAL format; the exercises follow his level; the game is
 felt BETWEEN two levels of the exam, never inside a sitting.
 
+- **The pyramids world, France only (2026-11-27, `triangles-semblables`)**: two experiment kinds, `pair` (two triangles
+  APART, sides linked — the world lays one on the other; quotients never evaluated) and `angles` (a protractor; the third
+  angle « 180° − a° − b° = c° »; a triangle that cannot close), registered in `nilePyramids/Inquiry.jsx`; a case may carry
+  its own `scene` (`forgeParts.jsx`); the story options `plateau` (the sun, a date palm, no slide), `mission.lines(vals)`
+  (lines opened one by one), `mission.heightSay`, and a story with no `box` ENDS with its mission; `evidence.answerKeys`
+  ties a savoir-faire proved by answers to the key whose last step teaches it (`kit/bankSitting.js › keysOfPoints`).
 - **« Espace jeu » / « Espace brevet »** — a switch at the top of the practice hub (`KnowledgeMap`, `data-di-space`). The game
   space is the 16 levels of §2bis. **« Espace brevet » is the FIRST of the two, the one the hub opens on, and it is OPEN FROM THE START, even for a
   student who never played** (owner, 2026-11-26 — it used to wait for the four keys and the first run of each;

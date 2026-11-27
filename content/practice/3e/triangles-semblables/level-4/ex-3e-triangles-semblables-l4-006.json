@@ -1,0 +1,236 @@
+{
+  "id": "ex-3e-triangles-semblables-l4-006",
+  "lessonCode": "triangles-semblables",
+  "level": 4,
+  "brevet": 2,
+  "calculator": true,
+  "metadata": {
+    "title": "La hauteur d’un arbre",
+    "estimatedMinutes": 9,
+    "tags": [
+      "triangles semblables"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "3e_triangles-semblables_P4",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "Exercice",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "Pour mesurer un arbre, Nina place un bâton vertical sur le sol plat. À la même heure, le bâton et l’arbre projettent une ombre. Le triangle $ABC$ est formé par le bâton, son ombre et un rayon de soleil ; le triangle $DEF$ par l’arbre, son ombre et un rayon de soleil. Le bâton mesure $BC = 1{,}2$ m. Sur la figure, les deux triangles sont dessinés sans respecter l’échelle. Pour $ABC$ : $AB = 0{,}5$ m. Pour $DEF$ : $DE = 5$ m. Les triangles $ABC$ et $DEF$ sont semblables ; les sommets homologues sont $A$ et $D$ ; $B$ et $E$ ; $C$ et $F$.",
+    "figure": {
+      "points": {
+        "A": [
+          -2.7692,
+          0.4769
+        ],
+        "B": [
+          -1.6154,
+          0.4769
+        ],
+        "C": [
+          -1.6154,
+          3.2462
+        ],
+        "D": [
+          1.5929,
+          -2.5305
+        ],
+        "E": [
+          2.6771,
+          -2.1359
+        ],
+        "F": [
+          1.73,
+          0.4664
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "0,5"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "5"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        }
+      ],
+      "ariaLabel": "Deux triangles séparés, ABC et DEF.",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "Calcule le coefficient $k$ qui transforme $ABC$ en $DEF$.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "10",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Cherche deux côtés homologues dont tu connais les deux longueurs : $[AB]$ et $[DE]$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Le coefficient s’obtient en divisant une longueur de $DEF$ par la longueur homologue de $ABC$."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{DE}{AB} = \\dfrac{5}{0{,}5} = 10$.",
+        "incorrect": "Divise la longueur du côté de $DEF$ par celle de son homologue dans $ABC$, et pas l’inverse."
+      },
+      "solution": {
+        "lines": [
+          "Les côtés $[AB]$ et $[DE]$ sont homologues.",
+          "$k = \\dfrac{DE}{AB} = \\dfrac{5}{0{,}5} = 10$."
+        ],
+        "result": "k = 10"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "0,1"
+        }
+      ],
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "Calcule la hauteur $EF$ de l’arbre.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "12",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[EF]$ est $[BC]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[BC]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = k \\times BC = 10 \\times 1{,}2 = 12$ m.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[EF]$ est l’homologue de $[BC]$.",
+          "$EF = k \\times BC = 10 \\times 1{,}2 = 12$ m."
+        ],
+        "result": "EF = 12"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "0,12"
+        }
+      ],
+      "timeSeconds": 110
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "Calcule la distance $FD$ entre la cime de l’arbre et le bout de son ombre.",
+      "learningPoints": [
+        {
+          "code": "3e_triangles-semblables_P4",
+          "role": "primary"
+        },
+        {
+          "code": "3e_triangles-semblables_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "expectedAnswer": "13",
+      "answerFormat": "Un nombre décimal, avec une virgule si besoin, en m",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Le côté homologue de $[FD]$ est $[CA]$ : sa longueur est connue."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "Multiplie la longueur de $[CA]$ par $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$FD = k \\times CA = 10 \\times 1{,}3 = 13$ m.",
+        "incorrect": "Vérifie le côté homologue que tu utilises, et si tu multiplies ou si tu divises par $k$."
+      },
+      "solution": {
+        "lines": [
+          "$[FD]$ est l’homologue de $[CA]$.",
+          "$FD = k \\times CA = 10 \\times 1{,}3 = 13$ m."
+        ],
+        "result": "FD = 13"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SEMB-K-INVERSE",
+          "value": "0,13"
+        }
+      ],
+      "timeSeconds": 110
+    }
+  ]
+}

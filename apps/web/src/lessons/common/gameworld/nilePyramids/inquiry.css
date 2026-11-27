@@ -159,3 +159,195 @@
   margin-inline-start: 0.4rem;
   font-size: 1.08rem;
 }
+
+/* kind pair */
+.np-iq--pair .np-pair__fig {
+  /* the two triangles side by side: 38rem ≈ 608 design px for a 640-unit drawing (font 18 → ≥ 18 px at 1366 × 768) */
+  flex: 0 0 38rem;
+}
+.np-iq--pair .np-pair__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.np-iq--pair .np-pair__side:focus-visible {
+  outline: 3px solid #f59e0b;
+}
+.np-iq--pair .np-pair__said {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #334155;
+}
+.np-iq--pair .np-pair__quotients {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+.np-iq--pair .np-pair__chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.7rem;
+  background: #fff;
+  font-weight: 700;
+}
+.np-iq--pair .np-pair__chip small {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #475569;
+}
+.np-iq--pair .np-pair__mark {
+  min-width: 1.2rem;
+  padding-top: 0.25rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.np-iq--pair .np-pair__again {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #334155;
+}
+
+/* kind angles */
+/* two triangles apart (640 × 320 units, drawn at 1 px a unit or more: 18-unit text is 18 px or more), the world's line
+   of each triangle under them, the protractor's controls beside */
+.np-iq--angles .np-iq-ang__fig {
+  flex: 0 0 40rem;
+  min-width: 0;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  background: #fffdf6;
+  box-shadow: inset 0 0 0 1px #e7dcc0;
+}
+.np-iq--angles .np-iq-ang__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: none;
+}
+.np-iq--angles .np-iq-ang__gap {
+  stroke: #e7dcc0;
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+}
+.np-iq--angles .np-iq-ang__tri {
+  fill: rgba(29, 78, 216, 0.1);
+  stroke: #1d4ed8;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+.np-iq--angles .np-iq-ang__name {
+  font-size: 20px;
+  font-weight: 800;
+  fill: #0f172a;
+}
+.np-iq--angles .np-iq-ang__deg,
+.np-iq--angles .np-iq-ang__len {
+  font-size: 18px;
+  font-weight: 700;
+  fill: #7c4a03;
+}
+.np-iq--angles .np-iq-ang__len {
+  fill: #1e3a8a;
+}
+.np-iq--angles .np-iq-ang__arc {
+  fill: none;
+  stroke: #d97706;
+  stroke-width: 2.5;
+}
+.np-iq--angles .np-iq-ang__spot {
+  fill: transparent;
+  cursor: pointer;
+}
+.np-iq--angles .np-iq-ang__spot:hover {
+  fill: rgba(29, 78, 216, 0.18);
+}
+.np-iq--angles .np-iq-ang__pro {
+  cursor: grab;
+}
+.np-iq--angles .np-iq-ang__disc {
+  fill: rgba(14, 165, 233, 0.16);
+  stroke: #0284c7;
+  stroke-width: 1.5;
+}
+.np-iq--angles .np-iq-ang__tick {
+  stroke: #0369a1;
+  stroke-width: 1.5;
+}
+.np-iq--angles .np-iq-ang__needle {
+  stroke: #b91c1c;
+  stroke-width: 2.5;
+}
+.np-iq--angles .np-iq-ang__handle {
+  fill: #fee2e2;
+  stroke: #b91c1c;
+  stroke-width: 2;
+}
+.np-iq--angles .np-iq-ang__flat {
+  stroke: #64748b;
+  stroke-width: 2;
+  stroke-dasharray: 8 6;
+}
+.np-iq--angles .np-iq-ang__wedge {
+  stroke: #1d4ed8;
+  stroke-width: 2;
+  fill: rgba(29, 78, 216, 0.12);
+}
+.np-iq--angles .np-iq-ang__wedge.is-1 {
+  fill: rgba(29, 78, 216, 0.24);
+}
+.np-iq--angles .np-iq-ang__wedge.is-2 {
+  fill: rgba(29, 78, 216, 0.36);
+}
+.np-iq--angles .np-iq-ang__over {
+  fill: rgba(217, 119, 6, 0.35);
+  stroke: #d97706;
+  stroke-width: 2;
+}
+.np-iq--angles .np-iq-ang__ghost {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  transform: var(--np-slide);
+  animation: np-iq-ang-slide 1.4s ease-in-out both;
+}
+.np-iq--angles .np-iq-ang__ghost polygon {
+  fill: rgba(217, 119, 6, 0.22);
+  stroke: #d97706;
+  stroke-width: 3;
+  stroke-dasharray: 8 5;
+}
+@keyframes np-iq-ang-slide {
+  from {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .np-iq--angles .np-iq-ang__ghost {
+    animation: none;
+  }
+}
+.np-iq--angles .np-iq-ang__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+.np-iq--angles .np-iq-ang__pick,
+.np-iq--angles .np-iq-ang__dial {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+.np-iq--angles .np-iq-ang__range {
+  width: 16rem;
+  max-width: 100%;
+}
