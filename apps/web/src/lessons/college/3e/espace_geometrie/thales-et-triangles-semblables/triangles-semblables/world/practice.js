@@ -2,8 +2,9 @@
  * « Entraîne-toi sur le Nil » — the CONTENT of the practice ladder of lesson `triangles-semblables` (PURE). The ladder is
  * the kit's (`gameworld/kit/ladder.js`); a level is a run of the kit's rail on the river (`nilePyramids/practice.js`). Its
  * waves are the felucca's (`run.js › GENERATORS`, `isRight`): one definition of a buoy, here and between the docks — the
- * first level of a key's node IS the leg sailed after its seal. Each key practises ITS rule only: K1 the coefficient and a
- * side from the sides, K2 the third angle and a side from two equal angles.
+ * first level of a key's node IS the leg sailed after its seal. Every buoy is ONE bare calculation (owner, 2026-11-27),
+ * the computations of the key's exercises only: K1 a proportion to complete, a coefficient, a side times its coefficient;
+ * K2 the third angle of a triangle. The second level of a node: faster, with harder numbers (`{ hard: true }`).
  */
 import { createLadder, SUMMARY } from '../../../../../../common/gameworld/kit/ladder';
 import { GENERATORS, isRight, LEG_MIX } from './run';
@@ -18,9 +19,10 @@ export const PRACTICE_NODES = [
       {
         speed: 6.6,
         mix: [
-          ['longueur', {}],
-          ['rapport', {}],
-          ['longueur', {}],
+          ['cote', {}],
+          ['quatrieme', { hard: true }],
+          ['coefficient', { hard: true }],
+          ['cote', { hard: true }],
         ],
       },
     ],
@@ -32,32 +34,34 @@ export const PRACTICE_NODES = [
       {
         speed: 6.6,
         mix: [
-          ['cote', {}],
-          ['troisieme', {}],
-          ['cote', {}],
+          ['complement', { hard: true }],
+          ['troisieme', { hard: true }],
         ],
       },
     ],
   },
-  // the summary node: two mixed runs, the second faster
+  // the summary node: two mixed runs, the second faster and with the harder numbers
   {
     id: SUMMARY,
     levels: [
       {
         speed: 6.2,
         mix: [
-          ['longueur', {}],
+          ['quatrieme', {}],
           ['troisieme', {}],
+          ['coefficient', {}],
+          ['complement', {}],
           ['cote', {}],
         ],
       },
       {
         speed: 6.8,
         mix: [
-          ['rapport', {}],
-          ['cote', {}],
-          ['longueur', {}],
-          ['troisieme', {}],
+          ['quatrieme', { hard: true }],
+          ['complement', { hard: true }],
+          ['coefficient', { hard: true }],
+          ['troisieme', { hard: true }],
+          ['cote', { hard: true }],
         ],
       },
     ],

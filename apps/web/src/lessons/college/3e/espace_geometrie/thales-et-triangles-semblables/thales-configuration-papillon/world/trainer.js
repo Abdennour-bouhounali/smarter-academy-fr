@@ -4,7 +4,8 @@
  * `kit/Trainer.jsx`). Here: the kinds of question of THIS lesson, the plan of each card of its mind map, and how an
  * answer is judged: `check` gives first a HINT that says what the answer gives (never the answer), then the correction.
  *
- *   game formats: a buoy of the felucca (`practice.js › waveOf`, its facts as hints), a true / false in one tap;
+ *   game formats: a buoy of the felucca (`practice.js › waveOf`: a bare calculation, no figure — its facts as hints),
+ *   a true / false in one tap;
  *   exam formats, the asks of the bank on the platform's OWN figures (`math.js › FIGURES`) and letters —
  *     K1 « Calcule le rapport » (a fraction over a bar; the two lengths of one line given, or the one ACROSS the vertex:
  *        P2), « Écris les trois rapports égaux » (segment names chosen inside fractions, a butterfly or a nested figure);
@@ -419,23 +420,9 @@ const Q = {
 
 /** What a session asks, by family of card: [kind, …arguments] for the six slots (game, game, exam, game, exam, exam). */
 const PLANS = {
-  k1: [
-    ['tap', 'longueur', {}],
-    ['tf', K.papillon],
-    ['rapport'],
-    ['tap', 'rapport', {}],
-    ['rapports'],
-    ['rapportTravers'],
-  ],
-  k2: [['tap', 'travers', {}], ['tf', K.calcul], ['longueur'], ['tap', 'traversInconnu', {}], ['travers'], ['emboite']],
-  mix: [
-    ['tap', 'longueur', {}],
-    ['tf', K.calcul],
-    ['rapportTravers'],
-    ['tap', 'emboite', {}],
-    ['longueur'],
-    ['travers'],
-  ],
+  k1: [['tap', 'egalite', {}], ['tf', K.papillon], ['rapport'], ['tap', 'croix', {}], ['rapports'], ['rapportTravers']],
+  k2: [['tap', 'somme', {}], ['tf', K.calcul], ['longueur'], ['tap', 'decimal', {}], ['travers'], ['emboite']],
+  mix: [['tap', 'egalite', {}], ['tf', K.calcul], ['rapportTravers'], ['tap', 'somme', {}], ['longueur'], ['travers']],
 };
 /** Which plan a card of the lesson's mind map trains (`knowledge.js`). */
 export const PLAN_OF = {

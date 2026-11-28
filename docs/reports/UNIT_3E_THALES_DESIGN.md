@@ -270,7 +270,7 @@ disclosed). The bank agent runs `pairs.js` on the finished bank (each new sheet 
 | # | Screen | What the student does | What the walk checks |
 |---|---|---|---|
 | 1 | Title → the map | three docks only (W2) | `data-np-dock` × 3; Zero at dock 3 |
-| 2 | Dock 3 « La largeur du Nil » | AS 72, SE 9, inland to the sight (`data-np-sight`), ER 52; types 468 (slack), then 416 (ties) | the sight hides F; no size written; the instruction teaches the rope here (first dock) |
+| 2 | Dock 3 « La largeur du Nil » | AS 72, SE 9 at the rope; then THE GEOMETER'S PLAN (the river from above, `data-np-plan`): R moved until the string over S arrives on F (46 → left, 58 → right, 52 planted); [AF] written on the drawing — a PREDICTION before the key: 468 (slack), the forge opens all the same; after the key the rope is cut again, 416 (ties) | a string beside the post plants nothing and a fact says the side; the two triangles are filled once R stands; a missed rope does not block him; the plan opened again draws the rope he threw (rebuilt 2026-11-27: the owner refused the walk « until S hides F in Zero's eye » and the length typed with no figure) |
 | 3 | Dock 3's table — K1 | `halfturn` ×3 (prediction, turn) → tiles (16) → mirror → attacks → seal → sentence + ratios + OF 8,5 → tablet, the Thalès card | after each turn NO line in the butterfly's letters (W3); the two true pairs refuted by the third ratio; the world's sentences hold no « papillon » before the tablet (the lesson's title does — the check is scoped to the world) |
 | 4 | Felucca dock 3 → 4 | four butterfly buoys, crocodiles | one right buoy per wave |
 | 5 | Dock 4 « Le pyramidion » | the capstone « chaque longueur × [1/36] » (owned) | sits; the card states the base 99 m |
@@ -541,6 +541,118 @@ The mission: the inverted pairing 26,25 (Zero above), then 16,8. The launch's to
 | 5 | K2's last step had no numbers | its angles 27°, 41°, 112°, sides named by letters only — CLEAR |
 | 6 | rule named before the seal | the key ids never shown as titles before the seal; the world's first link is captioned « premier lien », never « le plus petit avec le plus petit » |
 | 7 | labels | items 0 / 5 corrected; « (v4) » |
+
+## Lesson 3 — `reciproque-de-thales` — « Prouver que deux droites sont parallèles » — design v1 (2026-11-27, for gate A)
+
+Owner, 2026-11-26: new world pieces are built **in France only**; the contraposée stays (the six kept DZ sheets that
+conclude « not parallel » from unequal ratios, and the lesson shows it once). Numbers computed exactly by
+`reports/rt-numbers.py` (« every line ok »; positions as SIGNED abscissas through O), every screen run through
+`reports/ts-pairs.py`: CLEAR. Port map: § 8bis. Nothing is built.
+
+**What binds**: `3e.m4.r05` (« Thalès et sa réciproque dans la configuration du papillon »); P1 the points aligned in
+the same order on the two secant lines; P2 compare two ratios to prove two lines parallel (⇐ P1, papillon P1); P3 write
+a proof of parallelism citing the converse (⇐ P2).
+
+**§0ter.** He holds: Thalès in nested triangles AND its converse (4e, `4e.m4.r04`, measured by the launch kit:
+PARALLEL_IN_TRIANGLE, EQUAL_FRACTIONS); the butterfly and its direct theorem (lesson 2, `papillon`: « every length from
+the vertex »). **New**: the converse IN THE BUTTERFLY — equal ratios are NOT enough: the points must stand in the same
+order (C beyond O exactly when D is beyond O); the converse's name and its brevet sentence; and, from the direct theorem
+he owns, « unequal ratios ⇒ not parallel ». So ONE key — one rule with two conditions — at dock 1, its written proof in
+its last step (after the seal: the name « réciproque du théorème de Thalès » comes with the tablet), and a mission that
+asks for one proof « parallèles » and one « pas parallèles ».
+
+**Docks**: `story.stages = ['field', 'river']`. Dock 1 « Le champ du Nil » (not yet on France's map; its world steps —
+the canals measured, a canal's length predicted — play as scenery: nested, the direct theorem he owns); dock 3 « La
+largeur du Nil » (the papillon lesson's: its steps replay with this story's sentences) holds the MISSION card at its
+table (**T5**, below).
+
+### K1 `reciproque` « Le même ordre » — dock 1 (P1, P2)
+
+**New kind `stake`** (2D: `nilePyramids/stake.js`, `InquiryStake.jsx`): two lines secant at O; A on the first and B on
+the second at given lengths from O; he plants C on (OA) and D on (OB) at given lengths, CHOOSING the side of O for each
+(« du côté de A / de B » · « de l'autre côté de O »). The world writes the two quotients « OC ÷ OA » and « OD ÷ OB »
+UNEVALUATED with « = / ≠ », draws (CD) and (AB), and LAYS a level along (AB) then along (CD): the bubble stays in the
+middle (parallel) or not. Before the level he predicts « parallèles » · « pas parallèles ». One round per screen.
+
+Rounds (OA = 1,8 m, OB = 2,6 m): **R1** C, D beyond O, OC = 5,4, OD = 7,8 (5,4 ÷ 1,8 = 7,8 ÷ 2,6): parallel. **R2** the
+same lengths, D planted on B's side: the quotients are equal, NOT parallel. **R3** C, D beyond O, OD = 7,4: quotients
+unequal, not parallel (the contraposée met). **R4** nested: OC = 0,9, OD = 1,3, both on A's and B's side: parallel
+(his 4e case). **R5** C, D beyond O, OD = 6,2: OC − OA = OD − OB = 3,6, not parallel.
+
+Tiles — « $(AB)$ et $(CD)$ sont parallèles quand [les longueurs] [les côtés] »: [les quotients OC ÷ OA et OD ÷ OB sont
+égaux ✓ · les différences OC − OA et OD − OB sont égales (R5) · les quotients sont différents (R1)] × [C et D sont
+dans le même ordre que A et B ✓ · C et D sont n'importe où sur leurs droites (R2)]. Every wrong tile met and refuted;
+exactly one rule holds. Tablet (after the seal): « Si les points $O, A, C$ et $O, B, D$ sont alignés DANS LE MÊME
+ORDRE et si $\dfrac{OC}{OA} = \dfrac{OD}{OB}$, alors les droites $(AB)$ et $(CD)$ sont parallèles : c'est la
+**réciproque du théorème de Thalès**. Si les deux quotients sont différents, les droites ne sont pas parallèles : sinon,
+le théorème de Thalès les rendrait égaux. »
+
+Last step (P1 + P2 + P3, after the seal; choice tokens and boxes as the papillon's K1): a new butterfly, OA = 2 m,
+OB = 2,2 m, OC = 6 m, OD = 6,6 m, C and D beyond O. « Les points [O], [A], [C] sont alignés, ainsi que [O], [B], [D],
+dans le même ordre. $\dfrac{OC}{OA} = \dfrac{[6]}{[2]} = [3]$ et $\dfrac{OD}{OB} = \dfrac{[6,6]}{[2,2]} = [3]$. Les
+quotients sont égaux, donc d'après [la réciproque du théorème de Thalès · le théorème de Thalès · le théorème de
+Pythagore], les droites [(AB)] et [(CD)] sont parallèles. »
+
+### The mission — dock 3, the ferry's two cables (P1, P2, P3, the contraposée)
+
+The ferry crosses at the stake O; two cables (AB) and (CD) and two others (AB) and (CE) must be checked. Card: « Sur
+chaque rive, le piquet $O$. $OA = 2,4$ m, $OB = 3$ m, $OC = 6$ m, $OD = 7,5$ m, $OE = 7,2$ m ; $C$, $D$, $E$ sont de
+l'autre côté du fleuve. Les câbles $(AB)$ et $(CD)$ sont-ils parallèles ? Et $(AB)$ et $(CE)$ ? » Lines, each opening
+when the one before holds (`lines(vals)`): the same order (choice); the two quotients for (CD) (6 ÷ 2,4 = 7,5 ÷ 3 =
+2,5) and the conclusion with the theorem named; the two for (CE) (2,5 against 7,2 ÷ 3 = 2,4) and « ne sont pas
+parallèles ». Distractor: the difference (6 − 2,4 = 3,6 against 7,2 − 3 = 4,2 or 7,5 − 3 = 4,5). No flight (no height).
+
+### World options (France only)
+
+| # | Option | Where | Size |
+|---|---|---|---|
+| T6 | the kind `stake` (2D: two secant lines, plant on a side, a spirit level) | `nilePyramids/stake.js`, `InquiryStake.jsx`, text, tests | new, ~450 lines |
+| T5 | the mission card at ANOTHER dock's table (`story.missionAt: 'river'`; default the plateau) — no flight when the mission has no `height` | `Game.js` (main session) | 30–60 |
+
+The lab: port DZ `parallel-level` (ParallelLevel.jsx, 1 505 lines, and `packages/core/arithmetic/thales.js › converse`) as
+« Mon labo » instrument — or a smaller instrument of our own (decided at gate A).
+
+### Numbers (v1) — every screen
+
+| Screen | Numbers | |
+|---|---|---|
+| R1–R5 | 1,8, 2,6, 5,4, 7,8 · 7,4 · 0,9, 1,3 · 6,2 | CLEAR each |
+| last step | 2, 2,2, 6, 6,6, 3 | CLEAR |
+| mission | 2,4, 3, 6, 7,5, 7,2, 2,5 | CLEAR |
+
+### Bank, satellites
+
+- Bank `content/practice/3e/reciproque-de-thales/`: 24 DZ sheets ported (18 butterfly, 6 order — § 8bis), the selfCheck
+  proofs as P3 items; new sheets to reach 50, 25 / 25; the answer oracle in the same wave.
+- Class test: new (DZ has none). Board: new (stations: same order, the level, the proof). Launch: `4e.m4.r04`,
+  `4e.m1.r07` (exist). Revision page. Lab (above).
+
+### The walk's outline (v1)
+
+K1: tiles above; R1, R4 parallel, R2, R3, R5 not; the wrong first try: « n'importe où » refuted on R2. Last step: the
+proof's tokens and 6/2 = 3, 6,6/2,2 = 3, the theorem « réciproque ». Mission: (CD) parallel, (CE) not, the difference
+distractor.
+
+### Gate A, first reading — « back to design » (2026-11-27), NOT answered yet — the lesson is PAUSED
+
+Paused because the owner refused the river dock's step the same day (« very very bad, rebuild it from scratch, and never
+use the same way » — the papillon lesson's « fix R, find AF »; propositions: `docs/reports/mockups/papillon-river-three-propositions.html`):
+this design put its mission on that dock. To answer in v2: (1) BLOCKING the mission does not need the lesson — add a post
+on the WRONG side with equal quotients, « même ordre » read from the figure; (2) BLOCKING write what he holds when the
+forge opens, and use dock 1's own canals (14/63 = 16/72 parallel; 39/63, 28/72 not) as rounds; (3) BLOCKING the mission's
+numbers clash once the quotient 2,5 is on screen; (4) BLOCKING computed values shown (3,6 ; 4,5) and dock 1's 14 & 16 were
+not checked; notes: the contraposée written in the last step too (« réciproque » the WRONG token for « pas parallèles »);
+the third-ratio error (OC/OA = CD/AB taken as proof) needs a case; the tile « tous deux du côté de A et B, ou tous deux
+de l'autre côté de O »; no replay of the river steps; the mission's world verdict named; the level only in a VERTICAL
+scene, or measure the gap between the lines at two places; ONE law (`core/arithmetic/thales.js › converse`) for the kind
+and the lab.
+
+### Open for gate A
+
+1. One key only (the rule has two conditions in one tile frame); is P3 enough in the last step and the mission?
+2. The kind `stake` — is a spirit level an honest « the world tests it », or does it tell the answer?
+3. T5 (mission at the river) against putting the mission on the plateau.
+4. The lab: port DZ `parallel-level` whole, or a smaller instrument.
 
 ### Engine changes (each in DZ FIRST, then the patch to France; the DZ lesson declares all five stages and is unchanged)
 

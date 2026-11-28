@@ -8,8 +8,9 @@
  *     1 field                six rope measures, two predictions of a canal's length (as typed · longer · shorter)
  *     2 workshop             the rope up the edge on the built steps; two courses ordered (fits · gap · overhang); then
  *                            the row already cut: HE types its mark, the masons build up to it and lay it there
- *     3 river                the bank AS, then SE, then inland ER until, in Zero's eye, the stake S hides the post F
- *                            (`data-np-sight`); the ferry rope cut before crossing (ties · short · slack)
+ *     3 river                the bank AS, then SE; then THE GEOMETER'S PLAN (`RiverPlan.jsx`, the river from above):
+ *                            the stake R placed where a string over S arrives on the post F, and the ferry rope's
+ *                            length written on the drawn [AF], cut before crossing (ties · short · slack)
  *     4 summit               up the ramp to the summit, framed close; « every length × [k] » to the stone-cutter: the
  *                            capstone sits · is too small · too big (a block too big is the quarry's written order)
  *     5 plateau              the stick IN THE SUN, the shadows (DRAWN meshes from `shadowTip`, never the shadow map),
@@ -45,6 +46,7 @@ import * as THREE from 'three';
 import { WorldRuntime } from '../kit/WorldRuntime';
 import { GateRun, railSpeed } from '../kit/GateRun';
 import { riverRun } from './riverMeshes';
+import { stringFact } from './riverPlan';
 import { practiceRun, practiceEnd, practiceSpeed } from './practice';
 import {
   FIELD,
@@ -121,8 +123,6 @@ const SUN_NOON = sunVector('8', Math.PI / 2);
 /** The summit's top platform: the pyramid's base × the capstone's k (99 × 1/36 = 2,75) — given on the summit's record. */
 const SUMMIT_TOP = write(times(FACE.base, CAPSTONE.k));
 const ZERO = 0.55; // the kit's robot is about 2,2 units tall: drawn about 1,2 m, as planned (§1.2)
-const SIGHT_EYE = 1.25; // Zero's eye on the sight line (stage 3), in metres
-const SIGHT_DIP = 8; // degrees the sight looks down: the land under him in the bottom third, the far post kept high
 const AMBER = 0xf59e0b;
 const VIOLET = 0x8b5cf6;
 const v3 = (p) => new THREE.Vector3(p.x, p.y ?? 0, p.z);
@@ -329,19 +329,31 @@ export class NilePyramidsGame extends WorldRuntime {
             target: RIVER.SE,
             max: '20',
           },
+          // the plan seen from above: R placed by a string he sees, then [AF] asked on the same drawing
+          { id: 'ER', kind: 'plan', from: 'E', toward: 'R', seg: 'ER', target: RIVER.ER },
+          // with a forge at this dock, the first rope is a PREDICTION (he does not own the rule yet): the world throws
+          // it whatever it is and the forge opens; a rope that did not tie is cut again once the key is his (`again`)
           {
-            id: 'ER',
-            kind: 'slide',
-            sight: true,
-            from: 'E',
-            toward: 'R',
-            stake: null,
-            seg: 'ER',
-            target: RIVER.ER,
-            max: '70',
+            id: 'ferry',
+            kind: 'order',
+            order: 'ferry',
+            plan: true,
+            seg: 'AF',
+            at: 'A',
+            truth: riverWidth(RIVER),
+            open: forge('river').length > 0,
           },
-          { id: 'ferry', kind: 'order', order: 'ferry', seg: 'AF', at: 'A', truth: riverWidth(RIVER) },
           ...forge('river'),
+          ...forge('river').map(() => ({
+            id: 'ferry2',
+            kind: 'order',
+            order: 'ferry',
+            plan: true,
+            seg: 'AF',
+            at: 'A',
+            truth: riverWidth(RIVER),
+            again: 'ferry',
+          })),
         ],
       },
       {
@@ -460,7 +472,6 @@ export class NilePyramidsGame extends WorldRuntime {
       register: null,
       verdict: null,
       look: null,
-      sight: false,
       run: null,
       stars: { ...(sv?.stars ?? {}) },
       hasSave: Boolean(sv && (sv.dock > 0 || Object.keys(sv.done ?? {}).length)),
@@ -553,10 +564,8 @@ export class NilePyramidsGame extends WorldRuntime {
       const b = this.felucca.position;
       return { pos: new THREE.Vector3(b.x + 22, 13, b.z + 26), look: new THREE.Vector3(b.x, 1, b.z - 20), k: 3 };
     }
-    if (this.hold && (ph === 'play' || ph === 'dialog')) {
-      if (this.hold.step.sight) return this.sightShot();
+    if (this.hold && (ph === 'play' || ph === 'dialog'))
       return { pos: this.hold.cam.pos, look: this.hold.cam.look, k: 3 };
-    }
     // what was built is SEEN: the camera stays over it until he walks again
     if (this.cine && this.stickyCine && (ph === 'play' || ph === 'dialog'))
       return { pos: this.cine.pos, look: this.cine.look, k: 2 };
@@ -569,23 +578,6 @@ export class NilePyramidsGame extends WorldRuntime {
     f.pos.set(h.x - d.x * 6.8, Math.max(0, h.y) + 4.4, h.z - d.y * 6.8);
     f.look.set(h.x + d.x * 2, Math.max(-2, h.y) + 0.8, h.z + d.y * 2);
     return { pos: f.pos, look: f.look, k: 4.5 };
-  }
-  /**
-   * Zero's eye, from the knot he stands on, along the line to the far post (stage 3, `cameraShot('sight')`). The eye
-   * stays ON the line (S hides F exactly where it should), but it looks SIGHT_DIP degrees down: the sand under him, the
-   * rope back to the stake E and the water's edge fill the bottom of the screen, and that strip of land grows as he
-   * backs away — he SEES he walks inland, never into the river (owner, 2026-11-26: « how, by walking in the water? »).
-   */
-  sightShot() {
-    const p = slidePoint(this.hold.s);
-    const F = this.pts.river.F;
-    const s = this.sightCam ?? (this.sightCam = { pos: new THREE.Vector3(), look: new THREE.Vector3() });
-    const dx = F.x - p.x;
-    const dz = F.z - p.z;
-    const l = Math.hypot(dx, dz) || 1;
-    s.pos.set(p.x, SIGHT_EYE, p.z);
-    s.look.set(p.x + (dx / l) * 10, SIGHT_EYE - 10 * Math.tan((SIGHT_DIP * Math.PI) / 180), p.z + (dz / l) * 10);
-    return { pos: s.pos, look: s.look, k: 8 };
   }
   /** On the summit: the top eight metres framed close — the capstone about 150 px wide (§1.5). */
   topShot() {
@@ -1115,7 +1107,8 @@ export class NilePyramidsGame extends WorldRuntime {
     this.robot.group.scale.setScalar(ZERO);
     for (const st of this.stages)
       for (const step of st.steps)
-        if (step.kind === 'slide' && !step.ghost && this.done[step.id] != null) this.layRope(st, step);
+        if ((step.kind === 'slide' || step.kind === 'plan') && !step.ghost && this.done[step.id] != null)
+          this.layRope(st, step);
     const lastCourse = [...this.log].reverse().find((l) => l.kind === 'course' || l.kind === 'mark');
     if (lastCourse && !(lastCourse.kind === 'course' && holds(lastCourse.fact))) this.layCourse(lastCourse, false);
     const ferry = [...this.log].reverse().find((l) => l.kind === 'ferry');
@@ -1146,6 +1139,7 @@ export class NilePyramidsGame extends WorldRuntime {
   /** A forge step is done when its key is owned; any other when the world holds what it gave. */
   stepDone(step) {
     if (step.kind === 'forge') return this.state.keys.includes(step.key);
+    if (step.again) return this.log.some((l) => l.step === step.again && holds(l.fact));
     return this.done[step.id] != null;
   }
   stepNow() {
@@ -1167,7 +1161,6 @@ export class NilePyramidsGame extends WorldRuntime {
       if (step.edge) return T.edge(step.from, step.stake);
       if (step.canal) return T.canal(step.from, step.stake);
       if (step.bank) return O.bankStart;
-      if (step.sight) return O.sight;
       if (step.stick) return O.stick;
       if (step.shadow) return O.shadow;
       if (step.base) return O.base;
@@ -1175,13 +1168,16 @@ export class NilePyramidsGame extends WorldRuntime {
       return T.slide(step.from, step.line, step.stake);
     }
     if (step.kind === 'predict') return T.predict(step.seg);
+    if (step.kind === 'plan') return O.plan;
     if (step.kind === 'order')
       return step.order === 'course'
         ? T.course(step.seg)
         : step.order === 'mark'
           ? O.mark(FACE.row)
           : step.order === 'ferry'
-            ? O.ferry
+            ? step.again
+              ? O.ferryAgain
+              : O.ferry
             : O.capstone;
     if (step.kind === 'climb') return O.climb;
     if (step.kind === 'mission') return O.mission;
@@ -1252,7 +1248,7 @@ export class NilePyramidsGame extends WorldRuntime {
             by: T.typed,
             fact: last.fact,
           });
-      } else if (step.kind === 'slide' && step.seg && v != null)
+      } else if ((step.kind === 'slide' || step.kind === 'plan') && step.seg && v != null)
         rows.push({ id: step.id, tex: `${step.seg} = ${v}`, kind: 'measured', by: step.canal ? T.reads : null });
     }
     if (!rows.length) return null;
@@ -1281,6 +1277,7 @@ export class NilePyramidsGame extends WorldRuntime {
     const step = this.stepNow();
     if (step.kind === 'slide') this.take(step);
     else if (step.kind === 'predict' || step.kind === 'order') this.openOrder(step);
+    else if (step.kind === 'plan') this.openPlan(step);
     else if (step.kind === 'climb') this.climb();
     else if (step.kind === 'mission' || step.kind === 'box') this.openCard(step.kind);
     else if (step.kind === 'forge') this.openForge(step.key);
@@ -1331,8 +1328,7 @@ export class NilePyramidsGame extends WorldRuntime {
       pos: new THREE.Vector3(mid.x + n.x * D * 0.82, mid.y + D * 0.55 + 1.5, mid.z + n.z * D * 0.82),
       look: new THREE.Vector3(mid.x, mid.y + 0.5, mid.z),
     };
-    // the sight line: the eye looks along it, so the keys follow the walk inland (→ inland)
-    this.hold = { step, s, sign: step.sight ? 1 : sign, cam };
+    this.hold = { step, s, sign, cam };
     this.audio.play('ui');
     this.input.take('left');
     this.input.take('right');
@@ -1340,7 +1336,6 @@ export class NilePyramidsGame extends WorldRuntime {
     this.set({
       rope: { knots: 0, id: step.id, seg: step.seg ?? step.id, ghost: Boolean(step.ghost) },
       verdict: null,
-      sight: Boolean(step.sight),
     });
     this.lightUp();
   }
@@ -1353,7 +1348,7 @@ export class NilePyramidsGame extends WorldRuntime {
     this.rope.visible = false;
     if (h.step.edge) this.standAtFoot(h.step);
     if (h.step.ghost) this.ghost.position.set(this.pts.plateau.Gh.x, 0, GREAT.z);
-    this.set({ rope: null, sight: false });
+    this.set({ rope: null });
     this.refreshObjective();
   }
 
@@ -1375,7 +1370,6 @@ export class NilePyramidsGame extends WorldRuntime {
     this.audio.play('success');
     if (!step.ghost) this.layRope(st, step);
     if (step.edge) this.standAtFoot(step);
-    if (step.sight) this.riverR.visible = true;
     let verdict = null;
     if (step.canal) {
       // the rope reads the canal AFTER he typed it: as typed · longer · shorter (no difference written — gate P1)
@@ -1392,7 +1386,7 @@ export class NilePyramidsGame extends WorldRuntime {
       this.cine = { pos: new THREE.Vector3(A.x - 20, 70, A.z + 150), look: new THREE.Vector3(A.x + 90, 30, A.z) };
       this.stickyCine = true;
     } else if (step.seg) this.say(this.T.say.tied(step.seg, step.target), 4);
-    this.set({ rope: null, verdict, sight: false, register: this.registerOf() });
+    this.set({ rope: null, verdict, register: this.registerOf() });
     this.save();
     this.refreshObjective();
     // what comes next is asked at once: the canal's length, the course's order, the mission's card
@@ -1430,12 +1424,62 @@ export class NilePyramidsGame extends WorldRuntime {
   // ───────────────────────────── THE ONE ORDER ─────────────────────────────
   openOrder(step) {
     if (this.state.phase !== 'play' && this.state.phase !== 'dialog') return;
+    if (step.plan) return this.openPlan(step);
     const kind = step.kind === 'predict' ? 'canal' : step.order;
     this.set({
       overlay: { type: 'order', kind, seg: step.seg, id: step.id, refused: null, row: FACE.row },
       phase: 'dialog',
       prompt: null,
     });
+  }
+  /**
+   * THE GEOMETER'S PLAN of the river (`RiverPlan.jsx`), opened at the stake E to place R (`place`) and at A — or at
+   * once after R is planted — to write the ferry rope's length on the drawn [AF] (`rope`). The rope's moment is the
+   * ferry ORDER: `sendOrder` reads it from this overlay, the world throws the rope.
+   */
+  openPlan(step) {
+    if (this.state.phase !== 'play' && this.state.phase !== 'dialog') return;
+    const mode = step.kind === 'plan' ? 'place' : 'rope';
+    const last = [...this.log].reverse().find((l) => l.step === 'ferry') ?? null;
+    this.audio.play('ui');
+    this.set({
+      overlay: {
+        type: 'plan',
+        mode,
+        id: step.id,
+        lens: { AS: this.done.AS, SE: this.done.SE },
+        last: last && { typed: last.typed, fact: last.fact },
+        fact: null,
+        refused: null,
+      },
+      phase: 'dialog',
+      prompt: null,
+    });
+  }
+  /** « Planter le piquet R » at `er` metres inland of E: on the post, the stake is planted; beside it, a FACT. */
+  plantR(er) {
+    const o = this.state.overlay;
+    const st = this.stageNow();
+    const step = st.steps.find((x) => x.id === o?.id && x.kind === 'plan');
+    if (!step) return;
+    const fact = stringFact(RIVER, er);
+    if (fact !== 'on') {
+      this.audio.play('hit');
+      this.set({ overlay: { ...o, fact, at: er } });
+      return;
+    }
+    this.done[step.id] = step.target;
+    this.audio.play('success');
+    this.layRope(st, step);
+    this.riverR.visible = true;
+    this.say(this.S.riverPlan.planted, 5);
+    this.set({ register: this.registerOf() });
+    this.save();
+    this.refreshObjective();
+    // what comes next is asked at once, on the same drawing
+    const next = this.stepNow();
+    if (next?.plan) this.openPlan(next);
+    else this.closeOrder();
   }
   /** « later »: the card closes; the place where it is asked opens it again. */
   closeOrder() {
@@ -1468,14 +1512,14 @@ export class NilePyramidsGame extends WorldRuntime {
     }
     const entry = {
       stage: st.id,
-      step: step.id,
+      step: step.again ?? step.id,
       kind: step.order,
       seg: step.seg,
       typed: out.typed,
       fact: out.fact,
       built: out.built,
     };
-    const first = !this.log.some((l) => l.step === step.id);
+    const first = !this.log.some((l) => l.step === (step.again ?? step.id));
     this.log.push(entry);
     this.closeOverlay();
     this.set({ verdict: null, register: this.registerOf() });
@@ -1490,7 +1534,7 @@ export class NilePyramidsGame extends WorldRuntime {
       if (holds(out.fact)) {
         this.done[step.id] = out.typed;
         if (first) this.addStar(st.id);
-      }
+      } else if (step.open) this.done[step.id] = out.typed;
       const verdict = { kind: step.order, fact: out.fact, typed: out.typed, seg: step.seg };
       if (out.built?.quarry) verdict.quarry = out.built.base;
       this.set({ phase: 'play', verdict, register: this.registerOf() });
@@ -2055,7 +2099,7 @@ export class NilePyramidsGame extends WorldRuntime {
       o.getWorldPosition(p);
       if (o.userData.topOnly) o.visible = top && this.stageOf(p.z) === this.state.at;
       else if (ph === 'run') o.visible = false;
-      else if (wide || (this.hold && this.hold.step.sight))
+      else if (wide)
         o.visible = !o.userData.dock && this.stageOf(p.z) === this.state.at && (top || p.distanceTo(cam) < 900);
       else o.visible = p.distanceTo(cam) < (o.userData.dock ? 120 : 170);
       if (top && o.visible) shown.push(o);

@@ -14,6 +14,7 @@
  *   stages, maxStars    the pips of the top bar and the stars it can give
  *   text                { title, subtitle, turn, end: { title, text, stay } } — its own sentences on the kit's screens
  *   Hud                 what it shows in the middle while the student plays (its objective, its equation, its verdict)
+ *   Fact                what it has just answered while he walks, on the LEFT edge (never over the way ahead)
  *   Under, Over         its own layers under and over the kit's overlays (the HUD of a run, of a real-world case)
  *   overlay(o, s, game) its own overlays, by `o.type`; guide(o, s, game) the ones that explain a mistake
  *   playing(s), busy(s), quiet(s), paperOn(s), held(s)   when the student is in the world, in the middle of something, when
@@ -314,6 +315,13 @@ function Shell({ world, game, rootRef, exitTo, basePath, config, onRestart, mast
         </div>
       )}
 
+      {/* what the world has just answered stands on the left edge, clear of the way ahead (world.css « WHERE THE MESSAGES STAND ») */}
+      {playing && world.Fact && (
+        <div className="di-answer">
+          <world.Fact s={s} game={game} />
+        </div>
+      )}
+
       {world.Under && <world.Under s={s} game={game} />}
 
       {s.say && s.phase !== 'title' && !world.quiet?.(s) && <Say key={s.say.id} say={s.say} />}
@@ -363,8 +371,13 @@ function Shell({ world, game, rootRef, exitTo, basePath, config, onRestart, mast
                 }}
                 data-di-act
               >
+                {!coarse && (
+                  <>
+                    <em>{KT.prompt.press}</em>
+                    <kbd>E</kbd>
+                  </>
+                )}
                 <span>{s.prompt}</span>
-                {!coarse && <kbd>E</kbd>}
               </button>
             )}
             <button

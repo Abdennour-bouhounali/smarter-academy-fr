@@ -4,7 +4,7 @@
  * the ONE order (one typed box with its printed unit, `WORLD_TEXT.unit`), and the kit's rail between two docks. It
  * names no lesson.
  *
- * Hooks for the walks: `data-np-stage`, `data-np-rope=<knots>`, `data-np-drop`, `data-np-sight` (the sight line of
+ * Hooks for the walks: `data-np-stage`, `data-np-rope=<knots>`, `data-np-drop`, `data-np-plan` (the geometer's plan of
  * stage 3), `data-np-register` (rows: `data-np-row=<id>`), `data-np-order=<canal|course|mark|ferry|capstone>` (+
  * `data-np-predict` on the canal's card), `data-np-order-in` (or `data-np-order-n` / `data-np-order-d` for the
  * capstone's k), `data-np-order-send`, `data-np-order-later`, `data-np-refused=<why>`, `data-np-fact=<fact>` (+ `data-np-fact-say`: the story’s words for the flight, `story.mission.heightSay(typed)`),
@@ -24,6 +24,7 @@ import { Card, M } from '../kit/parts';
 import { sheetFigure } from '../kit/sheetFigure';
 import { Instruction, Recall } from '../kit/Instruction';
 import { NilePyramidsGame, devHandles } from './Game';
+import RiverPlan from './RiverPlan';
 import { stageRoute } from './logic';
 import { WORLD_TEXT, withStory } from './strings';
 import './nilePyramids.css';
@@ -129,17 +130,11 @@ export function Fact({ verdict, game }) {
 
 function Hud({ s, game }) {
   return (
-    <div
-      className="np-hud"
-      data-np-stage={s.at}
-      data-np-look={s.look ?? undefined}
-      {...(s.sight ? { 'data-np-sight': '' } : {})}
-    >
+    <div className="np-hud" data-np-stage={s.at} data-np-look={s.look ?? undefined}>
       {s.objective && !s.look && (
         <Instruction key={s.objective} text={s.objective} compact={Boolean(s.rope || s.verdict || s.top)} />
       )}
       {s.rope && <RopeChip rope={s.rope} game={game} />}
-      {!s.rope && !s.top && s.verdict && <Fact verdict={s.verdict} game={game} />}
       {s.look && (
         <button
           type="button"
@@ -368,6 +363,9 @@ const WORLD = {
   quiet: (s) => Boolean(s.top),
   held: (s) => (s.rope ? WORLD_TEXT.held(s.rope.knots) : null),
   Hud,
+  /** What the world built from his number, on the left edge while he walks (the kit's `Fact` slot). */
+  Fact: ({ s, game }) =>
+    !s.overlay && !s.rope && !s.top && s.verdict ? <Fact verdict={s.verdict} game={game} /> : null,
   Under: ({ s, game }) =>
     !s.overlay && (s.phase === 'play' || s.phase === 'build') ? (
       <>
@@ -381,6 +379,7 @@ const WORLD = {
     s.run && game.runContent ? <GateRunHud run={s.run} game={game} content={game.runContent} /> : null,
   overlay(o, s, game) {
     if (o.type === 'order') return <OrderCard key={o.id} o={o} game={game} />;
+    if (o.type === 'plan') return <RiverPlan key={o.mode} o={o} game={game} />;
     if (o.type === 'mission' || o.type === 'box') return <StoryCard key={o.type} kind={o.type} game={game} />;
     if (o.type === 'forge')
       return (

@@ -422,3 +422,13 @@
 .rf-log li .crt-line strong .katex {
   font-size: 1em;
 }
+/* on the forge's sheet (kit/ruleForge.css « THE SHEET ») the three verdicts of a line are inks, not lights */
+.rf-log li .crt-line em.crt-kind--ride {
+  color: var(--rf-agree);
+}
+.rf-log li .crt-line em.crt-kind--band {
+  color: #8a5a00;
+}
+.rf-log li .crt-line em.crt-kind--jam {
+  color: #5b3d99;
+}

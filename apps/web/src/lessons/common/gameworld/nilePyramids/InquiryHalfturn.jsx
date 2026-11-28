@@ -10,7 +10,7 @@
  * about that chain.
  */
 import { useEffect, useReducer } from 'react';
-import GeoFigure from '../../components/GeoFigure';
+import { RotateCcw, RotateCw } from 'lucide-react';
 import MathText from '../../components/MathText';
 import { M } from '../kit/parts';
 import { points, gauge } from './figure';
@@ -19,32 +19,111 @@ import { initHalfturn, halfturnReducer, halfturnResult, rotate, turned } from '.
 import { expose, textOf } from './inquiryParts';
 import { DIR, FIGURE_TEXT } from './strings';
 
-/** The butterfly with its small triangle turned by `angle`; four hidden corners keep the drawing's frame still. */
-function turnedSpec(fig, angle) {
+const FW = 520;
+const FH = 430;
+const PAD = 46;
+
+/**
+ * THE FIGURE of the half-turn, drawn here (not by GeoFigure): squared paper, the two lines through the vertex, the big
+ * triangle, the small one turned by `angle` with the place it left (dashed) and the arc of the turn with its angle.
+ * The frame holds the whole turn (the circle the small triangle sweeps), so nothing moves but the triangle.
+ */
+function TurnFigure({ fig, angle }) {
   const { V, M: m, B, N, C } = fig.names;
   const P = points(fig);
-  const R = Math.max(...Object.values(P).map(([x, y]) => Math.hypot(x, y))) * 1.05;
-  const pm = rotate(P[m], angle);
-  const pn = rotate(P[N] ?? P[fig.names.N], angle);
-  return {
-    points: { [V]: P[V], [B]: P[B], [C]: P[C], [m]: pm, [N]: pn, c1: [-R, -R], c2: [R, R], c3: [-R, R], c4: [R, -R] },
-    hidden: ['c1', 'c2', 'c3', 'c4'],
-    segments: [
-      { from: V, to: B },
-      { from: V, to: C },
-      { from: B, to: C, tone: 'rose', bold: true },
-      { from: V, to: m, tone: 'indigo' },
-      { from: V, to: N, tone: 'indigo' },
-      { from: m, to: N, tone: 'amber', bold: true },
-    ],
-    lines: [
-      { through: [V, B], dashed: true },
-      { through: [V, C], dashed: true },
-    ],
-    polygons: [{ points: [V, m, N], tone: 'amber' }],
-    ariaLabel: FIGURE_TEXT.pair(V),
-    maxWidth: 380,
+  const sweep = Math.max(Math.hypot(...P[m]), Math.hypot(...P[N]));
+  const xs = [P[B][0], P[C][0], -sweep, sweep];
+  const ys = [P[B][1], P[C][1], -sweep, sweep];
+  const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+  const k = Math.min((FW - 2 * PAD) / (x1 - x0), (FH - 2 * PAD) / (y1 - y0));
+  const ox = (FW - (x1 - x0) * k) / 2 - x0 * k;
+  const oy = (FH + (y1 - y0) * k) / 2 + y0 * k;
+  const at = ([x, y]) => [ox + x * k, oy - y * k];
+  const v = at(P[V]);
+  const [b, c] = [at(P[B]), at(P[C])];
+  const [m0, n0] = [at(P[m]), at(P[N])];
+  const [m1, n1] = [at(rotate(P[m], angle)), at(rotate(P[N], angle))];
+  const poly = (...q) => q.map((p) => p.map((t) => t.toFixed(1)).join(',')).join(' ');
+  // a line through the vertex, drawn across the whole frame
+  const through = (p) => {
+    const d = [p[0] - v[0], p[1] - v[1]];
+    const l = Math.hypot(...d) || 1;
+    const t = FW + FH;
+    return {
+      x1: v[0] - (d[0] / l) * t,
+      y1: v[1] - (d[1] / l) * t,
+      x2: v[0] + (d[0] / l) * t,
+      y2: v[1] + (d[1] / l) * t,
+    };
   };
+  // the arc of the turn: from where M stood to where it is, round the vertex
+  const r = Math.max(26, Math.min(Math.hypot(m0[0] - v[0], m0[1] - v[1]) * 0.55, 60));
+  const a0 = Math.atan2(m0[1] - v[1], m0[0] - v[0]);
+  const a1 = a0 - (angle * Math.PI) / 180;
+  const arcAt = (a) => `${(v[0] + r * Math.cos(a)).toFixed(1)},${(v[1] + r * Math.sin(a)).toFixed(1)}`;
+  const arc = `M${arcAt(a0)} A${r},${r} 0 0 0 ${arcAt(a1)}`;
+  const mid = a0 - (angle * Math.PI) / 360;
+  // a letter stands away from the middle of its triangle
+  const label = (p, name, from) => {
+    const d = [p[0] - from[0], p[1] - from[1]];
+    const l = Math.hypot(...d) || 1;
+    return (
+      <text x={p[0] + (d[0] / l) * 18} y={p[1] + (d[1] / l) * 18 + 6} textAnchor="middle" className="np-tf__letter">
+        {name}
+      </text>
+    );
+  };
+  const big = [(v[0] + b[0] + c[0]) / 3, (v[1] + b[1] + c[1]) / 3];
+  const small = [(v[0] + m1[0] + n1[0]) / 3, (v[1] + m1[1] + n1[1]) / 3];
+  const prime = angle > 0 ? '′' : '';
+  return (
+    <svg className="np-tf" viewBox={`0 0 ${FW} ${FH}`} role="img" aria-label={FIGURE_TEXT.pair(V)}>
+      <defs>
+        <pattern id="np-tf-grid" width="26" height="26" patternUnits="userSpaceOnUse">
+          <path d="M26 0H0V26" fill="none" stroke="#dbe4f0" strokeWidth="1" />
+        </pattern>
+        <clipPath id="np-tf-box">
+          <rect width={FW} height={FH} rx="14" />
+        </clipPath>
+        <marker id="np-tf-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0L10 5L0 10z" fill="#7c3aed" />
+        </marker>
+      </defs>
+      <g clipPath="url(#np-tf-box)">
+        <rect width={FW} height={FH} fill="#fff" />
+        <rect width={FW} height={FH} fill="url(#np-tf-grid)" />
+        <line {...through(b)} className="np-tf__line" />
+        <line {...through(c)} className="np-tf__line" />
+        <polygon points={poly(v, b, c)} className="np-tf__big" />
+        {angle > 0 && <polygon points={poly(v, m0, n0)} className="np-tf__ghost" />}
+        <polygon points={poly(v, m1, n1)} className="np-tf__small" />
+        {angle > 0 && (
+          <>
+            <path d={arc} className="np-tf__arc" markerEnd="url(#np-tf-arrow)" />
+          </>
+        )}
+        {/* the angle is written while he turns; landed, the arc alone says the half-turn */}
+        {angle > 0 && angle < 180 && (
+          <>
+            <text
+              x={v[0] + (r + 20) * Math.cos(mid)}
+              y={v[1] + (r + 20) * Math.sin(mid) + 5}
+              textAnchor="middle"
+              className="np-tf__angle"
+            >{`${angle}°`}</text>
+          </>
+        )}
+        {[v, b, c, m1, n1].map((p, i) => (
+          <circle key={i} cx={p[0]} cy={p[1]} r="4.5" className="np-tf__dot" />
+        ))}
+        {label(b, B, big)}
+        {label(c, C, big)}
+        {label(m1, `${m}${prime}`, small)}
+        {label(n1, `${N}${prime}`, small)}
+        {label(v, V, [(big[0] + small[0]) / 2 + 0.01, (big[1] + small[1]) / 2 - 40])}
+      </g>
+    </svg>
+  );
 }
 
 const ratioTex = (a, b) => `\\dfrac{${a}}{${b}}`;
@@ -62,7 +141,7 @@ export function HalfturnView({ spec, state: s, act }) {
       </p>
       <div className="np-iq__row">
         <div className="np-iq__fig">
-          <GeoFigure {...turnedSpec(fig, s.angle)} />
+          <TurnFigure fig={fig} angle={s.angle} />
         </div>
         <div className="np-iq__side">
           {s.stage === 'predict' && (
@@ -88,17 +167,23 @@ export function HalfturnView({ spec, state: s, act }) {
           {s.stage === 'turn' && (
             <div className="np-iq__turn">
               <p className="np-iq__ask">{T.turn}</p>
-              <div className="np-iq__choices" dir="ltr">
-                <button type="button" className="rf-btn rf-btn--main" onClick={() => act.turn(-1)} data-iq-turn="-1">
-                  ←
+              <div className="np-turn" dir="ltr">
+                <button type="button" className="np-turn__btn" onClick={() => act.turn(-1)} data-iq-turn="-1">
+                  <RotateCw size={22} aria-hidden="true" />
+                  <kbd>←</kbd>
                 </button>
-                <b className="np-iq__angle">{`${s.angle}°`}</b>
-                <button type="button" className="rf-btn rf-btn--main" onClick={() => act.turn(1)} data-iq-turn="1">
-                  →
+                <span className="np-turn__dial" style={{ '--p': s.angle / 180 }}>
+                  <b className="np-iq__angle">{`${s.angle}°`}</b>
+                </span>
+                <button type="button" className="np-turn__btn" onClick={() => act.turn(1)} data-iq-turn="1">
+                  <RotateCcw size={22} aria-hidden="true" />
+                  <kbd>→</kbd>
                 </button>
               </div>
             </div>
           )}
+          {/* the three sides, laid on their bars AS he turns (owner, 2026-11-27) — from the first press to the landing */}
+          {s.stage === 'turn' && <Gauge c={turned(fig)} angle={s.angle} />}
           {row && (
             <div
               className="np-iq__out"
@@ -117,7 +202,7 @@ export function HalfturnView({ spec, state: s, act }) {
               <p className="np-iq__chain" dir={DIR}>
                 <MathText>{T.landed(`${N}'`, V, C)}</MathText>
               </p>
-              <Gauge c={turned(fig)} names={false} />
+              <Gauge c={turned(fig)} angle={s.angle} />
               {spec.chainOwn === true && (
                 <p className="np-iq__chain" dir={DIR} data-iq-chain-own>
                   {T.chainOwn}{' '}

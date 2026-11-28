@@ -466,6 +466,13 @@ is a kit part since 2026-11-21: it names no world and no lesson. A world owns on
 (`stepWorld`, `lanesLive`, `robotPose`, `cameraShot`, `dispose` — listed at the top of the file) and draws
 `<GateRunHud run={s.run} game={game} content={…} />` over everything while `state.run` is set. The lesson gives the
 content: `{ levels, gates, round(level, random, n) → { ask, tex?, options × 3, right, why × 3, seconds?, figure? }, total?, text }`.
+**Where the messages stand while he walks** (owner, 2026-11-27: « they hide the way of the robot », « it must not hide
+the robot itself »). The middle of the screen stays free. The instruction keeps the top. With a mouse and keys the « E »
+prompt is written at the bottom centre (`.di-act`) and steps to Zero's side when he stands there
+(`WorldRuntime.dodgeHero`, `--dodge`); over the thing to use only a small « E » key floats; Zero's sentence rises above
+his head (`--lift`). A world gives what it has just answered in its `Fact` slot (`LessonWorld.jsx`): it stands on the
+left edge. On a touch screen the bubble over the thing and the thumb's button are unchanged.
+
 **A round that names points carries `figure`** (2026-11-25, owner: « the questions in the river need a schema that show
 A B C »): a GeoFigure spec, published as `state.run.figure` (null without it — a world without figures is unchanged) and
 drawn by the HUD with the practice space's `components/StatementFigure.jsx` in its own light panel `data-gr-figure`, while
@@ -995,6 +1002,31 @@ Nothing in the game world scrolls — not the page, not a card, not a panel — 
    its content, no panel leaves the screen, the page is not taller than the window.
 
 ## 2sexies. « Forge ta règle » — the rule forge (NOT validated)
+
+> **THE ARCHITECTURE SINCE 2026-11-27 (owner: the navy mirror « gives the feeling of leaving the game world… a lot of
+> questions, especially the last one »; study by four specialists and a played prototype,
+> `docs/reports/mockups/forge-new-version.html`). What this section says of the screens below is read with these changes
+> (`kit/RuleForge.jsx` header, `kit/ruleForge.css` « THE SHEET »):**
+>
+> - **A sheet on the world's table.** The forge is a sheet laid over the world, which stays in sight, blurred. Its colours
+>   are tokens; a world gives its values with `parts.skin` (`'nile'`: papyrus and sandstone, `'isles'`: wood and sky,
+>   `'courts'`: stone). The MIRROR (and an experiment a world frames in dark, `.iq` / `.rq-iq`) is dark glass in a bronze
+>   frame: what a world draws in it keeps its colours. A world part drawn on the sheet (its `Line`) uses ink colours.
+> - **Three beats, shown as the key being made:** « Essaie » (the experiment or the predictions), « Grave ta règle »
+>   (tiles, the mirror on his own lines, then its attacks), « Scelle ta clé » (the last step). A forge with no experiment
+>   and no prediction shows two.
+> - **Fewer presses.** A rule that agrees with all his lines is attacked at once (no « Chiche ! »). He says what his rule
+>   announces and the mirror computes at once (no second button). The rule that holds meets at most `ATTACKS_MAX` (2)
+>   attacks; a rule that does not hold still meets them all. The screen « say it in your words / Je scelle ma clé » is
+>   gone: a rule that held is his key and the last step opens (`data-rf-sealed` on the rule's ribbon).
+> - **The last step is written ONE LINE AT A TIME** (`UseLines step`): the line being written is whole; the lines after it
+>   wait, dimmed, their choices folded to « … »; a written line folds each choice to what he picked (a click opens it
+>   again). After a first « Vérifier » every line is open. It takes the whole sheet: the evidence column leaves.
+> - **Not done yet (content, lesson by lesson):** the rule's CONDITION as a tile (« Si … alors … »), the last step
+>   filled by pointing at the figure, the trap « ta clé ouvre-t-elle ici ? ». The prototype shows them on one key.
+> - Walk hooks removed: `data-rf-dare`, `data-rf-fire`, `data-rf-seal`, `data-rf-words`; added: `data-rf-skin`,
+>   `data-rf-beat`, `data-rf-step`.
+
 
 > The forges and experiments below are the kit's and the worlds' (all kept); the lessons that carry the examples —
 > the pilot, lessons 2–8 of the Algerian 4AM unit 1, the 1AM/2AM division road, the square-root lessons — are Algerian

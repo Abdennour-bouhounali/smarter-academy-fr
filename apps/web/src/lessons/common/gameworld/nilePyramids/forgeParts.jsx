@@ -198,4 +198,4 @@ export function UseFigure({ c }) {
 export const beats = () => 3;
 
 /** The parts object a lesson's forge is played with (NilePyramids.jsx passes it to the kit's RuleForge). */
-export const FORGE_PARTS = { Mirror, Line, beats, Inquiry, UseFigure };
+export const FORGE_PARTS = { skin: 'nile', Mirror, Line, beats, Inquiry, UseFigure };

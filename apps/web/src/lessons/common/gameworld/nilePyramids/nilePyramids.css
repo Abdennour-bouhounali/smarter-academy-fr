@@ -69,6 +69,7 @@
   font-size: 1.15rem;
 }
 .di-root .np-fact__line {
+  flex-wrap: wrap;
   display: flex;
   gap: 1.2rem;
   justify-content: center;
@@ -241,4 +242,173 @@
   color: #b45309;
   font-size: 1.125rem;
   font-weight: 700;
+}
+/* the geometer's plan of the river (RiverPlan.jsx): the drawing takes the card's width */
+.di-root .di-card.np-plancard {
+  width: min(100%, 60rem);
+}
+.di-root .np-plan__ask {
+  margin: 0.1rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+.di-root .np-plan__fig {
+  position: relative;
+}
+.di-root .np-plan__fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  touch-action: none;
+  user-select: none;
+}
+.di-root .np-plan__land {
+  fill: #e7cf9a;
+}
+.di-root .np-plan__far {
+  fill: #86b266;
+}
+.di-root .np-plan__water {
+  fill: #5fa8cf;
+}
+.di-root .np-plan__place {
+  fill: #5b4a23;
+  font-size: 17px;
+  font-style: italic;
+}
+.di-root .np-plan__place--water {
+  fill: #e8f4fb;
+}
+.di-root .np-plan__tri--big {
+  fill: rgba(30, 64, 175, 0.38);
+}
+.di-root .np-plan__tri--small {
+  fill: rgba(245, 158, 11, 0.75);
+}
+.di-root .np-plan__bank {
+  stroke: #3b2a12;
+  stroke-width: 3;
+}
+.di-root .np-plan__inland {
+  stroke: #3b2a12;
+  stroke-width: 3;
+  stroke-dasharray: 6 5;
+}
+.di-root .np-plan__square {
+  stroke: #3b2a12;
+  stroke-width: 2;
+}
+.di-root .np-plan__ferry {
+  stroke: #1f2937;
+  stroke-width: 3;
+  stroke-dasharray: 10 8;
+}
+.di-root .np-plan__thrown {
+  stroke: #7c2d12;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.di-root .np-plan__splash {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+}
+.di-root .np-plan__string {
+  stroke: #dc2626;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+.di-root .np-plan__string.is-tied {
+  stroke: #b91c1c;
+}
+.di-root .np-plan__touch {
+  fill: #dc2626;
+  stroke: #fff;
+  stroke-width: 2;
+}
+.di-root .np-plan__stake {
+  fill: #1f2937;
+  stroke: #fff;
+  stroke-width: 2;
+}
+.di-root .np-plan__post {
+  fill: #fff;
+  stroke: #1f2937;
+  stroke-width: 4;
+}
+.di-root .np-plan__stake--r {
+  fill: #dc2626;
+}
+.di-root .np-plan__r.is-held {
+  cursor: ns-resize;
+}
+.di-root .np-plan__halo {
+  fill: rgba(220, 38, 38, 0.2);
+  stroke: #dc2626;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+.di-root .np-plan__letter {
+  fill: #111827;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 4px;
+}
+.di-root .np-plan__len {
+  fill: #111827;
+  font-size: 19px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 4px;
+}
+.di-root .np-plan__len--ask {
+  font-size: 30px;
+}
+/* the rope's length is written ON the drawing, in the water left of [AF] */
+.di-root .np-plan__order {
+  position: absolute;
+  left: 2%;
+  top: 30%;
+  width: 33%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  background: rgba(17, 24, 39, 0.82);
+}
+.di-root .np-plan__order .np-order__line {
+  margin: 0.2rem 0;
+}
+.di-root .np-plan__last {
+  margin: 0.3rem 0 0;
+  color: #fde68a;
+  font-size: 1rem;
+  text-align: center;
+}
+.di-root .np-plan__fact {
+  margin: 0.5rem 0 0.6rem;
+  font-size: 1.125rem;
+  text-align: center;
+}
+.di-root .np-plan__fact.is-miss {
+  color: #fbbf24;
+  font-weight: 700;
+}
+.di-root .np-plan__place--note {
+  font-size: 15px;
+}
+.di-root .np-plan kbd {
+  font-size: 0.9375rem;
+}
+.di-root .np-plan > .np-order__go {
+  margin-top: 0.75rem;
+}
+/* the fact on the left edge (the kit's `Fact` slot): a narrow column */
+.di-root .di-answer .np-fact p {
+  font-size: 1rem;
+}
+.di-root .di-answer .np-fact .np-fact__what {
+  font-size: 1.125rem;
 }

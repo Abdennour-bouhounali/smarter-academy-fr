@@ -690,6 +690,76 @@ export class WorldRuntime {
     this.step(dt);
     this.renderer.render(this.scene, this.camera);
     this.placePrompt();
+    this.dodgeHero();
+  }
+
+  /** Zero on the screen, in the page's pixels — or null when he is not in front of the lens. */
+  heroRect() {
+    const box = (this.tmpBox ??= new THREE.Box3()).setFromObject(this.robot.group);
+    if (box.isEmpty()) return null;
+    const v = (this.tmpH ??= new THREE.Vector3());
+    const base = this.canvas.getBoundingClientRect();
+    let [l, t, r, b] = [Infinity, Infinity, -Infinity, -Infinity];
+    for (const x of [box.min.x, box.max.x])
+      for (const y of [box.min.y, box.max.y])
+        for (const z of [box.min.z, box.max.z]) {
+          v.set(x, y, z).project(this.camera);
+          if (v.z >= 1) return null;
+          const px = base.left + (v.x * 0.5 + 0.5) * base.width;
+          const py = base.top + (-v.y * 0.5 + 0.5) * base.height;
+          l = Math.min(l, px);
+          r = Math.max(r, px);
+          t = Math.min(t, py);
+          b = Math.max(b, py);
+        }
+    return { left: l, right: r, top: t, bottom: b };
+  }
+
+  /**
+   * NOTHING WRITTEN COVERS ZERO (owner, 2026-11-27): the « E » prompt of the bottom centre steps to his side when he
+   * stands there (`--dodge`), and his own sentence rises above his head (`--lift`). In steps of 8 px, so that his bob
+   * does not make them tremble. The same button says whether the place is still far (`data-far`: no key to press yet).
+   */
+  dodgeHero() {
+    const doc = this.canvas.ownerDocument;
+    const act = doc.querySelector('[data-di-act]');
+    const say = doc.querySelector('.di-say');
+    if (!act && !say) return;
+    const h = this.state.phase === 'play' || this.state.phase === 'dialog' ? this.heroRect() : null;
+    const step = (px) => `${Math.round(px / 8) * 8}px`;
+    if (act) {
+      act.toggleAttribute('data-far', Boolean(this.promptIt && this.promptIt !== this.activeIt));
+      const r = act.getBoundingClientRect();
+      const base = this.canvas.getBoundingClientRect();
+      const mid = base.left + base.width / 2;
+      let dodge = 0;
+      if (
+        h &&
+        r.bottom > h.top - 8 &&
+        r.top < h.bottom + 8 &&
+        mid + r.width / 2 > h.left - 12 &&
+        mid - r.width / 2 < h.right + 12
+      ) {
+        const right = h.right + 12 + r.width / 2 - mid;
+        const left = h.left - 12 - r.width / 2 - mid;
+        // to the side that asks the shorter step — and stays on the screen
+        dodge = Math.abs(left) < right && mid + left - r.width / 2 > base.left + 8 ? left : right;
+      }
+      act.style.setProperty('--dodge', step(dodge));
+    }
+    if (say) {
+      const lift0 = parseFloat(say.style.getPropertyValue('--lift')) || 0;
+      const r = say.getBoundingClientRect();
+      // where it would stand with no lift
+      const bottom = r.bottom + lift0;
+      const top = r.top + lift0;
+      let lift = 0;
+      if (h && bottom > h.top - 8 && top < h.bottom && r.right > h.left && r.left < h.right)
+        lift = bottom - (h.top - 12);
+      // never up into the instruction: the top bar and one line are kept
+      lift = Math.max(0, Math.min(lift, top - 130));
+      say.style.setProperty('--lift', step(lift));
+    }
   }
 
   /** Anchors the HUD's « E » bubble (an element handed over by the shell) above the thing the robot can use now. */

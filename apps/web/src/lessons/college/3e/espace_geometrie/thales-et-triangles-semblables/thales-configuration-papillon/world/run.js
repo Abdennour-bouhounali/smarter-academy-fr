@@ -4,34 +4,38 @@
  *
  * The world reads `story.legs[i]` by the dock's PLACE in the world (0–4, `nilePyramids/Game.js › board`): this story
  * sails docks 2 → 3 → 4 (« La largeur du Nil », « Le pyramidion », « L’ombre de la grande pyramide »), so it has two
- * legs, keyed 2 and 3 (design § 1, « run.js »; DZ's two nested legs are not used):
- *   leg 2 (river → summit), after K1 — the DZ butterfly leg, ported: the ratio of one line given, the partner on the
- *         other line; three lengths from the vertex, the fourth;
- *   leg 3 (summit → plateau), after K2 — NEW, across the vertex: the length across given (the one from the vertex is
- *         cut first), or the length across asked (the two from the vertex are joined).
- * Four right buoys reach the next dock (`total: 4`). Every buoy is NUMERIC, MENTAL numbers: k = p/q with q ≤ 9, a length
- * p × m or q × m with m ≤ 9. Every buoy names points, and carries its FIGURE (owner, 2026-11-25: « the questions in the
- * river need a schema that show A B C »): the world's Thalès figure with the order's letters, the lengths it gives
- * written, « ? » on the one asked and the chevrons of the parallel (`figureOf`; drawn by the HUD beside the order,
- * `kit/GateRunHud.jsx`). A length across the vertex (AE, BF) is written along its line through O (`figureSpec`'s VMB, VNC).
- * The SAME generators are the practice ladder's (`practice.js`): a leg is the first level of the node of the key just
- * sealed.
+ * legs, keyed 2 and 3:
+ *   leg 2 (river → summit), after K1 `papillon` — the computations of its exercises: complete an equality of two
+ *         fractions (`egalite`: the box in any of the four places), and the cross product itself (`croix`:
+ *         « 12 × 5 ÷ 4 »);
+ *   leg 3 (summit → plateau), after K2 `calcul-depuis-le-sommet` — a length from the vertex written as the sum of its two
+ *         pieces (`somme`: « 4 / (4 + 8) = 5 / □ »), and an equality whose answer is a short decimal (`decimal`: 7,5).
+ * Four right buoys reach the next dock (`total: 4`).
+ *
+ * THE RIVER ASKS SPEED CALCULATIONS ONLY (owner, 2026-11-27: « the river game must never contain complicated questions:
+ * the questions must be speed calculation questions like: complete: 4/12 = 5/… »; it replaces his rule of 2026-11-25,
+ * so a buoy carries NO figure and names no point). Every wave is ONE bare calculation: `say` a short order
+ * (« Complète », « Calcule »), `tex` the calculation, the box to fill `\square`; MENTAL numbers (k = p/q < 1, q ≤ 9, a
+ * number p × m or q × m). The SAME generators are the practice ladder's (`practice.js`): a leg is the first level of
+ * the node of the key just sealed; the second level draws bigger multipliers (`{ big: true }`).
  *
  * A wave is DATA (the kit's ladder): { type, key, say, tex, gates: [3], good, why: { right, wrong: { [gate]: fact } },
- * data, pairs } — `say` PLAIN, `tex` the formula after it, a gate a whole number, `why` ONE fact per gate (never
- * « faux »: the two products the buoy gives), `data` the numbers asked, `pairs` every pair of numbers the order shows.
- * `run.test.js` refuses every k the bank writes, every pair standing on one line of the bank or of another lesson's
- * story, and any wave whose wrong buoy equals the right one.
+ * data, pairs } — `data.eq` the four numbers a / b = c / d (null in the box; `croix` is b × c ÷ a, its d the box), a
+ * gate a whole number or a short decimal writing (« 7,5 »), `why` ONE fact per gate (never « faux »: the two cross
+ * products, equal or different), `pairs` every pair of numbers the order shows. `run.test.js` recomputes the right
+ * gate from the `tex` itself, refuses every k the bank writes, every pair standing on one line of the bank or of
+ * another lesson's story, and checks every equality a fact writes.
  */
 import { pick, shuffle } from '../../../../../../common/gameworld/kit/random';
 import { WORLD_TEXT } from '../../../../../../common/gameworld/nilePyramids/strings';
-import { buoyFigure } from '../../../../../../common/gameworld/nilePyramids/figure';
-import { compare, equal, frAll, isInteger, K, over, times, tx, write } from './math';
+import { compare, equal, frAll, K, minus, over, plus, times, tx, write } from './math';
 
 /** k < 1, q ≤ 9 — none written by the bank (run.test.js reads it: 2/3, 3/4, 2/5, 3/5, 4/5, 5/7, 5/8 are). */
 export const REDUCE = ['5/6', '2/7', '3/7', '4/7', '6/7', '3/8', '7/8', '2/9', '4/9', '5/9', '7/9', '8/9'];
-/** The multipliers m of a length q × m. */
-const M = [2, 3, 4, 5, 6, 7, 8, 9];
+/** The multipliers m of a number p × m or q × m: small on a leg and a first level, bigger on a second level. */
+const M = { small: [1, 2, 3, 4, 5], big: [3, 4, 5, 6, 7, 8, 9] };
+/** The largest number an order shows: a mental calculation. */
+const MAX = 72;
 /**
  * The pairs of numbers of ten and more that stand on one line of the bank (computed from
  * `content/practice/3e/thales-configuration-papillon` with `bank.js › linesWithBoth`), then on one line of another
@@ -48,7 +52,9 @@ const TAKEN = new Set(
     '16;91 16;97 17;85 18;30 18;54 18;90 30;42 30;90 31;52 45;60 51;57 51;59 53;59 54;90 55;86 57;59 60;72 60;91 ' +
     '60;97 72;91 72;97 84;90 90;91 91;97 96;97 ' +
     // the two lessons added to the unit on 2026-11-26 (`fraction-irreductible`, `multiples-et-diviseurs-communs`)
-    '16;20'
+    '16;20 ' +
+    // the unit's lesson `triangles-semblables` (2026-11-27: its comments' dates)
+    '11;27'
   ).split(' '),
 );
 const pairKey = (a, b) => [Number(a), Number(b)].sort((x, y) => x - y).join(';');
@@ -58,69 +64,32 @@ const pairsOf = (xs) => xs.flatMap((x, i) => xs.slice(i + 1).map((y) => [x, y]))
 const clear = (pairs) => pairs.every(([a, b]) => !TAKEN.has(pairKey(a, b)));
 
 const kOf = (k) => k.split('/').map(Number);
-/**
- * THE FIGURE of a buoy (`nilePyramids/figure.js › buoyFigure`): `names` the order's letters, `len` the lengths, `show`
- * those written, `ask` the one written « ? ». `draw`: lengths for the SHAPE only, when the order gives too few to draw it
- * (a ratio and one length) — taken from the wave's own numbers at the same k; never written.
- */
-const figureOf =
-  (kind, names, len, show, ask, draw = null) =>
-  () =>
-    buoyFigure(
-      {
-        kind,
-        names,
-        len: Object.fromEntries(Object.entries(len).map(([k, v]) => [k, String(v)])),
-        ...(draw ? { draw } : {}),
-      },
-      { show, ask },
-    );
-/** The butterfly of the orders: A and E on one line through O, B and F on the other, (AB) ∥ (EF). */
-const BUTTERFLY = { V: 'O', M: 'A', B: 'E', N: 'B', C: 'F' };
-const NESTED = { V: 'A', M: 'M', B: 'B', N: 'N', C: 'C' };
-
-/** A gate: a whole number, or its writing (« 13,5 »). */
+/** A gate: a whole number, or its writing (« 7,5 »). */
 const gate = (x) => {
   const t = write(x);
   return /^\d+$/.test(t) ? Number(t) : t;
 };
-/** « $a \\times b = c$ » — a formula (the rail draws `why` with MathText; true: `run.test.js` checks every one). */
-const prod = (a, b) => `$${tx(a)} \\times ${tx(b)} = ${tx(times(a, b))}$`;
-/** A length of the figure as a formula: « $OB = 12$ ». */
-const is = (seg, x) => `$${seg} = ${tx(x)}$`;
-/** The two products « a × d » and « b × c » of a / b = c / d, as two facts. */
-const cross = (a, b, c, d) => `${prod(a, d)} et ${prod(b, c)}`;
-/** The value of an exact quotient as text, or null when it is not a whole number (a buoy of mental numbers). */
-const whole = (x) => (isInteger(x) ? write(x) : null);
-/** The two products differ: the sentence of a buoy that is not the one. */
-const differ = (seg, x, products) => `Avec ${is(seg, x)} : ${products}, les deux produits sont différents.`;
-/** The two products agree: the sentence of the right buoy. */
-const agree = (seg, x, products) => `${is(seg, x)} : ${products}, les deux produits sont égaux.`;
+/** A gate's writing is a whole number or a short decimal (« 17,5 », « 2,25 »). */
+const SHORT = /^\d+(,\d{1,2})?$/;
 
 /**
- * The right value of a wave, from its data alone — ONE definition, used to build the wave, to judge him and by the
- * tests (which compute it again by the proportion itself).
+ * The right value of a wave, from its data alone — ONE definition, used to build the wave and to judge him (the tests
+ * compute it again from the order's `tex`): a / b = c / d, so a × d = b × c, the box from the three others.
  */
 function truthOf(w) {
-  const d = w.data;
-  switch (w.type) {
-    case 'rapport':
-      return write(times(d.side, d.k));
-    case 'longueur':
-    case 'emboite':
-      return write(over(times(d.big, d.other), d.small));
-    case 'travers':
-      return write(over(times(d.OB, d.OE), d.OA));
-    case 'traversInconnu':
-      return write(times(d.OB, over(String(Number(d.OA) + Number(d.OE)), d.OA)));
-    default:
-      return null;
-  }
+  const e = w.data?.eq;
+  if (!e) return null;
+  const [a, b, c, d] = e;
+  if (d == null) return write(over(times(b, c), a));
+  if (c == null) return write(over(times(a, d), b));
+  if (b == null) return write(over(times(a, d), c));
+  if (a == null) return write(over(times(b, c), d));
+  return null;
 }
 /** Is gate value n right for this wave? */
 export function isRight(w, n) {
   try {
-    return equal(String(n), truthOf(w));
+    return equal(String(n).replace('{,}', ','), truthOf(w));
   } catch {
     return false;
   }
@@ -128,31 +97,45 @@ export function isRight(w, n) {
 
 /**
  * How long each kind of buoy takes a 3e student, in seconds, computing in his head while he steers (owner, 2026-11-25:
- * « estimate the time of each question and then five seconds »): reading the order, the steps of the computation, the
+ * « estimate the time of each question and then five seconds »): reading the calculation, its one or two steps, the
  * choice of a buoy. `SPARE` is the owner's five seconds; the rail places the buoy row `seconds` of travel ahead
  * (`kit/GateRun.js › next`).
  */
 export const THINK = {
-  rapport: 12, // OF ÷ q × p
-  longueur: 20, // simplify OA / OE, then OB ÷ p × q
-  travers: 25, // OE = AE − OA first, then the computation above
-  traversInconnu: 25, // OF from the vertex, then OB + OF
-  emboite: 25, // AB = AM + MB first, then the computation above
+  croix: 8, // one product, one division
+  egalite: 10, // which two numbers cross, then the same
+  somme: 11, // the sum first, then the same
+  decimal: 12, // the same, the division ends on a comma
 };
 export const SPARE = 5;
 
+/** « $a \\times b = c$ » — a formula (the rail draws `why` with MathText; true: `run.test.js` checks every one). */
+const prod = (a, b) => `$${tx(a)} \\times ${tx(b)} = ${tx(times(a, b))}$`;
+/** The two cross products of a / b = c / d with the box holding x: « a × d » and « b × c ». */
+const cross = (eq, x) => {
+  const [a, b, c, d] = eq.map((v) => (v == null ? x : v));
+  return [prod(a, d), prod(b, c)];
+};
+/** The fact of a gate x: its two cross products, equal or different. */
+const crossFact = (eq, x, right) => {
+  const [p, q] = cross(eq, x);
+  return right
+    ? `Avec $${tx(x)}$ dans la case : ${p} et ${q}, les deux produits sont égaux.`
+    : `Avec $${tx(x)}$ dans la case : ${p} et ${q}, les deux produits sont différents.`;
+};
+
 /**
- * A wave: the right gate, two others drawn from `pool` (never one the wave would count right, never twice the same, at
- * most 6 characters, positive), each with its fact. null (« ask again ») when the pool has fewer than two.
+ * A wave: the right gate, two others drawn from `pool` (never one the wave would count right, never twice the same,
+ * whole beside a whole answer — a short decimal allowed only beside a decimal one —, at most 6 characters, positive),
+ * each with its fact (no number of four digits in it). null (« ask again ») when the
+ * pool has fewer than two.
  */
-function waveOf(rand, { drawing, ...wave }, pool, sentence, rightSentence) {
-  // French typography on every sentence of the buoy (a no-break space before « : »…); `drawing`: its figure, drawn only
-  // once the wave is made (`figureOf`)
+function waveOf(rand, wave, pool, fact) {
+  // a whole answer has whole buoys beside it: a decimal one would be dropped at a glance
+  const shape = wave.type === 'decimal' ? SHORT : /^\d+$/;
   const base = { ...wave, say: frAll(wave.say) };
-  const fact = (g) => frAll(sentence(g));
-  const rightFact = frAll(rightSentence);
   const right = truthOf(base);
-  if (!right || right.length > 6) return null;
+  if (!right || !SHORT.test(right) || right.length > 6) return null;
   const seen = new Set([right]);
   const wrong = [];
   for (const g of shuffle(rand, pool)) {
@@ -164,193 +147,172 @@ function waveOf(rand, { drawing, ...wave }, pool, sentence, rightSentence) {
     } catch {
       continue;
     }
-    if (seen.has(k) || isRight(base, k) || k.length > 6) continue;
+    if (seen.has(k) || isRight(base, k) || !shape.test(k) || k.length > 6) continue;
     seen.add(k);
     wrong.push(k);
   }
   if (wrong.length < 2) return null;
   const others = wrong.slice(0, 2);
+  const facts = [right, ...others].map((g, i) => frAll(fact(g, i === 0)));
+  // a fact stays mental too: no number of four digits in it
+  if (facts.some((f) => /\d{4}|\d\\,\d/.test(f))) return null;
   const gates = shuffle(rand, [gate(right), ...others.map(gate)]);
   return {
     ...base,
     seconds: THINK[base.type] + SPARE,
-    ...(drawing ? { figure: drawing() } : {}),
     // the ladder never draws the same numbers twice in a row: its `a` / `b` are the order's formula
     a: base.tex,
     b: base.say,
     gates,
     good: gates.indexOf(gate(right)),
-    why: { right: rightFact, wrong: Object.fromEntries(others.map((g) => [gate(g), fact(g)])) },
+    why: { right: facts[0], wrong: Object.fromEntries(others.map((g, i) => [gate(g), facts[i + 1]])) },
   };
 }
-/** Two different multipliers. */
-const twoM = (rand) => {
-  const a = pick(rand, M);
+
+/** Two different multipliers of the level's set. */
+const twoM = (rand, big) => {
+  const set = big ? M.big : M.small;
+  const a = pick(rand, set);
   const b = pick(
     rand,
-    M.filter((x) => x !== a),
+    set.filter((x) => x !== a),
   );
   return [a, b];
 };
+/** The four numbers a / b = c / d at a k of `REDUCE`: a = p × m, b = q × m, c = p × n, d = q × n. */
+function fourOf(rand, big, ks = REDUCE) {
+  const [p, q] = kOf(pick(rand, ks));
+  const [m, n] = twoM(rand, big);
+  return [p * m, q * m, p * n, q * n];
+}
+/** « \\dfrac{a}{b} = \\dfrac{c}{d} », the box written `\\square`; `show` writes a number its own way (a sum). */
+const fracs = (eq, show = (v) => tx(v)) => {
+  const t = eq.map((v, i) => (v == null ? '\\square' : show(v, i)));
+  return `\\dfrac{${t[0]}}{${t[1]}} = \\dfrac{${t[2]}}{${t[3]}}`;
+};
+/** The numbers of the order, shown, and a check that none is too big for the head. */
+const mental = (xs) => xs.every((x) => x > 0 && x <= MAX);
+/**
+ * The mistakes a real student makes on a / b = c / d with one box (`hole`): adding the gap instead of multiplying (the
+ * box's fraction-mate plus the other fraction's difference), forgetting the division, the wrong diagonal.
+ */
+function slips(full, hole) {
+  const v = (i) => String(full[i]);
+  const mate = hole ^ 1;
+  const added = minus(plus(v(mate), v(hole ^ 2)), v(mate ^ 2));
+  const opposite = v(3 - hole);
+  const [p, q] = [v(hole ^ 1), v(hole ^ 2)];
+  return [added, times(p, q), over(times(p, opposite), q), over(times(q, opposite), p)].map(write);
+}
 
 // ───────────────────────────── the kinds of buoy ─────────────────────────────
 export const GENERATORS = {
-  /** K1 — the ratio of one line given: OA / OE = p / q and OF = q × m — OB, its partner on the other line. */
-  rapport(rand) {
-    const k = pick(rand, REDUCE);
-    const [p, q] = kOf(k);
-    const m = pick(rand, M);
-    const OF = q * m;
+  /** K1 — complete an equality of two fractions, the box in any of the four places: « 4/12 = 5/□ ». */
+  egalite(rand, { big = false } = {}) {
+    const full = fourOf(rand, big);
+    const hole = pick(rand, [0, 1, 2, 3]);
+    const eq = full.map((v, i) => (i === hole ? null : v));
+    const shown = eq.filter((v) => v != null);
+    const pairs = pairsOf(shown);
+    if (!mental(full) || !clear(pairs)) return null;
     const base = {
-      type: 'rapport',
+      type: 'egalite',
       key: K.papillon,
-      say: '(AB) ∥ (EF) : calcule OB',
-      tex: `\\dfrac{OA}{OE} = \\dfrac{${p}}{${q}} \\quad OF = ${OF}`,
-      data: { k, side: String(OF) },
-      pairs: [],
-      // the ratio stays in the order: OF written, OB « ? »; OE for the shape only (4/5 of OF), OA at the same k
-      drawing: figureOf('butterfly', BUTTERFLY, { VN: p * m, VC: OF }, ['VN', 'VC'], ['VN'], {
-        VM: write(times(String(OF), `${4 * p}/${5 * q}`)),
-        VB: write(times(String(OF), '4/5')),
-        VN: String(p * m),
-        VC: String(OF),
-        MN: null,
-        BC: null,
-      }),
+      say: 'Complète',
+      tex: fracs(eq),
+      data: { eq: eq.map((v) => (v == null ? null : String(v))) },
+      pairs,
     };
-    const right = truthOf(base);
-    // OA / OE = OB / OF ⟺ OB × q = OF × p
-    const fact = (x) => differ('OB', x, cross(x, OF, p, q));
-    const rightFact = agree('OB', right, cross(right, OF, p, q));
-    return waveOf(rand, base, [String(OF - (q - p)), whole(over(OF * q, p)), String(OF * p)], fact, rightFact);
+    return waveOf(rand, base, slips(full, hole), (x, right) => crossFact(base.data.eq, x, right));
   },
 
-  /** K1 — three lengths from the vertex O: OA, OE and OB — OF. */
-  longueur(rand) {
-    const [p, q] = kOf(pick(rand, REDUCE));
-    const [m, n] = twoM(rand);
-    const [OA, OE, OB] = [p * m, q * m, p * n];
-    const pairs = pairsOf([OA, OE, OB]);
-    if (!clear(pairs)) return null;
+  /** K1 — the cross product itself: « 12 × 5 ÷ 4 » (a / b = c / d, d = b × c ÷ a). */
+  croix(rand, { big = false } = {}) {
+    const [a, b, c] = fourOf(rand, big);
+    const [x, y] = pick(rand, [
+      [b, c],
+      [c, b],
+    ]);
+    const pairs = pairsOf([a, b, c]);
+    if (!mental([a, b, c]) || b * c > 999 || !clear(pairs)) return null;
     const base = {
-      type: 'longueur',
+      type: 'croix',
       key: K.papillon,
-      say: '(AB) ∥ (EF) : calcule OF',
-      tex: `OA = ${OA} \\quad OE = ${OE} \\quad OB = ${OB}`,
-      data: { small: String(OA), big: String(OE), other: String(OB) },
+      say: 'Calcule',
+      tex: `${tx(x)} \\times ${tx(y)} \\div ${tx(a)}`,
+      data: { eq: [String(a), String(b), String(c), null] },
       pairs,
-      drawing: figureOf(
-        'butterfly',
-        BUTTERFLY,
-        { VM: OA, VB: OE, VN: OB, VC: q * n },
-        ['VM', 'VB', 'VN', 'VC'],
-        ['VC'],
-      ),
     };
-    const right = truthOf(base);
-    // OA / OE = OB / OF ⟺ OA × OF = OE × OB
-    const fact = (x) =>
-      equal(x, OA + OE)
-        ? `$${OA} + ${OE} = ${OA + OE}$ : c’est la longueur $AE$, d’un bout à l’autre de la figure, pas un côté d’un des deux triangles.`
-        : differ('OF', x, cross(OA, OE, OB, x));
-    const rightFact = agree('OF', right, cross(OA, OE, OB, right));
-    return waveOf(rand, base, [whole(over(OB * OA, OE)), String(OA + OE), String(OB + (OE - OA))], fact, rightFact);
+    const fact = (g, right) =>
+      right
+        ? `${prod(x, y)}, et ${prod(g, a)} : le quotient de $${tx(b * c)}$ par $${tx(a)}$ est $${tx(g)}$.`
+        : `${prod(x, y)}, et ${prod(g, a)}, pas $${tx(b * c)}$.`;
+    return waveOf(rand, base, [String(b * c), String(b + c - a), write(over(a * c, b)), write(over(a * b, c))], fact);
   },
 
-  /** K2 — the length ACROSS the vertex given: OA, AE and OB — OF (OE = AE − OA first). */
-  travers(rand) {
-    const [p, q] = kOf(pick(rand, REDUCE));
-    const [m, n] = twoM(rand);
-    const [OA, OE, OB] = [p * m, q * m, p * n];
-    const AE = OA + OE;
-    const pairs = pairsOf([OA, AE, OB, OE]);
-    if (!clear(pairs)) return null;
+  /**
+   * K2 — a length from the vertex written as the sum of its two pieces: « 4 / (4 + 8) = 5 / □ » (the sum first). The
+   * box is in the other fraction, above or below; the fraction of the sum on the left or on the right.
+   */
+  somme(rand, { big = false } = {}) {
+    const [a, b, c, d] = fourOf(rand, big);
+    const piece = b - a;
+    if (piece === a) return null;
+    const hole = pick(rand, [2, 3]);
+    const left = pick(rand, [true, false]);
+    // the four numbers in the order written, the sum's fraction first or second
+    const full = left ? [a, b, c, d] : [c, d, a, b];
+    const at = left ? hole : hole - 2;
+    const sumAt = left ? 1 : 3;
+    const eq = full.map((v, i) => (i === at ? null : v));
+    const shown = [a, piece, ...[c, d].filter((_, i) => i + 2 !== hole)];
+    const pairs = pairsOf(shown);
+    if (!mental(full) || !clear(pairs)) return null;
     const base = {
-      type: 'travers',
+      type: 'somme',
       key: K.calcul,
-      say: '(AB) ∥ (EF), O est sur [AE] : calcule OF',
-      tex: `OA = ${OA} \\quad AE = ${AE} \\quad OB = ${OB}`,
-      data: { OA: String(OA), OE: String(OE), OB: String(OB) },
+      say: 'Complète',
+      tex: fracs(eq, (v, i) => (i === sumAt ? `${tx(a)} + ${tx(piece)}` : tx(v))),
+      data: { eq: eq.map((v) => (v == null ? null : String(v))) },
       pairs,
-      // AE across the vertex, written along its line through O
-      drawing: figureOf(
-        'butterfly',
-        BUTTERFLY,
-        { VM: OA, VB: OE, VN: OB, VC: q * n, VMB: AE },
-        ['VM', 'VMB', 'VN', 'VC'],
-        ['VC'],
-      ),
     };
-    const right = truthOf(base);
-    const cut = `$OE = ${AE} - ${OA} = ${OE}$`;
-    const fact = (x) =>
-      equal(x, over(AE * OB, OA))
-        ? `$AE = ${AE}$ va de $A$ à $E$ en passant par $O$. Depuis $O$ : ${cut}, et ${cross(OA, OE, OB, x)}, les deux produits sont différents.`
-        : `${cut}. Avec ${is('OF', x)} : ${cross(OA, OE, OB, x)}, les deux produits sont différents.`;
-    const rightFact = `${cut}, et ${cross(OA, OE, OB, right)} : les deux produits sont égaux.`;
-    return waveOf(rand, base, [whole(over(AE * OB, OA)), whole(over(OB * OA, OE)), String(AE - OB)], fact, rightFact);
+    const sum = `$${tx(a)} + ${tx(piece)} = ${tx(b)}$`;
+    const fact = (x, right) => `${sum}. ${crossFact(base.data.eq, x, right)}`;
+    // the piece alone (the sum forgotten), the piece added, the division forgotten
+    const alone = [...full];
+    alone[sumAt] = piece;
+    return waveOf(
+      rand,
+      base,
+      [truthOf({ data: { eq: alone.map((v, i) => (i === at ? null : String(v))) } }), ...slips(full, at)],
+      fact,
+    );
   },
 
-  /** K2 — the length ACROSS the vertex asked: OA, OE and OB — BF (OF from the vertex, then OB + OF). */
-  traversInconnu(rand) {
-    const [p, q] = kOf(pick(rand, REDUCE));
-    const [m, n] = twoM(rand);
-    const [OA, OE, OB] = [p * m, q * m, p * n];
-    const OF = q * n;
-    const pairs = pairsOf([OA, OE, OB]);
-    if (!clear(pairs)) return null;
+  /** K2 — an equality whose box is a short decimal: « 4/6 = 5/□ » gives 7,5. */
+  decimal(rand, { big = false } = {}) {
+    const [p, q] = kOf(pick(rand, ['5/6', '2/7', '4/7', '2/9', '4/9', '5/9']));
+    const m = pick(rand, big ? [2, 3] : [1, 2]);
+    const [a, b] = [p * m, q * m];
+    const c = pick(
+      rand,
+      Array.from({ length: big ? 14 : 9 }, (_, i) => i + 3).filter((x) => x !== a && x !== b),
+    );
+    const d = write(over(b * c, a));
+    if (/^\d+$/.test(d)) return null;
+    const eq = [String(a), String(b), String(c), null];
+    const pairs = pairsOf([a, b, c]);
+    if (!mental([a, b, c]) || !clear(pairs)) return null;
     const base = {
-      type: 'traversInconnu',
+      type: 'decimal',
       key: K.calcul,
-      say: '(AB) ∥ (EF), O est sur [BF] : calcule BF',
-      tex: `OA = ${OA} \\quad OE = ${OE} \\quad OB = ${OB}`,
-      data: { OA: String(OA), OE: String(OE), OB: String(OB) },
+      say: 'Complète',
+      tex: fracs(eq),
+      data: { eq },
       pairs,
-      // BF across the vertex, asked: « BF = ? » along its line through O
-      drawing: figureOf(
-        'butterfly',
-        BUTTERFLY,
-        { VM: OA, VB: OE, VN: OB, VC: OF, VNC: OB + OF },
-        ['VM', 'VB', 'VN', 'VNC'],
-        ['VNC'],
-      ),
     };
-    const from = `${prod(OA, OF)} et ${prod(OE, OB)}, donc ${is('OF', OF)}`;
-    const sum = `$BF = ${OB} + ${OF} = ${OB + OF}$`;
-    const fact = (x) =>
-      equal(x, OF)
-        ? `${is('OF', OF)} va de $O$ à $F$. $BF$ va de $B$ à $F$ en passant par $O$ : ${sum}.`
-        : `${from}, et ${sum}, pas $${tx(x)}$.`;
-    const rightFact = `${from}, et ${sum}.`;
-    return waveOf(rand, base, [String(OF), String((q - p) * n), String(OE + OB)], fact, rightFact);
-  },
-
-  /** K2 — the nested figure, a side from the vertex in two pieces: AM, MB and AN — AC (AB = AM + MB first). */
-  emboite(rand) {
-    const [p, q] = kOf(pick(rand, REDUCE));
-    const [m, n] = twoM(rand);
-    const [AM, MB, AN] = [p * m, (q - p) * m, p * n];
-    const AB = AM + MB;
-    const pairs = pairsOf([AM, MB, AN]);
-    if (AM === MB || !clear(pairs)) return null;
-    const base = {
-      type: 'emboite',
-      key: K.calcul,
-      say: 'M sur [AB], N sur [AC], (MN) ∥ (BC) : calcule AC',
-      tex: `AM = ${AM} \\quad MB = ${MB} \\quad AN = ${AN}`,
-      data: { small: String(AM), big: String(AB), other: String(AN) },
-      pairs,
-      drawing: figureOf('nested', NESTED, { VM: AM, VB: AB, VN: AN, VC: q * n, MB }, ['VM', 'MB', 'VN', 'VC'], ['VC']),
-    };
-    const right = truthOf(base);
-    const join = `$AB = ${AM} + ${MB} = ${AB}$`;
-    const piece = (q - p) * n; // AN × MB / AM: NC, a piece
-    const fact = (x) =>
-      equal(x, piece)
-        ? `${is('NC', piece)} : un morceau de $[AC]$, pas tout le côté. ${join}, et ${cross(AM, AB, AN, right)}.`
-        : `${join}. Avec ${is('AC', x)} : ${cross(AM, AB, AN, x)}, les deux produits sont différents.`;
-    const rightFact = `${join}, et ${cross(AM, AB, AN, right)} : les deux produits sont égaux.`;
-    return waveOf(rand, base, [String(piece), String(AN + MB), String(AN + AB)], fact, rightFact);
+    const pool = slips([a, b, c, d], 3);
+    return waveOf(rand, base, pool, (x, right) => crossFact(eq, x, right));
   },
 };
 
@@ -359,12 +321,12 @@ export const GENERATORS = {
 /** What each leg asks, by the dock it leaves (its place in the world): the first level of the node of the key just sealed. */
 export const LEG_MIX = {
   2: [
-    ['rapport', {}],
-    ['longueur', {}],
+    ['egalite', {}],
+    ['croix', {}],
   ],
   3: [
-    ['travers', {}],
-    ['traversInconnu', {}],
+    ['somme', {}],
+    ['decimal', {}],
   ],
 };
 const TRIES = 400;
@@ -381,7 +343,7 @@ export const gateOption = (g) => {
   const m = /^(\d+)\/(\d+)$/.exec(String(g));
   return m ? { tex: `\\dfrac{${m[1]}}{${m[2]}}` } : { t: String(g) };
 };
-/** A wave as the rail plays it: { ask, tex, options × 3, right, why × 3, seconds, figure }. */
+/** A wave as the rail plays it: { ask, tex, options × 3, right, why × 3, seconds } — no figure (owner, 2026-11-27). */
 export const roundOf = (w) => ({
   ask: w.say,
   tex: w.tex ?? null,
@@ -389,7 +351,6 @@ export const roundOf = (w) => ({
   right: w.good,
   why: w.gates.map((g, i) => (i === w.good ? w.why.right : (w.why.wrong?.[g] ?? w.why.right))),
   seconds: w.seconds,
-  ...(w.figure ? { figure: w.figure } : {}),
 });
 
 /** The words of the rail's cards (`kit/GateRunHud.jsx › content.text`): the world's, a leg's own where it differs. */

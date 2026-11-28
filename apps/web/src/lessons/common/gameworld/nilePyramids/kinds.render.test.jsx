@@ -170,7 +170,7 @@ describe('the forge parts draw through GeoFigure', () => {
     const out = renderToString(<Line c={{ ...c, head: WORLD_TEXT.docks[0], tag: '⭐' }} />);
     expect(out).toContain('data-np-line="aligned"');
     expect(beats()).toBe(3);
-    expect(Object.keys(FORGE_PARTS)).toEqual(['Mirror', 'Line', 'beats', 'Inquiry', 'UseFigure']);
+    expect(Object.keys(FORGE_PARTS)).toEqual(['skin', 'Mirror', 'Line', 'beats', 'Inquiry', 'UseFigure']);
   });
   it('the gauge shows the values a case was TESTED with: a wrong chain apart, a copy short of its target apart', () => {
     // the new canal through the chain « piece »: 2/7, 2/7, 2/9 — the whole ratios are equal, the tested ones are not

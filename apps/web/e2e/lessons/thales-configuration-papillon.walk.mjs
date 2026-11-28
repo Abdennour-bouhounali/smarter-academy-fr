@@ -185,9 +185,10 @@ function statementTrue(plain) {
 }
 
 /**
- * A buoy of a felucca's leg or of a practice level is right? — the order read (`ask`, `tex`), the walk's own arithmetic.
- * The letters are the rail's: a butterfly O, A, E, B, F ((AE) and (BF) through O, (AB) ∥ (EF)); a nested figure A, M, B,
- * N, C (M on [AB], N on [AC], (MN) ∥ (BC)).
+ * A buoy of a felucca's leg or of a practice level is right? — computed from the order's formula alone (owner,
+ * 2026-11-27: the river asks bare speed calculations, no figure, no point): « \dfrac{4}{4 + 8} = \dfrac{5}{\square} »
+ * — the box of a / b = c / d by a × d = b × c, each term a number or a sum —, or « 12 \times 5 \div 4 » evaluated.
+ * The walk's own arithmetic (`texValue`); `ask` is only read to know the order is one (« Complète », « Calcule »).
  */
 function buoy(ask, tex, gate) {
   const say = norm(ask);
@@ -195,31 +196,20 @@ function buoy(ask, tex, gate) {
     .replace(/\\displaystyle\s*/g, '')
     .trim();
   const g = q(String(gate).trim());
-  const asked = /calcule ([A-Z]{2})/.exec(say)?.[1];
-  if (!asked) throw new Error(`the walk cannot read the buoy « ${say} » ${t}`);
-  const nested = /M sur \[AB\]/.test(say);
-  const names = nested ? { V: 'A', M: 'M', B: 'B', N: 'N', C: 'C' } : { V: 'O', M: 'A', B: 'E', N: 'B', C: 'F' };
-  const kind = nested ? 'nested' : 'butterfly';
-  const known = {};
-  for (const part of t.split('\\quad').map((x) => x.trim())) {
-    const ratio = /^\\dfrac\{([A-Z]{2})\}\{([A-Z]{2})\} = \\dfrac\{(\d+)\}\{(\d+)\}$/.exec(part);
-    if (ratio) {
-      // a ratio given: OA / OE = p / q (the two lengths of one line are then p·s and q·s for some s — only their ratio counts)
-      known[`${keyOf(names, ratio[1], kind)}/${keyOf(names, ratio[2], kind)}`] = div(ratio[3], ratio[4]);
-      continue;
-    }
-    const m = /^([A-Z]{2}) = (\d+(?:,\d+)?)$/.exec(part);
-    if (!m) throw new Error(`the walk cannot read « ${part} » in the buoy « ${say} »`);
-    known[keyOf(names, m[1], kind)] = m[2];
+  if (!/^(Complète|Calcule)/.test(say)) throw new Error(`the walk cannot read the buoy « ${say} » ${t}`);
+  const f = /^\\d?frac\{([^{}]*)\}\{([^{}]*)\} = \\d?frac\{([^{}]*)\}\{([^{}]*)\}$/.exec(t);
+  if (!f) {
+    const v = texValue(t);
+    if (v == null) throw new Error(`the walk cannot compute « ${t} » in the buoy « ${say} »`);
+    return eq(g, v);
   }
-  const want = keyOf(names, asked, kind);
-  const k = known['VM/VB'];
-  if (k) {
-    // OA / OE = OB / OF: a length of one ratio from its partner × k
-    const partner = known[PARTNER[want]];
-    return eq(g, SMALL.has(want) ? mul(partner, k) : div(partner, k));
-  }
-  return eq(g, lengthFrom(known, want, kind));
+  const terms = f.slice(1).map((x) => (x.trim() === '\\square' ? null : texValue(x)));
+  const hole = terms.indexOf(null);
+  if (hole < 0 || terms.filter((x) => x == null).length !== 1)
+    throw new Error(`the walk finds no single box in « ${t} »`);
+  const [a, b, c, d] = terms.map((x) => x ?? g);
+  // a / b = c / d with the gate in the box: the two cross products equal
+  return eq(mul(a, d), mul(b, c));
 }
 
 /** The first number after `re` in a sentence (« $AM = 3$ », « $0{,}5$ »). */
@@ -366,10 +356,7 @@ export default {
   },
   // a tap of « Entraîne-toi » is a buoy of the same waves: judged by the same arithmetic, from its order and its formula
   gate: Object.fromEntries(
-    ['rapport', 'longueur', 'travers', 'traversInconnu', 'emboite'].map((t) => [
-      t,
-      (x, n) => buoy(x.say, x.tex, String(n)),
-    ]),
+    ['egalite', 'croix', 'somme', 'decimal'].map((t) => [t, (x, n) => buoy(x.say, x.tex, String(n))]),
   ),
   // a buoy of the felucca's legs and of the practice levels (lib/lessonWalk/gateRun.mjs)
   run: buoy,
@@ -426,13 +413,17 @@ export default {
 };
 
 // the walk's own arithmetic is checked once at load: the river (SE 9, AS 72, ER 52 → AF 416), a cut across the vertex,
-// a nested side in two pieces, a buoy, a reason
+// a nested side in two pieces, the buoys (an equality, a sum, a decimal, a cross product), a reason
 if (
   !eq(lengthFrom({ VM: '9', VB: '72', MN: '52' }, 'BC', 'butterfly'), '416') ||
   !eq(lengthFrom({ VM: '9', VMB: '31,5', MN: '5' }, 'BC', 'butterfly'), '12,5') ||
   !eq(lengthFrom({ VM: '2', MB: '4', BC: '16,5' }, 'MN'), '5,5') ||
   !eq(lengthFrom({ VM: '9', VB: '22,5', VN: '11' }, 'VNC', 'butterfly'), '38,5') ||
-  !buoy('(AB) ∥ (EF), O est sur [AE] : calcule OF', 'OA = 4 \\quad AE = 10 \\quad OB = 6', '9') ||
+  !buoy('Complète', '\\dfrac{4}{12} = \\dfrac{5}{\\square}', '15') ||
+  buoy('Complète', '\\dfrac{4}{12} = \\dfrac{5}{\\square}', '13') ||
+  !buoy('Complète', '\\dfrac{4}{4 + 8} = \\dfrac{\\square}{15}', '5') ||
+  !buoy('Complète', '\\dfrac{4}{6} = \\dfrac{5}{\\square}', '7,5') ||
+  !buoy('Calcule', '12 \\times 5 \\div 4', '15') ||
   !reasonTrue('car $\\dfrac{26}{45{,}5} = \\dfrac{4}{7}$ et $AE = 26 + 45{,}5 = 71{,}5$') ||
   reasonTrue('car chaque longueur va avec celle qui lui fait face')
 )

@@ -1,7 +1,8 @@
 /**
  * THE FIGURES of lesson `triangles-semblables` — TWO TRIANGLES THAT SHARE NOTHING (PURE). The lesson's whole point is the
  * pair of triangles lying APART, turned or flipped: the help the 4e figures gave for free (a shared vertex) is gone.
- * One drawing serves the buoys of the felucca, « Entraîne-toi », the cards of the map and the mission: a spec for the
+ * One drawing serves « Entraîne-toi », the forges, the cards of the map and the mission (the felucca's buoys carry none: each
+ * is a bare calculation, `run.js`): a spec for the
  * shared `components/GeoFigure.jsx` (never a second renderer) — points, segments with their written lengths, the arc of
  * a written angle, the square of a right angle.
  *
@@ -129,7 +130,7 @@ const inside = (pt, [a, b, c]) => {
  * placement when it holds, else a radius of `RADII` for each, the nearest to GeoFigure's 20 (a search with bounds — a
  * figure has at most six measures). When no placement holds them all, the figure is left as it was.
  */
-export function fitAngleLabels(spec) {
+function fitAngleLabels(spec) {
   if (!(spec.angles ?? []).some((g) => g.label)) return spec;
   const L = layoutGeoFigure(spec);
   const width = (g) => {

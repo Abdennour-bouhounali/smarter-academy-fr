@@ -154,61 +154,31 @@ function useAngles(u) {
 
 // ───────────────────────────── a buoy, a trainer's tap ─────────────────────────────
 
-/** A gate as the rail or the trainer writes it: « \dfrac{3}{2} », « 3/2 », « 13,5 », 7. */
-const gateValue = (g) => {
-  const t = unbrace(String(g)).trim();
-  const m = /\\d?frac\{(\d+)\}\{(\d+)\}/.exec(t);
-  return q(m ? `${m[1]}/${m[2]}` : t);
-};
+/** A gate as the rail or the trainer writes it: « 13,5 », « 1{,}5 », 7 — as the formula's writing. */
+const gateTex = (g) => unbrace(String(g)).trim().replace(',', '{,}');
 /**
- * The right number of a buoy (the felucca's legs, the practice levels, a tap of « Entraîne-toi »), from its order and
- * its formula: the third angle of a triangle; or two triangles of the same shape — their vertices matched by the equal
- * angles the formula writes, else in the order of their names — a length asked from the pair whose two lengths are given.
+ * Is `gate` the right buoy (the felucca's legs, the practice levels, a tap of « Entraîne-toi »)? Every buoy is ONE bare
+ * calculation (run.js, owner 2026-11-27), judged HERE from the order's own formula: « Calcule » — the calculation
+ * (« 9 \div 6 », « 6 \times 1{,}5 », « 180 - 65 - 48 ») is worth the gate; « Complète » — the box `\square` filled with
+ * the gate, the two sides of « \dfrac{6}{9} = \dfrac{10}{\square} » or « 65 + 48 + \square = 180 » are equal.
  */
-function buoyValue(ask, tex) {
-  const say = unbrace(norm(ask));
-  const t = unbrace(String(tex ?? ''))
+function buoy(ask, tex, gate) {
+  const say = norm(ask);
+  const t = String(tex ?? '')
     .replace(/\\displaystyle\s*/g, '')
     .trim();
-  if (/\?\s*=\s*180/.test(t)) {
-    // « x^\circ + y^\circ + \ ? = 180^\circ »
-    const given = [...t.split('=')[0].matchAll(/(\d+(?:,\d+)?)\s*\^\\circ/g)].map((m) => m[1]);
-    return given.reduce((a, x) => sub(a, x), q('180'));
+  if (/^Calcule\b/.test(say)) {
+    const v = texValue(t);
+    if (v == null) throw new Error(`the walk cannot compute the buoy « ${t} »`);
+    return eq(v, q(unbrace(String(gate)).trim()));
   }
-  // the two triangles: named in the question, or ABC and DEF (the rail's short questions name none — run.js)
-  const tri = [...say.matchAll(/\b([A-Z]{3})\b/g)].map((m) => m[1]);
-  const [n1, n2] = tri.length >= 2 ? tri : ['ABC', 'DEF'];
-  // « Même forme, DE plus petit côté de DEF : EF ? »: the shortest sides go together, EF is DEF's longest (run.test.js)
-  const byRank = /^Même forme, ([A-Z]{2}) plus petit côté de [A-Z]{3} : ([A-Z]{2}) \?$/.exec(say);
-  if (byRank) {
-    const L0 = lengthsIn(t);
-    const own = sidesOf(n1)
-      .map((x) => lengthOf(L0, x))
-      .filter((v) => v != null)
-      .sort(cmp);
-    return mul(own.at(-1), div(lengthOf(L0, byRank[1]), own[0]));
+  if (/^Complète\b/.test(say) && t.includes('\\square')) {
+    const sides = t.replace('\\square', gateTex(gate)).split('=').map(texValue);
+    if (sides.length !== 2 || sides.some((v) => v == null)) throw new Error(`the walk cannot read the buoy « ${t} »`);
+    return eq(sides[0], sides[1]);
   }
-  const pairs = hatPairs(t);
-  const map = pairs.length ? vertexMap(n1, n2, pairs) : Object.fromEntries([...n1].map((v, i) => [v, n2[i]]));
-  const L = lengthsIn(t);
-  const firstSides = sidesOf(n1);
-  // k from a side of the first and its image, both given
-  const pair = firstSides.find((s) => lengthOf(L, s) != null && lengthOf(L, mapSide(map, s)) != null);
-  if (!pair) throw new Error(`the walk finds no pair of homologous sides given in « ${t} »`);
-  const k = div(lengthOf(L, mapSide(map, pair)), lengthOf(L, pair));
-  if (/par quel nombre|plus petits côtés sont/.test(say)) return k;
-  if (/plus grand côté de/.test(say)) {
-    const longest = firstSides
-      .filter((s) => lengthOf(L, s) != null)
-      .sort((x, y) => cmp(lengthOf(L, y), lengthOf(L, x)))[0];
-    return mul(lengthOf(L, longest), k);
-  }
-  const asked = /calcule (?:le côté )?([A-Z]{2})/.exec(say)?.[1];
-  if (!asked) throw new Error(`the walk cannot read what the buoy « ${say} » asks`);
-  const back = Object.fromEntries(Object.entries(map).map(([a, b]) => [b, a]));
-  return mul(lengthOf(L, mapSide(back, asked)), k);
+  throw new Error(`the walk cannot read what the buoy « ${say} » « ${t} » asks`);
 }
-const buoy = (ask, tex, gate) => eq(gateValue(gate), buoyValue(ask, tex));
 
 // ───────────────────────────── « Vrai ou faux ? » ─────────────────────────────
 
@@ -232,11 +202,13 @@ function texValue(f) {
     }
     const fr = /^\[([^\]]*)\]\/\[([^\]]*)\]$/.exec(e);
     if (fr) return div(value(fr[1]), value(fr[2]));
-    if (e.includes('\\times'))
-      return e
-        .split('\\times')
-        .map(value)
-        .reduce((x, y) => mul(x, y));
+    if (/\\times|\\div/.test(e)) {
+      const parts = e.split(/(\\times|\\div)/);
+      let acc = value(parts[0]);
+      for (let i = 1; i < parts.length; i += 2)
+        acc = parts[i] === '\\times' ? mul(acc, value(parts[i + 1])) : div(acc, value(parts[i + 1]));
+      return acc;
+    }
     return q(e);
   };
   try {
@@ -528,7 +500,10 @@ export default {
   },
   // a tap of « Entraîne-toi » is a buoy of the same waves: judged by the same arithmetic, from its order and its formula
   gate: Object.fromEntries(
-    ['rapport', 'longueur', 'troisieme', 'cote'].map((t) => [t, (x, n) => buoy(x.say, x.tex, String(n))]),
+    ['quatrieme', 'coefficient', 'cote', 'troisieme', 'complement'].map((t) => [
+      t,
+      (x, n) => buoy(x.say, x.tex, String(n)),
+    ]),
   ),
   run: buoy,
   mission,
@@ -600,37 +575,14 @@ export default {
     }),
     'SAS',
   );
+  ok(buoy('Complète', '\\dfrac{6}{9} = \\dfrac{10}{\\square}', '15'), 'quatrieme');
+  ok(!buoy('Complète', '\\dfrac{6}{9} = \\dfrac{10}{\\square}', '13'), 'quatrieme, the difference added');
+  ok(buoy('Calcule', '9 \\div 6', '1,5') && !buoy('Calcule', '9 \\div 6', '3'), 'coefficient');
+  ok(buoy('Calcule', '6 \\times 1{,}5', '9') && !buoy('Calcule', '6 \\times 1{,}5', '7,5'), 'cote');
+  ok(buoy('Calcule', '180 - 65 - 48', '67') && !buoy('Calcule', '180 - 65 - 48', '113'), 'troisieme');
   ok(
-    buoy(
-      'ABC et DEF ont la même forme. Leurs plus petits côtés sont AB et DE : de ABC à DEF, par quel nombre multiplie-t-on les côtés ?',
-      'AB = 4 \\quad DE = 6',
-      '\\dfrac{3}{2}',
-    ),
-    'rapport',
-  );
-  ok(
-    buoy(
-      'ABC et DEF ont la même forme, et DE est le plus petit côté de DEF : calcule le plus grand côté de DEF',
-      'AB = 3 \\quad CA = 4 \\quad BC = 6 \\quad DE = 6',
-      '12',
-    ),
-    'longueur',
-  );
-  ok(
-    buoy(
-      'ABC a trois angles : 49°, 58° et 73°. DEF en a deux : 73° et 49°.',
-      '73^\\circ + 49^\\circ + \\ ? = 180^\\circ',
-      '58',
-    ),
-    'troisieme',
-  );
-  ok(
-    buoy(
-      'ABC et DEF ont deux angles égaux : calcule le côté EF',
-      '\\widehat{A} = \\widehat{E} \\quad \\widehat{B} = \\widehat{D} \\quad AB = 4 \\quad DE = 6 \\quad AC = 7',
-      '10,5',
-    ),
-    'cote',
+    buoy('Complète', '65 + 48 + \\square = 180', '67') && !buoy('Complète', '65 + 48 + \\square = 180', '77'),
+    'complement',
   );
   ok(reasonTrue('car $\\dfrac{6}{4} = \\dfrac{7{,}5}{5} = \\dfrac{9}{6} = \\dfrac{3}{2}$'), 'reason =');
   ok(reasonTrue('car $\\dfrac{6}{4} = \\dfrac{3}{2}$ mais $\\dfrac{8}{6}$ ne vaut pas $\\dfrac{3}{2}$'), 'reason ≠');

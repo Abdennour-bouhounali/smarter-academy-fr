@@ -3,14 +3,19 @@
  * ladder is the kit's (`gameworld/kit/ladder.js`); a level is a run of the kit's rail on the river
  * (`nilePyramids/practice.js`). Its waves are the felucca's (`run.js › GENERATORS`, `isRight`): one definition of a
  * buoy, here and between the docks — the first level of a key's node IS the leg sailed after its seal.
- * Each key practises ITS rule only: K1 the partner on the other line and the fourth length from the vertex; K2 the
- * length across the vertex (cut, or asked) and the nested side in two pieces.
+ * Each key practises ITS calculations only, bare (owner, 2026-11-27: the river asks speed calculations, no figure): K1
+ * an equality of two fractions to complete and the cross product « b × c ÷ a »; K2 a length from the vertex written as
+ * the sum of its two pieces, and an equality whose box is a short decimal.
  */
 import { createLadder, SUMMARY } from '../../../../../../common/gameworld/kit/ladder';
 import { GENERATORS, isRight, LEG_MIX } from './run';
 import { K } from './math';
 
-/** The map: one node per key in the order of the lesson, then the summary node; levels from the easiest. */
+/**
+ * The map: one node per key in the order of the lesson, then the summary node; levels from the easiest — the second of
+ * each node faster, with bigger multipliers (`{ big: true }`, `run.js › M`).
+ */
+const BIG = { big: true };
 export const PRACTICE_NODES = [
   {
     id: K.papillon,
@@ -19,9 +24,9 @@ export const PRACTICE_NODES = [
       {
         speed: 6.6,
         mix: [
-          ['longueur', {}],
-          ['rapport', {}],
-          ['longueur', {}],
+          ['egalite', BIG],
+          ['croix', BIG],
+          ['egalite', BIG],
         ],
       },
     ],
@@ -33,32 +38,33 @@ export const PRACTICE_NODES = [
       {
         speed: 6.6,
         mix: [
-          ['travers', {}],
-          ['emboite', {}],
-          ['traversInconnu', {}],
+          ['somme', BIG],
+          ['decimal', BIG],
+          ['somme', BIG],
         ],
       },
     ],
   },
-  // the summary node: two mixed runs, the second faster
+  // the summary node: two mixed runs, the second faster with bigger numbers
   {
     id: SUMMARY,
     levels: [
       {
         speed: 6.2,
         mix: [
-          ['longueur', {}],
-          ['travers', {}],
-          ['emboite', {}],
+          ['egalite', {}],
+          ['somme', {}],
+          ['croix', {}],
+          ['decimal', {}],
         ],
       },
       {
         speed: 6.8,
         mix: [
-          ['rapport', {}],
-          ['traversInconnu', {}],
-          ['longueur', {}],
-          ['travers', {}],
+          ['somme', BIG],
+          ['egalite', BIG],
+          ['decimal', BIG],
+          ['croix', BIG],
         ],
       },
     ],

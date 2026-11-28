@@ -121,7 +121,7 @@ describe('the forge’s rule — frame and tiles in reading order, left to right
     const html = draw();
     expect(html).not.toContain('dir="rtl"');
     expect(html).not.toMatch(/row-reverse|direction:\s*rtl/);
-    expect(html).toContain('Écris ta règle');
+    expect(html).toContain('Grave ta règle');
     expect(html).toContain('Aide-moi, Zéro');
     expect(html).not.toMatch(/\p{Script=Arabic}/u);
     const css = readFileSync(fileURLToPath(new URL('./ruleForge.css', import.meta.url)), 'utf8');

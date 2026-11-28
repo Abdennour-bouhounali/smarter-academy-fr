@@ -368,13 +368,10 @@ export const TRAINER = {
 
 /** « Forge ta règle » — the words of the forge itself, the same in every lesson. What speaks of a case is the forge's `text`. */
 export const FORGE = {
-  steps: {
-    inquiry: 'Explore',
-    predict: 'Prédis',
-    build: 'Écris ta règle',
-    test: 'Le miroir la teste',
-    seal: 'Scelle ta clé',
-  },
+  /** The three beats of a forge — the key being made (RuleForge.jsx « THE ARCHITECTURE »). */
+  beats: { try: 'Essaie', write: 'Grave ta règle', seal: 'Scelle ta clé' },
+  /** One short line over the mirror's first attack: his rule agreed with all he did (the long sentence was just shown). */
+  agreedThenAttack: 'Ta règle s’accorde avec tes essais. Le miroir riposte.',
   right: 'Ta prédiction a vu juste !',
   miss: 'Ta prédiction n’a pas vu juste cette fois.',
   toBuild: 'J’écris ma règle',
@@ -382,13 +379,10 @@ export const FORGE = {
   timeToWrite: 'C’est le moment d’écrire ta règle : le miroir va la tester.',
   test: 'Teste ma règle',
   fix: 'Je corrige ma règle',
-  dare: 'Chiche !',
   notThat: 'Ta règle dit autre chose.',
   another: 'Un autre défi',
   toSeal: 'Ma règle a tenu !',
   sealed: 'Ta règle a tenu face au miroir : elle devient ta clé.',
-  words: 'Dis-la avec tes mots (facultatif)',
-  sealIt: 'Je scelle ma clé',
   check: 'Vérifier',
   help: 'Aide-moi, Zéro',
   choice: 'L’une de ces deux règles tient face au miroir. Teste-les :',

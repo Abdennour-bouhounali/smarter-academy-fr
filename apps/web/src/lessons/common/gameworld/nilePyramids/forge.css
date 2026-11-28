@@ -107,3 +107,24 @@
 .np-usefig figure {
   margin: 0;
 }
+
+/* in the mirror's dark glass the gauge's sentence is light; on the sheet its line of evidence wraps instead of being cut */
+.rf-mirror:not(.is-rule) .np-gauge .np-gauge__say {
+  color: #fde68a;
+}
+.np-line .np-line__foot {
+  flex-wrap: wrap;
+}
+.rf-log .np-gauge.is-small {
+  flex-basis: 5rem;
+  width: 5rem;
+}
+/* the case the mirror ASKS about (before it computes) is drawn as wide as its 12 px labels need, like the built one */
+.np-mirror:not(.is-tight) .np-mirror__fig {
+  flex-shrink: 0;
+  min-width: calc(var(--di-min-font, 12px) * var(--np-fig-k, 0) + 0.6rem);
+}
+.np-mirror:not(.is-tight) .np-mirror__fig > * {
+  max-width: none !important;
+  width: 100%;
+}

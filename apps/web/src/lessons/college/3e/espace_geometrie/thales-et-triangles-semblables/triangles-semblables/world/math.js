@@ -5,7 +5,7 @@
  *
  * What is this lesson's own: its two key ids, the numbers of the design (`docs/reports/UNIT_3E_THALES_DESIGN.md` §
  * « Lesson 1 », v4 — ONE place: the story, the forges, the tablets and the tests read them; every screen was run pair by
- * pair by the design's `ts-pairs.py`) and the figures of « Entraîne-toi », of the felucca's legs and of the knowledge map
+ * pair by the design's `ts-pairs.py`) and the figures of « Entraîne-toi » and of the knowledge map
  * (FIGURES, the platform's own: none of them is a figure of the story, and no two numbers of ten and more or with a
  * comma, of one figure, stand together on a sheet of a bank, an item of a class test or a line of another lesson —
  * `trainer.test.js` re-reads the rule).
@@ -110,7 +110,7 @@ export const NUMBERS = {
 };
 
 /**
- * THE FIGURES OF « ENTRAÎNE-TOI », OF THE FELUCCA'S LEGS AND OF THE KNOWLEDGE MAP — the platform's own (none is a figure
+ * THE FIGURES OF « ENTRAÎNE-TOI » AND OF THE KNOWLEDGE MAP (the felucca's legs are bare calculations: `run.js`) — the platform's own (none is a figure
  * of the story). Checked pairwise against every bank, class test and French lesson file with the design's
  * `ts-pairs.py` and, in `trainer.test.js`, with the kit's `bank.js › collisions`.
  *   `sides`   two similar triangles: `a`, `b` their sides (cm) in the order of their sizes, `k` = b ÷ a;

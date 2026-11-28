@@ -739,6 +739,7 @@ function Line({ c, children }) {
 }
 
 export const FORGE_PARTS = {
+  skin: 'isles',
   Mirror,
   Line,
   Inquiry,

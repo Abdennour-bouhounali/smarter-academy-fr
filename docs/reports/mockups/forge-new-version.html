@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>La table du Nil — nouvelle version de la forge (prototype)</title>
+<style>
+  /* ── one shell, a skin per world: only these values change ── */
+  :root {
+    --frame: #c9a36b; --frame-deep: #8a6a3f; --surface: #f6ecd2; --raised: #fbf5e4; --recess: #eadbb8;
+    --line: #d2be94; --ink: #2b2118; --ink-soft: #6b5a45; --accent: #1f5f8b; --action: #e0a526; --action-deep: #a87410;
+    --agree: #25693f; --refute: #a04421; --small: #d9822b; --large: #2b4c9b;
+    --sky1: #bfe3f2; --sky2: #f3e2b4; --water: #3f8fc0; --water2: #2b6f9e; --bank: #d9bd7e; --far: #86a85a;
+  }
+  body.isles {
+    --frame: #b9824a; --frame-deep: #7b5126; --surface: #f4f8fb; --raised: #ffffff; --recess: #dfeaf2;
+    --line: #c3d3df; --ink: #1e2a38; --ink-soft: #55677a; --accent: #2f7fbf; --action: #f2b33d; --action-deep: #b67a10;
+    --sky1: #8fd0ff; --sky2: #dff3ff; --water: #bfe6ff; --water2: #9ad4fb; --bank: #7cc46a; --far: #5fae58;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; overflow: hidden; background: #1b1610; }
+  body { font-family: ui-rounded, 'Nunito', 'Segoe UI', system-ui, sans-serif; color: var(--ink); }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1366px; height: 768px; transform-origin: center; overflow: hidden; }
+
+  /* the world behind, kept in sight (blurred): he never leaves it */
+  .world { position: absolute; inset: 0; filter: blur(3px) saturate(0.9); transform: scale(1.03);
+    background: linear-gradient(var(--sky1), var(--sky2) 46%, var(--far) 46%, var(--far) 49%, var(--water) 49%, var(--water2) 78%, var(--bank) 78%); }
+  .world::before { content: ''; position: absolute; left: 120px; top: 150px; border-left: 190px solid transparent; border-right: 190px solid transparent; border-bottom: 205px solid #c8a868; }
+  .world::after { content: ''; position: absolute; left: 330px; top: 232px; border-left: 115px solid transparent; border-right: 115px solid transparent; border-bottom: 122px solid #b79556; }
+  body.isles .world::before, body.isles .world::after { border-bottom-color: #6bb85f; top: 300px; }
+  .veil { position: absolute; inset: 0; background: rgba(43, 33, 24, 0.28); }
+
+  /* the sheet on the builders' table */
+  .sheet { position: absolute; left: 40px; top: 34px; width: 1286px; height: 700px; background: var(--surface);
+    border: 6px solid var(--frame); border-radius: 22px; box-shadow: 0 0 0 2px var(--frame-deep), 0 22px 50px rgba(20, 12, 4, 0.5);
+    display: grid; grid-template-rows: 62px 1fr; }
+  .head { display: flex; align-items: center; gap: 18px; padding: 0 110px 0 20px; border-bottom: 1.5px solid var(--line); }
+  .head h1 { margin: 0; font-size: 22px; font-weight: 800; }
+  .key { display: flex; align-items: center; gap: 10px; margin-left: 8px; }
+  .key svg { width: 86px; height: 34px; }
+  .key b { font-size: 17px; color: var(--ink-soft); font-weight: 700; }
+  .head .sp { flex: 1; }
+  .ghost { height: 38px; padding: 0 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--raised); font-size: 15px; font-weight: 700; color: var(--ink-soft); }
+  .body { display: grid; grid-template-columns: 590px 1fr; min-height: 0; }
+
+  /* left: the figure never leaves */
+  .left { padding: 16px 14px 14px 18px; display: grid; grid-template-rows: 1fr 78px; gap: 12px; min-height: 0; }
+  .fig { position: relative; background: var(--raised); border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .fig svg { display: block; width: 100%; height: 100%; }
+  .cases { display: flex; gap: 10px; align-items: stretch; }
+  .case { flex: 0 0 104px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--recess); padding: 4px; position: relative; }
+  .case.on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); background: var(--raised); }
+  .case.hit { animation: hit 0.9s 2; }
+  .case svg { width: 100%; height: 100%; display: block; }
+  .case i { position: absolute; right: 5px; top: 3px; font-style: normal; font-size: 15px; font-weight: 800; }
+  .cases .legend { align-self: center; color: var(--ink-soft); font-size: 15px; padding-left: 4px; line-height: 1.3; }
+  @keyframes hit { 50% { box-shadow: 0 0 0 5px var(--refute); } }
+
+  /* right: the rule, then ONE thing to do */
+  .right { padding: 16px 20px 14px 8px; display: grid; grid-template-rows: auto 1fr auto; gap: 12px; min-height: 0; }
+  .rule { min-height: 96px; background: var(--recess); border-radius: 16px; border: 1.5px solid var(--line); padding: 10px 18px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 22px; font-weight: 700; }
+  .rule small { flex-basis: 100%; font-size: 15px; font-weight: 700; color: var(--ink-soft); margin-bottom: -4px; }
+  .slot { min-width: 74px; min-height: 58px; padding: 4px 12px; border-radius: 12px; border: 2px dashed var(--ink-soft); display: inline-flex; align-items: center; justify-content: center; color: var(--ink-soft); background: var(--raised); }
+  .slot.live { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(31, 95, 139, 0.25); animation: pulse 1.2s infinite; }
+  .slot.full { border-style: solid; border-color: var(--ink); color: var(--ink); }
+  .slot.cond { min-width: 150px; font-size: 19px; }
+  .rule.sealed { background: linear-gradient(#f7df9a, #e8c25c); border-color: var(--action-deep); }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(31, 95, 139, 0.12); } }
+
+  .work { min-height: 0; display: flex; flex-direction: column; gap: 12px; }
+  .ask { margin: 0; font-size: 22px; line-height: 30px; font-weight: 700; max-width: 34em; }
+  .ask em { font-style: normal; color: var(--accent); }
+  .say { margin: 0; font-size: 18px; line-height: 26px; padding: 10px 14px; border-radius: 12px; background: var(--raised); border-left: 6px solid var(--ink-soft); max-width: 36em; }
+  .say.ok { border-color: var(--agree); color: var(--agree); font-weight: 700; }
+  .say.no { border-color: var(--refute); color: var(--refute); font-weight: 700; }
+  .say.voice::before { content: 'Le miroir · '; font-weight: 800; color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { min-height: 48px; padding: 4px 16px; border-radius: 12px; border: 2px solid var(--line); background: var(--raised); font-size: 20px; font-weight: 700; display: inline-flex; align-items: center; }
+  .chip:hover { border-color: var(--accent); }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip.frac { min-height: 64px; }
+
+  /* mathematics: italic letters, stacked fractions, never a slash */
+  .m { font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif; font-style: italic; font-weight: 400; letter-spacing: 0.02em; }
+  .fr { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1.05; margin: 0 2px; }
+  .fr > span { padding: 0 5px; }
+  .fr > span + span { border-top: 2px solid currentColor; margin-top: 2px; padding-top: 2px; }
+  .n { font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif; }
+
+  /* the gauge: each small side comes down onto its big side */
+  .gauge { background: var(--raised); border: 1.5px solid var(--line); border-radius: 14px; padding: 8px 16px 10px; max-width: 560px; }
+  .grow { display: grid; grid-template-columns: 150px 1fr 60px; align-items: center; height: 50px; gap: 12px; font-size: 19px; }
+  .pair { display: flex; align-items: center; gap: 6px; }
+  .pair u { text-decoration: none; padding: 1px 6px; border-radius: 7px; }
+  .pair u:first-child { background: #fbe3c4; color: #8a4a0c; }
+  .pair u:last-child { background: #d9e2f6; color: #22397a; }
+  .pair s { text-decoration: none; font-size: 15px; color: var(--ink-soft); }
+  .rail { position: relative; height: 8px; border-radius: 9px; background: #a99b82; }
+  .piece { position: absolute; left: 0; top: 0; height: 8px; border-radius: 9px; background: var(--small); transform-origin: 4px 50%; }
+  .piece b { position: absolute; right: -8px; top: -4px; width: 16px; height: 16px; border-radius: 50%; background: #c0392b; box-shadow: 0 0 0 2px #fff; }
+  .val { font-size: 19px; text-align: right; color: var(--ink-soft); }
+
+  /* the scribe: the proof he caused, in the brevet's words */
+  .proof { background: var(--raised); border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 16px; font-size: 18px; line-height: 30px; }
+  .proof p { margin: 0; color: #b3a68c; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-height: 44px; }
+  .proof p.live { color: var(--ink); font-weight: 700; }
+  .proof p.done { color: var(--ink); }
+  .proof p.done::after { content: '✓'; color: var(--agree); font-weight: 800; }
+  .proof input { width: 92px; height: 44px; border-radius: 10px; border: 2px solid var(--accent); background: #fff; font: inherit; font-size: 20px; text-align: center; color: var(--ink); }
+  .foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 56px; }
+  .foot span { font-size: 15px; color: var(--ink-soft); }
+  .go { height: 54px; padding: 0 28px; border: 0; border-radius: 14px; background: var(--action); box-shadow: 0 5px 0 var(--action-deep); font-size: 20px; font-weight: 800; color: #2b2118; }
+  .go:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--action-deep); }
+  .go[disabled] { opacity: 0.4; cursor: default; }
+
+  /* figure parts */
+  .seg { stroke: var(--ink); stroke-width: 3; stroke-linecap: round; pointer-events: none; }
+  .seg.big { stroke: var(--large); } .seg.sm { stroke: var(--small); }
+  .hitline { stroke: transparent; stroke-width: 26; cursor: pointer; pointer-events: stroke; }
+  .hitline:hover + .seg { stroke-width: 7; }
+  .seg.picked { stroke: var(--accent); stroke-width: 7; }
+  .tri-big { fill: rgba(63, 108, 196, 0.2); } .tri-sm { fill: rgba(217, 130, 43, 0.38); }
+  .ghosttri { fill: none; stroke: var(--small); stroke-dasharray: 6 6; stroke-width: 1.5; opacity: 0.6; }
+  .thru { stroke: #a99b82; stroke-width: 1.5; stroke-dasharray: 7 6; }
+  .pt { fill: var(--ink); stroke: #fff; stroke-width: 1.5; pointer-events: none; }
+  .lt { font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif; font-style: italic; font-size: 24px; fill: var(--ink); paint-order: stroke; stroke: var(--raised); stroke-width: 5px; pointer-events: none; }
+  .len { font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif; font-size: 19px; fill: var(--ink); paint-order: stroke; stroke: var(--raised); stroke-width: 5px; pointer-events: none; }
+  .chev { fill: none; stroke: var(--refute); stroke-width: 2.5; pointer-events: none; }
+
+  /* the mirror: someone on the table, not an icon */
+  .mirror { position: absolute; right: 22px; top: -30px; width: 74px; height: 96px; pointer-events: none; transition: transform 0.3s; }
+  .mirror.speaks { transform: rotate(-8deg) scale(1.12); }
+  .notes { position: absolute; inset: 0; background: rgba(27, 22, 16, 0.72); display: none; align-items: center; justify-content: center; z-index: 9; }
+  .notes.open { display: flex; }
+  .notes div { width: 820px; max-height: 660px; overflow: auto; background: #fff; border-radius: 16px; padding: 22px 28px; font: 16px/1.55 Georgia, serif; color: #1d2433; }
+  .notes h2 { margin: 0 0 6px; } .notes li { margin: 4px 0; }
+  .tablet { margin: 0 auto; text-align: center; }
+  .tablet h2 { font-size: 28px; margin: 0 0 2px; } .tablet p { font-size: 18px; margin: 6px 0; color: var(--ink-soft); }
+  .ev { display: inline-flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; justify-content: center; } .ev span { padding: 6px 12px; border-radius: 999px; background: var(--raised); border: 1.5px solid var(--line); font-size: 15px; color: var(--ink); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="world"></div><div class="veil"></div>
+  <section class="sheet">
+    <header class="head">
+      <h1 id="title">La table du Nil</h1>
+      <div class="key" title="La clé se fabrique en trois temps">
+        <svg viewBox="0 0 86 34" id="keysvg"></svg><b id="beat"></b>
+      </div>
+      <span class="sp"></span>
+      <button class="ghost" id="skin">Habillage : le Nil</button>
+      <button class="ghost" id="why">Ce qui change</button>
+      <button class="ghost" id="again">Recommencer</button>
+    </header>
+    <div class="body">
+      <div class="left">
+        <div class="fig" id="fig"></div>
+        <div class="cases" id="cases"></div>
+      </div>
+      <div class="right">
+        <div class="rule" id="rule"></div>
+        <div class="work" id="work"></div>
+        <div class="foot"><span id="hint"></span><button class="go" id="go"></button></div>
+      </div>
+    </div>
+    <svg class="mirror" id="mirror" viewBox="0 0 74 96"><ellipse cx="37" cy="36" rx="30" ry="33" fill="#b9792e" stroke="#7a4a12" stroke-width="3"/><ellipse cx="37" cy="36" rx="23" ry="26" fill="#dff1f6"/><path d="M22 28q10-12 24-8" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="29" cy="38" r="3" fill="#2b2118"/><circle cx="45" cy="38" r="3" fill="#2b2118"/><path d="M30 48q7 5 14 0" stroke="#2b2118" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="31" y="68" width="12" height="26" rx="5" fill="#7a4a12"/></svg>
+  </section>
+  <div class="notes" id="notes"><div>
+    <h2>Ce qui change par rapport à la forge d’aujourd’hui</h2>
+    <ul>
+      <li><b>On ne quitte plus le monde.</b> Une feuille posée sur la table des bâtisseurs, le Nil visible derrière. Le même gabarit prend l’habillage de chaque monde (bouton « Habillage »).</li>
+      <li><b>Trois temps au lieu de quatre</b>, environ 14 gestes et 4 minutes (aujourd’hui : 20 à 25 gestes, 6 à 10 minutes).</li>
+      <li><b>Une seule figure, les mêmes lettres</b> du début à la fin (celles de la rive), toujours à gauche. Le carnet illisible devient trois jetons cliquables.</li>
+      <li><b>La règle a enfin sa condition</b> : « Si … alors … ». C’est son essai « de biais » qui réfute « toujours ».</li>
+      <li><b>Le miroir ne se regarde plus, il se pare</b> : l’élève dit ce que sa règle annonce avant que le miroir calcule.</li>
+      <li><b>Le dernier temps : trois lignes, une à la fois</b>, remplies en cliquant sur la figure, puis un piège. Plus de mur de 33 boutons. Le scribe écrit la démonstration du brevet à partir de ses gestes.</li>
+      <li><b>Pour le professeur</b> : règle scellée avec sa condition, longueur trouvée (nombre d’essais), piège refusé.</li>
+    </ul>
+    <p>Prototype : les nombres sont ceux de la démonstration (9, 12, 15 et 36, 48, 60), pas ceux de la leçon.</p>
+    <p><button class="go" onclick="document.getElementById('notes').classList.remove('open')">Fermer</button></p>
+  </div></div>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const fr = (a, b) => `<span class="fr m"><span>${a}</span><span>${b}</span></span>`;
+const m = (t) => `<span class="m">${t}</span>`;
+const dec = (x) => String(Math.round(x * 100) / 100).replace('.', ',');
+
+// ── the cases: the same letters everywhere (the river's) ──
+const mk = (se, er, sa, k2) => { // S at 0; (EA) vertical; the small triangle below S, the big one above
+  const E = [0, se], A = [0, -sa], F = [-er * (sa / se), -sa];
+  const R = k2 ? [(-F[0] / Math.hypot(...F)) * k2, (-F[1] / Math.hypot(...F)) * k2] : [er, se];
+  return { S: [0, 0], E, R, A, F };
+};
+const dist = (p, q) => Math.hypot(p[0] - q[0], p[1] - q[1]);
+const lens = (c) => ({ SE: dist(c.S, c.E), SA: dist(c.S, c.A), SR: dist(c.S, c.R), SF: dist(c.S, c.F), ER: dist(c.E, c.R), AF: dist(c.A, c.F) });
+const CASES = [
+  { id: 1, name: 'parallèles', P: mk(9, 12, 36) },
+  { id: 2, name: 'de biais', P: mk(9, 12, 36, 24) },
+  { id: 3, name: 'le défi du miroir', P: mk(10, 7.5, 25) },
+];
+const SHOW3 = { SE: '10', SA: '25', ER: '7,5', AF: '18,75', SR: '12,5', SF: '31,25' };
+const SEAL = { P: mk(6, 8, 21), show: { SE: '6', SA: '21', ER: '8', AF: '?' } };
+const TRAP = { P: mk(6, 8, 21, 16), show: { SE: '6', SA: '21', ER: '8', AF: '?' } };
+const SEGS = { SE: ['S', 'E', 'sm'], SR: ['S', 'R', 'sm'], ER: ['E', 'R', 'sm'], SA: ['S', 'A', 'big'], SF: ['S', 'F', 'big'], AF: ['A', 'F', 'big'] };
+
+// ── the figure ──
+function figure(el, P, o = {}) {
+  const W = o.w ?? 556, H = o.h ?? 512, pad = o.pad ?? 54;
+  const sweep = Math.max(dist(P.S, P.E), dist(P.S, P.R));
+  const xs = [P.A[0], P.F[0], -sweep, sweep], ys = [P.A[1], P.F[1], -sweep, sweep];
+  const k = Math.min((W - 2 * pad) / (Math.max(...xs) - Math.min(...xs)), (H - 2 * pad) / (Math.max(...ys) - Math.min(...ys)));
+  const ox = (W - (Math.max(...xs) + Math.min(...xs)) * k) / 2, oy = (H - (Math.max(...ys) + Math.min(...ys)) * k) / 2;
+  const at = (p) => [ox + p[0] * k, oy + p[1] * k];
+  const a = ((o.angle ?? 0) * Math.PI) / 180, rot = (p) => [p[0] * Math.cos(a) - p[1] * Math.sin(a), p[0] * Math.sin(a) + p[1] * Math.cos(a)];
+  const Q = { S: at(P.S), A: at(P.A), F: at(P.F), E: at(rot(P.E)), R: at(rot(P.R)), E0: at(P.E), R0: at(P.R) };
+  const poly = (...n) => n.map((x) => Q[x].map((t) => t.toFixed(1)).join(',')).join(' ');
+  const thru = (n) => { const d = [Q[n][0] - Q.S[0], Q[n][1] - Q.S[1]], l = Math.hypot(...d), t = 900; return `<line class="thru" x1="${Q.S[0] - (d[0] / l) * t}" y1="${Q.S[1] - (d[1] / l) * t}" x2="${Q.S[0] + (d[0] / l) * t}" y2="${Q.S[1] + (d[1] / l) * t}"/>`; };
+  const cen = (t) => [(Q[t[0]][0] + Q[t[1]][0] + Q[t[2]][0]) / 3, (Q[t[0]][1] + Q[t[1]][1] + Q[t[2]][1]) / 3];
+  const cb = cen(['S', 'A', 'F']), cs = cen(['S', 'E', 'R']);
+  const lab = (n, from, t) => { const d = [Q[n][0] - from[0], Q[n][1] - from[1]], l = Math.hypot(...d) || 1; return `<text class="lt" text-anchor="middle" x="${Q[n][0] + (d[0] / l) * 20}" y="${Q[n][1] + (d[1] / l) * 20 + 7}">${t}</text>`; };
+  const prime = o.angle ? '′' : '';
+  let s = `<svg viewBox="0 0 ${W} ${H}">`;
+  if (!o.thumb) s += thru('A') + thru('F');
+  s += `<polygon class="tri-big" points="${poly('S', 'A', 'F')}"/>`;
+  if (o.angle) s += `<polygon class="ghosttri" points="${poly('S', 'E0', 'R0')}"/>`;
+  s += `<polygon class="tri-sm" points="${poly('S', 'E', 'R')}"/>`;
+  for (const [name, [p, q, tone]] of Object.entries(SEGS)) {
+    const [u, v] = [Q[p], Q[q]];
+    if (o.pick) s += `<line class="hitline" data-seg="${name}" x1="${u[0]}" y1="${u[1]}" x2="${v[0]}" y2="${v[1]}"/>`;
+    s += `<line class="seg ${tone}${o.picked?.includes(name) ? ' picked' : ''}" x1="${u[0]}" y1="${u[1]}" x2="${v[0]}" y2="${v[1]}"/>`;
+    if (o.show?.[name]) { const c = tone === 'big' ? cb : cs, mx = (u[0] + v[0]) / 2, my = (u[1] + v[1]) / 2, off = [mx - c[0], my - c[1]], l = Math.hypot(...off) || 1; s += `<text class="len" text-anchor="middle" x="${mx + (off[0] / l) * 24}" y="${my + (off[1] / l) * 24 + 6}">${o.show[name]}</text>`; }
+  }
+  if (o.parallel) for (const n of ['ER', 'AF']) { const [p, q] = SEGS[n]; const mx = (Q[p][0] + Q[q][0]) / 2, my = (Q[p][1] + Q[q][1]) / 2; s += `<path class="chev" d="M${mx - 7},${my - 7} l7,7 l-7,7"/>`; }
+  if (!o.thumb) { for (const n of ['S', 'A', 'F', 'E', 'R']) s += `<circle class="pt" r="5" cx="${Q[n][0]}" cy="${Q[n][1]}"/>`;
+    s += lab('A', cb, 'A') + lab('F', cb, 'F') + lab('E', cs, 'E' + prime) + lab('R', cs, 'R' + prime) + `<text class="lt" x="${Q.S[0] + 14}" y="${Q.S[1] + 8}">S</text>`; }
+  el.innerHTML = s + '</svg>';
+  if (o.pick) el.querySelectorAll('.hitline').forEach((h) => (h.onclick = () => o.pick(h.dataset.seg)));
+}
+
+// ── state ──
+const S0 = () => ({ beat: 1, round: 0, angle: 0, bet: null, seen: [], cond: null, r1: null, r2: null, slot: 'cond', graved: false, riposte: null,
+  line: 1, par: [], ratio: [], af: '', tries: 0, trapMiss: false, sealed: false, msg: null, msgOk: false, view: 1, hit: null, turning: false });
+let st = S0();
+const COND = { always: 'toujours', touch: 'les triangles se touchent en S' };
+const R1 = { ok: ['SE', 'SA'], sf: ['SE', 'SF'], inv: ['SA', 'SE'] };
+const R2 = { sa: ['SR', 'SA'], ok: ['SR', 'SF'], inv: ['SF', 'SR'] };
+const frOf = ([a, b]) => fr(a, b);
+const valOn = (c, [a, b]) => lens(c.P)[a] / lens(c.P)[b];
+
+function gauge(c, angle) {
+  const L = lens(c.P), rows = [['SE', 'SA'], ['SR', 'SF'], ['ER', 'AF']], tilt = (180 - angle) / 6, done = angle >= 180;
+  return `<div class="gauge">${rows.map(([a, b]) => `<div class="grow"><span class="pair"><u class="m">[${a}]</u><s>sur</s><u class="m">[${b}]</u></span><span class="rail"><span class="piece" style="width:${Math.min(96, (L[a] / L[b]) * 150)}%;transform:rotate(${-tilt}deg)"><b></b></span></span><span class="val n">${done ? dec(L[a] / L[b]) : ''}</span></div>`).join('')}</div>`;
+}
+function keyIcon() {
+  const on = (i) => (st.sealed || st.beat > i ? 'var(--action)' : st.beat === i ? 'var(--accent)' : 'var(--recess)');
+  $('keysvg').innerHTML = `<circle cx="16" cy="17" r="12" fill="${on(1)}" stroke="var(--frame-deep)" stroke-width="2.5"/><circle cx="16" cy="17" r="4.5" fill="var(--surface)" stroke="var(--frame-deep)" stroke-width="2"/><rect x="28" y="13" width="30" height="8" fill="${on(2)}" stroke="var(--frame-deep)" stroke-width="2.5"/><path d="M58 13h24v8h-6v8h-6v-8h-6v6h-6z" fill="${on(3)}" stroke="var(--frame-deep)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  $('beat').textContent = st.sealed ? 'Clé scellée' : ['', '1 · Essaie', '2 · Grave ta règle', '3 · Scelle'][st.beat];
+}
+function ruleBar() {
+  const slot = (k, html, cls = '') => `<span class="slot ${cls} ${st[k] ? 'full' : ''} ${!st.graved && st.beat === 2 && st.slot === k ? 'live' : ''}" data-slot="${k}">${st[k] ? html : '…'}</span>`;
+  $('rule').className = 'rule' + (st.sealed ? ' sealed' : '');
+  $('rule').innerHTML = `<small>${st.sealed ? 'Ta clé — le théorème de Thalès, dans le papillon' : 'Ta règle'}</small>` + (st.beat === 1 ? `<span style="color:var(--ink-soft);font-size:18px">Elle s’écrira ici, avec tes mots.</span>`
+    : `Si ${slot('cond', st.cond === 'par' ? m('(ER) ∥ (AF)') : (COND[st.cond] ?? ''), 'cond')} alors ${slot('r1', st.r1 ? frOf(R1[st.r1]) : '')} = ${slot('r2', st.r2 ? frOf(R2[st.r2]) : '')} = ${fr('ER', 'AF')}${st.sealed ? ' 🔑' : ''}`);
+  if (st.beat === 2 && !st.graved) $('rule').querySelectorAll('[data-slot]').forEach((e) => (e.onclick = () => { st.slot = e.dataset.slot; render(); }));
+}
+function casesBar() {
+  const shown = CASES.filter((c) => st.seen.includes(c.id));
+  $('cases').innerHTML = shown.map((c) => `<button class="case ${st.view === c.id ? 'on' : ''} ${st.hit === c.id ? 'hit' : ''}" data-c="${c.id}" title="${c.name}"><i>${c.id}</i><span id="th${c.id}"></span></button>`).join('') +
+    `<span class="legend">${shown.length ? 'Tes essais : clique pour les revoir.' : 'Tes essais viendront se ranger ici.'}</span>`;
+  shown.forEach((c) => figure($('th' + c.id), c.P, { w: 96, h: 62, pad: 8, thumb: true }));
+  $('cases').querySelectorAll('[data-c]').forEach((b) => (b.onclick = () => { if (st.beat === 2 && !st.graved) { st.view = +b.dataset.c; render(); } }));
+}
+const foot = (label, fn, hint = '', off = false) => { $('go').textContent = label; $('go').disabled = off; $('go').onclick = fn; $('go').style.visibility = label ? 'visible' : 'hidden'; $('hint').textContent = hint; };
+const speak = () => { $('mirror').classList.add('speaks'); setTimeout(() => $('mirror').classList.remove('speaks'), 700); };
+
+function render() {
+  keyIcon(); ruleBar(); casesBar();
+  const W = $('work');
+  if (st.sealed) return sealedView(W);
+  if (st.beat === 1) return beat1(W);
+  if (st.beat === 2) return beat2(W);
+  return beat3(W);
+}
+
+// ── 1 · Essaie: two half-turns, a prediction before the second ──
+function beat1(W) {
+  const c = CASES[st.round];
+  figure($('fig'), c.P, { angle: st.angle, parallel: st.round === 0 });
+  const landed = st.angle >= 180;
+  if (st.round === 1 && st.bet === null) {
+    W.innerHTML = `<p class="ask">Même rive, mais cette fois <em>${m('(ER)')} n’est plus parallèle à ${m('(AF)')}</em>. Après le demi-tour, les trois repères rouges seront-ils alignés ?</p>
+      <div class="chips"><button class="chip" data-b="1">Oui, alignés</button><button class="chip" data-b="0">Non, pas alignés</button></div>`;
+    W.querySelectorAll('[data-b]').forEach((b) => (b.onclick = () => { st.bet = b.dataset.b === '1'; render(); }));
+    return foot('', null, 'Dis-le avant de tourner.');
+  }
+  const L = lens(c.P), same = Math.abs(L.SE / L.SA - L.ER / L.AF) < 1e-6;
+  W.innerHTML = `<p class="ask">${st.round === 0 ? `Deux triangles de part et d’autre de ${m('S')}, comme sur la rive : ${m('(ER) ∥ (AF)')}. Fais faire un demi-tour au petit.` : 'Fais faire le demi-tour.'}</p>${gauge(c, st.angle)}` +
+    (landed ? `<p class="say ${same ? 'ok' : 'no'}">${st.round === 1 ? (st.bet === same ? 'Regarde : ' : 'Comme tu l’avais dit. ') : ''}${same ? 'Le petit triangle se pose dans le grand. Les trois repères sont alignés.' : 'Les trois repères ne sont pas alignés.'}</p>` : '');
+  if (!landed) return foot('Tourner ↻', turn, 'Ou appuie sur la flèche → du clavier.');
+  foot(st.round === 0 ? 'Un autre essai' : 'Graver ma règle', () => { if (st.round === 0) { st.round = 1; st.angle = 0; } else { st.beat = 2; st.view = 1; } render(); });
+}
+function turn() {
+  if (st.turning || st.angle >= 180) return; st.turning = true; const t0 = performance.now();
+  const step = (t) => { st.angle = Math.min(180, ((t - t0) / 1300) * 180); if (st.angle < 180) { render(); requestAnimationFrame(step); } else { st.turning = false; if (!st.seen.includes(CASES[st.round].id)) st.seen.push(CASES[st.round].id); render(); } };
+  requestAnimationFrame(step);
+}
+addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' && st.beat === 1 && !(st.round === 1 && st.bet === null)) turn(); });
+
+// ── 2 · Grave ta règle: three picks, the mirror answers on HIS essays, then one parry ──
+function beat2(W) {
+  if (!st.graved) {
+    const c = CASES.find((x) => x.id === st.view) ?? CASES[0];
+    figure($('fig'), c.P, { parallel: c.id !== 2 });
+    const opts = { cond: [['always', 'toujours'], ['par', m('(ER) ∥ (AF)')], ['touch', 'les triangles se touchent en S']],
+      r1: Object.entries(R1).map(([k, v]) => [k, frOf(v)]), r2: Object.entries(R2).map(([k, v]) => [k, frOf(v)]) }[st.slot];
+    const label = { cond: 'Quand la règle marche-t-elle ?', r1: 'Le premier rapport', r2: 'Le deuxième rapport' }[st.slot];
+    W.innerHTML = `<p class="ask">${label}</p><div class="chips">${opts.map(([k, h]) => `<button class="chip ${st.slot !== 'cond' ? 'frac' : ''} ${st[st.slot] === k ? 'on' : ''}" data-k="${k}">${h}</button>`).join('')}</div>` + (st.msg ? `<p class="say no voice">${st.msg}</p>` : '');
+    W.querySelectorAll('[data-k]').forEach((b) => (b.onclick = () => { st[st.slot] = b.dataset.k; st.msg = null; st.hit = null; st.slot = !st.cond ? 'cond' : !st.r1 ? 'r1' : !st.r2 ? 'r2' : st.slot; render(); }));
+    return foot('Graver', grave, 'Clique une case de ta règle pour la changer.', !(st.cond && st.r1 && st.r2));
+  }
+  figure($('fig'), CASES[2].P, { parallel: true, show: SHOW3 });
+  if (st.riposte === null) {
+    W.innerHTML = `<p class="say ok voice">Ta règle s’accorde avec tes deux essais. À moi : une autre rive, ${m('(ER) ∥ (AF)')}.</p><p class="ask">Avant que le miroir calcule : que dit ta règle des trois rapports ?</p>
+      <div class="chips"><button class="chip" data-r="1">Ils sont égaux</button><button class="chip" data-r="0">Ils ne sont pas égaux</button></div>`;
+    W.querySelectorAll('[data-r]').forEach((b) => (b.onclick = () => { st.riposte = b.dataset.r === '1' ? 'yes' : 'no'; st.seen.push(3); st.view = 3; speak(); render(); }));
+    return foot('', null, 'Le miroir attaque ta règle : pare.');
+  }
+  W.innerHTML = `<p class="say voice">${fr('10', '25')} = <span class="n">0,4</span> ; ${fr('12,5', '31,25')} = <span class="n">0,4</span> ; ${fr('7,5', '18,75')} = <span class="n">0,4</span>.</p>
+    <p class="say ok">${st.riposte === 'yes' ? 'Paré : les trois rapports sont égaux, comme ta règle l’annonçait.' : 'Ta règle annonçait « égaux » — et ils le sont : elle a tenu.'}</p>`;
+  foot('Sceller ma clé', () => { st.beat = 3; render(); });
+}
+function grave() {
+  speak();
+  const v1 = valOn(CASES[0], R1[st.r1]), v2 = valOn(CASES[0], R2[st.r2]), same = Math.abs(v1 - 0.25) < 1e-9 && Math.abs(v2 - 0.25) < 1e-9;
+  if (!same) { st.hit = 1; st.view = 1; st.slot = Math.abs(v1 - 0.25) > 1e-9 ? 'r1' : 'r2'; st.msg = `Sur ton essai 1 : ${frOf(R1[st.r1])} = <span class="n">${dec(v1)}</span> ; ${frOf(R2[st.r2])} = <span class="n">${dec(v2)}</span> ; ${fr('ER', 'AF')} = <span class="n">0,25</span>. Les trois ne sont pas égaux.`; return render(); }
+  if (st.cond !== 'par') { const L = lens(CASES[1].P); st.hit = 2; st.view = 2; st.slot = 'cond'; st.msg = `Sur ton essai 2 (de biais) : <span class="n">${dec(L.SE / L.SA)}</span> ; <span class="n">${dec(L.SR / L.SF)}</span> ; <span class="n">${dec(L.ER / L.AF)}</span>. Là, les rapports ne sont pas égaux.`; return render(); }
+  st.graved = true; st.msg = null; st.hit = null; render();
+}
+
+// ── 3 · Scelle: three lines, one live at a time, filled on the figure; then the trap ──
+function beat3(W) {
+  const live = (n) => (st.line === n ? 'live' : st.line > n ? 'done' : '');
+  if (st.line === 4) figure($('fig'), TRAP.P, { show: TRAP.show });
+  else figure($('fig'), SEAL.P, { show: SEAL.show, parallel: st.line > 1, picked: st.line === 1 ? st.par : st.line === 2 ? st.ratio : ['ER', 'AF'], pick: st.line < 3 ? pick : null });
+  const rs = (i) => `<span class="slot ${st.line === 2 && st.ratio.length === i ? 'live' : ''} ${st.ratio[i] ? 'full' : ''}" style="min-width:56px;min-height:34px">${st.ratio[i] ? m(st.ratio[i]) : '…'}</span>`;
+  const ask = ['', `Un autre gué du Nil. Clique sur la figure <em>les deux côtés parallèles</em>.`, `Clique les deux côtés du rapport qui contient ${m('AF')} : celui du haut, puis celui du bas.`, `Calcule ${m('AF')}.`, `Dernier coup du miroir : ici ${m('(ER)')} et ${m('(AF)')} ne sont pas parallèles. Ta clé ouvre-t-elle ?`][st.line];
+  W.innerHTML = `<p class="ask">${ask}</p>
+    <div class="proof">
+      <p class="${live(1)}">Les droites ${m('(EA)')} et ${m('(RF)')} se coupent en ${m('S')} ; ${st.line > 1 ? m('(ER) ∥ (AF)') + '.' : `<span class="slot live" style="min-width:150px;min-height:34px">${st.par.map((x) => m(`(${x})`)).join(' ∥ ') || '…'}</span>`}</p>
+      <p class="${live(2)}">D’après le théorème de Thalès : ${fr('SE', 'SA')} = <span class="fr"><span>${rs(0)}</span><span>${rs(1)}</span></span></p>
+      <p class="${live(3)}">Donc ${fr('6', '21')} = ${fr('8', 'AF')} et ${m('AF')} = ${st.line === 3 ? `<input id="af" inputmode="decimal" value="${st.af}" autocomplete="off" />` : `<span class="n">${st.line > 3 ? '28' : '…'}</span>`} m.</p>
+    </div>` +
+    (st.line === 4 ? `<div class="chips"><button class="chip" data-t="1">Oui, elle ouvre</button><button class="chip" data-t="0">Non, pas ici</button></div>` : '') +
+    (st.msg ? `<p class="say ${st.msgOk ? 'ok' : 'no'} voice">${st.msg}</p>` : '');
+  if (st.line === 3) { const i = $('af'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); i.oninput = () => (st.af = i.value.replace(/[^0-9,]/g, '')); i.onkeydown = (e) => e.key === 'Enter' && checkAF(); return foot('Vérifier', checkAF, 'Le scribe écrit la démonstration à partir de tes gestes.'); }
+  if (st.line === 4) { W.querySelectorAll('[data-t]').forEach((b) => (b.onclick = () => { speak(); if (b.dataset.t === '1') { const L = lens(CASES[1].P); st.msgOk = false; st.trapMiss = true; st.msg = `Souviens-toi de ton essai de biais : <span class="n">${dec(L.SE / L.SA)}</span> ; <span class="n">${dec(L.SR / L.SF)}</span> ; <span class="n">${dec(L.ER / L.AF)}</span>. Sans parallèles, pas de rapports égaux.`; } else { st.sealed = true; st.msg = null; } render(); })); return foot('', null, 'Une clé, c’est aussi savoir quand elle n’ouvre pas.'); }
+  foot('', null, 'Le scribe écrit la démonstration à partir de tes gestes.');
+}
+function pick(seg) {
+  speak(); st.msg = null;
+  if (st.line === 1) {
+    st.par = st.par.includes(seg) ? st.par.filter((x) => x !== seg) : [...st.par, seg].slice(-2);
+    if (st.par.length === 2) { if ([...st.par].sort().join() === 'AF,ER') { st.line = 2; st.msgOk = true; st.msg = `Oui : ce sont les deux côtés en face de ${m('S')}.`; } else { const bad = st.par.find((x) => x[0] === 'S') ?? st.par[0]; st.msgOk = false; st.msg = `Le côté ${m('[' + bad + ']')} passe par ${m('S')} : il coupe les autres droites, il n’est parallèle à aucune.`; st.par = []; } }
+    return render();
+  }
+  st.ratio = [...st.ratio, seg];
+  if (st.ratio.length === 2) {
+    const [a, b] = st.ratio, v = valOn(CASES[0], [a, b]);
+    if (a === 'ER' && b === 'AF') { st.line = 3; }
+    else if (a === 'SR' && b === 'SF') { st.msgOk = false; st.msg = `${fr('SR', 'SF')} est bien égal à ${fr('SE', 'SA')}. Mais ni ${m('SR')} ni ${m('SF')} ne sont mesurés ici : prends le rapport qui contient ${m('AF')}.`; st.ratio = []; }
+    else { st.msgOk = false; st.msg = `Sur ton essai 1 : ${fr('SE', 'SA')} = <span class="n">0,25</span>, mais ${fr(a, b)} = <span class="n">${dec(v)}</span>.`; st.ratio = []; }
+  }
+  render();
+}
+function checkAF() {
+  if (!st.af) return; const x = Number(String(st.af).replace(',', '.')); st.tries += 1; speak();
+  if (Math.abs(x - 28) < 1e-9) { st.line = 4; st.msg = null; } else { st.msgOk = false; st.msg = `Avec ${m('AF')} = <span class="n">${dec(x)}</span> : <span class="n">6 × ${dec(x)} = ${dec(6 * x)}</span> et <span class="n">21 × 8 = 168</span>. Les deux produits sont différents.`; }
+  render();
+}
+function sealedView(W) {
+  figure($('fig'), SEAL.P, { show: { ...SEAL.show, AF: '28' }, parallel: true, picked: ['ER', 'AF'] });
+  W.innerHTML = `<div class="tablet"><h2>🔑 Clé scellée</h2><p>Ta règle porte un nom : <b>le théorème de Thalès</b>, dans la configuration « papillon ».</p>
+    <div class="proof" style="text-align:left;margin-top:8px"><p class="done">Les droites ${m('(EA)')} et ${m('(RF)')} se coupent en ${m('S')} ; ${m('(ER) ∥ (AF)')}.</p><p class="done">D’après le théorème de Thalès : ${fr('SE', 'SA')} = ${fr('SR', 'SF')} = ${fr('ER', 'AF')}</p><p class="done">Donc ${fr('6', '21')} = ${fr('8', 'AF')} et ${m('AF')} = <span class="n">28</span> m.</p></div>
+    <p style="margin-top:10px">Ce que ton professeur voit :</p><div class="ev"><span>Règle scellée avec sa condition</span><span>Longueur trouvée en ${st.tries} essai${st.tries > 1 ? 's' : ''}</span><span>Piège ${st.trapMiss ? 'refusé au 2ᵉ coup' : 'refusé du premier coup'}</span></div></div>`;
+  foot('Lancer la corde du bac', () => { $('hint').textContent = 'Dans le jeu : retour sur la rive, la corde est lancée par-dessus le Nil.'; }, 'La clé sert tout de suite, dans le monde.');
+}
+
+// ── shell ──
+$('again').onclick = () => { st = S0(); render(); };
+$('why').onclick = () => $('notes').classList.add('open');
+$('skin').onclick = () => { const i = document.body.classList.toggle('isles'); $('skin').textContent = i ? 'Habillage : l’archipel' : 'Habillage : le Nil'; $('title').textContent = i ? 'L’établi du ponton' : 'La table du Nil'; };
+const fit = () => { const k = Math.min(innerWidth / 1366, innerHeight / 768); $('stage').style.transform = `translate(-50%, -50%) scale(${k})`; };
+addEventListener('resize', fit); fit(); render();
+</script>
+</body>
+</html>

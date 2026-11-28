@@ -4,7 +4,7 @@
  * Here: the kinds of question of THIS lesson, the plan of each card of its mind map, and how an answer is judged: `check`
  * gives first a HINT that says what the answer gives (never the answer), then the correction.
  *
- *   game formats: a buoy of the felucca (`practice.js › waveOf`, its facts as hints), a true / false in one tap;
+ *   game formats: a buoy of the felucca (`practice.js › waveOf`: one bare calculation, no figure, its facts as hints), a true / false in one tap;
  *   exam formats, the asks of the bank on the platform's OWN figures (`math.js › FIGURES`) and letters —
  *     K1 `coef`      « Calcule le coefficient k » of two triangles apart, their sides given in any order (P1: the sides are
  *                    ranked, the quotients taken); `longueur` « Calcule le côté » of the second triangle from the first
@@ -459,9 +459,23 @@ const Q = {
 
 /** What a session asks, by family of card: [kind, …arguments] for the six slots (game, game, exam, game, exam, exam). */
 const PLANS = {
-  k1: [['tap', 'rapport', {}], ['tf', K.cotes], ['coef'], ['tap', 'longueur', {}], ['longueur'], ['coef']],
-  k2: [['tap', 'troisieme', {}], ['tf', K.angles], ['troisieme'], ['tap', 'cote', {}], ['homologue'], ['apparier']],
-  mix: [['tap', 'longueur', {}], ['tf', K.angles], ['coef'], ['tap', 'cote', {}], ['longueur'], ['troisieme']],
+  k1: [['tap', 'quatrieme', {}], ['tf', K.cotes], ['coef'], ['tap', 'coefficient', {}], ['longueur'], ['coef']],
+  k2: [
+    ['tap', 'troisieme', {}],
+    ['tf', K.angles],
+    ['troisieme'],
+    ['tap', 'complement', {}],
+    ['homologue'],
+    ['apparier'],
+  ],
+  mix: [
+    ['tap', 'quatrieme', {}],
+    ['tf', K.angles],
+    ['coef'],
+    ['tap', 'complement', { hard: true }],
+    ['longueur'],
+    ['troisieme'],
+  ],
 };
 /** Which plan a card of the lesson's mind map trains (`knowledge.js`). */
 export const PLAN_OF = {

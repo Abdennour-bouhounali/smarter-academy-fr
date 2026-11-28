@@ -147,10 +147,11 @@ export const WORLD_TEXT = {
         `Une rangée de ${dec(row)} m est déjà taillée. Où la poser sur l’arête ? Écris le repère $BM$ : les bâtisseurs construisent jusqu’à ton repère. Appuie sur E au coin $B$.`,
       bankStart:
         'Mesure à la corde, le long de la rive, du piquet $A$ jusqu’au vieux piquet $S$ : appuie sur E en $A$, puis sur les flèches.',
-      sight:
-        'Depuis le piquet $E$, éloigne-toi du fleuve avec la corde, tout droit dans les terres (flèche →), jusqu’à ce que le piquet $S$ cache le poteau $F$ dans l’œil de Zéro. Lâche la corde là.',
+      plan: 'Il reste un piquet à planter dans les terres. Va au piquet $E$ et ouvre le plan du géomètre.',
       ferry:
-        'La corde du bac se coupe avant la traversée. Écris la longueur $AF$ au piquet $A$ : la corde est lancée jusqu’au poteau $F$.',
+        'La corde du bac se coupe avant la traversée. Ouvre le plan au piquet $A$ et écris la longueur $AF$ : la corde est lancée jusqu’au poteau $F$.',
+      ferryAgain:
+        'Ta première corde ne s’est pas attachée au poteau. Ouvre le plan au piquet $A$ et coupe une nouvelle corde : écris la longueur $AF$.',
       climb: 'Le pyramidion attend. Monte au sommet : appuie sur E au pied de la rampe.',
       capstone:
         'Le pyramidion est une petite pyramide de la même forme. Écris un seul nombre pour le tailleur de pierre : chaque longueur × [ ]. Appuie sur E au sommet.',
@@ -169,6 +170,7 @@ export const WORLD_TEXT = {
     prompt: {
       mark: 'Écris le repère de la rangée',
       ferry: 'Coupe la corde du bac',
+      plan: 'Ouvre le plan du géomètre',
       climb: 'Monte au sommet',
       capstone: 'Écris la commande du pyramidion',
       stick: 'Prends le triangle du bâton',
@@ -206,6 +208,29 @@ export const WORLD_TEXT = {
       markGap: 'À ton repère, il reste un vide aux deux coins autour de la rangée.',
       markOver: 'À ton repère, la rangée dépasse des deux arêtes.',
       meet: 'Les bouts des deux ombres se rejoignent en $A$.',
+    },
+    /** The geometer's plan of the river (`RiverPlan.jsx`): facts and directions, never a rule. */
+    riverPlan: {
+      title: 'Le plan du géomètre',
+      aria: 'Le fleuve vu de dessus : le poteau F sur l’autre rive, les piquets A, S et E sur la rive, le piquet R dans les terres',
+      place:
+        'Une ficelle part du piquet $R$, passe sur le piquet $S$ et traverse le fleuve. Déplace $R$ jusqu’à ce que la ficelle arrive sur le poteau $F$.',
+      hint: 'Le piquet $R$ se déplace sur la ligne tracée depuis $E$, mètre par mètre.',
+      fact: {
+        left: 'La ficelle touche l’autre rive à gauche du poteau $F$.',
+        right: 'La ficelle touche l’autre rive à droite du poteau $F$.',
+      },
+      nearer: 'Vers le fleuve',
+      further: 'Vers les terres',
+      set: 'Planter le piquet R',
+      planted: 'Le piquet $R$ est planté : la ficelle passe sur $S$ et arrive sur le poteau $F$.',
+      rope: 'La corde du bac ira du piquet $A$ au poteau $F$. Quelle longueur couper ?',
+      send: 'Couper et lancer',
+      last: (n) => `Tu as lancé ${dec(n)} m.`,
+      note: 'Sur ce plan, le fleuve est dessiné moins large qu’il ne l’est.',
+      farBank: 'l’autre rive',
+      river: 'le Nil',
+      nearBank: 'la rive des bâtisseurs',
     },
     card: {
       check: 'Vérifier',
@@ -305,6 +330,8 @@ export const THALES_TEXT = {
   wordsHint: 'Dis ta règle avec tes mots…',
   aligned: 'Les trois repères sont sur une même ligne.',
   apart: 'Les trois repères ne sont pas sur une même ligne.',
+  gauge: 'Les côtés, deux à deux : un côté du petit triangle sur un côté du grand.',
+  gaugeTurn: 'Les trois côtés du grand triangle sont ramenés à la même longueur.',
   mirrored: 'Construit par le miroir',
 };
 

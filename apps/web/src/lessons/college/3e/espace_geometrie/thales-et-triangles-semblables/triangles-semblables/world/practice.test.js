@@ -8,6 +8,7 @@ import { roundOfWave } from '../../../../../../common/gameworld/nilePyramids/pra
 import { plain, typographyErrors } from '../../../../../../common/gameworld/kit/authoring/test/suites.js';
 import { ladder, PRACTICE_MAP, PRACTICE_NODES } from './practice';
 import { isRight, LEG_MIX, SPARE, THINK } from './run';
+import { K } from './math';
 import { KEYS } from './journey';
 import { KNOWLEDGE } from './knowledge';
 import { TEXT } from './text';
@@ -42,13 +43,33 @@ describe(`${ID} — the practice ladder`, () => {
     );
   });
 
-  it('every buoy of every level carries its figure to the river (`roundOfWave`): six points, two triangles apart', () => {
+  it('every buoy of every level reaches the river as ONE bare calculation (`roundOfWave`): no figure, no letter of a point', () => {
     ladder.nodes.forEach((node, n) =>
       node.levels.forEach((_, l) => {
-        for (const w of ladder.makeRun(rng(n * 7 + l + 1), n, l))
-          expect(Object.keys(roundOfWave(w).figure.points), w.type).toHaveLength(6);
+        for (const w of ladder.makeRun(rng(n * 7 + l + 1), n, l)) {
+          const r = roundOfWave(w);
+          expect('figure' in r, w.type).toBe(false);
+          expect(['Complète', 'Calcule'], w.type).toContain(r.ask);
+          expect(r.tex.replace(/\\[a-zA-Z]+/g, ''), r.tex).not.toMatch(/[A-Za-z]/);
+          for (const o of r.options) expect(o.t, r.tex).toMatch(/^\d+(,\d+)?$/);
+        }
       }),
     );
+  });
+
+  it('the second level of a node asks the harder numbers', () => {
+    for (const node of PRACTICE_NODES) {
+      expect(
+        node.levels[0].mix.every(([, p]) => !p.hard),
+        node.id,
+      ).toBe(true);
+      if (node.id !== K.cotes)
+        expect(
+          node.levels[1].mix.every(([, p]) => p.hard),
+          node.id,
+        ).toBe(true);
+      else expect(node.levels[1].mix.filter(([, p]) => p.hard).length, node.id).toBeGreaterThan(1);
+    }
   });
 
   it('the felucca’s leg after a key is the first level of that key’s node (legs 1 and 3)', () => {

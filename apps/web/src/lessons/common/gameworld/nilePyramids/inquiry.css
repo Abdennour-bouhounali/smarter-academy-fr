@@ -351,3 +351,224 @@
   width: 16rem;
   max-width: 100%;
 }
+/* ── the half-turn: its figure on squared paper, its dial, and the sides compared two by two ── */
+.np-iq--halfturn .np-iq__row {
+  align-items: stretch;
+  gap: 1.4rem;
+}
+.np-iq--halfturn .np-iq__fig {
+  flex: 0 0 min(33rem, 44%);
+  align-self: flex-start;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 1px #cbd5e1,
+    0 6px 18px rgba(15, 23, 42, 0.08);
+}
+.np-tf {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.np-tf__line {
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+  stroke-dasharray: 7 6;
+}
+.np-tf__big {
+  fill: rgba(37, 99, 235, 0.14);
+  stroke: #1e3a8a;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.np-tf__small {
+  fill: rgba(245, 158, 11, 0.45);
+  stroke: #b45309;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.np-tf__ghost {
+  fill: none;
+  stroke: #b45309;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  opacity: 0.55;
+}
+.np-tf__arc {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 2.5;
+}
+.np-tf__angle {
+  fill: #6d28d9;
+  font-size: 16px;
+  font-weight: 800;
+}
+.np-tf__dot {
+  fill: #0f172a;
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+.np-tf__letter {
+  fill: #0f172a;
+  font-family: KaTeX_Math, 'Times New Roman', serif;
+  font-size: 22px;
+  font-style: italic;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 4px;
+}
+.np-turn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.np-turn__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3.2rem;
+  padding: 0 1.1rem;
+  border: 0;
+  border-radius: 0.9rem;
+  background: #1e3a8a;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #172554;
+}
+.np-turn__btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #172554;
+}
+.np-turn__btn kbd {
+  min-width: 1.9rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 1.05rem;
+  text-align: center;
+}
+.np-turn__dial {
+  display: grid;
+  place-items: center;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 50%;
+  background: radial-gradient(#fbf6ea 58%, transparent 60%), conic-gradient(#7c3aed calc(var(--p) * 100%), #e2e8f0 0);
+  line-height: 1.1;
+}
+.np-turn__dial .np-iq__angle {
+  min-width: 0;
+  color: #4c1d95;
+  font-size: 1.3rem;
+}
+.np-tg {
+  align-self: stretch;
+  max-width: 34rem;
+  padding: 0.8rem 1.1rem 0.9rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 1px #cbd5e1,
+    0 6px 18px rgba(15, 23, 42, 0.06);
+}
+.np-tg p {
+  margin: 0;
+}
+.np-tg .np-tg__lead {
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.np-tg__rows {
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0 1rem;
+  margin: 0.4rem 0 0.5rem;
+}
+.np-tg__row {
+  display: contents;
+}
+.np-tg__pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 3.3rem;
+  font-size: 1.15rem;
+}
+.np-tg__pair i {
+  color: #64748b;
+  font-size: 0.95rem;
+  font-style: normal;
+}
+.np-tg__small {
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.45rem;
+  background: #fef3c7;
+  color: #92400e;
+}
+.np-tg__big {
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.45rem;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+.np-tg__rule {
+  position: relative;
+  align-self: center;
+  height: 8px;
+  border-radius: 999px;
+  background: #94a3b8;
+}
+.np-tg.is-cut .np-tg__rule {
+  background: linear-gradient(90deg, #94a3b8 82%, rgba(148, 163, 184, 0));
+}
+.np-tg__piece {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  border-radius: 999px;
+  background: #f59e0b;
+  transform-origin: 4px 50%;
+  transition: transform 0.18s ease-out;
+}
+.np-tg__piece b {
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: #e11d48;
+  box-shadow: 0 0 0 2px #fff;
+}
+/* the three ends on one line: each rule carries its stretch of the dashed line, and the three stretches meet */
+.np-tg.is-agreed .np-tg__rule::after {
+  content: '';
+  position: absolute;
+  top: -1.45rem;
+  bottom: -1.45rem;
+  left: var(--at);
+  margin-left: -1.5px;
+  border-left: 3px dashed #16a34a;
+}
+.np-tg .np-tg__say {
+  color: #475569;
+  font-size: 1rem;
+}
+.np-tg .np-tg__say.is-ok {
+  color: #15803d;
+  font-weight: 800;
+}
+.np-tg .np-tg__say.is-apart {
+  color: #b45309;
+  font-weight: 800;
+}

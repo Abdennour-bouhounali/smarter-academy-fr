@@ -4,7 +4,7 @@
   inset: 0;
   z-index: 14;
   overflow: hidden;
-  color: #e8f6ff;
+  color: var(--rf-ink);
   font-family: 'Inter', system-ui, sans-serif;
   user-select: none;
   -webkit-user-select: none;
@@ -67,7 +67,7 @@
 .rf-brand p {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
 }
 .rf-steps {
   display: flex;
@@ -82,10 +82,10 @@
   gap: 0.35rem;
   padding: 0.22rem 0.8rem 0.22rem 0.3rem;
   border-radius: 99px;
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--rf-tint);
   font-size: 0.95rem;
   font-weight: 800;
-  color: #9fb8dd;
+  color: var(--rf-ink-soft);
   white-space: nowrap;
 }
 .rf-steps b {
@@ -94,22 +94,22 @@
   width: 1.55rem;
   height: 1.55rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--rf-tint);
   font-size: max(var(--di-min-font, 12px), 0.85rem);
 }
 .rf-steps li.is-now {
-  background: #7dfcff;
-  color: #06262c;
+  background: var(--rf-accent);
+  color: var(--rf-on-accent);
 }
 .rf-steps li.is-now b {
-  background: #06262c;
-  color: #7dfcff;
+  background: var(--rf-on-accent);
+  color: var(--rf-accent);
 }
 .rf-steps li.is-done {
-  color: #6ee7b7;
+  color: var(--rf-agree);
 }
 .rf-steps li.is-done b {
-  background: rgba(52, 211, 153, 0.3);
+  background: var(--rf-agree-tint);
 }
 .rf-head__end {
   display: flex;
@@ -126,8 +126,8 @@
   min-height: 3rem;
   padding: 0 1.3rem;
   border-radius: 1rem;
-  border: 2px solid rgba(159, 216, 255, 0.5);
-  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--rf-line);
+  background: var(--rf-tint);
   font-size: 1.08rem;
   font-weight: 900;
   cursor: pointer;
@@ -137,7 +137,7 @@
     background 0.2s;
 }
 .rf-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.17);
+  background: var(--rf-tint);
 }
 .rf-btn:active:not(:disabled) {
   transform: scale(0.96);
@@ -147,38 +147,38 @@
   cursor: not-allowed;
 }
 .rf-root .rf-btn--main {
-  background: #7dfcff;
-  border-color: #7dfcff;
-  color: #06262c;
+  background: var(--rf-accent);
+  border-color: var(--rf-accent);
+  color: var(--rf-on-accent);
   min-width: 12rem;
   min-height: 3.3rem;
   font-size: 1.2rem;
 }
 .rf-root .rf-btn--main:hover:not(:disabled) {
-  background: #a5fdff;
+  background: var(--rf-accent);
 }
 .rf-btn--bot {
-  border-color: #fbbf24;
-  color: #fde68a;
+  border-color: var(--rf-action);
+  color: var(--rf-refute);
 }
 .rf-btn--hold {
-  border-color: #34d399;
+  border-color: var(--rf-agree);
   min-width: 9rem;
   min-height: 3.4rem;
   font-size: 1.3rem;
 }
 .rf-btn--fall {
-  border-color: #fbbf24;
+  border-color: var(--rf-action);
   min-width: 9rem;
   min-height: 3.4rem;
   font-size: 1.3rem;
 }
 .rf-root .rf-btn--hold.is-on {
-  background: #34d399;
-  color: #06262c;
+  background: var(--rf-agree);
+  color: var(--rf-on-accent);
 }
 .rf-root .rf-btn--fall.is-on {
-  background: #fbbf24;
+  background: var(--rf-action);
   color: #2a1c02;
 }
 
@@ -188,14 +188,14 @@
   gap: 0.5rem;
   padding: 0.8rem 0.75rem;
   border-radius: 1.3rem;
-  background: rgba(6, 18, 44, 0.7);
-  border: 1.5px solid rgba(125, 252, 255, 0.25);
+  background: var(--rf-panel);
+  border: 1.5px solid var(--rf-line);
   min-height: 0;
 }
 .rf-log h3 {
   font-size: 1.08rem;
   font-weight: 900;
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
   line-height: 1.4;
 }
 .rf-log ul {
@@ -217,7 +217,7 @@
   padding: 0.26rem 0.6rem;
   line-height: 1.3; /* a tight line height: eight lines must fit at 1280 × 720 */
   border-radius: 0.8rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--rf-tint);
   border: 2px solid transparent;
   transition:
     border-color 0.25s,
@@ -235,7 +235,7 @@
   font-weight: 900;
 }
 .rf-log li span {
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
 }
 .rf-log li em {
   margin-inline-start: auto;
@@ -244,23 +244,23 @@
   font-weight: 800;
 }
 .rf-log li.is-held em {
-  color: #6ee7b7;
+  color: var(--rf-agree);
 }
 .rf-log li.is-fell em {
-  color: #fcd34d;
+  color: var(--rf-refute);
 }
 .rf-log li.is-agree {
-  border-color: #34d399;
-  background: rgba(52, 211, 153, 0.12);
+  border-color: var(--rf-agree);
+  background: var(--rf-agree-tint);
 }
 .rf-log li.is-refute {
-  border-color: #fb923c;
-  background: rgba(251, 146, 60, 0.2);
+  border-color: var(--rf-refute);
+  background: var(--rf-refute-tint);
   animation: rf-shake 0.4s;
 }
 .rf-log li.is-compare {
-  border-color: #fbbf24;
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+  border-color: var(--rf-action);
+  box-shadow: 0 0 0 3px var(--rf-action-tint);
 }
 .rf-mini {
   width: 100%;
@@ -271,10 +271,10 @@
   fill: #5b8fd6;
 }
 .rf-mini rect.is-held {
-  fill: #34d399;
+  fill: var(--rf-agree);
 }
 .rf-mini rect.is-left {
-  fill: #fbbf24;
+  fill: var(--rf-action);
 }
 .rf-log li > .rf-line2 {
   display: flex;
@@ -291,14 +291,14 @@
   font-size: max(var(--di-min-font, 12px), 0.82rem);
   line-height: 1; /* its line is 1.1rem high: the floored size must still stand inside it */
   font-weight: 900;
-  color: #cfe9ff;
+  color: var(--rf-ink-soft);
   white-space: nowrap;
 }
 .rf-log li.is-refute .rf-says {
-  color: #fdba74;
+  color: var(--rf-refute);
 }
 .rf-log li.is-agree .rf-says {
-  color: #6ee7b7;
+  color: var(--rf-agree);
 }
 
 /* the mirror is 15.5rem high, unless the panel under it needs that room (a build with many long tiles): it then gives
@@ -319,21 +319,16 @@
   border-radius: 1.6rem;
   overflow: hidden;
   border: 2px solid rgba(165, 243, 252, 0.55);
-  background: linear-gradient(
-    120deg,
-    rgba(165, 243, 252, 0.16),
-    rgba(255, 255, 255, 0.04) 40%,
-    rgba(165, 243, 252, 0.12)
-  );
+  background: linear-gradient(120deg, rgba(165, 243, 252, 0.16), var(--rf-tint) 40%, rgba(165, 243, 252, 0.12));
   box-shadow:
-    inset 0 0 60px rgba(125, 252, 255, 0.12),
+    inset 0 0 60px var(--rf-accent-tint),
     0 14px 40px rgba(0, 0, 0, 0.35);
 }
 .rf-mirror::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.1) 45%, transparent 55%);
+  background: linear-gradient(115deg, transparent 30%, var(--rf-tint) 45%, transparent 55%);
   pointer-events: none;
 }
 .rf-bridge {
@@ -347,46 +342,46 @@
   fill: #5a6f94;
 }
 .rf-cell {
-  fill: rgba(255, 255, 255, 0.07);
+  fill: var(--rf-tint);
   stroke: rgba(165, 243, 252, 0.35);
   stroke-width: 1;
 }
 .rf-cell.is-left {
-  fill: rgba(251, 191, 36, 0.5);
-  stroke: #fbbf24;
+  fill: var(--rf-action);
+  stroke: var(--rf-action);
   animation: rf-blink 0.7s infinite;
 }
 .rf-plank {
-  fill: #7dfcff;
-  stroke: #06262c;
+  fill: var(--rf-accent);
+  stroke: var(--rf-on-accent);
   stroke-width: 2;
   opacity: 0;
   animation: rf-lay 0.3s ease-out forwards;
 }
 .rf-plank.is-alt {
-  fill: #5eead4;
+  fill: var(--rf-agree);
 }
 .rf-plank--sample {
   opacity: 1;
   animation: none;
-  fill: #fde68a;
+  fill: var(--rf-refute);
 }
 .rf-bridge.is-held .rf-plank {
-  fill: #34d399;
-  filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.8));
+  fill: var(--rf-agree);
+  filter: drop-shadow(0 0 8px var(--rf-agree));
 }
 .rf-bridge.is-fell .rf-plank {
   animation: rf-fall 0.7s ease-in forwards;
   opacity: 1;
 }
 .rf-cap {
-  fill: #cfe9ff;
+  fill: var(--rf-ink-soft);
   font:
     800 17px 'Inter',
     sans-serif;
 }
 .rf-cap--a {
-  fill: #9fd8ff;
+  fill: var(--rf-ink-soft);
 }
 .rf-eq {
   font-size: 1.5rem;
@@ -407,14 +402,14 @@
 .rf-rule b {
   padding: 0.1rem 0.9rem;
   border-radius: 0.8rem;
-  background: rgba(125, 252, 255, 0.18);
-  border: 2px solid #7dfcff;
+  background: var(--rf-accent-tint);
+  border: 2px solid var(--rf-accent);
   font-weight: 900;
 }
 .rf-rule b.is-empty {
   border-style: dashed;
   background: none;
-  color: #9fb8dd;
+  color: var(--rf-ink-soft);
   min-width: 8rem;
 }
 .rf-keymark {
@@ -432,8 +427,8 @@
   gap: 0.75rem;
   padding: 0.9rem 1.2rem;
   border-radius: 1.4rem;
-  background: rgba(6, 18, 44, 0.7);
-  border: 1.5px solid rgba(125, 252, 255, 0.25);
+  background: var(--rf-panel);
+  border: 1.5px solid var(--rf-line);
   min-height: 0;
   text-align: center;
 }
@@ -445,11 +440,11 @@
 .rf-note {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #b9dcff;
+  color: var(--rf-ink-soft);
   line-height: 1.7;
 }
 .rf-note b {
-  color: #fde68a;
+  color: var(--rf-refute);
 }
 .rf-row {
   display: inline-flex;
@@ -461,7 +456,7 @@
 .rf-fb {
   font-size: 1.25rem;
   font-weight: 900;
-  color: #fde68a;
+  color: var(--rf-refute);
   line-height: 1.7;
   animation: rf-pop 0.4s;
 }
@@ -471,13 +466,13 @@
   display: block;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #cfe9ff;
+  color: var(--rf-ink-soft);
 }
 .rf-fb.is-right {
-  color: #6ee7b7;
+  color: var(--rf-agree);
 }
 .rf-fb.is-broken {
-  color: #fdba74;
+  color: var(--rf-refute);
 }
 .rf-streak {
   position: absolute;
@@ -491,11 +486,11 @@
   width: 0.9rem;
   height: 0.9rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--rf-tint);
 }
 .rf-streak i.is-on {
-  background: #34d399;
-  box-shadow: 0 0 10px #34d399;
+  background: var(--rf-agree);
+  box-shadow: 0 0 10px var(--rf-agree);
 }
 .rf-tiles {
   display: grid;
@@ -511,15 +506,15 @@
 .rf-tiles h4 {
   font-size: 0.95rem;
   font-weight: 800;
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
   text-align: start;
 }
 .rf-tile {
   min-height: 2.75rem;
   padding: 0.2rem 0.9rem;
   border-radius: 0.85rem;
-  border: 2px solid rgba(159, 216, 255, 0.4);
-  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid var(--rf-line);
+  background: var(--rf-tint);
   font-size: 1.05rem;
   font-weight: 800;
   cursor: pointer;
@@ -529,15 +524,15 @@
     transform 0.12s;
 }
 .rf-tile:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--rf-tint);
 }
 .rf-tile:active {
   transform: scale(0.97);
 }
 .rf-root .rf-tile.is-on {
-  background: #7dfcff;
-  border-color: #7dfcff;
-  color: #06262c;
+  background: var(--rf-accent);
+  border-color: var(--rf-accent);
+  color: var(--rf-on-accent);
 }
 .rf-bubble {
   display: flex;
@@ -547,11 +542,11 @@
   gap: 0.5rem;
   padding: 0.45rem 1rem;
   border-radius: 1rem;
-  background: rgba(251, 191, 36, 0.14);
-  border: 1.5px solid rgba(251, 191, 36, 0.6);
+  background: var(--rf-action-tint);
+  border: 1.5px solid var(--rf-action);
   font-size: 1.05rem;
   font-weight: 800;
-  color: #fde68a;
+  color: var(--rf-refute);
   line-height: 1.7;
 }
 .rf-bubble .rf-btn {
@@ -567,14 +562,14 @@
 .rf-words span {
   font-size: 1rem;
   font-weight: 800;
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
 }
 .rf-words input {
   height: 3rem;
   padding: 0 1rem;
   border-radius: 0.9rem;
-  border: 2px solid rgba(159, 216, 255, 0.5);
-  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--rf-line);
+  background: var(--rf-tint);
   font-size: 1.1rem;
   font-weight: 700;
   user-select: text;
@@ -582,7 +577,7 @@
   outline: none;
 }
 .rf-words input:focus {
-  border-color: #7dfcff;
+  border-color: var(--rf-accent);
 }
 .rf-use {
   display: flex;
@@ -600,9 +595,9 @@
   width: 5.2rem;
   height: 3.4rem;
   border-radius: 0.9rem;
-  border: 3px solid #7dfcff;
-  background: rgba(125, 252, 255, 0.1);
-  color: #7dfcff;
+  border: 3px solid var(--rf-accent);
+  background: var(--rf-accent-tint);
+  color: var(--rf-accent);
   font:
     900 2rem 'Inter',
     sans-serif;
@@ -614,7 +609,7 @@
 .rf-use small {
   font-size: max(var(--di-min-font, 12px), 0.85rem);
   font-weight: 800;
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
   line-height: 1.5;
 }
 /* a fraction of the last step (`{ frac: { n, d } }`): the look is the kit's `di-frac` (styles/trainer.css — numerator, a
@@ -667,9 +662,9 @@
 .rf-use .rf-use__choice {
   display: grid;
   justify-items: center;
-  --kit-choice-on: #7dfcff;
-  --kit-choice-on-text: #0b1d33;
-  color: #7dfcff;
+  --kit-choice-on: var(--rf-accent);
+  --kit-choice-on-text: var(--rf-on-accent);
+  color: var(--rf-accent);
 }
 .rf-use .kit-choice > button {
   min-height: 2.6rem;
@@ -858,7 +853,7 @@
 .rf-sentence__hint {
   font-size: 1rem;
   font-weight: 700;
-  color: #9fd8ff;
+  color: var(--rf-ink-soft);
   text-align: center;
 }
 
@@ -1058,4 +1053,345 @@
     font-size: 0.92rem;
     line-height: 1.5;
   }
+}
+
+/*
+ * ── THE SHEET ON THE WORLD'S TABLE (owner, 2026-11-27: the navy glass « gives the feeling of leaving the game world ») ──
+ * The forge is a sheet laid over the world, which stays in sight behind it, blurred. Every colour above is a token;
+ * a world gives its values with `parts.skin` (`data-rf-skin`): papyrus and sandstone on the Nile, wood and sky on the
+ * islands, stone on the courts. The MIRROR is an object on that table: its glass stays dark, and what a world draws
+ * in it keeps the colours it was drawn with (the tokens take their night values inside it).
+ */
+.rf-root {
+  --rf-frame: #c9a36b;
+  --rf-frame-deep: #8a6a3f;
+  --rf-surface: #f6ecd2;
+  --rf-raised: #fbf5e4;
+  --rf-recess: #eadbb8;
+  --rf-line: #d2be94;
+  --rf-ink: #2b2118;
+  --rf-ink-soft: #6b5a45;
+  --rf-accent: #1f5f8b;
+  --rf-on-accent: #ffffff;
+  --rf-accent-tint: rgba(31, 95, 139, 0.12);
+  --rf-action: #e0a526;
+  --rf-action-deep: #a87410;
+  --rf-action-tint: rgba(224, 165, 38, 0.18);
+  --rf-agree: #25693f;
+  --rf-agree-tint: rgba(37, 105, 63, 0.13);
+  --rf-refute: #a04421;
+  --rf-refute-tint: rgba(160, 68, 33, 0.13);
+  --rf-tint: rgba(43, 33, 24, 0.06);
+  --rf-panel: transparent;
+  --rf-glass-1: #17485c;
+  --rf-glass-2: #0e2e3d;
+  --rf-veil: rgba(43, 33, 24, 0.3);
+  color: var(--rf-ink);
+  background: var(--rf-veil);
+  backdrop-filter: blur(5px) saturate(0.9);
+  -webkit-backdrop-filter: blur(5px) saturate(0.9);
+}
+.rf-root[data-rf-skin='isles'] {
+  --rf-frame: #b9824a;
+  --rf-frame-deep: #7b5126;
+  --rf-surface: #f4f8fb;
+  --rf-raised: #ffffff;
+  --rf-recess: #dfeaf2;
+  --rf-line: #c3d3df;
+  --rf-ink: #1e2a38;
+  --rf-ink-soft: #55677a;
+  --rf-accent: #2a6fa8;
+  --rf-accent-tint: rgba(42, 111, 168, 0.12);
+  --rf-action: #f2b33d;
+  --rf-action-deep: #b67a10;
+  --rf-tint: rgba(30, 42, 56, 0.06);
+  --rf-glass-1: #1d4f8f;
+  --rf-glass-2: #0d2552;
+  --rf-veil: rgba(20, 40, 70, 0.3);
+}
+.rf-root[data-rf-skin='courts'] {
+  --rf-frame: #a8a29a;
+  --rf-frame-deep: #6b655d;
+  --rf-surface: #f3efe7;
+  --rf-raised: #fbf9f4;
+  --rf-recess: #e4ddd0;
+  --rf-line: #cfc6b6;
+  --rf-ink: #26221d;
+  --rf-ink-soft: #655c50;
+  --rf-accent: #7a3e8f;
+  --rf-accent-tint: rgba(122, 62, 143, 0.12);
+  --rf-glass-1: #3b2a55;
+  --rf-glass-2: #21183a;
+}
+.rf-fit {
+  inset: 0.3rem 0.45rem;
+  padding: 0.45rem 0.9rem 0.55rem;
+  border-radius: 1.3rem;
+  background: var(--rf-surface);
+  border: 4px solid var(--rf-frame);
+  box-shadow:
+    0 0 0 2px var(--rf-frame-deep),
+    0 22px 50px rgba(20, 12, 4, 0.45);
+}
+/* the head: the mirror who speaks, the name of the table, the key that is being made */
+.rf-head {
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--rf-line);
+}
+.rf-brand h2 {
+  color: var(--rf-ink);
+}
+.rf-brand p {
+  color: var(--rf-ink-soft);
+}
+.rf-steps li {
+  background: var(--rf-recess);
+  color: var(--rf-ink-soft);
+}
+.rf-steps b {
+  background: var(--rf-raised);
+  color: var(--rf-ink-soft);
+}
+.rf-steps li.is-now {
+  background: var(--rf-accent);
+  color: var(--rf-on-accent);
+}
+.rf-steps li.is-now b {
+  background: var(--rf-on-accent);
+  color: var(--rf-accent);
+}
+.rf-steps li.is-done {
+  background: var(--rf-action-tint);
+  color: var(--rf-ink);
+}
+.rf-steps li.is-done b {
+  background: var(--rf-action);
+  color: #2b2118;
+}
+.rf-steps li + li::before {
+  content: '';
+  width: 1.1rem;
+  height: 3px;
+  margin-inline-start: -1.55rem;
+  margin-inline-end: 0.45rem;
+  background: var(--rf-frame-deep);
+  opacity: 0.5;
+}
+/* buttons on paper: ONE gold action, the rest quiet */
+.rf-btn {
+  background: var(--rf-raised);
+  border-color: var(--rf-line);
+  color: var(--rf-ink);
+}
+.rf-root .rf-btn--main {
+  background: var(--rf-action);
+  border-color: var(--rf-action-deep);
+  color: #2b2118;
+  box-shadow: 0 4px 0 var(--rf-action-deep);
+}
+.rf-root .rf-btn--main:hover:not(:disabled) {
+  background: var(--rf-action);
+  filter: brightness(1.06);
+}
+.rf-root .rf-btn--hold.is-on,
+.rf-root .rf-btn--fall.is-on {
+  color: #ffffff;
+}
+.rf-log {
+  background: var(--rf-recess);
+  border-color: var(--rf-line);
+}
+.rf-log li {
+  background: var(--rf-raised);
+  color: var(--rf-ink);
+}
+/* the mirror: dark glass in a bronze frame — the tokens take their night values inside it */
+/* (an experiment a world frames in dark glass — the islands' `.iq` — is the mirror's glass too) */
+.rf-mirror:not(.is-rule),
+.rf-root .iq,
+.rf-root .rq-iq {
+  --rf-ink: #e8f6ff;
+  --rf-ink-soft: #9fd8ff;
+  --rf-accent: #7dfcff;
+  --rf-on-accent: #06262c;
+  --rf-accent-tint: rgba(125, 252, 255, 0.14);
+  --rf-agree: #34d399;
+  --rf-agree-tint: rgba(52, 211, 153, 0.2);
+  --rf-refute: #fde68a;
+  --rf-refute-tint: rgba(251, 146, 60, 0.2);
+  --rf-action: #fbbf24;
+  --rf-action-tint: rgba(251, 191, 36, 0.2);
+  --rf-tint: rgba(255, 255, 255, 0.08);
+  --rf-line: rgba(159, 216, 255, 0.45);
+  color: var(--rf-ink);
+  border: 5px solid #b9792e;
+  background: linear-gradient(150deg, var(--rf-glass-1), var(--rf-glass-2));
+  box-shadow:
+    inset 0 0 0 2px #7a4a12,
+    inset 0 0 50px rgba(255, 255, 255, 0.07),
+    0 8px 20px rgba(20, 12, 4, 0.25);
+}
+/* …and when it holds HIS RULE it is the ribbon of the sheet */
+.rf-mirror.is-rule {
+  border: 1.5px solid var(--rf-line);
+  background: var(--rf-recess);
+  box-shadow: none;
+}
+.rf-mirror.is-rule::before {
+  display: none;
+}
+.rf-rule {
+  color: var(--rf-ink);
+}
+.rf-rule b {
+  background: var(--rf-raised);
+  border-color: var(--rf-ink);
+  color: var(--rf-ink);
+}
+.rf-rule b.is-empty {
+  border-color: var(--rf-ink-soft);
+  color: var(--rf-ink-soft);
+}
+.rf-sealedline {
+  flex-basis: 100%;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--rf-agree);
+  line-height: 1.4;
+}
+.rf-panel {
+  border-color: transparent;
+}
+.rf-root .rf-tile {
+  background: var(--rf-raised);
+  border-color: var(--rf-line);
+  color: var(--rf-ink);
+}
+.rf-root .rf-tile:hover {
+  border-color: var(--rf-accent);
+  background: var(--rf-raised);
+}
+.rf-root .rf-tile.is-on {
+  background: var(--rf-accent);
+  border-color: var(--rf-accent);
+  color: var(--rf-on-accent);
+}
+.rf-use input {
+  background: #ffffff;
+  color: var(--rf-ink);
+}
+.rf-use .rf-use__choice {
+  --kit-choice-on: var(--rf-accent);
+  --kit-choice-on-text: var(--rf-on-accent);
+  color: var(--rf-ink);
+}
+/*
+ * THE LAST STEP, ONE LINE AT A TIME (`UseLines step`): the line he is writing is whole; the lines after it wait, dimmed,
+ * their choices folded to « … »; a line he has written folds each choice to what he picked (a click opens it again).
+ * After a first « Vérifier » every line is open: he corrects where the mirror's fact points.
+ */
+.rf-uselines[data-rf-step] .rf-use.is-later {
+  opacity: 0.38;
+  pointer-events: none;
+}
+.rf-uselines[data-rf-step] .rf-use.is-later .kit-choice > button {
+  display: none;
+}
+.rf-uselines[data-rf-step] .rf-use.is-later .kit-choice::after {
+  content: '…';
+  display: inline-block;
+  min-width: 2.6rem;
+  padding: 0 0.6rem;
+  border: 2px dashed currentColor;
+  border-radius: 0.55rem;
+  text-align: center;
+}
+.rf-uselines[data-rf-step] .rf-use.is-written {
+  cursor: pointer;
+}
+.rf-uselines[data-rf-step] .rf-use.is-written .kit-choice > button:not(.is-on) {
+  display: none;
+}
+.rf-uselines[data-rf-step] .rf-use.is-written .kit-choice > button.is-on {
+  background: none;
+  border-color: transparent;
+  color: var(--rf-ink);
+  opacity: 1;
+  padding: 0 0.15rem;
+  pointer-events: none;
+}
+.rf-uselines[data-rf-step] .rf-use.is-written input {
+  border-color: var(--rf-line);
+}
+.rf-uselines[data-rf-step] .rf-use.is-written::after {
+  content: '✓';
+  color: var(--rf-agree);
+  font-size: 1.2rem;
+  font-weight: 900;
+  align-self: center;
+}
+
+/* THE LAST STEP takes the whole sheet: the lines of his experiments leave (the rule he sealed stays above, as a ribbon) */
+.rf-root[data-rf='use'] .rf-log {
+  display: none;
+}
+.rf-root[data-rf='use'] .rf-main {
+  grid-column: 1 / -1;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.rf-root[data-rf='use'] .rf-mirror.is-rule {
+  padding: 0.3rem 1rem;
+}
+.rf-root[data-rf='use'] .rf-rule {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  gap: 0.3rem 0.6rem;
+}
+.rf-root[data-rf='use'] .rf-keymark {
+  font-size: 1.5rem;
+}
+.rf-root[data-rf='use'] .rf-sealedline {
+  flex-basis: auto;
+  margin-inline-start: 0.8rem;
+}
+
+.rf-agreedline {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--rf-agree);
+}
+/* under attack the mirror is the stage: it takes the height its case needs (a figure kept at its 12 px labels) */
+.rf-root[data-rf='attack'] .rf-main {
+  grid-template-rows: minmax(min-content, 18rem) minmax(min-content, 1fr);
+}
+.rf-root[data-rf='attack'] .rf-panel {
+  gap: 0.5rem;
+  padding-block: 0.5rem;
+}
+
+.rf-root .iq {
+  border-width: 4px;
+  padding: 0.6rem 1.1rem;
+}
+.rf-root[data-rf='inquiry'] .rf-head {
+  padding-bottom: 0.3rem;
+}
+.rf-root[data-rf='inquiry'] .rf-fit {
+  gap: 0.55rem;
+  padding-bottom: 0.5rem;
+}
+
+/* while he writes his rule and the robot's experiment shares the screen, the mirror keeps the height its case needs */
+.rf-root[data-rf='build'] .rf-fit {
+  gap: 0.55rem;
+}
+.rf-root[data-rf='build'] .rf-panel {
+  gap: 0.5rem;
+  padding-block: 0.45rem;
+}
+/* the sheet's frame takes a little of the mirror's width: a caption drawn in it stays at its 12 px on screen */
+.rf-mirror .rf-cap {
+  font-size: 18.5px;
 }

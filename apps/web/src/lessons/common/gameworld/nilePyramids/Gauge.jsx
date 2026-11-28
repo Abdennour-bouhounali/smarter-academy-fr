@@ -19,12 +19,74 @@ const texRatio = (c, k, name) => {
   return `\\dfrac{${segName(c, a)}}{${segName(c, b)}}`;
 };
 
+/** How far a small side still stands off its bar while the triangle turns: 30° at the start, laid flat at 180°. */
+const tiltOf = (angle) => (180 - angle) / 6;
+
+/**
+ * THE GAUGE OF THE HALF-TURN (owner, 2026-11-27: the three bare bars « are not clear » — they are shown DURING the
+ * rotation and change with it; then: « mathematical, professional »). One row per pair of sides, written as segments
+ * `[SE]` and `[SA]`: the grey rule is a side of the big triangle (the three brought to one length), the amber one the
+ * side of the small triangle that goes onto it. While he turns the triangle the amber sides come down onto their rules
+ * with it; landed, they lie on them and their ends can be compared (a dashed line through the three when they agree).
+ * A triangle many times smaller would be a dot at the rule's start: the rules are then shown from their start only —
+ * three times the longest piece — and their cut end fades.
+ */
+function TurningGauge({ c, angle }) {
+  const g = gauge(c);
+  const landed = angle >= 180;
+  const tilt = tiltOf(angle);
+  const far = Math.max(...g.marks.map((m) => m.at ?? 0));
+  const part = Math.min(1, Math.max(far * 3, 0.05));
+  const at = (m) => `${((m.at / part) * 100).toFixed(2)}%`;
+  const agree = landed && g.aligned;
+  return (
+    <div
+      className={`np-tg${part < 1 ? ' is-cut' : ''}${agree ? ' is-agreed' : ''}`}
+      data-rf-gauge
+      data-rf-gauge-turn={angle}
+      data-rf-aligned={agree ? 'yes' : 'no'}
+    >
+      <p className="np-tg__lead">{THALES_TEXT.gauge}</p>
+      <div className="np-tg__rows" dir="ltr" style={agree ? { '--at': at(g.marks[0]) } : undefined}>
+        {g.marks.map((m) => {
+          const [small, big] = ROWS[m.k].split('/');
+          return (
+            <div className="np-tg__row" key={m.k}>
+              <span className="np-tg__pair">
+                <span className="np-tg__small">
+                  <M>{`[${segName(c, small)}]`}</M>
+                </span>
+                <i aria-hidden="true">sur</i>
+                <span className="np-tg__big">
+                  <M>{`[${segName(c, big)}]`}</M>
+                </span>
+              </span>
+              <span className="np-tg__rule">
+                {m.at != null && (
+                  <span className="np-tg__piece" style={{ width: at(m), transform: `rotate(${-tilt}deg)` }}>
+                    <b />
+                  </span>
+                )}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+      <p className={`np-tg__say${landed ? (g.aligned ? ' is-ok' : ' is-apart') : ''}`}>
+        {landed ? (g.aligned ? THALES_TEXT.aligned : THALES_TEXT.apart) : THALES_TEXT.gaugeTurn}
+      </p>
+    </div>
+  );
+}
+
 /**
  * THE RATIO GAUGE: three bars of one length, each with its piece marked; a gold line when the marks stand together.
- * `names: false` draws the bars without the ratios' names — the experiment `halfturn` shows facts, never the chain
- * (review gate A, 2026-11-24: its names were the right tiles of 🦋's forge, before the tiles).
+ * `names: false` draws the bars without the ratios' names. `angle` (the experiment `halfturn`): the gauge of the
+ * half-turn, whose pieces come down with the triangle (`TurningGauge`) — sides are named there, never a ratio (review
+ * gate A, 2026-11-24: the ratios' names were the right tiles of 🦋's forge, before the tiles).
  */
-export function Gauge({ c, small = false, names = true }) {
+export function Gauge({ c, small = false, names = true, angle = null }) {
+  if (angle != null) return <TurningGauge c={c} angle={angle} />;
   const g = gauge(c);
   const h = small ? 34 : 120;
   const row = h / 3;

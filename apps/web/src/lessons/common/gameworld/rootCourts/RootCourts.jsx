@@ -17,7 +17,7 @@ import Inquiry from './Inquiry';
 import { WORLD_TEXT, withStory, tiles } from './strings';
 import './rootCourts.css';
 
-const FORGE_PARTS = { Mirror, Line, beats, Inquiry };
+const FORGE_PARTS = { skin: 'courts', Mirror, Line, beats, Inquiry };
 
 /** The rod in his hand: its length, the court it is for, and the marks of its dial when the terrace offers several. */
 function RodChip({ rod, game }) {

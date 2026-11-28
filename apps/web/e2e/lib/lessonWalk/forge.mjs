@@ -160,13 +160,13 @@ export async function playForge(ctx, key) {
       if (pairs) await pairChecks(w, page, `${name}, refuted`);
       await w.shot(page, `${name}-refuted`, ctx.OUT);
     } else {
-      await page.click('[data-rf-dare]');
-      await page.waitForSelector('[data-rf-say]');
+      // the rule agrees with his lines: the mirror attacks at once (no « Chiche ! »), and computes as soon as he has
+      // said what his rule announces (no second button)
+      await page.waitForSelector('[data-rf-say]', { timeout: 20000 });
       const c = (await fg()).atk.list[0];
       const yes = verdict(c, `${name}, the false rule's attack`);
-      await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
       const heard = await hear(async () => {
-        await page.click('[data-rf-fire]');
+        await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
         await page.waitForSelector('[data-rf-broken]', { timeout: 20000 });
       });
       const fb = (await page.textContent('[data-rf-broken]')) ?? '';
@@ -188,9 +188,10 @@ export async function playForge(ctx, key) {
     for (const t of right) await page.click(`[data-rf-tile="${t}"]`);
     await page.click('[data-rf-test]');
     await page.waitForSelector('[data-rf-agreed]', { timeout: 20000 });
+    // the mirror opens its first attack at once: its case is measured once it has settled, not while it pops in
+    await page.waitForTimeout(600);
     await w.shot(page, `${name}-agreed`, ctx.OUT);
-    await page.click('[data-rf-dare]');
-    await page.waitForSelector('[data-rf="attack"]');
+    await page.waitForSelector('[data-rf="attack"], [data-rf="use"]', { timeout: 20000 });
   }
   // the rule he holds now: the tiles' (derived), or the one his experiment wrote
   const held = writes ? (await fg()).rule : theRule;
@@ -202,9 +203,8 @@ export async function playForge(ctx, key) {
       Boolean(forge.says(held, c)) === yes,
       `${name}, attack ${i + 1}: the rule that holds says what the world does`,
     );
-    await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
     const heard = await hear(async () => {
-      await page.click('[data-rf-fire]');
+      await page.click(`[data-rf-say="${yes ? 'yes' : 'no'}"]`);
       await page.waitForSelector('[data-rf-survived]', { timeout: 20000 });
     });
     check(
@@ -219,10 +219,9 @@ export async function playForge(ctx, key) {
     await page.waitForSelector('[data-rf-say]');
     await page.waitForTimeout(80);
   }
-  await page.waitForSelector('[data-rf-sealed]');
-  await w.shot(page, `${name}-sealed`, ctx.OUT);
-  await page.click('[data-rf-seal]');
+  // the rule that held is his key at once: the last step opens, the rule above it marked sealed (no screen in between)
   await page.waitForSelector('[data-rf="use"]');
+  await page.waitForSelector('[data-rf-sealed]');
   await page.waitForTimeout(120);
 
   // ── the last step: typed wrong, then right — computed from the numbers it shows ──
@@ -276,7 +275,13 @@ export async function playForge(ctx, key) {
   );
   await lastStepLayout(w, page, `${name}, the last step`);
   const fillUse = async (v) => {
-    for (const [nm, x] of Object.entries(boxOf(v)))
+    // the last step is written ONE LINE AT A TIME (a box of a later line is closed): the boxes are filled in the
+    // order of the page
+    const order = await page.$$eval('.rf-root [data-rf-use], .rf-root .rf-uselines [data-kit-choice]', (els) =>
+      els.map((e) => e.dataset.rfUse ?? e.dataset.kitChoice),
+    );
+    const at = (nm) => (order.indexOf(nm) < 0 ? order.length : order.indexOf(nm));
+    for (const [nm, x] of Object.entries(boxOf(v)).sort((a, b) => at(a[0]) - at(b[0])))
       if (await page.locator(`.rf-root [data-rf-use="${nm}"]`).count())
         await page.fill(`.rf-root [data-rf-use="${nm}"]`, String(x));
       else await page.click(`.rf-root [data-kit-choice="${nm}"] [data-kit-option="${x}"]`);

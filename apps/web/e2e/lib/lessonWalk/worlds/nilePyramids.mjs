@@ -97,8 +97,46 @@ export function npWorld(w, page, L) {
       const g = window.__world;
       const st = g.stepNow();
       if (!st) return null;
-      const { id, kind, from, toward, stake, at, order, seg, edge, sight, canal, ghost, stick, shadow, base, key } = st;
-      return { id, kind, from, toward, stake, at, order, seg, edge, sight, canal, ghost, stick, shadow, base, key };
+      const {
+        id,
+        kind,
+        from,
+        toward,
+        stake,
+        at,
+        order,
+        seg,
+        edge,
+        plan,
+        open,
+        again,
+        canal,
+        ghost,
+        stick,
+        shadow,
+        base,
+        key,
+      } = st;
+      return {
+        id,
+        kind,
+        from,
+        toward,
+        stake,
+        at,
+        order,
+        seg,
+        edge,
+        plan,
+        open,
+        again,
+        canal,
+        ghost,
+        stick,
+        shadow,
+        base,
+        key,
+      };
     });
   const pts = () => page.evaluate(() => JSON.parse(JSON.stringify(window.__np.points())));
   /** Zero placed beside a place of the stage he stands on (as the islands' walks place him at an altar). */
@@ -429,15 +467,11 @@ export async function npStoryWalk(L, D, opts) {
           const from = st.edge ? P.B : P[st.from];
           await W.actAt(from, tag);
           expect((await s()).rope, `${tag}: E at ${st.from}: the rope's end in his hand`);
-          // where the hand stops: on the stake (the drawn distance), where S hides F, where the drawn triangle's
+          // where the hand stops: on the stake (the drawn distance), where the drawn triangle's
           // shadow tip meets A — or as far as what is built
           let target = null;
           if (st.stake && P[st.stake]) target = Math.round(dist(P[st.from], P[st.stake]));
-          else if (st.sight) {
-            const { E, S, F } = P;
-            const u = (E.z - F.z) / (S.z - F.z);
-            target = Math.round(F.x + u * (S.x - F.x) - E.x);
-          } else if (st.ghost) {
+          else if (st.ghost) {
             // the stick's shadow he measured (the register's « AM = … » of this stage)
             const am = await page.evaluate(
               () =>
@@ -449,8 +483,7 @@ export async function npStoryWalk(L, D, opts) {
             target = Math.round(dist(P[st.from], P[st.toward]) - Number(String(am).trim().replace(',', '.')));
           } else if (st.stick) target = 'probe';
           if (i === 0 && st.id === 'AM') await shotWorld(`${tag}-rope`);
-          if (st.sight) await shotWorld(`${tag}-sight`);
-          const tied = await W.slideTo(target, tag, st.sight ? () => shotWorld(`${tag}-near`) : undefined);
+          const tied = await W.slideTo(target, tag);
           expect(tied, `${tag}: released on ${target ?? 'the last built course'}, the rope ties`);
           await ff(0.4);
           const reg = await register();
@@ -470,6 +503,54 @@ export async function npStoryWalk(L, D, opts) {
             await shotWorld(`${tag}-read`);
           }
           if (i === 4 && st.ghost) await shotWorld(`${tag}-meet`);
+          continue;
+        }
+        if (st.kind === 'plan') {
+          // THE GEOMETER'S PLAN: R where the string over S arrives on the post F — E, S, F as the world places them
+          await W.actAt(P[st.from], tag);
+          await page.waitForSelector('[data-np-plan="place"]', { timeout: 6000 });
+          const { E, S, F } = P;
+          const target = Math.round(F.x + ((E.z - F.z) / (S.z - F.z)) * (S.x - F.x) - E.x);
+          const er = async () => Number(await page.getAttribute('[data-np-plan]', 'data-np-plan-er'));
+          const to = async (n) => {
+            for (let k = 0; k < 80 && (await er()) !== n; k += 1)
+              await page.click((await er()) < n ? '[data-np-plan-further]' : '[data-np-plan-nearer]');
+          };
+          await w.shot(page, `${tag}-plan`, { exit: ['[data-np-order-later]', '[data-di-exit]'], numbers: true });
+          // a stake planted beside the line: the string misses the post, a FACT says on which side, nothing is planted
+          for (const [d, side] of [
+            [-6, 'left'],
+            [6, 'right'],
+          ]) {
+            await to(target + d);
+            await page.click('[data-np-plan-set]');
+            await ff(0.2);
+            const fact = await page.getAttribute('[data-np-plan-fact]', 'data-np-plan-fact').catch(() => null);
+            check(
+              fact === side,
+              `${tag}: R at ${target + d} m, the string touches the far bank on the ${side} of F (${fact})`,
+            );
+            if (d < 0)
+              await w.shot(page, `${tag}-plan-miss`, {
+                exit: ['[data-np-order-later]', '[data-di-exit]'],
+                numbers: true,
+              });
+          }
+          expect((await register()).ER == null, `${tag}: a string beside the post plants nothing`);
+          await to(target);
+          await page.keyboard.press('Enter');
+          await page.waitForSelector('[data-np-plan="rope"]', { timeout: 6000 });
+          await ff(0.3);
+          const reg = await register();
+          check(
+            q(reg[st.id]).n === BigInt(target),
+            `${tag}: the register writes ${st.seg} = ${target} (« ${reg[st.id]} »)`,
+          );
+          check(
+            (await page.locator('.np-plan__tri').count()) === 2,
+            `${tag}: R planted, the two triangles are filled on the plan and [AF] is asked on it`,
+          );
+          done[st.id] = String(target);
           continue;
         }
         if (st.kind === 'predict' || st.kind === 'order') {
@@ -506,6 +587,27 @@ export async function npStoryWalk(L, D, opts) {
           } else if (st.order === 'ferry') {
             // S between A and E on the bank, F across and R inland, both square to the bank: SE / SA = ER / AF
             value = write(solveLength({ VM: n('SE'), VB: n('AS'), MN: n('ER') }, 'BC', 'butterfly'));
+            if (st.open) {
+              // before the key the rope is a PREDICTION: the rope of the WHOLE bank (ER × AE / SE) is thrown, it is
+              // too long, and the stage goes on to its forge all the same
+              const whole = String((Number(n('ER')) * (Number(n('AS')) + Number(n('SE')))) / Number(n('SE')));
+              await W.order(whole, `${tag}-whole`);
+              const v = await W.built();
+              check(v?.fact === 'slack', `${tag}: a rope of ${whole} m thrown: it hangs SLACK (${v?.fact})`);
+              await shotWorld(`${tag}-slack`);
+              check(
+                (await W.step())?.kind === 'forge',
+                `${tag}: a rope that did not tie does not block him: the forge is next`,
+              );
+              continue;
+            }
+            if (st.again) {
+              await page.waitForSelector('[data-np-plan="rope"]', { timeout: 6000 });
+              check(
+                (await page.getAttribute('[data-np-plan-last]', 'data-np-plan-last')) === 'slack',
+                `${tag}: the key forged, the plan draws the rope he threw before it, left over at the post`,
+              );
+            }
           } else if (st.order === 'capstone') {
             const k = q(`${n('top')}`);
             const base = q(n('BC'));

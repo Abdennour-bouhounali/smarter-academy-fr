@@ -1,13 +1,10 @@
-// THE FELUCCA'S LEGS of thales-configuration-papillon: two legs keyed by the dock they leave (2, 3), every buoy fair —
-// its right gate computed HERE by the proportion itself —, a fact for every buoy, the numbers the platform's own.
+// THE FELUCCA'S LEGS of thales-configuration-papillon: two legs keyed by the dock they leave (2, 3), every buoy ONE bare
+// calculation (owner, 2026-11-27: « speed calculation questions like: complete: 4/12 = 5/… » — no figure, no point) —
+// its right gate computed HERE from the order's own formula —, a true fact for every buoy, the numbers the platform's
+// own.
 import { describe, it, expect } from 'vitest';
 import { rng } from '../../../../../../common/gameworld/kit/random';
-import {
-  plain,
-  said,
-  trueEqualities,
-  typographyErrors,
-} from '../../../../../../common/gameworld/kit/authoring/test/suites.js';
+import { plain, said, typographyErrors } from '../../../../../../common/gameworld/kit/authoring/test/suites.js';
 import {
   bankNumbers,
   linesWithBoth,
@@ -15,71 +12,90 @@ import {
   storiesOf,
   pairLines,
 } from '../../../../../../common/gameworld/kit/authoring/test/bank.js';
-import { chainHolds, sameRatio } from '../../../../../../common/gameworld/kit/authoring/test/ratios';
 import { GENERATORS, LEG_MIX, LEGS, REDUCE, SPARE, THINK, fairWave, gateOption, isRight, roundOf } from './run';
-import { K, compare, read, write, times, over } from './math';
-import { runFigure } from '../../../../../../common/gameworld/kit/trainerFigure';
+import { K, compare, equal, over, plus, read, times, write } from './math';
 
 const ID = 'thales-configuration-papillon';
 const KINDS = Object.keys(GENERATORS);
-/** Every wave of every kind, over many seeds. */
+const PARAMS = [{}, { big: true }];
+/** Every wave of every kind, at both levels' numbers, over many seeds. */
 const waves = (seeds = 60) =>
   KINDS.flatMap((kind) =>
-    Array.from({ length: seeds }, (_, s) => fairWave(rng((s + 1) * 7919 + kind.length), kind, {})),
+    PARAMS.flatMap((params, l) =>
+      Array.from({ length: seeds }, (_, s) => fairWave(rng((s + 1) * 7919 + kind.length + l * 13), kind, params)),
+    ),
   );
-/** The numbers of a wave's order, read from its formula « OA = 6 \\quad OE = 14 … ». */
-const given = (w) => Object.fromEntries([...w.tex.matchAll(/([A-Z]{2}) = (\d+)/g)].map(([, seg, n]) => [seg, n]));
-/** k written in the order: « \\dfrac{3}{7} ». */
-const kGiven = (w) => {
-  const f = /\\dfrac\{(\d+)\}\{(\d+)\}/.exec(w.tex);
-  return `${f[1]}/${f[2]}`;
+
+/** A formula of numbers only, evaluated exactly HERE: « 4 + 8 », « 12 \\times 5 \\div 4 », « 7{,}5 », « \\dfrac{4}{6} ». */
+function value(t) {
+  const s = String(t).replace(/\{,\}/g, ',').replace(/\\,/g, '').trim();
+  const frac = /^\\dfrac\{([^{}]*)\}\{([^{}]*)\}$/.exec(s);
+  if (frac) return over(value(frac[1]), value(frac[2]));
+  if (s.includes(' + '))
+    return s
+      .split(' + ')
+      .map(value)
+      .reduce((x, y) => plus(x, y));
+  const tokens = s.split(/\s*(\\times|\\div)\s*/);
+  let v = read(tokens[0]);
+  for (let i = 1; i < tokens.length; i += 2)
+    v = tokens[i] === '\\times' ? times(v, tokens[i + 1]) : over(v, tokens[i + 1]);
+  return v;
+}
+/** The two fractions of an order « \\dfrac{a}{b} = \\dfrac{c}{d} », each term as written (a sum, a box). */
+const termsOf = (tex) => {
+  const m = /^\\dfrac\{([^{}]*)\}\{([^{}]*)\} = \\dfrac\{([^{}]*)\}\{([^{}]*)\}$/.exec(tex.replace(/\{,\}/g, ','));
+  return m ? m.slice(1) : null;
 };
 /**
- * The right buoy, computed HERE from what the order shows, by the proportion itself (never by `truthOf`): the value x for
- * which the ratios of the figure are equal.
+ * The right buoy, computed HERE from the order's formula alone (never from the wave's data): the box of a / b = c / d
+ * by a × d = b × c, or the calculation « b × c ÷ a » itself.
  */
 function truth(w) {
-  const g = given(w);
-  switch (w.type) {
-    case 'rapport':
-      return write(times(g.OF, kGiven(w)));
-    case 'longueur':
-      return write(over(times(g.OE, g.OB), g.OA));
-    case 'travers': {
-      const OE = String(Number(g.AE) - Number(g.OA));
-      return write(over(times(OE, g.OB), g.OA));
-    }
-    case 'traversInconnu':
-      return String(Number(g.OB) + Number(write(over(times(g.OE, g.OB), g.OA))));
-    case 'emboite':
-      return write(over(times(Number(g.AM) + Number(g.MB), g.AN), g.AM));
-    default:
-      return null;
-  }
+  const t = termsOf(w.tex);
+  if (!t) return write(value(w.tex));
+  const hole = t.findIndex((x) => x === '\\square');
+  const v = t.map((x) => (x === '\\square' ? null : value(x)));
+  const [a, b, c, d] = v;
+  const solve = [
+    () => over(times(b, c), d),
+    () => over(times(a, d), c),
+    () => over(times(a, d), b),
+    () => over(times(b, c), a),
+  ];
+  return write(solve[hole]());
 }
-/** The right buoy makes the order a PROPORTION of the figure, exactly. */
-function proportion(w, x) {
-  const g = given(w);
-  switch (w.type) {
-    case 'rapport':
-      return sameRatio([x, g.OF], [read(kGiven(w)).n, read(kGiven(w)).d]);
-    case 'longueur':
-      return chainHolds([g.OA, g.OE], [g.OB, x]);
-    case 'travers':
-      return chainHolds([g.OA, String(Number(g.AE) - Number(g.OA))], [g.OB, x]);
-    case 'traversInconnu':
-      return Number(x) > Number(g.OB) && chainHolds([g.OA, g.OE], [g.OB, String(Number(x) - Number(g.OB))]);
-    case 'emboite':
-      return sameRatio([g.AM, String(Number(g.AM) + Number(g.MB))], [g.AN, x]);
-    default:
-      return false;
-  }
+/** The gate x in the box makes the order TRUE: the two fractions equal (or x the calculation's value). */
+function holds(w, x) {
+  const t = termsOf(w.tex);
+  if (!t) return equal(value(w.tex), x);
+  const [a, b, c, d] = t.map((y) => (y === '\\square' ? read(x) : value(y)));
+  return equal(times(a, d), times(b, c));
 }
+/** Every equality of a fact is true: in each formula, every side equals the first. Returns how many. */
+const factsTrue = (line) => {
+  let n = 0;
+  for (const [, f] of String(line).matchAll(/\$([^$]+)\$/g)) {
+    const sides = f.split('=').map((x) => x.trim());
+    if (sides.length < 2) continue;
+    for (const x of sides.slice(1)) expect(equal(value(sides[0]), value(x)), `${line} — ${f}`).toBe(true);
+    n += 1;
+  }
+  return n;
+};
+/** A point's name: a capital letter standing alone or two together (« O », « AB »). */
+const POINT = /\b[A-Z]{1,2}\b|\(|\[[A-Z]/;
+const lettersOf = (t) =>
+  String(t)
+    .replace(/\\[a-z]+/g, '')
+    .replace(/\$/g, ' ');
 
 describe(`${ID} — the felucca’s legs`, () => {
   it('two legs, keyed by the dock they leave (2: river → summit, 3: summit → plateau), four buoys each', () => {
     expect(Object.keys(LEGS)).toEqual(['2', '3']);
     const keyOf = { 2: K.papillon, 3: K.calcul };
+    expect(LEG_MIX[2].map(([k]) => k)).toEqual(['egalite', 'croix']);
+    expect(LEG_MIX[3].map(([k]) => k)).toEqual(['somme', 'decimal']);
     for (const i of [2, 3]) {
       const leg = LEGS[i];
       expect(leg.total).toBe(4);
@@ -89,6 +105,7 @@ describe(`${ID} — the felucca’s legs`, () => {
         expect(r.options).toHaveLength(3);
         expect(r.why).toHaveLength(3);
         expect(r.right).toBeGreaterThanOrEqual(0);
+        expect(r, 'no figure on a buoy (owner, 2026-11-27)').not.toHaveProperty('figure');
       }
       for (const [kind, params] of LEG_MIX[i]) expect(fairWave(rng(5), kind, params).key).toBe(keyOf[i]);
       // every buoy row is its kind's thinking time plus the owner's five seconds ahead (2026-11-25)
@@ -104,14 +121,33 @@ describe(`${ID} — the felucca’s legs`, () => {
     expect(JSON.stringify(Object.values(LEGS).map((l) => l.text))).not.toMatch(/faux|erreur/i);
   });
 
-  it('leg 3 is across the vertex: its orders give or ask a length that passes through O', () => {
-    for (const [kind] of LEG_MIX[3]) {
-      const w = fairWave(rng(9), kind, {});
-      expect(w.say).toMatch(/O est sur \[(AE|BF)\]/);
+  it('a thinking time between 8 and 12 seconds for every kind, the owner’s five seconds after it', () => {
+    expect(Object.keys(THINK).sort()).toEqual([...KINDS].sort());
+    for (const t of Object.values(THINK)) {
+      expect(t).toBeGreaterThanOrEqual(8);
+      expect(t).toBeLessThanOrEqual(12);
     }
+    expect(SPARE).toBe(5);
   });
 
-  it('every buoy: exactly ONE right gate — the one the proportion gives — and no wrong buoy equals it', () => {
+  it('every buoy is ONE bare calculation: a short order, a formula, no point, no figure, the box written □', () => {
+    const seen = new Set();
+    for (const w of waves()) {
+      seen.add(w.type);
+      expect(w, w.tex).not.toHaveProperty('figure');
+      expect(roundOf(w), w.tex).not.toHaveProperty('figure');
+      expect(['Complète', 'Calcule'], w.say).toContain(w.say);
+      expect(w.tex, w.tex).not.toMatch(/\$/);
+      expect(lettersOf(w.tex).trim(), w.tex).not.toMatch(/[A-Za-z]/);
+      if (w.type === 'croix') expect(w.tex).toMatch(/^\d+ \\times \d+ \\div \d+$/);
+      else expect(w.tex.match(/\\square/g), w.tex).toHaveLength(1);
+      if (w.type === 'somme') expect(w.tex, w.tex).toMatch(/\{\d+ \+ \d+\}/);
+      for (const line of roundOf(w).why) expect(lettersOf(line), line).not.toMatch(POINT);
+    }
+    expect([...seen].sort()).toEqual([...KINDS].sort());
+  });
+
+  it('every buoy: exactly ONE right gate — the one the order’s formula gives — and no wrong buoy makes it true', () => {
     const seen = new Set();
     for (const w of waves()) {
       seen.add(w.type);
@@ -122,20 +158,31 @@ describe(`${ID} — the felucca’s legs`, () => {
         tag,
       ).toHaveLength(1);
       const right = w.gates[w.good];
-      expect(write(String(right)), tag).toBe(t);
-      expect(proportion(w, String(right)), tag).toBe(true);
-      const values = w.gates.map((g) => write(String(g)));
+      expect(write(read(String(right))), tag).toBe(t);
+      expect(holds(w, String(right)), tag).toBe(true);
+      const values = w.gates.map((g) => write(read(String(g))));
       expect(new Set(values).size, tag).toBe(3);
       for (const g of w.gates.filter((_, i) => i !== w.good)) {
-        expect(write(String(g)), tag).not.toBe(t);
-        expect(proportion(w, String(g)), tag).toBe(false);
+        expect(write(read(String(g))), tag).not.toBe(t);
+        expect(holds(w, String(g)), tag).toBe(false);
       }
-      for (const g of w.gates) expect(String(g).length, tag).toBeLessThanOrEqual(6);
-      plain(w.say);
-      expect(typographyErrors(w.say), w.say).toEqual([]);
-      expect(w.tex, tag).not.toMatch(/\$/);
+      for (const g of w.gates) {
+        expect(String(g).length, tag).toBeLessThanOrEqual(6);
+        expect(String(g), tag).toMatch(/^\d+(,\d{1,2})?$/);
+        expect(compare(read(String(g)), '0'), tag).toBe(1);
+      }
+      if (w.type === 'decimal') expect(String(right), tag).toMatch(/,/);
+      else for (const g of w.gates) expect(String(g), tag).toMatch(/^\d+$/);
     }
     expect([...seen].sort()).toEqual([...KINDS].sort());
+  });
+
+  it('mental numbers: no number of an order above 72, no product above 999', () => {
+    for (const w of waves()) {
+      for (const n of w.tex.replace(/\{,\}/g, ',').match(/\d+(,\d+)?/g)) {
+        expect(Number(n.replace(',', '.')), w.tex).toBeLessThanOrEqual(72);
+      }
+    }
   });
 
   it('a FACT for every buoy (never « faux »), French, and every equality it writes is true', () => {
@@ -149,8 +196,11 @@ describe(`${ID} — the felucca’s legs`, () => {
         expect(typographyErrors(line), line).toEqual([]);
         // a formula in a fact is read by MathText; the rest writes no fraction « p/q » as text
         expect(line.replace(/\$[^$]*\$/g, ''), line).not.toMatch(/\d\s*\/\s*\d/);
-        checked += trueEqualities(line);
+        checked += factsTrue(line);
       }
+      // the right buoy's fact says the two products are equal; a wrong one's that they differ
+      expect(r.why[w.good]).toMatch(/égaux|quotient/);
+      r.why.forEach((line, i) => i !== w.good && expect(line).toMatch(/différents|pas \$/));
     }
     expect(checked).toBeGreaterThan(400);
   });
@@ -158,52 +208,7 @@ describe(`${ID} — the felucca’s legs`, () => {
   it('a gate is drawn over a real bar when it is a fraction', () => {
     expect(gateOption('4/7')).toEqual({ tex: '\\dfrac{4}{7}' });
     expect(gateOption(21)).toEqual({ t: '21' });
-  });
-});
-
-describe(`${ID} — every buoy carries its FIGURE (owner, 2026-11-25: « a schema that show A B C »)`, () => {
-  /** The two letters of a segment, in order: « AC » for { from: 'C', to: 'A' }. */
-  const ends = (s) => [s.from, s.to].sort().join('');
-  const sorted = (name) => name.split('').sort().join('');
-  it('its letters, its lengths given (across the vertex too), « ? » on the asked one, the chevrons, at 12 px in the panel', () => {
-    const seen = new Set();
-    // many seeds: a fat butterfly fits at no turn of its first angle (`buoyFigure` narrows it)
-    for (const w of waves(300)) {
-      const r = roundOf(w);
-      const tag = `${w.type} ${w.say} ${w.tex}`;
-      seen.add(w.type);
-      const f = r.figure;
-      expect(f, tag).toBeTruthy();
-      // every letter the order names is a point of the figure
-      const letters = new Set(`${w.say} ${w.tex}`.replace(/\\[a-z]+/g, '').match(/[A-Z]/g));
-      for (const l of letters) expect(Object.keys(f.points), tag).toContain(l);
-      // « ? » on the length asked, and on it alone
-      const asked = w.say.match(/[A-Z]{2}/g).at(-1);
-      const unknown = f.segments.filter((s) => s.label === '?' || /= \?$/.test(s.label ?? ''));
-      expect(unknown.map(ends), tag).toEqual([sorted(asked)]);
-      // every length the order gives is written on its segment; a ratio given (« OA / OE = p / q ») stays in the order
-      for (const [, seg, n] of w.tex.matchAll(/([A-Z]{2}) = (\d+)/g)) {
-        const on = f.segments.filter((s) => ends(s) === sorted(seg) && (s.label === n || s.label === `${seg} = ${n}`));
-        expect(on, `${tag} — ${seg}`).toHaveLength(1);
-      }
-      // nothing else written: the lengths given and the one asked
-      expect(
-        f.segments.filter((s) => s.label != null),
-        tag,
-      ).toHaveLength([...w.tex.matchAll(/[A-Z]{2} = \d/g)].length + 1);
-      expect(
-        f.segments.filter((s) => s.arrows),
-        tag,
-      ).toHaveLength(2);
-      const t = runFigure(f);
-      expect(t.fits, tag).toBe(true);
-      expect(t.label, tag).toBeGreaterThanOrEqual(12);
-    }
-    expect([...seen].sort()).toEqual([...KINDS].sort());
-  });
-  it('the legs hand it to the rail (`roundOf`)', () => {
-    for (const i of [2, 3])
-      expect(Object.keys(LEGS[i].round(1, rng(3), 0).figure.points).sort()).toEqual(['A', 'B', 'E', 'F', 'O']);
+    expect(gateOption('7,5')).toEqual({ t: '7,5' });
   });
 });
 
@@ -218,6 +223,33 @@ describe(`${ID} — the numbers of the legs are the platform’s own`, () => {
       expect(q).toBeLessThanOrEqual(9);
       expect(compare(k, '1')).toBe(-1);
       expect(p).toBeGreaterThan(0);
+    }
+  });
+
+  it('the ratio of every fraction an order shows whole is a k of the legs (never one the bank writes)', () => {
+    const ks = new Set(REDUCE.map((k) => write(k)));
+    for (const w of waves()) {
+      const t = /^\\dfrac\{([^{}]*)\}\{([^{}]*)\} = \\dfrac\{([^{}]*)\}\{([^{}]*)\}$/.exec(w.tex);
+      const known = t
+        ? [
+            [t[1], t[2]],
+            [t[3], t[4]],
+          ].filter((f) => !f.join('').includes('square'))
+        : [];
+      for (const [n, d] of known) {
+        const k = write(over(value(n), value(d)));
+        expect(ks.has(k), `${w.tex}: ${k}`).toBe(true);
+      }
+    }
+  });
+
+  it('`pairs` holds every pair of whole numbers the order shows (the check below sees them all)', () => {
+    for (const w of waves()) {
+      const shown = [...new Set((w.tex.replace(/\d+\{,\}\d+/g, ' ').match(/\d+/g) ?? []).map(Number))];
+      const listed = new Set(w.pairs.map(([a, b]) => [a, b].sort((x, y) => x - y).join(';')));
+      for (let i = 0; i < shown.length; i += 1)
+        for (let j = i + 1; j < shown.length; j += 1)
+          expect(listed.has([shown[i], shown[j]].sort((x, y) => x - y).join(';')), w.tex).toBe(true);
     }
   });
 

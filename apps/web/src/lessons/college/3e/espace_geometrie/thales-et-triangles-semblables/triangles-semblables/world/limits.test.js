@@ -6,7 +6,6 @@ import { describeLimits, PROVEN_LIMITS } from '../../../../../../common/gameworl
 import { WORLD_TEXT, withStory } from '../../../../../../common/gameworld/nilePyramids/strings';
 import { SCRIPT } from '../board/script';
 import { rng } from '../../../../../../common/gameworld/kit/random';
-import { GENERATORS as PAPILLON_KINDS, fairWave as papillonWave } from '../../thales-configuration-papillon/world/run';
 import { FORGES } from './forges';
 import { KEYS } from './journey';
 import { KNOWLEDGE } from './knowledge';
@@ -49,9 +48,12 @@ describe(`${ID} — its own limits`, () => {
  * THE RAIL'S PROMPT is ONE line (kit/GateRunHud.jsx › `data-gr-ask`: the order, then its formula): at 1366 × 768 the
  * walk saw « ABC et DEF ont la même forme. Leurs plus petits côtés sont AB et DE : de ABC à DEF, par quel nombre
  * multiplie-t-on les côtés ? » run off both edges. Its width in characters: the order's, a space, and the formula as
- * KaTeX draws it (spaces ignored, `\\quad` ≈ 2, a relation « = » with its spacing ≈ 2, `^\\circ` = 1). The LIMIT is
- * the widest prompt of thales-configuration-papillon (its walk passed at 1366 × 768): measured, never typed in.
+ * KaTeX draws it (spaces ignored, `\\quad` ≈ 2, a relation « = » with its spacing ≈ 2, `^\\circ` = 1). The LIMIT:
+ * 40 characters — the prompts of thales-configuration-papillon were all wider than that when its walk passed at
+ * 1366 × 768 (this test then measured them: « > 40 »); since 2026-11-27 a buoy is one bare calculation (owner) and both
+ * lessons stand far under it.
  */
+const RAIL_PROMPT = 40;
 const texWidth = (t) =>
   [
     ...String(t ?? '')
@@ -65,17 +67,9 @@ const texWidth = (t) =>
       .replace(/[{}]/g, ''),
   ].length;
 const promptWidth = (w) => [...w.say].length + 1 + texWidth(w.tex);
-const widest = (kinds, wave) =>
-  Math.max(
-    ...Object.keys(kinds).flatMap((kind) =>
-      Array.from({ length: 120 }, (_, s) => promptWidth(wave(rng((s + 1) * 7919 + kind.length), kind, {}))),
-    ),
-  );
-
 describe(`${ID} — the rail’s prompt fits its ONE line`, () => {
-  it('every buoy’s order and formula are no wider than the widest prompt of thales-configuration-papillon', () => {
-    const limit = widest(PAPILLON_KINDS, papillonWave);
-    expect(limit).toBeGreaterThan(40);
+  it('every buoy’s order and formula are no wider than the width a walk proved', () => {
+    const limit = RAIL_PROMPT;
     for (const kind of Object.keys(GENERATORS))
       for (let s = 0; s < 120; s += 1) {
         const w = fairWave(rng((s + 1) * 7919 + kind.length), kind, {});

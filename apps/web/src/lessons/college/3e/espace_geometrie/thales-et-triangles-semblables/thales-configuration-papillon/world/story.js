@@ -4,7 +4,8 @@
  * `nilePyramids/logic.js`); the lesson gives what the world asks of it (the header of `Game.js`): the docks it plays,
  * the forge of each stage's table, the felucca's legs, the card of the final mission, the box at noon, its sentences.
  *
- *   La largeur du Nil              AS, SE, ER until S hides F; the ferry rope cut before crossing → forge K1 `papillon`
+ *   La largeur du Nil              AS, SE at the rope; the geometer's plan: R where the string over S arrives on F, the
+ *                                  ferry rope predicted on the drawn [AF] → forge K1 `papillon` → the rope cut again
  *   Le pyramidion                  « chaque longueur × [k] » to the stone-cutter (his 4e reduction, no forge of its
  *                                  own): the register gives the pyramid's base 99 m and the platform 2,75 m itself —
  *                                  playable without the workshop, which is not on France's map (gate A, F2) → forge K2
