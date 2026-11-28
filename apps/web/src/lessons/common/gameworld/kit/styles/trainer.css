@@ -16,9 +16,9 @@
   inset-inline-end: 8px;
   padding: 0 0.3rem;
   border-radius: 999px;
-  background: #0d1a45;
-  border: 1px solid #fbbf24;
-  color: #fbbf24;
+  background: rgb(var(--w-ground));
+  border: 1px solid rgb(var(--w-gold-ink));
+  color: rgb(var(--w-gold-ink));
   font-size: 0.6rem;
   font-style: normal;
   line-height: 1.5;
@@ -45,11 +45,11 @@
   font-weight: 800;
 }
 .di-trainer__badge.is-game {
-  background: #7dfcff;
+  background: rgb(var(--w-cyan));
   color: #06202b;
 }
 .di-trainer__badge.is-exam {
-  background: #fff;
+  background: rgb(var(--w-paper));
   color: #1e293b;
 }
 .di-trainer__dots {
@@ -61,25 +61,25 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(125, 252, 255, 0.35);
+  background: rgb(var(--w-cyan-ink) / 0.35);
   border: 2px solid transparent;
 }
 .di-trainer__dots i.is-exam {
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgb(var(--w-ink) / 0.4);
 }
 .di-trainer__dots i.is-now {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   transform: scale(1.25);
 }
 .di-trainer__dots i.is-ok {
-  background: #34d399;
+  background: rgb(var(--w-green));
 }
 .di-trainer__dots i.is-late {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
 }
 .di-trainer__dots i.is-ko {
-  background: #fb923c;
+  background: rgb(var(--w-orange));
 }
 .di-trainer__best {
   display: inline-flex;
@@ -94,8 +94,8 @@
   gap: 1rem;
   padding: 1.2rem 1rem;
   border-radius: 1.3rem;
-  background: radial-gradient(ellipse at 50% 0%, rgba(59, 91, 190, 0.55), rgba(6, 14, 38, 0.6));
-  border: 1.5px solid rgba(125, 252, 255, 0.4);
+  background: radial-gradient(ellipse at 50% 0%, rgb(var(--w-ground) / 0.55), rgb(var(--w-ground) / 0.6));
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.4);
 }
 .di-tap__say {
   margin: 0;
@@ -114,10 +114,10 @@
   width: 5.2rem;
   height: 5.6rem;
   border-radius: 2.6rem 2.6rem 0.5rem 0.5rem;
-  border: 3px solid #6f9dff;
+  border: 3px solid rgb(var(--w-soft));
   border-bottom-width: 7px;
-  background: rgba(111, 157, 255, 0.18);
-  color: #fff;
+  background: rgb(var(--w-soft) / 0.18);
+  color: rgb(var(--w-ink));
   font:
     900 2rem 'Inter',
     sans-serif;
@@ -128,7 +128,7 @@
 }
 .di-tap__gates button:hover:not(:disabled) {
   transform: translateY(-4px);
-  background: rgba(111, 157, 255, 0.38);
+  background: rgb(var(--w-soft) / 0.38);
 }
 .di-tap__gates button:disabled {
   opacity: 0.55;
@@ -155,8 +155,8 @@
 .di-tf button.is-on,
 .di-tf button:hover:not(:disabled) {
   opacity: 1;
-  background: #fbbf24;
-  border-color: #fbbf24;
+  background: rgb(var(--w-gold));
+  border-color: rgb(var(--w-gold-ink));
   color: #3b2a06;
 }
 /* the exam look: a sheet of paper */
@@ -183,7 +183,7 @@
   padding: 0 0.5rem;
   border-radius: 0.3rem;
   background: #1e293b;
-  color: #fff;
+  color: #ffffff;
   font-size: max(var(--di-min-font, 12px), 0.9rem);
 }
 .di-sheet__statement {
@@ -206,7 +206,7 @@
   padding: 0 0.5rem;
   border-radius: 0.5rem;
   border: 2px solid #1e293b;
-  background: #fff;
+  background: rgb(var(--w-paper));
   color: #1e293b;
   font:
     800 1.05rem 'Inter',
@@ -215,14 +215,14 @@
 .di-root .di-num--tr {
   height: 2.5rem;
   border: 2px solid #1e293b;
-  background: #fff;
+  background: rgb(var(--w-paper));
   color: #1e293b;
   font-size: 1.35rem;
   border-radius: 0.5rem;
 }
 .di-root .di-num--tr:focus {
   background: #fff8db;
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.5);
+  box-shadow: 0 0 0 3px rgb(var(--w-gold-ink) / 0.5);
 }
 /* ───────── a FRACTION in its own shape: the numerator over a real bar over the denominator ─────────
    THE ONE PLACE of this look in the kit (2026-11-20): the trainer's form (`Trainer.jsx › FormLines`, a token
@@ -320,7 +320,7 @@
 .kit-choice > button:hover:not(:disabled),
 .kit-choice > button:focus-visible {
   opacity: 1;
-  outline: 3px solid rgba(251, 191, 36, 0.6);
+  outline: 3px solid rgb(var(--w-gold-ink) / 0.6);
   outline-offset: 1px;
 }
 /* the picked one is filled: ink on the white sheet; a dark panel sets --kit-choice-on and --kit-choice-on-text */
@@ -329,7 +329,7 @@
   background: var(--kit-choice-on, #1e293b);
   box-shadow: none;
   border-color: var(--kit-choice-on, #1e293b);
-  color: var(--kit-choice-on-text, #fff);
+  color: var(--kit-choice-on-text, rgb(var(--w-ink)));
 }
 .kit-choice > button:disabled {
   cursor: default;
@@ -354,8 +354,8 @@
 .di-sheet__reasons button {
   padding: 0.25rem 0.7rem;
   border-radius: 0.5rem;
-  border: 1.5px solid #94a3b8;
-  background: #fff;
+  border: 1.5px solid rgb(var(--w-soft));
+  background: rgb(var(--w-paper));
   color: #1e293b;
   font:
     600 0.95rem/1.7 'Inter',
@@ -365,7 +365,7 @@
 }
 .di-sheet__reasons button.is-on {
   border-color: #1e293b;
-  background: #fde68a;
+  background: rgb(var(--w-gold));
 }
 .di-sheet .di-tf button {
   border-color: #1e293b;
@@ -377,7 +377,7 @@
   align-self: center;
   min-height: 2.5rem;
   background: #1e293b;
-  color: #fff;
+  color: #ffffff;
   border: 0;
 }
 .di-btn.di-sheet__check,
@@ -404,13 +404,13 @@
   background: rgba(22, 163, 74, 0.9);
 }
 .di-trainer__fb.is-hint {
-  background: rgba(251, 191, 36, 0.16);
-  border: 1.5px solid #fbbf24;
-  color: #fde68a;
+  background: rgb(var(--w-gold-ink) / 0.16);
+  border: 1.5px solid rgb(var(--w-gold-ink));
+  color: rgb(var(--w-gold-ink));
 }
 .di-trainer__fb.is-fix {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1.5px solid #fb923c;
+  background: rgb(var(--w-ink) / 0.1);
+  border: 1.5px solid rgb(var(--w-orange-ink));
 }
 .di-trainer__next {
   align-self: center;
@@ -459,7 +459,7 @@
   flex: none;
   padding: 0.2rem 0.4rem;
   border-radius: 0.9rem;
-  background: #fff;
+  background: rgb(var(--w-paper));
 }
 .di-tr-figure figure,
 .di-tr-figure svg {

@@ -1019,7 +1019,9 @@ Nothing in the game world scrolls — not the page, not a card, not a panel — 
 >   INK (text, border, stroke, a tint under 50 %) is dark on a light ground; a SHAPE (an opaque fill) stays bright, and
 >   dark text on a bright shape stays dark. Night values: `.di-root` (kit/styles/world.css); light values: `.rf-root`
 >   and its skins (kit/ruleForge.css « THE SHEET »), `.lk-root--inline` (launchKit.css), `.ll-root` (the lesson lab, ONE
->   light set for every world — lessonLab.css). A number coloured inside a
+>   light set for every world — lessonLab.css), `.di-mapcard` and `.di-page` (the training space and the knowledge page,
+>   sheets of the world too since 2026-11-28 — `kit/styles/sheets.css`, keyed by the shell's `data-gameworld`, which the
+>   tools opened with no world carry as well). A number coloured inside a
 >   formula (`\textcolor{#fbbf24}{…}`) is re-inked by `.rf-root .katex [style*=…]`. A new experiment uses the palette;
 >   the brand blue of shapes (`#2f7df6`, `#3b5bdb`) is written as it is. A world part drawn on the sheet (its `Line`)
 >   uses ink colours. The islands' workshop notebook (`Workshop.jsx`, a `.rf-root`) carries `data-rf-skin="isles"`.

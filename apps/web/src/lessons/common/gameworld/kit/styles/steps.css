@@ -3,9 +3,9 @@
   margin: 0;
   padding: 0.35rem 0.9rem;
   border-radius: 1rem;
-  background: rgba(125, 252, 255, 0.12);
-  border: 1.5px dashed #7dfcff;
-  color: #e6fdff;
+  background: rgb(var(--w-cyan-ink) / 0.12);
+  border: 1.5px dashed rgb(var(--w-cyan-ink));
+  color: rgb(var(--w-ink));
   font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.75;
@@ -13,7 +13,7 @@
   max-width: 100%;
 }
 .di-tip b {
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
   margin-inline-end: 0.2rem;
   white-space: nowrap;
 }
@@ -86,8 +86,8 @@
 .di-hist button {
   padding: 0.05rem 0.65rem;
   border-radius: 999px;
-  border: 1.5px solid #34d399;
-  background: rgba(52, 211, 153, 0.14);
+  border: 1.5px solid rgb(var(--w-green-ink));
+  background: rgb(var(--w-green-ink) / 0.14);
   color: #d1fae5;
   font:
     700 0.76rem 'Inter',
@@ -95,19 +95,19 @@
   cursor: pointer;
 }
 .di-hist button.is-late {
-  border-color: #fbbf24;
-  background: rgba(251, 191, 36, 0.14);
-  color: #fde68a;
+  border-color: rgb(var(--w-gold-ink));
+  background: rgb(var(--w-gold-ink) / 0.14);
+  color: rgb(var(--w-gold-ink));
 }
 .di-hist button.is-on {
-  background: #fff;
+  background: rgb(var(--w-paper));
   color: #10203f;
-  border-color: #fff;
+  border-color: rgb(var(--w-ink));
 }
 .di-hist button.is-now {
   margin-inline-start: auto;
-  border-color: #7dfcff;
-  background: #7dfcff;
+  border-color: rgb(var(--w-cyan-ink));
+  background: rgb(var(--w-cyan));
   color: #06202b;
 }
 .di-review {
@@ -117,8 +117,8 @@
   width: 100%;
   padding: 0.6rem 0.9rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1.5px dashed rgba(255, 255, 255, 0.4);
+  background: rgb(var(--w-ink) / 0.07);
+  border: 1.5px dashed rgb(var(--w-ink) / 0.4);
   text-align: start;
 }
 .di-review__head {
@@ -131,7 +131,7 @@
 .di-review__head b {
   padding: 0 0.6rem;
   border-radius: 999px;
-  background: #fff;
+  background: rgb(var(--w-paper));
   color: #10203f;
 }
 .di-review__head span {
@@ -161,11 +161,11 @@
   margin-inline-end: 0.2rem;
 }
 .di-review__a.is-ok > b {
-  background: #34d399;
+  background: rgb(var(--w-green));
   color: #06261a;
 }
 .di-review__a.is-ko > b {
-  background: #fb923c;
+  background: rgb(var(--w-orange));
   color: #2b1404;
 }
 .di-review__a small {
@@ -187,19 +187,19 @@
 .di-review__ans .is-mine {
   padding: 0 0.45rem;
   border-radius: 0.4rem;
-  background: #fde68a;
+  background: rgb(var(--w-gold));
   color: #3b2a06;
 }
 .di-review__fix {
   margin: 0;
   padding: 0.3rem 0.7rem;
   border-radius: 0.8rem;
-  background: rgba(125, 252, 255, 0.1);
+  background: rgb(var(--w-cyan-ink) / 0.1);
   font-size: 0.9rem;
   line-height: 1.7;
 }
 .di-review__fix b {
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
   margin-inline-end: 0.3rem;
 }
 .di-review .di-btn {
@@ -212,7 +212,7 @@
   height: 14px;
   padding: 0;
   border-radius: 50%;
-  background: rgba(125, 252, 255, 0.35);
+  background: rgb(var(--w-cyan-ink) / 0.35);
   border: 2px solid transparent;
   cursor: pointer;
 }
@@ -221,22 +221,22 @@
 }
 .di-trainer__dots button.is-exam {
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgb(var(--w-ink) / 0.4);
 }
 .di-trainer__dots button.is-now {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   transform: scale(1.25);
 }
 .di-trainer__dots button.is-rev {
-  border-color: #fff;
+  border-color: rgb(var(--w-ink));
   transform: scale(1.35);
 }
 .di-trainer__dots button.is-ok {
-  background: #34d399;
+  background: rgb(var(--w-green));
 }
 .di-trainer__dots button.is-late {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
 }
 .di-trainer__dots button.is-ko {
-  background: #fb923c;
+  background: rgb(var(--w-orange));
 }

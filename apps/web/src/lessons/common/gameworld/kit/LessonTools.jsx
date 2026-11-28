@@ -24,6 +24,7 @@ import { Promotion, ProgressPage } from './Spaces';
 import { ExitTo } from './parts';
 import { Tablet } from './Tablet';
 import PracticeHub from './PracticeHub';
+import { lessonPackFlags } from '../../../registry';
 import './examSitting.css';
 import './styles';
 
@@ -118,7 +119,7 @@ export default function LessonTools({ tool, lesson, config, basePath, exitTo, on
   }, []);
 
   return createPortal(
-    <div className="di-root di-root--tools" data-lesson-tools={tool}>
+    <div className="di-root di-root--tools" data-lesson-tools={tool} data-gameworld={lessonPackFlags(config.id).world}>
       {game && (
         <LessonProvider lesson={lesson}>
           <ExitTo.Provider value={{ to: exitTo, label: KT.hud.exit }}>

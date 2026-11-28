@@ -15,4 +15,5 @@ import './steps.css'; // « Astuce », what is known at this step, the earlier s
 import './knowledgeJourney.css'; // « fiche de connaissances »: the discovery journey
 import './fit.css'; // no scrolling anywhere: every panel fits its content (Fit.jsx)
 import './spaces.css'; // the two practice spaces, the ladder of the exam, the promotion, « Ma progression »
+import './sheets.css'; // the training space and the knowledge page as sheets of the world: the light values of the palette
 import './phone.css'; // a phone held sideways — always last

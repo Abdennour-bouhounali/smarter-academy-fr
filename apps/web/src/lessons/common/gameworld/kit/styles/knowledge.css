@@ -7,8 +7,13 @@
   flex-direction: column;
   gap: 0.7rem;
   padding: 1rem 1.2rem 1.1rem;
-  background: radial-gradient(ellipse at 30% 0%, #1c3a8a 0%, #0b1740 45%, #060d26 100%);
-  color: #f4f8ff;
+  background: radial-gradient(
+    ellipse at 30% 0%,
+    rgb(var(--w-ground)) 0%,
+    rgb(var(--w-ground)) 45%,
+    rgb(var(--w-ground)) 100%
+  );
+  color: rgb(var(--w-ink));
   animation: di-fade 0.3s;
   user-select: text;
 }
@@ -18,10 +23,13 @@
   inset: 0;
   pointer-events: none;
   opacity: 0.5;
-  background-image: radial-gradient(1.5px 1.5px at 12% 22%, #fff, transparent),
-    radial-gradient(1px 1px at 37% 71%, #fff, transparent), radial-gradient(1.5px 1.5px at 64% 14%, #fff, transparent),
-    radial-gradient(1px 1px at 83% 58%, #fff, transparent), radial-gradient(1px 1px at 52% 88%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 91% 9%, #fff, transparent), radial-gradient(1px 1px at 6% 80%, #fff, transparent);
+  background-image: radial-gradient(1.5px 1.5px at 12% 22%, rgb(var(--w-paper)), transparent),
+    radial-gradient(1px 1px at 37% 71%, rgb(var(--w-paper)), transparent),
+    radial-gradient(1.5px 1.5px at 64% 14%, rgb(var(--w-paper)), transparent),
+    radial-gradient(1px 1px at 83% 58%, rgb(var(--w-paper)), transparent),
+    radial-gradient(1px 1px at 52% 88%, rgb(var(--w-paper)), transparent),
+    radial-gradient(1.5px 1.5px at 91% 9%, rgb(var(--w-paper)), transparent),
+    radial-gradient(1px 1px at 6% 80%, rgb(var(--w-paper)), transparent);
 }
 .di-page__head {
   position: relative;
@@ -44,8 +52,8 @@
   opacity: 0.8;
 }
 .di-pill--gold {
-  border-color: #fbbf24;
-  color: #fde68a;
+  border-color: rgb(var(--w-gold-ink));
+  color: rgb(var(--w-gold-ink));
 }
 .di-page__body {
   position: relative;
@@ -58,8 +66,8 @@
 .di-kmap {
   position: relative;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgb(var(--w-ink) / 0.035);
+  border: 1px solid rgb(var(--w-ink) / 0.13);
   overflow: hidden;
 }
 /* everything the map draws sits in ONE layer, so the whole map can be scaled at once (see « is-training ») */
@@ -74,7 +82,7 @@
   height: 100%;
 }
 .di-kmap line {
-  stroke: rgba(255, 255, 255, 0.16);
+  stroke: rgb(var(--w-ink) / 0.16);
   stroke-width: 2.5;
   stroke-linecap: round;
 }
@@ -82,18 +90,18 @@
   stroke-dasharray: 5 9;
 }
 .di-kmap line.is-lit {
-  stroke: rgba(125, 252, 255, 0.75);
+  stroke: rgb(var(--w-cyan-ink) / 0.75);
 }
 .di-kmap__edge {
   position: absolute;
   transform: translate(-50%, -50%);
   padding: 0 0.5rem;
   border-radius: 999px;
-  background: #0d1a45;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgb(var(--w-ground));
+  border: 1px solid rgb(var(--w-ink) / 0.16);
   font-size: 0.7rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: rgb(var(--w-ink));
   white-space: nowrap;
   pointer-events: none;
 }
@@ -109,9 +117,9 @@
   max-width: 12.5rem;
   padding: 0.32rem 0.7rem 0.32rem 0.45rem;
   border-radius: 999px;
-  border: 2px solid rgba(125, 252, 255, 0.55);
-  background: linear-gradient(#22408f, #142a66);
-  color: #fff;
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.55);
+  background: linear-gradient(rgb(var(--w-ground)), rgb(var(--w-ground)));
+  color: rgb(var(--w-ink));
   font-family: inherit;
   cursor: pointer;
   text-align: start;
@@ -130,7 +138,7 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgb(var(--w-ink) / 0.14);
   font-size: 1.05rem;
 }
 .di-knode__text {
@@ -153,29 +161,29 @@
   border-radius: 1.4rem;
 }
 .di-knode--guide {
-  border-color: rgba(167, 243, 208, 0.6);
-  background: linear-gradient(#1f5c5a, #153f47);
+  border-color: rgb(var(--w-green-ink) / 0.6);
+  background: linear-gradient(rgb(var(--w-cyan-ink) / 0.14), rgb(var(--w-ground)));
 }
 .di-knode--mistake {
-  border-color: rgba(251, 146, 60, 0.8);
-  background: linear-gradient(#7c3a1d, #4c2413);
+  border-color: rgb(var(--w-orange-ink) / 0.8);
+  background: linear-gradient(rgb(var(--w-orange-ink) / 0.14), rgb(var(--w-orange-ink) / 0.14));
 }
 .di-knode.is-locked {
   border-style: dashed;
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.05);
-  color: #94a3b8;
+  border-color: rgb(var(--w-ink) / 0.25);
+  background: rgb(var(--w-ink) / 0.05);
+  color: rgb(var(--w-soft));
   box-shadow: none;
 }
 .di-knode.is-sel {
   box-shadow:
-    0 0 0 4px rgba(251, 191, 36, 0.55),
-    0 0 26px rgba(251, 191, 36, 0.6);
-  border-color: #fbbf24;
+    0 0 0 4px rgb(var(--w-gold-ink) / 0.55),
+    0 0 26px rgb(var(--w-gold-ink) / 0.6);
+  border-color: rgb(var(--w-gold-ink));
 }
 .di-knode.is-gold {
-  border-color: #fbbf24;
-  background: linear-gradient(#9a6a12, #5b3a06);
+  border-color: rgb(var(--w-gold-ink));
+  background: linear-gradient(#9a6a12, rgb(var(--w-gold-ink) / 0.14));
 }
 .di-knode__tick {
   position: absolute;
@@ -186,11 +194,11 @@
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
-  background: #34d399;
+  background: rgb(var(--w-green));
   color: #06261a;
 }
 .di-knode.is-gold .di-knode__tick {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
   color: #3b2a06;
 }
 /* the legend stands in the one corner no card uses (top, left), one family per line: at the bottom it ran over the
@@ -204,7 +212,7 @@
   gap: 0.22rem;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: rgb(var(--w-ink));
 }
 .di-kmap__legend span {
   display: inline-flex;
@@ -215,7 +223,7 @@
   width: 0.7rem;
   height: 0.7rem;
   border-radius: 50%;
-  background: #2b55c0;
+  background: rgb(var(--w-ground));
 }
 .di-kmap__legend .is-guide i {
   background: #2b8a80;
@@ -230,14 +238,14 @@
   min-height: 0;
   padding: 1rem 1.1rem;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1.5px solid rgba(125, 252, 255, 0.35);
+  background: rgb(var(--w-ink) / 0.07);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.35);
 }
 .di-kpanel--mistake {
-  border-color: rgba(251, 146, 60, 0.7);
+  border-color: rgb(var(--w-orange-ink) / 0.7);
 }
 .di-kpanel--guide {
-  border-color: rgba(167, 243, 208, 0.5);
+  border-color: rgb(var(--w-green-ink) / 0.5);
 }
 .di-kpanel__head {
   display: flex;
@@ -251,13 +259,13 @@
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(var(--w-ink) / 0.1);
   font-size: 1.8rem;
 }
 .di-kpanel__head small {
   font-size: 0.78rem;
   font-weight: 800;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .di-kpanel__head h3 {
   margin: 0;
@@ -289,14 +297,14 @@
   border: 0;
   border-radius: 0.7rem;
   background: none;
-  color: #cbd5e1;
+  color: rgb(var(--w-ink));
   font:
     800 0.88rem 'Inter',
     sans-serif;
   cursor: pointer;
 }
 .di-tabs button.is-on {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
   color: #3b2a06;
 }
 .di-ctx p,
@@ -324,8 +332,8 @@
 .di-ctx__note {
   padding: 0.5rem 0.8rem;
   border-radius: 0.9rem;
-  background: rgba(125, 252, 255, 0.08);
-  border-inline-start: 4px solid #7dfcff;
+  background: rgb(var(--w-cyan-ink) / 0.08);
+  border-inline-start: 4px solid rgb(var(--w-cyan-ink));
   font-weight: 600;
 }
 .di-parts {
@@ -335,7 +343,7 @@
 .di-parts > div {
   padding: 0.55rem 0.8rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgb(var(--w-ink) / 0.06);
 }
 .di-parts small {
   font-size: max(var(--di-min-font, 12px), 0.74rem);
@@ -346,19 +354,19 @@
   margin: 0;
 }
 .di-parts .is-wrong {
-  border-inline-start: 4px solid #fb923c;
+  border-inline-start: 4px solid rgb(var(--w-orange-ink));
 }
 .di-parts .is-wrong small {
-  color: #fdba74;
+  color: rgb(var(--w-orange-ink));
 }
 .di-parts .is-why {
-  border-inline-start: 4px solid #7dfcff;
+  border-inline-start: 4px solid rgb(var(--w-cyan-ink));
 }
 .di-parts .is-right {
-  border-inline-start: 4px solid #34d399;
+  border-inline-start: 4px solid rgb(var(--w-green-ink));
 }
 .di-parts .is-right small {
-  color: #6ee7b7;
+  color: rgb(var(--w-green-ink));
 }
 .di-memo {
   margin: 0;
@@ -368,12 +376,12 @@
 .di-memo > div {
   padding: 0.45rem 0.8rem;
   border-radius: 0.9rem;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgb(var(--w-ink) / 0.06);
 }
 .di-memo dt {
   font-size: max(var(--di-min-font, 12px), 0.74rem);
   font-weight: 800;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .di-memo dd {
   margin: 0;
@@ -386,13 +394,13 @@
   text-align: center;
 }
 .di-memo .is-trap {
-  background: rgba(251, 146, 60, 0.12);
+  background: rgb(var(--w-orange-ink) / 0.12);
 }
 .di-memo .is-trap dt {
-  color: #fdba74;
+  color: rgb(var(--w-orange-ink));
 }
 .di-memo .is-exam dt {
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .di-quiz {
   display: grid;
@@ -410,9 +418,9 @@
 .di-quiz__q button {
   padding: 0.4rem 0.7rem;
   border-radius: 0.8rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  border: 1.5px solid rgb(var(--w-ink) / 0.22);
+  background: rgb(var(--w-ink) / 0.05);
+  color: rgb(var(--w-ink));
   font:
     600 0.95rem/1.6 'Inter',
     sans-serif;
@@ -420,16 +428,16 @@
   cursor: pointer;
 }
 .di-quiz__q button.is-on {
-  border-color: #7dfcff;
-  background: rgba(125, 252, 255, 0.16);
+  border-color: rgb(var(--w-cyan-ink));
+  background: rgb(var(--w-cyan-ink) / 0.16);
 }
 .di-quiz__q button.is-ok {
-  border-color: #34d399;
-  background: rgba(52, 211, 153, 0.2);
+  border-color: rgb(var(--w-green-ink));
+  background: rgb(var(--w-green-ink) / 0.2);
 }
 .di-quiz__q button.is-ko {
-  border-color: #fb923c;
-  background: rgba(251, 146, 60, 0.16);
+  border-color: rgb(var(--w-orange-ink));
+  background: rgb(var(--w-orange-ink) / 0.16);
 }
 .di-quiz__gold {
   display: flex;
@@ -439,8 +447,8 @@
   margin: 0;
   padding: 0.4rem;
   border-radius: 0.9rem;
-  background: rgba(251, 191, 36, 0.18);
-  color: #fde68a;
+  background: rgb(var(--w-gold-ink) / 0.18);
+  color: rgb(var(--w-gold-ink));
   font-weight: 800;
 }
 .di-title__doors {
