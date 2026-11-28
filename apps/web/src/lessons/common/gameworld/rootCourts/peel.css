@@ -34,15 +34,15 @@
   width: 0.7rem;
   height: 0.7rem;
   border-radius: 50%;
-  border: 2px solid #9fd8ff;
+  border: 2px solid rgb(var(--w-soft));
 }
 .rq-iq-frame .rq-pl__dot.is-now {
-  background: #7dfcff;
-  border-color: #7dfcff;
+  background: rgb(var(--w-cyan));
+  border-color: rgb(var(--w-cyan-ink));
 }
 .rq-iq-frame .rq-pl__dot.is-done {
-  background: #8dffb0;
-  border-color: #8dffb0;
+  background: rgb(var(--w-green));
+  border-color: rgb(var(--w-green-ink));
 }
 
 /* a number: a true minus, a fraction stacked over a real bar */
@@ -81,8 +81,8 @@
   justify-items: center;
   gap: 0.35rem;
   border-radius: 1rem;
-  background: rgba(125, 252, 255, 0.05);
-  border: 1.5px solid rgba(159, 216, 255, 0.16);
+  background: rgb(var(--w-cyan-ink) / 0.05);
+  border: 1.5px solid rgb(var(--w-soft) / 0.16);
   overflow: hidden;
 }
 .rq-iq-frame .rq-pl__group {
@@ -127,7 +127,7 @@
   display: block;
 }
 .rq-iq-frame .rq-pl__tile {
-  fill: rgba(147, 197, 253, 0.32);
+  fill: rgb(var(--w-soft) / 0.32);
 }
 .rq-iq-frame .rq-pl__floor {
   fill: rgba(59, 130, 246, 0.18);
@@ -137,7 +137,7 @@
 }
 .rq-iq-frame .rq-pl__rim {
   fill: none;
-  stroke: #93c5fd;
+  stroke: rgb(var(--w-soft));
   stroke-width: 3;
 }
 .rq-iq-frame .rq-pl__rim.is-ghost {
@@ -146,12 +146,12 @@
   opacity: 0.7;
 }
 .rq-iq-frame .rq-pl__cut {
-  stroke: #93c5fd;
+  stroke: rgb(var(--w-soft));
   stroke-width: 1.5;
   stroke-dasharray: 3 3;
 }
 .rq-iq-frame .rq-pl__post {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan));
 }
 .rq-iq-frame .rq-pl__pile {
   display: grid;
@@ -163,13 +163,13 @@
   height: 3.1rem;
 }
 .rq-iq-frame .rq-pl__pile.is-added .rq-pl__piletile {
-  fill: rgba(251, 191, 36, 0.55);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold) / 0.55);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2;
 }
 .rq-iq-frame .rq-pl__pile.is-taken .rq-pl__piletile {
   fill: none;
-  stroke: #a78bfa;
+  stroke: rgb(var(--w-violet-ink));
   stroke-width: 2.5;
   stroke-dasharray: 4 3;
 }
@@ -181,27 +181,27 @@
   font-weight: 900;
 }
 .rq-iq-frame .rq-pl__pile.is-added .rq-pl__pilenum {
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .rq-iq-frame .rq-pl__pile.is-taken .rq-pl__pilenum {
-  color: #ddd6fe;
+  color: rgb(var(--w-violet-ink));
 }
 .rq-iq-frame .rq-pl__say {
   font-size: 1.12rem;
   font-weight: 800;
   line-height: 1.5;
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
   text-align: center;
   padding: 0 0.8rem;
 }
 .rq-iq-frame .rq-pl__tex {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #c9ffd9;
+  color: rgb(var(--w-green-ink));
   padding: 0.1rem 0.9rem;
   border-radius: 0.7rem;
-  border: 1.5px solid rgba(141, 255, 176, 0.5);
-  background: rgba(141, 255, 176, 0.1);
+  border: 1.5px solid rgb(var(--w-green-ink) / 0.5);
+  background: rgb(var(--w-green-ink) / 0.1);
 }
 
 /* the world does a peel: the courts part or join, the pile goes back or comes out */
@@ -254,17 +254,17 @@
   height: 7.9rem;
 }
 .rq-iq-frame .rq-pl__ground {
-  stroke: rgba(159, 216, 255, 0.5);
+  stroke: rgb(var(--w-soft) / 0.5);
   stroke-width: 2;
 }
 .rq-iq-frame .rq-pl__twincourt {
   fill: rgba(59, 130, 246, 0.16);
-  stroke: #93c5fd;
+  stroke: rgb(var(--w-soft));
   stroke-width: 3;
 }
 .rq-iq-frame .rq-pl__slab {
-  fill: rgba(141, 255, 176, 0.35);
-  stroke: #8dffb0;
+  fill: rgb(var(--w-green-ink) / 0.35);
+  stroke: rgb(var(--w-green-ink));
   stroke-width: 3;
   transition: opacity 0.9s ease-out;
 }
@@ -272,19 +272,19 @@
   animation: rq-pl-lower 1.1s ease-out;
 }
 .rq-iq-frame .rq-pl__rod {
-  fill: #8dffb0;
+  fill: rgb(var(--w-green));
 }
 .rq-iq-frame .rq-pl__dot {
-  fill: #8dffb0;
+  fill: rgb(var(--w-green));
 }
 .rq-iq-frame .rq-pl__nocourt {
-  fill: rgba(167, 139, 250, 0.1);
-  stroke: #a78bfa;
+  fill: rgb(var(--w-violet-ink) / 0.1);
+  stroke: rgb(var(--w-violet-ink));
   stroke-width: 3;
   stroke-dasharray: 9 7;
 }
 .rq-iq-frame .rq-pl__twinpost {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan));
 }
 @keyframes rq-pl-lower {
   from {
@@ -298,7 +298,7 @@
   justify-content: space-around;
   align-items: center;
   min-height: 2.6rem;
-  color: #c9ffd9;
+  color: rgb(var(--w-green-ink));
 }
 .rq-iq-frame .rq-pl__name {
   display: inline-flex;
@@ -309,7 +309,7 @@
 }
 .rq-iq-frame .rq-pl__name.is-none {
   gap: 0.8rem;
-  color: #ddd6fe;
+  color: rgb(var(--w-violet-ink));
 }
 .rq-iq-frame .rq-pl__minus {
   font-weight: 900;
@@ -323,7 +323,7 @@
 .rq-iq-frame .rq-pl__norod {
   font-size: 1.08rem;
   font-weight: 800;
-  color: #ddd6fe;
+  color: rgb(var(--w-violet-ink));
   white-space: nowrap;
 }
 
@@ -351,11 +351,11 @@
   min-height: 3.3rem;
   padding: 0.2rem 0.6rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(125, 252, 255, 0.35);
-  background: rgba(125, 252, 255, 0.06);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.35);
+  background: rgb(var(--w-cyan-ink) / 0.06);
   font-size: 1.12rem;
   font-weight: 800;
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
   white-space: nowrap;
 }
 .rq-iq-frame .rq-pl__op .rq-num {
@@ -378,8 +378,8 @@
 
 /* the rods he says */
 .rq-iq-frame .rq-pl__taps .rf-btn.is-on {
-  background: #7dfcff;
-  border-color: #7dfcff;
+  background: rgb(var(--w-cyan));
+  border-color: rgb(var(--w-cyan-ink));
   color: #06203f;
 }
 .rq-iq-frame .rq-pl__rods {
@@ -402,7 +402,7 @@
 .rq-iq-frame .rq-pl__rodlabel {
   font-size: 1.08rem;
   font-weight: 800;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .rq-iq-frame .rq-pl__forms {
   display: inline-flex;
@@ -426,7 +426,7 @@
   width: 2.4rem;
   height: 0.55rem;
   border-radius: 999px;
-  background: #8dffb0;
+  background: rgb(var(--w-green));
 }
 .rq-iq-frame .rq-pl__rodbar.is-small {
   width: 1.2rem;
@@ -442,14 +442,14 @@
 
 /* the fact: a share not done is a fact of the world (violet), never the red of an error */
 .rq-iq-frame .rq-pl__fact.is-refused {
-  color: #ddd6fe;
+  color: rgb(var(--w-violet-ink));
 }
 .rq-iq-frame .rq-pl__fact.is-two,
 .rq-iq-frame .rq-pl__fact.is-one {
-  color: #8dffb0;
+  color: rgb(var(--w-green-ink));
 }
 .rq-iq-frame .rq-pl__fact.is-none {
-  color: #ddd6fe;
+  color: rgb(var(--w-violet-ink));
 }
 
 /* the table of the rounds: the plaque as given → each peel → the lone court → its rods */
@@ -475,7 +475,7 @@
   padding-right: 0.2rem;
 }
 .rq-iq-frame .rq-pl__table tr.is-now td {
-  background: rgba(125, 252, 255, 0.07);
+  background: rgb(var(--w-cyan-ink) / 0.07);
 }
 .rq-iq-frame .rq-pl__pchip {
   display: inline-flex;
@@ -488,13 +488,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .rq-iq-frame .rq-pl__mark {
   width: 1.1rem;
   height: 1.1rem;
   fill: rgba(59, 130, 246, 0.25);
-  stroke: #93c5fd;
+  stroke: rgb(var(--w-soft));
   stroke-width: 2.5;
 }
 .rq-iq-frame .rq-pl__ppile {
@@ -504,10 +504,10 @@
   font-weight: 900;
 }
 .rq-iq-frame .rq-pl__ppile.is-added {
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .rq-iq-frame .rq-pl__ppile.is-taken {
-  color: #ddd6fe;
+  color: rgb(var(--w-violet-ink));
 }
 .rq-iq-frame .rq-pl__pplate {
   display: inline-flex;
@@ -530,14 +530,14 @@
   gap: 0.05rem;
   padding: 0 0.3rem;
   border-radius: 0.45rem;
-  border: 1.5px solid rgba(125, 252, 255, 0.45);
-  color: #bff7ff;
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.45);
+  color: rgb(var(--w-cyan-ink));
   font-weight: 900;
 }
 .rq-iq-frame .rq-pl__tag.is-restart,
 .rq-iq-frame .rq-pl__tag.is-more {
   border-style: dashed;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .rq-iq-frame .rq-pl__rchips {
   display: inline-flex;
@@ -549,7 +549,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.05rem;
-  color: #c9ffd9;
+  color: rgb(var(--w-green-ink));
   font-weight: 900;
 }
 .rq-iq-frame .rq-pl__rwall {
@@ -559,6 +559,6 @@
 }
 .rq-iq-frame .rq-pl__rcourt {
   padding: 0 0.25rem;
-  border: 1.5px solid #93c5fd;
+  border: 1.5px solid rgb(var(--w-soft));
   border-radius: 0.25rem;
 }

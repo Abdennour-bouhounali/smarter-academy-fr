@@ -128,14 +128,14 @@ export default function Strip({ a, b, play, report, start = null }) {
           y1={RULER_Y}
           x2={X1}
           y2={RULER_Y}
-          stroke="rgba(234,252,255,.45)"
+          stroke="rgb(var(--w-ink) / 0.45)"
           strokeWidth="3"
           strokeLinecap="round"
         />
-        <text x={X0} y={RULER_Y + 30} textAnchor="middle" fontSize="16" style={{ fill: 'rgba(234,252,255,.6)' }}>
+        <text x={X0} y={RULER_Y + 30} textAnchor="middle" fontSize="16" style={{ fill: 'rgb(var(--w-ink) / 0.6)' }}>
           2
         </text>
-        <text x={X1} y={RULER_Y + 30} textAnchor="middle" fontSize="16" style={{ fill: 'rgba(234,252,255,.6)' }}>
+        <text x={X1} y={RULER_Y + 30} textAnchor="middle" fontSize="16" style={{ fill: 'rgb(var(--w-ink) / 0.6)' }}>
           {kMax}
         </text>
         <g
@@ -149,9 +149,9 @@ export default function Strip({ a, b, play, report, start = null }) {
           data-ll-strip-handle
         >
           <rect x={X0 - 10} y={RULER_Y - 22} width={X1 - X0 + 20} height="44" fill="transparent" />
-          {!moved && <circle className="ll-pulse" cx={hk} cy={RULER_Y} r="22" fill="#fbbf24" />}
-          <circle cx={hk} cy={RULER_Y} r="13" fill="#fde68a" stroke="#06262c" strokeWidth="3" />
-          <text x={hk} y={RULER_Y - 26} textAnchor="middle" fontSize="20" style={{ fill: '#fde68a' }}>
+          {!moved && <circle className="ll-pulse" cx={hk} cy={RULER_Y} r="22" fill="rgb(var(--w-gold))" />}
+          <circle cx={hk} cy={RULER_Y} r="13" fill="rgb(var(--w-gold))" stroke="#06262c" strokeWidth="3" />
+          <text x={hk} y={RULER_Y - 26} textAnchor="middle" fontSize="20" style={{ fill: 'rgb(var(--w-gold-ink))' }}>
             {k}
           </text>
         </g>
@@ -164,8 +164,8 @@ export default function Strip({ a, b, play, report, start = null }) {
             width={b * w}
             height={STRIP_H}
             rx="6"
-            fill="#062026"
-            stroke="rgba(125,252,255,.55)"
+            fill="rgb(var(--w-ground))"
+            stroke="rgb(var(--w-cyan-ink) / 0.55)"
             strokeWidth="2"
           />
           <rect
@@ -174,7 +174,7 @@ export default function Strip({ a, b, play, report, start = null }) {
             width={Math.max(2, a * w)}
             height={STRIP_H - 8}
             rx="4"
-            fill={both ? '#fde68a' : 'rgba(253,230,138,.75)'}
+            fill={both ? 'rgb(var(--w-gold))' : 'rgb(var(--w-gold) / 0.75)'}
             data-ll-strip-lit={a}
           />
           {joints.map((c) => (
@@ -184,7 +184,7 @@ export default function Strip({ a, b, play, report, start = null }) {
               y1={STRIP_Y - 6}
               x2={xOf(c)}
               y2={STRIP_Y + STRIP_H + 6}
-              stroke={both ? '#34d399' : 'rgba(234,252,255,.7)'}
+              stroke={both ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-ink) / 0.7)'}
               strokeWidth={k * w >= 6 ? 2.5 : 1.2}
               data-ll-strip-joint={c}
             />
@@ -198,7 +198,7 @@ export default function Strip({ a, b, play, report, start = null }) {
               height={STRIP_H + 16}
               rx="5"
               fill="none"
-              stroke="#fbbf24"
+              stroke="rgb(var(--w-gold-ink))"
               strokeWidth="3"
               strokeDasharray="6 4"
               data-ll-strip-cut={`${S.cut.from}:${S.cut.to}`}
@@ -212,7 +212,7 @@ export default function Strip({ a, b, play, report, start = null }) {
               width={Math.max(3, S.left * w)}
               height="8"
               rx="3"
-              fill="#fbbf24"
+              fill="rgb(var(--w-gold))"
               data-ll-strip-left={S.left}
             />
           )}
@@ -223,7 +223,7 @@ export default function Strip({ a, b, play, report, start = null }) {
               y1={STRIP_Y - 12}
               x2={xOf(a)}
               y2={STRIP_Y + STRIP_H + 12}
-              stroke="#34d399"
+              stroke="rgb(var(--w-green-ink))"
               strokeWidth="4"
               strokeLinecap="round"
               data-ll-strip-onjoint={a}
@@ -235,7 +235,7 @@ export default function Strip({ a, b, play, report, start = null }) {
             textAnchor="middle"
             fontSize="18"
             fontWeight="900"
-            style={{ fill: '#fde68a' }}
+            style={{ fill: 'rgb(var(--w-gold-ink))' }}
           >
             {a}
           </text>
@@ -245,27 +245,40 @@ export default function Strip({ a, b, play, report, start = null }) {
             textAnchor="middle"
             fontSize="18"
             fontWeight="900"
-            style={{ fill: '#7dfcff' }}
+            style={{ fill: 'rgb(var(--w-cyan-ink))' }}
           >
             {b}
           </text>
         </g>
 
         {/* the fraction, and — only when k divides both — the same fraction written in pieces */}
-        <Frac x={X0 + 40} y={278} n={a} d={b} tone="#eafcff" id="cells" />
+        <Frac x={X0 + 40} y={278} n={a} d={b} tone="rgb(var(--w-ink))" id="cells" />
         {S.rewrite && (
           <g data-ll-strip-rewrite={`${S.rewrite[0]}/${S.rewrite[1]}`}>
-            <text x={X0 + 100} y={288} textAnchor="middle" fontSize="28" fontWeight="900" style={{ fill: '#6ee7b7' }}>
+            <text
+              x={X0 + 100}
+              y={288}
+              textAnchor="middle"
+              fontSize="28"
+              fontWeight="900"
+              style={{ fill: 'rgb(var(--w-green-ink))' }}
+            >
               =
             </text>
-            <Frac x={X0 + 170} y={278} n={S.rewrite[0]} d={S.rewrite[1]} tone="#6ee7b7" id="pieces" />
-            <text x={X0 + 400} y={286} textAnchor="middle" fontSize="17" style={{ fill: '#6ee7b7' }}>
+            <Frac x={X0 + 170} y={278} n={S.rewrite[0]} d={S.rewrite[1]} tone="rgb(var(--w-green-ink))" id="pieces" />
+            <text x={X0 + 400} y={286} textAnchor="middle" fontSize="17" style={{ fill: 'rgb(var(--w-green-ink))' }}>
               {`Morceaux de ${k} : ${S.rewrite[0]} allumés sur ${S.rewrite[1]}`}
             </text>
           </g>
         )}
         {many && (
-          <text x={(X0 + X1) / 2} y={RULER_Y + 30} textAnchor="middle" fontSize="16" style={{ fill: '#a5b4fc' }}>
+          <text
+            x={(X0 + X1) / 2}
+            y={RULER_Y + 30}
+            textAnchor="middle"
+            fontSize="16"
+            style={{ fill: 'rgb(var(--w-violet-ink))' }}
+          >
             {`${S.pieces} morceaux`}
           </text>
         )}
@@ -282,8 +295,20 @@ export default function Strip({ a, b, play, report, start = null }) {
                   width="46"
                   height="30"
                   rx="8"
-                  fill={t === 'both' ? '#064e3b' : t === 'none' ? '#062026' : 'rgba(251,191,36,.18)'}
-                  stroke={t === 'both' ? '#34d399' : t === 'none' ? 'rgba(125,252,255,.4)' : '#fbbf24'}
+                  fill={
+                    t === 'both'
+                      ? 'rgb(var(--w-green-ink) / 0.14)'
+                      : t === 'none'
+                        ? 'rgb(var(--w-ground))'
+                        : 'rgb(var(--w-gold-ink) / 0.18)'
+                  }
+                  stroke={
+                    t === 'both'
+                      ? 'rgb(var(--w-green-ink))'
+                      : t === 'none'
+                        ? 'rgb(var(--w-cyan-ink) / 0.4)'
+                        : 'rgb(var(--w-gold-ink))'
+                  }
                   strokeWidth="2"
                   data-ll-strip-tried-k={v}
                   data-verdict={t}

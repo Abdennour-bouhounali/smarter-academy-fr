@@ -9,15 +9,15 @@
 
 /* the painted part: one stroke after the other (a second shade marks where a stroke starts) */
 .iq-part-paint {
-  fill: rgba(125, 252, 255, 0.62);
-  stroke: #7dfcff;
+  fill: rgb(var(--w-cyan) / 0.62);
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 1.5;
   transform-box: fill-box;
   transform-origin: left center;
   animation: iq-part-stroke 0.45s ease-out backwards;
 }
 .iq-part-paint.is-alt {
-  fill: rgba(125, 252, 255, 0.42);
+  fill: rgb(var(--w-cyan-ink) / 0.42);
 }
 @keyframes iq-part-stroke {
   from {
@@ -26,13 +26,13 @@
 }
 /* where the painted part ends: it never moves */
 .iq-part-end {
-  stroke: #e8f6ff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 3;
   stroke-dasharray: 5 4;
 }
 .iq-scene text.iq-part-label {
   font-size: 22px;
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan-ink));
 }
 
 /* a plank laid along the whole: outlined, so that the paint stays visible under it */
@@ -43,7 +43,7 @@
 }
 .iq-part-plank.is-alt {
   fill: rgba(47, 125, 246, 0.14);
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
 }
 /* the new cuts once the strip is re-cut */
 .iq-part-cut {

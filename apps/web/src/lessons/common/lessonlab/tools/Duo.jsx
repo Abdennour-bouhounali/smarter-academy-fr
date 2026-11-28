@@ -107,8 +107,8 @@ export default function Duo({ a, b, play, report, start = null }) {
             width="110"
             height="40"
             rx="12"
-            fill={band.id === 'both' ? 'rgba(52,211,153,.18)' : 'rgba(125,252,255,.14)'}
-            stroke={band.id === 'both' ? '#34d399' : '#7dfcff'}
+            fill={band.id === 'both' ? 'rgb(var(--w-green-ink) / 0.18)' : 'rgb(var(--w-cyan-ink) / 0.14)'}
+            stroke={band.id === 'both' ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink))'}
             strokeWidth="2"
           />
           <text
@@ -116,7 +116,7 @@ export default function Duo({ a, b, play, report, start = null }) {
             y={mid + (band.id === 'both' ? 6 : 8)}
             textAnchor="middle"
             fontSize={band.id === 'both' ? 16 : 22}
-            style={{ fill: band.id === 'both' ? '#6ee7b7' : '#7dfcff' }}
+            style={{ fill: band.id === 'both' ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink))' }}
           >
             {band.id === 'both' ? 'Communs' : band.n}
           </text>
@@ -144,8 +144,10 @@ export default function Duo({ a, b, play, report, start = null }) {
                     width={CW}
                     height={CH}
                     rx="9"
-                    fill={both ? '#064e3b' : '#062026'}
-                    stroke={on ? '#fff' : both ? '#34d399' : 'rgba(125,252,255,.55)'}
+                    fill={both ? 'rgb(var(--w-green-ink) / 0.14)' : 'rgb(var(--w-ground))'}
+                    stroke={
+                      on ? 'rgb(var(--w-ink))' : both ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink) / 0.55)'
+                    }
                     strokeWidth={on ? 3.5 : 2}
                   />
                   <text x={x} y={cy + 6} textAnchor="middle" fontSize="18" fontWeight="900">
@@ -179,7 +181,7 @@ export default function Duo({ a, b, play, report, start = null }) {
             style={{ animation: 'll-flip .3s ease-out' }}
           >
             {`${l.a} = ${l.b} × ${l.q} + `}
-            <tspan style={{ fill: l.r === 0 ? '#6ee7b7' : '#fbbf24' }}>{l.r}</tspan>
+            <tspan style={{ fill: l.r === 0 ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-gold-ink))' }}>{l.r}</tspan>
           </text>
         );
       })}
@@ -189,7 +191,7 @@ export default function Duo({ a, b, play, report, start = null }) {
           y={92 + (written % 7) * 40}
           textAnchor="middle"
           fontSize="24"
-          style={{ fill: 'rgba(234,252,255,.4)' }}
+          style={{ fill: 'rgb(var(--w-ink) / 0.4)' }}
           data-ll-open
         >
           …
@@ -205,11 +207,19 @@ export default function Duo({ a, b, play, report, start = null }) {
     const bar = (n, div, y, id) => {
       const pieces = div.q;
       const many = pieces > 60;
-      const tone = div.r === 0 ? '#34d399' : '#7dfcff';
+      const tone = div.r === 0 ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink))';
       return (
         <g data-ll-duo-bar={id} data-n={n} data-q={div.q} data-r={div.r}>
-          <rect x="12" y={y - 20} width="110" height="40" rx="12" fill="rgba(125,252,255,.14)" stroke="#7dfcff" />
-          <text x="67" y={y + 8} textAnchor="middle" fontSize="22" style={{ fill: '#7dfcff' }}>
+          <rect
+            x="12"
+            y={y - 20}
+            width="110"
+            height="40"
+            rx="12"
+            fill="rgb(var(--w-cyan-ink) / 0.14)"
+            stroke="rgb(var(--w-cyan-ink))"
+          />
+          <text x="67" y={y + 8} textAnchor="middle" fontSize="22" style={{ fill: 'rgb(var(--w-cyan-ink))' }}>
             {n}
           </text>
           <rect
@@ -218,8 +228,8 @@ export default function Duo({ a, b, play, report, start = null }) {
             width={Math.max(2, n * w)}
             height="26"
             rx="5"
-            fill="rgba(234,252,255,.08)"
-            stroke="rgba(234,252,255,.45)"
+            fill="rgb(var(--w-ink) / 0.08)"
+            stroke="rgb(var(--w-ink) / 0.45)"
           />
           {many ? (
             <rect x={X0} y={y - 10} width={pieces * d * w} height="20" rx="3" fill={tone} />
@@ -244,12 +254,17 @@ export default function Duo({ a, b, play, report, start = null }) {
               height="20"
               rx="3"
               fill="none"
-              stroke="#fbbf24"
+              stroke="rgb(var(--w-gold-ink))"
               strokeWidth="2"
               strokeDasharray="5 4"
             />
           )}
-          <text x={X0} y={y + 40} fontSize="18" style={{ fill: div.r === 0 ? '#6ee7b7' : '#e0f2fe' }}>
+          <text
+            x={X0}
+            y={y + 40}
+            fontSize="18"
+            style={{ fill: div.r === 0 ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-ink))' }}
+          >
             {eq(n, d, div)}
           </text>
         </g>
@@ -258,11 +273,11 @@ export default function Duo({ a, b, play, report, start = null }) {
     const hx = xOfD(d);
     return (
       <g data-ll-duo-probe data-d={d} data-verdict={P.verdict}>
-        <line x1={X0} y1="86" x2={X1} y2="86" stroke="rgba(234,252,255,.45)" strokeWidth="3" strokeLinecap="round" />
-        <text x={X0} y="116" textAnchor="middle" fontSize="16" style={{ fill: 'rgba(234,252,255,.6)' }}>
+        <line x1={X0} y1="86" x2={X1} y2="86" stroke="rgb(var(--w-ink) / 0.45)" strokeWidth="3" strokeLinecap="round" />
+        <text x={X0} y="116" textAnchor="middle" fontSize="16" style={{ fill: 'rgb(var(--w-ink) / 0.6)' }}>
           2
         </text>
-        <text x={X1} y="116" textAnchor="middle" fontSize="16" style={{ fill: 'rgba(234,252,255,.6)' }}>
+        <text x={X1} y="116" textAnchor="middle" fontSize="16" style={{ fill: 'rgb(var(--w-ink) / 0.6)' }}>
           {dMax}
         </text>
         <g
@@ -276,9 +291,9 @@ export default function Duo({ a, b, play, report, start = null }) {
           data-ll-probe
         >
           <rect x={X0 - 10} y="64" width={X1 - X0 + 20} height="44" fill="transparent" />
-          {!moved && <circle className="ll-pulse" cx={hx} cy="86" r="22" fill="#fbbf24" />}
-          <circle cx={hx} cy="86" r="13" fill="#fde68a" stroke="#06262c" strokeWidth="3" />
-          <text x={hx} y="60" textAnchor="middle" fontSize="20" style={{ fill: '#fde68a' }}>
+          {!moved && <circle className="ll-pulse" cx={hx} cy="86" r="22" fill="rgb(var(--w-gold))" />}
+          <circle cx={hx} cy="86" r="13" fill="rgb(var(--w-gold))" stroke="#06262c" strokeWidth="3" />
+          <text x={hx} y="60" textAnchor="middle" fontSize="20" style={{ fill: 'rgb(var(--w-gold-ink))' }}>
             {d}
           </text>
         </g>
@@ -295,8 +310,20 @@ export default function Duo({ a, b, play, report, start = null }) {
                   width="46"
                   height="30"
                   rx="8"
-                  fill={t === 'both' ? '#064e3b' : t === 'none' ? '#062026' : 'rgba(251,191,36,.18)'}
-                  stroke={t === 'both' ? '#34d399' : t === 'none' ? 'rgba(125,252,255,.4)' : '#fbbf24'}
+                  fill={
+                    t === 'both'
+                      ? 'rgb(var(--w-green-ink) / 0.14)'
+                      : t === 'none'
+                        ? 'rgb(var(--w-ground))'
+                        : 'rgb(var(--w-gold-ink) / 0.18)'
+                  }
+                  stroke={
+                    t === 'both'
+                      ? 'rgb(var(--w-green-ink))'
+                      : t === 'none'
+                        ? 'rgb(var(--w-cyan-ink) / 0.4)'
+                        : 'rgb(var(--w-gold-ink))'
+                  }
                   strokeWidth="2"
                   data-ll-tried-d={v}
                   data-verdict={t}
@@ -442,11 +469,17 @@ export default function Duo({ a, b, play, report, start = null }) {
                 width={TAB_W - 12}
                 height="36"
                 rx="12"
-                fill={on ? '#7dfcff' : 'rgba(125,252,255,.1)'}
-                stroke="#7dfcff"
+                fill={on ? 'rgb(var(--w-cyan))' : 'rgb(var(--w-cyan-ink) / 0.1)'}
+                stroke="rgb(var(--w-cyan-ink))"
                 strokeWidth="1.5"
               />
-              <text x={x} y="29" textAnchor="middle" fontSize="18" style={{ fill: on ? '#06262c' : '#eafcff' }}>
+              <text
+                x={x}
+                y="29"
+                textAnchor="middle"
+                fontSize="18"
+                style={{ fill: on ? '#06262c' : 'rgb(var(--w-ink))' }}
+              >
                 {f.label}
               </text>
             </g>

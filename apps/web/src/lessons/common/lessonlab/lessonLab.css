@@ -4,13 +4,13 @@
   inset: 0;
   z-index: 1300;
   overflow: hidden;
-  color: #eafcff;
+  color: rgb(var(--w-ink));
   font-family: inherit;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
-  background: radial-gradient(1200px 700px at 78% -10%, #17525c 0%, transparent 60%),
-    linear-gradient(160deg, #0d2b33, #071a20);
+  background: radial-gradient(1200px 700px at 78% -10%, rgb(var(--w-ground)) 0%, transparent 60%),
+    linear-gradient(160deg, rgb(var(--w-ground)), rgb(var(--w-ground)));
 }
 .ll-root--inline {
   position: absolute;
@@ -22,8 +22,8 @@
   inset: 0;
   pointer-events: none;
   opacity: 0.5;
-  background-image: linear-gradient(rgba(125, 252, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125, 252, 255, 0.07) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(var(--w-cyan-ink) / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--w-cyan-ink) / 0.07) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 .ll-root *,
@@ -75,7 +75,7 @@
 .ll-brand i {
   font-style: normal;
   font-size: 2.3rem;
-  filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.6));
+  filter: drop-shadow(0 0 12px rgb(var(--w-green-ink) / 0.6));
 }
 .ll-brand h2 {
   font-size: 1.7rem;
@@ -99,14 +99,14 @@
   gap: 0.8rem;
   padding: 0.45rem 0.9rem 0.55rem;
   border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1.5px solid rgba(125, 252, 255, 0.3);
+  background: rgb(var(--w-ink) / 0.07);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.3);
 }
 .ll-nums em {
   font-style: normal;
   font-weight: 900;
   font-size: 1rem;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
   align-self: center;
 }
 .ll-num {
@@ -129,25 +129,25 @@
   height: 2.5rem;
   border-radius: 0.7rem;
   border: 0;
-  background: rgba(125, 252, 255, 0.16);
+  background: rgb(var(--w-cyan-ink) / 0.16);
   cursor: pointer;
 }
 .ll-num__box button:hover {
-  background: rgba(125, 252, 255, 0.32);
+  background: rgb(var(--w-cyan-ink) / 0.32);
 }
 .ll-num__box input {
   width: 5.2rem;
   height: 2.5rem;
   border-radius: 0.7rem;
-  border: 2px solid rgba(125, 252, 255, 0.55);
-  background: #062026;
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.55);
+  background: rgb(var(--w-ground));
   text-align: center;
   font-size: 1.55rem;
   font-weight: 900;
   outline: none;
 }
 .ll-num__box input:focus {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
 }
 .ll-dice {
   display: grid;
@@ -156,7 +156,7 @@
   height: 2.5rem;
   border-radius: 0.7rem;
   border: 0;
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
   color: #3b2a06 !important;
   cursor: pointer;
 }
@@ -171,8 +171,8 @@
 .ll-stars {
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  background: rgba(251, 191, 36, 0.16);
-  border: 1.5px solid rgba(251, 191, 36, 0.5);
+  background: rgb(var(--w-gold-ink) / 0.16);
+  border: 1.5px solid rgb(var(--w-gold-ink) / 0.5);
   font-weight: 900;
   font-size: 1.05rem;
 }
@@ -182,12 +182,12 @@
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgb(var(--w-ink) / 0.3);
+  background: rgb(var(--w-ink) / 0.07);
   cursor: pointer;
 }
 .ll-icon:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgb(var(--w-ink) / 0.18);
 }
 .ll-icon:disabled {
   opacity: 0.35;
@@ -201,14 +201,14 @@
   gap: 0.45rem;
   padding: 0.8rem 0.7rem;
   border-radius: 1.4rem;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgb(var(--w-ink) / 0.055);
+  border: 1px solid rgb(var(--w-ink) / 0.14);
   min-height: 0;
 }
 .ll-rail h3 {
   font-size: 0.9rem;
   font-weight: 900;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
   margin-top: 0.15rem;
 }
 /* the group « Les outils de cette leçon »: a hook for the walks, laid out as if its children stood in the rail */
@@ -229,8 +229,8 @@
   min-height: 3.5rem;
   padding: 0.35rem 0.6rem;
   border-radius: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgb(var(--w-ink) / 0.16);
+  background: rgb(var(--w-ink) / 0.05);
   cursor: pointer;
   text-align: start;
   transition:
@@ -241,12 +241,12 @@
 .ll-tile:hover {
   /* the rail stands on the left: a tile leans toward the bench */
   transform: translateX(3px);
-  border-color: rgba(125, 252, 255, 0.6);
+  border-color: rgb(var(--w-cyan-ink) / 0.6);
 }
 .ll-tile.is-on {
-  border-color: #34d399;
-  background: rgba(52, 211, 153, 0.16);
-  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+  border-color: rgb(var(--w-green-ink));
+  background: rgb(var(--w-green-ink) / 0.16);
+  box-shadow: 0 0 0 3px rgb(var(--w-green-ink) / 0.2);
 }
 .ll-tile i {
   font-style: normal;
@@ -267,10 +267,10 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(var(--w-ink) / 0.2);
 }
 .ll-tile__dots b.is-on {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
 }
 .ll-cabinet-btn {
   margin-top: auto;
@@ -279,13 +279,13 @@
   gap: 0.6rem;
   padding: 0.6rem 0.7rem;
   border-radius: 1.1rem;
-  border: 2px dashed rgba(251, 191, 36, 0.7);
-  background: rgba(251, 191, 36, 0.1);
+  border: 2px dashed rgb(var(--w-gold-ink) / 0.7);
+  background: rgb(var(--w-gold-ink) / 0.1);
   cursor: pointer;
   text-align: start;
 }
 .ll-cabinet-btn:hover {
-  background: rgba(251, 191, 36, 0.22);
+  background: rgb(var(--w-gold-ink) / 0.22);
 }
 .ll-cabinet-btn i {
   font-style: normal;
@@ -295,7 +295,7 @@
   display: block;
   font-size: 1.1rem;
   font-weight: 900;
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .ll-cabinet-btn small {
   font-size: 0.78rem;
@@ -341,16 +341,16 @@
   font-weight: 800;
   padding: 0.15rem 0.7rem;
   border-radius: 999px;
-  background: rgba(251, 191, 36, 0.18);
-  color: #fde68a;
+  background: rgb(var(--w-gold-ink) / 0.18);
+  color: rgb(var(--w-gold-ink));
   white-space: nowrap;
 }
 .ll-stage {
   flex: 1;
   min-height: 0;
   border-radius: 1.4rem;
-  background: rgba(4, 20, 25, 0.72);
-  border: 1.5px solid rgba(125, 252, 255, 0.25);
+  background: rgb(var(--w-ground) / 0.72);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.25);
   box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.35);
   overflow: hidden;
 }
@@ -384,11 +384,11 @@
   direction: ltr;
 }
 /* the instrument's own drawing writes light on the dark board; a GeoFigure on its white card keeps its own inks (this
-   rule painted the rope card's letters and lengths #eafcff on white: unreadable — the hub walk, 2026-11-24) */
+   rule painted the rope card's letters and lengths rgb(var(--w-ink)) on white: unreadable — the hub walk, 2026-11-24) */
 .ll-draw text:not([data-geo-figure] text) {
   font-family: inherit;
   font-weight: 800;
-  fill: #eafcff;
+  fill: rgb(var(--w-ink));
 }
 /* one line, a fixed height: the drawing above never moves when the reading changes */
 .ll-reading {
@@ -397,8 +397,8 @@
   gap: 0.9rem;
   height: 4.3rem;
   padding: 0.45rem 1rem;
-  border-top: 1.5px solid rgba(125, 252, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
+  border-top: 1.5px solid rgb(var(--w-cyan-ink) / 0.18);
+  background: rgb(var(--w-ink) / 0.04);
 }
 .ll-reading__text {
   flex: 1;
@@ -415,17 +415,17 @@
   line-height: 1.6;
 }
 .ll-reading--good {
-  background: rgba(52, 211, 153, 0.14);
+  background: rgb(var(--w-green-ink) / 0.14);
 }
 .ll-reading--warm {
-  background: rgba(251, 191, 36, 0.1);
+  background: rgb(var(--w-gold-ink) / 0.1);
 }
 .ll-math {
   font-size: 1.5rem;
   font-weight: 800;
 }
 .ll-reading .ll-math {
-  color: #fff;
+  color: rgb(var(--w-ink));
 }
 .ll-chip {
   display: inline-flex;
@@ -438,19 +438,19 @@
   white-space: nowrap;
 }
 .ll-chip--good {
-  background: #34d399;
+  background: rgb(var(--w-green));
   color: #052e22 !important;
 }
 .ll-chip--warm {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
   color: #3b2a06 !important;
 }
 .ll-chip--dim {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgb(var(--w-ink) / 0.12);
 }
 /* what a platform holds MORE than its court (« La plateforme de la fraction »): the world's violet of a jam, never the red of an error */
 .ll-chip--jam {
-  background: #c4b5fd;
+  background: rgb(var(--w-violet));
   color: #2e1065 !important;
 }
 .ll-actions {
@@ -463,9 +463,9 @@
   width: 3.6em;
   height: 2rem;
   border-radius: 0.6rem;
-  border: 2px solid #7dfcff;
-  background: rgba(125, 252, 255, 0.1);
-  color: #eafcff;
+  border: 2px solid rgb(var(--w-cyan-ink));
+  background: rgb(var(--w-cyan-ink) / 0.1);
+  color: rgb(var(--w-ink));
   font: inherit;
   text-align: center;
   outline: none;
@@ -478,7 +478,7 @@
   padding: 0 1.1rem;
   border-radius: 0.9rem;
   border: 0;
-  background: #7dfcff;
+  background: rgb(var(--w-cyan));
   color: #06262c !important;
   font-size: 1.05rem;
   font-weight: 900;
@@ -495,10 +495,10 @@
   cursor: default;
 }
 .ll-btn--ghost {
-  background: rgba(255, 255, 255, 0.1);
-  color: #eafcff !important;
+  background: rgb(var(--w-ink) / 0.1);
+  color: rgb(var(--w-ink)) !important;
   box-shadow: none;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgb(var(--w-ink) / 0.3);
 }
 /* a button that was never pressed calls the hand (« L’établi des deux listes »: the first try) */
 .ll-btn--call {
@@ -509,12 +509,12 @@
   100% {
     box-shadow:
       0 4px 0 #3aa7ad,
-      0 0 0 0 rgba(125, 252, 255, 0.55);
+      0 0 0 0 rgb(var(--w-cyan-ink) / 0.55);
   }
   50% {
     box-shadow:
       0 4px 0 #3aa7ad,
-      0 0 0 10px rgba(125, 252, 255, 0);
+      0 0 0 10px rgb(var(--w-cyan-ink) / 0);
   }
 }
 /* the two lists: a written divisor is tapped to see the equalities that place it */
@@ -528,14 +528,14 @@
   gap: 1rem;
   padding: 0.55rem 1rem;
   border-radius: 1.2rem;
-  background: rgba(251, 191, 36, 0.08);
-  border: 1.5px solid rgba(251, 191, 36, 0.35);
+  background: rgb(var(--w-gold-ink) / 0.08);
+  border: 1.5px solid rgb(var(--w-gold-ink) / 0.35);
   min-height: 4.4rem;
 }
 .ll-quests h4 {
   font-size: 1.15rem;
   font-weight: 900;
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
   white-space: nowrap;
 }
 .ll-quests ul {
@@ -562,15 +562,15 @@
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.45rem;
-  border: 2px solid rgba(251, 191, 36, 0.7);
+  border: 2px solid rgb(var(--w-gold-ink) / 0.7);
   color: #052e22;
 }
 .ll-quests li.is-done {
-  color: #a7f3d0;
+  color: rgb(var(--w-green-ink));
 }
 .ll-quests li.is-done b {
-  background: #34d399;
-  border-color: #34d399;
+  background: rgb(var(--w-green));
+  border-color: rgb(var(--w-green-ink));
 }
 .ll-quests li.is-fresh {
   animation: ll-pop 0.7s ease-out;
@@ -597,8 +597,8 @@
   gap: 0.7rem;
   padding: 1.1rem 1.3rem;
   border-radius: 1.5rem;
-  background: linear-gradient(170deg, #3b2a12, #23180a);
-  border: 2px solid #fbbf24;
+  background: linear-gradient(170deg, rgb(var(--w-gold-ink) / 0.14), rgb(var(--w-gold-ink) / 0.14));
+  border: 2px solid rgb(var(--w-gold-ink));
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
   animation: ll-rise 0.25s ease-out;
 }
@@ -616,7 +616,7 @@
 .ll-cabinet h3 {
   font-size: 1.45rem;
   font-weight: 900;
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .ll-cabinet header p {
   font-size: 1rem;
@@ -629,14 +629,14 @@
 .ll-cabinet__tabs button {
   padding: 0.35rem 1.1rem;
   border-radius: 999px;
-  border: 2px solid rgba(251, 191, 36, 0.5);
+  border: 2px solid rgb(var(--w-gold-ink) / 0.5);
   background: none;
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
 }
 .ll-cabinet__tabs button.is-on {
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
   color: #3b2a06 !important;
 }
 .ll-cabinet__list {
@@ -656,13 +656,13 @@
   gap: 0.9rem;
   padding: 0.55rem 0.8rem;
   border-radius: 1.1rem;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgb(var(--w-ink) / 0.06);
 }
 .ll-cabinet__list li > p {
   font-size: 1.02rem;
   font-weight: 800;
   line-height: 1.5;
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .ll-cabinet__list li > div {
   display: flex;
@@ -676,8 +676,8 @@
   gap: 0.6rem;
   padding: 0.5rem 0.9rem;
   border-radius: 1rem;
-  border: 2px solid rgba(125, 252, 255, 0.45);
-  background: rgba(125, 252, 255, 0.08);
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.45);
+  background: rgb(var(--w-cyan-ink) / 0.08);
   cursor: pointer;
   text-align: start;
   flex: 0 1 21rem;
@@ -686,7 +686,7 @@
 }
 .ll-card:hover {
   transform: translateY(-3px);
-  background: rgba(125, 252, 255, 0.2);
+  background: rgb(var(--w-cyan-ink) / 0.2);
 }
 .ll-card i {
   font-style: normal;
@@ -759,7 +759,7 @@
   }
 }
 .ll-glow {
-  filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.9));
+  filter: drop-shadow(0 0 10px rgb(var(--w-green-ink) / 0.9));
 }
 .ll-arc {
   fill: none;
@@ -793,8 +793,8 @@
   gap: 0.6rem;
   padding: 1rem;
   border-radius: 1.4rem;
-  background: linear-gradient(#17424b, #0c2a31);
-  border: 2px solid rgba(125, 252, 255, 0.4);
+  background: linear-gradient(rgb(var(--w-ground)), rgb(var(--w-ground)));
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.4);
 }
 .ll-sent__nums {
   display: flex;
@@ -814,13 +814,13 @@
   height: 4.6rem;
   padding: 0 0.5rem;
   border-radius: 1rem;
-  background: #062026;
-  border: 2px solid #7dfcff;
+  background: rgb(var(--w-ground));
+  border: 2px solid rgb(var(--w-cyan-ink));
   font-size: 2.3rem;
   font-weight: 900;
 }
 .ll-sent__nums b.is-second {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
 }
 .ll-sent__nums span {
   font-size: 0.8rem;
@@ -852,8 +852,8 @@
   }
 }
 .ll-sent__card.is-ok {
-  border-color: #34d399;
-  background: rgba(52, 211, 153, 0.15);
+  border-color: rgb(var(--w-green-ink));
+  background: rgb(var(--w-green-ink) / 0.15);
 }
 .ll-sent__card.is-ko {
   border-color: #f87171;
@@ -875,7 +875,7 @@
   text-decoration: none;
 }
 .ll-sent__card.is-ok i {
-  background: #34d399;
+  background: rgb(var(--w-green));
   color: #052e22;
 }
 .ll-sent__card.is-ko i {
@@ -909,8 +909,8 @@
   gap: 0.35rem;
   padding: 0.9rem 1rem;
   border-radius: 1.2rem;
-  border: 2px solid rgba(125, 252, 255, 0.35);
-  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.35);
+  background: rgb(var(--w-ink) / 0.04);
   font-size: 1.15rem;
   font-weight: 800;
   line-height: 1.55;
@@ -925,10 +925,10 @@
 .ll-court__title {
   font-size: 1.25rem;
   font-weight: 900;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .ll-court__facts[data-ll-court-facts='settled'] {
-  border-color: #34d399;
+  border-color: rgb(var(--w-green-ink));
 }
 .ll-court__wait {
   white-space: normal !important;
@@ -950,23 +950,23 @@
   gap: 0.5rem;
   padding: 0.7rem;
   border-radius: 1.3rem;
-  border: 2px solid rgba(125, 252, 255, 0.35);
-  background: rgba(125, 252, 255, 0.06);
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.35);
+  background: rgb(var(--w-cyan-ink) / 0.06);
   min-height: 0;
 }
 .ll-zone--both {
-  border-color: #fbbf24;
-  background: rgba(251, 191, 36, 0.1);
+  border-color: rgb(var(--w-gold-ink));
+  background: rgb(var(--w-gold-ink) / 0.1);
 }
 .ll-zone h5 {
   margin: 0;
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .ll-zone--both h5 {
-  color: #fde68a;
+  color: rgb(var(--w-gold-ink));
 }
 .ll-zone > div {
   flex: 1;
@@ -982,27 +982,27 @@
   height: 2.8rem;
   padding: 0 0.5rem;
   border-radius: 0.8rem;
-  border: 2px solid rgba(125, 252, 255, 0.5);
-  background: #062026;
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.5);
+  background: rgb(var(--w-ground));
   font-size: 1.3rem;
   font-weight: 900;
   cursor: pointer;
   animation: ll-flip 0.3s ease-out;
 }
 .ll-dchip.is-sel {
-  outline: 3px solid #fff;
+  outline: 3px solid rgb(var(--w-ink));
 }
 .ll-zone--both .ll-dchip {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
 }
 .ll-dchip.is-top {
   margin-top: 1.1rem;
   min-width: 4.2rem;
   height: 3.8rem;
   font-size: 1.8rem;
-  background: #fbbf24;
+  background: rgb(var(--w-gold));
   color: #3b2a06 !important;
-  box-shadow: 0 0 22px rgba(251, 191, 36, 0.7);
+  box-shadow: 0 0 22px rgb(var(--w-gold-ink) / 0.7);
   position: relative;
 }
 .ll-dchip.is-top::after {
@@ -1092,8 +1092,8 @@
   gap: 0.45rem;
   padding: 0.8rem 1rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: rgb(var(--w-ink) / 0.06);
+  border: 1.5px solid rgb(var(--w-ink) / 0.15);
   font-size: 1.12rem;
   font-weight: 700;
   line-height: 1.7;
@@ -1102,7 +1102,7 @@
   margin: 0;
   font-size: 1rem;
   font-weight: 900;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .ll-think p {
   animation: ll-flip 0.3s;
@@ -1112,7 +1112,7 @@
 .ll-lamps__cap {
   font-size: 1.1rem;
   font-weight: 800;
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
   text-align: center;
 }
 .ll-rules {
@@ -1140,13 +1140,13 @@
   height: 1.7rem;
   border-radius: 0.6rem;
   border: 0;
-  background: rgba(125, 252, 255, 0.18);
+  background: rgb(var(--w-cyan-ink) / 0.18);
   cursor: pointer;
   display: grid;
   place-items: center;
 }
 .ll-wheel button:hover {
-  background: rgba(125, 252, 255, 0.4);
+  background: rgb(var(--w-cyan-ink) / 0.4);
 }
 .ll-wheel b {
   display: grid;
@@ -1154,8 +1154,8 @@
   width: 4rem;
   height: 4.3rem;
   border-radius: 0.9rem;
-  background: linear-gradient(#0a2f37, #051c22);
-  border: 2.5px solid rgba(125, 252, 255, 0.5);
+  background: linear-gradient(rgb(var(--w-ground)), rgb(var(--w-ground)));
+  border: 2.5px solid rgb(var(--w-cyan-ink) / 0.5);
   font-size: 2.8rem;
   font-weight: 900;
   transition:
@@ -1164,8 +1164,8 @@
     transform 0.15s;
 }
 .ll-wheel.is-read b {
-  border-color: #fbbf24;
-  box-shadow: 0 0 18px rgba(251, 191, 36, 0.6);
+  border-color: rgb(var(--w-gold-ink));
+  box-shadow: 0 0 18px rgb(var(--w-gold-ink) / 0.6);
   transform: translateY(-3px);
 }
 .ll-wheel.is-pad b {
@@ -1189,8 +1189,8 @@
   gap: 0.15rem;
   padding: 0.4rem;
   border-radius: 1.1rem;
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgb(var(--w-ink) / 0.18);
+  background: rgb(var(--w-ink) / 0.04);
   cursor: pointer;
 }
 .ll-lamp i {
@@ -1200,7 +1200,7 @@
   width: 4.2rem;
   height: 4.2rem;
   border-radius: 50%;
-  background: #1b2f35;
+  background: rgb(var(--w-ground));
   font-size: 2rem;
   transition:
     background 0.25s,
@@ -1208,8 +1208,8 @@
   filter: grayscale(1) brightness(0.6);
 }
 .ll-lamp.is-ok i {
-  background: #fde68a;
-  box-shadow: 0 0 26px 6px rgba(251, 191, 36, 0.75);
+  background: rgb(var(--w-gold));
+  box-shadow: 0 0 26px 6px rgb(var(--w-gold-ink) / 0.75);
   filter: none;
 }
 .ll-lamp strong {
@@ -1217,8 +1217,8 @@
   font-weight: 900;
 }
 .ll-lamp.is-sel {
-  border-color: #7dfcff;
-  background: rgba(125, 252, 255, 0.12);
+  border-color: rgb(var(--w-cyan-ink));
+  background: rgb(var(--w-cyan-ink) / 0.12);
 }
 
 /* ── a 4:3 screen (tablet): the same lab, designed at 1000 × 740 — narrower pieces, a reading line of two rows ── */
@@ -1511,12 +1511,56 @@
   align-self: center;
   padding: 0.4rem 0.6rem;
   border-radius: 1.2rem;
-  border: 2px solid rgba(125, 252, 255, 0.35);
-  background: #f8fafc;
+  border: 2px solid rgb(var(--w-cyan-ink) / 0.35);
+  background: rgb(var(--w-paper));
 }
 .ll-rope__card[data-ll-rope-figure='parallel'] {
-  border-color: #34d399;
+  border-color: rgb(var(--w-green-ink));
 }
 .ll-rope__card [data-geo-figure] {
   margin: 0 auto;
+}
+
+/*
+ * ── THE COLOURS (owner, 2026-11-28: « the labo colors are far from the worlds colors… this space is where the student
+ * feels freedom to test, make mistakes and develop, so it must be the best » — and: the SAME colours in every world,
+ * « but it must be better, light ») ──
+ * The lab is a sheet of graph paper on a white bench, the same in every lesson and every world: dark ink, the blue of
+ * a pen for what he acts on, amber for what is left over, green for what closes. Every colour above is a token of the
+ * palette `--w-*` (triplets: `rgb(var(--w-ink) / 0.3)`; GAME_WORLD.md « The palette »): an INK is dark, a SHAPE stays
+ * bright. An instrument (tools/*.jsx) uses the same tokens in its SVG; it writes no fixed night colour.
+ */
+.ll-root {
+  --w-ink: 24 39 56;
+  --w-soft: 84 104 122;
+  --w-cyan: 122 201 238;
+  --w-cyan-ink: 22 104 160;
+  --w-gold: 246 184 56;
+  --w-gold-ink: 150 92 0;
+  --w-green: 84 204 146;
+  --w-green-ink: 21 128 61;
+  --w-violet: 178 164 246;
+  --w-violet-ink: 91 61 190;
+  --w-orange: 250 165 90;
+  --w-orange-ink: 170 80 20;
+  --w-ground: 255 255 255;
+  --w-paper: 255 255 255;
+  color: rgb(var(--w-ink));
+  background: linear-gradient(170deg, #f8fbfe, #eef4f9);
+}
+.ll-root::before {
+  opacity: 1;
+  background-image: linear-gradient(rgba(22, 104, 160, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 104, 160, 0.07) 1px, transparent 1px);
+}
+/* the bench and the cabinet on paper */
+.ll-root .ll-stage {
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--w-cyan-ink) / 0.12),
+    0 8px 22px rgba(20, 40, 60, 0.08);
+}
+.ll-root .ll-cabinet {
+  background: #fffdf6;
+  box-shadow: 0 24px 60px rgba(20, 40, 60, 0.3);
 }

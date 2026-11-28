@@ -1059,8 +1059,8 @@
  * ── THE SHEET ON THE WORLD'S TABLE (owner, 2026-11-27: the navy glass « gives the feeling of leaving the game world ») ──
  * The forge is a sheet laid over the world, which stays in sight behind it, blurred. Every colour above is a token;
  * a world gives its values with `parts.skin` (`data-rf-skin`): papyrus and sandstone on the Nile, wood and sky on the
- * islands, stone on the courts. The MIRROR is an object on that table: its glass stays dark, and what a world draws
- * in it keeps the colours it was drawn with (the tokens take their night values inside it).
+ * islands, stone on the courts. The MIRROR is a pane of the same world, light too; what a world draws in it is coloured
+ * by the palette `--w-*` (triplets, so that `rgb(var(--w-ink) / 0.3)` works): an INK is dark, a SHAPE stays bright.
  */
 .rf-root {
   --rf-frame: #c9a36b;
@@ -1083,8 +1083,22 @@
   --rf-refute-tint: rgba(160, 68, 33, 0.13);
   --rf-tint: rgba(43, 33, 24, 0.06);
   --rf-panel: transparent;
-  --rf-glass-1: #17485c;
-  --rf-glass-2: #0e2e3d;
+  --rf-glass-1: #e4f1ee;
+  --rf-glass-2: #cfe5e0;
+  --w-ink: 43 33 24;
+  --w-soft: 107 90 69;
+  --w-cyan: 150 205 232;
+  --w-cyan-ink: 31 95 139;
+  --w-gold: 242 179 61;
+  --w-gold-ink: 146 90 0;
+  --w-green: 111 207 151;
+  --w-green-ink: 30 110 62;
+  --w-violet: 196 170 250;
+  --w-violet-ink: 109 40 217;
+  --w-orange: 250 165 90;
+  --w-orange-ink: 170 80 20;
+  --w-ground: 255 255 255;
+  --w-paper: 255 255 255;
   --rf-veil: rgba(43, 33, 24, 0.3);
   color: var(--rf-ink);
   background: var(--rf-veil);
@@ -1105,8 +1119,11 @@
   --rf-action: #f2b33d;
   --rf-action-deep: #b67a10;
   --rf-tint: rgba(30, 42, 56, 0.06);
-  --rf-glass-1: #1d4f8f;
-  --rf-glass-2: #0d2552;
+  --rf-glass-1: #e6f3fc;
+  --rf-glass-2: #c9e5f7;
+  --w-ink: 30 42 56;
+  --w-soft: 85 103 122;
+  --w-cyan-ink: 36 99 156;
   --rf-veil: rgba(20, 40, 70, 0.3);
 }
 .rf-root[data-rf-skin='courts'] {
@@ -1120,8 +1137,10 @@
   --rf-ink-soft: #655c50;
   --rf-accent: #7a3e8f;
   --rf-accent-tint: rgba(122, 62, 143, 0.12);
-  --rf-glass-1: #3b2a55;
-  --rf-glass-2: #21183a;
+  --rf-glass-1: #efeaf5;
+  --rf-glass-2: #ddd4ea;
+  --w-ink: 38 34 29;
+  --w-soft: 101 92 80;
 }
 .rf-fit {
   inset: 0.3rem 0.45rem;
@@ -1205,31 +1224,54 @@
   background: var(--rf-raised);
   color: var(--rf-ink);
 }
-/* the mirror: dark glass in a bronze frame — the tokens take their night values inside it */
-/* (an experiment a world frames in dark glass — the islands' `.iq` — is the mirror's glass too) */
+/* the mirror: a pane of the world's own light (sky on the islands, the river's haze on the Nile, pale stone in the
+   courts) in the frame of the sheet — never a night glass (owner, 2026-11-28: « the blue does not fit the world »).
+   An experiment a world frames (the islands' `.iq`, the courts' `.rq-iq`) is the same pane. What a world draws in it
+   takes its colours from the palette `--w-*`. */
 .rf-mirror:not(.is-rule),
 .rf-root .iq,
 .rf-root .rq-iq {
-  --rf-ink: #e8f6ff;
-  --rf-ink-soft: #9fd8ff;
-  --rf-accent: #7dfcff;
-  --rf-on-accent: #06262c;
-  --rf-accent-tint: rgba(125, 252, 255, 0.14);
-  --rf-agree: #34d399;
-  --rf-agree-tint: rgba(52, 211, 153, 0.2);
-  --rf-refute: #fde68a;
-  --rf-refute-tint: rgba(251, 146, 60, 0.2);
-  --rf-action: #fbbf24;
-  --rf-action-tint: rgba(251, 191, 36, 0.2);
-  --rf-tint: rgba(255, 255, 255, 0.08);
-  --rf-line: rgba(159, 216, 255, 0.45);
   color: var(--rf-ink);
-  border: 5px solid #b9792e;
-  background: linear-gradient(150deg, var(--rf-glass-1), var(--rf-glass-2));
+  border: 4px solid var(--rf-frame);
+  background: linear-gradient(170deg, var(--rf-glass-1), var(--rf-glass-2));
   box-shadow:
-    inset 0 0 0 2px #7a4a12,
-    inset 0 0 50px rgba(255, 255, 255, 0.07),
-    0 8px 20px rgba(20, 12, 4, 0.25);
+    inset 0 0 0 1.5px var(--rf-frame-deep),
+    inset 0 0 40px rgba(255, 255, 255, 0.5),
+    0 6px 16px rgba(20, 12, 4, 0.16);
+}
+.rf-mirror::before {
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.35) 45%, transparent 55%);
+}
+.rf-bank {
+  fill: #8d97a6;
+}
+.rf-cell {
+  fill: rgba(255, 255, 255, 0.55);
+  stroke: var(--rf-ink-soft);
+  stroke-opacity: 0.55;
+}
+.rf-plank,
+.rf-plank--sample {
+  fill: #e6b566;
+  stroke: #7b5126;
+}
+.rf-plank.is-alt {
+  fill: #cf9a4a;
+}
+.rf-bridge.is-held .rf-plank {
+  fill: #6fcf97;
+  stroke: var(--rf-agree);
+  filter: none;
+}
+/* a typed number on the light pane: dark ink in a white box (the shell's `.di-num` is drawn for the night) */
+.rf-root .di-num {
+  border-color: var(--rf-accent);
+  background: #ffffff;
+  color: var(--rf-ink);
+}
+.rf-root .di-num:focus {
+  background: #ffffff;
+  box-shadow: 0 0 0 4px var(--rf-accent-tint);
 }
 /* …and when it holds HIS RULE it is the ribbon of the sheet */
 .rf-mirror.is-rule {
@@ -1394,4 +1436,18 @@
 /* the sheet's frame takes a little of the mirror's width: a caption drawn in it stays at its 12 px on screen */
 .rf-mirror .rf-cap {
   font-size: 18.5px;
+}
+/* a number a world colours inside a formula (`\textcolor{#fbbf24}{…}`, a night gold): its ink on the light pane */
+.rf-root .katex [style*='#fbbf24'] {
+  color: rgb(var(--w-gold-ink)) !important;
+}
+.rf-root .katex [style*='#8dffb0'],
+.rf-root .katex [style*='#34d399'] {
+  color: rgb(var(--w-green-ink)) !important;
+}
+.rf-root .katex [style*='#fb923c'] {
+  color: rgb(var(--w-orange-ink)) !important;
+}
+.rf-root .katex [style*='#c4b5fd'] {
+  color: rgb(var(--w-violet-ink)) !important;
 }

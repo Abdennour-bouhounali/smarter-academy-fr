@@ -9,7 +9,7 @@
 
 /* the fraction bar between the two strips */
 .iq-meas-bar {
-  stroke: #e8f6ff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 4;
   stroke-linecap: round;
 }
@@ -24,7 +24,7 @@
   min-height: 2.6rem;
 }
 .rf-root .iq-meas-calc {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-meas-chain {
   white-space: nowrap;
@@ -49,7 +49,7 @@
   font-weight: 800;
 }
 .rf-root .iq-meas-check small {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-meas-tried {
   display: inline-flex;
@@ -59,8 +59,8 @@
   animation: iq-drop 0.3s ease-out backwards;
 }
 .iq-meas-tried.is-fills {
-  border-color: #8dffb0;
-  background: rgba(141, 255, 176, 0.2);
+  border-color: rgb(var(--w-green-ink));
+  background: rgb(var(--w-green-ink) / 0.2);
 }
 .iq--measure .iq-chip.is-no,
 .iq--part .iq-chip.is-no {
@@ -84,7 +84,7 @@
   align-self: stretch;
   height: 3px;
   border-radius: 2px;
-  background: #e8f6ff;
+  background: rgb(var(--w-paper));
 }
 
 @media (max-height: 500px) {
@@ -105,7 +105,7 @@
   opacity: 0.85;
 }
 .iq-meas-band__n {
-  fill: #ffffff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 800;
 }

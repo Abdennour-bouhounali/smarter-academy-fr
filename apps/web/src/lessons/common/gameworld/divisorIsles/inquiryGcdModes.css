@@ -6,7 +6,7 @@
 /* a gap of 0 cells: an empty mark at the start of its line (its « 0 » is written above it) */
 .iq-gapzero {
   fill: none;
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 3;
   stroke-dasharray: 5 4;
 }
@@ -14,7 +14,7 @@
 /* nest · pair: each pair of gaps on its own pale band */
 .iq-pairband {
   fill: rgba(47, 125, 246, 0.08);
-  stroke: rgba(159, 216, 255, 0.28);
+  stroke: rgb(var(--w-soft) / 0.28);
   stroke-width: 1.5;
 }
 .iq--pair .iq-chip {
@@ -26,14 +26,14 @@
   grid-template-columns: 3.6rem minmax(6rem, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
 }
 .iq-rung--line {
-  border: 1.5px solid rgba(125, 252, 255, 0.35);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.35);
 }
 .iq-rung.is-counted .iq-rung__n {
   border-radius: 0.5rem;
-  background: rgba(141, 255, 176, 0.15);
+  background: rgb(var(--w-green-ink) / 0.15);
 }
 .rf-root .iq-rung.is-counted .iq-rung__n {
-  color: #8dffb0;
+  color: rgb(var(--w-green-ink));
 }
 
 /* ladder · both: the two ladders side by side, their rows shrinking together to fit one screen */
@@ -54,18 +54,18 @@
   min-height: 0;
   padding: 0.4rem 0.8rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(159, 216, 255, 0.3);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgb(var(--w-soft) / 0.3);
+  background: rgb(var(--w-ink) / 0.04);
 }
 .iq-both__col.is-done {
-  border-color: rgba(125, 252, 255, 0.6);
+  border-color: rgb(var(--w-cyan-ink) / 0.6);
 }
 .iq-both__label {
   font-size: max(var(--di-min-font, 12px), 0.95rem);
   font-weight: 800;
 }
 .rf-root .iq-both__label {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-both__bars {
   width: 100%;
@@ -85,7 +85,7 @@
   white-space: nowrap;
 }
 .rf-root .iq-both__tex {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-both__count {
   min-height: 1.6rem;
@@ -93,7 +93,7 @@
   font-weight: 900;
 }
 .rf-root .iq-both__count {
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 @media (max-height: 500px) {
   .iq-both__col {

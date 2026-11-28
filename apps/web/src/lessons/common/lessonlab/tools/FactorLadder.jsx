@@ -140,7 +140,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
     >
       <svg viewBox={`0 0 ${VW} ${VH}`} data-ll-factor-tool data-left={left} data-planks={planks.join(',')}>
         {/* the ladder, as a copybook writes it: the numbers, a bar, the planks that filled */}
-        <text x="40" y="30" fontSize="18" style={{ fill: '#e0f2fe' }}>
+        <text x="40" y="30" fontSize="18" style={{ fill: 'rgb(var(--w-ink))' }}>
           L’échelle
         </text>
         <line
@@ -148,7 +148,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
           y1={50}
           x2="185"
           y2={50 + rows.length * rowH}
-          stroke="#7dfcff"
+          stroke="rgb(var(--w-cyan-ink))"
           strokeWidth="3"
           strokeLinecap="round"
         />
@@ -160,7 +160,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
               textAnchor="end"
               fontSize={size}
               fontWeight="700"
-              style={{ ...LTR, fill: x.p === null ? '#fde68a' : '#eafcff' }}
+              style={{ ...LTR, fill: x.p === null ? 'rgb(var(--w-gold-ink))' : 'rgb(var(--w-ink))' }}
             >
               {f(x.n)}
             </text>
@@ -170,7 +170,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                 y={50 + (k + 0.75) * rowH}
                 fontSize={size}
                 fontWeight="700"
-                style={{ ...LTR, fill: '#6ee7b7' }}
+                style={{ ...LTR, fill: 'rgb(var(--w-green-ink))' }}
               >
                 {f(x.p)}
               </text>
@@ -178,7 +178,14 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
           </g>
         ))}
         {/* the gap now, and the last lay over the gap it was laid on */}
-        <text x={X_GAP} y="34" fontSize="20" fontWeight="700" style={{ fill: '#e0f2fe' }} data-ll-factor-gap={left}>
+        <text
+          x={X_GAP}
+          y="34"
+          fontSize="20"
+          fontWeight="700"
+          style={{ fill: 'rgb(var(--w-ink))' }}
+          data-ll-factor-gap={left}
+        >
           {done ? 'Le fossé est franchi' : `Fossé : ${cells(left)}`}
         </text>
         <rect
@@ -187,8 +194,8 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
           width={W_GAP}
           height="32"
           rx="6"
-          fill="rgba(234,252,255,.08)"
-          stroke="rgba(234,252,255,.55)"
+          fill="rgb(var(--w-ink) / 0.08)"
+          stroke="rgb(var(--w-ink) / 0.55)"
           strokeWidth="1.5"
         />
         {last && (
@@ -202,7 +209,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                   width={Math.max(1, last.plank * u - 2)}
                   height="26"
                   rx="3"
-                  fill={last.held ? '#34d399' : '#7dfcff'}
+                  fill={last.held ? 'rgb(var(--w-green))' : 'rgb(var(--w-cyan))'}
                 />
               ))
             ) : (
@@ -212,11 +219,18 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                 width={q * last.plank * u - 2}
                 height="26"
                 rx="3"
-                fill={last.held ? '#34d399' : '#7dfcff'}
+                fill={last.held ? 'rgb(var(--w-green))' : 'rgb(var(--w-cyan))'}
               />
             )}
-            {r > 0 && <rect x={X_GAP + q * last.plank * u} y="53" width={r * u} height="26" rx="3" fill="#fbbf24" />}
-            <text x={X_GAP} y="108" fontSize="18" style={{ ...LTR, fill: last.held ? '#6ee7b7' : '#fde68a' }}>
+            {r > 0 && (
+              <rect x={X_GAP + q * last.plank * u} y="53" width={r * u} height="26" rx="3" fill="rgb(var(--w-gold))" />
+            )}
+            <text
+              x={X_GAP}
+              y="108"
+              fontSize="18"
+              style={{ ...LTR, fill: last.held ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-gold-ink))' }}
+            >
               {`${counted(q, ['planche', 'planches'])} de ${f(last.plank)} sur ${cells(last.before)}${r ? `, reste ${f(r)}` : ''}`}
             </text>
           </g>
@@ -241,7 +255,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                   width={CHIP.w + 8}
                   height={CHIP.h + 8}
                   rx="14"
-                  fill="#fbbf24"
+                  fill="rgb(var(--w-gold))"
                 />
               )}
               <rect
@@ -250,8 +264,8 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                 width={CHIP.w}
                 height={CHIP.h}
                 rx="10"
-                fill="rgba(125,252,255,.12)"
-                stroke={fellHere === d ? '#fbbf24' : '#7dfcff'}
+                fill="rgb(var(--w-cyan-ink) / 0.12)"
+                stroke={fellHere === d ? 'rgb(var(--w-gold-ink))' : 'rgb(var(--w-cyan-ink))'}
                 strokeWidth={fellHere === d ? 3 : 1.5}
               />
               <text
@@ -260,7 +274,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                 textAnchor="middle"
                 fontSize="22"
                 fontWeight="800"
-                style={{ fill: '#eafcff' }}
+                style={{ fill: 'rgb(var(--w-ink))' }}
               >
                 {d}
               </text>
@@ -283,8 +297,8 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                 width={CHIP.w + CHIP.step}
                 height={CHIP.h}
                 rx="10"
-                fill="rgba(253,230,138,.12)"
-                stroke="#fde68a"
+                fill="rgb(var(--w-gold-ink) / 0.12)"
+                stroke="rgb(var(--w-gold-ink))"
                 strokeWidth="1.5"
                 strokeDasharray="6 4"
               />
@@ -294,7 +308,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
                 textAnchor="middle"
                 fontSize="17"
                 fontWeight="700"
-                style={{ fill: '#fde68a' }}
+                style={{ fill: 'rgb(var(--w-gold-ink))' }}
               >
                 Tout le fossé
               </text>
@@ -309,7 +323,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
             y="300"
             fontSize={planks.length > 8 ? 17 : 24}
             fontWeight="800"
-            style={{ ...LTR, fill: '#6ee7b7' }}
+            style={{ ...LTR, fill: 'rgb(var(--w-green-ink))' }}
             data-ll-factor-product
           >
             {`${f(a)} = ${row}`}
@@ -320,7 +334,7 @@ export default function FactorLadder({ a, b, play, report, start = null }) {
             y="288"
             fontSize={planks.length > 8 ? 17 : 21}
             fontWeight="700"
-            style={{ ...LTR, fill: '#e0f2fe' }}
+            style={{ ...LTR, fill: 'rgb(var(--w-ink))' }}
             data-ll-factor-row
           >
             {planks.length ? `Rangée : ${row}` : 'Rangée : aucune planche'}

@@ -12,7 +12,16 @@ const OY = 14;
 const W = 640;
 const H = 318;
 const LX = 925; // the divisions are written in a column on the right, after the rectangle (read left to right)
-const COLORS = ['#2dd4bf', '#fbbf24', '#a78bfa', '#f472b6', '#60a5fa', '#fb923c', '#a3e635'];
+const INKS = ['rgb(var(--w-cyan-ink))', 'rgb(var(--w-gold-ink))', 'rgb(var(--w-violet-ink))', '#be185d', '#1d4ed8'];
+const COLORS = [
+  'rgb(var(--w-cyan))',
+  'rgb(var(--w-gold))',
+  'rgb(var(--w-violet))',
+  '#f472b6',
+  '#60a5fa',
+  '#fb923c',
+  '#a3e635',
+];
 
 export default function Euclid({ a, b, setA, setB, play, report, range }) {
   const svg = useRef(null);
@@ -109,10 +118,18 @@ export default function Euclid({ a, b, setA, setB, play, report, range }) {
       <svg ref={svg} viewBox={`0 0 ${VW} ${VH}`} data-ll-euclid data-cut={cut} data-squares={E.squares.length}>
         <defs>
           <pattern id="ll-unit" width={u} height={u} patternUnits="userSpaceOnUse" x={OX} y={OY}>
-            <path d={`M ${u} 0 H 0 V ${u}`} fill="none" stroke="rgba(234,252,255,.22)" strokeWidth="1" />
+            <path d={`M ${u} 0 H 0 V ${u}`} fill="none" stroke="rgb(var(--w-ink) / 0.22)" strokeWidth="1" />
           </pattern>
         </defs>
-        <rect x={OX} y={OY} width={a * u} height={b * u} fill="#12343c" stroke="#eafcff" strokeWidth="2.5" />
+        <rect
+          x={OX}
+          y={OY}
+          width={a * u}
+          height={b * u}
+          fill="rgb(var(--w-ground))"
+          stroke="rgb(var(--w-ink))"
+          strokeWidth="2.5"
+        />
         {u >= 7 && <rect x={OX} y={OY} width={a * u} height={b * u} fill="url(#ll-unit)" />}
         {E.squares.slice(0, cut).map((s, i) => {
           const last = done && s.step === E.steps - 1;
@@ -125,7 +142,7 @@ export default function Euclid({ a, b, setA, setB, play, report, range }) {
                 width={px - 3}
                 height={px - 3}
                 rx={Math.min(8, px / 5)}
-                fill={last ? '#fde047' : COLORS[s.step % COLORS.length]}
+                fill={last ? 'rgb(var(--w-gold))' : COLORS[s.step % COLORS.length]}
                 opacity=".92"
                 stroke="#06262c"
                 strokeWidth="2"
@@ -153,22 +170,37 @@ export default function Euclid({ a, b, setA, setB, play, report, range }) {
               y={44 + i * 33}
               textAnchor="end"
               fontSize="21"
-              style={{ fill: l.r === 0 ? '#6ee7b7' : COLORS[i % COLORS.length], animation: 'll-flip .3s ease-out' }}
+              style={{
+                fill: l.r === 0 ? 'rgb(var(--w-green-ink))' : INKS[i % INKS.length],
+                animation: 'll-flip .3s ease-out',
+              }}
             >
               {l.a} = {l.b} × {l.q} + {l.r}
             </text>
           ))}
         </g>
-        <text x={OX + (a * u) / 2} y={cy + 24} textAnchor="middle" fontSize="19" style={{ fill: '#7dfcff' }}>
+        <text
+          x={OX + (a * u) / 2}
+          y={cy + 24}
+          textAnchor="middle"
+          fontSize="19"
+          style={{ fill: 'rgb(var(--w-cyan-ink))' }}
+        >
           {a}
         </text>
-        <text x={OX - 10} y={OY + (b * u) / 2 + 7} textAnchor="end" fontSize="19" style={{ fill: '#7dfcff' }}>
+        <text
+          x={OX - 10}
+          y={OY + (b * u) / 2 + 7}
+          textAnchor="end"
+          fontSize="19"
+          style={{ fill: 'rgb(var(--w-cyan-ink))' }}
+        >
           {b}
         </text>
         <g className="ll-handle" {...corner} data-ll-corner>
-          {!moved && <circle className="ll-pulse" cx={cx} cy={cy} r="26" fill="#7dfcff" />}
+          {!moved && <circle className="ll-pulse" cx={cx} cy={cy} r="26" fill="rgb(var(--w-cyan))" />}
           <circle cx={cx} cy={cy} r="22" fill="transparent" />
-          <circle cx={cx} cy={cy} r="12" fill="#7dfcff" stroke="#06262c" strokeWidth="3" />
+          <circle cx={cx} cy={cy} r="12" fill="rgb(var(--w-cyan))" stroke="#06262c" strokeWidth="3" />
         </g>
       </svg>
     </Tool>

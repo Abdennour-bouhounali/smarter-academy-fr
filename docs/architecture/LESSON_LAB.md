@@ -173,6 +173,14 @@ A teacher gets no button. Lessons and the lab stay behind `RequireLargeScreen`.
 
 ## 5. Screen
 
+**Its colours** (owner, 2026-11-28: « the labo… is where the student feels freedom to test, make mistakes and
+develop, so it must be the best » — the SAME in every world, and light). The lab is a sheet of graph paper on a white
+bench: dark ink, the blue of a pen for what he acts on, amber for what is left over, green for what closes — never a
+night screen. `lessonLab.css` and every instrument (`tools/*.jsx`, in its SVG attributes and style objects) write no
+fixed night colour: they use the palette `--w-*` (GAME_WORLD.md « The palette »), whose values for the lab are given
+once on `.ll-root` (`lessonLab.css` « THE COLOURS »). An opaque fill is a bright SHAPE (`--w-cyan`, `--w-gold`,
+`--w-green`); a text, a stroke, a border is an INK (`--w-…-ink`). A new instrument follows the same rule.
+
 - **Nothing scrolls.** Two designs so the text never gets small: 1280 × 720 for a wide screen, 1000 × 740 for a 4:3 one
   (`ll-root--narrow`), each zoomed to the window. The one size a lesson is checked at is 1366×768.
 - The cabinet never scrolls either: one grade per tab, four lessons a page — three when the grade needs the pager.

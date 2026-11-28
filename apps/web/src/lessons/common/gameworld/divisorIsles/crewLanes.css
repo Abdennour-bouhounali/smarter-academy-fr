@@ -1,5 +1,5 @@
 /* THE CREWS' LANES (crewLanes.jsx) — SVG drawn at 1 : 1. Shapes are the brand blue (#2f7df6), never black; the
-   shortfall amber (#fbbf24) as everywhere in this world; text light on the world's dark panels, never under 12 px — what
+   shortfall amber (rgb(var(--w-gold-ink))) as everywhere in this world; text light on the world's dark panels, never under 12 px — what
    the student must read (a crew's name, a shortfall, the pillar's distance, the days since the start) is 18 px. Scoped
    to .cl-*: nothing here touches another kind. */
 .cl-lanes,
@@ -11,11 +11,11 @@
   font-family: inherit;
 }
 .cl-ruler line {
-  stroke: #9fd8ff;
+  stroke: rgb(var(--w-soft));
   stroke-width: 1.5;
 }
 .cl-tick {
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
   font-size: 16px;
   font-weight: 700;
 }
@@ -25,60 +25,60 @@
   stroke: #0b1a3f;
   stroke-width: 6px;
   stroke-linejoin: round;
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 800;
 }
 .cl-water {
   fill: rgba(47, 125, 246, 0.12);
-  stroke: rgba(159, 216, 255, 0.35);
+  stroke: rgb(var(--w-soft) / 0.35);
   stroke-width: 1;
 }
 .cl-plank {
   fill: #2f7df6;
-  stroke: #cfe9ff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 1.5;
 }
 .cl-band rect {
   fill: #2f7df6;
 }
 .cl-band__count {
-  fill: #ffffff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 800;
 }
 .cl-short rect {
-  fill: rgba(251, 191, 36, 0.45);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.45);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2;
 }
 .cl-short line {
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2;
 }
 .cl-short text {
-  fill: #ffe2a8;
+  fill: rgb(var(--w-gold-ink));
   font-size: 18px;
   font-weight: 800;
 }
 .cl-post rect {
   fill: #2f7df6;
-  stroke: #e8f6ff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 1.5;
 }
 .cl-post text {
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 800;
 }
 /* the days */
 .cl-dayhead {
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 700;
 }
 .cl-team {
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 800;
 }
@@ -86,29 +86,29 @@
   fill: #2f7df6;
 }
 .cl-off {
-  fill: rgba(159, 216, 255, 0.16);
+  fill: rgb(var(--w-soft) / 0.16);
 }
 .cl-dark {
-  fill: rgba(255, 255, 255, 0.04);
+  fill: rgb(var(--w-ink) / 0.04);
 }
 .cl-glyph-on {
-  fill: #ffffff;
+  fill: rgb(var(--w-paper));
 }
 .cl-glyph-off {
   fill: #9fb3c8;
 }
 .cl-since {
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   font-size: 18px;
   font-weight: 700;
 }
 .cl-ask {
   fill: none;
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 2;
 }
 .cl-today {
   fill: none;
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2.5;
 }

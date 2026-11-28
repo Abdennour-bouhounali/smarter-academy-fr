@@ -8,24 +8,24 @@
 
 /* the table and what lies on it */
 .iqd-table {
-  fill: rgba(255, 255, 255, 0.04);
-  stroke: rgba(159, 216, 255, 0.3);
+  fill: rgb(var(--w-ink) / 0.04);
+  stroke: rgb(var(--w-soft) / 0.3);
   stroke-width: 1.5;
 }
 .iq-scene text.iqd-count {
   /* the scene is drawn smaller than 1000 px wide when the table of tries is on screen: the count stays readable */
   font-size: 28px;
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
 }
 .iqd-apart {
-  fill: rgba(251, 191, 36, 0.12);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.12);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2.5;
   stroke-dasharray: 7 5;
   animation: iq-drop 0.35s ease-out backwards;
 }
 .is-left .iqd-count {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
 }
 /* the lots */
 .iqd-lotshape {
@@ -36,7 +36,7 @@
 }
 .iqd-weave {
   fill: none;
-  stroke: rgba(125, 252, 255, 0.35);
+  stroke: rgb(var(--w-cyan-ink) / 0.35);
   stroke-width: 1.5;
 }
 .iqd-item.is-in {
@@ -47,12 +47,12 @@
 /* the glyphs (symbols drawn once) */
 .iqd-stem {
   fill: none;
-  stroke: #4ade80;
+  stroke: rgb(var(--w-green-ink));
   stroke-width: 1.6;
   stroke-linecap: round;
 }
 .iqd-leaf {
-  fill: #4ade80;
+  fill: rgb(var(--w-green));
 }
 .iqd-rose {
   fill: #f43f5e;
@@ -66,12 +66,12 @@
 }
 .iqd-lily {
   fill: #fff7ed;
-  stroke: #fcd34d;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 0.8;
   stroke-linejoin: round;
 }
 .iqd-lily-in {
-  fill: #f59e0b;
+  fill: rgb(var(--w-gold));
 }
 .iqd-apple {
   fill: #dc2626;
@@ -105,7 +105,7 @@
   font-weight: 800;
 }
 .rf-root .iqd-tab {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iqd-tab th,
 .iqd-tab td {
@@ -119,23 +119,23 @@
   font-weight: 800;
 }
 .rf-root .iqd-tab th[scope='row'] {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iqd-tab tr:first-child th:not([scope='row']) {
   background: rgba(47, 125, 246, 0.25);
-  border: 1.5px solid rgba(125, 252, 255, 0.35);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.35);
 }
 .iqd-tab th.is-ok {
-  border-color: rgba(141, 255, 176, 0.7);
+  border-color: rgb(var(--w-green-ink) / 0.7);
 }
 .iqd-tab th.is-shown {
-  outline: 2px solid #7dfcff;
+  outline: 2px solid rgb(var(--w-cyan-ink));
 }
 .iqd-tab td.is-left {
-  background: rgba(251, 191, 36, 0.1);
+  background: rgb(var(--w-gold-ink) / 0.1);
 }
 .iqd-tab td.is-ok {
-  background: rgba(141, 255, 176, 0.12);
+  background: rgb(var(--w-green-ink) / 0.12);
 }
 .iqd-left {
   display: inline-flex;
@@ -157,7 +157,7 @@
   border-style: dashed;
 }
 .iq--deal .iq-chip.is-tried.is-ok {
-  border-color: rgba(141, 255, 176, 0.7);
+  border-color: rgb(var(--w-green-ink) / 0.7);
 }
 .iq--deal .iq-chip:disabled {
   opacity: 0.6;
@@ -187,15 +187,15 @@
 .rf-deal text.iqd-count,
 .rf-deal text.rf-deal__k {
   font-size: 30px;
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
 }
 .rf-deal .is-left text.iqd-count {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 .rf-deal.is-held .iqd-lotshape {
-  stroke: #34d399;
-  fill: rgba(52, 211, 153, 0.16);
-  filter: drop-shadow(0 0 6px rgba(52, 211, 153, 0.7));
+  stroke: rgb(var(--w-green-ink));
+  fill: rgb(var(--w-green-ink) / 0.16);
+  filter: drop-shadow(0 0 6px rgb(var(--w-green-ink) / 0.7));
 }
 .rf-deal.is-fell .is-left .iqd-item {
   animation: rf-blink 0.7s infinite;
@@ -204,13 +204,13 @@
   opacity: 0.4;
 }
 .rf-deal__claim rect {
-  fill: rgba(6, 18, 44, 0.88);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-ground) / 0.88);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2;
 }
 .rf-deal__claim text {
   font-size: 28px;
-  fill: #fde68a;
+  fill: rgb(var(--w-gold-ink));
 }
 /* the head of a sharing's line of evidence: two counts, each with its item */
 .rf-dealhead {

@@ -89,37 +89,65 @@ export default function Divisors({ a, b, play, report }) {
             />
           ),
         )}
-        <line x1={X0 - 16} y1={Y} x2={X1 + 16} y2={Y} stroke="#eafcff" strokeWidth="3" strokeLinecap="round" />
+        <line
+          x1={X0 - 16}
+          y1={Y}
+          x2={X1 + 16}
+          y2={Y}
+          stroke="rgb(var(--w-ink))"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
         {Array.from({ length: a }, (_, i) => i + 1).map((d) => (
-          <line key={d} x1={x(d)} y1={Y - 5} x2={x(d)} y2={Y + 5} stroke="rgba(234,252,255,.5)" strokeWidth="1.5" />
+          <line key={d} x1={x(d)} y1={Y - 5} x2={x(d)} y2={Y + 5} stroke="rgb(var(--w-ink) / 0.5)" strokeWidth="1.5" />
         ))}
         {found.map((d, i) => (
           <g key={d}>
-            <circle cx={x(d)} cy={Y} r="7" fill="#34d399" stroke="#06262c" strokeWidth="2" />
-            <text x={x(d)} y={Y + 28 + (i % 3) * 19} textAnchor="middle" fontSize="17" style={{ fill: '#a7f3d0' }}>
+            <circle cx={x(d)} cy={Y} r="7" fill="rgb(var(--w-green))" stroke="#06262c" strokeWidth="2" />
+            <text
+              x={x(d)}
+              y={Y + 28 + (i % 3) * 19}
+              textAnchor="middle"
+              fontSize="17"
+              style={{ fill: 'rgb(var(--w-green-ink))' }}
+            >
               {d}
             </text>
           </g>
         ))}
-        <text x={X1} y="24" textAnchor="end" fontSize="22" style={{ fill: '#fde68a' }}>
+        <text x={X1} y="24" textAnchor="end" fontSize="22" style={{ fill: 'rgb(var(--w-gold-ink))' }}>
           {a}
         </text>
         <g className="ll-handle" {...drag} data-ll-lens>
           <rect x={X0 - 30} y={Y - 44} width={X1 - X0 + 60} height="90" fill="transparent" />
-          {probe === null && <circle className="ll-pulse" cx={px} cy={Y} r="26" fill="#fbbf24" />}
-          <circle cx={px} cy={Y} r="14" fill="rgba(251,191,36,.25)" stroke="#fbbf24" strokeWidth="4" />
+          {probe === null && <circle className="ll-pulse" cx={px} cy={Y} r="26" fill="rgb(var(--w-gold))" />}
+          <circle
+            cx={px}
+            cy={Y}
+            r="14"
+            fill="rgb(var(--w-gold-ink) / 0.25)"
+            stroke="rgb(var(--w-gold-ink))"
+            strokeWidth="4"
+          />
           <line
             x1={px + 10}
             y1={Y + 10}
             x2={px + 22}
             y2={Y + 22}
-            stroke="#fbbf24"
+            stroke="rgb(var(--w-gold-ink))"
             strokeWidth="5"
             strokeLinecap="round"
           />
           {probe !== null && (
             <g>
-              <rect x={px - 24} y={Y - 62} width="48" height="30" rx="10" fill={res.r === 0 ? '#34d399' : '#fbbf24'} />
+              <rect
+                x={px - 24}
+                y={Y - 62}
+                width="48"
+                height="30"
+                rx="10"
+                fill={res.r === 0 ? 'rgb(var(--w-green))' : 'rgb(var(--w-gold))'}
+              />
               <text x={px} y={Y - 40} textAnchor="middle" fontSize="20" style={{ fill: '#06262c' }}>
                 {probe}
               </text>

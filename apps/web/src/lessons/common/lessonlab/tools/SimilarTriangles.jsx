@@ -17,11 +17,11 @@ const BOX = [
   { x: 20, y: 30, w: 420, h: 196 },
   { x: 500, y: 30, w: 420, h: 196 },
 ];
-const INK1 = '#7dfcff';
-const INK2 = '#fde68a';
+const INK1 = 'rgb(var(--w-cyan-ink))';
+const INK2 = 'rgb(var(--w-gold-ink))';
 /** One colour per angle of ABC; an angle of DEF wears it only when it is exactly equal. */
-const ANGLE_INK = { A: '#f9a8d4', B: '#86efac', C: '#c4b5fd' };
-const DIM = 'rgba(234,252,255,.35)';
+const ANGLE_INK = { A: '#be185d', B: '#15803d', C: 'rgb(var(--w-violet-ink))' };
+const DIM = 'rgb(var(--w-ink) / 0.35)';
 const HAT = { A: 'Â', B: 'B̂', C: 'Ĉ', D: 'D̂', E: 'Ê', F: 'F̂' };
 const CELLS = [330, 560, 790];
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
@@ -123,7 +123,7 @@ function Triangle({ pts, sides, names, ink, angleInk, id }) {
     <g data-ll-sim-tri={id}>
       <polygon
         points={poly(names.map((n) => pts[n]))}
-        fill={id === 't1' ? 'rgba(125,252,255,.10)' : 'rgba(253,230,138,.12)'}
+        fill={id === 't1' ? 'rgb(var(--w-cyan-ink) / 0.1)' : 'rgb(var(--w-gold-ink) / 0.12)'}
         stroke={ink}
         strokeWidth="4"
         strokeLinejoin="round"
@@ -251,12 +251,12 @@ export default function SimilarTriangles({ a, b, play, report, start = null }) {
   const quot = (p) => `${S.t2.sides[p.t2].text} ÷ ${S.t1.sides[p.t1].text}`;
   const row = (pairs, eqs, y, caption, label, id) => (
     <g data-ll-sim-row={id}>
-      <text x="20" y={y} fontSize="17" style={{ fill: '#a5f3fc' }}>
+      <text x="20" y={y} fontSize="17" style={{ fill: 'rgb(var(--w-cyan-ink))' }}>
         {label}
       </text>
       {pairs.map((p, i) => (
         <g key={i}>
-          <text x={CELLS[i]} y={y - 22} textAnchor="middle" fontSize="13" style={{ fill: '#a5f3fc' }}>
+          <text x={CELLS[i]} y={y - 22} textAnchor="middle" fontSize="13" style={{ fill: 'rgb(var(--w-cyan-ink))' }}>
             {caption(p, i)}
           </text>
           <text x={CELLS[i]} y={y} textAnchor="middle" fontSize="19" data-ll-sim-quot={`${id}-${i}`}>
@@ -272,7 +272,7 @@ export default function SimilarTriangles({ a, b, play, report, start = null }) {
           textAnchor="middle"
           fontSize="24"
           fontWeight="900"
-          style={{ fill: eq ? '#34d399' : '#fbbf24' }}
+          style={{ fill: eq ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-gold-ink))' }}
           data-ll-sim-mark={`${id}-${i}`}
           data-eq={eq ? 'yes' : 'no'}
         >
@@ -284,7 +284,7 @@ export default function SimilarTriangles({ a, b, play, report, start = null }) {
   const angles = (tri, letters, x, id) => (
     <text x={x} y="356" fontSize="17" data-ll-sim-angles={id}>
       {letters.map((n, i) => (
-        <tspan key={n} style={{ fill: id === 't1' ? ink1(n) : ink2(n) === DIM ? '#eafcff' : ink2(n) }}>
+        <tspan key={n} style={{ fill: id === 't1' ? ink1(n) : ink2(n) === DIM ? 'rgb(var(--w-ink))' : ink2(n) }}>
           {`${i ? ' ; ' : ''}${HAT[n]} ${tri.angles[n].text}`}
         </tspan>
       ))}
@@ -378,17 +378,17 @@ export default function SimilarTriangles({ a, b, play, report, start = null }) {
         data-same={S.same ? 'yes' : 'no'}
         data-size={S.size ?? 'none'}
       >
-        <text x={BOX[0].x} y="20" fontSize="15" style={{ fill: '#a5f3fc' }}>
+        <text x={BOX[0].x} y="20" fontSize="15" style={{ fill: 'rgb(var(--w-cyan-ink))' }}>
           ABC
         </text>
-        <text x={BOX[1].x} y="20" fontSize="15" style={{ fill: '#a5f3fc' }}>
+        <text x={BOX[1].x} y="20" fontSize="15" style={{ fill: 'rgb(var(--w-cyan-ink))' }}>
           {`DEF — fais glisser ${P2name}`}
         </text>
         {/* DEF set to the size of ABC and laid on it: drawn under ABC's letters, dashed */}
         <polygon
           points={poly(ghostNames.map((n) => G.ghost[n]))}
-          fill={S.same ? 'rgba(52,211,153,.22)' : 'none'}
-          stroke={S.same ? '#34d399' : INK2}
+          fill={S.same ? 'rgb(var(--w-green-ink) / 0.22)' : 'none'}
+          stroke={S.same ? 'rgb(var(--w-green-ink))' : INK2}
           strokeWidth="3"
           strokeDasharray="8 6"
           data-ll-sim-laid={S.same ? 'covers' : 'misses'}
@@ -408,7 +408,9 @@ export default function SimilarTriangles({ a, b, play, report, start = null }) {
           onKeyDown={keys(setC, c)}
           data-ll-sim-handle="C"
         >
-          {!moved && <circle className="ll-pulse" cx={fmt(G.t1.C.x)} cy={fmt(G.t1.C.y)} r="20" fill="#fbbf24" />}
+          {!moved && (
+            <circle className="ll-pulse" cx={fmt(G.t1.C.x)} cy={fmt(G.t1.C.y)} r="20" fill="rgb(var(--w-gold))" />
+          )}
           <circle cx={fmt(G.t1.C.x)} cy={fmt(G.t1.C.y)} r="11" fill={INK1} stroke="#06262c" strokeWidth="3" />
         </g>
         {/* the far vertex of DEF's second side: it slides along that side, the angle at its first vertex stays */}

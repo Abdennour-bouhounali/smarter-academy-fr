@@ -54,7 +54,7 @@
   stroke-dasharray: 7 5;
 }
 .crt-onetile__line {
-  stroke: rgba(145, 167, 255, 0.35);
+  stroke: rgb(var(--w-soft, 159 216 255) / 0.35);
   stroke-width: 1;
 }
 .crt-wall {
@@ -91,7 +91,7 @@
 }
 .crt-plat.is-ask .crt-plat__slab {
   stroke-dasharray: 8 6;
-  fill: rgba(219, 228, 255, 0.1);
+  fill: rgb(var(--w-ink, 232 246 255) / 0.1);
 }
 .crt-plat.is-build {
   animation: crt-lower 0.9s cubic-bezier(0.3, 0.7, 0.4, 1) both;
@@ -103,9 +103,9 @@
   stroke-linejoin: round;
 }
 .crt-plat.is-ride .crt-plat__slab {
-  fill: rgba(52, 211, 153, 0.35);
+  fill: rgb(var(--w-green-ink, 141 255 176) / 0.35);
   stroke: var(--crt-ride);
-  filter: drop-shadow(0 0 7px rgba(52, 211, 153, 0.85));
+  filter: drop-shadow(0 0 7px rgb(var(--w-green-ink, 141 255 176) / 0.85));
   animation: crt-glow 1.4s ease-in-out 2;
 }
 .crt-plat.is-jam {
@@ -120,14 +120,14 @@
   animation: crt-tilt 0.6s ease-in-out;
 }
 .crt-band {
-  fill: rgba(251, 191, 36, 0.55);
+  fill: rgb(var(--w-gold, 251 191 36) / 0.55);
   stroke: var(--crt-band);
   stroke-width: 2;
   stroke-linejoin: round;
   animation: crt-pulse 1.1s ease-in-out 3;
 }
 .crt-over {
-  fill: rgba(167, 139, 250, 0.55);
+  fill: rgb(var(--w-violet, 167 139 250) / 0.55);
   stroke: var(--crt-over);
   stroke-width: 2;
   stroke-linejoin: round;
@@ -141,7 +141,7 @@
 }
 .crt-t--area {
   font-weight: 900;
-  fill: #fff;
+  fill: rgb(var(--w-ink, 232 246 255));
 }
 .crt-t--soft {
   fill: var(--crt-soft);
@@ -156,27 +156,27 @@
   opacity: 0.9;
 }
 .crt-t--ride {
-  fill: #6ee7b7;
+  fill: rgb(var(--w-green-ink, 141 255 176));
   font-weight: 900;
 }
 .crt-t--band {
-  fill: #fcd34d;
+  fill: rgb(var(--w-gold-ink, 251 191 36));
   font-weight: 900;
 }
 .crt-t--jam {
-  fill: #c4b5fd;
+  fill: rgb(var(--w-violet-ink, 196 181 253));
   font-weight: 900;
 }
 .crt-t--diff {
-  fill: #fff;
+  fill: rgb(var(--w-ink, 232 246 255));
   font-weight: 900;
 }
 .crt-t--zoom {
-  fill: #fff;
+  fill: rgb(var(--w-ink, 232 246 255));
   font-weight: 900;
 }
 .crt-bar {
-  stroke: #fff;
+  stroke: rgb(var(--w-ink, 232 246 255));
   stroke-width: 2.5;
 }
 /* a rod written as a fraction: its bar in the rod's ink, like its digits */
@@ -215,10 +215,10 @@
   fill: rgba(92, 124, 250, 0.45);
 }
 .crt-lens__plat {
-  fill: rgba(219, 228, 255, 0.4);
+  fill: rgb(var(--w-ink, 232 246 255) / 0.4);
 }
 .crt-lens__plat.is-ride {
-  fill: rgba(52, 211, 153, 0.55);
+  fill: rgb(var(--w-green, 141 255 176) / 0.55);
 }
 .crt-lens__wall {
   fill: none;
@@ -232,22 +232,22 @@
 }
 .crt-lens__ring {
   fill: none;
-  stroke: #dbe4ff;
+  stroke: rgb(var(--w-ink, 232 246 255));
   stroke-width: 4;
 }
 .crt-lens__handle {
-  stroke: #91a7ff;
+  stroke: rgb(var(--w-soft, 159 216 255));
   stroke-width: 9;
   stroke-linecap: round;
 }
 .crt-lens__leader {
-  stroke: #dbe4ff;
+  stroke: rgb(var(--w-ink, 232 246 255));
   stroke-width: 1.6;
   stroke-dasharray: 5 4;
 }
 .crt-lens__spot {
   fill: none;
-  stroke: #dbe4ff;
+  stroke: rgb(var(--w-ink, 232 246 255));
   stroke-width: 2;
 }
 .crt-lens.is-band .crt-lens__spot {
@@ -274,17 +274,17 @@
   fill: #91a7ff;
 }
 .crt-mini.is-ride .crt-mini__plat {
-  fill: #34d399;
+  fill: rgb(var(--w-green, 141 255 176));
 }
 .crt-mini__band {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold, 251 191 36));
 }
 .crt-mini__over {
-  fill: #a78bfa;
+  fill: rgb(var(--w-violet, 167 139 250));
 }
 .crt-mini__wall {
   fill: none;
-  stroke: #dbe4ff;
+  stroke: #5c7cfa;
   stroke-width: 1.6;
 }
 
@@ -309,7 +309,7 @@
 }
 @keyframes crt-glow {
   50% {
-    filter: drop-shadow(0 0 14px rgba(52, 211, 153, 1));
+    filter: drop-shadow(0 0 14px rgb(var(--w-green-ink, 141 255 176)));
   }
 }
 @keyframes crt-jam {
@@ -398,18 +398,18 @@
   font-weight: 900;
 }
 .rf-log li .crt-line em.crt-kind--ride {
-  color: #6ee7b7;
+  color: rgb(var(--w-green-ink, 141 255 176));
 }
 .rf-log li .crt-line em.crt-kind--band {
-  color: #fcd34d;
+  color: rgb(var(--w-gold-ink, 251 191 36));
 }
 .rf-log li .crt-line em.crt-kind--jam {
-  color: #c4b5fd;
+  color: rgb(var(--w-violet-ink, 196 181 253));
 }
 .crt-line__tag {
   font-size: max(var(--di-min-font, 12px), 0.82rem);
   font-weight: 800;
-  color: #cfe9ff;
+  color: rgb(var(--w-ink, 232 246 255));
 }
 .crt-line__foot .rf-says {
   margin-inline-start: auto;
@@ -431,4 +431,27 @@
 }
 .rf-log li .crt-line em.crt-kind--jam {
   color: #5b3d99;
+}
+
+/* in the forge the court is drawn on a light pane (kit/ruleForge.css « THE SHEET »): the brand blue itself, dark inks */
+.rf-root .crt-court {
+  --crt-floor: rgba(59, 91, 219, 0.14);
+  --crt-floor-edge: rgba(59, 91, 219, 0.42);
+  --crt-cut: rgba(59, 91, 219, 0.06);
+  --crt-lit: rgba(59, 91, 219, 0.34);
+  --crt-wall: #3b5bdb;
+  --crt-slab: rgba(59, 91, 219, 0.12);
+  --crt-slab-edge: #3b5bdb;
+  --crt-rod: #3b5bdb;
+  --crt-band: #d97706;
+  --crt-over: #7c3aed;
+  --crt-ride: #059669;
+  --crt-ink: #26221d;
+  --crt-soft: #655c50;
+}
+.rf-root .crt-lens__void {
+  fill: #ffffff;
+}
+.rf-root .crt-lens__plat {
+  fill: rgba(59, 91, 219, 0.22);
 }

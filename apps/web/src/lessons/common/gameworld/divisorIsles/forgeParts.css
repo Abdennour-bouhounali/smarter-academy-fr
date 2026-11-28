@@ -1,8 +1,8 @@
 /* A case of a rule forge that is a PAIR of gaps (forgeParts.jsx › `c.pair`): two bridges, one plank laid on both. The
    scene keeps the single bridge's box (`.rf-bridge`, kit/ruleForge.css); each bridge has its own held / fell look. */
 .rf-pairrow.is-held .rf-plank {
-  fill: #34d399;
-  filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.8));
+  fill: rgb(var(--w-green));
+  filter: drop-shadow(0 0 8px rgb(var(--w-green-ink) / 0.8));
 }
 .rf-pairrow.is-fell .rf-plank {
   animation: rf-fall 0.7s ease-in forwards;
@@ -52,8 +52,8 @@
   animation: rf-factor-fall 1.3s ease-in forwards;
 }
 .rf-factor .rf-factor__fell .rf-plank {
-  fill: #fde68a;
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold));
+  stroke: rgb(var(--w-gold-ink));
   stroke-dasharray: 6 4;
 }
 @keyframes rf-factor-fall {
@@ -70,15 +70,15 @@
   stroke-width: 3;
 }
 .rf-factor__end.is-one rect {
-  fill: rgba(52, 211, 153, 0.25);
-  stroke: #34d399;
+  fill: rgb(var(--w-green-ink) / 0.25);
+  stroke: rgb(var(--w-green-ink));
 }
 .rf-factor__end.is-left rect {
-  fill: rgba(251, 191, 36, 0.3);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.3);
+  stroke: rgb(var(--w-gold-ink));
 }
 .rf-factor__end text {
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   font:
     900 30px 'Inter',
     sans-serif;
@@ -105,9 +105,9 @@
 .rf-factorhead__planks b {
   padding: 0 0.32rem;
   border-radius: 0.3rem;
-  border: 1px solid #7dfcff;
+  border: 1px solid rgb(var(--w-cyan-ink));
   background: #2f7df6;
-  color: #ffffff;
+  color: rgb(var(--w-ink));
   font-size: 0.9em;
   line-height: 1.35;
 }
@@ -127,10 +127,10 @@
 }
 .rf-bridge.rf-walk.is-held .cl-plank,
 .rf-bridge.rf-walk.is-held .cl-band rect {
-  fill: #34d399;
+  fill: rgb(var(--w-green));
 }
 .rf-bridge.rf-days.is-held .cl-today {
-  stroke: #34d399;
+  stroke: rgb(var(--w-green-ink));
 }
 
 /* a row of the log said in words (`c.sub`, forgeParts.jsx › Line): a fraction's two decompositions, under its head */
@@ -144,7 +144,7 @@
 .rf-line2 .rf-line__sub {
   font-size: max(var(--di-min-font, 12px), 0.8rem);
   font-weight: 700;
-  color: #cbd5e1;
+  color: rgb(var(--w-ink));
   line-height: 1.25;
   unicode-bidi: isolate;
 }

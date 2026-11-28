@@ -81,7 +81,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
   ];
   const outDrawn = Math.min(C.out, border.length);
   const fits = C.verdict === 'fits';
-  const tone = fits ? '#34d399' : 'rgba(125,252,255,.62)';
+  const tone = fits ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink) / 0.62)';
   const side = s * c;
 
   return (
@@ -132,7 +132,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
             y1={RULER_Y}
             x2={R1}
             y2={RULER_Y}
-            stroke="rgba(234,252,255,.45)"
+            stroke="rgb(var(--w-ink) / 0.45)"
             strokeWidth="3"
             strokeLinecap="round"
           />
@@ -143,12 +143,19 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
               y1={RULER_Y - (v % 5 === 0 || v === 1 ? 8 : 4)}
               x2={xOfS(v)}
               y2={RULER_Y + (v % 5 === 0 || v === 1 ? 8 : 4)}
-              stroke="rgba(234,252,255,.5)"
+              stroke="rgb(var(--w-ink) / 0.5)"
               strokeWidth="1.6"
             />
           ))}
           {[1, 5, 10, 15, 20].map((v) => (
-            <text key={v} x={xOfS(v)} y={RULER_Y + 30} textAnchor="middle" fontSize="18" style={{ fill: '#a5f3fc' }}>
+            <text
+              key={v}
+              x={xOfS(v)}
+              y={RULER_Y + 30}
+              textAnchor="middle"
+              fontSize="18"
+              style={{ fill: 'rgb(var(--w-cyan-ink))' }}
+            >
               {v}
             </text>
           ))}
@@ -170,8 +177,8 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
             data-ll-court-handle
           >
             <rect x={R0 - 12} y={RULER_Y - 24} width={R1 - R0 + 24} height="48" fill="transparent" />
-            {!moved && <circle className="ll-pulse" cx={xOfS(s)} cy={RULER_Y} r="22" fill="#fbbf24" />}
-            <circle cx={xOfS(s)} cy={RULER_Y} r="13" fill="#fde68a" stroke="#06262c" strokeWidth="3" />
+            {!moved && <circle className="ll-pulse" cx={xOfS(s)} cy={RULER_Y} r="22" fill="rgb(var(--w-gold))" />}
+            <circle cx={xOfS(s)} cy={RULER_Y} r="13" fill="rgb(var(--w-gold))" stroke="#06262c" strokeWidth="3" />
           </g>
 
           {/* the tiles in the square, its empty places, and the tiles that do not fit along its border */}
@@ -188,7 +195,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
                 height={t.w}
                 rx={Math.min(3, c / 6)}
                 fill="none"
-                stroke="rgba(234,252,255,.45)"
+                stroke="rgb(var(--w-ink) / 0.45)"
                 strokeWidth="1.4"
                 strokeDasharray="4 3"
                 data-ll-court-hole
@@ -202,7 +209,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
                 width={t.w}
                 height={t.w}
                 rx={Math.min(3, c / 6)}
-                fill="#fbbf24"
+                fill="rgb(var(--w-gold))"
                 data-ll-court-out
               />
             ))}
@@ -213,7 +220,7 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
             width={side}
             height={side}
             fill="none"
-            stroke={fits ? '#34d399' : '#eafcff'}
+            stroke={fits ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-ink))'}
             strokeWidth="3"
             rx="3"
             data-ll-court-square={s}
@@ -224,14 +231,20 @@ export default function NumberCourt({ a, b, play, report, start = null }) {
               y={BOTTOM - (s + 1) * c + 20}
               fontSize="22"
               fontWeight="900"
-              style={{ fill: '#fde68a' }}
+              style={{ fill: 'rgb(var(--w-gold-ink))' }}
               data-ll-court-more={C.out - outDrawn}
             >
               {`+${C.out - outDrawn}`}
             </text>
           )}
           {/* the side, written under the square, centred on it */}
-          <text x={X0 + side / 2} y={BOTTOM + 26} textAnchor="middle" fontSize="22" style={{ fill: '#fde68a' }}>
+          <text
+            x={X0 + side / 2}
+            y={BOTTOM + 26}
+            textAnchor="middle"
+            fontSize="22"
+            style={{ fill: 'rgb(var(--w-gold-ink))' }}
+          >
             {s}
           </text>
           <title>{`${s} × ${s} = ${s * s} · ${a}`}</title>

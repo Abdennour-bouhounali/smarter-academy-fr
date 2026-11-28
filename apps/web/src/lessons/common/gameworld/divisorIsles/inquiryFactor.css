@@ -21,7 +21,7 @@
 /* the plank that does not hold: laid over the end of the gap, then it falls */
 .iq-factor-fall {
   fill: #2f7df6;
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2.5;
   transform-box: fill-box;
   animation: iq-factor-fall 1.1s ease-in 0.35s forwards;
@@ -50,19 +50,19 @@
   font-weight: 800;
 }
 .rf-root .iq-factor-rack small {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-factor-chip {
   min-width: 3.4rem;
-  border-color: #7dfcff;
+  border-color: rgb(var(--w-cyan-ink));
   background: #2f7df6;
   font-size: max(var(--di-min-font, 12px), 1.15rem);
 }
 .rf-root .iq-factor-chip {
-  color: #ffffff;
+  color: rgb(var(--w-ink));
 }
 .iq-factor-chip.is-fell {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   border-style: dashed;
   background: rgba(47, 125, 246, 0.35);
 }
@@ -79,7 +79,7 @@
   font-weight: 800;
 }
 .rf-root .iq-factor-laid small {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-factor-laid__row {
   display: flex;
@@ -92,7 +92,7 @@
   height: 2.1rem;
   padding: 0 0.5rem;
   border-radius: 0.45rem;
-  border: 2px solid #7dfcff;
+  border: 2px solid rgb(var(--w-cyan-ink));
   background: #2f7df6;
   font-size: max(var(--di-min-font, 12px), 1.15rem);
   font-weight: 900;
@@ -102,7 +102,7 @@
   background: #2563d9;
 }
 .rf-root .iq-factor-plank {
-  color: #ffffff;
+  color: rgb(var(--w-ink));
 }
 
 @media (prefers-reduced-motion: reduce) {

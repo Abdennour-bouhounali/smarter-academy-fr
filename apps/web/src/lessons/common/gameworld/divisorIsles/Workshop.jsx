@@ -225,7 +225,7 @@ function Bench({ o, game }) {
   }));
   const back = () => game.closeBench(latest.current);
   return (
-    <div className="rf-root di-bench" data-di-bench={spec.kind}>
+    <div className="rf-root di-bench" data-rf-skin="isles" data-di-bench={spec.kind}>
       <div className="rf-fit" style={{ zoom: z, '--di-min-font': `${Math.ceil(1200 / z) / 100}px` }}>
         <header className="rf-head">
           <div className="rf-brand">

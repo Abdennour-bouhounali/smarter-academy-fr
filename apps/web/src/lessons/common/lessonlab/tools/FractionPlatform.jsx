@@ -27,7 +27,7 @@ const BOTTOM = 300;
 const G = 210; // the longest side drawn: the court or the platform
 const THIN = 3; // a band or an overhang thinner than this is drawn this wide: the counts say how much
 const SOUND = { fits: 'fit', band: 'rest', jam: 'short' };
-const TONE = { fits: '#34d399', band: '#fbbf24', jam: '#c4b5fd' };
+const TONE = { fits: 'rgb(var(--w-green-ink))', band: 'rgb(var(--w-gold-ink))', jam: 'rgb(var(--w-violet-ink))' };
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 /**
  * A point of the pointer in THIS drawing's viewBox (560 × 370) — not the kit's default 940 × 370 (defects ledger D38: with
@@ -169,7 +169,7 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
             y1={RULER_Y}
             x2={R1}
             y2={RULER_Y}
-            stroke="rgba(234,252,255,.45)"
+            stroke="rgb(var(--w-ink) / 0.45)"
             strokeWidth="3"
             strokeLinecap="round"
           />
@@ -183,7 +183,7 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
                   y1={RULER_Y - 4}
                   x2={xOfP(v)}
                   y2={RULER_Y + 4}
-                  stroke="rgba(234,252,255,.4)"
+                  stroke="rgb(var(--w-ink) / 0.4)"
                   strokeWidth="1.4"
                 />
               ))}
@@ -194,11 +194,17 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
                 y1={RULER_Y - 9}
                 x2={xOfP(k * q)}
                 y2={RULER_Y + 9}
-                stroke="rgba(234,252,255,.7)"
+                stroke="rgb(var(--w-ink) / 0.7)"
                 strokeWidth="2"
               />
               {k % every === 0 && (
-                <text x={xOfP(k * q)} y={RULER_Y + 30} textAnchor="middle" fontSize="18" style={{ fill: '#a5f3fc' }}>
+                <text
+                  x={xOfP(k * q)}
+                  y={RULER_Y + 30}
+                  textAnchor="middle"
+                  fontSize="18"
+                  style={{ fill: 'rgb(var(--w-cyan-ink))' }}
+                >
                   {k}
                 </text>
               )}
@@ -222,20 +228,20 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
             data-ll-piece-handle
           >
             <rect x={R0 - 12} y={RULER_Y - 24} width={R1 - R0 + 24} height="48" fill="transparent" />
-            {!moved && <circle className="ll-pulse" cx={xOfP(p)} cy={RULER_Y} r="22" fill="#fbbf24" />}
-            <circle cx={xOfP(p)} cy={RULER_Y} r="13" fill="#fde68a" stroke="#06262c" strokeWidth="3" />
+            {!moved && <circle className="ll-pulse" cx={xOfP(p)} cy={RULER_Y} r="22" fill="rgb(var(--w-gold))" />}
+            <circle cx={xOfP(p)} cy={RULER_Y} r="13" fill="rgb(var(--w-gold))" stroke="#06262c" strokeWidth="3" />
           </g>
 
           {/* the court: its floor and its whole tiles */}
-          <rect x={X0} y={yc} width={Sc} height={Sc} fill="rgba(125,252,255,.08)" data-ll-piece-court={a} />
+          <rect x={X0} y={yc} width={Sc} height={Sc} fill="rgb(var(--w-cyan-ink) / 0.08)" data-ll-piece-court={a} />
           {u >= 8 && (
-            <path d={gridPath(Sc, u, Math.ceil(side))} stroke="rgba(234,252,255,.28)" strokeWidth="1" fill="none" />
+            <path d={gridPath(Sc, u, Math.ceil(side))} stroke="rgb(var(--w-ink) / 0.28)" strokeWidth="1" fill="none" />
           )}
           {/* the band it leaves, or what it holds more */}
           {P.verdict === 'band' && (
             <path
               d={`M${X0} ${yc}H${X0 + Sc}V${BOTTOM}H${X0 + Sd}V${yp}H${X0}Z`}
-              fill="#fbbf24"
+              fill="rgb(var(--w-gold))"
               fillOpacity=".85"
               data-ll-piece-band={P.far}
             />
@@ -243,7 +249,7 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
           {P.verdict === 'jam' && (
             <path
               d={`M${X0} ${yp}H${X0 + Sd}V${BOTTOM}H${X0 + Sc}V${yc}H${X0}Z`}
-              fill="#c4b5fd"
+              fill="rgb(var(--w-violet))"
               fillOpacity=".85"
               data-ll-piece-over={P.far}
             />
@@ -254,8 +260,8 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
             y={yp}
             width={Sd}
             height={Sd}
-            fill={P.verdict === 'fits' ? 'rgba(52,211,153,.55)' : 'rgba(125,252,255,.32)'}
-            stroke={P.verdict === 'fits' ? '#34d399' : '#7dfcff'}
+            fill={P.verdict === 'fits' ? 'rgb(var(--w-green) / 0.55)' : 'rgb(var(--w-cyan-ink) / 0.32)'}
+            stroke={P.verdict === 'fits' ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink))'}
             strokeWidth="2"
             data-ll-piece-platform={P.plat}
           />
@@ -268,8 +274,8 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
               data-ll-piece-grid={q}
             />
           )}
-          <rect x={X0} y={yc} width={Sc} height={Sc} fill="none" stroke="#eafcff" strokeWidth="3" rx="2" />
-          <rect x={X0 - 6} y={BOTTOM - 6} width="12" height="12" rx="3" fill="#eafcff" />
+          <rect x={X0} y={yc} width={Sc} height={Sc} fill="none" stroke="rgb(var(--w-ink))" strokeWidth="3" rx="2" />
+          <rect x={X0 - 6} y={BOTTOM - 6} width="12" height="12" rx="3" fill="rgb(var(--w-paper))" />
           {/* the rod under the platform: its length p/q, a fraction with its bar */}
           <line
             x1={X0}
@@ -280,7 +286,7 @@ export default function FractionPlatform({ a, b, play, report, start = null }) {
             strokeWidth="6"
             strokeLinecap="round"
           />
-          <SvgFrac x={X0 + Math.max(Sd / 2, 22)} y={BOTTOM + 34} p={p} q={q} fill="#fde68a" />
+          <SvgFrac x={X0 + Math.max(Sd / 2, 22)} y={BOTTOM + 34} p={p} q={q} fill="rgb(var(--w-gold))" />
           <title>{`${p}/${q} · ${P.plat} · ${P.court}`}</title>
         </svg>
 

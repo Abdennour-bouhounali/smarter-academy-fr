@@ -120,8 +120,16 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
       }
     >
       <svg ref={svg} viewBox={`0 0 ${VW} ${VH}`} data-ll-jumps data-q={J.q} data-r={J.r}>
-        <line x1={X0 - 14} y1={Y} x2={X1 + 20} y2={Y} stroke="#eafcff" strokeWidth="3" strokeLinecap="round" />
-        <path d={`M ${X1 + 20} ${Y} l -10 -6 v 12 z`} fill="#eafcff" />
+        <line
+          x1={X0 - 14}
+          y1={Y}
+          x2={X1 + 20}
+          y2={Y}
+          stroke="rgb(var(--w-ink))"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+        <path d={`M ${X1 + 20} ${Y} l -10 -6 v 12 z`} fill="rgb(var(--w-paper))" />
         {Array.from({ length: Math.floor(span / step) + 1 }, (_, i) => i * step).map((v) => (
           <line
             key={v}
@@ -129,7 +137,7 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
             y1={Y - (v % 5 === 0 ? 7 : 4)}
             x2={x(v)}
             y2={Y + (v % 5 === 0 ? 7 : 4)}
-            stroke="rgba(234,252,255,.55)"
+            stroke="rgb(var(--w-ink) / 0.55)"
             strokeWidth={v % 5 === 0 ? 2 : 1}
           />
         ))}
@@ -142,7 +150,7 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
             d={arc(v - b, v)}
             className={`ll-arc ${still ? '' : 'll-arc--in'}`}
             pathLength="1"
-            stroke={hit ? '#34d399' : '#7dfcff'}
+            stroke={hit ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink))'}
           />
         ))}
         {J.landings.slice(0, shown).map(
@@ -154,7 +162,7 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
                 y={Y + 30}
                 textAnchor="middle"
                 fontSize="17"
-                style={{ fill: v === a ? '#6ee7b7' : '#a5f3fc' }}
+                style={{ fill: v === a ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-cyan-ink))' }}
               >
                 {v}
               </text>
@@ -162,9 +170,26 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
         )}
         {!J.hit && still && (
           <>
-            <path d={arc(lastLand, J.over)} className="ll-arc" stroke="#fbbf24" strokeDasharray="7 8" opacity=".75" />
-            <path d={`M ${x(lastLand)} ${Y + 44} v 9 H ${fx} v -9`} fill="none" stroke="#fbbf24" strokeWidth="3" />
-            <text x={(x(lastLand) + fx) / 2} y={Y + 76} textAnchor="middle" fontSize="18" style={{ fill: '#fbbf24' }}>
+            <path
+              d={arc(lastLand, J.over)}
+              className="ll-arc"
+              stroke="rgb(var(--w-gold-ink))"
+              strokeDasharray="7 8"
+              opacity=".75"
+            />
+            <path
+              d={`M ${x(lastLand)} ${Y + 44} v 9 H ${fx} v -9`}
+              fill="none"
+              stroke="rgb(var(--w-gold-ink))"
+              strokeWidth="3"
+            />
+            <text
+              x={(x(lastLand) + fx) / 2}
+              y={Y + 76}
+              textAnchor="middle"
+              fontSize="18"
+              style={{ fill: 'rgb(var(--w-gold-ink))' }}
+            >
               reste {J.r}
             </text>
           </>
@@ -175,10 +200,19 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
             transition: 'transform .28s cubic-bezier(.3,1.5,.5,1)',
           }}
         >
-          <rect x="-11" y="-30" width="22" height="26" rx="8" fill="#f8fafc" stroke="#06262c" strokeWidth="2.5" />
-          <rect x="-7" y="-24" width="14" height="8" rx="4" fill="#06262c" />
-          <circle cx="-3" cy="-20" r="1.8" fill="#7dfcff" />
-          <circle cx="3" cy="-20" r="1.8" fill="#7dfcff" />
+          <rect
+            x="-11"
+            y="-30"
+            width="22"
+            height="26"
+            rx="8"
+            fill="rgb(var(--w-paper))"
+            stroke="#06262c"
+            strokeWidth="2.5"
+          />
+          <rect x="-7" y="-24" width="14" height="8" rx="4" fill="rgb(var(--w-ground))" />
+          <circle cx="-3" cy="-20" r="1.8" fill="rgb(var(--w-cyan))" />
+          <circle cx="3" cy="-20" r="1.8" fill="rgb(var(--w-cyan))" />
         </g>
         <g className="ll-handle" {...flag} data-ll-flag>
           <rect x={fx - 24} y={Y - 190} width="60" height="170" fill="transparent" />
@@ -187,26 +221,32 @@ export default function Jumps({ a, b, setA, setB, play, range }) {
             y1={Y}
             x2={fx}
             y2={Y - 172}
-            stroke={hit ? '#34d399' : '#fbbf24'}
+            stroke={hit ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-gold-ink))'}
             strokeWidth="4"
             strokeLinecap="round"
           />
           <path
             d={`M ${fx} ${Y - 172} l 40 13 l -40 13 z`}
-            fill={hit ? '#34d399' : '#fbbf24'}
+            fill={hit ? 'rgb(var(--w-green))' : 'rgb(var(--w-gold))'}
             className={hit ? 'll-glow' : ''}
           />
-          <text x={fx} y={Y - 182} textAnchor="middle" fontSize="26" style={{ fill: hit ? '#6ee7b7' : '#fde68a' }}>
+          <text
+            x={fx}
+            y={Y - 182}
+            textAnchor="middle"
+            fontSize="26"
+            style={{ fill: hit ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-gold-ink))' }}
+          >
             {a}
           </text>
         </g>
         <g className="ll-handle" {...knob} data-ll-knob>
-          {!moved && <circle className="ll-pulse" cx={x(b)} cy={Y} r="24" fill="#7dfcff" />}
+          {!moved && <circle className="ll-pulse" cx={x(b)} cy={Y} r="24" fill="rgb(var(--w-cyan))" />}
           <circle cx={x(b)} cy={Y} r="20" fill="transparent" />
-          <circle cx={x(b)} cy={Y} r="11" fill="#7dfcff" stroke="#06262c" strokeWidth="3" />
+          <circle cx={x(b)} cy={Y} r="11" fill="rgb(var(--w-cyan))" stroke="#06262c" strokeWidth="3" />
         </g>
         {!moved && (
-          <text x={VW / 2} y="26" textAnchor="middle" fontSize="16" style={{ fill: '#7dfcff' }}>
+          <text x={VW / 2} y="26" textAnchor="middle" fontSize="16" style={{ fill: 'rgb(var(--w-cyan-ink))' }}>
             Fais glisser le drapeau pour changer le nombre, et le point bleu pour changer la longueur du saut
           </text>
         )}

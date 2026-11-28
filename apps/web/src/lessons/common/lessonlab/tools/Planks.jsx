@@ -89,7 +89,13 @@ export default function Planks({ a, b, play, report }) {
         data-fits={rows.map((r) => (r.fits ? 1 : 0)).join('')}
       >
         {/* the plank the hand holds */}
-        <text x={(X0 - 14) / 2 + 30} y={Y0 + 7} textAnchor="middle" fontSize="18" style={{ fill: '#fde68a' }}>
+        <text
+          x={(X0 - 14) / 2 + 30}
+          y={Y0 + 7}
+          textAnchor="middle"
+          fontSize="18"
+          style={{ fill: 'rgb(var(--w-gold-ink))' }}
+        >
           La planche {shown}
         </text>
         <rect
@@ -98,14 +104,14 @@ export default function Planks({ a, b, play, report }) {
           width={shown * u}
           height={BAR}
           rx="5"
-          fill="#fbbf24"
+          fill="rgb(var(--w-gold))"
           stroke="#06262c"
           strokeWidth="2"
         />
         <g className="ll-handle" {...drag} tabIndex={0} onKeyDown={key} data-ll-plank>
           <rect x={X0} y={Y0 - 22} width={X1 - X0} height="44" fill="transparent" />
-          {!moved && <circle className="ll-pulse" cx={X0 + shown * u} cy={Y0} r="22" fill="#fbbf24" />}
-          <circle cx={X0 + shown * u} cy={Y0} r="12" fill="#fde68a" stroke="#06262c" strokeWidth="3" />
+          {!moved && <circle className="ll-pulse" cx={X0 + shown * u} cy={Y0} r="22" fill="rgb(var(--w-gold))" />}
+          <circle cx={X0 + shown * u} cy={Y0} r="12" fill="rgb(var(--w-gold))" stroke="#06262c" strokeWidth="3" />
         </g>
         {rows.map((r, i) => {
           const w = Math.max(1, shown * u);
@@ -117,11 +123,11 @@ export default function Planks({ a, b, play, report }) {
                 y={y(i) + 7}
                 textAnchor="middle"
                 fontSize="16"
-                style={{ fill: r.fits ? '#6ee7b7' : '#fbbf24' }}
+                style={{ fill: r.fits ? 'rgb(var(--w-green-ink))' : 'rgb(var(--w-gold-ink))' }}
               >
                 {r.fits ? '✓' : `reste ${r.left}`}
               </text>
-              <text x={X0 - 14} y={y(i) + 7} textAnchor="end" fontSize="17" style={{ fill: '#e0f2fe' }}>
+              <text x={X0 - 14} y={y(i) + 7} textAnchor="end" fontSize="17" style={{ fill: 'rgb(var(--w-ink))' }}>
                 {r.label}
               </text>
               <rect
@@ -130,8 +136,8 @@ export default function Planks({ a, b, play, report }) {
                 width={Math.max(2, r.n * u)}
                 height={BAR}
                 rx="5"
-                fill="rgba(234,252,255,.08)"
-                stroke="rgba(234,252,255,.45)"
+                fill="rgb(var(--w-ink) / 0.08)"
+                stroke="rgb(var(--w-ink) / 0.45)"
                 strokeWidth="1.5"
               />
               {Array.from({ length: r.planks }, (_, k) => (
@@ -142,7 +148,7 @@ export default function Planks({ a, b, play, report }) {
                   width={w - gap}
                   height={BAR - 6}
                   rx="3"
-                  fill={r.fits ? '#34d399' : '#7dfcff'}
+                  fill={r.fits ? 'rgb(var(--w-green))' : 'rgb(var(--w-cyan))'}
                 />
               ))}
               {r.left > 0 && (
@@ -153,7 +159,7 @@ export default function Planks({ a, b, play, report }) {
                   height={BAR - 6}
                   rx="3"
                   fill="none"
-                  stroke="#fbbf24"
+                  stroke="rgb(var(--w-gold-ink))"
                   strokeWidth="2"
                   strokeDasharray="5 4"
                 />

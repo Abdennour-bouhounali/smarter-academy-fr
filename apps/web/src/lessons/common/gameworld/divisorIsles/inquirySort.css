@@ -22,7 +22,7 @@
   min-height: 6.2rem;
   padding: 0.4rem 0.6rem;
   border-radius: 1rem;
-  border: 2px dashed rgba(159, 216, 255, 0.45);
+  border: 2px dashed rgb(var(--w-soft) / 0.45);
   background: rgba(47, 125, 246, 0.1);
   font: inherit;
   cursor: default;
@@ -36,11 +36,11 @@
 .iqs-basket.is-open:hover,
 .iqs-basket.is-over {
   border-style: solid;
-  border-color: #7dfcff;
-  background: rgba(125, 252, 255, 0.16);
+  border-color: rgb(var(--w-cyan-ink));
+  background: rgb(var(--w-cyan-ink) / 0.16);
 }
 .iqs-basket.is-said {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   animation: iq-shake 0.35s;
 }
 .iqs-basket__name {
@@ -50,7 +50,7 @@
   text-align: center;
 }
 .rf-root .iqs-basket__name {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iqs-basket__cards {
   display: flex;
@@ -77,12 +77,12 @@
   animation: iq-drop 0.3s ease-out backwards;
 }
 .rf-root .iqs-mini {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 /* a card the world moved to its basket */
 .iqs-mini.is-moved {
   border-style: dashed;
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
 }
 .iqs-mini.is-hand {
   cursor: pointer;
@@ -111,7 +111,7 @@
   min-height: 3.6rem;
   padding: 0.2rem 1rem;
   border-radius: 0.9rem;
-  border: 2.5px solid #7dfcff;
+  border: 2.5px solid rgb(var(--w-cyan-ink));
   background: rgba(47, 125, 246, 0.35);
   box-shadow: 0 0.4rem 1rem rgba(2, 10, 30, 0.45);
   font-size: max(var(--di-min-font, 12px), 1.45rem);
@@ -121,7 +121,7 @@
   user-select: none;
 }
 .rf-root .iqs-card {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iqs-card.is-free {
   cursor: grab;
@@ -145,7 +145,7 @@
 /* the panel of facts (SVG) */
 .iq-scene text.iqs-label {
   font-size: 19px;
-  fill: #9fd8ff;
+  fill: rgb(var(--w-soft));
   text-anchor: start;
 }
 .iqs-chip rect {
@@ -155,22 +155,22 @@
 }
 .iq-scene .iqs-chip text {
   font-size: 20px;
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
 }
 .iqs-chip {
   animation: iq-drop 0.3s ease-out backwards;
 }
 .iqs-chip.is-common rect,
 .iqs-chip.is-fills rect {
-  fill: rgba(141, 255, 176, 0.2);
-  stroke: #8dffb0;
+  fill: rgb(var(--w-green-ink) / 0.2);
+  stroke: rgb(var(--w-green-ink));
 }
 .iq-scene .iqs-chip.is-common text,
 .iq-scene .iqs-chip.is-fills text {
-  fill: #8dffb0;
+  fill: rgb(var(--w-green-ink));
 }
 .iqs-chip.is-no rect {
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
 }
 .iqs-chip.is-wait,
 .iqs-chip.is-untried {
@@ -181,30 +181,30 @@
 }
 .iq-scene .iqs-chip text.iqs-under {
   font-size: 18px;
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 .iq-scene .iqs-chip text.iqs-under.is-zero {
-  fill: #8dffb0;
+  fill: rgb(var(--w-green-ink));
 }
 .iqs-tag {
   fill: #2f7df6;
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 2;
 }
 .iq-scene text.iqs-tagnum {
   font-size: 20px;
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
 }
 .iq-scene text.iqs-row {
   font-size: 20px;
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   animation: iq-drop 0.3s ease-out backwards;
 }
 .iqs-row .is-rest {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
 }
 .iqs-row .is-zero {
-  fill: #8dffb0;
+  fill: rgb(var(--w-green));
 }
 
 @media (max-height: 500px) {

@@ -40,7 +40,7 @@ describe('Mon labo — « L’échelle des facteurs »', () => {
     const fell = html(72, { planks: [2], last: layPlank(36, 5) });
     expect(fell).toContain('data-ll-factor-lay-drawn="5:fell"');
     expect(fell).toContain('7 planches de 5 sur 36 cases, reste 1');
-    expect(fell).toContain('fill="#fbbf24"'); // what is left, in amber
+    expect(fell).toContain('fill="rgb(var(--w-gold))"'); // what is left, in amber
     expect(fell).toContain('data-ll-factor-last="fell"');
     // a plank longer than the gap is out of reach
     const small = html(72, { planks: [2, 2, 2, 3], last: layPlank(9, 3) });

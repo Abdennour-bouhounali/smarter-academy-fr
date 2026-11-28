@@ -7,6 +7,22 @@
   font-size: max(var(--di-min-font, 12px), 0.833em);
 }
 .di-root {
+  /* the palette of what a world draws (`rgb(var(--w-ink) / 0.3)`): here its night values; a light ground gives its
+     own (ruleForge.css « THE SHEET », launchKit.css) */
+  --w-ink: 232 246 255;
+  --w-soft: 159 216 255;
+  --w-cyan: 125 252 255;
+  --w-cyan-ink: 125 252 255;
+  --w-gold: 251 191 36;
+  --w-gold-ink: 251 191 36;
+  --w-green: 141 255 176;
+  --w-green-ink: 141 255 176;
+  --w-violet: 167 139 250;
+  --w-violet-ink: 167 139 250;
+  --w-orange: 251 146 60;
+  --w-orange-ink: 251 146 60;
+  --w-ground: 8 20 52;
+  --w-paper: 255 255 255;
   position: fixed;
   inset: 0;
   z-index: 1200;

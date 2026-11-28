@@ -9,11 +9,11 @@
 /* the label of a list (above the first, under the second); the list being built is lit */
 .iq-scene text.iq-li-label {
   font-size: 19px;
-  fill: #9fd8ff;
+  fill: rgb(var(--w-soft));
   text-anchor: start;
 }
 .iq-scene text.iq-li-label.is-now {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan-ink));
 }
 
 /* a plank of a list */
@@ -27,18 +27,18 @@
   stroke-width: 2.5;
 }
 .iq-scene .iq-li-chip text {
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
   font-weight: 900;
 }
 .iq-li-chip.is-tap {
   cursor: pointer;
 }
 .iq-li-chip.is-tap rect {
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
 }
 .iq-li-chip.is-tap:hover rect,
 .iq-li-chip.is-tap:focus-visible rect {
-  fill: rgba(125, 252, 255, 0.3);
+  fill: rgb(var(--w-cyan-ink) / 0.3);
 }
 .iq-li-chip:focus {
   outline: none;
@@ -46,41 +46,41 @@
 /* the plank he just laid, and its partner written by the world */
 .iq-li-chip.is-new rect {
   fill: #2f7df6;
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
 }
 .iq-li-chip.is-partner rect {
-  fill: rgba(251, 191, 36, 0.25);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.25);
+  stroke: rgb(var(--w-gold-ink));
 }
 .iq-scene .iq-li-chip.is-partner text {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 /* a plank of both lists, linked */
 .iq-li-chip.is-linked rect {
-  fill: rgba(141, 255, 176, 0.2);
-  stroke: #8dffb0;
+  fill: rgb(var(--w-green-ink) / 0.2);
+  stroke: rgb(var(--w-green-ink));
 }
 .iq-scene .iq-li-chip.is-linked text {
-  fill: #c9ffd9;
+  fill: rgb(var(--w-green-ink));
 }
 /* the plank tapped, while the world lays it */
 .iq-li-chip.is-now rect {
-  fill: rgba(125, 252, 255, 0.3);
-  stroke: #7dfcff;
+  fill: rgb(var(--w-cyan-ink) / 0.3);
+  stroke: rgb(var(--w-cyan-ink));
 }
 /* a plank that did not fill the other gap: outlined amber (its division is written) */
 .iq-li-chip.is-wrong rect {
-  fill: rgba(251, 191, 36, 0.15);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.15);
+  stroke: rgb(var(--w-gold-ink));
   stroke-dasharray: 6 4;
 }
 .iq-scene .iq-li-chip.is-wrong text {
-  fill: #ffe2a8;
+  fill: rgb(var(--w-gold-ink));
 }
 /* a link that was missing, shown by the world */
 .iq-li-chip.is-hint rect {
-  fill: rgba(141, 255, 176, 0.1);
-  stroke: #8dffb0;
+  fill: rgb(var(--w-green-ink) / 0.1);
+  stroke: rgb(var(--w-green-ink));
   stroke-dasharray: 6 4;
 }
 /* the longest: a pick that was shorter (dim), the longer one shown, the crown */
@@ -88,13 +88,13 @@
   opacity: 0.55;
 }
 .iq-li-chip.is-longer rect {
-  fill: rgba(141, 255, 176, 0.32);
-  stroke: #e8f6ff;
+  fill: rgb(var(--w-green-ink) / 0.32);
+  stroke: rgb(var(--w-ink));
   stroke-width: 3;
 }
 .iq-li-chip.is-crown rect {
-  fill: #fbbf24;
-  stroke: #ffe2a8;
+  fill: rgb(var(--w-gold));
+  stroke: rgb(var(--w-gold-ink));
 }
 .iq-scene .iq-li-chip.is-crown text {
   fill: #06203f;
@@ -102,7 +102,7 @@
 
 /* the links between the two lists */
 .iq-li-link {
-  stroke: #8dffb0;
+  stroke: rgb(var(--w-green-ink));
   stroke-width: 3.5;
   stroke-linecap: round;
   animation: iq-drop 0.3s ease-out backwards;
@@ -111,7 +111,7 @@
   stroke-dasharray: 5 5;
 }
 .iq-li-link.is-crown {
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 5;
 }
 

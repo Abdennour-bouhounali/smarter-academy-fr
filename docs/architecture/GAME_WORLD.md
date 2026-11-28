@@ -1010,8 +1010,19 @@ Nothing in the game world scrolls — not the page, not a card, not a panel — 
 >
 > - **A sheet on the world's table.** The forge is a sheet laid over the world, which stays in sight, blurred. Its colours
 >   are tokens; a world gives its values with `parts.skin` (`'nile'`: papyrus and sandstone, `'isles'`: wood and sky,
->   `'courts'`: stone). The MIRROR (and an experiment a world frames in dark, `.iq` / `.rq-iq`) is dark glass in a bronze
->   frame: what a world draws in it keeps its colours. A world part drawn on the sheet (its `Line`) uses ink colours.
+>   `'courts'`: stone). The MIRROR (and an experiment a world frames, `.iq` / `.rq-iq`) is a LIGHT pane of the same world
+>   in the sheet's frame (owner, 2026-11-28: « the blue colour does not fit the world's UI » — never a night glass):
+>   sky on the islands, the river's haze on the Nile, pale stone in the courts (`--rf-glass-1/2`).
+> - **The palette `--w-*`.** What a world draws in the forge (its experiments' style files, the court's drawing) and
+>   the whole start test write NO fixed night colour: they use triplets — `rgb(var(--w-ink) / 0.3)` — of the families
+>   `ink`, `soft`, `paper`, `ground`, and `cyan`, `gold`, `green`, `violet`, `orange` each with its `-ink` twin. Rule: an
+>   INK (text, border, stroke, a tint under 50 %) is dark on a light ground; a SHAPE (an opaque fill) stays bright, and
+>   dark text on a bright shape stays dark. Night values: `.di-root` (kit/styles/world.css); light values: `.rf-root`
+>   and its skins (kit/ruleForge.css « THE SHEET »), `.lk-root--inline` (launchKit.css), `.ll-root` (the lesson lab, ONE
+>   light set for every world — lessonLab.css). A number coloured inside a
+>   formula (`\textcolor{#fbbf24}{…}`) is re-inked by `.rf-root .katex [style*=…]`. A new experiment uses the palette;
+>   the brand blue of shapes (`#2f7df6`, `#3b5bdb`) is written as it is. A world part drawn on the sheet (its `Line`)
+>   uses ink colours. The islands' workshop notebook (`Workshop.jsx`, a `.rf-root`) carries `data-rf-skin="isles"`.
 > - **Three beats, shown as the key being made:** « Essaie » (the experiment or the predictions), « Grave ta règle »
 >   (tiles, the mirror on his own lines, then its attacks), « Scelle ta clé » (the last step). A forge with no experiment
 >   and no prediction shows two.

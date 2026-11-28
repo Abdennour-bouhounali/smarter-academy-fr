@@ -5,8 +5,8 @@
   min-height: 0;
   min-width: 0;
   border-radius: 1.4rem;
-  border: 1.5px solid rgba(159, 216, 255, 0.28);
-  background: rgba(8, 20, 52, 0.72);
+  border: 1.5px solid rgb(var(--w-soft) / 0.28);
+  background: rgb(var(--w-ground) / 0.72);
   padding: 0.9rem 1.2rem;
 }
 .iq-lead {
@@ -24,8 +24,8 @@
   margin-top: 0.25rem;
   padding: 0.1rem 0.7rem;
   border-radius: 999px;
-  background: rgba(125, 252, 255, 0.16);
-  color: #7dfcff;
+  background: rgb(var(--w-cyan-ink) / 0.16);
+  color: rgb(var(--w-cyan-ink));
   font-size: 0.95rem;
   font-weight: 900;
   direction: ltr;
@@ -35,11 +35,11 @@
   font-size: 1.12rem;
   font-weight: 700;
   line-height: 1.6;
-  color: #cfe9ff;
+  color: rgb(var(--w-ink));
   text-align: center;
 }
 .iq-fact.is-ok {
-  color: #8dffb0;
+  color: rgb(var(--w-green-ink));
 }
 .iq-actions {
   display: flex;
@@ -60,24 +60,24 @@
   height: 2.7rem;
   padding: 0 0.5rem;
   border-radius: 0.8rem;
-  border: 2px solid rgba(159, 216, 255, 0.5);
-  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgb(var(--w-soft) / 0.5);
+  background: rgb(var(--w-ink) / 0.07);
   font-size: 1.2rem;
   font-weight: 900;
   cursor: pointer;
 }
 .iq-chip:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgb(var(--w-ink) / 0.18);
 }
 .iq-chip.is-on {
-  background: #7dfcff;
-  border-color: #7dfcff;
+  background: rgb(var(--w-cyan));
+  border-color: rgb(var(--w-cyan-ink));
 }
 .rf-root .iq-chip.is-on {
   color: #06203f;
 }
 .iq-chip.is-said {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   animation: iq-shake 0.35s;
 }
 .iq-found {
@@ -91,13 +91,13 @@
 .iq-found li {
   padding: 0.15rem 0.8rem;
   border-radius: 999px;
-  background: rgba(141, 255, 176, 0.13);
-  border: 1.5px solid rgba(141, 255, 176, 0.45);
+  background: rgb(var(--w-green-ink) / 0.13);
+  border: 1.5px solid rgb(var(--w-green-ink) / 0.45);
   font-size: 0.98rem;
   font-weight: 800;
 }
 .rf-root .iq-found li {
-  color: #c9ffd9;
+  color: rgb(var(--w-green-ink));
 }
 
 /* ── pairs ── */
@@ -112,57 +112,57 @@
   min-height: 0;
 }
 .iq-zone {
-  fill: rgba(125, 252, 255, 0.14);
+  fill: rgb(var(--w-cyan-ink) / 0.14);
 }
 .iq-axis {
-  stroke: rgba(159, 216, 255, 0.55);
+  stroke: rgb(var(--w-soft) / 0.55);
   stroke-width: 3;
   stroke-linecap: round;
 }
 /* the break of a long gap's strip (Inquiry.jsx › stripScale): two slanted strokes where the scale changes */
 .iq-break {
   fill: none;
-  stroke: rgba(159, 216, 255, 0.85);
+  stroke: rgb(var(--w-soft) / 0.85);
   stroke-width: 3;
   stroke-linecap: round;
 }
 .iq-tick {
-  stroke: rgba(159, 216, 255, 0.45);
+  stroke: rgb(var(--w-soft) / 0.45);
   stroke-width: 2;
 }
 .iq-pair path {
   fill: none;
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 3;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   animation: iq-draw 0.6s ease-out forwards;
 }
 .iq-pair circle {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan));
 }
 .iq-pair circle.is-partner {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
 }
 .iq-strip text {
   font-family: inherit;
   font-size: 19px;
   font-weight: 900;
   text-anchor: middle;
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan-ink));
 }
 .iq-strip text.is-partner {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 .iq-strip text.iq-fell {
-  fill: rgba(207, 233, 255, 0.45);
+  fill: rgb(var(--w-ink) / 0.45);
   font-size: 16px;
 }
 .iq-walk__plank {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan));
 }
 .iq-walk__partner {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
   transition: transform 0.4s;
 }
 .iq-walk text {
@@ -172,7 +172,7 @@
   animation: iq-pulse 0.9s ease-in-out infinite;
 }
 .iq-guess line {
-  stroke: #f0abfc;
+  stroke: rgb(var(--w-violet-ink));
   stroke-width: 3;
   stroke-dasharray: 6 5;
 }
@@ -199,7 +199,7 @@
   padding-inline-end: 0.3rem;
   font-size: 0.95rem;
   font-weight: 800;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-try {
   flex: 0 1 4.6rem;
@@ -207,8 +207,8 @@
   padding: 0 0.15rem;
   white-space: nowrap;
   border-radius: 0.7rem;
-  border: 1.5px solid rgba(159, 216, 255, 0.3);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgb(var(--w-soft) / 0.3);
+  background: rgb(var(--w-ink) / 0.05);
   font-size: 1rem;
   font-weight: 800;
   animation: iq-pop 0.3s;
@@ -219,20 +219,20 @@
 }
 .iq-try em {
   font-style: normal;
-  color: #f0abfc;
+  color: rgb(var(--w-violet-ink));
 }
 .iq-try.is-new {
-  border-color: #7dfcff;
+  border-color: rgb(var(--w-cyan-ink));
 }
 .iq-try.is-new span {
-  color: #fbbf24;
+  color: rgb(var(--w-gold-ink));
 }
 .iq-try.is-fell {
   opacity: 0.75;
 }
 .iq-try.is-crossed {
   border-style: dashed;
-  border-color: rgba(251, 191, 36, 0.7);
+  border-color: rgb(var(--w-gold-ink) / 0.7);
 }
 .iq-try.is-ahead {
   border-style: dotted;
@@ -261,14 +261,14 @@
   gap: 0.5rem;
   padding: 0.4rem 0.9rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(125, 252, 255, 0.4);
-  background: rgba(125, 252, 255, 0.09);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.4);
+  background: rgb(var(--w-cyan-ink) / 0.09);
   font-size: 1.08rem;
   font-weight: 800;
   line-height: 1.55;
 }
 .rf-root .iq-goal {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-how {
   font-size: 1.05rem;
@@ -276,7 +276,7 @@
   line-height: 1.55;
 }
 .rf-root .iq-how {
-  color: #cfe9ff;
+  color: rgb(var(--w-ink));
 }
 .iq-divs {
   display: flex;
@@ -303,18 +303,18 @@
 .iq-div__rest {
   padding: 0.05rem 0.7rem;
   border-radius: 999px;
-  background: rgba(251, 191, 36, 0.14);
+  background: rgb(var(--w-gold-ink) / 0.14);
   font-size: 1rem;
   font-weight: 800;
 }
 .rf-root .iq-div__rest {
-  color: #fbbf24;
+  color: rgb(var(--w-gold-ink));
 }
 .iq-div.is-zero .iq-div__rest {
-  background: rgba(34, 197, 94, 0.22);
+  background: rgb(var(--w-green-ink) / 0.22);
 }
 .rf-root .iq-div.is-zero .iq-div__rest {
-  color: #8dffb0;
+  color: rgb(var(--w-green-ink));
 }
 /* HIS CLAIM, laid as a French sentence, left to right (owner, 2026-11-17): the three lenses in a column on the LEFT, the
    link (« est égal à », « est divisible par »), then the numbers on the RIGHT, in columns read downwards (five; three on a phone) */
@@ -336,7 +336,7 @@
   font-weight: 900;
 }
 .rf-root .iq-equals {
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .iq--chart .iq-values {
   display: grid;
@@ -349,15 +349,15 @@
   min-height: 2.8rem;
   padding: 0 1rem;
   border-radius: 999px;
-  border: 2px solid rgba(159, 216, 255, 0.5);
-  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgb(var(--w-soft) / 0.5);
+  background: rgb(var(--w-ink) / 0.07);
   font-size: 1.08rem;
   font-weight: 800;
   cursor: pointer;
 }
 .iq-lens.is-on {
-  background: #7dfcff;
-  border-color: #7dfcff;
+  background: rgb(var(--w-cyan));
+  border-color: rgb(var(--w-cyan-ink));
 }
 .rf-root .iq-lens.is-on {
   color: #06203f;
@@ -378,7 +378,7 @@
   font-size: 1rem;
   font-weight: 800;
   text-align: center;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-chart {
   flex: 1;
@@ -395,42 +395,42 @@
   min-height: 0;
   padding: 0;
   border-radius: 0.45rem;
-  border: 1.5px solid rgba(159, 216, 255, 0.22);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgb(var(--w-soft) / 0.22);
+  background: rgb(var(--w-ink) / 0.04);
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
   cursor: default;
 }
 .rf-root .iq-cell {
-  color: rgba(207, 233, 255, 0.55);
+  color: rgb(var(--w-ink) / 0.55);
 }
 .iq-cell--none {
   visibility: hidden;
 }
 .iq-cell.is-next {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   cursor: pointer;
   animation: iq-pulse 1s ease-in-out infinite;
 }
 .iq-cell.is-dark {
-  background: rgba(2, 8, 28, 0.6);
+  background: rgb(var(--w-ground) / 0.6);
 }
 /* a gap whose division by the plank leaves 0: GREEN (owner, 2026-11-17 — « if d = 0 the cell becomes green ») */
 .iq-cell.is-lit {
   background: #16a34a;
-  border-color: #8dffb0;
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+  border-color: rgb(var(--w-green-ink));
+  box-shadow: 0 0 10px rgb(var(--w-green-ink) / 0.7);
 }
 .rf-root .iq-cell.is-lit {
-  color: #fff;
+  color: rgb(var(--w-ink));
 }
 .iq-cell.is-claimed {
-  outline: 3px solid #7dfcff;
+  outline: 3px solid rgb(var(--w-cyan-ink));
   outline-offset: 1px;
 }
 .iq-cell.is-intruder {
-  outline: 3px solid #fb923c;
+  outline: 3px solid rgb(var(--w-orange-ink));
   outline-offset: 1px;
   animation: iq-shake 0.4s;
 }
@@ -598,12 +598,12 @@
   text-anchor: middle;
 }
 .iq-gapcell {
-  fill: rgba(255, 255, 255, 0.05);
-  stroke: rgba(159, 216, 255, 0.35);
+  fill: rgb(var(--w-ink) / 0.05);
+  stroke: rgb(var(--w-soft) / 0.35);
   stroke-width: 1;
 }
 .iq-brick {
-  stroke: rgba(6, 32, 63, 0.55);
+  stroke: rgb(var(--w-ground) / 0.55);
   stroke-width: 1;
   transition:
     x 0.45s,
@@ -615,19 +615,19 @@
   fill: #2f7df6;
 }
 .iq-brick.is-b {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan));
 }
 .iq-brick.is-rest {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
 }
 .iq-brick.is-mine {
   cursor: pointer;
-  stroke: #fff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 2.5;
 }
 .iq-wall__say {
   font-size: 19px;
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
 }
 .iq-asks {
   display: grid;
@@ -651,22 +651,22 @@
 }
 .iq-plank {
   fill: #2f7df6;
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 2;
 }
 .iq-piece {
-  fill: rgba(251, 191, 36, 0.3);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.3);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2.5;
   stroke-dasharray: 7 5;
 }
 .iq-saw__piece {
   font-size: 18px;
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 .iq-saw__count {
   font-size: 22px;
-  fill: #e8f6ff;
+  fill: rgb(var(--w-ink));
 }
 .iq-slide {
   display: flex;
@@ -678,7 +678,7 @@
   flex: 0 1 34rem;
   min-width: 0;
   height: 2.6rem;
-  accent-color: #7dfcff;
+  accent-color: rgb(var(--w-cyan-ink));
   cursor: pointer;
 }
 .iq-slide strong {
@@ -734,18 +734,18 @@
 }
 .iq-scene__say {
   font-size: 20px;
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
 }
 .iq-scene__num {
   font-size: 22px;
-  fill: #9fd8ff;
+  fill: rgb(var(--w-soft));
 }
 .iq-scene__big {
   font-size: 30px;
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan-ink));
 }
 .iq-plank.is-alt {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan));
   stroke: #2f7df6;
 }
 .iq-plank--drop {
@@ -754,16 +754,16 @@
 }
 /* the cells no plank covers: the piece left */
 .iq-rest {
-  fill: rgba(251, 191, 36, 0.2);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.2);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2.5;
   stroke-dasharray: 7 5;
   animation: iq-drop 0.35s ease-out backwards;
 }
 /* a plank longer than the piece it is laid on */
 .iq-over {
-  fill: rgba(125, 252, 255, 0.12);
-  stroke: #7dfcff;
+  fill: rgb(var(--w-cyan-ink) / 0.12);
+  stroke: rgb(var(--w-cyan-ink));
   stroke-width: 2.5;
   stroke-dasharray: 6 5;
   animation: iq-drop 0.35s ease-out backwards;
@@ -773,12 +773,12 @@
   transition: transform 0.8s cubic-bezier(0.5, 0, 0.25, 1);
 }
 .iq-mover.is-cutter .iq-gapcell {
-  fill: rgba(251, 191, 36, 0.28);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.28);
+  stroke: rgb(var(--w-gold-ink));
 }
 .iq-cutoff {
-  fill: rgba(251, 191, 36, 0.28);
-  stroke: #fbbf24;
+  fill: rgb(var(--w-gold-ink) / 0.28);
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 2;
   transform-box: fill-box;
   animation: iq-fall 0.9s ease-in forwards;
@@ -788,7 +788,7 @@
   animation: iq-copy 0.45s cubic-bezier(0.3, 0, 0.2, 1) backwards;
 }
 .iq-seam {
-  stroke: #e8f6ff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 2.5;
   stroke-dasharray: 4 4;
 }
@@ -803,14 +803,14 @@
   white-space: nowrap;
 }
 .rf-root .iq-calc {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-found li.is-fell {
-  background: rgba(251, 191, 36, 0.1);
-  border-color: rgba(251, 191, 36, 0.45);
+  background: rgb(var(--w-gold-ink) / 0.1);
+  border-color: rgb(var(--w-gold-ink) / 0.45);
 }
 .rf-root .iq-found li.is-fell {
-  color: #ffe2a8;
+  color: rgb(var(--w-gold-ink));
 }
 
 /* peel: the table of every round, a column per plank (the labels on the left) */
@@ -843,8 +843,8 @@
   min-width: 3.2rem;
   padding: 0 0.25rem;
   border-radius: 0.7rem;
-  border: 1.5px solid rgba(159, 216, 255, 0.3);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgb(var(--w-soft) / 0.3);
+  background: rgb(var(--w-ink) / 0.05);
   font-size: 1.05rem;
   font-weight: 800;
 }
@@ -859,30 +859,30 @@
   border-color: transparent;
   background: none;
   font-size: 0.95rem;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-pcol.is-active {
-  border-color: #fbbf24;
-  box-shadow: 0 0 10px rgba(251, 191, 36, 0.45);
+  border-color: rgb(var(--w-gold-ink));
+  box-shadow: 0 0 10px rgb(var(--w-gold-ink) / 0.45);
 }
 .iq-pcol .is-yes {
-  color: #8dffb0;
+  color: rgb(var(--w-green-ink));
 }
 .iq-pcol .is-no {
-  color: rgba(207, 233, 255, 0.5);
+  color: rgb(var(--w-ink) / 0.5);
 }
 .iq-pcol .is-missed {
-  outline: 2px dotted #fbbf24;
+  outline: 2px dotted rgb(var(--w-gold-ink));
   outline-offset: 1px;
   border-radius: 0.4rem;
   padding: 0 0.3rem;
 }
 .iq-pcol.is-claimed {
-  outline: 3px solid #7dfcff;
+  outline: 3px solid rgb(var(--w-cyan-ink));
   outline-offset: 1px;
 }
 .iq-pcol.is-intruder {
-  outline: 3px solid #fb923c;
+  outline: 3px solid rgb(var(--w-orange-ink));
   outline-offset: 1px;
   animation: iq-shake 0.4s;
 }
@@ -925,12 +925,12 @@
 .iq-val {
   padding: 0.2rem 1rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(125, 252, 255, 0.45);
-  background: rgba(125, 252, 255, 0.08);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.45);
+  background: rgb(var(--w-cyan-ink) / 0.08);
 }
 .iq-val.is-hidden {
   border-style: dashed;
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
 }
 .iq-proof {
   display: grid;
@@ -951,13 +951,13 @@
   gap: 0.2rem 0.8rem;
   padding: 0.4rem 0.9rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(125, 252, 255, 0.4);
-  background: rgba(125, 252, 255, 0.07);
+  border: 1.5px solid rgb(var(--w-cyan-ink) / 0.4);
+  background: rgb(var(--w-cyan-ink) / 0.07);
   font-size: 1.1rem;
 }
 .iq-given b {
   grid-column: 1;
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
   font-size: 1rem;
 }
 .iq-given > :not(b) {
@@ -978,17 +978,17 @@
   min-height: 2.6rem;
   padding: 0.15rem 0.7rem;
   border-radius: 0.8rem;
-  border: 1.5px dashed rgba(159, 216, 255, 0.35);
+  border: 1.5px dashed rgb(var(--w-soft) / 0.35);
   font-size: 1.12rem;
   white-space: nowrap;
 }
 .iq-slot.is-next {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   animation: iq-pulse 1.2s ease-in-out infinite;
 }
 .iq-slot.is-full {
   border-style: solid;
-  border-color: #7dfcff;
+  border-color: rgb(var(--w-cyan-ink));
   background: rgba(47, 125, 246, 0.25);
   animation: iq-pop 0.3s;
 }
@@ -999,8 +999,8 @@
   width: 1.7rem;
   height: 1.7rem;
   border-radius: 999px;
-  background: rgba(125, 252, 255, 0.16);
-  color: #7dfcff;
+  background: rgb(var(--w-cyan-ink) / 0.16);
+  color: rgb(var(--w-cyan-ink));
   font-size: 0.95rem;
   font-weight: 900;
 }
@@ -1015,18 +1015,18 @@
   min-height: 2.6rem;
   padding: 0.2rem 0.9rem;
   border-radius: 0.8rem;
-  border: 2px solid rgba(159, 216, 255, 0.5);
-  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgb(var(--w-soft) / 0.5);
+  background: rgb(var(--w-ink) / 0.07);
   font-size: 1.1rem;
   font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
 }
 .iq-card:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgb(var(--w-ink) / 0.16);
 }
 .iq-card.is-said {
-  border-color: #fbbf24;
+  border-color: rgb(var(--w-gold-ink));
   animation: iq-shake 0.35s;
 }
 .iq-card.is-refuted:not(.is-said) {
@@ -1094,7 +1094,7 @@
   line-height: 1.5;
 }
 .rf-root .iq-askline {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 /* a typed answer in its own shape: the boxes inside the line they complete (never two lines) */
 .iq-tpl {
@@ -1106,7 +1106,7 @@
   white-space: nowrap;
 }
 .rf-root .iq-tpl {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-tpl label {
   display: inline-flex;
@@ -1125,7 +1125,7 @@
 }
 /* the end of the gap: a plank that passes it hangs in the air */
 .iq-gapend {
-  stroke: #e8f6ff;
+  stroke: rgb(var(--w-ink));
   stroke-width: 3;
   stroke-dasharray: 6 5;
 }
@@ -1134,13 +1134,13 @@
   fill: #06203f;
 }
 .iq-plank.is-new {
-  fill: #8dffb0;
-  stroke: #e8f6ff;
+  fill: rgb(var(--w-green));
+  stroke: rgb(var(--w-ink));
 }
 /* the cloth over the gap of « rebuild »: lifted once he has said its length */
 .iq-cloth {
   fill: #1c3f7a;
-  stroke: #9fd8ff;
+  stroke: rgb(var(--w-soft));
   stroke-width: 2;
   transform-box: fill-box;
   transition:
@@ -1153,53 +1153,53 @@
 }
 /* the ruler (estimate) and the line of the multiples (bracket) */
 .iq-mark line {
-  stroke: rgba(159, 216, 255, 0.7);
+  stroke: rgb(var(--w-soft) / 0.7);
   stroke-width: 2.5;
 }
 .iq-mark__value {
   font-size: 19px;
-  fill: #9fd8ff;
+  fill: rgb(var(--w-soft));
 }
 .iq-mark__count {
   font-size: 18px;
-  fill: #cfe9ff;
+  fill: rgb(var(--w-ink));
 }
 .iq-mark.is-pick line {
   stroke-width: 5;
 }
 .iq-mark.is-ok line {
-  stroke: #7dfcff;
+  stroke: rgb(var(--w-cyan-ink));
 }
 .iq-mark.is-ok text {
-  fill: #7dfcff;
+  fill: rgb(var(--w-cyan-ink));
 }
 .iq-mark.is-passes line,
 .iq-mark.is-short line {
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
 }
 .iq-mark.is-passes text,
 .iq-mark.is-short text {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 /* bracket: the flag stands ON this mark (nothing left) — the mark takes the flag's gold */
 .iq-mark.is-flagged line {
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 6;
 }
 .iq-mark.is-flagged .iq-mark__value {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
   font-weight: 700;
 }
 .iq-flag line {
-  stroke: #fbbf24;
+  stroke: rgb(var(--w-gold-ink));
   stroke-width: 3;
 }
 .iq-flag path {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
 }
 .iq-flag text {
   font-size: 22px;
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold-ink));
 }
 @media (max-height: 500px) {
   .iq--div {
@@ -1224,11 +1224,11 @@
   grid-template-rows: auto auto auto minmax(0, 1fr) auto auto auto auto;
 }
 .iq-scene__num.is-gold {
-  fill: #fbbf24;
+  fill: rgb(var(--w-gold));
 }
 .iq .rf-btn.is-on {
-  background: #7dfcff;
-  border-color: #7dfcff;
+  background: rgb(var(--w-cyan));
+  border-color: rgb(var(--w-cyan-ink));
 }
 .rf-root .iq .rf-btn.is-on {
   color: #06203f;
@@ -1241,7 +1241,7 @@
   font-weight: 900;
 }
 .rf-root .iq-side {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 /* common: the tray of candidate planks (left) and the shelves they go to */
 .iq-shelves {
@@ -1259,15 +1259,15 @@
   min-width: 7rem;
   padding: 0.3rem 0.6rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(159, 216, 255, 0.3);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgb(var(--w-soft) / 0.3);
+  background: rgb(var(--w-ink) / 0.04);
 }
 .iq-shelf small {
   font-size: max(var(--di-min-font, 12px), 0.9rem);
   font-weight: 800;
 }
 .rf-root .iq-shelf small {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-shelf--tray {
   flex-direction: row;
@@ -1277,8 +1277,8 @@
   max-width: 16rem;
 }
 .iq-shelf--both {
-  border-color: rgba(141, 255, 176, 0.6);
-  background: rgba(141, 255, 176, 0.08);
+  border-color: rgb(var(--w-green-ink) / 0.6);
+  background: rgb(var(--w-green-ink) / 0.08);
 }
 .iq-shelf--none {
   opacity: 0.7;
@@ -1310,10 +1310,10 @@
   grid-template-columns: 2rem minmax(6rem, 1fr) minmax(0, 1.4fr);
 }
 .iq-rung.is-written {
-  background: rgba(125, 252, 255, 0.06);
+  background: rgb(var(--w-cyan-ink) / 0.06);
 }
 .iq-rung.is-new {
-  background: rgba(125, 252, 255, 0.14);
+  background: rgb(var(--w-cyan-ink) / 0.14);
 }
 .iq-rung--head,
 .iq-rung--fold {
@@ -1330,7 +1330,7 @@
 }
 .rf-root .iq-rung--head small,
 .rf-root .iq-rung--fold small {
-  color: #9fd8ff;
+  color: rgb(var(--w-soft));
 }
 .iq-rung__n {
   font-size: max(var(--di-min-font, 12px), 1rem);
@@ -1338,7 +1338,7 @@
   text-align: center;
 }
 .rf-root .iq-rung__n {
-  color: #7dfcff;
+  color: rgb(var(--w-cyan-ink));
 }
 .iq-rung__bar {
   width: 100%;
@@ -1352,7 +1352,7 @@
   white-space: nowrap;
 }
 .rf-root .iq-rung__tex {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-rung__ticks {
   display: flex;
@@ -1367,11 +1367,11 @@
 .iq-rung__ticks b {
   padding: 0 0.4rem;
   border-radius: 0.5rem;
-  background: rgba(141, 255, 176, 0.15);
+  background: rgb(var(--w-green-ink) / 0.15);
 }
 .rf-root .iq-rung__ticks b,
 .rf-root .iq-rung__ticks i {
-  color: #8dffb0;
+  color: rgb(var(--w-green-ink));
 }
 .iq-rung__ticks i {
   font-style: normal;
@@ -1381,8 +1381,8 @@
   stroke-dasharray: 4 3;
 }
 .iq-plank.is-end {
-  fill: #fbbf24;
-  stroke: #ffe2a8;
+  fill: rgb(var(--w-gold));
+  stroke: rgb(var(--w-gold-ink));
 }
 /* nest: g and its planks, given all along; then the two lists side by side */
 .iq-gknown {
@@ -1401,7 +1401,7 @@
 }
 .rf-root .iq-gknown,
 .rf-root .iq-lists small {
-  color: #e8f6ff;
+  color: rgb(var(--w-ink));
 }
 .iq-lists {
   display: flex;
@@ -1416,7 +1416,7 @@
   gap: 0.25rem;
   padding: 0.3rem 0.8rem;
   border-radius: 0.9rem;
-  border: 1.5px solid rgba(141, 255, 176, 0.5);
+  border: 1.5px solid rgb(var(--w-green-ink) / 0.5);
 }
 @media (prefers-reduced-motion: reduce) {
   .iq-rung {

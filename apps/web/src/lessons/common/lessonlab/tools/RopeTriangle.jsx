@@ -90,17 +90,38 @@ export default function RopeTriangle({ a, b, play, report, start = null }) {
     const [start, end] = which === 'm' ? ['A', 'B'] : ['A', 'C'];
     return (
       <g data-ll-rope-line-of={which}>
-        <text x={R0 - 30} y={y + 7} textAnchor="middle" fontSize="22" fontWeight="900" style={{ fill: '#eafcff' }}>
+        <text
+          x={R0 - 30}
+          y={y + 7}
+          textAnchor="middle"
+          fontSize="22"
+          fontWeight="900"
+          style={{ fill: 'rgb(var(--w-ink))' }}
+        >
           {start}
         </text>
-        <text x={R1 + 30} y={y + 7} textAnchor="middle" fontSize="22" fontWeight="900" style={{ fill: '#eafcff' }}>
+        <text
+          x={R1 + 30}
+          y={y + 7}
+          textAnchor="middle"
+          fontSize="22"
+          fontWeight="900"
+          style={{ fill: 'rgb(var(--w-ink))' }}
+        >
           {end}
         </text>
         {/* the rope: the piece from A to the knot held, then the rest */}
-        <line x1={R0} y1={y} x2={x} y2={y} stroke="#7dfcff" strokeWidth="6" strokeLinecap="round" />
-        <line x1={x} y1={y} x2={R1} y2={y} stroke="rgba(234,252,255,.4)" strokeWidth="4" strokeLinecap="round" />
+        <line x1={R0} y1={y} x2={x} y2={y} stroke="rgb(var(--w-cyan-ink))" strokeWidth="6" strokeLinecap="round" />
+        <line x1={x} y1={y} x2={R1} y2={y} stroke="rgb(var(--w-ink) / 0.4)" strokeWidth="4" strokeLinecap="round" />
         {Array.from({ length: len + 1 }, (_, i) => (
-          <circle key={i} cx={xOf(i, len)} cy={y} r={len > 20 ? 3 : 4.5} fill="#fde68a" data-ll-rope-knot={which} />
+          <circle
+            key={i}
+            cx={xOf(i, len)}
+            cy={y}
+            r={len > 20 ? 3 : 4.5}
+            fill="rgb(var(--w-gold))"
+            data-ll-rope-knot={which}
+          />
         ))}
         {/* the rope's length, under its end — the knot held is written under the knot */}
         <text
@@ -108,7 +129,7 @@ export default function RopeTriangle({ a, b, play, report, start = null }) {
           y={y + 36}
           textAnchor="middle"
           fontSize="18"
-          style={{ fill: '#a5f3fc' }}
+          style={{ fill: 'rgb(var(--w-cyan-ink))' }}
           data-ll-rope-len={len}
         >
           {`${len} m`}
@@ -126,13 +147,27 @@ export default function RopeTriangle({ a, b, play, report, start = null }) {
           data-ll-rope-handle={which}
         >
           <rect x={R0 - 12} y={y - 26} width={L + 24} height="52" fill="transparent" />
-          {!moved && which === 'm' && <circle className="ll-pulse" cx={x} cy={y} r="22" fill="#fbbf24" />}
-          <circle cx={x} cy={y} r="13" fill="#fde68a" stroke="#06262c" strokeWidth="3" />
+          {!moved && which === 'm' && <circle className="ll-pulse" cx={x} cy={y} r="22" fill="rgb(var(--w-gold))" />}
+          <circle cx={x} cy={y} r="13" fill="rgb(var(--w-gold))" stroke="#06262c" strokeWidth="3" />
         </g>
-        <text x={x} y={y - 24} textAnchor="middle" fontSize="20" fontWeight="900" style={{ fill: '#fde68a' }}>
+        <text
+          x={x}
+          y={y - 24}
+          textAnchor="middle"
+          fontSize="20"
+          fontWeight="900"
+          style={{ fill: 'rgb(var(--w-gold-ink))' }}
+        >
           {which === 'm' ? 'M' : 'N'}
         </text>
-        <text x={x} y={y + 36} textAnchor="middle" fontSize="18" fontWeight="800" style={{ fill: '#fde68a' }}>
+        <text
+          x={x}
+          y={y + 36}
+          textAnchor="middle"
+          fontSize="18"
+          fontWeight="800"
+          style={{ fill: 'rgb(var(--w-gold-ink))' }}
+        >
           {v}
         </text>
       </g>
@@ -195,7 +230,7 @@ export default function RopeTriangle({ a, b, play, report, start = null }) {
               y1={Y.m + 16}
               x2={xOf(n, b)}
               y2={Y.n - 16}
-              stroke="#fbbf24"
+              stroke="rgb(var(--w-gold-ink))"
               strokeWidth="3"
               strokeDasharray="7 5"
               data-ll-rope-aligned
